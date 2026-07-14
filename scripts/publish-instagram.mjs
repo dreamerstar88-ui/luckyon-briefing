@@ -121,8 +121,18 @@ async function main() {
   console.log(`· 캐러셀 컨테이너 생성: ${parent.id}`);
   await waitFinished(parent.id, '캐러셀');
 
-  // 4) 발행
-  const published = await api(`${IG_USER}/media_publish`, { creation_id: parent.id });
+  // 4) 발행 (컨테이너가 FINISHED여도 잠시 뒤에야 발행 가능한 경우가 있어 재시도)
+  let published;
+  for (let i = 0; ; i++) {
+    try {
+      published = await api(`${IG_USER}/media_publish`, { creation_id: parent.id });
+      break;
+    } catch (e) {
+      if (i >= 5) throw e;
+      console.log(`· 발행 재시도 ${i + 1}/5 (${e.message})`);
+      await sleep(15000);
+    }
+  }
   console.log(`\n✅ 발행 완료! media id = ${published.id} [${lang.toUpperCase()}]`);
   return published.id;
 }
