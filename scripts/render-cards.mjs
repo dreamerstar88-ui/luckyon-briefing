@@ -111,15 +111,15 @@ function cardOutro() {
 const cards = [
   cardHook(),
   cardMarkets(),
-  newsCard(t('경제 · 금융 ①','Economy ①'), data.econ.slice(0, 2), 3, '#e66767'),
-  newsCard(t('경제 · 금융 ②','Economy ②'), data.econ.slice(2, 5), 4, '#e66767'),
-  newsCard(t('AI · 테크 ①','AI & Tech ①'), data.ai.slice(0, 2), 5, '#9085e9'),
-  newsCard(t('AI · 테크 ②','AI & Tech ②'), data.ai.slice(2, 5), 6, '#9085e9'),
+  newsCard(t('경제 · 금융 ①','Economy ①'), data.econ.slice(0, 3), 3, '#e66767'),
+  newsCard(t('경제 · 금융 ②','Economy ②'), data.econ.slice(3, 6), 4, '#e66767'),
+  newsCard(t('AI · 테크 ①','AI & Tech ①'), data.ai.slice(0, 3), 5, '#9085e9'),
+  newsCard(t('AI · 테크 ②','AI & Tech ②'), data.ai.slice(3, 6), 6, '#9085e9'),
   cardOutro(),
 ];
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
-const pageObj = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
+const pageObj = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 2 });
 for (let i = 0; i < cards.length; i++) {
   await pageObj.setContent(cards[i], { waitUntil: 'networkidle' });
   const file = path.join(outDir, `card${i + 1}.png`);
