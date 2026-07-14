@@ -1,0 +1,45 @@
+{
+  "date": "2026-07-14",
+  "dateLabel_ko": "2026년 7월 14일 (화)",
+  "dateLabel_en": "Tuesday, July 14, 2026",
+  "headline_ko": "유가 4% 급등, 나스닥 1.55% 하락",
+  "headline_sub_ko": "호르무즈 해협 봉쇄 재개 · 오늘 밤 미국 CPI 발표",
+  "headline_en": "Oil Jumps 4%, Nasdaq Slides 1.55%",
+  "headline_sub_en": "Hormuz blockade resumes · US CPI drops tonight",
+  "markets": [
+    { "label": "S&P 500", "value": "7,515.34", "delta": "▼ 0.79%", "dir": "down" },
+    { "label": "NASDAQ", "value": "25,873.18", "delta": "▼ 1.55%", "dir": "down" },
+    { "label": "DOW", "value": "52,498.64", "delta": "▼ 0.26%", "dir": "down" },
+    { "label": "VIX", "value": "15.03", "delta": "▼ 5.11%", "dir": "down" },
+    { "label": "Fear & Greed", "value": "49", "delta": "중립", "dir": "flat" },
+    { "label": "US 10Y", "value": "4.58%", "delta": "▲", "dir": "up" },
+    { "label": "USD/KRW", "value": "1,494.25", "delta": "▼ 0.33%", "dir": "down" },
+    { "label": "Gold", "value": "$4,020", "delta": "▼ 2%대", "dir": "down" },
+    { "label": "WTI", "value": "$74+", "delta": "▲ 4%대", "dir": "up" },
+    { "label": "Bitcoin", "value": "$62K대", "delta": "▼ 약세", "dir": "down" }
+  ],
+  "market_note_ko": "중동 리스크로 유가·금리 동반 상승, 위험자산 회피. VIX·F&G는 7/10 기준.",
+  "market_note_en": "Middle East risk lifts oil & yields; risk-off tone. VIX/F&G as of Jul 10.",
+  "econ": [
+    { "headline_ko": "이란, 호르무즈 해협 봉쇄 재개 선언… 유가 4% 급등", "headline_en": "Iran resumes Hormuz blockade; oil jumps 4%", "body_ko": "트럼프 대통령이 이란 선박 봉쇄 재개를 발표하며 WTI가 배럴당 74달러를 넘겼습니다. 세계 해상 원유의 25%가 지나는 항로라 공급 차질 우려가 큽니다.", "body_en": "Trump announced a renewed blockade on Iranian ships, pushing WTI above $74. The strait carries 25% of seaborne oil, raising supply-disruption fears.", "src": "CNBC / Yahoo Finance", "time": "7/14 05:00 KST" },
+    { "headline_ko": "미 3대 지수 일제히 하락, 나스닥 1.55% 급락", "headline_en": "US indexes fall broadly; Nasdaq -1.55%", "body_ko": "S&P500 -0.79%, 나스닥 -1.55%, 다우 -0.26%로 마감했습니다. 지정학 리스크와 반도체주 약세가 겹쳤습니다.", "body_en": "S&P500 -0.79%, Nasdaq -1.55%, Dow -0.26%. Geopolitical risk met a chip-stock slump.", "src": "CNBC", "time": "7/14 05:00 KST" },
+    { "headline_ko": "오늘 밤 6월 미국 CPI 발표, 금리 향방 분수령", "headline_en": "June US CPI tonight: a rate-path pivot", "body_ko": "한국시간 오늘 밤 9시 30분 발표됩니다. 근원 CPI 전년비 +2.85% 예상으로, 예상보다 낮으면 긴축 우려가 완화될 수 있습니다.", "body_en": "Out at 9:30pm KST tonight. Core CPI seen +2.85% YoY; a soft print could ease tightening fears.", "src": "The Motley Fool", "time": "7/13 발행" },
+    { "headline_ko": "금값 2% 급락, 국채금리 상승… '긴축 장기화' 반영", "headline_en": "Gold drops 2%, yields rise on 'higher for longer'", "body_ko": "금 현물이 온스당 4,020달러로 2% 넘게 밀렸습니다. 중동발 인플레 압력이 오히려 금리 장기화 전망을 키웠습니다.", "body_en": "Spot gold fell over 2% to $4,020/oz as Mideast inflation pressure fed 'higher-for-longer' rate views.", "src": "Reuters 종합", "time": "7/14 05:00 KST" },
+    { "headline_ko": "원/달러 1,494원… 원화, 한 달새 1.3% 강세", "headline_en": "USD/KRW at 1,494; won up 1.3% in a month", "body_ko": "환율이 전 거래일 대비 0.33% 내렸습니다. 다만 지정학 리스크가 커지면 안전자산 달러 수요로 방향이 바뀔 수 있습니다.", "body_en": "The pair eased 0.33% on the day, though rising geopolitical risk could revive safe-haven dollar demand.", "src": "시장데이터", "time": "7/14 05:00 KST" }
+  ],
+  "ai": [
+    { "headline_ko": "백악관, 프론티어 AI 안전기준 발표 임박… 3대 랩 참여", "headline_en": "White House nears frontier-AI safety standards", "body_ko": "OpenAI·구글·Anthropic과 자율 사전심사 표준을 협상 중이며, 출시 전 최대 30일 정부 보안검토안이 유력합니다.", "body_en": "In talks with OpenAI, Google, and Anthropic on voluntary pre-release review — up to 30 days of government security review.", "src": "AI Weekly / TipRanks", "time": "7/13 보도" },
+    { "headline_ko": "엔비디아 두 달새 시총 1조달러 증발", "headline_en": "Nvidia sheds $1T in market cap in two months", "body_ko": "5월 고점 대비 16% 하락했습니다. 메타의 클라우드 진출과 딥시크 자체 칩 개발이 경쟁 우려를 키웠습니다.", "body_en": "Down 16% from its May peak as Meta's cloud push and DeepSeek's in-house chip stoked competition fears.", "src": "Bloomberg", "time": "7/8 보도" },
+    { "headline_ko": "Anthropic, 매출 기준 OpenAI 추월… ARR 470억달러", "headline_en": "Anthropic overtakes OpenAI on revenue (ARR $47B)", "body_ko": "Ramp 데이터 기준 5월 기업 구독 매출에서 앞섰습니다. OpenAI는 250~330억달러로 공시했습니다.", "body_en": "Led on May enterprise-subscription revenue per Ramp data; OpenAI disclosed $25–33B.", "src": "AI Weekly", "time": "7월 초" },
+    { "headline_ko": "Claude Code, 브라우저 내장 기능 추가", "headline_en": "Claude Code adds a built-in browser", "body_ko": "AI가 웹페이지를 직접 열람·조작할 수 있게 됐고, 무료 이용 한도 상향도 연장했습니다.", "body_en": "The AI can now open and interact with web pages directly; higher usage limits were extended.", "src": "Anthropic", "time": "7월 중순" },
+    { "headline_ko": "AI 반도체, 메모리로 자금 이동… 경쟁 구도 재편", "headline_en": "AI-chip money rotates toward memory names", "body_ko": "엔비디아 의존도를 낮추려는 흐름에 메모리·맞춤형 칩 업체로 투자심리가 옮겨가고 있습니다.", "body_en": "Investors rotate to memory and custom-silicon makers, seeking to cut Nvidia dependence.", "src": "종합", "time": "7/13" }
+  ],
+  "caption_ko": "📊 luckyon 브리핑 · 2026년 7월 14일\n\n오늘의 핵심: 호르무즈 해협 봉쇄 재개로 유가 4% 급등, 미 증시 하락. 오늘 밤 9시 30분 미국 CPI 발표가 최대 변수입니다.\n\n👉 매일 아침 경제·AI 뉴스를 카드로 정리합니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n#경제뉴스 #주식 #증시 #환율 #금값 #유가 #비트코인 #AI #인공지능 #엔비디아 #재테크 #경제공부 #투자 #뉴스브리핑 #luckyon",
+  "caption_en": "📊 luckyon Briefing · July 14, 2026\n\nToday: Hormuz blockade resumes → oil +4%, US stocks slip. Tonight's US CPI (9:30pm KST) is the key swing factor.\n\n👉 Daily economy & AI news, summarized in cards. Follow so you don't miss it!\nSaves 🔖 & shares 📤 welcome.\n\n#economy #stocks #markets #forex #gold #oil #bitcoin #AI #nvidia #investing #finance #newsbriefing #luckyon",
+  "sources": [
+    "https://www.cnbc.com/2026/07/12/stock-market-today-live-updates.html",
+    "https://finance.yahoo.com/economy/policy/articles/latest-inflation-data-drop-july-143801630.html",
+    "https://www.bloomberg.com/news/articles/2026-07-08/nvidia-s-1-trillion-slide-sends-valuation-to-pre-ai-boom-levels",
+    "https://aiweekly.co/alerts/white-house-nears-voluntary-frontier-model-deal-with-top-ai-labs"
+  ]
+}
