@@ -70,7 +70,13 @@ async function waitFinished(containerId, label, maxTries = 30) {
 }
 
 // GitHub Pages가 이미지를 실제로 서빙할 때까지 대기 (푸시 직후 반영 지연 대비)
+// SKIP_PAGES_WAIT=1 이면 건너뛴다 (세션 네트워크 정책이 github.io 접근을 막는 환경용;
+// 실제 이미지 fetch는 Instagram 서버가 수행하므로 발행 자체에는 영향 없음)
 async function waitForImages() {
+  if (process.env.SKIP_PAGES_WAIT === '1') {
+    console.log('· SKIP_PAGES_WAIT=1 → Pages 반영 확인 생략');
+    return;
+  }
   console.log('· GitHub Pages 이미지 반영 대기…');
   for (const u of imageUrls) {
     let ok = false;
