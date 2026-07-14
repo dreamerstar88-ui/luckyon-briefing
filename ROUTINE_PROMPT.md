@@ -37,7 +37,16 @@
    - `node scripts/render-cards.mjs <DATE> en`
    - `cards/<DATE>/ko/` 와 `cards/<DATE>/en/` 에 각각 card1~7.png 가 생겼는지 확인한다.
 
-6. **저장소에 커밋 & 푸시**: `git add -A && git commit -m "brief: <DATE>" && git push`. (이미지가 GitHub Pages로 공개되어야 인스타가 가져갈 수 있다.)
+6. **고정 브랜치 `claude/live` 에 커밋 & 푸시**: 반드시 아래 순서대로, 항상 같은 브랜치 이름을 재사용한다 (새 브랜치를 매번 만들지 않는다). GitHub Pages가 이 브랜치를 소스로 보고 있으므로, 여기에 푸시해야 이미지가 공개된다.
+   ```
+   git fetch origin claude/live 2>/dev/null
+   git checkout claude/live 2>/dev/null || git checkout -b claude/live
+   git merge origin/main --no-edit 2>/dev/null || true
+   git add -A
+   git commit -m "brief: <DATE> (${LANG})"
+   git push origin claude/live
+   ```
+   (main 브랜치는 건드리지 않는다. `claude/`로 시작하는 브랜치는 별도 권한 설정 없이도 기본적으로 푸시가 허용된다.)
 
 7. **토큰 만료 점검**: 환경변수 `IG_TOKEN_EXPIRES_AT`(YYYY-MM-DD)를 읽어, 오늘로부터 10일 이내면 PushNotification으로 "인스타 토큰 갱신 필요 (만료 임박)" 알림을 보낸다.
 
@@ -50,3 +59,8 @@
 
 ### 이 루틴의 언어 설정
 LANG = ko     ← 영어본 루틴에서는 이 값을 en 으로 바꾸세요.
+
+### 최초 1회 준비사항 (사람이 직접)
+이 루틴을 처음 한 번 "지금 실행"으로 돌려 `claude/live` 브랜치가 저장소에 생기게 한 뒤,
+GitHub 저장소 → Settings → Pages → Branch 드롭다운에서 `claude/live` 를 선택하고 Save 하세요.
+(브랜치가 아직 없으면 드롭다운에 나타나지 않습니다. 최초 1회만 이 순서가 필요합니다.)
