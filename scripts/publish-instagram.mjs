@@ -70,7 +70,13 @@ async function waitFinished(containerId, label, maxTries = 30) {
 }
 
 // GitHub Pages가 이미지를 실제로 서빙할 때까지 대기 (푸시 직후 반영 지연 대비)
+// SKIP_PAGES_WAIT=1 이면 건너뛴다 (세션 네트워크 정책이 github.io 접근을 막는 환경용;
+// 실제 이미지 fetch는 Instagram 서버가 수행하므로 발행 자체에는 영향 없음)
 async function waitForImages() {
+  if (process.env.SKIP_PAGES_WAIT === '1') {
+    console.log('· SKIP_PAGES_WAIT=1 → Pages 반영 확인 생략');
+    return;
+  }
   console.log('· GitHub Pages 이미지 반영 대기…');
   for (const u of imageUrls) {
     let ok = false;
@@ -115,8 +121,18 @@ async function main() {
   console.log(`· 캐러셀 컨테이너 생성: ${parent.id}`);
   await waitFinished(parent.id, '캐러셀');
 
-  // 4) 발행
-  const published = await api(`${IG_USER}/media_publish`, { creation_id: parent.id });
+  // 4) 발행 (컨테이너가 FINISHED여도 잠시 뒤에야 발행 가능한 경우가 있어 재시도)
+  let published;
+  for (let i = 0; ; i++) {
+    try {
+      published = await api(`${IG_USER}/media_publish`, { creation_id: parent.id });
+      break;
+    } catch (e) {
+      if (i >= 5) throw e;
+      console.log(`· 발행 재시도 ${i + 1}/5 (${e.message})`);
+      await sleep(15000);
+    }
+  }
   console.log(`\n✅ 발행 완료! media id = ${published.id} [${lang.toUpperCase()}]`);
   return published.id;
 }

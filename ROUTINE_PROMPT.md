@@ -8,15 +8,17 @@
 당신은 "luckyon 브리핑"의 자동 발행 담당입니다. 저장소 `luckyon-briefing`이 클론된 상태이며, 목표는 오늘자 경제·AI 뉴스 카드뉴스를 생성해 Instagram에 캐러셀로 발행하는 것입니다. 아래를 순서대로 수행하세요.
 
 1. **의존성 확인**: `npm ls playwright` 로 playwright가 있는지 확인하고, 없으면 `npm install` 을 실행한다. (setup 스크립트에서 이미 설치됐다면 건너뛴다.)
+   - `npm install` 이 403 등으로 실패하는 환경이면, 전역 설치본을 심볼릭 링크로 연결한다:
+     `mkdir -p node_modules && ln -sf /opt/node22/lib/node_modules/playwright node_modules/playwright`
 
 2. **오늘 날짜 확인**: 한국시간(KST) 기준 오늘 날짜를 `YYYY-MM-DD` 형식으로 정하고 `DATE` 로 사용한다.
 
 3. **뉴스 리서치**: WebSearch로 오늘 기준 최신 뉴스를 조사한다.
    - 먼저 시장 지표를 확인: 미국 3대 지수, VIX, Fear&Greed, 미 10년물 금리, 원/달러, 금, WTI 원유, 비트코인.
-   - 경제/금융 뉴스 5건, AI/테크 뉴스 5건을 선별한다. 출처가 분명하고 최근 24시간 이내(또는 가장 최신)를 우선한다.
+   - 경제/금융 뉴스 6건, AI/테크 뉴스 6건을 선별한다. 출처가 분명하고 최근 24시간 이내(또는 가장 최신)를 우선한다. (뉴스 카드 4장에 3건씩 배치되므로 반드시 각 6건을 채운다.)
    - 각 뉴스는 결론부터 1~2문장으로, 한국어와 영어 두 버전을 모두 작성한다.
 
-4. **콘텐츠 JSON 작성**: `content/<DATE>.json` 파일을 아래 스키마로 저장한다. (기존 `content/2026-07-14.json` 을 예시로 참고하되, 반드시 오늘 내용으로 새로 만든다. econ 5건, ai 5건, markets 10개 항목을 채운다.)
+4. **콘텐츠 JSON 작성**: `content/<DATE>.json` 파일을 아래 스키마로 저장한다. (기존 `content/` 의 가장 최근 파일을 예시로 참고하되, 반드시 오늘 내용으로 새로 만든다. econ 6건, ai 6건, markets 10개 항목을 채운다.)
 
    ```
    {
@@ -24,13 +26,14 @@
      "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
      "markets":[{"label","value","delta","dir(up|down|flat)"} x10],
      "market_note_ko","market_note_en",
-     "econ":[{"headline_ko","headline_en","body_ko","body_en","src","time"} x5],
-     "ai":[  {"headline_ko","headline_en","body_ko","body_en","src","time"} x5],
+     "econ":[{"headline_ko","headline_en","body_ko","body_en","src","time"} x6],
+     "ai":[  {"headline_ko","headline_en","body_ko","body_en","src","time"} x6],
      "caption_ko","caption_en","sources":[...]
    }
    ```
    - `time` 은 한국시간(KST) 기준으로 표기한다.
    - caption 에는 요약 + 팔로우/저장 유도 문구 + 해시태그 15개 내외를 포함한다.
+   - **한국어 맞춤법·띄어쓰기 검증**: JSON 저장 전에 모든 한국어 텍스트(특히 markets 의 delta, note, headline)를 다시 읽으며 맞춤법과 띄어쓰기를 점검한다. 예: "두달래 최고"(X) → "두 달 내 최고"(O). 지표 변동 표현은 자연스러운 한국어로 쓰되, 주가지수·금리 등은 "두 달 내 최고", "52주 신고가", "20일 이동평균선 상회" 처럼 시장에서 통용되는 표현을 우선한다.
 
 5. **카드 이미지 생성**: 다음을 실행한다.
    - `node scripts/render-cards.mjs <DATE> ko`
