@@ -1,7 +1,14 @@
-# 루틴에 붙여넣을 프롬프트 (그대로 복사)
+# luckyon 브리핑 루틴 절차서
 
-> claude.ai/code/routines → New routine → Instructions 칸에 아래 전체를 붙여넣으세요.
-> 한국어본과 영어본을 **별도 루틴 2개**로 만들 경우, 맨 아래 `LANG` 값만 각각 `ko` / `en` 으로 바꾸세요.
+> **루틴 설정 방법**: claude.ai/code/routines → 루틴의 Instructions 칸에는 아래 두 줄만 넣으세요.
+>
+> ```
+> 저장소의 ROUTINE_PROMPT.md 파일을 읽고, 그 절차를 순서대로 그대로 수행하세요.
+> LANG = ko
+> ```
+>
+> 이렇게 하면 절차 수정이 필요할 때 이 파일만 고치면 되고, 루틴 설정은 다시 손댈 필요가 없습니다.
+> 영어본 루틴은 `LANG = en` 으로만 바꿔 별도 루틴으로 만드세요.
 
 ---
 
