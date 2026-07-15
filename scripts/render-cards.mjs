@@ -5,6 +5,7 @@
 //
 // 사용법: node scripts/render-cards.mjs <date> <lang> <session>
 //   예)   node scripts/render-cards.mjs 2026-07-16 ko am
+//   session: am(아침) | pm(저녁) | sat(주간 결산) | sun(다음 주 일정) — 주말 세션은 ROUTINE_PROMPT_WEEKEND.md 참고
 //
 // session 을 생략하면 구버전 content/<date>.json / cards/<date>/<lang>/ 경로로 동작하며,
 // JSON 에 schedule 이 없으면 일정 카드는 건너뛴다(구버전 7장 호환).
@@ -18,8 +19,8 @@ import path from 'node:path';
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
 const session = process.argv[4] || '';
-if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm>'); process.exit(1); }
-if (session && !['am', 'pm'].includes(session)) { console.error(`session 은 am 또는 pm 이어야 합니다: ${session}`); process.exit(1); }
+if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
+if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
@@ -62,7 +63,11 @@ function cardHook() {
     <div class="pad">
       <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-        <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:28px;">${session === 'pm' ? t('저녁 브리핑', 'EVENING BRIEF') : t('오늘의 핵심', 'TODAY')}</div>
+        <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:28px;">${
+          session === 'pm' ? t('저녁 브리핑', 'EVENING BRIEF')
+          : session === 'sat' ? t('주간 결산', 'WEEK IN REVIEW')
+          : session === 'sun' ? t('다음 주 미리 보기', 'THE WEEK AHEAD')
+          : t('오늘의 핵심', 'TODAY')}</div>
         <div style="font-size:78px; font-weight:800; line-height:1.18; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
         <div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>
       </div>
@@ -146,7 +151,7 @@ function cardOutro() {
   return `
     <div class="pad" style="justify-content:center; align-items:center; text-align:center;">
       <div class="brand" style="font-size:40px; margin-bottom:40px;">luckyon<span class="k"> 브리핑</span></div>
-      <div style="font-size:52px; font-weight:800; line-height:1.3;">${t('매일 아침·저녁, 경제와 AI를<br>한눈에 정리합니다', 'Economy & AI at a glance,<br>every morning & night')}</div>
+      <div style="font-size:52px; font-weight:800; line-height:1.3;">${t(data.outro_tagline_ko, data.outro_tagline_en) || t('매일 아침·저녁, 경제와 AI를<br>한눈에 정리합니다', 'Economy & AI at a glance,<br>every morning & night')}</div>
       ${nextBrief ? `<div style="font-size:32px; font-weight:700; color:#3987e5; margin-top:36px;">${nextBrief}</div>` : ''}
       <div style="font-size:34px; color:#c3c2b7; margin-top:44px; line-height:1.5;">${t('팔로우하고 놓치지 마세요', 'Follow so you never miss it')}<br>🔖 ${t('저장', 'Save')} · 📤 ${t('공유', 'Share')} · 💬 ${t('댓글', 'Comment')}</div>
       <div style="font-size:28px; color:#898781; margin-top:56px;">@luckyon_77</div>
