@@ -146,7 +146,7 @@ function cardOutro() {
   return `
     <div class="pad" style="justify-content:center; align-items:center; text-align:center;">
       <div class="brand" style="font-size:40px; margin-bottom:40px;">luckyon<span class="k"> 브리핑</span></div>
-      <div style="font-size:52px; font-weight:800; line-height:1.3;">${t('매일 아침·저녁, 경제와 AI를<br>한 장으로 정리합니다', 'Economy & AI, summarized<br>every morning & night')}</div>
+      <div style="font-size:52px; font-weight:800; line-height:1.3;">${t('매일 아침·저녁, 경제와 AI를<br>한눈에 정리합니다', 'Economy & AI at a glance,<br>every morning & night')}</div>
       ${nextBrief ? `<div style="font-size:32px; font-weight:700; color:#3987e5; margin-top:36px;">${nextBrief}</div>` : ''}
       <div style="font-size:34px; color:#c3c2b7; margin-top:44px; line-height:1.5;">${t('팔로우하고 놓치지 마세요', 'Follow so you never miss it')}<br>🔖 ${t('저장', 'Save')} · 📤 ${t('공유', 'Share')} · 💬 ${t('댓글', 'Comment')}</div>
       <div style="font-size:28px; color:#898781; margin-top:56px;">@luckyon_77</div>
