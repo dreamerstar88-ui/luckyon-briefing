@@ -2,8 +2,9 @@
 // GitHub Pages에 올라간 카드 이미지들을 Instagram 캐러셀로 발행한다.
 // Instagram API with Instagram Login (graph.instagram.com) 사용.
 //
-// 사용법: node scripts/publish-instagram.mjs <date> <lang>
-//   예)   node scripts/publish-instagram.mjs 2026-07-14 ko
+// 사용법: node scripts/publish-instagram.mjs <date> <lang> <session:am|pm>
+//   예)   node scripts/publish-instagram.mjs 2026-07-16 ko am
+//   session 을 생략하면 구버전 content/<date>.json / cards/<date>/<lang>/ 경로로 동작한다.
 //
 // 필요한 환경변수:
 //   IG_ACCESS_TOKEN  - 장기(60일) 인스타 액세스 토큰
@@ -17,14 +18,15 @@ import path from 'node:path';
 
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
-if (!date) { console.error('Usage: node scripts/publish-instagram.mjs <date> <lang>'); process.exit(1); }
+const session = process.argv[4] || '';
+if (!date) { console.error('Usage: node scripts/publish-instagram.mjs <date> <lang> <session:am|pm>'); process.exit(1); }
+if (session && !['am', 'pm'].includes(session)) { console.error(`session 은 am 또는 pm 이어야 합니다: ${session}`); process.exit(1); }
 
 const TOKEN = required('IG_ACCESS_TOKEN');
 const IG_USER = required('IG_USER_ID');
 const PAGES = required('PAGES_BASE_URL').replace(/\/$/, '');
 const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
-const CARD_COUNT = 7;
 
 function required(k) {
   const v = process.env[k];
@@ -34,12 +36,19 @@ function required(k) {
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const content = JSON.parse(fs.readFileSync(path.join(root, 'content', `${date}.json`), 'utf8'));
+const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
+const content = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const caption = lang === 'ko' ? content.caption_ko : content.caption_en;
+
+// 로컬에 렌더된 카드 수를 세어 슬라이드 수를 정한다 (구버전 7장 / 신버전 8장 모두 대응)
+const cardSubPath = session ? `cards/${date}/${session}/${lang}` : `cards/${date}/${lang}`;
+const localCardDir = path.join(root, ...cardSubPath.split('/'));
+const CARD_COUNT = fs.readdirSync(localCardDir).filter(f => /^card\d+\.png$/.test(f)).length;
+if (CARD_COUNT < 2) { console.error(`❌ ${cardSubPath}/ 에 카드 이미지가 없습니다.`); process.exit(1); }
 
 // 이미지 공개 URL 목록
 const imageUrls = Array.from({ length: CARD_COUNT }, (_, i) =>
-  `${PAGES}/cards/${date}/${lang}/card${i + 1}.png`);
+  `${PAGES}/${cardSubPath}/card${i + 1}.png`);
 
 async function api(pathPart, params) {
   const url = new URL(`${BASE}/${pathPart}`);
@@ -93,7 +102,7 @@ async function waitForImages() {
 }
 
 async function main() {
-  console.log(`\n▶ Instagram 발행 시작 [${lang.toUpperCase()}] ${date}`);
+  console.log(`\n▶ Instagram 발행 시작 [${lang.toUpperCase()}${session ? ' ' + session.toUpperCase() : ''}] ${date} (${CARD_COUNT}장)`);
   await waitForImages();
 
   // 1) 슬라이드별 아이템 컨테이너 생성
@@ -133,7 +142,7 @@ async function main() {
       await sleep(15000);
     }
   }
-  console.log(`\n✅ 발행 완료! media id = ${published.id} [${lang.toUpperCase()}]`);
+  console.log(`\n✅ 발행 완료! media id = ${published.id} [${lang.toUpperCase()}${session ? ' ' + session.toUpperCase() : ''}]`);
   return published.id;
 }
 
