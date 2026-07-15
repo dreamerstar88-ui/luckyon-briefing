@@ -19,8 +19,8 @@ import path from 'node:path';
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
 const session = process.argv[4] || '';
-if (!date) { console.error('Usage: node scripts/publish-instagram.mjs <date> <lang> <session:am|pm>'); process.exit(1); }
-if (session && !['am', 'pm'].includes(session)) { console.error(`session 은 am 또는 pm 이어야 합니다: ${session}`); process.exit(1); }
+if (!date) { console.error('Usage: node scripts/publish-instagram.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
+if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
 const TOKEN = required('IG_ACCESS_TOKEN');
 const IG_USER = required('IG_USER_ID');
