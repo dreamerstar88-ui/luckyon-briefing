@@ -47,8 +47,11 @@ const CARD_COUNT = fs.readdirSync(localCardDir).filter(f => /^card\d+\.png$/.tes
 if (CARD_COUNT < 2) { console.error(`❌ ${cardSubPath}/ 에 카드 이미지가 없습니다.`); process.exit(1); }
 
 // 이미지 공개 URL 목록
+// CACHE_BUST 를 지정하면(예: 커밋 SHA) 쿼리스트링으로 붙여 GitHub Pages CDN의
+// 이전 배포 캐시를 우회한다 — 같은 경로에 이미지를 다시 렌더링해 재발행할 때 필수.
+const bust = process.env.CACHE_BUST ? `?v=${encodeURIComponent(process.env.CACHE_BUST)}` : '';
 const imageUrls = Array.from({ length: CARD_COUNT }, (_, i) =>
-  `${PAGES}/${cardSubPath}/card${i + 1}.png`);
+  `${PAGES}/${cardSubPath}/card${i + 1}.png${bust}`);
 
 async function api(pathPart, params) {
   const url = new URL(`${BASE}/${pathPart}`);
