@@ -27,7 +27,7 @@
       "dir": "down"
     },
     {
-      "label": "S&P 500 선물",
+      "label": "S&P 500 Fut",
       "value": "7,565.00",
       "delta": "▼0.1%",
       "dir": "down",
@@ -35,7 +35,7 @@
       "delta_en": "▼0.1%"
     },
     {
-      "label": "나스닥 선물",
+      "label": "Nasdaq Fut",
       "value": "29,535.50",
       "delta": "▼0.5%",
       "dir": "down",
@@ -45,7 +45,7 @@
     {
       "label": "USD/KRW",
       "value": "1,480.40",
-      "delta": "▼4.3원",
+      "delta": "▼4.3 won",
       "dir": "down",
       "delta_ko": "▼4.3원",
       "delta_en": "▼4.3 won"
@@ -53,7 +53,7 @@
     {
       "label": "US 10Y",
       "value": "4.59%",
-      "delta": "▼소폭",
+      "delta": "▼slightly",
       "dir": "down",
       "delta_ko": "▼소폭",
       "delta_en": "▼slightly"
@@ -69,7 +69,7 @@
     {
       "label": "WTI",
       "value": "$79.90",
-      "delta": "▲보합",
+      "delta": "▲flat-ish",
       "dir": "up",
       "delta_ko": "▲보합",
       "delta_en": "▲flat-ish"
@@ -91,7 +91,7 @@
       "headline_en": "Kospi plunges 6.37% below 6,820, sell-side sidecar triggered",
       "body_ko": "코스피가 전일 대비 463.81포인트(6.37%) 내린 6,820.60에 마감했습니다. 삼성전자 -8.8%, SK하이닉스 -11.5%로 급락했고 외국인·기관이 3조7,000억원 넘게 순매도하며 매도 사이드카가 발동됐습니다.",
       "body_en": "Kospi fell 463.81 points (6.37%) to close at 6,820.60. Samsung Electronics dropped 8.8% and SK Hynix 11.5%, as foreign and institutional investors dumped over ₩3.7 trillion, triggering a sell-side sidecar.",
-      "src": "뉴스핌·이투데이",
+      "src": "Newspim / Etoday",
       "src_ko": "뉴스핌·이투데이",
       "src_en": "Newspim / Etoday",
       "time": "7/16 15:30 KST"
@@ -101,7 +101,7 @@
       "headline_en": "Kosdaq drops 4.53% to 791.84, sidecar for second straight day",
       "body_ko": "코스닥 지수는 전일 대비 37.59포인트(4.53%) 내린 791.84에 장을 마쳤습니다. 반도체 관련주 투매가 중소형 성장주로 번지며 낙폭이 커졌습니다.",
       "body_en": "The Kosdaq fell 37.59 points (4.53%) to 791.84, as chip-sector selling spread into smaller growth stocks.",
-      "src": "서울경제",
+      "src": "Seoul Economic Daily",
       "src_ko": "서울경제",
       "src_en": "Seoul Economic Daily",
       "time": "7/16 15:30 KST"
@@ -111,7 +111,7 @@
       "headline_en": "Nikkei falls 2.79% as four chip stocks drag index down 1,300+ yen",
       "body_ko": "닛케이225가 전일 대비 1,915.97엔(2.79%) 내린 66,835.54엔에 마감했습니다. 어드밴테스트·도쿄일렉트론·소프트뱅크그룹·키옥시아 등 반도체·AI 관련주 매도세가 집중됐습니다.",
       "body_en": "The Nikkei 225 fell 1,915.97 yen (2.79%) to 66,835.54, dragged down by heavy selling in Advantest, Tokyo Electron, SoftBank Group and Kioxia.",
-      "src": "뉴스핌",
+      "src": "Newspim",
       "src_ko": "뉴스핌",
       "src_en": "Newspim",
       "time": "7/16 15:00 KST"
@@ -124,7 +124,7 @@
       "src": "TradingKey",
       "src_ko": "TradingKey",
       "src_en": "TradingKey",
-      "time": "7/15 보도"
+      "time": "7/15 reported"
     },
     {
       "headline_ko": "코어위브, 메모리 가격 하락 대비 파생상품 헤지 검토",
@@ -134,14 +134,14 @@
       "src": "Seeking Alpha",
       "src_ko": "Seeking Alpha",
       "src_en": "Seeking Alpha",
-      "time": "7월 중순 보도"
+      "time": "mid-Jul reported"
     },
     {
       "headline_ko": "원/달러 1,480원대로 하락, WTI는 80달러 안팎 등락",
       "headline_en": "Won firms to near 1,480; WTI hovers around $80",
       "body_ko": "원/달러 환율은 전 거래일보다 4.3원 내린 1,480.4원에 마감했습니다. WTI는 78~80달러대에서 등락하며 중동 리스크와 인플레 우려가 계속 시장을 흔들고 있습니다.",
       "body_en": "The won closed at 1,480.4 per dollar, down 4.3 won on the day. WTI hovered in the high-$70s to $80 range as Mideast risk and inflation worries continued to sway markets.",
-      "src": "머니투데이",
+      "src": "Money Today",
       "src_ko": "머니투데이",
       "src_en": "Money Today",
       "time": "7/16 15:30 KST"
@@ -152,61 +152,61 @@
       "headline_ko": "미라 무라티의 씽킹머신랩, 첫 오픈모델 '잉클링' 공개",
       "headline_en": "Mira Murati's Thinking Machines releases first open model 'Inkling'",
       "body_ko": "전 오픈AI CTO 미라 무라티가 이끄는 씽킹머신랩이 텍스트·이미지·오디오·비디오를 함께 처리하는 9,750억 파라미터 MoE 모델 '잉클링'을 아파치 라이선스로 공개했습니다. 미국산 오픈웨이트 모델로는 이례적인 행보입니다.",
-      "body_en": "Thinking Machines Lab, led by former OpenAI CTO Mira Murati, released Inkling — a 975B-parameter mixture-of-experts model handling text, image, audio and video — under an Apache license, a rare US-made entry in the open-weight race.",
+      "body_en": "Mira Murati's Thinking Machines released Inkling, a 975B-parameter multimodal model (text, image, audio, video) under an Apache license — a rare US open-weight entry.",
       "src": "Bloomberg / TechCrunch",
       "src_ko": "Bloomberg / TechCrunch",
       "src_en": "Bloomberg / TechCrunch",
-      "time": "7/15 보도"
+      "time": "7/15 reported"
     },
     {
       "headline_ko": "SK 최태원 회장, GTC 2026 첫 참석… 젠슨 황과 HBM4 부스 점검",
       "headline_en": "SK's Chey Tae-won attends GTC 2026, tours HBM4 booth with Jensen Huang",
       "body_ko": "최태원 SK 회장이 산호세에서 개막한 'GTC 2026'에 처음 참석해 엔비디아 젠슨 황 CEO와 함께 SK하이닉스 부스를 찾아 HBM4 탑재 '베라루빈' 등을 점검했습니다. AI 생태계 파트너십 강화 행보로 풀이됩니다.",
-      "body_en": "SK Group Chairman Chey Tae-won made his first appearance at GTC 2026 in San Jose, joining Nvidia's Jensen Huang at the SK Hynix booth to review HBM4-equipped 'Vera Rubin' hardware, underscoring deeper AI-ecosystem ties.",
-      "src": "SK하이닉스 뉴스룸",
+      "body_en": "SK Chairman Chey Tae-won made his first GTC appearance, joining Nvidia's Jensen Huang at the SK Hynix booth to review HBM4-equipped 'Vera Rubin' hardware — underscoring deeper AI ties.",
+      "src": "SK hynix Newsroom",
       "src_ko": "SK하이닉스 뉴스룸",
       "src_en": "SK hynix Newsroom",
-      "time": "7/16 (현지시간)"
+      "time": "7/16 (local time)"
     },
     {
       "headline_ko": "구글, 제미나이 3.5 프로 내일 출시 예정… 상하이 AI콘퍼런스와 정면충돌",
       "headline_en": "Google set to launch Gemini 3.5 Pro tomorrow, clashing with Shanghai AI summit",
       "body_ko": "구글이 7월 17일 제미나이 3.5 프로를 출시할 것으로 알려진 가운데, 같은 날 시진핑 주석이 처음 참석하는 상하이 세계AI콘퍼런스(WAIC, 7/17~20)가 개막해 미중 AI 경쟁 구도가 한층 부각될 전망입니다.",
-      "body_en": "Google is expected to launch Gemini 3.5 Pro on July 17, the same day Shanghai's World AI Conference (July 17-20) opens with President Xi Jinping attending for the first time — setting up a symbolic US-China AI face-off.",
+      "body_en": "Google is set to launch Gemini 3.5 Pro on July 17 — the same day Shanghai's World AI Conference opens with Xi Jinping attending for the first time, a symbolic US-China AI face-off.",
       "src": "TechTimes / CGTN",
       "src_ko": "TechTimes / CGTN",
       "src_en": "TechTimes / CGTN",
-      "time": "7/17 예정"
+      "time": "7/17 (scheduled)"
     },
     {
       "headline_ko": "네이버, 이달 중순부터 생성형 AI 광고 수익화 본격 시작",
       "headline_en": "Naver begins monetizing generative-AI ads this month",
       "body_ko": "네이버가 7월 중순부터 AI 브리핑 등에 생성형 AI 광고를 붙여 수익화를 시작했습니다. 연말까지 AI 브리핑 커버리지를 40%로 확대한다는 목표입니다.",
       "body_en": "Naver has started monetizing its AI Briefing feature with generative-AI ads this month, aiming to expand AI Briefing coverage to 40% of searches by year-end.",
-      "src": "이데일리",
+      "src": "Edaily",
       "src_ko": "이데일리",
       "src_en": "Edaily",
-      "time": "7월 중순"
+      "time": "mid-Jul"
     },
     {
       "headline_ko": "'모두의 AI' 사업자 선정 8월 마무리… 네이버·카카오·통신3사 등판",
       "headline_en": "Korea's 'AI for All' operator selection wraps up in August",
       "body_ko": "국민 누구나 무료로 쓰는 국산 AI 서비스를 만드는 정부의 '모두의 AI' 프로젝트에 네이버·카카오와 이동통신 3사, AI 스타트업들이 참여를 검토·확정하고 있으며 사업자 선정은 8월 완료될 예정입니다.",
-      "body_en": "Naver, Kakao, the three telecom carriers and AI startups are lining up for the government's 'AI for All' project to build a free domestic AI service, with operator selection due to wrap up in August.",
-      "src": "이투데이",
+      "body_en": "Naver, Kakao, the three telecoms and AI startups are lining up for the government's 'AI for All' free domestic AI service, with operator selection wrapping up in August.",
+      "src": "Etoday",
       "src_ko": "이투데이",
       "src_en": "Etoday",
-      "time": "7월 보도"
+      "time": "Jul reported"
     },
     {
       "headline_ko": "美 HBM 수출규제 검토설에 AI 데이터센터 업계 공급망 긴장",
       "headline_en": "US HBM export-curb talk rattles AI data-center supply chains",
       "body_ko": "미 정부가 고대역폭메모리(HBM) 수출 통제를 검토 중이라는 보도가 나오며, 마이크론·SK하이닉스·삼성전자 등 HBM 3강 체제와 이들에 의존하는 AI 데이터센터 업계에 공급망 불확실성이 커지고 있습니다.",
-      "body_en": "Reports that Washington is weighing new export controls on high-bandwidth memory are stoking supply-chain uncertainty for the HBM oligopoly of Micron, SK Hynix and Samsung — and for the AI data centers that depend on them.",
+      "body_en": "Reports that Washington may curb HBM exports are rattling supply chains for the Micron–SK Hynix–Samsung memory oligopoly and the AI data centers that depend on them.",
       "src": "TradingKey",
       "src_ko": "TradingKey",
       "src_en": "TradingKey",
-      "time": "7/15 보도"
+      "time": "7/15 reported"
     }
   ],
   "schedule_title_ko": "오늘 밤 주요 일정",
@@ -215,19 +215,17 @@
     "title_ko": "미국 증시 운영시간",
     "title_en": "US market hours",
     "lines_ko": [
-      "정규장 22:30 ~ 익일 05:00 (서머타임 기준)",
-      "프리마켓 17:00~22:30 · 애프터마켓 05:00~09:00"
+      "정규장 22:30 ~ 익일 05:00 (서머타임 기준)"
     ],
     "lines_en": [
-      "Regular session 22:30–05:00 KST (DST)",
-      "Pre-market 17:00–22:30 · After-hours 05:00–09:00 KST"
+      "Regular session 22:30–05:00 KST (DST)"
     ]
   },
   "schedule": [
     {
       "time": "21:30",
       "title_ko": "美 6월 소매판매·PPI·주간 실업수당 청구",
-      "title_en": "US June retail sales, PPI, weekly jobless claims",
+      "title_en": "US retail sales, PPI, jobless claims",
       "detail_ko": "인플레이션 흐름과 소비 체력을 동시에 가늠하는 지표, 금리 전망에 영향",
       "detail_en": "Key read on inflation and consumer strength; could move rate expectations",
       "importance": "high"
@@ -235,7 +233,7 @@
     {
       "time": "7/17 05:01",
       "title_ko": "넷플릭스 2분기 실적 발표 (콘퍼런스콜 05:45)",
-      "title_en": "Netflix Q2 earnings (call at 05:45 KST)",
+      "title_en": "Netflix Q2 earnings (05:45 KST call)",
       "detail_ko": "매출 125.7억달러·EPS 0.79달러 컨센서스, 광고요금제 성장세 주목",
       "detail_en": "Consensus $12.57B revenue, $0.79 EPS; watch ad-tier subscriber growth",
       "importance": "high"
@@ -243,7 +241,7 @@
     {
       "time": "7/17",
       "title_ko": "구글 제미나이 3.5 프로 출시 · 상하이 WAIC 개막 (미리 보기)",
-      "title_en": "Google Gemini 3.5 Pro launch & Shanghai WAIC opens (preview)",
+      "title_en": "Gemini 3.5 Pro launch & Shanghai WAIC (preview)",
       "detail_ko": "시진핑 주석 첫 참석, 미중 AI 경쟁 구도 주목",
       "detail_en": "Xi Jinping's first appearance; watch US-China AI rivalry framing",
       "importance": "mid"
@@ -251,7 +249,7 @@
     {
       "time": "7/18~",
       "title_ko": "FOMC 블랙아웃 돌입, 7/28-29 회의 앞두고 발언 잠정 중단 (미리 보기)",
-      "title_en": "FOMC blackout begins ahead of July 28-29 meeting (preview)",
+      "title_en": "FOMC blackout begins ahead of Jul 28-29 (preview)",
       "detail_ko": "금리 인상 가능성까지 열어둔 상황, 마지막 발언 기회로 시장 촉각",
       "detail_en": "A hike remains on the table; markets parse officials' last remarks before the quiet period",
       "importance": "mid"
