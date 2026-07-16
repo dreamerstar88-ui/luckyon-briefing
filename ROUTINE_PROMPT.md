@@ -64,10 +64,12 @@
      "date", "session",                          // session: "am" | "pm"
      "dateLabel_ko","dateLabel_en",
      "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
-     "markets":[{"label","value","delta","dir(up|down|flat)"} x10],
+     "markets":[{"label","value","delta_ko","delta_en","dir(up|down|flat)"} x10],   // value에 한국어가 필요하면 value_ko/value_en 으로 분리
      "market_note_ko","market_note_en",
      "econ":[{"headline_ko","headline_en","body_ko","body_en","src","time","catchup(선택)"} x6],
      "ai":[  {"headline_ko","headline_en","body_ko","body_en","src","time","catchup(선택)"} x6],
+       // src·time 에 한국어가 들어가면(예: "7/15 보도", "시장데이터") 반드시 src_ko/src_en, time_ko/time_en 으로 분리한다.
+       // 렌더러는 <필드>_ko / <필드>_en 이 있으면 언어에 맞게 우선 사용한다 (markets의 value/delta, schedule의 time도 동일).
      "schedule_title_ko","schedule_title_en",     // 예: "오늘 낮 주요 일정" / "Today's daytime schedule"
      "market_hours": {
        "title_ko","title_en",                     // am: "한국 증시 운영시간" / pm: "미국 증시 운영시간"
@@ -88,6 +90,8 @@
    - `time` 은 한국시간(KST) 기준으로 표기한다.
    - caption 에는 요약 + 팔로우/저장 유도 문구 + 해시태그 15개 내외를 포함하고, 끝에 다음 브리핑 예고 한 줄(`next_brief` 내용)을 넣는다. pm 캡션에는 "저녁 브리핑" 임을 밝힌다.
    - **한국어 맞춤법·띄어쓰기 검증**: JSON 저장 전에 모든 한국어 텍스트(특히 markets 의 delta, note, headline, schedule)를 다시 읽으며 맞춤법과 띄어쓰기를 점검한다. 예: "두달래 최고"(X) → "두 달 내 최고"(O). 지표 변동 표현은 자연스러운 한국어로 쓰되, 주가지수·금리 등은 "두 달 내 최고", "52주 신고가", "20일 이동평균선 상회" 처럼 시장에서 통용되는 표현을 우선한다.
+   - **수치는 정확하게 (근사치 금지)**: markets 의 value 는 일의 자리까지 정확한 수치로 쓴다. 비트코인 "$62K대"(X) → "$64,940"(O), WTI "$79대"(X) → "$79.75"(O). delta 도 "▲ 7%대" 같은 어림 표현 대신 확인된 정확한 %("▲ 1.1%")를 우선하고, 정확한 값을 못 구했을 때만 방향+정성 표현을 쓴다.
+   - **영어판 100% 영어 검증**: 영어 카드에 들어가는 모든 필드(_en 필드 + 공용 src/time/value/delta)에 한글이 한 글자도 남지 않았는지 저장 전에 점검한다. 한국어가 필요한 공용 필드는 반드시 _ko/_en 으로 분리한다. (브랜드 로고·푸터는 렌더러가 언어에 맞춰 "luckyon 브리핑"/"luckyon Briefing" 으로 자동 처리한다.)
 
 5. **카드 이미지 생성**: 다음을 실행한다.
    - `node scripts/render-cards.mjs <DATE> ${LANG} <SESSION>`
