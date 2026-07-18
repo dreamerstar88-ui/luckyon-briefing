@@ -28,9 +28,8 @@ luckyon 브리핑 pm 세션의 markets 10개 타일 중 FMP·Alpha Vantage·Play
    올바른 입력 JSON을 지정한다. 기본값은 `{"tickers":["ES=F","NQ=F"]}`.
 4. `node scripts/fetch-futures.mjs` 로 실값 확인.
 
-> ⚠️ 아직 미확인: automation-lab 액터가 `ES=F`/`NQ=F` **선물 심볼**을 입력으로 받아
-> 데이터를 반환하는지. 사용자 테스트는 기본 종목(AAPL 등)으로 이뤄졌으므로, 실제
-> 연결 전 선물 심볼로 1회 실행해 확인할 것. 안 되면 kaix 액터 또는 아래 커스텀 액터로 대체.
+> ✅ 확인됨: automation-lab 액터가 `ES=F`/`NQ=F` **선물 심볼**을 입력으로 받아 정상적으로
+> price·change·changePercent 를 반환함(사용자 테스트 확인). 커스텀 액터는 백업으로만 유지.
 
 파싱 로직만 먼저 검증하려면 토큰 없이:
 ```bash
