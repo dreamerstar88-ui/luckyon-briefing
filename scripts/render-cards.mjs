@@ -95,21 +95,21 @@ function cardMarkets() {
   const tiles = data.markets.map(m => {
     const c = m.dir === 'up' ? '#e66767' : m.dir === 'down' ? '#3987e5' : '#c3c2b7';
     const note = t(m.note_ko, m.note_en);
-    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:15px; padding:18px 22px;">
-      <div style="font-size:21px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
+    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:15px; padding:16px 24px; display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:22px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
       <div style="display:flex; align-items:baseline; gap:12px; margin-top:6px;">
-        <div style="font-size:35px; font-weight:800; font-variant-numeric:tabular-nums;">${m.value}</div>
-        <div style="font-size:22px; font-weight:700; color:${c};">${m.delta}</div>
+        <div style="font-size:37px; font-weight:800; font-variant-numeric:tabular-nums;">${m.value}</div>
+        <div style="font-size:23px; font-weight:700; color:${c};">${m.delta}</div>
       </div>
-      ${note ? `<div style="font-size:20px; color:#a9a89f; margin-top:8px; line-height:1.38;">${note}</div>` : ''}
+      ${note ? `<div style="font-size:21px; color:#a9a89f; margin-top:8px; line-height:1.38;">${note}</div>` : ''}
     </div>`;
   }).join('');
   return `
     <div class="pad">
       <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
       <div style="font-size:42px; font-weight:800; margin:26px 0 22px;">${t('시장 한눈에', 'Markets at a glance')}</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">${tiles}</div>
-      <div style="font-size:23px; color:#898781; margin-top:22px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
+      <div style="flex:1; min-height:0; display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:16px;">${tiles}</div>
+      <div style="font-size:23px; color:#898781; margin-top:22px; margin-bottom:30px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
     </div>`;
 }
 
