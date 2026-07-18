@@ -1,0 +1,9 @@
+{
+  "actorSpecification": 1,
+  "name": "index-futures-quote-scraper",
+  "title": "Index Futures Quote Scraper (Yahoo Finance)",
+  "description": "S&P 500 선물(ES=F)·나스닥 선물(NQ=F) 등 야후 파이낸스 선물 시세를 조회해 luckyon 브리핑 markets 타일용 JSON을 만든다.",
+  "version": "0.1",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile"
+}

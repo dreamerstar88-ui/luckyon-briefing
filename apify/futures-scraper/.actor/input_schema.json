@@ -1,0 +1,17 @@
+{
+  "title": "Index Futures Quote Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tickers": {
+      "title": "조회할 티커 목록",
+      "description": "야후 파이낸스 티커 심볼과 브리핑 카드에 쓸 라벨. 기본값은 luckyon 브리핑 pm 세션에 필요한 두 항목.",
+      "type": "array",
+      "editor": "json",
+      "default": [
+        { "symbol": "ES=F", "label": "S&P 500 Fut" },
+        { "symbol": "NQ=F", "label": "Nasdaq Fut" }
+      ]
+    }
+  }
+}

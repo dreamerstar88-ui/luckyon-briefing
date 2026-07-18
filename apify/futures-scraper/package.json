@@ -1,0 +1,15 @@
+{
+  "name": "index-futures-quote-scraper",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "야후 파이낸스에서 지수 선물 시세를 스크레이핑하는 Apify 액터",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "crawlee": "^3.11.1",
+    "playwright": "^1.48.0"
+  }
+}
