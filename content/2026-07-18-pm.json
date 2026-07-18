@@ -1,0 +1,87 @@
+{
+  "date": "2026-07-18",
+  "session": "pm",
+  "dateLabel_ko": "2026년 7월 18일 (토)",
+  "dateLabel_en": "Saturday, July 18, 2026",
+  "headline_ko": "미·이란 공습 7일째, 유가 88달러 육박… 호르무즈 통항 급감",
+  "headline_sub_ko": "국내외 증시는 주말 휴장 · 월요일 재개장 앞두고 리스크 확대",
+  "headline_en": "US-Iran Strikes Hit Day 7, Oil Nears $88 as Hormuz Traffic Collapses",
+  "headline_sub_en": "Markets closed for the weekend · risk builds into Monday's reopen",
+  "hook_bull": {
+    "body_ko": "반도체 업황 자체는 견조합니다 — 옴디아는 2026년 글로벌 반도체 매출이 AI 수요에 힘입어 사상 처음 1조달러를 넘어설 것으로 전망했습니다.",
+    "body_en": "Underlying chip demand still looks solid — Omdia projects 2026 global semiconductor revenue will top $1 trillion for the first time, led by AI."
+  },
+  "hook_bear": {
+    "body_ko": "미·이란 공습이 7일째 이어지며 호르무즈 해협 통항이 급감, WTI가 82달러대로 급등해 물류·인플레 리스크가 커지고 있습니다.",
+    "body_en": "US-Iran strikes have entered a 7th night, Hormuz transits have collapsed, and WTI has jumped into the low-$80s — raising shipping and inflation risk."
+  },
+  "markets": [
+    { "label": "NASDAQ", "value": "25,520.24", "delta": "▼ 1.40%", "dir": "down", "note_ko": "휴장(주말) · 7/17 미국장 종가 유지", "note_en": "Weekend closed · holds Jul 17 US close" },
+    { "label": "S&P 500", "value": "7,457.78", "delta": "▼ 1.01%", "dir": "down", "note_ko": "휴장(주말) · 7/17 미국장 종가 유지", "note_en": "Weekend closed · holds Jul 17 US close" },
+    { "label": "KOSPI", "value": "6,820.60", "delta": "휴장", "dir": "flat", "note_ko": "토요일 휴장 · 7/16 종가(서킷브레이커) 유지", "note_en": "Saturday closed · holds Jul 16 close (circuit breaker)" },
+    { "label": "VIX", "value": "18.77", "delta": "휴장", "dir": "flat", "note_ko": "주말 휴장 · 7/17 종가 유지(전일 +12.19%)", "note_en": "Weekend closed · holds Jul 17 close (+12.19% that day)" },
+    { "label": "Fear & Greed", "value": "37", "delta": "공포", "dir": "flat", "note_ko": "'공포' 구간 유지, 주말 갱신 없음", "note_en": "Stays in 'Fear'; no weekend update" },
+    { "label": "US 10Y", "value": "4.55%", "delta": "휴장", "dir": "flat", "note_ko": "채권시장 휴장 · 7/17 종가 유지", "note_en": "Bond market closed · holds Jul 17 close" },
+    { "label": "USD/KRW", "value": "1,487", "value_sub": "· DXY 100.8", "delta": "휴장", "dir": "flat", "note_ko": "외환시장 휴장 · 7/17 고시가 유지", "note_en": "FX market closed · holds Jul 17 rate" },
+    { "label": "Gold", "value": "$4,019", "delta": "휴장", "dir": "flat", "note_ko": "휴장 · 7/17 종가 유지", "note_en": "Market closed · holds Jul 17 close" },
+    { "label": "WTI", "value": "$82.49", "delta": "▲ 4.5%", "dir": "up", "note_ko": "7/17 정규장 마감가 · 이란 공습 7일째로 급등", "note_en": "Jul 17 settle · surged on the 7th night of Iran strikes" },
+    { "label": "Bitcoin", "value": "$63,300", "delta": "▼ 1.4%", "dir": "down", "note_ko": "24시간 거래 지속, 위험회피 속 6.3만달러 초반대로 소폭 하락", "note_en": "Trades 24/7 · eases toward $63k amid the risk-off mood" }
+  ],
+  "market_note_ko": "증시·채권·외환은 주말 휴장으로 7/17 마감가 유지. WTI는 7/17 마감가(82.49달러)로 급등분 반영, 비트코인은 24시간 거래로 소폭 조정.",
+  "market_note_en": "Stocks, bonds and FX closed for the weekend, holding Jul 17 closes. WTI updated to Friday's settle ($82.49); Bitcoin, trading 24/7, eased slightly.",
+  "econ": [
+    { "headline_ko": "금감원, 레버리지 ETF 간담회 예고… 잦은 서킷브레이커에 투자자 보호 대책 검토", "headline_en": "FSS to meet asset managers on leveraged ETFs after repeated circuit breakers", "body_ko": "금융감독원이 단일종목 레버리지 ETF 관련 자산운용사 대표 간담회를 열어 추가 투자자 보호 장치 마련을 논의할 예정입니다.", "body_en": "Korea's Financial Supervisory Service plans to convene asset-management CEOs over single-stock leveraged ETFs and discuss additional investor-protection measures.", "src": "종합", "time": "7/18 보도" },
+    { "headline_ko": "코스피, 7월에만 서킷브레이커 9차례… 역대 최다 절반 넘어서", "headline_en": "KOSPI triggers circuit breakers 9 times in July alone, over half of all-time total", "body_ko": "7월 12거래일 중 사이드카·서킷브레이커가 9일 발동됐습니다. 2026년 누적 7회로 2008년 금융위기, 2020년 코로나 때보다도 잦은 역대 최다 수준입니다.", "body_en": "Circuit breakers or sidecars hit on 9 of July's 12 trading days. The 2026 tally of 7 already exceeds the 2008 crisis and 2020 pandemic years, an all-time high.", "src": "종합", "time": "7/16 집계" },
+    { "headline_ko": "정부, AI·로봇 등 6대 산업에 연내 16조원 자금 공급 확정", "headline_en": "Government confirms ₩16T in funding for AI, robotics and 4 other sectors this year", "body_ko": "금융위원회가 AI·로봇·미래차·방산·반도체·이차전지 6개 분야에 올해 약 16조원을 공급하는 방안을 확정했습니다.", "body_en": "Korea's Financial Services Commission finalized roughly ₩16 trillion in financing this year for AI, robotics, future mobility, defense, semiconductors and batteries.", "src": "금융위원회", "time": "7/1 시행" },
+    { "headline_ko": "미·이란 공습 7일째, 유가 88달러 육박… 호르무즈 통항 급감", "headline_en": "US-Iran strikes enter 7th night, oil nears $88 as Hormuz transits collapse", "body_ko": "미군이 이란 남부 교량 등 기반시설을 잇달아 타격하며 7일째 공습을 이어갔습니다. 호르무즈 해협 통항 선박은 주당 57척으로 평시(하루 약 130척) 대비 급감했고, WTI는 82달러대, 브렌트유는 88달러대로 뛰었습니다.", "body_en": "US forces struck bridges and other infrastructure in southern Iran for a 7th straight night. Hormuz transits fell to just 57 vessels over three days, down from roughly 130 per day in peacetime, and WTI jumped into the low-$80s while Brent neared $88.", "src": "CBS News / NPR / Al Jazeera", "time": "7/18 보도" },
+    { "headline_ko": "애플, 법무부 반독점 소송 합의 협상 중", "headline_en": "Apple in talks to settle DOJ antitrust suit", "body_ko": "애플이 2024년 제기된 법무부 반독점 소송의 합의를 논의 중이라고 보도됐습니다. 관련 소식에 애플 주가는 17일 약 1% 내렸습니다.", "body_en": "Apple is reportedly in talks to settle the Department of Justice's 2024 antitrust suit; shares slipped about 1% on the news Jul 17.", "src": "Bloomberg", "time": "7/17 보도" },
+    { "headline_ko": "신임 연준의장 워시, 첫 의회 증언서 매파 색채… 7/29 FOMC 예정", "headline_en": "New Fed Chair Warsh strikes hawkish tone in first testimony; FOMC set for Jul 29", "body_ko": "케빈 워시 신임 연준의장이 하원·상원에 출석해 \"5년간의 고물가 시대를 끝내겠다\"며 인플레이션에 대한 경계를 늦추지 않겠다고 밝혔습니다. 다음 FOMC 금리 결정은 7월 29일(현지시간)입니다.", "body_en": "New Fed Chair Kevin Warsh told Congress he aims to make \"5 years of high inflation a thing of the past,\" signaling continued vigilance on prices. The next FOMC rate decision is Jul 29.", "src": "CNN / CNBC", "time": "7/14-15 증언" }
+  ],
+  "ai": [
+    { "headline_ko": "SK하이닉스, 다롄 낸드 2공장 하반기 재가동… 낸드 주도권 확대 노려", "headline_en": "SK Hynix restarts Dalian NAND Plant 2 in H2, aiming to extend NAND lead", "body_ko": "SK하이닉스가 중단됐던 중국 다롄 낸드 2공장 투자를 하반기 재개, 신규 V8 라인(238단) 설비를 순차 도입합니다. 낸드 업황 회복과 기업용 SSD 수요 급증이 배경입니다.", "body_en": "SK Hynix is resuming long-stalled investment at its Dalian NAND Plant 2 this half, phasing in new 238-layer V8 lines as NAND demand and enterprise SSD orders recover.", "src": "TrendForce / IB토마토", "time": "7/17 보도" },
+    { "headline_ko": "옴디아, 2026년 글로벌 반도체 매출 사상 첫 1조달러 돌파 전망", "headline_en": "Omdia: 2026 global chip revenue to top $1 trillion for the first time", "body_ko": "시장조사업체 옴디아가 2026년 글로벌 반도체 매출이 전년 대비 30.7% 급증하며 처음으로 1조달러를 넘어설 것으로 전망했습니다. AI발 메모리·로직 수요가 성장을 견인합니다.", "body_en": "Omdia forecasts 2026 global semiconductor revenue will surge 30.7% YoY to top $1 trillion for the first time, led by AI-driven memory and logic chip demand.", "src": "Omdia", "time": "7/18 발표" },
+    { "headline_ko": "메타·앤스로픽, 2년 100억달러 컴퓨팅 임대 협상… 국내 파운드리·메모리 수혜 기대", "headline_en": "Meta, Anthropic in talks over $10B compute lease; Korea foundry/memory seen benefiting", "body_ko": "메타가 앤스로픽에 2년간 최대 100억달러 규모의 AI 데이터센터 컴퓨팅을 임대하는 방안을 논의 중입니다. 업계는 관련 주문 확대가 삼성 파운드리·SK하이닉스 등 국내 공급망에도 온기를 줄 것으로 보고 있습니다.", "body_en": "Meta is in talks to lease Anthropic up to $10B of AI data-center compute over two years. Industry watchers say the resulting order growth could also benefit Korea's supply chain, including Samsung Foundry and SK Hynix.", "src": "NYT / Yahoo Finance", "time": "7/17 보도" },
+    { "headline_ko": "문샷AI 'Kimi K3' 쇼크에 필라델피아반도체지수 3.9%↓ 약세장 진입", "headline_en": "Kimi K3 shock sends Philly Semi Index -3.9% into a bear market", "body_ko": "중국 문샷AI의 오픈모델 'Kimi K3'가 최상위 모델급 성능을 보였다는 평가에 'AI 데이케이 모먼트' 우려가 재점화, 필라델피아반도체지수가 3.9% 급락하며 약세장에 진입했습니다. 엔비디아 시총은 한때 애플에 다시 역전당했습니다.", "body_en": "Moonshot AI's Kimi K3 revived 'DeepSeek moment' fears, sending the Philadelphia Semiconductor Index down 3.9% into a bear market. Nvidia's market cap briefly slipped below Apple's.", "src": "Bloomberg / CNN", "time": "7/17 보도" },
+    { "headline_ko": "삼성전자 파운드리, 앤스로픽 AI칩 수주… 테슬라·그록3 이어 연속 낭보", "headline_en": "Samsung Foundry wins Anthropic AI-chip order, extending its Tesla/Groq win streak", "body_ko": "삼성전자 파운드리가 앤스로픽의 AI칩 생산 계약을 새로 따내며 테슬라 자율주행칩, 엔비디아 산하 그록의 '그록3' 양산에 이어 수주 행진을 이어가고 있습니다.", "body_en": "Samsung Foundry landed a new AI-chip deal with Anthropic, extending a streak that already includes Tesla's self-driving chips and Nvidia-owned Groq's 'Groq 3'.", "src": "한국경제 / 뉴스웍스", "time": "7/3 보도" },
+    { "headline_ko": "앤스로픽, Claude Fable 5 무료 사용 7/19까지 재연장… 20일부터 종량제 전환", "headline_en": "Claude Fable 5 free access extended to Jul 19; pricing shifts Jul 20", "body_ko": "앤스로픽이 유료 요금제 대상 Fable 5 무료 사용 기간을 이번 주 들어 두 번째로 7월 19일까지 연장했습니다. 20일부터는 입력 100만 토큰당 10달러, 출력 100만 토큰당 50달러의 종량제로 전환됩니다.", "body_en": "Anthropic extended free Fable 5 access for paid plans a second time this week, through Jul 19. Usage-based pricing ($10/M input, $50/M output) starts Jul 20.", "src": "Bleeping Computer / Forbes", "time": "7/13 보도" }
+  ],
+  "schedule_title_ko": "주요 일정 미리보기",
+  "schedule_title_en": "Upcoming schedule preview",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US market hours",
+    "lines_ko": [
+      "정규장 22:30 ~ 익일 05:00 (서머타임 기준)",
+      "이번 주말은 휴장 · 월요일 22:30 재개장"
+    ],
+    "lines_en": [
+      "Regular session 22:30–05:00 KST (DST)",
+      "Closed this weekend · reopens Monday 22:30 KST"
+    ]
+  },
+  "schedule": [
+    { "time": "월 09:00", "title_ko": "코스피·코스닥 재개장", "title_en": "KOSPI/KOSDAQ reopen", "detail_ko": "주말 새 유가 급등·이란-호르무즈 사태가 개장가에 반영될 전망", "detail_en": "Weekend oil surge and the Iran-Hormuz standoff should feed into the open", "importance": "high" },
+    { "time": "월 22:30", "title_ko": "뉴욕증시 재개장", "title_en": "NYSE/Nasdaq reopen", "detail_ko": "AI 밸류에이션 우려·반도체 약세장 진입 이후 첫 거래일", "detail_en": "First session since the AI-valuation selloff pushed semis into a bear market", "importance": "high" },
+    { "time": "화~수 (7/22-23)", "title_ko": "SK하이닉스 2분기 실적 발표(잠정)", "title_en": "SK Hynix Q2 earnings (tentative)", "detail_ko": "메모리 슈퍼사이클 지속 여부가 관전 포인트", "detail_en": "Watch for signs the memory supercycle holds", "importance": "high" },
+    { "time": "수 (7/29) KST 새벽", "title_ko": "FOMC 금리 결정", "title_en": "FOMC rate decision", "detail_ko": "워시 신임 의장 첫 금리 결정 · 한국시간 30일 새벽 발표", "detail_en": "New Chair Warsh's first rate decision · early Jul 30 KST", "importance": "high" }
+  ],
+  "next_brief_ko": "☀️ 다음 브리핑 — 월요일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — Monday 8 AM KST, US close wrap-up",
+  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 7월 18일(토)\n\n오늘의 핵심: 미·이란 공습이 7일째로 접어들며 호르무즈 해협 통항이 급감, WTI가 82달러대까지 뛰었습니다. 국내외 증시는 주말 휴장 중이지만, 코스피는 7월에만 서킷브레이커가 9차례 발동되며 역대 최다 수준을 기록했습니다. AI 쪽에서는 중국 문샷AI의 'Kimi K3'가 촉발한 매도세로 필라델피아반도체지수가 약세장에 진입했고, 메타·앤스로픽의 100억달러 컴퓨팅 임대 협상 소식도 나왔습니다.\n\n👉 매일 아침·저녁 경제·AI 뉴스를 카드로 정리합니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n☀️ 다음 브리핑 — 월요일 아침 8시\n\n#경제뉴스 #주식 #증시 #코스피 #서킷브레이커 #유가 #호르무즈 #반도체 #SK하이닉스 #삼성전자 #비트코인 #AI #인공지능 #투자 #luckyon",
+  "caption_en": "📊 luckyon Evening Brief · Saturday, July 18, 2026\n\nToday: US-Iran strikes hit a 7th night, Hormuz transits collapsed, and WTI jumped into the low-$80s. Local and US markets are closed for the weekend, but KOSPI triggered circuit breakers 9 times in July alone — an all-time high. On the AI side, Moonshot's 'Kimi K3' model sparked a selloff that pushed the Philadelphia Semiconductor Index into a bear market, while Meta and Anthropic are in talks over a $10B compute-lease deal.\n\n👉 Daily economy & AI news, in cards, morning & night. Follow so you don't miss it!\nSaves 🔖 & shares 📤 welcome.\n\n☀️ Next brief — Monday 8 AM KST\n\n#economy #stocks #markets #kospi #circuitbreaker #oil #hormuz #semiconductors #skhynix #samsung #bitcoin #AI #investing #newsbriefing #luckyon",
+  "sources": [
+    "https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-attacks-persian-gulf/",
+    "https://www.npr.org/2026/07/18/nx-s1-5898916/us-iran-escalate-strikes",
+    "https://www.nbcnews.com/world/iran/us-strikes-bridges-iran-port-hormuz-bandar-abbas-syria-rcna587959",
+    "https://www.aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook",
+    "https://www.bloomberg.com/news/articles/2026-07-17/us-stock-index-futures-slide-as-jitters-grow-on-chip-selloff",
+    "https://www.theedgesingapore.com/news/us-stocks/us-stocks-plunge-concerns-deepseek-20-hit-chipmakers",
+    "https://www.cnn.com/2026/07/17/investing/us-stocks-asia",
+    "https://www.trendforce.com/news/2026/07/10/news-sk-hynix-reportedly-revives-dalian-plant-2-expansion-in-2h26-adding-new-v8-nand-capacity/",
+    "https://www.newsworks.co.kr/news/articleView.html?idxno=847008",
+    "https://www.benzinga.com/markets/tech/26/07/60540514/meta-reportedly-negotiating-10-billion-ai-compute-deal-with-anthropic",
+    "https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-stays-free-for-paid-users-until-july-19-as-anthropic-buys-more-time/",
+    "https://www.cnn.com/2026/07/14/economy/takeaways-kevin-warsh-congressional-testimony",
+    "https://www.federalreserve.gov/newsevents/testimony/warsh20260714a.htm"
+  ]
+}
