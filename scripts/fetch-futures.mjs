@@ -29,12 +29,6 @@ const SYMBOL_LABELS = {
   'ES=F': { label: 'S&P 500 Fut' },
 };
 
-function required(k) {
-  const v = process.env[k];
-  if (!v) { console.error(`❌ 환경변수 ${k} 가 없습니다.`); process.exit(1); }
-  return v;
-}
-
 function toTile(item) {
   const map = SYMBOL_LABELS[item.symbol] || { label: item.symbol };
   if (item.error || item.price == null) {
@@ -81,8 +75,13 @@ async function main() {
     return;
   }
 
-  const TOKEN = required('APIFY_TOKEN');
-  const ACTOR_ID = required('APIFY_ACTOR_ID');
+  // ACTOR_ID 는 비밀이 아니므로 기본값을 둔다. TOKEN 만 없으면 대체(fallback) 신호로 exit 2.
+  const ACTOR_ID = process.env.APIFY_ACTOR_ID || 'automation-lab~yahoo-finance-scraper';
+  const TOKEN = process.env.APIFY_TOKEN;
+  if (!TOKEN) {
+    console.error('⏭  APIFY_TOKEN 미설정 → 선물 조회 건너뜀. pm 세션은 S&P·나스닥을 직전 미국장 종가(전일 종가·개장 전)로 대체하고 발행은 계속한다.');
+    process.exit(2);
+  }
   const input = process.env.APIFY_INPUT_JSON
     || JSON.stringify({ tickers: Object.keys(SYMBOL_LABELS) });
 
