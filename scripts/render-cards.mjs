@@ -59,6 +59,18 @@ function page(inner, pageno, total) {
 
 // ---------- 카드별 마크업 ----------
 function cardHook() {
+  const bull = data.hook_bull;
+  const bear = data.hook_bear;
+  const hasHook = bull && bear;
+  const hookBox = (icon, tag, text, color) => `
+    <div style="background:#1a1a19; border-left:6px solid ${color}; border-radius:14px; padding:24px 28px; margin-top:20px;">
+      <div style="font-size:24px; font-weight:800; color:${color}; letter-spacing:0.04em; margin-bottom:8px;">${icon} ${tag}</div>
+      <div style="font-size:30px; font-weight:700; line-height:1.4;">${text}</div>
+    </div>`;
+  const hookBlocks = hasHook
+    ? hookBox('▲', t(bull.tag_ko || '호재', bull.tag_en || 'BULL'), t(bull.text_ko, bull.text_en), '#e66767')
+      + hookBox('▼', t(bear.tag_ko || '악재', bear.tag_en || 'BEAR'), t(bear.text_ko, bear.text_en), '#3987e5')
+    : '';
   return `
     <div class="pad">
       <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
@@ -68,28 +80,47 @@ function cardHook() {
           : session === 'sat' ? t('주간 결산', 'WEEK IN REVIEW')
           : session === 'sun' ? t('다음 주 미리 보기', 'THE WEEK AHEAD')
           : t('오늘의 핵심', 'TODAY')}</div>
-        <div style="font-size:78px; font-weight:800; line-height:1.18; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
-        <div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>
+        <div style="font-size:${hasHook ? 62 : 78}px; font-weight:800; line-height:1.18; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
+        ${hasHook ? '' : `<div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>`}
+        ${hookBlocks}
       </div>
       <div style="font-size:26px; color:#898781;">${t('오른쪽으로 넘겨보세요', 'Swipe to read →')} →</div>
     </div>`;
 }
 
 function cardMarkets() {
+  const hasInsight = data.markets.some(m => m.insight_ko || m.insight_en);
+  const highlights = data.market_highlights;
+  const compact = hasInsight || (highlights && highlights.length);
   const tiles = data.markets.map(m => {
     const c = m.dir === 'up' ? '#e66767' : m.dir === 'down' ? '#3987e5' : '#c3c2b7';
-    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px 26px;">
+    const insight = hasInsight
+      ? `<div style="font-size:21px; color:#a9a89f; margin-top:8px; line-height:1.35; border-top:1px solid rgba(255,255,255,0.07); padding-top:8px;">${t(m.insight_ko, m.insight_en) || ''}</div>`
+      : '';
+    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:${compact ? '18px 24px' : '24px 26px'};">
       <div style="font-size:23px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
-      <div style="font-size:40px; font-weight:800; margin-top:8px; font-variant-numeric:tabular-nums;">${m.value}</div>
-      <div style="font-size:26px; font-weight:700; color:${c}; margin-top:4px;">${m.delta}</div>
+      <div style="font-size:${compact ? 36 : 40}px; font-weight:800; margin-top:${compact ? 6 : 8}px; font-variant-numeric:tabular-nums;">${m.value} <span style="font-size:${compact ? 24 : 26}px; font-weight:700; color:${c};">${m.delta}</span></div>
+      ${insight}
     </div>`;
   }).join('');
+  const highlightBox = highlights && highlights.length
+    ? `<div style="background:rgba(57,135,229,0.10); border:1px solid rgba(57,135,229,0.35); border-radius:16px; padding:22px 28px; margin-top:22px;">
+        <div style="font-size:26px; font-weight:800; color:#3987e5; margin-bottom:6px;">💡 ${t('오늘의 해석 포인트', "Today's takeaways")}</div>
+        ${highlights.map(h => `<div style="display:flex; gap:14px; margin-top:12px;">
+          <div style="min-width:140px; font-size:23px; font-weight:800; color:#c3c2b7; padding-top:2px;">${h.label}</div>
+          <div style="flex:1; font-size:23px; line-height:1.42; color:#d7d6cf;">${t(h.text_ko, h.text_en)}</div>
+        </div>`).join('')}
+      </div>`
+    : '';
+  // 해석 포인트 박스가 있으면 ※ 노트는 생략한다 (지면 확보, 내용도 대체됨)
+  const note = highlightBox ? '' : `<div style="font-size:${compact ? 23 : 25}px; color:#898781; margin-top:${compact ? 20 : 28}px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>`;
   return `
     <div class="pad">
       <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
-      <div style="font-size:44px; font-weight:800; margin:36px 0 30px;">${t('시장 한눈에', 'Markets at a glance')}</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">${tiles}</div>
-      <div style="font-size:25px; color:#898781; margin-top:28px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
+      <div style="font-size:44px; font-weight:800; margin:${compact ? '30px 0 24px' : '36px 0 30px'};">${t('시장 한눈에', 'Markets at a glance')}</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:${compact ? 14 : 18}px;">${tiles}</div>
+      ${highlightBox}
+      ${note}
     </div>`;
 }
 
