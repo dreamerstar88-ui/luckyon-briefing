@@ -97,8 +97,8 @@ function cardMarkets() {
     const note = t(m.note_ko, m.note_en);
     return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:15px; padding:16px 24px; display:flex; flex-direction:column; justify-content:center;">
       <div style="font-size:22px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
-      <div style="display:flex; align-items:baseline; gap:12px; margin-top:6px;">
-        <div style="font-size:37px; font-weight:800; font-variant-numeric:tabular-nums;">${m.value}</div>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-top:6px; flex-wrap:wrap;">
+        <div style="font-size:37px; font-weight:800; font-variant-numeric:tabular-nums;">${m.value}${m.value_sub ? `<span style="font-size:19px; font-weight:600; color:#898781; margin-left:8px;">${m.value_sub}</span>` : ''}</div>
         <div style="font-size:23px; font-weight:700; color:${c};">${m.delta}</div>
       </div>
       ${note ? `<div style="font-size:21px; color:#a9a89f; margin-top:8px; line-height:1.38;">${note}</div>` : ''}

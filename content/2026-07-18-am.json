@@ -16,19 +16,19 @@
     "body_en": "Netflix drops 10% on soft guidance despite a beat; a chip selloff drags the Nasdaq down 1.4%."
   },
   "markets": [
+    { "label": "KOSPI", "value": "6,820.60", "delta": "▼ 6.37%", "dir": "down", "note_ko": "7/16 서킷브레이커 −6.37%, 17일 제헌절 휴장", "note_en": "−6.37% on Jul 16 (circuit breaker); closed Jul 17" },
     { "label": "S&P 500", "value": "7,457.78", "delta": "▼ 1.01%", "dir": "down", "note_ko": "AI 매도세에 3거래일째 약세", "note_en": "Down a 3rd day on the AI selloff" },
     { "label": "NASDAQ", "value": "25,520.24", "delta": "▼ 1.40%", "dir": "down", "note_ko": "넷플릭스·반도체가 낙폭 주도, 주간 −2.9%", "note_en": "Netflix & chips lead; −2.9% on the week" },
-    { "label": "DOW", "value": "52,146.42", "delta": "▼ 0.77%", "dir": "down", "note_ko": "빅테크 부진 속 상대적 선방", "note_en": "Held up better as Big Tech sank" },
     { "label": "VIX", "value": "18.77", "delta": "▲ 12.19%", "dir": "up", "note_ko": "변동성 급등, 위험회피 확산", "note_en": "Volatility jumps as risk-off spreads" },
     { "label": "Fear & Greed", "value": "37", "delta": "공포", "dir": "flat", "note_ko": "'공포' 구간 진입, 심리 위축", "note_en": "Slid into 'Fear' as sentiment cools" },
     { "label": "US 10Y", "value": "4.55%", "delta": "▼ 0.02%p", "dir": "down", "note_ko": "유가발 인플레 우려에 하단 지지", "note_en": "Floored by oil-driven inflation risk" },
-    { "label": "USD/KRW", "value": "1,487", "delta": "휴장", "dir": "flat", "note_ko": "서울 제헌절 휴장, 원화 고시 없음", "note_en": "No onshore fixing — Seoul holiday" },
+    { "label": "USD/KRW", "value": "1,487", "value_sub": "· DXY 100.8", "delta": "휴장", "dir": "flat", "note_ko": "서울 제헌절 휴장 · 달러인덱스 +0.06%", "note_en": "Seoul holiday · Dollar index +0.06%" },
     { "label": "Gold", "value": "$4,019", "delta": "▲ 0.67%", "dir": "up", "note_ko": "당일 반등에도 주간 −3%대", "note_en": "Bounced today but −3% on the week" },
     { "label": "WTI", "value": "$79.2", "delta": "▲ 중동 리스크", "dir": "up", "note_ko": "이란·호르무즈 긴장에 80달러 근접", "note_en": "Near $80 on Iran/Hormuz tension" },
     { "label": "Bitcoin", "value": "$63,911", "delta": "보합", "dir": "flat", "note_ko": "위험회피 속 6.4만달러 부근 정체", "note_en": "Stuck near $64k in the risk-off" }
   ],
-  "market_note_ko": "7/17 미국장 종가 기준. 한국은 제헌절 휴장. 넷플릭스·반도체 급락이 지수를 끌어내렸고, 중동 리스크로 유가는 강세. 원/달러·유가는 최신 일간 데이터 기준.",
-  "market_note_en": "As of the Jul 17 US close; Korea closed for Constitution Day. Netflix and chips dragged indexes lower while oil firmed on Mideast risk.",
+  "market_note_ko": "7/17 미국장 종가 기준. 코스피는 7/16 −6.37% 급락(서킷브레이커) 후 제헌절 휴장. 넷플릭스·반도체가 지수를 끌어내렸고, 중동 리스크로 유가 강세.",
+  "market_note_en": "As of the Jul 17 US close. KOSPI fell 6.37% on Jul 16 (circuit breaker) then closed for Constitution Day; Netflix and chips led the drop, oil firmed on Mideast risk.",
   "econ": [
     { "headline_ko": "한국 증시, 제헌절로 휴장", "headline_en": "Korea markets closed for Constitution Day", "body_ko": "7월 17일 제헌절로 코스피·코스닥이 하루 휴장했습니다. 글로벌 반도체 매도세의 여파는 다음 개장일에 반영될 전망입니다.", "body_en": "KOSPI and KOSDAQ were shut for Constitution Day on Jul 17; the global chip selloff will feed through at the next session.", "src": "종합", "time": "7/17 KST" },
     { "headline_ko": "미 3대 지수 일제히 하락, 나스닥 1.4% 급락", "headline_en": "US indexes fall broadly; Nasdaq -1.4%", "body_ko": "S&P500 -1.01%, 나스닥 -1.40%, 다우 -0.77%로 마감했습니다. 반도체·AI주 매도세가 지수 전반을 압박했습니다.", "body_en": "S&P500 -1.01%, Nasdaq -1.40%, Dow -0.77%. A semis/AI selloff weighed across the board.", "src": "CNBC / The Motley Fool", "time": "7/18 05:00 KST" },
