@@ -1,22 +1,33 @@
 // fetch-futures.mjs
-// Apify에 배포한(또는 스토어에서 고른) 액터를 동기 실행해
+// Apify 스토어 액터(automation-lab/yahoo-finance-scraper 등)를 동기 실행해
 // S&P 500 선물·나스닥 선물 markets 타일 2개를 JSON으로 출력한다.
 // apify/futures-scraper/README.md 참고.
 //
-// 사용법: node scripts/fetch-futures.mjs
+// 사용법:
+//   node scripts/fetch-futures.mjs                 # 실제 액터 호출 (토큰 필요)
+//   APIFY_SELFTEST_FILE=sample.json node scripts/fetch-futures.mjs   # 액터 없이 파싱만 검증
 //
-// 필요한 환경변수:
+// 필요한 환경변수(실제 호출 시):
 //   APIFY_TOKEN     - Apify 개인 API 토큰
-//   APIFY_ACTOR_ID  - 실행할 액터 ID
-//                     (커스텀 배포 시 예: your-username~index-futures-quote-scraper
-//                      스토어 액터를 쓸 경우 그 액터의 ID)
+//   APIFY_ACTOR_ID  - 실행할 액터 ID (예: automation-lab~yahoo-finance-scraper)
+//   APIFY_INPUT_JSON- (선택) 액터 입력 JSON. 기본값은 {"tickers":["ES=F","NQ=F"]}.
+//                     액터가 다른 입력 키를 쓰면(예: symbols) 이 값을 맞게 지정한다.
 //
-// 출력: markets 타일 스키마({label,value,delta,dir}) 배열을 stdout에 JSON으로 찍는다.
-//   ROUTINE_PROMPT.md 3-a 단계에서 이 출력을 pm 세션 markets 배열에 그대로 이어붙이면 된다.
-//   (아직 ROUTINE_PROMPT.md에는 자동 연결되어 있지 않음 — 실제 토큰으로 검증 후 수동으로 반영할 것)
+// 액터 출력 스키마(automation-lab/yahoo-finance-scraper, 실측):
+//   { symbol, name, price:Number, change:Number, changePercent:"+1.23%"|"-4.68%",
+//     volume, marketCap, exchange, currency }
+//
+// 출력: markets 타일 스키마({label,value,delta,dir,symbol}) 배열을 stdout에 JSON으로 찍는다.
+//   ROUTINE_PROMPT.md 3-a(pm 세션)에서 이 출력을 나스닥·S&P 선물 타일에 넣고
+//   한 줄 해석(note_ko/note_en)만 그 시점 상황에 맞게 덧붙이면 된다.
 
-const TOKEN = required('APIFY_TOKEN');
-const ACTOR_ID = required('APIFY_ACTOR_ID');
+import fs from 'node:fs';
+
+// 조회할 선물 심볼 → 카드 라벨 (라벨은 한/영 공용 중립 표기)
+const SYMBOL_LABELS = {
+  'NQ=F': { label: 'NASDAQ Fut' },
+  'ES=F': { label: 'S&P 500 Fut' },
+};
 
 function required(k) {
   const v = process.env[k];
@@ -25,39 +36,67 @@ function required(k) {
 }
 
 function toTile(item) {
-  if (!item || item.error || item.price == null) {
-    return { label: item?.label ?? item?.symbol ?? '?', value: '조회 실패', delta: '-', dir: 'flat' };
+  const map = SYMBOL_LABELS[item.symbol] || { label: item.symbol };
+  if (item.error || item.price == null) {
+    return { label: map.label, value: '조회 실패', delta: '-', dir: 'flat', symbol: item.symbol };
   }
-  const pct = item.changePercent;
-  const arrow = item.dir === 'up' ? '▲' : item.dir === 'down' ? '▼' : '-';
+  // dir 은 change(숫자) 부호로 유도. change 가 없으면 changePercent 문자열에서 파싱.
+  const changeNum = typeof item.change === 'number'
+    ? item.change
+    : parseFloat(String(item.changePercent || '').replace('%', '')) || 0;
+  const dir = changeNum > 0 ? 'up' : changeNum < 0 ? 'down' : 'flat';
+  const arrow = dir === 'up' ? '▲' : dir === 'down' ? '▼' : '·';
+  // changePercent 는 "+1.23%" / "-4.68%" 형태의 문자열 → 부호 떼고 절댓값만 사용
+  const pct = String(item.changePercent ?? '').replace(/^[+\-]/, '').trim();
   return {
-    label: item.label,
-    value: Number(item.price).toLocaleString(),
-    delta: pct == null ? '-' : `${arrow} ${Math.abs(pct).toFixed(2)}%`,
-    dir: item.dir ?? 'flat',
+    label: map.label,
+    value: Number(item.price).toLocaleString('en-US'),
+    delta: pct ? `${arrow} ${pct}` : arrow,
+    dir,
+    symbol: item.symbol,
   };
 }
 
+function emit(items) {
+  if (!Array.isArray(items) || items.length === 0) {
+    console.error('❌ 빈 결과입니다.');
+    process.exit(1);
+  }
+  // 요청한 심볼 순서(NQ=F, ES=F)대로 정렬해 출력
+  const order = Object.keys(SYMBOL_LABELS);
+  const sorted = [...items].sort(
+    (a, b) => order.indexOf(a.symbol) - order.indexOf(b.symbol),
+  );
+  console.log(JSON.stringify(sorted.map(toTile), null, 2));
+  const failed = items.filter((it) => it.error || it.price == null);
+  if (failed.length) {
+    console.error(`⚠️  ${failed.length}건 실패/누락: ${failed.map((f) => f.symbol).join(', ')}`);
+  }
+}
+
 async function main() {
+  // 자체 검증 모드: 액터 없이 저장된 샘플 JSON 으로 파싱만 확인
+  if (process.env.APIFY_SELFTEST_FILE) {
+    emit(JSON.parse(fs.readFileSync(process.env.APIFY_SELFTEST_FILE, 'utf8')));
+    return;
+  }
+
+  const TOKEN = required('APIFY_TOKEN');
+  const ACTOR_ID = required('APIFY_ACTOR_ID');
+  const input = process.env.APIFY_INPUT_JSON
+    || JSON.stringify({ tickers: Object.keys(SYMBOL_LABELS) });
+
   const url = `https://api.apify.com/v2/acts/${encodeURIComponent(ACTOR_ID)}/run-sync-get-dataset-items?token=${TOKEN}&timeout=90`;
-  const res = await fetch(url, { method: 'POST' });
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: input,
+  });
   if (!res.ok) {
     console.error(`❌ Apify 호출 실패: ${res.status} ${await res.text()}`);
     process.exit(1);
   }
-  const items = await res.json();
-  if (!Array.isArray(items) || items.length === 0) {
-    console.error('❌ Apify가 빈 결과를 반환했습니다.');
-    process.exit(1);
-  }
-
-  const tiles = items.map(toTile);
-  console.log(JSON.stringify(tiles, null, 2));
-
-  const failed = items.filter((it) => it.error);
-  if (failed.length) {
-    console.error(`⚠️  ${failed.length}건 실패: ${failed.map((f) => f.symbol).join(', ')}`);
-  }
+  emit(await res.json());
 }
 
 main().catch((err) => {
