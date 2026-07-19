@@ -1,0 +1,147 @@
+{
+  "date": "2026-07-20",
+  "session": "am",
+  "dateLabel_ko": "2026년 7월 20일 (월)",
+  "dateLabel_en": "Monday, July 20, 2026",
+  "headline_ko": "美·이란 충돌 장기화, 유가 82달러대 지속…코스피 오늘 재개장",
+  "headline_sub_ko": "나스닥·S&P500 반도체 약세에 하락 마감(7/17) · 코스피 09시 재개장",
+  "headline_en": "US-Iran Standoff Drags On as Oil Holds Near $83, Kospi Reopens Today",
+  "headline_sub_en": "Nasdaq, S&P 500 close lower on chip weakness (Jul 17) · Kospi reopens at 9 AM KST",
+  "markets": [
+    { "label": "NASDAQ", "value": "25,520.24", "delta": "▼ 1.40%", "dir": "down", "note_ko": "7/17 미국장 마감 종가", "note_en": "Jul 17 US close" },
+    { "label": "S&P 500", "value": "7,457.69", "delta": "▼ 1.01%", "dir": "down", "note_ko": "7/17 미국장 마감 종가", "note_en": "Jul 17 US close" },
+    { "label": "KOSPI", "value": "6,820.60", "delta": "▼ 6.37%", "dir": "down", "note_ko": "개장 전 · 7/16 종가(서킷브레이커, 제헌절 휴장 지나 유지)", "note_en": "Pre-open · holds Jul 16 close (circuit breaker day, before the holiday)" },
+    { "label": "VIX", "value": "18.77", "delta": "▲ 12.19%", "dir": "up", "note_ko": "7/17 미국장 마감 기준", "note_en": "As of Jul 17 US close" },
+    { "label": "Fear & Greed", "value": "37", "delta": "공포", "dir": "down", "note_ko": "7/17 기준 '공포' 구간", "note_en": "Reads 'Fear' as of Jul 17" },
+    { "label": "US 10Y", "value": "4.55%", "delta": "▼ 0.01%p", "dir": "down", "note_ko": "7/17 마감 기준", "note_en": "As of Jul 17 close" },
+    { "label": "USD/KRW", "value": "1,480", "value_sub": "· DXY 100.8", "delta": "▼ 0.4원", "dir": "flat", "note_ko": "개장 전 · 7/17 종가(1,480원대) 기준", "note_en": "Pre-open · holds Jul 17 close (~1,480)" },
+    { "label": "Gold", "value": "$4,017", "delta": "▲ 1.0%", "dir": "up", "note_ko": "7/17 마감 기준 · 이란 사태發 안전자산 수요", "note_en": "As of Jul 17 close · safe-haven demand from the Iran crisis" },
+    { "label": "WTI", "value": "$82.49", "delta": "▲ 4.5%", "dir": "up", "note_ko": "7/17 정규장 마감가 · 호르무즈 통항 급감으로 급등", "note_en": "Jul 17 settle · surged as Hormuz transits collapsed" },
+    { "label": "Bitcoin", "value": "$63,600", "delta": "▼ 0.5%", "dir": "down", "note_ko": "24시간 거래 지속, 6.3만달러대 등락", "note_en": "Trades 24/7 · holding in the low-$60Ks" }
+  ],
+  "market_note_ko": "나스닥·S&P500·WTI·달러인덱스는 7/17 마감가, 코스피는 개장 전(7/16 종가) 기준입니다. 비트코인은 24시간 거래 반영.",
+  "market_note_en": "Nasdaq/S&P 500/WTI/DXY reflect Jul 17 close; Kospi is pre-open (holds Jul 16 close). Bitcoin reflects 24/7 trading.",
+  "econ": [
+    {
+      "headline_ko": "한화 필리조선소, 美 해상미사일 시험함(MRIV) 수주…'골든돔' 사업 발판",
+      "headline_en": "Hanwha Philly Shipyard wins US missile test-ship contract, eyes 'Golden Dome' work",
+      "body_ko": "한화 필리조선소가 미 해군의 해상 미사일 시험 계측함(MRIV) 건조 사업을 수주했습니다. 트럼프 행정부의 미사일 방어 구상 '골든돔' 성능 검증을 지원하는 함정으로, 미 국방·특수선 시장 진입의 발판이 될 전망입니다.",
+      "body_en": "Hanwha Philly Shipyard won a US Navy contract to build a missile test-range ship (MRIV) for the 'Golden Dome' missile-defense program, an entry point into the US defense shipbuilding market.",
+      "src": "종합", "time": "7/20 보도"
+    },
+    {
+      "headline_ko": "국제유가 상승에 韓 7월 수출입물가 두 달째 오름세",
+      "headline_en": "Korea's import/export prices rise for a 2nd straight month on higher oil",
+      "body_ko": "이란 사태로 국제유가가 뛰면서 한국의 7월 수출입물가가 두 달 연속 오름세를 나타냈습니다. 7월 1~10일 수출은 전년比 53.9% 늘어난 298억달러로 동기간 역대 최대를 기록했고, 반도체 수출이 193% 급증했습니다.",
+      "body_en": "Korea's import/export prices rose for a 2nd straight month in July as oil climbed amid the Iran crisis. Jul 1-10 exports hit a record $29.8B, up 53.9% YoY.",
+      "src": "한국무역협회", "time": "7월 집계"
+    },
+    {
+      "headline_ko": "코스피, 서킷브레이커 후유증 안고 오늘 09시 재개장",
+      "headline_en": "Kospi reopens at 9 AM KST, still nursing circuit-breaker bruises",
+      "body_ko": "코스피는 7월 들어 서킷브레이커·사이드카가 9차례 발동되며 역대 최다 수준의 변동성을 겪었습니다. 제헌절 휴장을 지나 오늘 재개장하는 가운데, 간밤 유가 추가 상승이 개장가에 어떻게 반영될지 주목됩니다.",
+      "body_en": "Kospi triggered circuit breakers or sidecars 9 times in July alone, an all-time high. Trading resumes today after the holiday amid the overnight oil jump.",
+      "src": "종합", "time": "7/20 개장 전"
+    },
+    {
+      "headline_ko": "美·이란 충돌 장기화…트럼프 \"이번 주 못 끝내면 발전소 타격\"",
+      "headline_en": "US-Iran standoff drags on; Trump threatens to hit power plants 'this week'",
+      "body_ko": "미국이 나흘 연속 이란 해안방어체계·해군 전력을 타격하고 호르무즈 해협 봉쇄를 재개했습니다. 트럼프 대통령은 이번 주 안에 합의가 없으면 발전소·교량 등 기반시설까지 타격하겠다고 위협했고, 이란은 요르단·쿠웨이트·바레인 내 미군 기지에 보복 공습으로 맞섰습니다.",
+      "body_en": "US forces struck Iranian coastal defenses and naval assets for a 4th straight night and reinstated a blockade of the Strait of Hormuz. Trump threatened to strike power plants and bridges if no deal is reached this week; Iran retaliated with strikes on US bases in Jordan, Kuwait and Bahrain.",
+      "src": "MBC / 파이낸셜뉴스", "time": "7/19 보도"
+    },
+    {
+      "headline_ko": "국제유가 WTI 82달러대·브렌트 88달러 육박…인플레 우려 재점화",
+      "headline_en": "WTI near $83, Brent close to $88 as Iran crisis revives inflation fears",
+      "body_ko": "호르무즈 해협 통항이 급감하면서 WTI는 82달러대, 브렌트유는 88달러 근접까지 올랐습니다. 유가 급등은 금리 인하 기대를 낮추며 채권·주식시장에 부담을 주고 있습니다.",
+      "body_en": "With Hormuz transits collapsing, WTI has climbed into the low-$80s and Brent is nearing $88. The surge is dampening rate-cut hopes and weighing on bonds and equities.",
+      "src": "CBS News / USAGOLD", "time": "7/17 마감 기준"
+    },
+    {
+      "headline_ko": "IMF, 2026년 세계 성장률 3%로 하향…이란 사태發 불확실성 반영",
+      "headline_en": "IMF cuts 2026 global growth forecast to 3%, citing Iran-driven uncertainty",
+      "body_ko": "국제통화기금(IMF)이 중동 정세 불안과 유가 급등을 반영해 2026년 세계 경제성장률 전망치를 지난해 3.5%에서 3%로 하향 조정했습니다.",
+      "body_en": "The IMF cut its 2026 global growth forecast to 3% from 3.5%, citing Middle East instability and the oil-price spike.",
+      "src": "IMF / NPR", "time": "7월 보고서"
+    }
+  ],
+  "ai": [
+    {
+      "headline_ko": "현대차그룹, 보스턴다이나믹스 지분 100% 확보…'피지컬 AI' 완전자회사 편입",
+      "headline_en": "Hyundai Motor Group takes full ownership of Boston Dynamics in 'physical AI' push",
+      "body_ko": "현대차그룹이 소프트뱅크가 보유한 보스턴다이나믹스 잔여 지분(약 9.9%, 3억2,500만달러)을 전량 인수해 완전자회사로 편입했습니다. 로봇 상용화와 피지컬 AI 전략에 속도가 붙을 전망입니다.",
+      "body_en": "Hyundai Motor Group acquired SoftBank's remaining ~9.9% stake in Boston Dynamics for about $325 million, making it a wholly owned subsidiary.",
+      "src": "헤럴드경제 / 이데일리", "time": "7/16 보도"
+    },
+    {
+      "headline_ko": "화웨이 \"AI 플랫폼 성능, 엔비디아 압도\"…中 AI칩 점유율 급확대",
+      "headline_en": "Huawei claims its AI platform 'outperforms Nvidia' as its China chip share surges",
+      "body_ko": "화웨이가 자체 AI칩 클러스터 '아틀라스 950 슈퍼포드'의 성능이 엔비디아를 압도한다고 주장했습니다. 번스타인에 따르면 중국 AI칩 시장에서 엔비디아 점유율은 지난해 40%에서 올해 약 8%까지 추락하고, 화웨이는 약 50%까지 확대될 전망입니다.",
+      "body_en": "Huawei claimed its 'Atlas 950 SuperPoD' AI-chip cluster outperforms Nvidia. Bernstein sees Nvidia's China AI-chip share falling from ~40% to ~8% this year as Huawei's expands to ~50%.",
+      "src": "이데일리 / 파이낸셜뉴스", "time": "7/20 보도"
+    },
+    {
+      "headline_ko": "앤스로픽, 10월 나스닥 상장 목표로 투자자 미팅 돌입",
+      "headline_en": "Anthropic kicks off investor meetings, eyes October Nasdaq debut",
+      "body_ko": "앤스로픽이 6월 SEC에 비공개로 IPO를 신청한 데 이어 투자자 미팅을 시작했습니다. 골드만삭스·JP모간·모간스탠리가 주관사로 나섰고, 조달 규모는 600억달러 이상, 밸류에이션은 9,650억달러 수준으로 거론됩니다. 성사되면 오픈AI보다 먼저 상장하는 AI 기업이 됩니다.",
+      "body_en": "Anthropic has begun investor meetings after confidentially filing for an IPO in June, targeting over $60B raised at a ~$965B valuation.",
+      "src": "CNBC", "time": "7/15 보도"
+    },
+    {
+      "headline_ko": "국토부, 레벨4 완전 자율주행 가이드라인 마련",
+      "headline_en": "Korea's transport ministry sets Level-4 fully autonomous driving guidelines",
+      "body_ko": "국토교통부가 운전자 개입 없는 레벨4 완전 자율주행차 시대를 앞당기기 위한 가이드라인을 마련했습니다. 관련 규제·인프라 정비가 본격화될 전망입니다.",
+      "body_en": "Korea's transport ministry has drawn up Level-4 fully-autonomous driving guidelines, laying groundwork for related regulation and infrastructure.",
+      "src": "종합", "time": "7월 발표"
+    },
+    {
+      "headline_ko": "오픈AI, 컨설팅 자회사 '딥플로이Co' 출범…40억달러 첫 투자",
+      "headline_en": "OpenAI launches consulting arm DeployCo with over $4B in initial funding",
+      "body_ko": "오픈AI가 기업의 AI 도입을 지원하는 다수 지분 자회사 '오픈AI 딥플로이먼트Co'를 출범시키고 40억달러 이상을 초기 투자했습니다. 응용 AI 컨설팅사 토모로 인수도 함께 발표해 엔지니어 150명이 합류합니다.",
+      "body_en": "OpenAI launched OpenAI Deployment Co., a majority-owned consulting subsidiary, with over $4B in initial investment, and announced the acquisition of applied-AI consultancy Tomoro, whose 150 engineers will join DeployCo.",
+      "src": "The Information", "time": "7월 보도"
+    },
+    {
+      "headline_ko": "AMD '어드밴싱 AI' 컨퍼런스 임박·中 딥시크 V4 출시 초읽기",
+      "headline_en": "AMD's 'Advancing AI' event nears as China's DeepSeek V4 launch looms",
+      "body_ko": "이번 주 AMD의 연례 'Advancing AI' 컨퍼런스와 중국 딥시크의 신모델 'V4' 출시가 예고돼 있어 AI 반도체·모델 경쟁이 한층 격화될 전망입니다.",
+      "body_en": "AMD's annual 'Advancing AI' conference and a new DeepSeek 'V4' launch from China are both due this week, set to intensify AI chip and model competition.",
+      "src": "뉴스핌", "time": "7/20 보도"
+    }
+  ],
+  "schedule_title_ko": "오늘 낮 주요 일정",
+  "schedule_title_en": "Today's daytime schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea market hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00–15:30 KST · Call auctions 08:30–09:00 / 15:20–15:30"]
+  },
+  "schedule": [
+    { "time": "09:00", "title_ko": "코스피·코스닥 개장", "title_en": "Kospi/Kosdaq open", "detail_ko": "간밤 유가 추가 상승·이란 사태가 개장가에 반영될 전망, 패닉셀 재현 여부 주목", "detail_en": "Overnight oil gains and the Iran crisis should shape the open", "importance": "high" },
+    { "time": "10:00경", "title_ko": "中 인민은행 7월 대출우대금리(LPR) 발표", "title_en": "PBOC July loan prime rate (LPR)", "detail_ko": "1년물 3.0%·5년물 3.5% 동결 전망", "detail_en": "1-year at 3.0%, 5-year+ at 3.5% both seen holding", "importance": "mid" },
+    { "time": "15:30", "title_ko": "코스피·코스닥 정규장 마감", "title_en": "Kospi/Kosdaq session close", "detail_ko": "외국인 수급과 서킷브레이커 재발동 여부가 관전 포인트", "detail_en": "Watch foreign flows and any repeat circuit breaker", "importance": "mid" },
+    { "time": "화~수 (7/22-23)", "title_ko": "ECB 통화정책회의", "title_en": "ECB policy meeting", "detail_ko": "유럽중앙은행 금리 결정 예정", "detail_en": "European Central Bank rate decision", "importance": "mid" },
+    { "time": "수 (7/29) 미리보기", "title_ko": "FOMC 금리 결정", "title_en": "FOMC decision (preview)", "detail_ko": "케빈 워시 신임 의장의 첫 금리 결정 · 한국시간 30일 새벽 발표", "detail_en": "Chair Warsh's first rate call · early Jul 30 KST", "importance": "high" }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "caption_ko": "📊 luckyon 아침 브리핑 · 2026년 7월 20일(월)\n\n오늘의 핵심: 美·이란 충돌이 나흘째 이어지며 호르무즈 해협이 다시 봉쇄됐고, 트럼프 대통령은 이번 주 안에 합의가 없으면 발전소·교량까지 타격하겠다고 위협했습니다. 유가는 WTI 82달러대·브렌트 88달러 근접까지 뛰었고, 나스닥·S&P500은 반도체 약세에 하락 마감했습니다. 코스피는 7월 서킷브레이커 9차례의 후유증을 안고 오늘 09시 재개장합니다. 기업 소식으로는 현대차그룹의 보스턴다이나믹스 완전자회사 편입, 한화 필리조선소의 美 미사일시험함 수주가 눈에 띕니다.\n\n👉 매일 아침·저녁 경제·AI 뉴스를 카드로 정리합니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시\n\n#경제뉴스 #주식 #증시 #코스피 #서킷브레이커 #유가 #호르무즈 #이란 #반도체 #현대차 #보스턴다이나믹스 #비트코인 #AI #인공지능 #luckyon",
+  "caption_en": "📊 luckyon Morning Brief · Monday, July 20, 2026\n\nToday: The US-Iran standoff enters a 4th night, the Strait of Hormuz is blockaded again, and Trump has threatened to strike Iranian power plants and bridges if no deal is reached this week. Oil has climbed to the low-$80s (WTI) and near $88 (Brent), while the Nasdaq and S&P 500 closed lower on chip weakness. Kospi reopens at 9 AM KST today still nursing the bruises of 9 circuit breakers this July. On the corporate side: Hyundai Motor Group now fully owns Boston Dynamics, and Hanwha Philly Shipyard landed a US missile test-ship contract.\n\n👉 Daily economy & AI news, in cards, morning & night. Follow so you don't miss it!\nSaves 🔖 & shares 📤 welcome.\n\n🌙 Next brief — 9 PM KST tonight\n\n#economy #stocks #markets #kospi #circuitbreaker #oil #hormuz #iran #semiconductors #hyundai #bostondynamics #bitcoin #AI #investing #luckyon",
+  "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-friday-july-17-dow-sp-500-nasdaq-092345307.html",
+    "https://www.washingtonpost.com/business/2026/07/17/wall-street-stocks-dow-nasdaq/64463f38-821d-11f1-8a16-393bd03340b0_story.html",
+    "https://www.cnbc.com/2026/07/16/stock-market-today-live-updates.html",
+    "https://www.usagold.com/daily-precious-metals-market-report-july-17-2026/",
+    "https://imnews.imbc.com/replay/2026/nwdesk/article/6837709_37004.html",
+    "https://www.fnnews.com/news/202607151642493369",
+    "https://www.hankyung.com/article/2026071571187",
+    "https://biz.heraldcorp.com/article/10811091",
+    "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01941766645516160",
+    "https://www.cnbc.com/2026/07/15/anthropic-ipo-banks-investor-meetings.html",
+    "https://www.kita.net/board/totalTradeNews/totalTradeNewsDetail.do?no=85668&siteId=1",
+    "https://www.newspim.com/news/view/20260720000005",
+    "https://www.newspim.com/news/view/20260720000004",
+    "https://www.npr.org/2026/07/08/nx-s1-5885946/iran-trump-oil-stock-inflation-gas-federal-reserve"
+  ]
+}
