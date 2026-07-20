@@ -8,8 +8,8 @@
   "headline_en": "Kospi's 'Black Monday': AI Shock Sends Index Down 4.46%, Kosdaq 5.33%",
   "headline_sub_en": "Sell-side sidecars hit both markets · Brent nears $90 as Iran strikes continue · Samsung Bio's $2B mega-deal",
   "markets": [
-    { "label": "NASDAQ", "value": "25,520.24", "delta": "▼ 1.40%", "dir": "down", "note_ko": "선물 조회 불가 · 7/17 미국장 마감 종가 유지", "note_en": "Futures feed unavailable · holds Jul 17 US close" },
-    { "label": "S&P 500", "value": "7,457.69", "delta": "▼ 1.01%", "dir": "down", "note_ko": "선물 조회 불가 · 7/17 미국장 마감 종가 유지", "note_en": "Futures feed unavailable · holds Jul 17 US close" },
+    { "label": "NASDAQ", "value": "25,520.24", "delta": "▼ 1.40%", "dir": "down", "note_ko": "7/17 미국장 마감 종가", "note_en": "Futures feed unavailable · holds Jul 17 US close" },
+    { "label": "S&P 500", "value": "7,457.69", "delta": "▼ 1.01%", "dir": "down", "note_ko": "7/17 미국장 마감 종가", "note_en": "Futures feed unavailable · holds Jul 17 US close" },
     { "label": "KOSPI", "value": "6,516.27", "delta": "▼ 4.46%", "dir": "down", "note_ko": "오늘 종가 · 中 무료 AI 쇼크에 매도 사이드카 발동", "note_en": "Today's close · sell-side sidecar triggered amid China's free-AI-model shock" },
     { "label": "VIX", "value": "18.77", "delta": "▲ 12.19%", "dir": "up", "note_ko": "7/17 미국장 마감 기준", "note_en": "As of Jul 17 US close" },
     { "label": "Fear & Greed", "value": "37", "delta": "▼5pt", "dir": "down", "note_ko": "7/17 기준 '공포' 구간", "note_en": "Reads 'Fear' as of Jul 17" },
@@ -19,7 +19,7 @@
     { "label": "WTI", "value": "$83.48", "delta": "▲ 1.2%", "dir": "up", "note_ko": "브렌트는 90달러 육박 · 호르무즈 통항 급감 지속", "note_en": "Brent nears $90 as Hormuz transits stay depressed" },
     { "label": "Bitcoin", "value": "$64,246", "delta": "▲ 0.37%", "dir": "up", "note_ko": "24시간 거래 지속, 6.4만달러대 유지", "note_en": "Trades 24/7 · holds in the mid-$64Ks" }
   ],
-  "market_note_ko": "나스닥·S&P500은 선물 조회가 불가해 7/17 마감가를 유지했고, 코스피는 오늘 종가(AI 쇼크발 폭락) 기준입니다. 원/달러는 장중 1,490원에서 1,478원대로 낙폭을 줄이며 마감했고, 국제유가는 브렌트 90달러 육박까지 올랐습니다.",
+  "market_note_ko": "나스닥·S&P500은 7/17 마감가, 코스피는 오늘 종가(AI 쇼크발 폭락) 기준입니다. 원/달러는 1,478원대로 낙폭을 줄이며 마감했고, 브렌트유는 90달러 육박까지 올랐습니다.",
   "market_note_en": "Nasdaq/S&P 500 hold their Jul 17 close; Kospi reflects today's AI-shock plunge. The won pared losses to close near 1,478; Brent has climbed toward $90.",
   "econ": [
     {
