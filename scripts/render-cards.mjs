@@ -31,12 +31,7 @@ const outDir = session
 fs.mkdirSync(outDir, { recursive: true });
 
 const t = (ko, en) => (lang === 'ko' ? ko : en);
-// 공용 필드(delta, src, time 등)에 언어별 값이 있으면 우선 사용한다.
-// 예: { delta: "▲ 1%대", delta_en: "▲ ~1%" } → en 렌더링 시 delta_en 사용
-const tf = (obj, key) => (lang === 'ko' ? (obj[`${key}_ko`] ?? obj[key]) : (obj[`${key}_en`] ?? obj[key]));
 const dateLabel = t(data.dateLabel_ko, data.dateLabel_en);
-const BRAND = `luckyon<span class="k"> ${lang === 'ko' ? '브리핑' : 'Briefing'}</span>`;
-const FOOT = lang === 'ko' ? 'luckyon 브리핑' : 'luckyon Briefing';
 
 // ---------- 공통 스타일 ----------
 const BASE = `
@@ -59,42 +54,62 @@ const BASE = `
 
 function page(inner, pageno, total) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
-  <body>${inner}<div class="foot">${FOOT}</div><div class="pageno">${pageno} / ${total}</div></body></html>`;
+  <body>${inner}<div class="foot">luckyon 브리핑</div><div class="pageno">${pageno} / ${total}</div></body></html>`;
 }
 
 // ---------- 카드별 마크업 ----------
 function cardHook() {
+  // 호재/악재 분석 블록 (있으면 headline_sub 대신 노출)
+  const point = (p, kind) => {
+    if (!p) return '';
+    const isBull = kind === 'bull';
+    const color = isBull ? '#4fbf7b' : '#e66767';
+    const arrow = isBull ? '▲' : '▼';
+    const label = isBull ? t('호재', 'BULL') : t('악재', 'BEAR');
+    return `<div style="background:#1a1a19; border-left:6px solid ${color}; border-radius:14px; padding:24px 28px; margin-top:18px;">
+      <div style="font-size:23px; font-weight:800; color:${color}; letter-spacing:0.04em; margin-bottom:12px;">${arrow} ${label}</div>
+      <div style="font-size:30px; font-weight:700; line-height:1.42; color:#e8e7e0;">${t(p.body_ko, p.body_en)}</div>
+    </div>`;
+  };
+  const hasPoints = data.hook_bull || data.hook_bear;
+  const analysis = hasPoints
+    ? `${point(data.hook_bull, 'bull')}${point(data.hook_bear, 'bear')}`
+    : `<div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>`;
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">${BRAND}</div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-        <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:28px;">${
+        <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:26px;">${
           session === 'pm' ? t('저녁 브리핑', 'EVENING BRIEF')
           : session === 'sat' ? t('주간 결산', 'WEEK IN REVIEW')
           : session === 'sun' ? t('다음 주 미리 보기', 'THE WEEK AHEAD')
           : t('오늘의 핵심', 'TODAY')}</div>
-        <div style="font-size:78px; font-weight:800; line-height:1.18; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
-        <div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>
+        <div style="font-size:${hasPoints ? '58px' : '78px'}; font-weight:800; line-height:1.2; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
+        ${analysis}
       </div>
-      <div style="font-size:26px; color:#898781;">${t('오른쪽으로 넘겨보세요', 'Swipe to read →')} →</div>
+      <div style="font-size:26px; color:#898781; margin-bottom:24px;">${t('오른쪽으로 넘겨보세요', 'Swipe to read')} →</div>
     </div>`;
 }
 
 function cardMarkets() {
   const tiles = data.markets.map(m => {
     const c = m.dir === 'up' ? '#e66767' : m.dir === 'down' ? '#3987e5' : '#c3c2b7';
-    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px 26px;">
-      <div style="font-size:23px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
-      <div style="font-size:40px; font-weight:800; margin-top:8px; font-variant-numeric:tabular-nums;">${tf(m, 'value')}</div>
-      <div style="font-size:26px; font-weight:700; color:${c}; margin-top:4px;">${tf(m, 'delta')}</div>
+    const note = t(m.note_ko, m.note_en);
+    return `<div style="background:#1a1a19; border:1px solid rgba(255,255,255,0.08); border-radius:15px; padding:16px 24px; display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:22px; color:#898781; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">${m.label}</div>
+      <div style="display:flex; align-items:baseline; gap:10px; margin-top:6px; flex-wrap:wrap;">
+        <div style="font-size:37px; font-weight:800; font-variant-numeric:tabular-nums;">${m.value}${m.value_sub ? `<span style="font-size:19px; font-weight:600; color:#898781; margin-left:8px;">${m.value_sub}</span>` : ''}</div>
+        <div style="font-size:23px; font-weight:700; color:${c};">${m.delta}</div>
+      </div>
+      ${note ? `<div style="font-size:21px; color:#a9a89f; margin-top:8px; line-height:1.38;">${note}</div>` : ''}
     </div>`;
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">${BRAND}</div><div class="date">${dateLabel}</div></div>
-      <div style="font-size:44px; font-weight:800; margin:36px 0 30px;">${t('시장 한눈에', 'Markets at a glance')}</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">${tiles}</div>
-      <div style="font-size:25px; color:#898781; margin-top:28px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
+      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div style="font-size:42px; font-weight:800; margin:26px 0 22px;">${t('시장 한눈에', 'Markets at a glance')}</div>
+      <div style="flex:1; min-height:0; display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:16px;">${tiles}</div>
+      <div style="font-size:23px; color:#898781; margin-top:22px; margin-bottom:30px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
     </div>`;
 }
 
@@ -107,12 +122,12 @@ function newsCard(title, items, dotColor) {
     <div style="background:#1a1a19; border-left:6px solid ${dotColor}; border-radius:14px; padding:26px 30px; margin-bottom:20px;">
       <div style="font-size:33px; font-weight:800; line-height:1.35; margin-bottom:12px;">${t(n.headline_ko, n.headline_en)}${badge}</div>
       <div style="font-size:27px; line-height:1.5; color:#d7d6cf;">${t(n.body_ko, n.body_en)}</div>
-      <div style="font-size:22px; color:#898781; margin-top:14px;">${tf(n, 'src')} · ${tf(n, 'time')}</div>
+      <div style="font-size:22px; color:#898781; margin-top:14px;">${n.src} · ${n.time}</div>
     </div>`;
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">${BRAND}</div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
       <div style="display:flex; align-items:center; gap:16px; margin:32px 0 26px;">
         <span style="width:18px; height:18px; border-radius:50%; background:${dotColor};"></span>
         <span style="font-size:42px; font-weight:800;">${title}</span>
@@ -129,7 +144,7 @@ function cardSchedule() {
     const hi = s.importance === 'high';
     return `
     <div style="display:flex; gap:22px; align-items:flex-start; background:#1a1a19; border-left:6px solid ${hi ? '#e0a94f' : 'rgba(255,255,255,0.14)'}; border-radius:14px; padding:24px 28px; margin-bottom:18px;">
-      <div style="min-width:170px; font-size:26px; font-weight:800; color:${hi ? '#e0a94f' : '#c3c2b7'}; font-variant-numeric:tabular-nums; padding-top:3px;">${tf(s, 'time')}</div>
+      <div style="min-width:170px; font-size:26px; font-weight:800; color:${hi ? '#e0a94f' : '#c3c2b7'}; font-variant-numeric:tabular-nums; padding-top:3px;">${s.time}</div>
       <div style="flex:1;">
         <div style="font-size:30px; font-weight:800; line-height:1.35;">${t(s.title_ko, s.title_en)}${hi ? `<span style="font-size:20px; font-weight:700; color:#e0a94f; background:rgba(224,169,79,0.14); border-radius:8px; padding:4px 12px; margin-left:12px; vertical-align:middle;">${t('주목', 'Watch')}</span>` : ''}</div>
         ${s.detail_ko || s.detail_en ? `<div style="font-size:25px; line-height:1.5; color:#a9a89f; margin-top:8px;">${t(s.detail_ko, s.detail_en)}</div>` : ''}
@@ -138,7 +153,7 @@ function cardSchedule() {
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">${BRAND}</div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
       <div style="display:flex; align-items:center; gap:16px; margin:32px 0 26px;">
         <span style="width:18px; height:18px; border-radius:50%; background:#e0a94f;"></span>
         <span style="font-size:42px; font-weight:800;">${t(data.schedule_title_ko, data.schedule_title_en)}</span>
@@ -155,7 +170,7 @@ function cardOutro() {
   const nextBrief = t(data.next_brief_ko, data.next_brief_en);
   return `
     <div class="pad" style="justify-content:center; align-items:center; text-align:center;">
-      <div class="brand" style="font-size:40px; margin-bottom:40px;">${BRAND}</div>
+      <div class="brand" style="font-size:40px; margin-bottom:40px;">luckyon<span class="k"> 브리핑</span></div>
       <div style="font-size:52px; font-weight:800; line-height:1.3;">${t(data.outro_tagline_ko, data.outro_tagline_en) || t('매일 아침·저녁, 경제와 AI를<br>한눈에 정리합니다', 'Economy & AI at a glance,<br>every morning & night')}</div>
       ${nextBrief ? `<div style="font-size:32px; font-weight:700; color:#3987e5; margin-top:36px;">${nextBrief}</div>` : ''}
       <div style="font-size:34px; color:#c3c2b7; margin-top:44px; line-height:1.5;">${t('팔로우하고 놓치지 마세요', 'Follow so you never miss it')}<br>🔖 ${t('저장', 'Save')} · 📤 ${t('공유', 'Share')} · 💬 ${t('댓글', 'Comment')}</div>
