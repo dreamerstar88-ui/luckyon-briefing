@@ -4,6 +4,15 @@
 luckyon 브리핑 pm 세션의 markets 10개 타일 중 FMP·Alpha Vantage·PlayMCP로 못 채우던
 마지막 2개 항목(지수 선물)을 채우기 위한 용도.
 
+## APIFY_TOKEN 두 가지 경로
+
+- **Claude 세션 환경변수**: `APIFY_TOKEN`을 세션 환경변수로 넣으면 `scripts/fetch-futures.mjs`가
+  매 pm 세션마다 직접 액터를 호출한다.
+- **GitHub Actions 캐시 (세션 환경변수 저장이 안 될 때)**: `../../.github/workflows/futures-cache.yml`이
+  평일 20:20 KST에 저장소 시크릿의 `APIFY_TOKEN`으로 직접 조회해 `data/futures-cache.json`에 커밋한다.
+  `fetch-futures.mjs`는 세션에 토큰이 없으면 이 캐시(6시간 이내)를 자동으로 쓴다. 저장소
+  Settings → Secrets and variables → Actions 에 `APIFY_TOKEN`을 등록하면 된다.
+
 ## 채택: 스토어 액터 사용 (커스텀 배포 불필요)
 
 `scripts/fetch-futures.mjs` 는 아래 스토어 액터를 그대로 호출하도록 맞춰져 있습니다

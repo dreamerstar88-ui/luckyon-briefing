@@ -1,0 +1,65 @@
+name: Futures Cache
+
+# 저녁 브리핑(pm, 20:35 KST) 직전에 지수 선물(S&P 500·나스닥) 시세를 Apify로 조회해
+# data/futures-cache.json 에 커밋해 둔다. Claude 세션 환경변수에 APIFY_TOKEN 을 못 넣는
+# 경우(플랫폼 저장 한도 등)를 위한 대체 경로 — scripts/fetch-futures.mjs 가 이 캐시를 읽는다.
+# 필요한 사전 준비: 저장소 Settings → Secrets and variables → Actions 에 APIFY_TOKEN 시크릿 등록.
+
+on:
+  schedule:
+    - cron: '20 11 * * 1-5' # 11:20 UTC = 20:20 KST, 월~금
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: futures-cache
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        if: env.APIFY_TOKEN != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch futures and write cache
+        if: env.APIFY_TOKEN != ''
+        run: |
+          set -e
+          tiles=$(node scripts/fetch-futures.mjs)
+          mkdir -p data
+          fetched_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          node -e "
+            const fs = require('fs');
+            const tiles = JSON.parse(process.argv[1]);
+            const cache = { fetchedAt: process.argv[2], tiles };
+            fs.writeFileSync('data/futures-cache.json', JSON.stringify(cache, null, 2) + '\n');
+          " "$tiles" "$fetched_at"
+
+      - name: Commit and push cache
+        if: env.APIFY_TOKEN != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/futures-cache.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh futures cache [skip ci]"
+            git push
+          fi
+
+      - name: Warn if secret missing
+        if: env.APIFY_TOKEN == ''
+        run: |
+          echo "::warning::APIFY_TOKEN secret not set — skipping futures fetch. Add it under Settings > Secrets and variables > Actions."
