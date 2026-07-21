@@ -16,7 +16,7 @@
     { "label": "US 10Y", "value": "4.59%", "delta": "▼ 0.01%p", "dir": "down", "note_ko": "소폭 하락 · 인플레 우려 완화 조짐", "note_en": "Ticks down · inflation fears ease slightly" },
     { "label": "USD/KRW", "value": "1,473", "value_sub": "· DXY 100.9", "delta": "▼ 0.34%", "dir": "down", "note_ko": "오늘 종가 · 코스피 강세에 달러 매도 우위", "note_en": "Today's close · dollar-selling on Kospi rally" },
     { "label": "Gold", "value": "$4,063", "delta": "▲ 1.17%", "dir": "up", "note_ko": "금리 안정 속 실물자산 매수세 유입", "note_en": "Buying returns as rates hold steady" },
-    { "label": "WTI", "value": "$82.47", "delta": "▼ 0.9%", "dir": "down", "note_ko": "브렌트는 88.87달러 · 휴전 기대에 보합권 하락", "note_en": "Brent at $88.87 · little changed to lower on ceasefire hopes" },
+    { "label": "WTI", "value": "$82.47", "delta": "▼ 0.9%", "dir": "down", "note_ko": "브렌트는 88.26달러 · 휴전 기대에 보합권 하락", "note_en": "Brent at $88.26 · little changed to lower on ceasefire hopes" },
     { "label": "Bitcoin", "value": "$66,205", "delta": "▲ 1.52%", "dir": "up", "note_ko": "24시간 거래 지속, 6.6만달러대 회복", "note_en": "Trades 24/7 · back above $66K" }
   ],
   "market_note_ko": "S&P500·나스닥은 美 개장 전 선물, 코스피·원달러는 오늘 종가 기준입니다. 美·이란 '10일 휴전' 중재안에 유가는 내리고 위험자산은 반등했습니다.",
@@ -46,8 +46,8 @@
     {
       "headline_ko": "美·이란 '10일 휴전' 중재안 부상…유가 하락, 브렌트 88달러대로",
       "headline_en": "Mediators Float 10-Day US-Iran Truce; Oil Slips With Brent Near $88",
-      "body_ko": "카타르·이집트 등 중재국들이 미국과 이란에 10일간 교전 중단과 호르무즈 해협 항로 재개방을 골자로 한 휴전안을 제시했습니다. 양측 모두 아직 수용하지 않았지만 기대감에 브렌트유는 88.87달러, WTI는 82.47달러로 보합권에서 밀렸고 美 증시 선물도 반등했습니다.",
-      "body_en": "Qatar, Egypt and other mediators presented Washington and Tehran a 10-day ceasefire proposal centered on halting strikes and reopening Hormuz shipping lanes. Neither side has accepted yet, but the prospect eased Brent to $88.87 and WTI to $82.47, while US futures rebounded.",
+      "body_ko": "카타르 등 중재국들이 미국과 이란에 10일간 교전 중단과 호르무즈 해협 항로 재개방을 골자로 한 휴전안을 제시했습니다. 양측 모두 아직 수용하지 않았지만 기대감에 브렌트유는 88.26달러, WTI는 82.47달러로 보합권에서 밀렸고 美 증시 선물도 반등했습니다.",
+      "body_en": "Qatar and other mediators presented Washington and Tehran a 10-day ceasefire proposal centered on halting strikes and reopening Hormuz shipping lanes. Neither side has accepted yet, but the prospect eased Brent to $88.26 and WTI to $82.47, while US futures rebounded.",
       "src": "CNBC / 아주경제", "time": "7/21 보도"
     },
     {
@@ -121,13 +121,13 @@
   "schedule": [
     { "time": "22:30", "title_ko": "뉴욕증시 개장", "title_en": "NYSE/Nasdaq open", "detail_ko": "반도체주 프리마켓 랠리가 정규장까지 이어질지, 이란 휴전 기대가 지속될지 주목", "detail_en": "Watch whether the premarket chip rally holds into the regular session and ceasefire hopes persist", "importance": "high" },
     { "time": "美 개장 전", "title_ko": "찰스슈왑·노바티스 등 실적 발표", "title_en": "Charles Schwab, Novartis earnings", "detail_ko": "빅테크 실적시즌 개막 초입 · 금융·헬스케어 업종 가늠자", "detail_en": "Early earnings-season read from financials and healthcare", "importance": "mid" },
-    { "time": "수시", "title_ko": "美·이란 '10일 휴전' 협상 진전 여부", "title_en": "US-Iran 10-day ceasefire talks", "detail_ko": "카타르·이집트 등 중재안에 양측 수용 여부 촉각 · 타결 시 유가·증시 추가 반응 가능", "detail_en": "Watch for acceptance of the mediators' truce plan · a deal could move oil and stocks further", "importance": "high" },
+    { "time": "수시", "title_ko": "美·이란 '10일 휴전' 협상 진전 여부", "title_en": "US-Iran 10-day ceasefire talks", "detail_ko": "카타르 등 중재안에 양측 수용 여부 촉각 · 타결 시 유가·증시 추가 반응 가능", "detail_en": "Watch for acceptance of the mediators' truce plan · a deal could move oil and stocks further", "importance": "high" },
     { "time": "수(7/23) 새벽 미리보기", "title_ko": "알파벳·테슬라 실적 발표", "title_en": "Alphabet & Tesla earnings (preview)", "detail_ko": "현지 22일 장마감 후 · 한국시간 23일 새벽 · AI 설비투자 가이던스 주목", "detail_en": "After Jul 22 US close · early Jul 23 KST · watch AI capex guidance", "importance": "high" }
   ],
   "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
   "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
-  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 7월 21일(화)\n\n오늘의 핵심: 코스피가 매수 사이드카 속 3.56% 급등한 6,747.95에 마감하며 어제 '검은 월요일' 낙폭을 상당 부분 만회했습니다. 삼성전자(+6.15%)·SK하이닉스(+4.08%)가 반등을 이끌었습니다. 美·이란 갈등은 카타르·이집트 등의 '10일 휴전' 중재안이 부상하며 국면 전환 기대가 커졌고, 이에 브렌트유는 88달러대로 내렸습니다. 반도체주는 엔비디아의 네비우스 지분 공시 등에 힘입어 프리마켓에서 급등(필라델피아 반도체지수 +3.8%)했습니다. 국내에서는 AI기본법 후속 시행령이 오늘부터 시행돼 생성형 AI 표시 의무가 시작됐습니다. 오늘 밤 22:30 뉴욕증시 개장에서 이 흐름이 이어질지 주목됩니다.\n\n👉 매일 아침·저녁 경제·AI 뉴스를 카드로 정리합니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시\n\n#경제뉴스 #주식 #증시 #코스피 #삼성전자 #SK하이닉스 #반도체 #유가 #이란 #휴전 #엔비디아 #네비우스 #AI기본법 #비트코인 #AI #luckyon",
-  "caption_en": "📊 luckyon Evening Brief · Tuesday, July 21, 2026\n\nTonight: The Kospi jumped 3.56% to 6,747.95 on a buy-side sidecar, clawing back much of yesterday's 'Black Monday' plunge as Samsung Electronics (+6.15%) and SK Hynix (+4.08%) led the rebound. On the US-Iran front, mediators including Qatar and Egypt floated a 10-day ceasefire, and Brent crude slipped to the high-$80s on the news. Chip stocks surged premarket (Philadelphia Semiconductor Index +3.8%) after Nvidia disclosed a 9.3% stake in Nebius. In Korea, follow-up rules under the AI Framework Act took effect today, mandating labeling for generative AI content. Watch whether the rally holds into tonight's 10:30 PM KST NYSE open.\n\n👉 Daily economy & AI news, in cards, morning & night. Follow so you don't miss it!\nSaves 🔖 & shares 📤 welcome.\n\n☀️ Next brief — 8 AM KST tomorrow\n\n#economy #stocks #markets #kospi #samsung #skhynix #semiconductors #oil #iran #ceasefire #nvidia #nebius #AIact #bitcoin #AI #luckyon",
+  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 7월 21일(화)\n\n오늘의 핵심: 코스피가 매수 사이드카 속 3.56% 급등한 6,747.95에 마감하며 어제 '검은 월요일' 낙폭을 상당 부분 만회했습니다. 삼성전자(+6.15%)·SK하이닉스(+4.08%)가 반등을 이끌었습니다. 美·이란 갈등은 카타르 등의 '10일 휴전' 중재안이 부상하며 국면 전환 기대가 커졌고, 이에 브렌트유는 88달러대로 내렸습니다. 반도체주는 엔비디아의 네비우스 지분 공시 등에 힘입어 프리마켓에서 급등(필라델피아 반도체지수 +3.8%)했습니다. 국내에서는 AI기본법 후속 시행령이 오늘부터 시행돼 생성형 AI 표시 의무가 시작됐습니다. 오늘 밤 22:30 뉴욕증시 개장에서 이 흐름이 이어질지 주목됩니다.\n\n👉 매일 아침·저녁 경제·AI 뉴스를 카드로 정리합니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시\n\n#경제뉴스 #주식 #증시 #코스피 #삼성전자 #SK하이닉스 #반도체 #유가 #이란 #휴전 #엔비디아 #네비우스 #AI기본법 #비트코인 #AI #luckyon",
+  "caption_en": "📊 luckyon Evening Brief · Tuesday, July 21, 2026\n\nTonight: The Kospi jumped 3.56% to 6,747.95 on a buy-side sidecar, clawing back much of yesterday's 'Black Monday' plunge as Samsung Electronics (+6.15%) and SK Hynix (+4.08%) led the rebound. On the US-Iran front, Qatar and other mediators floated a 10-day ceasefire, and Brent crude slipped to the high-$80s on the news. Chip stocks surged premarket (Philadelphia Semiconductor Index +3.8%) after Nvidia disclosed a 9.3% stake in Nebius. In Korea, follow-up rules under the AI Framework Act took effect today, mandating labeling for generative AI content. Watch whether the rally holds into tonight's 10:30 PM KST NYSE open.\n\n👉 Daily economy & AI news, in cards, morning & night. Follow so you don't miss it!\nSaves 🔖 & shares 📤 welcome.\n\n☀️ Next brief — 8 AM KST tomorrow\n\n#economy #stocks #markets #kospi #samsung #skhynix #semiconductors #oil #iran #ceasefire #nvidia #nebius #AIact #bitcoin #AI #luckyon",
   "sources": [
     "https://www.mt.co.kr/stock/2026/07/21/2026072115201065462",
     "https://www.edaily.co.kr/News/Read?newsId=04493606645516816",
