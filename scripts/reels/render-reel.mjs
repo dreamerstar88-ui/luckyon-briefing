@@ -1,12 +1,12 @@
 // render-reel.mjs
-// data/reels/<date>-open30.json 을 읽어 인스타 릴스용 세로 영상(1080x1920)을 만든다.
+// data/reels/<stamp>.json 을 읽어 인스타 릴스용 세로 영상(1080x1920)을 만든다.
 //
 // 컨셉: "장 보다가 스마트폰으로 차트를 찍어서, 그 위에 펜으로 혼잣말을 갈겨쓴 화면"
 //   - 차트가 화면을 꽉 채운다 (정보 카드 아님)
 //   - 손글씨는 '그날 차트가 비워 둔 자리'에 쓴다. 캔들이 아래로 흐르면 위쪽 여백에,
 //     위로 오르면 아래쪽 여백에 — 매일 위치가 달라진다.
 //
-// 사용법: node scripts/reels/render-reel.mjs <date> [ko|en]
+// 사용법: node scripts/reels/render-reel.mjs <stamp|latest> [ko|en]
 // 산출물: cards/reels/<date>/<lang>/reel.mp4 (+ cover.png)
 
 import { chromium } from 'playwright';
@@ -17,24 +17,34 @@ import os from 'node:os';
 import path from 'node:path';
 import { buildComment } from './comment.mjs';
 
-const date = process.argv[2];
+const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const dataDir = path.join(root, 'data', 'reels');
+
+// 스탬프를 생략하면 마지막으로 수집한 구간을 쓴다
+let stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
-if (!date) {
-  console.error('Usage: node scripts/reels/render-reel.mjs <YYYY-MM-DD> [ko|en]');
-  process.exit(1);
+if (!stamp || stamp === 'latest') {
+  const p = path.join(dataDir, 'latest.txt');
+  if (!fs.existsSync(p)) {
+    console.error('Usage: node scripts/reels/render-reel.mjs <stamp|latest> [ko|en]');
+    console.error('  (먼저 scripts/reels/fetch-window.mjs 를 실행하세요)');
+    process.exit(1);
+  }
+  stamp = fs.readFileSync(p, 'utf8').trim();
 }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
-const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'reels', `${date}-open30.json`), 'utf8'));
-const outDir = path.join(root, 'cards', 'reels', date, lang);
+const data = JSON.parse(fs.readFileSync(path.join(dataDir, `${stamp}.json`), 'utf8'));
+const outDir = path.join(root, 'cards', 'reels', stamp, lang);
 fs.mkdirSync(outDir, { recursive: true });
 
-const ctx = data.context || {};
+// 상황 문맥(지표 발표 전 / 방금 나온 뉴스)은 절차서가 JSON 에 넣어 준다.
+// atOpen 은 수집 단계에서 판정한 값 — 화법을 개장 직후 / 장 중으로 가른다.
+const ctx = { ...(data.context || {}), atOpen: !!data.atOpen };
 const t = (ko, en) => (lang === 'ko' ? ko : en);
 
 const nasdaq = data.symbols.nasdaq;
 const sp500 = data.symbols.sp500;
-const comment = buildComment(nasdaq, sp500, ctx, `${date}-${data.session}`);
+const comment = buildComment(nasdaq, sp500, ctx, stamp);
 const lines = lang === 'ko' ? comment.ko : comment.en;
 
 // ---------- 타이밍 ----------
@@ -51,6 +61,11 @@ const PEN = '#ffd54a';
 
 const fontB64 = fs.readFileSync(path.join(root, 'assets', 'fonts', 'NanumPenScript-Korean.woff2')).toString('base64');
 const fmt = (n, d = 2) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// epoch(초) → 미 동부시간 "HH:MM"
+const etHM = (sec) => new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: false,
+}).format(new Date(sec * 1000));
 
 // ---------- 차트 기하 ----------
 // 화면에서 차트가 차지하는 영역 (상단 헤더 아래 ~ 릴스 UI 가림선 위)
@@ -202,8 +217,8 @@ function html(frame) {
   const spPct = ((spShown[spShown.length - 1].c - sp500.bars[0].o) / sp500.bars[0].o) * 100;
   const spCol = spPct >= 0 ? UP : DOWN;
 
-  const minsIn = Math.round((reveal / nasdaq.bars.length) * 30);
-  const clock = minsIn >= 30 ? '10:00' : `09:${String(30 + minsIn).padStart(2, '0')}`;
+  // 시계는 실제로 그려진 마지막 봉의 시각을 보여 준다 (구간이 언제든 상관없이 맞는다)
+  const clock = etHM(shown[shown.length - 1].t);
 
   const penHtml = lines.map((text, i) => {
     const startAt = CHART_SEC + PER_LINE_SEC * i;
@@ -263,7 +278,8 @@ async function main() {
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 
-  console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${date} — ${TOTAL_FRAMES}프레임 (${TOTAL_SEC.toFixed(1)}초)`);
+  console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${stamp} — ${data.startEt}→${data.endEt} ET`
+    + `${data.atOpen ? ' (개장 직후)' : ''} · ${TOTAL_FRAMES}프레임 ${TOTAL_SEC.toFixed(1)}초`);
   console.log(`  펜: ${lines.join(' / ')}`);
 
   // 글자를 실제로 재서, 캔들을 가리지 않고 들어갈 크기와 자리를 찾는다

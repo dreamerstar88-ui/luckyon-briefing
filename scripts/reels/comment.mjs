@@ -105,12 +105,12 @@ const POOL = {
   },
   quiet: {
     ko: [
-      [`30분째 제자리`, `이렇게 조용해도 되나`, `불안한데`],
+      [`계속 제자리`, `이렇게 조용해도 되나`, `불안한데`],
       [`아무일도 안 일어남`, `이러다 갑자기 튀지`],
       [`숨만 쉬는 중`, `누가 먼저 움직이나 보자`],
     ],
     en: [
-      [`30 min, nothing`, `is it supposed to be this quiet`, `feels off`],
+      [`Going nowhere`, `is it supposed to be this quiet`, `feels off`],
       [`Absolutely nothing happening`, `so it'll snap later`],
       [`Just breathing`, `who blinks first`],
     ],
@@ -125,37 +125,56 @@ const POOL = {
       [`Nasdaq and S&P`, `going separate ways`, `confusing`],
     ],
   },
+  // 아래 세 가지는 "창의 앞쪽"을 가리키는 표현이 들어가므로,
+  // 창이 개장에서 시작할 때(open)와 장 중일 때(roll)를 나눠 둔다.
   fadeFromHigh: {
-    ko: [
-      [`출발은 좋았는데`, `왜 자꾸 밀리냐`],
-      [`위에서부터 계속 흘러내림`, `잠깐 쉬는거였으면`],
-      [`아까 그 기세 어디감`, `...`],
-    ],
-    en: [
-      [`Started so well`, `why does it keep sliding`],
-      [`Bleeding down from the top`, `just a breather right?`],
-      [`Where'd that momentum go`, `...`],
-    ],
+    ko: {
+      open: [
+        [`출발은 좋았는데`, `왜 자꾸 밀리냐`],
+        [`아까 그 기세 어디감`, `...`],
+      ],
+      roll: [
+        [`잘 가더니 갑자기`, `왜 자꾸 밀리냐`],
+        [`위에서부터 계속 흘러내림`, `잠깐 쉬는거였으면`],
+        [`아까 그 기세 어디감`, `...`],
+      ],
+    },
+    en: {
+      open: [[`Started so well`, `why does it keep sliding`], [`Where'd that momentum go`, `...`]],
+      roll: [[`Was going fine, then`, `why does it keep sliding`], [`Where'd that momentum go`, `...`]],
+    },
   },
   bounceFromLow: {
-    ko: [
-      [`열자마자 훅 빠지더니`, `슬금슬금 올라오는 중`, `이대로 가자`],
-      [`바닥 찍고 기어올라옴`, `살아나는건가 이거`],
-    ],
-    en: [
-      [`Dumped at the open`, `crawling back now`, `keep going`],
-      [`Bottomed and climbing`, `is it waking up?`],
-    ],
+    ko: {
+      open: [
+        [`열자마자 훅 빠지더니`, `슬금슬금 올라오는 중`, `이대로 가자`],
+        [`바닥 찍고 기어올라옴`, `살아나는건가 이거`],
+      ],
+      roll: [
+        [`훅 빠지더니`, `슬금슬금 올라오는 중`, `이대로 가자`],
+        [`바닥 찍고 기어올라옴`, `살아나는건가 이거`],
+      ],
+    },
+    en: {
+      open: [[`Dumped at the open`, `crawling back now`, `keep going`], [`Bottomed and climbing`, `waking up?`]],
+      roll: [[`Dumped, then`, `crawling back now`, `keep going`], [`Bottomed and climbing`, `waking up?`]],
+    },
   },
   recovered: {
-    ko: [
-      [`초반엔 흔들리더니`, `결국 올라왔네`, `버틴 보람이 있다`],
-      [`아침에 놀랐는데`, `다시 위로`, `휴...`],
-    ],
-    en: [
-      [`Shaky start`, `but it came back`, `worth holding on`],
-      [`Scared me earlier`, `back up now`, `phew`],
-    ],
+    ko: {
+      open: [
+        [`초반엔 흔들리더니`, `결국 올라왔네`, `버틴 보람이 있다`],
+        [`아침에 놀랐는데`, `다시 위로`, `휴...`],
+      ],
+      roll: [
+        [`흔들리더니`, `결국 올라왔네`, `버틴 보람이 있다`],
+        [`아까 놀랐는데`, `다시 위로`, `휴...`],
+      ],
+    },
+    en: {
+      open: [[`Shaky start`, `but it came back`, `worth holding on`], [`Scared me earlier`, `back up now`, `phew`]],
+      roll: [[`Wobbled, then`, `came right back`, `worth holding on`], [`Scared me earlier`, `back up now`, `phew`]],
+    },
   },
   sinking: {
     ko: [
@@ -222,11 +241,19 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
   const spPct = sp500.stats.pctFromOpen;
   const diverging = (p < -0.05 && spPct > 0.05) || (p > 0.05 && spPct < -0.05);
 
+  // 창이 개장에서 시작하면 '개장 직후' 화법, 아니면 장 중 화법을 쓴다.
+  const variant = ctx.atOpen ? 'open' : 'roll';
+  const resolve = (side, arg) => {
+    if (typeof side === 'function') return side(arg);
+    if (Array.isArray(side)) return side;
+    return side[variant] || side.roll || side.open;
+  };
   const out = (key, arg) => {
     const g = POOL[key];
-    const koArr = typeof g.ko === 'function' ? g.ko(arg.ko) : g.ko;
-    const enArr = typeof g.en === 'function' ? g.en(arg.en) : g.en;
-    return { ko: pick(koArr, seed), en: pick(enArr, seed) };
+    return {
+      ko: pick(resolve(g.ko, arg.ko), seed),
+      en: pick(resolve(g.en, arg.en), seed),
+    };
   };
 
   if (ctx.pendingEvent) {
