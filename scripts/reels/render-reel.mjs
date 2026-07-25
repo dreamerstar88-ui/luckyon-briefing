@@ -180,7 +180,7 @@ async function fitText(page) {
   let fallback = null;
   for (const size of PEN_SIZES) {
     const m = await measure(page, size);
-    const w = m.w + 24, h = m.h + 46; // 밑줄 자리 포함
+    const w = m.w + 24, h = m.h + 16;
     const s = findFreeSpot(geo, w, h);
     if (s.fits) return { size, w, h, spot: s };
     if (!fallback) fallback = { size, w, h, spot: s };
@@ -215,9 +215,6 @@ function html(frame) {
       clip-path:inset(0 ${((1 - prog) * 100).toFixed(2)}% -20% 0);">${text}</div>`;
   }).join('');
 
-  const uEnd = CHART_SEC + PER_LINE_SEC * lines.length;
-  const uProg = Math.max(0, Math.min(1, (sec - uEnd) / 0.55));
-
   return `<!doctype html><html><head><meta charset="utf-8"><style>
     @font-face{font-family:'Pen';src:url(data:font/woff2;base64,${fontB64}) format('woff2');font-display:block;}
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -246,8 +243,6 @@ function html(frame) {
       ${chartSvg(geo, reveal)}
       <div class="pen" style="position:absolute;left:${spot.left.toFixed(0)}px;top:${spot.top.toFixed(0)}px;width:${BOX_W.toFixed(0)}px;">
         ${penHtml}
-        <div style="height:9px;width:${(uProg * 78).toFixed(1)}%;margin-top:18px;margin-left:6px;
-          background:${PEN};border-radius:6px;opacity:0.92;transform:rotate(-0.9deg);transform-origin:left center;"></div>
       </div>
       <!-- 차트 하단: S&P 한 줄 -->
       <div style="position:absolute;left:34px;bottom:16px;display:flex;align-items:baseline;gap:14px;">
