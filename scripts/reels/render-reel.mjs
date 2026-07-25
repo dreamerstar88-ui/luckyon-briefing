@@ -1,15 +1,13 @@
 // render-reel.mjs
 // data/reels/<date>-open30.json 을 읽어 인스타 릴스용 세로 영상(1080x1920)을 만든다.
 //
-// 컨셉: "주린이가 장 보다가 스마트폰으로 차트를 찍어서, 그 위에 펜으로 지금 기분을 갈겨쓴 화면"
-//   - 배경은 트레이딩 앱 화면처럼 보이는 캔들 차트 하나 (정보 카드가 아니다)
-//   - 그 위에 손글씨가 한 줄씩 '써지듯' 나타난다
-//   - 움직임은 최소한. 정지 캡처처럼 보이되 릴스로 올릴 수 있는 영상.
+// 컨셉: "장 보다가 스마트폰으로 차트를 찍어서, 그 위에 펜으로 혼잣말을 갈겨쓴 화면"
+//   - 차트가 화면을 꽉 채운다 (정보 카드 아님)
+//   - 손글씨는 '그날 차트가 비워 둔 자리'에 쓴다. 캔들이 아래로 흐르면 위쪽 여백에,
+//     위로 오르면 아래쪽 여백에 — 매일 위치가 달라진다.
 //
 // 사용법: node scripts/reels/render-reel.mjs <date> [ko|en]
 // 산출물: cards/reels/<date>/<lang>/reel.mp4 (+ cover.png)
-//
-// 의존성: playwright(chromium), ffmpeg-static
 
 import { chromium } from 'playwright';
 import ffmpegPath from 'ffmpeg-static';
@@ -31,81 +29,167 @@ const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'reels', `${date
 const outDir = path.join(root, 'cards', 'reels', date, lang);
 fs.mkdirSync(outDir, { recursive: true });
 
-// 상황 문맥(지표 발표 전 / 방금 나온 뉴스)은 절차서에서 JSON 에 넣어 준다.
 const ctx = data.context || {};
 const t = (ko, en) => (lang === 'ko' ? ko : en);
 
 const nasdaq = data.symbols.nasdaq;
 const sp500 = data.symbols.sp500;
-const comment = buildComment(nasdaq, sp500, ctx);
+const comment = buildComment(nasdaq, sp500, ctx, `${date}-${data.session}`);
 const lines = lang === 'ko' ? comment.ko : comment.en;
 
 // ---------- 타이밍 ----------
 const FPS = 30;
-const CHART_SEC = 1.4;             // 차트가 그려지는 구간 (짧게 — 캡처처럼 보이도록)
-const PER_LINE_SEC = 0.75;         // 손글씨 한 줄이 써지는 시간
-const HOLD_SEC = 2.6;              // 다 쓴 뒤 머무는 시간
+const CHART_SEC = 1.4;
+const PER_LINE_SEC = 0.8;
+const HOLD_SEC = 2.8;
 const TOTAL_SEC = CHART_SEC + PER_LINE_SEC * lines.length + HOLD_SEC;
 const TOTAL_FRAMES = Math.round(TOTAL_SEC * FPS);
 
-const UP = '#e66767';   // 한국식: 상승 빨강
-const DOWN = '#3987e5'; // 하락 파랑
-const PEN = '#ffd54a';  // 형광펜 노랑
+const UP = '#e66767';
+const DOWN = '#3987e5';
+const PEN = '#ffd54a';
 
 const fontB64 = fs.readFileSync(path.join(root, 'assets', 'fonts', 'NanumPenScript-Korean.woff2')).toString('base64');
-
 const fmt = (n, d = 2) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 
-// ---------- 캔들 차트 (화면을 꽉 채우는 앱 화면처럼) ----------
-function chartSvg(sym, reveal) {
-  const W = 1080, H = 700;
-  const padL = 40, padR = 150, padT = 30, padB = 30;
-  const bars = sym.bars;
-  const shown = bars.slice(0, Math.max(1, reveal));
+// ---------- 차트 기하 ----------
+// 화면에서 차트가 차지하는 영역 (상단 헤더 아래 ~ 릴스 UI 가림선 위)
+const CHART = { x: 0, y: 300, w: 1080, h: 1230 };
+const PAD = { l: 34, r: 158, t: 24, b: 96 };
 
+function geometry(sym) {
+  const bars = sym.bars;
   const openPx = bars[0].o;
   let hi = Math.max(...bars.map((b) => b.h), openPx);
   let lo = Math.min(...bars.map((b) => b.l), openPx);
-  const pad = (hi - lo) * 0.16 || 1;
+  const pad = (hi - lo) * 0.14 || 1;
   hi += pad; lo -= pad;
 
-  const plotW = W - padL - padR, plotH = H - padT - padB;
-  const x = (i) => padL + (plotW / bars.length) * (i + 0.5);
-  const y = (p) => padT + plotH * (1 - (p - lo) / (hi - lo));
-  const cw = Math.max(7, (plotW / bars.length) * 0.6);
+  const plotL = PAD.l, plotR = CHART.w - PAD.r;
+  const plotT = PAD.t, plotB = CHART.h - PAD.b;
+  const colW = (plotR - plotL) / bars.length;
+  return {
+    bars, openPx, hi, lo, plotL, plotR, plotT, plotB, colW,
+    x: (i) => plotL + colW * (i + 0.5),
+    y: (p) => plotT + (plotB - plotT) * (1 - (p - lo) / (hi - lo)),
+  };
+}
+
+// 캔들이 비워 둔 가장 넓은 자리를 찾는다.
+// 글자 상자(boxW x boxH)가 들어갈 수 있는 구간을 가로로 훑으며,
+// 캔들 위쪽 여백과 아래쪽 여백 중 가장 여유 있는 곳을 고른다.
+function findFreeSpot(g, boxW, boxH) {
+  const { bars, plotL, plotR, plotT, plotB, colW, y } = g;
+  const top = bars.map((b) => y(b.h));   // 값이 작을수록 화면 위
+  const bot = bars.map((b) => y(b.l));
+  const win = Math.min(bars.length, Math.max(1, Math.ceil(boxW / colW)));
+
+  let best = null;
+  for (let i = 0; i + win <= bars.length; i++) {
+    const minTop = Math.min(...top.slice(i, i + win));
+    const maxBot = Math.max(...bot.slice(i, i + win));
+    const above = minTop - plotT;
+    const below = plotB - maxBot;
+    const left = Math.min(plotL + i * colW, plotR - boxW);
+
+    // 여백이 글자 상자보다 커야 후보가 된다. 여유가 클수록 점수가 높다.
+    if (above >= boxH && (!best || above > best.score)) {
+      best = { score: above, left, top: plotT + (above - boxH) / 2 };
+    }
+    if (below >= boxH && (!best || below > best.score)) {
+      best = { score: below, left, top: maxBot + (below - boxH) / 2 };
+    }
+  }
+  // 어디에도 안 들어가면 여백이 그나마 큰 쪽에 얹는다 (fits=false → 글자를 줄여 재시도)
+  const fits = !!best;
+  if (!best) {
+    const aboveAll = Math.min(...top) - plotT;
+    const belowAll = plotB - Math.max(...bot);
+    best = aboveAll >= belowAll
+      ? { left: plotL + 16, top: plotT + 10 }
+      : { left: plotL + 16, top: plotB - boxH - 10 };
+  }
+  return {
+    fits,
+    left: Math.max(plotL + 8, Math.min(best.left, plotR - boxW)),
+    top: Math.max(plotT + 8, Math.min(best.top, plotB - boxH)),
+  };
+}
+
+function chartSvg(g, reveal) {
+  const { bars, openPx, plotL, plotR, plotT, plotB, colW, x, y, hi, lo } = g;
+  const shown = bars.slice(0, Math.max(1, reveal));
+  const cw = Math.max(8, colW * 0.6);
+
+  const grid = [0.25, 0.5, 0.75].map((f) => {
+    const gy = plotT + (plotB - plotT) * f;
+    const gp = lo + (hi - lo) * (1 - f);
+    return `<line x1="${plotL}" y1="${gy.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${gy.toFixed(1)}" stroke="#1f1f1f" stroke-width="1"/>`
+      + `<text x="${(plotR + 14).toFixed(1)}" y="${(gy + 10).toFixed(1)}" fill="#565656" font-size="27" font-family="system-ui">${fmt(gp, 0)}</text>`;
+  }).join('');
+
+  const yOpen = y(openPx);
+  const openLine = `<line x1="${plotL}" y1="${yOpen.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yOpen.toFixed(1)}" stroke="#7a7a72" stroke-width="1.6" stroke-dasharray="10 10"/>`;
 
   const candles = shown.map((b, i) => {
     const col = b.c >= b.o ? UP : DOWN;
     const yo = y(b.o), yc = y(b.c);
-    return `<line x1="${x(i).toFixed(1)}" y1="${y(b.h).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(b.l).toFixed(1)}" stroke="${col}" stroke-width="2.4"/>`
-      + `<rect x="${(x(i) - cw / 2).toFixed(1)}" y="${Math.min(yo, yc).toFixed(1)}" width="${cw.toFixed(1)}" height="${Math.max(2.5, Math.abs(yc - yo)).toFixed(1)}" fill="${col}"/>`;
+    return `<line x1="${x(i).toFixed(1)}" y1="${y(b.h).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(b.l).toFixed(1)}" stroke="${col}" stroke-width="2.6"/>`
+      + `<rect x="${(x(i) - cw / 2).toFixed(1)}" y="${Math.min(yo, yc).toFixed(1)}" width="${cw.toFixed(1)}" height="${Math.max(3, Math.abs(yc - yo)).toFixed(1)}" fill="${col}"/>`;
   }).join('');
-
-  // 가로 눈금 (앱 화면 느낌)
-  const grid = [0.2, 0.4, 0.6, 0.8].map((f) => {
-    const gy = padT + plotH * f;
-    const gp = lo + (hi - lo) * (1 - f);
-    return `<line x1="${padL}" y1="${gy.toFixed(1)}" x2="${(W - padR).toFixed(1)}" y2="${gy.toFixed(1)}" stroke="#232323" stroke-width="1"/>`
-      + `<text x="${(W - padR + 14).toFixed(1)}" y="${(gy + 9).toFixed(1)}" fill="#5c5c5c" font-size="25" font-family="system-ui">${fmt(gp, 0)}</text>`;
-  }).join('');
-
-  const yOpen = y(openPx);
-  const openLine = `<line x1="${padL}" y1="${yOpen.toFixed(1)}" x2="${(W - padR).toFixed(1)}" y2="${yOpen.toFixed(1)}" stroke="#7a7a72" stroke-width="1.6" stroke-dasharray="9 9"/>`;
 
   const cur = shown[shown.length - 1];
   const yCur = y(cur.c);
   const curCol = cur.c >= openPx ? UP : DOWN;
-  const curTag = `<line x1="${padL}" y1="${yCur.toFixed(1)}" x2="${(W - padR).toFixed(1)}" y2="${yCur.toFixed(1)}" stroke="${curCol}" stroke-width="1.6" opacity="0.6"/>`
-    + `<rect x="${(W - padR + 6).toFixed(1)}" y="${(yCur - 23).toFixed(1)}" width="132" height="46" rx="5" fill="${curCol}"/>`
-    + `<text x="${(W - padR + 72).toFixed(1)}" y="${(yCur + 9).toFixed(1)}" fill="#000" font-size="27" font-weight="700" font-family="system-ui" text-anchor="middle">${fmt(cur.c, 0)}</text>`;
+  const tag = `<line x1="${plotL}" y1="${yCur.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yCur.toFixed(1)}" stroke="${curCol}" stroke-width="1.6" opacity="0.65"/>`
+    + `<rect x="${(plotR + 6).toFixed(1)}" y="${(yCur - 25).toFixed(1)}" width="140" height="50" rx="5" fill="${curCol}"/>`
+    + `<text x="${(plotR + 76).toFixed(1)}" y="${(yCur + 10).toFixed(1)}" fill="#000" font-size="29" font-weight="700" font-family="system-ui" text-anchor="middle">${fmt(cur.c, 0)}</text>`;
 
-  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${grid}${openLine}${candles}${curTag}</svg>`;
+  return `<svg width="${CHART.w}" height="${CHART.h}" viewBox="0 0 ${CHART.w} ${CHART.h}" xmlns="http://www.w3.org/2000/svg">${grid}${openLine}${candles}${tag}</svg>`;
+}
+
+// 손글씨 상자 크기는 추정하지 않고 브라우저에서 실제로 재서 쓴다.
+// (글자폭을 어림하면 줄바꿈이 생겨 배치가 어긋난다.)
+// 영어는 같은 내용도 훨씬 넓어지므로, 차트 여백에 들어갈 때까지 크기를 줄인다.
+const PEN_SIZES = [86, 78, 70, 63, 56, 50];
+let PEN_SIZE = PEN_SIZES[0];
+let BOX_W = 600, BOX_H = 300;
+const geo = geometry(nasdaq);
+let spot = { left: geo.plotL + 16, top: geo.plotT + 16 };
+
+async function measure(page, size) {
+  const html = `<!doctype html><html><head><meta charset="utf-8"><style>
+    @font-face{font-family:'Pen';src:url(data:font/woff2;base64,${fontB64}) format('woff2');font-display:block;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{width:1080px;background:#000;}
+    .pen{font-family:'Pen';font-size:${size}px;line-height:1.16;display:inline-block;}
+    .pen div{white-space:nowrap;}
+  </style></head><body>
+    <div class="pen" id="m">${lines.map((l, i) => `<div style="margin-left:${[0, 22, 8][i % 3]}px">${l}</div>`).join('')}</div>
+  </body></html>`;
+  await page.setContent(html, { waitUntil: 'load' });
+  await page.evaluate(() => document.fonts.ready);
+  return page.evaluate(() => {
+    const r = document.getElementById('m').getBoundingClientRect();
+    return { w: Math.ceil(r.width), h: Math.ceil(r.height) };
+  });
+}
+
+// 캔들을 가리지 않고 들어갈 수 있는 가장 큰 글자 크기를 고른다
+async function fitText(page) {
+  let fallback = null;
+  for (const size of PEN_SIZES) {
+    const m = await measure(page, size);
+    const w = m.w + 24, h = m.h + 46; // 밑줄 자리 포함
+    const s = findFreeSpot(geo, w, h);
+    if (s.fits) return { size, w, h, spot: s };
+    if (!fallback) fallback = { size, w, h, spot: s };
+  }
+  return fallback; // 그래도 안 되면 가장 큰 크기로 얹는다
 }
 
 function html(frame) {
   const sec = frame / FPS;
-
-  // 차트 드로잉
   const cp = Math.min(1, sec / CHART_SEC);
   const reveal = Math.max(1, Math.round((1 - Math.pow(1 - cp, 2)) * nasdaq.bars.length));
 
@@ -115,31 +199,24 @@ function html(frame) {
   const col = pct >= 0 ? UP : DOWN;
 
   const spShown = sp500.bars.slice(0, reveal);
-  const spLast = spShown[spShown.length - 1].c;
-  const spPct = ((spLast - sp500.bars[0].o) / sp500.bars[0].o) * 100;
+  const spPct = ((spShown[spShown.length - 1].c - sp500.bars[0].o) / sp500.bars[0].o) * 100;
   const spCol = spPct >= 0 ? UP : DOWN;
 
   const minsIn = Math.round((reveal / nasdaq.bars.length) * 30);
   const clock = minsIn >= 30 ? '10:00' : `09:${String(30 + minsIn).padStart(2, '0')}`;
 
-  // 손글씨: 줄마다 왼쪽부터 써지는 것처럼 clip 폭을 늘린다
   const penHtml = lines.map((text, i) => {
     const startAt = CHART_SEC + PER_LINE_SEC * i;
     const prog = Math.max(0, Math.min(1, (sec - startAt) / PER_LINE_SEC));
     if (prog <= 0) return '';
-    // 줄마다 살짝 다른 기울기 — 손으로 쓴 티
-    const rot = [-1.6, 0.9, -0.7][i % 3];
-    const indent = [0, 26, 12][i % 3];
-    return `<div style="
-        margin-top:${i === 0 ? 0 : 14}px; margin-left:${indent}px;
-        transform:rotate(${rot}deg); transform-origin:left center;
-        clip-path:inset(0 ${((1 - prog) * 100).toFixed(2)}% 0 0);
-      ">${text}</div>`;
+    const rot = [-1.7, 0.8, -0.6][i % 3];
+    const indent = [0, 22, 8][i % 3];
+    return `<div style="margin-left:${indent}px;transform:rotate(${rot}deg);transform-origin:left center;
+      clip-path:inset(0 ${((1 - prog) * 100).toFixed(2)}% -20% 0);">${text}</div>`;
   }).join('');
 
-  // 다 쓰고 난 뒤 밑줄이 그어진다
   const uEnd = CHART_SEC + PER_LINE_SEC * lines.length;
-  const uProg = Math.max(0, Math.min(1, (sec - uEnd) / 0.5));
+  const uProg = Math.max(0, Math.min(1, (sec - uEnd) / 0.55));
 
   return `<!doctype html><html><head><meta charset="utf-8"><style>
     @font-face{font-family:'Pen';src:url(data:font/woff2;base64,${fontB64}) format('woff2');font-display:block;}
@@ -147,46 +224,41 @@ function html(frame) {
     html,body{width:1080px;height:1920px;}
     body{background:#0b0b0b;color:#fff;width:1080px;height:1920px;overflow:hidden;
       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
-    /* 하단 300px 은 릴스 UI(캡션·버튼)가 덮으므로 비워 둔다 */
-    .screen{position:absolute;top:0;left:0;right:0;bottom:300px;display:flex;flex-direction:column;}
-    .pen{font-family:'Pen';color:${PEN};font-size:82px;line-height:1.18;
-      text-shadow:0 3px 14px rgba(0,0,0,0.85);}
+    .pen{font-family:'Pen';color:${PEN};font-size:${PEN_SIZE}px;line-height:1.16;
+      text-shadow:0 2px 10px rgba(0,0,0,0.95),0 0 26px rgba(0,0,0,0.8);}
+    .pen > div{white-space:nowrap;}
   </style></head><body>
-    <div class="screen">
-      <!-- 앱 화면 상단: 종목 / 현재가 -->
-      <div style="padding:132px 44px 0;">
-        <div style="display:flex;align-items:baseline;gap:16px;">
-          <div style="font-size:44px;font-weight:800;letter-spacing:-0.01em;">${t('나스닥 선물', 'Nasdaq Futures')}</div>
-          <div style="font-size:27px;color:#6f6f6f;font-weight:700;">NQ · 1m</div>
-          <div style="margin-left:auto;font-size:27px;color:#6f6f6f;font-weight:700;font-variant-numeric:tabular-nums;">${clock} ET</div>
-        </div>
-        <div style="display:flex;align-items:baseline;gap:20px;margin-top:10px;">
-          <div style="font-size:82px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;">${fmt(last, 2)}</div>
-          <div style="font-size:44px;font-weight:800;color:${col};">${pct >= 0 ? '▲' : '▼'} ${Math.abs(pct).toFixed(2)}%</div>
-        </div>
+    <!-- 상단: 앱 화면처럼 종목/현재가 -->
+    <div style="padding:126px 34px 0;">
+      <div style="display:flex;align-items:baseline;gap:16px;">
+        <div style="font-size:46px;font-weight:800;letter-spacing:-0.01em;">${t('나스닥 선물', 'Nasdaq Futures')}</div>
+        <div style="font-size:28px;color:#6b6b6b;font-weight:700;">NQ · 1m</div>
+        <div style="margin-left:auto;font-size:28px;color:#6b6b6b;font-weight:700;font-variant-numeric:tabular-nums;">${clock} ET</div>
       </div>
-
-      <div style="margin-top:6px;">${chartSvg(nasdaq, reveal)}</div>
-
-      <!-- S&P 는 한 줄 요약으로만 -->
-      <div style="margin:2px 44px 0;padding-top:18px;border-top:1px solid #1e1e1e;
-                  display:flex;align-items:baseline;gap:14px;">
-        <div style="font-size:32px;font-weight:700;color:#9a9a9a;">${t('S&P 500 선물', 'S&P 500 Futures')}</div>
-        <div style="font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;">${fmt(spLast, 2)}</div>
-        <div style="font-size:32px;font-weight:800;color:${spCol};">${spPct >= 0 ? '▲' : '▼'} ${Math.abs(spPct).toFixed(2)}%</div>
+      <div style="display:flex;align-items:baseline;gap:20px;margin-top:8px;">
+        <div style="font-size:84px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;">${fmt(last, 2)}</div>
+        <div style="font-size:46px;font-weight:800;color:${col};">${pct >= 0 ? '▲' : '▼'} ${Math.abs(pct).toFixed(2)}%</div>
       </div>
+    </div>
 
-      <!-- 펜으로 쓴 한마디 -->
-      <div style="margin:40px 52px 0;position:relative;">
-        <div class="pen">${penHtml}</div>
-        <div style="height:9px;width:${(uProg * 62).toFixed(1)}%;margin-top:22px;margin-left:10px;
-                    background:${PEN};border-radius:6px;opacity:0.9;
-                    transform:rotate(-0.8deg);transform-origin:left center;"></div>
+    <!-- 차트 (화면을 꽉 채움) + 그 위에 손글씨 -->
+    <div style="position:absolute;left:${CHART.x}px;top:${CHART.y}px;width:${CHART.w}px;height:${CHART.h}px;">
+      ${chartSvg(geo, reveal)}
+      <div class="pen" style="position:absolute;left:${spot.left.toFixed(0)}px;top:${spot.top.toFixed(0)}px;width:${BOX_W.toFixed(0)}px;">
+        ${penHtml}
+        <div style="height:9px;width:${(uProg * 78).toFixed(1)}%;margin-top:18px;margin-left:6px;
+          background:${PEN};border-radius:6px;opacity:0.92;transform:rotate(-0.9deg);transform-origin:left center;"></div>
       </div>
+      <!-- 차트 하단: S&P 한 줄 -->
+      <div style="position:absolute;left:34px;bottom:16px;display:flex;align-items:baseline;gap:14px;">
+        <div style="font-size:31px;font-weight:700;color:#8e8e8e;">${t('S&P 500 선물', 'S&P 500 Futures')}</div>
+        <div style="font-size:33px;font-weight:800;font-variant-numeric:tabular-nums;color:#ddd;">${fmt(spShown[spShown.length - 1].c, 2)}</div>
+        <div style="font-size:31px;font-weight:800;color:${spCol};">${spPct >= 0 ? '▲' : '▼'} ${Math.abs(spPct).toFixed(2)}%</div>
+      </div>
+    </div>
 
-      <div style="margin-top:auto;padding:0 44px 26px;font-size:23px;color:#4a4a4a;">
-        ${t('※ 투자 권유가 아닌 시황 기록', '※ Market log, not investment advice')} · luckyon
-      </div>
+    <div style="position:absolute;left:34px;top:${CHART.y + CHART.h + 14}px;font-size:23px;color:#454545;">
+      ${t('※ 투자 권유가 아닌 시황 기록', '※ Market log, not investment advice')} · luckyon
     </div>
   </body></html>`;
 }
@@ -199,6 +271,11 @@ async function main() {
   console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${date} — ${TOTAL_FRAMES}프레임 (${TOTAL_SEC.toFixed(1)}초)`);
   console.log(`  펜: ${lines.join(' / ')}`);
 
+  // 글자를 실제로 재서, 캔들을 가리지 않고 들어갈 크기와 자리를 찾는다
+  const fit = await fitText(page);
+  PEN_SIZE = fit.size; BOX_W = fit.w; BOX_H = fit.h; spot = fit.spot;
+  console.log(`  글자 ${PEN_SIZE}px · 상자 ${BOX_W}x${BOX_H} → x=${spot.left.toFixed(0)} y=${spot.top.toFixed(0)}${spot.fits ? '' : ' (여백 부족 — 겹침)'}`);
+
   for (let f = 0; f < TOTAL_FRAMES; f++) {
     await page.setContent(html(f), { waitUntil: 'load' });
     await page.screenshot({ path: path.join(tmp, `f${String(f).padStart(4, '0')}.png`) });
@@ -210,7 +287,6 @@ async function main() {
   const mp4 = path.join(outDir, 'reel.mp4');
   execFileSync(ffmpegPath, [
     '-y', '-framerate', String(FPS), '-i', path.join(tmp, 'f%04d.png'),
-    // 무음 트랙: 오디오 없는 영상을 거르는 경우가 있어 넣어둔다
     '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100', '-shortest',
     '-c:v', 'libx264', '-profile:v', 'high', '-pix_fmt', 'yuv420p',
     '-r', String(FPS), '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '128k', mp4,
