@@ -75,8 +75,13 @@ const PAD = { l: 34, r: 158, t: 24, b: 96 };
 function geometry(sym) {
   const bars = sym.bars;
   const openPx = bars[0].o;
+  // 전일 종가가 화면 안에 들어오면 함께 그린다 (갭을 숫자 없이 눈으로 보이게)
+  const prev = sym.prevClose;
   let hi = Math.max(...bars.map((b) => b.h), openPx);
   let lo = Math.min(...bars.map((b) => b.l), openPx);
+  const span = hi - lo || 1;
+  const showPrev = prev != null && prev <= hi + span * 0.9 && prev >= lo - span * 0.9;
+  if (showPrev) { hi = Math.max(hi, prev); lo = Math.min(lo, prev); }
   const pad = (hi - lo) * 0.14 || 1;
   hi += pad; lo -= pad;
 
@@ -85,6 +90,7 @@ function geometry(sym) {
   const colW = (plotR - plotL) / bars.length;
   return {
     bars, openPx, hi, lo, plotL, plotR, plotT, plotB, colW,
+    prev: showPrev ? prev : null,
     x: (i) => plotL + colW * (i + 0.5),
     y: (p) => plotT + (plotB - plotT) * (1 - (p - lo) / (hi - lo)),
   };
@@ -132,19 +138,29 @@ function findFreeSpot(g, boxW, boxH) {
 }
 
 function chartSvg(g, reveal) {
-  const { bars, openPx, plotL, plotR, plotT, plotB, colW, x, y, hi, lo } = g;
+  const { bars, openPx, plotL, plotR, plotT, plotB, colW, x, y, hi, lo, prev } = g;
   const shown = bars.slice(0, Math.max(1, reveal));
   const cw = Math.max(8, colW * 0.6);
 
+  // 현재가 태그와 겹치는 눈금 라벨은 숫자를 생략한다 (선만 남긴다)
+  const yCurForGrid = y(shown[shown.length - 1].c);
   const grid = [0.25, 0.5, 0.75].map((f) => {
     const gy = plotT + (plotB - plotT) * f;
     const gp = lo + (hi - lo) * (1 - f);
-    return `<line x1="${plotL}" y1="${gy.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${gy.toFixed(1)}" stroke="#1f1f1f" stroke-width="1"/>`
-      + `<text x="${(plotR + 14).toFixed(1)}" y="${(gy + 10).toFixed(1)}" fill="#565656" font-size="27" font-family="system-ui">${fmt(gp, 0)}</text>`;
+    const line = `<line x1="${plotL}" y1="${gy.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${gy.toFixed(1)}" stroke="#1f1f1f" stroke-width="1"/>`;
+    if (Math.abs(gy - yCurForGrid) < 40) return line;
+    return line + `<text x="${(plotR + 14).toFixed(1)}" y="${(gy + 10).toFixed(1)}" fill="#565656" font-size="27" font-family="system-ui">${fmt(gp, 0)}</text>`;
   }).join('');
 
   const yOpen = y(openPx);
   const openLine = `<line x1="${plotL}" y1="${yOpen.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yOpen.toFixed(1)}" stroke="#7a7a72" stroke-width="1.6" stroke-dasharray="10 10"/>`;
+
+  // 전일 종가 — 숫자 없이 '어제 어디였는지'를 보여 준다
+  const prevLine = prev == null ? '' : (() => {
+    const yp = y(prev);
+    return `<line x1="${plotL}" y1="${yp.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yp.toFixed(1)}" stroke="#8a7a4a" stroke-width="1.6" stroke-dasharray="3 9"/>`
+      + `<text x="${(plotL + 8).toFixed(1)}" y="${(yp - 12).toFixed(1)}" fill="#9a8a56" font-size="25" font-weight="700" font-family="system-ui">${t('어제 종가', 'prev close')}</text>`;
+  })();
 
   const candles = shown.map((b, i) => {
     const col = b.c >= b.o ? UP : DOWN;
@@ -160,7 +176,7 @@ function chartSvg(g, reveal) {
     + `<rect x="${(plotR + 6).toFixed(1)}" y="${(yCur - 25).toFixed(1)}" width="140" height="50" rx="5" fill="${curCol}"/>`
     + `<text x="${(plotR + 76).toFixed(1)}" y="${(yCur + 10).toFixed(1)}" fill="#000" font-size="29" font-weight="700" font-family="system-ui" text-anchor="middle">${fmt(cur.c, 0)}</text>`;
 
-  return `<svg width="${CHART.w}" height="${CHART.h}" viewBox="0 0 ${CHART.w} ${CHART.h}" xmlns="http://www.w3.org/2000/svg">${grid}${openLine}${candles}${tag}</svg>`;
+  return `<svg width="${CHART.w}" height="${CHART.h}" viewBox="0 0 ${CHART.w} ${CHART.h}" xmlns="http://www.w3.org/2000/svg">${grid}${prevLine}${openLine}${candles}${tag}</svg>`;
 }
 
 // 손글씨 상자 크기는 추정하지 않고 브라우저에서 실제로 재서 쓴다.
@@ -210,12 +226,7 @@ function html(frame) {
 
   const shown = nasdaq.bars.slice(0, reveal);
   const last = shown[shown.length - 1].c;
-  const pct = ((last - nasdaq.bars[0].o) / nasdaq.bars[0].o) * 100;
-  const col = pct >= 0 ? UP : DOWN;
-
   const spShown = sp500.bars.slice(0, reveal);
-  const spPct = ((spShown[spShown.length - 1].c - sp500.bars[0].o) / sp500.bars[0].o) * 100;
-  const spCol = spPct >= 0 ? UP : DOWN;
 
   // 시계는 실제로 그려진 마지막 봉의 시각을 보여 준다 (구간이 언제든 상관없이 맞는다)
   const clock = etHM(shown[shown.length - 1].t);
@@ -249,7 +260,6 @@ function html(frame) {
       </div>
       <div style="display:flex;align-items:baseline;gap:20px;margin-top:8px;">
         <div style="font-size:84px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;">${fmt(last, 2)}</div>
-        <div style="font-size:46px;font-weight:800;color:${col};">${pct >= 0 ? '▲' : '▼'} ${Math.abs(pct).toFixed(2)}%</div>
       </div>
     </div>
 
@@ -263,7 +273,6 @@ function html(frame) {
       <div style="position:absolute;left:34px;bottom:16px;display:flex;align-items:baseline;gap:14px;">
         <div style="font-size:31px;font-weight:700;color:#8e8e8e;">${t('S&P 500 선물', 'S&P 500 Futures')}</div>
         <div style="font-size:33px;font-weight:800;font-variant-numeric:tabular-nums;color:#ddd;">${fmt(spShown[spShown.length - 1].c, 2)}</div>
-        <div style="font-size:31px;font-weight:800;color:${spCol};">${spPct >= 0 ? '▲' : '▼'} ${Math.abs(spPct).toFixed(2)}%</div>
       </div>
     </div>
 

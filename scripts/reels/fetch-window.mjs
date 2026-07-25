@@ -27,12 +27,14 @@ const argOf = (name, dflt) => {
   const i = argv.indexOf(name);
   return i >= 0 && argv[i + 1] ? argv[i + 1] : dflt;
 };
-const MINUTES = Number(argOf('--minutes', '30'));
+// 기본은 '개장부터 지금까지'. --minutes 를 주면 '지금 기준 최근 N분' 방식으로 바뀐다.
+const minutesArg = argOf('--minutes', null);
+const MINUTES = minutesArg == null ? null : Number(minutesArg);
 const STALE_OK = argv.includes('--stale-ok');
 const endArg = argOf('--end', null);
 const endMs = endArg ? Date.parse(endArg) : Date.now();
 if (Number.isNaN(endMs)) { console.error(`--end 를 해석할 수 없음: ${endArg}`); process.exit(1); }
-if (!(MINUTES > 0)) { console.error('--minutes 는 양수여야 합니다'); process.exit(1); }
+if (MINUTES != null && !(MINUTES > 0)) { console.error('--minutes 는 양수여야 합니다'); process.exit(1); }
 
 // ---------- 미 동부시간 helper ----------
 function etParts(epochSec) {
@@ -95,19 +97,43 @@ function summarize(bars) {
 
 async function main() {
   const endSec = Math.floor(endMs / 1000);
-  const startSec = endSec - MINUTES * 60;
-  const out = { generatedAt: new Date(endMs).toISOString(), minutes: MINUTES, symbols: {} };
+  const endEt = etParts(endSec);
+  const out = { generatedAt: new Date(endMs).toISOString(), symbols: {} };
   let stamp = null, meta = null;
+
+  // 개장 기준 모드에서는 그날 09:30 ET 부터 지금까지를 담는다.
+  if (MINUTES == null && endEt.min < OPEN_MIN) {
+    throw new Error(
+      `아직 정규장 개장(09:30 ET) 전입니다. 현재 ${endEt.hh}:${endEt.mm} ET.\n`
+      + `   개장 전 구간으로 만들려면 --minutes 30 처럼 롤링 방식을 쓰세요.`
+    );
+  }
 
   for (const s of SYMBOLS) {
     const { bars, prevClose } = await fetchBars(s.yahoo);
     if (!bars.length) throw new Error(`${s.yahoo}: 봉 데이터가 비어 있음`);
 
+    // 창의 시작점
+    let startSec;
+    if (MINUTES != null) {
+      startSec = endSec - MINUTES * 60;
+    } else {
+      // 그날 09:30 ET 직전 (개장봉을 포함시키려 1초 뺀다)
+      const openBar = bars.find((b) => {
+        const e = etParts(b.t);
+        return e.date === endEt.date && e.min >= OPEN_MIN;
+      });
+      if (!openBar) {
+        throw new Error(`${s.yahoo}: ${endEt.date} 정규장 봉을 찾지 못했습니다 (휴장?).`);
+      }
+      startSec = openBar.t - 1;
+    }
+
     const win = bars.filter((b) => b.t > startSec && b.t <= endSec);
     if (win.length < 5) {
       const newest = etParts(bars[bars.length - 1].t);
       throw new Error(
-        `${s.yahoo}: 최근 ${MINUTES}분 구간의 봉이 ${win.length}개뿐입니다.\n`
+        `${s.yahoo}: 대상 구간의 봉이 ${win.length}개뿐입니다.\n`
         + `   가장 최근 봉은 ${newest.date} ${newest.hh}:${newest.mm} ET.\n`
         + `   (주말·휴장이거나 선물 정비시간 17:00~18:00 ET 일 수 있습니다. `
         + `특정 시점으로 만들려면 --end 를 쓰세요.)`
@@ -136,18 +162,49 @@ async function main() {
         phase: phaseOf(b.min),
         // 창이 정규장 개장에서 시작하면 "개장 직후" 화법을 쓴다
         atOpen: Math.abs(a.min - OPEN_MIN) <= 2,
+        minutesIn: b.min - a.min,
         lagMinutes: Number(lagMin.toFixed(1)),
       };
     }
 
+    // ---- 개장 전 문맥 ----
+    // 30분 창만 보면 "밤사이 크게 빠진 뒤의 소폭 반등"을 그냥 상승으로 읽게 된다.
+    // 프리장(04:00 ET~개장)과 전일 종가를 함께 담아 문구가 현실과 어긋나지 않게 한다.
+    const pre = bars.filter((b) => {
+      const e = etParts(b.t);
+      return e.date === endEt.date && e.min >= 4 * 60 && e.min < OPEN_MIN && b.t < win[0].t;
+    });
+    const sessionOpen = win[0].o;
+    const nowPx = win[win.length - 1].c;
+    const overnight = prevClose ? {
+      // 전일 종가 대비 시가 = 갭
+      gapPct: Number((((sessionOpen - prevClose) / prevClose) * 100).toFixed(2)),
+      // 지금이 전일 종가 위인지 아래인지 — 하루 전체의 위치감
+      nowVsPrevPct: Number((((nowPx - prevClose) / prevClose) * 100).toFixed(2)),
+      preBars: pre.length,
+      preRangePct: pre.length
+        ? Number((((Math.max(...pre.map((b) => b.h)) - Math.min(...pre.map((b) => b.l))) / prevClose) * 100).toFixed(2))
+        : null,
+      preDirPct: pre.length
+        ? Number((((pre[pre.length - 1].c - pre[0].o) / pre[0].o) * 100).toFixed(2))
+        : null,
+    } : null;
+
     out.symbols[s.key] = {
       label_ko: s.label_ko, label_en: s.label_en, yahoo: s.yahoo,
       prevClose,
+      overnight,
+      pre: pre.map(({ t, o, h, l, c, v }) => ({ t, o, h, l, c, v })),
       bars: win,
       stats: summarize(win),
     };
     const st = out.symbols[s.key].stats;
-    console.log(`· ${s.yahoo}: ${win.length}봉, 창 대비 ${st.pctFromOpen > 0 ? '+' : ''}${st.pctFromOpen}%`);
+    console.log(
+      `· ${s.yahoo}: ${win.length}봉, 창 대비 ${st.pctFromOpen > 0 ? '+' : ''}${st.pctFromOpen}%`
+      + (overnight ? ` | 갭 ${overnight.gapPct > 0 ? '+' : ''}${overnight.gapPct}%`
+        + ` · 전일比 ${overnight.nowVsPrevPct > 0 ? '+' : ''}${overnight.nowVsPrevPct}%`
+        + ` · 프리장 ${overnight.preBars}봉` : '')
+    );
   }
 
   Object.assign(out, meta, { stamp });

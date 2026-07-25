@@ -103,6 +103,70 @@ const POOL = {
       [`${n}`, `and... nothing`, `nobody cares?`],
     ],
   },
+  // ---- 밤사이 흐름을 아는 문구 ----
+  // 창(개장 후 30분~1시간)만 보면 "밤새 크게 빠진 뒤의 소폭 반등"을 그냥 상승으로 읽는다.
+  // 전일 종가·갭을 알면 그날의 위치감이 맞는 말이 나온다.
+  gapDownFalling: {
+    ko: [
+      [`밤새 빠지더니`, `열려서도 계속 아래로`, `어디까지 가려나`],
+      [`아래로 열었는데`, `멈출 생각을 안하네`],
+    ],
+    en: [
+      [`Fell all night`, `and keeps falling after the open`, `how far`],
+      [`Opened down`, `and no sign of stopping`],
+    ],
+  },
+  gapDownRecovering: {
+    ko: [
+      [`밤사이 빠진 거`, `조금씩 만회하는 중`, `갈 길 멀다`],
+      [`아래로 열었지만`, `생각보다 잘 버티네`],
+    ],
+    en: [
+      [`Clawing back some of`, `what it lost overnight`, `long way to go`],
+      [`Opened down but`, `holding up better than expected`],
+    ],
+  },
+  gapUpHolding: {
+    ko: [
+      [`밤새 오르더니`, `열려서도 잘 가네`, `이대로만`],
+      [`위로 열고`, `그대로 밀고 가는 중`],
+    ],
+    en: [
+      [`Up all night and`, `still going after the open`, `just stay like this`],
+      [`Gapped up`, `and pushing on`],
+    ],
+  },
+  gapUpFading: {
+    ko: [
+      [`위로 열었는데`, `자꾸 반납하네`, `아깝다`],
+      [`좋게 시작해놓고`, `계속 까먹는 중`],
+    ],
+    en: [
+      [`Gapped up`, `and giving it back`, `such a waste`],
+      [`Nice start,`, `slowly handing it over`],
+    ],
+  },
+  belowPrevRising: {
+    ko: [
+      [`아직 어제보다 아래`, `그래도 올라오는 중`],
+      [`어제 자리까지는`, `아직 멀었네`, `그래도 방향은 위`],
+    ],
+    en: [
+      [`Still under yesterday`, `but climbing`],
+      [`Long way back to`, `where it closed`, `at least it's up`],
+    ],
+  },
+  abovePrevFalling: {
+    ko: [
+      [`어제보단 위인데`, `자꾸 밀리네`],
+      [`아직 어제 위지만`, `계속 까먹는 중`, `버텨줘`],
+    ],
+    en: [
+      [`Still above yesterday`, `but sliding`],
+      [`Above yesterday, sure`, `but giving it up`, `hold on`],
+    ],
+  },
+
   quiet: {
     ko: [
       [`계속 제자리`, `이렇게 조용해도 되나`, `불안한데`],
@@ -267,6 +331,21 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
 
   if (sh.quiet) return out('quiet', {});
   if (diverging) return out('diverging', {});
+
+  // 밤사이 흐름을 아는 문구를 먼저 시도한다.
+  // 갭이 뚜렷하거나 전일 종가와 확실히 떨어져 있을 때만 쓴다 — 애매하면 창 모양으로 넘긴다.
+  const ov = nasdaq.overnight;
+  if (ov && ov.gapPct != null) {
+    const gap = ov.gapPct;
+    const vsPrev = ov.nowVsPrevPct;
+    const BIG_GAP = 0.3;
+    if (gap <= -BIG_GAP && down) return out('gapDownFalling', {});
+    if (gap <= -BIG_GAP && up) return out('gapDownRecovering', {});
+    if (gap >= BIG_GAP && up) return out('gapUpHolding', {});
+    if (gap >= BIG_GAP && down) return out('gapUpFading', {});
+    if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
+    if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
+  }
   if (sh.peakedEarly && down) return out('fadeFromHigh', {});
   if (sh.troughEarly && down) return out('bounceFromLow', {});
   if (sh.troughEarly && up) return out('recovered', {});
