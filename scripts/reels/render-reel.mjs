@@ -20,11 +20,12 @@ import { buildComment, buildWeeklyComment } from './comment.mjs';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
 const dataDir = path.join(root, 'data', 'reels');
 
-// 스탬프를 생략하면 마지막으로 수집한 구간을 쓴다
 // --still: 영상 대신 정지 이미지 한 장만 만든다 (스토리용).
-// 프레임 174장 + ffmpeg 인코딩을 건너뛰므로 20초 -> 2초로 줄어든다.
+// 프레임 174장 + ffmpeg 인코딩을 건너뛰므로 20초 -> 3.5초로 줄어든다.
 const STILL = process.argv.includes('--still');
 const posArgs = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+
+// 스탬프를 생략하면 마지막으로 수집한 구간을 쓴다
 let stamp = posArgs[0];
 const lang = posArgs[1] || 'ko';
 if (!stamp || stamp === 'latest') {
