@@ -21,8 +21,12 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const dataDir = path.join(root, 'data', 'reels');
 
 // 스탬프를 생략하면 마지막으로 수집한 구간을 쓴다
-let stamp = process.argv[2];
-const lang = process.argv[3] || 'ko';
+// --still: 영상 대신 정지 이미지 한 장만 만든다 (스토리용).
+// 프레임 174장 + ffmpeg 인코딩을 건너뛰므로 20초 -> 2초로 줄어든다.
+const STILL = process.argv.includes('--still');
+const posArgs = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+let stamp = posArgs[0];
+const lang = posArgs[1] || 'ko';
 if (!stamp || stamp === 'latest') {
   const p = path.join(dataDir, 'latest.txt');
   if (!fs.existsSync(p)) {
@@ -34,7 +38,10 @@ if (!stamp || stamp === 'latest') {
 }
 
 const data = JSON.parse(fs.readFileSync(path.join(dataDir, `${stamp}.json`), 'utf8'));
-const outDir = path.join(root, 'cards', 'reels', stamp, lang);
+// 스토리용 정지 이미지는 publish-story.mjs 가 찾는 경로에 둔다
+const outDir = STILL
+  ? path.join(root, 'cards', 'stories', stamp, lang)
+  : path.join(root, 'cards', 'reels', stamp, lang);
 fs.mkdirSync(outDir, { recursive: true });
 
 // 상황 문맥(지표 발표 전 / 방금 나온 뉴스)은 절차서가 JSON 에 넣어 준다.
@@ -295,15 +302,26 @@ async function main() {
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 
-  console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${stamp} — `
+  console.log(`▶ ${STILL ? '스토리(정지)' : '릴스'} 렌더링 [${lang.toUpperCase()}] ${stamp} — `
     + (isWeek ? `${data.weekStart}~${data.weekEnd} 주간` : `${data.startEt}→${data.endEt} ET${data.atOpen ? ' (개장 직후)' : ''}`)
-    + ` · ${TOTAL_FRAMES}프레임 ${TOTAL_SEC.toFixed(1)}초`);
+    + (STILL ? '' : ` · ${TOTAL_FRAMES}프레임 ${TOTAL_SEC.toFixed(1)}초`));
   console.log(`  펜: ${lines.join(' / ')}`);
 
   // 글자를 실제로 재서, 캔들을 가리지 않고 들어갈 크기와 자리를 찾는다
   const fit = await fitText(page);
   PEN_SIZE = fit.size; BOX_W = fit.w; BOX_H = fit.h; spot = fit.spot;
   console.log(`  글자 ${PEN_SIZE}px · 상자 ${BOX_W}x${BOX_H} → x=${spot.left.toFixed(0)} y=${spot.top.toFixed(0)}${spot.fits ? '' : ' (여백 부족 — 겹침)'}`);
+
+  // 정지 이미지 모드: 손글씨까지 다 쓰인 마지막 상태 한 장만 뽑는다
+  if (STILL) {
+    const out = path.join(outDir, 'story.png');
+    await page.setContent(html(TOTAL_FRAMES - 1), { waitUntil: 'load' });
+    await page.screenshot({ path: out });
+    await browser.close();
+    fs.rmSync(tmp, { recursive: true, force: true });
+    console.log(`✅ ${path.relative(root, out)} (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
+    return;
+  }
 
   for (let f = 0; f < TOTAL_FRAMES; f++) {
     await page.setContent(html(f), { waitUntil: 'load' });
