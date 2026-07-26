@@ -294,6 +294,107 @@ const POOL = {
   },
 };
 
+// ---------- 주간 되돌아보기 + 다음 주 바람 ----------
+// 주말 편. 이번 주가 어땠는지 한 줄, 다음 주엔 어땠으면 좋겠는지 한 줄.
+// 역시 숫자는 쓰지 않는다.
+const WEEK_POOL = {
+  hardDown: {
+    ko: [
+      [`이번 주는 좀 아팠다`, `다음 주엔 좀 쉬어가자`],
+      [`한 주 내내 밀렸네`, `다음 주엔 반등 좀`],
+      [`계좌가 많이 야위었다`, `다음 주엔 살 좀 붙자`],
+    ],
+    en: [
+      [`Rough week`, `let's ease up next week`],
+      [`Down all week`, `give us a bounce next week`],
+    ],
+  },
+  mildDown: {
+    ko: [
+      [`조금씩 흘러내린 한 주`, `다음 주엔 방향 좀 잡자`],
+      [`크게 다치진 않았지만`, `다음 주엔 웃어보자`],
+    ],
+    en: [
+      [`Slowly bled all week`, `let's find a direction next week`],
+      [`Not badly hurt, but`, `let's smile next week`],
+    ],
+  },
+  choppy: {
+    ko: [
+      [`오르락내리락만 하다 끝난 주`, `다음 주엔 한쪽으로 좀`],
+      [`왔다갔다 정신없었다`, `다음 주는 좀 순하게`],
+    ],
+    en: [
+      [`All chop, no progress`, `pick a side next week`],
+      [`Whipsawed all week`, `go easy on us next week`],
+    ],
+  },
+  mildUp: {
+    ko: [
+      [`조용히 잘 버틴 한 주`, `다음 주도 이대로만`],
+      [`나쁘지 않았다`, `다음 주엔 좀 더 가보자`],
+    ],
+    en: [
+      [`Quietly held up`, `just keep this next week`],
+      [`Not bad at all`, `let's push a bit next week`],
+    ],
+  },
+  strongUp: {
+    ko: [
+      [`오랜만에 기분 좋은 주`, `다음 주도 부탁해`],
+      [`이번 주는 잘 갔다`, `다음 주엔 더 가자`],
+    ],
+    en: [
+      [`Best week in a while`, `same again next week please`],
+      [`Strong week`, `let's go further next week`],
+    ],
+  },
+  // 주 중반까지 올랐다가 후반에 무너진 주 — 가장 흔하면서
+  // '내내 밀렸다'로 뭉뚱그리면 사실과 어긋나는 모양이다.
+  gaveItBack: {
+    ko: [
+      [`중간까진 좋았는데`, `후반에 다 반납했다`, `다음 주엔 좀 지켜내자`],
+      [`잘 가다가 막판에 무너짐`, `다음 주엔 끝까지 가보자`],
+    ],
+    en: [
+      [`Great until midweek`, `gave it all back after`, `let's hold it next week`],
+      [`Fine until it broke late`, `let's finish strong next week`],
+    ],
+  },
+  // 초반에 밀렸다가 후반에 살아난 주
+  cameBack: {
+    ko: [
+      [`초반엔 힘들었는데`, `끝은 나쁘지 않았다`, `다음 주도 이렇게`],
+      [`중간에 포기할 뻔`, `그래도 살아났네`, `다음 주엔 편하게 가자`],
+    ],
+    en: [
+      [`Rough start`, `but it finished fine`, `same again next week`],
+      [`Almost gave up midweek`, `it came back`, `let's cruise next week`],
+    ],
+  },
+};
+
+export function buildWeeklyComment(nasdaq, seedStr = '') {
+  const st = nasdaq.stats;
+  const sh = shapeOf(nasdaq);
+  const seed = seedOf(seedStr || String(nasdaq.bars[0].t));
+  const p = st.pctFromOpen;
+  const mixed = st.upDays >= 2 && st.downDays >= 2;
+
+  let key;
+  // 모양을 먼저 본다. 주간 등락률만 보면 "올랐다 반납한 주"를 "내내 밀린 주"로 쓰게 된다.
+  if (sh.peakedEarly && p < -0.4) key = 'gaveItBack';
+  else if (sh.troughEarly && p > 0.4) key = 'cameBack';
+  else if (p <= -2) key = 'hardDown';
+  else if (p <= -0.4) key = mixed ? 'choppy' : 'mildDown';
+  else if (p < 0.4) key = 'choppy';
+  else if (p < 2) key = 'mildUp';
+  else key = 'strongUp';
+
+  const g = WEEK_POOL[key];
+  return { ko: pick(g.ko, seed), en: pick(g.en, seed) };
+}
+
 // ctx: { pendingEvent:{title_ko,title_en}, recentNews:{title_ko,title_en} }
 // 절차서에서 채워 넣는다. 없으면 순수하게 차트 모양에만 반응한다.
 export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {

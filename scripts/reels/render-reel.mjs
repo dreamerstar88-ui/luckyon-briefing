@@ -15,7 +15,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { buildComment } from './comment.mjs';
+import { buildComment, buildWeeklyComment } from './comment.mjs';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
 const dataDir = path.join(root, 'data', 'reels');
@@ -44,8 +44,14 @@ const t = (ko, en) => (lang === 'ko' ? ko : en);
 
 const nasdaq = data.symbols.nasdaq;
 const sp500 = data.symbols.sp500;
-const comment = buildComment(nasdaq, sp500, ctx, stamp);
+const isWeek = data.mode === 'week';
+const comment = isWeek
+  ? buildWeeklyComment(nasdaq, stamp)
+  : buildComment(nasdaq, sp500, ctx, stamp);
 const lines = lang === 'ko' ? comment.ko : comment.en;
+
+// 주간 편은 "M/D" 형식으로 기간을 보여 준다
+const mdOf = (s) => `${Number(s.slice(5, 7))}/${Number(s.slice(8, 10))}`;
 
 // ---------- 타이밍 ----------
 const FPS = 30;
@@ -228,8 +234,10 @@ function html(frame) {
   const last = shown[shown.length - 1].c;
   const spShown = sp500.bars.slice(0, reveal);
 
-  // 시계는 실제로 그려진 마지막 봉의 시각을 보여 준다 (구간이 언제든 상관없이 맞는다)
-  const clock = etHM(shown[shown.length - 1].t);
+  // 우측 상단: 장중 편은 마지막 봉 시각, 주간 편은 기간
+  const clock = isWeek
+    ? `${mdOf(data.weekStart)} – ${mdOf(data.weekEnd)}`
+    : `${etHM(shown[shown.length - 1].t)} ET`;
 
   const penHtml = lines.map((text, i) => {
     const startAt = CHART_SEC + PER_LINE_SEC * i;
@@ -255,8 +263,8 @@ function html(frame) {
     <div style="padding:126px 34px 0;">
       <div style="display:flex;align-items:baseline;gap:16px;">
         <div style="font-size:46px;font-weight:800;letter-spacing:-0.01em;">${t('나스닥 선물', 'Nasdaq Futures')}</div>
-        <div style="font-size:28px;color:#6b6b6b;font-weight:700;">NQ · 1m</div>
-        <div style="margin-left:auto;font-size:28px;color:#6b6b6b;font-weight:700;font-variant-numeric:tabular-nums;">${clock} ET</div>
+        <div style="font-size:28px;color:#6b6b6b;font-weight:700;">NQ · ${isWeek ? '30m' : '1m'}</div>
+        <div style="margin-left:auto;font-size:28px;color:#6b6b6b;font-weight:700;font-variant-numeric:tabular-nums;">${clock}</div>
       </div>
       <div style="display:flex;align-items:baseline;gap:20px;margin-top:8px;">
         <div style="font-size:84px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;">${fmt(last, 2)}</div>
@@ -287,8 +295,9 @@ async function main() {
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 
-  console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${stamp} — ${data.startEt}→${data.endEt} ET`
-    + `${data.atOpen ? ' (개장 직후)' : ''} · ${TOTAL_FRAMES}프레임 ${TOTAL_SEC.toFixed(1)}초`);
+  console.log(`▶ 릴스 렌더링 [${lang.toUpperCase()}] ${stamp} — `
+    + (isWeek ? `${data.weekStart}~${data.weekEnd} 주간` : `${data.startEt}→${data.endEt} ET${data.atOpen ? ' (개장 직후)' : ''}`)
+    + ` · ${TOTAL_FRAMES}프레임 ${TOTAL_SEC.toFixed(1)}초`);
   console.log(`  펜: ${lines.join(' / ')}`);
 
   // 글자를 실제로 재서, 캔들을 가리지 않고 들어갈 크기와 자리를 찾는다
