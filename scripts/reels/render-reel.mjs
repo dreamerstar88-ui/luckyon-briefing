@@ -169,11 +169,21 @@ function chartSvg(g, reveal) {
   const yOpen = y(openPx);
   const openLine = `<line x1="${plotL}" y1="${yOpen.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yOpen.toFixed(1)}" stroke="#7a7a72" stroke-width="1.6" stroke-dasharray="10 10"/>`;
 
-  // 전일 종가 — 숫자 없이 '어제 어디였는지'를 보여 준다
+  // 전일 종가 — 숫자 없이 '어제 어디였는지'를 보여 준다.
+  // 라벨은 기본적으로 왼쪽에 두되, 손글씨 상자와 겹치면 오른쪽으로 피한다.
   const prevLine = prev == null ? '' : (() => {
     const yp = y(prev);
+    const LW = 150, LH = 40;
+    const leftX = plotL + 8;
+    const boxL = spot.left - CHART.x, boxR = boxL + BOX_W;
+    const boxT = spot.top, boxB = boxT + BOX_H;
+    const hitsBox = (lx) =>
+      lx < boxR && lx + LW > boxL && yp - LH < boxB && yp + 8 > boxT;
+    const x = hitsBox(leftX) ? plotR - LW : leftX;
+    const anchor = x === leftX ? 'start' : 'end';
+    const tx = anchor === 'start' ? x : plotR;
     return `<line x1="${plotL}" y1="${yp.toFixed(1)}" x2="${plotR.toFixed(1)}" y2="${yp.toFixed(1)}" stroke="#8a7a4a" stroke-width="1.6" stroke-dasharray="3 9"/>`
-      + `<text x="${(plotL + 8).toFixed(1)}" y="${(yp - 12).toFixed(1)}" fill="#9a8a56" font-size="25" font-weight="700" font-family="system-ui">${t('어제 종가', 'prev close')}</text>`;
+      + `<text x="${tx.toFixed(1)}" y="${(yp - 12).toFixed(1)}" fill="#9a8a56" font-size="25" font-weight="700" font-family="system-ui" text-anchor="${anchor}">${t('어제 종가', 'prev close')}</text>`;
   })();
 
   const candles = shown.map((b, i) => {
