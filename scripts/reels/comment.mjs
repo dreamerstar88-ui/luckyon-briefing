@@ -167,6 +167,61 @@ const POOL = {
     ],
   },
 
+  // ---- 개장 전 흐름까지 아는 문구 ----
+  // 갭(전일 종가 -> 시가)만 보면 '어디서 열었나'만 알 수 있고,
+  // 열기 직전까지 어느 쪽으로 흐르고 있었는지는 모른다.
+  // 프리장 방향을 함께 보면 '개장 후 갑자기 뒤집힌 것'과 '아까부터 그랬던 것'을 구분할 수 있다.
+  preFadeContinued: {
+    ko: [
+      [`열기 전부터 밀리더니`, `열리고도 그대로네`],
+      [`아까부터 계속 흘러내리는 중`, `언제 멈추려나`],
+    ],
+    en: [
+      [`Was sliding before the bell`, `and just kept going`],
+      [`Bleeding since before the open`, `when does it stop`],
+    ],
+  },
+  preRallyReversed: {
+    ko: [
+      [`열기 직전까진 좋았는데`, `막상 열리니까 뒤집혔다`],
+      [`분위기 좋다가`, `종 치자마자 밀리네`, `뭐야 이거`],
+    ],
+    en: [
+      [`Looked good right up to the bell`, `then flipped`],
+      [`All fine until the open`, `and down it went`, `seriously?`],
+    ],
+  },
+  preFadeReversed: {
+    ko: [
+      [`열기 전엔 계속 빠지더니`, `열리고 나서 살아나네`, `이런 날도 있구나`],
+      [`아까까진 최악이었는데`, `열고 반등 중`],
+    ],
+    en: [
+      [`Kept falling before the bell`, `then turned after the open`, `didn't expect that`],
+      [`Looked awful earlier`, `bouncing since the open`],
+    ],
+  },
+  preRallyContinued: {
+    ko: [
+      [`열기 전부터 좋더니`, `그대로 밀고 가네`, `계속 가자`],
+      [`아까부터 분위기 좋았는데`, `열고도 이어진다`],
+    ],
+    en: [
+      [`Strong before the bell`, `and still pushing`, `keep going`],
+      [`Good vibes earlier`, `carried right through the open`],
+    ],
+  },
+  preWildThenQuiet: {
+    ko: [
+      [`열기 전엔 요동치더니`, `정작 열리니까 잠잠하네`],
+      [`아까 그렇게 흔들리고`, `지금은 조용`, `뭐지`],
+    ],
+    en: [
+      [`Wild before the bell`, `dead quiet since the open`],
+      [`All that thrashing earlier`, `now nothing`, `huh`],
+    ],
+  },
+
   quiet: {
     ko: [
       [`계속 제자리`, `이렇게 조용해도 되나`, `불안한데`],
@@ -428,6 +483,21 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
   if (ctx.recentNews) {
     const a = { ko: ctx.recentNews.title_ko, en: ctx.recentNews.title_en };
     return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
+  }
+
+  const ov0 = nasdaq.overnight;
+
+  // 개장 전 흐름을 먼저 본다 — '아까부터 그랬던 것'과 '열자마자 뒤집힌 것'은 다른 이야기다.
+  if (ov0 && ov0.preDirPct != null && ov0.preBars >= 60) {
+    const preDir = ov0.preDirPct;
+    const preWild = (ov0.preRangePct ?? 0) >= 0.8;
+    const PRE_MOVE = 0.15;
+
+    if (preWild && sh.quiet) return out('preWildThenQuiet', {});
+    if (preDir <= -PRE_MOVE && down) return out('preFadeContinued', {});
+    if (preDir >= PRE_MOVE && down) return out('preRallyReversed', {});
+    if (preDir <= -PRE_MOVE && up) return out('preFadeReversed', {});
+    if (preDir >= PRE_MOVE && up) return out('preRallyContinued', {});
   }
 
   if (sh.quiet) return out('quiet', {});
