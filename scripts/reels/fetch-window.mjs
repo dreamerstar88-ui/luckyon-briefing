@@ -78,7 +78,24 @@ async function fetchBars(sym) {
     if ([o, h, l, c].some((v) => v == null)) continue;
     bars.push({ t: ts[i], o, h, l, c, v: q.volume?.[i] ?? 0 });
   }
-  return { bars, prevClose: r.meta?.chartPreviousClose ?? null };
+  return { bars, metaPrevClose: r.meta?.chartPreviousClose ?? null };
+}
+
+// 전일 종가는 meta.chartPreviousClose 를 쓰지 않고 봉 데이터에서 직접 구한다.
+// meta 값은 조회 시점 기준이라 --end 로 과거를 조회하면 엉뚱한 날 종가가 오고,
+// 그러면 갭이 잘못 계산돼 손글씨 문구 선택까지 틀어진다.
+function prevCloseFromBars(bars, windowStartSec) {
+  const startEt = etParts(windowStartSec);
+  // 창이 시작된 날 이전의 거래일들
+  const prior = bars.filter((b) => {
+    const e = etParts(b.t);
+    return e.date < startEt.date && e.min <= CLOSE_MIN;
+  });
+  if (!prior.length) return null;
+  const lastDate = etParts(prior[prior.length - 1].t).date;
+  // 그 날의 정규장 마지막 봉 종가
+  const sameDay = prior.filter((b) => etParts(b.t).date === lastDate);
+  return sameDay[sameDay.length - 1].c;
 }
 
 function summarize(bars) {
@@ -110,7 +127,7 @@ async function main() {
   }
 
   for (const s of SYMBOLS) {
-    const { bars, prevClose } = await fetchBars(s.yahoo);
+    const { bars, metaPrevClose } = await fetchBars(s.yahoo);
     if (!bars.length) throw new Error(`${s.yahoo}: 봉 데이터가 비어 있음`);
 
     // 창의 시작점
@@ -174,6 +191,7 @@ async function main() {
       const e = etParts(b.t);
       return e.date === endEt.date && e.min >= 4 * 60 && e.min < OPEN_MIN && b.t < win[0].t;
     });
+    const prevClose = prevCloseFromBars(bars, win[0].t) ?? metaPrevClose;
     const sessionOpen = win[0].o;
     const nowPx = win[win.length - 1].c;
     const overnight = prevClose ? {
