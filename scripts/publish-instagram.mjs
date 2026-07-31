@@ -40,6 +40,47 @@ const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const content = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const caption = lang === 'ko' ? content.caption_ko : content.caption_en;
 
+// 커스텀 alt_text 를 넘기지 않으면 인스타그램이 이미지 속 텍스트를 OCR로 읽어
+// 자동 대체텍스트를 만드는데, 구글이 이걸 그대로 색인해 캡션 대신 원시 숫자
+// (예: "6,690.62" kospi july 24 2026")로 검색 스니펫에 노출시키는 문제가 있었다.
+// 카드별로 헤드라인 중심의 alt_text 를 직접 채워 이를 대체한다.
+function buildAltTexts() {
+  const ko = lang === 'ko';
+  const brief = ko ? 'luckyon 브리핑' : 'luckyon Briefing';
+  const dateLabel = ko ? content.dateLabel_ko : content.dateLabel_en;
+  const headline = ko ? content.headline_ko : content.headline_en;
+  const headlineSub = ko ? content.headline_sub_ko : content.headline_sub_en;
+  const nextBrief = ko ? content.next_brief_ko : content.next_brief_en;
+
+  const marketsLabel = ko ? '주요 시장 지표: ' : 'Key market indicators: ';
+  const econLabel = ko ? '경제·금융 뉴스: ' : 'Economy & finance news: ';
+  const aiLabel = ko ? 'AI·테크 뉴스: ' : 'AI & tech news: ';
+  const scheduleLabel = ko ? '주요 일정: ' : 'Upcoming schedule: ';
+
+  const headlines = (arr, start) => arr.slice(start, start + 3)
+    .map(item => ko ? item.headline_ko : item.headline_en)
+    .join(' / ');
+
+  const list = [
+    `${brief} ${dateLabel}: ${headline}${headlineSub ? ' - ' + headlineSub : ''}`,
+    marketsLabel + content.markets.map(m =>
+      `${m.label} ${m.value}${m.value_sub ? ' ' + m.value_sub : ''} ${m.delta}`).join(', '),
+    econLabel + headlines(content.econ, 0),
+    econLabel + headlines(content.econ, 3),
+    aiLabel + headlines(content.ai, 0),
+    aiLabel + headlines(content.ai, 3),
+  ];
+  if (content.schedule && content.market_hours) {
+    list.push(scheduleLabel + content.schedule
+      .map(s => `${s.time} ${ko ? s.title_ko : s.title_en}`).join(' / '));
+  }
+  list.push(`${nextBrief || ''} · ${brief}`.trim());
+
+  // Graph API 의 alt_text 상한(1,000자) 대비 여유를 둔다.
+  return list.map(s => s.length > 900 ? s.slice(0, 897) + '...' : s);
+}
+const altTexts = buildAltTexts();
+
 // 로컬에 렌더된 카드 수를 세어 슬라이드 수를 정한다 (구버전 7장 / 신버전 8장 모두 대응)
 const cardSubPath = session ? `cards/${date}/${session}/${lang}` : `cards/${date}/${lang}`;
 const localCardDir = path.join(root, ...cardSubPath.split('/'));
@@ -111,10 +152,9 @@ async function main() {
   // 1) 슬라이드별 아이템 컨테이너 생성
   const childIds = [];
   for (let i = 0; i < imageUrls.length; i++) {
-    const r = await api(`${IG_USER}/media`, {
-      image_url: imageUrls[i],
-      is_carousel_item: 'true',
-    });
+    const params = { image_url: imageUrls[i], is_carousel_item: 'true' };
+    if (altTexts[i]) params.alt_text = altTexts[i];
+    const r = await api(`${IG_USER}/media`, params);
     childIds.push(r.id);
     console.log(`· 슬라이드 ${i + 1} 컨테이너 생성: ${r.id}`);
   }
