@@ -49,6 +49,26 @@ function section(lang, n) {
 }
 
 const fc = d.fact_check || {};
+
+// ---------- 승인/수정 버튼 ----------
+// 정적 페이지라 입력을 직접 받을 수 없다. 대신 GitHub Issue 를 우편함으로 쓴다:
+// 버튼을 누르면 제목·본문이 미리 채워진 이슈 작성 화면이 열리고, 사용자는 제출만 하면 된다.
+// 그 이슈를 "차트노트 승인 확인" 루틴(ROUTINE_PROMPT_CHARTNOTES_APPROVE.md)이 읽고 처리한다.
+const base = (process.env.PAGES_BASE_URL || '').replace(/\/$/, '');
+const m = base.match(/^https:\/\/([^.]+)\.github\.io\/([^/]+)/);
+const slug = process.env.REPO_SLUG || (m ? `${m[1]}/${m[2]}` : '');
+const issueUrl = (title, body) =>
+  `https://github.com/${slug}/issues/new?labels=chartnotes&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+
+const actions = slug ? `
+<div class="act">
+  <a class="btn ok" href="${issueUrl(`[발행] ${stamp}`,
+    `이 회차를 인스타그램에 발행해 주세요.\n\n(추가로 남길 말이 있으면 여기에 적어주세요. 없으면 그대로 제출하시면 됩니다.)\n\n---\nstamp: ${stamp}\n${d.episode || ''} ${d.term_ko || ''}`)}" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="${issueUrl(`[수정] ${stamp}`,
+    `아래에 고칠 곳을 적어주세요. 어느 카드(p.01~p.08)의 무엇인지 알려주시면 됩니다.\n\n예)\n- p.06 한국어 종가 숫자가 틀렸어요\n- p.03 영어 카드 마지막 줄이 넘쳐요\n- p.05 설명이 어려워요, 더 쉽게\n\n고칠 곳:\n- \n\n---\nstamp: ${stamp}\n${d.episode || ''} ${d.term_ko || ''}`)}" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>` : '';
 const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
@@ -77,6 +97,12 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
   .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
   footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
   code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+  .act{display:flex;gap:12px;margin:22px 0 10px}
+  .btn{flex:1;display:block;text-align:center;padding:18px 10px;border-radius:12px;
+       font-size:17px;font-weight:800;text-decoration:none}
+  .btn.ok{background:#2f7d5b;color:#fff}
+  .btn.fix{background:#8a4436;color:#fff}
+  .hint{font-size:13px;color:#9b9889;margin:0 0 6px}
 </style></head><body>
 
 <h1>${esc(d.episode || '')} · ${esc(d.term_ko || '')}</h1>
@@ -92,15 +118,18 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
   <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
 </ul></div>
 
+${actions}
+
 ${(fc.ko || fc.en) ? `<div class="fact"><b>시세 검증 기록</b>
 ${fc.ko ? `<div>KO — ${esc(fc.ko)}</div>` : ''}${fc.en ? `<div>EN — ${esc(fc.en)}</div>` : ''}</div>` : ''}
 
 ${section('ko', nKo)}
 ${section('en', nEn)}
 
+${actions}
+
 <footer>
-문제가 없으면 Claude 에게 <code>차트노트 ${esc(stamp)} 발행해</code> 라고 하세요.<br>
-고칠 곳이 있으면 어느 카드의 무엇을 고칠지 알려주시면 다시 렌더해 이 페이지를 갱신합니다.<br>
+버튼 대신 Claude 에게 직접 <code>차트노트 ${esc(stamp)} 발행해</code> 라고 해도 됩니다.<br>
 ※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
 </footer>
 </body></html>`;
@@ -108,6 +137,6 @@ ${section('en', nEn)}
 const out = path.join(cardDir, 'preview.html');
 fs.writeFileSync(out, html);
 console.log('wrote', path.relative(root, out));
-const base = (process.env.PAGES_BASE_URL || '').replace(/\/$/, '');
 if (base) console.log(`\n🔗 ${base}/cards/chart-notes/${stamp}/preview.html`);
 console.log(`\n카드: KO ${nKo}장 / EN ${nEn}장`);
+if (!slug) console.warn('\n⚠️  PAGES_BASE_URL 로 저장소를 못 알아내 승인/수정 버튼이 빠졌습니다. REPO_SLUG 를 지정하세요.');
