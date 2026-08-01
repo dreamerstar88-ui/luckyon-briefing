@@ -143,14 +143,23 @@
 
 6. **고정 브랜치 `claude/live` 에 커밋 & 푸시**: 반드시 아래 순서대로, 항상 같은 브랜치 이름을 재사용한다 (새 브랜치를 매번 만들지 않는다). GitHub Pages가 이 브랜치를 소스로 보고 있으므로, 여기에 푸시해야 이미지가 공개된다. ko·en 카드와 content json을 한 번에 커밋한다.
    ```
-   git fetch origin claude/live 2>/dev/null
-   git checkout claude/live 2>/dev/null || git checkout -b claude/live
-   git merge origin/main --no-edit 2>/dev/null || true
-   git add -A
+   git fetch origin claude/live
+   git checkout -B claude/live FETCH_HEAD          # 항상 원격 최신 기준 (아래 주의 참고)
+   git add content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>
    git commit -m "brief: <DATE> <SESSION> (ko+en)"
    git push origin claude/live
+   git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
    ```
    (main 브랜치는 건드리지 않는다. `claude/`로 시작하는 브랜치는 별도 권한 설정 없이도 기본적으로 푸시가 허용된다.)
+
+   **주의 ① — `git add -A` 를 쓰지 않는다.** 이 계정은 여러 콘텐츠 축을 함께 운영하고, 축마다 별도 세션이 돈다.
+   `-A` 를 쓰면 다른 축이 만들다 만 파일(아직 커밋 전인 카드 이미지 등)까지 이 커밋에 끌려 들어와,
+   검증도 안 된 남의 콘텐츠가 브리핑 커밋으로 발행될 수 있다. **위처럼 자기 축 경로만 명시해서 add 한다.**
+
+   **주의 ② — 반드시 `FETCH_HEAD` 기준으로 체크아웃한다.** 다른 축이 먼저 푸시했을 수 있으므로
+   원격 최신을 기준으로 삼아야 push 가 거부되지 않는다. (`git checkout claude/live` 만 하면 로컬에 남아 있던
+   오래된 브랜치 위에 커밋하게 된다.) 루틴은 매번 새 컨테이너에서 도므로 이 방식으로 잃을 로컬 작업은 없다.
+   push 가 거부되면 `--force` 를 쓰지 말고 **`git fetch` 부터 다시** 한다 — 남의 커밋을 덮어쓰지 않는다.
 
 7. **토큰 만료 점검**: 환경변수 `IG_TOKEN_EXPIRES_AT`(YYYY-MM-DD)를 읽어, 오늘로부터 10일 이내면 PushNotification으로 "인스타 토큰 갱신 필요 (만료 임박)" 알림을 보낸다. (ko·en 공통이므로 세션당 한 번만 확인한다.)
 

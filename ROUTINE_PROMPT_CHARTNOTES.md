@@ -50,6 +50,7 @@
 ### 2. 시리즈 대장 읽기 — 다음 주제 결정
 
 `content/chart-notes/_series.json` 을 읽는다. 이 파일이 **"무엇을 이미 다뤘고 다음은 무엇인가"의 유일한 근거**다.
+편성 의도와 회차별 기획(훅·사례 후보)은 `content/chart-notes/_roadmap.md` 에 있으니 함께 읽는다.
 
 - `published` 배열 = 이미 발행한 회차. **여기 있는 주제는 최근 30일 내라면 다시 쓰지 않는다.**
 - `next_up` = 다음 회차 주제. **이 값이 있으면 무조건 그것을 쓴다.**
@@ -100,21 +101,49 @@ p.06(실제 사례)에 넣는 시세는 **반드시 원본 데이터와 대조�
 
 검증 결과는 콘텐츠 JSON 의 `fact_check` 필드에 한 줄로 남긴다.
 
-### 5. 카드 이미지 준비
+### 5. 카드 이미지 렌더링
 
-카드 8장 × 2언어 = 16장을 **1080×1350 (4:5)** PNG 로 만들어 아래에 놓는다.
+**카드는 이 세션이 직접 만든다.** 렌더러가 이미 있으므로 디자인을 새로 고민하지 않는다 — 원고만 스키마에 맞게 쓰면 된다.
 
 ```
-cards/chart-notes/<STAMP>/ko/card1.png ... card8.png
-cards/chart-notes/<STAMP>/en/card1.png ... card8.png
+node scripts/chart-notes/render-chartnotes.mjs <STAMP> ko
+node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 ```
 
-디자인은 EP.01 카드를 그대로 참고한다 (`cards/chart-notes/2026-08-01-ep01/`).
-크림색 모눈 노트 배경 + 스프링 제본 + 감청색 헤더 + 붉은 포인트 + 노란 형광펜 강조가 시리즈 아이덴티티다.
-**회차마다 이 톤을 바꾸지 않는다** — 피드에서 한 시리즈로 보여야 한다.
+산출물: `cards/chart-notes/<STAMP>/{ko,en}/card1..8.png` (1080×1350, 4:5)
 
-사람이 이미 만든 카드를 넘겨받는 경우도 있다. 그때는 다시 만들지 말고 받은 파일을 그대로 쓴다
-(디자인이 이미 확정된 것이므로 재현하려 들면 오히려 훼손된다).
+렌더러가 시리즈 아이덴티티(크림 모눈 노트 · 스프링 제본 · 감청색 헤더 · 붉은 포인트 · 노란 형광펜)를
+코드로 들고 있다. **디자인 토큰과 레이아웃을 회차마다 바꾸지 않는다** — 피드에서 한 시리즈로 보여야 한다.
+색·여백을 손대고 싶으면 그 회차만 고치지 말고 렌더러를 고쳐 전 회차에 같이 적용한다.
+
+**캔들 색은 JSON 에서 지정하지 않는다.** 방향(`"direction": "up"|"down"`)만 쓰면 렌더러가 언어권 관행을 적용한다
+(한국어판 상승=빨강·하락=파랑 / 영어판 상승=초록·하락=빨강). 이 시리즈가 EP.01 에서 가르친 내용이므로
+여기서 틀리면 안 된다 — 그래서 코드가 강제한다.
+
+**쓸 수 있는 카드 타입 8종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
+
+| type | 쓰임 | 주요 필드 |
+|---|---|---|
+| `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈) |
+| `intro` | p.02 도입 | `title`, `body`, `caption` |
+| `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing` |
+| `anatomy` | 구조를 화살표로 분해 | `title`, `body`, `labels.upper/body/lower` |
+| `compare` | 둘을 나란히 비교 | `title`, `legend[]`, `rows[]`, `closing` |
+| `example` | **실제 시세 사례** | `title`, `sub`, `direction`, `values.{high,close,open,low}`, `conclusion`, `note` |
+| `numbered` | 번호 매긴 3가지 + 경고 | `title`, `items[].title/desc`, `warn_title`, `warn_body` |
+| `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
+
+모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
+
+**렌더 후 반드시 눈으로 확인한다.** 8장을 모두 열어 텍스트가 카드 밖으로 넘치거나 겹치지 않는지 본다.
+특히 **영어는 같은 내용도 한국어보다 길어져 넘치기 쉽다.** 넘치면 그 언어의 문구만 줄여 다시 렌더한다
+(사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
+
+**타입 8종으로 표현이 안 되는 주제**(예: 이동평균선 교차, RSI 같은 보조지표 곡선)를 만나면,
+억지로 기존 타입에 끼워 넣지 말고 **렌더러에 새 타입을 추가**한다. 추가한 타입은 위 표에도 한 줄 적어 둔다.
+
+> 예외: 사람이 이미 만든 카드를 넘겨받는 경우(EP.01 이 그랬다)에는 다시 만들지 말고 받은 파일을 그대로 쓴다.
+> 디자인이 이미 확정된 것이므로 재현하려 들면 오히려 훼손된다. 이때는 5단계를 건너뛰고 파일만 배치한다.
 
 ### 6. 콘텐츠 JSON 작성
 
@@ -123,14 +152,17 @@ cards/chart-notes/<STAMP>/en/card1.png ... card8.png
 ```
 {
   "type": "chart-notes",
-  "stamp", "date", "series", "series_en", "episode",
+  "stamp", "date", "series", "series_en", "episode", "byline",
   "term_ko", "term_en",                  // 이 회차가 다루는 용어
   "fact_check": { "ko": "...", "en": "..." },   // 4단계 검증 결과
+  "cards": [ 8개 ],                       // 5단계 렌더러가 읽는 카드 원고 (타입별 필드는 위 표 참고)
   "caption_ko", "caption_en",
   "alt_ko": [ 8개 ], "alt_en": [ 8개 ],  // 슬라이드별 대체 텍스트
   "published": { ... }                    // 8단계에서 채운다
 }
 ```
+
+`cards` 를 먼저 쓰고 렌더한 뒤, 완성된 카드를 보면서 `alt_*` 를 쓰면 설명이 실제 그림과 어긋나지 않는다.
 
 - `alt_*` 는 카드 수와 **정확히 같은 개수**여야 한다. 시각장애인 접근성과 노출 모두에 쓰인다.
 - 캡션은 요약 + 저장/태그 유도 + 해시태그 10개 내외 + 교육 목적 고지로 구성한다.
@@ -140,11 +172,12 @@ cards/chart-notes/<STAMP>/en/card1.png ... card8.png
 
 GitHub Pages 가 이 브랜치를 소스로 보므로, 여기에 푸시해야 이미지가 공개된다.
 **반드시 `FETCH_HEAD` 기준으로 체크아웃한다** — `origin/main` 기준으로 새로 만들면 그동안 쌓인 발행 이력이 통째로 날아간다.
+**`git add -A` 를 쓰지 않는다** — 다른 축 세션이 만들다 만 파일까지 끌려 들어온다. 위처럼 자기 축 경로만 명시한다.
 
 ```
 git fetch origin claude/live
 git checkout -B claude/live FETCH_HEAD
-git add cards/chart-notes content/chart-notes
+git add cards/chart-notes/<STAMP> content/chart-notes
 git commit -m "chart-notes: <STAMP> <term> (ko+en)"
 git push -u origin claude/live
 ```

@@ -77,13 +77,16 @@
 
 6. **고정 브랜치 `claude/live` 에 커밋 & 푸시** (평일과 동일):
    ```
-   git fetch origin claude/live 2>/dev/null
-   git checkout claude/live 2>/dev/null || git checkout -b claude/live
-   git merge origin/main --no-edit 2>/dev/null || true
-   git add -A
+   git fetch origin claude/live
+   git checkout -B claude/live FETCH_HEAD          # 항상 원격 최신 기준
+   git add content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>
    git commit -m "brief: <DATE> <SESSION> (${LANG})"
    git push origin claude/live
+   git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
    ```
+   **`git add -A` 를 쓰지 않는다.** 이 계정은 여러 콘텐츠 축(브리핑·스토리·릴스·차트 노트)을 함께 운영하며
+   축마다 별도 세션이 돈다. `-A` 는 다른 축이 만들다 만 파일까지 끌고 들어와 검증 안 된 콘텐츠를 발행시킬 수 있다.
+   **자기 축 경로만 명시해서 add** 하고, push 가 거부되면 `--force` 대신 `git fetch` 부터 다시 한다.
 
 7. **토큰 만료 점검**: `IG_TOKEN_EXPIRES_AT` 가 오늘로부터 10일 이내면 PushNotification으로 "인스타 토큰 갱신 필요 (만료 임박)" 알림.
 
