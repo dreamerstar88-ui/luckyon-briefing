@@ -298,6 +298,104 @@ const R = {
     </div>`;
   },
 
+  // 선 그래프: 선 여러 개 + 교차점 + 수평선(지지·저항) + 밴드
+  // 이동평균선/골든크로스·지지저항·추세선·VIX·볼린저밴드·배당락 등에 두루 쓴다.
+  // points 는 0~100 정규화 좌표 (x 왼→오, y 아래→위). 실제 픽셀은 렌더러가 계산한다.
+  lines(c) {
+    const W = 900, H = 470, P = 30;
+    const px = (x) => P + (x / 100) * (W - P * 2);
+    const py = (y) => (H - P) - (y / 100) * (H - P * 2);
+    const band = c.band ? `<polygon points="${[...c.band.upper.map(p => `${px(p[0])},${py(p[1])}`),
+    ...[...c.band.lower].reverse().map(p => `${px(p[0])},${py(p[1])}`)].join(' ')}"
+      fill="${C.navy}" opacity="0.10"/>` : '';
+    const levels = (c.levels || []).map(l => `
+      <line x1="${px(0)}" y1="${py(l.y)}" x2="${px(100)}" y2="${py(l.y)}"
+            stroke="${l.color || C.red}" stroke-width="4" stroke-dasharray="14 10"/>
+      <text x="${px(100)}" y="${py(l.y) - 12}" text-anchor="end" font-family="${FONT_TITLE}"
+            font-size="25" font-weight="800" fill="${l.color || C.red}">${esc(t(l, 'label'))}</text>`).join('');
+    const series = (c.series || []).map(s => `
+      <polyline points="${s.points.map(p => `${px(p[0])},${py(p[1])}`).join(' ')}"
+                stroke="${s.color || C.navy}" stroke-width="${s.width || 6}" fill="none"
+                stroke-linejoin="round" stroke-linecap="round" ${s.dashed ? 'stroke-dasharray="12 9"' : ''}/>`).join('');
+    const mk = c.marker ? `
+      <circle cx="${px(c.marker.x)}" cy="${py(c.marker.y)}" r="17" fill="none" stroke="${C.red}" stroke-width="6"/>
+      <text x="${px(c.marker.x)}" y="${py(c.marker.y) - 32}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="28" font-weight="800" fill="${C.red}">${esc(t(c.marker, 'label'))}</text>` : '';
+    const legend = (c.series || []).filter(s => t(s, 'label')).map(s => `
+      <span style="display:inline-flex;align-items:center;gap:12px;margin-right:34px">
+        <span style="width:38px;height:7px;background:${s.color || C.navy};border-radius:4px"></span>
+        <span style="font-family:${FONT_TITLE};font-size:26px;font-weight:700;color:${C.body}">${esc(t(s, 'label'))}</span>
+      </span>`).join('');
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="flex:1;display:flex;align-items:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+          <line x1="${px(0)}" y1="${py(0)}" x2="${px(100)}" y2="${py(0)}" stroke="#c9c6bc" stroke-width="3"/>
+          ${band}${levels}${series}${mk}
+        </svg>
+      </div>
+      ${legend ? `<div style="margin-bottom:14px">${legend}</div>` : ''}
+      ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
+    </div>`;
+  },
+
+  // 막대 비교: 거래량·시가총액·PER 등 "숫자 몇 개를 나란히" 보여줄 때
+  bars(c) {
+    const max = Math.max(...(c.items || []).map(i => Math.abs(i.value) || 0), 1);
+    const rows = (c.items || []).map(it => {
+      const w = Math.max((Math.abs(it.value) / max) * 100, 3);
+      const hi = it.highlight;
+      return `<div style="margin-bottom:26px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px">
+          <span style="font-family:${FONT_TITLE};font-size:29px;font-weight:${hi ? 800 : 700};color:${hi ? C.red : C.ink}">${esc(t(it, 'label'))}</span>
+          <span style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${hi ? C.red : C.ink}">${esc(it.display ?? it.value)}</span>
+        </div>
+        <div style="height:34px;background:#eceade;border-radius:6px;overflow:hidden">
+          <div style="width:${w}%;height:100%;background:${it.color || (hi ? C.red : C.navy)};opacity:${hi ? 1 : 0.72}"></div>
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="margin-top:34px">${rows}</div>
+      <div style="flex:1"></div>
+      ${t(c, 'closing') ? `<div class="box" style="margin-bottom:22px"><div style="font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</div></div>` : ''}
+    </div>`;
+  },
+
+  // 공식: 분수 꼴 수식 + 각 항 설명 + 실제 숫자로 계산해 보기
+  // PER·PBR·EPS·배당수익률·ROE 처럼 "나누기 하나로 끝나는" 지표에 쓴다.
+  formula(c) {
+    const f = c.formula || {};
+    const parts = (c.parts || []).map(p => `
+      <div style="display:flex;gap:18px;align-items:baseline;margin-bottom:16px">
+        <span style="font-family:${FONT_TITLE};font-size:28px;font-weight:800;color:${C.red};min-width:210px">${esc(t(p, 'term'))}</span>
+        <span style="font-size:27px;color:${C.body}">${esc(t(p, 'desc'))}</span>
+      </div>`).join('');
+    const ex = c.example ? `
+      <div class="box" style="margin-bottom:22px">
+        <div style="font-family:${FONT_TITLE};font-size:26px;font-weight:800;color:${C.navy};margin-bottom:12px">${esc(t(c.example, 'title'))}</div>
+        ${(c.example.lines || []).map(l => `<div style="font-family:${FONT_TITLE};font-size:29px;font-weight:700;color:${C.ink};margin-top:6px">${esc(t(l, 'text'))}</div>`).join('')}
+      </div>` : '';
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="margin:38px 0 34px;display:flex;align-items:center;justify-content:center;gap:26px">
+        <div style="text-align:center">
+          <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink};padding:0 24px">${esc(t(f, 'numerator'))}</div>
+          <div style="height:5px;background:${C.ink};margin:14px 0"></div>
+          <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink};padding:0 24px">${esc(t(f, 'denominator'))}</div>
+        </div>
+        ${t(f, 'result') ? `<div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.red};white-space:nowrap">= ${esc(t(f, 'result'))}</div>` : ''}
+      </div>
+      ${parts}
+      <div style="flex:1"></div>
+      ${ex}
+    </div>`;
+  },
+
   // 요약: 제목 + 체크 3줄 + 형광펜 CTA 2개 + 다음 편 예고 + 고지
   recap(c) {
     const lines = (c.points || []).map(p => `

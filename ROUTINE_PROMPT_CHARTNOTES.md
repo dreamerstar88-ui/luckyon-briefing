@@ -120,7 +120,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 (한국어판 상승=빨강·하락=파랑 / 영어판 상승=초록·하락=빨강). 이 시리즈가 EP.01 에서 가르친 내용이므로
 여기서 틀리면 안 된다 — 그래서 코드가 강제한다.
 
-**쓸 수 있는 카드 타입 8종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
+**쓸 수 있는 카드 타입 11종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
 
 | type | 쓰임 | 주요 필드 |
 |---|---|---|
@@ -132,6 +132,9 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `example` | **실제 시세 사례** | `title`, `sub`, `direction`, `values.{high,close,open,low}`, `conclusion`, `note` |
 | `numbered` | 번호 매긴 3가지 + 경고 | `title`, `items[].title/desc`, `warn_title`, `warn_body` |
 | `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
+| `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing` |
+| `bars` | **막대 비교** — 거래량·시총·지표 수치 | `title`, `body`, `items[].label/value/display/highlight`, `closing` |
+| `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
 
@@ -139,8 +142,16 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 특히 **영어는 같은 내용도 한국어보다 길어져 넘치기 쉽다.** 넘치면 그 언어의 문구만 줄여 다시 렌더한다
 (사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
 
-**타입 8종으로 표현이 안 되는 주제**(예: 이동평균선 교차, RSI 같은 보조지표 곡선)를 만나면,
-억지로 기존 타입에 끼워 넣지 말고 **렌더러에 새 타입을 추가**한다. 추가한 타입은 위 표에도 한 줄 적어 둔다.
+**타입을 새로 만들 일은 거의 없다.** 위 11종이 로드맵 24회차의 그림을 사실상 전부 덮는다 —
+`lines` 하나가 골든크로스·지지저항·추세선·VIX·볼린저밴드·배당락을 다 그리고,
+`bars` 하나가 거래량·시가총액·PER·PBR·EPS·배당수익률·ROE 를 다 그린다.
+**주제가 바뀌어도 바뀌는 것은 숫자와 라벨뿐이지 타입이 아니다.**
+
+`lines` 의 `series[].points` 는 **0~100 정규화 좌표**다 (x 왼→오, y 아래→위). 실제 픽셀은 렌더러가 계산하므로
+화면 크기를 신경 쓸 필요 없이 "대략 이런 모양"으로만 찍으면 된다. 교차점을 강조하려면 `marker` 에 그 좌표를 준다.
+
+그래도 정말 안 되는 그림(예: 호가창 표, ETF 구성 비율)을 만나면 억지로 끼워 넣지 말고
+**렌더러에 새 타입을 추가**하고 위 표에 한 줄 적어 둔다. 그 타입은 다음 회차부터 재사용된다.
 
 > 예외: 사람이 이미 만든 카드를 넘겨받는 경우(EP.01 이 그랬다)에는 다시 만들지 말고 받은 파일을 그대로 쓴다.
 > 디자인이 이미 확정된 것이므로 재현하려 들면 오히려 훼손된다. 이때는 5단계를 건너뛰고 파일만 배치한다.
