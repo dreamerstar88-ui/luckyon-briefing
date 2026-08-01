@@ -1,23 +1,27 @@
 # luckyon 브리핑 — 주말 루틴 절차서 (토: 주간 결산 / 일: 다음 주 일정)
 
-> **아직 비활성 상태입니다.** 주말 브리핑을 시작하기로 하면 claude.ai/code/routines 에 아래 두 루틴을 등록하기만 하면 됩니다. 코드(카드 8장 렌더러·발행 스크립트)는 이미 sat/sun 세션을 지원합니다.
+> **루틴 설정 방법**: claude.ai/code/routines 에 아래 **두 개**를 등록합니다. Instructions 칸에는 두 줄만 넣습니다.
+> 각 루틴이 **한국어·영어 카드를 모두 만들어 각각 발행**하므로, 주말 게시물은 총 4건이지만 세션은 2번입니다.
 >
-> **① 토요일 주간 결산** — 매주 토요일 07:35 KST 실행 (금요일 미국장 마감 직후, 발행 약 08:00)
+> **① 토요일 주간 결산** — 매주 토요일 **07:35 KST** (금요일 미국장 마감 직후, 발행 약 08:00)
 > ```
 > 저장소의 ROUTINE_PROMPT_WEEKEND.md 파일을 읽고, 그 절차를 순서대로 그대로 수행하세요.
-> LANG = ko
 > SESSION = sat
 > ```
 >
-> **② 일요일 다음 주 일정** — 매주 일요일 20:30 KST 실행 (발행 약 21:00, 월요일 대비)
+> **② 일요일 다음 주 일정** — 매주 일요일 **20:30 KST** (발행 약 21:00, 월요일 대비)
 > ```
 > 저장소의 ROUTINE_PROMPT_WEEKEND.md 파일을 읽고, 그 절차를 순서대로 그대로 수행하세요.
-> LANG = ko
 > SESSION = sun
 > ```
 >
-> 영어본은 각각 `LANG = en` 으로 별도 루틴을 만드세요.
-> 주말 루틴을 활성화한 뒤에는, 평일 절차서(ROUTINE_PROMPT.md)의 금요일 저녁 `next_brief` 문구를 "내일 아침 8시, 한 주 결산"으로 바꾸는 것을 잊지 마세요 (아래 참고).
+> **`LANG` 을 지정하지 않습니다.** 예전에는 한국어·영어 루틴을 따로 돌렸지만, 그 방식은 나중 언어가
+> 먼저 언어의 검증을 신뢰하고 재검증을 건너뛰는 실패 모드가 있었습니다 (평일 브리핑에서 2026-07-21에
+> 2주 전 기사가 "오늘 발표"로 오발행되는 사고가 실제로 있었습니다). 지금은 **세션 하나가 리서치·검증을
+> 한 번만 하고 두 언어 카드를 모두 만들므로** 두 언어가 다른 사실관계로 나갈 위험이 구조적으로 없습니다.
+>
+> **활성화할 때 함께 할 일**: 평일 절차서(ROUTINE_PROMPT.md)의 **금요일 `pm` `next_brief`** 문구를
+> "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산" 으로 바꿉니다. (아래 마지막 절 참고 — 이미 반영돼 있으면 그대로 두세요.)
 
 ---
 
@@ -36,7 +40,8 @@
 1. **의존성 확인**: `npm ls playwright` 로 playwright가 있는지 확인하고, 없으면 `npm install` 을 실행한다.
    - `npm install` 이 403 등으로 실패하는 환경이면: `mkdir -p node_modules && ln -sf /opt/node22/lib/node_modules/playwright node_modules/playwright`
 
-2. **날짜·세션 확인**: 한국시간(KST) 기준 오늘 날짜를 `YYYY-MM-DD` 형식으로 `DATE` 로 정한다. `SESSION` 은 sat 또는 sun.
+2. **날짜·세션 확인**: 한국시간(KST) 기준 오늘 날짜를 `YYYY-MM-DD` 형식으로 `DATE` 로 정한다. 루틴 지시문의 `SESSION`(sat|sun)을 확인한다.
+   - **중복 실행 가드**: `claude/live` 에 `content/<DATE>-<SESSION>.json` 이 이미 있으면 이미 발행됐을 수 있다. 무리해서 추측하지 말고 PushNotification 으로 알린 뒤 발행 여부를 신중히 결정한다.
 
 3. **리서치**: WebSearch로 조사한다. 지난 한 주의 평일 콘텐츠 파일들(`content/` 의 이번 주 am/pm JSON)을 먼저 읽으면 한 주 흐름을 빠르게 파악할 수 있다 — 단, 주간 등락률·최신 일정은 반드시 웹에서 다시 확인한다.
 
@@ -58,6 +63,17 @@
 
    - 중요 일정은 `"importance": "high"` (카드에 "주목" 배지), 나머지는 `"mid"`.
    - 각 항목은 결론부터 1~2문장, 한국어·영어 두 버전 모두 작성한다.
+
+   **뉴스 검증 (필수)** — econ·ai 후보 12건을 JSON 에 넣기 전에, 반드시 **별도의 검증 에이전트**를 띄운다
+   (`Agent` 도구, `subagent_type: general-purpose`, `run_in_background: false` 로 결과를 받고 이어서 진행).
+   뉴스를 고른 세션이 스스로 재검토하면 확증편향으로 놓친다 — 평일 브리핑에서 실제로 사고가 있었다.
+   후보 12건 전체(headline/body/src/time 초안 + 근거 URL)를 넘기고 항목별 pass/fail 을 표로 받는다:
+   ① **최초 게시일** — 기사 URL 의 날짜 패턴·바이라인으로 실제 보도 시점을 확인하고, 이번 주(sat) 또는
+   다음 주 예정(sun) 범위에 맞는지. ② **사실 일치** — 수치·인용구가 원문과 자릿수까지 맞는지.
+   ③ **미래형 표현** — "다음 주 ~한다/예정" 이 검증 시점에도 사실인지 (특히 sun 세션의 일정은 변경·연기가 잦다).
+   fail 항목은 교체하거나 `time`·헤드라인을 실제 날짜 기준으로 정정한다. 결과는 짧게 로그에 남긴다.
+   (이 검증은 세션당 한 번이면 ko·en 카드 모두에 적용된다.)
+
    - 위 예시처럼 delta·time·src 에 한국어가 들어가면("▲ 주간 +2.1%", "7/14(화)", "수 7/22 21:30 KST") 반드시 `_ko`/`_en` 으로 분리해 영어판에는 영어 표기("▲ +2.1% w/w", "Tue 7/14", "Wed 7/22 21:30 KST")를 쓴다. 수치는 일의 자리까지 정확하게 (근사치 "62K대" 금지). — 상세 규칙은 ROUTINE_PROMPT.md 4단계 참조.
 
 4. **콘텐츠 JSON 작성**: `content/<DATE>-<SESSION>.json` 으로 저장한다. 스키마는 평일(ROUTINE_PROMPT.md 4단계)과 동일하며, 아래 주말 전용 값을 쓴다.
@@ -71,16 +87,19 @@
    - caption: sat 은 "한 주 결산" 임을, sun 은 "다음 주 일정" 임을 첫 줄에 밝힌다. 요약 + 팔로우/저장 유도 + 해시태그 15개 내외 + next_brief 예고 한 줄.
    - **한국어 맞춤법·띄어쓰기 검증**: 저장 전에 모든 한국어 텍스트를 다시 읽으며 점검한다 (평일 절차서와 동일 기준). 특히 "주간 +2.1%" 처럼 단위·기호 표기를 통일한다.
 
-5. **카드 이미지 생성**:
-   - `node scripts/render-cards.mjs <DATE> ${LANG} <SESSION>`
-   - `cards/<DATE>/<SESSION>/${LANG}/` 에 card1~8.png 확인.
+5. **카드 이미지 생성**: 같은 JSON 으로 한국어·영어 카드를 모두 만든다.
+   - `node scripts/render-cards.mjs <DATE> ko <SESSION>`
+   - `node scripts/render-cards.mjs <DATE> en <SESSION>`
+   - `cards/<DATE>/<SESSION>/ko/`, `cards/<DATE>/<SESSION>/en/` 각각에 card1~8.png 가 생겼는지 확인한다.
+   - **카드 분량 초과 확인 (매번 필수)**: 영어는 같은 내용도 줄바꿈이 많아져 카드 높이(1350px)를 넘기기 쉽다.
+     두 언어 모두 3~7번 카드를 열어 하단 텍스트가 푸터와 겹치는지 확인하고, 겹치면 **그 언어 텍스트만** 줄여 재렌더한다.
 
 6. **고정 브랜치 `claude/live` 에 커밋 & 푸시** (평일과 동일):
    ```
    git fetch origin claude/live
    git checkout -B claude/live FETCH_HEAD          # 항상 원격 최신 기준
    git add content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>
-   git commit -m "brief: <DATE> <SESSION> (${LANG})"
+   git commit -m "brief: <DATE> <SESSION> (ko+en)"
    git push origin claude/live
    git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
    ```
@@ -90,17 +109,25 @@
 
 7. **토큰 만료 점검**: `IG_TOKEN_EXPIRES_AT` 가 오늘로부터 10일 이내면 PushNotification으로 "인스타 토큰 갱신 필요 (만료 임박)" 알림.
 
-8. **Instagram 발행**:
-   - `node scripts/publish-instagram.mjs <DATE> ${LANG} <SESSION>`
-   - 성공 시 media id 를 로그에 남기고, 실패 시 원인(토큰/권한/URL)을 판단해 PushNotification으로 알린다.
+8. **Instagram 발행**: 한국어·영어를 각각 발행한다.
+   - `node scripts/publish-instagram.mjs <DATE> ko <SESSION>`
+   - `node scripts/publish-instagram.mjs <DATE> en <SESSION>`
+   - 두 언어는 **서로 독립적으로** 시도한다 — 한쪽이 실패해도 다른 쪽을 건너뛰지 않는다.
+     각각 성공하면 media id 를, 실패하면 에러를 그대로 로그에 남기고 토큰/권한/URL 중 무엇이 원인인지 판단한다.
 
-9. **마무리 보고**: 세션, 언어, media id, 카드 수, 실패 내용을 요약한다.
+9. **카카오톡 발행 알림**: 두 언어 시도가 끝나면 **결과가 무엇이든** PlayMCP 카카오톡 도구
+   (`KakaotalkChat-MemoChat`, 나와의 채팅)로 결과를 보낸다. 200자 제한을 고려해 핵심만 압축한다.
+   - 둘 다 성공: `✅ [luckyon] <DATE> <SESSION> 발행 완료 — KO media <id> / EN media <id>`
+   - 일부 성공: `⚠️ [luckyon] <DATE> <SESSION> 일부 성공 — KO: <요약> · EN: <요약>. 수동 확인 필요`
+   - 둘 다 실패: `❌ [luckyon] <DATE> <SESSION> 발행 실패 — <사유 한 줄>. 수동 확인 필요`
+   - 카카오톡 도구를 쓸 수 없는 세션이면 **건너뛰지 말고 PushNotification 으로 같은 내용을 보낸다.**
 
-### 활성화할 때 평일 절차서에 반영할 것 (사람이 직접 또는 Claude에게 요청)
-ROUTINE_PROMPT.md 4단계의 `next_brief` 규칙에 아래 예외를 추가하세요:
-- 금요일 `pm`: "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산" / "📊 Next brief — 8 AM KST, the week in review"
-(주말 루틴이 없는 동안 금요일 저녁 카드가 "내일 아침 8시"를 예고하면 실제로는 월요일에야 다음 브리핑이 나가므로, 활성화 전까지는 금요일 pm 의 next_brief 를 "다음 브리핑 — 월요일 아침 8시" 로 쓰는 것이 정확합니다.)
+10. **마무리 보고**: 세션, 언어별 media id, 카드 수, 실패 내용을 요약한다.
 
-### 이 루틴의 언어·세션 설정
-LANG = ko        ← 영어본 루틴에서는 en 으로.
-SESSION = sat    ← 토요일 루틴은 sat, 일요일 루틴은 sun.
+### 평일 절차서에 반영할 것 (활성화 시 1회)
+
+ROUTINE_PROMPT.md 4단계의 `next_brief` 규칙에서 **금요일 `pm`** 을 아래로 바꿉니다:
+- "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산" / "📊 Next brief — 8 AM KST, the week in review"
+
+주말 루틴이 없는 동안에는 금요일 저녁 카드가 "월요일 아침 8시"를 예고해야 정확했지만,
+이제 토요일 아침에 주간 결산이 나가므로 "내일 아침"이 맞습니다.
