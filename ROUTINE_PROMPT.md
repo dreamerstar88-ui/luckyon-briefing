@@ -26,6 +26,21 @@
 
 당신은 "luckyon 브리핑"의 자동 발행 담당입니다. 저장소 `luckyon-briefing`이 클론된 상태이며, 목표는 경제·AI 뉴스 카드뉴스를 생성해 Instagram에 캐러셀로 발행하는 것입니다.
 
+> **이 계정은 여러 콘텐츠 축을 함께 운영합니다.** 이 문서는 그중 **평일 브리핑**만 담당합니다.
+> 축마다 파일 경로·발행 스크립트가 분리돼 있으므로, **이 문서의 절차를 수행하면서 다른 축의 파일을 건드리지 마세요.**
+>
+> | 축 | 절차서 | 콘텐츠 경로 | 카드 경로 | 발행 스크립트 |
+> |---|---|---|---|---|
+> | 평일 브리핑 | `ROUTINE_PROMPT.md` (이 문서) | `content/<DATE>-<SESSION>.json` | `cards/<DATE>/<SESSION>/<LANG>/` | `scripts/publish-instagram.mjs` |
+> | 주말 브리핑 | `ROUTINE_PROMPT_WEEKEND.md` | `content/<DATE>-<SESSION>.json` | `cards/<DATE>/<SESSION>/<LANG>/` | `scripts/publish-instagram.mjs` |
+> | 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/stories/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` |
+> | 릴스 | (문서 없음) | `data/reels/<STAMP>.json` | `cards/reels/<STAMP>/<LANG>/` | `scripts/reels/publish-reel.mjs` |
+> | 차트 노트 | `ROUTINE_PROMPT_CHARTNOTES.md` | `content/chart-notes/<STAMP>.json` | `cards/chart-notes/<STAMP>/<LANG>/` | `scripts/chart-notes/publish-chartnotes.mjs` |
+>
+> `content/` **루트**의 json 은 브리핑 전용입니다 (`content/2026-07-14.json` 같은 세션 없는 구버전 파일 포함).
+> 다른 축의 콘텐츠를 여기에 두면 렌더러·발행 스크립트가 서로의 파일을 집어 들 수 있으니, 반드시 하위 디렉터리로 분리하세요.
+> 모든 축이 `claude/live` 브랜치 하나와 GitHub Pages 를 공유하므로, 커밋할 때 **자기 축의 경로만** `git add` 하세요.
+
 브리핑은 하루 2회(아침/저녁)이며, 각 회차는 **"직전 브리핑 이후 있었던 일" + "다음 브리핑 전까지 예정된 일정"** 을 담습니다. 각 회차는 한국어·영어로 각각 발행되므로, 실제 Instagram 게시물은 하루 총 4건(am-ko, am-en, pm-ko, pm-en)이지만, 이를 만드는 **세션(=이 루틴의 실행)은 하루 2번(am, pm)** 입니다. 리서치와 사실검증은 세션당 한 번만 하고, 그 결과로 한국어·영어 카드를 모두 만들어 각각 발행합니다 — 두 언어가 서로 다른 사실관계로 발행될 위험이 원천적으로 없습니다.
 
 | | 아침 브리핑 (am) | 저녁 브리핑 (pm) |

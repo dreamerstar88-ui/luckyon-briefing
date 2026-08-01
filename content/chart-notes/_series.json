@@ -1,0 +1,49 @@
+{
+  "series_ko": "주식 차트 3분 노트",
+  "series_en": "3-Min Stock Chart Notes",
+  "byline": "by luckyon",
+  "footer_ko": "매일 3분씩 배우는 주식 차트",
+  "footer_en": "3 minutes a day, one chart at a time",
+  "cards_per_episode": 8,
+  "size": "1080x1350",
+  "_comment": "발행할 때마다 published 에 한 줄 추가하고, 쓴 주제를 backlog 에서 뺀다. 루틴이 '최근 30일 내 다룬 주제'를 판단하는 근거 파일이다.",
+
+  "published": [
+    {
+      "stamp": "2026-08-01-ep01",
+      "episode": "EP.01",
+      "term_ko": "캔들차트",
+      "term_en": "Candlestick chart",
+      "date": "2026-08-01",
+      "ko": "https://www.instagram.com/p/DbfPc6hluAD/",
+      "en": "https://www.instagram.com/p/DbfP5xknH7-/"
+    }
+  ],
+
+  "next_up": {
+    "term_ko": "이동평균선 & 골든크로스",
+    "term_en": "Moving averages & golden cross",
+    "_comment": "EP.01 마지막 장에 '다음 편'으로 예고했으므로 EP.02 는 반드시 이 주제여야 한다."
+  },
+
+  "backlog": [
+    { "term_ko": "이동평균선 & 골든크로스", "term_en": "Moving averages & golden cross" },
+    { "term_ko": "거래량", "term_en": "Trading volume" },
+    { "term_ko": "지지선과 저항선", "term_en": "Support & resistance" },
+    { "term_ko": "PER (주가수익비율)", "term_en": "P/E ratio" },
+    { "term_ko": "PBR (주가순자산비율)", "term_en": "P/B ratio" },
+    { "term_ko": "시가총액", "term_en": "Market capitalization" },
+    { "term_ko": "배당수익률", "term_en": "Dividend yield" },
+    { "term_ko": "변동성과 VIX", "term_en": "Volatility & the VIX" },
+    { "term_ko": "RSI (상대강도지수)", "term_en": "RSI" },
+    { "term_ko": "MACD", "term_en": "MACD" },
+    { "term_ko": "볼린저밴드", "term_en": "Bollinger Bands" },
+    { "term_ko": "갭 상승·갭 하락", "term_en": "Gap up & gap down" },
+    { "term_ko": "호가창 읽는 법", "term_en": "Reading the order book" },
+    { "term_ko": "공매도", "term_en": "Short selling" },
+    { "term_ko": "ETF", "term_en": "ETFs" },
+    { "term_ko": "액면분할", "term_en": "Stock splits" },
+    { "term_ko": "EPS와 어닝서프라이즈", "term_en": "EPS & earnings surprise" },
+    { "term_ko": "선물과 미결제약정", "term_en": "Futures & open interest" }
+  ]
+}
