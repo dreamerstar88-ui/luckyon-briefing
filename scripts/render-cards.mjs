@@ -71,10 +71,15 @@ function cardHook() {
       <div style="font-size:30px; font-weight:700; line-height:1.42; color:#e8e7e0;">${t(p.body_ko, p.body_en)}</div>
     </div>`;
   };
-  const hasPoints = data.hook_bull || data.hook_bear;
-  const analysis = hasPoints
-    ? `${point(data.hook_bull, 'bull')}${point(data.hook_bear, 'bear')}`
-    : `<div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>`;
+  const sub = `<div style="font-size:34px; color:#c3c2b7; margin-top:36px; line-height:1.45;">${t(data.headline_sub_ko, data.headline_sub_en)}</div>`;
+  // 호재·악재가 둘 다 있을 때만 헤드라인을 줄이고 서브헤드라인을 감춘다.
+  // 한쪽만 있는 날(예: 뚜렷한 악재만 있는 날)은 박스가 하나뿐이라 서브헤드라인을
+  // 함께 남겨야 카드 아래쪽이 비어 보이지 않는다.
+  const hookCount = (data.hook_bull ? 1 : 0) + (data.hook_bear ? 1 : 0);
+  const points = `${point(data.hook_bull, 'bull')}${point(data.hook_bear, 'bear')}`;
+  const analysis = hookCount === 2 ? points
+    : hookCount === 1 ? `${sub}${points}`
+    : sub;
   return `
     <div class="pad">
       <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
@@ -84,7 +89,7 @@ function cardHook() {
           : session === 'sat' ? t('주간 결산', 'WEEK IN REVIEW')
           : session === 'sun' ? t('다음 주 미리 보기', 'THE WEEK AHEAD')
           : t('오늘의 핵심', 'TODAY')}</div>
-        <div style="font-size:${hasPoints ? '58px' : '78px'}; font-weight:800; line-height:1.2; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
+        <div style="font-size:${hookCount === 2 ? '58px' : '78px'}; font-weight:800; line-height:1.2; letter-spacing:-0.02em;">${t(data.headline_ko, data.headline_en)}</div>
         ${analysis}
       </div>
       <div style="font-size:26px; color:#898781; margin-bottom:24px;">${t('오른쪽으로 넘겨보세요', 'Swipe to read')} →</div>
