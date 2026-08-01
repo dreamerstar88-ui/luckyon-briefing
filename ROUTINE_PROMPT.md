@@ -78,6 +78,32 @@
    - **최신성 원칙**: 보도 후 24시간이 지난 뉴스는 시장을 움직이는 주요 뉴스가 아닌 한 넣지 않는다. 부득이 포함할 때는 발행 직전 후속 보도를 검색해 상황이 갱신되지 않았는지(예: "출시 예정"이 연기·확정으로 바뀌지 않았는지) 확인하고, 카드에는 현재 시점의 최신 상태로 기술한다. 특히 "오늘 ~한다/예정" 류의 미래형 문장은 발행 시점에 사실인지 반드시 재확인한다.
    - 각 뉴스는 결론부터 1~2문장으로, 한국어와 영어 두 버전을 모두 작성한다.
 
+   **3-b-2. 훅 카드의 호재·악재 (`hook_bull` / `hook_bear`) — 매 회차 필수**
+
+   1번 카드(훅)는 헤드라인 아래에 **초록 "▲ 호재" 블록과 빨강 "▼ 악재" 블록**을 나란히 세운다.
+   오늘 시장을 한 문장씩으로 양쪽에서 보여주는 칸이며, 이 시리즈의 첫 화면을 만드는 핵심 요소다.
+
+   - **두 개를 모두 채운다.** 하나만 넣으면 카드가 한쪽으로 비어 보인다.
+   - 각 1~2문장. **구체적인 종목·수치·사건**을 담는다. "투자심리가 개선됐습니다" 같은 뭉뚱그린 말은 쓰지 않는다.
+   - 악재 일색인 날에도 호재 칸을 억지 낙관으로 채우지 않는다. 대신 **"덜 나쁜 것"이나 반등 근거**를 사실로 쓴다
+     (예: 낙폭 과대, 실적 자체는 견조, 특정 섹터만 선방).
+   - 호재·악재는 **headline 과 중복되지 않게** 쓴다. headline 이 결론이면 이 둘은 근거다.
+   - `hook_bull`/`hook_bear` 가 있으면 헤드라인 글자 크기가 자동으로 줄고(78px→58px) 두 블록이 들어간다.
+     **둘 다 없으면** 렌더러가 대신 `headline_sub` 를 보여준다 — 그래서 빠뜨려도 카드는 그려지지만
+     "호재/악재로 나눠 보여주는" 이 시리즈의 컨셉이 사라진다. **빠뜨리지 않는다.**
+
+   실제 예시 (2026-07-18 아침):
+   ```json
+   "hook_bull": {
+     "body_ko": "TSMC가 2분기 사상 최대 실적에 美 1,000억달러 증설까지 발표 — AI 반도체 수요 자체는 여전히 견조합니다.",
+     "body_en": "TSMC posts a record Q2 and unveils a $100B US expansion — underlying AI-chip demand still looks solid."
+   },
+   "hook_bear": {
+     "body_ko": "넷플릭스가 실적 호조에도 가이던스 실망으로 10%↓, 반도체주 급락까지 겹치며 나스닥이 1.4% 밀렸습니다.",
+     "body_en": "Netflix drops 10% on soft guidance despite a beat; a chip selloff drags the Nasdaq down 1.4%."
+   }
+   ```
+
    **3-c. 일정 리서치 (schedule 4~6건)** — 다음 브리핑 전까지 예정된 일정을 조사한다. 모든 시각은 KST로 표기한다.
    - `am`: 오늘 21:00 전까지 — 국내 지표 발표, 중국·일본 지표, 국내 주요 기업 실적 발표, 유럽 장 초반 주요 이벤트 등.
    - `pm`: 내일 08:00 전까지 — 미국 지표 발표(CPI·PPI·고용 등, KST 시각 병기), 미국 주요 기업 실적(장전/장후 구분), FOMC·연준 인사 발언 등.
@@ -107,6 +133,8 @@
      "date", "session",                          // session: "am" | "pm"
      "dateLabel_ko","dateLabel_en",
      "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
+     "hook_bull":{"body_ko","body_en"},        // ▲ 호재 — 필수 (3-b-2)
+     "hook_bear":{"body_ko","body_en"},        // ▼ 악재 — 필수 (3-b-2)
      "markets":[{"label","value","delta","dir(up|down|flat)"} x10],
      "market_note_ko","market_note_en",
      "econ":[{"headline_ko","headline_en","body_ko","body_en","src","time","catchup(선택)"} x6],
@@ -139,6 +167,8 @@
    - `node scripts/render-cards.mjs <DATE> ko <SESSION>`
    - `node scripts/render-cards.mjs <DATE> en <SESSION>`
    - `cards/<DATE>/<SESSION>/ko/`, `cards/<DATE>/<SESSION>/en/` 각각에 card1~8.png (8장: 훅, 시장, 경제×2, AI×2, 일정, 아웃트로)가 생겼는지 확인한다.
+   - **훅 카드(1번) 확인**: 호재·초록 블록과 악재·빨강 블록이 **둘 다** 보이는지 확인한다.
+     한쪽만 나오거나 둘 다 없이 `headline_sub` 만 보이면 `hook_bull`/`hook_bear` 를 빠뜨린 것이다 (3-b-2 참고).
    - **카드 분량 초과 확인 (매번 필수)**: 특히 영어는 같은 내용도 한국어보다 줄바꿈이 많아져 카드 높이(1350px)를 넘기기 쉽다. 두 언어 모두 3~7번 카드(경제·AI 뉴스, 일정)를 열어 하단 텍스트가 푸터("luckyon 브리핑"·페이지 번호)와 겹치는 항목이 있는지 확인한다. 겹치면 해당 항목의 `body_ko`/`body_en`/`detail_ko`/`detail_en` 등 **그 언어 텍스트만** 줄여 재렌더링한다 (사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
 
 6. **고정 브랜치 `claude/live` 에 커밋 & 푸시**: 반드시 아래 순서대로, 항상 같은 브랜치 이름을 재사용한다 (새 브랜치를 매번 만들지 않는다). GitHub Pages가 이 브랜치를 소스로 보고 있으므로, 여기에 푸시해야 이미지가 공개된다. ko·en 카드와 content json을 한 번에 커밋한다.

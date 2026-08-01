@@ -78,6 +78,11 @@
 
 4. **콘텐츠 JSON 작성**: `content/<DATE>-<SESSION>.json` 으로 저장한다. 스키마는 평일(ROUTINE_PROMPT.md 4단계)과 동일하며, 아래 주말 전용 값을 쓴다.
    - `headline`: sat = 이번 주 최대 이슈 요약 / sun = 다음 주 최대 관전 포인트.
+   - **`hook_bull` / `hook_bear` (필수)**: 1번 훅 카드의 초록 "▲ 호재" · 빨강 "▼ 악재" 블록.
+     평일 절차서 3-b-2 의 작성 원칙을 그대로 따르되, 주말은 범위가 한 주다:
+     - `sat`: 이번 주를 통틀어 **가장 긍정적이었던 것 / 가장 부담이었던 것** 한 문장씩.
+     - `sun`: 다음 주 일정 중 **기대 요인 / 경계 요인** 한 문장씩 (예: "수요일 CPI 둔화 기대" / "목요일 빅테크 실적 부담").
+     둘 다 채운다. 빠뜨리면 렌더러가 `headline_sub` 로 대체해 그려지므로 **조용히 사라진다.**
    - `next_brief` 고정 문구:
      - `sat`: "📅 다음 브리핑 — 내일 저녁 9시, 다음 주 일정 총정리" / "📅 Next brief — Sunday 9 PM KST, the week ahead"
      - `sun`: "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리" / "☀️ Next brief — 8 AM KST, US close wrap-up"
@@ -91,6 +96,7 @@
    - `node scripts/render-cards.mjs <DATE> ko <SESSION>`
    - `node scripts/render-cards.mjs <DATE> en <SESSION>`
    - `cards/<DATE>/<SESSION>/ko/`, `cards/<DATE>/<SESSION>/en/` 각각에 card1~8.png 가 생겼는지 확인한다.
+   - **훅 카드(1번) 확인**: 호재·악재 블록이 **둘 다** 보이는지 확인한다.
    - **카드 분량 초과 확인 (매번 필수)**: 영어는 같은 내용도 줄바꿈이 많아져 카드 높이(1350px)를 넘기기 쉽다.
      두 언어 모두 3~7번 카드를 열어 하단 텍스트가 푸터와 겹치는지 확인하고, 겹치면 **그 언어 텍스트만** 줄여 재렌더한다.
 
