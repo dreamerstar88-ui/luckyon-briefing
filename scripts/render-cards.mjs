@@ -52,6 +52,9 @@ const BASE = `
   .accent { color:#3987e5; }
 `;
 
+// 브랜드 로고·푸터의 "luckyon 브리핑" 은 영어 카드에서도 한글 그대로 둔다.
+// t() 로 감싸 "luckyon Briefing" 으로 바꾸지 말 것 — 번역 누락이 아니라
+// 브랜드 정체성을 위한 의도된 선택이다 (2026-08-01 확인).
 function page(inner, pageno, total) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
   <body>${inner}<div class="foot">luckyon 브리핑</div><div class="pageno">${pageno} / ${total}</div></body></html>`;
