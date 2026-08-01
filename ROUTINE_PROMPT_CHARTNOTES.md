@@ -9,6 +9,11 @@
 >
 > 요일·시각을 고른 이유는 이 문서 맨 아래 **"발행 슬롯"** 절에 적어두었습니다. 슬롯을 바꾸려면 그 절도 함께 고치세요.
 >
+> **⚠️ 이 루틴은 카드를 만들기만 하고 발행하지 않습니다.** 카카오톡으로 검토 링크를 보내고 끝납니다.
+> 사람이 확인한 뒤 Claude 에게 "차트노트 발행해" 라고 해야 인스타에 올라갑니다 (아래 **"발행"** 절).
+> 브리핑과 다른 점입니다 — 브리핑은 시의성 때문에 자동 발행하지만, 차트 노트는 교육 콘텐츠라
+> 틀린 설명이 저장·공유되며 오래 남고 발행 후 수정이 불가능하기 때문입니다.
+>
 > **이 루틴은 브리핑과 완전히 독립입니다.** 브리핑이 실패한 날에도 이 루틴은 정상 발행하고, 반대도 마찬가지입니다.
 > 공유하는 것은 인스타 계정과 GitHub Pages 뿐이며, 파일 경로·스크립트·스키마가 모두 분리돼 있습니다.
 
@@ -32,6 +37,7 @@
 | 콘텐츠 경로 | `content/<DATE>-<SESSION>.json` | `content/chart-notes/<STAMP>.json` |
 | 카드 경로 | `cards/<DATE>/<SESSION>/<LANG>/` | `cards/chart-notes/<STAMP>/<LANG>/` |
 | 발행 스크립트 | `scripts/publish-instagram.mjs` | `scripts/chart-notes/publish-chartnotes.mjs` |
+| **발행 방식** | **자동** (시의성이 생명, 검토 기다릴 수 없음) | **사람 승인 후** (틀리면 오래 남고 수정 불가) |
 
 `STAMP` 형식은 `<YYYY-MM-DD>-ep<NN>` 입니다 (예: `2026-08-01-ep01`). 날짜가 앞이라 정렬하면 발행 순서가 됩니다.
 
@@ -179,13 +185,33 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 - 캡션은 요약 + 저장/태그 유도 + 해시태그 10개 내외 + 교육 목적 고지로 구성한다.
 - 캡션 끝에 다음 편 예고를 한 줄 넣으면 시리즈 이탈이 줄어든다.
 
-### 7. 고정 브랜치 `claude/live` 에 커밋 & 푸시
+### 7. 내용 검증 (필수) — 반드시 별도 에이전트에게 시킨다
+
+원고를 쓴 세션이 스스로 검토하면 확증편향으로 놓친다. **`Agent` 도구로 검증 에이전트를 1개 띄운다**
+(`subagent_type: general-purpose`, `run_in_background: false` 로 결과를 받고 이어서 진행).
+
+검증 에이전트에게 **카드 8장의 원고 전문(ko·en 모두)** 을 넘기고, 항목별로 pass/fail 과 사유를 표로 보고하게 한다:
+
+1. **개념이 사실로 맞는가** — 용어의 정의, 계산식, 인과관계. 초보자용으로 단순화한 것과 **틀린 것**은 다르다.
+   ("RSI 70 이상은 무조건 하락 신호" 처럼 단정하면 fail. "과매수 구간으로 본다" 는 pass.)
+2. **p.06 시세** — 4단계에서 조회한 원본과 숫자·날짜가 자릿수까지 일치하는가.
+3. **투자 권유 표현** — "사야 한다 / 오른다 / 수익이 난다" 류가 없는가. 교육 고지가 마지막 장에 있는가.
+4. **한국어 맞춤법·띄어쓰기**, 영어판에 한글이 남아 있지 않은가.
+5. **다음 편 예고**가 `_series.json` 의 로드맵과 맞는가.
+
+fail 은 그대로 두지 않는다. 고친 뒤 **다시 렌더**한다(5단계). 검증 결과는 짧게 로그에 남긴다.
+
+### 8. 고정 브랜치 `claude/live` 에 커밋 & 푸시
 
 GitHub Pages 가 이 브랜치를 소스로 보므로, 여기에 푸시해야 이미지가 공개된다.
 **반드시 `FETCH_HEAD` 기준으로 체크아웃한다** — `origin/main` 기준으로 새로 만들면 그동안 쌓인 발행 이력이 통째로 날아간다.
-**`git add -A` 를 쓰지 않는다** — 다른 축 세션이 만들다 만 파일까지 끌려 들어온다. 위처럼 자기 축 경로만 명시한다.
+**`git add -A` 를 쓰지 않는다** — 다른 축 세션이 만들다 만 파일까지 끌려 들어온다. 아래처럼 자기 축 경로만 명시한다.
+
+**커밋 전에 검토 페이지를 먼저 만든다.** 이래야 카드와 같은 커밋에 실려 한 번의 Pages 빌드로 함께 공개된다.
 
 ```
+node scripts/chart-notes/make-preview.mjs <STAMP>
+
 git fetch origin claude/live
 git checkout -B claude/live FETCH_HEAD
 git add cards/chart-notes/<STAMP> content/chart-notes
@@ -195,11 +221,51 @@ git push -u origin claude/live
 
 푸시 후 `git rev-parse HEAD origin/claude/live` 로 두 해시가 같은지 확인한다.
 
-### 8. Instagram 발행
+### 9. 검토 페이지 생성 & 카카오톡으로 검토 요청 — **여기서 루틴은 멈춘다**
 
-**GitHub Pages 반영을 먼저 확인한다.** 이 환경에는 `SKIP_PAGES_WAIT=1` 이 설정돼 있을 수 있는데,
-새 경로를 막 푸시한 직후에는 **반드시 `SKIP_PAGES_WAIT=0` 으로 덮어써야 한다.**
-건너뛰면 인스타가 아직 404 인 URL 을 가져가 발행이 실패한다.
+**이 루틴은 발행하지 않는다.** 사람이 카드를 눈으로 확인한 뒤에 발행한다.
+차트 노트는 교육 콘텐츠라 틀린 설명이 저장·공유되며 오래 남고, 인스타 캡션과 카드는 발행 후 수정이 불가능하다.
+주 1회이고 마감 시각도 없으므로 검토 한 번 거치는 비용이 사실상 없다.
+
+검토 페이지(`cards/chart-notes/<STAMP>/preview.html`)는 8단계에서 이미 만들어 함께 푸시했다.
+ko·en 카드 전부와 캡션, 시세 검증 기록, 검토 체크리스트가 한 장에 들어 있어 폰에서 바로 볼 수 있다.
+
+**Pages 반영을 먼저 확인한다** (`curl -I` 로 preview.html 이 200 인지). 확인한 뒤, PlayMCP 카카오톡 도구(`KakaotalkChat-MemoChat`, 나와의 채팅)로 알린다.
+**카카오톡은 텍스트 200자만 되고 이미지 첨부가 안 되므로** 링크 하나로 보낸다:
+
+```
+📝 [luckyon] 차트노트 <EP> <용어> — 카드 16장 검토 요청
+<PAGES_BASE_URL>/cards/chart-notes/<STAMP>/preview.html
+확인 후 Claude에게 "차트노트 발행해"라고 알려주세요.
+```
+
+카카오톡 도구를 쓸 수 없는 세션이면 **건너뛰지 말고 PushNotification 으로 같은 내용을 보낸다.**
+
+여기까지 하고 **루틴을 끝낸다.** 승인을 기다리며 세션을 붙잡고 있지 않는다.
+
+### 10. 마무리 보고
+
+회차·용어, 렌더한 카드 수, 7단계 검증 결과, 검토 페이지 URL 을 요약한다.
+**아직 발행되지 않았다는 점을 분명히 적는다.**
+
+---
+
+## 발행 (사람이 승인한 뒤 — 별도 세션)
+
+사용자가 `차트노트 <STAMP> 발행해` 라고 하면 아래를 수행한다. 루틴이 아니라 대화로 시작되는 절차다.
+
+**고칠 곳을 알려준 경우**에는 먼저 그 부분만 고쳐 다시 렌더하고(5단계), 검토 페이지를 갱신해
+다시 확인받은 뒤에 발행한다. **승인 없이 발행하지 않는다.**
+
+### P1. 발행 전 확인
+
+- `content/chart-notes/<STAMP>.json` 의 `published` 가 비어 있는지 본다. **이미 채워져 있으면 발행된 회차다** — 중복 발행하지 말고 사용자에게 확인한다.
+- 카드가 Pages 에 실제로 공개돼 있는지 URL 로 확인한다 (16장 전부 200).
+
+### P2. Instagram 발행
+
+이 환경에는 `SKIP_PAGES_WAIT=1` 이 설정돼 있을 수 있는데, 새 경로를 막 푸시한 직후에는
+**반드시 `SKIP_PAGES_WAIT=0` 으로 덮어써야 한다.** 건너뛰면 인스타가 아직 404 인 URL 을 가져가 실패한다.
 
 ```
 SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko
@@ -211,9 +277,9 @@ SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> en
   스크립트가 15초 간격으로 5회까지 재시도하므로 **직접 다시 실행하지 않는다** (중복 게시물이 생긴다).
 - 발행 후 `GET /{media-id}?fields=permalink` 로 실제 링크를 확인한다.
 
-### 9. 발행 기록 남기기
+### P3. 발행 기록 남기기
 
-`content/chart-notes/_series.json` 을 갱신하고 다시 커밋·푸시한다. **이 단계를 빠뜨리면 다음 회차가 주제를 모른다.**
+`content/chart-notes/_series.json` 을 갱신하고 커밋·푸시한다. **이 단계를 빠뜨리면 다음 회차가 주제를 모른다.**
 
 - `published` 에 이번 회차(`stamp`·`episode`·`term_ko`·`date`·`ko`/`en` permalink)를 추가
 - `next_up` 을 **이번 회차 마지막 카드에서 예고한 주제**로 교체
@@ -221,18 +287,13 @@ SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> en
 
 같은 내용을 `content/chart-notes/<STAMP>.json` 의 `published` 에도 넣는다 (media id 포함).
 
-### 10. 발행 알림
+### P4. 발행 결과 알림
 
-두 언어 시도가 끝나면 **결과가 무엇이든** 알린다. PlayMCP 카카오톡 도구(`KakaotalkChat`, 나와의 채팅)를 쓰고,
-그 도구를 쓸 수 없는 세션이면 **건너뛰지 말고 PushNotification 으로 같은 내용을 보낸다.**
+**결과가 무엇이든** 카카오톡(없으면 PushNotification)으로 알린다.
 
 - 둘 다 성공: `✅ [luckyon] 차트노트 <EP> <용어> 발행 완료 — KO <permalink> / EN <permalink>`
 - 일부 성공: `⚠️ [luckyon] 차트노트 <EP> 일부 성공 — KO: <요약> · EN: <요약>. 수동 확인 필요`
 - 둘 다 실패: `❌ [luckyon] 차트노트 <EP> 발행 실패 — <사유 한 줄>. 수동 확인 필요`
-
-### 11. 마무리 보고
-
-회차·용어·언어별 media id 와 permalink, 카드 수, 실패가 있었다면 그 내용을 요약한다.
 
 ---
 

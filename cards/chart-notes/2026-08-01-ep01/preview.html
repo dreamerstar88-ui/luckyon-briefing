@@ -1,0 +1,127 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>검토 · EP.01 캔들차트</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px 14px 60px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
+       background:#14140f;color:#f0efe6;line-height:1.6;max-width:760px;margin-inline:auto}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:18px;border-top:1px solid #35342c}
+  h3{font-size:16px;margin:20px 0 8px;color:#b9b6a8}
+  .meta{font-size:14px;color:#9b9889;margin-bottom:18px}
+  .chk{background:#1e1e18;border-left:4px solid #ddc158;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .chk b{color:#ddc158}
+  .chk li{margin:5px 0}
+  .fact{background:#16211a;border-left:4px solid #3f8f6d;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .fact b{color:#6fc79c}
+  .cards{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  img{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  figcaption{font-size:13px;color:#9b9889;margin-top:7px}
+  figcaption b{color:#e0dfd4}
+  .cap{white-space:normal;background:#1e1e18;border-radius:10px;padding:14px 16px;font-size:14px;color:#d9d7cb}
+  .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
+  code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+</style></head><body>
+
+<h1>EP.01 · 캔들차트</h1>
+<div class="meta">주식 차트 3분 노트 · 발행 예정 2026-08-01 · stamp <code>2026-08-01-ep01</code></div>
+
+<div class="chk"><b>검토 체크리스트</b>
+<ul>
+  <li>개념 설명이 <b>사실로 맞는가</b> (정의·인과·용어)</li>
+  <li>p.06 실제 시세의 <b>숫자와 날짜</b>가 맞는가</li>
+  <li>카드 밖으로 <b>넘치거나 겹친 글자</b>가 없는가 (특히 영어)</li>
+  <li><b>투자 권유</b>로 읽힐 문장이 없는가</li>
+  <li>한국어 <b>맞춤법·띄어쓰기</b>, 영어판에 한글 잔존 없는가</li>
+  <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
+</ul></div>
+
+<div class="fact"><b>시세 검증 기록</b>
+<div>KO — 삼성전자(005930.KS) 2026-07-21 일봉 시247,000/고263,500/저243,000/종259,000 — Yahoo Finance 원본 대조 일치</div><div>EN — AAPL 2026-07-16 daily bar O328.01/H334.68/L326.79/C333.26 — verified against Yahoo Finance</div></div>
+
+
+    <h2>🇰🇷 한국어 — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="ko/card1.png" alt="주식 차트 3분 노트 EP.01 캔들차트 기초 표지 — 캔들 색깔은 지역마다 정반대입니다" loading="lazy">
+      <figcaption><b>p.01</b> 주식 차트 3분 노트 EP.01 캔들차트 기초 표지 — 캔들 색깔은 지역마다 정반대입니다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card2.png" alt="차트가 그냥 빨강·파랑 그림처럼 보이나요? 캔들 하나에 담긴 가격 정보 소개" loading="lazy">
+      <figcaption><b>p.02</b> 차트가 그냥 빨강·파랑 그림처럼 보이나요? 캔들 하나에 담긴 가격 정보 소개</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card3.png" alt="캔들 1개는 하루의 네 가지 가격 — 시가·고가·저가·종가(OHLC) 설명" loading="lazy">
+      <figcaption><b>p.03</b> 캔들 1개는 하루의 네 가지 가격 — 시가·고가·저가·종가(OHLC) 설명</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card4.png" alt="캔들의 구조 — 몸통과 위꼬리·아래꼬리 설명 다이어그램" loading="lazy">
+      <figcaption><b>p.04</b> 캔들의 구조 — 몸통과 위꼬리·아래꼬리 설명 다이어그램</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card5.png" alt="양봉 vs 음봉과 색의 반전 — 동아시아권과 서구권의 캔들 색상 관행 비교" loading="lazy">
+      <figcaption><b>p.05</b> 양봉 vs 음봉과 색의 반전 — 동아시아권과 서구권의 캔들 색상 관행 비교</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card6.png" alt="삼성전자 실제 봉 읽기 — 2026년 7월 21일 실제 일봉 데이터 분석" loading="lazy">
+      <figcaption><b>p.06</b> 삼성전자 실제 봉 읽기 — 2026년 7월 21일 실제 일봉 데이터 분석</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card7.png" alt="고수는 색보다 길이를 봅니다 — 몸통과 꼬리 길이로 힘을 읽는 법" loading="lazy">
+      <figcaption><b>p.07</b> 고수는 색보다 길이를 봅니다 — 몸통과 꼬리 길이로 힘을 읽는 법</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card8.png" alt="오늘의 3줄 요약과 다음 편(이동평균선 &amp; 골든크로스) 예고" loading="lazy">
+      <figcaption><b>p.08</b> 오늘의 3줄 요약과 다음 편(이동평균선 &amp; 골든크로스) 예고</figcaption>
+    </figure></div>
+    <h3>캡션 (324자)</h3>
+    <div class="cap">📊 새로운 주말 콘텐츠, 주식 차트 3분 노트를 시작합니다.<br>평일엔 아침저녁 브리핑으로 시장 소식을, 주말엔 차트 읽는 법을 하나씩 배워봐요.<br><br>EP.01 캔들차트 기초 — 빨강이면 무조건 하락? ❌ 캔들 색은 지역마다 정반대입니다.<br>캔들 하나에 담긴 시·고·저·종(OHLC)부터 삼성전자 실제 봉으로 읽는 법까지, 3분이면 끝나요.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br><br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>#주식초보 #주식공부 #캔들차트 #주식차트보는법 #양봉음봉 #재테크 #주식용어 #투자공부 #차트분석 #luckyon브리핑</div>
+
+    <h2>🇺🇸 English — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="en/card1.png" alt="3-Min Stock Chart Notes EP.01 Candlestick Basics cover — candle colors flip by region" loading="lazy">
+      <figcaption><b>p.01</b> 3-Min Stock Chart Notes EP.01 Candlestick Basics cover — candle colors flip by region</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card2.png" alt="Does a chart just look like red and blue bars? Introducing what one candle holds" loading="lazy">
+      <figcaption><b>p.02</b> Does a chart just look like red and blue bars? Introducing what one candle holds</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card3.png" alt="One candle equals four prices — Open, High, Low, Close (OHLC) explained" loading="lazy">
+      <figcaption><b>p.03</b> One candle equals four prices — Open, High, Low, Close (OHLC) explained</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card4.png" alt="Anatomy of a candle — body, upper wick and lower wick diagram" loading="lazy">
+      <figcaption><b>p.04</b> Anatomy of a candle — body, upper wick and lower wick diagram</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card5.png" alt="Up vs down and the color flip — East Asian vs Western candle color conventions compared" loading="lazy">
+      <figcaption><b>p.05</b> Up vs down and the color flip — East Asian vs Western candle color conventions compared</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card6.png" alt="Reading a real Apple candle — analysis of real daily bar data from July 16, 2026" loading="lazy">
+      <figcaption><b>p.06</b> Reading a real Apple candle — analysis of real daily bar data from July 16, 2026</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card7.png" alt="Pros read length, not just color — how to read strength from body and wick length" loading="lazy">
+      <figcaption><b>p.07</b> Pros read length, not just color — how to read strength from body and wick length</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card8.png" alt="Recap in 3 lines and a preview of the next episode: Moving Averages and Golden Cross" loading="lazy">
+      <figcaption><b>p.08</b> Recap in 3 lines and a preview of the next episode: Moving Averages and Golden Cross</figcaption>
+    </figure></div>
+    <h3>캡션 (627자)</h3>
+    <div class="cap">📊 A new weekend series: 3-Min Stock Chart Notes.<br>Weekdays bring you market briefings morning &amp; night — weekends, we'll learn to read charts, one page at a time.<br><br>EP.01 Candlestick Basics — Does red always mean "down"? ❌ Candle colors flip depending on where you look.<br>From what one candle holds (OHLC) to reading a real Apple candle, in 3 minutes.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br><br>(Educational content only — not investment advice)<br><br>#investing101 #stockmarket #candlestick #tradingforbeginners #stockmarketbasics #investingtips #financetips #charting #stocks #luckyonbriefing</div>
+
+<footer>
+문제가 없으면 Claude 에게 <code>차트노트 2026-08-01-ep01 발행해</code> 라고 하세요.<br>
+고칠 곳이 있으면 어느 카드의 무엇을 고칠지 알려주시면 다시 렌더해 이 페이지를 갱신합니다.<br>
+※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
+</footer>
+</body></html>
