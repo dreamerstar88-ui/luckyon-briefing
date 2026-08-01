@@ -63,12 +63,20 @@ function page(inner, pageno, total) {
 // ---------- 카드별 마크업 ----------
 function cardHook() {
   // 호재/악재 분석 블록 (있으면 headline_sub 대신 노출)
+  //
+  // 일요일(sun) 세션은 "다음 주에 무엇을 볼 것인가"라 아직 일어나지 않은 일정을 다룬다.
+  // 예정된 이벤트를 "호재"라고 부르면 결과를 미리 단정하는 예측이 되므로, 이 세션만
+  // 라벨을 '기대 요인 / 경계 요인' 으로 바꾼다. 색·화살표(방향성)는 그대로 둔다.
+  // 토요일(sat)은 지나간 한 주를 정리하므로 호재/악재 그대로가 맞다.
+  const forward = session === 'sun';
   const point = (p, kind) => {
     if (!p) return '';
     const isBull = kind === 'bull';
     const color = isBull ? '#4fbf7b' : '#e66767';
     const arrow = isBull ? '▲' : '▼';
-    const label = isBull ? t('호재', 'BULL') : t('악재', 'BEAR');
+    const label = isBull
+      ? (forward ? t('기대 요인', 'TAILWIND') : t('호재', 'BULL'))
+      : (forward ? t('경계 요인', 'HEADWIND') : t('악재', 'BEAR'));
     return `<div style="background:#1a1a19; border-left:6px solid ${color}; border-radius:14px; padding:24px 28px; margin-top:18px;">
       <div style="font-size:23px; font-weight:800; color:${color}; letter-spacing:0.04em; margin-bottom:12px;">${arrow} ${label}</div>
       <div style="font-size:30px; font-weight:700; line-height:1.42; color:#e8e7e0;">${t(p.body_ko, p.body_en)}</div>
