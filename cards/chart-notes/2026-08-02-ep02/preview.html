@@ -56,7 +56,7 @@
 제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
 
 <div class="fact"><b>시세 검증 기록</b>
-<div>KO — ① p.06 — 삼성전자(005930.KS) 종가와 20일 단순이동평균, 2026-06-01~2026-07-31 43거래일. 전일 대비 변동률의 절댓값 평균은 종가 5.78%, 20일선 0.99% (약 5.8배). 배당 무수정 종가 기준. ② p.07 — 지난 1년(2025-08-01~2026-07-31) 20일선 통과 27회. 20일 평균은 앞 19거래일이 비므로 2년치를 받아 산출했다. 1년치만 받으면 앞 19거래일이 잘려 26회로 과소 집계된다. ③ 데이터: Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. 원시 v8 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ④ MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다 — 이 회차는 무수정 종가를 쓴다.</div><div>EN — (1) p.06 — Apple (AAPL) close vs its 20-day simple moving average, 43 sessions from 2026-06-01 to 2026-07-31. Mean absolute daily change: price 1.69%, the average 0.35% (about 4.8x). (2) p.07 — 18 crossings of the 20-day line over the trailing year (2025-08-01 to 2026-07-31), computed from a 2-year pull; a 1-year pull silently drops the first 19 sessions to the SMA warm-up and undercounts to 17. (3) All figures computed directly from Yahoo Finance v8 daily closes.</div></div>
+<div>KO — ① p.06 — 코스피(^KS11) 종가와 20일 단순이동평균, 2026-06-01~2026-07-31 43거래일. 전일 대비 변동률 절댓값 평균은 종가 4.26%, 20일선 0.73% (약 5.8배). ② p.07 — 지난 1년(2025-08-01~2026-07-31) 코스피 종가가 20일선을 통과한 횟수 32회. 20일 평균은 앞 19거래일이 비므로 2년치를 받아 산출했다. 1년치만 받으면 앞 19거래일이 잘려 과소 집계된다. ③ 데이터: Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. 원시 v8 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있고 그 앞뒤(6/4·7/16)는 거래일로 잡혀 오프셋을 교차검증함. ④ 지수는 배당 조정 이슈가 없어 개별 종목처럼 무수정/조정 종가를 가릴 필요가 없다.</div><div>EN — (1) p.06 — Nasdaq Composite (^IXIC) close vs its 20-day simple moving average, 43 sessions from 2026-06-01 to 2026-07-31. Mean absolute daily change: index 1.18%, the average 0.13% (about 9x). (2) p.07 — the close crossed the 20-day line 40 times over the trailing year (2025-08-01 to 2026-07-31), computed from a 2-year pull; a 1-year pull silently drops the first 19 sessions to the SMA warm-up and undercounts. (3) All figures computed directly from Yahoo Finance v8 daily closes.</div></div>
 
 
     <h2>🇰🇷 한국어 — 8장</h2>
@@ -74,16 +74,16 @@
       <figcaption><b>p.03</b> 이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시</figcaption>
     </figure>
     <figure>
-      <img src="ko/card4.png" alt="기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지" loading="lazy">
-      <figcaption><b>p.04</b> 기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지</figcaption>
+      <img src="ko/card4.png" alt="5일선·20일선·60일선·120일선이 각각 며칠 평균인지 정리한 목록" loading="lazy">
+      <figcaption><b>p.04</b> 5일선·20일선·60일선·120일선이 각각 며칠 평균인지 정리한 목록</figcaption>
     </figure>
     <figure>
-      <img src="ko/card5.png" alt="5일선·20일선·60일선·120일선이 각각 며칠 평균인지 정리한 목록" loading="lazy">
-      <figcaption><b>p.05</b> 5일선·20일선·60일선·120일선이 각각 며칠 평균인지 정리한 목록</figcaption>
+      <img src="ko/card5.png" alt="기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지" loading="lazy">
+      <figcaption><b>p.05</b> 기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지</figcaption>
     </figure>
     <figure>
-      <img src="ko/card6.png" alt="삼성전자 종가와 20일 이동평균을 겹쳐 그린 그래프 — 종가는 크게 출렁이고 20일선은 완만하게 흐른다" loading="lazy">
-      <figcaption><b>p.06</b> 삼성전자 종가와 20일 이동평균을 겹쳐 그린 그래프 — 종가는 크게 출렁이고 20일선은 완만하게 흐른다</figcaption>
+      <img src="ko/card6.png" alt="코스피 종가와 20일 이동평균을 겹쳐 그린 그래프 — 종가는 크게 출렁이고 20일선은 완만하게 흐른다" loading="lazy">
+      <figcaption><b>p.06</b> 코스피 종가와 20일 이동평균을 겹쳐 그린 그래프 — 종가는 크게 출렁이고 20일선은 완만하게 흐른다</figcaption>
     </figure>
     <figure>
       <img src="ko/card7.png" alt="이동평균선을 볼 때 조심할 세 가지 — 뒤를 보고 그리는 선이고, 닿았다고 튕기지 않으며, 기간을 바꾸면 그림이 바뀐다" loading="lazy">
@@ -93,8 +93,8 @@
       <img src="ko/card8.png" alt="오늘의 3줄 요약과 다음 편(골든크로스 &amp; 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지" loading="lazy">
       <figcaption><b>p.08</b> 오늘의 3줄 요약과 다음 편(골든크로스 &amp; 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지</figcaption>
     </figure></div>
-    <h3>캡션 (489자)</h3>
-    <div class="cap">📊 투자 3분 노트 EP.02 — 이동평균선<br><br>차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.<br>최근 며칠 종가를 더해서 그 날수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?<br><br>5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.<br><br>실제로 2026년 6월부터 7월까지 43거래일 동안 삼성전자 종가는 하루 평균 5.8% 출렁였지만, 20일선은 1.0%만 움직였습니다.<br>그렇다고 이 선이 앞을 알려주는 건 아닙니다. 기간을 1년으로 넓혀 보면 종가는 20일선을 27번이나 오갔습니다.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '골든크로스 &amp; 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.<br><br>#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑</div>
+    <h3>캡션 (491자)</h3>
+    <div class="cap">📊 투자 3분 노트 EP.02 — 이동평균선<br><br>차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.<br>최근 며칠 종가를 더해서 그 날수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?<br><br>5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.<br><br>실제로 2026년 6월부터 7월까지 43거래일 동안 코스피 종가는 하루 평균 4.3% 출렁였지만, 20일선은 0.7%만 움직였습니다.<br>그렇다고 이 선이 앞을 알려주는 건 아닙니다. 기간을 1년으로 넓혀 보면 코스피 종가는 20일선을 32번이나 오갔습니다.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '골든크로스 &amp; 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.<br><br>#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #코스피 #재테크 #주식용어 #luckyon브리핑</div>
 
     <h2>🇺🇸 English — 8장</h2>
     <div class="cards">
@@ -111,16 +111,16 @@
       <figcaption><b>p.03</b> The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101</figcaption>
     </figure>
     <figure>
-      <img src="en/card4.png" alt="Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average" loading="lazy">
-      <figcaption><b>p.04</b> Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average</figcaption>
+      <img src="en/card4.png" alt="A list of what the 5, 20, 60 and 120-day lines each average" loading="lazy">
+      <figcaption><b>p.04</b> A list of what the 5, 20, 60 and 120-day lines each average</figcaption>
     </figure>
     <figure>
-      <img src="en/card5.png" alt="A list of what the 5, 20, 60 and 120-day lines each average" loading="lazy">
-      <figcaption><b>p.05</b> A list of what the 5, 20, 60 and 120-day lines each average</figcaption>
+      <img src="en/card5.png" alt="Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average" loading="lazy">
+      <figcaption><b>p.05</b> Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average</figcaption>
     </figure>
     <figure>
-      <img src="en/card6.png" alt="Apple's closing price and its 20-day moving average overlaid — the price swings sharply while the average glides" loading="lazy">
-      <figcaption><b>p.06</b> Apple's closing price and its 20-day moving average overlaid — the price swings sharply while the average glides</figcaption>
+      <img src="en/card6.png" alt="Nasdaq Composite close and its 20-day moving average overlaid — the index swings sharply while the average glides" loading="lazy">
+      <figcaption><b>p.06</b> Nasdaq Composite close and its 20-day moving average overlaid — the index swings sharply while the average glides</figcaption>
     </figure>
     <figure>
       <img src="en/card7.png" alt="Three cautions about moving averages — it looks backwards, touching it guarantees nothing, and changing the period changes the picture" loading="lazy">
@@ -130,8 +130,8 @@
       <img src="en/card8.png" alt="Recap in three lines, a preview of the next episode on the golden and dead cross, and an educational-purpose disclaimer" loading="lazy">
       <figcaption><b>p.08</b> Recap in three lines, a preview of the next episode on the golden and dead cross, and an educational-purpose disclaimer</figcaption>
     </figure></div>
-    <h3>캡션 (950자)</h3>
-    <div class="cap">📊 3-Min Investing Notes EP.02 — Moving averages<br><br>Those smooth curves laid over the candles are moving averages.<br>Add up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?<br><br>A 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.<br><br>A real one: over 43 sessions in June and July 2026, Apple's close moved 1.69% a day on average while its 20-day line moved 0.35%.<br>That smoothing is not foresight, though — over the past year the close crossed that line 18 times.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: the golden cross &amp; the dead cross — what happens when two lines meet.<br><br>#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing</div>
+    <h3>캡션 (959자)</h3>
+    <div class="cap">📊 3-Min Investing Notes EP.02 — Moving averages<br><br>Those smooth curves laid over the candles are moving averages.<br>Add up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?<br><br>A 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.<br><br>A real one: over 43 sessions in June and July 2026, the Nasdaq Composite moved 1.18% a day on average while its 20-day line moved 0.13%.<br>That smoothing is not foresight, though — over the past year the index crossed that line 40 times.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: the golden cross &amp; the dead cross — what happens when two lines meet.<br><br>#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #nasdaq #luckyonbriefing</div>
 
 
 <div class="act">
