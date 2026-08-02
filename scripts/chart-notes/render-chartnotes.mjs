@@ -37,6 +37,11 @@ const outDir = path.join(root, 'cards', 'chart-notes', stamp, lang);
 fs.mkdirSync(outDir, { recursive: true });
 
 const t = (o, key) => (o?.[`${key}_${lang}`] ?? o?.[key] ?? '');
+// 데이터 필드(차트 좌표·시세 값)도 언어별로 갈라 쓸 수 있게 한다.
+// 절차서 3단계가 "예시 종목도 독자에 맞춰 바꾼다"(EP.01 = 삼성전자 / 애플)고 정해 두었는데,
+// cards 배열은 ko·en 렌더가 함께 읽으므로 텍스트만 갈라서는 그 요구를 지킬 수 없다.
+// d() 는 `<key>_ko` / `<key>_en` 이 있으면 그것을, 없으면 공용 `<key>` 를 쓴다(기존 회차 그대로 동작).
+const d = (o, key, fallback) => (o?.[`${key}_${lang}`] ?? o?.[key] ?? fallback);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 // ---------- 시리즈 디자인 토큰 ----------
@@ -248,14 +253,14 @@ const R = {
 
   // 실제 사례: 제목 + 감청색 부제 + 캔들 + OHLC 콜아웃 + 결론 박스
   example(c) {
-    const v = c.values || {};
+    const v = d(c, 'values', {});
     const rowsY = { high: 118, close: 205, open: 452, low: 512 };
     const call = (key, label, val) => `
       <circle cx="356" cy="${rowsY[key]}" r="9" fill="${C.red}"/>
       <path d="M 366 ${rowsY[key]} Q 430 ${rowsY[key] - 8}, 500 ${rowsY[key]}" stroke="#9a968c" stroke-width="3" fill="none"/>
       <text x="520" y="${rowsY[key] + 11}" font-family="${FONT_TITLE}" font-size="33" font-weight="700" fill="${C.navy}">${esc(label)}</text>
       <text x="940" y="${rowsY[key] + 11}" font-family="${FONT_TITLE}" font-size="35" font-weight="800" fill="${C.ink}" text-anchor="end">${esc(val)}</text>`;
-    const up = c.direction !== 'down';
+    const up = d(c, 'direction', 'up') !== 'down';
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       <div style="font-family:${FONT_TITLE};font-size:28px;font-weight:800;color:${C.navy};margin-top:12px">${esc(t(c, 'sub'))}</div>
@@ -305,23 +310,27 @@ const R = {
     const W = 900, H = 470, P = 30;
     const px = (x) => P + (x / 100) * (W - P * 2);
     const py = (y) => (H - P) - (y / 100) * (H - P * 2);
-    const band = c.band ? `<polygon points="${[...c.band.upper.map(p => `${px(p[0])},${py(p[1])}`),
-    ...[...c.band.lower].reverse().map(p => `${px(p[0])},${py(p[1])}`)].join(' ')}"
+    const SERIES = d(c, 'series', []), MARKER = d(c, 'marker', null);
+    const bd = d(c, 'band', null);
+    const band = bd ? `<polygon points="${[...bd.upper.map(p => `${px(p[0])},${py(p[1])}`),
+    ...[...bd.lower].reverse().map(p => `${px(p[0])},${py(p[1])}`)].join(' ')}"
       fill="${C.navy}" opacity="0.10"/>` : '';
-    const levels = (c.levels || []).map(l => `
+    const levels = (d(c, 'levels', [])).map(l => `
       <line x1="${px(0)}" y1="${py(l.y)}" x2="${px(100)}" y2="${py(l.y)}"
             stroke="${l.color || C.red}" stroke-width="4" stroke-dasharray="14 10"/>
       <text x="${px(100)}" y="${py(l.y) - 12}" text-anchor="end" font-family="${FONT_TITLE}"
-            font-size="25" font-weight="800" fill="${l.color || C.red}">${esc(t(l, 'label'))}</text>`).join('');
-    const series = (c.series || []).map(s => `
+            font-size="25" font-weight="800" fill="${l.color || C.red}"
+            stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(l, 'label'))}</text>`).join('');
+    const series = SERIES.map(s => `
       <polyline points="${s.points.map(p => `${px(p[0])},${py(p[1])}`).join(' ')}"
                 stroke="${s.color || C.navy}" stroke-width="${s.width || 6}" fill="none"
                 stroke-linejoin="round" stroke-linecap="round" ${s.dashed ? 'stroke-dasharray="12 9"' : ''}/>`).join('');
-    const mk = c.marker ? `
-      <circle cx="${px(c.marker.x)}" cy="${py(c.marker.y)}" r="17" fill="none" stroke="${C.red}" stroke-width="6"/>
-      <text x="${px(c.marker.x)}" y="${py(c.marker.y) - 32}" text-anchor="middle" font-family="${FONT_TITLE}"
-            font-size="28" font-weight="800" fill="${C.red}">${esc(t(c.marker, 'label'))}</text>` : '';
-    const legend = (c.series || []).filter(s => t(s, 'label')).map(s => `
+    const mk = MARKER ? `
+      <circle cx="${px(MARKER.x)}" cy="${py(MARKER.y)}" r="17" fill="none" stroke="${C.red}" stroke-width="6"/>
+      <text x="${px(MARKER.x)}" y="${py(MARKER.y) - 32}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="28" font-weight="800" fill="${C.red}"
+            stroke="${C.paper}" stroke-width="8" paint-order="stroke">${esc(t(MARKER, 'label'))}</text>` : '';
+    const legend = SERIES.filter(s => t(s, 'label')).map(s => `
       <span style="display:inline-flex;align-items:center;gap:12px;margin-right:34px">
         <span style="width:38px;height:7px;background:${s.color || C.navy};border-radius:4px"></span>
         <span style="font-family:${FONT_TITLE};font-size:26px;font-weight:700;color:${C.body}">${esc(t(s, 'label'))}</span>
@@ -342,8 +351,9 @@ const R = {
 
   // 막대 비교: 거래량·시가총액·PER 등 "숫자 몇 개를 나란히" 보여줄 때
   bars(c) {
-    const max = Math.max(...(c.items || []).map(i => Math.abs(i.value) || 0), 1);
-    const rows = (c.items || []).map(it => {
+    const ITEMS = d(c, 'items', []);
+    const max = Math.max(...ITEMS.map(i => Math.abs(i.value) || 0), 1);
+    const rows = ITEMS.map(it => {
       const w = Math.max((Math.abs(it.value) / max) * 100, 3);
       const hi = it.highlight;
       return `<div style="margin-bottom:26px">

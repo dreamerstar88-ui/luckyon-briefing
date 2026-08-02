@@ -1,0 +1,148 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>검토 · EP.02 이동평균선 &amp; 골든크로스</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px 14px 60px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
+       background:#14140f;color:#f0efe6;line-height:1.6;max-width:760px;margin-inline:auto}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:18px;border-top:1px solid #35342c}
+  h3{font-size:16px;margin:20px 0 8px;color:#b9b6a8}
+  .meta{font-size:14px;color:#9b9889;margin-bottom:18px}
+  .chk{background:#1e1e18;border-left:4px solid #ddc158;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .chk b{color:#ddc158}
+  .chk li{margin:5px 0}
+  .fact{background:#16211a;border-left:4px solid #3f8f6d;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .fact b{color:#6fc79c}
+  .cards{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  img{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  figcaption{font-size:13px;color:#9b9889;margin-top:7px}
+  figcaption b{color:#e0dfd4}
+  .cap{white-space:normal;background:#1e1e18;border-radius:10px;padding:14px 16px;font-size:14px;color:#d9d7cb}
+  .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
+  code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+  .act{display:flex;gap:12px;margin:22px 0 10px}
+  .btn{flex:1;display:block;text-align:center;padding:18px 10px;border-radius:12px;
+       font-size:17px;font-weight:800;text-decoration:none}
+  .btn.ok{background:#2f7d5b;color:#fff}
+  .btn.fix{background:#8a4436;color:#fff}
+  .hint{font-size:13px;color:#9b9889;margin:0 0 6px}
+</style></head><body>
+
+<h1>EP.02 · 이동평균선 &amp; 골든크로스</h1>
+<div class="meta">주식 차트 3분 노트 · 발행 예정 2026-08-02 · stamp <code>2026-08-02-ep02</code></div>
+
+<div class="chk"><b>검토 체크리스트</b>
+<ul>
+  <li>개념 설명이 <b>사실로 맞는가</b> (정의·인과·용어)</li>
+  <li>p.06 실제 시세의 <b>숫자와 날짜</b>가 맞는가</li>
+  <li>카드 밖으로 <b>넘치거나 겹친 글자</b>가 없는가 (특히 영어)</li>
+  <li><b>투자 권유</b>로 읽힐 문장이 없는가</li>
+  <li>한국어 <b>맞춤법·띄어쓰기</b>, 영어판에 한글 잔존 없는가</li>
+  <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
+</ul></div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-02-ep02&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-02-ep02%0AEP.02%20%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0%EC%84%A0%20%26%20%EA%B3%A8%EB%93%A0%ED%81%AC%EB%A1%9C%EC%8A%A4" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-02-ep02&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-02-ep02%0AEP.02%20%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0%EC%84%A0%20%26%20%EA%B3%A8%EB%93%A0%ED%81%AC%EB%A1%9C%EC%8A%A4" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<div class="fact"><b>시세 검증 기록</b>
+<div>KO — 코스피(^KS11) 20일/60일 이동평균 교차 — 2026-07-21(KST) 데드크로스. 20일선 7,684.13 / 60일선 7,754.10, 당일 종가 6,747.95. 전 거래일 2026-07-20 은 20일선 7,802.46 &gt; 60일선 7,748.11 로 아직 위. Yahoo Finance 일봉 종가로 직접 산출(단순이동평균). 원본 봉은 15:00Z 로 찍혀 실제 거래일은 +1일이며, 어린이날(5/5)·설날(2/17)·지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함.</div><div>EN — S&amp;P 500 (^GSPC) 50-day/200-day golden cross on 2025-07-01: 50-day 5,846.34 vs 200-day 5,836.35 (close 6,198.01). Prior session 2025-06-30 was still 5,828.03 vs 5,833.13. Only 50/200 crossover in the trailing 2 years; 50-day still above as of 2026-07-31 (7,471.51 vs 7,024.11). Simple moving averages computed directly from Yahoo Finance daily closes.</div></div>
+
+
+    <h2>🇰🇷 한국어 — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="ko/card1.png" alt="주식 차트 3분 노트 EP.02 표지 — 골든크로스는 '오른다'는 뜻이 아닙니다" loading="lazy">
+      <figcaption><b>p.01</b> 주식 차트 3분 노트 EP.02 표지 — 골든크로스는 '오른다'는 뜻이 아닙니다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card2.png" alt="차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개" loading="lazy">
+      <figcaption><b>p.02</b> 차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card3.png" alt="이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시" loading="lazy">
+      <figcaption><b>p.03</b> 이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card4.png" alt="기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지" loading="lazy">
+      <figcaption><b>p.04</b> 기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card5.png" alt="골든크로스와 데드크로스 도해 — 짧은 선이 긴 선을 위로 뚫는 지점과 아래로 뚫는 지점" loading="lazy">
+      <figcaption><b>p.05</b> 골든크로스와 데드크로스 도해 — 짧은 선이 긴 선을 위로 뚫는 지점과 아래로 뚫는 지점</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card6.png" alt="실제 사례 그래프 — 2026년 7월 21일 코스피 20일선이 60일선을 아래로 통과한 데드크로스" loading="lazy">
+      <figcaption><b>p.06</b> 실제 사례 그래프 — 2026년 7월 21일 코스피 20일선이 60일선을 아래로 통과한 데드크로스</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card7.png" alt="교차 신호를 볼 때 조심할 세 가지 — 신호는 늦고, 한 번의 교차로 방향이 정해지지 않으며, 기간 조합에 정답은 없다" loading="lazy">
+      <figcaption><b>p.07</b> 교차 신호를 볼 때 조심할 세 가지 — 신호는 늦고, 한 번의 교차로 방향이 정해지지 않으며, 기간 조합에 정답은 없다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card8.png" alt="오늘의 3줄 요약과 다음 편(거래량) 예고, 투자 권유가 아니라는 교육 목적 고지" loading="lazy">
+      <figcaption><b>p.08</b> 오늘의 3줄 요약과 다음 편(거래량) 예고, 투자 권유가 아니라는 교육 목적 고지</figcaption>
+    </figure></div>
+    <h3>캡션 (440자)</h3>
+    <div class="cap">📊 주식 차트 3분 노트 EP.02 — 이동평균선 &amp; 골든크로스<br><br>차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.<br>최근 며칠 종가의 평균일 뿐인데 왜 다들 두 선이 만나는 순간을 쳐다볼까요?<br><br>그리고 골든크로스는 '오른다'는 뜻이 아닙니다. 평균은 이미 지나간 가격으로 만들기 때문에, 교차는 예측이 아니라 확인에 가깝습니다.<br>실제로 2026년 7월 21일 코스피에서는 20일선이 60일선을 아래로 뚫는 데드크로스가 나왔습니다. 그 숫자까지 카드에 담았어요.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br><br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '거래량' — 가격은 거짓말을 해도 거래량은 못 합니다.<br><br>#주식초보 #주식공부 #이동평균선 #골든크로스 #데드크로스 #주식차트보는법 #코스피 #재테크 #주식용어 #luckyon브리핑</div>
+
+    <h2>🇺🇸 English — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="en/card1.png" alt="3-Min Stock Chart Notes EP.02 cover — a golden cross is not a 'buy' signal" loading="lazy">
+      <figcaption><b>p.01</b> 3-Min Stock Chart Notes EP.02 cover — a golden cross is not a 'buy' signal</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card2.png" alt="Those smooth curves on the chart — introducing moving averages laid over candles" loading="lazy">
+      <figcaption><b>p.02</b> Those smooth curves on the chart — introducing moving averages laid over candles</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card3.png" alt="The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101" loading="lazy">
+      <figcaption><b>p.03</b> The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card4.png" alt="Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average" loading="lazy">
+      <figcaption><b>p.04</b> Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card5.png" alt="Diagram of a golden cross and a dead cross — where the short line cuts up through the long line and back down" loading="lazy">
+      <figcaption><b>p.05</b> Diagram of a golden cross and a dead cross — where the short line cuts up through the long line and back down</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card6.png" alt="Real example chart — the S&amp;P 500 50-day average crossing above its 200-day on July 1, 2025" loading="lazy">
+      <figcaption><b>p.06</b> Real example chart — the S&amp;P 500 50-day average crossing above its 200-day on July 1, 2025</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card7.png" alt="Three cautions about crossover signals — they lag, one cross settles nothing, and no period pair is definitive" loading="lazy">
+      <figcaption><b>p.07</b> Three cautions about crossover signals — they lag, one cross settles nothing, and no period pair is definitive</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card8.png" alt="Recap in three lines, a preview of the next episode on trading volume, and an educational-purpose disclaimer" loading="lazy">
+      <figcaption><b>p.08</b> Recap in three lines, a preview of the next episode on trading volume, and an educational-purpose disclaimer</figcaption>
+    </figure></div>
+    <h3>캡션 (876자)</h3>
+    <div class="cap">📊 3-Min Stock Chart Notes EP.02 — Moving averages &amp; the golden cross<br><br>Those smooth curves laid over the candles are moving averages.<br>They are just the average of the last few closes — so why does everyone watch the moment two of them meet?<br><br>And a golden cross is not a "buy" signal. An average is built from prices that already happened, so a crossing confirms a trend rather than predicting one.<br>A real one: on July 1, 2025 the S&amp;P 500's 50-day average crossed above its 200-day by just 10 points — and it has stayed above ever since.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br><br>(Educational content only — not investment advice)<br><br>Next up: trading volume — price can lie, volume can't.<br><br>#investing101 #stockmarket #movingaverage #goldencross #deadcross #tradingforbeginners #stockmarketbasics #investingtips #charting #luckyonbriefing</div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-02-ep02&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-02-ep02%0AEP.02%20%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0%EC%84%A0%20%26%20%EA%B3%A8%EB%93%A0%ED%81%AC%EB%A1%9C%EC%8A%A4" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-02-ep02&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-02-ep02%0AEP.02%20%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0%EC%84%A0%20%26%20%EA%B3%A8%EB%93%A0%ED%81%AC%EB%A1%9C%EC%8A%A4" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<footer>
+버튼 대신 Claude 에게 직접 <code>차트노트 2026-08-02-ep02 발행해</code> 라고 해도 됩니다.<br>
+※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
+</footer>
+</body></html>

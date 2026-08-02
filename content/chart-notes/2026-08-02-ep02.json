@@ -1,0 +1,276 @@
+{
+  "type": "chart-notes",
+  "stamp": "2026-08-02-ep02",
+  "date": "2026-08-02",
+  "series": "주식 차트 3분 노트",
+  "series_en": "3-Min Stock Chart Notes",
+  "episode": "EP.02",
+  "byline": "by luckyon",
+  "term_ko": "이동평균선 & 골든크로스",
+  "term_en": "Moving averages & the golden cross",
+  "fact_check": {
+    "ko": "코스피(^KS11) 20일/60일 이동평균 교차 — 2026-07-21(KST) 데드크로스. 20일선 7,684.13 / 60일선 7,754.10, 당일 종가 6,747.95. 전 거래일 2026-07-20 은 20일선 7,802.46 > 60일선 7,748.11 로 아직 위. Yahoo Finance 일봉 종가로 직접 산출(단순이동평균). 원본 봉은 15:00Z 로 찍혀 실제 거래일은 +1일이며, 어린이날(5/5)·설날(2/17)·지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함.",
+    "en": "S&P 500 (^GSPC) 50-day/200-day golden cross on 2025-07-01: 50-day 5,846.34 vs 200-day 5,836.35 (close 6,198.01). Prior session 2025-06-30 was still 5,828.03 vs 5,833.13. Only 50/200 crossover in the trailing 2 years; 50-day still above as of 2026-07-31 (7,471.51 vs 7,024.11). Simple moving averages computed directly from Yahoo Finance daily closes."
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "title_ko": "골든크로스는<br>'오른다'는<br>뜻이 아닙니다",
+      "title_en": "A golden cross<br>is not a<br>'buy' signal",
+      "sub_ko": "EP.02 이동평균선 & 골든크로스",
+      "sub_en": "EP.02 Moving averages & the golden cross",
+      "cta_ko": "저장하고 넘겨보세요",
+      "cta_en": "Save & swipe",
+      "annot_ko": "차트 위에 얹힌|그 선들의 정체",
+      "annot_en": "those smooth lines|over the candles"
+    },
+    {
+      "type": "intro",
+      "title_ko": "차트 위 구불구불한<br>선들의 정체",
+      "title_en": "Those smooth<br>curves on<br>the chart",
+      "body_ko": "캔들만 있는 차트는 거의 없습니다. 그 위에 겹쳐진 부드러운 곡선들이 <b>이동평균선</b>입니다. 오늘은 이 선을 읽습니다.",
+      "body_en": "Almost no chart shows candles alone. The smooth lines laid over them are <b>moving averages</b>. Today we learn to read them.",
+      "caption_ko": "선 하나면 흐름이 보입니다",
+      "caption_en": "One line, and the trend shows"
+    },
+    {
+      "type": "formula",
+      "title_ko": "이동평균선은<br>'요즘 평균'입니다",
+      "title_en": "A moving average<br>is a recent average",
+      "body_ko": "최근 며칠의 종가를 더해 그 날짜 수로 나눈 값입니다. 매일 하나씩 새로 계산해 이으면 선이 됩니다.",
+      "body_en": "Add up the closing prices of the last N sessions and divide by N. Do it every day, join the dots, and you get a line.",
+      "formula": {
+        "numerator_ko": "최근 20일 종가의 합",
+        "numerator_en": "Sum of 20 closes",
+        "denominator_ko": "20",
+        "denominator_en": "20",
+        "result_ko": "20일 이동평균",
+        "result_en": "20-day MA"
+      },
+      "parts": [
+        {
+          "term_ko": "종가",
+          "term_en": "Close",
+          "desc_ko": "그날 장이 끝났을 때의 가격",
+          "desc_en": "the price at the session's end"
+        },
+        {
+          "term_ko": "20일",
+          "term_en": "20 sessions",
+          "desc_ko": "최근 20거래일. 휴장일은 세지 않습니다",
+          "desc_en": "trading days only, not calendar days"
+        },
+        {
+          "term_ko": "이동",
+          "term_en": "Moving",
+          "desc_ko": "하루가 지나면 가장 오래된 날을 빼고 새 날을 더합니다",
+          "desc_en": "drop the oldest close, add the newest"
+        }
+      ],
+      "example": {
+        "title_ko": "예를 들면",
+        "title_en": "For example",
+        "lines": [
+          {
+            "text_ko": "5일 종가가 100 · 102 · 98 · 104 · 101 이면",
+            "text_en": "closes of 100, 102, 98, 104, 101"
+          },
+          {
+            "text_ko": "합계 505 ÷ 5 = 5일 이동평균 101",
+            "text_en": "sum 505 / 5 = a 5-day average of 101"
+          }
+        ]
+      }
+    },
+    {
+      "type": "lines",
+      "title_ko": "짧은 선은 예민하고<br>긴 선은 둔합니다",
+      "title_en": "Short lines react fast,<br>long lines react slow",
+      "body_ko": "같은 가격을 보고도 20일선은 곧바로 방향을 틀고, 60일선은 뒤늦게 천천히 따라옵니다.",
+      "body_en": "Given the very same prices, a 20-day line turns almost at once while a 60-day line bends slowly, well behind it.",
+      "series": [
+        {
+          "label_ko": "일봉 가격",
+          "label_en": "Daily price",
+          "color": "#a9a49a",
+          "width": 4,
+          "dashed": true,
+          "points": [[0, 30], [8, 52], [16, 38], [24, 62], [32, 45], [40, 70], [48, 55], [56, 80], [64, 62], [72, 88], [80, 70], [88, 92], [96, 78], [100, 85]]
+        },
+        {
+          "label_ko": "20일선",
+          "label_en": "20-day MA",
+          "color": "#3d4a68",
+          "width": 6,
+          "points": [[0, 46], [10, 48], [20, 51], [30, 55], [40, 58], [50, 62], [60, 66], [70, 71], [80, 75], [90, 80], [100, 84]]
+        },
+        {
+          "label_ko": "60일선",
+          "label_en": "60-day MA",
+          "color": "#c0523c",
+          "width": 6,
+          "points": [[0, 41], [10, 42], [20, 44], [30, 46], [40, 49], [50, 52], [60, 55], [70, 58], [80, 61], [90, 64], [100, 67]]
+        }
+      ],
+      "closing_ko": "기간이 길수록 느리게 움직입니다",
+      "closing_en": "Longer window, slower line"
+    },
+    {
+      "type": "lines",
+      "title_ko": "골든크로스와<br>데드크로스",
+      "title_en": "Golden cross vs<br>dead cross",
+      "body_ko": "짧은 선이 긴 선을 <b>아래에서 위로</b> 뚫으면 골든크로스, <b>위에서 아래로</b> 뚫으면 데드크로스입니다.",
+      "body_en": "When the short line cuts <b>up</b> through the long one, that is a golden cross. Cutting <b>down</b> through it is a dead cross.",
+      "series": [
+        {
+          "label_ko": "짧은 선",
+          "label_en": "Short MA",
+          "color": "#3d4a68",
+          "width": 6,
+          "points": [[0, 62], [12, 50], [24, 40], [36, 44], [48, 58], [60, 72], [72, 78], [84, 70], [100, 48]]
+        },
+        {
+          "label_ko": "긴 선",
+          "label_en": "Long MA",
+          "color": "#c0523c",
+          "width": 6,
+          "points": [[0, 72], [12, 68], [24, 62], [36, 56], [48, 54], [52, 54], [64, 58], [76, 64], [88, 68], [100, 70]]
+        }
+      ],
+      "marker": {
+        "x": 45,
+        "y": 54.5,
+        "label_ko": "골든크로스",
+        "label_en": "Golden cross"
+      },
+      "closing_ko": "오른쪽 교차가 데드크로스입니다",
+      "closing_en": "The right-hand crossing is a dead cross"
+    },
+    {
+      "type": "lines",
+      "title_ko": "코스피에서 실제로<br>일어난 교차",
+      "title_en": "A real cross:<br>the S&P 500",
+      "body_ko": "2026년 7월 21일, 코스피 20일선(7,684)이 60일선(7,754)을 아래로 통과했습니다. 하루 전만 해도 20일선이 위에 있었습니다.",
+      "body_en": "On July 1, 2025 the S&P 500's 50-day average (5,846.34) edged above its 200-day (5,836.35) — a gap of just 10 points.",
+      "series_ko": [
+        {
+          "label_ko": "코스피 20일선",
+          "color": "#3d4a68",
+          "width": 6,
+          "points": [[0, 95.5], [9.1, 86.9], [18.2, 77.1], [27.3, 68.0], [36.4, 62.6], [45.5, 57.3], [54.5, 48.7], [63.6, 42.3], [72.7, 33.2], [81.8, 22.4], [90.9, 12.0], [100, 7.9]]
+        },
+        {
+          "label_ko": "코스피 60일선",
+          "color": "#c0523c",
+          "width": 6,
+          "points": [[0, 71.7], [9.1, 72.5], [18.2, 72.9], [27.3, 73.4], [36.4, 73.9], [45.5, 74.7], [54.5, 74.9], [63.6, 75.1], [72.7, 74.4], [81.8, 73.0], [90.9, 71.7], [100, 71.3]]
+        }
+      ],
+      "series_en": [
+        {
+          "label_en": "S&P 500 50-day",
+          "color": "#3d4a68",
+          "width": 6,
+          "points": [[0, 9.1], [10, 16.2], [20, 23.5], [30, 32.4], [40, 41.1], [50, 51.3], [60, 60.7], [70, 68.9], [80, 75.9], [90, 82.9], [100, 90.1]]
+        },
+        {
+          "label_en": "S&P 500 200-day",
+          "color": "#c0523c",
+          "width": 6,
+          "points": [[0, 29.7], [10, 31.5], [20, 33.1], [30, 34.8], [40, 36.4], [50, 37.9], [60, 39.4], [70, 40.8], [80, 42.2], [90, 43.8], [100, 45.1]]
+        }
+      ],
+      "marker_ko": { "x": 22.2, "y": 73.1, "label_ko": "7/21 데드크로스" },
+      "marker_en": { "x": 33.4, "y": 35.3, "label_en": "Jul 1, 2025" },
+      "closing_ko": "이날 코스피 종가 6,747.95",
+      "closing_en": "50-day still above, as of Jul 31, 2026"
+    },
+    {
+      "type": "numbered",
+      "title_ko": "교차 신호,<br>이것만은 조심",
+      "title_en": "Three things<br>to watch for",
+      "items": [
+        {
+          "title_ko": "신호는 항상 늦습니다",
+          "title_en": "Signals always lag",
+          "desc_ko": "평균은 이미 지나간 종가로 만듭니다. 교차가 눈에 보일 땐 가격은 벌써 움직인 뒤입니다.",
+          "desc_en": "An average is built from closes that already happened. By the time you see the cross, price has moved."
+        },
+        {
+          "title_ko": "한 번의 교차가 방향을 정하지 않습니다",
+          "title_en": "One cross settles nothing",
+          "desc_ko": "며칠 만에 되돌아가 다시 반대로 교차하는 일이 드물지 않습니다.",
+          "desc_en": "Lines often cross back the other way within days."
+        },
+        {
+          "title_ko": "기간 조합에 정답은 없습니다",
+          "title_en": "No pair is the right pair",
+          "desc_ko": "한국은 5·20·60·120일선, 미국은 50·200일선을 즐겨 봅니다. 관행일 뿐입니다.",
+          "desc_en": "Korea watches 5/20/60/120-day lines, the US watches 50/200. Convention, not law."
+        }
+      ],
+      "warn_title_ko": "가장 흔한 오해",
+      "warn_title_en": "The usual mix-up",
+      "warn_body_ko": "골든크로스는 예측이 아니라, 이미 생긴 추세를 확인하는 참고 지표입니다.",
+      "warn_body_en": "A golden cross confirms a trend that already formed. It does not forecast one."
+    },
+    {
+      "type": "recap",
+      "title_ko": "오늘의 3줄 요약",
+      "title_en": "Recap in<br>three lines",
+      "points": [
+        {
+          "text_ko": "이동평균선은 최근 N일 평균",
+          "text_en": "MA = average of recent closes"
+        },
+        {
+          "text_ko": "짧은 선은 예민, 긴 선은 둔감",
+          "text_en": "Short line fast, long line slow"
+        },
+        {
+          "text_ko": "교차는 예측이 아니라 확인",
+          "text_en": "A cross confirms, never predicts"
+        }
+      ],
+      "ctas": [
+        {
+          "text_ko": "저장해두고 차트 볼 때 꺼내보세요",
+          "text_en": "Save it & pull it up when you chart"
+        },
+        {
+          "text_ko": "주식 시작한 친구를 태그해 보세요",
+          "text_en": "Tag a friend who just started"
+        }
+      ],
+      "next_label_ko": "다음 편",
+      "next_label_en": "Next",
+      "next_ko": "거래량",
+      "next_en": "Trading volume",
+      "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+      "disclaimer_en": "Educational content only — not investment advice."
+    }
+  ],
+  "caption_ko": "📊 주식 차트 3분 노트 EP.02 — 이동평균선 & 골든크로스\n\n차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.\n최근 며칠 종가의 평균일 뿐인데 왜 다들 두 선이 만나는 순간을 쳐다볼까요?\n\n그리고 골든크로스는 '오른다'는 뜻이 아닙니다. 평균은 이미 지나간 가격으로 만들기 때문에, 교차는 예측이 아니라 확인에 가깝습니다.\n실제로 2026년 7월 21일 코스피에서는 20일선이 60일선을 아래로 뚫는 데드크로스가 나왔습니다. 그 숫자까지 카드에 담았어요.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '거래량' — 가격은 거짓말을 해도 거래량은 못 합니다.\n\n#주식초보 #주식공부 #이동평균선 #골든크로스 #데드크로스 #주식차트보는법 #코스피 #재테크 #주식용어 #luckyon브리핑",
+  "caption_en": "📊 3-Min Stock Chart Notes EP.02 — Moving averages & the golden cross\n\nThose smooth curves laid over the candles are moving averages.\nThey are just the average of the last few closes — so why does everyone watch the moment two of them meet?\n\nAnd a golden cross is not a \"buy\" signal. An average is built from prices that already happened, so a crossing confirms a trend rather than predicting one.\nA real one: on July 1, 2025 the S&P 500's 50-day average crossed above its 200-day by just 10 points — and it has stayed above ever since.\n\n📌 Save it & pull it up when you chart\n👇 Tag a friend who just started investing\n\n(Educational content only — not investment advice)\n\nNext up: trading volume — price can lie, volume can't.\n\n#investing101 #stockmarket #movingaverage #goldencross #deadcross #tradingforbeginners #stockmarketbasics #investingtips #charting #luckyonbriefing",
+  "alt_ko": [
+    "주식 차트 3분 노트 EP.02 표지 — 골든크로스는 '오른다'는 뜻이 아닙니다",
+    "차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개",
+    "이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시",
+    "기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지",
+    "골든크로스와 데드크로스 도해 — 짧은 선이 긴 선을 위로 뚫는 지점과 아래로 뚫는 지점",
+    "실제 사례 그래프 — 2026년 7월 21일 코스피 20일선이 60일선을 아래로 통과한 데드크로스",
+    "교차 신호를 볼 때 조심할 세 가지 — 신호는 늦고, 한 번의 교차로 방향이 정해지지 않으며, 기간 조합에 정답은 없다",
+    "오늘의 3줄 요약과 다음 편(거래량) 예고, 투자 권유가 아니라는 교육 목적 고지"
+  ],
+  "alt_en": [
+    "3-Min Stock Chart Notes EP.02 cover — a golden cross is not a 'buy' signal",
+    "Those smooth curves on the chart — introducing moving averages laid over candles",
+    "The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101",
+    "Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average",
+    "Diagram of a golden cross and a dead cross — where the short line cuts up through the long line and back down",
+    "Real example chart — the S&P 500 50-day average crossing above its 200-day on July 1, 2025",
+    "Three cautions about crossover signals — they lag, one cross settles nothing, and no period pair is definitive",
+    "Recap in three lines, a preview of the next episode on trading volume, and an educational-purpose disclaimer"
+  ],
+  "published": {}
+}
