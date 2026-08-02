@@ -6,19 +6,19 @@
   "series_en": "3-Min Stock Chart Notes",
   "episode": "EP.02",
   "byline": "by luckyon",
-  "term_ko": "이동평균선 & 골든크로스",
-  "term_en": "Moving averages & the golden cross",
+  "term_ko": "이동평균선",
+  "term_en": "Moving averages",
   "fact_check": {
-    "ko": "코스피(^KS11) 20일/60일 이동평균 교차 — 2026-07-21(KST) 데드크로스. 20일선 7,684.13 / 60일선 7,754.10, 당일 종가 6,747.95. 전 거래일 2026-07-20 은 20일선 7,802.46 > 60일선 7,748.11 로 아직 위. Yahoo Finance 일봉 종가로 직접 산출(단순이동평균). 원본 봉은 15:00Z 로 찍혀 실제 거래일은 +1일이며, 어린이날(5/5)·설날(2/17)·지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함.",
-    "en": "S&P 500 (^GSPC) 50-day/200-day golden cross on 2025-07-01: 50-day 5,846.34 vs 200-day 5,836.35 (close 6,198.01). Prior session 2025-06-30 was still 5,828.03 vs 5,833.13. Two 50/200 crossovers in the trailing 2 years — dead cross 2025-04-14 (5,748.25 vs 5,753.90) and this golden cross — and none since; 50-day still above as of 2026-07-31 (7,471.51 vs 7,024.11). Simple moving averages computed directly from Yahoo Finance daily closes, over a 5-year pull: a 2-year pull cannot resolve a 200-day average across its own first 200 sessions, so crossover counts need 3y+ of history."
+    "ko": "삼성전자(005930.KS) 종가 vs 20일 단순이동평균, 배당 무수정 종가 기준 — 2026-06-29(KST) 종가 323,000원이 20일선 334,975원 아래로 이탈. 직전 거래일 2026-06-26 은 종가 339,500원 > 20일선 334,675원 으로 위. 이후 2026-07-31 까지 회복 없음(7/31 종가 262,500원 vs 20일선 262,550원). 지난 1년 20일선 통과 26회. Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. ① 타임스탬프: v8 원시 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ② 배당 조정: MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다. 카드는 실제 체결가인 무수정 종가를 쓴다. 배당락 당일인 6/29 종가 323,000원은 양쪽이 동일하다.",
+    "en": "Apple (AAPL) close vs 20-day simple moving average — on 2026-06-08 the close of $301.54 slipped below the 20-day average of $304.66; the prior session 2026-06-05 was still above. It regained the line on 2026-07-02 (close $308.63 vs $294.80). 17 crossings of the 20-day line over the trailing year. Simple moving averages computed directly from Yahoo Finance daily closes over a 1-year pull."
   },
   "cards": [
     {
       "type": "cover",
-      "title_ko": "골든크로스는<br>'오른다'라는<br>뜻이 아닙니다",
-      "title_en": "A golden cross<br>doesn't mean<br>'it will go up'",
-      "sub_ko": "EP.02 이동평균선 & 골든크로스",
-      "sub_en": "EP.02 Moving averages & the golden cross",
+      "title_ko": "차트 위 그 곡선,<br>계산은 나눗셈<br>한 번입니다",
+      "title_en": "That smooth curve?<br>It's one division,<br>nothing more",
+      "sub_ko": "EP.02 이동평균선 & 골든크로스 (상)",
+      "sub_en": "EP.02 Moving averages & the golden cross (Part 1)",
       "cta_ko": "저장하고 넘겨보세요",
       "cta_en": "Save & swipe",
       "annot_ko": "차트 위에 얹힌|그 선들의 정체",
@@ -95,124 +95,857 @@
           "color": "#a9a49a",
           "width": 4,
           "dashed": true,
-          "points": [[0, 30], [8, 52], [16, 44], [24, 66], [32, 58], [40, 76], [48, 48], [56, 36], [64, 54], [72, 72], [80, 64], [88, 88], [96, 80], [100, 92]]
+          "points": [
+            [
+              0,
+              30
+            ],
+            [
+              8,
+              52
+            ],
+            [
+              16,
+              44
+            ],
+            [
+              24,
+              66
+            ],
+            [
+              32,
+              58
+            ],
+            [
+              40,
+              76
+            ],
+            [
+              48,
+              48
+            ],
+            [
+              56,
+              36
+            ],
+            [
+              64,
+              54
+            ],
+            [
+              72,
+              72
+            ],
+            [
+              80,
+              64
+            ],
+            [
+              88,
+              88
+            ],
+            [
+              96,
+              80
+            ],
+            [
+              100,
+              92
+            ]
+          ]
         },
         {
           "label_ko": "20일선",
           "label_en": "20-day MA",
           "color": "#3d4a68",
           "width": 6,
-          "points": [[0, 46], [10, 50], [20, 55], [30, 60], [40, 63], [50, 61], [60, 58], [70, 62], [80, 70], [90, 78], [100, 84]]
+          "points": [
+            [
+              0,
+              46
+            ],
+            [
+              10,
+              50
+            ],
+            [
+              20,
+              55
+            ],
+            [
+              30,
+              60
+            ],
+            [
+              40,
+              63
+            ],
+            [
+              50,
+              61
+            ],
+            [
+              60,
+              58
+            ],
+            [
+              70,
+              62
+            ],
+            [
+              80,
+              70
+            ],
+            [
+              90,
+              78
+            ],
+            [
+              100,
+              84
+            ]
+          ]
         },
         {
           "label_ko": "60일선",
           "label_en": "60-day MA",
           "color": "#c0523c",
           "width": 6,
-          "points": [[0, 41], [10, 42], [20, 44], [30, 46], [40, 49], [50, 51], [60, 53], [70, 56], [80, 59], [90, 63], [100, 67]]
+          "points": [
+            [
+              0,
+              41
+            ],
+            [
+              10,
+              42
+            ],
+            [
+              20,
+              44
+            ],
+            [
+              30,
+              46
+            ],
+            [
+              40,
+              49
+            ],
+            [
+              50,
+              51
+            ],
+            [
+              60,
+              53
+            ],
+            [
+              70,
+              56
+            ],
+            [
+              80,
+              59
+            ],
+            [
+              90,
+              63
+            ],
+            [
+              100,
+              67
+            ]
+          ]
         }
       ],
       "closing_ko": "기간이 길수록 느리게 움직입니다",
       "closing_en": "Longer window, slower line"
     },
     {
-      "type": "lines",
-      "title_ko": "골든크로스와<br>데드크로스",
-      "title_en": "Golden cross vs<br>dead cross",
-      "body_ko": "짧은 선이 긴 선을 <b>아래에서 위로</b> 뚫으면 골든크로스, <b>위에서 아래로</b> 뚫으면 데드크로스입니다.",
-      "body_en": "When the short line cuts <b>up</b> through the long one, that is a golden cross. Cutting <b>down</b> through it is a dead cross.",
-      "series": [
+      "type": "checklist",
+      "title_ko": "며칠을 평균 내느냐가<br>선의 이름입니다",
+      "title_en": "The name is just<br>how many days",
+      "body_ko": "차트에 흔히 함께 그려지는 네 개입니다. 숫자가 곧 평균을 낸 날 수입니다.",
+      "body_en": "Four lines you'll usually see together. The number is the count of days averaged.",
+      "items": [
         {
-          "label_ko": "짧은 선",
-          "label_en": "Short MA",
-          "color": "#3d4a68",
-          "width": 6,
-          "points": [[0, 62], [12, 50], [24, 40], [36, 44], [48, 58], [60, 72], [72, 78], [84, 70], [100, 48]]
+          "term_ko": "5일선",
+          "term_en": "5-day",
+          "desc_ko": "최근 한 주의 평균",
+          "desc_en": "Last week's average"
         },
         {
-          "label_ko": "긴 선",
-          "label_en": "Long MA",
-          "color": "#c0523c",
-          "width": 6,
-          "points": [[0, 72], [12, 68], [24, 62], [36, 56], [48, 54], [52, 54], [64, 58], [76, 64], [88, 68], [100, 70]]
+          "term_ko": "20일선",
+          "term_en": "20-day",
+          "desc_ko": "최근 한 달의 평균",
+          "desc_en": "Last month's average"
+        },
+        {
+          "term_ko": "60일선",
+          "term_en": "60-day",
+          "desc_ko": "최근 석 달의 평균",
+          "desc_en": "Last quarter's average"
+        },
+        {
+          "term_ko": "120일선",
+          "term_en": "120-day",
+          "desc_ko": "최근 반년의 평균",
+          "desc_en": "Last half-year's average"
         }
       ],
-      "marker": {
-        "x": 45,
-        "y": 54.5,
-        "label_ko": "골든크로스",
-        "label_en": "Golden cross"
-      },
-      "closing_ko": "오른쪽 교차가 데드크로스입니다",
-      "closing_en": "The right-hand crossing is a dead cross"
+      "closing_ko": "한국은 20·60일선, 미국은 50·200일선을 즐겨 봅니다",
+      "closing_en": "Korea watches 20 & 60, the US watches 50 & 200"
     },
     {
       "type": "lines",
-      "title_ko": "코스피에서 실제로<br>일어난 교차",
-      "title_en": "A real cross:<br>the S&P 500",
-      "body_ko": "2026년 7월 21일, 코스피 20일선(7,684)이 60일선(7,754)을 아래로 통과했습니다. 하루 전만 해도 20일선이 위에 있었습니다.",
-      "body_en": "On July 1, 2025 the S&P 500's 50-day average (5,846.34) edged above its 200-day (5,836.35) — a gap of just 10 points.",
+      "title_ko": "삼성전자가<br>20일선을 내준 날",
+      "title_en": "The day Apple<br>slipped under<br>its 20-day line",
+      "body_ko": "2026년 6월 29일, 종가 323,000원이 20일 이동평균 334,975원 아래로 내려갔습니다. 직전 거래일까지는 위에 있었습니다.",
+      "body_en": "On June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66. The session before, it was still above.",
       "series_ko": [
         {
-          "label_ko": "코스피 20일선",
-          "color": "#3d4a68",
-          "width": 6,
-          "points": [[0, 95.5], [9.1, 86.9], [18.2, 77.1], [27.3, 68.0], [36.4, 62.6], [45.5, 57.3], [54.5, 48.7], [63.6, 42.3], [72.7, 33.2], [81.8, 22.4], [90.9, 12.0], [100, 7.9]]
+          "label_ko": "삼성전자 종가",
+          "color": "#a9a49a",
+          "width": 4,
+          "dashed": true,
+          "points": [
+            [
+              0,
+              78.2
+            ],
+            [
+              3,
+              81.5
+            ],
+            [
+              6.1,
+              83.4
+            ],
+            [
+              9.1,
+              92
+            ],
+            [
+              12.1,
+              87.4
+            ],
+            [
+              15.2,
+              87.1
+            ],
+            [
+              18.2,
+              63.6
+            ],
+            [
+              21.2,
+              80.1
+            ],
+            [
+              24.2,
+              89.8
+            ],
+            [
+              27.3,
+              79.6
+            ],
+            [
+              30.3,
+              70.7
+            ],
+            [
+              33.3,
+              76.6
+            ],
+            [
+              36.4,
+              66.1
+            ],
+            [
+              39.4,
+              50.7
+            ],
+            [
+              42.4,
+              63.4
+            ],
+            [
+              45.5,
+              68
+            ],
+            [
+              48.5,
+              56.1
+            ],
+            [
+              51.5,
+              46.1
+            ],
+            [
+              54.5,
+              46.4
+            ],
+            [
+              57.6,
+              50.1
+            ],
+            [
+              60.6,
+              33.7
+            ],
+            [
+              63.6,
+              38.3
+            ],
+            [
+              66.7,
+              47.2
+            ],
+            [
+              69.7,
+              33.9
+            ],
+            [
+              72.7,
+              28
+            ],
+            [
+              75.8,
+              36.1
+            ],
+            [
+              78.8,
+              36.9
+            ],
+            [
+              81.8,
+              42
+            ],
+            [
+              84.8,
+              31
+            ],
+            [
+              87.9,
+              33.4
+            ],
+            [
+              90.9,
+              15
+            ],
+            [
+              93.9,
+              8.8
+            ],
+            [
+              97,
+              8
+            ],
+            [
+              100,
+              38
+            ]
+          ]
         },
         {
-          "label_ko": "코스피 60일선",
-          "color": "#c0523c",
+          "label_ko": "20일선",
+          "color": "#3d4a68",
           "width": 6,
-          "points": [[0, 71.7], [9.1, 72.5], [18.2, 72.9], [27.3, 73.4], [36.4, 73.9], [45.5, 74.7], [54.5, 74.9], [63.6, 75.1], [72.7, 74.4], [81.8, 73.0], [90.9, 71.7], [100, 71.3]]
+          "points": [
+            [
+              0,
+              63.3
+            ],
+            [
+              3,
+              65.2
+            ],
+            [
+              6.1,
+              67
+            ],
+            [
+              9.1,
+              69.3
+            ],
+            [
+              12.1,
+              71.4
+            ],
+            [
+              15.2,
+              72.9
+            ],
+            [
+              18.2,
+              73.4
+            ],
+            [
+              21.2,
+              74.5
+            ],
+            [
+              24.2,
+              75.9
+            ],
+            [
+              27.3,
+              77
+            ],
+            [
+              30.3,
+              77.1
+            ],
+            [
+              33.3,
+              76.7
+            ],
+            [
+              36.4,
+              75.5
+            ],
+            [
+              39.4,
+              73.7
+            ],
+            [
+              42.4,
+              73.2
+            ],
+            [
+              45.5,
+              73.8
+            ],
+            [
+              48.5,
+              73.1
+            ],
+            [
+              51.5,
+              72.4
+            ],
+            [
+              54.5,
+              71.9
+            ],
+            [
+              57.6,
+              70.8
+            ],
+            [
+              60.6,
+              68.6
+            ],
+            [
+              63.6,
+              66.4
+            ],
+            [
+              66.7,
+              64.6
+            ],
+            [
+              69.7,
+              61.7
+            ],
+            [
+              72.7,
+              58.8
+            ],
+            [
+              75.8,
+              56.2
+            ],
+            [
+              78.8,
+              54.9
+            ],
+            [
+              81.8,
+              53
+            ],
+            [
+              84.8,
+              50
+            ],
+            [
+              87.9,
+              47.7
+            ],
+            [
+              90.9,
+              44.9
+            ],
+            [
+              93.9,
+              41.5
+            ],
+            [
+              97,
+              38.6
+            ],
+            [
+              100,
+              38
+            ]
+          ]
         }
       ],
       "series_en": [
         {
-          "label_en": "S&P 500 50-day",
-          "color": "#3d4a68",
-          "width": 6,
-          "points": [[0, 9.1], [10, 16.2], [20, 23.5], [30, 32.4], [40, 41.1], [50, 51.3], [60, 60.7], [70, 68.9], [80, 75.9], [90, 82.9], [100, 90.1]]
+          "label_en": "AAPL close",
+          "color": "#a9a49a",
+          "width": 4,
+          "dashed": true,
+          "points": [
+            [
+              0,
+              55.6
+            ],
+            [
+              2.8,
+              59.2
+            ],
+            [
+              5.6,
+              61.6
+            ],
+            [
+              8.3,
+              60.9
+            ],
+            [
+              11.1,
+              52.7
+            ],
+            [
+              13.9,
+              65.4
+            ],
+            [
+              16.7,
+              58.3
+            ],
+            [
+              19.4,
+              59.7
+            ],
+            [
+              22.2,
+              54.2
+            ],
+            [
+              25,
+              45.8
+            ],
+            [
+              27.8,
+              30.1
+            ],
+            [
+              30.6,
+              31.6
+            ],
+            [
+              33.3,
+              37.4
+            ],
+            [
+              36.1,
+              30.9
+            ],
+            [
+              38.9,
+              38.5
+            ],
+            [
+              41.7,
+              42.5
+            ],
+            [
+              44.4,
+              37.8
+            ],
+            [
+              47.2,
+              40.8
+            ],
+            [
+              50,
+              39.3
+            ],
+            [
+              52.8,
+              35.5
+            ],
+            [
+              55.6,
+              33.7
+            ],
+            [
+              58.3,
+              8
+            ],
+            [
+              61.1,
+              20.4
+            ],
+            [
+              63.9,
+              17.4
+            ],
+            [
+              66.7,
+              28.4
+            ],
+            [
+              69.4,
+              35.6
+            ],
+            [
+              72.2,
+              56
+            ],
+            [
+              75,
+              61.8
+            ],
+            [
+              77.8,
+              58.9
+            ],
+            [
+              80.6,
+              62.8
+            ],
+            [
+              83.3,
+              66.9
+            ],
+            [
+              86.1,
+              65.6
+            ],
+            [
+              88.9,
+              68.4
+            ],
+            [
+              91.7,
+              64.9
+            ],
+            [
+              94.4,
+              83.1
+            ],
+            [
+              97.2,
+              91.3
+            ],
+            [
+              100,
+              92
+            ]
+          ]
         },
         {
-          "label_en": "S&P 500 200-day",
-          "color": "#c0523c",
+          "label_en": "20-day MA",
+          "color": "#3d4a68",
           "width": 6,
-          "points": [[0, 29.7], [10, 31.5], [20, 33.1], [30, 34.8], [40, 36.4], [50, 37.9], [60, 39.4], [70, 40.8], [80, 42.2], [90, 43.8], [100, 45.1]]
+          "points": [
+            [
+              0,
+              31.3
+            ],
+            [
+              2.8,
+              34.1
+            ],
+            [
+              5.6,
+              37.2
+            ],
+            [
+              8.3,
+              40.1
+            ],
+            [
+              11.1,
+              42
+            ],
+            [
+              13.9,
+              44.7
+            ],
+            [
+              16.7,
+              46.6
+            ],
+            [
+              19.4,
+              48.3
+            ],
+            [
+              22.2,
+              49.7
+            ],
+            [
+              25,
+              50.3
+            ],
+            [
+              27.8,
+              50.2
+            ],
+            [
+              30.6,
+              49.9
+            ],
+            [
+              33.3,
+              49.7
+            ],
+            [
+              36.1,
+              49.2
+            ],
+            [
+              38.9,
+              48.9
+            ],
+            [
+              41.7,
+              49
+            ],
+            [
+              44.4,
+              48.8
+            ],
+            [
+              47.2,
+              48.5
+            ],
+            [
+              50,
+              47.9
+            ],
+            [
+              52.8,
+              46.9
+            ],
+            [
+              55.6,
+              45.8
+            ],
+            [
+              58.3,
+              43.2
+            ],
+            [
+              61.1,
+              41.2
+            ],
+            [
+              63.9,
+              39
+            ],
+            [
+              66.7,
+              37.8
+            ],
+            [
+              69.4,
+              36.3
+            ],
+            [
+              72.2,
+              36.2
+            ],
+            [
+              75,
+              36.3
+            ],
+            [
+              77.8,
+              36.5
+            ],
+            [
+              80.6,
+              37.4
+            ],
+            [
+              83.3,
+              39.2
+            ],
+            [
+              86.1,
+              40.9
+            ],
+            [
+              88.9,
+              42.5
+            ],
+            [
+              91.7,
+              44.2
+            ],
+            [
+              94.4,
+              46.4
+            ],
+            [
+              97.2,
+              48.8
+            ],
+            [
+              100,
+              51.5
+            ]
+          ]
         }
       ],
-      "marker_ko": { "x": 22.2, "y": 73.1, "label_ko": "7/21 데드크로스" },
-      "marker_en": { "x": 33.4, "y": 35.3, "label_en": "Jul 1, 2025" },
-      "closing_ko": "이날 코스피 종가 6,747.95",
-      "closing_en": "50-day still above, as of Jul 31, 2026"
+      "marker_ko": {
+        "x": 30.3,
+        "y": 77.1,
+        "label_ko": "6/29 이탈"
+      },
+      "marker_en": {
+        "x": 25,
+        "y": 50.3,
+        "label_en": "Jun 8 break"
+      },
+      "closing_ko": "그 뒤 7월 31일까지 한 번도 되찾지 못했습니다",
+      "closing_en": "It took until July 2 to climb back above"
     },
     {
       "type": "numbered",
-      "title_ko": "교차 신호,<br>이것만은 조심",
-      "title_en": "Three things<br>to watch for",
+      "title_ko": "이 선을 볼 때<br>조심할 것",
+      "title_en": "Three things<br>to keep in mind",
       "items": [
         {
-          "title_ko": "신호는 항상 늦습니다",
-          "title_en": "Signals always lag",
-          "desc_ko": "평균은 이미 지나간 종가로 만듭니다. 교차가 눈에 보일 땐 가격은 벌써 움직인 뒤입니다.",
-          "desc_en": "An average is built from closes that already happened. By the time you see the cross, price has moved."
+          "title_ko": "뒤를 보고 그리는 선입니다",
+          "title_en": "It is drawn looking backwards",
+          "desc_ko": "평균은 이미 나온 종가로 만듭니다. 앞을 알려주는 선이 아닙니다.",
+          "desc_en": "An average is built from closes that already happened. It does not point ahead."
         },
         {
-          "title_ko": "한 번의 교차가 방향을 정하지 않습니다",
-          "title_en": "One cross settles nothing",
-          "desc_ko": "며칠 만에 되돌아가 다시 반대로 교차하는 일이 드물지 않습니다.",
-          "desc_en": "Lines often cross back the other way within days."
+          "title_ko": "닿았다고 튕기지 않습니다",
+          "title_en": "Touching it guarantees nothing",
+          "desc_ko": "삼성전자는 지난 1년 동안 20일선을 26번 오갔습니다. 지지선처럼 보이는 건 결과입니다.",
+          "desc_en": "Apple crossed its 20-day line 17 times in the past year. Support is what we call it afterwards."
         },
         {
-          "title_ko": "기간 조합에 정답은 없습니다",
-          "title_en": "No pair is the right pair",
-          "desc_ko": "한국은 5·20·60·120일선, 미국은 50·200일선을 즐겨 봅니다. 관행일 뿐입니다.",
-          "desc_en": "Korea watches 5/20/60/120-day lines, the US watches 50/200. Convention, not law."
+          "title_ko": "기간을 바꾸면 그림이 바뀝니다",
+          "title_en": "Change the period, change the picture",
+          "desc_ko": "20일선으로는 이탈인 자리가 60일선으로는 아무 일도 아닐 수 있습니다.",
+          "desc_en": "A break on the 20-day can be a non-event on the 60-day."
         }
       ],
-      "warn_title_ko": "가장 흔한 오해",
-      "warn_title_en": "The usual mix-up",
-      "warn_body_ko": "골든크로스는 예측이 아니라, 이미 생긴 추세를 확인하는 참고 지표입니다.",
-      "warn_body_en": "A golden cross confirms a trend that already formed. It does not forecast one."
+      "warn_title_ko": "그래서 이 선 하나로 사고팔지 않습니다",
+      "warn_title_en": "So no one trades on this line alone",
+      "warn_body_ko": "이동평균선은 방향을 정리해 주는 도구지 신호등이 아닙니다.",
+      "warn_body_en": "A moving average tidies up direction. It is not a traffic light."
     },
     {
       "type": "recap",
@@ -220,16 +953,16 @@
       "title_en": "Recap in<br>three lines",
       "points": [
         {
-          "text_ko": "이동평균선은 최근 N일 평균",
-          "text_en": "MA = average of recent closes"
+          "text_ko": "이동평균선은 최근 N일 종가의 평균",
+          "text_en": "An MA is the average of the last N closes"
         },
         {
-          "text_ko": "짧은 선은 예민, 긴 선은 둔감",
-          "text_en": "Short line fast, long line slow"
+          "text_ko": "기간이 길수록 느리게 움직인다",
+          "text_en": "The longer the period, the slower it moves"
         },
         {
-          "text_ko": "교차는 예측이 아니라 확인",
-          "text_en": "A cross confirms, never predicts"
+          "text_ko": "뒤를 보고 그리므로 앞을 보장하지 않는다",
+          "text_en": "It looks back, so it promises nothing ahead"
         }
       ],
       "ctas": [
@@ -244,33 +977,33 @@
       ],
       "next_label_ko": "다음 편",
       "next_label_en": "Next",
-      "next_ko": "거래량",
-      "next_en": "Trading volume",
+      "next_ko": "골든크로스 & 데드크로스",
+      "next_en": "Golden cross & dead cross",
       "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
       "disclaimer_en": "Educational content only — not investment advice."
     }
   ],
-  "caption_ko": "📊 주식 차트 3분 노트 EP.02 — 이동평균선 & 골든크로스\n\n차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.\n최근 며칠 종가의 평균일 뿐인데 왜 다들 두 선이 만나는 순간을 쳐다볼까요?\n\n그리고 골든크로스는 '오른다'라는 뜻이 아닙니다. 평균은 이미 지나간 가격으로 만들기 때문에, 교차는 예측이 아니라 확인에 가깝습니다.\n실제로 2026년 7월 21일 코스피에서는 20일선이 60일선을 아래로 뚫는 데드크로스가 나왔습니다. 그 숫자까지 카드에 담았어요.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '거래량' — 가격이 말해주지 않는 것을 거래량이 보여줍니다.\n\n#주식초보 #주식공부 #이동평균선 #골든크로스 #데드크로스 #주식차트보는법 #코스피 #재테크 #주식용어 #luckyon브리핑",
-  "caption_en": "📊 3-Min Stock Chart Notes EP.02 — Moving averages & the golden cross\n\nThose smooth curves laid over the candles are moving averages.\nThey are just the average of the last few closes — so why does everyone watch the moment two of them meet?\n\nAnd a golden cross doesn't mean \"it will go up\". An average is built from prices that already happened, so a crossing confirms a trend rather than predicting one.\nA real one: on July 1, 2025 the S&P 500's 50-day average crossed above its 200-day by just 10 points — and it has stayed above ever since.\n\n📌 Save it & pull it up when you chart\n👇 Tag a friend who just started investing\n\n(Educational content only — not investment advice)\n\nNext up: trading volume — what price alone won't tell you.\n\n#investing101 #stockmarket #movingaverage #goldencross #deadcross #tradingforbeginners #stockmarketbasics #investingtips #charting #luckyonbriefing",
+  "caption_ko": "📊 주식 차트 3분 노트 EP.02 — 이동평균선 (상)\n\n차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.\n최근 며칠 종가를 더해서 그 날 수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?\n\n5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.\n\n실제로 2026년 6월 29일 삼성전자는 종가 323,000원으로 20일선(334,975원) 아래로 내려갔고, 7월 31일까지 되찾지 못했습니다.\n다만 지난 1년만 놓고 보면 20일선을 26번이나 오갔습니다. 선을 한 번 내줬다고 방향이 정해지는 건 아닙니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '골든크로스 & 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.\n\n#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑",
+  "caption_en": "📊 3-Min Stock Chart Notes EP.02 — Moving averages (Part 1)\n\nThose smooth curves laid over the candles are moving averages.\nAdd up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?\n\nA 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.\n\nA real one: on June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66, and it took until July 2 to climb back above.\nZoom out, though, and Apple crossed that line 17 times in the past year. One break settles nothing.\n\n📌 Save it & pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: the golden cross & the dead cross — what happens when two lines meet.\n\n#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing",
   "alt_ko": [
-    "주식 차트 3분 노트 EP.02 표지 — 골든크로스는 '오른다'라는 뜻이 아닙니다",
+    "주식 차트 3분 노트 EP.02 상편 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다",
     "차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개",
     "이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시",
     "기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지",
-    "골든크로스와 데드크로스 도해 — 짧은 선이 긴 선을 위로 뚫는 지점과 아래로 뚫는 지점",
-    "실제 사례 그래프 — 2026년 7월 21일 코스피 20일선이 60일선을 아래로 통과한 데드크로스",
-    "교차 신호를 볼 때 조심할 세 가지 — 신호는 늦고, 한 번의 교차로 방향이 정해지지 않으며, 기간 조합에 정답은 없다",
-    "오늘의 3줄 요약과 다음 편(거래량) 예고, 투자 권유가 아니라는 교육 목적 고지"
+    "5일선·20일선·60일선·120일선이 각각 며칠 평균인지 정리한 목록",
+    "삼성전자 종가와 20일선 그래프 — 2026년 6월 29일 종가가 20일선 아래로 내려간 지점 표시",
+    "이동평균선을 볼 때 조심할 세 가지 — 뒤를 보고 그리는 선이고, 닿았다고 튕기지 않으며, 기간을 바꾸면 그림이 바뀐다",
+    "오늘의 3줄 요약과 다음 편(골든크로스 & 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지"
   ],
   "alt_en": [
-    "3-Min Stock Chart Notes EP.02 cover — a golden cross does not mean 'it will go up'",
+    "3-Min Stock Chart Notes EP.02 Part 1 cover — that smooth curve is one division, nothing more",
     "Those smooth curves on the chart — introducing moving averages laid over candles",
     "The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101",
     "Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average",
-    "Diagram of a golden cross and a dead cross — where the short line cuts up through the long line and back down",
-    "Real example chart — the S&P 500 50-day average crossing above its 200-day on July 1, 2025",
-    "Three cautions about crossover signals — they lag, one cross settles nothing, and no period pair is definitive",
-    "Recap in three lines, a preview of the next episode on trading volume, and an educational-purpose disclaimer"
+    "A list of what the 5, 20, 60 and 120-day lines each average",
+    "Apple close against its 20-day moving average, marking June 8 2026 where the close slipped below the line",
+    "Three cautions about moving averages — it looks backwards, touching it guarantees nothing, and changing the period changes the picture",
+    "Recap in three lines, a preview of the next episode on the golden and dead cross, and an educational-purpose disclaimer"
   ],
   "published": {}
 }

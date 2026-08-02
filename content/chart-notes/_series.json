@@ -19,14 +19,19 @@
     }
   ],
   "next_up": {
-    "term_ko": "이동평균선 & 골든크로스",
-    "term_en": "Moving averages & golden cross",
-    "_comment": "EP.01 마지막 장에 '다음 편'으로 예고했으므로 EP.02 는 반드시 이 주제여야 한다."
+    "term_ko": "이동평균선 (상)",
+    "term_en": "Moving averages (Part 1)",
+    "_comment": "EP.01 이 '이동평균선 & 골든크로스' 를 예고했는데 한 회차에 담기엔 밀도가 높아 2부작으로 나눴다. EP.02 가 상편(이동평균선), EP.03 이 하편(골든크로스 & 데드크로스)이다. 예고한 제목은 표지 부제에 '(상)/(하)' 로 그대로 유지하므로 EP.01 의 예고를 어기지 않는다. EP.02 발행 후 next_up 은 '골든크로스 & 데드크로스' 가 된다."
   },
   "backlog": [
     {
-      "term_ko": "이동평균선 & 골든크로스",
-      "term_en": "Moving averages & golden cross"
+      "term_ko": "이동평균선 (상)",
+      "term_en": "Moving averages (Part 1)"
+    },
+    {
+      "term_ko": "골든크로스 & 데드크로스 (하)",
+      "term_en": "Golden cross & dead cross (Part 2)",
+      "_comment": "카드 원고 재료는 EP.02 의 분리 이전 판(git: 7ba5108 content/chart-notes/2026-08-02-ep02.json)에 있다 — p.01 훅, 교차 도해, 코스피 7/21 데드크로스 사례와 그 fact_check, 교차 주의 3가지를 그대로 옮겨 쓴다."
     },
     {
       "term_ko": "거래량",
