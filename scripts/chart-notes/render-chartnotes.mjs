@@ -86,6 +86,15 @@ function spiral() {
   return `<svg class="spiral" width="1080" height="150" viewBox="0 0 1080 150">${rings}</svg>`;
 }
 
+// 제목의 마지막 줄만 <span> 으로 감싼다. 밑줄 스퀴글이 그 줄의 실제 너비를 따라가게 하기 위한 것.
+// 제목은 <br> 를 허용하는 raw HTML 이므로 이스케이프하지 않고 그대로 다시 잇는다.
+function markLastLine(html) {
+  const parts = String(html).split(/<br\s*\/?>/i);
+  const last = parts.pop();
+  const head = parts.length ? `${parts.join('<br>')}<br>` : '';
+  return `${head}<span class="ttl-last">${last}</span>`;
+}
+
 function candleSVG({ x, w, open, close, high, low, color, id }) {
   // open/close/high/low 는 SVG 좌표(px). 위가 작은 값.
   const bodyTop = Math.min(open, close);
@@ -132,7 +141,21 @@ function page(inner, pageno) {
   </style></head><body>
   <div class="paper"><div class="hd"><div class="s">${esc(SERIES)} · ${esc(data.episode || '')}</div>
   <div class="p">p.${String(pageno).padStart(2, '0')}</div></div>${inner}</div>
-  ${spiral()}<div class="foot">${esc(FOOTER)}</div></body></html>`;
+  ${spiral()}<div class="foot">${esc(FOOTER)}</div>
+  <script>
+  // 밑줄 스퀴글을 대상 텍스트의 실제 렌더 너비에 맞춘다.
+  // 고정 너비로 두면 언어마다 글자 폭이 달라 한쪽은 줄 전체를 덮고 다른 쪽은 문장 중간에서 끊긴다
+  // (EP.02 에서 한국어는 마지막 줄을 다 덮고 영어는 "'it will go" 까지만 그어졌다).
+  (function () {
+    var OVER = 28; // 손으로 그은 듯 살짝 넘겨 긋는 여유
+    document.querySelectorAll('svg[data-fit]').forEach(function (s) {
+      var el = document.querySelector(s.getAttribute('data-fit'));
+      if (!el) return;
+      var w = Math.round(el.getBoundingClientRect().width);
+      if (w > 0) s.setAttribute('width', w + OVER);
+    });
+  })();
+  </script></body></html>`;
 }
 
 // ---------- 카드 타입별 마크업 ----------
@@ -148,10 +171,11 @@ const R = {
       `<text x="606" y="${118 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
       </svg>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
-        <div class="ttl" style="font-size:70px">${t(c, 'title')}</div>
-        <svg width="480" height="26" style="margin-top:10px">
-          <path d="M 4 10 Q 120 2, 240 11 T 476 8" stroke="${C.red}" stroke-width="4" fill="none"/>
-          <path d="M 4 19 Q 140 11, 260 20 T 470 16" stroke="${C.red}" stroke-width="3" fill="none" opacity="0.75"/>
+        <div class="ttl" style="font-size:70px">${markLastLine(t(c, 'title'))}</div>
+        <svg data-fit=".ttl-last" width="480" height="26" viewBox="0 0 480 26"
+             preserveAspectRatio="none" style="margin-top:10px">
+          <path d="M 4 10 Q 120 2, 240 11 T 476 8" stroke="${C.red}" stroke-width="4" fill="none" vector-effect="non-scaling-stroke"/>
+          <path d="M 4 19 Q 140 11, 260 20 T 470 16" stroke="${C.red}" stroke-width="3" fill="none" opacity="0.75" vector-effect="non-scaling-stroke"/>
         </svg>
         <div style="font-family:${FONT_TITLE};font-size:34px;font-weight:700;color:${C.navy};margin-top:26px">${esc(t(c, 'sub'))}</div>
         <div style="margin-top:30px"><span class="chip">${esc(t(c, 'cta'))} ▶</span></div>
