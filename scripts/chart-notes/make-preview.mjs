@@ -106,7 +106,7 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 </style></head><body>
 
 <h1>${esc(d.episode || '')} · ${esc(d.term_ko || '')}</h1>
-<div class="meta">${esc(d.series || '주식 차트 3분 노트')} · 발행 예정 ${esc(d.date || '')} · stamp <code>${esc(stamp)}</code></div>
+<div class="meta">${esc(d.series || '투자 3분 노트')} · 발행 예정 ${esc(d.date || '')} · stamp <code>${esc(stamp)}</code></div>
 
 <div class="chk"><b>검토 체크리스트</b>
 <ul>

@@ -1,5 +1,5 @@
 // render-chartnotes.mjs
-// content/chart-notes/<stamp>.json 의 cards 배열을 읽어 "주식 차트 3분 노트" 카드 PNG(1080x1350)를 만든다.
+// content/chart-notes/<stamp>.json 의 cards 배열을 읽어 "투자 3분 노트" 카드 PNG(1080x1350)를 만든다.
 //
 // 사용법: node scripts/chart-notes/render-chartnotes.mjs <stamp> <lang:ko|en>
 //   예)   node scripts/chart-notes/render-chartnotes.mjs 2026-08-09-ep02 ko
@@ -59,8 +59,8 @@ const C = {
   green: '#3f8f6d',       // 상승(글로벌)
   blue: '#5b7fb5',        // 하락(동아시아)
 };
-const SERIES = lang === 'ko' ? (data.series || '주식 차트 3분 노트') : (data.series_en || '3-Min Stock Chart Notes');
-const FOOTER = lang === 'ko' ? '매일 3분씩 배우는 주식 차트' : '3 minutes a day, one chart at a time';
+const SERIES = lang === 'ko' ? (data.series || '투자 3분 노트') : (data.series_en || '3-Min Investing Notes');
+const FOOTER = lang === 'ko' ? '매일 3분씩 배우는 투자 공부' : '3 minutes a day, one idea at a time';
 const FONT_SANS = `system-ui, -apple-system, 'Segoe UI', 'Noto Sans KR', sans-serif`;
 const FONT_MONO = `'DejaVu Sans Mono', 'Liberation Mono', monospace`;
 // 영어판은 제목을 고정폭으로 — EP.01 에서 확정된 언어별 차이다.

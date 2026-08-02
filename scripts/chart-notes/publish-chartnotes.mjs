@@ -1,5 +1,5 @@
 // publish-chartnotes.mjs
-// "주식 차트 3분 노트"(chart-notes) 카드를 Instagram 캐러셀로 발행한다.
+// "투자 3분 노트"(chart-notes) 카드를 Instagram 캐러셀로 발행한다.
 // 브리핑용 publish-instagram.mjs 와 완전히 분리된 스크립트다 — 스키마도 경로도 다르므로
 // 어느 한쪽을 고쳐도 다른 축의 발행이 깨지지 않는다.
 //
