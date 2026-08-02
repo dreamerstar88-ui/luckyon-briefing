@@ -9,20 +9,21 @@
   "term_ko": "이동평균선",
   "term_en": "Moving averages",
   "fact_check": {
-    "ko": "삼성전자(005930.KS) 종가 vs 20일 단순이동평균, 배당 무수정 종가 기준 — 2026-06-29(KST) 종가 323,000원이 20일선 334,975원 아래로 이탈. 직전 거래일 2026-06-26 은 종가 339,500원 > 20일선 334,675원 으로 위. 이후 2026-07-31 까지 회복 없음(7/31 종가 262,500원 vs 20일선 262,550원). 지난 1년 20일선 통과 26회. Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. ① 타임스탬프: v8 원시 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ② 배당 조정: MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다. 카드는 실제 체결가인 무수정 종가를 쓴다. 배당락 당일인 6/29 종가 323,000원은 양쪽이 동일하다.",
-    "en": "Apple (AAPL) close vs 20-day simple moving average — on 2026-06-08 the close of $301.54 slipped below the 20-day average of $304.66; the prior session 2026-06-05 was still above. It regained the line on 2026-07-02 (close $308.63 vs $294.80). 17 crossings of the 20-day line over the trailing year. Simple moving averages computed directly from Yahoo Finance daily closes over a 1-year pull."
+    "ko": "삼성전자(005930.KS) 종가 vs 20일 단순이동평균, 배당 무수정 종가 기준 — 2026-06-29(KST) 종가 323,000원이 20일선 334,975원 아래로 이탈. 직전 거래일 2026-06-26 은 종가 339,500원 > 20일선 334,675원 으로 위. 이후 2026-07-31 까지 회복 없음(7/31 종가 262,500원 vs 20일선 262,550원). 지난 1년(2025-08-01~2026-07-31) 20일선 통과 27회 — 20일 평균은 앞 19거래일이 비므로 2년치를 받아 산출했다. 1년치만 받으면 앞 19거래일이 잘려 26회로 과소 집계된다. Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. ① 타임스탬프: v8 원시 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ② 배당 조정: MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다. 카드는 실제 체결가인 무수정 종가를 쓴다. 배당락 당일인 6/29 종가 323,000원은 양쪽이 동일하다.",
+    "en": "Apple (AAPL) close vs 20-day simple moving average — on 2026-06-08 the close of $301.54 slipped below the 20-day average of $304.66; the prior session 2026-06-05 was still above. It regained the line on 2026-07-02 (close $308.63 vs $294.80). 18 crossings of the 20-day line over the trailing year (2025-08-01 to 2026-07-31), computed from a 2-year pull — a 1-year pull silently drops the first 19 sessions to the SMA warm-up and undercounts to 17. Simple moving averages computed directly from Yahoo Finance daily closes over a 1-year pull."
   },
   "cards": [
     {
       "type": "cover",
       "title_ko": "차트 위 그 곡선,<br>계산은 나눗셈<br>한 번입니다",
       "title_en": "That smooth curve?<br>It's one division,<br>nothing more",
-      "sub_ko": "EP.02 이동평균선 & 골든크로스 (상)",
-      "sub_en": "EP.02 Moving averages & the golden cross (Part 1)",
+      "sub_ko": "EP.02 이동평균선",
+      "sub_en": "EP.02 Moving averages",
       "cta_ko": "저장하고 넘겨보세요",
       "cta_en": "Save & swipe",
       "annot_ko": "차트 위에 얹힌|그 선들의 정체",
-      "annot_en": "those smooth lines|over the candles"
+      "annot_en": "those smooth lines|over the candles",
+      "overlay": "ma"
     },
     {
       "type": "intro",
@@ -37,7 +38,7 @@
       "type": "formula",
       "title_ko": "이동평균선은<br>'요즘 평균'입니다",
       "title_en": "A moving average<br>is a recent average",
-      "body_ko": "최근 며칠의 종가를 더해 그 날 수로 나눈 값입니다. 매일 하나씩 새로 계산해 이으면 선이 됩니다.",
+      "body_ko": "최근 며칠의 종가를 더해 그 날수로 나눈 값입니다. 매일 하나씩 새로 계산해 이으면 선이 됩니다.",
       "body_en": "Add up the closing prices of the last N sessions and divide by N. Do it every day, join the dots, and you get a line.",
       "formula": {
         "numerator_ko": "최근 20일 종가의 합",
@@ -266,7 +267,7 @@
       "type": "checklist",
       "title_ko": "며칠을 평균 내느냐가<br>선의 이름입니다",
       "title_en": "The name is just<br>how many days",
-      "body_ko": "차트에 흔히 함께 그려지는 네 개입니다. 숫자가 곧 평균을 낸 날 수입니다.",
+      "body_ko": "차트에 흔히 함께 그려지는 네 개입니다. 숫자가 곧 평균을 낸 날수입니다.",
       "body_en": "Four lines you'll usually see together. The number is the count of days averaged.",
       "items": [
         {
@@ -301,7 +302,7 @@
       "type": "lines",
       "title_ko": "삼성전자가<br>20일선을 내준 날",
       "title_en": "The day Apple<br>slipped under<br>its 20-day line",
-      "body_ko": "2026년 6월 29일, 종가 323,000원이 20일 이동평균 334,975원 아래로 내려갔습니다. 직전 거래일까지는 위에 있었습니다.",
+      "body_ko": "2026년 6월 29일, 종가 323,000원이 20일 이동평균 334,975원 아래로 내려갔습니다. 직전 거래일 6월 26일은 종가 339,500원으로 20일선 위에 있었습니다.",
       "body_en": "On June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66. The session before, it was still above.",
       "series_ko": [
         {
@@ -312,139 +313,111 @@
           "points": [
             [
               0,
-              78.2
+              82.02
             ],
             [
-              3,
-              81.5
-            ],
-            [
-              6.1,
-              83.4
-            ],
-            [
-              9.1,
+              3.8,
               92
             ],
             [
-              12.1,
-              87.4
+              7.7,
+              81.47
             ],
             [
-              15.2,
-              87.1
+              11.5,
+              72.32
             ],
             [
-              18.2,
-              63.6
+              15.4,
+              78.42
             ],
             [
-              21.2,
-              80.1
+              19.2,
+              67.6
             ],
             [
-              24.2,
-              89.8
+              23.1,
+              51.8
             ],
             [
-              27.3,
-              79.6
+              26.9,
+              64.83
             ],
             [
-              30.3,
-              70.7
+              30.8,
+              69.54
             ],
             [
-              33.3,
-              76.6
+              34.6,
+              57.35
             ],
             [
-              36.4,
-              66.1
+              38.5,
+              47.09
             ],
             [
-              39.4,
-              50.7
+              42.3,
+              47.37
             ],
             [
-              42.4,
-              63.4
+              46.2,
+              51.25
             ],
             [
-              45.5,
-              68
+              50,
+              34.34
             ],
             [
-              48.5,
-              56.1
+              53.8,
+              39.05
             ],
             [
-              51.5,
-              46.1
+              57.7,
+              48.2
             ],
             [
-              54.5,
-              46.4
+              61.5,
+              34.61
             ],
             [
-              57.6,
-              50.1
+              65.4,
+              28.51
             ],
             [
-              60.6,
-              33.7
+              69.2,
+              36.83
             ],
             [
-              63.6,
-              38.3
+              73.1,
+              37.66
             ],
             [
-              66.7,
-              47.2
+              76.9,
+              42.93
             ],
             [
-              69.7,
-              33.9
+              80.8,
+              31.56
             ],
             [
-              72.7,
-              28
+              84.6,
+              34.06
             ],
             [
-              75.8,
-              36.1
+              88.5,
+              15.21
             ],
             [
-              78.8,
-              36.9
+              92.3,
+              8.83
             ],
             [
-              81.8,
-              42
-            ],
-            [
-              84.8,
-              31
-            ],
-            [
-              87.9,
-              33.4
-            ],
-            [
-              90.9,
-              15
-            ],
-            [
-              93.9,
-              8.8
-            ],
-            [
-              97,
+              96.2,
               8
             ],
             [
               100,
-              38
+              38.77
             ]
           ]
         },
@@ -455,139 +428,111 @@
           "points": [
             [
               0,
-              63.3
+              76.25
             ],
             [
-              3,
-              65.2
+              3.8,
+              77.68
             ],
             [
-              6.1,
-              67
+              7.7,
+              78.79
             ],
             [
-              9.1,
-              69.3
+              11.5,
+              78.96
             ],
             [
-              12.1,
-              71.4
+              15.4,
+              78.54
             ],
             [
-              15.2,
-              72.9
+              19.2,
+              77.27
             ],
             [
-              18.2,
-              73.4
+              23.1,
+              75.45
             ],
             [
-              21.2,
-              74.5
+              26.9,
+              74.91
             ],
             [
-              24.2,
-              75.9
+              30.8,
+              75.53
             ],
             [
-              27.3,
-              77
+              34.6,
+              74.81
             ],
             [
-              30.3,
-              77.1
+              38.5,
+              74.12
             ],
             [
-              33.3,
-              76.7
+              42.3,
+              73.54
             ],
             [
-              36.4,
-              75.5
+              46.2,
+              72.5
             ],
             [
-              39.4,
-              73.7
+              50,
+              70.21
             ],
             [
-              42.4,
-              73.2
+              53.8,
+              67.99
             ],
             [
-              45.5,
-              73.8
+              57.7,
+              66.13
             ],
             [
-              48.5,
-              73.1
+              61.5,
+              63.15
             ],
             [
-              51.5,
-              72.4
+              65.4,
+              60.1
             ],
             [
-              54.5,
-              71.9
+              69.2,
+              57.49
             ],
             [
-              57.6,
-              70.8
+              73.1,
+              56.11
             ],
             [
-              60.6,
-              68.6
+              76.9,
+              54.16
             ],
             [
-              63.6,
-              66.4
+              80.8,
+              51.14
             ],
             [
-              66.7,
-              64.6
+              84.6,
+              48.77
             ],
             [
-              69.7,
-              61.7
+              88.5,
+              45.91
             ],
             [
-              72.7,
-              58.8
+              92.3,
+              42.43
             ],
             [
-              75.8,
-              56.2
-            ],
-            [
-              78.8,
-              54.9
-            ],
-            [
-              81.8,
-              53
-            ],
-            [
-              84.8,
-              50
-            ],
-            [
-              87.9,
-              47.7
-            ],
-            [
-              90.9,
-              44.9
-            ],
-            [
-              93.9,
-              41.5
-            ],
-            [
-              97,
-              38.6
+              96.2,
+              39.45
             ],
             [
               100,
-              38
+              38.8
             ]
           ]
         }
@@ -906,8 +851,8 @@
         }
       ],
       "marker_ko": {
-        "x": 30.3,
-        "y": 77.1,
+        "x": 11.5,
+        "y": 78.96,
         "label_ko": "6/29 이탈"
       },
       "marker_en": {
@@ -932,8 +877,8 @@
         {
           "title_ko": "닿았다고 튕기지 않습니다",
           "title_en": "Touching it guarantees nothing",
-          "desc_ko": "삼성전자는 지난 1년 동안 20일선을 26번 오갔습니다. 지지선처럼 보이는 건 결과입니다.",
-          "desc_en": "Apple crossed its 20-day line 17 times in the past year. Support is what we call it afterwards."
+          "desc_ko": "삼성전자는 지난 1년 동안 20일선을 27번 오갔습니다. 지지선처럼 보이는 건 결과입니다.",
+          "desc_en": "Apple crossed its 20-day line 18 times in the past year. Support is what we call it afterwards."
         },
         {
           "title_ko": "기간을 바꾸면 그림이 바뀝니다",
@@ -983,10 +928,10 @@
       "disclaimer_en": "Educational content only — not investment advice."
     }
   ],
-  "caption_ko": "📊 주식 차트 3분 노트 EP.02 — 이동평균선 (상)\n\n차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.\n최근 며칠 종가를 더해서 그 날 수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?\n\n5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.\n\n실제로 2026년 6월 29일 삼성전자는 종가 323,000원으로 20일선(334,975원) 아래로 내려갔고, 7월 31일까지 되찾지 못했습니다.\n다만 지난 1년만 놓고 보면 20일선을 26번이나 오갔습니다. 선을 한 번 내줬다고 방향이 정해지는 건 아닙니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '골든크로스 & 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.\n\n#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑",
-  "caption_en": "📊 3-Min Stock Chart Notes EP.02 — Moving averages (Part 1)\n\nThose smooth curves laid over the candles are moving averages.\nAdd up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?\n\nA 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.\n\nA real one: on June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66, and it took until July 2 to climb back above.\nZoom out, though, and Apple crossed that line 17 times in the past year. One break settles nothing.\n\n📌 Save it & pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: the golden cross & the dead cross — what happens when two lines meet.\n\n#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing",
+  "caption_ko": "📊 주식 차트 3분 노트 EP.02 — 이동평균선\n\n차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.\n최근 며칠 종가를 더해서 그 날수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?\n\n5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.\n\n실제로 2026년 6월 29일 삼성전자는 종가 323,000원으로 20일선(334,975원) 아래로 내려갔고, 7월 31일까지 되찾지 못했습니다.\n다만 지난 1년만 놓고 보면 20일선을 27번이나 오갔습니다. 선을 한 번 내줬다고 방향이 정해지는 건 아닙니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '골든크로스 & 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.\n\n#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑",
+  "caption_en": "📊 3-Min Stock Chart Notes EP.02 — Moving averages\n\nThose smooth curves laid over the candles are moving averages.\nAdd up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?\n\nA 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.\n\nA real one: on June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66, and it took until July 2 to climb back above.\nZoom out, though, and Apple crossed that line 18 times in the past year. One break settles nothing.\n\n📌 Save it & pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: the golden cross & the dead cross — what happens when two lines meet.\n\n#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing",
   "alt_ko": [
-    "주식 차트 3분 노트 EP.02 상편 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다",
+    "주식 차트 3분 노트 EP.02 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다",
     "차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개",
     "이동평균선 계산식 — 최근 20일 종가의 합을 20으로 나눈 값, 5일 평균 101 계산 예시",
     "기간별 반응 속도 비교 그래프 — 일봉 가격, 20일선, 60일선이 각각 얼마나 빠르게 움직이는지",
@@ -996,7 +941,7 @@
     "오늘의 3줄 요약과 다음 편(골든크로스 & 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지"
   ],
   "alt_en": [
-    "3-Min Stock Chart Notes EP.02 Part 1 cover — that smooth curve is one division, nothing more",
+    "3-Min Stock Chart Notes EP.02 cover — that smooth curve is one division, nothing more",
     "Those smooth curves on the chart — introducing moving averages laid over candles",
     "The moving-average formula — sum of the last 20 closes divided by 20, with a 5-day example averaging 101",
     "Chart comparing reaction speed — daily price against a 20-day and a 60-day moving average",

@@ -141,7 +141,7 @@ function page(inner, pageno) {
   </style></head><body>
   <div class="paper"><div class="hd"><div class="s">${esc(SERIES)} · ${esc(data.episode || '')}</div>
   <div class="p">p.${String(pageno).padStart(2, '0')}</div></div>${inner}</div>
-  ${spiral()}<div class="foot">${esc(FOOTER)}</div>
+  ${spiral()}<div class="foot">${esc(FOOTER)} · ${esc(data.byline || 'by luckyon')}</div>
   <script>
   // 밑줄 스퀴글을 대상 텍스트의 실제 렌더 너비에 맞춘다.
   // 고정 너비로 두면 언어마다 글자 폭이 달라 한쪽은 줄 전체를 덮고 다른 쪽은 문장 중간에서 끊긴다
@@ -166,6 +166,11 @@ const R = {
       <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
         ${candleSVG({ x: 190, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.red, id: 'a' })}
         ${candleSVG({ x: 420, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.green, id: 'b' })}
+        ${/* overlay:'ma' 를 주면 캔들 위로 이동평균선 곡선을 얹는다. 표지 주석이 '선'을 가리키는
+              회차(이동평균선·추세선 등)에서 쓴다. 값이 없으면 EP.01 과 똑같이 캔들만 그린다. */
+      c.overlay === 'ma'
+        ? `<path d="M 56 212 Q 168 118, 300 168 T 545 136" stroke="${C.navy}" stroke-width="6"
+                 fill="none" stroke-linecap="round" opacity="0.9"/>` : ''}
         <path d="M 600 128 L 545 136" stroke="${C.red}" stroke-width="3" fill="none"/>
         ${String(t(c, 'annot')).split('|').map((ln, i) =>
       `<text x="606" y="${118 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
@@ -180,7 +185,6 @@ const R = {
         <div style="font-family:${FONT_TITLE};font-size:34px;font-weight:700;color:${C.navy};margin-top:26px">${esc(t(c, 'sub'))}</div>
         <div style="margin-top:30px"><span class="chip">${esc(t(c, 'cta'))} ▶</span></div>
       </div>
-      <div style="text-align:right;font-family:${FONT_MONO};font-size:26px;color:${C.muted}">${esc(data.byline || 'by luckyon')}</div>
     </div>`;
   },
 

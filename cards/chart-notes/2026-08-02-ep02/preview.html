@@ -56,14 +56,14 @@
 제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
 
 <div class="fact"><b>시세 검증 기록</b>
-<div>KO — 삼성전자(005930.KS) 종가 vs 20일 단순이동평균, 배당 무수정 종가 기준 — 2026-06-29(KST) 종가 323,000원이 20일선 334,975원 아래로 이탈. 직전 거래일 2026-06-26 은 종가 339,500원 &gt; 20일선 334,675원 으로 위. 이후 2026-07-31 까지 회복 없음(7/31 종가 262,500원 vs 20일선 262,550원). 지난 1년 20일선 통과 26회. Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. ① 타임스탬프: v8 원시 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ② 배당 조정: MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다. 카드는 실제 체결가인 무수정 종가를 쓴다. 배당락 당일인 6/29 종가 323,000원은 양쪽이 동일하다.</div><div>EN — Apple (AAPL) close vs 20-day simple moving average — on 2026-06-08 the close of $301.54 slipped below the 20-day average of $304.66; the prior session 2026-06-05 was still above. It regained the line on 2026-07-02 (close $308.63 vs $294.80). 17 crossings of the 20-day line over the trailing year. Simple moving averages computed directly from Yahoo Finance daily closes over a 1-year pull.</div></div>
+<div>KO — 삼성전자(005930.KS) 종가 vs 20일 단순이동평균, 배당 무수정 종가 기준 — 2026-06-29(KST) 종가 323,000원이 20일선 334,975원 아래로 이탈. 직전 거래일 2026-06-26 은 종가 339,500원 &gt; 20일선 334,675원 으로 위. 이후 2026-07-31 까지 회복 없음(7/31 종가 262,500원 vs 20일선 262,550원). 지난 1년(2025-08-01~2026-07-31) 20일선 통과 27회 — 20일 평균은 앞 19거래일이 비므로 2년치를 받아 산출했다. 1년치만 받으면 앞 19거래일이 잘려 26회로 과소 집계된다. Yahoo Finance v8 차트 API 일봉 종가로 직접 산출. ① 타임스탬프: v8 원시 봉의 00:00Z 가 곧 그날 KST 거래일이며, MCP UsStockInfo 도구가 주는 15:00Z 봉과는 하루 차이가 난다. 지방선거(6/3)·제헌절(7/17) 휴장 자리가 정확히 비어 있어 오프셋을 교차검증함. ② 배당 조정: MCP 도구는 6/29 배당락(374원) 이전 봉을 배당 조정해 돌려주므로 6/26 종가가 339,126원(=339,500-374)으로 나온다. 카드는 실제 체결가인 무수정 종가를 쓴다. 배당락 당일인 6/29 종가 323,000원은 양쪽이 동일하다.</div><div>EN — Apple (AAPL) close vs 20-day simple moving average — on 2026-06-08 the close of $301.54 slipped below the 20-day average of $304.66; the prior session 2026-06-05 was still above. It regained the line on 2026-07-02 (close $308.63 vs $294.80). 18 crossings of the 20-day line over the trailing year (2025-08-01 to 2026-07-31), computed from a 2-year pull — a 1-year pull silently drops the first 19 sessions to the SMA warm-up and undercounts to 17. Simple moving averages computed directly from Yahoo Finance daily closes over a 1-year pull.</div></div>
 
 
     <h2>🇰🇷 한국어 — 8장</h2>
     <div class="cards">
     <figure>
-      <img src="ko/card1.png" alt="주식 차트 3분 노트 EP.02 상편 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다" loading="lazy">
-      <figcaption><b>p.01</b> 주식 차트 3분 노트 EP.02 상편 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다</figcaption>
+      <img src="ko/card1.png" alt="주식 차트 3분 노트 EP.02 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다" loading="lazy">
+      <figcaption><b>p.01</b> 주식 차트 3분 노트 EP.02 표지 — 차트 위 그 곡선, 계산은 나눗셈 한 번입니다</figcaption>
     </figure>
     <figure>
       <img src="ko/card2.png" alt="차트 위 구불구불한 선들의 정체 — 캔들 위에 겹쳐진 이동평균선 소개" loading="lazy">
@@ -93,14 +93,14 @@
       <img src="ko/card8.png" alt="오늘의 3줄 요약과 다음 편(골든크로스 &amp; 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지" loading="lazy">
       <figcaption><b>p.08</b> 오늘의 3줄 요약과 다음 편(골든크로스 &amp; 데드크로스) 예고, 투자 권유가 아니라는 교육 목적 고지</figcaption>
     </figure></div>
-    <h3>캡션 (503자)</h3>
-    <div class="cap">📊 주식 차트 3분 노트 EP.02 — 이동평균선 (상)<br><br>차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.<br>최근 며칠 종가를 더해서 그 날 수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?<br><br>5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.<br><br>실제로 2026년 6월 29일 삼성전자는 종가 323,000원으로 20일선(334,975원) 아래로 내려갔고, 7월 31일까지 되찾지 못했습니다.<br>다만 지난 1년만 놓고 보면 20일선을 26번이나 오갔습니다. 선을 한 번 내줬다고 방향이 정해지는 건 아닙니다.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '골든크로스 &amp; 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.<br><br>#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑</div>
+    <h3>캡션 (498자)</h3>
+    <div class="cap">📊 주식 차트 3분 노트 EP.02 — 이동평균선<br><br>차트 위에 겹쳐진 그 부드러운 곡선들, 이동평균선입니다.<br>최근 며칠 종가를 더해서 그 날수로 나눈 값일 뿐인데, 왜 다들 이 선부터 보라고 할까요?<br><br>5일선은 최근 한 주, 20일선은 최근 한 달의 평균입니다. 기간이 길수록 선은 느리게 움직입니다.<br><br>실제로 2026년 6월 29일 삼성전자는 종가 323,000원으로 20일선(334,975원) 아래로 내려갔고, 7월 31일까지 되찾지 못했습니다.<br>다만 지난 1년만 놓고 보면 20일선을 27번이나 오갔습니다. 선을 한 번 내줬다고 방향이 정해지는 건 아닙니다.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '골든크로스 &amp; 데드크로스' — 선 두 개가 만나는 순간을 읽습니다.<br><br>#주식초보 #주식공부 #이동평균선 #이평선 #20일선 #주식차트보는법 #삼성전자 #재테크 #주식용어 #luckyon브리핑</div>
 
     <h2>🇺🇸 English — 8장</h2>
     <div class="cards">
     <figure>
-      <img src="en/card1.png" alt="3-Min Stock Chart Notes EP.02 Part 1 cover — that smooth curve is one division, nothing more" loading="lazy">
-      <figcaption><b>p.01</b> 3-Min Stock Chart Notes EP.02 Part 1 cover — that smooth curve is one division, nothing more</figcaption>
+      <img src="en/card1.png" alt="3-Min Stock Chart Notes EP.02 cover — that smooth curve is one division, nothing more" loading="lazy">
+      <figcaption><b>p.01</b> 3-Min Stock Chart Notes EP.02 cover — that smooth curve is one division, nothing more</figcaption>
     </figure>
     <figure>
       <img src="en/card2.png" alt="Those smooth curves on the chart — introducing moving averages laid over candles" loading="lazy">
@@ -130,8 +130,8 @@
       <img src="en/card8.png" alt="Recap in three lines, a preview of the next episode on the golden and dead cross, and an educational-purpose disclaimer" loading="lazy">
       <figcaption><b>p.08</b> Recap in three lines, a preview of the next episode on the golden and dead cross, and an educational-purpose disclaimer</figcaption>
     </figure></div>
-    <h3>캡션 (973자)</h3>
-    <div class="cap">📊 3-Min Stock Chart Notes EP.02 — Moving averages (Part 1)<br><br>Those smooth curves laid over the candles are moving averages.<br>Add up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?<br><br>A 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.<br><br>A real one: on June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66, and it took until July 2 to climb back above.<br>Zoom out, though, and Apple crossed that line 17 times in the past year. One break settles nothing.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: the golden cross &amp; the dead cross — what happens when two lines meet.<br><br>#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing</div>
+    <h3>캡션 (964자)</h3>
+    <div class="cap">📊 3-Min Stock Chart Notes EP.02 — Moving averages<br><br>Those smooth curves laid over the candles are moving averages.<br>Add up the last few closes, divide by how many — that's the whole calculation. So why does everyone say to watch this line first?<br><br>A 5-day line is last week's average, a 20-day is last month's. The longer the period, the slower the line moves.<br><br>A real one: on June 8, 2026 Apple closed at $301.54, just under its 20-day average of $304.66, and it took until July 2 to climb back above.<br>Zoom out, though, and Apple crossed that line 18 times in the past year. One break settles nothing.<br><br>📌 Save it &amp; pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: the golden cross &amp; the dead cross — what happens when two lines meet.<br><br>#investing101 #stockmarket #movingaverage #technicalanalysis #tradingforbeginners #stockmarketbasics #investingtips #charting #AAPL #luckyonbriefing</div>
 
 
 <div class="act">
