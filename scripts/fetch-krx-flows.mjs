@@ -17,11 +17,16 @@
 
 // bizdate 를 비우면 헤더만 있는 1.7KB 응답이 온다 — 반드시 날짜를 넣어야 데이터 행이 나온다.
 // sosok=0 코스피, sosok=1 코스닥.
-function kstToday() {
+// 직전 '거래가 끝난' 날을 기본값으로 쓴다. 오늘 장이 아직 안 끝났으면 오늘 데이터는 없다.
+// 15:40 KST 이전이면 전날, 주말이면 직전 금요일. (공휴일은 데이터가 없으면 하루씩 뒤로 간다)
+function lastSessionKst() {
   const n = new Date();
-  return new Date(n.getTime() + (9 * 60 - n.getTimezoneOffset()) * 60000).toISOString().slice(0, 10);
+  const kst = new Date(n.getTime() + (9 * 60 - n.getTimezoneOffset()) * 60000);
+  if (kst.getUTCHours() * 60 + kst.getUTCMinutes() < 15 * 60 + 40) kst.setUTCDate(kst.getUTCDate() - 1);
+  while (kst.getUTCDay() === 0 || kst.getUTCDay() === 6) kst.setUTCDate(kst.getUTCDate() - 1);
+  return kst.toISOString().slice(0, 10);
 }
-const DATE = (process.argv.find(a => /^\d{4}-\d{2}-\d{2}$/.test(a)) || kstToday()).replace(/-/g, '');
+const DATE = (process.argv.find(a => /^\d{4}-\d{2}-\d{2}$/.test(a)) || lastSessionKst()).replace(/-/g, '');
 
 const PAGES = [
   { key: 'KOSPI', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}&sosok=0` },
@@ -67,6 +72,7 @@ async function probe() {
     try {
       const { html, enc, bytes } = await getHtml(p.url);
       console.log(`  인코딩 ${enc} · ${bytes} bytes`);
+      console.log('  --- 본문 텍스트 ---\n    ' + strip(html).slice(0, 500));
       const ts = tables(html);
       console.log(`  table ${ts.length}개`);
       ts.forEach((tb, i) => {
