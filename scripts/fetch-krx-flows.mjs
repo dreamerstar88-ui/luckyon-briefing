@@ -140,8 +140,29 @@ async function probeJson() {
   }
 }
 
+// 국내증시 지수 페이지(59KB)에 투자자별 매매동향 블록이 들어 있다. 표를 전부 훑어
+// 개인/외국인/기관 이 함께 나오는 표를 찾는다.
+async function probeIndexPage() {
+  for (const code of ['KOSPI', 'KOSDAQ']) {
+    const url = `https://finance.naver.com/sise/sise_index.naver?code=${code}`;
+    console.log(`\n▶ ${url}`);
+    try {
+      const { html, bytes } = await getHtml(url);
+      console.log(`  ${bytes} bytes`);
+      tables(html).forEach((tb, i) => {
+        const rs = rows(tb).filter(r => r.length);
+        const flat = rs.flat().join(' ');
+        if (!/개인/.test(flat) || !/외국인/.test(flat)) return;
+        console.log(`  --- table[${i}] rows=${rs.length} ---`);
+        rs.slice(0, 8).forEach((r, j) => console.log(`    [${j}] ${r.slice(0, 8).join(' | ')}`));
+      });
+    } catch (e) { console.log(`  실패: ${e.message}`); }
+  }
+}
+
 async function probe() {
   console.log(`기준일 ${DATE}`);
+  await probeIndexPage();
   await probeKrx();
   await probeJson();
   for (const p of PAGES) {
