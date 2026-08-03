@@ -134,11 +134,13 @@ function newsCard(title, items, dotColor) {
     const badge = n.catchup
       ? `<span style="font-size:20px; font-weight:700; color:#e0a94f; background:rgba(224,169,79,0.14); border-radius:8px; padding:4px 12px; margin-left:12px; vertical-align:middle; white-space:nowrap;">${t('아침 브리핑 보충', 'Catch-up')}</span>`
       : '';
+    // 기록·지표 항목은 출처나 시각이 없을 수 있다 (우리가 직접 계산한 값).
+    const meta = [n.src, n.time].filter(Boolean).join(' · ');
     return `
     <div style="background:#1a1a19; border-left:6px solid ${dotColor}; border-radius:14px; padding:26px 30px; margin-bottom:20px;">
       <div style="font-size:33px; font-weight:800; line-height:1.35; margin-bottom:12px;">${t(n.headline_ko, n.headline_en)}${badge}</div>
       <div style="font-size:27px; line-height:1.5; color:#d7d6cf;">${t(n.body_ko, n.body_en)}</div>
-      <div style="font-size:22px; color:#898781; margin-top:14px;">${n.src} · ${n.time}</div>
+      ${meta ? `<div style="font-size:22px; color:#898781; margin-top:14px;">${meta}</div>` : ''}
     </div>`;
   }).join('');
   return `
@@ -195,13 +197,21 @@ function cardOutro() {
     </div>`;
 }
 
+// 본문 카드는 sections 가 있으면 그것을 따르고, 없으면 기존 econ/ai 6+6 구성으로 그린다.
+// (구버전 content/*.json 을 그대로 다시 렌더할 수 있어야 하므로 폴백을 남긴다.)
+const bodyCards = Array.isArray(data.sections) && data.sections.length
+  ? data.sections.map(s => newsCard(t(s.title_ko, s.title_en), s.items || [], s.color || '#e66767'))
+  : [
+      newsCard(t('경제 · 금융 ①', 'Economy ①'), data.econ.slice(0, 3), '#e66767'),
+      newsCard(t('경제 · 금융 ②', 'Economy ②'), data.econ.slice(3, 6), '#e66767'),
+      newsCard(t('AI · 테크 ①', 'AI & Tech ①'), data.ai.slice(0, 3), '#9085e9'),
+      newsCard(t('AI · 테크 ②', 'AI & Tech ②'), data.ai.slice(3, 6), '#9085e9'),
+    ];
+
 const inners = [
   cardHook(),
   cardMarkets(),
-  newsCard(t('경제 · 금융 ①', 'Economy ①'), data.econ.slice(0, 3), '#e66767'),
-  newsCard(t('경제 · 금융 ②', 'Economy ②'), data.econ.slice(3, 6), '#e66767'),
-  newsCard(t('AI · 테크 ①', 'AI & Tech ①'), data.ai.slice(0, 3), '#9085e9'),
-  newsCard(t('AI · 테크 ②', 'AI & Tech ②'), data.ai.slice(3, 6), '#9085e9'),
+  ...bodyCards,
   ...(data.schedule && data.market_hours ? [cardSchedule()] : []),
   cardOutro(),
 ];
