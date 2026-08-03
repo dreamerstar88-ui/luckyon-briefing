@@ -232,8 +232,40 @@ function cardStats(s) {
     </div>`;
   }).join('');
 
+  // 투자자별 순매수 — 0을 기준으로 좌우로 뻗는 막대. 사는 쪽 빨강, 파는 쪽 파랑.
+  const f = s.flows;
+  const flows = f ? (() => {
+    const max = Math.max(...f.rows.map(r => Math.abs(r.value)), 0.01);
+    const CENTER = 50;
+    const rows = f.rows.map(r => {
+      const w = Math.abs(r.value) / max * 38;
+      const pos = r.value >= 0 ? `left:${CENTER}%; width:${w}%;` : `right:${100 - CENTER}%; width:${w}%;`;
+      const radius = r.value >= 0 ? '0 6px 6px 0' : '6px 0 0 6px';
+      return `
+      <div style="position:relative; height:50px; display:flex; align-items:center;">
+        <div style="position:absolute; left:0; width:${CENTER - 22}%; text-align:right; padding-right:16px;
+                    font-size:26px; font-weight:700; color:#e8e7e0;">${t(r.label_ko, r.label_en)}</div>
+        <div style="position:absolute; ${pos} height:26px; background:${sign(r.value)}; border-radius:${radius};"></div>
+        ${w >= 14
+          ? `<div style="position:absolute; ${pos} height:26px; display:flex; align-items:center;
+                         justify-content:${r.value >= 0 ? 'flex-end' : 'flex-start'}; padding:0 10px;
+                         font-size:23px; font-weight:800; color:#0d0d0d; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`
+          : `<div style="position:absolute; ${r.value >= 0 ? `left:calc(${CENTER}% + ${w}% + 12px)` : `right:calc(${100 - CENTER}% + ${w}% + 12px)`};
+                         font-size:25px; font-weight:800; color:${sign(r.value)}; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`}
+      </div>`;
+    }).join('');
+    return `
+    <div style="margin-top:30px;">
+      <div style="font-size:27px; font-weight:800; margin-bottom:14px;">${t(f.label_ko, f.label_en)}</div>
+      <div style="position:relative;">
+        <div style="position:absolute; left:${CENTER}%; top:0; bottom:0; width:2px; background:#3a3936;"></div>
+        ${rows}
+      </div>
+    </div>`;
+  })() : '';
+
   return sectionShell(t(s.title_ko, s.title_en), s.color || UP,
-    `<div style="display:flex; gap:18px;">${tiles}</div>${breadth}`,
+    `<div style="display:flex; gap:18px;">${tiles}</div>${breadth}${flows}`,
     t(s.note_ko, s.note_en));
 }
 

@@ -106,24 +106,24 @@
   },
   "schedule": [
     {
-      "time": "22:30",
-      "title_ko": "미국 증시 정규장 개장",
-      "title_en": "US Regular Session Opens",
-      "detail_ko": "코스피 급락 이후 위험선호 회복 여부·호르무즈 협상 진전 주목",
-      "detail_en": "Watching for a risk-appetite rebound after the Kospi's plunge and progress in the Hormuz talks",
-      "importance": "high"
+      "time": "22:45",
+      "title_ko": "S&P 글로벌 제조업 PMI (7월)",
+      "title_en": "S&P Global Manufacturing PMI (July)",
+      "detail_ko": "컨센서스 53.8 · ISM 발표 15분 전",
+      "detail_en": "Consensus 53.8 · 15 minutes before ISM",
+      "importance": "mid"
     },
     {
       "time": "23:00",
       "title_ko": "ISM 제조업 PMI (7월)",
       "title_en": "ISM Manufacturing PMI (July)",
-      "detail_ko": "컨센서스 54.0, 전월 53.3 · 물가지수(Prices Paid)도 함께 주목",
-      "detail_en": "Consensus 54.0 vs June's 53.3; the Prices Paid sub-index is also in focus",
-      "importance": "mid"
+      "detail_ko": "컨센서스 54.0, 전월 53.3 · 물가지수 컨센서스 70.0",
+      "detail_en": "Consensus 54.0 vs June's 53.3 · Prices Paid consensus 70.0",
+      "importance": "high"
     },
     {
       "time": "8/4 05~07",
-      "title_ko": "ON세미컨덕터·스냅 등 대형 시간외 실적",
+      "title_ko": "ON세미컨덕터·스냅 등 시간외 실적",
       "title_en": "ON Semi, Snap and Others Report After Close",
       "detail_ko": "AI 반도체 수요·빅테크 광고 경기 가늠자",
       "detail_en": "A read on AI-chip demand and big-tech ad spending",
@@ -131,10 +131,10 @@
     },
     {
       "time": "8/4 06:00",
-      "title_ko": "팔란티어, 2분기 실적 발표(장 마감 후)",
-      "title_en": "Palantir Q2 Earnings (After Close)",
-      "detail_ko": "컨센서스 매출 18.1억달러(+80%)·EPS 0.35달러, AI 소프트웨어 밸류에이션 시험대",
-      "detail_en": "Consensus revenue $1.81B (+80% YoY), EPS $0.35 — a test for AI-software valuations",
+      "title_ko": "팔란티어 2분기 실적",
+      "title_en": "Palantir Q2 Earnings",
+      "detail_ko": "컨센서스 매출 18.1억달러·EPS 0.35달러",
+      "detail_en": "Consensus revenue $1.81B, EPS $0.35",
       "importance": "high"
     }
   ],
@@ -190,8 +190,31 @@
           "down": 449
         }
       ],
-      "note_ko": "코스피는 급락했지만 오른 종목이 더 많았습니다. 지수를 끌어내린 것은 소수의 대형주입니다.",
-      "note_en": "The Kospi fell hard, yet more stocks rose than fell. A few megacaps drove the drop."
+      "note_ko": "코스피는 급락했지만 오른 종목이 더 많았습니다. 외국인·기관이 판 물량을 개인이 받았습니다.",
+      "note_en": "The Kospi fell hard, yet more stocks rose than fell. Retail investors absorbed what foreigners and institutions sold.",
+      "flows": {
+        "label_ko": "투자자별 순매수 (코스피)",
+        "label_en": "Net buying by investor type (Kospi)",
+        "unit_ko": "조",
+        "unit_en": "T",
+        "rows": [
+          {
+            "label_ko": "개인",
+            "label_en": "Retail",
+            "value": 4.7
+          },
+          {
+            "label_ko": "외국인",
+            "label_en": "Foreign",
+            "value": -2.8
+          },
+          {
+            "label_ko": "기관",
+            "label_en": "Institutions",
+            "value": -1.9
+          }
+        ]
+      }
     },
     {
       "type": "bars",
@@ -378,13 +401,13 @@
     "lines_ko": [
       "코스피는 338포인트(5.12%) 내린 6,257.45로 마감했지만, 오른 종목이 455개로 내린 종목 419개보다 많았습니다.",
       "반도체 업종이 8.65% 내리며 지수를 혼자 끌어내렸습니다. 주력 15개 업종 가운데 5개는 올랐습니다.",
-      "거래대금 26조3천억원 중 58%가 SK하이닉스와 삼성전자 두 종목에 몰렸습니다.",
+      "거래대금 26조3천억원 중 58%가 SK하이닉스와 삼성전자 두 종목에 몰렸고, 외국인 2.8조·기관 1.9조 순매도를 개인이 4.7조 순매수로 받았습니다.",
       "코스닥은 반대로 2.44% 올라 737.35로 마감했고, 로봇주가 거래대금 상위를 휩쓸었습니다."
     ],
     "lines_en": [
       "The Kospi closed down 338 points (5.12%) at 6,257.45, yet 455 stocks rose against 419 that fell.",
       "Semiconductors fell 8.65% and dragged the index down on their own. Five of the 15 major sectors still rose.",
-      "SK Hynix and Samsung took 58% of the day's ₩26.3 trillion in turnover.",
+      "SK Hynix and Samsung took 58% of the ₩26.3 trillion turnover; retail investors bought ₩4.7T against ₩2.8T of foreign and ₩1.9T of institutional selling.",
       "The Kosdaq went the other way, up 2.44% to 737.35, with robotics names topping turnover."
     ]
   }
