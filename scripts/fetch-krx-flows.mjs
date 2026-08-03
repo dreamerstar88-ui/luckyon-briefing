@@ -66,7 +66,50 @@ const num = s => {
   return Number(t);
 };
 
+// KRX 정보데이터시스템 직접 조회. 브리핑 세션에서는 LOGOUT 만 돌아왔지만
+// 그건 프록시 IP 때문일 수 있어, 러너에서 되는지 확인한다. 되면 1차 출처라 더 낫다.
+async function krx(bld, extra = {}) {
+  const body = new URLSearchParams({
+    bld, locale: 'ko_KR', share: '1', money: '1', csvxls_isNo: 'false', ...extra,
+  });
+  const res = await fetch('https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd', {
+    method: 'POST',
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122 Safari/537.36',
+      'Referer': 'https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201020304',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+    body,
+  });
+  const text = await res.text();
+  return { status: res.status, text };
+}
+
+async function probeKrx() {
+  const cands = [
+    ['MDCSTAT02203 투자자별 거래실적(일별)', 'dbms/MDC/STAT/standard/MDCSTAT02203',
+      { inqTpCd: '1', trdVolVal: '2', askBid: '3', mktId: 'STK', strtDd: DATE, endDd: DATE, detailView: '1' }],
+    ['MDCSTAT02201 투자자별 거래실적', 'dbms/MDC/STAT/standard/MDCSTAT02201',
+      { inqTpCd: '1', trdVolVal: '2', askBid: '3', mktId: 'STK', strtDd: DATE, endDd: DATE }],
+    ['MDCSTAT01501 전종목 시세(연결 확인용)', 'dbms/MDC/STAT/standard/MDCSTAT01501',
+      { mktId: 'STK', trdDd: DATE }],
+  ];
+  for (const [name, bld, extra] of cands) {
+    console.log(`\n▶ KRX ${name}`);
+    try {
+      const { status, text } = await krx(bld, extra);
+      console.log(`  HTTP ${status} · ${text.length} bytes`);
+      console.log('  ' + text.slice(0, 400).replace(/\n/g, ' '));
+    } catch (e) {
+      console.log(`  실패: ${e.message}`);
+    }
+  }
+}
+
 async function probe() {
+  console.log(`기준일 ${DATE}`);
+  await probeKrx();
   for (const p of PAGES) {
     console.log(`\n${'='.repeat(70)}\n▶ ${p.key}  ${p.url}`);
     try {
