@@ -107,9 +107,43 @@ async function probeKrx() {
   }
 }
 
+// 네이버 모바일/내부 JSON API 후보. 어느 것이 살아 있는지 한 번에 확인한다.
+async function probeJson() {
+  const urls = [
+    'https://m.stock.naver.com/api/index/KOSPI/investors',
+    'https://m.stock.naver.com/api/index/KOSPI/investorTrend',
+    'https://api.stock.naver.com/index/KOSPI/investors',
+    'https://api.stock.naver.com/index/KOSPI/investorTrend',
+    'https://m.stock.naver.com/api/index/KOSPI/price?pageSize=3',
+    `https://api.finance.naver.com/siseJson.naver?symbol=KOSPI&requestType=1&startTime=${DATE}&endTime=${DATE}&timeframe=day`,
+    'https://finance.naver.com/sise/sise_index.naver?code=KOSPI',
+  ];
+  for (const u of urls) {
+    console.log(`\n▶ ${u}`);
+    try {
+      const r = await fetch(u, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile Safari/604.1',
+          'Referer': 'https://m.stock.naver.com/', 'Accept': 'application/json,text/html,*/*',
+        },
+      });
+      const buf = Buffer.from(await r.arrayBuffer());
+      const head = buf.subarray(0, 800).toString('latin1').toLowerCase();
+      const enc = /euc-kr|ks_c_5601/.test(head) ? 'euc-kr' : 'utf-8';
+      const body = new TextDecoder(enc).decode(buf);
+      console.log(`  HTTP ${r.status} · ${buf.length} bytes · ${enc}`);
+      const isJson = /^[\s]*[[{]/.test(body);
+      console.log('  ' + (isJson ? body.slice(0, 500) : strip(body).slice(0, 350)).replace(/\n/g, ' '));
+    } catch (e) {
+      console.log(`  실패: ${e.message}`);
+    }
+  }
+}
+
 async function probe() {
   console.log(`기준일 ${DATE}`);
   await probeKrx();
+  await probeJson();
   for (const p of PAGES) {
     console.log(`\n${'='.repeat(70)}\n▶ ${p.key}  ${p.url}`);
     try {
