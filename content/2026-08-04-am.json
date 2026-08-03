@@ -1,0 +1,188 @@
+{
+  "date": "2026-08-04",
+  "session": "am",
+  "dateLabel_ko": "2026년 8월 4일 (화)",
+  "dateLabel_en": "Tuesday, August 4, 2026",
+  "headline_ko": "다우 사상 최고치·아마존 시총 3조달러 첫 돌파…코스피는 전날 급락분 안고 개장",
+  "headline_sub_ko": "나스닥 +2.13%·S&P500 +1.48% 동반 강세 · 국제유가 이틀째 급락, 80달러 방어 · 이재명 대통령 귀국 후 7시간반 부동산·증시 점검회의",
+  "headline_en": "Dow Hits a Record, Amazon Tops $3 Trillion for the First Time as the Kospi Opens Still Carrying Monday's Selloff",
+  "headline_sub_en": "Nasdaq +2.13%, S&P 500 +1.48% · Oil falls a 2nd day, holding near $80 · President Lee chairs a 7.5-hour market review meeting right after his return",
+  "hook_bull": {
+    "body_ko": "다우존스가 693.38포인트(1.32%) 오른 53,178.41로 사상 최고치를 새로 썼고, 아마존은 시가총액 3조달러를 처음 돌파했습니다 — 나스닥도 2.13% 올랐습니다.",
+    "body_en": "The Dow rose 693.38 points (1.32%) to a record 53,178.41, and Amazon crossed $3 trillion in market cap for the first time — the Nasdaq also gained 2.13%."
+  },
+  "hook_bear": {
+    "body_ko": "국제유가 급락에도 코스피는 전날 5.12% 급락분을 그대로 안고 개장합니다 — 이재명 대통령은 귀국 직후 7시간 반 동안 부동산·증시 점검회의를 열었습니다.",
+    "body_en": "Despite oil's plunge, the Kospi opens still carrying Monday's 5.12% drop — President Lee chaired a 7.5-hour real estate and market review meeting right after returning from his trip."
+  },
+  "markets": [
+    { "label": "NASDAQ", "value": "25,913.90", "delta": "▲2.13%", "dir": "up", "note_ko": "다우 사상 최고치 속 3거래일 연속 상승 · 8/3 마감 종가", "note_en": "Rises with the Dow at a record, a 3rd straight gain · Aug 3 close" },
+    { "label": "S&P 500", "value": "7,600.50", "delta": "▲1.48%", "dir": "up", "note_ko": "아마존 시총 3조달러 첫 돌파가 견인 · 8/3 마감 종가", "note_en": "Led by Amazon's first-ever $3T market cap · Aug 3 close" },
+    { "label": "KOSPI", "value": "6,257.45", "delta": "▼5.12%", "dir": "down", "note_ko": "전날 급락 마감 · 개장 전, 전 거래일 종가", "note_en": "Closed down 5.12% the prior session · pre-open, previous close" },
+    { "label": "VIX", "value": "15.86", "delta": "▼0.81%", "dir": "down", "note_ko": "이틀 연속 하락, 20선 하회 지속 · 8/3 마감", "note_en": "Falls a 2nd day, holds below 20 · Aug 3 close" },
+    { "label": "Fear & Greed", "value": "45", "delta": "▲3p", "dir": "up", "note_ko": "'공포'에서 '중립'으로 진입 · 다우 최고치에 개선", "note_en": "Moves from 'Fear' into 'Neutral' as the Dow hits a record" },
+    { "label": "US 10Y", "value": "4.70%", "delta": "▼0.05%p", "dir": "down", "note_ko": "국채금리 하락 전환 · 8/3 마감 기준", "note_en": "Yields ease · Aug 3 close" },
+    { "label": "USD/KRW", "value": "1,428.7", "value_sub": "· DXY 99.99", "delta": "▼0.92%", "dir": "down", "note_ko": "달러 약세 속 원화 강세 지속 · 오늘 새벽 기준", "note_en": "Won firms as the dollar softens · early this morning" },
+    { "label": "Gold", "value": "$4,107.5", "delta": "▲1.44%", "dir": "up", "note_ko": "4,100달러 위 안착 · 오늘 새벽 기준", "note_en": "Settles above $4,100 · early this morning" },
+    { "label": "WTI", "value": "$80.05", "delta": "▼5.46%", "dir": "down", "note_ko": "이란 관련 우려 완화에 이틀째 급락, 80달러 방어 · 오늘 새벽 기준", "note_en": "Falls a 2nd day as Iran fears ease, holds near $80 · early morning" },
+    { "label": "Bitcoin", "value": "$63,457", "delta": "▼0.04%", "dir": "down", "note_ko": "코스피발 위험회피 진정, 보합권 · 오늘 새벽 기준", "note_en": "Steadies near flat as risk-off from the Kospi fades · early this morning" }
+  ],
+  "market_note_ko": "나스닥·S&P500·VIX·미 10년물·금(가격대)은 8/3 마감, 코스피는 전 거래일(8/3) 종가로 개장 전 기준, 원/달러·WTI·비트코인은 오늘(8/4) 이른 아침 기준입니다.",
+  "market_note_en": "Nasdaq, S&P 500, VIX and the 10Y yield are Aug 3's close; Kospi is pre-open (Aug 3 close); the won, WTI and Bitcoin are as of early this morning.",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Market Records",
+      "color": "#e66767",
+      "items": [
+        {
+          "headline_ko": "다우존스 사상 최고치 경신…나스닥 3거래일 연속 상승",
+          "headline_en": "Dow Jones Sets a New Record High; Nasdaq Rises for a 3rd Straight Session",
+          "body_ko": "다우존스산업평균이 693.38포인트(1.32%) 오른 53,178.41로 마감해 사상 최고치를 새로 썼다. 나스닥은 2.13%, S&P500은 1.48% 올라 3대 지수가 동반 강세를 보였다.",
+          "body_en": "The Dow Jones Industrial Average rose 693.38 points (1.32%) to a record 53,178.41. The Nasdaq gained 2.13% and the S&P 500 1.48%, with all three major indexes rallying together.",
+          "src": "Yahoo Finance",
+          "time": "8/3 마감"
+        },
+        {
+          "headline_ko": "아마존, 시가총액 3조달러 첫 돌파…역대 5번째 기업",
+          "headline_en": "Amazon Tops $3 Trillion Market Cap for the First Time, the 5th Company Ever",
+          "body_ko": "아마존이 2분기 실적 호조에 힘입어 3일 시가총액 3조달러를 처음 넘어섰다. 엔비디아·애플·마이크로소프트·알파벳에 이어 5번째로 이 기록을 세운 기업이 됐다. 주가는 이날 4.58% 올라 사상 최고가를 새로 썼다.",
+          "body_en": "Amazon crossed $3 trillion in market cap for the first time on the 3rd on strong Q2 results — only the fifth company ever, after Nvidia, Apple, Microsoft and Alphabet. Shares rose 4.58% to a record high.",
+          "src": "FMP",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "기술주 강세 속 에너지는 홀로 하락…유가 급락 여파",
+          "headline_en": "Tech Rallies While Energy Alone Falls on the Oil Plunge",
+          "body_ko": "기술 섹터(XLK)가 1.53%, 반도체(SMH)가 0.91% 오른 반면 에너지(XLE)는 국제유가 급락 여파로 1.28% 내렸다. 시장 전반의 강세 속에서도 업종별 온도차가 뚜렷했다.",
+          "body_en": "Tech (XLK) rose 1.53% and semis (SMH) 0.91%, while energy (XLE) fell 1.28% on the oil plunge — a clear divergence even as the market rallied broadly.",
+          "src": "PlayMCP",
+          "time": "8/3 마감"
+        }
+      ]
+    },
+    {
+      "title_ko": "실적 발표",
+      "title_en": "Earnings",
+      "color": "#e0a94f",
+      "items": [
+        {
+          "headline_ko": "팔란티어, 매출·EPS 모두 예상치 상회…9분기 연속 서프라이즈",
+          "headline_en": "Palantir Beats on Both Revenue and EPS, a 9th Straight Quarterly Beat",
+          "body_ko": "팔란티어가 3일 2분기 실적을 발표해 EPS 0.41달러(예상 0.35달러), 매출 19억3,546만달러(예상 18억1,228만달러)로 모두 예상치를 웃돌았다. 8분기 연속 상회 행진에 이어 9분기째 이어간 것이다.",
+          "body_en": "Palantir reported Q2 results on the 3rd with EPS of $0.41 (vs. $0.35 estimated) and revenue of $1.935B (vs. $1.812B estimated), beating on both — extending its beat streak to nine straight quarters after eight in a row.",
+          "src": "FMP",
+          "time": "8/3 장마감 후"
+        },
+        {
+          "headline_ko": "스냅, 손실 폭 줄이고 매출도 예상 상회",
+          "headline_en": "Snap Narrows Its Loss and Tops Revenue Estimates",
+          "body_ko": "스냅이 2분기 EPS -0.10달러(예상 -0.12달러), 매출 15억9,899만달러(예상 15억3,873만달러)를 기록해 손실 폭을 줄이고 매출도 예상을 웃돌았다.",
+          "body_en": "Snap posted Q2 EPS of -$0.10 (vs. -$0.12 estimated) and revenue of $1.599B (vs. $1.539B estimated), narrowing its loss and beating on revenue.",
+          "src": "FMP",
+          "time": "8/3 장마감 후"
+        },
+        {
+          "headline_ko": "2분기 실적 시즌, S&P500 약 300곳 발표…85% 예상치 상회",
+          "headline_en": "Q2 Season So Far: About 300 S&P 500 Firms Report, 85% Beat Estimates",
+          "body_ko": "2분기 실적 발표가 이어지는 가운데 S&P500 약 300개 기업이 실적을 내놨고 이 중 85%가 예상치를 웃돌았다. 합산 이익 증가율은 47%를 웃도는 것으로 집계됐다.",
+          "body_en": "With roughly 300 S&P 500 companies now reporting Q2 results, about 85% have beaten estimates, and aggregate profit growth is tracking above 47%.",
+          "src": "시장 집계",
+          "time": "8/3 기준"
+        }
+      ]
+    },
+    {
+      "title_ko": "금리 · 지표 · 원자재",
+      "title_en": "Rates, Data & Commodities",
+      "color": "#3987e5",
+      "items": [
+        {
+          "headline_ko": "美 ISM 제조업 PMI 55.6…예상·전월 모두 웃돌며 확장 국면",
+          "headline_en": "US ISM Manufacturing PMI Hits 55.6, Beating Estimates and Expanding",
+          "body_ko": "7월 ISM 제조업 PMI가 55.6으로 발표돼 컨센서스(54.0)와 전월(53.3)을 모두 웃돌았다. 고용지수도 52.8로 전월(49.7) 위축 국면에서 확장으로 전환했다.",
+          "body_en": "July's ISM Manufacturing PMI came in at 55.6, above both the 54.0 consensus and June's 53.3. The employment sub-index also swung into expansion at 52.8, up from June's contractionary 49.7.",
+          "src": "ISM",
+          "time": "8/3 발표"
+        },
+        {
+          "headline_ko": "국제유가 이틀째 급락 80달러 방어…국채금리는 하락 전환",
+          "headline_en": "Oil Falls for a 2nd Day Near $80 as Treasury Yields Ease",
+          "body_ko": "WTI는 배럴당 80.05달러로 5.46% 내리며 이틀 연속 급락, 80달러선을 겨우 지켰다. 미 10년물 국채금리는 4.70%로 전 거래일(4.75%) 대비 낮아졌다.",
+          "body_en": "WTI fell 5.46% to $80.05 a barrel, a second straight sharp drop that barely held the $80 line. The 10-year Treasury yield eased to 4.70% from 4.75% the prior session.",
+          "src": "FMP",
+          "time": "8/3 기준"
+        },
+        {
+          "headline_ko": "금값 4,100달러 위 안착…금리 하락에 지지력",
+          "headline_en": "Gold Holds Above $4,100, Supported by Falling Yields",
+          "body_ko": "금은 온스당 4,107.5달러로 1.44% 오르며 4,100달러 위에서 거래됐다. 국채금리 하락과 지정학적 리스크 완화가 뒤섞이며 지지력을 얻었다.",
+          "body_en": "Gold rose 1.44% to $4,107.5 an ounce, trading above $4,100 as falling yields offset easing geopolitical risk.",
+          "src": "PlayMCP",
+          "time": "오늘 새벽 기준"
+        }
+      ]
+    },
+    {
+      "title_ko": "한국 · 아시아",
+      "title_en": "Korea & Asia",
+      "color": "#5aa469",
+      "items": [
+        {
+          "headline_ko": "이재명 대통령, 귀국 즉시 7시간반 부동산·증시 점검회의…\"주택공급 속도\"",
+          "headline_en": "President Lee Holds a 7.5-Hour Real Estate & Market Review Right After Returning",
+          "body_ko": "이재명 대통령이 7박11일 순방을 마치고 3일 귀국하자마자 청와대에서 오후 3시부터 밤 10시30분까지 7시간 30분 동안 부동산·증시 점검회의를 주재했다. 주택공급 확대와 7/31 시행된 레버리지 ETF 보완책 점검이 핵심 의제였으며, 2~3일 내 후속회의가 예정됐다.",
+          "body_en": "President Lee, back from an 11-day trip on the 3rd, immediately chaired a 7.5-hour review of housing supply and July 31's leveraged-ETF safeguards, with a follow-up meeting due in 2-3 days.",
+          "src": "대통령실 서면브리핑",
+          "time": "8/3 발표"
+        },
+        {
+          "headline_ko": "아시아 증시 혼조…닛케이 하락, 항셍 상승",
+          "headline_en": "Asian Markets Mixed: Nikkei Falls, Hang Seng Rises",
+          "body_ko": "3일 아시아 증시는 엇갈렸다. 닛케이225는 0.94% 내린 63,754.90, 상하이종합은 0.59% 내린 3,809.66으로 마감한 반면 홍콩 항셍지수는 0.48% 오른 26,009.40으로 마쳤다.",
+          "body_en": "Asian markets diverged on the 3rd. Japan's Nikkei 225 fell 0.94% to 63,754.90 and China's Shanghai Composite dropped 0.59% to 3,809.66, while Hong Kong's Hang Seng rose 0.48% to 26,009.40.",
+          "src": "시장 데이터",
+          "time": "8/3 마감"
+        },
+        {
+          "headline_ko": "아이에스동서, 1,100억원 규모 새만금 공장 신축 공급계약",
+          "headline_en": "IS Dongseo Signs a ₩110B Construction Contract in Saemangeum",
+          "body_ko": "아이에스동서가 3일 이디엘과 전북 군산 새만금 이차전지 특화단지 내 EDL 새만금 K-1 공장 신축공사에 대해 1,100억원 규모 공급계약을 체결했다고 공시했다.",
+          "body_en": "IS Dongseo disclosed a ₩110B contract with EDL on the 3rd to build a new plant in Gunsan's Saemangeum battery complex.",
+          "src": "DART",
+          "time": "8/3"
+        }
+      ]
+    }
+  ],
+  "schedule_title_ko": "오늘 낮 주요 일정",
+  "schedule_title_en": "Today's Daytime Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea market hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    { "time": "09:00", "title_ko": "코스피 개장", "title_en": "Kospi Opens", "detail_ko": "전날 5.12% 급락 이후 반등 시도…미 3대 지수 사상 최고치 랠리를 뒤따를지 주목", "detail_en": "A test of whether it can rebound from Monday's 5.12% drop, tracking Wall Street's record rally", "importance": "high" },
+    { "time": "2~3일 내", "title_ko": "부동산·증시 후속 점검회의 예정", "title_en": "Follow-up Real Estate & Market Review Meeting Expected", "detail_ko": "이재명 대통령이 귀국 당일 회의에서 예고, 주택공급 확대안 등 후속 대책 발표 가능성", "detail_en": "Announced during President Lee's return-day meeting; further housing-supply measures may follow", "importance": "mid" },
+    { "time": "19:30", "title_ko": "화이자 2분기 실적 발표", "title_en": "Pfizer Q2 Earnings", "detail_ko": "컨센서스 EPS 0.68달러·매출 144억달러, 장 시작 전 발표", "detail_en": "Consensus EPS $0.68, revenue $14.4B, reports before the US market open", "importance": "mid" },
+    { "time": "8/4 밤~5일 새벽", "title_ko": "[미리보기] AMD 2분기 실적 발표", "title_en": "[Preview] AMD Q2 Earnings", "detail_ko": "컨센서스 EPS 1.61달러·매출 113억달러, AI 반도체 수요 가늠자", "detail_en": "Consensus EPS $1.61, revenue $11.3B — a read on AI-chip demand", "importance": "high" }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "caption_ko": "📊 luckyon 아침 브리핑 · 2026년 8월 4일(화)\n\n오늘의 핵심: 다우존스산업평균이 693.38포인트(1.32%) 오른 53,178.41로 사상 최고치를 새로 썼습니다. 아마존은 2분기 실적 호조에 힘입어 시가총액 3조달러를 처음 돌파, 엔비디아·애플·마이크로소프트·알파벳에 이어 역대 5번째 기업이 됐습니다. 나스닥은 2.13%, S&P500은 1.48% 올라 3대 지수가 동반 강세를 보였습니다.\n\n국제유가는 이란 관련 우려 완화 속 WTI 기준 5.46% 내리며 이틀 연속 급락, 배럴당 80달러를 겨우 지켰습니다. 미 10년물 국채금리는 4.70%로 낮아졌고, ISM 제조업 PMI는 55.6으로 예상과 전월을 모두 웃돌며 확장 국면을 이어갔습니다.\n\n실적 발표에서는 팔란티어가 매출·EPS 모두 예상치를 웃돌며 9분기 연속 서프라이즈 행진을 이어갔고, 스냅도 손실 폭을 줄이며 매출을 상회했습니다.\n\n국내에서는 이재명 대통령이 7박11일 순방을 마치고 귀국하자마자 7시간 반 동안 부동산·증시 점검회의를 주재하며 주택공급 확대를 주문했습니다. 코스피는 전날 5.12% 급락분을 그대로 안고 오늘 개장하며 미 증시 랠리를 뒤따를 수 있을지 시험대에 섰습니다. 아시아 증시는 닛케이·상하이 하락, 항셍 상승으로 엇갈렸습니다.\n\n💾 저장해두고 다음 브리핑도 확인하세요.\n👉 팔로우하면 하루 2번, 놓치지 않는 경제·AI 브리핑을 받아보실 수 있습니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n\n#luckyon브리핑 #경제뉴스 #주식 #코스피 #증시 #미국증시 #나스닥 #다우존스 #아마존 #팔란티어 #국제유가 #환율 #금리 #투자 #재테크",
+  "caption_en": "📊 luckyon Morning Briefing · Tuesday, August 4, 2026\n\nToday's headline: The Dow Jones Industrial Average rose 693.38 points (1.32%) to a record 53,178.41. Amazon crossed $3 trillion in market cap for the first time on strong Q2 results, becoming only the fifth company ever to do so after Nvidia, Apple, Microsoft and Alphabet. The Nasdaq gained 2.13% and the S&P 500 1.48%, with all three major indexes rallying together.\n\nOil fell for a second straight day, with WTI down 5.46% and barely holding $80 a barrel as Iran-related supply worries eased. The 10-year Treasury yield eased to 4.70%, while the ISM Manufacturing PMI came in at 55.6, beating both the consensus and last month's reading to extend its expansion.\n\nIn earnings, Palantir beat on both revenue and EPS to extend its beat streak to nine straight quarters, while Snap narrowed its loss and topped revenue estimates.\n\nIn Korea, President Lee Jae-myung returned from an 11-day trip and immediately chaired a 7.5-hour real estate and market review meeting, calling for expanded housing supply. The Kospi opens today still carrying Monday's 5.12% drop, facing a test of whether it can follow Wall Street's record rally. Asian markets were mixed, with the Nikkei and Shanghai lower and the Hang Seng higher.\n\n💾 Save this for later and check back for the next brief.\n👉 Follow for economic and AI briefings, twice a day, every weekday.\n\n🌙 Next brief — 9 PM KST, before the US open\n\n#luckyonbriefing #economicnews #stockmarket #kospi #markets #usmarkets #nasdaq #dowjones #amazon #palantir #oilprices #forex #rates #investing #finance",
+  "sources": [
+    "https://query1.finance.yahoo.com",
+    "https://home.treasury.gov",
+    "https://www.ismworld.org",
+    "https://raw.githubusercontent.com/FinanceData/fdr_krx_data_cache",
+    "https://opendart.fss.or.kr",
+    "https://www.cnbc.com/2026/08/03/amazon-amzn-stock-market-cap-earnings.html",
+    "https://www.bloomberg.com/news/articles/2026-08-03/amazon-joins-elite-list-of-stocks-to-top-3-trillion-in-value",
+    "https://www.imaeil.com/page/view/2026080407395047415",
+    "https://www.dailian.co.kr/news/view/1674073/?sc=Naver",
+    "https://www.etoday.co.kr/news/view/2610537"
+  ]
+}
