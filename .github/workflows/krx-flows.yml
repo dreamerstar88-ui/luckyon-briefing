@@ -1,0 +1,73 @@
+name: KRX Investor Flows
+
+# 코스피·코스닥 투자자별 매매동향(개인·외국인·기관 순매수)을 받아
+# data/krx-flows.json 에 커밋해 둔다.
+#
+# 왜 필요한가: finance.naver.com 은 브리핑 세션의 네트워크 정책에서 차단되고,
+# data.krx.co.kr 은 허용목록에 있어도 로그인을 요구해 LOGOUT 만 돌려준다.
+# GitHub Actions 러너는 프록시 밖이라 네이버 금융에 그대로 접속된다.
+# (data/futures-cache.json · data/econ-calendar.json 과 같은 패턴)
+#
+# 인증키·계정이 필요 없다 — 공개 페이지다.
+
+on:
+  schedule:
+    - cron: '10 11 * * 1-5'   # 11:10 UTC = 20:10 KST — 저녁 브리핑 직전 (한국장 마감 후)
+    - cron: '20 22 * * 0-4'   # 22:20 UTC = 07:20 KST(다음날) — 아침 브리핑 직전
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: '페이지 구조만 진단 출력 (파서 수정용)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: krx-flows
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Probe page structure
+        if: inputs.probe
+        run: node scripts/fetch-krx-flows.mjs --probe
+
+      - name: Fetch flows
+        if: ${{ !inputs.probe }}
+        id: fetch
+        run: |
+          mkdir -p data
+          if node scripts/fetch-krx-flows.mjs > /tmp/flows.json; then
+            mv /tmp/flows.json data/krx-flows.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+            cat data/krx-flows.json
+          else
+            # 파싱이 깨진 날은 기존 파일을 그대로 둔다. 지우면 브리핑이 더 나빠진다.
+            echo "::warning::투자자별 매매동향 조회 실패 — 기존 data/krx-flows.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/krx-flows.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh KRX investor flows [skip ci]"
+            git push
+          fi
