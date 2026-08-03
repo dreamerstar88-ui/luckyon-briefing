@@ -1,0 +1,414 @@
+{
+  "date": "2026-08-03",
+  "session": "pm",
+  "dateLabel_ko": "2026년 8월 3일 (월)",
+  "dateLabel_en": "Monday, August 3, 2026",
+  "headline_ko": "반도체만 빠졌다…코스피 5.12% 급락에도 오른 종목이 더 많아",
+  "headline_sub_ko": "상승 455 vs 하락 419 · 반도체 업종 홀로 -8.65% · 거래대금 26.3조 중 상위 2종목이 58% · 코스닥은 2.44% 상승",
+  "headline_en": "A Semis-Only Selloff: the Kospi Fell 5.12%, but More Stocks Rose Than Fell",
+  "headline_sub_en": "455 advancers vs 419 decliners · semis alone -8.65% · top 2 names took 58% of the ₩26.3T turnover · Kosdaq up 2.44%",
+  "markets": [
+    {
+      "label": "NASDAQ Fut",
+      "value": "28,766.50",
+      "delta": "▲1.28%",
+      "dir": "up",
+      "note_ko": "미 정규장 개장 전 선물 · 코스피와 반대로 상승",
+      "note_en": "Futures ahead of the US open · rising, unlike the Kospi"
+    },
+    {
+      "label": "S&P 500 Fut",
+      "value": "7,606.75",
+      "delta": "▲1.16%",
+      "dir": "up",
+      "note_ko": "미 정규장 개장 전 선물",
+      "note_en": "Futures ahead of the US open"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,257.45",
+      "delta": "▼5.12%",
+      "dir": "down",
+      "note_ko": "20일 전 고점(8,051) 대비 -22.3% · 오늘 종가",
+      "note_en": "Down 22.3% from its 20-session high of 8,051 · today’s close"
+    },
+    {
+      "label": "VIX",
+      "value": "15.96",
+      "delta": "▼0.19%",
+      "dir": "down",
+      "note_ko": "20선 하회 유지 · 오늘 저녁 기준",
+      "note_en": "Holds below 20 · this evening"
+    },
+    {
+      "label": "Fear & Greed",
+      "value": "42",
+      "delta": "▲3p",
+      "dir": "up",
+      "note_ko": "'공포' 구간, 소폭 개선 지속",
+      "note_en": "Still 'Fear' but continues to improve"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.75%",
+      "delta": "▲0.07%p",
+      "dir": "up",
+      "note_ko": "인플레·유가 우려 속 상승 · 7/31 마감 기준",
+      "note_en": "Rises on inflation and oil concerns · Jul 31 close"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,429.8",
+      "value_sub": "· DXY 99.7",
+      "delta": "▲0.4%",
+      "dir": "up",
+      "note_ko": "코스피 급락에 위험회피, 원화 약세 전환",
+      "note_en": "Won weakens as risk-off sentiment follows the Kospi's plunge"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,103",
+      "delta": "▼0.1%",
+      "dir": "down",
+      "note_ko": "4,000달러대 유지 · 오늘 저녁 기준",
+      "note_en": "Holds above $4,000 · this evening"
+    },
+    {
+      "label": "WTI",
+      "value": "$80.80",
+      "delta": "▼4.6%",
+      "dir": "down",
+      "note_ko": "이란-오만 협상 속 공급 우려 완화 지속",
+      "note_en": "Supply concerns keep easing amid the Iran-Oman talks"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$62,659",
+      "delta": "▼1.3%",
+      "dir": "down",
+      "note_ko": "코스피발 위험자산 회피 속 하락",
+      "note_en": "Falls as risk-off sentiment follows the Kospi selloff"
+    }
+  ],
+  "market_note_ko": "나스닥·S&P500은 미 정규장 개장 전 선물, 미 10년물은 7/31 마감 기준, 코스피·VIX·원달러·금·WTI·비트코인은 오늘(8/3) 저녁 기준입니다.",
+  "market_note_en": "Nasdaq and S&P 500 are futures ahead of the US open; the 10-year yield is Jul 31's close; Kospi, VIX, the won, gold, WTI and Bitcoin are as of this evening (Aug 3).",
+  "schedule_title_ko": "오늘 밤 주요 일정",
+  "schedule_title_en": "Tonight's Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US market hours",
+    "lines_ko": [
+      "정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30, 애프터마켓 05:00~09:00"
+    ],
+    "lines_en": [
+      "Regular session 10:30 PM - 5:00 AM KST (DST) · Pre-market 5-10:30 PM, after-hours 5-9 AM KST"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "22:45",
+      "title_ko": "S&P 글로벌 제조업 PMI (7월)",
+      "title_en": "S&P Global Manufacturing PMI (July)",
+      "detail_ko": "컨센서스 53.8 · ISM 발표 15분 전",
+      "detail_en": "Consensus 53.8 · 15 minutes before ISM",
+      "importance": "mid"
+    },
+    {
+      "time": "23:00",
+      "title_ko": "ISM 제조업 PMI (7월)",
+      "title_en": "ISM Manufacturing PMI (July)",
+      "detail_ko": "컨센서스 54.0, 전월 53.3 · 물가지수 컨센서스 70.0",
+      "detail_en": "Consensus 54.0 vs June's 53.3 · Prices Paid consensus 70.0",
+      "importance": "high"
+    },
+    {
+      "time": "8/4 05~07",
+      "title_ko": "ON세미컨덕터·스냅 등 시간외 실적",
+      "title_en": "ON Semi, Snap and Others Report After Close",
+      "detail_ko": "AI 반도체 수요·빅테크 광고 경기 가늠자",
+      "detail_en": "A read on AI-chip demand and big-tech ad spending",
+      "importance": "mid"
+    },
+    {
+      "time": "8/4 06:00",
+      "title_ko": "팔란티어 2분기 실적",
+      "title_en": "Palantir Q2 Earnings",
+      "detail_ko": "컨센서스 매출 18.1억달러·EPS 0.35달러",
+      "detail_en": "Consensus revenue $1.81B, EPS $0.35",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 8월 3일(월)\n\n오늘의 핵심: 코스피가 338.00포인트(5.12%) 내린 6,257.45에 마감했습니다. 그런데 숫자를 열어보면 다른 그림이 나옵니다 — 943개 종목 중 오른 종목이 455개로 내린 종목(419개)보다 많았습니다. 지수를 끌어내린 건 소수의 대형주였습니다.\n\n시가총액 가중으로 업종을 보면 반도체가 -8.65%로 홀로 급락했고, 주력 15개 업종 중 5개는 오히려 올랐습니다(IT·전자기기 +2.12%, 건설 +1.83%, 자동차 +1.07%). 거래대금 26조3,346억원 가운데 SK하이닉스(8.64조)와 삼성전자(6.74조) 두 종목이 58.4%를 가져갔습니다.\n\n코스닥은 정반대였습니다. 2.44% 오른 737.35에 마감했고, 1,770개 중 1,141개가 상승했습니다. 거래대금 상위는 코스모로보틱스·에스피지·레인보우로보틱스로 로봇주가 휩쓸었습니다.\n\n공시에서는 현대차가 2분기 잠정실적을 공정공시했고(주가 +1.29%), 한화갤러리아·한화비전이 최대주주 변경을 알렸습니다. 국민연금과 블랙록의 대량보유 보고도 잇따랐습니다.\n\n미 선물은 반대로 올랐습니다. 나스닥 선물 +1.28%, S&P500 선물 +1.16%. 오늘 밤 10시반 미국장이 열리고, 내일 새벽 6시 팔란티어 실적이 나옵니다.\n\n💾 저장해두고 다음 브리핑도 확인하세요.\n👉 팔로우하면 하루 2번, 놓치지 않는 경제·AI 브리핑을 받아보실 수 있습니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#luckyon브리핑 #경제뉴스 #주식 #코스피 #코스닥 #증시 #반도체 #삼성전자 #SK하이닉스 #로봇주 #미국증시 #나스닥 #환율 #투자 #재테크",
+  "caption_en": "📊 luckyon Evening Briefing · Monday, August 3, 2026\n\nToday's headline: The Kospi closed down 338.00 points (5.12%) at 6,257.45 — but the numbers underneath tell a different story. Of 943 stocks, 455 rose and only 419 fell. A handful of megacaps dragged the index down.\n\nOn a market-cap-weighted basis, semiconductors fell 8.65% alone, while 5 of the 15 major sectors actually rose (IT hardware +2.12%, construction +1.83%, autos +1.07%). Of the ₩26.33 trillion in Kospi turnover, SK Hynix (₩8.64T) and Samsung (₩6.74T) took 58.4% between them.\n\nThe Kosdaq went the other way, closing up 2.44% at 737.35 with 1,141 of 1,770 stocks advancing. Turnover leaders were all robotics names — Cosmo Robotics, SPG and Rainbow Robotics.\n\nIn filings, Hyundai Motor disclosed preliminary Q2 results (shares +1.29%), while Hanwha Galleria and Hanwha Vision reported changes of largest shareholder. The National Pension Service and BlackRock filed a wave of 5% ownership reports.\n\nUS futures moved the opposite way: Nasdaq futures +1.28%, S&P 500 futures +1.16%. The US market opens at 10:30 PM KST tonight, and Palantir reports at 6 AM KST tomorrow.\n\n💾 Save this for later and check back for the next brief.\n👉 Follow for economic and AI briefings, twice a day, every weekday.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#luckyonbriefing #economicnews #stockmarket #kospi #kosdaq #markets #semiconductors #samsung #skhynix #robotics #usmarkets #nasdaq #investing #finance",
+  "sources": [
+    "https://raw.githubusercontent.com/FinanceData/fdr_krx_data_cache",
+    "https://opendart.fss.or.kr",
+    "https://query1.finance.yahoo.com",
+    "https://home.treasury.gov"
+  ],
+  "sections": [
+    {
+      "type": "stats",
+      "title_ko": "오늘의 한국 증시",
+      "title_en": "Korea Market Today",
+      "color": "#e66767",
+      "stats": [
+        {
+          "label_ko": "코스피",
+          "label_en": "KOSPI",
+          "value": "6,257.45",
+          "delta": "▼5.12%",
+          "dir": "down",
+          "sub_ko": "338.00p 하락 · 거래대금 26.3조",
+          "sub_en": "−338.00p · ₩26.3T turnover"
+        },
+        {
+          "label_ko": "코스닥",
+          "label_en": "KOSDAQ",
+          "value": "737.35",
+          "delta": "▲2.44%",
+          "dir": "up",
+          "sub_ko": "17.59p 상승 · 거래대금 5.5조",
+          "sub_en": "+17.59p · ₩5.5T turnover"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "코스피 등락 종목",
+          "label_en": "Kospi advancers / decliners",
+          "up": 455,
+          "flat": 69,
+          "down": 419
+        },
+        {
+          "label_ko": "코스닥 등락 종목",
+          "label_en": "Kosdaq advancers / decliners",
+          "up": 1141,
+          "flat": 180,
+          "down": 449
+        }
+      ],
+      "note_ko": "코스피는 급락했지만 오른 종목이 더 많았습니다. 외국인·기관이 판 물량을 개인이 받았습니다.",
+      "note_en": "The Kospi fell hard, yet more stocks rose than fell. Retail investors absorbed what foreigners and institutions sold.",
+      "flows": {
+        "label_ko": "투자자별 순매수 (코스피)",
+        "label_en": "Net buying by investor type (Kospi)",
+        "unit_ko": "조",
+        "unit_en": "T",
+        "rows": [
+          {
+            "label_ko": "개인",
+            "label_en": "Retail",
+            "value": 4.7
+          },
+          {
+            "label_ko": "외국인",
+            "label_en": "Foreign",
+            "value": -2.8
+          },
+          {
+            "label_ko": "기관",
+            "label_en": "Institutions",
+            "value": -1.9
+          }
+        ]
+      }
+    },
+    {
+      "type": "bars",
+      "title_ko": "업종별 등락",
+      "title_en": "By Sector",
+      "color": "#e0a94f",
+      "bars": [
+        {
+          "label_ko": "IT·전자기기",
+          "label_en": "IT hardware",
+          "value": 2.12
+        },
+        {
+          "label_ko": "건설·건자재",
+          "label_en": "Construction",
+          "value": 1.83
+        },
+        {
+          "label_ko": "자동차",
+          "label_en": "Autos",
+          "value": 1.07
+        },
+        {
+          "label_ko": "전력·에너지",
+          "label_en": "Power & energy",
+          "value": 0.82
+        },
+        {
+          "label_ko": "통신서비스",
+          "label_en": "Telecom",
+          "value": 0.7
+        },
+        {
+          "label_ko": "인터넷·SW",
+          "label_en": "Internet & SW",
+          "value": -0.07
+        },
+        {
+          "label_ko": "화학",
+          "label_en": "Chemicals",
+          "value": -0.31
+        },
+        {
+          "label_ko": "기계·방산",
+          "label_en": "Machinery & defense",
+          "value": -0.43
+        },
+        {
+          "label_ko": "철강·금속",
+          "label_en": "Steel & metals",
+          "value": -0.57
+        },
+        {
+          "label_ko": "금융",
+          "label_en": "Financials",
+          "value": -1.71
+        },
+        {
+          "label_ko": "조선",
+          "label_en": "Shipbuilding",
+          "value": -2.34
+        },
+        {
+          "label_ko": "바이오·제약",
+          "label_en": "Bio & pharma",
+          "value": -2.45
+        },
+        {
+          "label_ko": "2차전지",
+          "label_en": "Batteries",
+          "value": -2.63
+        },
+        {
+          "label_ko": "유통·소비재",
+          "label_en": "Retail & consumer",
+          "value": -5.61
+        },
+        {
+          "label_ko": "반도체",
+          "label_en": "Semiconductors",
+          "value": -8.65
+        }
+      ],
+      "note_ko": "코스피 주력 15개 업종을 시가총액 기준으로 묶은 등락률입니다. 반도체는 시총 2,694조원으로 코스피의 절반이 넘습니다.",
+      "note_en": "Market-cap-weighted moves across the Kospi's 15 major sectors. Semis are ₩2,694T — over half the index."
+    },
+    {
+      "type": "rank",
+      "title_ko": "거래대금 상위",
+      "title_en": "Turnover Leaders",
+      "color": "#e0a94f",
+      "rows": [
+        {
+          "name_ko": "SK하이닉스",
+          "name_en": "SK Hynix",
+          "value": "8.64조",
+          "pct": -8.79
+        },
+        {
+          "name_ko": "삼성전자",
+          "name_en": "Samsung Electronics",
+          "value": "6.74조",
+          "pct": -8.76
+        },
+        {
+          "name_ko": "삼성전기",
+          "name_en": "Samsung Electro-Mechanics",
+          "value": "1.33조",
+          "pct": 2.12
+        },
+        {
+          "name_ko": "현대차",
+          "name_en": "Hyundai Motor",
+          "value": "3,239억",
+          "pct": 1.29
+        },
+        {
+          "name_ko": "셀트리온",
+          "name_en": "Celltrion",
+          "value": "823억",
+          "pct": -2.41
+        }
+      ],
+      "share": {
+        "label_ko": "코스피 거래대금 26.3조 구성",
+        "label_en": "Share of the Kospi's ₩26.3T turnover",
+        "segments": [
+          {
+            "label_ko": "상위 2종목",
+            "label_en": "Top 2",
+            "pct": 58.4,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "3~10위",
+            "label_en": "Ranks 3–10",
+            "pct": 14.5,
+            "color": "#e0a94f"
+          },
+          {
+            "label_ko": "나머지 933종목",
+            "label_en": "Other 933",
+            "pct": 27.1,
+            "color": "#6b6a63"
+          }
+        ]
+      },
+      "note_ko": "두 종목이 시장 거래대금의 58%를 가져갔습니다.",
+      "note_en": "Two stocks took 58% of all turnover."
+    },
+    {
+      "title_ko": "오늘의 공시",
+      "title_en": "Today's Filings",
+      "color": "#5aa469",
+      "items": [
+        {
+          "headline_ko": "현대차, 2분기 잠정실적 공시…주가는 1.29% 상승",
+          "headline_en": "Hyundai Motor Filed Q2 Preliminary Results; Shares Rose 1.29%",
+          "body_ko": "현대자동차가 3일 영업(잠정)실적을 공정공시했다. 반도체가 급락한 날 현대차는 1.29% 오른 393,000원에 마감해 자동차 업종(+1.07%) 상승을 이끌었다.",
+          "body_en": "Hyundai Motor filed preliminary Q2 operating results on the 3rd. On a day semis plunged, it rose 1.29% to ₩393,000, leading the auto sector's 1.07% gain.",
+          "src": "DART",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "한화갤러리아·한화비전 최대주주 변경 공시",
+          "headline_en": "Hanwha Galleria and Hanwha Vision Filed Changes of Largest Shareholder",
+          "body_ko": "한화갤러리아와 한화비전이 같은 날 최대주주 변경을 공시했다. 한화비전은 3.57%, 한화갤러리아는 1.93% 올랐다. 한화 계열 지배구조 개편이 이어지고 있다.",
+          "body_en": "Hanwha Galleria and Hanwha Vision both filed changes of largest shareholder on the same day. Hanwha Vision rose 3.57% and Galleria 1.93% as the group's restructuring continues.",
+          "src": "DART",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "국민연금·블랙록, 대량보유 보고 잇따라",
+          "headline_en": "NPS and BlackRock Filed a Wave of 5% Ownership Reports",
+          "body_ko": "국민연금이 셀트리온·현대로템·LG화학·SK텔레콤 등에 대량보유 변동을 보고했고, 블랙록은 카카오 지분을 보고했다. 셀트리온은 2.41%, 카카오는 0.53% 내렸다.",
+          "body_en": "The National Pension Service filed ownership changes in Celltrion, Hyundai Rotem, LG Chem and SK Telecom, while BlackRock reported a stake in Kakao. Celltrion fell 2.41% and Kakao 0.53%.",
+          "src": "DART",
+          "time": "8/3"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "lines_ko": [
+      "코스피는 338포인트(5.12%) 내린 6,257.45로 마감했지만, 오른 종목이 455개로 내린 종목 419개보다 많았습니다.",
+      "반도체 업종이 8.65% 내리며 지수를 혼자 끌어내렸습니다. 주력 15개 업종 가운데 5개는 올랐습니다.",
+      "거래대금 26조3천억원 중 58%가 SK하이닉스와 삼성전자 두 종목에 몰렸고, 외국인 2.8조·기관 1.9조 순매도를 개인이 4.7조 순매수로 받았습니다.",
+      "코스닥은 반대로 2.44% 올라 737.35로 마감했고, 로봇주가 거래대금 상위를 휩쓸었습니다."
+    ],
+    "lines_en": [
+      "The Kospi closed down 338 points (5.12%) at 6,257.45, yet 455 stocks rose against 419 that fell.",
+      "Semiconductors fell 8.65% and dragged the index down on their own. Five of the 15 major sectors still rose.",
+      "SK Hynix and Samsung took 58% of the ₩26.3 trillion turnover; retail investors bought ₩4.7T against ₩2.8T of foreign and ₩1.9T of institutional selling.",
+      "The Kosdaq went the other way, up 2.44% to 737.35, with robotics names topping turnover."
+    ]
+  }
+}

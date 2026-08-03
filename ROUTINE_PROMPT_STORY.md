@@ -100,13 +100,15 @@ node scripts/reels/render-reel.mjs <스탬프> en --still
 
 ```
 git fetch origin claude/live
-git checkout claude/live
-git merge origin/claude/live --no-edit      # 다른 루틴이 먼저 푸시했을 수 있다
-git merge origin/main --no-edit
-git add -A
+git checkout -B claude/live FETCH_HEAD       # 다른 루틴이 먼저 푸시했을 수 있으므로 항상 원격 최신 기준
+git add data/stories/<스탬프>.json cards/stories/<스탬프>
 git commit -m "story: <스탬프> (ko+en)"
 git push origin claude/live
+git rev-parse HEAD origin/claude/live        # 두 해시가 같은지 확인
 ```
+**`git add -A` 를 쓰지 않는다.** 이 계정은 여러 콘텐츠 축(브리핑·스토리·릴스·차트 노트)을 함께 운영하며
+축마다 별도 세션이 돈다. `-A` 는 다른 축이 만들다 만 파일까지 끌고 들어와 검증 안 된 콘텐츠를 발행시킬 수 있다.
+**자기 축 경로만 명시해서 add** 한다.
 
 **주의**: 아침·저녁 브리핑 루틴도 같은 브랜치에 푸시한다. 충돌이 나면 **원격을 먼저 병합**하고, 남의 커밋을 덮어쓰지 않는다. `--force` 는 쓰지 않는다.
 커밋 후 `git log --oneline -1` 로 **커밋이 실제로 만들어졌는지 확인**한다.

@@ -1,0 +1,127 @@
+{
+  "series_ko": "투자 3분 노트",
+  "series_en": "3-Min Investing Notes",
+  "byline": "by luckyon",
+  "footer_ko": "매일 3분씩 배우는 투자 공부",
+  "footer_en": "3 minutes a day, one idea at a time",
+  "cards_per_episode": 8,
+  "size": "1080x1350",
+  "_comment": "발행할 때마다 published 에 한 줄 추가하고, 쓴 주제를 backlog 에서 뺀다. 루틴이 '최근 30일 내 다룬 주제'를 판단하는 근거 파일이다.",
+  "published": [
+    {
+      "stamp": "2026-08-01-ep01",
+      "episode": "EP.01",
+      "term_ko": "캔들차트",
+      "term_en": "Candlestick chart",
+      "date": "2026-08-01",
+      "ko": "https://www.instagram.com/p/DbfPc6hluAD/",
+      "en": "https://www.instagram.com/p/DbfP5xknH7-/"
+    }
+  ],
+  "next_up": {
+    "term_ko": "이동평균선",
+    "term_en": "Moving averages",
+    "_comment": "EP.01 이 '이동평균선 & 골든크로스' 를 예고했으나 한 회차에 담기엔 밀도가 높아 두 회차로 나눴다. EP.02 는 이동평균선, EP.03 은 골든크로스 & 데드크로스다. EP.02 발행 후 next_up 은 '골든크로스 & 데드크로스' 가 된다."
+  },
+  "backlog": [
+    {
+      "term_ko": "이동평균선",
+      "term_en": "Moving averages"
+    },
+    {
+      "term_ko": "골든크로스 & 데드크로스",
+      "term_en": "Golden cross & dead cross",
+      "_comment": "카드 원고 재료는 EP.02 의 분리 이전 판(git: 7ba5108 content/chart-notes/2026-08-02-ep02.json)에 있다 — p.01 훅, 교차 도해, 코스피 7/21 데드크로스 사례와 그 fact_check, 교차 주의 3가지를 그대로 옮겨 쓴다."
+    },
+    {
+      "term_ko": "거래량",
+      "term_en": "Trading volume"
+    },
+    {
+      "term_ko": "지지선과 저항선",
+      "term_en": "Support & resistance"
+    },
+    {
+      "term_ko": "추세선과 박스권",
+      "term_en": "Trendlines & ranges"
+    },
+    {
+      "term_ko": "갭 상승·갭 하락",
+      "term_en": "Gap up & gap down"
+    },
+    {
+      "term_ko": "시가총액",
+      "term_en": "Market capitalization"
+    },
+    {
+      "term_ko": "PER (주가수익비율)",
+      "term_en": "P/E ratio"
+    },
+    {
+      "term_ko": "PBR (주가순자산비율)",
+      "term_en": "P/B ratio"
+    },
+    {
+      "term_ko": "EPS와 어닝서프라이즈",
+      "term_en": "EPS & earnings surprise"
+    },
+    {
+      "term_ko": "배당수익률",
+      "term_en": "Dividend yield"
+    },
+    {
+      "term_ko": "ROE",
+      "term_en": "Return on equity"
+    },
+    {
+      "term_ko": "변동성과 VIX",
+      "term_en": "Volatility & the VIX"
+    },
+    {
+      "term_ko": "RSI (상대강도지수)",
+      "term_en": "RSI"
+    },
+    {
+      "term_ko": "MACD",
+      "term_en": "MACD"
+    },
+    {
+      "term_ko": "볼린저밴드",
+      "term_en": "Bollinger Bands"
+    },
+    {
+      "term_ko": "공매도",
+      "term_en": "Short selling"
+    },
+    {
+      "term_ko": "선물과 미결제약정",
+      "term_en": "Futures & open interest"
+    },
+    {
+      "term_ko": "ETF",
+      "term_en": "ETFs"
+    },
+    {
+      "term_ko": "호가창 읽는 법",
+      "term_en": "Reading the order book"
+    },
+    {
+      "term_ko": "액면분할",
+      "term_en": "Stock splits"
+    },
+    {
+      "term_ko": "배당락",
+      "term_en": "Ex-dividend date"
+    },
+    {
+      "term_ko": "공모주(IPO)",
+      "term_en": "IPOs"
+    },
+    {
+      "term_ko": "분산투자와 리밸런싱",
+      "term_en": "Diversification & rebalancing"
+    }
+  ],
+  "roadmap": "content/chart-notes/_roadmap.md — 사람이 읽는 기획서. backlog 를 고치면 그쪽도 함께 고칠 것.",
+  "renderer": "scripts/chart-notes/render-chartnotes.mjs — 카드 렌더러. 디자인 토큰이 여기 있다."
+}
