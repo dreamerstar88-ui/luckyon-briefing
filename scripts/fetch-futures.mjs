@@ -28,17 +28,15 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const CACHE_PATH = path.join(process.cwd(), 'data', 'futures-cache.json');
 const CACHE_MAX_AGE_MS = (Number(process.env.FUTURES_CACHE_MAX_AGE_HOURS) || 6) * 60 * 60 * 1000;
 
-// GitHub Actions(.github/workflows/futures-cache.yml)가 채워둔 캐시가 충분히 최신이면 그 타일을 그대로 쓴다.
-// 캐시가 없거나, 형식이 안 맞거나, 오래됐으면 null 을 반환해 기존 대체(직전 종가) 경로로 넘어간다.
-function readFreshCache() {
-  if (!fs.existsSync(CACHE_PATH)) return null;
+function parseCache(raw) {
   let cache;
   try {
-    cache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
+    cache = JSON.parse(raw);
   } catch {
     return null;
   }
@@ -46,6 +44,33 @@ function readFreshCache() {
   const ageMs = Date.now() - new Date(cache.fetchedAt).getTime();
   if (!(ageMs >= 0) || ageMs > CACHE_MAX_AGE_MS) return null;
   return cache;
+}
+
+// 워크플로(.github/workflows/futures-cache.yml)는 캐시를 main 브랜치에 커밋하는데,
+// 브리핑 세션의 작업트리는 보통 claude/live 다. ROUTINE_PROMPT.md 6단계의 merge 는 이 시점보다
+// 한참 뒤라서, 작업트리 파일만 읽으면 직전 세션 때 병합된 낡은 캐시를 쓰게 된다.
+// 그래서 작업트리 캐시가 낡았으면 origin/main 의 캐시를 직접 조회한다.
+function readCacheFromMain() {
+  try {
+    execFileSync('git', ['fetch', '--quiet', 'origin', 'main'], { stdio: 'ignore', timeout: 30_000 });
+    const raw = execFileSync('git', ['show', 'origin/main:data/futures-cache.json'], {
+      encoding: 'utf8',
+      timeout: 30_000,
+    });
+    return parseCache(raw);
+  } catch {
+    return null;
+  }
+}
+
+// 캐시가 충분히 최신이면 그 타일을 그대로 쓴다.
+// 캐시가 없거나, 형식이 안 맞거나, 오래됐으면 null 을 반환해 기존 대체(직전 종가) 경로로 넘어간다.
+function readFreshCache() {
+  if (fs.existsSync(CACHE_PATH)) {
+    const local = parseCache(fs.readFileSync(CACHE_PATH, 'utf8'));
+    if (local) return local;
+  }
+  return readCacheFromMain();
 }
 
 // 조회할 선물 심볼 → 카드 라벨 (라벨은 한/영 공용 중립 표기)

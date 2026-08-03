@@ -4,29 +4,100 @@
   "dateLabel_ko": "2026년 8월 3일 (월)",
   "dateLabel_en": "Monday, August 3, 2026",
   "headline_ko": "코스피, 금요일 폭등분 3분의 1 반납…5.12% 급락에 6,257선",
-  "headline_sub_ko": "삼성전자·SK하이닉스 동반 8%대↓·외국인 4.8조 매도 · 이재명 대통령 귀국 즉시 긴급회의 · 이란은 '합의' 주장에도 오만과 별도 협상 중",
+  "headline_sub_ko": "삼성전자·SK하이닉스 동반 8%대↓ · 외국인 2.7조 순매도 · 이재명 대통령 귀국 즉시 긴급회의 · 이란은 '합의' 주장에도 오만과 별도 협상 중",
   "headline_en": "Kospi Gives Back a Third of Friday's Record Surge, Sinking 5.12%",
-  "headline_sub_en": "Samsung, SK Hynix both drop ~8.8% as foreigners sell ₩4.8 trillion · President Lee holds emergency meeting hours after landing · Iran negotiates separately with Oman despite Trump's 'deal' claim",
+  "headline_sub_en": "Samsung, SK Hynix both drop ~8.8% as foreigners net-sell ₩2.7 trillion · President Lee holds emergency meeting hours after landing · Iran negotiates separately with Oman despite Trump's 'deal' claim",
   "markets": [
-    { "label": "NASDAQ", "value": "25,373.85", "delta": "▲1.00%", "dir": "up", "note_ko": "아마존 실적 서프라이즈 여진 · 7/31 마감 종가, 개장 전", "note_en": "Still riding Amazon's earnings beat · Jul 31 close, pre-open" },
-    { "label": "S&P 500", "value": "7,489.72", "delta": "▲0.70%", "dir": "up", "note_ko": "7/31 마감 종가 · 개장 전(정규장 22:30 KST)", "note_en": "Jul 31 close · pre-open (regular session opens 10:30pm KST)" },
-    { "label": "KOSPI", "value": "6,257.45", "delta": "▼5.12%", "dir": "down", "note_ko": "금요일 폭등분 3분의 1 반납 · 오늘 종가", "note_en": "Gives back about a third of Friday's surge · today's close" },
-    { "label": "VIX", "value": "15.96", "delta": "▼0.19%", "dir": "down", "note_ko": "20선 하회 유지 · 오늘 저녁 기준", "note_en": "Holds below 20 · this evening" },
-    { "label": "Fear & Greed", "value": "42", "delta": "▲3p", "dir": "up", "note_ko": "'공포' 구간, 소폭 개선 지속", "note_en": "Still 'Fear' but continues to improve" },
-    { "label": "US 10Y", "value": "4.73%", "delta": "▲0.02%p", "dir": "up", "note_ko": "인플레·유가 우려 속 상승 흐름 · 7/31 기준", "note_en": "Extends its rise on inflation/oil concerns · Jul 31 level" },
-    { "label": "USD/KRW", "value": "1,429.8", "value_sub": "· DXY 99.7", "delta": "▲0.4%", "dir": "up", "note_ko": "코스피 급락에 위험회피, 원화 약세 전환", "note_en": "Won weakens as risk-off sentiment follows the Kospi's plunge" },
-    { "label": "Gold", "value": "$4,103", "delta": "▼0.1%", "dir": "down", "note_ko": "4,000달러대 유지 · 오늘 저녁 기준", "note_en": "Holds above $4,000 · this evening" },
-    { "label": "WTI", "value": "$80.80", "delta": "▼4.6%", "dir": "down", "note_ko": "이란-오만 협상 속 공급 우려 완화 지속", "note_en": "Supply concerns keep easing amid the Iran-Oman talks" },
-    { "label": "Bitcoin", "value": "$62,659", "delta": "▼1.3%", "dir": "down", "note_ko": "코스피발 위험자산 회피 속 하락", "note_en": "Falls as risk-off sentiment follows the Kospi selloff" }
+    {
+      "label": "NASDAQ",
+      "value": "25,373.85",
+      "delta": "▲1.00%",
+      "dir": "up",
+      "note_ko": "아마존 실적 서프라이즈 여진 · 7/31 마감 종가, 개장 전",
+      "note_en": "Still riding Amazon's earnings beat · Jul 31 close, pre-open"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,489.72",
+      "delta": "▲0.70%",
+      "dir": "up",
+      "note_ko": "7/31 마감 종가 · 개장 전(정규장 22:30 KST)",
+      "note_en": "Jul 31 close · pre-open (regular session opens 10:30pm KST)"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,257.45",
+      "delta": "▼5.12%",
+      "dir": "down",
+      "note_ko": "금요일 폭등분 3분의 1 반납 · 오늘 종가",
+      "note_en": "Gives back about a third of Friday's surge · today's close"
+    },
+    {
+      "label": "VIX",
+      "value": "15.96",
+      "delta": "▼0.19%",
+      "dir": "down",
+      "note_ko": "20선 하회 유지 · 오늘 저녁 기준",
+      "note_en": "Holds below 20 · this evening"
+    },
+    {
+      "label": "Fear & Greed",
+      "value": "42",
+      "delta": "▲3p",
+      "dir": "up",
+      "note_ko": "'공포' 구간, 소폭 개선 지속",
+      "note_en": "Still 'Fear' but continues to improve"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.75%",
+      "delta": "▲0.07%p",
+      "dir": "up",
+      "note_ko": "인플레·유가 우려 속 상승 · 7/31 마감 기준",
+      "note_en": "Rises on inflation and oil concerns · Jul 31 close"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,429.8",
+      "value_sub": "· DXY 99.7",
+      "delta": "▲0.4%",
+      "dir": "up",
+      "note_ko": "코스피 급락에 위험회피, 원화 약세 전환",
+      "note_en": "Won weakens as risk-off sentiment follows the Kospi's plunge"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,103",
+      "delta": "▼0.1%",
+      "dir": "down",
+      "note_ko": "4,000달러대 유지 · 오늘 저녁 기준",
+      "note_en": "Holds above $4,000 · this evening"
+    },
+    {
+      "label": "WTI",
+      "value": "$80.80",
+      "delta": "▼4.6%",
+      "dir": "down",
+      "note_ko": "이란-오만 협상 속 공급 우려 완화 지속",
+      "note_en": "Supply concerns keep easing amid the Iran-Oman talks"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$62,659",
+      "delta": "▼1.3%",
+      "dir": "down",
+      "note_ko": "코스피발 위험자산 회피 속 하락",
+      "note_en": "Falls as risk-off sentiment follows the Kospi selloff"
+    }
   ],
-  "market_note_ko": "나스닥·S&P500은 7/31 마감 종가(월요일 정규장 개장 전), 코스피·VIX·10년물·원달러·금·WTI·비트코인은 오늘(8/3) 저녁 기준입니다.",
-  "market_note_en": "Nasdaq and S&P 500 reflect Friday's close (ahead of Monday's regular session); Kospi, VIX, the 10-year yield, the won, gold, WTI and Bitcoin reflect this evening (Aug 3).",
+  "market_note_ko": "나스닥·S&P500·미 10년물은 7/31 마감 기준(월요일 정규장 개장 전), 코스피·VIX·원달러·금·WTI·비트코인은 오늘(8/3) 저녁 기준입니다.",
+  "market_note_en": "Nasdaq, the S&P 500 and the 10-year yield reflect Friday's close (ahead of Monday's regular session); Kospi, VIX, the won, gold, WTI and Bitcoin reflect this evening (Aug 3).",
   "econ": [
     {
       "headline_ko": "코스피, 금요일 폭등분 3분의 1 반납…5.12% 급락에 6,257선",
       "headline_en": "Kospi Gives Back a Third of Friday's Surge, Sinks 5.12%",
-      "body_ko": "코스피가 338.00포인트(5.12%) 내린 6,257.45에 마감하며 금요일 폭등분의 3분의 1가량을 반납했다. 삼성전자(-8.76%)·SK하이닉스(-8.79%)가 동반 급락하며 지수를 끌어내렸다. 코스닥은 2.44% 오른 737.35에 마감해 매수 사이드카가 발동됐다.",
-      "body_en": "The Kospi fell 338.00 points (5.12%) to 6,257.45, giving back about a third of Friday's record surge. Samsung (-8.76%) and SK Hynix (-8.79%) dragged the index down, while the Kosdaq rose 2.44% to 737.35, triggering a buy-side sidecar.",
+      "body_ko": "코스피가 338.00포인트(5.12%) 내린 6,257.45에 마감하며 금요일 폭등분의 3분의 1가량을 반납했다. 삼성전자(-8.76%)·SK하이닉스(-8.79%)가 동반 급락했다. 코스닥은 2.44% 오른 737.35에 마감했고, 장중 코스닥150 선물 급등에 매수 사이드카가 발동됐다.",
+      "body_en": "The Kospi fell 338.00 points (5.12%) to 6,257.45, giving back about a third of Friday's record surge. Samsung (-8.76%) and SK Hynix (-8.79%) dragged the index down. The Kosdaq rose 2.44% to 737.35; a buy-side sidecar fired intraday.",
       "src": "서울경제 / 이투데이 / 전자신문",
       "time": "8/3 종가"
     },
@@ -48,9 +119,9 @@
     },
     {
       "headline_ko": "이란, 트럼프 '호르무즈 합의' 주장에도 미국과 직접 협상 안해…오만과 별도 협의",
-      "headline_en": "Iran Isn't Talking to the US Yet Despite Trump's 'Hormuz Deal' Claim — Negotiates via Oman Instead",
+      "headline_en": "Iran Says It's Negotiating via Oman, Not Directly With the US",
       "body_ko": "트럼프 대통령은 이란과 호르무즈 합의가 이뤄졌다고 밝혔지만, 이란은 미국과 직접 협상하지 않고 오만을 통한 통행 문제 협의에 집중하고 있다고 선을 그었다. 통제권·통행료 등 핵심 쟁점은 여전히 미해결 상태다.",
-      "body_en": "Trump said a Hormuz deal with Iran has been reached, but Iran said it's negotiating only with Oman on transit issues, not directly with the US. Core disputes over control and transit fees remain unresolved.",
+      "body_en": "Trump said a Hormuz deal was reached, but Iran said it is talking only with Oman on transit issues, not with the US. Control and transit-fee disputes remain unresolved.",
       "src": "파이낸셜뉴스 / 서울경제",
       "time": "8/3 보도"
     },
@@ -63,12 +134,12 @@
       "time": "8/3 보도"
     },
     {
-      "headline_ko": "9월 연준 금리 인상 확률 80%대로 급등…7월 하순 이후 인하 기대서 반전",
-      "headline_en": "September Fed Hike Odds Surge Past 80%, Reversing Late-July Cut Bets",
-      "body_ko": "CME 페드워치에 따르면 9월 금리 인상 확률이 7월 하순 이후 80%대까지 치솟았다. 이란발 유가 급등이 원인으로 꼽히는데, 오늘 유가가 급락한 만큼 확률이 다시 움직일지 주목된다.",
-      "body_en": "CME's FedWatch tool shows September hike odds have surged past 80% since late July, driven by Iran-linked oil spikes. With oil now sliding, traders are watching whether the odds swing back.",
-      "src": "CNBC",
-      "time": "7월 하순 이후 동향"
+      "headline_ko": "9월 연준 인상 확률 82%→65% 후퇴…7/29 동결 이후 되돌림",
+      "headline_en": "September Fed Hike Odds Retreat From 82% to 65% After the July 29 Hold",
+      "body_ko": "CME 페드워치 기준 9월 인상 확률은 7월 23일 82%까지 올랐다가, 29일 연준 동결(3.50~3.75%) 이후 31일 65%로 되돌렸다. 오늘 유가 급락에 기대가 더 식을지 주목된다.",
+      "body_en": "CME FedWatch odds of a September hike peaked at 82% on July 23, then eased to about 65% by July 31 after the Fed's hold. Oil's slide today may cool them further.",
+      "src": "CNBC / 연합인포맥스",
+      "time": "7/31 기준"
     }
   ],
   "ai": [
@@ -89,8 +160,8 @@
       "time": "8/3 보도"
     },
     {
-      "headline_ko": "외국인, 삼성전자·SK하이닉스 4.8조 매도…HBM 고점 논란",
-      "headline_en": "Foreigners Dump ₩4.8T of Samsung, SK Hynix Amid HBM Peak Worries",
+      "headline_ko": "외국인, 삼성전자·SK하이닉스 2.7조 순매도…HBM 고점 논란",
+      "headline_en": "Foreigners Net-Sell ₩2.7T of Samsung, SK Hynix Amid HBM Peak Worries",
       "body_ko": "외국인이 3일 SK하이닉스·삼성전자를 합쳐 2조7,000억원어치 순매도했다(레버리지 포함 시장 전체 4조8,000억원대). 역대급 폭등 후 차익실현에 HBM 밸류에이션 논란이 겹쳤다.",
       "body_en": "Foreign investors net-sold ₩2.7 trillion of SK Hynix and Samsung on the 3rd (₩4.8T market-wide) — profit-taking plus HBM valuation worries.",
       "src": "머니투데이 / 디지털타임스 / 헤럴드경제",
@@ -126,14 +197,46 @@
   "market_hours": {
     "title_ko": "미국 증시 운영시간",
     "title_en": "US market hours",
-    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30, 애프터마켓 05:00~09:00"],
-    "lines_en": ["Regular session 10:30 PM - 5:00 AM KST (DST) · Pre-market 5-10:30 PM, after-hours 5-9 AM KST"]
+    "lines_ko": [
+      "정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30, 애프터마켓 05:00~09:00"
+    ],
+    "lines_en": [
+      "Regular session 10:30 PM - 5:00 AM KST (DST) · Pre-market 5-10:30 PM, after-hours 5-9 AM KST"
+    ]
   },
   "schedule": [
-    { "time": "22:30", "title_ko": "미국 증시 정규장 개장", "title_en": "US Regular Session Opens", "detail_ko": "코스피 급락 이후 위험선호 회복 여부·호르무즈 협상 진전 주목", "detail_en": "Watching for a risk-appetite rebound after the Kospi's plunge and progress in the Hormuz talks", "importance": "high" },
-    { "time": "23:00", "title_ko": "ISM 제조업 PMI (7월)", "title_en": "ISM Manufacturing PMI (July)", "detail_ko": "컨센서스 54.0, 전월 53.3 · 물가지수(Prices Paid)도 함께 주목", "detail_en": "Consensus 54.0 vs June's 53.3; the Prices Paid sub-index is also in focus", "importance": "mid" },
-    { "time": "8/4 06:00", "title_ko": "팔란티어, 2분기 실적 발표(장 마감 후)", "title_en": "Palantir Q2 Earnings (After Close)", "detail_ko": "컨센서스 매출 18.1억달러(+80%)·EPS 0.35달러, AI 소프트웨어 밸류에이션 시험대", "detail_en": "Consensus revenue $1.81B (+80% YoY), EPS $0.35 — a test for AI-software valuations", "importance": "high" },
-    { "time": "8/4 05:00~07:00", "title_ko": "ON세미컨덕터·스냅 등 대형 시간외 실적", "title_en": "ON Semi, Snap and Others Report After Close", "detail_ko": "AI 반도체 수요·빅테크 광고 경기 가늠자", "detail_en": "A read on AI-chip demand and big-tech ad spending", "importance": "mid" }
+    {
+      "time": "22:30",
+      "title_ko": "미국 증시 정규장 개장",
+      "title_en": "US Regular Session Opens",
+      "detail_ko": "코스피 급락 이후 위험선호 회복 여부·호르무즈 협상 진전 주목",
+      "detail_en": "Watching for a risk-appetite rebound after the Kospi's plunge and progress in the Hormuz talks",
+      "importance": "high"
+    },
+    {
+      "time": "23:00",
+      "title_ko": "ISM 제조업 PMI (7월)",
+      "title_en": "ISM Manufacturing PMI (July)",
+      "detail_ko": "컨센서스 54.0, 전월 53.3 · 물가지수(Prices Paid)도 함께 주목",
+      "detail_en": "Consensus 54.0 vs June's 53.3; the Prices Paid sub-index is also in focus",
+      "importance": "mid"
+    },
+    {
+      "time": "8/4 05~07",
+      "title_ko": "ON세미컨덕터·스냅 등 대형 시간외 실적",
+      "title_en": "ON Semi, Snap and Others Report After Close",
+      "detail_ko": "AI 반도체 수요·빅테크 광고 경기 가늠자",
+      "detail_en": "A read on AI-chip demand and big-tech ad spending",
+      "importance": "mid"
+    },
+    {
+      "time": "8/4 06:00",
+      "title_ko": "팔란티어, 2분기 실적 발표(장 마감 후)",
+      "title_en": "Palantir Q2 Earnings (After Close)",
+      "detail_ko": "컨센서스 매출 18.1억달러(+80%)·EPS 0.35달러, AI 소프트웨어 밸류에이션 시험대",
+      "detail_en": "Consensus revenue $1.81B (+80% YoY), EPS $0.35 — a test for AI-software valuations",
+      "importance": "high"
+    }
   ],
   "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
   "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
