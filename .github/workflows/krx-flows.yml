@@ -42,11 +42,17 @@ jobs:
 
       - name: Probe page structure
         if: inputs.probe
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: node scripts/fetch-krx-flows.mjs --probe
 
       - name: Fetch flows
         if: ${{ !inputs.probe }}
         id: fetch
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: |
           mkdir -p data
           if node scripts/fetch-krx-flows.mjs > /tmp/flows.json; then

@@ -68,6 +68,25 @@ const num = s => {
 
 // KRX 정보데이터시스템 직접 조회. 브리핑 세션에서는 LOGOUT 만 돌아왔지만
 // 그건 프록시 IP 때문일 수 있어, 러너에서 되는지 확인한다. 되면 1차 출처라 더 낫다.
+// KRX 는 2026-08 기준 로그인을 요구한다 (러너의 깨끗한 IP 에서도 LOGOUT 을 준다).
+// KRX_ID / KRX_PW 가 있으면 로그인해 세션 쿠키를 얻어 붙인다.
+let krxCookie = '';
+async function krxLogin() {
+  const id = process.env.KRX_ID, pw = process.env.KRX_PW;
+  if (!id || !pw) return false;
+  const res = await fetch('https://data.krx.co.kr/comm/member/security/loginProcess.cmd', {
+    method: 'POST', redirect: 'manual',
+    headers: {
+      'User-Agent': 'Mozilla/5.0', 'Referer': 'https://data.krx.co.kr/',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+    body: new URLSearchParams({ userId: id, password: pw }),
+  });
+  krxCookie = (res.headers.getSetCookie?.() || []).map(c => c.split(';')[0]).join('; ');
+  console.error(`ℹ️  KRX 로그인 시도 → HTTP ${res.status} · 쿠키 ${krxCookie ? '받음' : '없음'}`);
+  return !!krxCookie;
+}
+
 async function krx(bld, extra = {}) {
   const body = new URLSearchParams({
     bld, locale: 'ko_KR', share: '1', money: '1', csvxls_isNo: 'false', ...extra,
@@ -79,6 +98,7 @@ async function krx(bld, extra = {}) {
       'Referer': 'https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0201020304',
       'X-Requested-With': 'XMLHttpRequest',
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      ...(krxCookie ? { Cookie: krxCookie } : {}),
     },
     body,
   });
@@ -162,6 +182,7 @@ async function probeIndexPage() {
 
 async function probe() {
   console.log(`기준일 ${DATE}`);
+  await krxLogin();
   await probeIndexPage();
   await probeKrx();
   await probeJson();
@@ -215,6 +236,7 @@ function parseFlows(html) {
 
 async function main() {
   if (process.argv.includes('--probe')) return probe();
+  await krxLogin();
 
   const out = { fetchedAt: new Date().toISOString().slice(0, 19) + 'Z', source: 'finance.naver.com', markets: {} };
   const tried = [];
