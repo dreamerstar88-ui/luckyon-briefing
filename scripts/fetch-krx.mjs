@@ -184,25 +184,73 @@ function concentration(rows, total) {
   return { top2Pct: share(2), top5Pct: share(5), top10Pct: share(10) };
 }
 
+// KSIC 세분류(desc.csv 의 Industry)를 독자가 아는 주력 업종으로 묶는다.
+// 세분류를 그대로 쓰면 "시멘트·석회", "수산물 가공" 같은 것이 상위에 올라와
+// 한국 증시를 설명하지 못한다. 아래 순서가 곧 카드에 쓰는 우선순위다.
+const KR_SECTORS = [
+  ['반도체', ['반도체 제조업']],
+  ['IT·전자기기', ['통신 및 방송 장비', '전자부품 제조업', '컴퓨터 및 주변장치']],
+  ['2차전지', ['일차전지 및 이차전지']],
+  ['자동차', ['자동차용 엔진', '자동차 신품 부품', '자동차 재제조']],
+  ['바이오·제약', ['기초 의약물질', '의약품 제조업', '자연과학 및 공학 연구개발']],
+  ['인터넷·소프트웨어', ['소프트웨어 개발', '자료처리, 호스팅, 포털', '온라인']],
+  ['금융', ['기타 금융업', '보험업', '은행', '금융 지원 서비스']],
+  ['기계·방산', ['특수 목적용 기계', '일반 목적용 기계', '항공기']],
+  ['조선', ['선박 및 보트']],
+  ['화학', ['기초 화학물질', '기타 화학제품', '합성고무', '플라스틱 제품']],
+  ['철강·금속', ['1차 철강', '제철', '1차 비철금속', '금속 가공제품']],
+  ['전력·에너지', ['전동기, 발전기', '전기업', '가스']],
+  ['건설·건자재', ['건물 건설업', '토목 건설업', '시멘트']],
+  ['유통·소비재', ['종합 소매업', '음·식료품', '식료품', '기타 전문 도매업', '의복']],
+  ['통신서비스', ['전기 통신업']],
+];
+
+// KSIC 이 독자 인식과 크게 어긋나는 초대형주만 예외로 옮긴다.
+// 삼성전자는 휴대폰 때문에 '통신 및 방송 장비 제조업'(시총 1,400조 이상)으로
+// 분류돼 있어, 그대로 두면 '반도체' 업종에서 삼성전자가 빠진다.
+const KR_SECTOR_OVERRIDE = { '005930': '반도체', '005935': '반도체' };
+
+function sectorOf(code, industry) {
+  if (KR_SECTOR_OVERRIDE[code]) return KR_SECTOR_OVERRIDE[code];
+  if (!industry) return null;
+  for (const [name, keys] of KR_SECTORS) {
+    if (keys.some(k => industry.includes(k))) return name;
+  }
+  return null;                                   // 주력 업종에 안 맞으면 집계에서 뺀다
+}
+
 // 업종별 등락 — 지수는 빠졌는데 대부분 업종은 올랐는지 같은 어긋남을 본다.
+// 등락률은 **시가총액 가중**이다. 단순 평균이면 소형주가 결과를 좌우해
+// 지수 움직임과 어긋나는 값이 나온다.
 async function fetchIndustry(date, listingRows) {
   const text = await getCsv(`${BASE}/listing/desc/${date}.csv`);
   if (!text) return null;
   const industryOf = new Map(parseCsv(text).map(r => [r.Code, r.Industry]));
+
   const buckets = new Map();
   for (const r of listingRows) {
-    const ind = industryOf.get(r.Code);
+    const sector = sectorOf(r.Code, industryOf.get(r.Code));
     const pct = num(r.ChagesRatio);
-    if (!ind || pct === null) continue;
-    if (!buckets.has(ind)) buckets.set(ind, []);
-    buckets.get(ind).push(pct);
+    const mc = num(r.Marcap);
+    if (!sector || pct === null || !mc) continue;
+    if (!buckets.has(sector)) buckets.set(sector, { count: 0, mc: 0, wsum: 0 });
+    const b = buckets.get(sector);
+    b.count++; b.mc += mc; b.wsum += pct * mc;
   }
+
+  const order = new Map(KR_SECTORS.map(([n], i) => [n, i]));
   const list = [...buckets.entries()]
-    .filter(([, v]) => v.length >= 5)            // 종목이 너무 적은 업종은 대표성이 없다
-    .map(([name, v]) => ({ name, count: v.length, avgPct: v.reduce((s, x) => s + x, 0) / v.length }))
-    .sort((a, b) => b.avgPct - a.avgPct);
-  return { up: list.filter(x => x.avgPct > 0).length, down: list.filter(x => x.avgPct < 0).length,
-    top: list.slice(0, 5), bottom: list.slice(-5).reverse() };
+    .map(([name, b]) => ({ name, count: b.count, marcap: b.mc, pct: b.wsum / b.mc }))
+    .sort((a, b) => a.pct === b.pct ? order.get(a.name) - order.get(b.name) : b.pct - a.pct);
+
+  return {
+    weighting: '시가총액 가중',
+    up: list.filter(x => x.pct > 0).length,
+    down: list.filter(x => x.pct < 0).length,
+    all: list,                                   // 주력 업종 전체 (카드에 쓸 것을 여기서 고른다)
+    top: list.slice(0, 3),
+    bottom: list.slice(-3).reverse(),
+  };
 }
 
 async function main() {
