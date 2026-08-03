@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-03T17:12:24Z",
+  "fetchedAt": "2026-08-03T23:31:27Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-01T17:12:24Z",
-    "to": "2026-08-17T17:12:24Z"
+    "from": "2026-08-01T23:31:27Z",
+    "to": "2026-08-17T23:31:27Z"
   },
   "events": [
     {
@@ -193,7 +193,7 @@
       "impact": "LOW",
       "consensus": 0.1,
       "previous": 0.1,
-      "actual": null,
+      "actual": -0.2,
       "unit": "%"
     },
     {
@@ -203,7 +203,7 @@
       "impact": "LOW",
       "consensus": 3,
       "previous": 3.2,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
     },
     {
@@ -2065,6 +2065,26 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-17T20:00:00Z",
+      "country": "US",
+      "name": "Net Long-Term TIC Flows",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 232.7,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-08-17T20:00:00Z",
+      "country": "US",
+      "name": "Total Net TIC Flows",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 132.2,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
