@@ -3,34 +3,34 @@
   "session": "pm",
   "dateLabel_ko": "2026년 8월 3일 (월)",
   "dateLabel_en": "Monday, August 3, 2026",
-  "headline_ko": "코스피, 금요일 폭등분 3분의 1 반납…5.12% 급락에 6,257선",
-  "headline_sub_ko": "삼성전자·SK하이닉스 동반 8%대↓ · 외국인 2.7조 순매도 · 이재명 대통령 귀국 즉시 긴급회의 · 이란은 '합의' 주장에도 오만과 별도 협상 중",
-  "headline_en": "Kospi Gives Back a Third of Friday's Record Surge, Sinking 5.12%",
-  "headline_sub_en": "Samsung, SK Hynix both drop ~8.8% as foreigners net-sell ₩2.7 trillion · President Lee holds emergency meeting hours after landing · Iran negotiates separately with Oman despite Trump's 'deal' claim",
+  "headline_ko": "반도체만 빠졌다…코스피 5.12% 급락에도 오른 종목이 더 많아",
+  "headline_sub_ko": "상승 455 vs 하락 419 · 반도체 업종 홀로 -8.65% · 거래대금 26.3조 중 상위 2종목이 58% · 코스닥은 2.44% 상승",
+  "headline_en": "A Semiconductor-Only Selloff: Kospi Fell 5.12% but More Stocks Rose Than Fell",
+  "headline_sub_en": "455 advancers vs 419 decliners · semis alone -8.65% · top 2 names took 58% of the ₩26.3T turnover · Kosdaq up 2.44%",
   "markets": [
     {
-      "label": "NASDAQ",
-      "value": "25,373.85",
-      "delta": "▲1.00%",
+      "label": "NASDAQ Fut",
+      "value": "28,766.50",
+      "delta": "▲1.28%",
       "dir": "up",
-      "note_ko": "아마존 실적 서프라이즈 여진 · 7/31 마감 종가, 개장 전",
-      "note_en": "Still riding Amazon's earnings beat · Jul 31 close, pre-open"
+      "note_ko": "미 정규장 개장 전 선물 · 코스피와 반대로 상승",
+      "note_en": "Futures ahead of the US open · rising, unlike the Kospi"
     },
     {
-      "label": "S&P 500",
-      "value": "7,489.72",
-      "delta": "▲0.70%",
+      "label": "S&P 500 Fut",
+      "value": "7,606.75",
+      "delta": "▲1.16%",
       "dir": "up",
-      "note_ko": "7/31 마감 종가 · 개장 전(정규장 22:30 KST)",
-      "note_en": "Jul 31 close · pre-open (regular session opens 10:30pm KST)"
+      "note_ko": "미 정규장 개장 전 선물",
+      "note_en": "Futures ahead of the US open"
     },
     {
       "label": "KOSPI",
       "value": "6,257.45",
       "delta": "▼5.12%",
       "dir": "down",
-      "note_ko": "금요일 폭등분 3분의 1 반납 · 오늘 종가",
-      "note_en": "Gives back about a third of Friday's surge · today's close"
+      "note_ko": "20일 전 고점(8,051) 대비 -22.3% · 오늘 종가",
+      "note_en": "Down 22.3% from its 20-session high of 8,051 · today’s close"
     },
     {
       "label": "VIX",
@@ -90,108 +90,8 @@
       "note_en": "Falls as risk-off sentiment follows the Kospi selloff"
     }
   ],
-  "market_note_ko": "나스닥·S&P500·미 10년물은 7/31 마감 기준(월요일 정규장 개장 전), 코스피·VIX·원달러·금·WTI·비트코인은 오늘(8/3) 저녁 기준입니다.",
-  "market_note_en": "Nasdaq, the S&P 500 and the 10-year yield reflect Friday's close (ahead of Monday's regular session); Kospi, VIX, the won, gold, WTI and Bitcoin reflect this evening (Aug 3).",
-  "econ": [
-    {
-      "headline_ko": "코스피, 금요일 폭등분 3분의 1 반납…5.12% 급락에 6,257선",
-      "headline_en": "Kospi Gives Back a Third of Friday's Surge, Sinks 5.12%",
-      "body_ko": "코스피가 338.00포인트(5.12%) 내린 6,257.45에 마감하며 금요일 폭등분의 3분의 1가량을 반납했다. 삼성전자(-8.76%)·SK하이닉스(-8.79%)가 동반 급락했다. 코스닥은 2.44% 오른 737.35에 마감했고, 장중 코스닥150 선물 급등에 매수 사이드카가 발동됐다.",
-      "body_en": "The Kospi fell 338.00 points (5.12%) to 6,257.45, giving back about a third of Friday's record surge. Samsung (-8.76%) and SK Hynix (-8.79%) dragged the index down. The Kosdaq rose 2.44% to 737.35; a buy-side sidecar fired intraday.",
-      "src": "서울경제 / 이투데이 / 전자신문",
-      "time": "8/3 종가"
-    },
-    {
-      "headline_ko": "삼성전자·SK하이닉스 레버리지 ETF도 급락…거래량은 예탁금 규제로 반토막",
-      "headline_en": "Samsung, SK Hynix Leverage ETFs Sink Too — but Volume Halves on New Deposit Rule",
-      "body_ko": "삼성전자·SK하이닉스 레버리지 ETF들이 16~18%대 급락했지만, 관련 14개 ETF 거래량은 최소 3,000만원 예탁금 규제 여파로 53.5% 줄었다. SK하이닉스 인버스 2X 상품(SOL)은 23.65% 올라 가장 좋은 성과를 냈다.",
-      "body_en": "Samsung, SK Hynix leverage ETFs fell 16-18%, but the 14 related ETFs' volume dropped 53.5% on a new ₩30M deposit rule. SK Hynix's inverse 2X (SOL) led gainers, up 23.65%.",
-      "src": "파이낸셜뉴스 / 아주경제",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "이재명 대통령, 귀국 즉시 청와대서 코스피 급락 대응 긴급회의",
-      "headline_en": "President Lee Convenes Emergency Meeting on Kospi Plunge Right After Landing",
-      "body_ko": "이재명 대통령이 귀국 직후인 3일 청와대에서 코스피 급락 대응 긴급회의를 주재했다. 한성숙 국무총리 등이 참석했다.",
-      "body_en": "President Lee, back on the 3rd from his trip, chaired an emergency meeting on the Kospi's plunge, joined by PM Han Seong-suk.",
-      "src": "파이낸셜뉴스 / 한국일보",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "이란, 트럼프 '호르무즈 합의' 주장에도 미국과 직접 협상 안해…오만과 별도 협의",
-      "headline_en": "Iran Says It's Negotiating via Oman, Not Directly With the US",
-      "body_ko": "트럼프 대통령은 이란과 호르무즈 합의가 이뤄졌다고 밝혔지만, 이란은 미국과 직접 협상하지 않고 오만을 통한 통행 문제 협의에 집중하고 있다고 선을 그었다. 통제권·통행료 등 핵심 쟁점은 여전히 미해결 상태다.",
-      "body_en": "Trump said a Hormuz deal was reached, but Iran said it is talking only with Oman on transit issues, not with the US. Control and transit-fee disputes remain unresolved.",
-      "src": "파이낸셜뉴스 / 서울경제",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "닛케이, 금요일 4%대 급등 하루 만에 되돌림…엔화 강세에 0.94%↓",
-      "headline_en": "Nikkei Reverses Friday's ~4% Surge, Falls 0.94% as Yen Firms",
-      "body_ko": "지난달 31일 4.03% 급등했던 닛케이225지수가 하루 만에 상승분을 되돌려 607.12엔(0.94%) 내린 63,754.90엔에 마감했다. 추가 개입 경계 속 엔/달러가 한때 155.22엔까지 오르며 수출주 매도를 부추겼다. 도쿄일렉트론·화낙·도요타가 하락을 주도했다.",
-      "body_en": "The Nikkei 225, which had jumped 4.03% on Jul 31, reversed course a day later, closing down 0.94% at 63,754.90 as the yen strengthened to 155.22/dollar on intervention fears, pressuring exporters. Tokyo Electron, Fanuc and Toyota led the losses.",
-      "src": "머니투데이 / 뉴스핌",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "9월 연준 인상 확률 82%→65% 후퇴…7/29 동결 이후 되돌림",
-      "headline_en": "September Fed Hike Odds Retreat From 82% to 65% After the July 29 Hold",
-      "body_ko": "CME 페드워치 기준 9월 인상 확률은 7월 23일 82%까지 올랐다가, 29일 연준 동결(3.50~3.75%) 이후 31일 65%로 되돌렸다. 오늘 유가 급락에 기대가 더 식을지 주목된다.",
-      "body_en": "CME FedWatch odds of a September hike peaked at 82% on July 23, then eased to about 65% by July 31 after the Fed's hold. Oil's slide today may cool them further.",
-      "src": "CNBC / 연합인포맥스",
-      "time": "7/31 기준"
-    }
-  ],
-  "ai": [
-    {
-      "headline_ko": "네이버, 엔비디아·브룩필드와 'AI 팩토리' 계약구조 공개…GPU는 엔비디아, 인프라는 SPV",
-      "headline_en": "Naver Discloses AI Factory Deal Structure: Nvidia's GPUs, Brookfield's Infrastructure SPV",
-      "body_ko": "네이버가 3일 100억달러 규모 'AI 팩토리' 1단계(200MW) 계약구조를 공개했다. 엔비디아가 10억달러를 지분투자하고, 브룩필드는 최대 90억달러로 GPU·데이터센터를 맡을 특수목적법인(SPV)을 구성한다. 네이버는 브룩필드를 12주 우선협상대상자로 지정했다.",
-      "body_en": "Naver disclosed the deal structure for Stage 1 of its $10B 'AI Factory' project: Nvidia takes a $1B stake, and Brookfield will invest up to $9B via an SPV covering GPUs and data centers, as Naver's 12-week exclusive negotiating partner.",
-      "src": "파이낸셜뉴스 / 글로벌이코노믹 / AI타임스",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "과기정통부, '모두의 AI 성장사다리' 프로젝트 출범",
-      "headline_en": "Science Ministry Launches 'AI Growth Ladder for Everyone' Project",
-      "body_ko": "과학기술정보통신부와 한국지능정보사회진흥원이 3일 국립광주과학관에서 국민 누구나 교육부터 창업까지 이어지는 AI 성장경로를 제공하는 '모두의 AI 성장사다리' 프로젝트를 출범했다. 8월부터 민간 플랫폼과의 연계도 확대된다.",
-      "body_en": "Korea's science ministry launched the 'AI Growth Ladder for Everyone' project on the 3rd, offering citizens an AI pathway from education to startup.",
-      "src": "아시아경제 / 전자신문 / 컨슈머타임스",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "외국인, 삼성전자·SK하이닉스 2.7조 순매도…HBM 고점 논란",
-      "headline_en": "Foreigners Net-Sell ₩2.7T of Samsung, SK Hynix Amid HBM Peak Worries",
-      "body_ko": "외국인이 3일 SK하이닉스·삼성전자를 합쳐 2조7,000억원어치 순매도했다(레버리지 포함 시장 전체 4조8,000억원대). 역대급 폭등 후 차익실현에 HBM 밸류에이션 논란이 겹쳤다.",
-      "body_en": "Foreign investors net-sold ₩2.7 trillion of SK Hynix and Samsung on the 3rd (₩4.8T market-wide) — profit-taking plus HBM valuation worries.",
-      "src": "머니투데이 / 디지털타임스 / 헤럴드경제",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "UBS \"삼성전자, 2027년 HBM 1위로 SK하이닉스 추월 전망\"",
-      "headline_en": "UBS: Samsung to Overtake SK Hynix as No. 1 in HBM by 2027",
-      "body_ko": "UBS는 SK하이닉스가 올해 HBM 점유율 약 48%로 1위지만, 내년엔 삼성전자가 HBM4 세계 최초 양산을 앞세워 약 41%로 SK하이닉스(39%)를 제치고 1위에 오를 것으로 전망했다. AI 메모리 공급부족은 3년 이상 지속될 것으로 내다봤다.",
-      "body_en": "UBS forecasts SK Hynix will keep its ~48% HBM share lead this year, but Samsung will overtake it in 2027 with ~41% vs 39%, driven by first-to-market HBM4 output. UBS sees the AI memory shortage lasting 3+ years.",
-      "src": "뉴데일리 / 데이터뉴스",
-      "time": "8/3 보도"
-    },
-    {
-      "headline_ko": "MS, 오픈AI·구글·앤트로픽 능가한다는 사이버보안 AI '프로젝트 퍼셉션' 공개 프리뷰 시작",
-      "headline_en": "Microsoft Opens Public Preview of 'Project Perception' Security AI, Claims It Beats OpenAI, Google, Anthropic",
-      "body_ko": "마이크로소프트가 3일부터 보안 특화 AI 'MAI-Cyber-1-Flash' 기반 '프로젝트 퍼셉션' 퍼블릭 프리뷰를 시작했다. 오픈AI GPT-5.4와 결합 시 경쟁 대비 절반 가격에 업계 최고 보안 성능을 낸다고 주장한다.",
-      "body_en": "Microsoft began the public preview of 'Project Perception' on the 3rd, built on its MAI-Cyber-1-Flash security model. Combined with GPT-5.4, it claims industry-leading security at half the cost of rival setups.",
-      "src": "SecurityWeek / VentureBeat",
-      "time": "8/3 프리뷰 시작"
-    },
-    {
-      "headline_ko": "EU AI법 투명성 규정, 8월 2일부터 시행",
-      "headline_en": "EU AI Act's Transparency Rules Take Effect August 2",
-      "body_ko": "EU 집행위원회가 지난 2일부터 AI법 제50조 투명성 규정 집행에 들어갔다. AI 생성 콘텐츠 표시, 챗봇 AI 고지 의무가 핵심이며, 고위험 시스템 규정은 2027~2028년으로 유예됐다.",
-      "body_en": "The European Commission began enforcing the AI Act's Article 50 transparency rules on the 2nd, requiring labels on AI-generated content and chatbot disclosures. High-risk system rules remain deferred to 2027-2028.",
-      "src": "European Commission",
-      "time": "8/2 시행"
-    }
-  ],
+  "market_note_ko": "나스닥·S&P500은 미 정규장 개장 전 선물, 미 10년물은 7/31 마감 기준, 코스피·VIX·원달러·금·WTI·비트코인은 오늘(8/3) 저녁 기준입니다.",
+  "market_note_en": "Nasdaq and S&P 500 are futures ahead of the US open; the 10-year yield is Jul 31's close; Kospi, VIX, the won, gold, WTI and Bitcoin are as of this evening (Aug 3).",
   "schedule_title_ko": "오늘 밤 주요 일정",
   "schedule_title_en": "Tonight's Key Schedule",
   "market_hours": {
@@ -240,33 +140,146 @@
   ],
   "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
   "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
-  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 8월 3일(월)\n\n오늘의 핵심: 코스피가 338.00포인트(5.12%) 급락한 6,257.45에 마감하며 지난주 금요일 역대 최대폭 상승분의 3분의 1가량을 반납했습니다. 시총 절반을 차지하는 삼성전자(-8.76%)와 SK하이닉스(-8.79%)가 동반 급락했고, 외국인은 두 종목에서만 2조7,000억원어치를 순매도했습니다. 차익실현 물량에 HBM 가격 조정 우려까지 겹친 결과입니다. 반면 코스닥은 2.44% 올라 자금이 이동하는 모습을 보였습니다.\n\n이재명 대통령은 순방을 마치고 귀국하자마자 청와대에서 증시 대응 긴급회의를 주재했습니다. 대외적으로는 트럼프 대통령이 이란과 호르무즈 해협 합의를 밝혔지만, 이란은 아직 미국과 직접 협상하지 않고 오만을 통한 협의만 진행 중이라고 선을 그으며 온도차를 보였습니다. 국제유가는 그럼에도 낙폭을 이어갔습니다.\n\nAI 업계에서는 네이버가 엔비디아·브룩필드와 함께 추진하는 10조원대 'AI 팩토리' 사업의 계약구조를 공개했고, 정부는 '모두의 AI 성장사다리' 프로젝트를 출범시켰습니다. UBS는 삼성전자가 2027년 HBM 1위에 오를 것으로 전망했습니다.\n\n오늘 밤 10시반 미국 증시가 개장하고, 내일 새벽 6시에는 팔란티어 2분기 실적이 발표됩니다.\n\n💾 저장해두고 다음 브리핑도 확인하세요.\n👉 팔로우하면 하루 2번, 놓치지 않는 경제·AI 브리핑을 받아보실 수 있습니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#luckyon브리핑 #경제뉴스 #주식 #코스피 #증시 #AI뉴스 #반도체 #삼성전자 #SK하이닉스 #미국증시 #나스닥 #환율 #국제유가 #투자 #재테크",
-  "caption_en": "📊 luckyon Evening Briefing · Monday, August 3, 2026\n\nToday's headline: The Kospi fell 338.00 points (5.12%) to close at 6,257.45, giving back about a third of last Friday's record surge. Samsung Electronics (-8.76%) and SK Hynix (-8.79%) — together over half the index's weight — led the drop, with foreigners net-selling over ₩2.7 trillion of the two stocks combined, as profit-taking met fresh worries about HBM price corrections. The Kosdaq moved the opposite way, up 2.44%, as money rotated to non-chip names.\n\nPresident Lee, back from his overseas trip, went straight to the presidential office to chair an emergency meeting on the market plunge. Internationally, President Trump said a Hormuz Strait deal with Iran had been reached, but Iran drew a clear line, saying it isn't yet negotiating directly with the US — only via Oman. Oil prices kept falling regardless.\n\nIn AI news, Naver disclosed the deal structure behind its roughly $10 billion 'AI Factory' project with Nvidia and Brookfield, the government launched its 'AI Growth Ladder for Everyone' project, and UBS forecast Samsung will take the #1 HBM spot in 2027.\n\nThe US market opens at 10:30 PM KST tonight, and Palantir reports Q2 earnings at 6 AM KST tomorrow.\n\n💾 Save this for later and check back for the next brief.\n👉 Follow for economic and AI briefings, twice a day, every weekday.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#luckyonbriefing #economicnews #stockmarket #kospi #markets #AInews #semiconductors #samsung #skhynix #usmarkets #nasdaq #forex #oilprices #investing #finance",
+  "caption_ko": "📊 luckyon 저녁 브리핑 · 2026년 8월 3일(월)\n\n오늘의 핵심: 코스피가 338.00포인트(5.12%) 내린 6,257.45에 마감했습니다. 그런데 숫자를 열어보면 다른 그림이 나옵니다 — 943개 종목 중 오른 종목이 455개로 내린 종목(419개)보다 많았습니다. 지수를 끌어내린 건 소수의 대형주였습니다.\n\n시가총액 가중으로 업종을 보면 반도체가 -8.65%로 홀로 급락했고, 주력 15개 업종 중 5개는 오히려 올랐습니다(IT·전자기기 +2.12%, 건설 +1.83%, 자동차 +1.07%). 거래대금 26조3,346억원 가운데 SK하이닉스(8.64조)와 삼성전자(6.74조) 두 종목이 58.4%를 가져갔습니다.\n\n코스닥은 정반대였습니다. 2.44% 오른 737.35에 마감했고, 1,770개 중 1,141개가 상승했습니다. 거래대금 상위는 코스모로보틱스·에스피지·레인보우로보틱스로 로봇주가 휩쓸었습니다.\n\n공시에서는 현대차가 2분기 잠정실적을 공정공시했고(주가 +1.29%), 한화갤러리아·한화비전이 최대주주 변경을 알렸습니다. 국민연금과 블랙록의 대량보유 보고도 잇따랐습니다.\n\n미 선물은 반대로 올랐습니다. 나스닥 선물 +1.28%, S&P500 선물 +1.16%. 오늘 밤 10시반 미국장이 열리고, 내일 새벽 6시 팔란티어 실적이 나옵니다.\n\n💾 저장해두고 다음 브리핑도 확인하세요.\n👉 팔로우하면 하루 2번, 놓치지 않는 경제·AI 브리핑을 받아보실 수 있습니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#luckyon브리핑 #경제뉴스 #주식 #코스피 #코스닥 #증시 #반도체 #삼성전자 #SK하이닉스 #로봇주 #미국증시 #나스닥 #환율 #투자 #재테크",
+  "caption_en": "📊 luckyon Evening Briefing · Monday, August 3, 2026\n\nToday's headline: The Kospi closed down 338.00 points (5.12%) at 6,257.45 — but the numbers underneath tell a different story. Of 943 stocks, 455 rose and only 419 fell. A handful of megacaps dragged the index down.\n\nOn a market-cap-weighted basis, semiconductors fell 8.65% alone, while 5 of the 15 major sectors actually rose (IT hardware +2.12%, construction +1.83%, autos +1.07%). Of the ₩26.33 trillion in Kospi turnover, SK Hynix (₩8.64T) and Samsung (₩6.74T) took 58.4% between them.\n\nThe Kosdaq went the other way, closing up 2.44% at 737.35 with 1,141 of 1,770 stocks advancing. Turnover leaders were all robotics names — Cosmo Robotics, SPG and Rainbow Robotics.\n\nIn filings, Hyundai Motor disclosed preliminary Q2 results (shares +1.29%), while Hanwha Galleria and Hanwha Vision reported changes of largest shareholder. The National Pension Service and BlackRock filed a wave of 5% ownership reports.\n\nUS futures moved the opposite way: Nasdaq futures +1.28%, S&P 500 futures +1.16%. The US market opens at 10:30 PM KST tonight, and Palantir reports at 6 AM KST tomorrow.\n\n💾 Save this for later and check back for the next brief.\n👉 Follow for economic and AI briefings, twice a day, every weekday.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#luckyonbriefing #economicnews #stockmarket #kospi #kosdaq #markets #semiconductors #samsung #skhynix #robotics #usmarkets #nasdaq #investing #finance",
   "sources": [
-    "https://en.sedaily.com/finance/2026/08/03/kospi-closes-down-33800-points-or-512-percent-at-625745",
-    "https://www.etoday.co.kr/news/view/2610491",
-    "https://www.etnews.com/20260803000375",
-    "https://www.fnnews.com/news/202608031628381908",
-    "https://www.ajunews.com/view/20260803165743686",
-    "https://www.fnnews.com/news/202608031610222377",
-    "https://www.hankookilbo.com/news/article/A2026080220350002189",
-    "https://www.fnnews.com/news/202608031749142655",
-    "https://www.sedaily.com/article/20074894",
-    "https://www.mt.co.kr/world/2026/08/03/2026080311571685741",
-    "https://www.newspim.com/news/view/20260803001221",
-    "https://www.cnbc.com/2026/07/23/fed-interest-rate-odds-oil-jobless-claims.html",
-    "https://www.fnnews.com/news/202608031320082883",
-    "https://www.g-enews.com/article/ICT/2026/08/2026080310020347233d7a510102_1",
-    "https://www.aitimes.com/news/articleView.html?idxno=213463",
-    "https://view.asiae.co.kr/article/2026080309312592397",
-    "https://www.etnews.com/20260803000326",
-    "https://www.cstimes.com/news/articleView.html?idxno=715513",
-    "https://www.mt.co.kr/stock/2026/08/03/2026080316413031834",
-    "https://www.dt.co.kr/article/12075230",
-    "https://biz.heraldcorp.com/article/10829452",
-    "https://biz.newdaily.co.kr/site/data/html/2026/08/03/2026080300216.html",
-    "https://www.datanews.co.kr/news/article.html?no=145024",
-    "https://www.inc.com/chloe-aiello/microsoft-says-its-new-ai-beats-openai-google-and-anthropic-at-cybersecurity/91381069",
-    "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    "https://raw.githubusercontent.com/FinanceData/fdr_krx_data_cache",
+    "https://opendart.fss.or.kr",
+    "https://query1.finance.yahoo.com",
+    "https://home.treasury.gov"
+  ],
+  "hook_bull": {
+    "body_ko": "지수는 5.12% 빠졌지만 코스피 상승 종목이 455개로 하락 419개보다 많았고, 코스닥은 2.44% 올라 737.35에 마감했다. 대형주 밖은 버텼다.",
+    "body_en": "The index fell 5.12%, yet 455 Kospi stocks rose against 419 that fell, and the Kosdaq gained 2.44% to 737.35. Outside the megacaps, the market held."
+  },
+  "hook_bear": {
+    "body_ko": "시총 가중 기준 반도체 업종이 -8.65%로 홀로 지수를 끌어내렸다. 코스피 거래대금 26.3조 가운데 SK하이닉스·삼성전자 두 종목이 58.4%를 가져갔다.",
+    "body_en": "Semiconductors fell 8.65% on a market-cap-weighted basis, dragging the index down alone. SK Hynix and Samsung took 58.4% of the Kospi's ₩26.3T turnover."
+  },
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록",
+      "title_en": "Kospi & Kosdaq Records",
+      "color": "#e66767",
+      "items": [
+        {
+          "headline_ko": "코스피 5.12% 급락…그런데 오른 종목이 더 많았다",
+          "headline_en": "Kospi Sank 5.12% — Yet More Stocks Rose Than Fell",
+          "body_ko": "코스피는 338.00포인트(5.12%) 내린 6,257.45로 마감했지만, 943개 종목 중 상승 455개·하락 419개·보합 69개로 오른 종목이 더 많았다. 지수를 끌어내린 것은 소수의 대형주였다.",
+          "body_en": "The Kospi closed down 338.00 points (5.12%) at 6,257.45, but of 943 stocks, 455 rose, 419 fell and 69 were flat. A handful of megacaps drove the index down.",
+          "src": "KRX",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "거래대금 26.3조 중 58%가 단 2종목에 몰렸다",
+          "headline_en": "Two Stocks Took 58% of the Day's ₩26.3T Turnover",
+          "body_ko": "코스피 거래대금은 26조3,346억원. 이 가운데 SK하이닉스(8.64조)와 삼성전자(6.74조) 두 종목이 58.4%를 차지했다. 상위 10종목까지 넓혀도 72.9%다.",
+          "body_en": "Kospi turnover was ₩26.33 trillion, and SK Hynix (₩8.64T) plus Samsung (₩6.74T) alone accounted for 58.4%. The top 10 names made up 72.9%.",
+          "src": "KRX",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "코스닥은 정반대…2.44% 올라 737.35 마감",
+          "headline_en": "The Kosdaq Went the Other Way, Up 2.44% to 737.35",
+          "body_ko": "코스닥은 17.59포인트(2.44%) 오른 737.35에 마감했다. 1,770개 종목 중 1,141개가 올라 상승 종목이 하락(449개)의 2.5배였다. 거래대금은 5조4,600억원.",
+          "body_en": "The Kosdaq rose 17.59 points (2.44%) to 737.35. Of 1,770 stocks, 1,141 advanced — 2.5 times the 449 that declined. Turnover was ₩5.46 trillion.",
+          "src": "KRX",
+          "time": "8/3"
+        }
+      ]
+    },
+    {
+      "title_ko": "업종 · 종목 기록",
+      "title_en": "Sector & Stock Records",
+      "color": "#e0a94f",
+      "items": [
+        {
+          "headline_ko": "주력 15개 업종 중 5개는 올랐다…반도체만 -8.65%",
+          "headline_en": "5 of 15 Major Sectors Rose — Only Semis Fell 8.65%",
+          "body_ko": "시가총액 가중 기준 반도체 업종이 -8.65%로 홀로 급락했다. IT·전자기기(+2.12%), 건설·건자재(+1.83%), 자동차(+1.07%) 등 5개 업종은 상승했다. 반도체 시총은 2,694조원으로 코스피의 절반을 넘는다.",
+          "body_en": "On a market-cap-weighted basis, semiconductors fell 8.65% while five sectors rose — IT hardware (+2.12%), construction (+1.83%) and autos (+1.07%) among them. Semis are ₩2,694T, over half the Kospi.",
+          "src": "KRX",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "삼성전자 -8.76%, SK하이닉스 -8.79% 동반 급락",
+          "headline_en": "Samsung -8.76%, SK Hynix -8.79% Fell Together",
+          "body_ko": "삼성전자는 23,000원 내린 239,500원, SK하이닉스는 151,000원 내린 1,567,000원에 마감했다. 두 종목 모두 거래대금 1·2위였다.",
+          "body_en": "Samsung closed down ₩23,000 at ₩239,500 and SK Hynix down ₩151,000 at ₩1,567,000. Both ranked first and second by turnover.",
+          "src": "KRX",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "코스닥 로봇주로 자금 이동…코스모로보틱스 거래대금 1위",
+          "headline_en": "Money Rotated Into Kosdaq Robotics Names",
+          "body_ko": "코스닥 거래대금 상위는 코스모로보틱스(3,221억)·에스피지(3,012억)·레인보우로보틱스(1,361억)로 로봇주가 휩쓸었다. 딥노이드는 상한가(+30.00%)로 마감했다.",
+          "body_en": "Kosdaq turnover leaders were all robotics names — Cosmo Robotics (₩322B), SPG (₩301B) and Rainbow Robotics (₩136B). Deepnoid closed limit-up at +30.00%.",
+          "src": "KRX",
+          "time": "8/3"
+        }
+      ]
+    },
+    {
+      "title_ko": "오늘의 공시",
+      "title_en": "Today's Filings",
+      "color": "#5aa469",
+      "items": [
+        {
+          "headline_ko": "현대차, 2분기 잠정실적 공시…주가는 1.29% 상승",
+          "headline_en": "Hyundai Motor Filed Q2 Preliminary Results; Shares Rose 1.29%",
+          "body_ko": "현대자동차가 3일 영업(잠정)실적을 공정공시했다. 반도체가 급락한 날 현대차는 1.29% 오른 393,000원에 마감해 자동차 업종(+1.07%) 상승을 이끌었다.",
+          "body_en": "Hyundai Motor filed preliminary Q2 operating results on the 3rd. On a day semis plunged, it rose 1.29% to ₩393,000, leading the auto sector's 1.07% gain.",
+          "src": "DART",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "한화갤러리아·한화비전 최대주주 변경 공시",
+          "headline_en": "Hanwha Galleria and Hanwha Vision Filed Changes of Largest Shareholder",
+          "body_ko": "한화갤러리아와 한화비전이 같은 날 최대주주 변경을 공시했다. 한화비전은 3.57%, 한화갤러리아는 1.93% 올랐다. 한화 계열 지배구조 개편이 이어지고 있다.",
+          "body_en": "Hanwha Galleria and Hanwha Vision both filed changes of largest shareholder on the same day. Hanwha Vision rose 3.57% and Galleria 1.93% as the group's restructuring continues.",
+          "src": "DART",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "국민연금·블랙록, 대량보유 보고 잇따라",
+          "headline_en": "NPS and BlackRock Filed a Wave of 5% Ownership Reports",
+          "body_ko": "국민연금이 셀트리온·현대로템·LG화학·SK텔레콤 등에 대량보유 변동을 보고했고, 블랙록은 카카오 지분을 보고했다. 셀트리온은 2.41%, 카카오는 0.53% 내렸다.",
+          "body_en": "The National Pension Service filed ownership changes in Celltrion, Hyundai Rotem, LG Chem and SK Telecom, while BlackRock reported a stake in Kakao. Celltrion fell 2.41% and Kakao 0.53%.",
+          "src": "DART",
+          "time": "8/3"
+        }
+      ]
+    },
+    {
+      "title_ko": "글로벌 · 미 선물",
+      "title_en": "Global & US Futures",
+      "color": "#3987e5",
+      "items": [
+        {
+          "headline_ko": "미 선물은 상승…나스닥 선물 1.28%↑",
+          "headline_en": "US Futures Rose — Nasdaq Futures Up 1.28%",
+          "body_ko": "미 정규장 개장을 앞두고 나스닥 선물은 28,766.50으로 1.28%, S&P500 선물은 7,606.75로 1.16% 올랐다. 코스피 급락과는 방향이 갈렸다.",
+          "body_en": "Ahead of the US open, Nasdaq futures rose 1.28% to 28,766.50 and S&P 500 futures 1.16% to 7,606.75 — diverging from the Kospi's plunge.",
+          "src": "CME",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "아시아는 엇갈림…닛케이 -0.94%, 항셍 +0.48%",
+          "headline_en": "Asia Was Mixed — Nikkei -0.94%, Hang Seng +0.48%",
+          "body_ko": "닛케이225는 63,754.90(-0.94%)으로 지난달 31일 4.03% 급등분을 되돌렸다. 항셍은 26,009.40(+0.48%), 상해종합은 3,809.66(-0.59%)으로 마감했다.",
+          "body_en": "The Nikkei 225 closed at 63,754.90 (-0.94%), giving back its 4.03% jump on Jul 31. The Hang Seng ended at 26,009.40 (+0.48%) and the Shanghai Composite at 3,809.66 (-0.59%).",
+          "src": "Yahoo Finance",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "WTI 4.6% 급락…미 10년물은 7/31에 4.75%로 연중 최고권",
+          "headline_en": "WTI Fell 4.6%; the 10-Year Yield Hit 4.75% on Jul 31",
+          "body_ko": "WTI는 80.80달러로 4.6% 내리며 호르무즈 협상 기대를 반영했다. 미 10년물 금리는 7월 31일 4.75%로 마감해 전일(4.68%) 대비 0.07%포인트 올랐다.",
+          "body_en": "WTI fell 4.6% to $80.80 on hopes for the Hormuz talks. The US 10-year yield closed Jul 31 at 4.75%, up 0.07 percentage points from 4.68% the day before.",
+          "src": "US Treasury / Yahoo Finance",
+          "time": "7/31~8/3"
+        }
+      ]
+    }
   ]
 }
