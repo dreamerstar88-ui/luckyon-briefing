@@ -1,0 +1,64 @@
+name: Econ Calendar
+
+# 경제지표 발표 일정을 받아 data/econ-calendar.json 에 커밋해 둔다.
+#
+# 왜 필요한가: 경제 캘린더 사이트(Investing.com·세이브티커·TradingView·FXStreet 등)는
+# 브리핑 세션의 네트워크 정책에서 전부 차단된다. GitHub Actions 러너는 그 밖에 있어
+# 그대로 접근되므로, 여기서 받아 커밋하고 세션은 커밋된 JSON 을 읽는다.
+# (data/futures-cache.json 과 같은 패턴)
+#
+# 인증키가 필요 없다 — FXStreet 공개 캘린더 API 는 Origin/Referer 헤더만 있으면 된다.
+
+on:
+  schedule:
+    # 아침(07:35 KST)·저녁(20:35 KST) 브리핑 직전에 각각 한 번씩 갱신한다.
+    - cron: '20 22 * * 0-4'   # 22:20 UTC = 07:20 KST (다음날) — 아침 브리핑 직전
+    - cron: '10 11 * * 1-5'   # 11:10 UTC = 20:10 KST — 저녁 브리핑 직전
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: econ-calendar
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch calendar
+        id: fetch
+        run: |
+          set -o pipefail
+          mkdir -p data
+          if node scripts/fetch-econ-calendar.mjs 2 14 > /tmp/econ.json; then
+            mv /tmp/econ.json data/econ-calendar.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            # 두 소스가 모두 막힌 날은 기존 파일을 그대로 두고 넘어간다.
+            # 여기서 실패로 끝내면 낡은 캘린더가 지워져 브리핑이 더 나빠진다.
+            echo "::warning::경제 캘린더 조회 실패 — 기존 data/econ-calendar.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/econ-calendar.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh econ calendar [skip ci]"
+            git push
+          fi
