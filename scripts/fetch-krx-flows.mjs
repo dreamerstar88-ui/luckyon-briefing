@@ -15,10 +15,17 @@
 //
 // 인증이 필요 없다 — 공개 페이지다.
 
+// bizdate 를 비우면 헤더만 있는 1.7KB 응답이 온다 — 반드시 날짜를 넣어야 데이터 행이 나온다.
+// sosok=0 코스피, sosok=1 코스닥.
+function kstToday() {
+  const n = new Date();
+  return new Date(n.getTime() + (9 * 60 - n.getTimezoneOffset()) * 60000).toISOString().slice(0, 10);
+}
+const DATE = (process.argv.find(a => /^\d{4}-\d{2}-\d{2}$/.test(a)) || kstToday()).replace(/-/g, '');
+
 const PAGES = [
-  { key: 'investorDealTrendDay', url: 'https://finance.naver.com/sise/investorDealTrendDay.naver' },
-  { key: 'sise_trans_style', url: 'https://finance.naver.com/sise/sise_trans_style.naver' },
-  { key: 'investorDealTrendDay_kosdaq', url: 'https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=&sosok=1' },
+  { key: 'KOSPI', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}&sosok=0` },
+  { key: 'KOSDAQ', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}&sosok=1` },
 ];
 
 // 네이버 금융은 EUC-KR 로 내려온다. UTF-8 로 읽으면 한글이 깨져 표 헤더를 못 찾는다.
@@ -76,23 +83,27 @@ async function probe() {
   }
 }
 
-// 표에서 '개인 / 외국인 / 기관' 헤더를 찾아 가장 최근 행을 뽑는다.
+// 표 구조 (probe 로 확인):
+//   헤더 1행: 날짜 | 개인 | 외국인 | 기관계 | 기관 | 기타법인
+//   헤더 2행: 금융투자 | 보험 | 투신 (사모) | 은행 | 기타금융기관 | 연기금등
+// 데이터 행은 기관 세부가 펼쳐져 열 수가 헤더보다 많으므로, 헤더로 위치를 잡지 않고
+// 앞 네 칸(날짜·개인·외국인·기관계)을 자리로 읽는다. 헤더 존재 여부만 검증에 쓴다.
+// 값 단위는 백만원이다 (개인 순매수 4.65조 → 4,652,xxx).
 function parseFlows(html) {
   for (const tb of tables(html)) {
     const rs = rows(tb).filter(r => r.length >= 4);
     if (rs.length < 2) continue;
-    const headIdx = rs.findIndex(r => r.some(c => /개인/.test(c)) && r.some(c => /외국인/.test(c)) && r.some(c => /기관/.test(c)));
-    if (headIdx < 0) continue;
-    const head = rs[headIdx];
-    const col = re => head.findIndex(c => re.test(c));
-    const iDate = 0, iInd = col(/개인/), iFor = col(/외국인/), iIns = col(/기관/);
-    if (iInd < 0 || iFor < 0 || iIns < 0) continue;
-    for (const r of rs.slice(headIdx + 1)) {
-      const date = r[iDate];
-      if (!/\d{2}[./]\d{2}/.test(date || '')) continue;
-      const v = [num(r[iInd]), num(r[iFor]), num(r[iIns])];
+    const hasHead = rs.some(r => r.some(c => /개인/.test(c)) && r.some(c => /외국인/.test(c)) && r.some(c => /기관/.test(c)));
+    if (!hasHead) continue;
+    for (const r of rs) {
+      if (!/^\d{2}[./]\d{2}([./]\d{2})?$/.test((r[0] || '').trim())) continue;
+      const v = [num(r[1]), num(r[2]), num(r[3])];
       if (v.some(x => x === null)) continue;
-      return { date, individual: v[0], foreign: v[1], institution: v[2] };
+      return {
+        date: r[0].trim(),
+        unit: '백만원',
+        individual: v[0], foreign: v[1], institution: v[2],
+      };
     }
   }
   return null;
