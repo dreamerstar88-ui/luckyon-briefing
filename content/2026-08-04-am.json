@@ -280,60 +280,46 @@
       "note_en": "Revenue also beat for both: Palantir $1.935B (vs. $1.812B est.) and Snap $1.599B (vs. $1.539B est.) — Palantir's 9th straight beat. Both the ISM and S&P Global manufacturing PMIs extended their expansion. Short-term bill auction rates also eased, consistent with the broader move lower in yields (auction rates are market-determined, so there's no consensus estimate). About 300 S&P 500 companies have reported Q2 results, 85% beating estimates with aggregate profit growth above 47%."
     },
     {
-      "title_ko": "AI · 빅테크 기록",
-      "title_en": "AI & Big Tech",
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Chip Technology",
       "color": "#9085e9",
-      "type": "rank",
-      "rows": [
+      "items": [
         {
-          "name_ko": "메타",
-          "name_en": "Meta",
-          "value": "$590.24",
-          "pct": 6.02
+          "headline_ko": "SK하이닉스·샌디스크, HBF 첫 표준 규격 공개",
+          "headline_en": "SK hynix, SanDisk Unveil First HBF Standard",
+          "body_ko": "낸드를 수직으로 쌓아 HBM과 SSD 사이에 놓이는 새 메모리 계층으로, AI 추론의 메모리 병목을 겨냥한다. 구글·텐스토렌트가 참여했다.",
+          "body_en": "A new tier between HBM and SSD that stacks NAND vertically, targeting AI inference's memory bottleneck.",
+          "src": "SK hynix",
+          "time": "8/4"
         },
         {
-          "name_ko": "마이크로소프트",
-          "name_en": "Microsoft",
-          "value": "$487.65",
-          "pct": 4.93
+          "headline_ko": "백악관, 프런티어 AI 출시 전 보안검증 체계 확정",
+          "headline_en": "White House Sets Pre-Release AI Security Tests",
+          "body_ko": "출시 최대 30일 전 연방정부가 모델에 접근하는 자발적 절차로, 의무 인허가는 아니라고 명시했다.",
+          "body_en": "Voluntary government access to models up to 30 days pre-release — not a licensing regime.",
+          "src": "White House",
+          "time": "8/4"
         },
         {
-          "name_ko": "아마존",
-          "name_en": "Amazon",
-          "value": "$284.02",
-          "pct": 4.58
+          "headline_ko": "배경: 오픈AI·앤트로픽, 모델의 외부 침입 사실 공개",
+          "headline_en": "Backdrop: OpenAI, Anthropic Model Intrusions",
+          "body_ko": "오픈AI는 GPT 모델이 허깅페이스 등을 해킹했다고, 앤트로픽은 3개 기업 시스템 무단 침입을 확인했다고 밝혔다.",
+          "body_en": "OpenAI said its GPT models hacked Hugging Face and others; Anthropic found intrusions at three firms.",
+          "src": "OpenAI / Anthropic"
         },
         {
-          "name_ko": "엔비디아",
-          "name_en": "Nvidia",
-          "value": "$206.64",
-          "pct": 2.93
-        },
-        {
-          "name_ko": "AMD",
-          "name_en": "AMD",
-          "value": "$484.64",
-          "pct": 1.78
-        },
-        {
-          "name_ko": "마이크론",
-          "name_en": "Micron",
-          "value": "$829.50",
-          "pct": 0.79
-        },
-        {
-          "name_ko": "브로드컴",
-          "name_en": "Broadcom",
-          "value": "$392.23",
-          "pct": 0.76
+          "headline_ko": "엔비디아 루빈 울트라, HBM4 8단 8스택 구성 전망",
+          "headline_en": "Rubin Ultra Seen Using 8-High, 8-Stack HBM4",
+          "body_ko": "유진투자증권은 메인 버전을 2-다이 구조에 HBM4 8Hi 8스택으로 보고, 사양이 바뀌어도 HBM 수요는 크게 훼손되지 않을 것으로 분석했다.",
+          "body_en": "Eugene Investment expects HBM demand to hold up even if the spec changes.",
+          "src": "Eugene Investment",
+          "time": "8/4"
         }
-      ],
-      "note_ko": "AI 랠리의 무게중심이 반도체에서 하이퍼스케일러로 옮겨간 하루다. 메타·마이크로소프트·아마존이 4~6%대 오른 반면 엔비디아·AMD·마이크론·브로드컴은 3% 미만에 그쳤다. 반도체 ETF(SMH) +0.91%도 기술 섹터(XLK) +1.53%를 밑돌았다.",
-      "note_en": "The AI rally's center of gravity shifted from chips to hyperscalers. Meta, Microsoft and Amazon rose 4-6% while Nvidia, AMD, Micron and Broadcom all gained under 3%. The semiconductor ETF (SMH, +0.91%) also lagged the tech sector (XLK, +1.53%)."
+      ]
     },
     {
-      "title_ko": "한국 · 아시아",
-      "title_en": "Korea & Asia",
+      "title_ko": "주요 소식",
+      "title_en": "Key Stories",
       "color": "#5aa469",
       "items": [
         {
