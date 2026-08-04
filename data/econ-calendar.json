@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-03T23:31:27Z",
+  "fetchedAt": "2026-08-04T13:07:36Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-01T23:31:27Z",
-    "to": "2026-08-17T23:31:27Z"
+    "from": "2026-08-02T13:07:36Z",
+    "to": "2026-08-18T13:07:36Z"
   },
   "events": [
     {
@@ -213,7 +213,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -13.7,
-      "actual": null,
+      "actual": -13.8,
       "unit": "%"
     },
     {
@@ -223,7 +223,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.729,
-      "actual": null,
+      "actual": 2.84,
       "unit": "%"
     },
     {
@@ -233,7 +233,7 @@
       "impact": "LOW",
       "consensus": -73,
       "previous": -77.6,
-      "actual": null,
+      "actual": -73.3,
       "unit": "$"
     },
     {
@@ -271,7 +271,7 @@
       "country": "US",
       "name": "JOLTS Job Openings",
       "impact": "MEDIUM",
-      "consensus": 7.45,
+      "consensus": 7.4,
       "previous": 7.594,
       "actual": null,
       "unit": null
@@ -301,7 +301,7 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -2,
       "previous": 3.296,
       "actual": null,
       "unit": null
@@ -401,7 +401,7 @@
       "country": "EMU",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": -0.2,
+      "consensus": -0.3,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -561,7 +561,7 @@
       "country": "DE",
       "name": "Factory Orders s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.2,
+      "consensus": 0.3,
       "previous": 1.9,
       "actual": null,
       "unit": "%"
@@ -581,7 +581,7 @@
       "country": "EMU",
       "name": "Retail Sales (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.2,
+      "consensus": 0.1,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -621,7 +621,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 201,
+      "consensus": 202,
       "previous": 197,
       "actual": null,
       "unit": null
@@ -811,7 +811,7 @@
       "country": "DE",
       "name": "Imports (MoM)",
       "impact": "LOW",
-      "consensus": 1.4,
+      "consensus": 1,
       "previous": -2.5,
       "actual": null,
       "unit": "%"
@@ -831,7 +831,7 @@
       "country": "DE",
       "name": "Industrial Production s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.3,
+      "consensus": 0.1,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -901,7 +901,7 @@
       "country": "US",
       "name": "Nonfarm Payrolls",
       "impact": "HIGH",
-      "consensus": 83,
+      "consensus": 80,
       "previous": 57,
       "actual": null,
       "unit": null
@@ -921,7 +921,7 @@
       "country": "US",
       "name": "Unemployment Rate",
       "impact": "MEDIUM",
-      "consensus": 4.3,
+      "consensus": 4.2,
       "previous": 4.2,
       "actual": null,
       "unit": "%"
@@ -941,7 +941,7 @@
       "country": "US",
       "name": "Consumer Credit Change",
       "impact": "LOW",
-      "consensus": 10.5,
+      "consensus": 10.85,
       "previous": -0.18,
       "actual": null,
       "unit": "$"
@@ -2085,6 +2085,166 @@
       "previous": 132.2,
       "actual": null,
       "unit": "$"
+    },
+    {
+      "at": "2026-08-18T08:00:00Z",
+      "country": "EMU",
+      "name": "Current Account n.s.a",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -6.2,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-08-18T08:00:00Z",
+      "country": "EMU",
+      "name": "Current Account s.a",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 25.1,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-08-18T09:00:00Z",
+      "country": "DE",
+      "name": "ZEW Survey – Current Situation",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -77.6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T09:00:00Z",
+      "country": "DE",
+      "name": "ZEW Survey – Economic Sentiment",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 26.3,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T09:00:00Z",
+      "country": "EMU",
+      "name": "Harmonized Index of Consumer Prices (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T09:00:00Z",
+      "country": "EMU",
+      "name": "ZEW Survey – Economic Sentiment",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 23.4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T12:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change 4-week average",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Building Permits (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.367,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Building Permits Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Export Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Export Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 10.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Housing Starts (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.427,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Housing Starts Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 19,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Import Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:30:00Z",
+      "country": "US",
+      "name": "Import Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T12:55:00Z",
+      "country": "US",
+      "name": "Redbook Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
