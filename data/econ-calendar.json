@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-04T13:07:36Z",
+  "fetchedAt": "2026-08-04T23:28:14Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-02T13:07:36Z",
-    "to": "2026-08-18T13:07:36Z"
+    "from": "2026-08-02T23:28:14Z",
+    "to": "2026-08-18T23:28:14Z"
   },
   "events": [
     {
@@ -229,6 +229,16 @@
     {
       "at": "2026-08-04T12:30:00Z",
       "country": "US",
+      "name": "Fed's Paulson speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-04T12:30:00Z",
+      "country": "US",
       "name": "Goods and Services Trade Balance",
       "impact": "LOW",
       "consensus": -73,
@@ -253,7 +263,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 8.3,
-      "actual": null,
+      "actual": 8.7,
       "unit": "%"
     },
     {
@@ -263,7 +273,7 @@
       "impact": "MEDIUM",
       "consensus": 0.2,
       "previous": -1.3,
-      "actual": null,
+      "actual": -0.3,
       "unit": "%"
     },
     {
@@ -273,7 +283,7 @@
       "impact": "MEDIUM",
       "consensus": 7.4,
       "previous": 7.594,
-      "actual": null,
+      "actual": 7.359,
       "unit": null
     },
     {
@@ -283,7 +293,7 @@
       "impact": "LOW",
       "consensus": 47.5,
       "previous": 45.5,
-      "actual": null,
+      "actual": 45.1,
       "unit": null
     },
     {
@@ -293,7 +303,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.86,
-      "actual": null,
+      "actual": 3.88,
       "unit": "%"
     },
     {
@@ -303,7 +313,7 @@
       "impact": "LOW",
       "consensus": -2,
       "previous": 3.296,
-      "actual": null,
+      "actual": 2.69,
       "unit": null
     },
     {
@@ -313,7 +323,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 427.36,
-      "actual": null,
+      "actual": 427.95,
       "unit": null
     },
     {
@@ -1172,7 +1182,7 @@
       "name": "Redbook Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 8.7,
       "actual": null,
       "unit": "%"
     },
@@ -1212,7 +1222,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 2.69,
       "actual": null,
       "unit": null
     },
@@ -2245,6 +2255,46 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-18T13:15:00Z",
+      "country": "US",
+      "name": "Capacity Utilization",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 76.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T13:15:00Z",
+      "country": "US",
+      "name": "Industrial Production (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-18T14:00:00Z",
+      "country": "US",
+      "name": "NAHB Housing Market Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-18T20:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
