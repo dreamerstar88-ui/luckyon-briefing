@@ -137,6 +137,17 @@
      | ⑤ | **금리 · 지표 · 원자재** `#3987e5` — 국채 커브, 발표된 지표 실제치, 유가·금·환율 | **오늘의 공시** `#5aa469` — DART 에서 시장에 의미 있는 건 |
      | ⑥ | **한국 · 아시아** `#5aa469` — 전 거래일 한국장, 아시아 증시, 주요 공시 | **글로벌 · 미 선물** `#3987e5` — 아시아 마감, 유가·환율, 미 선물 |
 
+   - **섹션 카드 유형 (`type`) — 수치 중심 섹션은 문장 대신 데이터 카드로 그린다.** (2026-08-03 `render-cards.mjs` 개편, `f076f26`) `sections[].type` 을 지정하면 `render-cards.mjs` 가 아래 세 가지 중 하나로 그리고, **`type` 을 아예 안 쓰면 기존 글 카드(`items` 배열, headline/body/src/time)** 로 그린다 — 서술형 섹션(공시 내용, 인물 동정, 정책 발표처럼 문장 설명이 필요한 항목)은 `type` 없이 `items` 그대로 쓰면 된다. 한 세션의 `sections` 4장은 각각 독립적으로 타입을 고른다 — 전부 같은 타입일 필요 없다.
+
+     | `type` | 쓰임 | 필드 |
+     |---|---|---|
+     | (없음) | 서술형 — 공시·인물 동정·정책 발표 등 문장 설명이 필요한 항목 | `items:[{headline_ko/en, body_ko/en, src, time}]` (기존 방식) |
+     | `stats` | 지수·집계형 결과 요약 — 큰 숫자 몇 개 + 상승/하락 종목 수 + (선택) 투자자별 순매수 | `stats:[{label_ko/en, value, delta, dir, sub_ko/en}]`, `breadth:[{label_ko/en, up, flat, down}]`(선택), `flows:{label_ko/en, unit_ko/en, rows:[{label_ko/en, value}]}`(선택, 0 기준 좌우 막대·사는 쪽 빨강/파는 쪽 파랑) |
+     | `bars` | 업종·섹터별 등락처럼 카테고리별로 갈리는 데이터 | `bars:[{label_ko/en, value}]` (value 는 %, 0 기준 좌우로 뻗는 발산 막대, 상승 빨강·하락 파랑 자동) |
+     | `rank` | 거래대금 상위 등 순위 + 상위 종목이 차지하는 비중 | `rows:[{name_ko/en, value, pct}]`, `share:{label_ko/en, segments:[{label_ko/en, pct, color}]}`(선택, 구성비 띠) |
+
+     공통 필드는 `title_ko/en`, `color`, `note_ko/en` (모든 타입 동일). 예: `am` ③ "미국장 기록"의 섹터 등락(XLK/SMH/XLE)은 `bars` 로, `pm` ③ "코스피·코스닥 기록"은 `stats`(+breadth+flows)로, 거래대금 상위는 `rank` 로 그리는 식이다 (2026-08-03-pm.json 예시 참고). **`type` 을 넣었다고 검증(3-d)이나 "계산된 관찰 최소 1건" 요건이 면제되는 것은 아니다** — 카드 형태만 바뀔 뿐 내용 기준은 동일하다.
+
    - **공시·실적 조회 경로** (모두 실동작 확인):
 
      | 무엇 | 도구 | 비고 |
@@ -230,6 +241,13 @@
    }
    ```
 
+   **3-b-3. 훅 카드의 대안 — `summary` (호재·악재로 가르기 어색한 날)** (2026-08-03 개편, `f076f26`)
+
+   `hook_bull`/`hook_bear` 는 **앞으로 벌어질 일의 재료**(호재·악재)를 양쪽으로 나눠 보여주는 칸이다. 그런데 이미 확정된 결과를 정리하는 성격이 강한 날 — 예를 들어 역대급 등락 다음 날의 반작용처럼 "왜 이런 결과가 났는지"를 호재/악재로 가르면 오히려 어색한 경우가 있다. 이런 날은 `hook_bull`/`hook_bear` 대신 **`summary`** 를 쓴다.
+   - 스키마: `"summary": {"lines_ko":[...], "lines_en":[...]}` — 그날의 핵심을 불릿 3~4개로 정리한 문자열 배열 (각 1문장).
+   - **`summary` 가 있으면 렌더러가 이를 우선한다** — `hook_bull`/`hook_bear` 를 함께 넣어도 무시되고 `summary` 로 그려진다. 즉 한 세션에는 `summary` 아니면 `hook_bull`/`hook_bear` 중 하나만 고른다.
+   - 판단 기준은 3-b-2 의 "역할" 절과 같다 — 그날 재료가 자연스럽게 두 편(호재 vs 악재)으로 갈리면 `hook_bull`/`hook_bear`, 이미 벌어진 하나의 결과를 여러 각도에서 요약하는 편이 자연스러우면 `summary`. 매 세션 재료를 보고 판단하되, **기본값은 `hook_bull`/`hook_bear`**(더 많은 날에 적합) 이며 `summary` 는 예외적으로 어울리는 날에 쓴다.
+
    **3-c. 일정 리서치 (schedule 4~6건)** — 다음 브리핑 전까지 예정된 일정을 조사한다. 모든 시각은 KST로 표기한다.
    - `am`: 오늘 21:00 전까지 — 국내 지표 발표, 중국·일본 지표, 국내 주요 기업 실적 발표, 유럽 장 초반 주요 이벤트 등.
    - `pm`: 내일 08:00 전까지 — 미국 지표 발표(CPI·PPI·고용 등, KST 시각 병기), 미국 주요 기업 실적(장전/장후 구분), FOMC·연준 인사 발언 등.
@@ -290,15 +308,21 @@
      "date", "session",                          // session: "am" | "pm"
      "dateLabel_ko","dateLabel_en",
      "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
-     "hook_bull":{"body_ko","body_en"},        // ▲ 호재 — 뚜렷하면 넣는다 (3-b-2)
+     "hook_bull":{"body_ko","body_en"},        // ▲ 호재 — 뚜렷하면 넣는다 (3-b-2). summary 와는 양자택일
      "hook_bear":{"body_ko","body_en"},        // ▼ 악재 — 한쪽만 넣어도 된다 (3-b-2)
+     "summary":{"lines_ko":[...],"lines_en":[...]}, // hook_bull/bear 대신 쓰는 대안 (3-b-3). 있으면 이게 우선
      "markets":[{"label","value","delta","dir(up|down|flat)"} x10],
      "market_note_ko","market_note_en",
      "sections":[                                 // 본문 카드 3~4장 (3-b). 순서대로 카드 ③④⑤⑥
        {
          "title_ko","title_en",                   // 예: "코스피 · 코스닥 기록" / "Kospi & Kosdaq Records"
          "color",                                 // 3-b 표의 섹션별 색
-         "items":[{"headline_ko","headline_en","body_ko","body_en","src(선택)","time(선택)"} x3~4]
+         "type",                                  // 선택: "stats"|"bars"|"rank" (3-b 의 섹션 카드 유형 표). 없으면 items 로 그린다
+         "items":[{"headline_ko","headline_en","body_ko","body_en","src(선택)","time(선택)"} x3~4], // type 없을 때
+         "stats":[...], "breadth":[...], "flows":{...},  // type: "stats" 일 때 (선택 필드 포함, 3-b 표 참고)
+         "bars":[...],                                    // type: "bars" 일 때
+         "rows":[...], "share":{...},                     // type: "rank" 일 때
+         "note_ko","note_en"                              // 모든 type 공통 (선택)
        } x3~4
      ],
      "schedule_title_ko","schedule_title_en",     // 예: "오늘 낮 주요 일정" / "Today's daytime schedule"
