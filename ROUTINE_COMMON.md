@@ -134,7 +134,7 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
   | 축 | 출처 | 세션이 할 일 |
   |---|---|---|
   | 브리핑(평일·주말) | 콘텐츠 JSON 에서 자동 생성 (`scripts/lib/alt-text.mjs`) | 없음 |
-  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남고 발행 스크립트가 읽는다 (손글씨 문구가 렌더 시점에만 만들어져 발행 때 다시 계산할 수 없다) | 없음 — 커밋에 포함되기만 하면 된다 |
+  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남지만 **발행 스크립트가 보내지 않는다** — Graph API 가 `media_type=STORIES` 에서 `alt_text` 파라미터 자체를 거부해(`"The param alt_text is not supported for STORY"`, 2026-08-04 확인) 넘기면 발행이 통째로 실패한다. `alt.txt` 는 커밋에는 포함되지만 현재 스토리는 대체 텍스트 없이 나간다 — 업스트림 우회(정정 댓글 등)가 생기기 전까지는 알려진 한계다 | 없음 |
   | 차트 노트 | 사람이 쓴 `alt_ko`/`alt_en` 배열 | **직접 8개씩 쓴다.** 개수가 카드 수와 다르면 발행 스크립트가 경고만 하고 **그대로 발행하므로**, 빠뜨려도 오류로 잡히지 않는다 |
   - 적용 여부가 의심되면 발행 후 `node scripts/verify-alt-text.mjs <DATE> <LANG> <SESSION>` 로 대조한다. Graph API 는 모르는 파라미터를 오류 없이 무시하기도 해서 **"발행 성공"이 곧 "적용됨"은 아니다.** 매 회차 돌릴 필요는 없고 발행 방식이나 그 로직을 바꾼 직후에만 한 번 확인한다.
 
