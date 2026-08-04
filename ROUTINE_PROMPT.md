@@ -147,9 +147,11 @@
      | `type` | 쓰임 | 필드 |
      |---|---|---|
      | (없음) | 서술형 — 공시·인물 동정·정책 발표 등 문장 설명이 필요한 항목 | `items:[{headline_ko/en, body_ko/en, src, time}]` (기존 방식) |
-     | `stats` | 지수·집계형 결과 요약 — 큰 숫자 몇 개 + 상승/하락 종목 수 + (선택) 투자자별 순매수 | `stats:[{label_ko/en, value, delta, dir, sub_ko/en}]`, `breadth:[{label_ko/en, up, flat, down}]`(선택), `flows:{label_ko/en, unit_ko/en, rows:[{label_ko/en, value}]}`(선택, 0 기준 좌우 막대·사는 쪽 빨강/파는 쪽 파랑) |
+     | `stats` | 지수·집계형 결과 요약 — 큰 숫자 몇 개 + 상승/하락 종목 수 + (선택) 투자자별 순매수 | `stats:[{label_ko/en, value, delta, dir, sub_ko/en}]`, `cols`(선택, 1 또는 2 — 아래 참고), `breadth:[{label_ko/en, up, flat, down}]`(선택), `flows:{label_ko/en, unit_ko/en, rows:[{label_ko/en, value}]}`(선택, 0 기준 좌우 막대·사는 쪽 빨강/파는 쪽 파랑) |
      | `bars` | 업종·섹터별 등락처럼 카테고리별로 갈리는 데이터 | `bars:[{label_ko/en, value}]` (value 는 %, 0 기준 좌우로 뻗는 발산 막대, 상승 빨강·하락 파랑 자동) |
      | `rank` | 거래대금 상위 등 순위 + 상위 종목이 차지하는 비중 | `rows:[{name_ko/en, value, pct}]`, `share:{label_ko/en, segments:[{label_ko/en, pct, color}]}`(선택, 구성비 띠) |
+
+     - **`stats` 의 `cols`**: `1` 이면 가로로 긴 행(라벨·부연 왼쪽, 큰 숫자 오른쪽)을 위에서 아래로 쌓고, `2`(기본값)면 2열 격자로 놓는다. **지수 3개처럼 같은 종류를 순서대로 비교시키는 데이터는 `cols: 1`** 이 읽기 좋다(표처럼 세로로 훑힌다). **성격이 다른 지표를 4~6개 늘어놓을 때는 `cols: 2`.** 타일이 하나뿐이면 자동으로 1열이다.
 
      공통 필드는 `title_ko/en`, `color`, `note_ko/en` (모든 타입 동일). 예: `am` ③ "미국장 기록"의 섹터 등락(XLK/SMH/XLE)은 `bars` 로, `pm` ③ "코스피·코스닥 기록"은 `stats`(+breadth+flows)로, 거래대금 상위는 `rank` 로 그리는 식이다 (2026-08-03-pm.json 예시 참고). **`type` 을 넣었다고 검증(3-d)이나 "계산된 관찰 최소 1건" 요건이 면제되는 것은 아니다** — 카드 형태만 바뀔 뿐 내용 기준은 동일하다.
 
@@ -342,7 +344,7 @@
          "note_ko","note_en"                              // 모든 type 공통 (선택)
        } x3~4
      ],
-     "schedule_title_ko","schedule_title_en",     // 예: "오늘 낮 주요 일정" / "Today's daytime schedule"
+     "schedule_title_ko","schedule_title_en",     // 고정: "주요 일정" / "Key Schedule" (am·pm 공통. 세션별로 바꾸지 않는다)
      "market_hours": {
        "title_ko","title_en",                     // am: "한국 증시 운영시간" / pm: "미국 증시 운영시간"
        "lines_ko":[...], "lines_en":[...]

@@ -204,8 +204,27 @@ function sectionShell(title, dotColor, body, note) {
 }
 
 // 큰 숫자 몇 개 + 상승/하락 종목 수 막대. 문장으로 늘어놓지 않는다.
+//
+// 배치는 `cols` 로 고른다 (기본 2열, 타일이 하나면 1열).
+//   cols: 1 -> 가로로 긴 행을 위에서 아래로 쌓는다. 라벨·부연이 왼쪽, 큰 숫자가
+//             오른쪽에 붙어 표처럼 읽힌다. 지수 3개처럼 "같은 종류를 순서대로
+//             비교하는" 데이터에 맞다.
+//   cols: 2 -> 타일을 2열 격자로 놓는다. 성격이 다른 지표를 여러 개(4~6개)
+//             늘어놓을 때 맞다.
 function cardStats(s) {
-  const tiles = (s.stats || []).map(x => `
+  const cols = s.cols || ((s.stats || []).length === 1 ? 1 : 2);
+  const wide = cols === 1;
+  const tiles = (s.stats || []).map(x => wide ? `
+    <div style="background:#1a1a19; border-radius:16px; padding:24px 32px; display:flex; align-items:center; gap:26px;">
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:27px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
+        ${x.sub_ko || x.sub_en ? `<div style="font-size:23px; color:#a9a89f; margin-top:7px;">${t(x.sub_ko, x.sub_en)}</div>` : ''}
+      </div>
+      <div style="display:flex; align-items:baseline; gap:14px; white-space:nowrap;">
+        <span style="font-size:52px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
+        ${x.delta ? `<span style="font-size:29px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
+      </div>
+    </div>` : `
     <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; min-width:0;">
       <div style="font-size:24px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
       <div style="display:flex; align-items:baseline; gap:14px; margin-top:10px; flex-wrap:wrap;">
@@ -265,7 +284,7 @@ function cardStats(s) {
   })() : '';
 
   return sectionShell(t(s.title_ko, s.title_en), s.color || UP,
-    `<div style="display:grid; grid-template-columns:repeat(${(s.stats || []).length === 1 ? 1 : 2}, 1fr); gap:18px;">${tiles}</div>${breadth}${flows}`,
+    `<div style="display:grid; grid-template-columns:repeat(${cols}, 1fr); gap:18px;">${tiles}</div>${breadth}${flows}`,
     t(s.note_ko, s.note_en));
 }
 

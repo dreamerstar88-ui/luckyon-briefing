@@ -11,26 +11,26 @@
     "lines_ko": [
       "다우존스가 693.38포인트(1.32%) 오른 53,178.41로 사상 최고치를 새로 썼습니다.",
       "아마존은 시가총액 3조달러를 처음 돌파해 엔비디아·애플·마이크로소프트·알파벳에 이은 역대 5번째 기업이 됐습니다.",
-      "국제유가는 이란 관련 우려 완화 속 이틀째 급락해 배럴당 80달러선을 겨우 지켰습니다.",
+      "국제유가는 이란발 공급 우려가 풀리며 이틀째 급락해 배럴당 80.05달러까지 내렸습니다.",
       "코스피는 전날 5.12% 급락분을 그대로 안고 개장하며 미 증시 랠리를 뒤따를 수 있을지 시험대에 섰습니다."
     ],
     "lines_en": [
       "The Dow rose 693.38 points (1.32%) to a record 53,178.41.",
       "Amazon crossed $3 trillion in market cap for the first time — the 5th company ever, after Nvidia, Apple, Microsoft and Alphabet.",
-      "Oil fell for a 2nd day on easing Iran-related worries, barely holding $80 a barrel.",
+      "Oil fell for a 2nd day to $80.05 a barrel as Iran-related supply worries eased.",
       "The Kospi opens still carrying Monday's 5.12% drop, facing a test of whether it can follow Wall Street's rally."
     ]
   },
   "markets": [
-    { "label": "NASDAQ", "value": "25,913.90", "delta": "▲2.13%", "dir": "up", "note_ko": "다우 사상 최고치 속 3거래일 연속 상승 · 8/3 마감 종가", "note_en": "Rises with the Dow at a record, a 3rd straight gain · Aug 3 close" },
-    { "label": "S&P 500", "value": "7,600.50", "delta": "▲1.48%", "dir": "up", "note_ko": "아마존 시총 3조달러 첫 돌파가 견인 · 8/3 마감 종가", "note_en": "Led by Amazon's first-ever $3T market cap · Aug 3 close" },
+    { "label": "NASDAQ", "value": "25,913.90", "delta": "▲2.13%", "dir": "up", "note_ko": "아마존 시총 3조달러 첫 돌파가 견인 · 8/3 마감 종가", "note_en": "Led by Amazon's first-ever $3T market cap · Aug 3 close" },
+    { "label": "S&P 500", "value": "7,600.50", "delta": "▲1.48%", "dir": "up", "note_ko": "12개 섹터 중 9개 상승 · 8/3 마감 종가", "note_en": "9 of 12 sectors rose · Aug 3 close" },
     { "label": "KOSPI", "value": "6,257.45", "delta": "▼5.12%", "dir": "down", "note_ko": "전날 급락 마감 · 개장 전, 전 거래일 종가", "note_en": "Closed down 5.12% the prior session · pre-open, previous close" },
     { "label": "VIX", "value": "15.86", "delta": "▼0.81%", "dir": "down", "note_ko": "이틀 연속 하락, 20선 하회 지속 · 8/3 마감", "note_en": "Falls a 2nd day, holds below 20 · Aug 3 close" },
     { "label": "Fear & Greed", "value": "45", "delta": "▲3p", "dir": "up", "note_ko": "'공포'에서 '중립'으로 진입 · 다우 최고치에 힘입어 개선", "note_en": "Moves from 'Fear' into 'Neutral' as the Dow hits a record" },
     { "label": "US 10Y", "value": "4.70%", "delta": "▼0.05%p", "dir": "down", "note_ko": "국채금리 하락 전환 · 8/3 마감 기준", "note_en": "Yields ease · Aug 3 close" },
     { "label": "USD/KRW", "value": "1,428.7", "value_sub": "· DXY 99.99", "delta": "▼0.92%", "dir": "down", "note_ko": "달러 약세 속 원화 강세 지속 · 오늘 새벽 기준", "note_en": "Won firms as the dollar softens · early this morning" },
     { "label": "Gold", "value": "$4,107.5", "delta": "▲1.44%", "dir": "up", "note_ko": "4,100달러 위 안착 · 오늘 새벽 기준", "note_en": "Settles above $4,100 · early this morning" },
-    { "label": "WTI", "value": "$80.05", "delta": "▼5.46%", "dir": "down", "note_ko": "이란 관련 우려 완화에 이틀째 급락, 80달러 방어 · 오늘 새벽 기준", "note_en": "Falls a 2nd day as Iran fears ease, holds near $80 · early morning" },
+    { "label": "WTI", "value": "$80.05", "delta": "▼5.46%", "dir": "down", "note_ko": "이란발 공급 우려 완화에 이틀째 급락, 인플레 부담 경감 · 오늘 새벽 기준", "note_en": "Falls a 2nd day as Iran supply fears ease, easing inflation pressure · early morning" },
     { "label": "Bitcoin", "value": "$63,457", "delta": "▼0.04%", "dir": "down", "note_ko": "코스피발 위험회피 진정, 보합권 · 오늘 새벽 기준", "note_en": "Steadies near flat as risk-off from the Kospi fades · early this morning" }
   ],
   "market_note_ko": "나스닥·S&P500·VIX·미 10년물은 8/3 마감, 코스피는 전 거래일(8/3) 종가로 개장 전 기준, 원/달러·금·WTI·비트코인은 오늘(8/4) 이른 아침 기준입니다.",
@@ -41,13 +41,14 @@
       "title_en": "US Market Records",
       "color": "#e66767",
       "type": "stats",
+      "cols": 1,
       "stats": [
-        { "label_ko": "다우존스", "label_en": "Dow Jones", "value": "53,178.41", "delta": "▲1.32%", "dir": "up", "sub_ko": "+693.38p · 사상 최고치", "sub_en": "+693.38pts · record high" },
-        { "label_ko": "나스닥", "label_en": "Nasdaq", "value": "25,913.90", "delta": "▲2.13%", "dir": "up", "sub_ko": "3거래일 연속 상승", "sub_en": "3rd straight gain" },
-        { "label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,600.50", "delta": "▲1.48%", "dir": "up", "sub_ko": "아마존 3조달러 견인", "sub_en": "Led by Amazon's $3T cap" }
+        { "label_ko": "나스닥", "label_en": "Nasdaq", "value": "25,913.90", "delta": "▲2.13%", "dir": "up", "sub_ko": "3대 지수 중 최대 상승 · 3거래일 연속", "sub_en": "Largest gain · 3rd straight" },
+        { "label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,600.50", "delta": "▲1.48%", "dir": "up", "sub_ko": "12개 섹터 중 9개 상승", "sub_en": "9 of 12 sectors rose" },
+        { "label_ko": "다우존스", "label_en": "Dow Jones", "value": "53,178.41", "delta": "▲1.32%", "dir": "up", "sub_ko": "+693.38p · 사상 최고치", "sub_en": "+693.38pts · record high" }
       ],
-      "note_ko": "아마존은 시가총액 3조달러를 처음 돌파해 엔비디아·애플·마이크로소프트·알파벳에 이은 역대 5번째 기업이 됐다(주가 +4.58%, 사상 최고가). 미 시장 전체의 상승/하락 종목 수는 집계 경로를 확보하지 못해 뺐다.",
-      "note_en": "Amazon crossed $3 trillion in market cap for the first time — only the fifth company ever, after Nvidia, Apple, Microsoft and Alphabet (shares +4.58% to a record). Market-wide advance/decline counts weren't available from our data sources for this session."
+      "note_ko": "아마존이 시가총액 3조달러를 처음 돌파해 엔비디아·애플·마이크로소프트·알파벳에 이은 역대 5번째 기업이 됐다(주가 +4.58%, 사상 최고가). 나스닥 상장사인 아마존이 나스닥 상승폭을 키웠다.",
+      "note_en": "Amazon crossed $3 trillion in market cap for the first time — the fifth company ever, after Nvidia, Apple, Microsoft and Alphabet (shares +4.58% to a record). Nasdaq-listed Amazon drove the index's outsized gain."
     },
     {
       "title_ko": "섹터별 등락",
@@ -93,34 +94,50 @@
       "color": "#5aa469",
       "items": [
         {
-          "headline_ko": "이재명 대통령, 귀국 즉시 7시간 반 부동산·증시 점검회의…\"주택공급 속도\"",
-          "headline_en": "President Lee Holds a 7.5-Hour Real Estate & Market Review Right After Returning",
-          "body_ko": "이재명 대통령이 7박11일 순방을 마치고 3일 귀국하자마자 청와대에서 오후 3시부터 밤 10시 30분까지 7시간 30분 동안 부동산·증시 점검회의를 주재했다. 주택공급 확대와 7/31 시행된 레버리지 ETF 보완책 점검이 핵심 의제였으며, 2~3일 내 후속회의가 예정됐다.",
-          "body_en": "President Lee, back from an 11-day trip on the 3rd, immediately chaired a 7.5-hour review of housing supply and July 31's leveraged-ETF safeguards, with a follow-up meeting due in 2-3 days.",
+          "headline_ko": "이재명 대통령, 귀국 즉시 7시간 반 점검회의",
+          "headline_en": "President Lee Holds a 7.5-Hour Market Review",
+          "body_ko": "3일 오후 3시~밤 10시 30분, 주택공급·레버리지 ETF 대책을 점검했다.",
+          "body_en": "Reviewed housing supply and leveraged-ETF rules on the 3rd.",
           "src": "Presidential Office",
           "time": "8/3"
         },
         {
-          "headline_ko": "국채금리 하락 속 유가 이틀째 급락…금은 4,100달러 위 유지",
-          "headline_en": "Treasury Yields Ease as Oil Falls a 2nd Day; Gold Holds Above $4,100",
-          "body_ko": "미 10년물 국채금리는 4.70%로 전 거래일(4.75%) 대비 낮아졌다. WTI는 배럴당 80.05달러로 5.46% 내리며 이틀 연속 급락, 80달러선을 겨우 지켰고, 금은 온스당 4,107.5달러로 1.44% 올라 4,100달러 위에서 거래됐다.",
-          "body_en": "The 10-year Treasury yield eased to 4.70% from 4.75%. WTI fell 5.46% to $80.05 a barrel, a 2nd straight sharp drop that barely held $80, while gold rose 1.44% to $4,107.5, trading above $4,100.",
-          "src": "FMP/PlayMCP",
+          "headline_ko": "미 10년물 국채금리 4.70%로 하락",
+          "headline_en": "US 10-Year Treasury Yield Eases to 4.70%",
+          "body_ko": "전 거래일 4.75%에서 5bp 하락, 금리 상승 흐름이 꺾였다.",
+          "body_en": "Down 5bp from 4.75%, interrupting the recent climb in yields.",
+          "src": "FMP",
           "time": "8/3"
         },
         {
-          "headline_ko": "아시아 증시 혼조…닛케이 하락, 항셍 상승",
-          "headline_en": "Asian Markets Mixed: Nikkei Falls, Hang Seng Rises",
-          "body_ko": "3일 아시아 증시는 엇갈렸다. 닛케이225는 0.94% 내린 63,754.90, 상하이종합은 0.59% 내린 3,809.66으로 마감한 반면 홍콩 항셍지수는 0.48% 오른 26,009.40으로 마쳤다.",
-          "body_en": "Asian markets diverged: Nikkei -0.94% to 63,754.90, Shanghai -0.59% to 3,809.66, while Hang Seng rose 0.48% to 26,009.40.",
+          "headline_ko": "WTI 80.05달러, 이틀째 5%대 하락",
+          "headline_en": "WTI at $80.05 After a 2nd Straight 5% Drop",
+          "body_ko": "이란발 공급 우려 완화로 5.46% 하락, 인플레 부담을 덜었다.",
+          "body_en": "Down 5.46% as Iran supply worries eased.",
+          "src": "PlayMCP",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "금 4,107.5달러, 4,100선 위 안착",
+          "headline_en": "Gold Settles Above $4,100 at $4,107.5",
+          "body_ko": "국채금리 하락에 힘입어 1.44% 올랐다.",
+          "body_en": "Up 1.44%, supported by the drop in Treasury yields.",
+          "src": "PlayMCP",
+          "time": "8/3"
+        },
+        {
+          "headline_ko": "아시아 증시 혼조",
+          "headline_en": "Asian Markets Mixed",
+          "body_ko": "닛케이 ▼0.94%·상하이 ▼0.59%, 홍콩 항셍은 ▲0.48%로 갈렸다.",
+          "body_en": "Nikkei -0.94%, Shanghai -0.59%, Hang Seng +0.48%.",
           "src": "Market Data",
           "time": "8/3"
         }
       ]
     }
   ],
-  "schedule_title_ko": "오늘 낮 주요 일정",
-  "schedule_title_en": "Today's Daytime Schedule",
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
   "market_hours": {
     "title_ko": "한국 증시 운영시간",
     "title_en": "Korea market hours",
