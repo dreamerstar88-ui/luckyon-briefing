@@ -215,14 +215,14 @@ function cardStats(s) {
   const cols = s.cols || ((s.stats || []).length === 1 ? 1 : 2);
   const wide = cols === 1;
   const tiles = (s.stats || []).map(x => wide ? `
-    <div style="background:#1a1a19; border-radius:16px; padding:24px 32px; display:flex; align-items:center; gap:26px;">
+    <div style="background:#1a1a19; border-radius:18px; padding:44px 36px; display:flex; align-items:center; gap:26px;">
       <div style="flex:1; min-width:0;">
-        <div style="font-size:27px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
-        ${x.sub_ko || x.sub_en ? `<div style="font-size:23px; color:#a9a89f; margin-top:7px;">${t(x.sub_ko, x.sub_en)}</div>` : ''}
+        <div style="font-size:29px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
+        ${x.sub_ko || x.sub_en ? `<div style="font-size:24px; color:#a9a89f; margin-top:9px;">${t(x.sub_ko, x.sub_en)}</div>` : ''}
       </div>
       <div style="display:flex; align-items:baseline; gap:14px; white-space:nowrap;">
-        <span style="font-size:52px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
-        ${x.delta ? `<span style="font-size:29px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
+        <span style="font-size:56px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
+        ${x.delta ? `<span style="font-size:30px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
       </div>
     </div>` : `
     <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; min-width:0;">
