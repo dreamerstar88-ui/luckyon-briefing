@@ -206,9 +206,9 @@ function sectionShell(title, dotColor, body, note) {
 // 큰 숫자 몇 개 + 상승/하락 종목 수 막대. 문장으로 늘어놓지 않는다.
 function cardStats(s) {
   const tiles = (s.stats || []).map(x => `
-    <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; flex:1;">
+    <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; min-width:0;">
       <div style="font-size:24px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
-      <div style="display:flex; align-items:baseline; gap:14px; margin-top:10px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-top:10px; flex-wrap:wrap;">
         <span style="font-size:56px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
         ${x.delta ? `<span style="font-size:30px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
       </div>
@@ -265,7 +265,7 @@ function cardStats(s) {
   })() : '';
 
   return sectionShell(t(s.title_ko, s.title_en), s.color || UP,
-    `<div style="display:flex; gap:18px;">${tiles}</div>${breadth}${flows}`,
+    `<div style="display:grid; grid-template-columns:repeat(${(s.stats || []).length === 1 ? 1 : 2}, 1fr); gap:18px;">${tiles}</div>${breadth}${flows}`,
     t(s.note_ko, s.note_en));
 }
 
