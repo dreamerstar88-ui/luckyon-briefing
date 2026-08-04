@@ -58,6 +58,26 @@ const comment = isWeek
   : buildComment(nasdaq, sp500, ctx, stamp);
 const lines = lang === 'ko' ? comment.ko : comment.en;
 
+// 스토리(--still)용 대체 텍스트. 무엇을 그린 이미지이고 그 위에 뭐라고 썼는지를 한 덩어리로 적는다.
+function altText() {
+  const ko = lang === 'ko';
+  const parts = [];
+  if (isWeek) {
+    parts.push(ko
+      ? '지난 한 주 나스닥 선물 흐름을 그린 차트 이미지에 손글씨 메모를 얹었습니다.'
+      : 'A chart of last week’s Nasdaq futures with a handwritten note over it.');
+  } else {
+    parts.push(ko
+      ? `미국 증시 ${data.atOpen ? '개장 직후' : '장중'} 나스닥 선물 1분봉 차트에 손글씨 메모를 얹은 이미지입니다. 전일 종가는 점선으로 표시돼 있습니다.`
+      : `Nasdaq futures 1-minute chart ${data.atOpen ? 'just after the US open' : 'during the US session'}, with a handwritten note over it. The dashed line marks the previous close.`);
+  }
+  parts.push(ko ? `메모: ${lines.join(' ')}` : `Note: ${lines.join(' ')}`);
+  const c = ctx.recentNews || ctx.pendingEvent;
+  const title = c && (ko ? c.title_ko : c.title_en);
+  if (title) parts.push(ko ? `배경: ${title}` : `Context: ${title}`);
+  return parts.join(' ').slice(0, 900);
+}
+
 // 주간 편은 "M/D" 형식으로 기간을 보여 준다
 const mdOf = (s) => `${Number(s.slice(5, 7))}/${Number(s.slice(8, 10))}`;
 
@@ -330,6 +350,9 @@ async function main() {
     await page.screenshot({ path: out });
     await browser.close();
     fs.rmSync(tmp, { recursive: true, force: true });
+    // 대체 텍스트를 이미지 옆에 남긴다. 손글씨 문구는 여기서만 만들어지고 JSON 에는 없어서,
+    // 발행 스크립트가 다시 계산할 수 없다. 넘기지 않으면 인스타가 손글씨를 OCR 해 엉뚱한 설명을 붙인다.
+    fs.writeFileSync(path.join(outDir, 'alt.txt'), altText());
     console.log(`✅ ${path.relative(root, out)} (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
     return;
   }
