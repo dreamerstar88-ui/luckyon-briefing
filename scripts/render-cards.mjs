@@ -1,7 +1,8 @@
 // render-cards.mjs
 // content/<date>-<session>.json 을 읽어 인스타 캐러셀용 카드 PNG(1080x1350)를 생성한다.
-// 언어별(ko/en) 8장씩 -> cards/<date>/<session>/<lang>/card1..8.png
-//   (1 훅, 2 시장, 3-4 경제, 5-6 AI, 7 주요 일정, 8 아웃트로)
+// 언어별(ko/en) 9장씩 -> cards/<date>/<session>/<lang>/card1..9.png
+//   (1 훅, 2 시장, 3~7 본문(sections 5장), 8 주요 일정, 9 아웃트로)
+//   본문 장수는 sections 배열 길이를 그대로 따르므로 총 장수는 sections.length + 4 다.
 //
 // 사용법: node scripts/render-cards.mjs <date> <lang> <session>
 //   예)   node scripts/render-cards.mjs 2026-07-16 ko am
@@ -354,7 +355,7 @@ function cardSchedule() {
   // 바로 위 운영시간 안내에 이미 들어 있어 칸만 차지한다. 휴장·조기폐장처럼
   // 평소와 다른 날은 market_hours.lines_ko/en 배열에 안내 줄을 추가해 알린다
   // (별도 필드 없음 — ROUTINE_PROMPT.md 의 market_hours 문서 참고).
-  const ROUTINE_OPEN = /^(미국 증시 정규장 개장|한국 증시 개장|US Regular Session Opens|Korea Market Opens)$/;
+  const ROUTINE_OPEN = /^(미국 증시 정규장 개장|미국 증시 개장|한국 증시 개장|코스피 개장|US Regular Session Opens|US Market Opens|Korea Market Opens|Kospi Opens)$/;
   const rows = data.schedule
     .filter(s => !(ROUTINE_OPEN.test((s.title_ko || '').trim()) || ROUTINE_OPEN.test((s.title_en || '').trim())))
     .map(s => {
