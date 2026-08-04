@@ -38,10 +38,19 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const relDir = `cards/stories/${stamp}/${lang}`;
 const localPng = path.join(root, ...relDir.split('/'), 'story.png');
 if (!fs.existsSync(localPng)) {
-  console.error(`❌ 이미지가 없습니다: ${relDir}/story.png\n   먼저 render-story.mjs 를 실행하세요.`);
+  console.error(`❌ 이미지가 없습니다: ${relDir}/story.png\n`
+    + `   먼저 렌더링하세요: node scripts/reels/render-reel.mjs ${stamp} ${lang} --still\n`
+    + `   (이 경로만 alt.txt 를 함께 남깁니다. scripts/stories/render-story.mjs 는\n`
+    + `    data/stories/ 의 구버전 '주간 미리보기' 스토리 전용입니다.)`);
   process.exit(1);
 }
 const imageUrl = `${PAGES}/${relDir}/story.png`;
+
+// 대체 텍스트 — 넘기지 않으면 인스타가 이미지 속 텍스트를 OCR 로 읽어 엉뚱한 설명을 붙인다.
+// 손글씨 문구는 렌더 시점에만 만들어지므로 render-reel.mjs --still 이 alt.txt 로 남겨 둔다.
+const altFile = path.join(root, ...relDir.split('/'), 'alt.txt');
+const altText = fs.existsSync(altFile) ? fs.readFileSync(altFile, 'utf8').trim() : '';
+if (!altText) console.warn('⚠️  alt.txt 가 없습니다 — 대체 텍스트 없이 발행합니다 (render-reel.mjs --still 를 최신 버전으로 다시 돌리면 생깁니다).');
 
 async function api(pathPart, params) {
   const res = await fetch(new URL(`${BASE}/${pathPart}`), {
@@ -88,7 +97,9 @@ async function main() {
 
   await waitForPages();
 
-  const c = await api(`${IG_USER}/media`, { media_type: 'STORIES', image_url: imageUrl });
+  const params = { media_type: 'STORIES', image_url: imageUrl };
+  if (altText) params.alt_text = altText;
+  const c = await api(`${IG_USER}/media`, params);
   console.log(`· 컨테이너 생성: ${c.id}`);
   await waitFinished(c.id);
 

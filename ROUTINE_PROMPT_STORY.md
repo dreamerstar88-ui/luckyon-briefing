@@ -23,14 +23,22 @@
 
 **한국어·영어 두 건을 각각 발행합니다.** (스토리는 캡션이 없어 한 장에 두 언어를 섞을 수 없습니다.)
 
+---
+
+## 이 문서의 범위
+
+**이 문서는 스토리 축이 "무엇을 담고 어떻게 만들지"만 정한다.** 준비·검증·커밋·발행·알림·정정 같은 **모든 축 공통 절차는 `ROUTINE_COMMON.md` 에 있고, 이 세션은 둘 다 따른다.**
+
+- 카드 구조 문서(`FORMAT_BRIEFING.md`)는 **이 축과 무관하다** — 스토리는 렌더러가 다르다.
+- **리서치를 시작하기 전에 `ROUTINE_COMMON.md` 를 먼저 읽는다.** 세션이 아는 것은 문서뿐이라, 안 읽으면 그 안의 규칙은 없는 것과 같다.
+
 아래를 순서대로 수행하세요.
 
 ---
 
-## 1. 의존성 확인
+## 1. 준비
 
-`npm ls playwright` 로 playwright 가 있는지 확인하고, 없으면 `npm install` 을 실행한다.
-(스토리는 정지 이미지라 ffmpeg 가 필요 없다.)
+`ROUTINE_COMMON.md` §1 대로 의존성을 확인한다. (스토리는 정지 이미지라 ffmpeg 가 필요 없다.)
 
 브라우저는 이 환경의 `CHROMIUM_PATH` 를 쓴다 — 스크립트가 알아서 처리하므로 `npx playwright install` 은 **실행하지 않는다.**
 
@@ -55,8 +63,10 @@ node scripts/reels/fetch-window.mjs
 
 밤사이~지금 사이에 **시장을 움직인 뉴스**가 있었는지 확인한다. 이미 조사된 자료를 먼저 본다:
 
-- `content/<오늘 KST 날짜>-am.json` 의 `econ`·`ai` (오늘 아침 브리핑)
+- `content/<오늘 KST 날짜>-am.json` 의 `sections[]` (오늘 아침 브리핑 본문 — 특히 'AI · 반도체 기술'·'주요 소식' 글 카드)
 - `content/<어제 KST 날짜>-pm.json` 의 `schedule` (어젯밤 예고된 일정)
+
+(예전 `econ`·`ai` 필드는 하위 호환으로만 남아 있고 지금 브리핑은 쓰지 않는다. 오래된 파일을 읽을 때만 나온다.)
 
 시장을 실제로 움직인 뉴스가 뚜렷하면, 2단계에서 만든 JSON 에 `context` 를 추가한다:
 
@@ -84,7 +94,7 @@ node scripts/reels/render-reel.mjs <스탬프> ko --still
 node scripts/reels/render-reel.mjs <스탬프> en --still
 ```
 
-`cards/stories/<스탬프>/ko/story.png`, `.../en/story.png` (각 1080x1920) 가 생긴다. 한 장에 3~4초 걸린다.
+`cards/stories/<스탬프>/ko/story.png`, `.../en/story.png` (각 1080x1920) 가 생긴다. 한 장에 3~4초 걸린다. 같은 자리에 `alt.txt`(대체 텍스트)도 함께 생기며 발행 스크립트가 이를 읽어 넘긴다 — 세션이 따로 할 일은 없고, 5단계에서 함께 커밋되기만 하면 된다.
 
 **두 장을 반드시 열어서 눈으로 확인한다.** 아래를 본다:
 
@@ -93,24 +103,19 @@ node scripts/reels/render-reel.mjs <스탬프> en --still
   차트가 올랐는데 "계속 밀리네" 라고 쓰여 있으면 안 된다.
   실제로 개발 중에 "초반에 올랐다가 밀린" 흐름을 "내내 밀렸다"로 잘못 쓴 사례가 여러 번 있었다.
 - 맞지 않으면 3단계의 `context` 를 손보고 다시 렌더링한다. 그래도 이상하면 **발행하지 말고** 10단계 알림에 사유를 적는다.
+- **`context` 에 뉴스·지표를 넣었다면 그 한 건은 원문으로 확인한다** (`ROUTINE_COMMON.md` §3 의 스토리 축 게이트). 문구에 인과가 들어가는 순간 사실 주장이 된다.
 
 ## 5. `claude/live` 브랜치에 커밋 & 푸시
 
-인스타그램 서버가 URL 로 이미지를 가져가므로, GitHub Pages 에 공개돼야 발행할 수 있다.
+`ROUTINE_COMMON.md` §4 절차를 따른다. 이 축이 add 할 경로는 **`data/reels/<스탬프>.json` 과 `cards/stories/<스탬프>`** 뿐이다.
 
 ```
-git fetch origin claude/live
-git checkout -B claude/live FETCH_HEAD       # 다른 루틴이 먼저 푸시했을 수 있으므로 항상 원격 최신 기준
-git add data/stories/<스탬프>.json cards/stories/<스탬프>
+git add data/reels/<스탬프>.json data/reels/latest.txt cards/stories/<스탬프>
 git commit -m "story: <스탬프> (ko+en)"
-git push origin claude/live
-git rev-parse HEAD origin/claude/live        # 두 해시가 같은지 확인
 ```
-**`git add -A` 를 쓰지 않는다.** 이 계정은 여러 콘텐츠 축(브리핑·스토리·릴스·차트 노트)을 함께 운영하며
-축마다 별도 세션이 돈다. `-A` 는 다른 축이 만들다 만 파일까지 끌고 들어와 검증 안 된 콘텐츠를 발행시킬 수 있다.
-**자기 축 경로만 명시해서 add** 한다.
 
-**주의**: 아침·저녁 브리핑 루틴도 같은 브랜치에 푸시한다. 충돌이 나면 **원격을 먼저 병합**하고, 남의 커밋을 덮어쓰지 않는다. `--force` 는 쓰지 않는다.
+**시세 JSON 은 `data/reels/` 에 있다** — 이미지만 `cards/stories/` 로 간다. 2단계의 `fetch-window.mjs` 와 4단계의 `render-reel.mjs --still` 이 릴스 축과 같은 데이터를 공유하기 때문이다. 예전 절차서에 `data/stories/<스탬프>.json` 으로 적혀 있었는데 그런 파일은 만들어지지 않는다 — `git add` 는 없는 경로를 만나면 **아무것도 스테이징하지 않고 실패하므로**, 그대로 두면 커밋이 통째로 비고 이미지가 공개되지 않아 발행이 404 로 실패한다.
+
 커밋 후 `git log --oneline -1` 로 **커밋이 실제로 만들어졌는지 확인**한다.
 
 ## 6. Pages 배포 대기
@@ -125,7 +130,7 @@ curl -s "https://api.github.com/repos/dreamerstar88-ui/luckyon-briefing/actions/
 
 ## 7. 토큰 만료 점검
 
-환경변수 `IG_TOKEN_EXPIRES_AT`(YYYY-MM-DD)가 오늘로부터 10일 이내면, 10단계 알림에 "인스타 토큰 갱신 필요"를 함께 적는다.
+`ROUTINE_COMMON.md` §5 대로 확인하고, 만료가 임박했으면 10단계 알림에 "인스타 토큰 갱신 필요"를 함께 적는다.
 
 ## 8. 스토리 발행 (한국어·영어)
 
@@ -144,17 +149,12 @@ node scripts/stories/publish-story.mjs <스탬프> en
 
 ## 10. 카카오톡 알림 (PlayMCP)
 
-**결과가 무엇이든** 반드시 보낸다. 사용자가 발행 여부를 바로 확인하기 위함이다.
-PlayMCP 의 카카오톡 도구(도구 그룹명 `KakaotalkChat`, "나에게 보내기")를 쓴다.
-
-메시지 형식 (200자 제한):
+`ROUTINE_COMMON.md` §7 대로 **결과가 무엇이든** 보낸다. 이 축의 메시지 형식만 다르다 (200자 제한):
 
 - 둘 다 성공: `✅ [luckyon] 스토리 <스탬프> — KO <id> / EN <id>` + 손글씨 문구 한 줄
 - 일부 성공: `⚠️ [luckyon] 스토리 일부 성공 — KO: <요약> · EN: <요약>. 확인 필요`
 - 둘 다 실패: `❌ [luckyon] 스토리 발행 실패 — <사유 한 줄>. 확인 필요`
-- 2단계에서 건너뜀: `⏭️ [luckyon] 스토리 건너뜀 — <사유: 휴장/개장 전/시세 지연>`
-
-**폴백**: 카카오톡 도구를 쓸 수 없으면 건너뛰지 말고 **PushNotification 으로 같은 내용**을 보낸다.
+- **2단계에서 건너뜀**: `⏭️ [luckyon] 스토리 건너뜀 — <사유: 휴장/개장 전/시세 지연>` — 이 축에만 있는 정상 종료 경로다.
 
 ## 11. 마무리 보고
 

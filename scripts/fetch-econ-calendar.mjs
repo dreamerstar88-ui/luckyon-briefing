@@ -1,6 +1,6 @@
 // fetch-econ-calendar.mjs
 // 경제지표 발표 일정을 받아 data/econ-calendar.json 으로 출력한다.
-// ROUTINE_PROMPT.md 3-c(일정 리서치)가 이 파일을 읽는다.
+// ROUTINE_PROMPT.md 리서치 C절(일정 리서치)이 이 파일을 읽는다.
 //
 // 사용법:
 //   node scripts/fetch-econ-calendar.mjs            # 어제~+10일
