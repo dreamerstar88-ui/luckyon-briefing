@@ -1,6 +1,6 @@
 // fetch-krx.mjs
 // 한국 증시의 하루치 기록을 한 번에 뽑아 JSON 으로 출력한다.
-// ROUTINE_PROMPT.md 3-b 의 pm 섹션(코스피·코스닥 기록 / 종목 기록)이 이 출력을 쓴다.
+// ROUTINE_PROMPT.md 리서치 B절의 pm 섹션(코스피·코스닥 기록 / 종목 기록)이 이 출력을 쓴다.
 //
 // 사용법:
 //   node scripts/fetch-krx.mjs              # 오늘(KST) 기준
@@ -16,7 +16,7 @@
 //
 // 한계: **투자자별 매매동향(외국인/기관/개인 순매수)은 이 소스에 없다.** 어떤 경로로도
 // 이 환경에서는 조회되지 않으므로, 카드에 수급을 쓰려면 별도 조치가 필요하다
-// (ROUTINE_PROMPT.md 3-a 의 '한국 수급' 항목 참고).
+// (ROUTINE_PROMPT.md 리서치 A절의 '한국 수급' 항목 참고).
 
 const BASE = 'https://raw.githubusercontent.com/FinanceData/fdr_krx_data_cache/refs/heads/master/data';
 
@@ -116,7 +116,7 @@ function summarizeMarket(rows) {
 }
 
 // 연간 지수 파일(1995~)로 그날 하루만 봐서는 안 보이는 기록을 계산한다.
-// ROUTINE_PROMPT.md 3-b 의 '예비 지표'가 이 값들을 쓴다.
+// ROUTINE_PROMPT.md 리서치 B절의 '예비 지표'가 이 값들을 쓴다.
 async function fetchIndexExtras(key, date) {
   const year = date.slice(0, 4);
   const text = await getCsv(`${BASE}/index/year_${key}/${year}.csv`);

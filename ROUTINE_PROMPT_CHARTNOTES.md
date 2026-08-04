@@ -253,7 +253,8 @@ fail 은 그대로 두지 않는다. 고친 뒤 **다시 렌더**한다(5단계)
 
 ```
 node scripts/chart-notes/make-preview.mjs <STAMP>
-...
+
+# 그다음 ROUTINE_COMMON.md §4 의 fetch / checkout -B FETCH_HEAD 를 수행하고
 git add cards/chart-notes/<STAMP> content/chart-notes
 git commit -m "chart-notes: <STAMP> <term> (ko+en)"
 ```

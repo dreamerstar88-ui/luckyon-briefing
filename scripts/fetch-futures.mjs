@@ -18,7 +18,7 @@
 //     volume, marketCap, exchange, currency }
 //
 // 출력: markets 타일 스키마({label,value,delta,dir,symbol}) 배열을 stdout에 JSON으로 찍는다.
-//   ROUTINE_PROMPT.md 3-a(pm 세션)에서 이 출력을 나스닥·S&P 선물 타일에 넣고
+//   ROUTINE_PROMPT.md 리서치 A절(pm 세션)에서 이 출력을 나스닥·S&P 선물 타일에 넣고
 //   한 줄 해석(note_ko/note_en)만 그 시점 상황에 맞게 덧붙이면 된다.
 //
 // 캐시 폴백: Claude 세션 환경변수에 APIFY_TOKEN 을 못 넣는 경우(플랫폼 저장 한도 등)를 위해,
@@ -47,7 +47,7 @@ function parseCache(raw) {
 }
 
 // 워크플로(.github/workflows/futures-cache.yml)는 캐시를 main 브랜치에 커밋하는데,
-// 브리핑 세션의 작업트리는 보통 claude/live 다. ROUTINE_PROMPT.md 6단계의 merge 는 이 시점보다
+// 브리핑 세션의 작업트리는 보통 claude/live 다. 커밋 단계(ROUTINE_COMMON.md §4)는 이 시점보다
 // 한참 뒤라서, 작업트리 파일만 읽으면 직전 세션 때 병합된 낡은 캐시를 쓰게 된다.
 // 그래서 작업트리 캐시가 낡았으면 origin/main 의 캐시를 직접 조회한다.
 function readCacheFromMain() {

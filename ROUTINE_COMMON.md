@@ -18,7 +18,7 @@
 |---|---|---|---|---|---|
 | 평일 브리핑 | `ROUTINE_PROMPT.md` | `content/<DATE>-<SESSION>.json` | `cards/<DATE>/<SESSION>/<LANG>/` | `scripts/publish-instagram.mjs` | 월~금 07:35 / 20:35 |
 | 주말 브리핑 | `ROUTINE_PROMPT_WEEKEND.md` | 〃 | 〃 | 〃 | 토 07:35 / 일 20:30 |
-| 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/reels/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` | 월~금 22:58 |
+| 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/reels/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` | 월~금 22:58 (11~2월 23:58 — 미 서머타임) |
 | 차트 노트 | `ROUTINE_PROMPT_CHARTNOTES.md` | `content/chart-notes/<STAMP>.json` | `cards/chart-notes/<STAMP>/<LANG>/` | `scripts/chart-notes/publish-chartnotes.mjs` | 일 10:30 |
 | 릴스 | (문서 없음 · 보류) | `data/reels/<STAMP>.json` | `cards/reels/<STAMP>/<LANG>/` | `scripts/reels/publish-reel.mjs` | — |
 
@@ -64,6 +64,10 @@
 
 에이전트에게 넘길 것: 본문 항목 전체(초안 + 근거 데이터 출처·조회 조건, 계산이 있으면 산식) / ① 이 세션이 조회한 원본 데이터(캘린더 등) 전체, ② 완성된 JSON 초안, ③ 해당 축의 절차서와 `FORMAT_BRIEFING.md`(브리핑 축인 경우)의 관련 절.
 
+**훅 카드(첫 카드) 본문도 반드시 함께 넘긴다** — `summary` 든 `hook_bull`/`hook_bear` 든. 첫 카드에 나가는 문구라 오류 시 임팩트가 가장 크다. 두 가지를 지킨다:
+- **판정 범위는 그 문장이 인용한 사실(수치·날짜·사건)에 한정한다.** "AI 수요가 정말 견조한가" 같은 **인과 해석의 타당성은 판정시키지 않는다** — 정답이 없는 판정을 시키면 검증 결과 전체가 흐려진다. (앞으로 벌어질 일을 다루는 `sun` 세션의 추가 규칙은 `ROUTINE_PROMPT_WEEKEND.md` §D 에 있다.)
+- **훅은 본문 항목을 확정한 직후에 쓴다.** 마지막에 몰아 쓰면 검증에 못 넘겨 첫 카드만 게이트를 통과하지 않은 채 발행된다.
+
 아래 **다섯 범주**로 pass/fail 과 사유를 표로 보고하게 한다. 각 범주는 매 회차 빠짐없이 확인한다:
 
 - **A. 문법·맞춤법 (한국어·영어)** — 모든 한국어·영어 텍스트가 대상. 한국어는 맞춤법·띄어쓰기(예: "두달래 최고"(X) → "두 달 내 최고"(O), 시장 통용 표현 우선: "52주 신고가", "20일 이동평균선 상회"), 영어는 철자·문법·관사·시제. **언어 무관(invariant) 필드**에 한국어 조사·서술형 어미나 영어 문장이 섞이지 않았는지 **별도로** 확인한다 (브리핑 축은 `FORMAT_BRIEFING.md` §4 의 목록이 정본이며, **번역되는 필드를 오염으로 오해해 base 필드로 합치지 않도록** 그 절의 반대 목록도 함께 본다).
@@ -85,16 +89,24 @@ GitHub Pages 가 이 브랜치를 소스로 보므로 여기에 푸시해야 이
 ```
 git fetch origin claude/live
 git checkout -B claude/live FETCH_HEAD          # 항상 원격 최신 기준
-git add <자기 축의 경로만>
-git commit -m "<축>: <DATE> <회차>"
+git add <아래 표의 자기 축 경로만>
+git commit -m "<아래 표의 커밋 메시지>"
 git push origin claude/live
 git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
 ```
 
+**축별 add 경로와 커밋 메시지** — 추측하지 말고 그대로 쓴다. 없는 경로를 섞으면 `git add` 가 **아무것도 스테이징하지 않고 실패**해 커밋이 비고, 이미지가 공개되지 않아 발행이 404 로 실패한다.
+
+| 축 | `git add` | 커밋 메시지 |
+|---|---|---|
+| 평일·주말 브리핑 | `content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>` | `brief: <DATE> <SESSION> (ko+en)` |
+| 스토리 | `data/reels/<STAMP>.json data/reels/latest.txt cards/stories/<STAMP>` | `story: <STAMP> (ko+en)` |
+| 차트 노트 | `cards/chart-notes/<STAMP> content/chart-notes` | `chart-notes: <STAMP> <term> (ko+en)` |
+
 - **`git add -A` 를 쓰지 않는다.** 여러 축이 같은 저장소를 쓰므로 `-A` 면 다른 축이 만들다 만 파일까지 끌려 들어와, 검증도 안 된 남의 콘텐츠가 함께 발행될 수 있다. **자기 축 경로만 명시해서 add 한다.**
 - **반드시 `FETCH_HEAD` 기준으로 체크아웃한다.** 다른 축이 먼저 푸시했을 수 있다. `git checkout claude/live` 만 하면 로컬에 남은 오래된 브랜치 위에 커밋하게 된다. 루틴은 매번 새 컨테이너에서 도므로 이 방식으로 잃을 로컬 작업은 없다.
 - push 가 거부되면 `--force` 를 쓰지 말고 **`git fetch` 부터 다시** 한다. 남의 커밋을 덮어쓰지 않는다.
-- **`main` 은 브리핑 세션이 건드리지 않는다.** 다만 절차서·스크립트를 고쳤다면 §8 을 본다.
+- **`main` 은 브리핑 세션이 건드리지 않는다.** 다만 절차서·스크립트를 고쳤다면 §9 를 본다.
 
 ---
 
@@ -107,15 +119,23 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
 ## 6. Instagram 발행
 
 - `PAGES_BASE_URL` 환경변수가 설정돼 있어야 한다 (예: `https://dreamerstar88-ui.github.io/luckyon-briefing`).
+- **축별 발행 명령** — 인자 순서를 추측하지 않는다. 브리핑에서 `<SESSION>` 을 빼면 스크립트가 구버전 경로(`content/<DATE>.json`)로 떨어져 ENOENT 로 죽는다.
+
+  | 축 | 명령 |
+  |---|---|
+  | 평일·주말 브리핑 | `node scripts/publish-instagram.mjs <DATE> ko <SESSION>` / `... <DATE> en <SESSION>` (`<SESSION>` = `am`\|`pm`\|`sat`\|`sun`) |
+  | 스토리 | `node scripts/stories/publish-story.mjs <STAMP> ko` / `... <STAMP> en` |
+  | 차트 노트 | `SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` |
+
 - 언어가 둘인 축은 **서로 독립적으로** 시도한다 — 한쪽이 실패해도 다른 쪽을 건너뛰지 않는다. 각각 성공하면 media id 를, 실패하면 에러 메시지를 그대로 로그에 남기고 토큰/권한/URL 중 무엇이 원인인지 판단한다.
 - **GitHub Pages 반영 지연**: 푸시 직후에는 이미지가 아직 안 올라가 인스타가 `Media download has failed` 로 거부할 수 있다. 발행 스크립트가 자체적으로 기다리지만, 그래도 실패하면 **몇 분 뒤 재시도**한다 (2026-08-04 am 에서 실제로 1차 실패 후 재시도로 성공).
-- **`alt_text`(대체 텍스트)는 모든 축이 넘긴다.** 넘기지 않으면 인스타가 이미지 속 글자를 OCR 로 읽어 자동 대체텍스트를 만들고, 구글이 그걸 색인해 검색 스니펫에 원시 숫자만 노출된다. **축마다 만드는 방법이 다르지만 세션이 따로 할 일은 없다** — 아래는 어디서 나오는지에 대한 기록이다.
+- **`alt_text`(대체 텍스트)는 모든 축이 넘긴다.** 넘기지 않으면 인스타가 이미지 속 글자를 OCR 로 읽어 자동 대체텍스트를 만들고, 구글이 그걸 색인해 검색 스니펫에 원시 숫자만 노출된다. **브리핑·스토리는 자동이라 세션이 따로 할 일이 없지만, 차트 노트만은 세션이 직접 쓴다.**
 
-  | 축 | 출처 |
-  |---|---|
-  | 브리핑(평일·주말) | 콘텐츠 JSON 에서 자동 생성 (`scripts/lib/alt-text.mjs`) |
-  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남고 발행 스크립트가 읽는다. 손글씨 문구가 렌더 시점에만 만들어져 발행 때 다시 계산할 수 없기 때문이다 |
-  | 차트 노트 | 사람이 쓴 `alt_ko`/`alt_en` 배열 (카드 수와 개수가 정확히 같아야 한다) |
+  | 축 | 출처 | 세션이 할 일 |
+  |---|---|---|
+  | 브리핑(평일·주말) | 콘텐츠 JSON 에서 자동 생성 (`scripts/lib/alt-text.mjs`) | 없음 |
+  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남고 발행 스크립트가 읽는다 (손글씨 문구가 렌더 시점에만 만들어져 발행 때 다시 계산할 수 없다) | 없음 — 커밋에 포함되기만 하면 된다 |
+  | 차트 노트 | 사람이 쓴 `alt_ko`/`alt_en` 배열 | **직접 8개씩 쓴다.** 개수가 카드 수와 다르면 발행 스크립트가 경고만 하고 **그대로 발행하므로**, 빠뜨려도 오류로 잡히지 않는다 |
   - 적용 여부가 의심되면 발행 후 `node scripts/verify-alt-text.mjs <DATE> <LANG> <SESSION>` 로 대조한다. Graph API 는 모르는 파라미터를 오류 없이 무시하기도 해서 **"발행 성공"이 곧 "적용됨"은 아니다.** 매 회차 돌릴 필요는 없고 발행 방식이나 그 로직을 바꾼 직후에만 한 번 확인한다.
 
 ---

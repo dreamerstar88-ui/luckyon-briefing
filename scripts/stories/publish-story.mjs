@@ -38,7 +38,10 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..',
 const relDir = `cards/stories/${stamp}/${lang}`;
 const localPng = path.join(root, ...relDir.split('/'), 'story.png');
 if (!fs.existsSync(localPng)) {
-  console.error(`❌ 이미지가 없습니다: ${relDir}/story.png\n   먼저 render-story.mjs 를 실행하세요.`);
+  console.error(`❌ 이미지가 없습니다: ${relDir}/story.png\n`
+    + `   먼저 렌더링하세요: node scripts/reels/render-reel.mjs ${stamp} ${lang} --still\n`
+    + `   (이 경로만 alt.txt 를 함께 남깁니다. scripts/stories/render-story.mjs 는\n`
+    + `    data/stories/ 의 구버전 '주간 미리보기' 스토리 전용입니다.)`);
   process.exit(1);
 }
 const imageUrl = `${PAGES}/${relDir}/story.png`;

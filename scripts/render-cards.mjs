@@ -354,7 +354,7 @@ function cardSchedule() {
   // 운영시간이 평소와 같은 날에는 '정규장 개장' 같은 항목을 따로 두지 않는다.
   // 바로 위 운영시간 안내에 이미 들어 있어 칸만 차지한다. 휴장·조기폐장처럼
   // 평소와 다른 날은 market_hours.lines_ko/en 배열에 안내 줄을 추가해 알린다
-  // (별도 필드 없음 — ROUTINE_PROMPT.md 의 market_hours 문서 참고).
+  // (별도 필드 없음 — FORMAT_BRIEFING.md §5 고정 문구의 market_hours 절 참고).
   const ROUTINE_OPEN = /^(미국 증시 정규장 개장|미국 증시 개장|한국 증시 개장|코스피 개장|US Regular Session Opens|US Market Opens|Korea Market Opens|Kospi Opens)$/;
   const rows = data.schedule
     .filter(s => !(ROUTINE_OPEN.test((s.title_ko || '').trim()) || ROUTINE_OPEN.test((s.title_en || '').trim())))
