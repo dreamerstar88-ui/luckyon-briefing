@@ -97,8 +97,9 @@ async function main() {
 
   await waitForPages();
 
+  // Graph API rejects alt_text for media_type=STORIES ("The param alt_text is not supported
+  // for STORY", confirmed 2026-08-04) — stories publish without it regardless of altText.
   const params = { media_type: 'STORIES', image_url: imageUrl };
-  if (altText) params.alt_text = altText;
   const c = await api(`${IG_USER}/media`, params);
   console.log(`· 컨테이너 생성: ${c.id}`);
   await waitFinished(c.id);
