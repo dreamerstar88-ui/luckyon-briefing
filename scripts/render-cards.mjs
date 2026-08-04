@@ -1,7 +1,8 @@
 // render-cards.mjs
 // content/<date>-<session>.json 을 읽어 인스타 캐러셀용 카드 PNG(1080x1350)를 생성한다.
-// 언어별(ko/en) 8장씩 -> cards/<date>/<session>/<lang>/card1..8.png
-//   (1 훅, 2 시장, 3-4 경제, 5-6 AI, 7 주요 일정, 8 아웃트로)
+// 언어별(ko/en) 9장씩 -> cards/<date>/<session>/<lang>/card1..9.png
+//   (1 훅, 2 시장, 3~7 본문(sections 5장), 8 주요 일정, 9 아웃트로)
+//   본문 장수는 sections 배열 길이를 그대로 따르므로 총 장수는 sections.length + 4 다.
 //
 // 사용법: node scripts/render-cards.mjs <date> <lang> <session>
 //   예)   node scripts/render-cards.mjs 2026-07-16 ko am
@@ -204,11 +205,30 @@ function sectionShell(title, dotColor, body, note) {
 }
 
 // 큰 숫자 몇 개 + 상승/하락 종목 수 막대. 문장으로 늘어놓지 않는다.
+//
+// 배치는 `cols` 로 고른다 (기본 2열, 타일이 하나면 1열).
+//   cols: 1 -> 가로로 긴 행을 위에서 아래로 쌓는다. 라벨·부연이 왼쪽, 큰 숫자가
+//             오른쪽에 붙어 표처럼 읽힌다. 지수 3개처럼 "같은 종류를 순서대로
+//             비교하는" 데이터에 맞다.
+//   cols: 2 -> 타일을 2열 격자로 놓는다. 성격이 다른 지표를 여러 개(4~6개)
+//             늘어놓을 때 맞다.
 function cardStats(s) {
-  const tiles = (s.stats || []).map(x => `
-    <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; flex:1;">
+  const cols = s.cols || ((s.stats || []).length === 1 ? 1 : 2);
+  const wide = cols === 1;
+  const tiles = (s.stats || []).map(x => wide ? `
+    <div style="background:#1a1a19; border-radius:18px; padding:44px 36px; display:flex; align-items:center; gap:26px;">
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:29px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
+        ${x.sub_ko || x.sub_en ? `<div style="font-size:24px; color:#a9a89f; margin-top:9px;">${t(x.sub_ko, x.sub_en)}</div>` : ''}
+      </div>
+      <div style="display:flex; align-items:baseline; gap:14px; white-space:nowrap;">
+        <span style="font-size:56px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
+        ${x.delta ? `<span style="font-size:30px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
+      </div>
+    </div>` : `
+    <div style="background:#1a1a19; border-radius:16px; padding:26px 30px; min-width:0;">
       <div style="font-size:24px; color:#898781; font-weight:700; letter-spacing:0.02em;">${t(x.label_ko, x.label_en)}</div>
-      <div style="display:flex; align-items:baseline; gap:14px; margin-top:10px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-top:10px; flex-wrap:wrap;">
         <span style="font-size:56px; font-weight:800; letter-spacing:-0.02em;">${x.value}</span>
         ${x.delta ? `<span style="font-size:30px; font-weight:800; color:${x.dir === 'up' ? UP : x.dir === 'down' ? DOWN : FLAT};">${x.delta}</span>` : ''}
       </div>
@@ -265,7 +285,7 @@ function cardStats(s) {
   })() : '';
 
   return sectionShell(t(s.title_ko, s.title_en), s.color || UP,
-    `<div style="display:flex; gap:18px;">${tiles}</div>${breadth}${flows}`,
+    `<div style="display:grid; grid-template-columns:repeat(${cols}, 1fr); gap:18px;">${tiles}</div>${breadth}${flows}`,
     t(s.note_ko, s.note_en));
 }
 
@@ -333,8 +353,9 @@ function cardSchedule() {
     .map(l => `<div style="font-size:28px; line-height:1.55; color:#d7d6cf;">${l}</div>`).join('');
   // 운영시간이 평소와 같은 날에는 '정규장 개장' 같은 항목을 따로 두지 않는다.
   // 바로 위 운영시간 안내에 이미 들어 있어 칸만 차지한다. 휴장·조기폐장처럼
-  // 평소와 다른 날은 JSON 에서 "hours_note" 를 채워 그 사실을 알린다.
-  const ROUTINE_OPEN = /^(미국 증시 정규장 개장|한국 증시 개장|US Regular Session Opens|Korea Market Opens)$/;
+  // 평소와 다른 날은 market_hours.lines_ko/en 배열에 안내 줄을 추가해 알린다
+  // (별도 필드 없음 — ROUTINE_PROMPT.md 의 market_hours 문서 참고).
+  const ROUTINE_OPEN = /^(미국 증시 정규장 개장|미국 증시 개장|한국 증시 개장|코스피 개장|US Regular Session Opens|US Market Opens|Korea Market Opens|Kospi Opens)$/;
   const rows = data.schedule
     .filter(s => !(ROUTINE_OPEN.test((s.title_ko || '').trim()) || ROUTINE_OPEN.test((s.title_en || '').trim())))
     .map(s => {

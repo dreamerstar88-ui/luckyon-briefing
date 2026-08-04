@@ -31,12 +31,39 @@ export function buildAltTexts(content, lang) {
 
   // 본문 카드는 render-cards.mjs 와 같은 규칙으로 센다 — sections 가 있으면 섹션당 한 장,
   // 없으면 기존 econ/ai 6+6 구성. 여기가 어긋나면 alt_text 가 엉뚱한 카드에 붙는다.
+  //
+  // 섹션 type 별로 읽는 필드가 다르다. 글 카드만 items 를 쓰고 stats/bars/rank 는
+  // 각자 다른 배열에 내용이 들어 있으므로, items 만 보면 데이터 카드의 대체텍스트가
+  // 제목만 남고 텅 빈다 (2026-08-04 확인 — 카드 ③④⑤가 실제로 비어 있었다).
+  const t = (a, b) => (ko ? a : b);
+  const sectionBody = s => {
+    if (s.type === 'stats') {
+      const tiles = (s.stats || []).map(x =>
+        `${t(x.label_ko, x.label_en)} ${x.value}${x.delta ? ' ' + x.delta : ''}`);
+      const breadth = (s.breadth || []).map(b =>
+        `${t(b.label_ko, b.label_en)} ${t('상승', 'up')} ${b.up} / ${t('하락', 'down')} ${b.down}`);
+      const flows = s.flows ? (s.flows.rows || []).map(r =>
+        `${t(r.label_ko, r.label_en)} ${r.value > 0 ? '+' : ''}${r.value}${t(s.flows.unit_ko, s.flows.unit_en) || ''}`) : [];
+      return [...tiles, ...breadth, ...flows].join(', ');
+    }
+    if (s.type === 'bars') {
+      return (s.bars || []).map(b =>
+        `${t(b.label_ko, b.label_en)} ${b.value > 0 ? '+' : ''}${b.value}%`).join(', ');
+    }
+    if (s.type === 'rank') {
+      return (s.rows || []).map((r, i) =>
+        `${i + 1}. ${t(r.name_ko, r.name_en)} ${r.value}${r.pct != null ? ` (${r.pct > 0 ? '+' : ''}${r.pct}%)` : ''}`).join(', ');
+    }
+    // type 이 없으면 글 카드 — 항목 수가 고정이 아니므로 slice 하지 않고 전부 넣는다.
+    return (s.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / ');
+  };
   const bodyAlts = Array.isArray(content.sections) && content.sections.length
     ? content.sections.map(s => {
       const label = (ko ? s.title_ko : s.title_en) || '';
-      // 섹션은 항목 수가 3개로 고정이 아니므로 slice 하지 않고 전부 넣는다.
-      const heads = (s.items || []).map(i => ko ? i.headline_ko : i.headline_en).join(' / ');
-      return (label ? label + ': ' : '') + heads;
+      const body = sectionBody(s);
+      const note = t(s.note_ko, s.note_en);
+      // 수치만 나열하면 읽는 사람에게 맥락이 없다. note 가 있으면 한 줄 덧붙인다.
+      return (label ? label + ': ' : '') + body + (note ? ' — ' + note : '');
     })
     : [
       econLabel + headlines(content.econ, 0),
