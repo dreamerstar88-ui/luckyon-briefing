@@ -77,12 +77,15 @@
       "color": "#3987e5",
       "type": "stats",
       "stats": [
-        { "label_ko": "팔란티어 EPS", "label_en": "Palantir EPS", "value": "$0.41", "delta": "▲$0.06", "dir": "up", "sub_ko": "예상 $0.35 · 전분기 $0.33", "sub_en": "vs. $0.35 est. · $0.33 prior Q" },
-        { "label_ko": "스냅 EPS", "label_en": "Snap EPS", "value": "-$0.10", "delta": "▲$0.02", "dir": "up", "sub_ko": "예상 -$0.12 · 전분기 -$0.05", "sub_en": "vs. -$0.12 est. · -$0.05 prior Q" },
-        { "label_ko": "ISM 제조업 PMI", "label_en": "ISM Manufacturing PMI", "value": "55.6", "delta": "▲1.6", "dir": "up", "sub_ko": "예상 54.0 · 전월 53.3", "sub_en": "vs. 54.0 est. · 53.3 prior" }
+        { "label_ko": "[실적] 팔란티어 EPS", "label_en": "[Earnings] Palantir EPS", "value": "$0.41", "delta": "▲$0.06", "dir": "up", "sub_ko": "예상 $0.35 · 전분기 $0.33", "sub_en": "vs. $0.35 est. · $0.33 prior Q" },
+        { "label_ko": "[실적] 스냅 EPS", "label_en": "[Earnings] Snap EPS", "value": "-$0.10", "delta": "▲$0.02", "dir": "up", "sub_ko": "예상 -$0.12 · 전분기 -$0.05", "sub_en": "vs. -$0.12 est. · -$0.05 prior Q" },
+        { "label_ko": "[지표] ISM 제조업 PMI", "label_en": "[Data] ISM Mfg PMI", "value": "55.6", "delta": "▲1.6", "dir": "up", "sub_ko": "예상 54.0 · 전월 53.3", "sub_en": "vs. 54.0 est. · 53.3 prior" },
+        { "label_ko": "[지표] S&P글로벌 제조업 PMI", "label_en": "[Data] S&P Global Mfg PMI", "value": "53.9", "delta": "▲0.1", "dir": "up", "sub_ko": "예상 53.8 · 전월 53.8", "sub_en": "vs. 53.8 est. · 53.8 prior" },
+        { "label_ko": "[지표] 3개월물 국채입찰", "label_en": "[Data] 3-Month Bill Auction", "value": "3.75%", "delta": "▼0.065%p", "dir": "down", "sub_ko": "전회 3.815% · 예상치 없음(낙찰금리)", "sub_en": "vs. 3.815% prior · no estimate (auction rate)" },
+        { "label_ko": "[지표] 6개월물 국채입찰", "label_en": "[Data] 6-Month Bill Auction", "value": "3.855%", "delta": "▼0.09%p", "dir": "down", "sub_ko": "전회 3.945% · 예상치 없음(낙찰금리)", "sub_en": "vs. 3.945% prior · no estimate (auction rate)" }
       ],
-      "note_ko": "매출도 팔란티어(19.35억달러 vs 예상 18.12억달러)·스냅(15.99억달러 vs 예상 15.39억달러) 모두 예상을 웃돌았다. 팔란티어는 9분기 연속 예상치 상회다. ISM 제조업 PMI는 예상·전월을 모두 웃돌며 확장 국면을 이어갔다. S&P500 약 300개 기업이 2분기 실적을 냈고 이 중 85%가 예상치 상회, 합산 이익 증가율은 47%를 웃돈다.",
-      "note_en": "Revenue also beat for both: Palantir $1.935B (vs. $1.812B est.) and Snap $1.599B (vs. $1.539B est.) — Palantir's 9th straight beat. The ISM PMI topped both its estimate and prior reading, extending its expansion. About 300 S&P 500 companies have reported Q2 results, 85% beating estimates with aggregate profit growth above 47%."
+      "note_ko": "매출도 팔란티어(19.35억달러 vs 예상 18.12억달러)·스냅(15.99억달러 vs 예상 15.39억달러) 모두 예상을 웃돌았다. 팔란티어는 9분기 연속 예상치 상회다. ISM·S&P글로벌 제조업 PMI 모두 확장 국면을 이어갔다. 단기 국채입찰 금리도 낮아져 금리 하락 흐름과 맞물렸다(입찰금리는 시장에서 결정돼 컨센서스 예상치가 없다). S&P500 약 300개 기업이 2분기 실적을 냈고 이 중 85%가 예상치 상회, 합산 이익 증가율은 47%를 웃돈다.",
+      "note_en": "Revenue also beat for both: Palantir $1.935B (vs. $1.812B est.) and Snap $1.599B (vs. $1.539B est.) — Palantir's 9th straight beat. Both the ISM and S&P Global manufacturing PMIs extended their expansion. Short-term bill auction rates also eased, consistent with the broader move lower in yields (auction rates are market-determined, so there's no consensus estimate). About 300 S&P 500 companies have reported Q2 results, 85% beating estimates with aggregate profit growth above 47%."
     },
     {
       "title_ko": "금리 · 지표 · 한국 · 아시아",
@@ -125,7 +128,6 @@
     "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
   },
   "schedule": [
-    { "time": "09:00", "title_ko": "코스피 개장", "title_en": "Kospi Opens", "detail_ko": "전날 5.12% 급락 이후 반등 시도…미 3대 지수 사상 최고치 랠리를 뒤따를지 주목", "detail_en": "A test of whether it can rebound from Monday's 5.12% drop, tracking Wall Street's record rally", "importance": "high" },
     { "time": "2~3일 내", "title_ko": "부동산·증시 후속 점검회의 예정", "title_en": "Follow-up Real Estate & Market Review Meeting Expected", "detail_ko": "이재명 대통령이 귀국 당일 회의에서 예고, 주택공급 확대안 등 후속 대책 발표 가능성", "detail_en": "Announced during President Lee's return-day meeting; further housing-supply measures may follow", "importance": "mid" },
     { "time": "19:30", "title_ko": "화이자 2분기 실적 발표", "title_en": "Pfizer Q2 Earnings", "detail_ko": "컨센서스 EPS 0.68달러·매출 144억달러, 장 시작 전 발표", "detail_en": "Consensus EPS $0.68, revenue $14.4B, reports before the US market open", "importance": "mid" },
     { "time": "8/4 밤~5일 새벽", "title_ko": "[미리보기] AMD 2분기 실적 발표", "title_en": "[Preview] AMD Q2 Earnings", "detail_ko": "컨센서스 EPS 1.61달러·매출 113억달러, AI 반도체 수요 가늠자", "detail_en": "Consensus EPS $1.61, revenue $11.3B — a read on AI-chip demand", "importance": "high" }
