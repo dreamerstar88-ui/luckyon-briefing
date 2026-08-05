@@ -1,91 +1,11 @@
 {
-  "fetchedAt": "2026-08-04T23:28:14Z",
+  "fetchedAt": "2026-08-05T13:01:06Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-02T23:28:14Z",
-    "to": "2026-08-18T23:28:14Z"
+    "from": "2026-08-03T13:01:06Z",
+    "to": "2026-08-19T13:01:06Z"
   },
   "events": [
-    {
-      "at": "2026-08-03T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": 54.7,
-      "previous": 54.7,
-      "actual": 54.5,
-      "unit": null
-    },
-    {
-      "at": "2026-08-03T00:30:00Z",
-      "country": "KR",
-      "name": "S&P Global Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 52.1,
-      "actual": 53.1,
-      "unit": null
-    },
-    {
-      "at": "2026-08-03T01:45:00Z",
-      "country": "CN",
-      "name": "RatingDog Manufacturing PMI",
-      "impact": "HIGH",
-      "consensus": 51.5,
-      "previous": 51.7,
-      "actual": 50.9,
-      "unit": null
-    },
-    {
-      "at": "2026-08-03T06:00:00Z",
-      "country": "DE",
-      "name": "Retail Sales (MoM)",
-      "impact": "MEDIUM",
-      "consensus": -0.5,
-      "previous": 1.1,
-      "actual": -1.1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-03T06:00:00Z",
-      "country": "DE",
-      "name": "Retail Sales (YoY)",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": 1.8,
-      "actual": -0.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-03T07:55:00Z",
-      "country": "DE",
-      "name": "HCOB Manufacturing PMI",
-      "impact": "MEDIUM",
-      "consensus": 52.2,
-      "previous": 52.2,
-      "actual": 52.2,
-      "unit": null
-    },
-    {
-      "at": "2026-08-03T08:00:00Z",
-      "country": "EMU",
-      "name": "HCOB Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": 52,
-      "previous": 52,
-      "actual": 51.9,
-      "unit": null
-    },
-    {
-      "at": "2026-08-03T10:15:00Z",
-      "country": "US",
-      "name": "Fed's Williams speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-03T13:45:00Z",
       "country": "US",
@@ -333,7 +253,7 @@
       "impact": "MEDIUM",
       "consensus": 3.4,
       "previous": 3.2,
-      "actual": null,
+      "actual": 3.4,
       "unit": "%"
     },
     {
@@ -347,13 +267,23 @@
       "unit": null
     },
     {
+      "at": "2026-08-05T00:00:00Z",
+      "country": "US",
+      "name": "Fed's Schmid speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-05T00:30:00Z",
       "country": "JP",
       "name": "Jibun Bank Services PMI",
       "impact": "LOW",
       "consensus": 51.9,
       "previous": 51.9,
-      "actual": null,
+      "actual": 51.2,
       "unit": null
     },
     {
@@ -363,7 +293,7 @@
       "impact": "HIGH",
       "consensus": 53.7,
       "previous": 54.1,
-      "actual": null,
+      "actual": 50.4,
       "unit": null
     },
     {
@@ -373,7 +303,7 @@
       "impact": "MEDIUM",
       "consensus": 51.2,
       "previous": 51.2,
-      "actual": null,
+      "actual": 51.3,
       "unit": null
     },
     {
@@ -383,7 +313,7 @@
       "impact": "MEDIUM",
       "consensus": 49.6,
       "previous": 49.6,
-      "actual": null,
+      "actual": 49.8,
       "unit": null
     },
     {
@@ -393,7 +323,7 @@
       "impact": "MEDIUM",
       "consensus": 51.9,
       "previous": 51.9,
-      "actual": null,
+      "actual": 52,
       "unit": null
     },
     {
@@ -403,7 +333,7 @@
       "impact": "LOW",
       "consensus": 51.6,
       "previous": 51.6,
-      "actual": null,
+      "actual": 51.7,
       "unit": null
     },
     {
@@ -413,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": -0.3,
       "previous": 0.2,
-      "actual": null,
+      "actual": -0.3,
       "unit": "%"
     },
     {
@@ -423,7 +353,7 @@
       "impact": "MEDIUM",
       "consensus": 4.6,
       "previous": 5.9,
-      "actual": null,
+      "actual": 4.6,
       "unit": "%"
     },
     {
@@ -433,8 +363,18 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -6.4,
-      "actual": null,
+      "actual": -2.9,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-05T12:00:00Z",
+      "country": "US",
+      "name": "Fed's Kashkari speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-05T12:15:00Z",
@@ -443,7 +383,7 @@
       "impact": "HIGH",
       "consensus": 70,
       "previous": 98,
-      "actual": null,
+      "actual": 44,
       "unit": null
     },
     {
@@ -511,7 +451,7 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -1.5,
       "previous": -7.167,
       "actual": null,
       "unit": null
@@ -1251,7 +1191,7 @@
       "country": "DE",
       "name": "Consumer Price Index (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.8,
       "previous": 0.8,
       "actual": null,
       "unit": "%"
@@ -1271,7 +1211,7 @@
       "country": "DE",
       "name": "Harmonized Index of Consumer Prices (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.9,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -1281,7 +1221,7 @@
       "country": "DE",
       "name": "Harmonized Index of Consumer Prices (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 2.8,
       "previous": 2.8,
       "actual": null,
       "unit": "%"
@@ -1302,7 +1242,7 @@
       "name": "MBA Mortgage Applications",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -2.9,
       "actual": null,
       "unit": "%"
     },
@@ -2295,6 +2235,56 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-08-19T09:00:00Z",
+      "country": "CN",
+      "name": "FDI - Foreign Direct Investment (YTD) (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T09:00:00Z",
+      "country": "EMU",
+      "name": "Core Harmonized Index of Consumer Prices (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T09:00:00Z",
+      "country": "EMU",
+      "name": "Core Harmonized Index of Consumer Prices (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T09:00:00Z",
+      "country": "EMU",
+      "name": "Harmonized Index of Consumer Prices (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T11:00:00Z",
+      "country": "US",
+      "name": "MBA Mortgage Applications",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
