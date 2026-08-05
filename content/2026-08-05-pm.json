@@ -9,16 +9,16 @@
   "headline_sub_en": "SK Hynix ADR Surges 8% on Wall Street Price Targets · Kospi's 4th Straight Up Day",
   "summary": {
     "lines_ko": [
-      "코스피가 3.76% 급등한 6,598.26에 마감하며 2거래일 연속 올랐고, 코스닥도 2.42% 오른 799.59로 4거래일째 상승세를 이어갔습니다 — 장중 코스피200선물 급등에 올해 45번째 매수 사이드카가 발동됐습니다.",
-      "간밤 월가가 SK하이닉스 ADR에 대해 저평가 분석을 잇달아 내놓으며(로젠블랫 목표가 320달러) ADR이 8.17% 급등했고, 이 훈풍이 국내 반도체주로 이어졌습니다. 삼성전자(+2.50%)·SK하이닉스(+5.77%)가 지수를 견인했고, 삼성전기·LG이노텍도 AI 부품 수요 기대에 14%대 동반 급등했습니다.",
-      "외국인이 코스피 현물을 1.4조원대 순매수하며 지수를 밀어 올린 반면 코스피200 선물은 1,357억원 순매도해 현물·선물 수급이 엇갈렸습니다. 거래대금 상위 SK하이닉스(6.62조원)·삼성전자(5.61조원) 두 종목이 전체의 47.7%를 차지했습니다.",
-      "반대로 움직인 것: 15개 국내 업종이 모두 상승했지만 인터넷·소프트웨어(+0.50%)·통신서비스(+0.99%)는 상승폭이 가장 작아, 이번 랠리가 반도체·부품주 중심으로 쏠렸음을 보여줍니다."
+      "코스피 3.76% 급등 6,598.26 마감(2거래일 연속), 코스닥도 2.42% 올라 799.59(4거래일 연속) — 올해 45번째 매수 사이드카가 발동됐습니다.",
+      "SK하이닉스 ADR이 월가 저평가 리포트(로젠블랫 목표가 320달러)에 8.17% 급등, 국내 반도체·부품주로 훈풍이 이어져 삼성전자·SK하이닉스가 지수를 견인했습니다.",
+      "외국인은 코스피 현물을 1.4조원대 순매수한 반면 코스피200 선물은 1,357억원 순매도했습니다 — 거래대금 1·2위 SK하이닉스·삼성전자가 47.7%를 차지했습니다.",
+      "반대로 움직인 것: 15개 업종이 모두 상승했지만 인터넷·소프트웨어(+0.50%)·통신서비스(+0.99%)는 상승폭이 가장 작아 반도체·부품주 쏠림이 뚜렷했습니다."
     ],
     "lines_en": [
-      "The Kospi jumped 3.76% to close at 6,598.26 — a second straight day of gains — while the Kosdaq rose 2.42% to 799.59, its fourth straight up day; a surge in Kospi 200 futures triggered the year's 45th buy-side circuit breaker.",
-      "Overnight, Wall Street brokerages piled into bullish SK Hynix ADR calls (Rosenblatt's price target: $320), sending the ADR up 8.17% and fueling a domestic chip rally. Samsung Electronics (+2.50%) and SK Hynix (+5.77%) led the index, while Samsung Electro-Mechanics and LG Innotek both jumped over 14% on AI-parts demand hopes.",
-      "Foreigners net bought roughly ₩1.4tn of Kospi cash shares but net sold ₩135.7bn of Kospi 200 futures — a cash-futures divergence. SK Hynix (₩6.62tn) and Samsung Electronics (₩5.61tn) alone made up 47.7% of trading value.",
-      "The other way: even with all 15 sectors higher, Internet/Software (+0.50%) and Telecom (+0.99%) posted the smallest gains, underscoring how concentrated today's rally was in chips and components."
+      "Kospi +3.76% to 6,598.26, 2nd day up; Kosdaq +2.42% to 799.59, 4th day up — the year's 45th buy-side sidecar.",
+      "SK Hynix ADR jumped 8.17% on bullish Wall Street targets (Rosenblatt: $320), lifting Samsung Electronics and SK Hynix.",
+      "Foreigners bought ~₩1.4tn of Kospi shares, sold ₩135.7bn of futures — SK Hynix and Samsung made 47.7% of trading value.",
+      "The other way: all 15 sectors rose, but Internet/Software and Telecom gained least — chips led the rally."
     ]
   },
   "markets": [
@@ -81,11 +81,11 @@
     },
     {
       "label": "Gold",
-      "value": "$4,260.90",
-      "delta": "▲4.04%",
+      "value": "$4,195",
+      "delta": "▲2%대",
       "dir": "up",
-      "note_ko": "3거래일 연속 상승 · 오늘 저녁 기준",
-      "note_en": "3rd straight day higher · as of this evening"
+      "note_ko": "美 고용 둔화 신호에 달러 약세 속 강세 · 오늘 저녁 기준",
+      "note_en": "Rises as weak US jobs data pressures the dollar · as of this evening"
     },
     {
       "label": "WTI",
@@ -121,7 +121,7 @@
           "delta": "▲3.76%",
           "dir": "up",
           "sub_ko": "2거래일 연속 상승 · 올해 45번째 매수 사이드카",
-          "sub_en": "2nd straight day up · 45th buy-side circuit breaker this year"
+          "sub_en": "2nd straight day up · 45th buy-side sidecar this year"
         },
         {
           "label_ko": "코스닥",
@@ -158,7 +158,7 @@
           {
             "label_ko": "외국인",
             "label_en": "Foreign",
-            "value": 1.448
+            "value": 1.45
           },
           {
             "label_ko": "기관",
@@ -356,18 +356,18 @@
           "time": "8/4 NYSE"
         },
         {
-          "headline_ko": "삼성전기 · LG이노텍, AI 부품 랠리에 나란히 14%대 급등",
-          "body_ko": "AI 서버·가속기向 MLCC와 반도체 패키징 기판 수요 확대 기대에 삼성전기·LG이노텍이 나란히 14%대 상승했다. 상승은 기관이 주도했으며 삼성전기를 229억원 순매수했다.",
-          "headline_en": "Samsung Electro-Mechanics, LG Innotek Both Jump 14%+ on an AI-Parts Rally",
-          "body_en": "Shares of Samsung Electro-Mechanics and LG Innotek both surged more than 14% on hopes for stronger demand for AI server/accelerator MLCCs and semiconductor packaging substrates. Institutions led the buying, net purchasing ₩22.9bn of Samsung Electro-Mechanics.",
-          "src": "News1",
+          "headline_ko": "삼성 · SK, CXL 기술로 격차 확대…美·中·日은 HBM 대체 기술 총력전",
+          "body_ko": "삼성전자와 SK하이닉스가 컴퓨트 익스프레스 링크(CXL) 기술을 앞세워 메모리 반도체 확장에 나선 가운데, 마이크론을 포함한 미·중·일 기업들은 HBM 패러다임을 대체할 독자 기술 개발에 속도를 내고 있다. 중국 CXMT는 올해 하반기 LPDDR6 양산 가능성도 제기된다.",
+          "headline_en": "Samsung, SK Hynix Push CXL Tech as US/China/Japan Race for an HBM Alternative",
+          "body_en": "Samsung and SK Hynix are advancing Compute Express Link (CXL) tech to expand memory capacity, while US, Chinese and Japanese rivals — including Micron — race to develop HBM alternatives. China's CXMT is reportedly nearing LPDDR6 mass production.",
+          "src": "Sedaily",
           "time": "8/5"
         },
         {
           "headline_ko": "SK하이닉스 D램 점유율, 3위 마이크론에 1%p 차로 추격당해",
-          "body_ko": "카운터포인트리서치 집계에 따르면 2분기 글로벌 D램 매출 점유율에서 삼성전자가 1위를 지킨 가운데 SK하이닉스는 HBM 단가 하락과 장기공급계약 영향으로 점유율이 26%로 낮아졌고, 마이크론은 D램 매출을 전년 대비 5배 가까이 늘리며 25%까지 따라붙었다. 중국 CXMT도 범용 D램·낸드 증설에 속도를 내며 3사를 위협하고 있다.",
+          "body_ko": "2분기 D램 매출 점유율은 삼성전자 39%·SK하이닉스 26%·마이크론 25% — SK하이닉스·마이크론 격차가 1%p로 좁혀졌다. 중국 CXMT도 증설을 서두르고 있다.",
           "headline_en": "SK Hynix's DRAM Share Lead Over Micron Narrows to Just 1 Point",
-          "body_en": "Per Counterpoint Research, Samsung kept the No.1 spot in Q2 global DRAM revenue share, while SK Hynix slipped to 26% on falling HBM prices and long-term supply contracts. Micron, which nearly quintupled its DRAM revenue YoY, closed the gap to 25%. China's CXMT is also ramping commodity DRAM/NAND output, pressuring all three incumbents.",
+          "body_en": "Q2 DRAM share: Samsung 39%, SK Hynix 26%, Micron 25% — just 1 point now separates SK Hynix and Micron.",
           "src": "Counterpoint Research",
           "time": "8/5"
         }
@@ -381,40 +381,32 @@
       "color": "#5aa469",
       "items": [
         {
-          "headline_ko": "유럽 증시, 중동 완화 기대에 일제히 상승",
-          "body_ko": "미국 정부가 호르무즈 해협 통항 재개 가능성을 시사한 데 힘입어 유럽 주요 증시가 일제히 올랐다. 독일 DAX는 0.77% 오른 26,202.35, 프랑스 CAC40은 0.61% 오른 8,666.63, 이탈리아 FTSE-MIB는 1.26% 오른 53,540.50에 마감했다.",
-          "headline_en": "European Stocks Rally on Hopes for a Hormuz De-escalation",
-          "body_en": "European markets closed broadly higher after US officials signaled the Strait of Hormuz could reopen soon. Germany's DAX rose 0.77% to 26,202.35, France's CAC 40 gained 0.61% to 8,666.63, and Italy's FTSE-MIB climbed 1.26% to 53,540.50.",
-          "src": "Econonews · Newspim",
+          "headline_ko": "美 7월 ADP 민간고용 4.4만명, 예상 밑돌아",
+          "body_ko": "전월 수정치(9만5천명)의 절반 이하로 둔화 — 이틀 뒤 비농업고용(NFP)을 앞둔 선행지표다.",
+          "headline_en": "US July ADP Private Payrolls Rise Just 44K, Missing Estimates",
+          "body_en": "Down more than half from June's revised 95K — a lead indicator ahead of Friday's payrolls report.",
+          "src": "ADP Research · Yonhap",
           "time": "8/5"
         },
         {
-          "headline_ko": "고려아연, 2분기 영업이익 사상 최대 5,871억원",
-          "body_ko": "고려아연이 2분기 연결기준 잠정 영업이익 5,871억원(전년 대비 +126.8%)을 공시하며 반기 기준 사상 최대 실적을 냈다. 2분기 배당 총액은 약 1,020억원이며 배당기준일은 8월 20일이다.",
-          "headline_en": "Korea Zinc Posts a Record Q2 Operating Profit of ₩587.1bn",
-          "body_en": "Korea Zinc reported preliminary consolidated Q2 operating profit of ₩587.1bn, up 126.8% year on year — a record first half. The company set an Aug. 20 record date for its Q2 dividend, totaling about ₩102bn.",
+          "headline_ko": "고려아연, 상반기 영업이익 1조3,330억원 사상 최대",
+          "body_ko": "2분기만 5,871억원(+126.8%) — 배당기준일 8월 20일, 총액 약 1,020억원.",
+          "headline_en": "Korea Zinc's H1 Profit Hits a Record ₩1.333tn",
+          "body_en": "Q2 alone: ₩587.1bn (+126.8% YoY) — Aug. 20 record date, ~₩102bn dividend.",
           "src": "DART · EBN",
           "time": "8/5"
         },
         {
-          "headline_ko": "디즈니 · 쇼피파이 실적 예상 상회, 우버는 소폭 미달",
-          "body_ko": "美 장전 실적 발표에서 디즈니는 주당순이익 2.06달러(예상 1.88달러), 쇼피파이는 0.42달러(예상 0.39달러)로 컨센서스를 웃돌았다. 우버는 0.81달러로 예상(0.83달러)에 소폭 못 미쳤다.",
-          "headline_en": "Disney, Shopify Beat Estimates; Uber Comes In Just Shy",
-          "body_en": "In pre-market earnings, Disney posted EPS of $2.06 versus a $1.88 estimate and Shopify $0.42 versus $0.39 — both beats. Uber's $0.81 came in just under the $0.83 consensus.",
-          "src": "FMP",
-          "time": "8/5"
-        },
-        {
-          "headline_ko": "코스피, 올해 45번째 매수 사이드카 발동",
-          "body_ko": "코스피200선물이 장중 기준가 대비 5% 이상 급등하면서 프로그램 매수 호가 효력을 5분간 정지하는 매수 사이드카가 발동됐다 — 올해 들어 45번째다. 코스피는 장중 한때 6,674.66까지 올랐다.",
-          "headline_en": "Kospi Triggers Its 45th Buy-Side Circuit Breaker of the Year",
-          "body_en": "Kospi 200 futures surged more than 5% intraday, triggering a 5-minute halt on program buy orders — the year's 45th such 'sidecar.' The Kospi touched an intraday high of 6,674.66.",
-          "src": "KRX · Yonhap",
+          "headline_ko": "삼성전기 · LG이노텍, 테슬라 로보택시 · MSCI 기대에 나란히 14%대 급등",
+          "body_ko": "테슬라 '사이버캡' 카메라 모듈 공급 기대와 MSCI 편입 기대가 겹쳐 — 기관이 삼성전기를 229억원 순매수.",
+          "headline_en": "Samsung Electro-Mechanics, LG Innotek Jump 14%+",
+          "body_en": "On Tesla Cybercab and MSCI hopes — institutions bought ₩22.9bn.",
+          "src": "News1 · SBS Biz",
           "time": "8/5"
         }
       ],
-      "note_ko": "",
-      "note_en": ""
+      "note_ko": "유럽 증시도 중동 완화 기대에 일제히 상승 — DAX +0.77%(26,202.35)·CAC40 +0.61%(8,666.63)·FTSE-MIB +1.26%(53,540.50).",
+      "note_en": "Europe rallied too on Hormuz de-escalation hopes — DAX +0.77% to 26,202.35, CAC 40 +0.61% to 8,666.63, FTSE-MIB +1.26% to 53,540.50."
     }
   ],
   "schedule_title_ko": "주요 일정",
@@ -449,7 +441,7 @@
       "importance": "high"
     },
     {
-      "time": "05:05 (내일)",
+      "time": "8/6 05:05",
       "title_ko": "美 연준 리사 쿡 이사 연설",
       "title_en": "Fed Governor Lisa Cook Speech",
       "detail_ko": "연내 금리 경로에 대한 코멘트 주목",
@@ -457,7 +449,7 @@
       "importance": "mid"
     },
     {
-      "time": "05:30 (내일)",
+      "time": "8/6 05:30",
       "title_ko": "라이엇플랫폼 · 카탈리스트파마 실적 발표",
       "title_en": "Riot Platforms, Catalyst Pharma Earnings",
       "detail_ko": "오늘 미국 장마감 후 발표",
@@ -465,7 +457,7 @@
       "importance": "mid"
     },
     {
-      "time": "08:00 (내일)",
+      "time": "8/6 08:00",
       "title_ko": "한국 6월 경상수지",
       "title_en": "Korea Current Account Balance (June)",
       "detail_ko": "전월 38.6억달러 흑자",
@@ -492,6 +484,9 @@
     "https://www.newspim.com/news/view/20260805000154",
     "https://www.ebn.co.kr/news/articleView.html?idxno=1719294",
     "https://n.news.naver.com/mnews/article/081/0003667951?sid=101",
-    "https://www.ggilbo.com/news/articleView.html?idxno=1173708"
+    "https://www.ggilbo.com/news/articleView.html?idxno=1173708",
+    "https://n.news.naver.com/mnews/article/015/0005317839?sid=101",
+    "https://biz.sbs.co.kr/article_hub/20000326695?division=NAVER",
+    "https://www.mediafine.co.kr/news/articleView.html?idxno=85742"
   ]
 }
