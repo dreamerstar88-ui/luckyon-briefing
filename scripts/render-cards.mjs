@@ -257,20 +257,23 @@ function cardStats(s) {
   const flows = f ? (() => {
     const max = Math.max(...f.rows.map(r => Math.abs(r.value)), 0.01);
     const CENTER = 50;
+    // 막대 최대폭은 라벨 영역(왼쪽 0~CENTER-22%)을 절대 침범하지 않도록 20%로 제한한다.
+    // 예전 38%는 음수 막대가 라벨과 같은 좌측 절반에 그려지는 구조상, 최댓값의
+    // 58%만 넘어도 막대가 라벨 칸을 덮어 텍스트가 뒤섞이는 사고가 났다(2026-08-05 확인).
     const rows = f.rows.map(r => {
-      const w = Math.abs(r.value) / max * 38;
+      const w = Math.abs(r.value) / max * 20;
       const pos = r.value >= 0 ? `left:${CENTER}%; width:${w}%;` : `right:${100 - CENTER}%; width:${w}%;`;
       const radius = r.value >= 0 ? '0 6px 6px 0' : '6px 0 0 6px';
       return `
       <div style="position:relative; height:50px; display:flex; align-items:center;">
+        <div style="position:absolute; ${pos} height:26px; background:${sign(r.value)}; border-radius:${radius}; z-index:1;"></div>
         <div style="position:absolute; left:0; width:${CENTER - 22}%; text-align:right; padding-right:16px;
-                    font-size:26px; font-weight:700; color:#e8e7e0;">${t(r.label_ko, r.label_en)}</div>
-        <div style="position:absolute; ${pos} height:26px; background:${sign(r.value)}; border-radius:${radius};"></div>
+                    font-size:26px; font-weight:700; color:#e8e7e0; z-index:2; text-shadow:0 0 6px #0d0d0d, 0 0 6px #0d0d0d;">${t(r.label_ko, r.label_en)}</div>
         ${w >= 14
-          ? `<div style="position:absolute; ${pos} height:26px; display:flex; align-items:center;
+          ? `<div style="position:absolute; ${pos} height:26px; display:flex; align-items:center; z-index:2;
                          justify-content:${r.value >= 0 ? 'flex-end' : 'flex-start'}; padding:0 10px;
                          font-size:23px; font-weight:800; color:#0d0d0d; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`
-          : `<div style="position:absolute; ${r.value >= 0 ? `left:calc(${CENTER}% + ${w}% + 12px)` : `right:calc(${100 - CENTER}% + ${w}% + 12px)`};
+          : `<div style="position:absolute; z-index:2; ${r.value >= 0 ? `left:calc(${CENTER}% + ${w}% + 12px)` : `right:calc(${100 - CENTER}% + ${w}% + 12px)`};
                          font-size:25px; font-weight:800; color:${sign(r.value)}; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`}
       </div>`;
     }).join('');
