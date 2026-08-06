@@ -1,71 +1,11 @@
 {
-  "fetchedAt": "2026-08-05T23:19:21Z",
+  "fetchedAt": "2026-08-06T13:02:08Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-03T23:19:21Z",
-    "to": "2026-08-19T23:19:21Z"
+    "from": "2026-08-04T13:02:08Z",
+    "to": "2026-08-20T13:02:08Z"
   },
   "events": [
-    {
-      "at": "2026-08-03T23:50:00Z",
-      "country": "JP",
-      "name": "Monetary Base (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -13.7,
-      "actual": -13.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-04T03:35:00Z",
-      "country": "JP",
-      "name": "10-y Bond Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2.729,
-      "actual": 2.84,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-04T12:30:00Z",
-      "country": "US",
-      "name": "Fed's Paulson speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-08-04T12:30:00Z",
-      "country": "US",
-      "name": "Goods and Services Trade Balance",
-      "impact": "LOW",
-      "consensus": -73,
-      "previous": -77.6,
-      "actual": -73.3,
-      "unit": "$"
-    },
-    {
-      "at": "2026-08-04T12:30:00Z",
-      "country": "US",
-      "name": "Goods Trade Balance",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -101.5,
-      "actual": null,
-      "unit": "$"
-    },
-    {
-      "at": "2026-08-04T12:55:00Z",
-      "country": "US",
-      "name": "Redbook Index (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 8.3,
-      "actual": 8.7,
-      "unit": "%"
-    },
     {
       "at": "2026-08-04T14:00:00Z",
       "country": "US",
@@ -353,7 +293,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 38.61,
-      "actual": null,
+      "actual": 49.73,
       "unit": null
     },
     {
@@ -363,7 +303,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -811.4,
-      "actual": null,
+      "actual": 477.9,
       "unit": "¥"
     },
     {
@@ -373,8 +313,18 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 912.1,
-      "actual": null,
+      "actual": 392.5,
       "unit": "¥"
+    },
+    {
+      "at": "2026-08-06T00:40:00Z",
+      "country": "US",
+      "name": "Fed's Daly speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-06T06:00:00Z",
@@ -383,7 +333,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 6.2,
-      "actual": null,
+      "actual": 6.5,
       "unit": "%"
     },
     {
@@ -393,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": 0.3,
       "previous": 1.9,
-      "actual": null,
+      "actual": 3.1,
       "unit": "%"
     },
     {
@@ -413,7 +363,7 @@
       "impact": "MEDIUM",
       "consensus": 0.1,
       "previous": 0.2,
-      "actual": null,
+      "actual": -0.3,
       "unit": "%"
     },
     {
@@ -423,17 +373,17 @@
       "impact": "HIGH",
       "consensus": 1,
       "previous": 1.6,
-      "actual": null,
+      "actual": 0.7,
       "unit": "%"
     },
     {
-      "at": "2026-08-06T11:30:00Z",
+      "at": "2026-08-06T09:30:00Z",
       "country": "US",
       "name": "Challenger Job Cuts",
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 45.849,
-      "actual": null,
+      "actual": 33.429,
       "unit": null
     },
     {
@@ -441,9 +391,9 @@
       "country": "US",
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.79,
       "previous": 1.782,
-      "actual": null,
+      "actual": 1.801,
       "unit": null
     },
     {
@@ -453,7 +403,7 @@
       "impact": "MEDIUM",
       "consensus": 202,
       "previous": 197,
-      "actual": null,
+      "actual": 199,
       "unit": null
     },
     {
@@ -463,7 +413,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 202.75,
-      "actual": null,
+      "actual": 198.75,
       "unit": null
     },
     {
@@ -473,7 +423,7 @@
       "impact": "MEDIUM",
       "consensus": 0.6,
       "previous": 0.3,
-      "actual": null,
+      "actual": 1.4,
       "unit": "%"
     },
     {
@@ -483,7 +433,7 @@
       "impact": "MEDIUM",
       "consensus": 2,
       "previous": 1.8,
-      "actual": null,
+      "actual": 1.3,
       "unit": "%"
     },
     {
@@ -501,7 +451,7 @@
       "country": "US",
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
-      "consensus": 30,
+      "consensus": 31,
       "previous": 28,
       "actual": null,
       "unit": null
@@ -551,7 +501,7 @@
       "country": "CN",
       "name": "Exports (YoY)",
       "impact": "MEDIUM",
-      "consensus": 22.7,
+      "consensus": 22.2,
       "previous": 27,
       "actual": null,
       "unit": "%"
@@ -571,7 +521,7 @@
       "country": "CN",
       "name": "Imports (YoY)",
       "impact": "MEDIUM",
-      "consensus": 28.6,
+      "consensus": 27.9,
       "previous": 36,
       "actual": null,
       "unit": "%"
@@ -601,7 +551,7 @@
       "country": "CN",
       "name": "Trade Balance USD",
       "impact": "MEDIUM",
-      "consensus": 108,
+      "consensus": 107,
       "previous": 125.62,
       "actual": null,
       "unit": "$"
@@ -681,7 +631,7 @@
       "country": "CN",
       "name": "Foreign Exchange Reserves (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 3.42,
       "previous": 3.416,
       "actual": null,
       "unit": "$"
@@ -771,7 +721,7 @@
       "country": "US",
       "name": "Consumer Credit Change",
       "impact": "LOW",
-      "consensus": 10.85,
+      "consensus": 10.5,
       "previous": -0.18,
       "actual": null,
       "unit": "$"
@@ -841,7 +791,7 @@
       "country": "CN",
       "name": "Consumer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": -0.3,
       "actual": null,
       "unit": "%"
@@ -851,7 +801,7 @@
       "country": "CN",
       "name": "Consumer Price Index (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.8,
       "previous": 1,
       "actual": null,
       "unit": "%"
@@ -861,7 +811,7 @@
       "country": "CN",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.8,
       "previous": 4.1,
       "actual": null,
       "unit": "%"
@@ -1011,7 +961,7 @@
       "country": "US",
       "name": "Existing Home Sales (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 4.07,
       "previous": 4.09,
       "actual": null,
       "unit": null
@@ -1141,7 +1091,7 @@
       "country": "US",
       "name": "Consumer Price Index (MoM)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.1,
       "previous": -0.4,
       "actual": null,
       "unit": "%"
@@ -1151,7 +1101,7 @@
       "country": "US",
       "name": "Consumer Price Index (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 3.4,
       "previous": 3.5,
       "actual": null,
       "unit": "%"
@@ -1171,7 +1121,7 @@
       "country": "US",
       "name": "Consumer Price Index ex Food & Energy (MoM)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": 0,
       "actual": null,
       "unit": "%"
@@ -1181,7 +1131,7 @@
       "country": "US",
       "name": "Consumer Price Index ex Food & Energy (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 2.5,
       "previous": 2.6,
       "actual": null,
       "unit": "%"
@@ -1302,7 +1252,7 @@
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.801,
       "actual": null,
       "unit": null
     },
@@ -1312,7 +1262,7 @@
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 199,
       "actual": null,
       "unit": null
     },
@@ -1322,7 +1272,7 @@
       "name": "Initial Jobless Claims 4-week average",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 198.75,
       "actual": null,
       "unit": null
     },
@@ -1331,7 +1281,7 @@
       "country": "US",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.1,
       "previous": -0.3,
       "actual": null,
       "unit": "%"
@@ -1351,7 +1301,7 @@
       "country": "US",
       "name": "Producer Price Index ex Food & Energy (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -1422,7 +1372,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 477.9,
       "actual": null,
       "unit": "¥"
     },
@@ -1432,7 +1382,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 392.5,
       "actual": null,
       "unit": "¥"
     },
@@ -2193,6 +2143,166 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Adjusted Merchandise Trade Balance",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -881.9,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Exports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 19.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Imports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 25.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-19T23:50:00Z",
+      "country": "JP",
+      "name": "Merchandise Trade Balance Total",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -406.9,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-20T01:15:00Z",
+      "country": "CN",
+      "name": "PBoC Interest Rate Decision",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T06:00:00Z",
+      "country": "DE",
+      "name": "Producer Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T06:00:00Z",
+      "country": "DE",
+      "name": "Producer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T09:00:00Z",
+      "country": "EMU",
+      "name": "Construction Output  s.a (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T09:00:00Z",
+      "country": "EMU",
+      "name": "Construction Output w.d.a (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T09:00:00Z",
+      "country": "EMU",
+      "name": "Negotiated Wage Rates (QoQ)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.46,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-20T12:30:00Z",
+      "country": "US",
+      "name": "Continuing Jobless Claims",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-20T12:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-20T12:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims 4-week average",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-20T12:30:00Z",
+      "country": "US",
+      "name": "Philadelphia Fed Manufacturing Survey",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 41.4,
       "actual": null,
       "unit": null
     }
