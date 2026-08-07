@@ -10,13 +10,13 @@
   "summary": {
     "lines_ko": [
       "S&P 500이 사상 최고 종가로 한 주를 마쳤고, 나스닥은 주간 5.19% 올라 4월 중순 이후 최대 상승폭을 냈습니다.",
-      "미국 7월 고용이 2만3천명 감소해 예상(+8만명)을 크게 밑돌자, 미 10년물 금리가 4.75%에서 4.65%로 내렸습니다.",
+      "미국 7월 고용이 2만3천명 감소해 예상(+8만명)을 크게 밑돌았고, 미 10년물 금리는 한 주 동안 4.75%에서 4.65%로 내렸습니다.",
       "코스피는 5.10% 밀려 7주 연속 주간 하락했습니다. 6일 하루에만 외국인이 유가증권시장에서 3조원 넘게 팔았습니다.",
       "금은 주간 8.70% 올라 1년 만의 최대 상승폭을 기록했고, WTI는 호르무즈 재개방 협상 속에 8.96% 내렸습니다."
     ],
     "lines_en": [
       "The S&P 500 closed the week at a record high, while the Nasdaq's 5.19% weekly gain was its largest since mid-April.",
-      "US July payrolls fell 23,000 versus an expected +80,000, pushing the 10-year Treasury yield from 4.75% to 4.65%.",
+      "US July payrolls fell 23,000 versus an expected +80,000, and the 10-year Treasury yield eased from 4.75% to 4.65% over the week.",
       "The KOSPI dropped 5.10% for a seventh straight weekly loss, with foreigners selling over 3 trillion won on Thursday alone.",
       "Gold rose 8.70%, its biggest weekly gain in a year, while WTI fell 8.96% amid talks to reopen the Strait of Hormuz."
     ]
@@ -76,16 +76,16 @@
       "value_sub": "· DXY 99.6",
       "delta": "▼0.93%",
       "dir": "down",
-      "note_ko": "원화 강세 · 달러인덱스도 주간 0.20% 하락",
-      "note_en": "Won stronger · dollar index also down 0.20% on the week"
+      "note_ko": "뉴욕 마감 기준(서울 주간거래 종가 1,416.1원) · DXY 주간 0.20% 하락",
+      "note_en": "NY close basis (Seoul onshore close 1,416.1) · dollar index -0.20% on the week"
     },
     {
       "label": "Gold",
       "value": "$4,401.30",
       "delta": "▲8.70%",
       "dir": "up",
-      "note_ko": "1년 만의 최대 주간 상승 · 10주 만의 최고 종가",
-      "note_en": "Biggest weekly gain in a year · highest close in 10 weeks"
+      "note_ko": "1년 만의 최대 주간 상승 · 6월 4일 이후 최고 종가",
+      "note_en": "Biggest weekly gain in a year · highest close since June 4"
     },
     {
       "label": "WTI",
@@ -97,11 +97,11 @@
     },
     {
       "label": "Bitcoin",
-      "value": "$64,820",
-      "delta": "▲3.19%",
+      "value": "$64,854",
+      "delta": "▲3.25%",
       "dir": "up",
-      "note_ko": "4주째 6만2천~6만5천달러 사이 등락",
-      "note_en": "Fourth week ranging between $62K and $65K"
+      "note_ko": "4주 연속 금요일 종가가 6만2천~6만5천달러",
+      "note_en": "Fourth straight Friday close between $62K and $65K"
     }
   ],
   "market_note_ko": "모든 값은 8월 7일(금) 마감 기준이며, 등락률은 지난주 금요일(7/31) 종가 대비 주간 변동입니다.",
@@ -276,14 +276,22 @@
           "pct": -17.23
         }
       ],
-      "note_ko": "코스피 주요 종목의 8/7 종가와 주간 등락률(원). 한화솔루션은 미국의 폴리실리콘 관세 발표로 5거래일 만에 33% 올랐고, 반도체 두 종목은 반대편 끝에 섰습니다.",
-      "note_en": "Aug 7 closes and weekly moves for major KOSPI names, in won. Hanwha Solutions gained 33% in five sessions on the US polysilicon tariff, while the two memory names sat at the opposite end."
+      "note_ko": "코스피 주요 종목의 8/7 종가와 주간 등락률(원). 한화솔루션은 미국의 폴리실리콘 규제 발표가 겹치며 5거래일 만에 33% 올랐고, 반도체 두 종목은 반대편 끝에 섰습니다.",
+      "note_en": "Aug 7 closes and weekly moves for major KOSPI names, in won. Hanwha Solutions gained 33% in five sessions as the US polysilicon measures landed, while the two memory names sat at the opposite end."
     },
     {
       "title_ko": "AI · 반도체 기술",
       "title_en": "AI & Semiconductors",
       "color": "#9085e9",
       "items": [
+        {
+          "headline_ko": "삼성전자, HBM5 대비 성능 최대 8배 'zHBM' 첫 공개",
+          "headline_en": "Samsung unveils zHBM, up to 8x the performance of HBM5",
+          "body_ko": "AI가속기 위에 메모리를 수직으로 쌓아 데이터 이동거리를 줄인 3D 구조로, 열저항을 절반 이상 낮췄다. 미국 산타클라라 FMS 2026에서 목업을 업계 최초로 공개했다.",
+          "body_en": "A 3D structure that stacks memory vertically on the accelerator to shorten data paths, cutting thermal resistance by more than half. The mock-up was an industry first, shown at FMS 2026 in Santa Clara.",
+          "src": "Samsung Newsroom",
+          "time": "8/4"
+        },
         {
           "headline_ko": "SK하이닉스, 용인·청주에 54조원 투자 확정",
           "headline_en": "SK hynix commits 54 trillion won to two new fabs",
@@ -293,20 +301,12 @@
           "time": "8/7"
         },
         {
-          "headline_ko": "AMD 2분기 EPS 1.66달러로 예상 상회",
-          "headline_en": "AMD posts Q2 EPS of $1.66, above estimates",
-          "body_ko": "매출 115억3600만달러(예상 113억1000만달러), EPS 1.66달러(예상 1.62달러)로 둘 다 컨센서스를 웃돌았다. 발표는 4일 미국장 마감 뒤였다.",
-          "body_en": "Revenue of $11.536 billion (est. $11.310 billion) and EPS of $1.66 (est. $1.62) both beat consensus. The release came after the US close on Aug 4.",
-          "src": "FMP",
-          "time": "8/4"
-        },
-        {
-          "headline_ko": "팔란티어 2분기 매출 19억3500만달러",
-          "headline_en": "Palantir Q2 revenue reaches $1.935 billion",
-          "body_ko": "예상 18억1200만달러를 6.8% 웃돌았고 EPS는 0.41달러로 예상 0.34달러를 넘었다. 3일 발표로 이번 주 AI 실적 시즌의 문을 열었다.",
-          "body_en": "That is 6.8% above the $1.812 billion estimate, with EPS of $0.41 versus $0.34 expected. The Aug 3 report opened the week's AI earnings.",
-          "src": "FMP",
-          "time": "8/3"
+          "headline_ko": "AMD, 예상 웃돈 실적에도 시간외 9%대 하락",
+          "headline_en": "AMD beat estimates but fell 9% after hours",
+          "body_ko": "2분기 EPS 1.66달러(예상 1.62달러), 매출 115억3600만달러(예상 113억1000만달러)였다. 머스크가 AI 인프라에 엔비디아 블랙웰만 쓰겠다고 밝히면서 시간외 급락했다.",
+          "body_en": "Q2 EPS came in at $1.66 (est. $1.62) on revenue of $11.536 billion (est. $11.310 billion). Shares slid after hours once Musk said he would use only Nvidia Blackwell for AI infrastructure.",
+          "src": "FMP · Chosun Biz",
+          "time": "8/4~8/5"
         }
       ]
     },
@@ -326,24 +326,24 @@
         {
           "headline_ko": "이란, 미·이스라엘 선박 호르무즈 통항 금지 추진",
           "headline_en": "Iran moves to bar US, Israeli ships",
-          "body_ko": "이란 의회가 법안을 검토 중이다. 트럼프 대통령은 합의가 아직 이뤄지지 않았다고 밝혔고, WTI는 6일 반등해 77.08달러로 마쳤다.",
-          "body_en": "Iran's parliament is weighing the bill. Trump said no deal was reached; WTI rebounded Thursday to $77.08.",
-          "src": "Yahoo Finance",
+          "body_ko": "트럼프 대통령은 합의가 아직 이뤄지지 않았다고 밝혔다. WTI는 6일 77.29달러로 반등해 7일 77.08달러로 한 주를 마쳤다.",
+          "body_en": "Trump said no deal yet. WTI rebounded to $77.29 on Thursday and closed the week at $77.08.",
+          "src": "Reuters",
           "time": "8/6"
         },
         {
-          "headline_ko": "미국, 폴리실리콘·파생상품에 15% 관세",
-          "headline_en": "US sets 15% tariff on polysilicon",
-          "body_ko": "잉곳·웨이퍼·셀이 대상이다. 7일 한화솔루션은 11.51%, OCI홀딩스는 11.68% 올랐다.",
-          "body_en": "Ingots, wafers and cells are covered. Hanwha Solutions rose 11.51% and OCI Holdings 11.68% on Aug 7.",
+          "headline_ko": "미국, 폴리실리콘 파생상품에 15% 관세",
+          "headline_en": "US sets a 15% tariff on polysilicon derivatives",
+          "body_ko": "잉곳·웨이퍼·셀·모듈이 대상이고, 원료 폴리실리콘에는 최저수입가격이 적용된다. 7일 한화솔루션은 11.51% 올랐다.",
+          "body_en": "Ingots, wafers and cells are covered; polysilicon gets a minimum import price. Hanwha Solutions rose 11.51% on Aug 7.",
           "src": "KRX",
           "time": "8/7"
         },
         {
-          "headline_ko": "외국인, 주 후반 코스피 대거 이탈",
-          "headline_en": "Foreigners pulled out of the KOSPI",
-          "body_ko": "6일 유가증권시장에서 3조원 넘게 순매도했고 7일에도 8,589억원을 팔았다. 7일 개인·기관은 순매수였다.",
-          "body_en": "Net sales topped 3 trillion won Thursday and 858.9 billion won Friday; retail and institutions were buyers.",
+          "headline_ko": "샌디스크 쇼크에 아시아 메모리주 투매",
+          "headline_en": "SanDisk guidance shock hit Asian memory",
+          "body_ko": "6일 코스피는 4.58% 밀렸고 외국인이 유가증권시장에서 3조3천억원 넘게, 7일에도 8,589억원을 순매도했다.",
+          "body_en": "The KOSPI fell 4.58% Thursday as foreigners dumped over 3.3 trillion won, then 858.9 billion more on Friday.",
           "src": "KRX",
           "time": "8/6~8/7"
         }
@@ -366,20 +366,12 @@
   },
   "schedule": [
     {
-      "time": "8/9 10:30",
-      "title_ko": "중국 7월 소비자물가",
-      "title_en": "China July CPI",
-      "detail_ko": "컨센서스 전년비 0.8%, 직전 1.0%.",
-      "detail_en": "Consensus 0.8% y/y versus 1.0% prior.",
-      "importance": "mid"
-    },
-    {
-      "time": "8/12 08:00",
-      "title_ko": "한국 7월 고용동향",
-      "title_en": "Korea July Employment",
-      "detail_ko": "직전 실업률 2.7%.",
-      "detail_en": "Prior jobless rate 2.7%.",
-      "importance": "mid"
+      "time": "8/10 14:00",
+      "title_ko": "3대 메가프로젝트 2차 점검회의",
+      "title_en": "Korea Chip Mega-Project Review",
+      "detail_ko": "이재명 대통령 주재 · 800조원 호남 반도체 클러스터 점검.",
+      "detail_en": "Chaired by President Lee, reviewing the 800tn won Honam chip cluster.",
+      "importance": "high"
     },
     {
       "time": "8/12 21:30",
@@ -393,8 +385,8 @@
       "time": "8/13 21:30",
       "title_ko": "미 7월 생산자물가(PPI)",
       "title_en": "US July PPI",
-      "detail_ko": "컨센서스 전월비 0.1%, 직전 -0.3%.",
-      "detail_en": "Consensus 0.1% m/m versus -0.3% prior.",
+      "detail_ko": "컨센서스 전월비 0.1%, 직전 -0.3% · 신규 실업수당청구도 같은 시각입니다.",
+      "detail_en": "Consensus 0.1% m/m vs -0.3% prior; weekly jobless claims land at the same time.",
       "importance": "mid"
     },
     {
@@ -404,6 +396,14 @@
       "detail_ko": "직전 전월비 0.2%, 컨트롤그룹 0.5%.",
       "detail_en": "Prior 0.2% m/m, control group 0.5%.",
       "importance": "high"
+    },
+    {
+      "time": "8/14 23:00",
+      "title_ko": "미 8월 미시간대 소비자심리",
+      "title_en": "US August UMich Sentiment",
+      "detail_ko": "직전 55.2 · 1년 기대인플레 4.2%.",
+      "detail_en": "Prior 55.2; 1-year inflation expectations 4.2%.",
+      "importance": "mid"
     }
   ],
   "next_brief_ko": "🗓 다음 브리핑 — 내일 밤 9시, 다음 주 일정",
