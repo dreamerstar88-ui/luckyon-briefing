@@ -2245,7 +2245,34 @@
   "indexNote_ko": "※ 8/7 종가 · 지난주 금요일 대비 주간 변동 · 막대는 5개 지수 중 최대 변동 대비 비율",
   "indexNote_en": "※ Aug 7 close · change vs last Friday · bars are scaled to the largest move of the five",
   "valuation": {
-    "rows": []
+    "rows": [
+      {
+        "key": "DJI",
+        "name_ko": "다우",
+        "name_en": "Dow",
+        "per": 22.1,
+        "perYearAgo": 24.3,
+        "perEstimate": 20.73
+      },
+      {
+        "key": "GSPC",
+        "name_ko": "S&P 500",
+        "name_en": "S&P 500",
+        "per": 26.02,
+        "perYearAgo": 24.79,
+        "perEstimate": 21.31
+      },
+      {
+        "key": "IXIC",
+        "name_ko": "나스닥 100",
+        "name_en": "Nasdaq 100",
+        "per": 33.96,
+        "perYearAgo": 32.92,
+        "perEstimate": 25.27
+      }
+    ],
+    "note_ko": "WSJ 기준 · 8/07/26 · as-reported 이익 기준 · 나스닥은 100 지수(표에 종합 없음) · 산출 기관마다 값이 달라 같은 소스로 비교",
+    "note_en": "Per WSJ · 8/07/26 · as-reported earnings · Nasdaq figure is the 100 (no Composite row) · methodologies differ by provider, so all three come from one source"
   },
   "metrics": [
     {

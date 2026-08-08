@@ -30,10 +30,15 @@ const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 
 // 표에 있는 이름 → 카드에서 쓰는 이름. 카드 ②의 지수와 맞춘다.
 // 나스닥은 카드가 종합지수(IXIC)를 쓰므로 Composite 을 우선하고, 없으면 100 을 쓴다.
+// **표시 이름은 실제로 읽은 행에서 나온다.** 카드가 그리는 지수와 PER 의 대상이
+// 다를 수 있어서다 — WSJ 표에는 나스닥 «종합»이 없고 «100» 만 있다(2026-08-08 실측).
+// 카드 ③은 종합지수 봉차트를 그리는데 PER 만 100 이면, 이름을 '나스닥'으로 뭉개면
+// 독자는 같은 지수의 PER 로 읽는다. 그래서 행 이름에 붙은 라벨을 그대로 쓴다.
 const WANT = [
-  { key: 'DJI',  rowNames: ['Dow Jones Industrial Average'], name_ko: '다우', name_en: 'Dow' },
-  { key: 'GSPC', rowNames: ['S&P 500 Index'],                name_ko: 'S&P 500', name_en: 'S&P 500' },
-  { key: 'IXIC', rowNames: ['NASDAQ Composite', 'NASDAQ 100 Index'], name_ko: '나스닥', name_en: 'Nasdaq' },
+  { key: 'DJI',  rows: [['Dow Jones Industrial Average', '다우', 'Dow']] },
+  { key: 'GSPC', rows: [['S&P 500 Index', 'S&P 500', 'S&P 500']] },
+  { key: 'IXIC', rows: [['NASDAQ Composite', '나스닥 종합', 'Nasdaq Comp.'],
+                        ['NASDAQ 100 Index', '나스닥 100', 'Nasdaq 100']] },
 ];
 
 async function get(url) {
@@ -103,16 +108,16 @@ if (res.text) {
   out.asOfLabel = dm ? dm[1] : null;
 
   for (const w of WANT) {
-    let hit = null, usedName = null;
-    for (const rn of w.rowNames) {
+    let hit = null, usedName = null, ko = null, en = null;
+    for (const [rn, nko, nen] of w.rows) {
       const nums = rowAfter(flat, rn);
-      if (nums) { hit = nums; usedName = rn; break; }
+      if (nums) { hit = nums; usedName = rn; ko = nko; en = nen; break; }
     }
     if (!hit) { out.missing.push(w.key); continue; }
     out.rows.push({
       key: w.key,
-      name_ko: w.name_ko,
-      name_en: w.name_en,
+      name_ko: ko,
+      name_en: en,
       wsjRow: usedName,                 // 어느 행에서 왔는지 남긴다 (Composite vs 100 구분)
       per: hit[0],
       perYearAgo: hit[1] ?? null,

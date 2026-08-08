@@ -95,10 +95,22 @@
 
 **토요일에만 해당하는 주의사항**
 
-- **지수 PER·EPS(`valuation`)는 확보되지 않으면 빈 배열로 둔다.** 렌더러가 안내 문구로 대체한다.
-  연결된 어떤 소스에도 지수 PER/EPS 가 없음을 2026-08-08 에 전수 확인했다(FMP `quote`/`index-quote`·
-  `company`, Alpha Vantage `COMPANY_OVERVIEW`/`ETF_PROFILE`, 직접 크롤링 전부). `probe-index-valuation`
-  워크플로가 공식 소스를 확정하면 그때 채운다. **틀린 숫자보다 빈칸이 낫다.**
+- **지수 PER(`valuation`)은 `data/index-valuation.json` 에서 가져온다.**
+  `index-valuation` 워크플로가 토요일 05:45 KST 에 WSJ «P/E Ratios & Earnings Yields» 표에서
+  미국 3개 지수의 현재 PER·1년 전 PER·추정 PER 을 받아 커밋한다(러너에서만 열린다 — 세션은 403).
+
+  ```
+  git fetch origin main -q && git show origin/main:data/index-valuation.json > /tmp/val.json
+  ```
+
+  - `rows` 를 복사하고 `note_ko`/`note_en` 에 **출처와 기준을 반드시 적는다.** 같은 날 S&P 500 PER 이
+    WSJ 26.02 / multpl 29.88 / iShares 30.65 로 최대 18% 벌어진다 — 이익 계열이 기관마다 달라서다.
+    무출처로 쓰면 특정 벤더의 방법론을 사실처럼 내보내게 된다.
+  - **표시 이름은 `name_ko` 를 그대로 쓴다.** WSJ 표에는 나스닥 «종합»이 없어 «100» 이 잡히는데,
+    카드 ③은 종합지수 봉차트를 그린다. 이름을 '나스닥'으로 뭉개면 독자는 같은 지수의 PER 로 읽는다.
+  - **EPS 는 넣지 않는다.** 표에 없고, 종가 ÷ PER 로 되짚으면 반올림 오차가 '지수 EPS' 처럼 보인다.
+  - **코스피·코스닥 PER 은 아직 경로가 없다**(KRX 정보데이터시스템이 러너에서도 400). 넣지 않는다.
+  - `rows` 가 비면 렌더러가 안내 문구로 대체한다. **틀린 숫자보다 빈칸이 낫다.**
 - **`calendar` 의 색은 방향만 뜻한다** — `dir:1` = 실제치가 예상보다 **높음**, `-1` = 낮음, `0` = 같음.
   좋고 나쁨으로 정하지 않는다. 실업수당·감원처럼 '낮으면 좋은' 지표도 낮으면 `-1` 이다.
   (해석과 방향을 섞어 쓰다 기업 지표와 경제 지표의 색 의미가 반대가 된 적이 있다.)

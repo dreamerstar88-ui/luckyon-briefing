@@ -116,7 +116,10 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
     "ohlc":[[o,h,l,c], ...]                   // 일봉. MA20·RSI 를 여기서 직접 계산한다
   } x5],
   "indexNote_ko","indexNote_en",
-  "valuation": {"rows":[{"label_ko","label_en","per","eps"}]},   // 빈 배열이면 '비어 있음' 안내로 대체
+  "valuation": {                              // ← data/index-valuation.json 에서 복사
+    "rows":[{"key","name_ko","name_en","per","perYearAgo","perEstimate"}],
+    "note_ko","note_en"                       // 출처·기준 필수. 빈 rows 면 '비어 있음' 안내로 대체
+  },
   "metrics":[{"emoji","name_ko","name_en","value","delta","dir"} x10],
   "metricsNote_ko","metricsNote_en",
   "calendar":[{                               // 요일 칼럼. 보통 5개(월~금)
