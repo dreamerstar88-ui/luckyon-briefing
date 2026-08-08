@@ -11,13 +11,18 @@
 //   node scripts/fetch-sat-indexes.mjs 2026-08-07      # 특정 금요일 기준
 //   BARS=70 node scripts/fetch-sat-indexes.mjs         # 카드에 실을 봉 개수(기본 70)
 //
-// ── 소스가 둘로 갈리는 이유
+// ── 어디서 돌려야 하나 (2026-08-08 실측 — 짐작과 반대였다)
 // 한국(ks11·kq11): FinanceDataReader 가 KRX 원천을 GitHub 에 미러링한 연간 CSV.
-//   raw.githubusercontent 라 브리핑 세션에서도 통과한다. OHLC 가 다 들어 있다.
+//   raw.githubusercontent 라 **세션·러너 어디서든** 통과한다. OHLC 가 다 들어 있다.
 // 미국(^IXIC·^GSPC·^DJI): Yahoo chart API.
-//   **세션 egress 에서는 막힌다**(query1 → 429, query2 → 연결 실패, stooq → 봇 검증 페이지).
-//   Actions 러너는 그 정책 밖이라 통과한다 — econ-calendar·krx-flows 와 같은 패턴이다.
-//   그래서 이 스크립트는 러너에서 돌려 data/sat-indexes.json 에 커밋하는 것을 전제로 한다.
+//   **세션에서 된다 (5/5, 두 번 연속).** 첫 curl 은 429 를 주지만 아래 get() 의 재시도가
+//   뚫는다 — 그래서 curl 한 방으로 판단하면 안 된다.
+//   **Actions 러너에서는 안 된다 (0/3).** Yahoo 가 클라우드 IP 를 막는다. 러너에서 돌리면
+//   한국 2개만 잡히고 미국은 통째로 비었다 (run 31255278775 실측).
+//
+// 결론: **이 스크립트는 토요일 세션이 직접 돌리는 것이 1순위다.**
+//   sat-indexes 워크플로는 한국 쪽 예비용일 뿐이며, 세션이 그 파일을 미국 지수의
+//   근거로 삼아서는 안 된다. 자세한 건 ROUTINE_PROMPT_WEEKEND.md §B2 기법 1.
 //
 // 출력: data/sat-indexes.json 형태의 JSON 을 stdout 으로.
 //   `indexes[]` 는 FORMAT_BRIEFING.md §2-A 스키마와 필드 이름이 같아 그대로 붙여 쓸 수 있다.
@@ -215,7 +220,7 @@ const out = {
   runner: process.env.GITHUB_ACTIONS ? 'github-actions' : 'local',
   source: {
     kr: 'KRX via FinanceDataReader cache (raw.githubusercontent)',
-    us: 'Yahoo Finance chart API v8 — 세션 egress 에서는 막히므로 Actions 러너에서 받는다',
+    us: 'Yahoo Finance chart API v8 — 세션에서는 되고 Actions 러너에서는 막힌다(클라우드 IP 차단)',
   },
   missing,
   note: 'indexes[] 는 FORMAT_BRIEFING.md §2-A 스키마와 필드가 같다. note_ko/note_en 은 세션이 채운다. _check 는 대조용이라 콘텐츠 JSON 에 옮기지 않는다.',

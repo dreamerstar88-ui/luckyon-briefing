@@ -107,7 +107,7 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
     "tiles_title_ko","tiles_title_en",
     "tiles":[{"label_ko","label_en","value"} x3]                       // value 는 숫자(%), 부호로 색이 갈린다
   },
-  "indexes":[{                                // ②③이 같이 읽는다. 5개 고정. ← data/sat-indexes.json 에서 그대로 복사
+  "indexes":[{                                // ②③이 같이 읽는다. 5개 고정. ← fetch-sat-indexes.mjs 출력을 그대로 복사
     "key","name_ko","name_en",
     "close", "wk",                            // 숫자. wk = 주간 등락률(%)
     "hi","hiLabel_ko","hiLabel_en",           // 기간 고점과 그 라벨("52주 고점"/"60일 고점")
@@ -144,9 +144,10 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
 
 ### 토요일에서 특히 조심할 것
 
-- **`indexes[]` 는 손으로 만들지 않는다.** `data/sat-indexes.json`(sat-indexes 워크플로가 토요일
-  06:30 KST 에 커밋)의 `indexes` 배열이 이 스키마와 필드 이름이 같다. **그대로 복사하고 `note_ko`/
-  `note_en` 만 채운다.** `_check` 는 대조용이라 옮기지 않는다.
+- **`indexes[]` 는 손으로 만들지 않는다.** `node scripts/fetch-sat-indexes.mjs <금요일 날짜>` 출력의
+  `indexes` 배열이 이 스키마와 필드 이름이 같다. **그대로 복사하고 `note_ko`/`note_en` 만 채운다.**
+  `_check` 는 대조용이라 옮기지 않는다. (`data/sat-indexes.json` 은 예비용 — 러너에서는 미국 지수가
+  비므로 미국의 근거로 쓰지 않는다. ROUTINE_PROMPT_WEEKEND.md §B2 기법 1)
 - **`ohlc` 는 70봉(약 3.3개월)이 기본이다.** RSI(14)는 Wilder 방식이라 워밍업이 짧으면 값이 흔들린다 —
   23봉으로도 그림은 나오지만 RSI 숫자를 신뢰할 수 없다. 70봉이면 캔들도 아직 또렷하게 읽힌다.
 - **`hi` 가 캔들 범위에서 25% 넘게 벗어나면 렌더러가 고점선을 알아서 생략한다.** 오류가 아니다 —
