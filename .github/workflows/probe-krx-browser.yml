@@ -1,0 +1,56 @@
+name: Probe KRX Browser
+
+# 코스피·코스닥 지수 PER/PBR 을 실제 브라우저로 받아 볼 수 있는지 시험한다.
+# KRX 는 https 로도 getJsonData.cmd 에 LOGOUT 을 돌려준다(JS 세션 요구). 브라우저는
+# 그 과정을 통과하므로, 러너에서 Playwright 로 화면을 열고 XHR 을 가로채 본다.
+# 세션에서는 프록시가 CONNECT 터널만 받아 Chromium 이 끊긴다 — 러너만 가능하다.
+# 탐침 전용. 실패로 끝내지 않고 브리핑에 영향도 없다.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i -D playwright@latest --no-save && npx playwright install --with-deps chromium
+      - name: Probe
+        id: probe
+        continue-on-error: true
+        run: |
+          mkdir -p data
+          if node scripts/probe-krx-browser.mjs > /tmp/k.json; then
+            mv /tmp/k.json data/probe-krx-browser.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::브라우저 탐침 실패"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Summary
+        if: always() && steps.probe.outputs.ok == 'true'
+        run: |
+          node -e '
+            const r=require("./data/probe-krx-browser.json");
+            for (const s of r.screens) {
+              console.log(`### ${s.id} (${s.menuId})`);
+              console.log(s.error ? `실패: ${s.error}` : `제목 "${s.title}" · PER ${s.hasPER} · PBR ${s.hasPBR} · XHR ${s.xhr.length}건`);
+              for (const x of s.xhr) console.log(`- ${x.status} \`${x.post.slice(0,200)}\``);
+              if (s.textHead) console.log("\n```\n"+s.textHead.slice(0,700)+"\n```");
+            }
+          ' >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/probe-krx-browser.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: probe KRX via browser [skip ci]"
+          for i in 1 2 3; do git push && exit 0; sleep $((i*3)); git pull --rebase --autostash origin main || exit 1; done

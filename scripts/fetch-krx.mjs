@@ -8,8 +8,23 @@
 //
 // 데이터 출처: FinanceDataReader 가 KRX 원천 데이터를 GitHub 에 미러링해 둔 CSV.
 //   https://github.com/FinanceData/fdr_krx_data_cache
-// KRX 정보데이터시스템(data.krx.co.kr)·네이버 금융은 이 실행 환경의 egress 정책에서
-// 차단되므로 직접 조회할 수 없다. 이 미러는 raw.githubusercontent.com 이라 통과한다.
+//
+// ⚠ 2026-08-08 정정 — 예전 주석은 "KRX 정보데이터시스템·네이버 금융은 egress 에서
+// 차단된다"고 단정했으나 **사실이 아니다.** 실측하면 둘 다 200 이다.
+//     https://data.krx.co.kr     → 200
+//     https://finance.naver.com  → 200
+// 차단으로 보였던 것은 `http://` 로 요청했기 때문이다 — 이 환경의 프록시는 HTTPS
+// CONNECT 터널만 받고 평문 HTTP 를 거부한다(프록시가 그 문구를 응답 본문에 적어 준다).
+// **KRX 를 부를 때는 반드시 https 를 쓴다.**
+//
+// 그래도 이 미러를 계속 쓰는 이유는 남아 있다: KRX 의 getJsonData.cmd 는 https 로도
+// `LOGOUT` 을 돌려준다(브라우저가 JS 로 트는 세션을 요구한다). 미러는 인증 문턱이
+// 아예 없고, 지수 OHLC·전종목 시세는 이쪽이 더 단순하다.
+//
+// 한계 — **지수 PER/PBR 은 이 미러에 없다.** listing/krx 는 가격·시총만 준다
+// (Close·Marcap·Stocks). 이익 계열이 없어 지수 PER 을 만들 수 없고, 종목에서 되짚어도
+// KRX 공식 가중 방식과 어긋난다. 확보 경로 후보는 KRX 공식 OpenAPI(키 필요)와
+// 러너에서의 브라우저 자동화다.
 //
 // 주의: 전종목 스냅샷(listing)은 2026-03-11 이후만 존재한다. 그 이전 날짜를 넣으면
 // 지수만 나오고 종목 집계는 비어 있게 된다.
