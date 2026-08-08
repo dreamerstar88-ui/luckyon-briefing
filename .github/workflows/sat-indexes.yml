@@ -88,7 +88,16 @@ jobs:
           git add data/sat-indexes.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "chore: refresh sat indexes [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "chore: refresh sat indexes [skip ci]"
+          # 다른 캐시 워크플로가 같은 창에 main 을 밀면 push 가 거절된다(실제로 겪었다).
+          # 우리가 만지는 파일은 하나뿐이라 rebase 로 얹으면 충돌 없이 붙는다.
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "push 거절 — main 을 다시 받아 얹습니다 ($i/5)"
+            sleep $((i * 3))
+            git pull --rebase --autostash origin main || exit 1
+          done
+          echo "::error::5회 시도 후에도 push 실패"
+          exit 1
