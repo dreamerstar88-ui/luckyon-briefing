@@ -226,22 +226,36 @@ function cardIndexWeek() {
   ${note(t(data.indexNote_ko, data.indexNote_en))}</div>`;
 }
 
-// PER·EPS 는 공식 소스가 잡히기 전까지 비워 둔다. 틀린 숫자보다 빈칸이 낫다.
-// probe-index-valuation 워크플로가 소스를 확정하면 rows 를 채워 넣으면 된다.
+// 밸류에이션 블록. **현재 PER 을 1년 전과 나란히 둔다** — 지금이 비싼지 싼지는 절대
+// 수치보다 이 대비로 읽힌다. 오르면 빨강/내리면 파랑은 등락과 같은 규칙이다.
+//
+// EPS 는 넣지 않는다. 소스(WSJ 표)에 없고, 종가 ÷ PER 로 되짚으면 반올림 오차가 그대로
+// '지수 EPS' 처럼 보인다. 출처를 반드시 함께 적는다 — 같은 지수의 PER 도 산출 기관마다
+// 최대 18% 벌어지므로(2026-08-08 확인) 무출처로 쓰면 특정 벤더 방법론을 사실처럼 내보내게 된다.
 function valuationBlock(v) {
-  if (v && Array.isArray(v.rows) && v.rows.length) {
-    return `<div class="blk" style="flex:none;padding:16px 26px;display:flex;align-items:center;gap:22px">
-      <div style="font-size:20px;font-weight:800;color:${P.accent};flex:none">${t('PER · EPS', 'PER · EPS')}</div>
-      ${v.rows.map(r => `<div style="flex:1;min-width:0">
-        <div style="font-size:18px;color:${P.mute};font-weight:700">${t(r.label_ko, r.label_en)}</div>
-        <div class="num" style="font-size:24px;font-weight:800">${r.per} <span style="font-size:18px;color:${P.mute}">/ ${r.eps}</span></div>
-      </div>`).join('')}</div>`;
+  if (!v || !Array.isArray(v.rows) || !v.rows.length) {
+    return `<div class="blk" style="flex:none;padding:18px 26px;background:${P.paper};border-style:dashed;display:flex;align-items:center;gap:18px">
+      <div style="font-size:20px;font-weight:800;color:${P.accent};flex:none">${t('밸류에이션<br>(PER)', 'Valuation<br>(PER)')}</div>
+      <div style="font-size:19px;color:${P.mute};line-height:1.45">${t(
+        '이번 주 지수 PER 을 확보하지 못해 비워 두었습니다.<br>틀린 숫자보다 빈칸이 낫다는 원칙입니다.',
+        'Index PER could not be secured this week, so this stays blank.<br>A blank beats a wrong number.')}</div>
+    </div>`;
   }
-  return `<div class="blk" style="flex:none;padding:18px 26px;background:${P.paper};border-style:dashed;display:flex;align-items:center;gap:18px">
-    <div style="font-size:20px;font-weight:800;color:${P.accent};flex:none">${t('밸류에이션<br>(PER · EPS)', 'Valuation<br>(PER · EPS)')}</div>
-    <div style="font-size:19px;color:${P.mute};line-height:1.45">${t(
-      '연결된 데이터 소스 어디에도 지수 PER·EPS가 없어 비워 두었습니다.<br>공식 소스를 확보하면 이 칸이 채워집니다.',
-      'No connected source carries index PER/EPS, so this stays blank.<br>It fills in once an official source is secured.')}</div>
+  return `<div class="blk" style="flex:none;padding:15px 26px 13px">
+    <div style="display:flex;align-items:center;gap:20px">
+      <div style="font-size:19px;font-weight:800;color:${P.accent};flex:none;line-height:1.25">
+        ${t('PER<br>1년 전 대비', 'PER<br>vs a year ago')}</div>
+      ${v.rows.map(r => { const d = r.perYearAgo ? r.per - r.perYearAgo : null, col = UPDN(d ?? 0);
+        return `<div style="flex:1;min-width:0;display:flex;align-items:baseline;gap:10px">
+        <div style="min-width:0">
+          <div style="font-size:18px;color:${P.mute};font-weight:700">${t(r.name_ko, r.name_en)}</div>
+          <div class="num" style="font-size:26px;font-weight:800;letter-spacing:-.02em">${r.per.toFixed(2)}</div>
+        </div>
+        ${d != null ? `<div class="num" style="font-size:18px;font-weight:800;color:${col};white-space:nowrap">
+          ${d > 0 ? '▲' : d < 0 ? '▼' : ''}${Math.abs(d).toFixed(2)}</div>` : ''}
+      </div>`; }).join('')}
+    </div>
+    <div style="font-size:17px;color:${P.mute};margin-top:9px">※ ${t(v.note_ko, v.note_en)}</div>
   </div>`;
 }
 

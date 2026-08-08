@@ -1,0 +1,82 @@
+name: Index Valuation
+
+# 지수 PER 을 WSJ Market Data 표에서 받아 data/index-valuation.json 에 커밋한다.
+# 토요일 카드 ②의 valuation 블록이 이 출력을 쓴다.
+#
+# 왜 러너인가: WSJ 는 세션 egress 에서 403 이고 러너에서는 200 이다(2026-08-08 탐침).
+# 참고로 지수 «일봉»은 방향이 반대다 — Yahoo 가 클라우드 IP 를 막아 세션이 낫다.
+# 두 데이터가 서로 다른 쪽에서 오는 것은 착오가 아니라 측정 결과다.
+#
+# 왜 WSJ 한 곳인가: 러너에서 열린 네 소스의 S&P 500 PER 이 최대 18% 벌어진다
+# (WSJ 26.02 / multpl 29.88 / iShares 30.65). 이익 계열이 서로 달라서다. 하나를 골라
+# 단정하지 않고, 세 지수를 한 소스에서 받아 카드에 출처를 함께 적는다.
+
+on:
+  schedule:
+    # 토요일 세션 직전. 미국장 금요일 마감(약 05:00 KST) 뒤라 그 주 수치가 확정돼 있다.
+    - cron: '45 20 * * 5'   # 20:45 UTC 금 = 05:45 KST 토
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index-valuation
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch valuation
+        id: fetch
+        run: |
+          set -o pipefail
+          mkdir -p data
+          if node scripts/fetch-index-valuation.mjs > /tmp/v.json; then
+            mv /tmp/v.json data/index-valuation.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            # 표 구조가 바뀌면 여기서 걸린다. 기존 파일을 두고 넘어간다 —
+            # 그 주 카드는 빈칸 안내로 나가고, 그게 틀린 숫자보다 낫다.
+            echo "::warning::지수 PER 조회 실패 — 기존 data/index-valuation.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          {
+            echo '## 지수 PER (WSJ 기준)'
+            echo
+            node -e '
+              const r = require("./data/index-valuation.json");
+              console.log(`기준 **${r.asOfLabel || "?"}** · ${r.rows.length}/3개 지수`);
+              if (r.missing.length) console.log(`\n> ⚠ 못 읽은 지수: **${r.missing.join(", ")}** — 표 구조 변경 가능성`);
+              console.log("");
+              console.log("| 지수 | 현재 PER | 1년 전 | 추정 | 배당수익률 | WSJ 행 |");
+              console.log("| --- | --- | --- | --- | --- | --- |");
+              for (const x of r.rows)
+                console.log(`| ${x.name_ko} | ${x.per} | ${x.perYearAgo ?? "—"} | ${x.perEstimate ?? "—"} | ${x.divYield ?? "—"}% | ${x.wsjRow} |`);
+              console.log(`\n${r.caveat_ko}`);
+            '
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/index-valuation.json
+          git diff --cached --quiet && { echo "no changes"; exit 0; }
+          git commit -m "chore: refresh index valuation [skip ci]"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((i * 3)); git pull --rebase --autostash origin main || exit 1
+          done
+          exit 1
