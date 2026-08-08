@@ -1,0 +1,94 @@
+name: Sat Indexes
+
+# 토요일 카드 ②③이 쓰는 지수 데이터를 data/sat-indexes.json 에 커밋해 둔다.
+# 5개 지수(나스닥·S&P 500·다우·코스피·코스닥)의 일봉 70개 + 이동평균 20/50/100/200
+# + 기간 고점 + RSI(14).
+#
+# 왜 러너에서 받나: 미국 지수 일봉을 주는 소스가 브리핑 세션의 egress 정책에서 전부 막힌다
+# (Yahoo query1 → 429, query2 → 연결 실패, stooq → 봇 검증 페이지). 러너는 그 밖에 있어
+# 그대로 통과한다 — econ-calendar·krx-flows 와 같은 패턴이다.
+# 한국 지수는 FinanceDataReader 미러(raw.githubusercontent)라 세션에서도 되지만,
+# 두 나라를 한 파일로 묶어야 이동평균·주간 등락률 계산 기준이 어긋나지 않는다.
+#
+# 이것이 없으면 세션이 5개 × 70봉을 MCP 로 손수 모아야 한다. 토큰도 많이 들고 무엇보다
+# 틀리기 쉽다 — Yahoo `^KS11` 일봉 마지막 값이 null 로 오는 함정이 정확히 그 자리에 있다.
+
+on:
+  schedule:
+    # 토요일 주간 결산 세션(07:35 KST) 한 시간 전. 금요일 미국장 마감(약 05:00 KST) 뒤라
+    # 그 주 마지막 일봉이 확정돼 있다.
+    - cron: '30 21 * * 5'   # 21:30 UTC 금 = 06:30 KST 토
+  workflow_dispatch:
+    inputs:
+      asOf:
+        description: '기준일 (YYYY-MM-DD, 비우면 오늘 KST)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sat-indexes
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch indexes
+        id: fetch
+        run: |
+          set -o pipefail
+          mkdir -p data
+          if node scripts/fetch-sat-indexes.mjs ${{ inputs.asOf }} > /tmp/sat-indexes.json; then
+            mv /tmp/sat-indexes.json data/sat-indexes.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            # 지수를 하나도 못 받은 날은 기존 파일을 그대로 둔다. 여기서 실패로 끝내면
+            # 낡은 데이터까지 지워져 토요일 세션이 아무것도 못 읽는다.
+            echo "::warning::지수 조회 실패 — 기존 data/sat-indexes.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          {
+            echo '## 토요일 지수 데이터'
+            echo
+            node -e '
+              const r = require("./data/sat-indexes.json");
+              console.log(`기준 **${r.asOf}** · 봉 ${r.bars}개 · 지수 ${r.indexes.length}/5`);
+              if (r.missing.length) console.log(`\n> ⚠ 못 받은 지수: **${r.missing.join(", ")}** — 카드에서 빠집니다`);
+              console.log("");
+              console.log("| 지수 | 종가 | 주간 | RSI | MA50 | MA200 | 고점 |");
+              console.log("| --- | --- | --- | --- | --- | --- | --- |");
+              for (const x of r.indexes) {
+                const c = x._check || {};
+                console.log(`| ${x.name_ko} | ${x.close.toLocaleString()} | ${x.wk > 0 ? "+" : ""}${x.wk}% `
+                  + `| ${c.rsi14_full ?? "—"} | ${x.ma50 ?? "—"} | ${x.ma200 ?? "—"} | ${x.hiLabel_ko} ${x.hi.toLocaleString()} |`);
+              }
+            '
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sat-indexes.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh sat indexes [skip ci]"
+            git push
+          fi

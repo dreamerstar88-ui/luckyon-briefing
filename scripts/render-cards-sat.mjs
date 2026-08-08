@@ -38,6 +38,14 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const t = (ko, en) => (lang === 'ko' ? ko : en);
 
+// 로고 캐시. logos-cache 워크플로가 만들어 커밋해 둔 base64 사전이다.
+// 없어도 렌더는 된다 — 그 종목은 모노그램으로 나간다. 캐시가 통째로 비어도 조용히
+// 실패하지 않도록, 아래 badge() 가 항상 모노그램 대체 경로를 갖는다.
+const LOGO_FILE = path.join(root, 'data', 'logos.json');
+const LOGOS = fs.existsSync(LOGO_FILE)
+  ? (JSON.parse(fs.readFileSync(LOGO_FILE, 'utf8')).logos || {})
+  : {};
+
 /* ───────── 팔레트 ───────── */
 const P = {
   paper: '#f2efe6', card: '#fffdf8', line: '#ddd6c6', ink: '#1f1d19', mute: '#6f685b',
@@ -378,15 +386,28 @@ function cardSectors() {
 }
 
 /* ═════════ ⑧ 대형주 — 서식 27, 좌우 2단 ═════════ */
+// 배지: 캐시에 로고가 있으면 로고, 없으면 모노그램. 한국 종목은 로고 캐시가 없어
+// 항상 모노그램으로 나간다(CDN 이 미국 티커만 준다).
+// 로고 배지는 흰 바탕에 둔다 — 브랜드색 위에 얹으면 로고 자체 색과 부딪힌다.
+function badge(s) {
+  const L = s.logo && LOGOS[s.logo];
+  if (L) {
+    return `<div style="width:54px;height:54px;border-radius:15px;background:#fff;border:1px solid ${P.line};
+      display:grid;place-items:center;flex:none;overflow:hidden;padding:7px">
+      <img src="${L.dataUri}" alt="" style="width:100%;height:100%;object-fit:contain;display:block"></div>`;
+  }
+  const mono = t(s.mono_ko, s.mono_en);
+  return `<div style="width:54px;height:54px;border-radius:15px;background:${s.color};color:#fff;display:grid;place-items:center;
+    font-size:${mono.length > 2 ? 17 : 21}px;font-weight:800;flex:none;letter-spacing:-.02em">${mono}</div>`;
+}
 function moverCol(c) {
   return `<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:14px">
   <div style="display:flex;align-items:center;gap:10px;font-size:25px;font-weight:800;letter-spacing:-.01em;padding-left:2px">
     <span style="font-size:27px">${c.flag}</span>${t(c.head_ko, c.head_en)}</div>
-  ${c.items.map(s => { const col = UPDN(s.pct), mono = t(s.mono_ko, s.mono_en);
+  ${c.items.map(s => { const col = UPDN(s.pct);
     return `<div class="blk" style="flex:1;min-height:0;padding:22px 24px 20px;display:flex;flex-direction:column;gap:14px">
     <div style="display:flex;align-items:center;gap:14px;flex:none">
-      <div style="width:54px;height:54px;border-radius:15px;background:${s.color};color:#fff;display:grid;place-items:center;
-           font-size:${mono.length > 2 ? 17 : 21}px;font-weight:800;flex:none;letter-spacing:-.02em">${mono}</div>
+      ${badge(s)}
       <div style="flex:1;min-width:0;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.2">${t(s.name_ko, s.name_en)}</div>
     </div>
     <div style="flex:1;min-height:0;position:relative">${spark(s.seq, col)}</div>

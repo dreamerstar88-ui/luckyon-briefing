@@ -1,0 +1,90 @@
+name: Logos Cache
+
+# 미국 대형주 로고를 data/logos.json 에 base64 로 캐시해 둔다.
+# 토요일 카드 ⑧(대형주)의 배지가 모노그램 대신 실제 로고를 쓸 수 있게 하는 것이 목적이다.
+# "사람들은 그게 더 눈에 익다"는 요구에서 나온 작업이다.
+#
+# 왜 러너에서 받나: 로고 CDN 이 브리핑 세션의 egress 정책에서 막힌다(HTTP 000).
+# 그리고 렌더러는 로컬 HTML 을 Playwright 로 그리므로, 원격 이미지를 걸면 렌더 시점에
+# 네트워크를 타야 한다 — 그때 막히면 배지가 빈칸으로 나간 걸 아무도 모른다.
+# base64 로 박아 두면 렌더가 네트워크와 완전히 무관해진다.
+#
+# 로고는 거의 안 바뀌므로 주 1회로 충분하다. 새 종목이 필요하면 workflow_dispatch 에
+# 티커를 넣어 기존 캐시에 얹는다(MERGE 동작).
+
+on:
+  schedule:
+    # 토요일 지수 캐시(21:30 UTC 금)보다 앞서 돌려 둔다. 서로 의존하지는 않는다.
+    - cron: '00 20 * * 5'   # 20:00 UTC 금 = 05:00 KST 토
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: '추가할 티커 (공백 구분). 비우면 기본 목록 전체를 새로 받는다'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: logos-cache
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch logos
+        id: fetch
+        env:
+          # 티커를 지정하면 기존 캐시에 얹는다. 지정 안 하면 전체를 새로 받는다.
+          MERGE: ${{ inputs.tickers != '' && 'data/logos.json' || '' }}
+        run: |
+          set -o pipefail
+          mkdir -p data
+          if node scripts/fetch-logos.mjs ${{ inputs.tickers }} > /tmp/logos.json; then
+            mv /tmp/logos.json data/logos.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            # 하나도 못 받은 날은 기존 캐시를 그대로 둔다. 빈 파일로 덮으면 그 주 카드가
+            # 전부 모노그램으로 내려앉는데, 낡은 로고보다 그게 더 나쁘다.
+            echo "::warning::로고 조회 실패 — 기존 data/logos.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          {
+            echo '## 미국 대형주 로고 캐시'
+            echo
+            node -e '
+              const r = require("./data/logos.json");
+              const kb = Math.round(require("fs").statSync("data/logos.json").size / 1024);
+              console.log(`로고 **${r.count}개** · 파일 ${kb}KB`);
+              const svg = Object.values(r.logos).filter(x => x.fmt === "svg").length;
+              console.log(`\nSVG ${svg} / PNG ${r.count - svg}`);
+              if (r.missing.length) console.log(`\n> 못 받은 티커(모노그램으로 대체됨): ${r.missing.join(", ")}`);
+            '
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/logos.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh US large-cap logos [skip ci]"
+            git push
+          fi
