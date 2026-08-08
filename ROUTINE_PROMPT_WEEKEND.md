@@ -286,4 +286,12 @@ node scripts/fetch-sat-indexes.mjs <금요일 날짜> > /tmp/sat-idx.json
    - sat 첫 카드는 라벨칩 + 굵은 두 줄 제목 + 큰 수치 카드가 보이는 것이 정상이다. sun 은 기대/경계 블록.
    - **sat 은 영어 카드 ⑤를 특히 본다.** `억`·`만` 이 그대로 남아 있으면 `est_en`/`act_en` 을 안 넣은 것이다
      (`FORMAT_BRIEFING.md` §4). 실제로 그렇게 새어 나간 적이 있다.
+   - **대체텍스트 개수가 카드 수와 같은지 확인한다.** 토요일은 10개여야 한다:
+     ```
+     node -e "import('./scripts/lib/alt-text.mjs').then(async m=>{const fs=await import('node:fs');
+       const c=JSON.parse(fs.readFileSync('content/<DATE>-sat.json','utf8'));
+       for(const l of ['ko','en']) console.log(l, m.buildAltTexts(c,l).length)})"
+     ```
+     어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다. 카드 편성을 바꿨다면
+     `scripts/lib/alt-text.mjs` 의 `satAltTexts()` 도 같이 고쳐야 한다.
 4. **`ROUTINE_COMMON.md` §4~§7** 대로 커밋·푸시 → 토큰 점검 → Instagram 발행 → 카카오톡 알림 → 마무리 보고.

@@ -16,6 +16,12 @@ export function buildAltTexts(content, lang) {
   const ko = lang === 'ko';
   const brief = ko ? 'luckyon 브리핑' : 'luckyon Briefing';
   const dateLabel = ko ? content.dateLabel_ko : content.dateLabel_en;
+
+  // 토요일(sat)은 카드 편성이 완전히 달라 별도 경로로 만든다.
+  // 아래 평일·sun 경로를 그대로 태우면 `content.ai` 가 배열이 아니라 객체라서
+  // `.slice` 에서 TypeError 로 죽는다 — 발행 자체가 멈춘다.
+  if (content.cover && Array.isArray(content.indexes)) return satAltTexts(content, ko, brief, dateLabel);
+
   const headline = ko ? content.headline_ko : content.headline_en;
   const headlineSub = ko ? content.headline_sub_ko : content.headline_sub_en;
   const nextBrief = ko ? content.next_brief_ko : content.next_brief_en;
@@ -83,6 +89,74 @@ export function buildAltTexts(content, lang) {
       .map(s => `${s.time} ${ko ? s.title_ko : s.title_en}`).join(' / '));
   }
   list.push(`${nextBrief || ''} · ${brief}`.trim());
+
+  return list.map(s => s.length > MAX ? s.slice(0, MAX - 3) + '...' : s);
+}
+
+// 토요일 카드 10장의 대체텍스트. 순서는 render-cards-sat.mjs 의 편성과 반드시 같아야 한다 —
+// 어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다(평일에서 실제로 겪은 사고다).
+// ① 표지 ② 지수 ③ 차트 ④ 지표 ⑤ 발표결과 ⑥ 뉴스 ⑦ 섹터 ⑧ 대형주 ⑨ AI ⑩ 아웃트로
+function satAltTexts(c, ko, brief, dateLabel) {
+  const t = (a, b) => (ko ? a : b);
+  const pct = v => `${v > 0 ? '+' : ''}${v}%`;
+  // 태그와 함께 엔티티도 푼다. &amp; 를 남기면 대체텍스트에 "S&amp;P 500" 이 그대로 읽힌다.
+  const stripTags = s => String(s ?? '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/\s+/g, ' ').trim();
+  // est/act 는 한글 단위가 붙는 값만 _ko/_en 쌍을 갖는다(FORMAT_BRIEFING §4).
+  // 언어에 맞는 쪽을 먼저 골라야 한다 — 그냥 _ko 를 우선하면 영어 alt 에 '18.1억' 이 새어 나간다.
+  const pair = (r, k) => t(r[`${k}_ko`] ?? r[k], r[`${k}_en`] ?? r[k]);
+  const heads = o => (o?.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / ');
+
+  const cover = c.cover || {};
+  const val = c.valuation && c.valuation.rows && c.valuation.rows.length
+    ? ' · PER ' + c.valuation.rows.map(r => `${t(r.name_ko, r.name_en)} ${r.per}`).join(', ')
+    : '';
+
+  const list = [
+    // ① 표지 — 헤드라인이 최상위가 아니라 cover 안에 있다
+    `${brief} ${dateLabel}: ${stripTags(t(cover.headline_ko, cover.headline_en))}`
+      + (cover.hero ? ` — ${t(cover.hero.label_ko, cover.hero.label_en)} ${cover.hero.value}` : ''),
+
+    // ② 지수 주간 등락
+    t('지수 주간 등락: ', 'Index moves for the week: ')
+      + c.indexes.map(x => `${t(x.name_ko, x.name_en)} ${x.close} ${pct(x.wk)}`).join(', ') + val,
+
+    // ③ 주간 차트 — 그림이라 수치로 대체한다. 이동평균 이격은 렌더러가 계산하므로 여기선 고점만.
+    t('주간 일봉 차트: ', 'Daily candlestick charts: ')
+      + c.indexes.map(x => `${t(x.name_ko, x.name_en)} ${t(x.hiLabel_ko, x.hiLabel_en)} ${x.hi}`).join(', '),
+
+    // ④ 지수 외 지표
+    t('지수 외 지표: ', 'Beyond the indexes: ')
+      + (c.metrics || []).map(m => `${t(m.name_ko, m.name_en)} ${m.value} ${m.delta}`).join(', '),
+
+    // ⑤ 발표 결과 (예상 → 실제)
+    t('이번 주 발표 결과, 예상에서 실제로: ', 'Forecast to actual this week: ')
+      + (c.calendar || []).map(d => `${t(d.day_ko, d.day_en)} `
+        + d.rows.map(r => `${t(r.name_ko, r.name_en)} ${pair(r, 'est')}→${pair(r, 'act')}`).join(', ')
+      ).join(' / '),
+
+    // ⑥ 한 주를 움직인 것
+    `${t(c.news?.title_ko, c.news?.title_en) || t('한 주를 움직인 것', 'What moved the week')}: ${heads(c.news)}`,
+
+    // ⑦ 섹터 등락
+    t('주간 섹터 등락: ', 'Sector moves for the week: ')
+      + (c.sectors || []).map(s => `${t(s.label_ko, s.label_en)} ${pct(s.value)}`).join(', '),
+
+    // ⑧ 대형주
+    t('이번 주 많이 움직인 대형주: ', 'Biggest movers this week: ')
+      + ['kr', 'us'].filter(k => c.movers?.[k]).map(k =>
+        `${t(c.movers[k].head_ko, c.movers[k].head_en)} `
+        + c.movers[k].items.map(s => `${t(s.name_ko, s.name_en)} ${t(s.px_ko, s.px_en)} ${pct(s.pct)}`).join(', ')
+      ).join(' / '),
+
+    // ⑨ AI · 반도체
+    `${t(c.ai?.title_ko, c.ai?.title_en) || 'AI'}: ${heads(c.ai)}`,
+
+    // ⑩ 아웃트로
+    `${t(c.outro?.next_ko, c.outro?.next_en) || ''} · ${brief}`.trim(),
+  ];
 
   return list.map(s => s.length > MAX ? s.slice(0, MAX - 3) + '...' : s);
 }
