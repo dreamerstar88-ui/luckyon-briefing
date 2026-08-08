@@ -1,0 +1,90 @@
+name: Probe Index Valuation
+
+# 지수 PER / EPS 공식 소스가 러너에서 열리는지 시험한다. **탐침 전용 — 브리핑은 아직 이 결과를 쓰지 않는다.**
+#
+# 왜 필요한가: 브리핑 세션의 egress 정책에서 지수 밸류에이션 공식 소스가 전부 막히고,
+# 세션에 붙은 커넥터(FMP·Alpha Vantage·PlayMCP)에도 지수 PER/EPS 는 없다는 것을 확인했다.
+# Actions 러너는 그 정책 밖에 있으므로(econ-calendar·krx-flows 와 같은 패턴),
+# 어느 소스가 실제로 뚫리는지 먼저 재보고 되는 곳으로 확정한 뒤 정기 수집으로 넘어간다.
+#
+# 안전장치: 이 워크플로는 **절대 실패로 끝나지 않는다.** 소스가 하나도 안 열려도
+# 리포트만 남기고 정상 종료한다 — 값이 안 잡히면 그 칸을 비우고 나가는 것이 이 단계의 설계다.
+# 브리핑 파이프라인에 아무 영향도 주지 않는다.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # 토요일 브리핑 직전(주봉 마감 이후) 1회. 주간 지수 PER/EPS 는 이 시점 값이 기준이다.
+    - cron: '00 21 * * 5'   # 21:00 UTC 금 = 06:00 KST 토
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-index-valuation
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Probe sources
+        id: probe
+        # 실패해도 워크플로를 세우지 않는다. 결과 파일이 곧 이 실행의 산출물이다.
+        continue-on-error: true
+        run: |
+          mkdir -p data
+          if node scripts/probe-index-valuation.mjs --pretty > /tmp/probe.json; then
+            mv /tmp/probe.json data/probe-index-valuation.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::탐침 스크립트가 비정상 종료했습니다 — 기존 리포트를 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          {
+            echo '## 지수 PER/EPS 소스 탐침 결과'
+            echo
+            echo '| 소스 | 지수 | 공식 | 상태 | 비고 |'
+            echo '| --- | --- | --- | --- | --- |'
+            node -e '
+              const r = require("./data/probe-index-valuation.json");
+              for (const x of r.results) {
+                const st = x.error ? "✗ " + x.error
+                         : x.blockedBody ? "⚠ 차단 본문"
+                         : (x.ok ? "✓ " : "✗ ") + x.status;
+                const note = x.jsonValuationKeys?.length ? `PER/EPS 키 ${x.jsonValuationKeys.length}개`
+                           : x.keywordFound ? "키워드 있음"
+                           : x.snippet ? x.snippet.slice(0, 70)
+                           : x.looksLikeZip ? "xlsx 정상 수신"
+                           : "-";
+                console.log(`| ${x.id} | ${x.index} | ${x.official ? "O" : "-"} | ${st} | ${String(note).replace(/\|/g, "/")} |`);
+              }
+              console.log("");
+              console.log(`열린 소스 **${r.reachable.length} / ${r.results.length}** — ${r.reachable.join(", ") || "없음"}`);
+            '
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit report
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/probe-index-valuation.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: probe index valuation sources [skip ci]"
+            git push
+          fi
