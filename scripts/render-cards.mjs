@@ -23,6 +23,13 @@ const session = process.argv[4] || '';
 if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
 if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
+// 토요일은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
+// 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 토요일 절)
+if (session === 'sat') {
+  await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
+  process.exit(0);
+}
+
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));

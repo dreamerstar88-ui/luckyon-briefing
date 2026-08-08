@@ -1,7 +1,11 @@
 # 브리핑 카드 구조·양식 (FORMAT)
 
 > **이 문서가 정의하는 것**: `scripts/render-cards.mjs` 가 그리는 카드의 **구조·스키마·분량**.
-> 렌더러와의 계약서이며 **평일 브리핑(am·pm)과 주말 브리핑(sat·sun)이 공용으로 따른다.**
+> 렌더러와의 계약서이며 **평일 브리핑(am·pm)과 일요일(sun)이 §1~§7 을 공용으로 따른다.**
+>
+> **토요일(sat)은 §2-A 를 따른다.** 2026-08-08 개편으로 토요일만 카드 10장이 각자 다른 모양을 가진
+> 고정 편성이 됐고, 렌더러도 `scripts/render-cards-sat.mjs` 로 분리됐다. 호출 명령은 그대로다 —
+> `render-cards.mjs` 가 `session === 'sat'` 일 때 위임한다. **§1 의 `sections` 규칙은 토요일에 적용되지 않는다.**
 >
 > **이 문서가 정의하지 않는 것**
 > - 무엇을 조사하고 무엇을 쓸지 → 축별 절차서(`ROUTINE_PROMPT.md`, `ROUTINE_PROMPT_WEEKEND.md`)
@@ -13,7 +17,9 @@
 
 ---
 
-## 1. 카드 구성
+## 1. 카드 구성 (am · pm · sun)
+
+> 토요일(sat)은 이 표를 쓰지 않는다 → §2-A
 
 | 카드 | 내용 | 근거 필드 |
 |---|---|---|
@@ -58,6 +64,100 @@
 
 ---
 
+## 2-A. 토요일(sat) 카드 — 별도 편성
+
+렌더러: `scripts/render-cards-sat.mjs` · 견본: `content/example-sat.json`
+확인: `node scripts/render-cards.mjs example ko sat` (·`en`) → `cards/example/sat/<lang>/card1..10.png`
+
+**평일과 다른 점 셋.** ① `sections` 배열이 없다 — 카드 10장이 각자 전용 필드를 읽는 고정 편성이다.
+② 바탕이 밝다(따뜻한 종이색). ③ `summary`·`hook_bull`·`markets`·`schedule` 을 쓰지 않는다.
+장수는 **고정 10장**이고 늘릴 수 없다(인스타 캐러셀 한도).
+
+### 카드 편성과 근거 필드
+
+| 카드 | 내용 | 서식 | 근거 필드 |
+|---|---|---|---|
+| ① | 표지 | 30 | `weekLabel_*`, `cover{headline_*, hero{}, points[], tiles_title_*, tiles[]}` |
+| ② | 지수 주간 등락 | 27 | `indexes[]`, `indexNote_*`, `valuation` |
+| ③ | 주간 차트 (봉차트 5개) | 27 | `indexes[]` (같은 배열을 다시 읽는다) |
+| ④ | 지수 외 지표 (2열 10칸) | 27 | `metrics[]`, `metricsNote_*` |
+| ⑤ | 발표 결과 (예상 → 실제) | 28 | `calendar[]` |
+| ⑥ | 한 주를 움직인 것 | 30 | `news{title_*, sub_*, items[], note_*}` |
+| ⑦ | 주간 섹터 등락 | 27 | `sectors[]`, `sectorsSub_*`, `sectorsNote_*` |
+| ⑧ | 대형주 (좌우 2단) | 27 | `movers{kr{}, us{}, note_*}` |
+| ⑨ | AI · 반도체 | 30 | `ai{}` — ⑥과 같은 구조 |
+| ⑩ | 아웃트로 | 30 | `outro{tagline_*, next_*}` |
+
+**서식**은 노션 «노트북LM 슬라이드 스타일 가이드북(50종)» 번호다.
+27 = SaaS 대시보드(칼럼 헤더 + 타일 + 등락 알약칩 + 카드 안 차트), 28 = Before/After(예상 → 실제 분할),
+30 = 카드뉴스형(번호 배지 + 굵은 산세리프 제목 + 블록 분리).
+**27번 원문의 `white and blue corporate palette` 는 따르지 않는다** — 파랑은 이 브리핑에서 이미 '하락'이라
+UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레트를 유지하고 서식의 **구조**만 가져왔다.
+
+### 스키마
+
+```
+{
+  "dateLabel_ko","dateLabel_en",
+  "weekLabel_ko","weekLabel_en",              // 표지 라벨칩. 예: "주간 결산 · 8월 첫째 주"
+  "cover": {
+    "headline_ko","headline_en",              // <br> 로 두 줄. 48px 라 한 줄 20자 안쪽
+    "hero": {"label_ko","label_en","value","dir","sub_ko","sub_en"},   // value 는 문자열 그대로 출력
+    "points":[{"title_ko","title_en","body_ko","body_en"} x3],
+    "tiles_title_ko","tiles_title_en",
+    "tiles":[{"label_ko","label_en","value"} x3]                       // value 는 숫자(%), 부호로 색이 갈린다
+  },
+  "indexes":[{                                // ②③이 같이 읽는다. 5개 고정
+    "key","name_ko","name_en",
+    "close", "wk",                            // 숫자. wk = 주간 등락률(%)
+    "hi","hiLabel_ko","hiLabel_en",           // 기간 고점과 그 라벨("52주 고점"/"60일 고점")
+    "ma50","ma100","ma200",                   // 선택. 있는 것만 후보에 든다
+    "note_ko","note_en",
+    "ohlc":[[o,h,l,c], ...]                   // 일봉. MA20·RSI 를 여기서 직접 계산한다
+  } x5],
+  "indexNote_ko","indexNote_en",
+  "valuation": {"rows":[{"label_ko","label_en","per","eps"}]},   // 빈 배열이면 '비어 있음' 안내로 대체
+  "metrics":[{"emoji","name_ko","name_en","value","delta","dir"} x10],
+  "metricsNote_ko","metricsNote_en",
+  "calendar":[{                               // 요일 칼럼. 보통 5개(월~금)
+    "day_ko","day_en",
+    "rows":[{"name_ko","name_en","est","act","dir"} x4~7]        // est/act 는 §4 참고
+  }],
+  "news": {"title_ko","title_en","sub_ko","sub_en","note_ko","note_en",
+           "items":[{"emoji" | "icon":"chip", "headline_ko","headline_en","body_ko","body_en","src"} x3~4]},
+  "sectors":[{"label_ko","label_en","value"} x12],
+  "sectorsSub_ko","sectorsSub_en","sectorsNote_ko","sectorsNote_en",
+  "movers": {
+    "kr": {"flag","head_ko","head_en","items":[{
+        "name_ko","name_en","mono_ko","mono_en","color",
+        "px_ko","px_en","pct","seq":[...]      // seq[0]=전주 금요일 종가, 이후 5개가 이번 주 종가
+    } x3]},
+    "us": { ...같은 구조... },
+    "note_ko","note_en"
+  },
+  "ai": { ...news 와 같은 구조... },
+  "outro": {"tagline_ko","tagline_en","next_ko","next_en"},
+  "caption_ko","caption_en","sources":[...]
+}
+```
+
+### 토요일에서 특히 조심할 것
+
+- **`ohlc` 는 3개월치(60봉 이상)를 넣는다.** RSI(14)는 Wilder 방식이라 워밍업이 짧으면 값이 흔들린다.
+  23봉으로도 그림은 나오지만 RSI 숫자를 신뢰할 수 없다.
+- **`hi` 가 캔들 범위에서 25% 넘게 벗어나면 렌더러가 고점선을 알아서 생략한다.** 오류가 아니다 —
+  억지로 범위에 넣으면 캔들이 납작해져 차트가 아무것도 못 보여준다(코스피 60일 고점 9,115 vs 종가 6,259).
+  이때 숫자는 그대로 남으니, 카드 하단 범례의 "고점이 화면 밖이면 선은 생략" 문구를 지우지 말 것.
+- **이동평균선은 20/50/100/200 중 이격이 가장 작은 2개만 적힌다.** 넷을 다 넣어도 두 개만 나온다.
+- **`calendar[].rows` 는 요일마다 개수가 달라도 된다.** 타일이 남는 세로를 나눠 채우므로 발표가 적은
+  날은 타일이 커진다. 의도된 동작이다(빈칸을 남기지 말라는 요구를 따른 결과).
+- **`movers[].mono_*` 는 배지에 들어가는 2~4글자다.** 3글자 이상이면 글자 크기가 자동으로 줄어든다.
+  미국 종목은 티커가 눈에 익어 티커를 쓴다. 로고 이미지는 캐싱 워크플로가 붙은 뒤에 교체한다.
+- **`sectors` 막대 최대폭은 막대칸의 29%로 고정돼 있다.** 이 상한은 수치 라벨까지 칸 안에 들어가게
+  계산된 값이다. 늘리면 반도체(최댓값) 수치가 박스를 넘는다 — 실제로 46%·36%에서 넘쳤다.
+
+---
+
 ## 3. 훅 카드 (①)
 
 ### 3.1 `summary` — 이미 벌어진 일을 정리하는 세션의 기본값
@@ -93,12 +193,24 @@
 아래 필드는 렌더 스크립트가 `${LANG}` 분기 없이 **base 필드 이름 그대로** 출력한다. 즉 **한국어 카드와 영어 카드에 똑같이 박힌다.**
 
 ```
+# am · pm · sun
 markets[].label   markets[].value   markets[].value_sub   markets[].delta
 sections[].items[].src            sections[].items[].time
 sections[].stats[].value          sections[].stats[].delta
 sections[].rows[].value
 schedule[].time
+
+# sat (§2-A)
+cover.hero.value                  metrics[].value      metrics[].value 의 delta
+calendar[].rows[].est / .act      news.items[].src     ai.items[].src
+movers.*.items[].color            movers.*.items[].seq
 ```
+
+- **토요일의 `calendar[].rows[].est` / `.act` 는 `_ko`/`_en` 쌍도 받는다.** `18.1억`·`7.0만` 처럼
+  단위가 한글인 값이 실제로 영어 카드에 그대로 새어 나간 적이 있다. 숫자만 있는 값(`0.34`, `4.1%`)은
+  단일 필드로 두고, **한글 단위가 붙는 값에만 `est_ko`/`est_en` 쌍을 쓴다.** 쌍이 있으면 그쪽이 이긴다.
+  영어 환산은 억 → `$1.81B`, 만 → `+70K`·`202K`, 백만 → `1.790M` 처럼 중립 표기로.
+- **`movers[].px_ko`/`px_en` 은 invariant 가 아니다.** 한국 종목은 `33,900원` / `KRW 33,900` 으로 갈린다.
 
 - 여기에 **한국어 조사·서술형 어미나 영어 문장을 넣지 않는다.** 처음 쓸 때부터 두 언어 모두에서 자연스러운 중립 표기로 쓴다.
   - 라벨은 `S&P 500 Fut` 처럼 영문 약어로

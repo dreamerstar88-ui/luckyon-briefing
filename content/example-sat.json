@@ -1,0 +1,1431 @@
+{
+  "_comment": "토요일(sat) 카드 견본. 스키마 설명은 FORMAT_BRIEFING.md 의 «토요일(sat) 카드» 절. 렌더: node scripts/render-cards.mjs example ko sat",
+  "dateLabel_ko": "2026년 8월 8일 (토)",
+  "dateLabel_en": "Aug 8, 2026 (Sat)",
+  "weekLabel_ko": "주간 결산 · 8월 첫째 주",
+  "weekLabel_en": "WEEK IN REVIEW · AUG W1",
+  "cover": {
+    "headline_ko": "고용 쇼크에 S&amp;P 500 사상 최고<br>코스피는 7주 연속 하락",
+    "headline_en": "Payrolls shock, S&amp;P 500 record close<br>KOSPI down a 7th straight week",
+    "hero": {
+      "label_ko": "미국 7월 신규 고용",
+      "label_en": "US July payrolls",
+      "value": "−23,000",
+      "dir": -1,
+      "sub_ko": "시장 예상은 <b>+80,000</b>이었습니다",
+      "sub_en": "Consensus was <b>+80,000</b>"
+    },
+    "points": [
+      {
+        "title_ko": "금리 인하 기대",
+        "title_en": "Rate-cut bets",
+        "body_ko": "10년물이 4.75%에서 <b>4.65%</b>로 밀리며 미국 3대 지수가 함께 올랐다",
+        "body_en": "The 10-year slid from 4.75% to <b>4.65%</b> and all three US indexes rose"
+      },
+      {
+        "title_ko": "코스피만 역주행",
+        "title_en": "KOSPI went the other way",
+        "body_ko": "6일 샌디스크 쇼크로 하루 <b>4.58%</b> 급락, 7주 연속 주간 하락",
+        "body_en": "Down <b>4.58%</b> on Aug 6 after the SanDisk shock — a 7th losing week"
+      },
+      {
+        "title_ko": "반도체는 갈렸다",
+        "title_en": "Chips split",
+        "body_ko": "미국 SMH <b>+7.80%</b> vs SK하이닉스 <b>−17.23%</b>",
+        "body_en": "US SMH <b>+7.80%</b> vs SK hynix <b>−17.23%</b>"
+      }
+    ],
+    "tiles_title_ko": "한 주 성적",
+    "tiles_title_en": "THE WEEK",
+    "tiles": [
+      {
+        "label_ko": "나스닥",
+        "label_en": "Nasdaq",
+        "value": 5.19
+      },
+      {
+        "label_ko": "S&P 500",
+        "label_en": "S&P 500",
+        "value": 3.58
+      },
+      {
+        "label_ko": "코스피",
+        "label_en": "KOSPI",
+        "value": -5.1
+      }
+    ]
+  },
+  "indexes": [
+    {
+      "key": "IXIC",
+      "name_ko": "나스닥",
+      "name_en": "Nasdaq",
+      "close": 26690.62,
+      "wk": 5.19,
+      "hi": 27190.21,
+      "hiLabel_ko": "52주 고점",
+      "hiLabel_en": "52W high",
+      "ma50": 25941.68,
+      "ma200": 24090.44,
+      "note_ko": "4월 중순 이후 최대 주간 상승",
+      "note_en": "Best week since mid-April",
+      "ohlc": [
+        [
+          25704.66,
+          25896.07,
+          25526.46,
+          25870.65
+        ],
+        [
+          25918.31,
+          26215.82,
+          25825.85,
+          26206.89
+        ],
+        [
+          26175.54,
+          26301.54,
+          26009.49,
+          26281.61
+        ],
+        [
+          26088.31,
+          26139.37,
+          25822.1,
+          25873.18
+        ],
+        [
+          26015.49,
+          26168.8,
+          25912.4,
+          26107.01
+        ],
+        [
+          26261.18,
+          26316.81,
+          26041.13,
+          26269.23
+        ],
+        [
+          26155.4,
+          26165.37,
+          25765.45,
+          25881.95
+        ],
+        [
+          25412.26,
+          25703.01,
+          25250.63,
+          25520.24
+        ],
+        [
+          25720.87,
+          25815.6,
+          25501.1,
+          25508.07
+        ],
+        [
+          25772.55,
+          25880.34,
+          25672.83,
+          25837.21
+        ],
+        [
+          25693.72,
+          25841.31,
+          25681.32,
+          25690.9
+        ],
+        [
+          25245.54,
+          25358.28,
+          24954.77,
+          25137.69
+        ],
+        [
+          25107.38,
+          25222.14,
+          24918.09,
+          24975.82
+        ],
+        [
+          25236.19,
+          25261.91,
+          24774.87,
+          24932.08
+        ],
+        [
+          24825.07,
+          24984.5,
+          24581.01,
+          24876.91
+        ],
+        [
+          24863.48,
+          25054.53,
+          24425.34,
+          24442.94
+        ],
+        [
+          24852.05,
+          25171.44,
+          24813.84,
+          25122.18
+        ],
+        [
+          25340.71,
+          25460.86,
+          25004.33,
+          25373.85
+        ],
+        [
+          25452.66,
+          25967.44,
+          25420.35,
+          25913.9
+        ],
+        [
+          26088.04,
+          26679.91,
+          26088.04,
+          26584.99
+        ],
+        [
+          26698.02,
+          26739,
+          26348.51,
+          26363.44
+        ],
+        [
+          26268.84,
+          26499.42,
+          26208.43,
+          26348.35
+        ],
+        [
+          26534.66,
+          26712.62,
+          26478.01,
+          26690.62
+        ]
+      ]
+    },
+    {
+      "key": "GSPC",
+      "name_ko": "S&P 500",
+      "name_en": "S&P 500",
+      "close": 7757.64,
+      "wk": 3.58,
+      "hi": 7793.68,
+      "hiLabel_ko": "52주 고점",
+      "hiLabel_en": "52W high",
+      "ma50": 7494.24,
+      "ma200": 7050.03,
+      "note_ko": "사상 최고 종가로 마감",
+      "note_en": "Closed at a record high",
+      "ohlc": [
+        [
+          7476.54,
+          7488.51,
+          7421.82,
+          7482.71
+        ],
+        [
+          7491.6,
+          7546.89,
+          7481.73,
+          7543.64
+        ],
+        [
+          7547.64,
+          7579.93,
+          7508.16,
+          7575.39
+        ],
+        [
+          7547.53,
+          7565.37,
+          7506.41,
+          7515.34
+        ],
+        [
+          7536.7,
+          7557.44,
+          7513.23,
+          7543.59
+        ],
+        [
+          7571.72,
+          7581.5,
+          7526.95,
+          7572.4
+        ],
+        [
+          7558.8,
+          7570.74,
+          7504.02,
+          7533.77
+        ],
+        [
+          7447.52,
+          7498.47,
+          7431.26,
+          7457.69
+        ],
+        [
+          7489.18,
+          7513.23,
+          7440.53,
+          7443.28
+        ],
+        [
+          7489.95,
+          7515.31,
+          7467.86,
+          7509.2
+        ],
+        [
+          7497.47,
+          7525.94,
+          7485.85,
+          7498.96
+        ],
+        [
+          7418.29,
+          7450.12,
+          7376,
+          7408.3
+        ],
+        [
+          7406.3,
+          7460.98,
+          7396.53,
+          7411.98
+        ],
+        [
+          7464.2,
+          7480.57,
+          7382.74,
+          7413.18
+        ],
+        [
+          7395.55,
+          7452.09,
+          7382.95,
+          7428.78
+        ],
+        [
+          7418.16,
+          7450.84,
+          7313.92,
+          7316.15
+        ],
+        [
+          7390.45,
+          7448.75,
+          7370.98,
+          7437.63
+        ],
+        [
+          7462.13,
+          7512.04,
+          7399.83,
+          7489.72
+        ],
+        [
+          7504.78,
+          7610.04,
+          7504.78,
+          7600.5
+        ],
+        [
+          7630.62,
+          7758.21,
+          7629.1,
+          7736.52
+        ],
+        [
+          7771.62,
+          7793.68,
+          7720.17,
+          7723.55
+        ],
+        [
+          7713.79,
+          7742.85,
+          7698.15,
+          7709.96
+        ],
+        [
+          7735.18,
+          7763.08,
+          7719.19,
+          7757.64
+        ]
+      ]
+    },
+    {
+      "key": "DJI",
+      "name_ko": "다우",
+      "name_en": "Dow",
+      "close": 54036.93,
+      "wk": 2.96,
+      "hi": 54744.33,
+      "hiLabel_ko": "52주 고점",
+      "hiLabel_en": "52W high",
+      "ma50": 52056.65,
+      "ma200": 49241.26,
+      "note_ko": "52주 고점 코앞",
+      "note_en": "Just shy of its 52-week high",
+      "ohlc": [
+        [
+          52758.47,
+          52758.47,
+          52069.87,
+          52348.39
+        ],
+        [
+          52249.44,
+          52574.89,
+          52249.44,
+          52487.41
+        ],
+        [
+          52622.92,
+          52709.75,
+          52266.81,
+          52637.01
+        ],
+        [
+          52676.53,
+          52846.51,
+          52351.12,
+          52498.64
+        ],
+        [
+          52046.36,
+          52695.06,
+          52046.36,
+          52508.27
+        ],
+        [
+          52604.2,
+          52823.95,
+          52428.54,
+          52658.64
+        ],
+        [
+          52924.86,
+          52924.86,
+          52367.42,
+          52552.97
+        ],
+        [
+          52426.46,
+          52610.97,
+          51986.74,
+          52146.42
+        ],
+        [
+          52154.57,
+          52411.9,
+          51781.9,
+          51839.26
+        ],
+        [
+          51916.79,
+          52370.65,
+          51890.1,
+          52224.64
+        ],
+        [
+          52287.14,
+          52511.21,
+          52148.87,
+          52218.58
+        ],
+        [
+          51755.54,
+          51885.14,
+          51542.06,
+          51711.65
+        ],
+        [
+          51791.37,
+          52118.19,
+          51682.36,
+          51947.25
+        ],
+        [
+          52173.42,
+          52607.78,
+          51985.38,
+          52210.08
+        ],
+        [
+          52492.88,
+          52901.87,
+          52443.52,
+          52747.32
+        ],
+        [
+          52674.21,
+          52674.21,
+          51551.18,
+          51594.14
+        ],
+        [
+          52114.27,
+          52266.45,
+          51655.52,
+          52208.06
+        ],
+        [
+          52235.03,
+          52623.14,
+          51996.32,
+          52485.03
+        ],
+        [
+          52759.06,
+          53230.08,
+          52759.06,
+          53178.41
+        ],
+        [
+          53641.21,
+          54272.6,
+          53641.21,
+          54085.88
+        ],
+        [
+          54266.12,
+          54744.33,
+          54266.12,
+          54349.12
+        ],
+        [
+          54426.85,
+          54502.87,
+          53835.02,
+          53885.1
+        ],
+        [
+          53849.26,
+          54094.65,
+          53807.94,
+          54036.93
+        ]
+      ]
+    },
+    {
+      "key": "KS11",
+      "name_ko": "코스피",
+      "name_en": "KOSPI",
+      "close": 6258.77,
+      "wk": -5.1,
+      "hi": 9114.55,
+      "hiLabel_ko": "60일 고점",
+      "hiLabel_en": "60d high",
+      "note_ko": "7주 연속 주간 하락",
+      "note_en": "A 7th straight losing week",
+      "ohlc": [
+        [
+          7919.2,
+          7954.55,
+          7389.22,
+          7656.31
+        ],
+        [
+          7452.48,
+          7791.66,
+          7186.21,
+          7246.79
+        ],
+        [
+          7486.64,
+          7543.86,
+          7063.76,
+          7291.91
+        ],
+        [
+          7552.49,
+          7704.93,
+          7429.51,
+          7475.94
+        ],
+        [
+          7412.03,
+          7529.07,
+          6783.43,
+          6806.93
+        ],
+        [
+          6769.06,
+          6979.92,
+          6448.86,
+          6856.83
+        ],
+        [
+          7082.91,
+          7424.18,
+          7082.91,
+          7284.41
+        ],
+        [
+          6960.5,
+          6995.93,
+          6730.87,
+          6820.6
+        ],
+        [
+          6643.58,
+          6814.86,
+          6472.8,
+          6516.27
+        ],
+        [
+          6553.88,
+          6836.86,
+          6429.03,
+          6747.95
+        ],
+        [
+          7052.09,
+          7166,
+          6791.06,
+          6797.7
+        ],
+        [
+          6963.35,
+          7108.44,
+          6892.64,
+          7096.89
+        ],
+        [
+          7000.78,
+          7000.78,
+          6650.41,
+          6690.62
+        ],
+        [
+          6806.27,
+          6806.27,
+          6557.39,
+          6755.75
+        ],
+        [
+          6400.27,
+          6413.57,
+          5992.91,
+          6023.66
+        ],
+        [
+          6089.11,
+          6228.52,
+          5262.77,
+          5663.24
+        ],
+        [
+          5681.77,
+          5976.82,
+          5547.41,
+          5593.56
+        ],
+        [
+          5657.79,
+          6630.77,
+          5629.76,
+          6595.45
+        ],
+        [
+          6358.27,
+          6393,
+          6223.29,
+          6257.45
+        ],
+        [
+          6351.38,
+          6389.4,
+          6080.25,
+          6358.95
+        ],
+        [
+          6603.48,
+          6674.66,
+          6540.27,
+          6598.26
+        ],
+        [
+          6478.75,
+          6550.94,
+          6238.32,
+          6296.38
+        ],
+        [
+          6365.07,
+          6415.6,
+          6158.73,
+          6258.77
+        ]
+      ]
+    },
+    {
+      "key": "KQ11",
+      "name_ko": "코스닥",
+      "name_en": "KOSDAQ",
+      "close": 798.81,
+      "wk": 10.98,
+      "hi": 837.43,
+      "hiLabel_ko": "60일 고점",
+      "hiLabel_en": "60d high",
+      "note_ko": "코스피와 16.1%p 격차",
+      "note_en": "16.1pp ahead of the KOSPI",
+      "ohlc": [
+        [
+          843.74,
+          866.59,
+          812.7,
+          831.23
+        ],
+        [
+          816.39,
+          823.33,
+          778.7,
+          785
+        ],
+        [
+          792.99,
+          819.69,
+          778.17,
+          794
+        ],
+        [
+          807,
+          845.88,
+          800.39,
+          837.43
+        ],
+        [
+          839.72,
+          867.38,
+          797.34,
+          799.36
+        ],
+        [
+          797.16,
+          802.53,
+          749.76,
+          783.98
+        ],
+        [
+          805.71,
+          831.68,
+          805.59,
+          829.43
+        ],
+        [
+          813.32,
+          816.47,
+          786.59,
+          791.84
+        ],
+        [
+          773.21,
+          783.74,
+          747,
+          749.64
+        ],
+        [
+          750.07,
+          758.36,
+          730.81,
+          753.34
+        ],
+        [
+          772.41,
+          789.23,
+          751.09,
+          751.09
+        ],
+        [
+          763.51,
+          790.28,
+          760.83,
+          790.28
+        ],
+        [
+          777.5,
+          777.5,
+          746.5,
+          748.22
+        ],
+        [
+          760.54,
+          780.39,
+          753.73,
+          764.86
+        ],
+        [
+          742.13,
+          742.13,
+          697.45,
+          705.85
+        ],
+        [
+          713.71,
+          719.39,
+          630.99,
+          662.68
+        ],
+        [
+          654.72,
+          677.19,
+          642.95,
+          644.78
+        ],
+        [
+          666.47,
+          723.56,
+          663.25,
+          719.76
+        ],
+        [
+          709.99,
+          757.6,
+          705.07,
+          737.35
+        ],
+        [
+          748.19,
+          780.85,
+          748.19,
+          780.72
+        ],
+        [
+          794.93,
+          803.49,
+          783.32,
+          799.59
+        ],
+        [
+          797.44,
+          813.54,
+          779.08,
+          801.67
+        ],
+        [
+          807.62,
+          814.8,
+          776.6,
+          798.81
+        ]
+      ]
+    }
+  ],
+  "indexNote_ko": "※ 8/7 종가 · 지난주 금요일 대비 주간 변동 · 막대는 5개 지수 중 최대 변동 대비 비율",
+  "indexNote_en": "※ Aug 7 close · change vs last Friday · bars are scaled to the largest move of the five",
+  "valuation": {
+    "rows": []
+  },
+  "metrics": [
+    {
+      "emoji": "😨",
+      "name_ko": "Fear & Greed",
+      "name_en": "Fear & Greed",
+      "value": "63",
+      "delta": "▲24p",
+      "dir": 1
+    },
+    {
+      "emoji": "📉",
+      "name_ko": "VIX",
+      "name_en": "VIX",
+      "value": "14.90",
+      "delta": "▼6.82%",
+      "dir": -1
+    },
+    {
+      "emoji": "🏦",
+      "name_ko": "미 10년물",
+      "name_en": "US 10Y",
+      "value": "4.65%",
+      "delta": "▼10bp",
+      "dir": -1
+    },
+    {
+      "emoji": "🏦",
+      "name_ko": "미 2년물",
+      "name_en": "US 2Y",
+      "value": "4.19%",
+      "delta": "▼9bp",
+      "dir": -1
+    },
+    {
+      "emoji": "$₩",
+      "name_ko": "원/달러",
+      "name_en": "USD/KRW",
+      "value": "1,407",
+      "delta": "▼0.93%",
+      "dir": -1
+    },
+    {
+      "emoji": "💵",
+      "name_ko": "달러인덱스",
+      "name_en": "Dollar index",
+      "value": "99.60",
+      "delta": "▼0.20%",
+      "dir": -1
+    },
+    {
+      "emoji": "🥇",
+      "name_ko": "금",
+      "name_en": "Gold",
+      "value": "$4,401",
+      "delta": "▲8.70%",
+      "dir": 1
+    },
+    {
+      "emoji": "🛢",
+      "name_ko": "WTI",
+      "name_en": "WTI",
+      "value": "$77.08",
+      "delta": "▼8.96%",
+      "dir": -1
+    },
+    {
+      "emoji": "₿",
+      "name_ko": "비트코인",
+      "name_en": "Bitcoin",
+      "value": "$64,854",
+      "delta": "▲3.25%",
+      "dir": 1
+    },
+    {
+      "emoji": "Ξ",
+      "name_ko": "이더리움",
+      "name_en": "Ethereum",
+      "value": "$1,917",
+      "delta": "▲0.19%",
+      "dir": 1
+    }
+  ],
+  "metricsNote_ko": "※ 8/7 마감 기준 · 주간 변동 · 금리는 bp, 나머지는 %",
+  "metricsNote_en": "※ As of the Aug 7 close · weekly change · yields in bp, others in %",
+  "calendar": [
+    {
+      "day_ko": "8/3 월",
+      "day_en": "Mon 8/3",
+      "rows": [
+        {
+          "name_ko": "팔란티어",
+          "name_en": "Palantir",
+          "est": "0.34",
+          "act": "0.41",
+          "dir": 1
+        },
+        {
+          "name_ko": "PLTR 매출",
+          "name_en": "PLTR rev.",
+          "est_ko": "18.1억",
+          "est_en": "$1.81B",
+          "act_ko": "19.4억",
+          "act_en": "$1.94B",
+          "dir": 1
+        },
+        {
+          "name_ko": "스냅",
+          "name_en": "Snap",
+          "est": "−0.12",
+          "act": "−0.10",
+          "dir": 1
+        },
+        {
+          "name_ko": "스냅 매출",
+          "name_en": "Snap rev.",
+          "est_ko": "15.4억",
+          "est_en": "$1.54B",
+          "act_ko": "16.0억",
+          "act_en": "$1.60B",
+          "dir": 1
+        }
+      ]
+    },
+    {
+      "day_ko": "8/4 화",
+      "day_en": "Tue 8/4",
+      "rows": [
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "est": "1.62",
+          "act": "1.66",
+          "dir": 1
+        },
+        {
+          "name_ko": "AMD 매출",
+          "name_en": "AMD rev.",
+          "est_ko": "113.1억",
+          "est_en": "$11.31B",
+          "act_ko": "115.4억",
+          "act_en": "$11.54B",
+          "dir": 1
+        },
+        {
+          "name_ko": "화이자",
+          "name_en": "Pfizer",
+          "est": "0.68",
+          "act": "0.77",
+          "dir": 1
+        },
+        {
+          "name_ko": "핀터레스트",
+          "name_en": "Pinterest",
+          "est": "0.36",
+          "act": "0.43",
+          "dir": 1
+        },
+        {
+          "name_ko": "에너지트랜스퍼",
+          "name_en": "Energy Tr.",
+          "est": "0.38",
+          "act": "0.59",
+          "dir": 1
+        },
+        {
+          "name_ko": "루시드",
+          "name_en": "Lucid",
+          "est": "−2.36",
+          "act": "−3.30",
+          "dir": -1
+        }
+      ]
+    },
+    {
+      "day_ko": "8/5 수",
+      "day_en": "Wed 8/5",
+      "rows": [
+        {
+          "name_ko": "ADP 고용",
+          "name_en": "ADP jobs",
+          "est_ko": "7.0만",
+          "est_en": "+70K",
+          "act_ko": "4.4만",
+          "act_en": "+44K",
+          "dir": -1
+        },
+        {
+          "name_ko": "ISM 서비스",
+          "name_en": "ISM services",
+          "est": "54.5",
+          "act": "54.1",
+          "dir": -1
+        },
+        {
+          "name_ko": "ISM 서비스 고용",
+          "name_en": "ISM svc. jobs",
+          "est": "51.2",
+          "act": "47.4",
+          "dir": -1
+        },
+        {
+          "name_ko": "S&P 종합",
+          "name_en": "S&P composite",
+          "est": "53.6",
+          "act": "54.5",
+          "dir": 1
+        },
+        {
+          "name_ko": "디즈니",
+          "name_en": "Disney",
+          "est": "1.86",
+          "act": "2.06",
+          "dir": 1
+        },
+        {
+          "name_ko": "로쿠",
+          "name_en": "Roku",
+          "est": "0.61",
+          "act": "1.11",
+          "dir": 1
+        },
+        {
+          "name_ko": "엣시",
+          "name_en": "Etsy",
+          "est": "0.75",
+          "act": "1.34",
+          "dir": 1
+        }
+      ]
+    },
+    {
+      "day_ko": "8/6 목",
+      "day_en": "Thu 8/6",
+      "rows": [
+        {
+          "name_ko": "신규 실업수당",
+          "name_en": "Jobless claims",
+          "est_ko": "20.2만",
+          "est_en": "202K",
+          "act_ko": "19.9만",
+          "act_en": "199K",
+          "dir": -1
+        },
+        {
+          "name_ko": "계속 실업수당",
+          "name_en": "Continuing",
+          "est_ko": "179.0만",
+          "est_en": "1.790M",
+          "act_ko": "180.1만",
+          "act_en": "1.801M",
+          "dir": 1
+        },
+        {
+          "name_ko": "비농업 생산성",
+          "name_en": "Productivity",
+          "est": "0.6%",
+          "act": "1.4%",
+          "dir": 1
+        },
+        {
+          "name_ko": "단위노동비용",
+          "name_en": "Unit labor cost",
+          "est": "2.0%",
+          "act": "1.3%",
+          "dir": -1
+        },
+        {
+          "name_ko": "감원 발표",
+          "name_en": "Layoffs",
+          "est_ko": "4.6만",
+          "est_en": "46K",
+          "act_ko": "3.3만",
+          "act_en": "33K",
+          "dir": -1
+        },
+        {
+          "name_ko": "도매재고",
+          "name_en": "Wholesale inv.",
+          "est": "0.3%",
+          "act": "0.2%",
+          "dir": -1
+        }
+      ]
+    },
+    {
+      "day_ko": "8/7 금",
+      "day_en": "Fri 8/7",
+      "rows": [
+        {
+          "name_ko": "비농업고용",
+          "name_en": "Nonfarm payrolls",
+          "est_ko": "+8.0만",
+          "est_en": "+80K",
+          "act_ko": "−2.3만",
+          "act_en": "−23K",
+          "dir": -1
+        },
+        {
+          "name_ko": "실업률",
+          "name_en": "Unemployment",
+          "est": "4.2%",
+          "act": "4.1%",
+          "dir": -1
+        },
+        {
+          "name_ko": "시간당임금",
+          "name_en": "Avg. hourly earn.",
+          "est": "3.5%",
+          "act": "3.2%",
+          "dir": -1
+        },
+        {
+          "name_ko": "주당 근로시간",
+          "name_en": "Weekly hours",
+          "est": "34.3",
+          "act": "34.3",
+          "dir": 0
+        },
+        {
+          "name_ko": "참가율 (직전)",
+          "name_en": "Participation",
+          "est": "61.5%",
+          "act": "—",
+          "dir": 0
+        }
+      ]
+    }
+  ],
+  "news": {
+    "title_ko": "한 주를 움직인 것",
+    "title_en": "What moved the week",
+    "sub_ko": "네 가지 사건",
+    "sub_en": "Four things",
+    "items": [
+      {
+        "emoji": "👷",
+        "headline_ko": "미 7월 고용 2만3천명 감소",
+        "headline_en": "US payrolls fell 23,000 in July",
+        "body_ko": "예상은 8만명 증가였다. 실업률은 4.1%로 내렸고 미 10년물 금리는 한 주 동안 4.75%에서 4.65%로 밀렸다.",
+        "body_en": "Consensus was +80,000. Unemployment eased to 4.1% and the 10-year fell from 4.75% to 4.65% over the week.",
+        "src": "BLS · US Treasury · 8/7"
+      },
+      {
+        "emoji": "🔌",
+        "headline_ko": "샌디스크 쇼크에 아시아 메모리주 투매",
+        "headline_en": "SanDisk shock triggers an Asian memory selloff",
+        "body_ko": "샌디스크가 호실적에도 시간외 급락하자 6일 코스피는 4.58% 밀렸고, 외국인이 유가증권시장에서 3조3천억원 넘게 팔았다.",
+        "body_en": "SanDisk sank after hours despite a beat; the KOSPI lost 4.58% on Aug 6 as foreigners sold over KRW 3.3tn.",
+        "src": "KRX · 8/6"
+      },
+      {
+        "emoji": "🌍",
+        "headline_ko": "이란, 미·이스라엘 선박 호르무즈 통항 금지 추진",
+        "headline_en": "Iran moves to bar US and Israeli ships from Hormuz",
+        "body_ko": "트럼프 대통령은 합의가 아직 이뤄지지 않았다고 밝혔다. WTI는 6일 77.29달러로 반등해 7일 77.08달러로 한 주를 마쳤다.",
+        "body_en": "President Trump said no deal has been reached. WTI rebounded to $77.29 on Aug 6 and ended the week at $77.08.",
+        "src": "Reuters · 8/6"
+      },
+      {
+        "emoji": "🏛",
+        "headline_ko": "미국, 폴리실리콘 파생상품에 15% 관세",
+        "headline_en": "US sets a 15% tariff on polysilicon derivatives",
+        "body_ko": "잉곳·웨이퍼·셀·모듈이 대상이고 원료 폴리실리콘에는 최저수입가격이 적용된다. 7일 한화솔루션은 11.51% 올랐다.",
+        "body_en": "Ingots, wafers, cells and modules are covered; raw polysilicon gets a floor price. Hanwha Solutions rose 11.51% on Aug 7.",
+        "src": "KRX · 8/7"
+      }
+    ]
+  },
+  "sectors": [
+    {
+      "label_ko": "반도체 (SMH)",
+      "label_en": "Semis (SMH)",
+      "value": 7.8
+    },
+    {
+      "label_ko": "기술 (XLK)",
+      "label_en": "Tech (XLK)",
+      "value": 7.2
+    },
+    {
+      "label_ko": "소재 (XLB)",
+      "label_en": "Materials (XLB)",
+      "value": 4.82
+    },
+    {
+      "label_ko": "경기소비 (XLY)",
+      "label_en": "Cons. disc. (XLY)",
+      "value": 3.25
+    },
+    {
+      "label_ko": "산업재 (XLI)",
+      "label_en": "Industrials (XLI)",
+      "value": 2.97
+    },
+    {
+      "label_ko": "통신 (XLC)",
+      "label_en": "Comm. svcs (XLC)",
+      "value": 2.78
+    },
+    {
+      "label_ko": "헬스케어 (XLV)",
+      "label_en": "Health care (XLV)",
+      "value": 1.93
+    },
+    {
+      "label_ko": "금융 (XLF)",
+      "label_en": "Financials (XLF)",
+      "value": 1.16
+    },
+    {
+      "label_ko": "필수소비 (XLP)",
+      "label_en": "Cons. staples (XLP)",
+      "value": 0.08
+    },
+    {
+      "label_ko": "부동산 (XLRE)",
+      "label_en": "Real estate (XLRE)",
+      "value": -0.2
+    },
+    {
+      "label_ko": "유틸리티 (XLU)",
+      "label_en": "Utilities (XLU)",
+      "value": -1.67
+    },
+    {
+      "label_ko": "에너지 (XLE)",
+      "label_en": "Energy (XLE)",
+      "value": -3.44
+    }
+  ],
+  "sectorsSub_ko": "미국 코어 섹터 ETF 12",
+  "sectorsSub_en": "12 US sector ETFs",
+  "sectorsNote_ko": "※ 미국 코어 섹터 ETF 12개 · 9개 상승, 에너지만 3% 넘게 하락",
+  "sectorsNote_en": "※ 12 US core sector ETFs · 9 up; only energy fell more than 3%",
+  "movers": {
+    "kr": {
+      "flag": "🇰🇷",
+      "head_ko": "한국",
+      "head_en": "Korea",
+      "items": [
+        {
+          "name_ko": "한화솔루션",
+          "name_en": "Hanwha Solutions",
+          "mono_ko": "한화",
+          "mono_en": "HWA",
+          "color": "#f05a28",
+          "px_ko": "33,900원",
+          "px_en": "KRW 33,900",
+          "pct": 32.94,
+          "seq": [
+            25500,
+            24800,
+            26800,
+            30150,
+            30400,
+            33900
+          ]
+        },
+        {
+          "name_ko": "삼성전기",
+          "name_en": "Samsung Electro-Mech.",
+          "mono_ko": "삼성",
+          "mono_en": "SEMC",
+          "color": "#1428a0",
+          "px_ko": "1,278,000원",
+          "px_en": "KRW 1,278,000",
+          "pct": 11.91,
+          "seq": [
+            1142000,
+            1181000,
+            1185000,
+            1356000,
+            1229000,
+            1278000
+          ]
+        },
+        {
+          "name_ko": "SK하이닉스",
+          "name_en": "SK hynix",
+          "mono_ko": "SK",
+          "mono_en": "SK",
+          "color": "#e8730c",
+          "px_ko": "1,422,000원",
+          "px_en": "KRW 1,422,000",
+          "pct": -17.23,
+          "seq": [
+            1718000,
+            1567000,
+            1577000,
+            1668000,
+            1495000,
+            1422000
+          ]
+        }
+      ]
+    },
+    "us": {
+      "flag": "🇺🇸",
+      "head_ko": "미국",
+      "head_en": "United States",
+      "items": [
+        {
+          "name_ko": "팔란티어",
+          "name_en": "Palantir",
+          "mono_ko": "PLTR",
+          "mono_en": "PLTR",
+          "color": "#101820",
+          "px_ko": "$172.01",
+          "px_en": "$172.01",
+          "pct": 39.78,
+          "seq": [
+            123.06,
+            125.65,
+            162.66,
+            158.43,
+            155.92,
+            172.01
+          ]
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "mono_ko": "NVDA",
+          "mono_en": "NVDA",
+          "color": "#76b900",
+          "px_ko": "$223.96",
+          "px_en": "$223.96",
+          "pct": 11.56,
+          "seq": [
+            200.75,
+            206.64,
+            211.94,
+            219.22,
+            218.99,
+            223.96
+          ]
+        },
+        {
+          "name_ko": "유나이티드헬스",
+          "name_en": "UnitedHealth",
+          "mono_ko": "UNH",
+          "mono_en": "UNH",
+          "color": "#002677",
+          "px_ko": "$407.08",
+          "px_en": "$407.08",
+          "pct": -1.77,
+          "seq": [
+            414.4,
+            415.36,
+            407.55,
+            412.75,
+            403.97,
+            407.08
+          ]
+        }
+      ]
+    },
+    "note_ko": "※ 8/7 종가 · 등락률은 전주 금요일 종가 대비 · 선그래프는 전주 종가부터 이번 주 5거래일 종가<br>※ 배지는 모노그램 · 미국 대형주 로고는 캐싱 워크플로 적용 후 교체 예정",
+    "note_en": "※ Aug 7 close · change vs last Friday · the line runs from last Friday's close through the week's five sessions<br>※ Badges are monograms; US large-cap logos land once the caching workflow ships"
+  },
+  "ai": {
+    "title_ko": "AI · 반도체",
+    "title_en": "AI & semiconductors",
+    "sub_ko": "이번 주 세 가지",
+    "sub_en": "Three things",
+    "items": [
+      {
+        "headline_ko": "삼성전자, HBM5 대비 성능 최대 8배 'zHBM' 첫 공개",
+        "headline_en": "Samsung unveils 'zHBM', up to 8x the performance of HBM5",
+        "body_ko": "AI가속기 위에 메모리를 수직으로 쌓아 데이터 이동거리를 줄인 3D 구조로, 열저항을 절반 이상 낮췄다.",
+        "body_en": "A 3D design stacking memory vertically on the accelerator to shorten data paths, cutting thermal resistance by more than half.",
+        "src": "Samsung Newsroom · 8/4",
+        "icon": "chip"
+      },
+      {
+        "headline_ko": "SK하이닉스, 용인·청주에 54조원 투자 확정",
+        "headline_en": "SK hynix commits KRW 54tn to Yongin and Cheongju",
+        "body_ko": "용인 Y2에는 HBM 등 차세대 D램, 청주 M17에는 AI 데이터센터용 낸드 라인을 짓는다. 청주에만 19조1000억원.",
+        "body_en": "Yongin Y2 gets next-gen DRAM including HBM; Cheongju M17 gets NAND lines for AI data centres — KRW 19.1tn for Cheongju alone.",
+        "src": "SK hynix · 8/7",
+        "icon": "chip"
+      },
+      {
+        "headline_ko": "AMD, 예상 웃돈 실적에도 시간외 9%대 하락",
+        "headline_en": "AMD beats but falls about 9% after hours",
+        "body_ko": "2분기 EPS 1.66달러(예상 1.62), 매출 115억3600만달러. 머스크가 AI 인프라에 엔비디아 블랙웰만 쓰겠다고 밝힌 여파다.",
+        "body_en": "Q2 EPS $1.66 (est. $1.62) on revenue of $11.536bn. The drop followed Musk saying he would use only Nvidia Blackwell for AI infrastructure.",
+        "src": "FMP · Chosun Biz · 8/4~8/5",
+        "icon": "chip"
+      }
+    ],
+    "note_ko": "※ 미국 반도체 ETF(SMH)는 주간 +7.80%, 같은 기간 SK하이닉스는 −17.2%",
+    "note_en": "※ US semis ETF (SMH) rose 7.80% on the week while SK hynix fell 17.2%"
+  },
+  "outro": {
+    "tagline_ko": "평일엔 매일 아침·저녁,<br>주말엔 한 주를 한눈에",
+    "tagline_en": "Twice a day on weekdays,<br>the whole week on weekends",
+    "next_ko": "🗓 다음 브리핑 — 내일 밤 9시, 다음 주 일정",
+    "next_en": "🗓 Next up — tomorrow 9pm KST, the week ahead"
+  }
+}
