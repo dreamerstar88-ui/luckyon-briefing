@@ -1,0 +1,72 @@
+name: Probe Valuation Extract
+
+# 탐침 2단계 — 1단계에서 열린 소스에서 지수 PER/EPS 를 실제로 뽑아 본다.
+# 값 후보와 **원문 발췌**를 함께 커밋한다. 세션에서는 이 소스들이 전부 막혀 HTML 을
+# 볼 수 없으므로, 발췌가 없으면 파서를 장님 상태에서 짜게 된다.
+#
+# 브리핑 파이프라인에 아무 영향도 주지 않는다. 탐침 전용이고 실패로 끝내지 않는다.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-valuation-extract
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Extract
+        id: probe
+        continue-on-error: true
+        run: |
+          mkdir -p data
+          if node scripts/probe-valuation-extract.mjs > /tmp/x.json; then
+            mv /tmp/x.json data/probe-valuation-extract.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::추출 탐침 비정상 종료 — 기존 리포트를 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          node -e '
+            const r = require("./data/probe-valuation-extract.json");
+            const L = [];
+            for (const x of r.results) {
+              const n = (x.candidates||[]).reduce((a,c)=>a+c.hits.length,0);
+              L.push(`### ${x.id} — ${x.label} (${x.covers})`);
+              L.push(`상태 ${x.status}${x.blockedBody?" · 차단 본문":""}${x.jsonParseFailed?" · JSON 파싱 실패":""}`
+                + ` · 후보 ${n}${x.valuationKeys?` · JSON 키 ${x.valuationKeys.length} (${x.jsonParsedVia})`:""}`);
+              for (const k of (x.valuationKeys||[]).slice(0,12)) L.push(`- \`${k.path}\` = **${k.value}**`);
+              for (const c of (x.candidates||[])) for (const h of c.hits)
+                L.push(`- \`${h.matched}\` → ${h.numbers.join(", ") || "(숫자 없음)"}`);
+              L.push("");
+            }
+            console.log(L.join("\n"));
+          ' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/probe-valuation-extract.json
+          git diff --cached --quiet && { echo "no changes"; exit 0; }
+          git commit -m "chore: probe valuation extraction [skip ci]"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            sleep $((i * 3)); git pull --rebase --autostash origin main || exit 1
+          done
+          exit 1
