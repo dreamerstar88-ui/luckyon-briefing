@@ -23,10 +23,14 @@ const session = process.argv[4] || '';
 if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
 if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
-// 토요일은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
-// 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 토요일 절)
+// 주말은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
+// 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 §2-A·§2-B)
 if (session === 'sat') {
   await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
+  process.exit(0);
+}
+if (session === 'sun') {
+  await import('./render-cards-sun.mjs');
   process.exit(0);
 }
 
@@ -409,8 +413,21 @@ function cardOutro() {
 
 // 본문 카드는 sections 가 있으면 그것을 따르고, 없으면 기존 econ/ai 6+6 구성으로 그린다.
 // (구버전 content/*.json 을 그대로 다시 렌더할 수 있어야 하므로 폴백을 남긴다.)
+//
+// 폴백은 «조용히» 걸리면 안 된다. sections 를 빠뜨린 새 콘텐츠가 오류 없이 본문 4장짜리
+// 구버전 카드로 나가면 아무도 모른 채 발행된다 — 실제로 그럴 뻔한 구조였다.
+// 그러니 폴백에 들어갈 때는 반드시 경고를 남긴다.
 const SECTION_RENDERERS = { stats: cardStats, bars: cardBars, rank: cardRank };
-const bodyCards = Array.isArray(data.sections) && data.sections.length
+const hasSections = Array.isArray(data.sections) && data.sections.length;
+if (!hasSections) {
+  console.warn(`\n⚠️  sections 가 없어 구버전(econ/ai 6+6) 폴백으로 그립니다 — 본문 4장, 총 8장.`);
+  console.warn(`   새로 만드는 콘텐츠라면 sections 를 빠뜨린 것입니다 (FORMAT_BRIEFING.md §1·§5).`);
+  if (!Array.isArray(data.econ) || !Array.isArray(data.ai)) {
+    console.error(`❌ sections 도 econ/ai 도 없습니다 — 그릴 본문이 없습니다: content/${contentFile}`);
+    process.exit(1);
+  }
+}
+const bodyCards = hasSections
   ? data.sections.map(s => (SECTION_RENDERERS[s.type] || (x => newsCard(t(x.title_ko, x.title_en), x.items || [], x.color || '#e66767')))(s))
   : [
       newsCard(t('경제 · 금융 ①', 'Economy ①'), data.econ.slice(0, 3), '#e66767'),

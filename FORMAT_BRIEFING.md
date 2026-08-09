@@ -1,11 +1,18 @@
 # 브리핑 카드 구조·양식 (FORMAT)
 
-> **이 문서가 정의하는 것**: `scripts/render-cards.mjs` 가 그리는 카드의 **구조·스키마·분량**.
-> 렌더러와의 계약서이며 **평일 브리핑(am·pm)과 일요일(sun)이 §1~§7 을 공용으로 따른다.**
+> **이 문서가 정의하는 것**: 카드의 **구조·스키마·분량**. 렌더러와의 계약서다.
 >
-> **토요일(sat)은 §2-A 를 따른다.** 2026-08-08 개편으로 토요일만 카드 10장이 각자 다른 모양을 가진
-> 고정 편성이 됐고, 렌더러도 `scripts/render-cards-sat.mjs` 로 분리됐다. 호출 명령은 그대로다 —
-> `render-cards.mjs` 가 `session === 'sat'` 일 때 위임한다. **§1 의 `sections` 규칙은 토요일에 적용되지 않는다.**
+> **세션마다 따르는 절이 다르다.**
+>
+> | 세션 | 편성 | 따르는 절 | 렌더러 |
+> |---|---|---|---|
+> | `am` · `pm` | `sections` 5장 + 4 = **9장** | §1 · §2 · §3 · §5 | `render-cards.mjs` |
+> | `sat` | 고정 **10장** | **§2-A** | `render-cards-sat.mjs` |
+> | `sun` | 고정 **10장** | **§2-B** | `render-cards-sun.mjs` |
+>
+> **주말은 둘 다 고정 편성이다.** 토요일이 2026-08-08 에, 일요일이 2026-08-09 에 갈라져 나왔다.
+> 호출 명령은 셋 다 같다 — `render-cards.mjs` 가 `sat`·`sun` 을 알아서 전용 렌더러로 넘긴다.
+> **§1 의 `sections` 규칙은 주말에 적용되지 않는다.** §4(언어 무관 필드)·§6(분량 확인)·§7 은 전 세션 공용이다.
 >
 > **이 문서가 정의하지 않는 것**
 > - 무엇을 조사하고 무엇을 쓸지 → 축별 절차서(`ROUTINE_PROMPT.md`, `ROUTINE_PROMPT_WEEKEND.md`)
@@ -17,13 +24,13 @@
 
 ---
 
-## 1. 카드 구성 (am · pm · sun)
+## 1. 카드 구성 (am · pm)
 
-> 토요일(sat)은 이 표를 쓰지 않는다 → §2-A
+> **주말은 이 표를 쓰지 않는다** → 토요일 §2-A, 일요일 §2-B
 
 | 카드 | 내용 | 근거 필드 |
 |---|---|---|
-| ① | 훅 | `headline_*` + `summary` (또는 `hook_bull`/`hook_bear`) |
+| ① | 훅 | `headline_*` + `summary` |
 | ② | 시장 한눈에 (10칸 격자) | `markets[]` x10, `market_note_*` |
 | ③④⑤⑥⑦ | 본문 5장 | `sections[]` x5 |
 | ⑧ | 주요 일정 | `market_hours`, `schedule[]` |
@@ -177,33 +184,135 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
 
 ---
 
-## 3. 훅 카드 (①)
+## 2-B. 일요일(sun) 카드 — 별도 편성
 
-### 3.1 `summary` — 이미 벌어진 일을 정리하는 세션의 기본값
+렌더러: `scripts/render-cards-sun.mjs` · 견본: `content/example-sun.json`
+확인: `node scripts/render-cards.mjs example ko sun` (·`en`) → `cards/example/sun/<lang>/card1..10.png`
 
-**am · pm · sat 세션은 `summary` 를 쓴다.**
+**토요일과 같은 «주말 가족»이다.** 바탕은 같은 종이색이고 부품(알약칩·로고 배지·번호 배지)도 같다.
+**강조색만 다르다** — 토요일 딥그린 `#2f5d50` ↔ 일요일 딥인디고 `#4b4180`.
+`sections`·`summary`·`hook_*`·`markets`·`schedule`·`market_hours` 를 **쓰지 않는다.** 장수는 고정 10장이다.
 
-- 스키마: `"summary": {"lines_ko":[...], "lines_en":[...]}` — 그날(그 주)의 핵심을 불릿 3~4개로, 각 1문장.
+### 시각 언어: 화살표(→)
+
+일요일은 «무엇에서 무엇으로 갈 것인가»를 반복해 보여준다. 토요일 ⑤가 «예상 → 실제»로 결과를
+보여준 것의 정확한 앞면이다.
+
+| 카드 | 왼쪽 (이미 확정된 과거) | 오른쪽 (시장 컨센서스) |
+|---|---|---|
+| ③ 경제 지표 | 직전치 | 컨센서스 |
+| ④ 실적 | 전년 동기 EPS 실적 | 이번 분기 컨센서스 |
+
+**색은 방향만 뜻한다** — `dir:1` = 오른쪽이 왼쪽보다 **높음**(빨강), `-1` = 낮음(파랑), `0` = 같음.
+좋고 나쁨으로 정하지 않는다. 실업수당처럼 '낮으면 좋은' 지표도 낮으면 `-1` 이다 (토요일 ⑤와 같은 규칙).
+
+### 카드 편성과 근거 필드
+
+| 카드 | 내용 | 근거 필드 |
+|---|---|---|
+| ① | 표지 | `weekLabel_*`, `cover{headline_*, hero{}, points[], tiles_title_*, tiles[]}` |
+| ② | **다음 주 캘린더 (월~금 그리드)** | `week{note_*, days[]}` |
+| ③ | 미국 · 글로벌 경제 지표 | `econ{title_*, sub_*, note_*, rows[]}` |
+| ④ | 미국 대형주 실적 | `earnings{title_*, sub_*, note_*, items[]}` |
+| ⑤ | 한국 다음 주 | `korea{}` — 글 카드 구조 |
+| ⑥ | 주말 사이 소식 | `weekend{}` — 글 카드 구조 |
+| ⑦ | 다음 주 출발선 | `start{note_*, indexes[], metrics[]}` |
+| ⑧ | AI · 반도체 | `ai{}` — 글 카드 구조 |
+| ⑨ | 놓치면 안 될 것 | `watch{}` — 글 카드 구조 |
+| ⑩ | 아웃트로 | `outro{tagline_*, next_*}` |
+
+**⑤⑥⑧⑨ 는 같은 «글 카드» 구조를 쓴다**: `{title_ko/en, sub_ko/en, note_ko/en, items:[{emoji | icon:"chip", headline_ko/en, body_ko/en, src} x3]}`.
+토요일 ⑥⑨와 같은 모양이라 렌더러도 같은 함수를 쓴다.
+
+### 스키마
+
+```
+{
+  "session": "sun",
+  "dateLabel_ko","dateLabel_en",
+  "weekLabel_ko","weekLabel_en",              // 표지 라벨칩. 예: "다음 주 미리 보기 · 8월 둘째 주"
+  "cover": {
+    "headline_ko","headline_en",              // <br> 로 두 줄. 48px 라 한 줄 20자 안쪽
+    "hero": {"label_ko","label_en","value","sub_ko","sub_en"},  // value 는 문자열 그대로 출력
+    "points":[{"title_ko","title_en","body_ko","body_en"} x3],
+    "tiles_title_ko","tiles_title_en",
+    "tiles":[{"label_ko","label_en","value"} x3]                // value 는 숫자(%), 부호로 색이 갈린다
+  },
+  "week": {                                   // ② 요일 그리드. 보통 5개(월~금)
+    "note_ko","note_en",
+    "days":[{"day_ko","day_en",
+             "rows":[{"time","name_ko","name_en","tag_ko","tag_en","importance":"high|mid"} x3~4]}]
+  },
+  "econ": {                                   // ③ 직전치 → 컨센서스
+    "title_ko","title_en","sub_ko","sub_en","note_ko","note_en",
+    "rows":[{"name_ko","name_en","when","prev","est","dir"} x4~5]
+  },
+  "earnings": {                               // ④ 전년 동기 → 컨센서스
+    "title_ko","title_en","sub_ko","sub_en","note_ko","note_en",
+    "items":[{"name_ko","name_en","logo","mono_ko","mono_en","color",
+              "when","slot_ko","slot_en","epsPrev","eps","dir"} x6]
+  },
+  "korea": { ...글 카드... }, "weekend": { ...글 카드... },
+  "ai":    { ...글 카드... }, "watch":   { ...글 카드... },
+  "start": {                                  // ⑦ 금요일 마감 스냅샷
+    "note_ko","note_en",
+    "indexes":[{"name_ko","name_en","close","wk"} x3],          // 숫자. wk = 주간 등락률(%)
+    "metrics":[{"emoji","name_ko","name_en","value","delta","dir"} x6]
+  },
+  "outro": {"tagline_ko","tagline_en","next_ko","next_en"},
+  "caption_ko","caption_en","sources":[...]
+}
+```
+
+### 일요일에서 특히 조심할 것
+
+- **`hero` 는 «컨센서스»다. 예측이 아니다.** 라벨에 반드시 «컨센서스»임을 밝히고(`美 7월 CPI 컨센서스`),
+  `sub` 에 직전치와 발표 시각을 붙여 무엇과 비교하는 숫자인지 드러낸다. 라벨을 «美 7월 CPI» 로만 적으면
+  독자는 이미 나온 값으로 읽는다.
+- **`week.days[].rows` 는 요일당 3~4건이 기본이다.** 2건 이하로 떨어지면 카드가 눈에 띄게 빈다
+  (렌더러가 블록을 세로 중앙에 두어 완화하지만 한계가 있다). 지표만으로 모자라면 실적·개장/만기·
+  해외 지표를 함께 넣어 채운다. **정말 비는 요일은 «예정 없음» 타일이 자동으로 들어간다.**
+- **`importance:"high"` 는 요일당 최대 1건.** 전부 high 면 아무것도 강조되지 않는다.
+- **`tiles` 는 지난주 «주간 등락률»이다** (금요일 종가가 아니라 %). 숫자로 넣으면 부호에 따라 색이 갈린다.
+- **`⑦ start` 는 회고를 여기서 끝낸다.** 지수 3개 + 지표 6개까지다. 지난주 지수 상세·섹터·대형주는
+  토요일 회차가 통째로 다루므로, 일요일이 되풀이하면 하루 만에 같은 내용이 다시 나간다.
+- **배지는 `logo` → 로고, 없으면 `mono_*` → 모노그램 순으로 그려진다.** `logo` 에 티커를 적으면
+  `data/logos.json`(logos-cache 워크플로가 커밋해 둔 base64 사전)에서 찾는다. **캐시에 없으면 조용히
+  모노그램으로 내려앉는다.** 한국 종목은 CDN 이 미국 티커만 주므로 항상 모노그램이다.
+  `mono_*` 는 로고를 쓸 때도 **반드시 채워 둔다**(대체 경로가 그것이다). 원격 URL 은 쓰지 않는다.
+- **`slot_ko`/`slot_en` 은 번역 필드다** (`장 마감 후` / `After close`). 여기에 한쪽 언어만 넣지 않는다.
+
+---
+
+## 3. 훅 카드 (①) — am · pm 전용
+
+### 3.1 `summary` — 평일 훅 카드
+
+**am · pm 세션은 `summary` 를 쓴다.**
+
+- 스키마: `"summary": {"lines_ko":[...], "lines_en":[...]}` — 그날의 핵심을 불릿 3~4개로, 각 1문장.
 - 쓰는 순서: 결과 → 무엇이 그렇게 만들었나 → 수급·거래대금 → 반대로 움직인 것. 이렇게 쓰면 자연스럽다.
-- **왜 호재/악재로 안 가르나**: 호재·악재는 **앞으로 벌어질 일의 '재료'** 를 가리키는 말이다. am·pm·sat 은 **이미 끝난 장의 결과**를 다루므로 확정된 결과를 그렇게 가르면 어색하다. (2026-08-03 사용자 결정, 2026-08-04 에 sat 까지 확대)
+- **왜 호재/악재로 안 가르나**: 호재·악재는 **앞으로 벌어질 일의 '재료'** 를 가리키는 말이다. am·pm 은 **이미 끝난 장의 결과**를 다루므로 확정된 결과를 그렇게 가르면 어색하다. (2026-08-03 사용자 결정)
 
-### 3.2 `hook_bull` / `hook_bear` — 아직 안 벌어진 일을 다루는 세션 전용
+### 3.2 주말은 훅 카드를 쓰지 않는다 — 표지 카드로 대체됐다
 
-**`sun` 세션에만 쓴다.** 다음 주를 미리 보는 회차라 아직 결과가 없고, 재료를 기대/경계로 가르는 것이 자연스럽다.
+`sat`·`sun` 은 **첫 카드가 표지(`cover`)** 다. §2-A·§2-B 를 본다.
 
-- 스키마: `"hook_bull": {"body_ko","body_en"}`, `"hook_bear": {...}` — 각 1~2문장.
-- `sun` 에서는 렌더러가 라벨을 **'기대 요인 / 경계 요인'** 으로 바꿔 출력한다 (색·화살표는 그대로).
-- **구체적인 종목·수치·사건**을 담는다. "투자심리가 개선됐습니다" 같은 뭉뚱그린 말은 쓰지 않는다. 각각 **단일 사실 하나씩**만 담고 여러 개를 나열하지 않는다.
-- **확실한 것만 넣는다 — 한쪽만 뚜렷하면 그쪽만 넣는다.** 억지 낙관으로 빈칸을 채우지 않는다. 한쪽만 있으면 렌더러가 `headline_sub` 를 함께 노출해 카드가 비어 보이지 않게 한다.
+- **`hook_bull` / `hook_bear` 는 폐기됐다.** 2026-08-09 개편 전까지 `sun` 이 쓰던 필드로,
+  라벨을 '기대 요인 / 경계 요인'으로 바꿔 출력했다. **지금은 어느 세션도 쓰지 않는다** —
+  일요일 표지의 `cover.points` 가 그 자리를 대신한다. 구버전 콘텐츠를 다시 렌더할 때만 평일
+  렌더러의 폴백 경로에서 동작한다.
+- `summary` 도 주말에는 쓰지 않는다. 넣어도 주말 렌더러가 읽지 않아 조용히 사라진다.
 
-### 3.3 렌더러 우선순위 (중요)
+### 3.3 세션별 첫 카드 (중요)
 
-**`summary` 가 있으면 렌더러가 무조건 이것을 쓴다** — `hook_bull`/`hook_bear` 를 함께 넣어도 무시된다. 그러므로 **둘을 같이 채우지 말고 세션에 맞는 하나만** 쓴다.
+| 세션 | 첫 카드 | 필드 |
+|---|---|---|
+| `am` · `pm` | 훅 | `summary` (§3.1) |
+| `sat` | 표지 | `cover` (§2-A) |
+| `sun` | 표지 | `cover` (§2-B) |
 
-| 세션 | 훅 필드 |
-|---|---|
-| `am` · `pm` · `sat` | `summary` |
-| `sun` | `hook_bull` / `hook_bear` |
+**평일에서 `summary` 가 있으면 렌더러가 무조건 이것을 쓴다** — `hook_bull`/`hook_bear` 를 함께 넣어도 무시된다.
 
 ---
 
@@ -212,7 +321,7 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
 아래 필드는 렌더 스크립트가 `${LANG}` 분기 없이 **base 필드 이름 그대로** 출력한다. 즉 **한국어 카드와 영어 카드에 똑같이 박힌다.**
 
 ```
-# am · pm · sun
+# am · pm (§1)
 markets[].label   markets[].value   markets[].value_sub   markets[].delta
 sections[].items[].src            sections[].items[].time
 sections[].stats[].value          sections[].stats[].delta
@@ -220,16 +329,28 @@ sections[].rows[].value
 schedule[].time
 
 # sat (§2-A)
-cover.hero.value                  metrics[].value      metrics[].value 의 delta
+cover.hero.value                  metrics[].value      metrics[].delta
 calendar[].rows[].est / .act      news.items[].src     ai.items[].src
 movers.*.items[].color            movers.*.items[].seq
+
+# sun (§2-B)
+cover.hero.value                  cover.tiles[].value  (숫자)
+week.days[].rows[].time
+econ.rows[].when   econ.rows[].prev   econ.rows[].est
+earnings.items[].when   earnings.items[].eps   earnings.items[].epsPrev
+earnings.items[].logo / .color
+start.indexes[].close / .wk (숫자)   start.metrics[].value   start.metrics[].delta
+korea/weekend/ai/watch .items[].src
 ```
 
 - **토요일의 `calendar[].rows[].est` / `.act` 는 `_ko`/`_en` 쌍도 받는다.** `18.1억`·`7.0만` 처럼
   단위가 한글인 값이 실제로 영어 카드에 그대로 새어 나간 적이 있다. 숫자만 있는 값(`0.34`, `4.1%`)은
   단일 필드로 두고, **한글 단위가 붙는 값에만 `est_ko`/`est_en` 쌍을 쓴다.** 쌍이 있으면 그쪽이 이긴다.
   영어 환산은 억 → `$1.81B`, 만 → `+70K`·`202K`, 백만 → `1.790M` 처럼 중립 표기로.
-- **`movers[].px_ko`/`px_en` 은 invariant 가 아니다.** 한국 종목은 `33,900원` / `KRW 33,900` 으로 갈린다.
+- **`movers[].px_ko`/`px_en`(sat), `slot_ko`/`slot_en`(sun) 은 invariant 가 아니다.** 각각
+  `33,900원` / `KRW 33,900`, `장 마감 후` / `After close` 로 갈린다. 한쪽만 채우면 다른 언어가 빈다.
+- **일요일 `week.days[].rows[].time` 은 시각만 넣는다** (`21:30`). 날짜는 요일 헤더(`day_ko`/`day_en`)가
+  이미 갖고 있고, 요일 헤더는 번역 필드라 `월 8/10` / `Mon 8/10` 으로 갈라 쓴다.
 
 - 여기에 **한국어 조사·서술형 어미나 영어 문장을 넣지 않는다.** 처음 쓸 때부터 두 언어 모두에서 자연스러운 중립 표기로 쓴다.
   - 라벨은 `S&P 500 Fut` 처럼 영문 약어로
@@ -248,16 +369,17 @@ movers.*.items[].color            movers.*.items[].seq
 
 ---
 
-## 5. 콘텐츠 JSON 스키마
+## 5. 콘텐츠 JSON 스키마 (am · pm)
+
+> **주말 스키마는 여기가 아니다** → 토요일 §2-A, 일요일 §2-B. 아래 `markets`·`sections`·
+> `schedule`·`market_hours` 는 **평일에만** 쓴다.
 
 ```
 {
-  "date", "session",                          // session: "am" | "pm" | "sat" | "sun"
+  "date", "session",                          // session: "am" | "pm"
   "dateLabel_ko","dateLabel_en",
   "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
-  "summary":{"lines_ko":[...],"lines_en":[...]},   // am·pm·sat (§3.1)
-  "hook_bull":{"body_ko","body_en"},               // sun 전용 (§3.2)
-  "hook_bear":{"body_ko","body_en"},               // sun 전용
+  "summary":{"lines_ko":[...],"lines_en":[...]},   // §3.1
   "markets":[{"label","value","value_sub(선택)","delta","dir(up|down|flat)","note_ko","note_en"} x10],
   "market_note_ko","market_note_en",
   "sections":[                                 // 본문 5장. 순서대로 카드 ③④⑤⑥⑦
@@ -285,22 +407,25 @@ movers.*.items[].color            movers.*.items[].seq
 
 **`schedule_title`** — `"주요 일정"` / `"Key Schedule"`. **세션별로 바꾸지 않는다** (예전 "오늘 낮 주요 일정"은 am 에만 맞아 재사용이 안 됐다).
 
-**`market_hours`**
+**`market_hours`** — **평일 전용이다.**
 - `am`: 제목 "한국 증시 운영시간", 내용 "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
 - `pm`: 제목 "미국 증시 운영시간", 내용 "정규장 22:30 ~ 익일 05:00 (서머타임 기준)" — 11월 초~3월 초에는 "23:30 ~ 익일 06:00". 프리마켓/애프터마켓 시간을 한 줄 더 넣어도 좋다.
-- `sat`·`sun`: 제목 "다음 주 증시 개장" / "Next Week's Market Hours", 내용 두 줄 — "한국 정규장 월~금 09:00 ~ 15:30", "미국 정규장 월~금 22:30 ~ 익일 05:00 (서머타임 기준)". 주말 카드에 한 나라 운영시간만 싣는 것은 의미가 없다(둘 다 닫혀 있고 독자가 대비할 것은 다음 주다). **다음 주에 휴장일이 있으면 한 줄 추가한다** (예: "※ 미국 월요일 휴장 — 노동절").
-- **휴장일 처리**: 해당 세션의 시장이 공휴일로 휴장이어도 브리핑을 건너뛰지 않는다. `lines` 에 "※ 오늘(M/D)은 ○○로 하루 휴장" 한 줄을 추가하고, `schedule` 첫 항목에 휴장 안내를 `importance: "high"` 로 넣고, 헤드라인·`market_note` 에도 반영한다.
+- **주말은 `market_hours` 를 쓰지 않는다.** 개장 시각을 따로 실을 자리가 없어졌고, 그럴 필요도 없다 —
+  일요일은 ② 캘린더의 요일 헤더와 각 항목 시각이 그 정보를 이미 담는다. **다음 주 휴장일은
+  일요일 ⑨ «놓치면 안 될 것» 에 한 건으로 넣는다** (예: "한국 광복절 대체휴일 — 월요일 휴장").
+- **휴장일 처리(평일)**: 해당 세션의 시장이 공휴일로 휴장이어도 브리핑을 건너뛰지 않는다. `lines` 에 "※ 오늘(M/D)은 ○○로 하루 휴장" 한 줄을 추가하고, `schedule` 첫 항목에 휴장 안내를 `importance: "high"` 로 넣고, 헤드라인·`market_note` 에도 반영한다.
 
-**`next_brief`**
+**`next_brief`** — 평일은 최상위 `next_brief_*`, **주말은 `outro.next_*`** 에 넣는다.
 - `am`: "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전" / "🌙 Next brief — 9 PM KST, before the US open"
 - `pm`: "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리" / "☀️ Next brief — 8 AM KST, US close wrap-up"
 - **금요일 `pm`**: "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산" / "📊 Next brief — 8 AM KST, the week in review"
 - `sat`: "🗓 다음 브리핑 — 내일 밤 9시, 다음 주 일정" / "🗓 Next brief — 9 PM KST tomorrow, the week ahead"
-- `sun`: "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리" / "☀️ Next brief — 8 AM KST, US close wrap-up"
+- `sun`: "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리" / "☀️ Next up — 8am KST, the US close"
 
-**`outro_tagline`** — 평일은 비워 두면 렌더러 기본 문구가 나온다. **주말(`sat`·`sun`)만 아래로 교체한다**:
-- `outro_tagline_ko`: `"평일엔 매일 아침·저녁,<br>주말엔 한 주를 한눈에"`
-- `outro_tagline_en`: `"Twice daily on weekdays,<br>the full week on weekends"`
+**아웃트로 큰 문구** — 평일은 `outro_tagline_*` 를 비워 두면 렌더러 기본 문구가 나온다.
+**주말은 `outro.tagline_*`** 에 아래를 넣는다:
+- `"평일엔 매일 아침·저녁,<br>주말엔 한 주를 한눈에"`
+- `"Twice a day on weekdays,<br>the whole week on weekends"`
 
 ### 그 밖의 표기 규칙
 
@@ -319,10 +444,17 @@ node scripts/render-cards.mjs <DATE> ko <SESSION>
 node scripts/render-cards.mjs <DATE> en <SESSION>
 ```
 
-`cards/<DATE>/<SESSION>/ko/`, `.../en/` 각각에 `card1~9.png` 가 생겼는지 확인한다.
+`cards/<DATE>/<SESSION>/ko/`, `.../en/` 각각에 카드가 다 생겼는지 확인한다 —
+**평일 9장 · 토요일 10장 · 일요일 10장.** 장수가 다르면 스키마를 빠뜨린 것이다.
 
-- **훅 카드(①) 확인**: am·pm·sat 은 `summary` 불릿이 보이는 것이 정상이다. 호재·악재 블록이 보인다면 `summary` 를 안 넣었다는 뜻이니 §3 을 다시 본다. (`sun` 은 반대.)
-- **카드 분량 초과 확인 (매번 필수 · 9장 전부, 두 언어 모두 눈으로 본다)**: 영어는 같은 내용도 줄바꿈이 많아져 카드 높이(1350px)를 넘기기 쉽다. **렌더 성공 로그만 보고 넘어가지 말고 이미지를 실제로 연다** — 스크립트는 넘쳐도 오류 없이 성공한다. 하단 텍스트가 푸터("luckyon 브리핑"·페이지 번호)와 겹치면 **그 언어 텍스트만** 줄여 재렌더링한다 (사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
+- **첫 카드 확인**: 평일은 `summary` 불릿, 주말은 라벨칩 + 굵은 두 줄 제목 + 큰 수치 카드가 보이는 것이 정상이다. 주말에서 호재·악재 블록이 보인다면 폐기된 `hook_*` 를 넣은 것이니 §3.2 를 다시 본다.
+- **카드 분량 초과 확인 (매번 필수 · 전 장, 두 언어 모두 눈으로 본다)**: 영어는 같은 내용도 줄바꿈이 많아져 카드 높이(1350px)를 넘기기 쉽다. **렌더 성공 로그만 보고 넘어가지 말고 이미지를 실제로 연다** — 스크립트는 넘쳐도 오류 없이 성공한다. 하단 텍스트가 푸터("luckyon 브리핑"·페이지 번호)와 겹치면 **그 언어 텍스트만** 줄여 재렌더링한다 (사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
+- **대체텍스트 개수 = 카드 수**를 확인한다. 어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다.
+  ```
+  node -e "import('./scripts/lib/alt-text.mjs').then(async m=>{const fs=await import('node:fs');
+    const c=JSON.parse(fs.readFileSync('content/<DATE>-<SESSION>.json','utf8'));
+    for(const l of ['ko','en']) console.log(l, m.buildAltTexts(c,l).length)})"
+  ```
 
 자주 넘치는 곳과 대처:
 
@@ -332,6 +464,9 @@ node scripts/render-cards.mjs <DATE> en <SESSION>
 | `stats` | `cols:2` 에서 타일 3개는 2행이 되고 라벨·부연이 길면 높이가 제각각 | `cols:1` 은 부연(`sub`)이 2줄로 넘어가지 않게 짧게 |
 | `bars` | 라벨이 잘림(ellipsis) | 한글 8자·영문 15자 안쪽 (예: "커뮤니케이션 (XLC)"→"통신 (XLC)", "Industrials (XLI)"→"Indu. (XLI)") |
 | 시장 카드(②) | 타일 note 가 3줄이 되면 10칸 격자가 밀림 | note 는 2줄 안쪽 |
+| 일요일 ② 캘린더 | 요일당 5건 이상이면 타일이 눌리고, 2건 이하면 카드가 빈다 | 요일당 **3~4건** (§2-B) |
+| 일요일 ③ 지표 | 지표명이 2줄로 넘어감 | 한글 20자·영문 34자 안쪽 (`美 7월 소비자물가 (전년비)`) |
+| 일요일 ④ 실적 | 기업명이 2줄로 넘어가 타일이 밀림 | 한글 12자 안쪽 (`어플라이드 머티어리얼즈` 가 상한) |
 
 ---
 

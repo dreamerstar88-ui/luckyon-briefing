@@ -1,0 +1,620 @@
+{
+  "_comment": "일요일(sun) 카드 10장 스키마 견본. 값은 구조를 보여주기 위한 예시이며 사실이 아니다 — 반드시 이번 세션 내용으로 새로 만든다. 확인: node scripts/render-cards.mjs example ko sun (·en)",
+  "session": "sun",
+  "dateLabel_ko": "2026년 8월 9일 (일)",
+  "dateLabel_en": "Aug 9, 2026 (Sun)",
+  "weekLabel_ko": "다음 주 미리 보기 · 8월 둘째 주",
+  "weekLabel_en": "THE WEEK AHEAD · AUG W2",
+  "cover": {
+    "headline_ko": "물가와 실적,<br>같은 주에 겹친다",
+    "headline_en": "Inflation and earnings<br>land in the same week",
+    "hero": {
+      "label_ko": "美 7월 CPI 컨센서스",
+      "label_en": "US July CPI consensus",
+      "value": "3.0%",
+      "sub_ko": "직전 3.1% · 8/12(수) 21:30 KST 발표",
+      "sub_en": "Prior 3.1% · due Wed Aug 12, 21:30 KST"
+    },
+    "points": [
+      {
+        "title_ko": "수요일 밤 물가",
+        "title_en": "Wednesday night: prices",
+        "body_ko": "직전 3.1%에서 3%를 밑도는지가 9월 인하 기대의 분기점입니다.",
+        "body_en": "Whether it slips under 3% from 3.1% is the pivot for September cut bets."
+      },
+      {
+        "title_ko": "화·목 반도체 실적",
+        "title_en": "Tue & Thu: chip earnings",
+        "body_ko": "AMD·엔비디아 공급망 종목이 이틀에 걸쳐 나옵니다.",
+        "body_en": "Two days of results from names across the AI supply chain."
+      },
+      {
+        "title_ko": "금요일 옵션 만기",
+        "title_en": "Friday: option expiry",
+        "body_ko": "만기 주간이라 지수 변동성이 평소보다 커질 수 있습니다.",
+        "body_en": "Expiry week can amplify index swings."
+      }
+    ],
+    "tiles_title_ko": "지난주 마감",
+    "tiles_title_en": "LAST WEEK'S CLOSE",
+    "tiles": [
+      {
+        "label_ko": "S&P 500",
+        "label_en": "S&P 500",
+        "value": 1.05
+      },
+      {
+        "label_ko": "나스닥",
+        "label_en": "Nasdaq",
+        "value": 1.59
+      },
+      {
+        "label_ko": "코스피",
+        "label_en": "Kospi",
+        "value": -1.42
+      }
+    ]
+  },
+  "week": {
+    "note_ko": "일정과 시각은 발표 기관 공시 기준이며 변경될 수 있습니다",
+    "note_en": "Times follow official release calendars and can change",
+    "days": [
+      {
+        "day_ko": "월 8/10",
+        "day_en": "Mon 8/10",
+        "rows": [
+          {
+            "time": "09:00",
+            "name_ko": "한국 7월 수출입",
+            "name_en": "Korea July trade",
+            "tag_ko": "관세청",
+            "tag_en": "Customs",
+            "importance": "mid"
+          },
+          {
+            "time": "23:00",
+            "name_ko": "美 1년 기대인플레",
+            "name_en": "US 1-yr inflation view",
+            "tag_ko": "뉴욕 연은",
+            "tag_en": "NY Fed",
+            "importance": "mid"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "미국장 개장",
+            "name_en": "US market opens",
+            "tag_ko": "만기 주간 시작",
+            "tag_en": "Expiry week",
+            "importance": "mid"
+          },
+          {
+            "time": "16:00",
+            "name_ko": "유로존 8월 투자심리",
+            "name_en": "Eurozone Aug sentiment",
+            "tag_ko": "센틱스",
+            "tag_en": "Sentix",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "화 8/11",
+        "day_en": "Tue 8/11",
+        "rows": [
+          {
+            "time": "21:30",
+            "name_ko": "美 7월 생산자물가",
+            "name_en": "US July PPI",
+            "tag_ko": "직전 2.7%",
+            "tag_en": "Prior 2.7%",
+            "importance": "mid"
+          },
+          {
+            "time": "05:00",
+            "name_ko": "AMD 실적",
+            "name_en": "AMD earnings",
+            "tag_ko": "장 마감 후",
+            "tag_en": "After close",
+            "importance": "high"
+          },
+          {
+            "time": "08:00",
+            "name_ko": "호주 중앙은행 결정",
+            "name_en": "RBA rate decision",
+            "tag_ko": "아시아 통화정책",
+            "tag_en": "Asia policy",
+            "importance": "mid"
+          },
+          {
+            "time": "10:30",
+            "name_ko": "중국 7월 소비자물가",
+            "name_en": "China July CPI",
+            "tag_ko": "디플레 압력",
+            "tag_en": "Deflation watch",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "수 8/12",
+        "day_en": "Wed 8/12",
+        "rows": [
+          {
+            "time": "21:30",
+            "name_ko": "美 7월 소비자물가",
+            "name_en": "US July CPI",
+            "tag_ko": "직전 3.1%",
+            "tag_en": "Prior 3.1%",
+            "importance": "high"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "홈디포 실적",
+            "name_en": "Home Depot earnings",
+            "tag_ko": "장 시작 전",
+            "tag_en": "Before open",
+            "importance": "mid"
+          },
+          {
+            "time": "03:00",
+            "name_ko": "연준 위원 발언",
+            "name_en": "Fed speakers",
+            "tag_ko": "정책 신호",
+            "tag_en": "Policy signal",
+            "importance": "mid"
+          },
+          {
+            "time": "18:00",
+            "name_ko": "영국 2분기 GDP",
+            "name_en": "UK Q2 GDP",
+            "tag_ko": "속보치",
+            "tag_en": "Preliminary",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "목 8/13",
+        "day_en": "Thu 8/13",
+        "rows": [
+          {
+            "time": "21:30",
+            "name_ko": "美 신규 실업수당",
+            "name_en": "US jobless claims",
+            "tag_ko": "주간",
+            "tag_en": "Weekly",
+            "importance": "mid"
+          },
+          {
+            "time": "05:00",
+            "name_ko": "시스코 실적",
+            "name_en": "Cisco earnings",
+            "tag_ko": "장 마감 후",
+            "tag_en": "After close",
+            "importance": "mid"
+          },
+          {
+            "time": "05:00",
+            "name_ko": "어플라이드 실적",
+            "name_en": "Applied Mat. earnings",
+            "tag_ko": "장비 수주",
+            "tag_en": "Equipment orders",
+            "importance": "high"
+          },
+          {
+            "time": "15:00",
+            "name_ko": "국내 유통·바이오 실적",
+            "name_en": "Korea retail & biotech",
+            "tag_ko": "주 후반 집중",
+            "tag_en": "Back half of week",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "금 8/14",
+        "day_en": "Fri 8/14",
+        "rows": [
+          {
+            "time": "21:30",
+            "name_ko": "美 7월 소매판매",
+            "name_en": "US July retail sales",
+            "tag_ko": "소비 점검",
+            "tag_en": "Consumer check",
+            "importance": "high"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "월마트 실적",
+            "name_en": "Walmart earnings",
+            "tag_ko": "장 시작 전",
+            "tag_en": "Before open",
+            "importance": "mid"
+          },
+          {
+            "time": "05:00",
+            "name_ko": "8월 옵션 만기",
+            "name_en": "August option expiry",
+            "tag_ko": "변동성 주의",
+            "tag_en": "Volatility risk",
+            "importance": "mid"
+          },
+          {
+            "time": "09:00",
+            "name_ko": "한국 7월 고용동향",
+            "name_en": "Korea July jobs",
+            "tag_ko": "국가데이터처",
+            "tag_en": "Statistics Korea",
+            "importance": "mid"
+          }
+        ]
+      }
+    ]
+  },
+  "econ": {
+    "title_ko": "미국 · 글로벌 지표",
+    "title_en": "US & global data",
+    "sub_ko": "직전치 → 컨센서스",
+    "sub_en": "Prior → consensus",
+    "note_ko": "컨센서스는 발표 직전까지 바뀔 수 있습니다",
+    "note_en": "Consensus can shift right up to the release",
+    "rows": [
+      {
+        "name_ko": "美 7월 소비자물가 (전년비)",
+        "name_en": "US July CPI (YoY)",
+        "when": "8/12 21:30 KST",
+        "prev": "3.1%",
+        "est": "3.0%",
+        "dir": -1
+      },
+      {
+        "name_ko": "美 7월 근원 CPI (전년비)",
+        "name_en": "US July core CPI (YoY)",
+        "when": "8/12 21:30 KST",
+        "prev": "2.9%",
+        "est": "2.9%",
+        "dir": 0
+      },
+      {
+        "name_ko": "美 7월 생산자물가 (전년비)",
+        "name_en": "US July PPI (YoY)",
+        "when": "8/11 21:30 KST",
+        "prev": "2.7%",
+        "est": "2.8%",
+        "dir": 1
+      },
+      {
+        "name_ko": "美 7월 소매판매 (전월비)",
+        "name_en": "US July retail sales (MoM)",
+        "when": "8/14 21:30 KST",
+        "prev": "0.4%",
+        "est": "0.3%",
+        "dir": -1
+      },
+      {
+        "name_ko": "美 신규 실업수당 청구",
+        "name_en": "US initial jobless claims",
+        "when": "8/13 21:30 KST",
+        "prev": "197K",
+        "est": "205K",
+        "dir": 1
+      }
+    ]
+  },
+  "earnings": {
+    "title_ko": "다음 주 실적",
+    "title_en": "Earnings ahead",
+    "sub_ko": "전년 동기 → 컨센서스",
+    "sub_en": "Year ago → consensus",
+    "note_ko": "발표일은 기업 IR 공지 기준",
+    "note_en": "Dates follow company IR notices",
+    "items": [
+      {
+        "name_ko": "AMD",
+        "name_en": "AMD",
+        "logo": "AMD",
+        "mono_ko": "AMD",
+        "mono_en": "AMD",
+        "color": "#4b4180",
+        "when": "8/11",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "0.92",
+        "eps": "1.18",
+        "dir": 1
+      },
+      {
+        "name_ko": "시스코",
+        "name_en": "Cisco",
+        "logo": "CSCO",
+        "mono_ko": "CS",
+        "mono_en": "CS",
+        "color": "#26618c",
+        "when": "8/13",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "0.87",
+        "eps": "0.94",
+        "dir": 1
+      },
+      {
+        "name_ko": "월마트",
+        "name_en": "Walmart",
+        "logo": "WMT",
+        "mono_ko": "WM",
+        "mono_en": "WM",
+        "color": "#2f5d50",
+        "when": "8/14",
+        "slot_ko": "장 시작 전",
+        "slot_en": "Before open",
+        "epsPrev": "0.67",
+        "eps": "0.74",
+        "dir": 1
+      },
+      {
+        "name_ko": "어플라이드 머티어리얼즈",
+        "name_en": "Applied Materials",
+        "logo": "AMAT",
+        "mono_ko": "AM",
+        "mono_en": "AM",
+        "color": "#c2382e",
+        "when": "8/13",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "2.12",
+        "eps": "2.35",
+        "dir": 1
+      },
+      {
+        "name_ko": "홈디포",
+        "name_en": "Home Depot",
+        "logo": "HD",
+        "mono_ko": "HD",
+        "mono_en": "HD",
+        "color": "#b8860b",
+        "when": "8/12",
+        "slot_ko": "장 시작 전",
+        "slot_en": "Before open",
+        "epsPrev": "4.60",
+        "eps": "4.48",
+        "dir": -1
+      },
+      {
+        "name_ko": "디어",
+        "name_en": "Deere",
+        "logo": "DE",
+        "mono_ko": "DE",
+        "mono_en": "DE",
+        "color": "#6f685b",
+        "when": "8/14",
+        "slot_ko": "장 시작 전",
+        "slot_en": "Before open",
+        "epsPrev": "6.29",
+        "eps": "5.10",
+        "dir": -1
+      }
+    ]
+  },
+  "korea": {
+    "title_ko": "한국 다음 주",
+    "title_en": "Korea next week",
+    "sub_ko": "지표 · 실적 · 이벤트",
+    "sub_en": "Data, earnings, events",
+    "note_ko": "국내 일정은 거래소·기관 공시 기준",
+    "note_en": "Domestic dates follow exchange and agency notices",
+    "items": [
+      {
+        "emoji": "🇰🇷",
+        "headline_ko": "7월 수출입 확정치 — 반도체 단가가 관건",
+        "headline_en": "July trade final — chip prices are the swing factor",
+        "body_ko": "월요일 오전 발표됩니다. 반도체 수출 단가가 3개월 연속 올랐는지가 관전 포인트입니다.",
+        "body_en": "Out Monday morning; watch whether chip export prices rose for a third straight month.",
+        "src": "8/10"
+      },
+      {
+        "emoji": "🏦",
+        "headline_ko": "금통위는 이번 주 없음 — 다음 회의는 8/27",
+        "headline_en": "No BOK meeting this week — next is Aug 27",
+        "body_ko": "이번 주 국내 통화정책 이벤트는 없습니다. 8월 27일 금리 결정 전까지는 물가·환율이 기대를 좌우합니다.",
+        "body_en": "No domestic policy event this week; prices and the won steer expectations until the Aug 27 decision.",
+        "src": "8/27"
+      },
+      {
+        "emoji": "📊",
+        "headline_ko": "국내 대형주 2분기 실적 마무리 구간",
+        "headline_en": "Korean large-cap Q2 results wrap up",
+        "body_ko": "주 후반 유통·바이오 종목의 실적 발표가 몰려 있습니다.",
+        "body_en": "Retail and biotech results cluster in the back half of the week.",
+        "src": "8/13~8/14"
+      }
+    ]
+  },
+  "weekend": {
+    "title_ko": "주말 사이 소식",
+    "title_en": "Over the weekend",
+    "sub_ko": "토요일 낮 ~ 일요일 저녁",
+    "sub_en": "Saturday midday to Sunday evening",
+    "note_ko": "평일 브리핑이 비는 구간을 메웁니다",
+    "note_en": "Filling the gap where the weekday brief goes quiet",
+    "items": [
+      {
+        "emoji": "🌏",
+        "headline_ko": "주요국 무역 협상 주말 회동",
+        "headline_en": "Trade talks resume over the weekend",
+        "body_ko": "월요일 아시아장 개장 반응이 첫 시험대입니다.",
+        "body_en": "Monday's Asian open is the first read on how markets take it.",
+        "src": "8/9"
+      },
+      {
+        "emoji": "🛢",
+        "headline_ko": "산유국 회의, 증산 폭 유지",
+        "headline_en": "Producers hold output increase steady",
+        "body_ko": "주말 결정으로 월요일 유가 갭이 생길 수 있습니다.",
+        "body_en": "The weekend decision could open a gap in crude on Monday.",
+        "src": "8/9"
+      },
+      {
+        "emoji": "₿",
+        "headline_ko": "비트코인, 주말 사이 좁은 폭 등락",
+        "headline_en": "Bitcoin drifts in a narrow weekend range",
+        "body_ko": "24시간 거래 자산이라 금요일 마감 기준 타일과는 값이 다를 수 있습니다.",
+        "body_en": "It trades 24/7, so it can differ from the Friday-close tile.",
+        "src": "8/9"
+      }
+    ]
+  },
+  "start": {
+    "note_ko": "지난주 상세 결산은 토요일 회차에서 다뤘습니다",
+    "note_en": "The full week in review ran in Saturday's edition",
+    "indexes": [
+      {
+        "name_ko": "S&P 500",
+        "name_en": "S&P 500",
+        "close": 7489.72,
+        "wk": 1.05
+      },
+      {
+        "name_ko": "나스닥 종합",
+        "name_en": "Nasdaq Composite",
+        "close": 25373.85,
+        "wk": 1.59
+      },
+      {
+        "name_ko": "코스피",
+        "name_en": "Kospi",
+        "close": 6595.45,
+        "wk": -1.42
+      }
+    ],
+    "metrics": [
+      {
+        "emoji": "😨",
+        "name_ko": "VIX",
+        "name_en": "VIX",
+        "value": "16.91",
+        "delta": "▼1.1%",
+        "dir": -1
+      },
+      {
+        "emoji": "🏛",
+        "name_ko": "미 10년물",
+        "name_en": "US 10-yr",
+        "value": "4.75%",
+        "delta": "▲0.06%p",
+        "dir": 1
+      },
+      {
+        "emoji": "💱",
+        "name_ko": "원/달러",
+        "name_en": "USD/KRW",
+        "value": "1,424.0",
+        "delta": "▼2.9%",
+        "dir": -1
+      },
+      {
+        "emoji": "🥇",
+        "name_ko": "금",
+        "name_en": "Gold",
+        "value": "$4,116",
+        "delta": "▲1.8%",
+        "dir": 1
+      },
+      {
+        "emoji": "🛢",
+        "name_ko": "WTI",
+        "name_en": "WTI",
+        "value": "$84.00",
+        "delta": "▼5.9%",
+        "dir": -1
+      },
+      {
+        "emoji": "₿",
+        "name_ko": "비트코인",
+        "name_en": "Bitcoin",
+        "value": "$63,794",
+        "delta": "▼1.9%",
+        "dir": -1
+      }
+    ]
+  },
+  "ai": {
+    "title_ko": "AI · 반도체",
+    "title_en": "AI & semiconductors",
+    "sub_ko": "다음 주 예정 + 주말 소식",
+    "sub_en": "Coming up, plus the weekend",
+    "note_ko": "주가 나열이 아니라 기술·정책 소식을 담습니다",
+    "note_en": "Technology and policy, not a list of share moves",
+    "items": [
+      {
+        "icon": "chip",
+        "headline_ko": "AMD 실적에서 AI 가속기 가이던스 공개",
+        "headline_en": "AMD to give AI accelerator guidance",
+        "body_ko": "화요일 장 마감 후입니다. 하반기 데이터센터 매출 전망이 반도체 업종 전체의 기준선이 됩니다.",
+        "body_en": "Tuesday after the close; the second-half data-centre outlook sets the bar for the whole sector.",
+        "src": "8/11"
+      },
+      {
+        "icon": "chip",
+        "headline_ko": "어플라이드 머티어리얼즈 — 장비 수주 흐름",
+        "headline_en": "Applied Materials — equipment order trends",
+        "body_ko": "목요일 발표로 메모리 증설 사이클이 이어지는지 확인할 수 있습니다.",
+        "body_en": "Thursday's report shows whether the memory capex cycle is still running.",
+        "src": "8/13"
+      },
+      {
+        "emoji": "📜",
+        "headline_ko": "AI 규제 공개 의견수렴 마감",
+        "headline_en": "AI rule-making comment period closes",
+        "body_ko": "주 후반 마감입니다. 학습 데이터 공개 의무 범위가 핵심 쟁점입니다.",
+        "body_en": "Closes late in the week; the scope of training-data disclosure is the core issue.",
+        "src": "8/14"
+      }
+    ]
+  },
+  "watch": {
+    "title_ko": "놓치면 안 될 것",
+    "title_en": "Don't miss",
+    "sub_ko": "정책 · 만기 · 휴장",
+    "sub_en": "Policy, expiry, holidays",
+    "note_ko": "③④ 카드에 담기지 않은 확정 일정입니다",
+    "note_en": "Confirmed dates that cards 3 and 4 don't cover",
+    "items": [
+      {
+        "emoji": "⚠️",
+        "headline_ko": "금요일 8월 옵션 만기 — 변동성 주의",
+        "headline_en": "August option expiry lands Friday",
+        "body_ko": "만기 주간에는 지수 종가 부근 변동이 커지는 경향이 있습니다.",
+        "body_en": "Expiry weeks tend to see bigger swings into the close.",
+        "src": "8/14"
+      },
+      {
+        "emoji": "🗓",
+        "headline_ko": "한국 광복절 대체휴일 — 다음 주 월요일 휴장",
+        "headline_en": "Korea holiday closes the market next Monday",
+        "body_ko": "8월 17일 국내 증시가 하루 휴장합니다. 미국장은 정상 개장합니다.",
+        "body_en": "Korean markets shut Aug 17; US markets trade as usual.",
+        "src": "8/17"
+      },
+      {
+        "emoji": "🌐",
+        "headline_ko": "주요국 재무장관 회의",
+        "headline_en": "Finance ministers meet",
+        "body_ko": "환율 공동 대응 문구가 나오는지가 원화에 직접 영향을 줍니다.",
+        "body_en": "Any joint language on currencies would feed straight through to the won.",
+        "src": "8/13"
+      }
+    ]
+  },
+  "outro": {
+    "tagline_ko": "평일엔 매일 아침·저녁,<br>주말엔 한 주를 한눈에",
+    "tagline_en": "Twice a day on weekdays,<br>the whole week on weekends",
+    "next_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+    "next_en": "☀️ Next up — 8am KST, the US close"
+  },
+  "caption_ko": "🗓 luckyon 브리핑 · 다음 주 일정 (2026.8.10~8.14)\n\n수요일 밤 미국 7월 소비자물가가 이번 주 최대 관전 포인트입니다. 직전 3.1%에서 3%를 밑도는지가 9월 금리 인하 기대의 분기점입니다. 화·목에는 AMD·어플라이드 머티어리얼즈 실적이, 금요일에는 8월 옵션 만기가 기다립니다.\n\n👉 매주 일요일 밤, 다음 한 주를 미리 정리해 드립니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n#경제뉴스 #주식 #증시 #나스닥 #코스피 #소비자물가 #CPI #반도체 #AMD #실적발표 #옵션만기 #재테크 #경제공부 #투자 #뉴스브리핑 #luckyon\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "🗓 luckyon Briefing · The week ahead (Aug 10-14, 2026)\n\nWednesday night's US July CPI is the week's main event: whether it slips under 3% from a prior 3.1% is the pivot for September rate-cut bets. AMD and Applied Materials report Tuesday and Thursday, and August options expire Friday.\n\n👉 Every Sunday night we map out the week ahead. Follow so you never miss it!\nSaves 🔖 and shares 📤 welcome.\n\n#economy #stocks #markets #nasdaq #kospi #inflation #CPI #semiconductors #amd #earnings #optionsexpiry #investing #finance #newsbriefing #weekahead #luckyon\n\n☀️ Next up — 8am KST, the US close",
+  "sources": [
+    "https://www.bls.gov/schedule/2026/08_sched.htm",
+    "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  ]
+}
