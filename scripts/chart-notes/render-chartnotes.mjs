@@ -166,11 +166,25 @@ const R = {
       <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
         ${candleSVG({ x: 190, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.red, id: 'a' })}
         ${candleSVG({ x: 420, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.green, id: 'b' })}
-        ${/* overlay:'ma' 를 주면 캔들 위로 이동평균선 곡선을 얹는다. 표지 주석이 '선'을 가리키는
-              회차(이동평균선·추세선 등)에서 쓴다. 값이 없으면 EP.01 과 똑같이 캔들만 그린다. */
+        ${/* overlay:'ma'    — 캔들 위에 이동평균선 곡선 하나를 얹는다. 표지 주석이 '선'을 가리키는
+                              회차(이동평균선·추세선 등)에서 쓴다.
+              overlay:'cross' — 선 두 개가 (545,136) 에서 정확히 교차한다. 주석 지시선이 가리키는 끝점이
+                              바로 그 좌표라, 주석이 '두 선이 만나는 순간'을 말하는 회차
+                              (골든크로스·MACD·볼린저밴드 등)에서 쓴다. 'ma' 로 두면 선이 하나뿐이라
+                              주석이 가리킬 교차점이 화면에 없다 — EP.03 검증에서 실제로 지적된 사고다.
+              값이 없으면 EP.01 과 똑같이 캔들만 그린다. */
       c.overlay === 'ma'
         ? `<path d="M 56 212 Q 168 118, 300 168 T 545 136" stroke="${C.navy}" stroke-width="6"
-                 fill="none" stroke-linecap="round" opacity="0.9"/>` : ''}
+                 fill="none" stroke-linecap="round" opacity="0.9"/>`
+        : c.overlay === 'cross'
+          ? /* 두 곡선은 교차점(545,136)에서 '끝난다' — 오른쪽으로 더 뻗으면 x=606 부터 시작하는
+               주석 글자를 관통한다(실제로 그렇게 그려 봤다). 주석 문구가 '만나는 순간' 이므로
+               만나는 지점에서 멈추는 편이 그림과 글이 정확히 일치한다. */
+            `<path d="M 56 192 C 260 186, 430 164, 545 136" stroke="${C.red}"
+                   stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+             <path d="M 56 264 C 260 254, 430 210, 545 136" stroke="${C.navy}"
+                   stroke-width="6" fill="none" stroke-linecap="round" opacity="0.9"/>
+             <circle cx="545" cy="136" r="15" fill="none" stroke="${C.red}" stroke-width="5"/>` : ''}
         <path d="M 600 128 L 545 136" stroke="${C.red}" stroke-width="3" fill="none"/>
         ${String(t(c, 'annot')).split('|').map((ln, i) =>
       `<text x="606" y="${118 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
