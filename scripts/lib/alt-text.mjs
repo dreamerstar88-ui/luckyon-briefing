@@ -24,8 +24,10 @@ export function buildAltTexts(content, lang) {
   // 판별은 `session` 을 먼저 본다. 두 주말 포맷 모두 `cover` 를 갖기 때문에
   // 모양만으로 가르면 일요일이 토요일 경로로 잘못 빠진다(그러면 `indexes` 가 없어 또 죽는다).
   // `session` 이 없는 구버전 파일을 위해 모양 판별을 뒤에 남겨 둔다.
-  if (content.session === 'sat') return satAltTexts(content, ko, brief, dateLabel);
-  if (content.session === 'sun') return sunAltTexts(content, ko, brief, dateLabel);
+  // `cover` 를 함께 본다 — 개편 전 주말 콘텐츠는 cover 가 없고 렌더러도 평일 경로로 그리므로,
+  // 여기서만 주말 경로로 보내면 대체텍스트 개수가 카드 수와 어긋난다.
+  if (content.session === 'sat' && content.cover) return satAltTexts(content, ko, brief, dateLabel);
+  if (content.session === 'sun' && content.cover) return sunAltTexts(content, ko, brief, dateLabel);
   if (content.cover && content.week && content.earnings) return sunAltTexts(content, ko, brief, dateLabel);
   if (content.cover && Array.isArray(content.indexes)) return satAltTexts(content, ko, brief, dateLabel);
 

@@ -23,20 +23,28 @@ const session = process.argv[4] || '';
 if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
 if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
-// 주말은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
-// 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 §2-A·§2-B)
-if (session === 'sat') {
-  await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
-  process.exit(0);
-}
-if (session === 'sun') {
-  await import('./render-cards-sun.mjs');
-  process.exit(0);
-}
-
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
+
+// 주말은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
+// 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 §2-A·§2-B)
+//
+// 다만 «구버전 콘텐츠는 그대로 다시 렌더할 수 있어야 한다»는 원칙(아래 econ/ai 폴백과 같은 이유)이
+// 주말에도 적용된다. 개편 전 sun 콘텐츠에는 cover 가 없는데 새 렌더러에 태우면 TypeError 로 죽으므로,
+// 표지 필드가 있을 때만 위임하고 없으면 평일 경로로 그린다.
+if (session === 'sat' && data.cover) {
+  await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
+  process.exit(0);
+}
+if (session === 'sun' && data.cover) {
+  await import('./render-cards-sun.mjs');
+  process.exit(0);
+}
+if ((session === 'sat' || session === 'sun') && !data.cover) {
+  console.warn(`\n⚠️  ${session} 인데 cover 가 없습니다 — 개편 전 콘텐츠로 보고 평일 경로로 그립니다.`);
+  console.warn(`   새로 만드는 콘텐츠라면 표지 필드를 빠뜨린 것입니다 (FORMAT_BRIEFING.md §2-A·§2-B).`);
+}
 const outDir = session
   ? path.join(root, 'cards', date, session, lang)
   : path.join(root, 'cards', date, lang);
