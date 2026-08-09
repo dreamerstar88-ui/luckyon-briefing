@@ -56,7 +56,7 @@
 제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
 
 <div class="fact"><b>시세 검증 기록</b>
-<div>KO — 코스피(^KS11) 20일/60일 단순이동평균 교차 — 2026-07-21 데드크로스. 20일선 7,684.13 / 60일선 7,754.10, 당일 종가 6,747.95. 직전 거래일 2026-07-20 은 20일선 7,802.46 &gt; 60일선 7,748.11 로 아직 위였다. 교차 당일 지수는 직전 고점(2026-06-22 종가 9,114.55) 대비 -26.0%. 2026-08-07(직전 거래일) 기준으로도 20일선 6,574.78 &lt; 60일선 7,625.71 로 여전히 아래. 5년치(2021-08-09~2026-08-07) 일봉 종가에서 직접 산출했고, Yahoo Finance chart API 와 PlayMCP UsStockInfo 두 경로의 종가가 일치함을 대조했다. 날짜 오프셋은 어린이날(5/5)·제헌절(7/17) 휴장 자리가 정확히 비어 있고 마지막 봉이 금요일 8/7 에 떨어지는 것으로 교차검증했다.</div><div>EN — S&amp;P 500 (^GSPC) 50-day/200-day simple moving averages — golden cross on 2025-07-01: 50-day 5,846.34 vs 200-day 5,836.35, close 6,198.01. The prior session, 2025-06-30, was still 5,828.03 vs 5,833.13. At the cross the index was already 6.2% above its own 200-day line. A dead cross had come first, on 2025-04-14 (5,748.25 vs 5,753.90), 53 trading sessions earlier. As of 2026-08-07 the 50-day (7,494.24) is still above the 200-day (7,050.03). Crossing counts over one identical 5-year pull (2021-08-09 to 2026-08-07): KOSPI 20/60 = 22, KOSPI 50/200 = 5, S&amp;P 500 20/60 = 24, S&amp;P 500 50/200 = 3. Shortest round trip found: KOSPI dead cross 2023-03-31 reversed to a golden cross 2023-04-11, 7 trading sessions later. All computed directly from Yahoo Finance daily closes.</div></div>
+<div>KO — 코스피(^KS11) 20일/60일 단순이동평균 교차 — 2026-07-21 데드크로스. 20일선 7,684.13 / 60일선 7,754.10, 당일 종가 6,747.95. 직전 거래일 2026-07-20 은 20일선 7,802.46 &gt; 60일선 7,748.11 로 아직 위였다. 교차 당일 지수는 직전 고점(2026-06-22 종가 9,114.55) 대비 -26.0%. 2026-08-07(직전 거래일) 기준으로도 20일선 6,574.78 &lt; 60일선 7,625.71 로 여전히 아래. 5년치(2021-08-09~2026-08-07) 일봉 종가에서 직접 산출했고, Yahoo Finance chart API 와 PlayMCP UsStockInfo 두 경로의 종가가 일치함을 대조했다. 교차 횟수(p.05)는 10년치를 받아 이동평균을 창(window) 이전 데이터로 미리 채운 뒤 창 안의 교차만 셌다 — 5년치만으로 계산하면 200일선이 초기 10개월간 존재하지 않아 과소 집계된다. 날짜 오프셋은 어린이날(5/5)·제헌절(7/17) 휴장 자리가 정확히 비어 있고 마지막 봉이 금요일 8/7 에 떨어지는 것으로 교차검증했다.</div><div>EN — S&amp;P 500 (^GSPC) 50-day/200-day simple moving averages — golden cross on 2025-07-01: 50-day 5,846.34 vs 200-day 5,836.35, close 6,198.01. The prior session, 2025-06-30, was still 5,828.03 vs 5,833.13. At the cross the index was already 6.2% above its own 200-day line. A death cross had come first, on 2025-04-14 (5,748.25 vs 5,753.90), 53 trading sessions earlier. As of 2026-08-07 the 50-day (7,494.24) is still above the 200-day (7,050.03). Crossing counts over one identical 5-year pull (2021-08-09 to 2026-08-07): KOSPI 20/60 = 23, KOSPI 50/200 = 6, S&amp;P 500 20/60 = 26, S&amp;P 500 50/200 = 4. These counts require moving averages SEEDED FROM HISTORY BEFORE the window — computing them from a bare 5-year pull silently undercounts (22/5/24/3), because a 200-day average cannot exist until ~10 months into the pull. A 10-year pull was used and only crossings dated inside the window were counted. Shortest round trip found: KOSPI death cross 2023-03-31 reversed to a golden cross 2023-04-11, 7 trading sessions later. All computed directly from Yahoo Finance daily closes.</div></div>
 
 
     <h2>🇰🇷 한국어 — 8장</h2>
@@ -78,8 +78,8 @@
       <figcaption><b>p.04</b> 교차 도해 그래프 — 파란 단기선이 붉은 장기선을 위로 뚫는 골든크로스 지점과 오른쪽에서 다시 아래로 뚫는 데드크로스 지점</figcaption>
     </figure>
     <figure>
-      <img src="ko/card5.png" alt="막대 비교 — 같은 5년 동안 교차 횟수, 코스피 20·60일선 22회, S&amp;P 500 20·60일선 24회, 코스피 50·200일선 5회, S&amp;P 500 50·200일선 3회" loading="lazy">
-      <figcaption><b>p.05</b> 막대 비교 — 같은 5년 동안 교차 횟수, 코스피 20·60일선 22회, S&amp;P 500 20·60일선 24회, 코스피 50·200일선 5회, S&amp;P 500 50·200일선 3회</figcaption>
+      <img src="ko/card5.png" alt="막대 비교 — 같은 5년 동안 교차 횟수, 코스피 20·60일선 23회, S&amp;P 500 20·60일선 26회, 코스피 50·200일선 6회, S&amp;P 500 50·200일선 4회" loading="lazy">
+      <figcaption><b>p.05</b> 막대 비교 — 같은 5년 동안 교차 횟수, 코스피 20·60일선 23회, S&amp;P 500 20·60일선 26회, 코스피 50·200일선 6회, S&amp;P 500 50·200일선 4회</figcaption>
     </figure>
     <figure>
       <img src="ko/card6.png" alt="실제 사례 그래프 — 2026년 7월 21일 코스피 20일선이 60일선을 아래로 통과한 데드크로스, 이때 지수는 6월 고점보다 26% 낮았음" loading="lazy">
@@ -107,20 +107,20 @@
       <figcaption><b>p.02</b> Intro card — the headline 'a golden cross is forming' and a sketched price line with question marks asking which two lines actually meet</figcaption>
     </figure>
     <figure>
-      <img src="en/card3.png" alt="Key-concept checklist — fast line is a short average such as the 20-day, a golden cross is the fast line cutting up through the slow line, a dead cross is cutting down" loading="lazy">
-      <figcaption><b>p.03</b> Key-concept checklist — fast line is a short average such as the 20-day, a golden cross is the fast line cutting up through the slow line, a dead cross is cutting down</figcaption>
+      <img src="en/card3.png" alt="Key-concept checklist — fast line is a short average such as the 20-day, a golden cross is the fast line cutting up through the slow line, a death cross is cutting down" loading="lazy">
+      <figcaption><b>p.03</b> Key-concept checklist — fast line is a short average such as the 20-day, a golden cross is the fast line cutting up through the slow line, a death cross is cutting down</figcaption>
     </figure>
     <figure>
-      <img src="en/card4.png" alt="Diagram of both crossings — a navy fast line cutting up through a red slow line at the marked golden cross, then cutting back down on the right at the dead cross" loading="lazy">
-      <figcaption><b>p.04</b> Diagram of both crossings — a navy fast line cutting up through a red slow line at the marked golden cross, then cutting back down on the right at the dead cross</figcaption>
+      <img src="en/card4.png" alt="Diagram of both crossings — a navy fast line cutting up through a red slow line at the marked golden cross, then cutting back down on the right at the death cross" loading="lazy">
+      <figcaption><b>p.04</b> Diagram of both crossings — a navy fast line cutting up through a red slow line at the marked golden cross, then cutting back down on the right at the death cross</figcaption>
     </figure>
     <figure>
-      <img src="en/card5.png" alt="Bar comparison of crossing counts over one identical five-year window: KOSPI 20/60 twenty-two times, S&amp;P 500 20/60 twenty-four times, KOSPI 50/200 five times, S&amp;P 500 50/200 three times" loading="lazy">
-      <figcaption><b>p.05</b> Bar comparison of crossing counts over one identical five-year window: KOSPI 20/60 twenty-two times, S&amp;P 500 20/60 twenty-four times, KOSPI 50/200 five times, S&amp;P 500 50/200 three times</figcaption>
+      <img src="en/card5.png" alt="Bar comparison of crossing counts over one identical five-year window: KOSPI 20/60 twenty-three times, S&amp;P 500 20/60 twenty-six times, KOSPI 50/200 six times, S&amp;P 500 50/200 four times" loading="lazy">
+      <figcaption><b>p.05</b> Bar comparison of crossing counts over one identical five-year window: KOSPI 20/60 twenty-three times, S&amp;P 500 20/60 twenty-six times, KOSPI 50/200 six times, S&amp;P 500 50/200 four times</figcaption>
     </figure>
     <figure>
-      <img src="en/card6.png" alt="Real example graph — the S&amp;P 500's 50-day line rising above its 200-day on July 1, 2025, with the April dead cross visible earlier on the same chart" loading="lazy">
-      <figcaption><b>p.06</b> Real example graph — the S&amp;P 500's 50-day line rising above its 200-day on July 1, 2025, with the April dead cross visible earlier on the same chart</figcaption>
+      <img src="en/card6.png" alt="Real example graph — the S&amp;P 500's 50-day line rising above its 200-day on July 1, 2025, with the April death cross visible earlier on the same chart" loading="lazy">
+      <figcaption><b>p.06</b> Real example graph — the S&amp;P 500's 50-day line rising above its 200-day on July 1, 2025, with the April death cross visible earlier on the same chart</figcaption>
     </figure>
     <figure>
       <img src="en/card7.png" alt="Three things to watch for with crossing signals — signals always lag, one cross settles nothing, and no pair of periods is the correct one" loading="lazy">
@@ -130,8 +130,8 @@
       <img src="en/card8.png" alt="Three-line recap, a teaser for the next episode on trading volume, and a note that this is educational content and not investment advice" loading="lazy">
       <figcaption><b>p.08</b> Three-line recap, a teaser for the next episode on trading volume, and a note that this is educational content and not investment advice</figcaption>
     </figure></div>
-    <h3>캡션 (897자)</h3>
-    <div class="cap">"A golden cross is forming." You have seen the headline. It does not mean the price will go up.<br><br>When a shorter moving average cuts up through a longer one, that is a golden cross. Cutting down through it is a dead cross. Grand name, simple idea.<br><br>What matters is that the signal always arrives late. When the S&amp;P 500's 50-day line rose above its 200-day on July 1, 2025, price was already 6.2% above that 200-day line. And a dead cross had come just 53 sessions earlier, in April. A cross confirms a move that already happened — it does not predict the next one.<br><br>📌 Save it and pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: trading volume — how to read the bars under the price.<br><br>#investingbasics #stockmarket #goldencross #deadcross #movingaverage #technicalanalysis #sp500 #learntoinvest #stockcharts #luckyon</div>
+    <h3>캡션 (900자)</h3>
+    <div class="cap">"A golden cross is forming." You have seen the headline. It does not mean the price will go up.<br><br>When a shorter moving average cuts up through a longer one, that is a golden cross. Cutting down through it is a death cross. Grand name, simple idea.<br><br>What matters is that the signal always arrives late. When the S&amp;P 500's 50-day line rose above its 200-day on July 1, 2025, price was already 6.2% above that 200-day line. And a death cross had come just 53 sessions earlier, in April. A cross confirms a move that already happened — it does not predict the next one.<br><br>📌 Save it and pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: trading volume — how to read the bars under the price.<br><br>#investingbasics #stockmarket #goldencross #deathcross #movingaverage #technicalanalysis #sp500 #learntoinvest #stockcharts #luckyon</div>
 
 
 <div class="act">

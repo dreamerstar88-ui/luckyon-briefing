@@ -176,7 +176,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 
 | type | 쓰임 | 주요 필드 |
 |---|---|---|
-| `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈) |
+| `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈), `overlay`(선택) |
 | `intro` | p.02 도입 | `title`, `body`, `caption` |
 | `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing` |
 | `anatomy` | 구조를 화살표로 분해 | `title`, `body`, `labels.upper/body/lower` |
@@ -189,6 +189,16 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
+
+**표지의 `overlay`** — 캔들 위에 무엇을 얹을지 고른다. **표지 주석(`annot`)이 가리키는 대상이 실제로 그려지는지 반드시 확인한다.**
+
+| 값 | 그림 | 쓸 때 |
+|---|---|---|
+| (없음) | 캔들만 | EP.01 처럼 주석이 캔들을 가리키는 회차 |
+| `ma` | 이동평균선 곡선 **1개** | 주석이 '선 하나'를 가리키는 회차 (이동평균선·추세선) |
+| `cross` | 교차점에서 만나는 곡선 **2개** + 붉은 원 | 주석이 '두 선이 만나는 순간'을 말하는 회차 (골든크로스·MACD·볼린저밴드) |
+
+EP.03 을 `ma` 로 두었더니 주석은 "선 두 개가 만나는 순간"인데 화면에는 선이 하나뿐이라 **가리킬 교차점이 없었다**(검증에서 적발). 주석 문구를 바꾸기 전에 `overlay` 가 맞는지 먼저 본다.
 
 **렌더 후 반드시 눈으로 확인한다.** 8장을 모두 열어 텍스트가 카드 밖으로 넘치거나 겹치지 않는지 본다.
 특히 **영어는 같은 내용도 한국어보다 길어져 넘치기 쉽다.** 넘치면 그 언어의 문구만 줄여 다시 렌더한다
