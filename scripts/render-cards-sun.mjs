@@ -37,6 +37,17 @@ const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', `${date}-sun.json`), 'utf8'));
+
+// 스키마를 여기서 막는다. 2026-08-09 개편 전 sun 콘텐츠에는 cover 가 없어 그대로 태우면
+// cardCover() 가 undefined 를 읽고 죽는데, 그 죽는 자리가 «어디가 잘못됐는지»를 말해주지 않는다.
+if (!data.cover) {
+  console.error(`\n❌ cover 가 없습니다: content/${date}-sun.json`);
+  console.error(`   일요일 콘텐츠는 표지 필드가 필요합니다 (FORMAT_BRIEFING.md §2-B, 견본 content/example-sun.json).`);
+  console.error(`   2026-08-09 이전 콘텐츠를 그때 모습대로 다시 그리려면 그 시점 렌더러를 꺼내 씁니다:`);
+  console.error(`     git checkout <그 시점 커밋> -- scripts/render-cards.mjs`);
+  process.exit(1);
+}
+
 const outDir = path.join(root, 'cards', date, 'sun', lang);
 fs.mkdirSync(outDir, { recursive: true });
 

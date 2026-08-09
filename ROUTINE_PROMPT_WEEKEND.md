@@ -43,7 +43,7 @@
 
 **주말에서 쓰지 않는 필드** — `sections` · `summary` · `hook_bull`/`hook_bear` · `markets` ·
 `schedule` · `market_hours` · 구버전 `econ`/`ai` 6+6 최상위 배열. 넣어도 주말 렌더러가 읽지 않아
-**오류 없이 조용히 사라진다.** (일요일의 `econ`·`ai` 는 §2-B 의 카드 ④·⑦ 전용 «객체»로 이름만 같다.)
+**오류 없이 조용히 사라진다** (반대로 `cover` 를 빠뜨리면 멈춘다). (일요일의 `econ`·`ai` 는 §2-B 의 카드 ④·⑦ 전용 «객체»로 이름만 같다.)
 
 ---
 
@@ -338,7 +338,7 @@ node scripts/fetch-sat-indexes.mjs <금요일 날짜> > /tmp/sat-idx.json
    sun 은 **§2-B**. 예시 파일도 갈린다: sat 은 `content/example-sat.json`, sun 은 **`content/example-sun.json`**.
    어느 쪽이든 반드시 이번 세션 내용으로 새로 만든다.
    - **`content/` 의 지난 sun 파일을 예시로 삼지 않는다.** `2026-08-02-sun.json` 은 개편 전
-     `econ`/`ai` 6+6 스키마라 그대로 베끼면 **오류 없이 구버전 8장으로 발행된다.** 견본은 `example-sun.json` 뿐이다.
+     `econ`/`ai` 6+6 스키마라 그대로 베끼면 **렌더러가 «cover 가 없습니다» 로 멈춘다.** 견본은 `example-sun.json` 뿐이다.
    - **주말 고정 문구**(아웃트로 큰 문구·다음 브리핑 안내)는 `outro{}` 안에 넣는다 —
      최상위 `next_brief_*`·`outro_tagline_*` 는 평일 전용이라 주말 렌더러가 읽지 않는다.
    - `headline`: 두 세션 모두 `cover.headline` 이다. 최상위 `headline_*` 는 주말에서 쓰지 않는다.

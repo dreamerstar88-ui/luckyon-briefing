@@ -23,28 +23,20 @@ const session = process.argv[4] || '';
 if (!date) { console.error('Usage: node scripts/render-cards.mjs <date> <lang> <session:am|pm|sat|sun>'); process.exit(1); }
 if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`session 은 am|pm|sat|sun 중 하나여야 합니다: ${session}`); process.exit(1); }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
-const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
-
 // 주말은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
 // 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 §2-A·§2-B)
-//
-// 다만 «구버전 콘텐츠는 그대로 다시 렌더할 수 있어야 한다»는 원칙(아래 econ/ai 폴백과 같은 이유)이
-// 주말에도 적용된다. 개편 전 sun 콘텐츠에는 cover 가 없는데 새 렌더러에 태우면 TypeError 로 죽으므로,
-// 표지 필드가 있을 때만 위임하고 없으면 평일 경로로 그린다.
-if (session === 'sat' && data.cover) {
+if (session === 'sat') {
   await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
   process.exit(0);
 }
-if (session === 'sun' && data.cover) {
+if (session === 'sun') {
   await import('./render-cards-sun.mjs');
   process.exit(0);
 }
-if ((session === 'sat' || session === 'sun') && !data.cover) {
-  console.warn(`\n⚠️  ${session} 인데 cover 가 없습니다 — 개편 전 콘텐츠로 보고 평일 경로로 그립니다.`);
-  console.warn(`   새로 만드는 콘텐츠라면 표지 필드를 빠뜨린 것입니다 (FORMAT_BRIEFING.md §2-A·§2-B).`);
-}
+
+const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
+const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const outDir = session
   ? path.join(root, 'cards', date, session, lang)
   : path.join(root, 'cards', date, lang);
@@ -419,30 +411,25 @@ function cardOutro() {
     </div>`;
 }
 
-// 본문 카드는 sections 가 있으면 그것을 따르고, 없으면 기존 econ/ai 6+6 구성으로 그린다.
-// (구버전 content/*.json 을 그대로 다시 렌더할 수 있어야 하므로 폴백을 남긴다.)
+// 본문 카드는 sections 로만 그린다.
 //
-// 폴백은 «조용히» 걸리면 안 된다. sections 를 빠뜨린 새 콘텐츠가 오류 없이 본문 4장짜리
-// 구버전 카드로 나가면 아무도 모른 채 발행된다 — 실제로 그럴 뻔한 구조였다.
-// 그러니 폴백에 들어갈 때는 반드시 경고를 남긴다.
+// 예전에는 sections 가 없으면 구버전 econ/ai 6+6 구성으로 내려앉는 폴백이 있었다
+// (2026-08-03 sections 도입 때 7월분 콘텐츠를 위해 넣은 마이그레이션 완충재).
+// 2026-08-09 에 걷어냈다 — 재렌더가 실제로 쓰이는 곳이 없는데(발행된 인스타 이미지는
+// 교체가 불가능하고 index.html 도 과거 카드를 참조하지 않는다) 렌더러가 두 스키마를
+// 영원히 떠안는 비용만 남았고, 실제로 그 폴백이 주말 개편에서 «조용히 다른 포맷으로
+// 발행될 뻔한» 함정으로 작동했다. 과거 콘텐츠를 그때 모습대로 다시 그려야 하면
+// 저장소의 시간 기계(git)를 쓴다 — 아래 오류 메시지가 그 방법을 알려준다.
 const SECTION_RENDERERS = { stats: cardStats, bars: cardBars, rank: cardRank };
-const hasSections = Array.isArray(data.sections) && data.sections.length;
-if (!hasSections) {
-  console.warn(`\n⚠️  sections 가 없어 구버전(econ/ai 6+6) 폴백으로 그립니다 — 본문 4장, 총 8장.`);
-  console.warn(`   새로 만드는 콘텐츠라면 sections 를 빠뜨린 것입니다 (FORMAT_BRIEFING.md §1·§5).`);
-  if (!Array.isArray(data.econ) || !Array.isArray(data.ai)) {
-    console.error(`❌ sections 도 econ/ai 도 없습니다 — 그릴 본문이 없습니다: content/${contentFile}`);
-    process.exit(1);
-  }
+if (!Array.isArray(data.sections) || !data.sections.length) {
+  console.error(`\n❌ sections 가 없습니다: content/${contentFile}`);
+  console.error(`   평일 콘텐츠는 sections 5장이 필요합니다 (FORMAT_BRIEFING.md §1·§5).`);
+  console.error(`   2026-08-03 이전 콘텐츠를 그때 모습대로 다시 그리려면 그 시점 렌더러를 꺼내 씁니다:`);
+  console.error(`     git checkout <그 시점 커밋> -- scripts/render-cards.mjs`);
+  process.exit(1);
 }
-const bodyCards = hasSections
-  ? data.sections.map(s => (SECTION_RENDERERS[s.type] || (x => newsCard(t(x.title_ko, x.title_en), x.items || [], x.color || '#e66767')))(s))
-  : [
-      newsCard(t('경제 · 금융 ①', 'Economy ①'), data.econ.slice(0, 3), '#e66767'),
-      newsCard(t('경제 · 금융 ②', 'Economy ②'), data.econ.slice(3, 6), '#e66767'),
-      newsCard(t('AI · 테크 ①', 'AI & Tech ①'), data.ai.slice(0, 3), '#9085e9'),
-      newsCard(t('AI · 테크 ②', 'AI & Tech ②'), data.ai.slice(3, 6), '#9085e9'),
-    ];
+const bodyCards = data.sections.map(s =>
+  (SECTION_RENDERERS[s.type] || (x => newsCard(t(x.title_ko, x.title_en), x.items || [], x.color || '#e66767')))(s));
 
 const inners = [
   cardHook(),

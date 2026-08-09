@@ -23,11 +23,9 @@ export function buildAltTexts(content, lang) {
   //
   // 판별은 `session` 을 먼저 본다. 두 주말 포맷 모두 `cover` 를 갖기 때문에
   // 모양만으로 가르면 일요일이 토요일 경로로 잘못 빠진다(그러면 `indexes` 가 없어 또 죽는다).
-  // `session` 이 없는 구버전 파일을 위해 모양 판별을 뒤에 남겨 둔다.
-  // `cover` 를 함께 본다 — 개편 전 주말 콘텐츠는 cover 가 없고 렌더러도 평일 경로로 그리므로,
-  // 여기서만 주말 경로로 보내면 대체텍스트 개수가 카드 수와 어긋난다.
-  if (content.session === 'sat' && content.cover) return satAltTexts(content, ko, brief, dateLabel);
-  if (content.session === 'sun' && content.cover) return sunAltTexts(content, ko, brief, dateLabel);
+  // 견본 파일(example-sat/sun)처럼 `session` 이 없는 경우를 위해 모양 판별을 뒤에 남겨 둔다.
+  if (content.session === 'sat') return satAltTexts(content, ko, brief, dateLabel);
+  if (content.session === 'sun') return sunAltTexts(content, ko, brief, dateLabel);
   if (content.cover && content.week && content.earnings) return sunAltTexts(content, ko, brief, dateLabel);
   if (content.cover && Array.isArray(content.indexes)) return satAltTexts(content, ko, brief, dateLabel);
 
@@ -36,16 +34,11 @@ export function buildAltTexts(content, lang) {
   const nextBrief = ko ? content.next_brief_ko : content.next_brief_en;
 
   const marketsLabel = ko ? '주요 시장 지표: ' : 'Key market indicators: ';
-  const econLabel = ko ? '경제·금융 뉴스: ' : 'Economy & finance news: ';
-  const aiLabel = ko ? 'AI·테크 뉴스: ' : 'AI & tech news: ';
   const scheduleLabel = ko ? '주요 일정: ' : 'Upcoming schedule: ';
 
-  const headlines = (arr, start) => (arr || []).slice(start, start + 3)
-    .map(item => ko ? item.headline_ko : item.headline_en)
-    .join(' / ');
-
-  // 본문 카드는 render-cards.mjs 와 같은 규칙으로 센다 — sections 가 있으면 섹션당 한 장,
-  // 없으면 기존 econ/ai 6+6 구성. 여기가 어긋나면 alt_text 가 엉뚱한 카드에 붙는다.
+  // 본문 카드는 render-cards.mjs 와 같은 규칙으로 센다 — 섹션당 한 장.
+  // 여기가 어긋나면 alt_text 가 엉뚱한 카드에 붙는다. 그래서 구버전 econ/ai 6+6 폴백도
+  // 렌더러와 «같은 커밋에서» 걷어냈다 (2026-08-09). 한쪽만 남으면 개수가 어긋난다.
   //
   // 섹션 type 별로 읽는 필드가 다르다. 글 카드만 items 를 쓰고 stats/bars/rank 는
   // 각자 다른 배열에 내용이 들어 있으므로, items 만 보면 데이터 카드의 대체텍스트가
@@ -72,20 +65,13 @@ export function buildAltTexts(content, lang) {
     // type 이 없으면 글 카드 — 항목 수가 고정이 아니므로 slice 하지 않고 전부 넣는다.
     return (s.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / ');
   };
-  const bodyAlts = Array.isArray(content.sections) && content.sections.length
-    ? content.sections.map(s => {
-      const label = (ko ? s.title_ko : s.title_en) || '';
-      const body = sectionBody(s);
-      const note = t(s.note_ko, s.note_en);
-      // 수치만 나열하면 읽는 사람에게 맥락이 없다. note 가 있으면 한 줄 덧붙인다.
-      return (label ? label + ': ' : '') + body + (note ? ' — ' + note : '');
-    })
-    : [
-      econLabel + headlines(content.econ, 0),
-      econLabel + headlines(content.econ, 3),
-      aiLabel + headlines(content.ai, 0),
-      aiLabel + headlines(content.ai, 3),
-    ];
+  const bodyAlts = (content.sections || []).map(s => {
+    const label = (ko ? s.title_ko : s.title_en) || '';
+    const body = sectionBody(s);
+    const note = t(s.note_ko, s.note_en);
+    // 수치만 나열하면 읽는 사람에게 맥락이 없다. note 가 있으면 한 줄 덧붙인다.
+    return (label ? label + ': ' : '') + body + (note ? ' — ' + note : '');
+  });
 
   const list = [
     `${brief} ${dateLabel}: ${headline}${headlineSub ? ' - ' + headlineSub : ''}`,
