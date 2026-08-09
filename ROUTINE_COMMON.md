@@ -128,7 +128,7 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
   |---|---|
   | 평일·주말 브리핑 | `node scripts/publish-instagram.mjs <DATE> ko <SESSION>` / `... <DATE> en <SESSION>` (`<SESSION>` = `am`\|`pm`\|`sat`\|`sun`) |
   | 스토리 | `node scripts/stories/publish-story.mjs <STAMP> ko` / `... <STAMP> en` |
-  | 차트 노트 | `SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` |
+  | 차트 노트 | `node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` — **`SKIP_PAGES_WAIT` 값은 `ROUTINE_PROMPT_CHARTNOTES.md` P2 의 판단 절차를 따른다** (컨테이너가 `github.io` 를 막힌 환경이면 `0` 이 오히려 발행을 실패시킨다) |
 
 - 언어가 둘인 축은 **서로 독립적으로** 시도한다 — 한쪽이 실패해도 다른 쪽을 건너뛰지 않는다. 각각 성공하면 media id 를, 실패하면 에러 메시지를 그대로 로그에 남기고 토큰/권한/URL 중 무엇이 원인인지 판단한다.
 - **GitHub Pages 반영 지연**: 푸시 직후에는 이미지가 아직 안 올라가 인스타가 `Media download has failed` 로 거부할 수 있다. 발행 스크립트가 자체적으로 기다리지만, 그래도 실패하면 **몇 분 뒤 재시도**한다 (2026-08-04 am 에서 실제로 1차 실패 후 재시도로 성공).
