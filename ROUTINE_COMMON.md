@@ -25,6 +25,9 @@
 - **스토리와 릴스는 시세 JSON(`data/reels/`)을 공유한다.** 같은 `fetch-window.mjs` 출력을 스토리는 정지 이미지로, 릴스는 영상으로 렌더할 뿐이다. 이미지 산출 경로만 다르다.
 - `content/` **루트**의 json 은 브리핑 전용이다 (세션 없는 구버전 파일 포함). 다른 축의 콘텐츠를 여기 두면 렌더러·발행 스크립트가 서로의 파일을 집어 든다.
 - **모든 축이 `claude/live` 브랜치 하나와 GitHub Pages 를 공유한다.**
+- **데이터 소스가 되는지/안 되는지는 `DATA_SOURCES.md` 를 먼저 본다.** 어떤 소스가 세션에서
+  막히고 러너에서 되는지(그 반대도 있다), 무엇을 이미 시도해 실패했는지가 거기 있다.
+  **새 소스를 시험했으면 성공이든 실패든 그 문서에 적는다** — 같은 벽에 매번 부딪히지 않도록.
 - 스케줄은 요일·시각으로 완전히 분리돼 있어 동시 실행이 없다. 그래도 아래 §4 의 `FETCH_HEAD` 재기준 가드는 반드시 지킨다.
 
 ---
@@ -125,7 +128,7 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
   |---|---|
   | 평일·주말 브리핑 | `node scripts/publish-instagram.mjs <DATE> ko <SESSION>` / `... <DATE> en <SESSION>` (`<SESSION>` = `am`\|`pm`\|`sat`\|`sun`) |
   | 스토리 | `node scripts/stories/publish-story.mjs <STAMP> ko` / `... <STAMP> en` |
-  | 차트 노트 | `SKIP_PAGES_WAIT=0 node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` |
+  | 차트 노트 | `node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` — **`SKIP_PAGES_WAIT` 값은 `ROUTINE_PROMPT_CHARTNOTES.md` P2 의 판단 절차를 따른다** (컨테이너가 `github.io` 를 막힌 환경이면 `0` 이 오히려 발행을 실패시킨다) |
 
 - 언어가 둘인 축은 **서로 독립적으로** 시도한다 — 한쪽이 실패해도 다른 쪽을 건너뛰지 않는다. 각각 성공하면 media id 를, 실패하면 에러 메시지를 그대로 로그에 남기고 토큰/권한/URL 중 무엇이 원인인지 판단한다.
 - **GitHub Pages 반영 지연**: 푸시 직후에는 이미지가 아직 안 올라가 인스타가 `Media download has failed` 로 거부할 수 있다. 발행 스크립트가 자체적으로 기다리지만, 그래도 실패하면 **몇 분 뒤 재시도**한다 (2026-08-04 am 에서 실제로 1차 실패 후 재시도로 성공).
@@ -134,7 +137,7 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
   | 축 | 출처 | 세션이 할 일 |
   |---|---|---|
   | 브리핑(평일·주말) | 콘텐츠 JSON 에서 자동 생성 (`scripts/lib/alt-text.mjs`) | 없음 |
-  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남고 발행 스크립트가 읽는다 (손글씨 문구가 렌더 시점에만 만들어져 발행 때 다시 계산할 수 없다) | 없음 — 커밋에 포함되기만 하면 된다 |
+  | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남지만 **발행 스크립트가 보내지 않는다** — Graph API 가 `media_type=STORIES` 에서 `alt_text` 파라미터 자체를 거부해(`"The param alt_text is not supported for STORY"`, 2026-08-04 확인) 넘기면 발행이 통째로 실패한다. `alt.txt` 는 커밋에는 포함되지만 현재 스토리는 대체 텍스트 없이 나간다 — 업스트림 우회(정정 댓글 등)가 생기기 전까지는 알려진 한계다 | 없음 |
   | 차트 노트 | 사람이 쓴 `alt_ko`/`alt_en` 배열 | **직접 8개씩 쓴다.** 개수가 카드 수와 다르면 발행 스크립트가 경고만 하고 **그대로 발행하므로**, 빠뜨려도 오류로 잡히지 않는다 |
   - 적용 여부가 의심되면 발행 후 `node scripts/verify-alt-text.mjs <DATE> <LANG> <SESSION>` 로 대조한다. Graph API 는 모르는 파라미터를 오류 없이 무시하기도 해서 **"발행 성공"이 곧 "적용됨"은 아니다.** 매 회차 돌릴 필요는 없고 발행 방식이나 그 로직을 바꾼 직후에만 한 번 확인한다.
 
