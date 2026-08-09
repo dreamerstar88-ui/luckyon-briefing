@@ -13,6 +13,14 @@
 const MAX = 900;
 
 export function buildAltTexts(content, lang) {
+  // 주말(sat·sun)은 sections 배열이 없는 고정 10장 편성이라 완전히 다른 필드를 읽는다.
+  // sat 은 indexes[] 가, sun 은 week{} 가 있는 것으로 구분한다(둘 다 cover{} 는 공유).
+  if (content.cover && Array.isArray(content.indexes)) return satAltTexts(content, lang);
+  if (content.cover && content.week) return sunAltTexts(content, lang);
+  return weekdayAltTexts(content, lang);
+}
+
+function weekdayAltTexts(content, lang) {
   const ko = lang === 'ko';
   const brief = ko ? 'luckyon 브리핑' : 'luckyon Briefing';
   const dateLabel = ko ? content.dateLabel_ko : content.dateLabel_en;
@@ -85,4 +93,92 @@ export function buildAltTexts(content, lang) {
   list.push(`${nextBrief || ''} · ${brief}`.trim());
 
   return list.map(s => s.length > MAX ? s.slice(0, MAX - 3) + '...' : s);
+}
+
+const trunc = list => list.map(s => s.length > MAX ? s.slice(0, MAX - 3) + '...' : s);
+
+// 태그와 엔티티를 함께 푼다. &amp; 를 안 풀면 대체텍스트에 "S&amp;P 500" 이 그대로 읽히고,
+// cover.headline 의 <br> 을 안 지우면 "물가와<br>실적" 처럼 태그가 그대로 노출된다.
+const stripTags = s => String(s ?? '')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/\s+/g, ' ').trim();
+
+// 토요일(sat) — 카드 순서: ①표지 ②지수 ③주간차트(②와 같은 데이터) ④지수 외 지표
+// ⑤발표 결과 ⑥한 주를 움직인 것 ⑦섹터 등락 ⑧대형주 ⑨AI·반도체 ⑩아웃트로
+// (FORMAT_BRIEFING.md §2-A 편성표와 순서를 맞춘다 — 어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다)
+function satAltTexts(content, lang) {
+  const ko = lang === 'ko';
+  const t = (a, b) => (ko ? a : b);
+  const pct = v => `${v > 0 ? '+' : ''}${v}%`;
+  const brief = ko ? 'luckyon 브리핑' : 'luckyon Briefing';
+  const dateLabel = t(content.dateLabel_ko, content.dateLabel_en);
+  const cov = content.cover || {};
+  const hero = cov.hero || {};
+  // est/act 는 한글 단위가 붙는 값만 _ko/_en 쌍을 갖는다(FORMAT_BRIEFING §4) — 언어에 맞는 쪽을 우선한다.
+  const pair = (r, k) => t(r[`${k}_ko`] ?? r[k], r[`${k}_en`] ?? r[k]);
+  const val = content.valuation?.rows?.length
+    ? ' · PER ' + content.valuation.rows.map(r => `${t(r.name_ko, r.name_en)} ${r.per}`).join(', ')
+    : '';
+
+  const list = [
+    `${brief} ${dateLabel}: ${stripTags(t(cov.headline_ko, cov.headline_en))}`
+      + (hero.label_ko || hero.label_en ? ` — ${t(hero.label_ko, hero.label_en)} ${hero.value || ''}` : ''),
+    t('지수 주간 등락: ', 'Index moves for the week: ') + (content.indexes || [])
+      .map(x => `${t(x.name_ko, x.name_en)} ${x.close} ${pct(x.wk)}`).join(', ') + val,
+    t('주간 일봉 차트: ', 'Daily candlestick charts: ') + (content.indexes || [])
+      .map(x => `${t(x.name_ko, x.name_en)} ${t(x.hiLabel_ko, x.hiLabel_en) || ''} ${x.hi ?? ''}`.trim()).join(', '),
+    t('지수 외 지표: ', 'Beyond the indexes: ') + (content.metrics || [])
+      .map(m => `${t(m.name_ko, m.name_en)} ${m.value}${m.delta ? ' ' + m.delta : ''}`).join(', '),
+    t('이번 주 발표 결과, 예상에서 실제로: ', 'Forecast to actual this week: ') + (content.calendar || [])
+      .map(d => `${t(d.day_ko, d.day_en)} ` + (d.rows || [])
+        .map(r => `${t(r.name_ko, r.name_en)} ${pair(r, 'est')}→${pair(r, 'act')}`).join(', ')).join(' / '),
+    `${t(content.news?.title_ko, content.news?.title_en) || t('한 주를 움직인 것', 'What moved the week')}: `
+      + (content.news?.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / '),
+    t('주간 섹터 등락: ', 'Sector moves for the week: ') + (content.sectors || [])
+      .map(s => `${t(s.label_ko, s.label_en)} ${pct(s.value)}`).join(', '),
+    t('이번 주 많이 움직인 대형주: ', 'Biggest movers this week: ')
+      + ['kr', 'us'].filter(k => content.movers?.[k]).map(k =>
+        `${t(content.movers[k].head_ko, content.movers[k].head_en)} `
+        + (content.movers[k].items || []).map(s => `${t(s.name_ko, s.name_en)} ${t(s.px_ko, s.px_en) || ''} ${pct(s.pct)}`).join(', ')
+      ).join(' / '),
+    `${t(content.ai?.title_ko, content.ai?.title_en) || 'AI'}: `
+      + (content.ai?.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / '),
+    `${t(content.outro?.next_ko, content.outro?.next_en) || ''} · ${brief}`.trim(),
+  ];
+  return trunc(list);
+}
+
+// 일요일(sun) — 카드 순서: ①표지 ②주말 사이 소식 ③다음 주 캘린더 ④미국·글로벌 지표
+// ⑤다음 주 실적 ⑥한국 다음 주 ⑦AI·반도체 ⑧놓치면 안 될 것 ⑨다음 주 출발선 ⑩아웃트로
+// (FORMAT_BRIEFING.md §2-B 편성표와 순서를 맞춘다)
+function sunAltTexts(content, lang) {
+  const ko = lang === 'ko';
+  const t = (a, b) => (ko ? a : b);
+  const brief = ko ? 'luckyon 브리핑' : 'luckyon Briefing';
+  const dateLabel = t(content.dateLabel_ko, content.dateLabel_en);
+  const cov = content.cover || {};
+  const hero = cov.hero || {};
+  const newsBlock = (s, fallbackKo, fallbackEn) => (t(s?.title_ko, s?.title_en) || t(fallbackKo, fallbackEn)) + ': '
+    + (s?.items || []).map(i => t(i.headline_ko, i.headline_en)).join(' / ');
+
+  const list = [
+    `${brief} ${dateLabel}: ${stripTags(t(cov.headline_ko, cov.headline_en))}`
+      + (hero.label_ko || hero.label_en ? ` — ${t(hero.label_ko, hero.label_en)} ${hero.value || ''}` : ''),
+    newsBlock(content.weekend, '주말 사이 소식', 'Over the weekend'),
+    t('다음 주 캘린더: ', 'Next week calendar: ') + (content.week?.days || [])
+      .map(d => `${t(d.day_ko, d.day_en)} — ` + (d.rows || []).map(r => t(r.name_ko, r.name_en)).join(', ')).join(' / '),
+    t('미국·글로벌 지표 (직전치 → 컨센서스): ', 'US & global data (prior → consensus): ') + (content.econ?.rows || [])
+      .map(r => `${t(r.name_ko, r.name_en)} ${r.prev} → ${r.est}`).join(', '),
+    t('다음 주 실적 (전년 동기 → 컨센서스): ', 'Earnings ahead (year-ago → consensus): ') + (content.earnings?.items || [])
+      .map(i => `${t(i.name_ko, i.name_en)} ${i.epsPrev} → ${i.eps}`).join(', '),
+    newsBlock(content.korea, '한국 다음 주', 'Korea next week'),
+    newsBlock(content.ai, 'AI · 반도체', 'AI & semiconductors'),
+    newsBlock(content.watch, '놓치면 안 될 것', "Don't miss"),
+    t('다음 주 출발선 (금요일 마감): ', "Where next week starts (Friday's close): ") + (content.start?.indexes || [])
+      .map(x => `${t(x.name_ko, x.name_en)} ${x.close} (${x.wk > 0 ? '+' : ''}${x.wk}%)`).join(', ')
+      + ', ' + (content.start?.metrics || []).map(m => `${t(m.name_ko, m.name_en)} ${m.value}`).join(', '),
+    `${t(content.outro?.next_ko, content.outro?.next_en) || ''} · ${brief}`.trim(),
+  ];
+  return trunc(list);
 }
