@@ -102,7 +102,7 @@ export function buildAltTexts(content, lang) {
 
 // 일요일 카드 10장의 대체텍스트. 순서는 render-cards-sun.mjs 의 편성과 반드시 같아야 한다 —
 // 어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다.
-// ① 표지 ② 캘린더 ③ 경제지표 ④ 실적 ⑤ 한국 ⑥ 주말소식 ⑦ 출발선 ⑧ AI ⑨ 놓치면안될것 ⑩ 아웃트로
+// ① 표지 ② 주말소식 ③ 캘린더 ④ 경제지표 ⑤ 실적 ⑥ 한국 ⑦ AI ⑧ 놓치면안될것 ⑨ 출발선 ⑩ 아웃트로
 function sunAltTexts(c, ko, brief, dateLabel) {
   const t = (a, b) => (ko ? a : b);
   const pct = v => `${v > 0 ? '+' : ''}${v}%`;
@@ -122,39 +122,39 @@ function sunAltTexts(c, ko, brief, dateLabel) {
     `${brief} ${dateLabel}: ${stripTags(t(cover.headline_ko, cover.headline_en))}`
       + (cover.hero ? ` — ${t(cover.hero.label_ko, cover.hero.label_en)} ${cover.hero.value}` : ''),
 
-    // ② 다음 주 캘린더 — 요일별로 묶어 읽는다
+    // ② 주말 사이 소식
+    sect(c.weekend, t('주말 사이 소식', 'Over the weekend')),
+
+    // ③ 다음 주 캘린더 — 요일별로 묶어 읽는다
     t('다음 주 캘린더(KST): ', 'The week ahead (KST): ')
       + (c.week?.days || []).map(d => `${t(d.day_ko, d.day_en)} `
         + (d.rows || []).map(r => `${r.time} ${t(r.name_ko, r.name_en)}`).join(', ')
       ).join(' / '),
 
-    // ③ 경제 지표 — 직전치에서 컨센서스로
+    // ④ 경제 지표 — 직전치에서 컨센서스로
     t('다음 주 경제 지표, 직전치에서 컨센서스로: ', 'Next week\'s data, prior to consensus: ')
       + (c.econ?.rows || []).map(r =>
         `${t(r.name_ko, r.name_en)} ${r.when} ${r.prev ?? '—'}→${r.est ?? '—'}`).join(', '),
 
-    // ④ 실적 — 전년 동기 EPS 에서 컨센서스로
+    // ⑤ 실적 — 전년 동기 EPS 에서 컨센서스로
     t('다음 주 실적, 전년 동기 EPS 에서 컨센서스로: ', 'Next week\'s earnings, year-ago EPS to consensus: ')
       + (c.earnings?.items || []).map(s =>
         `${t(s.name_ko, s.name_en)} ${s.when} ${t(s.slot_ko, s.slot_en)} ${s.epsPrev ?? '—'}→${s.eps ?? '—'}`).join(', '),
 
-    // ⑤ 한국 다음 주
+    // ⑥ 한국 다음 주
     sect(c.korea, t('한국 다음 주', 'Korea next week')),
 
-    // ⑥ 주말 사이 소식
-    sect(c.weekend, t('주말 사이 소식', 'Over the weekend')),
+    // ⑦ AI · 반도체
+    sect(c.ai, 'AI'),
 
-    // ⑦ 출발선 — 금요일 마감 스냅샷
+    // ⑧ 놓치면 안 될 것
+    sect(c.watch, t('놓치면 안 될 것', 'Don\'t miss')),
+
+    // ⑨ 출발선 — 금요일 마감 스냅샷
     t('다음 주 출발선, 금요일 마감 기준: ', 'Where next week starts, at Friday\'s close: ')
       + (start.indexes || []).map(x => `${t(x.name_ko, x.name_en)} ${x.close} ${pct(x.wk)}`).join(', ')
       + ((start.metrics || []).length ? ' · '
         + start.metrics.map(m => `${t(m.name_ko, m.name_en)} ${m.value} ${m.delta}`).join(', ') : ''),
-
-    // ⑧ AI · 반도체
-    sect(c.ai, 'AI'),
-
-    // ⑨ 놓치면 안 될 것
-    sect(c.watch, t('놓치면 안 될 것', 'Don\'t miss')),
 
     // ⑩ 아웃트로
     `${t(c.outro?.next_ko, c.outro?.next_en) || ''} · ${brief}`.trim(),

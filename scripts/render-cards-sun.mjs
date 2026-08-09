@@ -333,16 +333,19 @@ function cardOutro() {
 // 고정 10장. 인스타 캐러셀 상한이 10장이라 여기서 더 늘릴 수 없다.
 // 이 순서는 scripts/lib/alt-text.mjs 의 sunAltTexts() 와 반드시 같아야 한다 —
 // 어긋나면 대체텍스트가 엉뚱한 슬라이드에 붙는다.
+// 순서는 «먼저 주말 사이 있었던 일부터, 그럼 다음 주는» 이라는 시간 흐름을 따른다.
+// ⑨ 출발선만 예외로 뒤에 둔다 — 뉴스가 아니라 «금요일 종가»라는 기준값이라
+// 시간 순서의 일부로 읽히지 않고, 마지막에 참조로 붙는 편이 자연스럽다.
 const inners = [
   cardCover(),            // ①
-  cardWeek(),             // ②
-  cardEcon(),             // ③
-  cardEarnings(),         // ④
-  cardNews('korea')(),    // ⑤
-  cardNews('weekend')(),  // ⑥
-  cardStart(),            // ⑦
-  cardNews('ai')(),       // ⑧
-  cardNews('watch')(),    // ⑨
+  cardNews('weekend')(),  // ② 주말 사이 있었던 일
+  cardWeek(),             // ③ ─── 여기서부터 다음 주
+  cardEcon(),             // ④
+  cardEarnings(),         // ⑤
+  cardNews('korea')(),    // ⑥
+  cardNews('ai')(),       // ⑦
+  cardNews('watch')(),    // ⑧
+  cardStart(),            // ⑨ 참조 — 어디서 출발하나
   cardOutro(),            // ⑩
 ];
 
