@@ -15,10 +15,10 @@
       "유가발 인플레이션 우려에 美 국채 금리는 전 구간 상승했고(10년물 4.72%), 안전자산 선호에 금은 2.6% 오른 온스당 4,452달러를 기록했다."
     ],
     "lines_en": [
-      "US indexes closed slightly lower across the board (Dow -0.11%, S&P 500 -0.06%, Nasdaq -0.32%), with the S&P pulling back a day after its Aug. 7 record close.",
-      "Iran raised its conditions for reopening the Strait of Hormuz while Israeli PM Netanyahu rejected the US Gaza disarmament plan, deepening Middle East uncertainty. WTI crude surged 5.1% to $82.15, its highest close this August.",
-      "Intel plunged 4.06% after announcing its first-ever share offering ($15B), and Nvidia fell 2.86% on news of a major funding push, dragging chips (SMH -2.28%) lower. Energy (XLE +4.66%) and healthcare (XLV +1.67%) led gainers.",
-      "Treasury yields rose across the curve (10Y at 4.72%) on oil-driven inflation worries, while gold climbed 2.6% to $4,452 an ounce on safe-haven demand."
+      "US indexes closed slightly lower (Dow -0.11%, S&P 500 -0.06%, Nasdaq -0.32%), with the S&P pulling back a day after its Aug. 7 record close.",
+      "Iran raised its conditions for reopening the Strait of Hormuz, and Netanyahu rejected the US Gaza disarmament plan. WTI crude surged 5.1% to $82.15, its highest close this August.",
+      "Intel plunged 4.06% on its first-ever share offering ($15B), and Nvidia fell 2.86% on funding news, dragging chips (SMH -2.28%) lower. Energy (XLE +4.66%) and healthcare (XLV +1.67%) led gainers.",
+      "Treasury yields rose across the curve (10Y at 4.72%) on oil-driven inflation worries, and gold climbed 2.6% to $4,452 on safe-haven demand."
     ]
   },
   "markets": [
@@ -28,7 +28,7 @@
       "delta": "▼0.32%",
       "dir": "down",
       "note_ko": "인텔·엔비디아 약세에 반도체株 부담 · 8/10(월) 마감 종가",
-      "note_en": "Weighed down by chip-stock weakness at Intel, Nvidia · Aug 10 close"
+      "note_en": "Weighed down by Intel, Nvidia weakness · Aug 10 close"
     },
     {
       "label": "S&P 500",
@@ -68,16 +68,16 @@
       "delta": "▲0.07%p",
       "dir": "up",
       "note_ko": "유가발 인플레 우려에 전 구간 금리 상승 · 8/10(월) 확정 종가",
-      "note_en": "Yields rise across the curve on oil-driven inflation angst · confirmed Aug 10 close"
+      "note_en": "Yields rise on oil-driven inflation angst · confirmed Aug 10"
     },
     {
       "label": "USD/KRW",
-      "value": "1,417.9",
+      "value": "1,418.4",
       "value_sub": "· DXY 99.81",
-      "delta": "▼0.04%",
-      "dir": "down",
-      "note_ko": "달러인덱스는 엔저에 강세, 원화는 보합권 · 국내 개장 전",
-      "note_en": "Dollar index firms on yen weakness while the won holds steady · ahead of Seoul's open"
+      "delta": "▲0.16%",
+      "dir": "up",
+      "note_ko": "달러 강세 속 원화도 소폭 약세 · 8/10(월) 서울 외환시장 종가",
+      "note_en": "Won eases as the dollar firms · Monday's Seoul FX close"
     },
     {
       "label": "Gold",
@@ -105,7 +105,7 @@
     }
   ],
   "market_note_ko": "이란이 호르무즈 해협 개방 조건을 높이며 유가가 급등했고, 뉴욕증시는 사상 최고치 다음날 소폭 밀렸다",
-  "market_note_en": "Oil jumped as Iran raised the bar on reopening Hormuz, and Wall Street eased a day after its record high",
+  "market_note_en": "Oil jumped as Iran raised the bar on reopening Hormuz, and Wall Street eased from its record high",
   "sections": [
     {
       "title_ko": "미국장 기록",
@@ -213,9 +213,9 @@
         {
           "headline_ko": "인텔, 상장 후 첫 유상증자로 150억달러 조달",
           "headline_en": "Intel Raises $15B in First-Ever Share Sale",
-          "body_ko": "AI 반도체 설비 투자 재원 마련 목적…기존 주주 지분 희석 우려에 주가 4.06% 급락",
-          "body_en": "Funds are earmarked for AI chip capacity; dilution fears sent the stock down 4.06%",
-          "src": "블룸버그·연합인포맥스 종합",
+          "body_ko": "AI 수요 확대를 배경으로 일반 운영자금 조달 목적…기존 주주 지분 희석 우려에 주가 4.06% 급락",
+          "body_en": "For general corporate purposes against a backdrop of rising AI demand; dilution fears sent the stock down 4.06%",
+          "src": "Bloomberg · Yonhap Infomax",
           "time": "8/10"
         },
         {
@@ -223,7 +223,7 @@
           "headline_en": "Nvidia in Talks for $500B AI Infrastructure Funding",
           "body_ko": "블랙록·골드만삭스·브룩필드·KKR 등과 조달 논의가 전해지며 주가는 2.86% 하락",
           "body_en": "Talks with BlackRock, Goldman Sachs, Brookfield and KKR were reported; shares fell 2.86%",
-          "src": "연합인포맥스",
+          "src": "Yonhap Infomax",
           "time": "8/10"
         },
         {
@@ -231,7 +231,7 @@
           "headline_en": "Apple Keeps Testing China's CXMT Chips Despite Congress Pushback",
           "body_ko": "WSJ \"美 의회의 중국산 배제 요구에도 창신(CXMT) 칩 초기 공급 논의 지속\"…반도체 공급망 신뢰 우려에 애플 1%대 하락",
           "body_en": "WSJ: early-stage supply talks continue with ChangXin Memory even after lawmakers urged Apple to avoid Chinese chips; shares fell about 1.5%",
-          "src": "WSJ·연합인포맥스",
+          "src": "WSJ · Yonhap Infomax",
           "time": "8/10"
         }
       ]
@@ -243,34 +243,34 @@
       "items": [
         {
           "headline_ko": "이란, 호르무즈 해협 개방 조건 오히려 상향",
-          "headline_en": "Iran Raises the Bar for Reopening the Strait of Hormuz",
+          "headline_en": "Iran Raises the Bar on Reopening Hormuz",
           "body_ko": "네타냐후 이스라엘 총리는 \"하마스 무장해제 전 가자 철군 불가\"라며 美 평화안을 거부…후티 반군은 사우디 정유시설·UAE 선박을 공격",
-          "body_en": "Netanyahu says Israel won't withdraw from Gaza until Hamas disarms, rejecting the US peace plan; Houthi rebels strike a Saudi refinery and a UAE-flagged ship",
-          "src": "News1·연합뉴스 종합",
+          "body_en": "Netanyahu rejects the US Gaza plan; Houthi rebels strike a Saudi refinery and a UAE ship",
+          "src": "News1 · Yonhap",
           "time": "8/10"
         },
         {
           "headline_ko": "WTI, 이틀 만에 82달러선…8월 들어 최고치",
-          "headline_en": "WTI Tops $82 in Two Days, Its Highest Close This August",
+          "headline_en": "WTI Tops $82, Its Highest Close This August",
           "body_ko": "지난 금요일 종가(78.18달러) 대비 5.1% 급등…이달 첫 거래일(75.22달러) 이후 나흘 만의 최대 상승폭",
-          "body_en": "Up 5.1% from Friday's $78.18 close — the sharpest single-day jump since this month's first session ($75.22)",
+          "body_en": "Up 5.1% from Friday's $78.18 close, the sharpest jump since Aug's first session",
           "src": "Yahoo Finance",
           "time": "8/10"
         },
         {
           "headline_ko": "S&P500 실적 시즌 호조에도 지정학 리스크가 압도",
-          "headline_en": "Strong Q2 Earnings Season Overwhelmed by Geopolitical Risk",
+          "headline_en": "Strong Q2 Earnings Overwhelmed by Geopolitics",
           "body_ko": "2분기 실적을 발표한 S&P500 기업의 약 85%가 시장 예상치를 웃돈 것으로 전해졌지만, 중동발 악재에 지수는 소폭 밀렸다",
-          "body_en": "About 85% of S&P 500 firms reporting Q2 results are said to have beaten estimates, but Middle East risk still dragged the index lower",
-          "src": "Ziksir 등 외신 종합",
+          "body_en": "About 85% of S&P 500 firms reporting Q2 results are said to have beaten estimates, but Middle East risk still won out",
+          "src": "Ziksir et al.",
           "time": "8/10"
         },
         {
           "headline_ko": "일본 증시, '야마노히'(산의 날)로 휴장",
           "headline_en": "Tokyo Market Closed for Mountain Day",
           "body_ko": "도쿄증권거래소는 8월 11일 하루 휴장하며 다음 거래는 12일 재개된다",
-          "body_en": "The Tokyo Stock Exchange is shut Aug. 11 and resumes trading Aug. 12",
-          "src": "거래소 공지",
+          "body_en": "Tokyo Stock Exchange is shut Aug. 11, resumes Aug. 12",
+          "src": "TSE notice",
           "time": "8/11"
         }
       ]
