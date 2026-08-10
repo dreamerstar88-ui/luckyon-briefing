@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-08-10T11:56:23Z",
+  "fetchedAt": "2026-08-10T22:58:59Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-08T11:56:23Z",
-    "to": "2026-08-24T11:56:23Z"
+    "from": "2026-08-08T22:58:59Z",
+    "to": "2026-08-24T22:58:59Z"
   },
   "events": [
-    {
-      "at": "2026-08-08T16:45:00Z",
-      "country": "US",
-      "name": "Fed's Bowman speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-09T01:30:00Z",
       "country": "CN",
@@ -133,7 +123,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.75,
-      "actual": null,
+      "actual": 3.735,
       "unit": "%"
     },
     {
@@ -143,7 +133,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.855,
-      "actual": null,
+      "actual": 3.83,
       "unit": "%"
     },
     {
@@ -1062,7 +1052,7 @@
       "name": "3-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.735,
       "actual": null,
       "unit": "%"
     },
@@ -1072,7 +1062,7 @@
       "name": "6-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.83,
       "actual": null,
       "unit": "%"
     },
@@ -1567,16 +1557,6 @@
       "unit": null
     },
     {
-      "at": "2026-08-20T14:00:00Z",
-      "country": "EMU",
-      "name": "Consumer Confidence",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": -15.9,
-      "actual": null,
-      "unit": null
-    },
-    {
       "at": "2026-08-20T14:30:00Z",
       "country": "US",
       "name": "EIA Natural Gas Storage Change",
@@ -1655,6 +1635,26 @@
       "previous": 1.6,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-21T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 54.5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-21T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Services PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 51.2,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-21T07:30:00Z",
@@ -1757,6 +1757,16 @@
       "unit": null
     },
     {
+      "at": "2026-08-21T14:00:00Z",
+      "country": "EMU",
+      "name": "Consumer Confidence",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -15.9,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-21T17:00:00Z",
       "country": "US",
       "name": "Baker Hughes US Oil Rig Count",
@@ -1817,32 +1827,32 @@
       "unit": "$"
     },
     {
-      "at": "2026-08-23T23:50:00Z",
-      "country": "JP",
-      "name": "Corporate Service Price Index (YoY)",
+      "at": "2026-08-24T15:30:00Z",
+      "country": "US",
+      "name": "3-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": 3.2,
+      "previous": null,
       "actual": null,
       "unit": "%"
     },
     {
-      "at": "2026-08-24T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Manufacturing PMI",
+      "at": "2026-08-24T15:30:00Z",
+      "country": "US",
+      "name": "6-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": 54.5,
+      "previous": null,
       "actual": null,
-      "unit": null
+      "unit": "%"
     },
     {
-      "at": "2026-08-24T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Services PMI",
+      "at": "2026-08-24T21:00:00Z",
+      "country": "KR",
+      "name": "Consumer Sentiment Index",
       "impact": "LOW",
       "consensus": null,
-      "previous": 51.2,
+      "previous": 106.8,
       "actual": null,
       "unit": null
     }
