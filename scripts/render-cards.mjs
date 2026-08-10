@@ -301,7 +301,10 @@ function cardBars(s) {
       : `right:${100 - CENTER}%; width:${w}%;`;
     const radius = r.value >= 0 ? '0 6px 6px 0' : '6px 0 0 6px';
     // 막대가 충분히 길면 수치를 막대 안에 넣는다. 밖에 두면 긴 막대에서 업종명과 겹친다.
-    const inside = w >= 10;
+    // 음수 쪽은 최대폭이 CENTER-26(%)로 양수 쪽(100-CENTER-12)보다 훨씬 좁다. 전체 최댓값이
+    // 양수 쪽에서 나온 날(흔한 경우)은 같은 절대 %fmt 임계값을 쓰면 음수 막대가 라벨 텍스트보다
+    // 좁은 상자에 갇혀 겹치거나 축선을 침범한다 — 음수 쪽만 임계값을 높여 그 구간을 "밖" 표기로 돌린다.
+    const inside = r.value >= 0 ? w >= 10 : w >= 14;
     const label = inside
       ? `<div style="position:absolute; ${pos} height:26px; display:flex; align-items:center;
                      justify-content:${r.value >= 0 ? 'flex-end' : 'flex-start'}; padding:0 10px;
