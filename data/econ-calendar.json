@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-11T11:53:06Z",
+  "fetchedAt": "2026-08-11T23:06:17Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-09T11:53:06Z",
-    "to": "2026-08-25T11:53:06Z"
+    "from": "2026-08-09T23:06:17Z",
+    "to": "2026-08-25T23:06:17Z"
   },
   "events": [
     {
@@ -133,7 +133,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 15,
-      "actual": null,
+      "actual": 8.25,
       "unit": null
     },
     {
@@ -143,7 +143,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 8.7,
-      "actual": null,
+      "actual": 8.3,
       "unit": "%"
     },
     {
@@ -151,9 +151,9 @@
       "country": "US",
       "name": "Existing Home Sales (MoM)",
       "impact": "LOW",
-      "consensus": 4.04,
+      "consensus": 4.05,
       "previous": 4.09,
-      "actual": null,
+      "actual": 4.06,
       "unit": null
     },
     {
@@ -163,8 +163,18 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": -2.4,
-      "actual": null,
+      "actual": -1.7,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-11T16:30:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-11T17:00:00Z",
@@ -173,7 +183,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.179,
-      "actual": null,
+      "actual": 4.291,
       "unit": "%"
     },
     {
@@ -181,9 +191,9 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -0.5,
       "previous": 2.69,
-      "actual": null,
+      "actual": 9.072,
       "unit": null
     },
     {
@@ -193,7 +203,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.7,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
     },
     {
@@ -341,7 +351,7 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
-      "consensus": -1.3,
+      "consensus": -0.5,
       "previous": 2.479,
       "actual": null,
       "unit": null
@@ -371,7 +381,7 @@
       "country": "US",
       "name": "Monthly Budget Statement",
       "impact": "MEDIUM",
-      "consensus": -361.2,
+      "consensus": -346,
       "previous": -120,
       "actual": null,
       "unit": "$"
@@ -421,7 +431,7 @@
       "country": "EMU",
       "name": "Industrial Production w.d.a. (YoY)",
       "impact": "LOW",
-      "consensus": -0.9,
+      "consensus": -0.8,
       "previous": -1.2,
       "actual": null,
       "unit": "%"
@@ -451,7 +461,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 201,
+      "consensus": 202,
       "previous": 199,
       "actual": null,
       "unit": null
@@ -701,7 +711,7 @@
       "country": "US",
       "name": "Retail Sales (MoM)",
       "impact": "HIGH",
-      "consensus": 0.2,
+      "consensus": 0.1,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -741,7 +751,7 @@
       "country": "US",
       "name": "Business Inventories",
       "impact": "LOW",
-      "consensus": 0.2,
+      "consensus": 0.1,
       "previous": 0.3,
       "actual": null,
       "unit": "%"
@@ -761,7 +771,7 @@
       "country": "US",
       "name": "Michigan Consumer Sentiment Index",
       "impact": "HIGH",
-      "consensus": 54,
+      "consensus": 54.5,
       "previous": 55.2,
       "actual": null,
       "unit": null
@@ -1092,7 +1102,7 @@
       "name": "ADP Employment Change 4-week average",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 8.25,
       "actual": null,
       "unit": null
     },
@@ -1182,7 +1192,7 @@
       "name": "Redbook Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 8.3,
       "actual": null,
       "unit": "%"
     },
@@ -1232,7 +1242,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 9.072,
       "actual": null,
       "unit": null
     },
@@ -1903,6 +1913,126 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 86.7,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T12:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change 4-week average",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T12:55:00Z",
+      "country": "US",
+      "name": "Redbook Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T13:00:00Z",
+      "country": "US",
+      "name": "Housing Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T13:00:00Z",
+      "country": "US",
+      "name": "S&P/Case-Shiller Home Price Indices (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T14:00:00Z",
+      "country": "US",
+      "name": "Consumer Confidence",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T14:00:00Z",
+      "country": "US",
+      "name": "New Home Sales (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.628,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T14:00:00Z",
+      "country": "US",
+      "name": "New Home Sales Change (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T14:00:00Z",
+      "country": "US",
+      "name": "Richmond Fed Manufacturing Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T17:00:00Z",
+      "country": "US",
+      "name": "2-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.315,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T17:00:00Z",
+      "country": "US",
+      "name": "5-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.408,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-25T20:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-25T21:00:00Z",
+      "country": "KR",
+      "name": "BOK Manufacturing BSI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 82,
       "actual": null,
       "unit": null
     }
