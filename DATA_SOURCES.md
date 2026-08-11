@@ -43,6 +43,7 @@
 | S&P DJI xlsx · Invesco · SSGA · KRX API | ✗ | ✗ | 403 / 406 / 400 |
 | `data.krx.co.kr` | 도달하나 `LOGOUT` | **앱 레벨 차단** | §4 참고 |
 | stooq.com | 200 이지만 봇 검증 JS 페이지 | — | 자동 조회 불가 |
+| `<계정>.github.io`(이 저장소의 GitHub Pages) | **✗ 세션 프록시 게이트웨이가 403** (`connect_rejected`, `$HTTPS_PROXY/__agentproxy/status` 의 `recentRelayFailures` 에서 확인, 2026-08-11) | 확인 안 함 | **세션에서 발행 직후 자기 카드 이미지를 curl 로 직접 검증하려 하지 않는다 — 애초에 안 된다.** Instagram Graph API 발행(§6)이 "Media download has failed"로 실패해도 이게 원인은 아니다 — Meta 서버는 이 프록시를 거치지 않고 공개 인터넷에서 직접 GH Pages 를 조회하므로, 세션이 그 URL에 도달하는지 여부와 무관하다. 실패 원인은 거의 항상 Pages 반영 지연이며, §6 대로 몇 분 뒤 재시도하면 된다(2026-08-12 am 세션에서 3분 대기 후 재시도로 KO·EN 모두 성공 확인). |
 
 - **`curl` 한 방으로 판단하지 않는다.** Yahoo 는 첫 요청에 429 를 주고 재시도·백오프로 뚫린다.
   `curl` 로 429/000 을 보고 "막혔다"고 결론 내면 실제로 되는 경로를 버린다.
