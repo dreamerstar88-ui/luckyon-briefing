@@ -1,41 +1,11 @@
 {
-  "fetchedAt": "2026-08-12T11:55:51Z",
+  "fetchedAt": "2026-08-12T23:04:15Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-10T11:55:51Z",
-    "to": "2026-08-26T11:55:51Z"
+    "from": "2026-08-10T23:04:15Z",
+    "to": "2026-08-26T23:04:15Z"
   },
   "events": [
-    {
-      "at": "2026-08-10T15:00:00Z",
-      "country": "JP",
-      "name": "Mountain Day",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-08-10T15:30:00Z",
-      "country": "US",
-      "name": "3-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.75,
-      "actual": 3.735,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-10T15:30:00Z",
-      "country": "US",
-      "name": "6-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.855,
-      "actual": 3.83,
-      "unit": "%"
-    },
     {
       "at": "2026-08-11T09:45:41.317Z",
       "country": "DE",
@@ -223,7 +193,7 @@
       "impact": "HIGH",
       "consensus": 0.1,
       "previous": -0.4,
-      "actual": null,
+      "actual": 0.1,
       "unit": "%"
     },
     {
@@ -233,7 +203,7 @@
       "impact": "HIGH",
       "consensus": 3.4,
       "previous": 3.5,
-      "actual": null,
+      "actual": 3.4,
       "unit": "%"
     },
     {
@@ -243,7 +213,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 336.065,
-      "actual": null,
+      "actual": 336.789,
       "unit": null
     },
     {
@@ -253,7 +223,7 @@
       "impact": "HIGH",
       "consensus": 0.2,
       "previous": 0,
-      "actual": null,
+      "actual": 0.2,
       "unit": "%"
     },
     {
@@ -263,7 +233,7 @@
       "impact": "HIGH",
       "consensus": 2.5,
       "previous": 2.6,
-      "actual": null,
+      "actual": 2.5,
       "unit": "%"
     },
     {
@@ -273,7 +243,7 @@
       "impact": "LOW",
       "consensus": 333.99,
       "previous": 333.95,
-      "actual": null,
+      "actual": 333.92,
       "unit": null
     },
     {
@@ -283,7 +253,7 @@
       "impact": "LOW",
       "consensus": -1.4,
       "previous": 2.479,
-      "actual": null,
+      "actual": 17.422,
       "unit": null
     },
     {
@@ -303,7 +273,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.58,
-      "actual": null,
+      "actual": 4.683,
       "unit": "%"
     },
     {
@@ -313,7 +283,7 @@
       "impact": "MEDIUM",
       "consensus": -346,
       "previous": -120,
-      "actual": null,
+      "actual": -432,
       "unit": "$"
     },
     {
@@ -1292,7 +1262,7 @@
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 17.422,
       "actual": null,
       "unit": null
     },
@@ -1985,6 +1955,156 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures - Price Index (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures - Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Durable Goods Orders",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Durable Goods Orders ex Defense",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Durable Goods Orders ex Transportation",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Gross Domestic Product Annualized",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Gross Domestic Product Price Index",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Nondefense Capital Goods Orders ex Aircraft",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures - Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures - Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures Prices (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 5.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Personal Income (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T12:30:00Z",
+      "country": "US",
+      "name": "Personal Spending",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-26T14:30:00Z",
+      "country": "US",
+      "name": "EIA Crude Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
