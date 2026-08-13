@@ -1,31 +1,11 @@
 {
-  "fetchedAt": "2026-08-12T23:04:15Z",
+  "fetchedAt": "2026-08-13T11:56:06Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-10T23:04:15Z",
-    "to": "2026-08-26T23:04:15Z"
+    "from": "2026-08-11T11:56:06Z",
+    "to": "2026-08-27T11:56:06Z"
   },
   "events": [
-    {
-      "at": "2026-08-11T09:45:41.317Z",
-      "country": "DE",
-      "name": "5-y Note Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2.89,
-      "actual": 2.93,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-11T10:00:00Z",
-      "country": "US",
-      "name": "NFIB Business Optimism Index",
-      "impact": "LOW",
-      "consensus": 97.5,
-      "previous": 97.4,
-      "actual": 99.8,
-      "unit": null
-    },
     {
       "at": "2026-08-11T12:15:00Z",
       "country": "US",
@@ -293,7 +273,7 @@
       "impact": "LOW",
       "consensus": 0.6,
       "previous": 0.4,
-      "actual": null,
+      "actual": 0.1,
       "unit": "%"
     },
     {
@@ -303,7 +283,7 @@
       "impact": "LOW",
       "consensus": 7.4,
       "previous": 7.1,
-      "actual": null,
+      "actual": 7.2,
       "unit": "%"
     },
     {
@@ -313,7 +293,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 52.8,
-      "actual": null,
+      "actual": 50.4,
       "unit": "%"
     },
     {
@@ -323,7 +303,7 @@
       "impact": "MEDIUM",
       "consensus": -0.1,
       "previous": -0.2,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -333,7 +313,7 @@
       "impact": "LOW",
       "consensus": -0.8,
       "previous": -1.2,
-      "actual": null,
+      "actual": 0.1,
       "unit": "%"
     },
     {
@@ -351,7 +331,7 @@
       "country": "US",
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.8,
       "previous": 1.801,
       "actual": null,
       "unit": null
@@ -551,7 +531,7 @@
       "country": "CN",
       "name": "M2 Money Supply (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 7.9,
       "previous": 8,
       "actual": null,
       "unit": "%"
@@ -1467,6 +1447,16 @@
       "unit": "%"
     },
     {
+      "at": "2026-08-20T19:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Sleijpen speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-20T21:00:00Z",
       "country": "KR",
       "name": "Producer Price Index Growth (MoM)",
@@ -1485,6 +1475,16 @@
       "previous": 8.6,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-20T22:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Sleijpen speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-20T23:30:00Z",
@@ -2101,6 +2101,96 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-26T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-26T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-08-27T00:00:00Z",
+      "country": "US",
+      "name": "Jackson Hole Symposium",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-27T01:00:00Z",
+      "country": "KR",
+      "name": "BoK Interest Rate Decision",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.75,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T06:00:00Z",
+      "country": "DE",
+      "name": "GfK Consumer Confidence Survey",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -29.6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-27T08:00:00Z",
+      "country": "EMU",
+      "name": "M3 Money Supply (3m)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T08:00:00Z",
+      "country": "EMU",
+      "name": "M3 Money Supply (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T08:00:00Z",
+      "country": "EMU",
+      "name": "Private Loans (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T11:30:00Z",
+      "country": "EMU",
+      "name": "ECB Monetary Policy Meeting Accounts",
+      "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
       "actual": null,
