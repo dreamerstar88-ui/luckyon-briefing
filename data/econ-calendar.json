@@ -1,91 +1,11 @@
 {
-  "fetchedAt": "2026-08-13T23:05:20Z",
+  "fetchedAt": "2026-08-14T11:53:49Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-11T23:05:20Z",
-    "to": "2026-08-27T23:05:20Z"
+    "from": "2026-08-12T11:53:49Z",
+    "to": "2026-08-28T11:53:49Z"
   },
   "events": [
-    {
-      "at": "2026-08-11T23:50:00Z",
-      "country": "JP",
-      "name": "Money Supply M2+CD (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2.2,
-      "actual": 2.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T06:00:00Z",
-      "country": "DE",
-      "name": "Consumer Price Index (MoM)",
-      "impact": "LOW",
-      "consensus": 0.8,
-      "previous": 0.8,
-      "actual": 0.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T06:00:00Z",
-      "country": "DE",
-      "name": "Consumer Price Index (YoY)",
-      "impact": "LOW",
-      "consensus": 2.8,
-      "previous": 2.8,
-      "actual": 2.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T06:00:00Z",
-      "country": "DE",
-      "name": "Harmonized Index of Consumer Prices (MoM)",
-      "impact": "MEDIUM",
-      "consensus": 0.9,
-      "previous": 0.9,
-      "actual": 0.9,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T06:00:00Z",
-      "country": "DE",
-      "name": "Harmonized Index of Consumer Prices (YoY)",
-      "impact": "HIGH",
-      "consensus": 2.8,
-      "previous": 2.8,
-      "actual": 2.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T09:49:23.387Z",
-      "country": "DE",
-      "name": "30-y Bond Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.64,
-      "actual": 3.65,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T11:00:00Z",
-      "country": "US",
-      "name": "MBA Mortgage Applications",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -2.9,
-      "actual": 3.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-12T11:03:09.623Z",
-      "country": "DE",
-      "name": "Current Account n.s.a.",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 10.4,
-      "actual": 19,
-      "unit": "€"
-    },
     {
       "at": "2026-08-12T12:30:00Z",
       "country": "US",
@@ -377,13 +297,23 @@
       "unit": "%"
     },
     {
+      "at": "2026-08-13T22:10:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-13T23:50:00Z",
       "country": "JP",
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
       "previous": 477.9,
-      "actual": null,
+      "actual": 1629.4,
       "unit": "¥"
     },
     {
@@ -392,8 +322,8 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": 392.5,
-      "actual": null,
+      "previous": -392.5,
+      "actual": -368.5,
       "unit": "¥"
     },
     {
@@ -403,7 +333,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 9.2,
-      "actual": null,
+      "actual": 9.4,
       "unit": "%"
     },
     {
@@ -413,7 +343,7 @@
       "impact": "LOW",
       "consensus": 0.4,
       "previous": -0.7,
-      "actual": null,
+      "actual": 0.2,
       "unit": "%"
     },
     {
@@ -423,7 +353,67 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.9,
-      "actual": null,
+      "actual": 5.3,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-14T08:30:00Z",
+      "country": "CN",
+      "name": "M2 Money Supply (YoY)",
+      "impact": "LOW",
+      "consensus": 7.9,
+      "previous": 8,
+      "actual": 7.7,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-14T08:30:00Z",
+      "country": "CN",
+      "name": "New Loans",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1610,
+      "actual": -340,
+      "unit": null
+    },
+    {
+      "at": "2026-08-14T09:00:00Z",
+      "country": "EMU",
+      "name": "Employment Change (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": 0.1,
+      "previous": 0.1,
+      "actual": 0.1,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-14T09:00:00Z",
+      "country": "EMU",
+      "name": "Employment Change (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": 0.5,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-14T09:00:00Z",
+      "country": "EMU",
+      "name": "Gross Domestic Product s.a. (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": 0.4,
+      "previous": 0.4,
+      "actual": 0.4,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-14T09:00:00Z",
+      "country": "EMU",
+      "name": "Gross Domestic Product s.a. (YoY)",
+      "impact": "MEDIUM",
+      "consensus": 1,
+      "previous": 1,
+      "actual": 1,
       "unit": "%"
     },
     {
@@ -433,7 +423,7 @@
       "impact": "LOW",
       "consensus": -2.2,
       "previous": -7.8,
-      "actual": null,
+      "actual": 8.6,
       "unit": "€"
     },
     {
@@ -443,68 +433,8 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -5,
-      "actual": null,
+      "actual": 1.8,
       "unit": "€"
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "CN",
-      "name": "M2 Money Supply (YoY)",
-      "impact": "LOW",
-      "consensus": 7.9,
-      "previous": 8,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "CN",
-      "name": "New Loans",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1610,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "EMU",
-      "name": "Employment Change (QoQ)",
-      "impact": "MEDIUM",
-      "consensus": 0.1,
-      "previous": 0.1,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "EMU",
-      "name": "Employment Change (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 0.5,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "EMU",
-      "name": "Gross Domestic Product s.a. (QoQ)",
-      "impact": "MEDIUM",
-      "consensus": 0.4,
-      "previous": 0.4,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-14T10:00:00Z",
-      "country": "EMU",
-      "name": "Gross Domestic Product s.a. (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 1,
-      "previous": 1,
-      "actual": null,
-      "unit": "%"
     },
     {
       "at": "2026-08-14T12:30:00Z",
@@ -1212,7 +1142,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1629.4,
       "actual": null,
       "unit": "¥"
     },
@@ -1222,7 +1152,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -368.5,
       "actual": null,
       "unit": "¥"
     },
@@ -1431,7 +1361,7 @@
       "country": "JP",
       "name": "National CPI ex Fresh Food (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.8,
       "previous": 1.6,
       "actual": null,
       "unit": "%"
@@ -2215,6 +2145,136 @@
       "previous": 4.473,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-27T23:30:00Z",
+      "country": "JP",
+      "name": "Jobs / Applicants Ratio",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.18,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-27T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Food, Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Fresh Food (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-27T23:30:00Z",
+      "country": "JP",
+      "name": "Unemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-28T00:00:00Z",
+      "country": "US",
+      "name": "Jackson Hole Symposium",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T07:55:00Z",
+      "country": "DE",
+      "name": "Unemployment Change",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T07:55:00Z",
+      "country": "DE",
+      "name": "Unemployment Rate s.a.",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-28T09:00:00Z",
+      "country": "EMU",
+      "name": "Business Climate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.19,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T09:00:00Z",
+      "country": "EMU",
+      "name": "Consumer Confidence",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T09:00:00Z",
+      "country": "EMU",
+      "name": "Economic Sentiment Indicator",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 96.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T09:00:00Z",
+      "country": "EMU",
+      "name": "Industrial Confidence",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -6.1,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T09:00:00Z",
+      "country": "EMU",
+      "name": "Services Sentiment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.7,
+      "actual": null,
+      "unit": null
     }
   ]
 }
