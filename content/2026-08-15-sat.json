@@ -1380,7 +1380,7 @@
       "ma50": 7408.26,
       "ma100": 7065.17,
       "ma200": 5873.23,
-      "note_ko": "5거래일 연속 상승. 주간 +11.5%는 처음 7,000선을 넘었던 5월 첫째 주(+13.6%) 이후 최대다. 다만 50일선(7,408)은 아직 위에 있다.",
+      "note_ko": "5거래일 연속 상승. 주간 +11.5%는 처음 7,000선을 넘었던 5월 첫 거래주(+13.6%) 이후 최대다. 다만 50일선(7,408)은 아직 위에 있다.",
       "note_en": "Five straight up days. The 11.5% weekly gain is the biggest since the week KOSPI first cleared 7,000 in May (+13.6%). The 50-day (7,408) is still overhead.",
       "ohlc": [
         [
@@ -2243,8 +2243,8 @@
       ]
     }
   ],
-  "indexNote_ko": "종가·주간 등락률은 8월 14일(금) 마감 기준. 한국은 5거래일 연속 상승한 반면 미국은 S&P 500·나스닥만 3주 연속 올랐고 다우는 주간 하락으로 갈렸다.",
-  "indexNote_en": "Closes and weekly changes as of Friday, Aug 14. Korea rose five sessions running; in the US only the S&P 500 and Nasdaq extended a three-week winning streak, while the Dow fell.",
+  "indexNote_ko": "",
+  "indexNote_en": "Closes and weekly changes as of Friday, Aug 14.",
   "valuation": {
     "rows": [
       {
@@ -2272,7 +2272,7 @@
         "perEstimate": 25.87
       }
     ],
-    "note_ko": "출처: WSJ Market Data «P/E Ratios & Earnings Yields», 8/14 기준. 현재·1년 전 PER 은 as-reported 이익, 추정 PER 은 operating 이익 기준이다. 산출 방식이 기관마다 달라 같은 지수도 벤더별로 벌어지므로 세 지수를 한 소스에서 받았다. 표에 종합지수가 없어 나스닥은 100 지수이며, 코스피·코스닥은 확보 경로가 없어 싣지 않는다.",
+    "note_ko": "출처: WSJ Market Data «P/E Ratios & Earnings Yields», 8/14 기준. 현재·1년 전 PER 은 as-reported 이익, 추정 PER 은 operating 이익 기준이다. 표에 종합지수가 없어 나스닥은 100 지수이며, 코스피·코스닥은 확보 경로가 없어 싣지 않는다.",
     "note_en": "Source: WSJ Market Data, \"P/E Ratios & Earnings Yields,\" as of Aug 14. Current and year-ago P/Es use as-reported earnings; estimates use operating earnings. Methodologies differ by vendor, so all three come from one source. The table carries the Nasdaq 100, not the composite; KOSPI and KOSDAQ P/Es are not available to us."
   },
   "metrics": [
@@ -2281,7 +2281,7 @@
       "name_ko": "Fear & Greed",
       "name_en": "Fear & Greed",
       "value": "65",
-      "delta": "▲1p",
+      "delta": "▲",
       "dir": 1
     },
     {
@@ -2357,8 +2357,8 @@
       "dir": -1
     }
   ],
-  "metricsNote_ko": "금요일 마감 기준, 등락은 지난 금요일 대비. 미 국채는 10년물이 3bp 오르고 2년물은 2bp 내려 장단기 금리차가 46bp에서 51bp로 벌어졌다 — 금요일 소매판매 부진이 오히려 장기물 금리를 밀어올린 «베어 스티프닝»이었다. 금·유가·코인은 주말에도 값이 움직이므로 금요일 미국장 마감 시점으로 통일했다.",
-  "metricsNote_en": "As of Friday's close, change versus the prior Friday. The US 10-year rose 3bp while the 2-year fell 2bp, widening the 2s10s spread from 46bp to 51bp — Friday's weak retail sales steepened the curve rather than flattening it. Gold, oil and crypto trade through the weekend, so all are pinned to Friday's US close.",
+  "metricsNote_ko": "금요일 마감 기준, 등락은 지난 금요일 대비. 미 국채는 10년물이 3bp 오르고 2년물은 2bp 내려 장단기 금리차가 46bp에서 51bp로 벌어졌다 — 금요일 소매판매 부진이 오히려 장기물 금리를 밀어올린 «베어 스티프닝»이었다. Fear & Greed 는 8/14 기준 65(탐욕 구간)이며, 직전 금요일 값이 출처마다 갈려 방향만 표시했다. 금·유가·코인은 주말에도 값이 움직이므로 금요일 미국장 마감 시점으로 통일했다.",
+  "metricsNote_en": "As of Friday's close, change versus the prior Friday. The US 10-year rose 3bp while the 2-year fell 2bp, widening the 2s10s spread from 46bp to 51bp — Friday's weak retail sales steepened the curve rather than flattening it. Fear & Greed stood at 65 (Greed) on Aug 14; sources disagree on the prior Friday reading, so only direction is shown. Gold, oil and crypto trade through the weekend, so all are pinned to Friday's US close.",
   "calendar": [
     {
       "day_ko": "8/10 월",
@@ -2375,9 +2375,9 @@
           "name_ko": "라이엇 매출",
           "name_en": "Riot rev.",
           "est_ko": "1.54억",
-          "est_en": "$1.54B",
+          "est_en": "$154M",
           "act_ko": "1.74억",
-          "act_en": "$1.74B",
+          "act_en": "$174M",
           "dir": 1
         }
       ]
@@ -2434,6 +2434,13 @@
           "name_en": "CPI (MoM)",
           "est": "0.1%",
           "act": "0.1%",
+          "dir": 0
+        },
+        {
+          "name_ko": "근원 CPI (전월비)",
+          "name_en": "Core CPI (MoM)",
+          "est": "0.2%",
+          "act": "0.2%",
           "dir": 0
         },
         {
@@ -2527,22 +2534,22 @@
         "emoji": "🛒",
         "headline_ko": "美 소매판매 −0.6%, 1년여 만에 최대 감소",
         "headline_en": "US retail sales −0.6%, the steepest drop in over a year",
-        "body_ko": "금요일 발표된 7월 소매판매가 예상(+0.1%)과 반대로 0.6% 줄어 2025년 5월 이후 가장 큰 감소폭을 기록했다. 온라인(−2.2%)과 자동차(−2.0%)가 컸고, 3대 지수는 이날 나란히 내렸다.",
-        "body_en": "July retail sales, released Friday, fell 0.6% against a +0.1% forecast — the biggest drop since May 2025. Online (−2.2%) and autos (−2.0%) led the decline, and all three US benchmarks fell that day.",
+        "body_ko": "금요일 발표된 7월 소매판매가 예상(+0.1%)과 반대로 0.6% 줄어 2025년 5월 이후 가장 큰 감소폭을 기록했다. 온라인(−2.2%)과 자동차(−1.8%)가 컸고, 3대 지수는 이날 나란히 내렸다.",
+        "body_en": "July retail sales, released Friday, fell 0.6% against a +0.1% forecast — the biggest drop since May 2025. Online (−2.2%) and autos (−1.8%) led the decline, and all three US benchmarks fell that day.",
         "src": "US Census Bureau · 8/14"
       },
       {
         "emoji": "🏛",
-        "headline_ko": "물가 둔화에 9월 동결 기대 68%로",
-        "headline_en": "Cooler inflation pushes September hold odds to 68%",
-        "body_ko": "7월 CPI는 전년비 3.4%로 예상에 부합했고, 이튿날 PPI는 4.7%로 예상(4.9%)을 밑돌았다. 금리선물에 반영된 9월 FOMC 동결 확률은 주중 60%에서 68%로 올라섰다.",
-        "body_en": "July CPI matched forecasts at 3.4% year over year, and PPI came in the next day at 4.7% against a 4.9% forecast. Futures-implied odds of a September hold rose from 60% to 68% during the week.",
+        "headline_ko": "물가 둔화에 9월 동결 기대 63%로",
+        "headline_en": "Cooler inflation lifts September hold odds to 63%",
+        "body_ko": "7월 CPI는 전년비 3.4%로 예상에 부합했고, 이튿날 PPI는 4.7%로 예상(4.9%)을 밑돌았다. 금리선물에 반영된 9월 FOMC 동결 확률은 PPI 발표 직후 63%로 올라섰다.",
+        "body_en": "July CPI matched forecasts at 3.4% year over year, and PPI came in the next day at 4.7% against a 4.9% forecast. Futures-implied odds of a September hold rose to 63% right after the PPI release.",
         "src": "BLS · CME FedWatch · 8/12~8/13"
       },
       {
         "emoji": "🇰🇷",
-        "headline_ko": "외국인, 코스피에서 5거래일 연속 순매수",
-        "headline_en": "Foreign investors net buyers of KOSPI for five straight sessions",
+        "headline_ko": "외국인, 코스피에서 4거래일 연속 순매수",
+        "headline_en": "Foreign investors net buyers of KOSPI for four straight sessions",
         "body_ko": "외국인은 금요일 하루에만 3조원대를 순매수했다. 코스피는 5거래일 내내 올라 주간 11.5%, 코스닥은 8.2% 상승했고 장중 한때 15거래일 만에 7,000선을 되밟았다.",
         "body_en": "Foreign investors bought a net 3 trillion won on Friday alone. The KOSPI rose all five sessions for an 11.5% week and the KOSDAQ gained 8.2%; the index briefly retook 7,000 intraday for the first time in 15 sessions.",
         "src": "KRX · 8/10~8/14"
@@ -2614,7 +2621,7 @@
     }
   ],
   "sectorsSub_ko": "미국 코어 섹터 ETF 12개 · 8/7 종가 대비 주간 등락률",
-  "sectorsSub_en": "12 US core sector ETFs · week-on-week from the Aug 7 close",
+  "sectorsSub_en": "12 US sector ETFs · vs the Aug 7 close",
   "sectorsNote_ko": "12개 중 10개가 올랐지만 에너지(+7.7%)를 빼면 모두 1%대 안쪽이다. 지수를 밀어올린 힘이 한 섹터에 몰려 있었다는 뜻이다. 경기소비(−1.4%)는 금요일 소매판매 부진을 그대로 받았다.",
   "sectorsNote_en": "Ten of twelve rose, but strip out energy (+7.7%) and none gained more than about 1.6% — the week's lift came from a single sector. Consumer discretionary (−1.4%) took Friday's retail sales miss directly.",
   "movers": {
@@ -2743,8 +2750,8 @@
         }
       ]
     },
-    "note_ko": "왼쪽 첫 값이 지난 금요일 종가, 이후 5개가 이번 주 종가다. 한국전력은 12일 장 마감 후 2분기 영업이익이 전년 대비 47.1% 줄어든 1조1,286억원이라고 밝힌 뒤 이튿날 밀렸다. 미국은 실적을 넘기고도 내린 쪽이 눈에 띄었다 — 어플라이드 머티어리얼즈는 매출·가이던스를 모두 웃돌고도 주간 5.9% 하락했다.",
-    "note_en": "The first value is last Friday's close; the five that follow are this week's. KEPCO fell the day after disclosing, post-close on the 12th, that Q2 operating profit dropped 47.1% year on year to 1.13 trillion won. In the US, some names fell despite beating — Applied Materials topped both revenue and guidance yet lost 5.9% on the week."
+    "note_ko": "왼쪽 첫 값이 지난 금요일 종가, 이후 5개가 이번 주 종가다. 한국전력은 12일 장 마감 후 2분기 영업이익이 전년 대비 47.2% 줄어든 1조1,286억원이라고 밝힌 뒤 이튿날 밀렸다. 미국은 실적을 넘기고도 내린 쪽이 눈에 띄었다 — 어플라이드 머티어리얼즈는 매출·가이던스를 모두 웃돌고도 주간 5.9% 하락했다.",
+    "note_en": "The first value is last Friday's close; the five that follow are this week's. KEPCO fell the day after disclosing, post-close on the 12th, that Q2 operating profit dropped 47.2% year on year to 1.13 trillion won. In the US, some names fell despite beating — Applied Materials topped both revenue and guidance yet lost 5.9% on the week."
   },
   "ai": {
     "title_ko": "AI · 반도체",
@@ -2764,17 +2771,17 @@
         "icon": "chip",
         "headline_ko": "브로드컴 AI 파이낸싱에 3,700억달러 부채 추정",
         "headline_en": "Broadcom's AI financing carries a $370bn debt estimate",
-        "body_ko": "BofA는 브로드컴의 칩 파이낸싱 법인이 20GW 규모에서 2029년 중반까지 선순위 부채 3,700억달러에 이를 수 있다고 추정했다. 지난주 엔비디아의 5,000억달러 파이낸싱을 둘러싼 «순환금융» 논란에 이어진 것으로, 주가는 금요일 5.9% 내렸다.",
-        "body_en": "BofA estimates Broadcom's chip-financing vehicle could carry $370bn of senior debt by mid-2029 at 20GW of scale. It follows last week's debate over the circularity of Nvidia's $500bn financing plan; the shares fell 5.9% on Friday.",
+        "body_ko": "BofA는 브로드컴의 칩 파이낸싱 법인이 20GW 규모에서 2029년 중반까지 선순위 부채 3,700억달러에 이를 수 있다고 추정했다. 이번 주 초 엔비디아의 5,000억달러 파이낸싱을 둘러싼 «순환금융» 논란에 이어진 것으로, 주가는 금요일 5.9% 내렸다.",
+        "body_en": "BofA estimates Broadcom's chip-financing vehicle could carry $370bn of senior debt by mid-2029 at 20GW of scale. It follows this week's debate over the circularity of Nvidia's $500bn financing plan; the shares fell 5.9% on Friday.",
         "src": "BofA · 8/14"
       },
       {
         "icon": "chip",
         "headline_ko": "LG·엔비디아, 이족보행 휴머노이드 공동개발 MOU",
         "headline_en": "LG and Nvidia sign a bipedal humanoid development MOU",
-        "body_ko": "구광모 LG그룹 회장과 젠슨 황 엔비디아 CEO가 14일 산타클라라에서 «아이작 GR00T» 기반 이족보행 휴머노이드를 함께 개발하기로 합의했다. 모건스탠리는 같은 날 LG전자·LG이노텍 투자의견을 비중확대로 올렸다.",
-        "body_en": "LG chairman Koo Kwang-mo and Nvidia CEO Jensen Huang agreed in Santa Clara on the 14th to co-develop a bipedal humanoid built on Isaac GR00T. Morgan Stanley raised LG Electronics and LG Innotek to overweight the same day.",
-        "src": "LG · Morgan Stanley · 8/14"
+        "body_ko": "구광모 LG그룹 회장과 젠슨 황 엔비디아 CEO가 14일 산타클라라에서 «아이작 GR00T» 기반 이족보행 휴머노이드를 함께 개발하기로 합의했다. 모건스탠리는 앞서 12일 LG전자를 비중확대로 올렸고, 그날 주가는 12.8% 뛰었다.",
+        "body_en": "LG chairman Koo Kwang-mo and Nvidia CEO Jensen Huang agreed in Santa Clara on the 14th to co-develop a bipedal humanoid built on Isaac GR00T. Morgan Stanley had already raised LG Electronics to overweight on the 12th, when the shares jumped 12.8%.",
+        "src": "LG · Morgan Stanley · 8/12~8/14"
       }
     ],
     "note_ko": "메모리는 값이 오르는 쪽으로, AI 인프라는 그 값을 무엇으로 대느냐 쪽으로 이야기가 갈리기 시작한 한 주였다.",
