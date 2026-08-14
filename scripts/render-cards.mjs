@@ -263,38 +263,35 @@ function cardStats(s) {
     </div>`;
   }).join('');
 
-  // 투자자별 순매수 — 0을 기준으로 좌우로 뻗는 막대. 사는 쪽 빨강, 파는 쪽 파랑.
+  // 투자자별 순매수 — 라벨+값은 flex 행(겹침 불가), 그 아래 0 기준 발산 막대는 순수 시각용(텍스트 없음).
+  // 예전에는 값 텍스트를 막대 위에 겹쳐 그렸으나, 카드가 1080px 논리 뷰포트라 폭이 좁아
+  // 라벨 칸과 값 텍스트가 만나는 위치 계산이 값·언어(한글/영문 단위 폭 차이)마다 달라져
+  // 자꾸 겹치는 사고가 났다(2026-08-14 확인). flex 행은 브라우저가 폭을 알아서 나눠주므로
+  // 이 종류의 겹침이 구조적으로 발생하지 않는다.
   const f = s.flows;
   const flows = f ? (() => {
     const max = Math.max(...f.rows.map(r => Math.abs(r.value)), 0.01);
     const CENTER = 50;
-    // 막대 최대폭은 라벨 영역(왼쪽 0~CENTER-22%)을 절대 침범하지 않도록 20%로 제한한다.
-    // 예전 38%는 음수 막대가 라벨과 같은 좌측 절반에 그려지는 구조상, 최댓값의
-    // 58%만 넘어도 막대가 라벨 칸을 덮어 텍스트가 뒤섞이는 사고가 났다(2026-08-05 확인).
     const rows = f.rows.map(r => {
-      const w = Math.abs(r.value) / max * 20;
+      const w = Math.abs(r.value) / max * (CENTER - 4);
       const pos = r.value >= 0 ? `left:${CENTER}%; width:${w}%;` : `right:${100 - CENTER}%; width:${w}%;`;
-      const radius = r.value >= 0 ? '0 6px 6px 0' : '6px 0 0 6px';
+      const radius = r.value >= 0 ? '0 4px 4px 0' : '4px 0 0 4px';
       return `
-      <div style="position:relative; height:50px; display:flex; align-items:center;">
-        <div style="position:absolute; ${pos} height:26px; background:${sign(r.value)}; border-radius:${radius}; z-index:1;"></div>
-        <div style="position:absolute; left:0; width:${CENTER - 22}%; text-align:right; padding-right:16px;
-                    font-size:26px; font-weight:700; color:#e8e7e0; z-index:2; text-shadow:0 0 6px #0d0d0d, 0 0 6px #0d0d0d;">${t(r.label_ko, r.label_en)}</div>
-        ${w >= 14
-          ? `<div style="position:absolute; ${pos} height:26px; display:flex; align-items:center; z-index:2;
-                         justify-content:${r.value >= 0 ? 'flex-end' : 'flex-start'}; padding:0 10px;
-                         font-size:23px; font-weight:800; color:#0d0d0d; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`
-          : `<div style="position:absolute; z-index:2; ${r.value >= 0 ? `left:calc(${CENTER}% + ${w}% + 12px)` : `right:calc(${100 - CENTER}% + ${w}% + 12px)`};
-                         font-size:25px; font-weight:800; color:${sign(r.value)}; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</div>`}
+      <div style="margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <span style="font-size:26px; font-weight:700; color:#e8e7e0;">${t(r.label_ko, r.label_en)}</span>
+          <span style="font-size:25px; font-weight:800; color:${sign(r.value)}; white-space:nowrap;">${r.value > 0 ? '+' : '−'}${Math.abs(r.value).toFixed(1)}${t(f.unit_ko, f.unit_en)}</span>
+        </div>
+        <div style="position:relative; height:14px;">
+          <div style="position:absolute; left:${CENTER}%; top:0; bottom:0; width:2px; background:#3a3936;"></div>
+          <div style="position:absolute; ${pos} height:14px; background:${sign(r.value)}; border-radius:${radius};"></div>
+        </div>
       </div>`;
     }).join('');
     return `
     <div style="margin-top:30px;">
       <div style="font-size:27px; font-weight:800; margin-bottom:14px;">${t(f.label_ko, f.label_en)}</div>
-      <div style="position:relative;">
-        <div style="position:absolute; left:${CENTER}%; top:0; bottom:0; width:2px; background:#3a3936;"></div>
-        ${rows}
-      </div>
+      ${rows}
     </div>`;
   })() : '';
 
