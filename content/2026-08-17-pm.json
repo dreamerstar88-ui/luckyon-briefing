@@ -15,10 +15,10 @@
       "美·이란 60일 휴전 시한이 끝나며 호르무즈 해협 통항이 사실상 마비(8/16 통과 0척)됐고, 국제유가·금은 안전자산 선호에 동반 상승했다(WTI ▲0.29%·금 ▲1.83%)."
     ],
     "lines_en": [
-      "Asian markets rose across the board on chip strength — Nikkei ▲0.74% (69,220.25), Shanghai Composite ▲1.41% (3,982.65), Hang Seng ▲1.34% (25,453.23). Kospi was closed for the Liberation Day holiday (observed).",
-      "Nvidia is building a $500B AI infrastructure financing network with Goldman Sachs, BlackRock and four other Wall Street majors, sending Japan's Kioxia and other memory makers up roughly 15%.",
-      "European markets are little changed mid-session (DAX ▲0.06%, FTSE ▲0.20%), and US index futures are modestly higher too — Nasdaq ▲0.51%, S&P 500 ▲0.13%.",
-      "The US-Iran 60-day truce expired, effectively halting Hormuz Strait transit (zero vessels on Aug 16), and oil and gold both gained on safe-haven demand (WTI ▲0.29%, gold ▲1.83%)."
+      "Asian markets rose on chip strength — Nikkei ▲0.74%, Shanghai ▲1.41%, Hang Seng ▲1.34%. Kospi was closed for the Liberation Day holiday.",
+      "Nvidia is building a $500B AI financing network with Goldman Sachs, BlackRock and four other Wall Street majors, sending Japan's Kioxia and other memory makers up ~15%.",
+      "European markets are little changed mid-session (DAX ▲0.06%, FTSE ▲0.20%); US futures are modestly higher too — Nasdaq ▲0.51%, S&P 500 ▲0.13%.",
+      "The US-Iran truce expired, halting Hormuz transit (zero vessels Aug 16); oil and gold both gained on safe-haven demand (WTI ▲0.29%, gold ▲1.83%)."
     ]
   },
   "markets": [
@@ -41,7 +41,7 @@
     {
       "label": "KOSPI",
       "value": "6,977.94",
-      "delta": "휴장",
+      "delta": "-",
       "dir": "flat",
       "note_ko": "광복절 대체공휴일 휴장 · 내일(8/18) 정상 재개장",
       "note_en": "Closed for Liberation Day holiday · reopens Aug 18"
@@ -158,8 +158,8 @@
         { "label_ko": "대만 가권", "label_en": "Taiwan", "value": 0.10 },
         { "label_ko": "獨 DAX", "label_en": "Germany DAX", "value": 0.06 }
       ],
-      "note_ko": "중화권·일본 지수가 반도체 강세를 타고 올랐고, 장중인 유럽은 보합권에서 움직이는 중이다.",
-      "note_en": "Greater China and Japan led on chip strength, while Europe — still in session — trades near flat."
+      "note_ko": "중화권·일본은 반도체 강세를 타고 올랐다 — 이날 발표된 중국 7월 산업생산·소매판매가 예상을 크게 밑돌았음에도(지수-펀더멘털 엇갈림). 장중인 유럽은 보합권이다.",
+      "note_en": "Greater China and Japan rose on chip strength — even as China's July output and retail sales, out the same day, badly missed estimates (a split from fundamentals). Europe, still in session, is near flat."
     },
     {
       "title_ko": "호르무즈 리스크 지표",
@@ -180,11 +180,11 @@
         {
           "label_ko": "호르무즈 통항 선박",
           "label_en": "Hormuz Transits",
-          "value": "49척",
-          "delta": "▼10.9%",
+          "value": "5 → 0",
+          "delta": "▼",
           "dir": "down",
-          "sub_ko": "8/15~16 주말 합계(직전 주말 55척) · 16일 하루는 0척, 케이플러 집계",
-          "sub_en": "Aug 15-16 weekend total (55 the week before) · zero on Aug 16 alone, per Kpler"
+          "sub_ko": "8/15(토) 5척 → 8/16(일) 0척 (직전 주말 31척) · 케이플러 집계",
+          "sub_en": "Aug 15 (Sat) 5 vessels → Aug 16 (Sun) 0 · down from 31 the prior weekend, per Kpler"
         },
         {
           "label_ko": "국제 금",
@@ -206,34 +206,34 @@
       "items": [
         {
           "headline_ko": "엔비디아, 월가 6대 금융사와 710조원 AI 인프라 자금조달망 구축",
-          "headline_en": "Nvidia Builds $500B AI Infrastructure Financing Network With Wall Street",
-          "body_ko": "엔비디아가 골드만삭스·블랙록·블랙스톤·KKR·아폴로글로벌·브룩필드와 5,000억달러(약 710조원) 규모 AI 컴퓨팅 금융 플랫폼 구축 MOU를 맺었다. GPU를 담보로 한 대출 확대가 골자다.",
-          "body_en": "Nvidia signed an MOU with Goldman Sachs, BlackRock, Blackstone, KKR, Apollo Global and Brookfield to build a $500B AI computing financing platform, centered on expanding GPU-collateralized lending.",
-          "src": "매일경제·헤럴드경제",
+          "headline_en": "Nvidia Builds $500B AI Financing Network",
+          "body_ko": "엔비디아가 골드만삭스·블랙록 등 6개 금융사와 5,000억달러(약 710조원) 규모 AI 컴퓨팅 금융 플랫폼 MOU를 맺었다.",
+          "body_en": "Nvidia signed an MOU with Goldman Sachs, BlackRock and four others for a $500B AI financing platform.",
+          "src": "Maeil Business·Herald Economy",
           "time": "8/17"
         },
         {
           "headline_ko": "백악관 과학기술자문, 엔비디아 AI 금융화에 경고",
-          "headline_en": "White House Science Adviser Warns on Nvidia's AI Financialization",
-          "body_ko": "데이비드 삭스 백악관 AI·가상자산 자문관이 팟캐스트에서 엔비디아의 5,000억달러 AI 인프라 자금조달 구조의 위험성을 지적했다고 Wccftech가 보도했다.",
-          "body_en": "Wccftech reports White House AI and crypto adviser David Sacks flagged risks in Nvidia's $500B AI infrastructure financing structure during a podcast appearance.",
+          "headline_en": "White House Adviser Warns on Nvidia AI Financing",
+          "body_ko": "데이비드 삭스 백악관 자문관이 엔비디아의 5,000억달러 AI 금융 구조 위험성을 지적했다고 Wccftech가 보도했다.",
+          "body_en": "Wccftech: adviser David Sacks flagged risks in Nvidia's $500B AI financing structure.",
           "src": "Wccftech",
           "time": "8/16"
         },
         {
           "headline_ko": "SK하이닉스, 美 자회사 솔리다임 나스닥 상장 추진설",
-          "headline_en": "SK Hynix's US Unit Solidigm Weighs Nasdaq Listing, Reports Say",
-          "body_ko": "SK하이닉스가 낸드 자회사 솔리다임을 미국 'AI컴퍼니' 산하로 개편하고 나스닥 상장을 추진한다는 보도가 나왔다. 지분 희석 우려와 실익 기대가 증권가에서 엇갈리며, 9월 4일 재공시에서 구체안이 나올 예정이다.",
-          "body_en": "Reports say SK Hynix is restructuring NAND unit Solidigm under a new US 'AI Company' and weighing a Nasdaq listing. Analysts are split between dilution concerns and potential upside, with details expected in a Sept 4 refiling.",
-          "src": "연합뉴스",
+          "headline_en": "SK Hynix's Solidigm Weighs Nasdaq Listing",
+          "body_ko": "SK하이닉스가 솔리다임을 미국 'AI컴퍼니' 산하로 개편해 나스닥 상장을 추진한다는 보도가 나왔다. 구체안은 9월 4일 재공시 예정.",
+          "body_en": "SK Hynix is reportedly restructuring Solidigm under a new US 'AI Company' unit, weighing a Nasdaq listing.",
+          "src": "Yonhap",
           "time": "8/17"
         },
         {
           "headline_ko": "일본 키옥시아 15%대 급등, 메모리 반도체주 동반 강세",
-          "headline_en": "Japan's Kioxia Surges ~15% as Memory Chip Stocks Rally",
-          "body_ko": "미국 반도체 업종의 강세가 아시아로 옮겨붙으며 낸드 제조사 키옥시아가 15%대 급등했다. 일본 30년물 국채금리가 사상 최고를 찍은 가운데서도 반도체 훈풍이 지수를 지지했다.",
-          "body_en": "US chip-sector strength spread to Asia, sending NAND maker Kioxia up about 15%. Chip momentum held up the index even as Japan's 30-year bond yield hit a record high.",
-          "src": "머니투데이",
+          "headline_en": "Japan's Kioxia Surges ~15% on Chip Rally",
+          "body_ko": "미국 반도체 강세가 아시아로 옮겨붙으며 낸드 제조사 키옥시아가 15%대 급등했다.",
+          "body_en": "US chip strength lifted Asia; NAND maker Kioxia rose ~15%.",
+          "src": "Money Today",
           "time": "8/17"
         }
       ]
@@ -245,26 +245,26 @@
       "items": [
         {
           "headline_ko": "美·이란 60일 휴전 시한 종료, 호르무즈 해협 사실상 봉쇄 지속",
-          "headline_en": "US-Iran 60-Day Truce Expires, Hormuz Strait Remains Effectively Blockaded",
-          "body_ko": "6월 체결된 60일 휴전 양해각서 시한이 17일(현지시간) 끝났다. 트럼프 대통령은 '전례 없는' 제재와 함께 호르무즈 해협을 미국 영토로 선언할 수 있다고 했고, 이란 외무차관은 '호르무즈는 오직 이란의 지휘 아래에서만 열리고 닫힐 것'이라고 반박했다. 해협 통항은 주말 이틀간 49척(직전 주말 55척)에 그쳤고 16일 하루는 0척이었다.",
-          "body_en": "The 60-day truce MOU signed in June expired Aug 17 local time. Trump threatened 'unprecedented' sanctions and floated declaring Hormuz US territory; Iran's deputy foreign minister countered that Hormuz 'will open and close only under Iran's command.' Weekend transits totaled 49 vessels (down from 55 the week before), with zero on Aug 16 alone.",
-          "src": "연합뉴스·이데일리·아주경제",
+          "headline_en": "US-Iran Truce Expires, Hormuz Effectively Blockaded",
+          "body_ko": "6월 체결된 60일 휴전 시한이 17일 끝났다. 트럼프는 호르무즈의 미국 영토화 가능성을, 이란은 '이란 지휘 아래서만 개방'을 언급하며 맞섰다. 통항은 15일 5척·16일 0척(직전 주말 31척).",
+          "body_en": "The 60-day truce signed in June expired Aug 17. Trump floated declaring Hormuz US territory; Iran said it opens 'only under Iran's command.' Transits: 5 vessels Aug 15, zero Aug 16.",
+          "src": "Yonhap·Edaily·Ajunews",
           "time": "8/17"
         },
         {
           "headline_ko": "트럼프, 한미연합훈련 대폭 축소 지시…대북 유화 신호",
-          "headline_en": "Trump Orders Major Cut to US-Korea Joint Drills, Signaling Outreach to North Korea",
-          "body_ko": "트럼프 대통령이 16일(현지시간) SNS에 헤그세스 국방장관에게 한미연합훈련 규모를 대폭 축소하라고 지시했다고 밝히며 김정은 위원장과의 친분을 언급했다. 청와대는 '확고한 연합방위태세 유지와 훈련에 대해 긴밀히 조율해왔다'고 반응했고, 미 민주당 상원의원들은 동맹 대비태세 약화를 우려해 반발했다.",
-          "body_en": "Trump said on social media Aug 16 (local time) that he ordered Defense Secretary Hegseth to significantly scale back joint US-Korea military exercises, citing his rapport with Kim Jong Un. South Korea's presidential office said the allies have 'closely coordinated' on the drills, while Democratic senators objected over concerns about weakened alliance readiness.",
-          "src": "연합뉴스·JTBC",
+          "headline_en": "Trump Orders Major Cut to US-Korea Drills",
+          "body_ko": "트럼프 대통령이 16일 SNS에 한미연합훈련 대폭 축소를 지시했다고 밝히며 김정은과의 친분을 언급했다. 청와대는 '긴밀히 조율해왔다'고 반응했고, 美 민주당은 동맹 태세 약화를 우려해 반발했다.",
+          "body_en": "Trump said on social media Aug 16 he ordered a major cut to US-Korea drills, citing his rapport with Kim Jong Un. Seoul's office said the allies 'closely coordinated'; Senate Democrats objected.",
+          "src": "Yonhap·JTBC",
           "time": "8/17"
         },
         {
-          "headline_ko": "일본 2분기 GDP 예상 하회… 30년물 금리는 사상 최고",
-          "headline_en": "Japan's Q2 GDP Misses Estimates as 30-Year Yield Hits Record High",
-          "body_ko": "일본 2분기 GDP 속보치가 전기비 +0.3%로 예상(+0.5%)과 이전치(+0.5%)를 모두 밑돌았다. 니혼게이자이는 호르무즈발 유가 급등에 따른 수입 급감이 역설적으로 GDP를 끌어올린 효과가 있었다고 짚었고, 전기·가스 요금 인상 우려에 일본 30년물 국채금리는 사상 최고치를 찍었다.",
-          "body_en": "Japan's preliminary Q2 GDP grew 0.3% QoQ, below both the 0.5% estimate and the prior quarter's 0.5%. Nikkei noted that a Hormuz-driven plunge in oil imports paradoxically flattered the GDP print, while fears of higher utility bills pushed Japan's 30-year bond yield to a record high.",
-          "src": "니혼게이자이·머니투데이",
+          "headline_ko": "일본 2분기 GDP 예상 하회… 10년물 금리는 30년 만에 최고",
+          "headline_en": "Japan's Q2 GDP Misses, 10-Year Yield Hits 30-Year High",
+          "body_ko": "일본 2분기 GDP 속보치가 전기비 +0.3%로 예상·이전치(+0.5%)를 밑돌았다. 같은 날 10년물 국채금리는 장중 2.930%로 1996년 9월 이후 최고 — BOJ 9월 조기 금리인상 기대와 다카이치 정부 재정확대 우려가 배경이다.",
+          "body_en": "Japan's prelim Q2 GDP grew 0.3% QoQ, below the 0.5% estimate. The 10-year JGB yield hit 2.930% intraday, a 30-year high, on BOJ rate-hike bets and fiscal concerns.",
+          "src": "Nikkei·Money Today",
           "time": "8/17"
         }
       ]
@@ -288,15 +288,7 @@
       "importance": "mid"
     },
     {
-      "time": "23:00",
-      "title_ko": "美 8월 NAHB 주택시장지수",
-      "title_en": "US Aug NAHB Housing Market Index",
-      "detail_ko": "예상 33 · 이전 34",
-      "detail_en": "Est 33 · Prior 34",
-      "importance": "mid"
-    },
-    {
-      "time": "8/18(화)",
+      "time": "8/18",
       "title_ko": "바이두 2분기 실적 발표 예정",
       "title_en": "Baidu Q2 Earnings Due",
       "detail_ko": "예상 EPS 1.51달러 · 매출 46.8억달러",
@@ -304,15 +296,15 @@
       "importance": "mid"
     },
     {
-      "time": "8/19(수) 16:10",
+      "time": "8/19 16:10",
       "title_ko": "라가르드 ECB 총재 연설",
       "title_en": "ECB President Lagarde Speech",
       "detail_ko": "통화정책 힌트 주목",
       "detail_en": "Watch for policy signals",
-      "importance": "mid"
+      "importance": "high"
     },
     {
-      "time": "8/19(수)",
+      "time": "8/19",
       "title_ko": "타겟 2분기 실적 발표 예정",
       "title_en": "Target Q2 Earnings Due",
       "detail_ko": "예상 EPS 2.26달러 · 매출 261.5억달러",
@@ -320,7 +312,7 @@
       "importance": "mid"
     },
     {
-      "time": "8/20(목) 03:00",
+      "time": "8/20 03:00",
       "title_ko": "FOMC 의사록 공개",
       "title_en": "FOMC Minutes Release",
       "detail_ko": "9월 금리 경로 힌트 주목",
@@ -334,5 +326,5 @@
   "outro_tagline_en": "",
   "caption_ko": "📊 luckyon 브리핑 · 2026.8.17(월) 저녁\n\n아시아 증시가 미국발 반도체 훈풍에 일제히 올랐습니다 — 닛케이 ▲0.74%·상하이종합 ▲1.41%·항셍 ▲1.34%. 코스피는 광복절 대체공휴일로 오늘 하루 휴장했습니다. 엔비디아는 골드만삭스·블랙록 등 월가 6대 금융사와 5,000억달러(약 710조원) 규모 AI 인프라 자금조달망 구축에 나섰고, 이 소식에 일본 키옥시아 등 메모리 반도체주가 15%대 급등했습니다. 한편 미·이란 60일 휴전 시한이 끝나며 호르무즈 해협 통항이 사실상 마비됐고, 국제유가·금은 안전자산 선호에 동반 상승했습니다. 트럼프 대통령은 한미연합훈련 대폭 축소를 지시하며 대북 유화 신호를 보냈습니다.\n\n👉 매일 아침 8시, 저녁 9시 새로운 브리핑으로 찾아옵니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n#경제뉴스 #주식 #증시 #코스피 #닛케이 #반도체 #엔비디아 #AI인프라 #호르무즈 #국제유가 #금값 #원달러환율 #한미훈련 #키옥시아 #투자 #luckyon\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
   "caption_en": "📊 luckyon Briefing · Mon, Aug 17, 2026 · PM\n\nAsian markets rose across the board on US-driven chip-sector strength — Nikkei ▲0.74%, Shanghai Composite ▲1.41%, Hang Seng ▲1.34%. Kospi was closed today for the Liberation Day holiday (observed). Nvidia is building a $500B AI infrastructure financing network with Goldman Sachs, BlackRock and four other Wall Street majors, sending Japan's Kioxia and other memory makers up roughly 15%. Meanwhile, the US-Iran 60-day truce expired, effectively halting Hormuz Strait transit, and oil and gold both gained on safe-haven demand. President Trump ordered a major cut to US-Korea joint military drills, signaling outreach to North Korea.\n\n👉 New briefings every day at 8 AM and 9 PM KST. Follow so you don't miss one!\nSave🔖 and share📤 welcome.\n\n#EconomicNews #Stocks #StockMarket #Kospi #Nikkei #Semiconductors #Nvidia #AIInfrastructure #Hormuz #OilPrices #Gold #USDKRW #Kioxia #Investing #luckyon\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
-  "sources": ["FMP", "PlayMCP UsStockInfo", "Yahoo Finance", "FXStreet", "CNN Fear & Greed Index", "연합뉴스", "경향신문", "이데일리", "아주경제", "매일경제", "헤럴드경제", "머니투데이", "JTBC", "Wccftech", "니혼게이자이"]
+  "sources": ["FMP", "PlayMCP UsStockInfo", "Yahoo Finance", "FXStreet", "CNN Fear & Greed Index", "Yonhap", "Edaily", "Ajunews", "Maeil Business", "Herald Economy", "Money Today", "JTBC", "Wccftech", "Nikkei"]
 }
