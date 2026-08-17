@@ -21,6 +21,7 @@
 | 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/reels/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` | 월~금 22:58 (11~2월 23:58 — 미 서머타임) |
 | 차트 노트 | `ROUTINE_PROMPT_CHARTNOTES.md` | `content/chart-notes/<STAMP>.json` | `cards/chart-notes/<STAMP>/<LANG>/` | `scripts/chart-notes/publish-chartnotes.mjs` | 일 10:30 |
 | 릴스 | (문서 없음 · 보류) | `data/reels/<STAMP>.json` | `cards/reels/<STAMP>/<LANG>/` | `scripts/reels/publish-reel.mjs` | — |
+| 숫자로 보는 기업 공시 | `ROUTINE_PROMPT_FILINGS.md` | `content/filings/<STAMP>.json` | `cards/filings/<STAMP>/<LANG>/` | `scripts/filings/publish-filings.mjs` | 스케줄 없음 · 수동 |
 
 - **스토리와 릴스는 시세 JSON(`data/reels/`)을 공유한다.** 같은 `fetch-window.mjs` 출력을 스토리는 정지 이미지로, 릴스는 영상으로 렌더할 뿐이다. 이미지 산출 경로만 다르다.
 - `content/` **루트**의 json 은 브리핑 전용이다 (세션 없는 구버전 파일 포함). 다른 축의 콘텐츠를 여기 두면 렌더러·발행 스크립트가 서로의 파일을 집어 든다.
@@ -114,6 +115,7 @@ git rev-parse HEAD origin/claude/live           # 두 해시가 같은지 확인
 | 평일·주말 브리핑 | `content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>` | `brief: <DATE> <SESSION> (ko+en)` |
 | 스토리 | `data/reels/<STAMP>.json data/reels/latest.txt cards/stories/<STAMP>` | `story: <STAMP> (ko+en)` |
 | 차트 노트 | `cards/chart-notes/<STAMP> content/chart-notes` | `chart-notes: <STAMP> <term> (ko+en)` |
+| 숫자로 보는 기업 공시 | `content/filings/<STAMP>.json cards/filings/<STAMP>` | `filings: <STAMP> (ko)` |
 
 - **`git add -A` 를 쓰지 않는다.** 여러 축이 같은 저장소를 쓰므로 `-A` 면 다른 축이 만들다 만 파일까지 끌려 들어와, 검증도 안 된 남의 콘텐츠가 함께 발행될 수 있다. **자기 축 경로만 명시해서 add 한다.**
 - **반드시 `FETCH_HEAD` 기준으로 체크아웃한다.** 다른 축이 먼저 푸시했을 수 있다. `git checkout claude/live` 만 하면 로컬에 남은 오래된 브랜치 위에 커밋하게 된다. 루틴은 매번 새 컨테이너에서 도므로 이 방식으로 잃을 로컬 작업은 없다.
@@ -180,6 +182,7 @@ PushNotification·카카오톡으로 알리고 사용자 승인을 기다린다.
   | 평일·주말 브리핑 | `node scripts/publish-instagram.mjs <DATE> ko <SESSION>` / `... <DATE> en <SESSION>` (`<SESSION>` = `am`\|`pm`\|`sat`\|`sun`) |
   | 스토리 | `node scripts/stories/publish-story.mjs <STAMP> ko` / `... <STAMP> en` |
   | 차트 노트 | `node scripts/chart-notes/publish-chartnotes.mjs <STAMP> ko` / `... <STAMP> en` — **`SKIP_PAGES_WAIT` 값은 `ROUTINE_PROMPT_CHARTNOTES.md` P2 의 판단 절차를 따른다** (컨테이너가 `github.io` 를 막힌 환경이면 `0` 이 오히려 발행을 실패시킨다) |
+  | 숫자로 보는 기업 공시 | `node scripts/filings/publish-filings.mjs <STAMP> ko` — 캐러셀 **10장 상한**을 스크립트가 검사해 초과 시 발행을 거부한다 |
 
 - 언어가 둘인 축은 **서로 독립적으로** 시도한다 — 한쪽이 실패해도 다른 쪽을 건너뛰지 않는다. 각각 성공하면 media id 를, 실패하면 에러 메시지를 그대로 로그에 남기고 토큰/권한/URL 중 무엇이 원인인지 판단한다.
 - **GitHub Pages 반영 지연**: 푸시 직후에는 이미지가 아직 안 올라가 인스타가 `Media download has failed` 로 거부할 수 있다. 발행 스크립트가 자체적으로 기다리지만, 그래도 실패하면 **몇 분 뒤 재시도**한다 (2026-08-04 am 에서 실제로 1차 실패 후 재시도로 성공).
@@ -190,6 +193,7 @@ PushNotification·카카오톡으로 알리고 사용자 승인을 기다린다.
   | 브리핑(평일·주말) | 콘텐츠 JSON 에서 자동 생성 (`scripts/lib/alt-text.mjs`) | 없음 |
   | 스토리 | 렌더 시 `cards/stories/<STAMP>/<LANG>/alt.txt` 로 남지만 **발행 스크립트가 보내지 않는다** — Graph API 가 `media_type=STORIES` 에서 `alt_text` 파라미터 자체를 거부해(`"The param alt_text is not supported for STORY"`, 2026-08-04 확인) 넘기면 발행이 통째로 실패한다. `alt.txt` 는 커밋에는 포함되지만 현재 스토리는 대체 텍스트 없이 나간다 — 업스트림 우회(정정 댓글 등)가 생기기 전까지는 알려진 한계다 | 없음 |
   | 차트 노트 | 사람이 쓴 `alt_ko`/`alt_en` 배열 | **직접 8개씩 쓴다.** 개수가 카드 수와 다르면 발행 스크립트가 경고만 하고 **그대로 발행하므로**, 빠뜨려도 오류로 잡히지 않는다 |
+  | 숫자로 보는 기업 공시 | 사람이 쓴 `alt_ko` 배열 | **직접 카드 수만큼 쓴다.** 차트 노트와 같은 한계가 그대로 적용된다 |
   - 적용 여부가 의심되면 발행 후 `node scripts/verify-alt-text.mjs <DATE> <LANG> <SESSION>` 로 대조한다. Graph API 는 모르는 파라미터를 오류 없이 무시하기도 해서 **"발행 성공"이 곧 "적용됨"은 아니다.** 매 회차 돌릴 필요는 없고 발행 방식이나 그 로직을 바꾼 직후에만 한 번 확인한다.
 
 ---

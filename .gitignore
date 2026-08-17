@@ -1,6 +1,6 @@
 node_modules/
 package-lock.json
-
-# 서식 견본 카드는 커밋하지 않는다 — content/example-sat.json 에서 언제든 다시 렌더된다.
-# (20장 5MB 를 저장소에 남길 이유가 없다)
-cards/example/
+.env
+.env.*
+*.env
+.secrets/
