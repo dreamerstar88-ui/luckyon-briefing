@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-08-16T22:39:47Z",
+  "fetchedAt": "2026-08-17T11:36:18Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-14T22:39:47Z",
-    "to": "2026-08-30T22:39:47Z"
+    "from": "2026-08-15T11:36:18Z",
+    "to": "2026-08-31T11:36:18Z"
   },
   "events": [
-    {
-      "at": "2026-08-14T23:00:00Z",
-      "country": "EMU",
-      "name": "The Assumption Holiday",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-16T23:50:00Z",
       "country": "JP",
@@ -23,7 +13,7 @@
       "impact": "HIGH",
       "consensus": 0.5,
       "previous": 0.5,
-      "actual": null,
+      "actual": 0.3,
       "unit": "%"
     },
     {
@@ -33,7 +23,7 @@
       "impact": "MEDIUM",
       "consensus": 2,
       "previous": 1.8,
-      "actual": null,
+      "actual": 1.1,
       "unit": "%"
     },
     {
@@ -43,7 +33,7 @@
       "impact": "MEDIUM",
       "consensus": 2.4,
       "previous": 3.2,
-      "actual": null,
+      "actual": 2.6,
       "unit": "%"
     },
     {
@@ -53,48 +43,8 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 30.32,
-      "actual": null,
+      "actual": 30.39,
       "unit": "$"
-    },
-    {
-      "at": "2026-08-17T01:30:00Z",
-      "country": "CN",
-      "name": "House Price Index ",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -3.3,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-17T02:00:00Z",
-      "country": "CN",
-      "name": "Fixed Asset Investment (YTD) (YoY)",
-      "impact": "LOW",
-      "consensus": -6.2,
-      "previous": -5.7,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-17T02:00:00Z",
-      "country": "CN",
-      "name": "Industrial Production (YoY)",
-      "impact": "HIGH",
-      "consensus": 5,
-      "previous": 5.3,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-17T02:00:00Z",
-      "country": "CN",
-      "name": "Retail Sales (YoY)",
-      "impact": "HIGH",
-      "consensus": 1.5,
-      "previous": 1,
-      "actual": null,
-      "unit": "%"
     },
     {
       "at": "2026-08-17T04:30:00Z",
@@ -103,7 +53,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.1,
-      "actual": null,
+      "actual": 4.1,
       "unit": "%"
     },
     {
@@ -113,7 +63,7 @@
       "impact": "LOW",
       "consensus": 1.3,
       "previous": 1.3,
-      "actual": null,
+      "actual": 1.9,
       "unit": "%"
     },
     {
@@ -123,7 +73,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.2,
-      "actual": null,
+      "actual": 4.9,
       "unit": "%"
     },
     {
@@ -133,7 +83,47 @@
       "impact": "LOW",
       "consensus": -1,
       "previous": 1.1,
-      "actual": null,
+      "actual": -0.2,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-17T07:00:00Z",
+      "country": "CN",
+      "name": "Fixed Asset Investment (YTD) (YoY)",
+      "impact": "LOW",
+      "consensus": -6.2,
+      "previous": -5.7,
+      "actual": -6.7,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-17T07:00:00Z",
+      "country": "CN",
+      "name": "House Price Index ",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -3.3,
+      "actual": -3.2,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-17T07:00:00Z",
+      "country": "CN",
+      "name": "Industrial Production (YoY)",
+      "impact": "HIGH",
+      "consensus": 5,
+      "previous": 5.3,
+      "actual": 4.5,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-17T07:00:00Z",
+      "country": "CN",
+      "name": "Retail Sales (YoY)",
+      "impact": "HIGH",
+      "consensus": 1.5,
+      "previous": 1,
+      "actual": 0.6,
       "unit": "%"
     },
     {
@@ -151,7 +141,7 @@
       "country": "US",
       "name": "NY Empire State Manufacturing Index",
       "impact": "MEDIUM",
-      "consensus": 10.2,
+      "consensus": 11,
       "previous": 15.6,
       "actual": null,
       "unit": null
@@ -211,7 +201,7 @@
       "country": "DE",
       "name": "ZEW Survey – Current Situation",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": -68.8,
       "previous": -77.6,
       "actual": null,
       "unit": null
@@ -281,7 +271,7 @@
       "country": "US",
       "name": "Export Price Index (MoM)",
       "impact": "LOW",
-      "consensus": -0.2,
+      "consensus": 0.2,
       "previous": -0.6,
       "actual": null,
       "unit": "%"
@@ -371,7 +361,7 @@
       "country": "US",
       "name": "Pending Home Sales (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.5,
+      "consensus": 0.2,
       "previous": -5.4,
       "actual": null,
       "unit": "%"
@@ -527,6 +517,26 @@
       "unit": null
     },
     {
+      "at": "2026-08-19T14:30:00Z",
+      "country": "US",
+      "name": "EIA Distillate Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.01,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-19T14:30:00Z",
+      "country": "US",
+      "name": "EIA Gasoline Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.968,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-19T17:00:00Z",
       "country": "US",
       "name": "20-Year Bond Auction",
@@ -621,7 +631,7 @@
       "country": "DE",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.6,
+      "consensus": 0.3,
       "previous": -0.3,
       "actual": null,
       "unit": "%"
@@ -681,7 +691,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 210,
+      "consensus": 212,
       "previous": 209,
       "actual": null,
       "unit": null
@@ -701,7 +711,7 @@
       "country": "US",
       "name": "Philadelphia Fed Manufacturing Survey",
       "impact": "MEDIUM",
-      "consensus": 25.3,
+      "consensus": 25,
       "previous": 41.4,
       "actual": null,
       "unit": null
@@ -931,7 +941,7 @@
       "country": "EMU",
       "name": "Consumer Confidence",
       "impact": "MEDIUM",
-      "consensus": -16,
+      "consensus": -16.3,
       "previous": -15.9,
       "actual": null,
       "unit": null
@@ -1835,6 +1845,256 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-08-30T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-30T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output Growth",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 6.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-30T23:00:00Z",
+      "country": "KR",
+      "name": "Service Sector Output",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-30T23:50:00Z",
+      "country": "JP",
+      "name": "Industrial Production (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-30T23:50:00Z",
+      "country": "JP",
+      "name": "Industrial Production (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49.2,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-31T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Non-Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-31T05:00:00Z",
+      "country": "JP",
+      "name": "Annualized Housing Starts",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.786,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-31T05:00:00Z",
+      "country": "JP",
+      "name": "Construction Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T05:00:00Z",
+      "country": "JP",
+      "name": "Consumer Confidence Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-31T05:00:00Z",
+      "country": "JP",
+      "name": "Housing Starts (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 18.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T06:00:00Z",
+      "country": "DE",
+      "name": "Import Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T06:00:00Z",
+      "country": "DE",
+      "name": "Import Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 6.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Baden-Wuerttemberg CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Baden-Wuerttemberg CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Bavaria CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Bavaria CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Brandenburg CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Brandenburg CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Hesse CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Hesse CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "North Rhine-Westphalia CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "North Rhine-Westphalia CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Saxony CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T08:00:00Z",
+      "country": "DE",
+      "name": "Saxony CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.8,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
