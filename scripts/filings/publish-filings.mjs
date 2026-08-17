@@ -15,6 +15,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -36,7 +37,9 @@ const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+// fileURLToPath 를 쓴다 — Windows 에서 new URL().pathname 은 '/C:/...' 에
+// 공백이 %20 으로 인코딩된 채 나와 경로가 깨진다 (수동 실행 시 실제로 겪음).
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const content = JSON.parse(
   fs.readFileSync(path.join(root, 'content', 'filings', `${stamp}.json`), 'utf8'));
 const caption = lang === 'ko' ? content.caption_ko : content.caption_en;
