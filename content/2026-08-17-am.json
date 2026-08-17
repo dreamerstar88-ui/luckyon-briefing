@@ -3,22 +3,22 @@
   "session": "am",
   "dateLabel_ko": "2026.8.17(월) 아침",
   "dateLabel_en": "Mon, Aug 17, 2026 · AM",
-  "headline_ko": "소매판매 급감에 뉴욕 3대 지수 소폭 하락",
+  "headline_ko": "소매판매 급감에 뉴욕 3대 지수 소폭 하락… 코스피는 광복절 대체휴일로 휴장",
   "headline_sub_ko": "美·이란 60일 휴전, 오늘 기한 종료 — 호르무즈 리스크 재부각",
-  "headline_en": "Weak Retail Sales Send Wall Street Lower",
+  "headline_en": "Weak Retail Sales Send Wall Street Lower — Kospi Closed for Holiday",
   "headline_sub_en": "US-Iran 60-day truce lapses today, reviving Hormuz risk",
   "summary": {
     "lines_ko": [
       "뉴욕 3대 지수가 소매판매 부진에 소폭 하락 마감했다 — 다우 ▼0.20%·S&P500 ▼0.17%·나스닥 ▼0.28%.",
       "7월 소매판매가 전월비 -0.6%로 예상(+0.1%)을 크게 밑돌았고, 미시간대 소비자심리지수도 3개월 만에 하락 전환했다.",
       "거래량은 20일 평균(174억주)을 밑도는 161억주에 그쳤지만, 에너지·유틸리티 등 방어 섹터는 오히려 강세를 보이며 지수 낙폭을 제한했다.",
-      "미·이란 60일 휴전 기한이 오늘(현지시간) 끝나며 호르무즈 리스크가 재부각되는 가운데, 코스피는 개장을 앞두고 5거래일 연속 상승 흐름을 지키고 있다."
+      "미·이란 60일 휴전 기한이 오늘(현지시간) 끝나며 호르무즈 리스크가 재부각되는 가운데, 코스피는 광복절 대체공휴일로 오늘 하루 휴장한다."
     ],
     "lines_en": [
       "All three major US indexes closed slightly lower on weak retail sales — Dow ▼0.20%, S&P 500 ▼0.17%, Nasdaq ▼0.28%.",
       "July retail sales fell 0.6% MoM, far below the +0.1% estimate, while Michigan consumer sentiment fell for the first time in three months.",
       "Volume of 16.1B shares trailed the 20-day average of 17.4B, but defensive sectors like energy and utilities gained, limiting the indexes' declines.",
-      "With the US-Iran 60-day truce expiring today, reviving Hormuz risk, Kospi heads into its open still riding a 5-session win streak."
+      "With the US-Iran 60-day truce expiring today, reviving Hormuz risk, Kospi is closed today for the Liberation Day holiday (observed)."
     ]
   },
   "markets": [
@@ -41,10 +41,10 @@
     {
       "label": "KOSPI",
       "value": "6,977.94",
-      "delta": "▲2.42%",
-      "dir": "up",
-      "note_ko": "5거래일 연속 상승 · 개장 전, 전 거래일(8/14) 종가",
-      "note_en": "5th straight gain · pre-open, Aug 14 close"
+      "delta": "휴장",
+      "dir": "flat",
+      "note_ko": "광복절 대체공휴일 휴장 · 5거래일 연속 상승한 8/14(금) 종가",
+      "note_en": "Closed for Liberation Day holiday · Aug 14 close, 5th straight gain"
     },
     {
       "label": "VIX",
@@ -104,8 +104,8 @@
       "note_en": "Down over the past 24 hours"
     }
   ],
-  "market_note_ko": "지정학 리스크에 금·유가는 주말 재개장 후에도 강세를 이어갔고, 코스피는 개장 전 5거래일 연속 상승분을 그대로 유지했다.",
-  "market_note_en": "Gold and oil extended gains through the weekend reopen on geopolitical risk, while Kospi held its 5-session win streak into the open.",
+  "market_note_ko": "지정학 리스크에 금·유가는 주말 재개장 후에도 강세를 이어갔다. 코스피는 광복절 대체공휴일로 오늘 하루 휴장한다.",
+  "market_note_en": "Gold and oil extended gains through the weekend reopen on geopolitical risk. Kospi is closed today for the Liberation Day holiday (observed).",
   "sections": [
     {
       "title_ko": "미국장 기록",
@@ -258,10 +258,10 @@
           "time": "8/16~17"
         },
         {
-          "headline_ko": "코스피 5거래일 연속 상승, '7000피' 안착 시험대",
-          "headline_en": "Kospi's 5-session win streak faces a test at the 7,000 mark",
-          "body_ko": "코스피는 지난주 외국인·기관 동반 매수에 힘입어 11.49% 급등하며 5거래일 연속 상승했다. 이번 주는 미국발 경기 둔화 우려와 반도체 투자심리 사이에서 방향을 모색할 전망이다.",
-          "body_en": "Kospi rose for a 5th straight session last week, up 11.49% on foreign and institutional buying. This week: US slowdown worries vs. chip sentiment.",
+          "headline_ko": "코스피 5거래일 연속 상승 마감, 광복절 휴장 뒤 '7000피' 시험대",
+          "headline_en": "Kospi's 5-session win streak — a 7,000 test awaits after the holiday",
+          "body_ko": "지난주 외국인·기관 매수에 11.49% 급등, 5거래일 연속 상승했다. 오늘은 광복절 휴장, 내일(8/18) 재개장은 美 경기 둔화·반도체 심리가 관건이다.",
+          "body_en": "Kospi rose 11.49% and a 5th straight session last week. Markets are closed today for the holiday; Aug 18's reopen hinges on US slowdown worries vs. chip sentiment.",
           "src": "Yonhap",
           "time": "8/16"
         },
@@ -281,10 +281,18 @@
   "market_hours": {
     "title_ko": "한국 증시 운영시간",
     "title_en": "Korea Market Hours",
-    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
-    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30", "※ 오늘(8/17)은 광복절 대체공휴일로 하루 휴장"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM", "※ Closed today (Aug 17) — Liberation Day holiday (observed)"]
   },
   "schedule": [
+    {
+      "time": "All day",
+      "title_ko": "광복절 대체공휴일로 국내 증시 하루 휴장",
+      "title_en": "Korea markets closed for Liberation Day holiday (observed)",
+      "detail_ko": "코스피·코스닥·파생·외환시장 모두 휴장 · 내일(8/18, 화) 정상 재개",
+      "detail_en": "Kospi, Kosdaq, derivatives & FX all closed · resumes Aug 18 (Tue)",
+      "importance": "high"
+    },
     {
       "time": "8/17 08:50",
       "title_ko": "일본 2분기 GDP (속보치)",
@@ -304,17 +312,9 @@
     {
       "time": "8/17 13:30",
       "title_ko": "일본 7월 산업생산(확정)·3차산업활동지수",
-      "title_en": "Japan July industrial production (final), tertiary index",
+      "title_en": "Japan July IP (final), tertiary index",
       "detail_ko": "산업생산 이전 +1.3%(전월비) · 3차산업활동지수 예상 -1.0%·이전 +1.1%",
       "detail_en": "IP prior +1.3% MoM · Tertiary Index est -1.0% (prior +1.1%)",
-      "importance": "mid"
-    },
-    {
-      "time": "8/17 18:30",
-      "title_ko": "ECB 레인 이사 연설",
-      "title_en": "ECB's Lane speech",
-      "detail_ko": "통화정책 관련 발언 주목",
-      "detail_en": "Watched for policy signals",
       "importance": "mid"
     }
   ],
@@ -322,7 +322,7 @@
   "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
   "outro_tagline_ko": "",
   "outro_tagline_en": "",
-  "caption_ko": "📊 luckyon 브리핑 · 2026.8.17(월) 아침\n\n뉴욕증시 3대 지수가 소매판매 부진에 소폭 하락 마감했습니다(다우 ▼0.20%·S&P500 ▼0.17%·나스닥 ▼0.28%). 7월 소매판매가 전월비 -0.6%로 예상(+0.1%)을 크게 밑돌았고, 미시간대 소비자심리지수도 3개월 만에 하락 전환했습니다. 다만 에너지·유틸리티 등 방어 섹터는 오히려 강세를 보이며 지수 낙폭을 제한했습니다. 앤트로픽은 2분기 매출이 전년 동기 대비 14배로 불며 첫 분기 흑자를 냈고, 10월 나스닥 상장을 추진 중입니다. 한편 미·이란 60일 휴전 기한이 오늘 끝나며 호르무즈 리스크가 재부각되는 가운데, 코스피는 개장을 앞두고 5거래일 연속 상승 흐름을 지키고 있습니다.\n\n👉 매일 아침 8시, 저녁 9시 새로운 브리핑으로 찾아옵니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n#경제뉴스 #주식 #증시 #소매판매 #나스닥 #S&P500 #코스피 #앤트로픽 #엔비디아 #마이크론 #반도체 #AI인프라 #국제유가 #호르무즈 #원달러환율 #재테크 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
-  "caption_en": "📊 luckyon Briefing · Mon, Aug 17, 2026 · AM\n\nWall Street's three major indexes closed slightly lower on weak retail sales (Dow ▼0.20%, S&P 500 ▼0.17%, Nasdaq ▼0.28%). July retail sales fell 0.6% MoM, far below the +0.1% estimate, while Michigan consumer sentiment fell for the first time in three months. Defensive sectors like energy and utilities gained, limiting the declines. Anthropic's Q2 revenue jumped 14x year-over-year to its first quarterly profit, and it's pushing for an October Nasdaq listing. Meanwhile, the US-Iran 60-day truce expires today, reviving Hormuz risk, while Kospi heads into its open still riding a 5-session win streak.\n\n👉 New briefings every day at 8 AM and 9 PM KST. Follow so you don't miss one!\nSave🔖 and share📤 welcome.\n\n#EconomicNews #Stocks #StockMarket #RetailSales #Nasdaq #SP500 #Kospi #Anthropic #Nvidia #Micron #Semiconductors #AIInfrastructure #OilPrices #Hormuz #USDKRW #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.8.17(월) 아침\n\n뉴욕증시 3대 지수가 소매판매 부진에 소폭 하락 마감했습니다(다우 ▼0.20%·S&P500 ▼0.17%·나스닥 ▼0.28%). 7월 소매판매가 전월비 -0.6%로 예상(+0.1%)을 크게 밑돌았고, 미시간대 소비자심리지수도 3개월 만에 하락 전환했습니다. 다만 에너지·유틸리티 등 방어 섹터는 오히려 강세를 보이며 지수 낙폭을 제한했습니다. 앤트로픽은 2분기 매출이 전년 동기 대비 14배로 불며 첫 분기 흑자를 냈고, 10월 나스닥 상장을 추진 중입니다. 한편 미·이란 60일 휴전 기한이 오늘 끝나며 호르무즈 리스크가 재부각되는 가운데, 코스피는 광복절 대체공휴일로 오늘 하루 휴장합니다.\n\n👉 매일 아침 8시, 저녁 9시 새로운 브리핑으로 찾아옵니다. 팔로우하고 놓치지 마세요!\n저장🔖·공유📤 환영합니다.\n\n#경제뉴스 #주식 #증시 #소매판매 #나스닥 #S&P500 #코스피 #앤트로픽 #엔비디아 #마이크론 #반도체 #AI인프라 #국제유가 #호르무즈 #원달러환율 #재테크 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "📊 luckyon Briefing · Mon, Aug 17, 2026 · AM\n\nWall Street's three major indexes closed slightly lower on weak retail sales (Dow ▼0.20%, S&P 500 ▼0.17%, Nasdaq ▼0.28%). July retail sales fell 0.6% MoM, far below the +0.1% estimate, while Michigan consumer sentiment fell for the first time in three months. Defensive sectors like energy and utilities gained, limiting the declines. Anthropic's Q2 revenue jumped 14x year-over-year to its first quarterly profit, and it's pushing for an October Nasdaq listing. Meanwhile, the US-Iran 60-day truce expires today, reviving Hormuz risk, while Kospi is closed today for the Liberation Day holiday (observed).\n\n👉 New briefings every day at 8 AM and 9 PM KST. Follow so you don't miss one!\nSave🔖 and share📤 welcome.\n\n#EconomicNews #Stocks #StockMarket #RetailSales #Nasdaq #SP500 #Kospi #Anthropic #Nvidia #Micron #Semiconductors #AIInfrastructure #OilPrices #Hormuz #USDKRW #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
   "sources": ["FMP", "PlayMCP UsStockInfo", "Yahoo Finance", "SaveTicker", "Reuters", "Yonhap", "CNBC", "Fortune", "The Information", "New Street Research", "IDX"]
 }
