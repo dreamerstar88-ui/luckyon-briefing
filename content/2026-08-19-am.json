@@ -5,7 +5,7 @@
   "dateLabel_en": "Wed, Aug 19, 2026 · AM",
   "headline_ko": "美 국채금리 19년來 최고… 반도체 쇼크에 나스닥 3거래일째 하락",
   "headline_sub_ko": "필라델피아 반도체지수 -4.98%·마이크론 7%↓ · 코스피도 1.55% 밀려",
-  "headline_en": "Treasury Yields Hit 19-Year High — Nasdaq Falls a Third Day on Chip Rout",
+  "headline_en": "19-Year High Yields, Chip Rout Sink Nasdaq",
   "headline_sub_en": "Philly Semis -5%, Micron -7% · Kospi Slips 1.55% Too",
   "summary": {
     "lines_ko": [
@@ -15,10 +15,10 @@
       "반면 헬스케어(XLV ▲1.60%)·에너지(XLE ▲1.76%)·필수소비재(XLP ▲1.06%) 등 방어주로 자금이 옮겨갔다. 코스피는 전일 1.55% 밀린 6,869.83으로 마감, 오늘 재개장을 앞두고 있다."
     ],
     "lines_en": [
-      "Nasdaq fell 1.33% to 26,289.71, its third straight decline — S&P 500 dropped 0.69% (7,691.76) and the Dow 0.22% (53,343.40) alongside it.",
-      "The US 30-year Treasury yield hit its highest since 2007, and the 10-year climbed to 4.71%, pressuring richly-valued growth names. With US-Iran truce talks deadlocked, oil rose for a third day too (WTI $84.95, +0.52%).",
-      "Losses were concentrated in chips — the Philadelphia Semiconductor Index sank 4.98%. Micron fell 7.06%, SanDisk 8.9%, Western Digital 7.43%, and SK hynix's US ADR dropped 9.2%.",
-      "Money rotated into defensives instead — Healthcare (XLV +1.60%), Energy (XLE +1.76%) and Staples (XLP +1.06%) all rose. Kospi closed down 1.55% at 6,869.83 in the prior session and reopens today."
+      "Nasdaq fell 1.33% to 26,289.71, a third straight decline — S&P 500 -0.69% (7,691.76), Dow -0.22% (53,343.40).",
+      "The 30-year Treasury yield hit its highest since 2007, pressuring growth stocks. Oil rose a third day as US-Iran talks stayed deadlocked (WTI $84.95, +0.52%).",
+      "Losses were concentrated in chips — the Philadelphia Semiconductor Index sank 4.98%. Micron -7.06%, SanDisk -8.9%, SK hynix's US ADR -9.2%.",
+      "Defensives gained instead — Healthcare +1.60%, Energy +1.76%, Staples +1.06%. Kospi closed -1.55% and reopens today."
     ]
   },
   "markets": [
@@ -68,7 +68,7 @@
       "delta": "▼",
       "dir": "down",
       "note_ko": "8/17 확정 종가 → 8/18 확정 종가 · 30년물은 2007년來 최고 부근 유지",
-      "note_en": "Aug 17 confirmed close → Aug 18 confirmed close · 30Y stays near its 2007 high"
+      "note_en": "Aug 17 → Aug 18 confirmed close · 30Y stays near 2007 high"
     },
     {
       "label": "USD/KRW",
@@ -93,7 +93,7 @@
       "delta": "▲0.52%",
       "dir": "up",
       "note_ko": "美·이란 협상 재개 없어 사흘 연속 상승 · 7/24 이후 3주 최고",
-      "note_en": "Rises a third day as US-Iran talks stay stalled · 3-week high since Jul 24"
+      "note_en": "Rises a third day as US-Iran talks stall · highest since Jul 24"
     },
     {
       "label": "Bitcoin",
@@ -292,9 +292,9 @@
       "items": [
         {
           "headline_ko": "무디스, 韓 성장률 3.5%로 상향… \"반도체 호황 2027년 중반까지\" 조건부 전망",
-          "headline_en": "Moody's Raises Korea's Growth to 3.5%, Sees Chip Boom Lasting Into Mid-2027 — With Conditions",
+          "headline_en": "Moody's Lifts Korea's 2026 Growth to 3.5%",
           "body_ko": "무디스가 한국의 올해 성장률 전망치를 3.5%로 상향 조정하며 정부의 반도체·AI데이터센터·피지컬AI '3대 메가프로젝트'를 긍정적으로 평가했다. 다만 반도체 호황이 2027년 중반까지 이어지려면 프로젝트가 계획대로 실행돼야 한다는 조건을 달았다.",
-          "body_en": "Moody's raised its 2026 growth forecast for Korea to 3.5%, citing a positive view of the government's semiconductor, AI data center and physical-AI \"mega projects.\" It added the current chip boom would only last into mid-2027 if the projects are executed as planned.",
+          "body_en": "Moody's cited a positive view of Korea's chip, AI data center and physical-AI \"mega projects\" — but said the chip boom lasting into mid-2027 depends on execution.",
           "src": "Moody's·KBS",
           "time": "8/19"
         },
@@ -310,7 +310,7 @@
           "headline_ko": "美·이란, 휴전 시한 넘기고도 대화 없어… 호르무즈 리스크 재부각",
           "headline_en": "US-Iran: No Talks Even After Truce Deadline Passes, Hormuz Risk Resurfaces",
           "body_ko": "트럼프 대통령은 현재 이란과 어떤 협상이나 대화도 진행하지 않고 있으며 예정된 협상도 없다고 밝혔다. 60일 휴전 시한이 지나면서 호르무즈 해협을 둘러싼 통항 리스크가 다시 부각돼 유가 상승 압력으로 이어졌다.",
-          "body_en": "President Trump said the US is not currently engaged in any negotiations or talks with Iran, and none are scheduled. With the 60-day truce deadline passed, renewed concern over Strait of Hormuz transit added to upward pressure on oil prices.",
+          "body_en": "President Trump said the US is not currently in any talks with Iran, and none are scheduled. With the truce deadline passed, renewed Strait of Hormuz risk added upward pressure on oil.",
           "src": "Reuters",
           "time": "8/18"
         }
@@ -344,14 +344,6 @@
       "title_en": "Eurozone Jul Core CPI (Final)",
       "detail_ko": "예상 +2.5%(전년비) · 이전 +2.5%",
       "detail_en": "Est +2.5% YoY · Prior +2.5%",
-      "importance": "mid"
-    },
-    {
-      "time": "19:00",
-      "title_ko": "로우스·에스티로더 실적 발표",
-      "title_en": "Lowe's & Estée Lauder Earnings",
-      "detail_ko": "장 시작 전 발표",
-      "detail_en": "Reports before the open",
       "importance": "mid"
     },
     {
