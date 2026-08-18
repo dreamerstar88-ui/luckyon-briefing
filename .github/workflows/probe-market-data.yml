@@ -1,0 +1,29 @@
+name: Probe Market Data Domains
+
+# 일회성 조사용. 세션(claude.ai 컨테이너)에서 막힌 시세 API 도메인들이
+# GitHub Actions 러너에서는 되는지 확인한다. DATA_SOURCES.md §2 의
+# 세션↔러너 비대칭 조사와 같은 목적. 결과를 문서에 기록한 뒤 이 파일은 지운다.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl candidate domains
+        run: |
+          set +e
+          for url in \
+            "https://hist.databento.com" \
+            "https://live.databento.com" \
+            "https://databento.com" \
+            "https://api.polygon.io" \
+            "https://finnhub.io" \
+            "https://openapi.kiwoom.com" \
+            "https://www.tradingview.com" \
+            "https://s.tradingview.com" \
+            ; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url")
+            echo "$url -> HTTP $code"
+          done
