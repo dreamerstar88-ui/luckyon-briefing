@@ -36,10 +36,10 @@ jobs:
       - name: Fetch recent NQ 1-min bars
         run: |
           set -e
+          echo "=== 1차: end=지금 으로 조회해서 실제 이용 가능 최신 시각을 알아낸다 ==="
           NOW=$(date -u +%Y-%m-%dT%H:%M:%S)
           START=$(date -u -d '90 minutes ago' +%Y-%m-%dT%H:%M:%S 2>/dev/null || date -u -v-90M +%Y-%m-%dT%H:%M:%S)
-          echo "요청 구간: $START ~ $NOW (UTC)"
-          curl -sS -u "${DATABENTO_API_KEY}:" -G \
+          HTTP1=$(curl -sS -u "${DATABENTO_API_KEY}:" -G \
             "https://hist.databento.com/v0/timeseries.get_range" \
             --data-urlencode "dataset=GLBX.MDP3" \
             --data-urlencode "symbols=NQ.c.0" \
@@ -48,12 +48,37 @@ jobs:
             --data-urlencode "start=${START}Z" \
             --data-urlencode "end=${NOW}Z" \
             --data-urlencode "encoding=json" \
-            -o /tmp/nq_bars.json -w "HTTP %{http_code}\n"
-          echo "=== 응답(마지막 2000자) ==="
-          tail -c 2000 /tmp/nq_bars.json
+            -o /tmp/nq_bars_1.json -w "%{http_code}")
+          echo "HTTP $HTTP1"
+          cat /tmp/nq_bars_1.json
           echo
-          echo "=== 현재 시각(UTC) ==="
-          date -u
+          AVAIL_END=$(python3 -c "
+import json
+try:
+    d = json.load(open('/tmp/nq_bars_1.json'))
+    print(d.get('detail', {}).get('payload', {}).get('available_end', ''))
+except Exception:
+    print('')
+")
+          echo "available_end 파싱 결과: $AVAIL_END"
+
+          echo "=== 2차: end=available_end 로 재조회해서 실제 마지막 봉을 받는다 ==="
+          END2="${AVAIL_END:-$NOW}"
+          curl -sS -u "${DATABENTO_API_KEY}:" -G \
+            "https://hist.databento.com/v0/timeseries.get_range" \
+            --data-urlencode "dataset=GLBX.MDP3" \
+            --data-urlencode "symbols=NQ.c.0" \
+            --data-urlencode "stype_in=continuous" \
+            --data-urlencode "schema=ohlcv-1m" \
+            --data-urlencode "start=${START}Z" \
+            --data-urlencode "end=${END2}" \
+            --data-urlencode "encoding=json" \
+            -o /tmp/nq_bars_2.json -w "HTTP %{http_code}\n"
+          echo "=== 마지막 3개 봉 ==="
+          tail -c 1200 /tmp/nq_bars_2.json
+          echo
+          echo "=== 이 2차 요청을 보낸 현재 시각(UTC) ==="
+          date -u +%Y-%m-%dT%H:%M:%S.%3NZ
 
       - name: Upload raw response
         uses: actions/upload-artifact@v4
