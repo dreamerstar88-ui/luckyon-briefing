@@ -18,7 +18,7 @@
 |---|---|---|---|---|---|
 | 평일 브리핑 | `ROUTINE_PROMPT.md` | `content/<DATE>-<SESSION>.json` | `cards/<DATE>/<SESSION>/<LANG>/` | `scripts/publish-instagram.mjs` | 월~금 07:35 / 20:35 |
 | 주말 브리핑 | `ROUTINE_PROMPT_WEEKEND.md` | 〃 | 〃 | 〃 | 토 07:35 / 일 20:30 |
-| 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/reels/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` | 월~금 22:58 (11~2월 23:58 — 미 서머타임) |
+| 스토리 | `ROUTINE_PROMPT_STORY.md` | `data/reels/<STAMP>.json` | `cards/stories/<STAMP>/<LANG>/` | `scripts/stories/publish-story.mjs` | 월~금 23:01 (11~2월 00:01 — 미 서머타임) |
 | 차트 노트 | `ROUTINE_PROMPT_CHARTNOTES.md` | `content/chart-notes/<STAMP>.json` | `cards/chart-notes/<STAMP>/<LANG>/` | `scripts/chart-notes/publish-chartnotes.mjs` | 일 10:30 |
 | 릴스 | (문서 없음 · 보류) | `data/reels/<STAMP>.json` | `cards/reels/<STAMP>/<LANG>/` | `scripts/reels/publish-reel.mjs` | — |
 | 숫자로 보는 기업 공시 | `ROUTINE_PROMPT_FILINGS.md` | `content/filings/<STAMP>.json` | `cards/filings/<STAMP>/<LANG>/` | `scripts/filings/publish-filings.mjs` | 스케줄 없음 · 수동 |

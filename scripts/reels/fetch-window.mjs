@@ -157,9 +157,15 @@ async function main() {
       );
     }
 
-    // 시세 신선도 — "지금"을 담는 게 목적이라 오래된 값이면 멈춘다
+    // 시세 신선도 — "지금"을 담는 게 목적이라 오래된 값이면 멈춘다.
+    // 야후 무료 선물 1분봉은 상시 ~10분 지연되는 피드라, 컷오프를 10분으로 두면
+    // 매번 그 경계선에서 우연히 통과/실패가 갈린다(2026-08-18 확인). 13분으로 두면
+    // 이 피드의 정상적인 지연 폭에 3분의 여유가 생겨 그 코인토스가 없어진다 —
+    // 다만 이 여유 자체가 "더 신선해졌다"는 뜻은 아니고, 이 무료 소스가 항상
+    // 안고 있는 ~10분 지연을 받아들이겠다는 결정이다.
+    const STALE_CUTOFF_MIN = 13;
     const lagMin = (endSec - win[win.length - 1].t) / 60;
-    if (lagMin > 10 && !STALE_OK && !endArg) {
+    if (lagMin > STALE_CUTOFF_MIN && !STALE_OK && !endArg) {
       throw new Error(
         `${s.yahoo}: 최신 봉이 ${lagMin.toFixed(0)}분 전 것입니다. 지금 장이 열려 있지 않은 듯합니다.\n`
         + `   그래도 진행하려면 --stale-ok 를 붙이세요.`
