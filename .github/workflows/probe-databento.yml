@@ -52,14 +52,7 @@ jobs:
           echo "HTTP $HTTP1"
           cat /tmp/nq_bars_1.json
           echo
-          AVAIL_END=$(python3 -c "
-import json
-try:
-    d = json.load(open('/tmp/nq_bars_1.json'))
-    print(d.get('detail', {}).get('payload', {}).get('available_end', ''))
-except Exception:
-    print('')
-")
+          AVAIL_END=$(python3 -c "import json; d=json.load(open('/tmp/nq_bars_1.json')); print((d.get('detail') or {}).get('payload', {}).get('available_end', ''))" 2>/dev/null || echo "")
           echo "available_end 파싱 결과: $AVAIL_END"
 
           echo "=== 2차: end=available_end 로 재조회해서 실제 마지막 봉을 받는다 ==="
@@ -86,5 +79,6 @@ except Exception:
           name: databento-probe-result
           path: |
             /tmp/datasets.json
-            /tmp/nq_bars.json
+            /tmp/nq_bars_1.json
+            /tmp/nq_bars_2.json
           retention-days: 3
