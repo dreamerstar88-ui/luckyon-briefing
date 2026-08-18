@@ -23,6 +23,9 @@ jobs:
             "https://openapi.kiwoom.com" \
             "https://www.tradingview.com" \
             "https://s.tradingview.com" \
+            "https://openapi.koreainvestment.com:9443" \
+            "https://openapivts.koreainvestment.com:29443" \
+            "https://apiportal.koreainvestment.com" \
             ; do
             code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url")
             echo "$url -> HTTP $code"

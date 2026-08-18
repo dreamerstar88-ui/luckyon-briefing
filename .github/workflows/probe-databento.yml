@@ -1,0 +1,65 @@
+name: Probe Databento (NQ latency test)
+
+# 일회성 조사용. Databento Historical API로 나스닥 선물(NQ, GLBX.MDP3) 1분봉을
+# 받아와 실제 지연(latency)을 측정한다. 크레딧 소모를 최소화하기 위해
+# ① 무료 메타데이터 호출로 키 유효성만 먼저 확인하고,
+# ② 최근 90분치 1분봉만 아주 좁게 조회한다.
+# 목적을 다했으면 이 파일은 지운다.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    env:
+      DATABENTO_API_KEY: ${{ secrets.DATABENTO_API_KEY }}
+    steps:
+      - name: Check key present
+        run: |
+          if [ -z "$DATABENTO_API_KEY" ]; then
+            echo "::error::DATABENTO_API_KEY 시크릿이 비어 있습니다. 저장소 Settings > Secrets and variables > Actions 에 등록됐는지 확인하세요."
+            exit 1
+          fi
+          echo "키 길이: ${#DATABENTO_API_KEY} 자"
+
+      - name: Auth check (free metadata call)
+        run: |
+          set -e
+          echo "=== metadata.list_datasets ==="
+          curl -sS -u "${DATABENTO_API_KEY}:" \
+            "https://hist.databento.com/v0/metadata.list_datasets" \
+            -o /tmp/datasets.json -w "HTTP %{http_code}\n"
+          head -c 500 /tmp/datasets.json
+          echo
+
+      - name: Fetch recent NQ 1-min bars
+        run: |
+          set -e
+          NOW=$(date -u +%Y-%m-%dT%H:%M:%S)
+          START=$(date -u -d '90 minutes ago' +%Y-%m-%dT%H:%M:%S 2>/dev/null || date -u -v-90M +%Y-%m-%dT%H:%M:%S)
+          echo "요청 구간: $START ~ $NOW (UTC)"
+          curl -sS -u "${DATABENTO_API_KEY}:" -G \
+            "https://hist.databento.com/v0/timeseries.get_range" \
+            --data-urlencode "dataset=GLBX.MDP3" \
+            --data-urlencode "symbols=NQ.c.0" \
+            --data-urlencode "stype_in=continuous" \
+            --data-urlencode "schema=ohlcv-1m" \
+            --data-urlencode "start=${START}Z" \
+            --data-urlencode "end=${NOW}Z" \
+            --data-urlencode "encoding=json" \
+            -o /tmp/nq_bars.json -w "HTTP %{http_code}\n"
+          echo "=== 응답(마지막 2000자) ==="
+          tail -c 2000 /tmp/nq_bars.json
+          echo
+          echo "=== 현재 시각(UTC) ==="
+          date -u
+
+      - name: Upload raw response
+        uses: actions/upload-artifact@v4
+        with:
+          name: databento-probe-result
+          path: |
+            /tmp/datasets.json
+            /tmp/nq_bars.json
+          retention-days: 3
