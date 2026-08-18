@@ -31,10 +31,14 @@ export function shapeOf(sym) {
   const earlyPct = ((early - open) / open) * 100;
   const latePct = ((late - open) / open) * 100;
   const pos = (last - lo) / (hi - lo || 1);
-  // 시가 → 저점 하락폭, 저점 → 현재 반등폭. troughEarly(앞쪽 45%)만 보면
-  // 저점이 창의 뒤쪽(마지막 40%)에서 찍히고 "지금 막" 올라오는 패턴을 놓친다 —
-  // 그러면 방금 시작된 반등을 "계속 내리는 중"으로 잘못 읽는다
-  // (2026-08-18, 사용자가 렌더된 차트를 보고 지적해 발견).
+  // 시가 → 저점 하락폭, 저점 → 현재 반등폭. 창이 "개장부터 지금까지"라 매분
+  // 길이가 늘어나는데, loIdx 를 창 길이의 비율(예: 뒤쪽 40%)로 재면 같은
+  // 저점이 창이 자랄수록 점점 "앞쪽"으로 밀려나 버린다 — 방금 만든 저점이
+  // 창이 좀 지나면 더 이상 "뒤쪽"으로 안 잡혀 반등을 놓친다. 자릿수(비율)가
+  // 아니라 하락·반등의 절대 크기로만 판정해야 창 길이와 무관하게 일관된다
+  // (2026-08-18, 사용자가 두 개의 다른 길이 창에서 같은 반등을 렌더된 차트로
+  // 두 번 지적해 발견 — 처음엔 loIdx 비율 게이트를 넣었다가, 창이 더 길어진
+  // 두 번째 렌더에서 같은 저점이 그 게이트를 벗어나며 재발했다).
   const dropToLowPct = ((open - lo) / open) * 100;
   const bounceFromLowPct = ((last - lo) / lo) * 100;
 
@@ -43,9 +47,9 @@ export function shapeOf(sym) {
     rangePct: ((hi - lo) / open) * 100,
     peakedEarly: hiIdx < n * 0.45 && latePct < earlyPct - 0.05,
     troughEarly: loIdx < n * 0.45 && latePct > earlyPct + 0.05,
-    // 저점이 뒤쪽 40% 안에서 나왔고, 그 전에 눈에 보이는 하락이 있었고,
-    // 지금 그 저점에서 눈에 보이게 올라온 상태.
-    reboundingNow: loIdx >= n * 0.6 && dropToLowPct >= 0.15 && bounceFromLowPct >= 0.12,
+    // 눈에 보이는 하락이 있었고, 지금 그 저점에서 눈에 보이게 올라온 상태.
+    // 저점이 창의 어디에서 나왔는지는 안 본다 — 위 주석 참고.
+    reboundingNow: dropToLowPct >= 0.15 && bounceFromLowPct >= 0.12,
     quiet: ((hi - lo) / open) * 100 < 0.25,
     nearHigh: pos >= 0.75,
     nearLow: pos <= 0.25,
@@ -500,10 +504,11 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
     return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
   }
 
-  // "지금 막 바닥 찍고 올라오는 중"은 밤사이 흐름 서사보다 우선한다 —
+  // "저점 찍고 눈에 보이게 올라온 중"은 밤사이 흐름 서사보다 우선한다 —
   // 이 스토리의 요점은 지금 이 순간이라, 몇 시간 전 프리장 방향보다
-  // 방금 시작된 반등이 더 현재를 대표한다.
-  if (sh.reboundingNow) return out('bounceFromLow', {});
+  // 그 뒤에 일어난 반등이 더 현재를 대표한다. 반등해서 시가 위로 돌아왔으면
+  // '다 회복했다'(recovered), 아직 시가 아래면 '반등 중이지만 미완'(bounceFromLow).
+  if (sh.reboundingNow) return out(up ? 'recovered' : 'bounceFromLow', {});
 
   const ov0 = nasdaq.overnight;
 
