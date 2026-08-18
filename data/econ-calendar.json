@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-17T22:43:59Z",
+  "fetchedAt": "2026-08-18T11:36:26Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-15T22:43:59Z",
-    "to": "2026-08-31T22:43:59Z"
+    "from": "2026-08-16T11:36:26Z",
+    "to": "2026-09-01T11:36:26Z"
   },
   "events": [
     {
@@ -203,7 +203,7 @@
       "impact": "MEDIUM",
       "consensus": -68.8,
       "previous": -77.6,
-      "actual": null,
+      "actual": -61.1,
       "unit": null
     },
     {
@@ -213,7 +213,7 @@
       "impact": "MEDIUM",
       "consensus": 30,
       "previous": 26.3,
-      "actual": null,
+      "actual": 34.2,
       "unit": null
     },
     {
@@ -223,7 +223,7 @@
       "impact": "MEDIUM",
       "consensus": 25.4,
       "previous": 23.4,
-      "actual": null,
+      "actual": 31.4,
       "unit": null
     },
     {
@@ -1071,7 +1071,7 @@
       "country": "DE",
       "name": "Gross Domestic Product (QoQ)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -1081,7 +1081,7 @@
       "country": "DE",
       "name": "Gross Domestic Product (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.9,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -2193,6 +2193,156 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-08-31T23:50:00Z",
+      "country": "JP",
+      "name": "Capital Spending",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T00:00:00Z",
+      "country": "KR",
+      "name": "Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 30.39,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-09-01T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T00:30:00Z",
+      "country": "KR",
+      "name": "S&P Global Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 53.1,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T01:45:00Z",
+      "country": "CN",
+      "name": "RatingDog Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 50.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T05:00:00Z",
+      "country": "JP",
+      "name": "Consumer Confidence Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T06:00:00Z",
+      "country": "DE",
+      "name": "Retail Sales (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -1.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T06:00:00Z",
+      "country": "DE",
+      "name": "Retail Sales (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": -0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T07:55:00Z",
+      "country": "DE",
+      "name": "HCOB Manufacturing PMI",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T08:00:00Z",
+      "country": "EMU",
+      "name": "HCOB Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-01T09:00:00Z",
+      "country": "EMU",
+      "name": "Core Harmonized Index of Consumer Prices (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T09:00:00Z",
+      "country": "EMU",
+      "name": "Core Harmonized Index of Consumer Prices (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T09:00:00Z",
+      "country": "EMU",
+      "name": "Harmonized Index of Consumer Prices (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T09:00:00Z",
+      "country": "EMU",
+      "name": "Harmonized Index of Consumer Prices (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T09:00:00Z",
+      "country": "EMU",
+      "name": "Unemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.3,
       "actual": null,
       "unit": "%"
     }
