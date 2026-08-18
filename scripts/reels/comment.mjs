@@ -31,12 +31,21 @@ export function shapeOf(sym) {
   const earlyPct = ((early - open) / open) * 100;
   const latePct = ((late - open) / open) * 100;
   const pos = (last - lo) / (hi - lo || 1);
+  // 시가 → 저점 하락폭, 저점 → 현재 반등폭. troughEarly(앞쪽 45%)만 보면
+  // 저점이 창의 뒤쪽(마지막 40%)에서 찍히고 "지금 막" 올라오는 패턴을 놓친다 —
+  // 그러면 방금 시작된 반등을 "계속 내리는 중"으로 잘못 읽는다
+  // (2026-08-18, 사용자가 렌더된 차트를 보고 지적해 발견).
+  const dropToLowPct = ((open - lo) / open) * 100;
+  const bounceFromLowPct = ((last - lo) / lo) * 100;
 
   return {
     pct,
     rangePct: ((hi - lo) / open) * 100,
     peakedEarly: hiIdx < n * 0.45 && latePct < earlyPct - 0.05,
     troughEarly: loIdx < n * 0.45 && latePct > earlyPct + 0.05,
+    // 저점이 뒤쪽 40% 안에서 나왔고, 그 전에 눈에 보이는 하락이 있었고,
+    // 지금 그 저점에서 눈에 보이게 올라온 상태.
+    reboundingNow: loIdx >= n * 0.6 && dropToLowPct >= 0.15 && bounceFromLowPct >= 0.12,
     quiet: ((hi - lo) / open) * 100 < 0.25,
     nearHigh: pos >= 0.75,
     nearLow: pos <= 0.25,
@@ -490,6 +499,11 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
     const a = { ko: ctx.recentNews.title_ko, en: ctx.recentNews.title_en };
     return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
   }
+
+  // "지금 막 바닥 찍고 올라오는 중"은 밤사이 흐름 서사보다 우선한다 —
+  // 이 스토리의 요점은 지금 이 순간이라, 몇 시간 전 프리장 방향보다
+  // 방금 시작된 반등이 더 현재를 대표한다.
+  if (sh.reboundingNow) return out('bounceFromLow', {});
 
   const ov0 = nasdaq.overnight;
 
