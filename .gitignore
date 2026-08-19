@@ -4,3 +4,7 @@ package-lock.json
 .env.*
 *.env
 .secrets/
+
+# 백테스트용 시세 캐시 (fetch-prices.mjs가 매 실행마다 새로 받는다)
+data/prices/
+.frames/

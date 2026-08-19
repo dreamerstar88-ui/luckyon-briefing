@@ -8,10 +8,13 @@
     "render:ko": "node scripts/render-cards.mjs $DATE ko",
     "render:en": "node scripts/render-cards.mjs $DATE en",
     "publish:ko": "node scripts/publish-instagram.mjs $DATE ko",
-    "publish:en": "node scripts/publish-instagram.mjs $DATE en"
+    "publish:en": "node scripts/publish-instagram.mjs $DATE en",
+    "backtest:run": "node scripts/backtest/run-backtest.mjs",
+    "backtest:reel": "node scripts/backtest/render-backtest-reel.mjs"
   },
   "dependencies": {
     "ffmpeg-static": "^5.3.0",
-    "playwright": "^1.48.0"
+    "playwright": "^1.48.0",
+    "@napi-rs/canvas": "^0.1.60"
   }
 }
