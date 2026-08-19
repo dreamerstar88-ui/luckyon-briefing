@@ -31,25 +31,26 @@ export function shapeOf(sym) {
   const earlyPct = ((early - open) / open) * 100;
   const latePct = ((late - open) / open) * 100;
   const pos = (last - lo) / (hi - lo || 1);
-  // 시가 → 저점 하락폭, 저점 → 현재 반등폭. 창이 "개장부터 지금까지"라 매분
-  // 길이가 늘어나는데, loIdx 를 창 길이의 비율(예: 뒤쪽 40%)로 재면 같은
-  // 저점이 창이 자랄수록 점점 "앞쪽"으로 밀려나 버린다 — 방금 만든 저점이
-  // 창이 좀 지나면 더 이상 "뒤쪽"으로 안 잡혀 반등을 놓친다. 자릿수(비율)가
-  // 아니라 하락·반등의 절대 크기로만 판정해야 창 길이와 무관하게 일관된다
-  // (2026-08-18, 사용자가 두 개의 다른 길이 창에서 같은 반등을 렌더된 차트로
-  // 두 번 지적해 발견 — 처음엔 loIdx 비율 게이트를 넣었다가, 창이 더 길어진
-  // 두 번째 렌더에서 같은 저점이 그 게이트를 벗어나며 재발했다).
-  const dropToLowPct = ((open - lo) / open) * 100;
-  const bounceFromLowPct = ((last - lo) / lo) * 100;
+
+  const peakedEarly = hiIdx < n * 0.45 && latePct < earlyPct - 0.05;
+  const troughEarly = loIdx < n * 0.45 && latePct > earlyPct + 0.05;
 
   return {
     pct,
     rangePct: ((hi - lo) / open) * 100,
-    peakedEarly: hiIdx < n * 0.45 && latePct < earlyPct - 0.05,
-    troughEarly: loIdx < n * 0.45 && latePct > earlyPct + 0.05,
-    // 눈에 보이는 하락이 있었고, 지금 그 저점에서 눈에 보이게 올라온 상태.
-    // 저점이 창의 어디에서 나왔는지는 안 본다 — 위 주석 참고.
-    reboundingNow: dropToLowPct >= 0.15 && bounceFromLowPct >= 0.12,
+    peakedEarly,
+    troughEarly,
+    // "얼마나 되돌렸는가"를 실제 고점·저점(hi·lo, 틱 단위) 대비 최근 구간
+    // '평균'(late)으로 잰다. 극값 위치는 정확한 틱으로 잡아야 창이 길어져도
+    // 초반 1/3 평균에 고점과 그 뒤 하락이 섞여 신호가 흐려지지 않고(2026-08-19
+    // 낮, 113봉짜리 긴 창에서 이 문제로 뚜렷한 V자 회복을 놓칠 뻔했다), "지금"은
+    // 마지막 한 틱이 아니라 최근 구간 평균으로 재야 막판 한 봉의 심지 노이즈에
+    // 안 흔들린다(2026-08-19 아침, 초반 고점 이후 계속 하락 중이었는데 막판 1봉의
+    // 미세 반등만으로 '회복 중'으로 잘못 분류된 사고). peakedEarly/troughEarly가
+    // 아니면(=고점·저점이 창 앞쪽에 있지 않으면) 0 — '몇 시간 전 살짝 고점'을
+    // 지금의 하락으로 착각하지 않도록 위치 조건은 그대로 남긴다.
+    fadeFromHighPct: peakedEarly ? ((hi - late) / hi) * 100 : 0,
+    bounceFromLowPct: troughEarly ? ((late - lo) / lo) * 100 : 0,
     quiet: ((hi - lo) / open) * 100 < 0.25,
     nearHigh: pos >= 0.75,
     nearLow: pos <= 0.25,
@@ -504,11 +505,20 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
     return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
   }
 
-  // "저점 찍고 눈에 보이게 올라온 중"은 밤사이 흐름 서사보다 우선한다 —
-  // 이 스토리의 요점은 지금 이 순간이라, 몇 시간 전 프리장 방향보다
-  // 그 뒤에 일어난 반등이 더 현재를 대표한다. 반등해서 시가 위로 돌아왔으면
-  // '다 회복했다'(recovered), 아직 시가 아래면 '반등 중이지만 미완'(bounceFromLow).
-  if (sh.reboundingNow) return out(up ? 'recovered' : 'bounceFromLow', {});
+  // 세션 안에서 뚜렷한 방향 전환(초반 고점→하락, 또는 초반 저점→반등)이
+  // 있었는지를 밤사이 흐름 서사보다 먼저 본다 — 이 스토리의 요점은 지금 이
+  // 순간이라, 몇 시간 전 프리장 방향보다 그 뒤에 일어난 전환이 더 현재를
+  // 대표한다. "고점에서 얼마나 빠졌나"(fadeFromHighPct)와 "저점에서 얼마나
+  // 올라왔나"(bounceFromLowPct)를 후보로 두고 점수(되돌린 폭)가 더 큰 쪽을
+  // 쓴다 — 조건을 우선순위로 하나씩 쌓는 대신, 두 후보 중 지금 궤적에 더 잘
+  // 맞는 쪽을 고르는 방식이다. 어느 쪽도 REVERSAL 이상으로 되돌리지 못했다면
+  // "뚜렷한 전환"이라 부를 근거가 없다는 뜻이라 아래 단조 흐름 판정으로 넘어간다.
+  const REVERSAL = 0.15;
+  const { fadeFromHighPct, bounceFromLowPct } = sh;
+  if (fadeFromHighPct >= REVERSAL || bounceFromLowPct >= REVERSAL) {
+    if (fadeFromHighPct >= bounceFromLowPct) return out(down ? 'fadeFromHigh' : 'coolingOff', {});
+    return out(down ? 'bounceFromLow' : 'recovered', {});
+  }
 
   const ov0 = nasdaq.overnight;
 
@@ -542,12 +552,10 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
     if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
     if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
   }
-  if (sh.peakedEarly && down) return out('fadeFromHigh', {});
-  if (sh.troughEarly && down) return out('bounceFromLow', {});
-  if (sh.troughEarly && up) return out('recovered', {});
+  // 여기까지 왔다면 뚜렷한 방향 전환은 없었다는 뜻이다 — 지금 방향으로
+  // 쭉 온 단조 흐름이니, 세션 극값 근처인지로만 표현 세기를 가른다.
   if (down && sh.nearLow) return out('sinking', {});
   if (down) return out('drifting', {});
-  if (sh.peakedEarly && up) return out('coolingOff', {});
   if (up && sh.nearHigh) return out('climbing', {});
   return out('rising', {});
 }
