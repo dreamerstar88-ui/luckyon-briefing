@@ -1,71 +1,11 @@
 {
-  "fetchedAt": "2026-08-19T11:35:46Z",
+  "fetchedAt": "2026-08-19T22:44:45Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-17T11:35:46Z",
-    "to": "2026-09-02T11:35:46Z"
+    "from": "2026-08-17T22:44:45Z",
+    "to": "2026-09-02T22:44:45Z"
   },
   "events": [
-    {
-      "at": "2026-08-17T12:30:00Z",
-      "country": "US",
-      "name": "NY Empire State Manufacturing Index",
-      "impact": "MEDIUM",
-      "consensus": 11,
-      "previous": 15.6,
-      "actual": 20.6,
-      "unit": null
-    },
-    {
-      "at": "2026-08-17T14:00:00Z",
-      "country": "US",
-      "name": "NAHB Housing Market Index",
-      "impact": "LOW",
-      "consensus": 33,
-      "previous": 34,
-      "actual": 35,
-      "unit": null
-    },
-    {
-      "at": "2026-08-17T15:30:00Z",
-      "country": "US",
-      "name": "3-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.735,
-      "actual": 3.715,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-17T15:30:00Z",
-      "country": "US",
-      "name": "6-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.83,
-      "actual": 3.78,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-17T20:00:00Z",
-      "country": "US",
-      "name": "Net Long-Term TIC Flows",
-      "impact": "LOW",
-      "consensus": 151.4,
-      "previous": 232.7,
-      "actual": 172.7,
-      "unit": "$"
-    },
-    {
-      "at": "2026-08-17T20:00:00Z",
-      "country": "US",
-      "name": "Total Net TIC Flows",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 132.2,
-      "actual": 133.5,
-      "unit": "$"
-    },
     {
       "at": "2026-08-18T09:00:00Z",
       "country": "DE",
@@ -371,9 +311,9 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
-      "consensus": 0.2,
+      "consensus": -0.6,
       "previous": 17.422,
-      "actual": null,
+      "actual": 4.405,
       "unit": null
     },
     {
@@ -383,7 +323,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.01,
-      "actual": null,
+      "actual": -1.53,
       "unit": null
     },
     {
@@ -393,7 +333,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.968,
-      "actual": null,
+      "actual": 0.688,
       "unit": null
     },
     {
@@ -403,7 +343,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.192,
-      "actual": null,
+      "actual": -0.537,
       "unit": null
     },
     {
@@ -413,7 +353,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.163,
-      "actual": null,
+      "actual": 5.204,
       "unit": "%"
     },
     {
@@ -1161,7 +1101,7 @@
       "country": "US",
       "name": "Core Personal Consumption Expenditures (QoQ)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.4,
       "previous": 3.4,
       "actual": null,
       "unit": "%"
@@ -1201,7 +1141,7 @@
       "country": "US",
       "name": "Gross Domestic Product Annualized",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.5,
       "previous": 1.5,
       "actual": null,
       "unit": "%"
@@ -1251,7 +1191,7 @@
       "country": "US",
       "name": "Personal Consumption Expenditures Prices (QoQ)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 5.1,
       "previous": 5.1,
       "actual": null,
       "unit": "%"
@@ -1282,7 +1222,7 @@
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.405,
       "actual": null,
       "unit": null
     },
@@ -2385,6 +2325,46 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-02T12:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 44,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-02T14:00:00Z",
+      "country": "US",
+      "name": "Factory Orders (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-02T14:30:00Z",
+      "country": "US",
+      "name": "EIA Crude Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-02T18:00:00Z",
+      "country": "US",
+      "name": "Fed's Beige Book",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
