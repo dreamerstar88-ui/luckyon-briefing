@@ -212,6 +212,48 @@ am 루틴 발화 시각 07:35 기준으로 **10일 중 3일은 아직 안 올라
 
 ---
 
+## 9. 美 지수·선물·원자재·환율·코인 조회 — `UsStockInfo` 도구 소실, 대체 경로 확정 (2026-08-20)
+
+`ROUTINE_PROMPT.md` A절은 나스닥·S&P·코스피·VIX·원달러·금·WTI·비트코인 조회를 **PlayMCP
+`UsStockInfo-get_historical_stock_prices`** 하나로 지정하는데, **2026-08-20 am 세션 시점에
+이 도구가 세션에 로드된 PlayMCP 도구 목록에 없었다** (`ToolSearch` 로 "UsStockInfo"·
+"get_historical_stock_prices"·"PlayMCP stock" 등 여러 키워드로 찾아도 안 잡힘 — 배포에서
+빠졌거나 이름이 바뀐 것으로 보이나 원인은 미확인). 이 세션은 아래 대체 경로로 전량 대체해
+문제없이 완료했다 — **다음 세션은 `UsStockInfo` 를 먼저 찾아보되, 없으면 바로 이 경로로 넘어가고
+새로 헤매지 않는다.**
+
+- **미 지수 종가(나스닥 종합·S&P500·VIX)**: `mcp__FMP__indexes`, `endpoint: "index-quote-short"`,
+  `symbol: "^IXIC"`/`"^GSPC"`/`"^VIX"` — 정상 동작. 전일 대비 delta 는 `index-historical-price-eod-light`
+  로 `from_date`/`to_date` 지정해 직접 계산한다(`change` 필드도 오지만 검산 겸 둘 다 본다).
+  **단, 코스피(`^KS11`)는 `index-quote-short` 가 "ACCESS DENIED: 요금제 상향 필요"를 반환한다**
+  (2026-08-20 확인) — 이 심볼은 FMP 로 못 받는다.
+- **코스피·미 선물(NQ=F·ES=F)·상품(GC=F·CL=F)·달러인덱스(DX-Y.NYB)·원달러(KRW=X)·비트코인(BTC-USD)**:
+  Yahoo chart API 를 세션에서 **직접 curl** 한다 — §2 표가 이미 "세션 5/5 성공"으로 확인해 둔
+  경로를 그대로 쓰면 된다. **`period=` 파라미터가 아니라 `range=` 를 써야 한다** — `period=5d` 를
+  주면 하루치(가장 최근 값)만 오고 과거 종가가 비어 delta 계산이 안 된다(2026-08-20 에 실제로
+  이 실수로 SMH 등 섹터 ETF 5일치가 하루치로 잘려 나왔다). 반드시 이렇게 호출한다:
+  ```
+  curl -s -A "Mozilla/5.0" "https://query1.finance.yahoo.com/v8/finance/chart/<SYM>?range=5d&interval=1d"
+  ```
+  `meta.regularMarketPrice` 가 최신값, `indicators.quote[0].close` 배열(당일 마지막 값 `null`
+  주의, `FORMAT_BRIEFING.md`·`ROUTINE_PROMPT.md` 기존 경고와 동일)에서 전일 종가를 골라 delta 를
+  직접 계산한다. `meta.chartPreviousClose` 는 기존 경고대로 신뢰하지 않는다(원/달러에서도
+  1,412.26 같은 오답이 재현됨, 2026-08-20).
+- **美 섹터 ETF(SMH·XLK·XLC·XLF·XLY·XLV·XLI·XLE·XLP·XLB·XLU·XLRE) 5일 시계열**: 위와 같은 Yahoo
+  `range=5d` 호출로 전부 정상 수신(2026-08-20, 12개 전량 확인). `ROUTINE_PROMPT.md` §B 의 섹터
+  ETF 표는 그대로 유효하다 — 조회 도구만 이걸로 바꾸면 된다.
+- **`mcp__FMP__forex`·`mcp__FMP__commodity` 는 이 계정 요금제에서 대부분 막힌다.** `forex-quote`
+  (USDKRW·DXY 등)는 호출 즉시 "ACCESS DENIED: 요금제 상향 필요". `commodity` 의
+  `commodities-quote` 는 **`GCUSD`(금)는 한 번 성공**했으나 같은 세션의 `CLUSD`(WTI)는
+  거부됐다 — 심볼별로 다르게 막히는지, 일시적 제한인지 불확실하니 **이 도구들에 시간 쓰지 말고
+  바로 위 Yahoo 경로로 간다.**
+- **Fear & Greed**: 여전히 API 없음. WebSearch 로 여러 매체를 대조하면 같은 날짜에도 수치가
+  갈린다(2026-08-20 에 54~59 사이로 소스마다 달랐다) — 가장 반복해 언급되는 값을 쓰고,
+  CNN 공식 페이지(`cnn.com/markets/fear-and-greed`)는 이 환경에서 `EGRESS_BLOCKED`로
+  WebFetch 가 막힌다(직접 조회 시도할 필요 없음).
+
+---
+
 ## 이 문서를 고칠 때
 
 - **측정값에는 날짜를 붙인다.** 소스 정책은 바뀐다. 날짜 없는 "안 된다"는 반년 뒤에 쓸모가 없다.
