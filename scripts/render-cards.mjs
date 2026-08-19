@@ -16,6 +16,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -34,7 +35,7 @@ if (session === 'sun') {
   process.exit(0);
 }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const outDir = session

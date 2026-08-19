@@ -15,6 +15,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -24,7 +25,7 @@ if (!stamp) {
 }
 if (!['ko', 'en'].includes(lang)) { console.error(`lang 은 ko|en 중 하나여야 합니다: ${lang}`); process.exit(1); }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const dataPath = path.join(root, 'content', 'chart-notes', `${stamp}.json`);
 if (!fs.existsSync(dataPath)) { console.error(`❌ ${path.relative(root, dataPath)} 이 없습니다.`); process.exit(1); }
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));

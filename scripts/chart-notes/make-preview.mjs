@@ -12,11 +12,12 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const stamp = process.argv[2];
 if (!stamp) { console.error('Usage: node scripts/chart-notes/make-preview.mjs <stamp>'); process.exit(1); }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const dataPath = path.join(root, 'content', 'chart-notes', `${stamp}.json`);
 if (!fs.existsSync(dataPath)) { console.error(`❌ content/chart-notes/${stamp}.json 이 없습니다.`); process.exit(1); }
 const d = JSON.parse(fs.readFileSync(dataPath, 'utf8'));

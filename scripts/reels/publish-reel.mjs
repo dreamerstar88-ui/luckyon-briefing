@@ -12,13 +12,14 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const argv = process.argv.slice(2);
 const DRY = argv.includes('--dry-run');
 const positional = argv.filter((a) => !a.startsWith('--'));
 const lang = positional[1] || 'ko';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const dataDir = path.join(root, 'data', 'reels');
 
 let stamp = positional[0];

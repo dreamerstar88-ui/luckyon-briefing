@@ -28,10 +28,11 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', `${date}-sat.json`), 'utf8'));
 
 // 스키마를 여기서 막는다. 2026-08-08 개편 전 sat 콘텐츠에는 cover 가 없어 그대로 태우면
