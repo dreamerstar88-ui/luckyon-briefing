@@ -28,7 +28,7 @@
     {"label": "VIX", "value": "15.18", "delta": "▲1.95%", "dir": "up", "note_ko": "美 정규장 개장 전 · 여전히 안정권", "note_en": "Ahead of US open · still in calm range"},
     {"label": "Fear & Greed", "value": "56", "delta": "-", "dir": "flat", "note_ko": "美 개장 전 · 전일 마감 값 유지 · Greed 구간", "note_en": "Ahead of US open · holding at prior close · Greed zone"},
     {"label": "US 10Y", "value": "4.65%", "delta": "-", "dir": "flat", "note_ko": "8/19 확정 종가 유지 · 재무부 바이백 확대 여파", "note_en": "Holding at 8/19 close · after Treasury's expanded buyback"},
-    {"label": "USD/KRW", "value": "1,392.2", "value_sub": "· DXY 98.7", "delta": "▼1.51%", "dir": "down", "note_ko": "5거래일 연속 하락 · 11개월래 최저 지속", "note_en": "5th straight decline · extends 11-month low"},
+    {"label": "USD/KRW", "value": "1,392.2", "value_sub": "· DXY 98.7", "delta": "▼0.40%", "dir": "down", "note_ko": "5거래일 연속 하락 · 11개월래 최저 지속", "note_en": "5th straight decline · extends 11-month low"},
     {"label": "Gold", "value": "$4,541.4", "delta": "▲1.16%", "dir": "up", "note_ko": "금리 진정에 강세", "note_en": "Firms as yields cool"},
     {"label": "WTI", "value": "$87.04", "delta": "▲1.41%", "dir": "up", "note_ko": "중동 리스크 프리미엄 지속", "note_en": "Middle East risk premium persists"},
     {"label": "Bitcoin", "value": "$72,067.3", "delta": "▲4.04%", "dir": "up", "note_ko": "금리 진정에 위험자산 전반 강세", "note_en": "Rallies with risk assets as yields ease"}
@@ -54,11 +54,11 @@
         "label_ko": "투자자별 순매수 (유가증권시장)",
         "label_en": "Net Buy/Sell by Investor (KOSPI)",
         "unit_ko": "조원",
-        "unit_en": "KRW tn",
+        "unit_en": " tn",
         "rows": [
-          {"label_ko": "외국인", "label_en": "Foreign", "value": "+1.7"},
-          {"label_ko": "개인", "label_en": "Individual", "value": "-2.3"},
-          {"label_ko": "기관", "label_en": "Institutional", "value": "-0.5"}
+          {"label_ko": "외국인", "label_en": "Foreign", "value": 1.7},
+          {"label_ko": "개인", "label_en": "Individual", "value": -2.3},
+          {"label_ko": "기관", "label_en": "Institutional", "value": -0.5}
         ]
       },
       "note_ko": "코스피200선물 급등에 프로그램 매수 사이드카 발동 · 이틀 누적 코스피 -0.25%",
@@ -95,11 +95,11 @@
       "color": "#3987e5",
       "type": "rank",
       "rows": [
-        {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "9.11조", "pct": 32.5},
-        {"name_ko": "삼성전자", "name_en": "Samsung Elec.", "value": "6.96조", "pct": 24.8},
-        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mech.", "value": "1.06조", "pct": 3.8},
-        {"name_ko": "SK스퀘어", "name_en": "SK Square", "value": "0.93조", "pct": 3.3},
-        {"name_ko": "삼성전자우", "name_en": "Samsung Elec. Pfd", "value": "0.70조", "pct": 2.5}
+        {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "₩9.11T", "pct": 12.73},
+        {"name_ko": "삼성전자", "name_en": "Samsung Elec.", "value": "₩6.96T", "pct": 9.49},
+        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mech.", "value": "₩1.06T", "pct": 0.65},
+        {"name_ko": "SK스퀘어", "name_en": "SK Square", "value": "₩0.93T", "pct": 11.85},
+        {"name_ko": "삼성전자우", "name_en": "Samsung Elec. Pfd", "value": "₩0.70T", "pct": 10.07}
       ],
       "share": {
         "label_ko": "상위 종목 거래대금 비중",
@@ -122,25 +122,25 @@
           "headline_ko": "中, 바이트댄스·텐센트에 엔비디아 H200 각 1만개 반입 허용",
           "headline_en": "China Lets ByteDance, Tencent Bring In 10,000 Nvidia H200s Each",
           "body_ko": "파이낸셜타임스에 따르면 중국 당국이 최근 수주간 바이트댄스·텐센트에 각각 약 1만 개의 H200 칩 반입을 허용했다. 앞서 美 정부가 5월 승인한 최대 10만 개엔 크게 못 미치는 초기 물량으로, 한국 HBM 수요 회복 기대가 나온다.",
-          "body_en": "The Financial Times reports China allowed ByteDance and Tencent to bring in roughly 10,000 H200 chips each over recent weeks — a fraction of the up-to-100,000 the US approved in May. The move has raised hopes for a rebound in Korean HBM demand.",
+          "body_en": "China allowed ByteDance and Tencent roughly 10,000 H200 chips each, well below the US-approved 100,000 — raising hopes for a Korean HBM rebound.",
           "src": "Financial Times",
           "time": "8/19"
         },
         {
-          "headline_ko": "S&P, SK하이닉스 신용등급 'A-'로 상향",
-          "headline_en": "S&P Upgrades SK Hynix to 'A-'",
-          "body_ko": "S&P는 6대 하이퍼스케일러의 설비투자 확대를 근거로 메모리 슈퍼사이클이 2028년까지 이어질 것으로 보고 SK하이닉스 신용등급을 상향했다. 다만 AI 데이터센터 투자 둔화와 공격적 재무정책 전환은 하방 리스크로 짚었다.",
-          "body_en": "S&P upgraded SK Hynix, citing a memory supercycle likely to run through 2028 on the back of expanding capex from the six largest hyperscalers. It flagged a slowdown in AI datacenter spending and a shift to aggressive financial policy as downside risks.",
-          "src": "S&P Global",
+          "headline_ko": "국내 벤처투자 역대 최대 8.9조원 — AI·반도체가 견인",
+          "headline_en": "Korea's VC Investment Hits Record ₩8.9tn, Led by AI and Chips",
+          "body_ko": "올해 상반기 국내 신규 벤처투자가 8조 8,676억원으로 전년 동기 대비 54.3% 늘며 역대 최대를 기록했다. AI솔루션·AI반도체·휴머노이드 등 딥테크 분야에 1,000억원 이상 대형 투자가 몰린 영향으로, 관련 스타트업의 채용도 늘고 있다.",
+          "body_en": "Korea's H1 venture investment hit a record ₩8.87tn, up 54.3% YoY, driven by AI and chip megadeals.",
+          "src": "Sedaily",
           "time": "8/20"
         },
         {
-          "headline_ko": "D램 급등세 진정 속 낸드 병목 심화",
-          "headline_en": "As DRAM Cools, NAND Bottleneck Deepens",
-          "body_ko": "AI 데이터센터용 기업용 SSD 수요가 급증하며 D램 대신 낸드플래시 공급이 빠듯해지고 있다. 中 YMTC는 이 틈을 타 범용 낸드 시장 공략을 강화하는 중이다.",
-          "body_en": "Surging demand for enterprise SSDs in AI datacenters is tightening NAND flash supply even as DRAM's rally cools. China's YMTC is pushing harder into the commodity NAND market to capitalize on the gap.",
-          "src": "국내언론 종합",
-          "time": "8/19~20"
+          "headline_ko": "빅테크 1.9조달러 구매약정, 삼성·SK 장기공급계약 뒷받침",
+          "headline_en": "Big Tech's $1.9tn Commitments Back Samsung, SK Hynix Deals",
+          "body_ko": "빅테크들이 향후 집행할 구매약정을 대규모로 쌓아두면서 삼성전자·SK하이닉스의 메모리 장기공급계약(LTA) 체결을 뒷받침하고 있다는 분석이 나왔다. AI 투자가 끝나지 않았다는 신호로 해석된다.",
+          "body_en": "Big Tech's purchase commitments are underpinning Samsung and SK Hynix's long-term supply deals, analysts say.",
+          "src": "Yonhap Infomax",
+          "time": "8/20"
         }
       ]
     },
@@ -151,33 +151,33 @@
       "items": [
         {
           "headline_ko": "삼성전자, 100조원대 자사주 소각 검토설",
-          "headline_en": "Samsung Elec. Reportedly Weighing a ₩100tn+ Buyback",
-          "body_ko": "SK하이닉스가 40조원 자사주 소각을 발표한 지 하루 만에, 삼성전자도 100조원대 규모의 자사주 소각을 검토 중이라는 보도가 나왔다. 두 회사 합산 주주환원 규모가 최대 300조원에 이를 수 있다는 전망도 나오지만, 삼성전자는 아직 공식 확인하지 않았다.",
-          "body_en": "A day after SK Hynix announced a ₩40tn buyback, reports say Samsung Electronics is weighing a buyback of over ₩100tn. Some analysts project the two firms' combined shareholder returns could reach ₩300tn, though Samsung has not officially confirmed the plan.",
-          "src": "아주경제 등 국내언론",
+          "headline_en": "Samsung Weighing ₩100tn+ Buyback",
+          "body_ko": "SK하이닉스 40조원 소각 다음 날, 삼성전자도 100조원대 소각 검토설이 나왔다.",
+          "body_en": "A day after SK Hynix's ₩40tn buyback, Samsung is reportedly weighing one over ₩100tn.",
+          "src": "Ajunews",
           "time": "8/20"
         },
         {
           "headline_ko": "원/달러 환율, 5거래일 연속 하락",
           "headline_en": "Won Falls for a 5th Straight Session",
-          "body_ko": "원/달러 환율이 1,390원대로 마감하며 어제 뚫은 1,400원선 아래에서 추가로 낮아졌다. SK하이닉스發 환전 기대와 미 국채금리 진정에 따른 달러 약세가 배경으로 꼽힌다.",
-          "body_en": "The won-dollar rate closed in the 1,390s, extending its move below the 1,400 line it broke yesterday. Expectations of SK Hynix-related dollar conversion and broad dollar weakness as Treasury yields cool are cited as drivers.",
-          "src": "국내언론 종합",
+          "body_ko": "원/달러 환율이 1,390원대로 마감하며 5거래일 연속 하락했다.",
+          "body_en": "The won-dollar rate closed in the 1,390s, falling for a 5th straight session.",
+          "src": "SeoulFN",
           "time": "8/20"
         },
         {
           "headline_ko": "아시아 증시 동반 반등",
           "headline_en": "Asian Markets Rally Together",
-          "body_ko": "미 국채금리 진정과 한국 반도체 급등 훈풍에 아시아 증시가 일제히 올랐다. 닛케이 +1.36%(6.6만엔대), 토픽스 +1.18%, 상하이종합 +0.24%(3,903.72), 항셍 +0.80%(25,698.49)로 마감했다.",
-          "body_en": "Asian markets rallied together on cooling US Treasury yields and Korea's semiconductor-led surge. Nikkei +1.36% (in the 66,000s), Topix +1.18%, Shanghai Composite +0.24% (3,903.72), and Hang Seng +0.80% (25,698.49) at the close.",
-          "src": "국내언론 종합",
-          "time": "8/20 마감"
+          "body_ko": "아시아 증시가 일제히 올랐다 — 닛케이 +1.36%, 상하이 +0.24%, 항셍 +0.80%.",
+          "body_en": "Asian markets rallied together — Nikkei +1.36%, Shanghai +0.24%, Hang Seng +0.80%.",
+          "src": "Yonhap Infomax",
+          "time": "8/20"
         },
         {
           "headline_ko": "DART 공시 — 하림지주·롯데 계열",
           "headline_en": "DART Filings — Harim Holdings, Lotte",
-          "body_ko": "하림지주가 팬오션·팜스코 지분에 대한 주식등의대량보유상황보고서를 제출했고, 롯데지주·롯데케미칼은 현금배당 결정을 공시했다.",
-          "body_en": "Harim Holdings filed major-shareholding reports on its stakes in Pan Ocean and Farmsco, while Lotte Corp. and Lotte Chemical disclosed cash dividend decisions.",
+          "body_ko": "하림지주 대량보유 신고, 롯데지주·롯데케미칼 배당 결정 공시.",
+          "body_en": "Harim Holdings filed major-shareholding reports; Lotte disclosed dividends.",
           "src": "DART",
           "time": "8/20"
         }
@@ -197,10 +197,9 @@
     ]
   },
   "schedule": [
-    {"time": "21:30", "title_ko": "美 신규 실업수당청구", "title_en": "US Initial Jobless Claims", "detail_ko": "예상 21.0만 명 · 이전 20.9만 명", "detail_en": "Consensus 210K · Prior 209K", "importance": "mid"},
-    {"time": "21:30", "title_ko": "美 필라델피아 연은 제조업지수", "title_en": "US Philadelphia Fed Manufacturing Survey", "detail_ko": "예상 25.0 · 이전 41.4", "detail_en": "Consensus 25.0 · Prior 41.4", "importance": "mid"},
-    {"time": "00:10", "title_ko": "무살렘 총재 발언", "title_en": "Fed's Musalem Speaks", "detail_ko": "세인트루이스 연은(매파·투표권 X)", "detail_en": "St. Louis Fed (hawkish · non-voter)", "importance": "mid"},
-    {"time": "04:30 · 07:30", "title_ko": "슬레이연 위원 발언", "title_en": "ECB's Sleijpen Speaks", "detail_ko": "네덜란드 중앙은행 총재(매파 성향) · 두 차례 예정", "detail_en": "Dutch central bank president (hawkish-leaning) · two appearances", "importance": "mid"},
+    {"time": "21:30", "title_ko": "美 실업수당청구 · 필라델피아 연은지수", "title_en": "US Jobless Claims & Philly Fed", "detail_ko": "실업수당 예상 21.0만·이전 20.9만 · 필라델피아 예상 25.0·이전 41.4", "detail_en": "Claims cons 210K/prior 209K · Philly Fed cons 25.0/prior 41.4", "importance": "mid"},
+    {"time": "21:30 · 00:10", "title_ko": "美 연준 인사 발언", "title_en": "Fed Speakers", "detail_ko": "데일리(비둘기파) · 무살렘(매파) · 둘 다 투표권 X", "detail_en": "Daly (dovish) · Musalem (hawkish) · both non-voters", "importance": "mid"},
+    {"time": "04:30 · 07:30", "title_ko": "슬레이펀 위원 발언", "title_en": "ECB's Sleijpen Speaks", "detail_ko": "네덜란드 중앙은행 총재(매파 성향)", "detail_en": "Dutch central bank president (hawkish-leaning)", "importance": "mid"},
     {"time": "06:00", "title_ko": "韓 7월 생산자물가(PPI)", "title_en": "Korea Producer Price Index (Jul)", "detail_ko": "이전 전월비 0.0% · 전년비 8.6%", "detail_en": "Prior MoM 0.0% · YoY 8.6%", "importance": "mid"},
     {"time": "08:30", "title_ko": "日 7월 전국 소비자물가(CPI)", "title_en": "Japan National CPI (Jul)", "detail_ko": "근원 예상 +1.8%(전년비) · 이전 근원 +1.6%", "detail_en": "Core consensus +1.8% YoY · Prior core +1.6%", "importance": "mid"}
   ],
