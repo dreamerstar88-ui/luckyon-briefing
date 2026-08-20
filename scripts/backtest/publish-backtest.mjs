@@ -48,9 +48,21 @@ const VER = process.env.GRAPH_VERSION || 'v21.0'
 const BASE = `https://graph.instagram.com/${VER}`
 
 const relDir = `cards/backtest/${stamp}/${lang}`
-const localMp4 = path.join(root, ...relDir.split('/'), 'reel.mp4')
-const localCover = path.join(root, ...relDir.split('/'), 'cover.png')
-const captionFile = path.join(root, ...relDir.split('/'), 'caption.txt')
+const absDir = path.join(root, ...relDir.split('/'))
+
+// 파일 이름에 티커가 붙는다 (reel_qqq_qld_tqqq.mp4). 예전 이름(reel.mp4)도 받아준다.
+function pick(prefix, ext, legacy) {
+  if (!fs.existsSync(absDir)) return path.join(absDir, legacy)
+  const hit = fs
+    .readdirSync(absDir)
+    .filter((f) => f.startsWith(prefix) && f.endsWith(ext))
+    .sort()
+  return path.join(absDir, hit[0] ?? legacy)
+}
+
+const localMp4 = pick('reel', '.mp4', 'reel.mp4')
+const localCover = pick('cover', '.png', 'cover.png')
+const captionFile = path.join(absDir, 'caption.txt')
 
 for (const [label, p] of [
   ['영상', localMp4],
@@ -93,8 +105,8 @@ if (problems.length) {
   process.exit(1)
 }
 
-const videoUrl = `${PAGES}/${relDir}/reel.mp4`
-const coverUrl = `${PAGES}/${relDir}/cover.png`
+const videoUrl = `${PAGES}/${relDir}/${path.basename(localMp4)}`
+const coverUrl = `${PAGES}/${relDir}/${path.basename(localCover)}`
 
 async function api(pathPart, params) {
   const res = await fetch(new URL(`${BASE}/${pathPart}`), {
