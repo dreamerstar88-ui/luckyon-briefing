@@ -1,41 +1,11 @@
 {
-  "fetchedAt": "2026-08-19T22:44:45Z",
+  "fetchedAt": "2026-08-20T11:37:32Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-17T22:44:45Z",
-    "to": "2026-09-02T22:44:45Z"
+    "from": "2026-08-18T11:37:32Z",
+    "to": "2026-09-03T11:37:32Z"
   },
   "events": [
-    {
-      "at": "2026-08-18T09:00:00Z",
-      "country": "DE",
-      "name": "ZEW Survey – Current Situation",
-      "impact": "MEDIUM",
-      "consensus": -68.8,
-      "previous": -77.6,
-      "actual": -61.1,
-      "unit": null
-    },
-    {
-      "at": "2026-08-18T09:00:00Z",
-      "country": "DE",
-      "name": "ZEW Survey – Economic Sentiment",
-      "impact": "MEDIUM",
-      "consensus": 30,
-      "previous": 26.3,
-      "actual": 34.2,
-      "unit": null
-    },
-    {
-      "at": "2026-08-18T09:00:00Z",
-      "country": "EMU",
-      "name": "ZEW Survey – Economic Sentiment",
-      "impact": "MEDIUM",
-      "consensus": 25.4,
-      "previous": 23.4,
-      "actual": 31.4,
-      "unit": null
-    },
     {
       "at": "2026-08-18T11:45:00Z",
       "country": "EMU",
@@ -373,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": -881.9,
-      "actual": null,
+      "actual": -686,
       "unit": "¥"
     },
     {
@@ -383,7 +353,7 @@
       "impact": "MEDIUM",
       "consensus": 19.9,
       "previous": 19.3,
-      "actual": null,
+      "actual": 23.2,
       "unit": "%"
     },
     {
@@ -393,7 +363,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1629.4,
-      "actual": null,
+      "actual": 1135.1,
       "unit": "¥"
     },
     {
@@ -403,7 +373,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -368.5,
-      "actual": null,
+      "actual": 621.2,
       "unit": "¥"
     },
     {
@@ -413,7 +383,7 @@
       "impact": "MEDIUM",
       "consensus": 26.5,
       "previous": 25.4,
-      "actual": null,
+      "actual": 27.8,
       "unit": "%"
     },
     {
@@ -423,7 +393,7 @@
       "impact": "MEDIUM",
       "consensus": -680,
       "previous": -406.9,
-      "actual": null,
+      "actual": -634.5,
       "unit": "¥"
     },
     {
@@ -433,7 +403,7 @@
       "impact": "MEDIUM",
       "consensus": 3,
       "previous": 3,
-      "actual": null,
+      "actual": 3,
       "unit": "%"
     },
     {
@@ -443,7 +413,7 @@
       "impact": "MEDIUM",
       "consensus": 0.7,
       "previous": -0.3,
-      "actual": null,
+      "actual": 1.1,
       "unit": "%"
     },
     {
@@ -453,7 +423,7 @@
       "impact": "MEDIUM",
       "consensus": 2.7,
       "previous": 1.8,
-      "actual": null,
+      "actual": 3,
       "unit": "%"
     },
     {
@@ -463,7 +433,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.4,
-      "actual": null,
+      "actual": -1.3,
       "unit": "%"
     },
     {
@@ -473,7 +443,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.2,
-      "actual": null,
+      "actual": -0.7,
       "unit": "%"
     },
     {
@@ -493,6 +463,16 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.777,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-20T12:30:00Z",
+      "country": "US",
+      "name": "Fed's Daly speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -1227,6 +1207,36 @@
       "unit": null
     },
     {
+      "at": "2026-08-26T14:30:00Z",
+      "country": "US",
+      "name": "EIA Distillate Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -1.53,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-26T14:30:00Z",
+      "country": "US",
+      "name": "EIA Gasoline Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.688,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-26T14:30:00Z",
+      "country": "US",
+      "name": "EIA Heating Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.537,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-26T17:00:00Z",
       "country": "US",
       "name": "5-Year Note Auction",
@@ -1242,7 +1252,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1135.1,
       "actual": null,
       "unit": "¥"
     },
@@ -1252,7 +1262,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 621.2,
       "actual": null,
       "unit": "¥"
     },
@@ -1583,6 +1593,16 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 51,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T14:00:00Z",
+      "country": "US",
+      "name": "Nonfarm Payrolls Benchmark Revision",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -2357,12 +2377,142 @@
       "unit": null
     },
     {
+      "at": "2026-09-02T14:30:00Z",
+      "country": "US",
+      "name": "EIA Distillate Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-02T14:30:00Z",
+      "country": "US",
+      "name": "EIA Gasoline Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-02T14:30:00Z",
+      "country": "US",
+      "name": "EIA Heating Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-09-02T18:00:00Z",
       "country": "US",
       "name": "Fed's Beige Book",
       "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-02T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-02T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-03T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Services PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T01:45:00Z",
+      "country": "CN",
+      "name": "RatingDog Services PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 50.4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T03:35:00Z",
+      "country": "JP",
+      "name": "10-y Bond Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.84,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-03T07:55:00Z",
+      "country": "DE",
+      "name": "HCOB Composite PMI",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T07:55:00Z",
+      "country": "DE",
+      "name": "HCOB Services PMI",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T08:00:00Z",
+      "country": "EMU",
+      "name": "HCOB Composite PMI",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T08:00:00Z",
+      "country": "EMU",
+      "name": "HCOB Services PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-03T11:30:00Z",
+      "country": "US",
+      "name": "Challenger Job Cuts",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 33.429,
       "actual": null,
       "unit": null
     }
