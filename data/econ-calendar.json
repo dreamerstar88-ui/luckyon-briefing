@@ -1,71 +1,11 @@
 {
-  "fetchedAt": "2026-08-21T11:36:42Z",
+  "fetchedAt": "2026-08-21T22:44:24Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-19T11:36:42Z",
-    "to": "2026-09-04T11:36:42Z"
+    "from": "2026-08-19T22:44:24Z",
+    "to": "2026-09-04T22:44:24Z"
   },
   "events": [
-    {
-      "at": "2026-08-19T14:30:00Z",
-      "country": "US",
-      "name": "EIA Crude Oil Stocks Change",
-      "impact": "LOW",
-      "consensus": -0.6,
-      "previous": 17.422,
-      "actual": 4.405,
-      "unit": null
-    },
-    {
-      "at": "2026-08-19T14:30:00Z",
-      "country": "US",
-      "name": "EIA Distillate Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -0.01,
-      "actual": -1.53,
-      "unit": null
-    },
-    {
-      "at": "2026-08-19T14:30:00Z",
-      "country": "US",
-      "name": "EIA Gasoline Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -0.968,
-      "actual": 0.688,
-      "unit": null
-    },
-    {
-      "at": "2026-08-19T14:30:00Z",
-      "country": "US",
-      "name": "EIA Heating Oil Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 0.192,
-      "actual": -0.537,
-      "unit": null
-    },
-    {
-      "at": "2026-08-19T17:00:00Z",
-      "country": "US",
-      "name": "20-Year Bond Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 5.163,
-      "actual": 5.204,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-19T18:00:00Z",
-      "country": "US",
-      "name": "FOMC Minutes",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-19T23:50:00Z",
       "country": "JP",
@@ -453,7 +393,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 54.5,
-      "actual": null,
+      "actual": 56,
       "unit": null
     },
     {
@@ -463,7 +403,7 @@
       "impact": "HIGH",
       "consensus": 53.9,
       "previous": 53.9,
-      "actual": null,
+      "actual": 53.2,
       "unit": null
     },
     {
@@ -473,7 +413,7 @@
       "impact": "HIGH",
       "consensus": 54,
       "previous": 54.6,
-      "actual": null,
+      "actual": 56.8,
       "unit": null
     },
     {
@@ -483,7 +423,7 @@
       "impact": "MEDIUM",
       "consensus": -16.3,
       "previous": -15.9,
-      "actual": null,
+      "actual": -15.5,
       "unit": null
     },
     {
@@ -491,9 +431,9 @@
       "country": "US",
       "name": "Baker Hughes US Oil Rig Count",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 456,
       "previous": 455,
-      "actual": null,
+      "actual": 452,
       "unit": null
     },
     {
@@ -503,7 +443,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -60,
-      "actual": null,
+      "actual": -59.1,
       "unit": "€"
     },
     {
@@ -513,7 +453,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -42.1,
-      "actual": null,
+      "actual": -52.9,
       "unit": "¥"
     },
     {
@@ -523,7 +463,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 217.9,
-      "actual": null,
+      "actual": 222.2,
       "unit": "$"
     },
     {
@@ -533,7 +473,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 99.2,
-      "actual": null,
+      "actual": 122.1,
       "unit": null
     },
     {
@@ -543,7 +483,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 11.3,
-      "actual": null,
+      "actual": -10.6,
       "unit": "$"
     },
     {
@@ -631,7 +571,7 @@
       "country": "DE",
       "name": "IFO – Business Climate",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 87.2,
       "previous": 86.6,
       "actual": null,
       "unit": null
@@ -641,7 +581,7 @@
       "country": "DE",
       "name": "IFO – Current Assessment",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 87,
       "previous": 86.5,
       "actual": null,
       "unit": null
@@ -651,7 +591,7 @@
       "country": "DE",
       "name": "IFO – Expectations",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 87.5,
       "previous": 86.7,
       "actual": null,
       "unit": null
@@ -681,7 +621,7 @@
       "country": "US",
       "name": "Housing Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": 0.3,
       "actual": null,
       "unit": "%"
@@ -691,7 +631,7 @@
       "country": "US",
       "name": "S&P/Case-Shiller Home Price Indices (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.7,
       "previous": 1.6,
       "actual": null,
       "unit": "%"
@@ -731,7 +671,7 @@
       "country": "US",
       "name": "Richmond Fed Manufacturing Index",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 7,
       "previous": 5,
       "actual": null,
       "unit": null
@@ -775,6 +715,16 @@
       "previous": 3.2,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-26T10:10:00Z",
+      "country": "EMU",
+      "name": "ECB's Cipollone speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-26T11:00:00Z",
@@ -1021,7 +971,7 @@
       "country": "DE",
       "name": "GfK Consumer Confidence Survey",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": -29.5,
       "previous": -29.6,
       "actual": null,
       "unit": null
@@ -1041,7 +991,7 @@
       "country": "EMU",
       "name": "M3 Money Supply (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 3.3,
       "previous": 3.3,
       "actual": null,
       "unit": "%"
@@ -1051,7 +1001,7 @@
       "country": "EMU",
       "name": "Private Loans (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 2.9,
       "previous": 3,
       "actual": null,
       "unit": "%"
@@ -1091,7 +1041,7 @@
       "country": "US",
       "name": "Goods Trade Balance",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -99,
       "previous": -102.1,
       "actual": null,
       "unit": "$"
@@ -1101,7 +1051,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 209,
       "previous": 206,
       "actual": null,
       "unit": null
@@ -1121,7 +1071,7 @@
       "country": "US",
       "name": "Wholesale Inventories",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.1,
       "previous": 0.2,
       "actual": null,
       "unit": "%"
@@ -1171,7 +1121,7 @@
       "country": "JP",
       "name": "Jobs / Applicants Ratio",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.19,
       "previous": 1.18,
       "actual": null,
       "unit": null
@@ -1201,7 +1151,7 @@
       "country": "JP",
       "name": "Tokyo CPI ex Fresh Food (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.8,
       "previous": 1.9,
       "actual": null,
       "unit": "%"
@@ -1211,7 +1161,7 @@
       "country": "JP",
       "name": "Unemployment Rate",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 2.5,
       "previous": 2.5,
       "actual": null,
       "unit": "%"
@@ -1231,7 +1181,7 @@
       "country": "DE",
       "name": "Unemployment Change",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 8,
       "previous": 6,
       "actual": null,
       "unit": null
@@ -1241,7 +1191,7 @@
       "country": "DE",
       "name": "Unemployment Rate s.a.",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 6.4,
       "previous": 6.4,
       "actual": null,
       "unit": "%"
@@ -1261,8 +1211,8 @@
       "country": "EMU",
       "name": "Consumer Confidence",
       "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
+      "consensus": -16.3,
+      "previous": -15.5,
       "actual": null,
       "unit": null
     },
@@ -1271,7 +1221,7 @@
       "country": "EMU",
       "name": "Economic Sentiment Indicator",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 97.5,
       "previous": 96.9,
       "actual": null,
       "unit": null
@@ -1301,7 +1251,7 @@
       "country": "US",
       "name": "Chicago PMI",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 57,
       "previous": 57.6,
       "actual": null,
       "unit": null
@@ -1331,7 +1281,7 @@
       "country": "US",
       "name": "Michigan Consumer Sentiment Index",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 51,
       "previous": 51,
       "actual": null,
       "unit": null
@@ -1361,10 +1311,20 @@
       "country": "US",
       "name": "UoM 5-year Consumer Inflation Expectation",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.3,
       "previous": 3.3,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-28T15:55:00Z",
+      "country": "EMU",
+      "name": "ECB's Schnabel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-28T17:00:00Z",
@@ -1372,7 +1332,7 @@
       "name": "Baker Hughes US Oil Rig Count",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 452,
       "actual": null,
       "unit": null
     },
@@ -1382,7 +1342,7 @@
       "name": "CFTC EUR NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -59.1,
       "actual": null,
       "unit": "€"
     },
@@ -1392,7 +1352,7 @@
       "name": "CFTC JPY NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -52.9,
       "actual": null,
       "unit": "¥"
     },
@@ -1402,7 +1362,7 @@
       "name": "CFTC Gold NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 222.2,
       "actual": null,
       "unit": "$"
     },
@@ -1412,7 +1372,7 @@
       "name": "CFTC Oil NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 122.1,
       "actual": null,
       "unit": null
     },
@@ -1422,7 +1382,7 @@
       "name": "CFTC S&P 500 NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -10.6,
       "actual": null,
       "unit": "$"
     },
@@ -1942,7 +1902,7 @@
       "name": "S&P Global Manufacturing PMI",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 53.2,
       "actual": null,
       "unit": null
     },
@@ -2332,7 +2292,7 @@
       "name": "S&P Global Composite PMI",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 56,
       "actual": null,
       "unit": null
     },
@@ -2342,7 +2302,7 @@
       "name": "S&P Global Services PMI",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 56.8,
       "actual": null,
       "unit": null
     },
@@ -2495,6 +2455,136 @@
       "previous": 0.7,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Average Hourly Earnings (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Average Hourly Earnings (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Average Weekly Hours",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34.3,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Labor Force Participation Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 61.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Nonfarm Payrolls",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": -23,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "U6 Underemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 7.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-04T12:30:00Z",
+      "country": "US",
+      "name": "Unemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 4.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-04T17:00:00Z",
+      "country": "US",
+      "name": "Baker Hughes US Oil Rig Count",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-04T19:30:00Z",
+      "country": "EMU",
+      "name": "CFTC EUR NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-09-04T19:30:00Z",
+      "country": "JP",
+      "name": "CFTC JPY NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-04T19:30:00Z",
+      "country": "US",
+      "name": "CFTC Gold NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-09-04T19:30:00Z",
+      "country": "US",
+      "name": "CFTC Oil NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-04T19:30:00Z",
+      "country": "US",
+      "name": "CFTC S&P 500 NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
