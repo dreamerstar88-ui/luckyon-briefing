@@ -4,7 +4,7 @@
   "dateLabel_ko": "2026.8.21(금) 저녁",
   "dateLabel_en": "Fri, Aug 21, 2026 · PM",
   "headline_ko": "삼성전자 110조 주주환원에 코스피 6,900 회복…코스닥은 사이드카 발동하며 급락",
-  "headline_sub_ko": "코스피 0.88%·코스닥 4.63%↓ — 반도체 대형주 쏠림 속 상승 종목은 하락 종목의 3분의 1에도 못 미쳐",
+  "headline_sub_ko": "코스피 ▲0.88%·코스닥 ▼4.63% — 반도체 대형주 쏠림 속 상승 종목은 하락 종목의 3분의 1에도 못 미쳐",
   "headline_en": "Samsung's ₩110tn Payout Lifts KOSPI Past 6,900 as KOSDAQ Plunges",
   "headline_sub_en": "KOSPI +0.88%, KOSDAQ -4.63% — advancers trail decliners 3-to-1 even as chip giants rally",
   "summary": {
@@ -12,20 +12,20 @@
       "코스피가 삼성전자·SK하이닉스 강세에 힘입어 0.88% 오른 6,912.95로 6,900선을 되찾았지만, 코스닥은 4.63% 급락하며 장중 매도 사이드카까지 발동됐다.",
       "삼성전자가 이사회에서 올해 최대 110조원 규모의 주주환원을 의결했다고 공시했다 — 기존 최대치(2020년 20조3천억원)의 약 5배로 국내 상장사 사상 최대 규모다.",
       "유가증권시장에서는 기관이 2,485억원을 순매수한 반면 개인은 1조1,657억원, 외국인은 1,710억원을 순매도했다 — 삼성전자·SK하이닉스 두 종목이 거래대금의 52%를 차지했다.",
-      "코스닥에서는 개인이 6,237억원을 순매수하며 저가매수에 나섰지만 외국인·기관 동반 매도에 낙폭을 방어하지 못했고, 미 국채금리 재반등에 나스닥·S&P500 선물은 소폭 반등하며 대비를 이뤘다."
+      "코스닥에서는 개인이 6,235억원을 순매수하며 저가매수에 나섰지만 외국인·기관 동반 매도에 낙폭을 방어하지 못했고, 미 국채금리 재반등에 나스닥·S&P500 선물은 소폭 반등하며 대비를 이뤘다."
     ],
     "lines_en": [
-      "KOSPI rose 0.88% to 6,912.95, reclaiming the 6,900 level on strength in Samsung Electronics and SK Hynix, while KOSDAQ plunged 4.63% and triggered a sell-side circuit breaker intraday.",
-      "Samsung Electronics disclosed a board-approved shareholder return of up to ₩110 trillion this year — about five times its prior record of ₩20.3 trillion set in 2020, the largest ever by a Korean listed company.",
-      "On the KOSPI, institutions net bought ₩248.5 billion while individuals sold ₩1.17 trillion and foreigners sold ₩171 billion — Samsung Electronics and SK Hynix alone made up 52% of trading value.",
-      "On KOSDAQ, individuals net bought ₩623.7 billion in a dip-buying attempt but couldn't offset combined foreign and institutional selling, even as Nasdaq and S&P 500 futures ticked up on a rebounding 10-year Treasury yield."
+      "KOSPI rose 0.88% to 6,912.95 on strength in Samsung and SK Hynix, while KOSDAQ plunged 4.63% and triggered a sell-side circuit breaker.",
+      "Samsung's board approved a record ₩110 trillion shareholder return this year — about 5x its 2020 record, the largest ever by a Korean company.",
+      "On KOSPI, institutions net bought ₩248.5bn while individuals and foreigners sold; Samsung and SK Hynix made up 52% of trading value.",
+      "On KOSDAQ, individuals net bought ₩623.5bn but couldn't offset foreign/institutional selling, even as US futures rebounded."
     ]
   },
   "markets": [
     {
       "label": "NASDAQ Fut",
-      "value": "29,496.00",
-      "delta": "▲0.67%",
+      "value": "29,530.25",
+      "delta": "▲0.78%",
       "dir": "up",
       "note_ko": "나스닥100 선물 · 8/21 장중",
       "note_en": "Nasdaq-100 futures · intraday 8/21"
@@ -115,7 +115,7 @@
       "cols": 1,
       "stats": [
         {"label_ko": "코스피", "label_en": "KOSPI", "value": "6,912.95", "delta": "▲0.88%", "dir": "up", "sub_ko": "60.37포인트 상승 · 2거래일 연속 상승", "sub_en": "Up 60.37pts · 2nd straight gain"},
-        {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "801.94", "delta": "▼4.63%", "dir": "down", "sub_ko": "38.95포인트 하락 · 장중 매도 사이드카 발동(올해 32번째)", "sub_en": "Down 38.95pts · sell-side circuit breaker hit (32nd this year)"}
+        {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "801.94", "delta": "▼4.63%", "dir": "down", "sub_ko": "38.95포인트 하락 · 매도 사이드카 발동 · 올해 32번째(매수18·매도14)", "sub_en": "Down 38.95pts · sell-side circuit breaker hit · 32nd sidecar this year (18 buy/14 sell)"}
       ],
       "breadth": [
         {"label_ko": "코스피", "label_en": "KOSPI", "up": 193, "flat": 66, "down": 683},
@@ -132,8 +132,8 @@
           {"label_ko": "개인", "label_en": "Individual", "value": -1.17}
         ]
       },
-      "note_ko": "코스피는 삼성전자·SK하이닉스 두 종목이 거래대금의 52%를 차지하며 지수를 밀어올렸지만 상승 종목(193개)은 하락 종목(683개)의 3분의 1에도 못 미쳤다 — 코스닥은 장중 4%대 낙폭에 매도 사이드카까지 발동해 뚜렷한 대비를 이뤘다.",
-      "note_en": "KOSPI's gain came almost entirely from Samsung Electronics and SK Hynix, which made up 52% of trading value, even as decliners (683) outnumbered advancers (193) more than 3-to-1 — a sharp contrast to KOSDAQ, which fell over 4% intraday and triggered a sell-side circuit breaker."
+      "note_ko": "삼성전자·SK하이닉스 두 종목이 거래대금의 52%를 차지하며 지수를 밀어올렸지만, 상승 종목(193개)은 하락 종목(683개)의 3분의 1에도 못 미쳤다.",
+      "note_en": "Samsung Electronics and SK Hynix alone made up 52% of trading value and drove the index higher, even as advancers (193) trailed decliners (683) more than 3-to-1."
     },
     {
       "title_ko": "업종별 등락",
@@ -191,24 +191,24 @@
         {
           "headline_ko": "앤트로픽, 기업가치 2조달러로 IPO 추진…스페이스X 기록 경신 목표",
           "headline_en": "Anthropic Eyes $2 Trillion IPO, Aiming to Top SpaceX's Record",
-          "body_ko": "블룸버그에 따르면 AI 모델 '클로드' 개발사 앤트로픽이 이르면 이달 말 미 증권거래위원회(SEC)에 상장 등록신청서를 공개 제출한다. 목표 기업가치는 2조달러(약 2,762조원)로, 스페이스X가 세운 역대 최대 IPO 조달 기록(862억달러) 경신을 노린다. 2분기 매출은 전년 동기 대비 14배 이상 늘어난 115억달러를 웃돈 것으로 전해졌다.",
-          "body_en": "Bloomberg reports Claude developer Anthropic could publicly file for an IPO as early as the end of this month, targeting a post-listing valuation of $2 trillion — aiming to top SpaceX's record $86.2 billion IPO raise. Its Q2 revenue reportedly surged more than 14-fold year over year to over $11.5 billion.",
+          "body_ko": "블룸버그에 따르면 앤트로픽이 이르면 이달 말 SEC에 상장 신청서를 제출하며, 목표 기업가치 2조달러로 스페이스X의 IPO 기록(862억달러) 경신을 노린다.",
+          "body_en": "Bloomberg reports Anthropic could file for an IPO as early as this month, targeting a $2 trillion valuation to top SpaceX's $86.2 billion IPO record.",
           "src": "Bloomberg",
           "time": "8/21"
         },
         {
           "headline_ko": "AI發 메모리 품귀에 스마트폰 출하량 14% 급감 전망…삼성은 1위 탈환",
           "headline_en": "AI Memory Crunch to Cut Smartphone Shipments 14% — Samsung Reclaims No. 1",
-          "body_ko": "카운터포인트리서치는 HBM·서버용 D램 등 AI 데이터센터용 메모리 수요가 급증하며 올해 세계 스마트폰 출하량이 전년 대비 14.3% 줄어들 것으로 전망했다. 메모리 공급사들이 물량을 AI용으로 우선 배정하며 스마트폰용 공급이 타격을 입었다는 설명이다. 다만 삼성전자는 출하량이 0.8% 늘며 애플을 제치고 1위로 복귀할 전망이다.",
-          "body_en": "Counterpoint Research forecasts global smartphone shipments will fall 14.3% this year as memory makers prioritize AI-datacenter demand for HBM and server DRAM over phone components. Samsung Electronics, however, is expected to grow shipments 0.8% and reclaim the No. 1 spot from Apple.",
+          "body_ko": "카운터포인트리서치는 AI용 메모리 우선 배정으로 올해 세계 스마트폰 출하량이 14.3% 줄어드는 가운데, 삼성전자는 0.8% 늘며 애플을 제치고 1위로 복귀할 것으로 전망했다.",
+          "body_en": "Counterpoint Research forecasts a 14.3% drop in global smartphone shipments as AI memory demand crowds out phone supply, while Samsung grows 0.8% to reclaim No. 1 from Apple.",
           "src": "Counterpoint Research",
           "time": "8/21"
         },
         {
-          "headline_ko": "소니, AI發 반도체 품귀에 PS6 출시 일정 무기한 연기",
-          "headline_en": "Sony Delays PS6 Launch Indefinitely Amid AI-Driven Chip Shortage",
-          "body_ko": "AI 데이터센터발 반도체 품귀와 제조 단가 급등으로 소니가 차세대 콘솔 PS6의 출시 일정을 확정하지 못하고 있다. 메모리 반도체를 비롯한 부품 공급이 AI 인프라 투자로 쏠리며 게임기 등 소비자 가전 제조사들의 부담이 커지고 있다는 분석이다.",
-          "body_en": "Sony has yet to set a launch date for its next-generation PS6 console as an AI-driven chip shortage and soaring component costs squeeze production. Memory and other component supply is increasingly being diverted to AI infrastructure, straining consumer-electronics makers.",
+          "headline_ko": "소니, AI發 반도체 품귀에 PS6 출시 일정 못 박지 못해",
+          "headline_en": "Sony Still Can't Set a Launch Date for PS6 Amid AI-Driven Chip Shortage",
+          "body_ko": "AI 데이터센터발 반도체 품귀와 제조 단가 급등으로 소니가 차세대 콘솔 PS6의 출시 일정을 아직 확정하지 못하고 있다.",
+          "body_en": "Sony has yet to set a launch date for its next-gen PS6 console amid an AI-driven chip shortage and soaring component costs.",
           "src": "Daily eSports",
           "time": "8/21"
         }
@@ -220,35 +220,27 @@
       "color": "#5aa469",
       "items": [
         {
-          "headline_ko": "삼성전자, 역대 최대 110조원 주주환원…SK하이닉스도 10조 추가 매입",
-          "headline_en": "Samsung Announces Record ₩110tn Shareholder Return; SK Hynix Adds ₩10tn Buyback",
-          "body_ko": "삼성전자는 21일 이사회에서 올해 90조~110조원 규모의 주주환원 시행 방안을 의결했다고 공시했다. 기존 최대였던 2020년(20조3천억원)의 약 5배 규모로, 3분기에 30조원 규모의 정규 배당을 우선 시행한다. 발표 직후 시간외 거래에서는 오히려 약세를 보였다.",
-          "body_en": "Samsung Electronics disclosed a board resolution on Aug. 21 to return ₩90-110 trillion to shareholders this year — about five times its prior record of ₩20.3 trillion set in 2020 — starting with a ₩30 trillion regular dividend in Q3. The stock slipped in after-hours trading despite the announcement.",
-          "src": "DART · 연합뉴스",
+          "headline_ko": "삼성전자, 역대 최대 110조원 주주환원 공시…발표 직후엔 오히려 '약세'",
+          "headline_en": "Samsung Discloses Record ₩110tn Shareholder Return — Stock Slips After-Hours",
+          "body_ko": "삼성전자는 21일 이사회에서 올해 90조~110조원 규모 주주환원을 의결했다고 공시했다 — 기존 최대(2020년 20조3천억원)의 약 5배로, 3분기 30조원 배당을 우선 시행한다.",
+          "body_en": "Samsung's board approved returning ₩90-110 trillion to shareholders this year — about 5x its 2020 record of ₩20.3 trillion — starting with a ₩30 trillion Q3 dividend.",
+          "src": "DART · Yonhap",
           "time": "8/21"
         },
         {
           "headline_ko": "아시아 증시 혼조…닛케이 0.3%↓, 상하이 0.03%↑",
           "headline_en": "Asian Markets Mixed — Nikkei -0.3%, Shanghai +0.03%",
-          "body_ko": "미 국채금리 반등과 월마트발 소매주 약세에 닛케이225는 0.3% 내린 66,016.36에 마감했다. 반면 중국 상하이종합지수는 0.03% 오른 3,905.20에 거래를 마쳤다.",
-          "body_en": "Japan's Nikkei 225 fell 0.3% to 66,016.36 as rebounding US yields and Walmart-driven weakness hit retail stocks, while China's Shanghai Composite edged up 0.03% to 3,905.20.",
-          "src": "연합인포맥스",
+          "body_ko": "미 국채금리 반등에 닛케이225는 0.3% 내린 66,016.36에, 중국 상하이종합지수는 0.03% 오른 3,905.20에 마감했다.",
+          "body_en": "Nikkei 225 fell 0.3% to 66,016.36 as US yields rebounded, while China's Shanghai Composite edged up 0.03% to 3,905.20.",
+          "src": "Yonhap Infomax",
           "time": "8/21"
         },
         {
-          "headline_ko": "이란 리스크 지속에 금 3%대 급등…국제유가는 소폭 진정",
-          "headline_en": "Gold Jumps Over 3% on Iran Risk; Oil Eases Slightly",
-          "body_ko": "베선트 재무장관의 대이란 제재 예고가 이어지며 금 현물은 온스당 4,654.8달러로 3.07% 뛰었다. WTI는 배럴당 86달러대에서 소폭 진정됐지만 여전히 지정학적 리스크 프리미엄이 반영된 수준이다.",
-          "body_en": "Gold jumped 3.07% to $4,654.8 an ounce as Treasury Secretary Bessent's threatened Iran sanctions kept safe-haven demand elevated, while WTI eased slightly into the mid-$86 range but remains well above pre-tension levels.",
-          "src": "Yahoo Finance",
-          "time": "8/21"
-        },
-        {
-          "headline_ko": "미 국채 10년물 4.69% 유지…나스닥·S&P500 선물은 반등",
-          "headline_en": "US 10-Year Holds at 4.69%; Nasdaq, S&P 500 Futures Rebound",
-          "body_ko": "미 10년물 국채금리는 8/20 확정 종가 4.69%에서 큰 변화 없이 유지되는 가운데, 나스닥100·S&P500 선물은 각각 0.67%·0.39% 오르며 전일 하락분 일부를 되돌리고 있다.",
-          "body_en": "The US 10-year Treasury yield is holding near its 8/20 close of 4.69%, while Nasdaq-100 and S&P 500 futures are up 0.67% and 0.39%, respectively, clawing back some of Thursday's losses.",
-          "src": "FMP · Yahoo Finance",
+          "headline_ko": "금 3%대 급등…국채·선물시장은 잠잠",
+          "headline_en": "Gold Jumps Over 3% While Bonds and Futures Stay Calm",
+          "body_ko": "금 현물은 온스당 4,654.8달러로 오늘 하루 3.07% 더 올랐고 WTI는 86달러대로 소폭 진정된 가운데, 美 10년물은 4.69%를 유지하고 나스닥·S&P500 선물은 각각 0.78%·0.39% 올랐다.",
+          "body_en": "Gold rose another 3.07% to $4,654.8/oz and WTI eased into the mid-$86 range, while the US 10-year yield held at 4.69% and Nasdaq/S&P 500 futures ticked up 0.78%/0.39%.",
+          "src": "Yahoo Finance · FMP",
           "time": "8/21"
         }
       ]
@@ -263,10 +255,10 @@
     "lines_en": ["Regular session 10:30 PM - 5:00 AM KST (DST) · Pre-market 5:00-10:30 PM KST"]
   },
   "schedule": [
-    {"time": "22:45", "title_ko": "S&P 글로벌 8월 PMI 예비치 (美)", "title_en": "US S&P Global Flash PMI (Aug)", "detail_ko": "제조업 예상 53.8·이전 53.9 / 서비스업 예상 54.0·이전 54.6", "detail_en": "Mfg. est. 53.8·prev. 53.9 / Services est. 54.0·prev. 54.6", "importance": "high"},
+    {"time": "22:45", "title_ko": "S&P 글로벌 8월 PMI 예비치 (美)", "title_en": "US S&P Global Flash PMI (Aug)", "detail_ko": "제조업 예상 53.9·이전 53.9 / 서비스업 예상 54.0·이전 54.6", "detail_en": "Mfg. est. 53.9·prev. 53.9 / Services est. 54.0·prev. 54.6", "importance": "high"},
     {"time": "23:00", "title_ko": "유로존 8월 소비자신뢰지수 예비치", "title_en": "Eurozone Flash Consumer Confidence (Aug)", "detail_ko": "예상 -16.3 · 이전 -15.9", "detail_en": "Est. -16.3 · prev. -15.9", "importance": "mid"},
-    {"time": "8/26(수)", "title_ko": "[다음 주 예고] 엔비디아(NVDA) 2분기 실적", "title_en": "[Next Week] Nvidia (NVDA) Q2 Earnings", "detail_ko": "컨센서스 EPS $2.09 · 매출 920.6억달러", "detail_en": "Consensus EPS $2.09 · revenue $92.06B", "importance": "high"},
-    {"time": "8/28(금) 밤 11시", "title_ko": "[다음 주 예고] 잭슨홀 심포지엄 · 워시 연준 의장 기조연설", "title_en": "[Next Week] Jackson Hole Symposium — Fed Chair Warsh Keynote", "detail_ko": "올해 새 연준 의장 취임 후 첫 기조연설", "detail_en": "First keynote address since taking over as Fed chair", "importance": "mid"}
+    {"time": "8/26", "title_ko": "[다음 주 예고] 엔비디아(NVDA) 2분기 실적", "title_en": "[Next Week] Nvidia (NVDA) Q2 Earnings", "detail_ko": "수요일 장 마감 후 · 컨센서스 EPS $2.09 · 매출 920.6억달러", "detail_en": "Wed. after close · consensus EPS $2.09 · revenue $92.06B", "importance": "high"},
+    {"time": "8/28 23:00", "title_ko": "[다음 주 예고] 잭슨홀 심포지엄 · 워시 연준 의장 기조연설", "title_en": "[Next Week] Jackson Hole Symposium — Fed Chair Warsh Keynote", "detail_ko": "금요일 밤 · 올해 새 연준 의장 취임 후 첫 기조연설", "detail_en": "Friday night KST · first keynote address since taking over as Fed chair", "importance": "mid"}
   ],
   "next_brief_ko": "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산",
   "next_brief_en": "📊 Next brief — 8 AM KST, the week in review",
