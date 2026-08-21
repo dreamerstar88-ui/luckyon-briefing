@@ -1,5 +1,5 @@
 {
-  "probed_at": "2026-08-14T21:15:57.856Z",
+  "probed_at": "2026-08-21T21:14:17.492Z",
   "runner": "github-actions",
   "note": "탐침 결과. 값의 정확성은 검증하지 않았다 — 접근 가능 여부와 원본 조각만 기록한다.",
   "reachable": [
@@ -22,7 +22,7 @@
       "totalBytes": 2011,
       "bytes": 2010,
       "contentType": "text/html",
-      "ms": 165
+      "ms": 159
     },
     {
       "id": "ishares-ivv-fund-json",
@@ -33,11 +33,11 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 2225793,
-      "bytes": 2223719,
+      "totalBytes": 2226396,
+      "bytes": 2224322,
       "contentType": "application/json;charset=UTF-8",
       "jsonParseError": true,
-      "ms": 565
+      "ms": 604
     },
     {
       "id": "ishares-ivv-product-page",
@@ -48,12 +48,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 2874773,
-      "bytes": 2872721,
+      "totalBytes": 2875756,
+      "bytes": 2873704,
       "contentType": "text/html;charset=UTF-8",
       "keywordFound": true,
       "snippet": "OptanonWrapper = function() {",
-      "ms": 305
+      "ms": 556
     },
     {
       "id": "invesco-qqq-holdings-csv",
@@ -67,7 +67,7 @@
       "totalBytes": 0,
       "bytes": 0,
       "contentType": "",
-      "ms": 93
+      "ms": 101
     },
     {
       "id": "nasdaq-ndx-overview",
@@ -78,12 +78,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 303274,
-      "bytes": 303246,
+      "totalBytes": 303276,
+      "bytes": 303248,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "nav id=\"headerWrapper\" class=\"flex items-center justify-between flex-wrap xl:flex-no-wrap shadow px-0",
-      "ms": 1420
+      "ms": 885
     },
     {
       "id": "ssga-dia-fund-json",
@@ -97,7 +97,7 @@
       "totalBytes": 132,
       "bytes": 132,
       "contentType": "application/json;charset=utf-8",
-      "ms": 369
+      "ms": 434
     },
     {
       "id": "wsj-pe-yields",
@@ -108,12 +108,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 749983,
-      "bytes": 749696,
+      "totalBytes": 747372,
+      "bytes": 747085,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "meta name=\"description\" content=\"P/E data based on as-reported earnings; estimate data based on operating earnings.\"",
-      "ms": 278
+      "ms": 335
     },
     {
       "id": "krx-index-per",
@@ -127,7 +127,7 @@
       "totalBytes": 6,
       "bytes": 6,
       "contentType": "text/html; charset=utf-8",
-      "ms": 477
+      "ms": 673
     },
     {
       "id": "multpl-sp500-pe",
@@ -138,12 +138,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 80836,
-      "bytes": 80836,
+      "totalBytes": 80837,
+      "bytes": 80837,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "acing:2px}.see-also h3{padding-bottom:10px;text-transform:uppercase}.see-also li:last-child a{border-bottom:1px solid;border-color:var(--hr_col",
-      "ms": 169
+      "ms": 126
     },
     {
       "id": "yahoo-quotesummary-spy",
@@ -157,7 +157,7 @@
       "totalBytes": 19,
       "bytes": 19,
       "contentType": "text/html",
-      "ms": 87
+      "ms": 118
     }
   ]
 }
