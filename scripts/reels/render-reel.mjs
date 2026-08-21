@@ -10,7 +10,6 @@
 // 산출물: cards/reels/<date>/<lang>/reel.mp4 (+ cover.png)
 
 import { chromium } from 'playwright';
-import ffmpegPath from 'ffmpeg-static';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -366,6 +365,7 @@ async function main() {
   await browser.close();
 
   const mp4 = path.join(outDir, 'reel.mp4');
+  const { default: ffmpegPath } = await import('ffmpeg-static');
   execFileSync(ffmpegPath, [
     '-y', '-framerate', String(FPS), '-i', path.join(tmp, 'f%04d.png'),
     '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100', '-shortest',
