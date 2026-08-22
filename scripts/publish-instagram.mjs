@@ -12,6 +12,9 @@
 //   PAGES_BASE_URL   - GitHub Pages 기본 주소
 //                      (예: https://dreamerstar88-ui.github.io/luckyon-briefing)
 //   GRAPH_VERSION    - (선택) 그래프 API 버전, 기본 v21.0
+//   PAGES_WAIT_MS    - (선택) GitHub Pages 반영을 기다리는 총 예산(ms), 기본 10분.
+//                      커밋 직후 발행하면 Pages 반영이 늦어 인스타그램이 이미지를
+//                      못 가져오는데, 그때 자동으로 기다렸다 재시도한다.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -63,7 +66,9 @@ async function api(pathPart, params) {
   const res = await fetch(url, { method: 'POST', body });
   const json = await res.json();
   if (!res.ok || json.error) {
-    throw new Error(`API 오류 (${pathPart}): ${JSON.stringify(json.error || json)}`);
+    const err = new Error(`API 오류 (${pathPart}): ${JSON.stringify(json.error || json)}`);
+    err.fbError = json.error || null; // 호출부가 오류 종류를 구분할 수 있게 원본을 붙인다
+    throw err;
   }
   return json;
 }
@@ -86,11 +91,12 @@ async function waitFinished(containerId, label, maxTries = 30) {
 }
 
 // GitHub Pages가 이미지를 실제로 서빙할 때까지 대기 (푸시 직후 반영 지연 대비)
-// SKIP_PAGES_WAIT=1 이면 건너뛴다 (세션 네트워크 정책이 github.io 접근을 막는 환경용;
-// 실제 이미지 fetch는 Instagram 서버가 수행하므로 발행 자체에는 영향 없음)
+// SKIP_PAGES_WAIT=1 이면 건너뛴다 (세션 네트워크 정책이 github.io 접근을 막는 환경용).
+// 건너뛰어도 발행은 안전하다 — 아래 createChild() 가 인스타그램 서버의 이미지 fetch
+// 결과로 반영 여부를 판단해 재시도하므로, 그쪽이 실질적인 관문 역할을 한다.
 async function waitForImages() {
   if (process.env.SKIP_PAGES_WAIT === '1') {
-    console.log('· SKIP_PAGES_WAIT=1 → Pages 반영 확인 생략');
+    console.log('· SKIP_PAGES_WAIT=1 → Pages 사전 확인 생략 (컨테이너 생성 단계에서 반영 대기)');
     return;
   }
   console.log('· GitHub Pages 이미지 반영 대기…');
@@ -108,6 +114,54 @@ async function waitForImages() {
   console.log('· 모든 이미지 공개 확인됨 ✅');
 }
 
+// 인스타그램이 이미지 URL을 못 가져왔을 때 나는 오류인지 판별한다.
+// 커밋 직후 GitHub Pages 반영이 늦으면 이 오류가 난다 — 잠시 뒤 재시도하면 풀린다.
+// (2026-08-22 토 회차에서 이 오류로 발행이 3회 연속 실패했다)
+function isMediaFetchError(err) {
+  const e = err && err.fbError;
+  if (!e) return false;
+  return e.code === 9004 || e.error_subcode === 2207052 || e.error_subcode === 2207003;
+}
+
+// Pages 반영 대기의 실제 관문.
+// 세션 네트워크가 github.io 를 못 열어도(SKIP_PAGES_WAIT=1) 이 재시도는 동작한다 —
+// 이미지를 실제로 가져오는 주체가 인스타그램 서버라, 컨테이너 생성 성공 자체가
+// "Pages 에 반영됐다"는 증거가 되기 때문이다.
+// 슬라이드 전체가 공유하는 예산이다. 보통 첫 장이 뚫리면 나머지는 즉시 통과한다.
+const PAGES_WAIT_MS = Number(process.env.PAGES_WAIT_MS || 10 * 60 * 1000);
+let propagationDeadline = null;
+
+async function createChild(i) {
+  const params = { image_url: imageUrls[i], is_carousel_item: 'true' };
+  if (altTexts[i]) params.alt_text = altTexts[i];
+
+  let waitMs = 5000;
+  for (;;) {
+    try {
+      return await api(`${IG_USER}/media`, params);
+    } catch (e) {
+      if (!isMediaFetchError(e)) throw e;
+
+      // 첫 반영 실패 시점부터 예산을 센다
+      if (propagationDeadline === null) propagationDeadline = Date.now() + PAGES_WAIT_MS;
+      const left = propagationDeadline - Date.now();
+      if (left <= 0) {
+        const budget = PAGES_WAIT_MS >= 60000
+          ? `${Math.round(PAGES_WAIT_MS / 60000)}분`
+          : `${Math.round(PAGES_WAIT_MS / 1000)}초`;
+        throw new Error(
+          `Pages 반영 대기 ${budget} 초과 — 슬라이드 ${i + 1} 이미지를 ` +
+          `인스타그램이 계속 가져오지 못했습니다: ${imageUrls[i]}`);
+      }
+      const nap = Math.min(waitMs, left);
+      console.log(`· 슬라이드 ${i + 1} Pages 반영 대기 — ${Math.round(nap / 1000)}초 후 재시도 ` +
+                  `(남은 예산 ${Math.round(left / 1000)}초)`);
+      await sleep(nap);
+      waitMs = Math.min(waitMs * 2, 30000); // 5s → 10s → 20s → 30s 고정
+    }
+  }
+}
+
 async function main() {
   console.log(`\n▶ Instagram 발행 시작 [${lang.toUpperCase()}${session ? ' ' + session.toUpperCase() : ''}] ${date} (${CARD_COUNT}장)`);
   await waitForImages();
@@ -115,9 +169,7 @@ async function main() {
   // 1) 슬라이드별 아이템 컨테이너 생성
   const childIds = [];
   for (let i = 0; i < imageUrls.length; i++) {
-    const params = { image_url: imageUrls[i], is_carousel_item: 'true' };
-    if (altTexts[i]) params.alt_text = altTexts[i];
-    const r = await api(`${IG_USER}/media`, params);
+    const r = await createChild(i);
     childIds.push(r.id);
     console.log(`· 슬라이드 ${i + 1} 컨테이너 생성: ${r.id}`);
   }
