@@ -1,0 +1,148 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>검토 · EP.04 거래량</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px 14px 60px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
+       background:#14140f;color:#f0efe6;line-height:1.6;max-width:760px;margin-inline:auto}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:18px;border-top:1px solid #35342c}
+  h3{font-size:16px;margin:20px 0 8px;color:#b9b6a8}
+  .meta{font-size:14px;color:#9b9889;margin-bottom:18px}
+  .chk{background:#1e1e18;border-left:4px solid #ddc158;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .chk b{color:#ddc158}
+  .chk li{margin:5px 0}
+  .fact{background:#16211a;border-left:4px solid #3f8f6d;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .fact b{color:#6fc79c}
+  .cards{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  img{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  figcaption{font-size:13px;color:#9b9889;margin-top:7px}
+  figcaption b{color:#e0dfd4}
+  .cap{white-space:normal;background:#1e1e18;border-radius:10px;padding:14px 16px;font-size:14px;color:#d9d7cb}
+  .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
+  code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+  .act{display:flex;gap:12px;margin:22px 0 10px}
+  .btn{flex:1;display:block;text-align:center;padding:18px 10px;border-radius:12px;
+       font-size:17px;font-weight:800;text-decoration:none}
+  .btn.ok{background:#2f7d5b;color:#fff}
+  .btn.fix{background:#8a4436;color:#fff}
+  .hint{font-size:13px;color:#9b9889;margin:0 0 6px}
+</style></head><body>
+
+<h1>EP.04 · 거래량</h1>
+<div class="meta">투자 3분 노트 · 발행 예정 2026-08-23 · stamp <code>2026-08-23-ep04</code></div>
+
+<div class="chk"><b>검토 체크리스트</b>
+<ul>
+  <li>개념 설명이 <b>사실로 맞는가</b> (정의·인과·용어)</li>
+  <li>p.06 실제 시세의 <b>숫자와 날짜</b>가 맞는가</li>
+  <li>카드 밖으로 <b>넘치거나 겹친 글자</b>가 없는가 (특히 영어)</li>
+  <li><b>투자 권유</b>로 읽힐 문장이 없는가</li>
+  <li>한국어 <b>맞춤법·띄어쓰기</b>, 영어판에 한글 잔존 없는가</li>
+  <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
+</ul></div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-23-ep04&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-23-ep04%0AEP.04%20%EA%B1%B0%EB%9E%98%EB%9F%89" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-23-ep04&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-23-ep04%0AEP.04%20%EA%B1%B0%EB%9E%98%EB%9F%89" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<div class="fact"><b>시세 검증 기록</b>
+<div>KO — 삼성전자(005930.KS) 일봉 — 2026-07-29(수) 시가 226,500 / 고가 234,000 / 저가 189,200 / 종가 208,500, 거래량 65,555,523주. 직전 20거래일(2026-06-30~07-28) 평균 거래량 28,234,667주로 2.32배. 직전 거래일(7/28) 종가 220,000 대비 종가 -5.23%, 장중 저가는 당일 시가 대비 -16.47%. p.04 막대는 같은 종목 5거래일 거래량(7/27 23,296,044 · 7/28 41,639,623 · 7/29 65,555,523 · 7/30 46,694,193 · 7/31 58,478,873)이며 7/29 는 7/27 의 2.81배. 모두 PlayMCP UsStockInfo 3개월 일봉에서 직접 산출했다. 이 구간 봉은 2026-06-29(배당락) 이후라 배당 조정이 걸리지 않은 실제 체결가다. 날짜 오프셋(도구가 주는 15:00Z = KST 다음 날)은 휴장일로 교차검증했다 — 제헌절 7/17(금)과 광복절 대체공휴일 8/17(월) 자리가 정확히 비어 있고, 마지막 봉이 직전 거래일 금요일 8/21 에 떨어진다.</div><div>EN — Tesla (TSLA) daily bars — Thursday, July 23, 2026: open 341.00 / high 342.11 / low 315.74 / close 319.69 on 115,606,400 shares. The prior 20 sessions (June 24 – July 22, 2026) averaged 38,959,480 shares, so that day was 2.97×. The close fell 14.52% from the previous close of 374.01, and the open was 8.83% below it. The p.04 bars are five TSLA sessions (Jul 21 32,735,300 · Jul 22 30,646,100 · Jul 23 115,606,400 · Jul 24 62,760,000 · Jul 27 44,919,400); Jul 23 is 3.77× Jul 22. TSLA paid no dividend in the window, so these prices are unadjusted actuals. Dates cross-checked against the market calendar: July 3 (Independence Day observed) is correctly absent and the last bar falls on Friday, August 21. All figures computed directly from the PlayMCP UsStockInfo daily pull.</div></div>
+
+
+    <h2>🇰🇷 한국어 — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="ko/card1.png" alt="투자 3분 노트 EP.04 표지 — 붉은 캔들과 초록 캔들 두 개가 그려져 있고, '차트의 절반을 안 보고 있습니다'라는 제목 옆에 캔들은 '얼마에'까지만 말해준다는 주석이 붙어 있다" loading="lazy">
+      <figcaption><b>p.01</b> 투자 3분 노트 EP.04 표지 — 붉은 캔들과 초록 캔들 두 개가 그려져 있고, '차트의 절반을 안 보고 있습니다'라는 제목 옆에 캔들은 '얼마에'까지만 말해준다는 주석이 붙어 있다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card2.png" alt="도입 카드 — '그 막대들, 그냥 지나치셨죠?'라는 제목과 물음표가 찍힌 스케치 가격 그래프, 가격은 '얼마에' 거래량은 '얼마나'라는 한 줄 정리" loading="lazy">
+      <figcaption><b>p.02</b> 도입 카드 — '그 막대들, 그냥 지나치셨죠?'라는 제목과 물음표가 찍힌 스케치 가격 그래프, 가격은 '얼마에' 거래량은 '얼마나'라는 한 줄 정리</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card3.png" alt="핵심 개념 체크리스트 — 거래량은 그날 오간 주식 수, 거래대금은 거래량 곱하기 체결가, 평균 거래량은 최근 20거래일 평균, 거래량 급증은 그 평균을 크게 넘긴 날" loading="lazy">
+      <figcaption><b>p.03</b> 핵심 개념 체크리스트 — 거래량은 그날 오간 주식 수, 거래대금은 거래량 곱하기 체결가, 평균 거래량은 최근 20거래일 평균, 거래량 급증은 그 평균을 크게 넘긴 날</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card4.png" alt="막대그래프 — 삼성전자 7월 말 5거래일 거래량. 7월 27일 2,330만 주, 28일 4,164만 주, 29일 6,556만 주(붉게 강조), 30일 4,669만 주, 31일 5,848만 주" loading="lazy">
+      <figcaption><b>p.04</b> 막대그래프 — 삼성전자 7월 말 5거래일 거래량. 7월 27일 2,330만 주, 28일 4,164만 주, 29일 6,556만 주(붉게 강조), 30일 4,669만 주, 31일 5,848만 주</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card5.png" alt="비교 카드 — 상승 캔들과 하락 캔들을 나란히 놓고, 거래량이 함께 늘면 그 방향으로 움직인 사람이 많았다는 뜻이고 거래량이 줄면 방향을 확신하기 어렵다고 설명한다" loading="lazy">
+      <figcaption><b>p.05</b> 비교 카드 — 상승 캔들과 하락 캔들을 나란히 놓고, 거래량이 함께 늘면 그 방향으로 움직인 사람이 많았다는 뜻이고 거래량이 줄면 방향을 확신하기 어렵다고 설명한다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card6.png" alt="실제 사례 — 2026년 7월 29일 삼성전자 하락 캔들. 고가 234,000원, 종가 208,500원, 시가 226,500원, 저가 189,200원. 거래량 6,556만 주로 직전 20거래일 평균의 2.3배" loading="lazy">
+      <figcaption><b>p.06</b> 실제 사례 — 2026년 7월 29일 삼성전자 하락 캔들. 고가 234,000원, 종가 208,500원, 시가 226,500원, 저가 189,200원. 거래량 6,556만 주로 직전 20거래일 평균의 2.3배</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card7.png" alt="흔한 오해 세 가지 — 거래량 급증을 호재로 보는 것, 거래량만 보고 판단하는 것, 그 종목의 평균과 견주지 않는 것. 거래량은 방향을 알려주지 않는다는 경고가 붙어 있다" loading="lazy">
+      <figcaption><b>p.07</b> 흔한 오해 세 가지 — 거래량 급증을 호재로 보는 것, 거래량만 보고 판단하는 것, 그 종목의 평균과 견주지 않는 것. 거래량은 방향을 알려주지 않는다는 경고가 붙어 있다</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card8.png" alt="3줄 요약과 다음 편 예고 — 다음 편은 지지선과 저항선, 그리고 이 콘텐츠는 교육 목적이며 투자 권유가 아니라는 고지" loading="lazy">
+      <figcaption><b>p.08</b> 3줄 요약과 다음 편 예고 — 다음 편은 지지선과 저항선, 그리고 이 콘텐츠는 교육 목적이며 투자 권유가 아니라는 고지</figcaption>
+    </figure></div>
+    <h3>캡션 (516자)</h3>
+    <div class="cap">📊 투자 3분 노트 EP.04 — 거래량<br><br>가격 그래프 아래에 줄지어 붙어 있는 막대, 거래량입니다. 그날 그 종목의 주식이 몇 주나 오갔는지를 세워 놓은 것뿐입니다.<br><br>숫자 자체는 의미가 없습니다. 그 종목의 평소 거래량과 견줘야 많고 적음이 보입니다.<br><br>삼성전자는 2026년 7월 29일 하루에 6,556만 주가 거래됐습니다. 직전 20거래일 평균(2,823만 주)의 2.3배입니다. 그날 종가는 5.2% 내렸고, 장중 저가는 시가보다 16.5% 아래였습니다.<br><br>거래량이 늘었다고 좋은 신호는 아닙니다. 많이 팔린 날에도 거래량은 똑같이 늘어납니다. 거래량은 방향이 아니라 '몇 명이 움직였나'를 말해 줍니다.<br><br>📌 저장해두고 차트 볼 때 꺼내보세요<br>👇 주식 시작한 친구 태그하기<br>(교육 목적 콘텐츠이며 투자 권유가 아닙니다)<br><br>다음 편은 '지지선과 저항선' — 차트의 천장과 바닥을 읽습니다.<br><br>#주식초보 #주식공부 #거래량 #주식차트보는법 #주식용어 #삼성전자 #코스피 #재테크 #투자공부 #luckyon브리핑</div>
+
+    <h2>🇺🇸 English — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="en/card1.png" alt="3-Min Investing Notes EP.04 cover — two candlesticks, one red and one green, under the title 'You're reading half the chart', with a note that a candle only tells you at what price" loading="lazy">
+      <figcaption><b>p.01</b> 3-Min Investing Notes EP.04 cover — two candlesticks, one red and one green, under the title 'You're reading half the chart', with a note that a candle only tells you at what price</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card2.png" alt="Intro card — the question 'Those bars at the bottom?' over a sketched price line with question marks, and the line: price says at what, volume says how much" loading="lazy">
+      <figcaption><b>p.02</b> Intro card — the question 'Those bars at the bottom?' over a sketched price line with question marks, and the line: price says at what, volume says how much</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card3.png" alt="Key-concept checklist — volume is shares traded that day, turnover is volume times price, average volume is the 20-session mean, and a volume spike is a day far above it" loading="lazy">
+      <figcaption><b>p.03</b> Key-concept checklist — volume is shares traded that day, turnover is volume times price, average volume is the 20-session mean, and a volume spike is a day far above it</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card4.png" alt="Bar chart of five Tesla sessions — July 21 32.7M shares, July 22 30.6M, July 23 115.6M highlighted in red, July 24 62.8M, July 27 44.9M" loading="lazy">
+      <figcaption><b>p.04</b> Bar chart of five Tesla sessions — July 21 32.7M shares, July 22 30.6M, July 23 115.6M highlighted in red, July 24 62.8M, July 27 44.9M</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card5.png" alt="Comparison card — an up candle beside a down candle, explaining that volume rising with the move means many people moved that way, while volume drying up leaves the move thin" loading="lazy">
+      <figcaption><b>p.05</b> Comparison card — an up candle beside a down candle, explaining that volume rising with the move means many people moved that way, while volume drying up leaves the move thin</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card6.png" alt="Real example — Tesla's down candle of Thursday, July 23, 2026: high 342.11, close 319.69, open 341.00, low 315.74, on 115.6M shares, three times the prior 20-session average of 39.0M" loading="lazy">
+      <figcaption><b>p.06</b> Real example — Tesla's down candle of Thursday, July 23, 2026: high 342.11, close 319.69, open 341.00, low 315.74, on 115.6M shares, three times the prior 20-session average of 39.0M</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card7.png" alt="Three common mistakes — treating a volume spike as good news, reading volume without price, and skipping the comparison with that stock's own average, with a warning that volume never gives direction" loading="lazy">
+      <figcaption><b>p.07</b> Three common mistakes — treating a volume spike as good news, reading volume without price, and skipping the comparison with that stock's own average, with a warning that volume never gives direction</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card8.png" alt="Three-line recap, a teaser for the next episode on support and resistance, and a note that this is educational content and not investment advice" loading="lazy">
+      <figcaption><b>p.08</b> Three-line recap, a teaser for the next episode on support and resistance, and a note that this is educational content and not investment advice</figcaption>
+    </figure></div>
+    <h3>캡션 (939자)</h3>
+    <div class="cap">Those bars under the price chart are volume — simply how many shares changed hands that day.<br><br>The raw number tells you nothing on its own. It only means something next to that stock's own average.<br><br>Tesla traded 115.6M shares on Thursday, July 23, 2026 — about 3.0 times the 39.0M average of the previous 20 sessions. The close finished 14.5% below the day before, and the stock opened 8.8% under that close.<br><br>A spike is not good news by itself. Heavy selling lifts volume exactly as much as heavy buying does. Volume never gives you direction — it tells you how many people moved.<br><br>📌 Save it and pull it up when you chart<br>👇 Tag a friend who just started investing<br>(Educational content only — not investment advice)<br><br>Next up: support and resistance — reading the ceiling and the floor on a chart.<br><br>#investingbasics #stockmarket #tradingvolume #stockcharts #technicalanalysis #learntoinvest #tesla #stockmarketbasics #investing101 #luckyon</div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-23-ep04&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-23-ep04%0AEP.04%20%EA%B1%B0%EB%9E%98%EB%9F%89" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-23-ep04&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-23-ep04%0AEP.04%20%EA%B1%B0%EB%9E%98%EB%9F%89" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<footer>
+버튼 대신 Claude 에게 직접 <code>차트노트 2026-08-23-ep04 발행해</code> 라고 해도 됩니다.<br>
+※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
+</footer>
+</body></html>
