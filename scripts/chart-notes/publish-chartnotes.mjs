@@ -21,6 +21,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -44,7 +45,7 @@ const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const contentPath = path.join(root, 'content', 'chart-notes', `${stamp}.json`);
 if (!fs.existsSync(contentPath)) {
   console.error(`❌ 콘텐츠 파일이 없습니다: content/chart-notes/${stamp}.json`);

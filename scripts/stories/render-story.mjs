@@ -10,6 +10,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -18,7 +19,7 @@ if (!stamp) {
   process.exit(1);
 }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'stories', `${stamp}.json`), 'utf8'));
 const outDir = path.join(root, 'cards', 'stories', stamp, lang);
 fs.mkdirSync(outDir, { recursive: true });

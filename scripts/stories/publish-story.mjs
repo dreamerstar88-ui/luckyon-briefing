@@ -10,6 +10,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const argv = process.argv.slice(2);
 const DRY = argv.includes('--dry-run');
@@ -34,7 +35,7 @@ const PAGES = required('PAGES_BASE_URL').replace(/\/$/, '');
 const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const relDir = `cards/stories/${stamp}/${lang}`;
 const localPng = path.join(root, ...relDir.split('/'), 'story.png');
 if (!fs.existsSync(localPng)) {

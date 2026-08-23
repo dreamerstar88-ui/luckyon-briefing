@@ -19,6 +19,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildAltTexts } from './lib/alt-text.mjs';
 
 const [date, lang = 'ko', session = ''] = process.argv.slice(2).filter(a => !a.startsWith('--'));
@@ -41,7 +42,7 @@ function required(k) {
   return v;
 }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const contentPath = path.join(root, 'content', contentFile);
 if (!fs.existsSync(contentPath)) {

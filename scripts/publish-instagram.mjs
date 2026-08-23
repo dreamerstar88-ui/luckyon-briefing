@@ -15,6 +15,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildAltTexts } from './lib/alt-text.mjs';
 
 const date = process.argv[2];
@@ -36,7 +37,7 @@ function required(k) {
 }
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const content = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const caption = lang === 'ko' ? content.caption_ko : content.caption_en;

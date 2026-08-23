@@ -15,9 +15,10 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildComment, buildWeeklyComment } from './comment.mjs';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const dataDir = path.join(root, 'data', 'reels');
 
 // --still: 영상 대신 정지 이미지 한 장만 만든다 (스토리용).
