@@ -1,0 +1,192 @@
+{
+  "date": "2026-08-24",
+  "session": "am",
+  "dateLabel_ko": "2026.8.24(월) 아침",
+  "dateLabel_en": "Mon, Aug 24, 2026 · AM",
+
+  "headline_ko": "국채금리 다시 올랐지만 3대 지수는 상승 마감",
+  "headline_en": "Wall Street Closes Higher Even as Treasury Yields Climb Again",
+  "headline_sub_ko": "다우 +0.98%·나스닥 +0.43%·S&P500 +0.43%, 그래도 주간으론 이틀째 하락",
+  "headline_sub_en": "Dow +0.98%, Nasdaq +0.43%, S&P 500 +0.43% — yet a second straight weekly loss",
+  "cover_kicker": "US MARKET CLOSE · 8/21",
+  "cover_facts": [
+    ["shield", "Dow +0.98% · S&P 500 +0.43%", "53,277.01 / 7,674.37 · 3대 지수 모두 상승 마감"],
+    ["rate", "US 10Y 4.69% → 4.74%", "재무부 바이백 확대 예고에도 금리는 다시 상승"],
+    ["chip", "NVDA AI 서버가 +15%", "HBM·서버D램 품귀 여파, 삼전·SK하이닉스엔 호재"]
+  ],
+
+  "markets": [
+    {"label":"NASDAQ","value":"26,180.46","delta":"▲0.43%","dir":"up","note_ko":"8/21 미국장 마감 종가 · 주간 -2.05%","note_en":"8/21 US close · down 2.05% for the week"},
+    {"label":"S&P 500","value":"7,674.37","delta":"▲0.43%","dir":"up","note_ko":"8/21 마감 · 주간 -1.43%","note_en":"8/21 close · down 1.43% for the week"},
+    {"label":"KOSPI","value":"6,912.95","delta":"▲0.88%","dir":"up","note_ko":"8/21 종가 · 장 열리기 전","note_en":"8/21 close · ahead of today's open"},
+    {"label":"VIX","value":"15.13","delta":"▼5.50%","dir":"down","note_ko":"美 정규장 마감 기준 · 국채금리 상승 속에도 진정","note_en":"As of US close · eased even as yields rose"},
+    {"label":"Fear & Greed","value":"52 → 55","delta":"▲","dir":"up","note_ko":"중립 상단으로 회복","note_en":"Recovers to upper end of Neutral"},
+    {"label":"US 10Y","value":"4.69% → 4.74%","delta":"▲","dir":"up","note_ko":"재무부 바이백 확대 예고에도 상승","note_en":"Rose despite the Treasury's expanded buyback plan"},
+    {"label":"USD/KRW","value":"1,385.9","value_sub":"· DXY 98.8","delta":"▼0.35%","dir":"down","note_ko":"달러인덱스 98.8 · 일요일 야간 기준(월요일 개장 전)","note_en":"Dollar index 98.8 · as of Sunday night, ahead of Monday's open"},
+    {"label":"Gold","value":"$4,680.6","delta":"▲3.64%","dir":"up","note_ko":"안전자산 수요에 사흘째 강세","note_en":"Safe-haven demand extends a 3-day rally"},
+    {"label":"WTI","value":"$87.06","delta":"▼0.88%","dir":"down","note_ko":"美 이란 제재 예고 속에도 소폭 진정","note_en":"Eased slightly even as the US preps new Iran sanctions"},
+    {"label":"Bitcoin","value":"$77,794.3","delta":"▲1.05%","dir":"up","note_ko":"24시간 기준 · 주간 22%대 급등 후 숨고르기","note_en":"24h change · cooling after a ~22% weekly surge"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "美 재무부가 국채 바이백 확대를 예고했지만 10년물은 오히려 4.74%로 올랐다 — 금 3%대 급등과 비트코인 주간 22% 급등이 안전자산·위험자산 동반 강세를 만들었다.",
+  "market_note_en": "The Treasury signaled bigger bond buybacks, yet the 10-year yield still rose to 4.74% — gold's 3%+ jump and Bitcoin's ~22% weekly surge show safe havens and risk assets rallying together.",
+
+  "chart_series_values": [26445.45, 26588.49, 26803.03, 26729.16, 26644.91, 26289.71, 26331.09, 26067.17, 26180.46],
+  "chart_series_labels": ["8.11", "8.12", "8.13", "8.14", "8.17", "8.18", "8.19", "8.20", "8.21"],
+  "chart_title": "나스닥, 금요일 반등에도 주간은 하락 마감",
+  "chart_sub": "나스닥종합 종가 · 최근 9거래일",
+  "chart_note": "8.13 고점 26,803.03 → 8.20 저점 26,067.17 → 8.21 26,180.46로 반등",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Market Recap",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {"label_ko":"나스닥종합","label_en":"Nasdaq Composite","value":"26,180.46","delta":"▲0.43%","dir":"up","sub_ko":"8/21 마감 · 주간 -2.05%","sub_en":"8/21 close · -2.05% for the week"},
+        {"label_ko":"S&P 500","label_en":"S&P 500","value":"7,674.37","delta":"▲0.43%","dir":"up","sub_ko":"8/21 마감 · 주간 -1.43%","sub_en":"8/21 close · -1.43% for the week"},
+        {"label_ko":"다우존스","label_en":"Dow Jones","value":"53,277.01","delta":"▲0.98%","dir":"up","sub_ko":"8/21 마감 · 3대 지수 중 최대 상승폭","sub_en":"8/21 close · the biggest gainer of the three"}
+      ],
+      "breadth": [
+        {"label_ko":"거래대금 상위 300종목","label_en":"Top 300 by turnover","up":198,"flat":2,"down":100}
+      ],
+      "note_ko": "지수는 0.4%대 완만한 상승에 그쳤지만, 거래대금 상위 300종목 중에서는 오른 종목(198개)이 내린 종목(100개)의 2배 가까이 많았다.",
+      "note_en": "The indexes rose a modest 0.4%, but among the 300 most-traded names, advancers (198) nearly doubled decliners (100)."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Performance",
+      "color": "#4f9d6e",
+      "type": "bars",
+      "bars": [
+        {"label_ko":"소재 (XLB)","label_en":"Materials (XLB)","value":2.14},
+        {"label_ko":"헬스케어 (XLV)","label_en":"Health Care (XLV)","value":1.29},
+        {"label_ko":"경기소비재 (XLY)","label_en":"Cons. Disc. (XLY)","value":1.15},
+        {"label_ko":"금융 (XLF)","label_en":"Financials (XLF)","value":0.93},
+        {"label_ko":"필수소비재 (XLP)","label_en":"Cons. Staples (XLP)","value":0.79},
+        {"label_ko":"커뮤니케이션 (XLC)","label_en":"Comm. Svcs (XLC)","value":0.65},
+        {"label_ko":"산업재 (XLI)","label_en":"Industrials (XLI)","value":0.27},
+        {"label_ko":"기술 (XLK)","label_en":"Technology (XLK)","value":0.12},
+        {"label_ko":"부동산 (XLRE)","label_en":"Real Estate (XLRE)","value":0.0},
+        {"label_ko":"에너지 (XLE)","label_en":"Energy (XLE)","value":-0.17},
+        {"label_ko":"반도체 (SMH)","label_en":"Semis (SMH)","value":-0.4},
+        {"label_ko":"유틸리티 (XLU)","label_en":"Utilities (XLU)","value":-2.29}
+      ],
+      "note_ko": "국채금리 상승에도 소재·헬스케어가 앞장섰고, 금리에 민감한 유틸리티(-2.29%)와 반도체(-0.40%)만 뒤처졌다.",
+      "note_en": "Materials and health care led even as yields climbed, while rate-sensitive utilities (-2.29%) and semiconductors (-0.40%) lagged."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Value Traded",
+      "color": "#c98a3e",
+      "type": "rank",
+      "rows": [
+        {"name_ko":"테슬라","name_en":"Tesla","value":"$21.49B","pct":5.14},
+        {"name_ko":"엔비디아","name_en":"Nvidia","value":"$21.23B","pct":-0.98},
+        {"name_ko":"애플","name_en":"Apple","value":"$14.50B","pct":-0.63},
+        {"name_ko":"모더나","name_en":"Moderna","value":"$12.67B","pct":8.86},
+        {"name_ko":"샌디스크","name_en":"SanDisk","value":"$12.09B","pct":-0.28}
+      ],
+      "note_ko": "테슬라·엔비디아 두 종목의 거래대금만 합쳐 427억달러로, 표본 300종목 거래액의 12%를 넘었다. 모더나는 8.86% 급등하며 거래대금 4위에 올랐다.",
+      "note_en": "Tesla and Nvidia alone accounted for roughly $42.7B in turnover, more than 12% of the sampled 300 stocks' total. Moderna jumped 8.86% to rank 4th by turnover."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#3987e5",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {"label_ko":"S&P 글로벌 제조업 PMI","label_en":"S&P Global Mfg PMI","value":"53.2","delta":"▼0.7p","dir":"down","sub_ko":"8/21 · 예상 53.9 · 이전 53.9","sub_en":"8/21 · est. 53.9 · prev. 53.9"},
+        {"label_ko":"S&P 글로벌 서비스업 PMI","label_en":"S&P Global Services PMI","value":"56.8","delta":"▲2.8p","dir":"up","sub_ko":"8/21 · 예상 54.0 · 이전 54.6","sub_en":"8/21 · est. 54.0 · prev. 54.6"},
+        {"label_ko":"S&P 글로벌 종합 PMI","label_en":"S&P Global Composite PMI","value":"56.0","delta":"▲1.5p","dir":"up","sub_ko":"8/21 · 이전 54.5 (예상치 없음)","sub_en":"8/21 · prev. 54.5 (no consensus)"}
+      ],
+      "note_ko": "제조업은 예상을 하회했지만 서비스업·종합 지수는 예상을 웃돌며 미국 경기가 서비스업 중심으로 견조함을 보여줬다. delta는 예상치 대비(종합은 이전치 대비) 실측치 기준.",
+      "note_en": "Manufacturing missed estimates, but services and the composite topped forecasts, underscoring services-led resilience in the US economy. Delta = actual vs. estimate (vs. prior for the composite, which has no consensus)."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "color": "#7a5fc9",
+      "items": [
+        {"headline_ko":"엔비디아, AI서버 가격 15% 이상 인상 예고","headline_en":"Nvidia Warns Customers of 15%+ AI Server Price Hike",
+         "body_ko":"블룸버그에 따르면 엔비디아는 22일(현지시간) 대형 데이터센터 고객사에 내년 초 출하분부터 AI서버 가격을 15% 이상 올리겠다고 통보했다 — HBM·서버용 D램 등 메모리 가격 급등이 배경이다.",
+         "body_en":"Nvidia told major data-center customers on Aug. 22 that AI server prices will rise more than 15% starting with early-2027 shipments, Bloomberg reported, citing surging HBM and server DRAM prices.",
+         "src":"Bloomberg","time":"8/22"},
+        {"headline_ko":"TSMC, 1.6나노(A16) 공정 개발·검증 완료","headline_en":"TSMC Completes Development of 1.6nm 'A16' Process",
+         "body_ko":"대만 언론에 따르면 TSMC는 후면전력공급(SPR) 기술을 적용한 1.6나노급 A16 공정의 개발과 검증을 마쳤다 — 올 4분기 양산을 앞두고 AI·HPC용 최선단 파운드리 경쟁이 더 빨라졌다.",
+         "body_en":"Taiwanese media report TSMC has finished developing and verifying its 1.6nm-class A16 node with backside power delivery ahead of Q4 mass production, intensifying the race for leading-edge AI/HPC foundry capacity.",
+         "src":"Taiwan media","time":"8/21"},
+        {"headline_ko":"메모리 가격 강세, 삼전·SK하이닉스엔 '양날의 검'","headline_en":"Memory Price Surge Cuts Both Ways for Samsung, SK Hynix",
+         "body_ko":"HBM·서버D램 가격 상승은 삼성전자·SK하이닉스의 실적 전망을 밀어올리는 요인이지만, 동시에 고객사 원가 부담을 키워 AI 서버 수요 자체를 눌러버릴 수 있다는 우려도 함께 나온다.",
+         "body_en":"Rising HBM and server DRAM prices are lifting profit outlooks for Samsung Electronics and SK Hynix, but the same hikes raise customers' costs and could eventually cool AI server demand, analysts caution.",
+         "src":"Korean press","time":"8/24"},
+        {"headline_ko":"온디바이스 AI 확산에 LPDDR·SRAM 수요 부상","headline_en":"On-Device AI Boosts Demand for LPDDR, SRAM",
+         "body_ko":"기기 자체에서 AI 연산을 처리하는 온디바이스 AI가 늘면서, 저전력 D램(LPDDR)과 SRAM 등 온디바이스향 메모리 수요가 새로운 성장축으로 떠오르고 있다.",
+         "body_en":"As more AI processing shifts on-device, demand is rising for low-power DRAM (LPDDR) and SRAM tailored to on-device workloads, an emerging growth axis for memory makers.",
+         "src":"Industry press","time":"8/24"}
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#5aa469",
+      "items": [
+        {"headline_ko":"美 재무장관 베선트, 국채 바이백 확대 예고…금리는 오히려 올라","headline_en":"Treasury's Bessent Signals Bigger Bond Buybacks — Yields Rise Anyway",
+         "body_ko":"스콧 베선트 미 재무장관이 장기국채 바이백 규모를 회당 최소 2배로 늘리겠다고 예고했지만, 30년물 금리는 지난주 5.3%대까지 오르며 19년 만의 최고치권을 유지했다. 잭슨홀에서 케빈 워시 연준 의장이 이를 언급할지가 관심사다.",
+         "body_en":"Treasury Secretary Scott Bessent said long-term bond buybacks will at least double in size per operation, but the 30-year yield still touched around 5.3% last week, a roughly 19-year high. Markets are watching whether Fed Chair Kevin Warsh addresses it at Jackson Hole.",
+         "src":"Korean press","time":"8/24"},
+        {"headline_ko":"비트코인, 주간 22% 급등 후 8만달러 목전에서 급락","headline_en":"Bitcoin Surges 22% for the Week, Then Slides Just Short of $80K",
+         "body_ko":"비트코인은 지난 한 주 새 약 22% 급등하며 한때 79,000달러 후반까지 올랐지만, 주말 들어 차익실현과 레버리지 청산이 겹치며 7만7천달러대로 밀렸다 — 현물 ETF 거래가 없는 주말이라 유동성이 얇았던 점도 변동성을 키웠다.",
+         "body_en":"Bitcoin jumped roughly 22% over the past week, briefly nearing $79,500, before profit-taking and leverage unwinds pulled it back into the high-$77,000s over the weekend — thin weekend liquidity, with spot ETFs closed, amplified the swing.",
+         "src":"Crypto press","time":"8/22-23"},
+        {"headline_ko":"美, 오늘 대이란 '역대급' 추가 제재 발표 예고","headline_en":"US to Unveil 'Unprecedented' New Iran Sanctions Today",
+         "body_ko":"트럼프 행정부가 24일(현지시간)부터 대이란 경제 제재를 대폭 강화해 발표할 예정이다. 이란은 제재에 동참하는 제3국을 '적국'으로 간주하겠다고 반발했다 — 국제유가·중동 리스크가 다시 부각될 수 있는 대목이다.",
+         "body_en":"The Trump administration is set to announce sharply expanded economic sanctions on Iran starting Aug. 24 (local time). Iran has warned it will treat any third country that joins the sanctions as an 'enemy state' — a flashpoint that could reawaken oil-price and Middle East risk.",
+         "src":"International press","time":"8/24"},
+        {"headline_ko":"코스피, 삼성전자 110조 주주환원 이후 첫 거래일…7000선 도전","headline_en":"KOSPI's First Session Since Samsung's ₩110tn Buyback — Testing 7,000",
+         "body_ko":"지난 21일 삼성전자가 역대 최대 90조~110조원 규모 주주환원을 공시한 뒤 첫 거래일을 맞는 코스피가 7000선 안착을 시험받는다. 이번 주 예정된 엔비디아 실적과 잭슨홀 심포지엄이 추가 변수다.",
+         "body_en":"KOSPI opens its first session since Samsung Electronics disclosed a record ₩90-110 trillion shareholder return on Aug. 21, with the index testing whether it can hold above 7,000. Nvidia's earnings and the Jackson Hole symposium later this week add further swing factors.",
+         "src":"Korean press","time":"8/24"}
+      ]
+    }
+  ],
+
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00–15:30 KST · Call auctions 08:30–09:00 / 15:20–15:30"]
+  },
+  "schedule": [
+    {"time":"8/24","title_ko":"美, 이란 대규모 추가 제재 발표","title_en":"US Unveils Major New Iran Sanctions","detail_ko":"트럼프 행정부, 경제 제재 대폭 강화 예고 · 국제유가·중동 리스크 변수","detail_en":"Trump administration to sharply expand sanctions · oil price, Mideast risk in focus","importance":"high"},
+    {"time":"8/25 23:00","title_ko":"美 8월 컨퍼런스보드 소비자신뢰지수","title_en":"US Aug. Conference Board Consumer Confidence","detail_ko":"월간 소비심리 지표 발표","detail_en":"Monthly consumer sentiment reading","importance":"mid"},
+    {"time":"8/26 21:30","title_ko":"美 7월 PCE 물가지수","title_en":"US July PCE Price Index","detail_ko":"예상 전월비 +0.1% · 근원 PCE 전년비 예상 +3.3%","detail_en":"Est. MoM +0.1% · Core PCE YoY est. +3.3%","importance":"high"},
+    {"time":"8/27 05:30","title_ko":"엔비디아(NVDA) 2분기 실적 발표","title_en":"Nvidia (NVDA) Q2 Earnings","detail_ko":"예상 EPS $2.09 · 매출 예상 920.6억달러","detail_en":"Est. EPS $2.09 · revenue est. $92.06B","importance":"high"},
+    {"time":"8/27 10:00","title_ko":"한국은행 금융통화위원회","title_en":"Bank of Korea Rate Decision","detail_ko":"현재 기준금리 2.75% · 동결 여부 주목","detail_en":"Current base rate 2.75% · hold vs. cut in focus","importance":"high"},
+    {"time":"8/27~29","title_ko":"잭슨홀 심포지엄 개막","title_en":"Jackson Hole Symposium Begins","detail_ko":"연준 연례 경제정책 심포지엄 · 케빈 워시 의장의 데뷔 무대","detail_en":"Fed's annual economic policy symposium · Chair Kevin Warsh's debut","importance":"mid"},
+    {"time":"8/28 23:00","title_ko":"케빈 워시 연준 의장 잭슨홀 연설","title_en":"Fed Chair Kevin Warsh's Jackson Hole Speech","detail_ko":"국채금리·재무부 바이백 정책에 대한 입장 주목","detail_en":"Markets watch for his stance on yields and Treasury buybacks","importance":"high"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "The NYSE trading floor moments after the Friday closing bell, traders in silhouette, warm amber light, index numbers glowing on a wall of screens, muted low-angle wide shot",
+    "3": "A dark trading floor with a glowing line chart projected across a bank of monitors, deep red and blue accent lights, cinematic depth of field",
+    "6": "A minimalist data center corridor at dusk, rows of server racks with soft blue LED indicators, cool tones, shallow depth of field",
+    "7": "Extreme close-up of a semiconductor wafer under industrial light, geometric circuit patterns, cool silver and violet tones, shallow focus",
+    "8": "A dim newsroom-style desk with world map glow in the background, muted blues and greys, subtle sense of geopolitical tension",
+    "9": "Seoul's financial district skyline at early dawn, soft blue-grey light, glass towers reflecting the sunrise, calm wide shot"
+  },
+
+  "caption_ko": "지난주 마지막 거래일, 美 국채금리가 다시 올랐지만 뉴욕증시 3대 지수는 나란히 상승 마감했습니다. 엔비디아는 메모리 품귀에 AI서버 가격을 15% 이상 올리겠다 예고했고, 비트코인은 주간 22% 급등 후 8만달러를 목전에서 급락했습니다. 오늘은 미국이 대이란 제재를 대규모로 발표하는 날이기도 합니다. 오늘 아침 브리핑에서 확인하세요. 저장하고 팔로우하면 매일 아침·저녁 놓치지 않아요.\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n#루키온브리핑 #아침브리핑 #뉴욕증시 #나스닥 #S&P500 #코스피 #엔비디아 #비트코인 #국채금리 #이란제재 #반도체 #잭슨홀 #경제뉴스 #주식 #투자",
+  "caption_en": "On the last trading day of the week, US Treasury yields climbed again, yet Wall Street's three major indexes all closed higher. Nvidia warned major customers of a 15%+ AI server price hike amid a memory chip shortage, while Bitcoin surged 22% for the week before sliding back just short of $80K. Today also marks the US's announcement of sweeping new Iran sanctions. Check today's morning brief for the full picture. Save & follow so you never miss the morning and evening briefs.\n🌙 Next brief — 9 PM KST, before the US open\n#luckyonbriefing #morningbrief #wallstreet #nasdaq #sp500 #kospi #nvidia #bitcoin #treasuryyields #iransanctions #semiconductors #jacksonhole #economicnews #stocks #investing",
+  "sources": ["Yahoo Finance", "FMP", "CNN Fear & Greed Index", "Bloomberg", "Naver News"]
+}
