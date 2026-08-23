@@ -54,7 +54,13 @@ const 수입품목 = [
 ];
 
 async function ecos(stat, from, to) {
-  const url = `${ECOS}/StatisticSearch/${key('ECOS_API_KEY')}/json/kr/1/500/${stat}/M/${from}/${to}`;
+  // 키가 없으면 ECOS 는 "인증키가 유효하지 않습니다" 를 준다. 키를 안 넣은 것과
+  // 잘못 넣은 것이 같은 문구로 나와 원인을 찾는 데 시간이 걸린다 — 먼저 갈라 준다.
+  const k = key('ECOS_API_KEY');
+  if (!k) throw new Error(
+    'ECOS_API_KEY 가 없습니다. 클라우드에서 돌 때는 루틴 환경 설정에 ECOS_API_KEY 를 넣어야 합니다 '
+    + '(로컬에서는 api-keys/keys.env 를 읽습니다). 키가 없으면 이 카드의 한국 지표 자리는 비우고 진행하십시오.');
+  const url = `${ECOS}/StatisticSearch/${k}/json/kr/1/500/${stat}/M/${from}/${to}`;
   const res = await fetch(url);
   const j = await res.json();
   if (j.RESULT) throw new Error(`ECOS ${stat}: ${j.RESULT.MESSAGE}`);
