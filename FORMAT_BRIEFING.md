@@ -26,24 +26,29 @@
 
 ## 1. 카드 구성 (am · pm)
 
-> **주말은 이 표를 쓰지 않는다** → 토요일 §2-A, 일요일 §2-B
+**평일은 카드 10장 고정 편성이다.** 2026-08-23 개편. 장마다 모양이 다르므로
+`scripts/render-cards.mjs` 가 `scripts/render-cards-day.mjs` 로 위임한다 (주말과 같은 방식).
 
-| 카드 | 내용 | 근거 필드 |
-|---|---|---|
-| ① | 훅 | `headline_*` + `summary` |
-| ② | 시장 한눈에 (10칸 격자) | `markets[]` x10, `market_note_*` |
-| ③④⑤⑥⑦ | 본문 5장 | `sections[]` x5 |
-| ⑧ | 주요 일정 | `market_hours`, `schedule[]` |
-| ⑨ | 아웃트로 | `next_brief_*`, `outro_tagline_*` |
+| 장 | 카드 | 무엇이 그려지나 | 근거 필드 |
+|---|---|---|---|
+| 1 | 표지 | 위 절반 사진 + 헤드라인 + 부제 + 아이콘 붙은 핵심 3줄 | `headline_ko/en`, `headline_sub_ko/en`, `cover_kicker`, `cover_facts` |
+| 2 | 시장 한눈에 | 큰 타일 1개(**선 차트 포함**) + 옆 타일 2개 + 아래 4+3 = **지표 10개 전부** | `markets`, `tile_main`, `tile_side`, `tile_rest`, `chart_series_values` |
+| 3 | 지수 기록 | **선 차트** + 지수 2개 큰 숫자 + **등락 종목수 띠** + **투자자별 순매수 막대** | `chart_*`, 섹션 `stats`·`breadth`·`flows` |
+| 4 | 섹터별 등락 | 0 기준 **발산 막대** (업종 10~15개) | 섹션 `bars` |
+| 5 | 거래대금 상위 | **순위 가로 막대** + 등락률·공매도 열 + 비중 띠 | 섹션 `rows`·`share` |
+| 6 | 실적 · 지표 발표 | 2열 큰 숫자 타일 (최대 6개) | 섹션 `stats` |
+| 7 | AI · 반도체 | 아이콘 + 헤드라인 + 본문 (4건) | 섹션 `items` |
+| 8 | 주요 소식 | 01~04 번호 + 헤드라인 + 본문 (4건) | 섹션 `items` |
+| 9 | 주요 일정 | 타임라인 + 운영시간 상자 | `schedule`, `market_hours` |
+| 10 | 아웃트로 | 로고 · 태그라인 · 다음 회차 · 핸들 | `outro_tagline_ko/en`, `next_brief_ko/en` |
 
-- **`sections` 는 필수다.** 없으면 렌더러가 «오류로» 멈춘다 — 예전에는 구버전 `econ`/`ai` 6+6
-  구성으로 조용히 내려앉는 폴백이 있었으나 2026-08-09 에 걷어냈다(§7 참고).
-- **총 장수 = `sections.length` + 4.** `sections` 5장이면 9장이다. 단 **`schedule` 과 `market_hours` 가 둘 다 있어야** ⑧이 그려진다 — 하나라도 빠지면 렌더러가 일정 카드를 통째로 건너뛰어 오류 없이 8장만 나온다. §6 에서 장수를 셀 때 이것부터 본다.
-- **인스타 캐러셀 한도는 10장**이라 본문을 더 늘릴 여지는 한 장뿐이다.
-- 재료가 정말 부족하면 `sections` 를 줄여도 레이아웃은 깨지지 않는다(카드 수만 준다). 다만 이는 최후 수단이고, 빈칸을 메우려고 확인 안 된 내용을 넣는 것보다 낫다는 뜻일 뿐이다.
-- **각 축의 ③~⑦ 주제 배정은 축별 절차서에 있다.** 이 문서는 그 자리에 쓸 수 있는 **유형**만 정의한다.
-
----
+- **본문 카드(3~8)는 `sections` 를 제목으로 찾아 쓴다.** `sections[].type` 을 보지 않는다 —
+  어느 장에 무엇이 오는지가 편성으로 정해져 있기 때문이다. 제목이 없으면 그 카드는 비고,
+  브리핑은 멈추지 않는다. 찾는 제목은 §5 스키마의 `sections` 항목에 적었다.
+- **배경 사진은 그날 내용으로 만든다.** `node scripts/gen-card-photos.mjs <DATE> <SESSION>` 을
+  렌더 전에 돌린다. 만들지 못한 장은 저장소에 든 사진으로 내려가고 발행은 그대로 진행된다.
+- 캐러셀 상한이 10장이므로 **장수를 늘릴 수 없다.** 재료가 남으면 카드 안에서 항목을 늘린다.
+- 주말(sat·sun)은 편성이 다르다 — §2-A·§2-B.
 
 ## 2. 섹션 카드 유형 (`sections[].type`)
 
@@ -418,38 +423,94 @@ korea/weekend/ai/watch .items[].src
 
 ## 5. 콘텐츠 JSON 스키마 (am · pm)
 
-> **주말 스키마는 여기가 아니다** → 토요일 §2-A, 일요일 §2-B. 아래 `markets`·`sections`·
-> `schedule`·`market_hours` 는 **평일에만** 쓴다.
-
-```
+```jsonc
 {
-  "date", "session",                          // session: "am" | "pm"
+  "date":"YYYY-MM-DD", "session":"am"|"pm",
   "dateLabel_ko","dateLabel_en",
-  "headline_ko","headline_sub_ko","headline_en","headline_sub_en",
-  "summary":{"lines_ko":[...],"lines_en":[...]},   // §3.1
-  "markets":[{"label","value","value_sub(선택)","delta","dir(up|down|flat)","note_ko","note_en"} x10],
-  "market_note_ko","market_note_en",
-  "sections":[                                 // 본문 5장. 순서대로 카드 ③④⑤⑥⑦
-    {
-      "title_ko","title_en",
-      "color",                                 // 축별 절차서의 섹션 표에 있는 색
-      "type",                                  // 선택: "stats"|"bars"|"rank"|"econ". 없으면 items 로 그린다 (§2)
-      "items":[{"headline_ko","headline_en","body_ko","body_en","src(선택)","time(선택)"}],  // type 없을 때
-      "stats":[...], "cols", "breadth":[...], "flows":{...},   // type:"stats"
-      "bars":[...],                                            // type:"bars"
-      "rows":[...], "share":{...},                             // type:"rank"
-      "rows":[...], "col_delta_ko", "col_delta_en",            // type:"econ"
-      "note_ko","note_en"                                      // 모든 type 공통(선택)
-    } x5
+
+  // ── 1 표지 ────────────────────────────────────────────────
+  "headline_ko","headline_en",                 // 한 줄. 40자 넘으면 두 줄로 접힌다
+  "headline_sub_ko","headline_sub_en",
+  "cover_kicker":"간밤 미국장 · 8/21 마감",     // 사진 위 작은 글씨
+  "cover_facts":[                              // 3줄 고정. 아이콘 이름은 아래 목록에서
+    ["shield","다우 +0.98% · S&P 500 +0.43%","53,277.01 / 7,674.37 · 3대 지수 모두 상승"]
   ],
-  "schedule_title_ko","schedule_title_en",     // 고정: "주요 일정" / "Key Schedule"
-  "market_hours": { "title_ko","title_en","lines_ko":[...], "lines_en":[...] },
-  "schedule":[{"time","title_ko","title_en","detail_ko","detail_en","importance(high|mid)"} x4~6],
-  "next_brief_ko","next_brief_en",
-  "outro_tagline_ko","outro_tagline_en",       // 선택. 없으면 렌더러 기본 문구
+  // 아이콘: shield · bond · chip · rate · ai · globe · clock · target
+
+  // ── 2 시장 한눈에 ─────────────────────────────────────────
+  "markets":[{"label","value","delta","dir":"up|down|flat","note_ko","note_en"}],  // 10개
+  "tile_main":"NASDAQ",                        // 차트가 들어가는 큰 타일. pm 은 "KOSPI"
+  "tile_side":["S&P 500","KOSPI"],             // 오른쪽 위아래 2개
+  "tile_rest":["VIX","US 10Y","KOSDAQ","USD/KRW","Gold","WTI","Bitcoin"],  // 4+3
+  "tile_lead":"...", "main_tile_note":"...",
+  "market_note_ko","market_note_en",           // ※ 각주
+
+  // ── 3 지수 기록 ───────────────────────────────────────────
+  "chart_series_values":[26460.2, 26588.4, ...],   // 최근 9거래일 종가. 이게 없으면 차트가 안 그려진다
+  "chart_series_labels":["8.11","8.12", ...],      // 같은 길이
+  "chart_title":"지수는 올랐고 주간으로는 내렸다",
+  "chart_sub":"나스닥종합 종가 · 최근 9거래일",
+  "chart_note":"8.13 고점 26,803.03 → 8.20 저점 26,067.17 → 8.21 26,180.46",
+  "record_section":"미국장 기록",               // pm 이면 "코스피 · 코스닥 기록"
+  "record_kicker":"TODAY",
+
+  // ── 4·5·6 카드 제목·부제 ──────────────────────────────────
+  "sector_section":"섹터별 등락",  "sector_title","sector_sub",
+  "rank_kicker","rank_title","rank_sub","rank_unit",
+  "econ_kicker","econ_title","econ_sub",
+  "tech_section":"AI · 반도체 기술",  "stories_section":"주요 소식",
+
+  // ── 본문 6개 (제목으로 찾는다 — 순서는 무관) ───────────────
+  "sections":[
+    {"title_ko":"미국장 기록","title_en":"...",           // 또는 "코스피 · 코스닥 기록"
+     "stats":[{"label_ko","label_en","value","delta","dir","sub_ko","sub_en"}],   // 2개
+     "breadth":[{"label_ko","label_en","up","flat","down"}],                      // 1~2개
+     "flows":{"label_ko","label_en","unit_ko","unit_en",
+              "rows":[{"label_ko","label_en","value"}]},
+     "note_ko","note_en"},
+    {"title_ko":"섹터별 등락","bars":[{"label_ko","label_en","value"}],"note_ko","note_en"},
+    {"title_ko":"거래대금 상위",
+     "rows":[{"name_ko","name_en","value","pct","short"}],     // short 는 미국장만
+     "share":{"label_ko","label_en","mode":"nested"|"compare",
+              "segments":[{"label_ko","label_en","pct","color"}]},
+     "note_ko","note_en"},
+    {"title_ko":"실적 · 지표 발표",
+     "stats":[{"label_ko","label_en","value","delta","dir","sub_ko","sub_en"}],   // 최대 6개
+     "note_ko","note_en"},
+    {"title_ko":"AI · 반도체 기술","items":[{"headline_ko","headline_en","body_ko","body_en"}]},  // 4건
+    {"title_ko":"주요 소식","items":[{"headline_ko","headline_en","body_ko","body_en"}]}          // 4건
+  ],
+
+  // ── 9 일정 ────────────────────────────────────────────────
+  "schedule_kicker","schedule_sub","schedule_title_ko","schedule_title_en",
+  "market_hours":{"title_ko","title_en","lines_ko":[...],"lines_en":[...]},
+  "schedule":[{"time","title_ko","title_en","detail_ko","detail_en","importance":"high|mid"}],  // 5건
+
+  // ── 10 아웃트로 ───────────────────────────────────────────
+  "outro_tagline_ko","outro_tagline_en","next_brief_ko","next_brief_en",
+
+  // ── 배경 사진 (선택이지만 권장) ───────────────────────────
+  "card_photos":{                              // 카드 번호 → 장면 설명(영문이 잘 나온다)
+    "1":"The NYSE trading floor moments after the closing bell, traders in silhouette…",
+    "3":"A dark trading floor, index numbers streaming across a wall of screens…"
+  },
+
   "caption_ko","caption_en","sources":[...]
 }
 ```
+
+**분량 상한** — 넘기면 푸터에 닿는다.
+
+| 필드 | 상한 |
+|---|---|
+| `cover_facts` | 3줄. 첫 줄 한글 22자·영문 40자 |
+| `markets` | 정확히 10개. `tile_main` 1 + `tile_side` 2 + `tile_rest` 7 |
+| `chart_series_values` | 8~10점. 그보다 촘촘하면 x축 라벨이 겹친다 |
+| `bars` | 10~15개 |
+| `rows` (거래대금) | 5개 |
+| `stats` (실적·지표) | 최대 6개 (2열 × 3행) |
+| `items` | 카드당 4건. 본문 한글 90자·영문 160자 안쪽 |
+| `schedule` | 5건 |
 
 ### 고정 문구
 

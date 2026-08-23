@@ -1,0 +1,591 @@
+{
+  "date": "2026-08-22",
+  "session": "am",
+  "dateLabel_ko": "2026.8.22(토) 아침",
+  "dateLabel_en": "Sat, Aug 22, 2026 · AM",
+  "headline_ko": "다우 517포인트 올랐지만 주간으로는 7월 이후 첫 하락",
+  "headline_sub_ko": "거래대금 1위 테슬라 +5.14% · 2위 마이크론 −0.77% · 엔비디아 실적 주간을 앞두고 갈렸다",
+  "headline_en": "Dow Adds 517 Points, but the Week Was the First Down Week Since July",
+  "headline_sub_en": "Tesla led turnover at +5.14% while Micron fell 0.77% — the tape split before Nvidia's earnings week",
+  "cover_photo": "photos/nyse.jpg",
+  "cover_kicker": "간밤 미국장 · 8/21 마감",
+  "cover_facts": [
+    [
+      "shield",
+      "다우 +0.98%  ·  S&P 500 +0.43%",
+      "53,277.01 / 7,674.37 · 3대 지수 모두 상승"
+    ],
+    [
+      "bond",
+      "그런데 주간으로는 S&P −1.4%",
+      "7월 이후 첫 주간 하락 · 30년물 금리 2주 연속 상승"
+    ],
+    [
+      "chip",
+      "돈은 오른 종목으로 갔다 · 57.7%",
+      "상승 $204.7B 대 하락 $149.8B"
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "다우가 517.80포인트(0.98%) 오른 53,277.01로 마감하며 3대 지수를 이끌었다. S&P 500과 나스닥은 각각 0.43% 올랐다.",
+      "하루만 보면 오른 날이지만 주간으로는 S&P 500이 1.4% 내려 7월 이후 첫 주간 하락을 기록했다. 30년물 국채금리가 2주 연속 오르며 장기물이 부담을 줬다.",
+      "거래대금 상위 288종목 가운데 오른 종목이 193개, 내린 종목이 93개였다. 금액으로도 상승 종목에 $204.7B, 하락 종목에 $149.8B가 몰려 돈은 오른 쪽으로 갔다.",
+      "다만 거래대금 1위 테슬라(+5.14%)와 2위 마이크론(−0.77%)이 정반대로 갈렸다. 다음 주 엔비디아 실적을 앞두고 반도체는 경계가 남았다."
+    ],
+    "lines_en": [
+      "The Dow rose 517.80 points (0.98%) to 53,277.01, leading the three indexes. The S&P 500 and Nasdaq each gained 0.43%.",
+      "It was an up day but a down week — the S&P 500 fell 1.4%, its first weekly loss since July, as the 30-year Treasury yield rose for a second straight week.",
+      "Among the 288 most-traded names, 193 rose and 93 fell. By value, $204.7B went into gainers against $149.8B into decliners.",
+      "Yet the two biggest by turnover split: Tesla +5.14% and Micron -0.77%. Caution lingered in chips ahead of Nvidia's earnings next week."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,180.46",
+      "delta": "▲0.43%",
+      "dir": "up",
+      "note_ko": "113.29p 상승 · 8/21 미국장 마감 종가",
+      "note_en": "+113.29 pts · Aug 21 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,674.37",
+      "delta": "▲0.43%",
+      "dir": "up",
+      "note_ko": "33.21p 상승 · 주간으로는 −1.4%",
+      "note_en": "+33.21 pts · but -1.4% on the week"
+    },
+    {
+      "label": "다우존스",
+      "value": "53,277.01",
+      "delta": "▲0.98%",
+      "dir": "up",
+      "note_ko": "517.80p 상승 · 3대 지수 중 최대폭",
+      "note_en": "+517.80 pts · biggest of the three"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,912.95",
+      "delta": "▲0.88%",
+      "dir": "up",
+      "note_ko": "8/21 한국장 종가 · 장 열리기 전",
+      "note_en": "Aug 21 Korea close · before the open"
+    },
+    {
+      "label": "VIX",
+      "value": "15.13",
+      "delta": "▼5.50%",
+      "dir": "down",
+      "note_ko": "0.88p 하락 · 지수는 차분했다",
+      "note_en": "-0.88 pts · a calm tape"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.738%",
+      "delta": "▲0.042%p",
+      "dir": "up",
+      "note_ko": "30년물은 2주 연속 상승 · 장기물 부담",
+      "note_en": "30-year up a 2nd week · long end pressured"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,386.5",
+      "delta": "▼6.1원",
+      "dir": "down",
+      "note_ko": "8/21 오후 3시 30분 기준",
+      "note_en": "As of 3:30 PM KST Aug 21"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,624.10",
+      "delta": "▲2.39%",
+      "dir": "up",
+      "note_ko": "금리 올랐는데 금도 올랐다 — 이례적",
+      "note_en": "Gold rose with yields — unusual"
+    },
+    {
+      "label": "WTI",
+      "value": "$87.06",
+      "delta": "▼0.88%",
+      "dir": "down",
+      "note_ko": "미국의 이란 경고에도 유가는 눌림",
+      "note_en": "Crude softer despite the Iran warning"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$77,376",
+      "delta": "▼1.23%",
+      "dir": "down",
+      "note_ko": "암호화폐 관련주는 오히려 강세",
+      "note_en": "Crypto equities rose even as BTC slipped"
+    }
+  ],
+  "market_note_ko": "모두 8/21 미국장 마감 종가 · 코스피는 8/21 한국장 종가",
+  "market_note_en": "All figures are Aug 21 US closes · KOSPI is the Aug 21 Korea close",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "다우존스"
+  ],
+  "tile_rest": [
+    "KOSPI",
+    "US 10Y",
+    "VIX",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "chart_series": "us",
+  "main_tile_note": "113.29p 상승 · 최근 9거래일",
+  "chart_title": "지수는 올랐고 주간으로는 내렸다",
+  "chart_sub": "나스닥종합 종가 · 최근 9거래일",
+  "chart_note": "8.13 고점 26,803.03  →  8.20 저점 26,067.17  →  8.21 26,180.46",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "다우존스",
+          "label_en": "Dow Jones",
+          "value": "53,277.01",
+          "delta": "▲0.98%",
+          "dir": "up",
+          "sub_ko": "517.80포인트 상승 · 3대 지수 중 최대폭",
+          "sub_en": "Up 517.80 pts · biggest of the three"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,674.37",
+          "delta": "▲0.43%",
+          "dir": "up",
+          "sub_ko": "33.21포인트 상승 · 주간 −1.4%로 7월 이후 첫 하락주",
+          "sub_en": "Up 33.21 pts · -1.4% on the week, first down week since July"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 8,
+          "flat": 1,
+          "down": 2
+        },
+        {
+          "label_ko": "거래대금 상위 288종목",
+          "label_en": "288 most-traded",
+          "up": 193,
+          "flat": 2,
+          "down": 93
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금",
+        "label_en": "Turnover: gainers vs decliners",
+        "unit_ko": "십억달러",
+        "unit_en": "$B",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 204.7
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -149.8
+          }
+        ]
+      },
+      "note_ko": "11개 업종 중 8개가 올랐고, 거래대금으로도 오른 종목에 57.7%가 몰렸다. 지수만이 아니라 시장 내부도 상승 쪽이었다 — 주간 성적이 마이너스인 것과는 다른 이야기다.",
+      "note_en": "Eight of eleven sectors rose and 57.7% of turnover went into gainers. The internals agreed with the index — which is a different story from the negative week."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 2.14
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": 1.29
+        },
+        {
+          "label_ko": "임의소비 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": 1.15
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": 0.93
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 0.79
+        },
+        {
+          "label_ko": "커뮤니케이션 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": 0.65
+        },
+        {
+          "label_ko": "산업 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 0.27
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": 0.11
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": 0.0
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": -0.17
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -0.4
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -2.28
+        }
+      ],
+      "note_ko": "경기민감·가치 쪽이 올랐고 기술은 제자리였다. 유틸리티가 2.28% 빠진 건 10년물이 4.74%로 다시 오른 탓이다. 다우가 앞장선 하루의 구조가 여기에 그대로 있다.",
+      "note_en": "Cyclicals and value led while tech stalled. Utilities fell 2.28% as the 10-year climbed to 4.74% — the same structure that let the Dow lead."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "테슬라",
+          "name_en": "Tesla",
+          "value": "$20.98B",
+          "pct": 5.14,
+          "short": 47.5
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$20.29B",
+          "pct": -0.77,
+          "short": 60.1
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$19.67B",
+          "pct": -0.98,
+          "short": 36.7
+        },
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$13.06B",
+          "pct": -0.63,
+          "short": 50.4
+        },
+        {
+          "name_ko": "모더나",
+          "name_en": "Moderna",
+          "value": "$12.59B",
+          "pct": 8.86,
+          "short": 49.8
+        }
+      ],
+      "share": {
+        "label_ko": "공매도 비중 · 표본 288종목 평균 47.0% (52% 이상 빨강 · 42% 이하 초록)",
+        "label_en": "Short-volume share · sample average 47.0% (red ≥52%, green ≤42%)",
+        "segments": [
+          {
+            "label_ko": "마이크론",
+            "label_en": "Micron",
+            "pct": 60.1,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "애플",
+            "label_en": "Apple",
+            "pct": 50.4,
+            "color": "#8c8a85"
+          },
+          {
+            "label_ko": "모더나",
+            "label_en": "Moderna",
+            "pct": 49.8,
+            "color": "#8c8a85"
+          },
+          {
+            "label_ko": "테슬라",
+            "label_en": "Tesla",
+            "pct": 47.5,
+            "color": "#8c8a85"
+          },
+          {
+            "label_ko": "엔비디아",
+            "label_en": "Nvidia",
+            "pct": 36.7,
+            "color": "#4a9d7f"
+          }
+        ],
+        "mode": "compare"
+      },
+      "note_ko": "거래대금 1위 테슬라는 5.14% 올랐고 2위 마이크론은 0.77% 내렸다. 다섯 종목의 공매도 비중은 마이크론 60.1%에서 엔비디아 36.7%까지 벌어졌다 — 같은 반도체 안에서도 포지션이 정반대였다.",
+      "note_en": "Tesla led turnover and rose 5.14%; Micron was second and fell 0.77%. Short-volume share ranged from Micron's 60.1% to Nvidia's 36.7% — opposite positioning inside the same sector."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "미국 8월 S&P Global 서비스 PMI",
+          "label_en": "US Aug S&P Global Services PMI",
+          "value": "56.8",
+          "delta": "예상 54.0 상회",
+          "dir": "up",
+          "sub_ko": "이전 54.6 · 이날 발표 중 가장 큰 예상 상회",
+          "sub_en": "Prior 54.6 · the day's biggest beat"
+        },
+        {
+          "label_ko": "미국 8월 S&P Global 제조업 PMI",
+          "label_en": "US Aug S&P Global Mfg PMI",
+          "value": "53.2",
+          "delta": "예상 53.9 하회",
+          "dir": "down",
+          "sub_ko": "이전 53.9 · 서비스와 반대 방향",
+          "sub_en": "Prior 53.9 · the mirror of services"
+        },
+        {
+          "label_ko": "미국 8월 종합 PMI",
+          "label_en": "US Aug Composite PMI",
+          "value": "56.0",
+          "delta": "▲1.5p",
+          "dir": "up",
+          "sub_ko": "이전 54.5 · 서비스가 끌어올렸다",
+          "sub_en": "Prior 54.5 · services did the lifting"
+        },
+        {
+          "label_ko": "한국 7월 생산자물가 (전년비)",
+          "label_en": "Korea Jul PPI (YoY)",
+          "value": "7.7%",
+          "delta": "▼0.9%p",
+          "dir": "down",
+          "sub_ko": "이전 8.6% · 8/21 06:00 발표 · 오름세 둔화",
+          "sub_en": "Prior 8.6% · released 6:00 KST · pace easing"
+        },
+        {
+          "label_ko": "한국 7월 생산자물가 (전월비)",
+          "label_en": "Korea Jul PPI (MoM)",
+          "value": "−0.4%",
+          "delta": "▼0.4%p",
+          "dir": "down",
+          "sub_ko": "이전 0.0% · 넉 달 만의 하락 전환",
+          "sub_en": "Prior 0.0% · first decline in four months"
+        },
+        {
+          "label_ko": "유로존 8월 소비자신뢰",
+          "label_en": "Eurozone Aug Consumer Confidence",
+          "value": "−15.5",
+          "delta": "예상 −16.3 상회",
+          "dir": "up",
+          "sub_ko": "이전 −15.9 · 소폭 개선",
+          "sub_en": "Prior -15.9 · a modest improvement"
+        }
+      ],
+      "note_ko": "미국 서비스업이 예상을 크게 웃돌며 종합 PMI를 끌어올렸다. 경기가 강하면 금리 인하가 늦어진다 — 30년물이 2주 연속 오른 배경이 여기에 있다. 한국 생산자물가는 오름세가 꺾였다.",
+      "note_en": "A big US services beat lifted the composite. Strong activity delays rate cuts — which is why the 30-year rose a second week. Korean producer prices are cooling."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "테슬라, 네바다에서 로보택시 유상운행 허가",
+          "headline_en": "Tesla Cleared for Paid Robotaxis in Nevada",
+          "body_ko": "네바다주가 라스베이거스 도로에 최대 5,000대의 무인 로보택시를 허용했다. 전기 세미트럭의 독일 진출 소식도 함께 나오며 주가는 5.14% 올라 거래대금 1위를 차지했다. 같은 날 알파벳의 웨이모도 라스베이거스 허가를 받아, 자율주행이 연구가 아니라 사업 단계로 넘어가고 있음을 보여줬다.",
+          "body_en": "Nevada cleared up to 5,000 driverless robotaxis for Las Vegas roads, and Tesla's electric semi is headed to Germany. The stock rose 5.14% on the day's heaviest turnover. Alphabet's Waymo won a Las Vegas permit the same day."
+        },
+        {
+          "headline_ko": "엔비디아 실적 주간을 앞두고 반도체는 경계",
+          "headline_en": "Chips Stay Cautious Before Nvidia's Earnings Week",
+          "body_ko": "반도체 ETF(SMH)가 0.40% 내리며 12개 업종 중 아래에서 두 번째였다. 거래대금 2위 마이크론은 0.77% 내렸고 공매도 비중이 60.1%로 표본 중 가장 높았다. 반면 엔비디아는 0.98% 내렸지만 공매도 비중은 36.7%로 가장 낮아, 같은 업종 안에서도 포지션이 갈렸다.",
+          "body_en": "SMH fell 0.40%, second-worst of twelve. Micron, second by turnover, slipped 0.77% with the sample's highest short share at 60.1%. Nvidia fell 0.98% but carried the lowest at 36.7% — positioning split inside the same sector."
+        },
+        {
+          "headline_ko": "스페이스X·테슬라, 168억달러 반도체 공장 합작",
+          "headline_en": "SpaceX and Tesla to Build a $16.8B Chip Fab",
+          "body_ko": "두 회사가 Terafab 합작법인을 세워 168억달러 규모의 반도체 공장을 짓는다. 완공되면 연면적 기준 세계 최대 건축물의 다섯 배 규모가 된다. 자체 칩 확보 경쟁이 완성차·우주 기업까지 번진 사례다.",
+          "body_en": "The two companies formed Terafab to build a $16.8bn semiconductor plant — five times the floor area of the world's largest building. The race for in-house silicon has now reached carmakers and space firms."
+        },
+        {
+          "headline_ko": "모더나, 암백신 데이터로 8.86% 급등",
+          "headline_en": "Moderna Jumps 8.86% on Cancer-Vaccine Data",
+          "body_ko": "흑색종 mRNA 백신 임상 데이터가 나오며 한 주간의 격렬한 등락을 상승으로 마무리했다. 거래대금 5위($12.59B)에 오를 만큼 손바뀜이 컸다. 수년간의 감원과 현금 소진, 기술에 대한 정치적 공격을 겪은 뒤 나온 반전이다.",
+          "body_en": "Melanoma mRNA trial data closed out a week of wild swings with a gain, on $12.59B of turnover — fifth-heaviest. It follows years of layoffs, cash burn and political attacks on the platform."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "주간으로는 S&P 500 −1.4%, 7월 이후 첫 하락주",
+          "headline_en": "S&P 500 -1.4% on the Week, First Loss Since July",
+          "body_ko": "하루는 올랐지만 한 주 전체로는 내렸다. 미국의 이란 경고가 주 중반 위험 회피를 불렀고, 30년물 국채금리가 2주 연속 오르며 장기물이 계속 압박했다. 지수는 건강해 보이지만 채권 쪽에서 긴장이 보이기 시작했다는 평가가 나온다.",
+          "body_en": "An up day inside a down week. A US warning to Iran drove mid-week risk-off, and the 30-year Treasury yield rose for a second straight week. Equities look healthy; the bond market is where the strain shows."
+        },
+        {
+          "headline_ko": "금값 2.39% 급등, 4,624달러",
+          "headline_en": "Gold Jumps 2.39% to $4,624",
+          "body_ko": "금리가 오르면 보통 금은 약해진다. 이날은 둘이 같이 올랐다 — 금리 말고 다른 것을 보고 산 사람이 있었다는 뜻이다. 중동 긴장이 그 후보다.",
+          "body_en": "Rising yields usually hurt gold; both rose together. Someone was buying for another reason — Middle East tension is the candidate."
+        },
+        {
+          "headline_ko": "비트코인은 내렸는데 암호화폐 관련주는 올랐다",
+          "headline_en": "Bitcoin Fell While Crypto Equities Rose",
+          "body_ko": "비트코인이 1.23% 내려 77,376달러로 마감했지만 스트래티지·코인베이스 등 관련주는 상승세를 이어갔다. 트럼프 대통령이 주 초 디지털화폐 업계 인사들과 만난 것이 배경으로 꼽힌다.",
+          "body_en": "Bitcoin slipped 1.23% to $77,376, yet Strategy, Coinbase and peers extended their climb after the president met digital-currency leaders earlier in the week."
+        }
+      ]
+    }
+  ],
+  "sector_title": "경기민감이 올랐다",
+  "sector_sub": "S&P500 섹터 ETF · 8/21 종가 기준 · 11개 중 8개 상승",
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": "거래대금 상위",
+  "rank_sub": "8/21 미국장 · 막대 옆은 등락률, 오른쪽은 공매도 비중",
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": "실적 · 지표 발표",
+  "econ_sub": "8/21 발표분 · 실측 · 예상 · 이전",
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": "한국시간 기준 · 노란 점 = 주목",
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "8/24 (월)",
+      "title_ko": "삼성전자 주주환원 발표 여부",
+      "title_en": "Samsung Payback Announcement?",
+      "detail_ko": "8/21 자기주식 취득 결정 공시 후속",
+      "detail_en": "Follow-up to the Aug 21 buyback filing",
+      "importance": "high"
+    },
+    {
+      "time": "8/25 (화)",
+      "title_ko": "美 8월 소비자신뢰지수",
+      "title_en": "US Aug Consumer Confidence",
+      "detail_ko": "서비스 PMI 강세가 소비까지 이어질지",
+      "detail_en": "Does the services beat reach the consumer",
+      "importance": "mid"
+    },
+    {
+      "time": "8/26 (수)",
+      "title_ko": "엔비디아 2분기 실적",
+      "title_en": "Nvidia Q2 Earnings",
+      "detail_ko": "이번 주 최대 이벤트 · 반도체 방향을 가른다",
+      "detail_en": "The week's main event for chips",
+      "importance": "high"
+    },
+    {
+      "time": "8/27 (목)",
+      "title_ko": "美 2분기 GDP 수정치",
+      "title_en": "US Q2 GDP (2nd est)",
+      "detail_ko": "금리 방향을 가를 지표",
+      "detail_en": "A print that steers rates",
+      "importance": "high"
+    },
+    {
+      "time": "8/28 (금)",
+      "title_ko": "美 7월 PCE 물가",
+      "title_en": "US Jul PCE Price Index",
+      "detail_ko": "연준이 보는 물가 지표",
+      "detail_en": "The Fed's preferred gauge",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 월요일 저녁 9시, 한국장 마감 정리",
+  "next_brief_en": "🌙 Next brief — Monday 9 PM KST, Korea close wrap-up",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.8.22(토) 아침\n\n다우가 517포인트(0.98%) 오르며 3대 지수를 이끌었습니다. 그런데 주간으로 보면 S&P 500이 1.4% 내려 7월 이후 첫 하락주였습니다.\n\n거래대금 1위 테슬라는 네바다 로보택시 허가로 5.14% 올랐고, 2위 마이크론은 0.77% 내렸습니다. 마이크론의 공매도 비중은 60.1%로 가장 높았고 엔비디아는 36.7%로 가장 낮았습니다 — 같은 반도체인데 포지션이 갈렸습니다.\n\n다음 주 수요일 엔비디아 실적이 방향을 가릅니다.\n\n#미국증시 #다우 #나스닥 #테슬라 #엔비디아 #마이크론 #모더나 #투자 #luckyon",
+  "caption_en": "📊 luckyon Briefing · Sat, Aug 22, 2026 · AM",
+  "sources": [
+    "Yahoo Finance",
+    "Twelve Data",
+    "FINRA (일별 공매도 거래량)",
+    "FXStreet 경제캘린더",
+    "WSJ",
+    "Barron's",
+    "Kiplinger",
+    "The Motley Fool",
+    "Stocktwits"
+  ],
+  "rank_unit": "단위 · 십억달러",
+  "chart_series_values": [
+    26445.45,
+    26588.49,
+    26803.03,
+    26729.16,
+    26644.91,
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46
+  ],
+  "chart_series_labels": [
+    "8.11",
+    "8.12",
+    "8.13",
+    "8.14",
+    "8.17",
+    "8.18",
+    "8.19",
+    "8.20",
+    "8.21"
+  ],
+  "card_photos": {
+    "1": "The New York Stock Exchange trading floor moments after the closing bell, traders in silhouette against a wall of glowing screens, warm amber light raking across the room."
+  }
+}

@@ -26,6 +26,13 @@ if (session && !['am', 'pm', 'sat', 'sun'].includes(session)) { console.error(`s
 
 // 주말은 카드 10장이 각자 다른 모양을 가진 고정 편성이라 렌더러를 따로 둔다.
 // 호출 명령은 그대로다 — 여기서 위임한다. (스키마는 FORMAT_BRIEFING.md 의 §2-A·§2-B)
+// 평일도 2026-08-23 부터 전용 렌더러를 쓴다. 카드 10장이 각자 다른 모양(선 차트·발산
+// 막대·순위 막대·타임라인)이고 배경에 그날 만든 사진이 깔려, 이 파일의 공용 틀로는
+// 그릴 수 없다. 호출 명령은 그대로다 — 여기서 위임한다.
+if (session === 'am' || session === 'pm') {
+  await import('./render-cards-day.mjs');
+  process.exit(0);
+}
 if (session === 'sat') {
   await import('./render-cards-sat.mjs');   // process.argv 를 그대로 다시 읽는다
   process.exit(0);
