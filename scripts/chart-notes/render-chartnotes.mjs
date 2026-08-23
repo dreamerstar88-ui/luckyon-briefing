@@ -268,8 +268,12 @@ const R = {
   compare(c) {
     const rows = (c.rows || []).map(r => `
       <div style="border:3px solid ${C.ink};border-radius:16px;padding:22px 28px;margin-bottom:20px;display:flex;align-items:center;gap:22px">
-        <span style="width:30px;height:30px;border-radius:50%;background:${r.dot1 || C.red};flex:none"></span>
-        <span style="width:30px;height:30px;border-radius:50%;background:${r.dot2 || C.blue};flex:none;margin-left:-8px"></span>
+        ${/* 행 앞의 점 두 개는 위 캔들 두 개(상승·하락)를 가리킨다. 그래서 기본값은 언어권 관행을
+             따르는 UP/DOWN 이어야 한다 — 예전에는 C.red/C.blue 로 하드코딩돼 있어 영어판에서
+             캔들은 초록·빨강인데 점만 빨강·파랑으로 나갔다(EP.04 검증에서 적발. compare 타입의
+             첫 사용례라 그때 처음 드러났다). 한국어판은 UP=빨강·DOWN=파랑이라 결과가 그대로다. */''}
+        <span style="width:30px;height:30px;border-radius:50%;background:${r.dot1 || UP};flex:none"></span>
+        <span style="width:30px;height:30px;border-radius:50%;background:${r.dot2 || DOWN};flex:none;margin-left:-8px"></span>
         <div style="margin-left:10px">
           <div style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${C.ink}">${esc(t(r, 'title'))}</div>
           <div style="font-size:25px;color:${C.muted};margin-top:5px">${esc(t(r, 'desc'))}</div>
@@ -296,19 +300,24 @@ const R = {
   // 실제 사례: 제목 + 감청색 부제 + 캔들 + OHLC 콜아웃 + 결론 박스
   example(c) {
     const v = d(c, 'values', {});
-    const rowsY = { high: 118, close: 205, open: 452, low: 512 };
+    const up = d(c, 'direction', 'up') !== 'down';
+    // 몸통의 위·아래 끝. 상승일은 종가가 위, 하락일은 시가가 위여야 한다.
+    // 예전에는 close 를 항상 위(205)에 고정해 둬서, direction:"down" 을 줘도 색만 하락색이고
+    // 그림은 종가가 시가보다 높은 상승 캔들이었다 — 콜아웃 숫자와 그림이 정면으로 어긋났다
+    // (EP.04 에서 적발. 하락일을 example 로 쓴 첫 회차라 그때 처음 드러났다).
+    const TOP = 205, BOT = 452;
+    const rowsY = { high: 118, close: up ? TOP : BOT, open: up ? BOT : TOP, low: 512 };
     const call = (key, label, val) => `
       <circle cx="356" cy="${rowsY[key]}" r="9" fill="${C.red}"/>
       <path d="M 366 ${rowsY[key]} Q 430 ${rowsY[key] - 8}, 500 ${rowsY[key]}" stroke="#9a968c" stroke-width="3" fill="none"/>
       <text x="520" y="${rowsY[key] + 11}" font-family="${FONT_TITLE}" font-size="33" font-weight="700" fill="${C.navy}">${esc(label)}</text>
       <text x="940" y="${rowsY[key] + 11}" font-family="${FONT_TITLE}" font-size="35" font-weight="800" fill="${C.ink}" text-anchor="end">${esc(val)}</text>`;
-    const up = d(c, 'direction', 'up') !== 'down';
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       <div style="font-family:${FONT_TITLE};font-size:28px;font-weight:800;color:${C.navy};margin-top:12px">${esc(t(c, 'sub'))}</div>
       <div style="flex:1;display:flex;align-items:center">
         <svg width="956" height="580" viewBox="0 0 956 580">
-          ${candleSVG({ x: 190, w: 150, open: 452, close: 205, high: 118, low: 512, color: up ? UP : DOWN, id: 'f' })}
+          ${candleSVG({ x: 190, w: 150, open: rowsY.open, close: rowsY.close, high: 118, low: 512, color: up ? UP : DOWN, id: 'f' })}
           ${call('high', t(v.high || {}, 'label'), v.high?.value ?? '')}
           ${call('close', t(v.close || {}, 'label'), v.close?.value ?? '')}
           ${call('open', t(v.open || {}, 'label'), v.open?.value ?? '')}
