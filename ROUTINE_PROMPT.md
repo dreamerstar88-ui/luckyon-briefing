@@ -81,8 +81,9 @@
      | 한국 개별 종목 시세·52주 고저 | `https://query1.finance.yahoo.com/v8/finance/chart/<종목코드>.KS` (코스닥은 `.KQ`) — 종가는 `meta.regularMarketPrice` 를 쓴다 |
      | **미국 거래대금 상위 · 공매도 비중 · 상승/하락 거래대금** | `node scripts/fetch-us-flows.mjs <YYYY-MM-DD>` — 야후 스크리너(가격×거래량) + FINRA 일별 공매도. am ⑤ 카드가 쓴다 |
      | **미국 기업 실적 실측치** | Alpha Vantage `EARNINGS` (종목별) — `quarterlyEarnings[]` 에 `reportedEPS`·`estimatedEPS`·`surprisePercentage` 가 들어 있다. `EARNINGS_CALENDAR` 는 **예정만** 주므로 실측에는 쓸 수 없다 |
-     | **한국 지표 (생산자물가·수출입 등)** | 한국은행 ECOS — `StatisticSearch/{KEY}/json/kr/1/N/{통계표}/M/{시작}/{끝}/`. 생산자물가 `404Y014`, 성질별 수출입 `901Y092`, 수출입 총괄 `901Y118` |
-     | 한국 품목별 수출 (HS 기준) | 공공데이터포털 관세청 수출입무역통계 — 활용신청이 승인돼야 열린다. 미승인 상태면 `등록되지 않은 서비스키`(코드 30) 가 온다 |
+     | **한국 수출입 (품목·성질별)** | `node scripts/fetch-kr-trade.mjs` — 관세청을 먼저 두드리고 안 열리면 한국은행 ECOS 로 내려간다. 어느 쪽을 썼는지는 출력 `source` 에 남으니 카드 각주에 그대로 쓴다. pm ⑥ 카드의 한국 지표 자리가 이 출력을 쓴다 |
+     | **한국 지표 (그 밖)** | 한국은행 ECOS — `StatisticSearch/{KEY}/json/kr/1/N/{통계표}/M/{시작}/{끝}/`. 생산자물가 `404Y014`, 성질별 수출입 `901Y092`(수출 E100 합계·E104 중화학공업품·E103 경공업품·E102 원료연료·E101 식료소비재, 수입 I100 합계·I102 원자재·I103 자본재·I101 소비재), 수출입 총괄 `901Y118`(T002 수출·T004 수입) |
+     | 한국 품목별 수출 (HS 기준) | 공공데이터포털 관세청 수출입무역통계 `1220000/Itemtrade/getItemtradeList`. 활용신청이 승인돼야 열리고, 미승인이면 `등록되지 않은 서비스키`(코드 30) 가 온다. **승인을 기다릴 필요 없다** — 위 `fetch-kr-trade.mjs` 가 자동으로 ECOS 로 내려가므로 카드는 그대로 만들어진다 |
 
      - **`fetch-krx.mjs` 는 KRX 원천 데이터를 미러링한 CSV 를 읽는다.** KRX 정보데이터시스템(`data.krx.co.kr`)과 네이버 금융은 이 실행 환경의 네트워크 정책에서 차단되므로 직접 조회할 수 없다 — 대신 이 스크립트를 쓴다. 휴장일이면 exit 2 로 조용히 빠지므로, **그때는 브리핑을 멈추지 말고** 한국 항목을 빼고 진행한다.
      - **Yahoo 차트 API 의 함정 2가지** (실측 확인): ① 응답의 `indicators.quote[0].close` 배열은 **당일 마지막 값이 `null`** 이다. 종가는 반드시 `meta.regularMarketPrice` 에서 읽는다. ② `meta.chartPreviousClose` 가 틀린 값을 주는 경우가 있다(2026-08-03 `^KS11` 기준 8088.34 로 나왔으나 실제 7/31 종가는 6595.45). **전일 대비는 직접 계산한다.**
