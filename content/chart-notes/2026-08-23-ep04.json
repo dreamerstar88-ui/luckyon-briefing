@@ -1,0 +1,196 @@
+{
+  "type": "chart-notes",
+  "stamp": "2026-08-23-ep04",
+  "date": "2026-08-23",
+  "series": "투자 3분 노트",
+  "series_en": "3-Min Investing Notes",
+  "episode": "EP.04",
+  "byline": "by luckyon",
+  "term_ko": "거래량",
+  "term_en": "Trading volume",
+  "fact_check": {
+    "ko": "삼성전자(005930.KS) 일봉 — 2026-07-29(수) 시가 226,500 / 고가 234,000 / 저가 189,200 / 종가 208,500, 거래량 65,555,523주. 직전 20거래일(2026-06-30~07-28) 평균 거래량 28,234,667주로 2.32배. 직전 거래일(7/28) 종가 220,000 대비 종가 -5.23%, 장중 저가는 당일 시가 대비 -16.47%. p.04 막대는 같은 종목 5거래일 거래량(7/27 23,296,044 · 7/28 41,639,623 · 7/29 65,555,523 · 7/30 46,694,193 · 7/31 58,478,873)이며 7/29 는 7/27 의 2.81배. 모두 PlayMCP UsStockInfo 3개월 일봉에서 직접 산출했다. 이 구간 봉은 2026-06-29(배당락) 이후라 배당 조정이 걸리지 않은 실제 체결가다. 날짜 오프셋(도구가 주는 15:00Z = KST 다음 날)은 휴장일로 교차검증했다 — 제헌절 7/17(금)과 광복절 대체공휴일 8/17(월) 자리가 정확히 비어 있고, 마지막 봉이 직전 거래일 금요일 8/21 에 떨어진다.",
+    "en": "Tesla (TSLA) daily bars — Thursday, July 23, 2026: open 341.00 / high 342.11 / low 315.74 / close 319.69 on 115,606,400 shares. The prior 20 sessions (June 24 – July 22, 2026) averaged 38,959,480 shares, so that day was 2.97×. The close fell 14.52% from the previous close of 374.01, and the open was 8.83% below it. The p.04 bars are five TSLA sessions (Jul 21 32,735,300 · Jul 22 30,646,100 · Jul 23 115,606,400 · Jul 24 62,760,000 · Jul 27 44,919,400); Jul 23 is 3.77× Jul 22. TSLA paid no dividend in the window, so these prices are unadjusted actuals. Dates cross-checked against the market calendar: July 3 (Independence Day observed) is correctly absent and the last bar falls on Friday, August 21. All figures computed directly from the PlayMCP UsStockInfo daily pull."
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "title_ko": "차트의 절반을<br>안 보고 있습니다",
+      "title_en": "You're reading<br>half the chart",
+      "sub_ko": "EP.04 거래량",
+      "sub_en": "EP.04 Trading volume",
+      "cta_ko": "저장하고 넘겨보세요",
+      "cta_en": "Save & swipe",
+      "annot_ko": "캔들이 말해주는 건|'얼마에'까지입니다",
+      "annot_en": "a candle only says|'at what price'"
+    },
+    {
+      "type": "intro",
+      "title_ko": "그 막대들,<br>그냥 지나치셨죠?",
+      "title_en": "Those bars at<br>the bottom?",
+      "body_ko": "가격 그래프 아래에 줄지어 붙어 있는 막대가 거래량입니다. 그날 이 종목의 주식이 몇 주나 손바뀜했는지를 그대로 세워 놓은 것입니다.",
+      "body_en": "The bars lined up under the price chart are volume. Each one is simply how many shares changed hands that day.",
+      "caption_ko": "가격은 '얼마에', 거래량은 '얼마나'.",
+      "caption_en": "Price says at what. Volume says how much."
+    },
+    {
+      "type": "checklist",
+      "title_ko": "먼저 네 단어만<br>정리하고 갑니다",
+      "title_en": "Four words first,<br>then the chart",
+      "body_ko": "거래량 이야기에 늘 같이 따라 나오는 말들입니다.",
+      "body_en": "These four turn up in every conversation about volume.",
+      "items": [
+        { "term_ko": "거래량", "term_en": "Volume", "desc_ko": "그날 오간 주식 수", "desc_en": "Shares traded that day" },
+        { "term_ko": "거래대금", "term_en": "Turnover", "desc_ko": "거래량 × 체결가", "desc_en": "Volume times price" },
+        { "term_ko": "평균 거래량", "term_en": "Average volume", "desc_ko": "최근 20거래일 평균", "desc_en": "The 20-session mean" },
+        { "term_ko": "거래량 급증", "term_en": "Volume spike", "desc_ko": "평균을 크게 넘긴 날", "desc_en": "A day far above it" }
+      ],
+      "closing_ko": "결국 '몇 주가 오갔나' 하나입니다",
+      "closing_en": "It all comes back to: how many shares"
+    },
+    {
+      "type": "bars",
+      "title_ko": "막대 하나가<br>하루 치입니다",
+      "title_en": "One bar is<br>one session",
+      "body_ko": "삼성전자의 7월 말 5거래일입니다. 막대가 길수록 그날 오간 주식이 많았다는 뜻입니다.",
+      "body_en": "Five Tesla sessions in late July. A longer bar means more shares changed hands that day.",
+      "items_ko": [
+        { "label": "7월 27일 (월)", "value": 23296044, "display": "2,330만 주" },
+        { "label": "7월 28일 (화)", "value": 41639623, "display": "4,164만 주" },
+        { "label": "7월 29일 (수)", "value": 65555523, "display": "6,556만 주", "highlight": true },
+        { "label": "7월 30일 (목)", "value": 46694193, "display": "4,669만 주" },
+        { "label": "7월 31일 (금)", "value": 58478873, "display": "5,848만 주" }
+      ],
+      "items_en": [
+        { "label": "Tue, Jul 21", "value": 32735300, "display": "32.7M" },
+        { "label": "Wed, Jul 22", "value": 30646100, "display": "30.6M" },
+        { "label": "Thu, Jul 23", "value": 115606400, "display": "115.6M", "highlight": true },
+        { "label": "Fri, Jul 24", "value": 62760000, "display": "62.8M" },
+        { "label": "Mon, Jul 27", "value": 44919400, "display": "44.9M" }
+      ],
+      "closing_ko": "7월 29일 하루에만 6,556만 주 — 이틀 전의 2.8배",
+      "closing_en": "July 23 alone: 115.6M shares — 3.8× the session before."
+    },
+    {
+      "type": "compare",
+      "title_ko": "같은 움직임도<br>무게가 다릅니다",
+      "title_en": "Same move,<br>different weight",
+      "legend": [
+        { "main_ko": "오른 날", "main_en": "Up day", "sub_ko": "종가가 시가보다 위", "sub_en": "Close above the open" },
+        { "main_ko": "내린 날", "main_en": "Down day", "sub_ko": "종가가 시가보다 아래", "sub_en": "Close below the open" }
+      ],
+      "rows": [
+        {
+          "title_ko": "거래량이 함께 늘었다면",
+          "title_en": "If volume rose with it",
+          "desc_ko": "그 방향으로 움직인 사람이 많았다는 뜻입니다",
+          "desc_en": "A lot of people moved in that direction"
+        },
+        {
+          "title_ko": "거래량이 줄었다면",
+          "title_en": "If volume dried up",
+          "desc_ko": "움직인 사람이 적어 방향을 확신하기 어렵습니다",
+          "desc_en": "Few people moved, so the move is thin"
+        }
+      ],
+      "closing_ko": "가격은 방향, 거래량은 그 방향의 무게",
+      "closing_en": "Price gives direction, volume gives weight"
+    },
+    {
+      "type": "example",
+      "title_ko": "거래량이 터진 날,<br>무슨 일이 있었나",
+      "title_en": "The day the<br>volume blew out",
+      "sub_ko": "삼성전자 · 2026년 7월 29일(수)",
+      "sub_en": "Tesla · Thursday, July 23, 2026",
+      "direction": "down",
+      "values_ko": {
+        "high": { "label": "고가", "value": "234,000" },
+        "close": { "label": "종가", "value": "208,500" },
+        "open": { "label": "시가", "value": "226,500" },
+        "low": { "label": "저가", "value": "189,200" }
+      },
+      "values_en": {
+        "high": { "label": "High", "value": "342.11" },
+        "close": { "label": "Close", "value": "319.69" },
+        "open": { "label": "Open", "value": "341.00" },
+        "low": { "label": "Low", "value": "315.74" }
+      },
+      "conclusion_ko": "거래량 6,556만 주 — 직전 20거래일 평균 2,823만 주의 2.3배",
+      "conclusion_en": "115.6M shares — 3.0× the prior 20-session average of 39.0M",
+      "note_ko": "종가는 하루 만에 5.2% 내렸고, 장중 저가는 그날 시가보다 16.5% 아래였습니다. 크게 움직인 날에는 거래량도 함께 터집니다.",
+      "note_en": "The close fell 14.5% from the day before, and the stock opened 8.8% under that close. Big moves arrive with big volume."
+    },
+    {
+      "type": "numbered",
+      "title_ko": "여기서 셋을<br>가장 많이 헷갈립니다",
+      "title_en": "Three things<br>people get wrong",
+      "items": [
+        {
+          "title_ko": "거래량 급증 = 호재",
+          "title_en": "A spike means good news",
+          "desc_ko": "많이 팔린 날에도 거래량은 똑같이 늘어납니다. 앞 장의 사례도 크게 내린 날이었습니다.",
+          "desc_en": "Heavy selling lifts volume just as much. The example on the card before was a down day."
+        },
+        {
+          "title_ko": "거래량만 보고 판단",
+          "title_en": "Reading volume alone",
+          "desc_ko": "거래량은 가격과 나란히 놓아야 뜻이 생깁니다. 숫자 하나로는 방향을 알 수 없습니다.",
+          "desc_en": "Volume only means something next to price. On its own it carries no direction."
+        },
+        {
+          "title_ko": "평균과 견주지 않기",
+          "title_en": "Skipping the comparison",
+          "desc_ko": "종목마다 평소 거래량이 다릅니다. 많고 적음은 그 종목의 평균과 견줘야 합니다.",
+          "desc_en": "Every stock has its own normal. Judge a day against that stock's own average."
+        }
+      ],
+      "warn_title_ko": "거래량은 방향을 알려주지 않습니다",
+      "warn_title_en": "Volume never tells you direction",
+      "warn_body_ko": "얼마나 많은 사람이 움직였는지만 말해 줍니다.",
+      "warn_body_en": "It only tells you how many people moved."
+    },
+    {
+      "type": "recap",
+      "title_ko": "오늘의 3줄 요약",
+      "title_en": "Recap in<br>three lines",
+      "points": [
+        { "text_ko": "거래량은 그날 오간 주식 수", "text_en": "Volume is shares traded that day" },
+        { "text_ko": "많고 적음은 평균과 견줘 본다", "text_en": "Judge it against the stock's average" },
+        { "text_ko": "가격의 방향에 무게를 더한다", "text_en": "It adds weight to the price move" }
+      ],
+      "ctas": [
+        { "text_ko": "저장해두고 차트 볼 때 꺼내보세요", "text_en": "Save it & pull it up when you chart" },
+        { "text_ko": "주식 시작한 친구를 태그해 보세요", "text_en": "Tag a friend who just started" }
+      ],
+      "next_label_ko": "다음 편",
+      "next_label_en": "Next",
+      "next_ko": "지지선과 저항선",
+      "next_en": "Support & resistance",
+      "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+      "disclaimer_en": "Educational content only — not investment advice."
+    }
+  ],
+  "caption_ko": "📊 투자 3분 노트 EP.04 — 거래량\n\n가격 그래프 아래에 줄지어 붙어 있는 막대, 거래량입니다. 그날 그 종목의 주식이 몇 주나 오갔는지를 세워 놓은 것뿐입니다.\n\n숫자 자체는 의미가 없습니다. 그 종목의 평소 거래량과 견줘야 많고 적음이 보입니다.\n\n삼성전자는 2026년 7월 29일 하루에 6,556만 주가 거래됐습니다. 직전 20거래일 평균(2,823만 주)의 2.3배입니다. 그날 종가는 5.2% 내렸고, 장중 저가는 시가보다 16.5% 아래였습니다.\n\n거래량이 늘었다고 좋은 신호는 아닙니다. 많이 팔린 날에도 거래량은 똑같이 늘어납니다. 거래량은 방향이 아니라 '몇 명이 움직였나'를 말해 줍니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '지지선과 저항선' — 차트의 천장과 바닥을 읽습니다.\n\n#주식초보 #주식공부 #거래량 #주식차트보는법 #주식용어 #삼성전자 #코스피 #재테크 #투자공부 #luckyon브리핑",
+  "caption_en": "Those bars under the price chart are volume — simply how many shares changed hands that day.\n\nThe raw number tells you nothing on its own. It only means something next to that stock's own average.\n\nTesla traded 115.6M shares on Thursday, July 23, 2026 — about 3.0 times the 39.0M average of the previous 20 sessions. The close finished 14.5% below the day before, and the stock opened 8.8% under that close.\n\nA spike is not good news by itself. Heavy selling lifts volume exactly as much as heavy buying does. Volume never gives you direction — it tells you how many people moved.\n\n📌 Save it and pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: support and resistance — reading the ceiling and the floor on a chart.\n\n#investingbasics #stockmarket #tradingvolume #stockcharts #technicalanalysis #learntoinvest #tesla #stockmarketbasics #investing101 #luckyon",
+  "alt_ko": [
+    "투자 3분 노트 EP.04 표지 — 붉은 캔들과 초록 캔들 두 개가 그려져 있고, '차트의 절반을 안 보고 있습니다'라는 제목 옆에 캔들은 '얼마에'까지만 말해준다는 주석이 붙어 있다",
+    "도입 카드 — '그 막대들, 그냥 지나치셨죠?'라는 제목과 물음표가 찍힌 스케치 가격 그래프, 가격은 '얼마에' 거래량은 '얼마나'라는 한 줄 정리",
+    "핵심 개념 체크리스트 — 거래량은 그날 오간 주식 수, 거래대금은 거래량 곱하기 체결가, 평균 거래량은 최근 20거래일 평균, 거래량 급증은 그 평균을 크게 넘긴 날",
+    "막대그래프 — 삼성전자 7월 말 5거래일 거래량. 7월 27일 2,330만 주, 28일 4,164만 주, 29일 6,556만 주(붉게 강조), 30일 4,669만 주, 31일 5,848만 주",
+    "비교 카드 — 상승 캔들과 하락 캔들을 나란히 놓고, 거래량이 함께 늘면 그 방향으로 움직인 사람이 많았다는 뜻이고 거래량이 줄면 방향을 확신하기 어렵다고 설명한다",
+    "실제 사례 — 2026년 7월 29일 삼성전자 하락 캔들. 고가 234,000원, 종가 208,500원, 시가 226,500원, 저가 189,200원. 거래량 6,556만 주로 직전 20거래일 평균의 2.3배",
+    "흔한 오해 세 가지 — 거래량 급증을 호재로 보는 것, 거래량만 보고 판단하는 것, 그 종목의 평균과 견주지 않는 것. 거래량은 방향을 알려주지 않는다는 경고가 붙어 있다",
+    "3줄 요약과 다음 편 예고 — 다음 편은 지지선과 저항선, 그리고 이 콘텐츠는 교육 목적이며 투자 권유가 아니라는 고지"
+  ],
+  "alt_en": [
+    "3-Min Investing Notes EP.04 cover — two candlesticks, one red and one green, under the title 'You're reading half the chart', with a note that a candle only tells you at what price",
+    "Intro card — the question 'Those bars at the bottom?' over a sketched price line with question marks, and the line: price says at what, volume says how much",
+    "Key-concept checklist — volume is shares traded that day, turnover is volume times price, average volume is the 20-session mean, and a volume spike is a day far above it",
+    "Bar chart of five Tesla sessions — July 21 32.7M shares, July 22 30.6M, July 23 115.6M highlighted in red, July 24 62.8M, July 27 44.9M",
+    "Comparison card — an up candle beside a down candle, explaining that volume rising with the move means many people moved that way, while volume drying up leaves the move thin",
+    "Real example — Tesla's down candle of Thursday, July 23, 2026: high 342.11, close 319.69, open 341.00, low 315.74, on 115.6M shares, three times the prior 20-session average of 39.0M",
+    "Three common mistakes — treating a volume spike as good news, reading volume without price, and skipping the comparison with that stock's own average, with a warning that volume never gives direction",
+    "Three-line recap, a teaser for the next episode on support and resistance, and a note that this is educational content and not investment advice"
+  ],
+  "published": {}
+}
