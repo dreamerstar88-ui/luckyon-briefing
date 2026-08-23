@@ -379,6 +379,9 @@ sections[].items[].src            sections[].items[].time
 sections[].stats[].value          sections[].stats[].delta
 sections[].rows[].value
 schedule[].time
+cover_kicker       cover_facts[][1]  cover_facts[][2]   (아이콘 뒤 두 문자열 — icon 이름만 제외)
+tile_lead          main_tile_note
+sector_sub         rank_sub          econ_sub           schedule_sub
 
 # sat (§2-A)
 cover.hero.value                  metrics[].value      metrics[].delta
@@ -395,6 +398,7 @@ start.indexes[].close / .wk (숫자)   start.metrics[].value   start.metrics[].d
 korea/weekend/ai/watch .items[].src
 ```
 
+- **평일 `cover_kicker`·`cover_facts`·`tile_lead`·`main_tile_note`·`sector_sub`·`rank_sub`·`econ_sub`·`schedule_sub` 는 `_ko`/`_en` 쌍을 받지 않는다.** `render-cards-day.mjs` 가 이 필드들을 `t()` 언어분기 없이 그대로 찍는다 — 즉 한 필드값이 두 언어 카드에 똑같이 나간다. 2026-08-24 am 세션에서 `cover_facts` 상세문구에 한국어 문장을 그대로 넣었다가 영어 카드에 그 문장이 그대로 노출되는 사고가 있었다(검증 단계에서 발견해 발행 전 고쳤다). 이 필드들을 쓸 때는 처음부터 숫자·티커·영문 약어 등 두 언어 모두에서 자연스러운 중립 표기로 쓰거나, 아예 비워 둔다(전부 선택 필드라 비워도 카드는 정상 렌더된다).
 - **토요일의 `calendar[].rows[].est` / `.act` 는 `_ko`/`_en` 쌍도 받는다.** `18.1억`·`7.0만` 처럼
   단위가 한글인 값이 실제로 영어 카드에 그대로 새어 나간 적이 있다. 숫자만 있는 값(`0.34`, `4.1%`)은
   단일 필드로 두고, **한글 단위가 붙는 값에만 `est_ko`/`est_en` 쌍을 쓴다.** 쌍이 있으면 그쪽이 이긴다.
