@@ -162,6 +162,45 @@ function page(inner, pageno) {
 const R = {
   // 표지: 캔들 두 개 + 큰 제목 + 밑줄 + 부제 + CTA + 바이라인
   cover(c) {
+    // overlay:'volume' — 표지 그림 자체를 «캔들 + 그 아래 거래량 막대» 2단으로 바꾼다.
+    // 주석이 아래 칸(거래량)을 가리키는 회차에서 쓴다. 캔들 두 개만 있는 기본 표지는
+    // 회차가 쌓일수록 서로 구별되지 않는데(EP.01~03 이 사실상 같은 그림이었다),
+    // 표지가 그 회차의 주제를 그림으로 말해주지 못하면 표지를 두는 뜻이 없다.
+    if (c.overlay === 'volume') {
+      const seq = [ // o,c,h,l 은 SVG y(px). 아래로 갈수록 큰 값. v 는 막대 높이 비율.
+        { o: 128, c: 104, h: 92, l: 138, v: 0.34 }, { o: 106, c: 118, h: 98, l: 128, v: 0.28 },
+        { o: 118, c: 92, h: 84, l: 126, v: 0.44 }, { o: 92, c: 100, h: 82, l: 112, v: 0.30 },
+        { o: 100, c: 132, h: 96, l: 146, v: 0.55 }, { o: 134, c: 168, h: 128, l: 178, v: 1.0 },
+        { o: 166, c: 150, h: 142, l: 176, v: 0.62 },
+      ];
+      const x0 = 66, step = 62, bw = 30;
+      const VB = 286, VT = 196;      // 거래량 칸 바닥·천장
+      const cand = seq.map((s, i) => {
+        const cxp = x0 + i * step, col = s.c < s.o ? UP : DOWN;  // y 가 작을수록 높은 가격
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - bw / 2}" y="${Math.min(s.o, s.c)}" width="${bw}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      const vol = seq.map((s, i) => {
+        const cxp = x0 + i * step, h = (VB - VT) * s.v, spike = s.v === 1;
+        // 급증 막대도 방향 색 그대로 — 강조는 테두리로 한다(pricevol 과 같은 이유).
+        return `<rect x="${cxp - bw / 2}" y="${VB - h}" width="${bw}" height="${h}"
+                      fill="${s.c < s.o ? UP : DOWN}" opacity="${spike ? 1 : 0.5}"
+                      ${spike ? `stroke="${C.ink}" stroke-width="4"` : ''}/>`;
+      }).join('');
+      const spikeX = x0 + 5 * step;
+      return `<div class="pad">
+        <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
+          <line x1="40" y1="186" x2="500" y2="186" stroke="#c9c6bc" stroke-width="3"/>
+          <line x1="40" y1="${VB}" x2="500" y2="${VB}" stroke="#c9c6bc" stroke-width="3"/>
+          ${cand}${vol}
+          <path d="M 600 232 L ${spikeX + 22} ${VB - (VB - VT) - 6}" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="606" y="${222 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     return `<div class="pad">
       <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
         ${candleSVG({ x: 190, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.red, id: 'a' })}
@@ -189,7 +228,13 @@ const R = {
         ${String(t(c, 'annot')).split('|').map((ln, i) =>
       `<text x="606" y="${118 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
       </svg>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+      ${R._coverText(c)}
+    </div>`;
+  },
+
+  // 표지의 글자 블록 — 그림만 다른 표지 변형들이 공유한다.
+  _coverText(c) {
+    return `<div style="flex:1;display:flex;flex-direction:column;justify-content:center">
         <div class="ttl" style="font-size:70px">${markLastLine(t(c, 'title'))}</div>
         <svg data-fit=".ttl-last" width="480" height="26" viewBox="0 0 480 26"
              preserveAspectRatio="none" style="margin-top:10px">
@@ -198,8 +243,7 @@ const R = {
         </svg>
         <div style="font-family:${FONT_TITLE};font-size:34px;font-weight:700;color:${C.navy};margin-top:26px">${esc(t(c, 'sub'))}</div>
         <div style="margin-top:30px"><span class="chip">${esc(t(c, 'cta'))} ▶</span></div>
-      </div>
-    </div>`;
+      </div>`;
   },
 
   // 도입: 큰 제목 + 짧은 밑줄 + 본문 + 스케치 꺾은선 + 캡션
@@ -392,28 +436,162 @@ const R = {
   },
 
   // 막대 비교: 거래량·시가총액·PER 등 "숫자 몇 개를 나란히" 보여줄 때
+  //
+  // 단위가 다른 지표 두 벌을 한 카드에서 견주려면 `sections` 를 쓴다
+  // (예: 같은 날 두 종목의 «거래량(주)» 과 «거래대금(원)»).
+  // 막대 길이는 **섹션 안에서만** 정규화하므로 주(株)와 원(₩)이 한 자에 섞이지 않는다.
+  // `items` 만 주면 예전처럼 이름 없는 섹션 하나로 동작한다(기존 회차 그대로).
   bars(c) {
-    const ITEMS = d(c, 'items', []);
-    const max = Math.max(...ITEMS.map(i => Math.abs(i.value) || 0), 1);
-    const rows = ITEMS.map(it => {
-      const w = Math.max((Math.abs(it.value) / max) * 100, 3);
-      const hi = it.highlight;
-      return `<div style="margin-bottom:26px">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px">
-          <span style="font-family:${FONT_TITLE};font-size:29px;font-weight:${hi ? 800 : 700};color:${hi ? C.red : C.ink}">${esc(t(it, 'label'))}</span>
-          <span style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${hi ? C.red : C.ink}">${esc(it.display ?? it.value)}</span>
-        </div>
-        <div style="height:34px;background:#eceade;border-radius:6px;overflow:hidden">
-          <div style="width:${w}%;height:100%;background:${it.color || (hi ? C.red : C.navy)};opacity:${hi ? 1 : 0.72}"></div>
-        </div>
-      </div>`;
-    }).join('');
+    const SECTIONS = d(c, 'sections', null) || [{ items: d(c, 'items', []) }];
+    const block = (sec) => {
+      const items = d(sec, 'items', []);
+      const max = Math.max(...items.map(i => Math.abs(i.value) || 0), 1);
+      const heading = t(sec, 'heading');
+      const rows = items.map(it => {
+        const w = Math.max((Math.abs(it.value) / max) * 100, 3);
+        const hi = it.highlight;
+        return `<div style="margin-bottom:22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px">
+            <span style="font-family:${FONT_TITLE};font-size:29px;font-weight:${hi ? 800 : 700};color:${hi ? C.red : C.ink}">${esc(t(it, 'label'))}</span>
+            <span style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${hi ? C.red : C.ink}">${esc(t(it, 'display') || it.value)}</span>
+          </div>
+          <div style="height:34px;background:#eceade;border-radius:6px;overflow:hidden">
+            <div style="width:${w}%;height:100%;background:${it.color || (hi ? C.red : C.navy)};opacity:${hi ? 1 : 0.72}"></div>
+          </div>
+        </div>`;
+      }).join('');
+      return `${heading ? `<div style="font-family:${FONT_TITLE};font-size:27px;font-weight:800;color:${C.navy};margin-bottom:16px">${esc(heading)}</div>` : ''}
+        ${rows}`;
+    };
+    const blocks = SECTIONS.map((s, i) => `<div style="margin-bottom:${i < SECTIONS.length - 1 ? 30 : 0}px">${block(s)}</div>`
+      + (i < SECTIONS.length - 1 ? `<div style="border-top:3px dashed #cac7bd;margin-bottom:28px"></div>` : '')).join('');
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="margin-top:34px">${rows}</div>
+      <div style="margin-top:30px">${blocks}</div>
       <div style="flex:1"></div>
       ${t(c, 'closing') ? `<div class="box" style="margin-bottom:22px"><div style="font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</div></div>` : ''}
+    </div>`;
+  },
+
+  // 주가 + 거래량 2단 패널 — 실제 차트가 생긴 그대로.
+  //
+  // 거래량은 «가격 그래프 아래에 붙은 세로 막대»다. 그런데 이 렌더러에는 오랫동안
+  // 그 그림이 없어서, EP.04(거래량) 초안이 가로 막대(`bars`)로 거래량을 설명했다 —
+  // 그건 순위 비교용 그림이라 "이게 거래량 얘기인지 막대그래프 얘기인지 모르겠다"는
+  // 지적을 받았다(2026-08-23 수정 요청). 거래량을 다루면서 거래량이 실제로 어떻게
+  // 생겼는지 한 번도 안 보여준 셈이었다. 그래서 이 타입을 만든다.
+  //
+  // 앞으로 지지·저항, 이동평균선, 거래대금, 배당락처럼 «가격과 무엇을 나란히 봐야 하는»
+  // 회차는 전부 이 타입 하나로 그린다.
+  //
+  //   mode: 'candle'(기본) — 캔들 + 거래량 막대 / 'line' — 종가 꺾은선 + 거래량 막대
+  //   bars: [{ o,h,l,c, v, hi }]  ('line' 모드는 c·v 만 쓴다)
+  //   avg:  거래량 평균선 값 (없으면 안 그린다) · avg_label 로 라벨
+  //   frame: true 면 거래량 패널을 붉은 점선으로 감싼다 ("여기가 거래량입니다")
+  //   xlabels: [{ i, text }] · callout: { i, text } 는 그 막대 위에 화살표+문구
+  pricevol(c) {
+    const W = 900, H = 620;
+    const BARS = d(c, 'bars', []);
+    const n = BARS.length || 1;
+    const PADL = 14, PADR = 14;
+    // 위: 주가 / 아래: 거래량. 사이를 확실히 띄워 "두 칸짜리 차트"로 읽히게 한다.
+    // 주가:거래량 = 약 2:1 — 실제 HTS 보다 거래량 칸을 넉넉히 준다. 이 시리즈에서
+    // 거래량은 곁다리가 아니라 본문이기 때문이다.
+    const PT = 52, PB = 330;          // 주가 패널 위·아래
+    const COY = 372;                  // 콜아웃 전용 줄 (아래 헤더와 절대 겹치지 않게 따로 뺀다)
+    const HDY = 404;                  // 거래량 패널 머리글 줄: 왼쪽 패널명 · 오른쪽 평균선 범례
+    const VT = 416, VB = 560;         // 거래량 패널 위·아래
+    const slot = (W - PADL - PADR) / n;
+    const cx = (i) => PADL + slot * (i + 0.5);
+    const bw = Math.max(Math.min(slot * 0.62, 46), 6);
+
+    const highs = BARS.map(b => b.h ?? b.c), lows = BARS.map(b => b.l ?? b.c);
+    const hi = Math.max(...highs), lo = Math.min(...lows);
+    const span = (hi - lo) || 1;
+    const py = (v) => PB - ((v - (lo - span * 0.08)) / (span * 1.16)) * (PB - PT);
+
+    const AVG = d(c, 'avg', null);
+    const vmax = Math.max(...BARS.map(b => b.v || 0), AVG || 0, 1) * 1.14;
+    const vy = (v) => VB - (v / vmax) * (VB - VT);
+
+    const mode = d(c, 'mode', 'candle');
+    const colOf = (b) => ((b.c ?? 0) >= (b.o ?? b.c ?? 0) ? UP : DOWN);
+
+    const price = mode === 'line'
+      ? `<polyline points="${BARS.map((b, i) => `${cx(i)},${py(b.c)}`).join(' ')}"
+                   stroke="${C.navy}" stroke-width="6" fill="none"
+                   stroke-linejoin="round" stroke-linecap="round"/>`
+      : BARS.map((b, i) => {
+        const col = colOf(b);
+        const top = Math.min(py(b.o), py(b.c));
+        const hgt = Math.max(Math.abs(py(b.c) - py(b.o)), 3);
+        return `<line x1="${cx(i)}" y1="${py(b.h)}" x2="${cx(i)}" y2="${py(b.l)}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cx(i) - bw / 2}" y="${top}" width="${bw}" height="${hgt}"
+                      fill="${col}" stroke="${col}" stroke-width="2" opacity="${b.hi ? 1 : 0.82}"/>`;
+      }).join('');
+
+    // 강조 막대도 **색은 방향 그대로** 두고 굵은 검정 테두리로만 짚는다.
+    // 붉게 칠하면 한국어판에서 «빨강 = 상승» 과 정면으로 어긋난다 — 하락일 급증을
+    // 빨간 막대로 그리면 EP.01 이 가르친 색 관행을 이 시리즈가 스스로 어기는 셈이다.
+    const vbars = BARS.map((b, i) => {
+      const y = vy(b.v || 0);
+      return `<rect x="${cx(i) - bw / 2}" y="${y}" width="${bw}" height="${Math.max(VB - y, 2)}"
+                    fill="${colOf(b)}" opacity="${b.hi ? 1 : 0.5}"
+                    ${b.hi ? `stroke="${C.ink}" stroke-width="4"` : ''}/>`;
+    }).join('');
+
+    // 평균선 범례는 거래량 패널 «머리글 줄» 오른쪽 끝에 둔다. 막대 옆에 두면
+    // 오른쪽 끝 막대들과 겹친다(실제로 겹쳤다).
+    const avgLine = AVG ? `
+      <line x1="${PADL}" y1="${vy(AVG)}" x2="${W - PADR}" y2="${vy(AVG)}"
+            stroke="${C.ink}" stroke-width="4" stroke-dasharray="13 9"/>
+      <line x1="${W - PADR - 215}" y1="${HDY - 8}" x2="${W - PADR - 171}" y2="${HDY - 8}"
+            stroke="${C.ink}" stroke-width="4" stroke-dasharray="13 9"/>
+      <text x="${W - PADR}" y="${HDY}" text-anchor="end" font-family="${FONT_TITLE}"
+            font-size="25" font-weight="800" fill="${C.ink}">${esc(t(c, 'avg_label'))}</text>` : '';
+
+    // 콜아웃은 평균선 범례보다 한 줄 위(COY)에 단독으로 놓는다. 같은 줄에 두었더니
+    // 문구·지시선·점선 범례가 한 자리에서 엉켰다.
+    // 막대가 오른쪽 절반이면 문구를 그 왼쪽에, 왼쪽 절반이면 오른쪽에 붙여 지시선이 짧게 떨어진다.
+    const CO = d(c, 'callout', null);
+    const callout = CO ? (() => {
+      const x = cx(CO.i), yTop = vy(BARS[CO.i]?.v || 0);
+      const right = x > W / 2;
+      const anchor = right ? 'end' : 'start';
+      const tx = right ? Math.max(x - 34, PADL + 60) : Math.min(x + 34, W - PADR - 60);
+      return `<path d="M ${x} ${yTop - 6} L ${tx + (right ? -10 : 10)} ${COY + 10}"
+                    stroke="${C.red}" stroke-width="3" fill="none"/>
+              <text x="${tx}" y="${COY}" text-anchor="${anchor}" font-family="${FONT_TITLE}"
+                    font-size="27" font-weight="800" fill="${C.red}">${esc(t(CO, 'text'))}</text>`;
+    })() : '';
+
+    const frame = d(c, 'frame', false) ? `
+      <rect x="${PADL - 10}" y="${VT - 6}" width="${W - PADL - PADR + 20}" height="${VB - VT + 22}"
+            fill="none" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10" rx="12"/>` : '';
+
+    const xlabels = (d(c, 'xlabels', [])).map(l => `
+      <text x="${cx(l.i)}" y="${VB + 38}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="24" font-weight="700" fill="${C.muted}">${esc(t(l, 'text'))}</text>`).join('');
+
+    const tag = (label, y) => label ? `
+      <text x="${PADL + 4}" y="${y}" font-family="${FONT_TITLE}" font-size="25" font-weight="800"
+            fill="${C.navy}" stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(label)}</text>` : '';
+
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="flex:1;display:flex;align-items:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+          <line x1="${PADL}" y1="${PB}" x2="${W - PADR}" y2="${PB}" stroke="#c9c6bc" stroke-width="3"/>
+          <line x1="${PADL}" y1="${VB}" x2="${W - PADR}" y2="${VB}" stroke="#c9c6bc" stroke-width="3"/>
+          ${frame}${price}${vbars}${avgLine}${callout}
+          ${tag(t(c, 'price_label'), PT - 14)}
+          ${tag(t(c, 'panel_label'), HDY)}
+          ${xlabels}
+        </svg>
+      </div>
+      ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
     </div>`;
   },
 
@@ -473,8 +651,8 @@ const R = {
 
 // ---------- 렌더 ----------
 const htmls = data.cards.map((c, i) => {
-  const fn = R[c.type];
-  if (!fn) { console.error(`❌ 카드 ${i + 1}: 알 수 없는 type "${c.type}". 가능한 값: ${Object.keys(R).join(', ')}`); process.exit(1); }
+  const fn = c.type && !String(c.type).startsWith('_') ? R[c.type] : null;   // `_` 로 시작하는 것은 내부 조각이다
+  if (!fn) { console.error(`❌ 카드 ${i + 1}: 알 수 없는 type "${c.type}". 가능한 값: ${Object.keys(R).filter(k => !k.startsWith('_')).join(', ')}`); process.exit(1); }
   return page(fn(c), i + 1);
 });
 
