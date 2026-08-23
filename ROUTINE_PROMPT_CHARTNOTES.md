@@ -202,11 +202,12 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 (한국어판 상승=빨강·하락=파랑 / 영어판 상승=초록·하락=빨강). 이 시리즈가 EP.01 에서 가르친 내용이므로
 여기서 틀리면 안 된다 — 그래서 코드가 강제한다.
 
-**쓸 수 있는 카드 타입 11종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
+**쓸 수 있는 카드 타입 12종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
 
 | type | 쓰임 | 주요 필드 |
 |---|---|---|
 | `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈), `overlay`(선택) |
+| `pricevol` | **주가 + 거래량 2단 패널** — 실제 차트가 생긴 그대로 | `title`, `body`, `mode`(`candle`\|`line`), `bars[].{o,h,l,c,v,hi}`, `avg`, `avg_label`, `callout.{i,text}`, `xlabels[].{i,text}`, `price_label`, `panel_label`, `frame`, `closing` |
 | `intro` | p.02 도입 | `title`, `body`, `caption` |
 | `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing` |
 | `anatomy` | 구조를 화살표로 분해 | `title`, `body`, `labels.upper/body/lower` |
@@ -215,7 +216,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `numbered` | 번호 매긴 3가지 + 경고 | `title`, `items[].title/desc`, `warn_title`, `warn_body` |
 | `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
 | `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing` |
-| `bars` | **막대 비교** — 거래량·시총·지표 수치 | `title`, `body`, `items[].label/value/display/highlight`, `closing` |
+| `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` |
 | `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
@@ -227,6 +228,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | (없음) | 캔들만 | EP.01 처럼 주석이 캔들을 가리키는 회차 |
 | `ma` | 이동평균선 곡선 **1개** | 주석이 '선 하나'를 가리키는 회차 (이동평균선·추세선) |
 | `cross` | 교차점에서 만나는 곡선 **2개** + 붉은 원 | 주석이 '두 선이 만나는 순간'을 말하는 회차 (골든크로스·MACD·볼린저밴드) |
+| `volume` | 캔들 **아래에 거래량 막대 칸**을 붙인 2단 그림 | 주석이 '가격 아래 칸'을 가리키는 회차 (거래량·거래대금) |
 
 EP.03 을 `ma` 로 두었더니 주석은 "선 두 개가 만나는 순간"인데 화면에는 선이 하나뿐이라 **가리킬 교차점이 없었다**(검증에서 적발). 주석 문구를 바꾸기 전에 `overlay` 가 맞는지 먼저 본다.
 
@@ -234,10 +236,21 @@ EP.03 을 `ma` 로 두었더니 주석은 "선 두 개가 만나는 순간"인�
 특히 **영어는 같은 내용도 한국어보다 길어져 넘치기 쉽다.** 넘치면 그 언어의 문구만 줄여 다시 렌더한다
 (사실관계나 다른 언어 필드는 건드리지 않는다). 겹침이 없어질 때까지 반복한다.
 
-**타입을 새로 만들 일은 거의 없다.** 위 11종이 로드맵 24회차의 그림을 사실상 전부 덮는다 —
+**타입을 새로 만들 일은 거의 없다.** 위 12종이 로드맵 24회차의 그림을 사실상 전부 덮는다 —
 `lines` 하나가 골든크로스·지지저항·추세선·VIX·볼린저밴드·배당락을 다 그리고,
 `bars` 하나가 거래량·시가총액·PER·PBR·EPS·배당수익률·ROE 를 다 그린다.
 **주제가 바뀌어도 바뀌는 것은 숫자와 라벨뿐이지 타입이 아니다.**
+
+`pricevol` 은 **실제 시세를 그대로** 넣는다(`lines` 와 달리 정규화하지 않는다). `bars[]` 에 세션 순서대로
+`{o,h,l,c,v}` 를 주면 축은 렌더러가 잡는다. 급증일에는 `hi: true` — **색은 그대로 두고 검은 테두리로만** 짚는다
+(붉게 칠하면 한국어판 «빨강 = 상승» 과 어긋난다. 하락일 급증에서 실제로 어긋났다). 언어별로 다른 종목을 실으려면
+`bars_ko` / `bars_en`, `avg_ko` / `avg_en` 처럼 갈라 쓴다. `mode: "line"` + `frame: true` 는 숫자 없이
+"여기가 거래량 칸"만 보여주는 도식용이다.
+
+**거래량·거래대금처럼 «가격과 나란히 봐야 하는» 것은 `bars` 가 아니라 `pricevol` 로 그린다.** EP.04 초안이
+거래량을 가로 막대(`bars`)로 설명했다가 "이게 막대그래프 얘기인지 거래량 얘기인지 모르겠다"는 지적을 받고
+통째로 다시 만들었다(2026-08-23 이슈 #21). 가로 막대는 순위 비교용이라 «가격 아래 붙은 세로 막대»라는
+거래량의 정체를 못 보여준다. `bars` 는 종목 간 비교(거래대금 순위 등)에만 쓴다.
 
 `lines` 의 `series[].points` 는 **0~100 정규화 좌표**다 (x 왼→오, y 아래→위). 실제 픽셀은 렌더러가 계산하므로
 화면 크기를 신경 쓸 필요 없이 "대략 이런 모양"으로만 찍으면 된다. 교차점을 강조하려면 `marker` 에 그 좌표를 준다.

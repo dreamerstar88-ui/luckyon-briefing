@@ -560,8 +560,13 @@ const R = {
       const right = x > W / 2;
       const anchor = right ? 'end' : 'start';
       const tx = right ? Math.max(x - 34, PADL + 60) : Math.min(x + 34, W - PADR - 60);
-      return `<path d="M ${x} ${yTop - 6} L ${tx + (right ? -10 : 10)} ${COY + 10}"
-                    stroke="${C.red}" stroke-width="3" fill="none"/>
+      // 지시선은 «가로로 빠졌다가 막대 바로 위에서 수직으로 내려꽂는» ㄱ자로 그린다.
+      // 문구에서 막대까지 비스듬히 그으면 그 사선이 머리글 줄(HDY)을 가로질러
+      // 평균선 범례의 점선 조각을 관통한다 — ko card6 에서 실제로 그랬다.
+      // 수직 구간은 x = 막대 중심이라 오른쪽 끝에 있는 범례와 절대 만나지 않는다.
+      return `<path d="M ${tx} ${COY + 10} L ${x} ${COY + 10} L ${x} ${yTop - 6}"
+                    stroke="${C.red}" stroke-width="3" fill="none"
+                    stroke-linejoin="round" stroke-linecap="round"/>
               <text x="${tx}" y="${COY}" text-anchor="${anchor}" font-family="${FONT_TITLE}"
                     font-size="27" font-weight="800" fill="${C.red}">${esc(t(CO, 'text'))}</text>`;
     })() : '';
