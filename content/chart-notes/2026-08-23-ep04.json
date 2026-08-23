@@ -9,8 +9,8 @@
   "term_ko": "거래량",
   "term_en": "Trading volume",
   "fact_check": {
-    "ko": "① p.06 차트 — 삼성전자(005930.KS) 2026-07-13~07-31 14거래일 OHLC·거래량 전량을 PlayMCP UsStockInfo 3개월 일봉에서 그대로 옮겼다. 급증일 7/29(수) 시가 226,500 / 고가 234,000 / 저가 189,200 / 종가 208,500, 거래량 65,555,523주. ② 20거래일 평균 — 7/29 직전 20거래일(6/30~7/28) 거래량 합 564,693,346주 ÷ 20 = 28,234,667주. 65,555,523 ÷ 28,234,667 = 2.32배(p.04·p.06 의 '2.3배'). ③ p.04 예시 숫자는 ②와 같은 값이다. ④ p.05 — 2026-08-21(금) 같은 세션. 카카오(035720.KS) 종가 35,800원·거래량 10,109,356주, SK하이닉스(000660.KS) 종가 1,730,000원·거래량 4,274,294주. 거래대금은 «종가 × 거래량» 어림값이다(실제 거래대금은 체결가 가중이므로 카드에도 '어림값'이라고 적었다): 카카오 361,914,944,800원(약 3,619억), 하이닉스 7,394,528,620,000원(약 7조 3,945억). 주식 수는 카카오가 2.37배 많고 금액은 하이닉스가 20.4배 많다. ⑤ p.07 의 '1주 체결 = 거래량 1주' 는 네이버 지식백과 '거래량'(매경 시사용어) 의 «매도 1백주, 매입 1백주인 경우 거래량은 1백주가 된다» 를 근거로 한다. ⑥ p.02 는 실제 시세가 아닌 도식이다 — 숫자·종목·날짜를 넣지 않았다. ⑦ 날짜 오프셋: 이 도구의 KRX 일봉은 15:00Z 로 찍히며 실제 거래일은 KST 다음 날이다. 광복절(토) 대체공휴일 8/17(월) 자리가 정확히 비어 있고 마지막 봉이 직전 거래일 8/21(금)에 떨어지는 것으로 교차검증했다.",
-    "en": "(1) p.06 chart — Tesla (TSLA) 2026-07-14 to 07-31, all 14 sessions of OHLC and volume copied straight from the PlayMCP UsStockInfo 3-month daily pull. Spike day Thu Jul 23: open 341.00 / high 342.11 / low 315.74 / close 319.69 on 115,606,400 shares. (2) 20-session average — the 20 sessions before Jul 23 (Jun 24 – Jul 22) total 779,189,600 shares ÷ 20 = 38,959,480. 115,606,400 ÷ 38,959,480 = 2.97x, shown as 3.0x on p.04 and p.06. (3) p.04's worked example uses the same two figures. (4) p.05 — same session, Fri 2026-08-21. Ford (F) close $14.41 on 45,108,300 shares; Microsoft (MSFT) close $483.24 on 22,489,200 shares. Dollar volume is the approximation «close x shares» (real turnover is trade-price weighted, and the card says 'approx.'): Ford $650,010,603 (~$0.65B), Microsoft $10,867,681,008 (~$10.87B). Ford traded 2.01x the shares; Microsoft moved 16.7x the money. (5) p.07's 'one share traded = one share of volume' follows the Naver Encyclopedia entry for 거래량: «if 100 shares are sold and 100 bought, volume is 100 shares». (6) p.02 is a schematic, not real data — no ticker, date, or figure appears on it. (7) US bars carry 04:00Z stamps and need no date shift; Fri Jul 3 (Independence Day observed) is correctly absent and the last bar falls on Fri Aug 21."
+    "ko": "① p.05 차트 — 삼성전자(005930.KS) 2026-07-13~07-31 14거래일 OHLC·거래량 전량을 PlayMCP UsStockInfo 일봉에서 그대로 옮겼다. 급증일 7/29(수) 시가 226,500 / 고가 234,000 / 저가 189,200 / 종가 208,500, 거래량 65,555,523주. ② 20거래일 평균 — 7/29 직전 20거래일(6/30~7/28) 거래량 합 564,693,346주 ÷ 20 = 28,234,667주. 65,555,523 ÷ 28,234,667 = 2.32배(p.04·p.05 의 '2.3배'). ③ p.05 가 말하는 «그날 무슨 일» — 네이버 뉴스로 확인했다. 머니투데이(2026-08-04) 「코스피는 지난달 28일과 29일 연일 서킷브레이커를 울리며 16.17% 급락」, 미디어오늘(2026-07-30) 「지난 28일과 29일 이틀에 걸쳐 코스피 지수가 17% 가까이 급락… 인공지능(AI) 투자 지속성에 대한 우려」, 연합뉴스·파이낸셜뉴스 등 다수가 「7월 29일 장중 18만9200원」을 보도했고 이는 일봉 저가와 일치한다. 7/29 종가 208,500원은 7/28 종가 220,000원 대비 -5.23%(p.07 의 '5.2%'). ④ p.06 — 2026-08-21(금) 같은 세션. 삼성전자 27,746,471주 ÷ 직전 20거래일(7/23~8/20) 평균 30,081,331주 = 0.92배. 카카오(035720.KS) 10,109,356주 ÷ 같은 기간 평균 2,441,618주 = 4.14배. 주식 수 비율은 27,746,471 ÷ 10,109,356 = 2.74배. ⑤ p.07 의 '1주 체결 = 거래량 1주' 는 네이버 지식백과 '거래량'(매경 시사용어) 의 «매도 1백주, 매입 1백주인 경우 거래량은 1백주가 된다» 를 근거로 한다. ⑥ p.02 는 실제 시세가 아닌 도식이다 — 숫자·종목·날짜를 넣지 않았다. ⑦ 날짜 오프셋: 이 도구의 KRX 일봉은 15:00Z 로 찍히며 실제 거래일은 KST 다음 날이다. 광복절 대체공휴일 8/17(월) 자리가 정확히 비어 있고, 2026-07-27T15:00Z 봉(종가 220,000원)이 언론이 보도한 «7월 28일 삼성전자 13.39% 하락»(254,000 → 220,000 = -13.39%)과 맞아떨어지는 것으로 교차검증했다.",
+    "en": "(1) p.05 chart — Tesla (TSLA) 2026-07-14 to 07-31, all 14 sessions of OHLC and volume copied straight from the PlayMCP UsStockInfo daily pull. Spike day Thu Jul 23: open 341.00 / high 342.11 / low 315.74 / close 319.69 on 115,606,400 shares. (2) 20-session average — the 20 sessions before Jul 23 (Jun 24 – Jul 22) total 779,189,600 shares ÷ 20 = 38,959,480. 115,606,400 ÷ 38,959,480 = 2.97x, shown as 3.0x on p.04 and p.05. (3) What p.05 says happened that day — Tesla released Q2 results after the close on Wednesday, July 22, and the stock fell the next session. Yonhap and SBS (2026-07-24): 'Tesla closed down 14.5% at $319.69… deliveries were a record 480,126 vehicles… profit came in far below the market forecast.' Newspim (2026-07-24) reports the walked-back robotaxi timeline from the same call. Close 319.69 against the Jul 22 close of 374.01 = -14.52% (p.07's '14.5%'). (4) p.06 — Thursday, 2026-08-20, one session. Nvidia (NVDA) 92,457,000 shares ÷ a 118,282,070 average over the previous 20 sessions (Jul 23 – Aug 19) = 0.78x. Walmart (WMT) 83,633,100 shares ÷ a 21,924,800 average over the same window = 3.81x. Share ratio 92,457,000 ÷ 83,633,100 = 1.11x. (5) p.07's 'one share traded = one share of volume' follows the Naver Encyclopedia entry for 거래량: «if 100 shares are sold and 100 bought, volume is 100 shares». (6) p.02 is a schematic, not real data — no ticker, date, or figure appears on it. (7) US bars carry 04:00Z stamps and need no date shift; Fri Jul 3 (Independence Day observed) is correctly absent and the last bar falls on Fri Aug 21."
   },
   "cards": [
     {
@@ -93,58 +93,17 @@
         "title_en": "Tesla · Thursday, July 23, 2026",
         "lines": [
           { "text_ko": "6,556만 주 ÷ 2,823만 주 = 2.3배", "text_en": "115.6M ÷ 39.0M = 3.0x" },
-          { "text_ko": "평소의 두 배 넘게 오간 날입니다", "text_en": "Three times its own normal" }
+          { "text_ko": "평소의 두 배 넘게 오간 날 — 무슨 일이 있었을까요?", "text_en": "Three times its normal — so what happened?" }
         ]
       }
     },
     {
-      "type": "bars",
-      "title_ko": "주식 수로 견주면<br>순위가 뒤집힙니다",
-      "title_en": "Count shares and<br>the ranking flips",
-      "body_ko": "2026년 8월 21일(금), 같은 하루입니다. 주가가 다르면 같은 '한 주'의 무게가 다릅니다.",
-      "body_en": "Friday, August 21, 2026 — one and the same session. When prices differ, one share does not weigh the same.",
-      "sections_ko": [
-        {
-          "heading": "① 거래량 — 오간 주식 수",
-          "items": [
-            { "label": "카카오", "value": 10109356, "display": "1,011만 주", "highlight": true },
-            { "label": "SK하이닉스", "value": 4274294, "display": "427만 주" }
-          ]
-        },
-        {
-          "heading": "② 거래대금 — 오간 돈 (종가 기준 어림값)",
-          "items": [
-            { "label": "카카오", "value": 361914944800, "display": "약 3,619억원" },
-            { "label": "SK하이닉스", "value": 7394528620000, "display": "약 7조 3,945억원", "highlight": true }
-          ]
-        }
-      ],
-      "sections_en": [
-        {
-          "heading": "1. Volume — shares traded",
-          "items": [
-            { "label": "Ford", "value": 45108300, "display": "45.1M shares", "highlight": true },
-            { "label": "Microsoft", "value": 22489200, "display": "22.5M shares" }
-          ]
-        },
-        {
-          "heading": "2. Turnover — money traded (approx., at the close)",
-          "items": [
-            { "label": "Ford", "value": 650010603, "display": "$0.65B" },
-            { "label": "Microsoft", "value": 10867681008, "display": "$10.87B", "highlight": true }
-          ]
-        }
-      ],
-      "closing_ko": "주식 수는 카카오가 2.4배 많지만, 오간 돈은 하이닉스가 20배 많습니다",
-      "closing_en": "Ford traded 2.0x the shares. Microsoft moved 16.7x the money."
-    },
-    {
       "type": "pricevol",
       "mode": "candle",
-      "title_ko": "실제 차트에서는<br>이렇게 보입니다",
-      "title_en": "Here it is on<br>a real chart",
-      "body_ko": "삼성전자 2026년 7월 13일~31일. 아래 칸 점선이 직전 20거래일 평균 거래량입니다.",
-      "body_en": "Tesla, July 14–31, 2026. The dashed line is its average volume over the previous 20 sessions.",
+      "title_ko": "그날 무슨 일이<br>있었을까요",
+      "title_en": "So what happened<br>that day?",
+      "body_ko": "2026년 7월 29일 — AI 투자가 계속될지 우려가 번지며 반도체주가 이틀째 무너졌고, 코스피에는 서킷브레이커가 걸렸습니다.",
+      "body_en": "Thursday, July 23, 2026 — Tesla's second-quarter results had landed the night before: record deliveries, but profit well short of forecasts.",
       "price_label_ko": "주가",
       "price_label_en": "Price",
       "panel_label_ko": "거래량",
@@ -197,8 +156,49 @@
         { "i": 7, "text": "Jul 23" },
         { "i": 13, "text": "Jul 31" }
       ],
-      "closing_ko": "크게 움직인 날에는 거래량도 함께 터집니다",
-      "closing_en": "Big price moves arrive with big volume"
+      "closing_ko": "무슨 일이 있었던 날은 거래량이 다릅니다",
+      "closing_en": "A day with news is a day with volume"
+    },
+    {
+      "type": "bars",
+      "title_ko": "주식 수를 나란히<br>놓으면 안 됩니다",
+      "title_en": "Never put two share<br>counts side by side",
+      "body_ko": "2026년 8월 21일(금), 같은 하루입니다. 둘 중 어느 쪽이 '평소와 다른' 날이었을까요?",
+      "body_en": "Thursday, August 20, 2026 — one and the same session. Which of the two was having an unusual day?",
+      "sections_ko": [
+        {
+          "heading": "① 거래량 — 그날 오간 주식 수",
+          "items": [
+            { "label": "삼성전자", "value": 27746471, "display": "2,775만 주", "highlight": true },
+            { "label": "카카오", "value": 10109356, "display": "1,011만 주" }
+          ]
+        },
+        {
+          "heading": "② 상대 거래량 — 각자의 평소와 견주면",
+          "items": [
+            { "label": "삼성전자", "value": 0.92, "display": "0.9배" },
+            { "label": "카카오", "value": 4.14, "display": "4.1배", "highlight": true }
+          ]
+        }
+      ],
+      "sections_en": [
+        {
+          "heading": "1. Volume — shares traded that day",
+          "items": [
+            { "label": "Nvidia", "value": 92457000, "display": "92.5M shares", "highlight": true },
+            { "label": "Walmart", "value": 83633100, "display": "83.6M shares" }
+          ]
+        },
+        {
+          "heading": "2. Relative volume — each against its own normal",
+          "items": [
+            { "label": "Nvidia", "value": 0.78, "display": "0.8x" },
+            { "label": "Walmart", "value": 3.81, "display": "3.8x", "highlight": true }
+          ]
+        }
+      ],
+      "closing_ko": "주식 수는 삼성전자가 2.7배 많지만, 평소와 다른 쪽은 카카오입니다",
+      "closing_en": "Nvidia traded more shares. Walmart had the unusual day."
     },
     {
       "type": "numbered",
@@ -214,14 +214,14 @@
         {
           "title_ko": "거래량 급증 = 호재",
           "title_en": "A spike means good news",
-          "desc_ko": "많이 팔린 날에도 똑같이 늘어납니다. 앞 장 사례는 하루에 5.2% 내린 날이었습니다.",
-          "desc_en": "Heavy selling lifts it just as much. The example on the card before fell 14.5% in a day."
+          "desc_ko": "많이 팔린 날에도 똑같이 늘어납니다. 앞서 본 7월 29일은 하루에 5.2% 내린 날이었습니다.",
+          "desc_en": "Heavy selling lifts it just as much. The July 23 example fell 14.5% in a day."
         },
         {
           "title_ko": "종목끼리 주식 수로 비교",
           "title_en": "Comparing stocks by share count",
-          "desc_ko": "그 종목의 평균과는 주식 수로, 다른 종목과는 거래대금으로 견줍니다.",
-          "desc_en": "Judge a stock against its own average in shares — against other stocks in money."
+          "desc_ko": "종목마다 주가도 주식 수도 다릅니다. 각자의 평소와 견주거나, 거래대금으로 봅니다.",
+          "desc_en": "Share counts and prices differ by stock. Judge each against its own normal, or compare the money traded."
         }
       ],
       "warn_title_ko": "거래량은 방향을 알려주지 않습니다",
@@ -236,7 +236,7 @@
       "points": [
         { "text_ko": "거래량은 그날 체결된 주식 수", "text_en": "Volume is shares traded that day" },
         { "text_ko": "많고 적음은 평소의 몇 배인지로", "text_en": "Size it as a multiple of normal" },
-        { "text_ko": "종목끼리는 거래대금으로 견준다", "text_en": "Compare stocks by money, not shares" }
+        { "text_ko": "종목끼리 주식 수를 그대로 견주지 않는다", "text_en": "Never rank two stocks by share count" }
       ],
       "ctas": [
         { "text_ko": "저장해두고 차트 볼 때 꺼내보세요", "text_en": "Save it & pull it up when you chart" },
@@ -250,15 +250,15 @@
       "disclaimer_en": "Educational content only — not investment advice."
     }
   ],
-  "caption_ko": "📊 투자 3분 노트 EP.04 — 거래량\n\n가격 그래프 아래 칸에 줄지어 선 세로 막대, 거래량입니다. 그날 그 종목의 주식이 몇 주나 체결됐는지를 세워 놓은 것뿐입니다.\n\n숫자 자체로는 많고 적음을 알 수 없습니다. 나눗셈 한 번이면 됩니다 — 오늘 거래량 ÷ 직전 20거래일 평균. 삼성전자는 2026년 7월 29일 6,556만 주가 거래됐는데, 직전 20거래일 평균은 2,823만 주였습니다. 평소의 2.3배입니다.\n\n종목끼리 견줄 때는 주식 수로 세면 안 됩니다. 8월 21일 카카오는 하이닉스보다 2.4배 많은 주식이 오갔지만, 오간 돈은 하이닉스가 20배 많았습니다. 주가가 다르면 같은 '한 주'의 무게가 다르기 때문입니다.\n\n그리고 가장 많이 하는 오해 하나. 거래량이 늘었다고 산 사람이 많았던 게 아닙니다. 한 주가 체결되려면 사는 쪽과 파는 쪽이 둘 다 있어야 하니까요. 거래량은 방향이 아니라 '몇 주가 오갔나'를 말해 줍니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '지지선과 저항선' — 차트의 천장과 바닥을 읽습니다.\n\n#주식초보 #주식공부 #거래량 #거래대금 #주식차트보는법 #주식용어 #삼성전자 #코스피 #재테크 #투자공부 #luckyon브리핑",
-  "caption_en": "Those vertical bars in the panel under the price chart are volume — simply how many shares changed hands that day.\n\nThe raw number tells you nothing on its own. One division fixes that: today's volume ÷ the 20-session average. Tesla traded 115.6M shares on Thursday, July 23, 2026, against a 39.0M average over the previous 20 sessions. That is 3.0 times its own normal.\n\nNever compare two different stocks by share count. On August 21 Ford traded twice the shares Microsoft did — but Microsoft moved almost 17 times the money. When prices differ, one share does not weigh the same.\n\nAnd the mistake almost everyone makes: rising volume does not mean buyers piled in. Every share traded needs a buyer and a seller, so the two sides always match. Volume never gives you direction — it tells you how many shares changed hands.\n\n📌 Save it and pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: support and resistance — reading the ceiling and the floor on a chart.\n\n#investingbasics #stockmarket #tradingvolume #stockcharts #technicalanalysis #learntoinvest #tesla #stockmarketbasics #investing101 #luckyon",
+  "caption_ko": "📊 투자 3분 노트 EP.04 — 거래량\n\n가격 그래프 아래 칸에 줄지어 선 세로 막대, 거래량입니다. 그날 그 종목의 주식이 몇 주나 체결됐는지를 세워 놓은 것뿐입니다.\n\n숫자 자체로는 많고 적음을 알 수 없습니다. 나눗셈 한 번이면 됩니다 — 오늘 거래량 ÷ 직전 20거래일 평균. 삼성전자는 2026년 7월 29일 6,556만 주가 거래됐는데, 직전 20거래일 평균은 2,823만 주였습니다. 평소의 2.3배입니다.\n\n그날 무슨 일이 있었을까요. AI 투자가 계속될지 우려가 번지며 반도체주가 이틀째 무너졌고, 코스피에는 서킷브레이커가 걸렸습니다. 삼성전자는 장중 18만 9,200원까지 밀렸습니다. 거래량이 평소와 다르다는 건 '찾아볼 만한 날'이라는 신호입니다.\n\n종목끼리 견줄 때는 주식 수를 그대로 놓으면 안 됩니다. 8월 21일 삼성전자는 카카오보다 2.7배 많은 주식이 오갔지만, 각자의 평소와 견주면 삼성전자는 0.9배로 한산했고 카카오는 4.1배였습니다. 주식 수가 많다고 그날이 특별한 건 아닙니다.\n\n그리고 가장 많이 하는 오해 하나. 거래량이 늘었다고 산 사람이 많았던 게 아닙니다. 한 주가 체결되려면 사는 쪽과 파는 쪽이 둘 다 있어야 하니까요. 거래량은 방향이 아니라 '몇 주가 오갔나'를 말해 줍니다.\n\n📌 저장해두고 차트 볼 때 꺼내보세요\n👇 주식 시작한 친구 태그하기\n(교육 목적 콘텐츠이며 투자 권유가 아닙니다)\n\n다음 편은 '지지선과 저항선' — 차트의 천장과 바닥을 읽습니다.\n\n#주식초보 #주식공부 #거래량 #거래대금 #주식차트보는법 #주식용어 #삼성전자 #코스피 #재테크 #투자공부 #luckyon브리핑",
+  "caption_en": "Those vertical bars in the panel under the price chart are volume — simply how many shares changed hands that day.\n\nThe raw number tells you nothing on its own. One division fixes that: today's volume ÷ the 20-session average. Tesla traded 115.6M shares on Thursday, July 23, 2026, against a 39.0M average over the previous 20 sessions. That is 3.0 times its own normal.\n\nSo what happened that day? Tesla's second-quarter results had landed the night before — record deliveries of 480,126 vehicles, but profit far short of forecasts, and a robotaxi timeline the company walked back on the call. The stock closed down 14.5%. Volume that sits far from normal is a signal that the day is worth looking into.\n\nNever put two share counts side by side. On August 20 Nvidia traded about 11% more shares than Walmart — yet against their own normals Nvidia was at 0.8x, a quiet day, and Walmart at 3.8x. A big share count does not make a day unusual.\n\nAnd the mistake almost everyone makes: rising volume does not mean buyers piled in. Every share traded needs a buyer and a seller, so the two sides always match. Volume never gives you direction — it tells you how many shares changed hands.\n\n📌 Save it and pull it up when you chart\n👇 Tag a friend who just started investing\n(Educational content only — not investment advice)\n\nNext up: support and resistance — reading the ceiling and the floor on a chart.\n\n#investingbasics #stockmarket #tradingvolume #stockcharts #technicalanalysis #learntoinvest #tesla #stockmarketbasics #investing101 #luckyon",
   "alt_ko": [
     "투자 3분 노트 EP.04 표지 — 위 칸에 캔들 일곱 개, 아래 칸에 그에 맞춘 세로 거래량 막대가 그려져 있고 여섯 번째 막대만 짙은 파랑으로 높이 솟아 있다. '차트의 절반을 안 보고 있습니다'라는 제목 옆에 이 아래 칸이 거래량이라는 주석이 붙어 있다",
     "도입 카드 — 위 칸은 주가 꺾은선, 아래 칸은 세로 거래량 막대이며 아래 칸 전체가 붉은 점선 테두리로 둘러싸여 있다. 가격은 '얼마에', 거래량은 '얼마나'라는 한 줄 정리",
     "핵심 개념 체크리스트 — 거래량은 그날 체결된 주식 수, 거래대금은 거래량 곱하기 체결가, 평균 거래량은 보통 20거래일 기준 그 종목의 평소, 상대 거래량은 오늘을 평소로 나눈 배수",
-    "공식 카드 — 오늘 거래량을 직전 20거래일 평균 거래량으로 나누면 상대 거래량이 된다. 1배는 평소, 2배 이상은 이유를 찾아볼 만한 날, 0.5배는 가볍게 볼 날. 삼성전자 2026년 7월 29일은 6,556만 주 나누기 2,823만 주로 2.3배",
-    "막대 비교 카드 — 2026년 8월 21일 같은 날, 거래량은 카카오 1,011만 주로 SK하이닉스 427만 주보다 많지만, 거래대금은 하이닉스가 약 7조 3,945억원으로 카카오 약 3,619억원보다 20배 많다",
-    "실제 차트 — 삼성전자 2026년 7월 13일부터 31일까지 14거래일. 위 칸은 캔들, 아래 칸은 거래량 막대이고 20거래일 평균을 나타내는 가로 점선이 그어져 있다. 7월 29일 막대만 짙은 파랑으로 높이 솟아 검은 테두리가 둘려 있고, 평소의 2.3배라는 붉은 주석이 붙어 있다",
+    "공식 카드 — 오늘 거래량을 직전 20거래일 평균 거래량으로 나누면 상대 거래량이 된다. 1배는 평소, 2배 이상은 이유를 찾아볼 만한 날, 0.5배는 가볍게 볼 날. 삼성전자 2026년 7월 29일은 6,556만 주 나누기 2,823만 주로 2.3배이며, 그날 무슨 일이 있었는지 묻는 문장으로 끝난다",
+    "실제 차트 — 삼성전자 2026년 7월 13일부터 31일까지 14거래일. 위 칸은 캔들, 아래 칸은 거래량 막대이고 20거래일 평균을 나타내는 가로 점선이 그어져 있다. 7월 29일 막대만 짙은 파랑으로 높이 솟아 검은 테두리가 둘려 있고 평소의 2.3배라는 붉은 주석이 붙어 있다. 그날은 AI 투자 지속 여부를 둘러싼 우려로 반도체주가 이틀째 무너지며 코스피에 서킷브레이커가 걸린 날이었다는 설명이 함께 있다",
+    "막대 비교 카드 — 2026년 8월 21일 같은 날, 오간 주식 수는 삼성전자 2,775만 주로 카카오 1,011만 주보다 2.7배 많지만, 각자의 직전 20거래일 평균과 견주면 삼성전자는 0.9배로 한산했고 카카오는 4.1배였다",
     "흔한 오해 세 가지 — 거래량이 늘면 산 사람이 많다는 오해, 급증을 호재로 보는 것, 종목끼리 주식 수로 비교하는 것. 거래량은 방향을 알려주지 않는다는 경고가 붙어 있다",
     "3줄 요약과 다음 편 예고 — 다음 편은 지지선과 저항선, 그리고 이 콘텐츠는 교육 목적이며 투자 권유가 아니라는 고지"
   ],
@@ -266,9 +266,9 @@
     "3-Min Investing Notes EP.04 cover — seven candlesticks in an upper panel with matching vertical volume bars in a lower panel, the sixth bar spiking in red. Beside the title 'You're reading half the chart' a note points out that the lower row is the volume",
     "Intro card — a price line in the upper panel and vertical volume bars in the lower panel, with the whole lower panel ringed by a red dashed border. The line reads: price says at what, volume says how much",
     "Key-concept checklist — volume is shares traded that day, turnover is volume times price, average volume is that stock's normal over roughly 20 sessions, and relative volume is today divided by that normal",
-    "Formula card — today's volume divided by the 20-session average volume gives relative volume. 1x is a normal day, 2x or more is worth investigating, 0.5x is a day to take lightly. Tesla on July 23, 2026: 115.6M divided by 39.0M equals 3.0x",
-    "Bar comparison — on the same session of August 21, 2026, Ford traded 45.1M shares against Microsoft's 22.5M, yet Microsoft's turnover of about 10.87 billion dollars was roughly 17 times Ford's 0.65 billion",
-    "Real chart — Tesla's 14 sessions from July 14 to 31, 2026, with candlesticks in the upper panel and volume bars below, crossed by a dashed line marking the 20-session average. The July 23 bar spikes in red, labelled 3.0x normal",
+    "Formula card — today's volume divided by the 20-session average volume gives relative volume. 1x is a normal day, 2x or more is worth investigating, 0.5x is a day to take lightly. Tesla on July 23, 2026: 115.6M divided by 39.0M equals 3.0x, and the card closes by asking what happened that day",
+    "Real chart — Tesla's 14 sessions from July 14 to 31, 2026, with candlesticks in the upper panel and volume bars below, crossed by a dashed line marking the 20-session average. The July 23 bar spikes in red, labelled 3.0x normal, and the card explains that Tesla's second-quarter results had landed the night before: record deliveries but profit well short of forecasts",
+    "Bar comparison — on the same session of August 20, 2026, Nvidia traded 92.5M shares against Walmart's 83.6M, yet measured against their own 20-session averages Nvidia was at 0.8x, a quiet day, while Walmart was at 3.8x",
     "Three common mistakes — believing more volume means more buyers, treating a spike as good news, and comparing different stocks by share count, with a warning that volume never gives direction",
     "Three-line recap, a teaser for the next episode on support and resistance, and a note that this is educational content and not investment advice"
   ],
