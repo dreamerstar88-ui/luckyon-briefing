@@ -371,8 +371,11 @@ function card6() {
 // ══════════════════════════════════════════════════════════
 function cardItems(n, sectionName, kick, ttl, style) {
   const s = sec(sectionName) || { items: [] };
-  const items = (s.items || []).slice(0, style === 'icon' ? 4 : 4);
-  const icons = ['ai', 'chip', 'globe', 'target'];
+  // 아이콘형(카드7)은 항목당 여백이 좁아 6건까지 실측으로 확인됐다. 번호형(카드8)은
+  // 항목당 글자 크기·여백이 더 커서 4건이 이미 한계다 — 5건째부터 overflow:hidden 에
+  // 조용히 잘려 나간다(에러 없이 사라지므로 늘리려면 반드시 다시 렌더해서 확인할 것).
+  const items = (s.items || []).slice(0, style === 'icon' ? 6 : 4);
+  const icons = ['ai', 'chip', 'globe', 'target', 'rate', 'shield'];
   const body = items.map((it, i) => `
     <div style="display:flex; gap:${style === 'icon' ? 26 : 30}px; padding-bottom:${style === 'icon' ? 34 : 44}px;
                 ${i < items.length - 1 ? `border-bottom:1px solid ${PAL.rule}; margin-bottom:${style === 'icon' ? 34 : 44}px;` : ''}">
@@ -398,7 +401,10 @@ function cardItems(n, sectionName, kick, ttl, style) {
 // 9 — 일정
 // ══════════════════════════════════════════════════════════
 function card9() {
-  const rows = (C.schedule || []).slice(0, 5).map(s => ({
+  // 5건은 보수적으로 잡은 값이었다 — 항목당 시각·제목 한 줄+세부 한 줄 기준으로
+  // 7건까지 운영시간 상자와 안 겹치는 것을 실측으로 확인했다. 세부 설명이 두 줄로
+  // 넘어가는 긴 항목이 여럿이면 다시 좁아질 수 있다.
+  const rows = (C.schedule || []).slice(0, 7).map(s => ({
     time: s.time, title: t(s.title_ko, s.title_en), detail: t(s.detail_ko, s.detail_en), high: s.importance === 'high',
   }));
   const mh = C.market_hours;

@@ -37,8 +37,8 @@
 | 4 | 섹터별 등락 | 0 기준 **발산 막대** (업종 10~15개) | 섹션 `bars` |
 | 5 | 거래대금 상위 | **순위 가로 막대** + 등락률·공매도 열 + 비중 띠 | 섹션 `rows`·`share` |
 | 6 | 실적 · 지표 발표 | 2열 큰 숫자 타일 (최대 6개) | 섹션 `stats` |
-| 7 | AI · 반도체 | 아이콘 + 헤드라인 + 본문 (4건) | 섹션 `items` |
-| 8 | 주요 소식 | 01~04 번호 + 헤드라인 + 본문 (4건) | 섹션 `items` |
+| 7 | AI · 반도체 | 아이콘 + 헤드라인 + 본문 (최대 6건) | 섹션 `items` |
+| 8 | 주요 소식 | 01~04 번호 + 헤드라인 + 본문 (최대 4건 — 항목이 더 커서 6장과 한도가 다르다) | 섹션 `items` |
 | 9 | 주요 일정 | 타임라인 + 운영시간 상자 | `schedule`, `market_hours` |
 | 10 | 아웃트로 | 로고 · 태그라인 · 다음 회차 · 핸들 | `outro_tagline_ko/en`, `next_brief_ko/en` |
 
@@ -477,14 +477,14 @@ korea/weekend/ai/watch .items[].src
     {"title_ko":"실적 · 지표 발표",
      "stats":[{"label_ko","label_en","value","delta","dir","sub_ko","sub_en"}],   // 최대 6개
      "note_ko","note_en"},
-    {"title_ko":"AI · 반도체 기술","items":[{"headline_ko","headline_en","body_ko","body_en"}]},  // 4건
-    {"title_ko":"주요 소식","items":[{"headline_ko","headline_en","body_ko","body_en"}]}          // 4건
+    {"title_ko":"AI · 반도체 기술","items":[{"headline_ko","headline_en","body_ko","body_en"}]},  // 최대 6건
+    {"title_ko":"주요 소식","items":[{"headline_ko","headline_en","body_ko","body_en"}]}          // 최대 4건
   ],
 
   // ── 9 일정 ────────────────────────────────────────────────
   "schedule_kicker","schedule_sub","schedule_title_ko","schedule_title_en",
   "market_hours":{"title_ko","title_en","lines_ko":[...],"lines_en":[...]},
-  "schedule":[{"time","title_ko","title_en","detail_ko","detail_en","importance":"high|mid"}],  // 5건
+  "schedule":[{"time","title_ko","title_en","detail_ko","detail_en","importance":"high|mid"}],  // 최대 7건
 
   // ── 10 아웃트로 ───────────────────────────────────────────
   "outro_tagline_ko","outro_tagline_en","next_brief_ko","next_brief_en",
@@ -508,9 +508,10 @@ korea/weekend/ai/watch .items[].src
 | `chart_series_values` | 8~10점. 그보다 촘촘하면 x축 라벨이 겹친다 |
 | `bars` | 10~15개 |
 | `rows` (거래대금) | 5개 |
-| `stats` (실적·지표) | 최대 6개 (2열 × 3행) |
-| `items` | 카드당 4건. 본문 한글 90자·영문 160자 안쪽 |
-| `schedule` | 5건 |
+| `stats` (실적·지표) | 최대 6개 (2열 × 3행) — 타일이 250px 고정이라 7개(4행)부터 각주와 겹친다. 늘리려면 타일 높이부터 줄여야 한다 |
+| `items` (AI·반도체, 카드7) | 최대 6건. 본문 한글 90자·영문 160자 안쪽 |
+| `items` (주요 소식, 카드8) | 최대 4건 — 항목이 카드7보다 커서 5건째부터 `overflow:hidden` 에 조용히 잘린다(에러 없음) |
+| `schedule` | 최대 7건 |
 
 ### 고정 문구
 
