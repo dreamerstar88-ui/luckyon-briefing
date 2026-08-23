@@ -42,6 +42,9 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    # 안전장치. 사진 열 장이면 넉넉히 5분이면 끝난다. 그보다 오래 걸리면 무언가
+    # 매달린 것이므로 기본 6시간을 기다리지 않고 끊는다.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:

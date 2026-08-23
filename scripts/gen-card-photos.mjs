@@ -148,5 +148,10 @@ for (const n of nums) {
     fail++;
   }
 }
+// 축소에 쓴 브라우저를 반드시 닫는다. 열어 둔 채로 두면 node 가 끝나지 않고 프로세스가
+// 그대로 남는다 — GitHub Actions 에서는 작업이 시간제한까지 매달린다.
+// (2026-08-23 실제로 그렇게 됐다: 시험 실행 뒤 node 가 15분 넘게 살아 있었다.)
+if (_browser) await _browser.close();
+
 console.log(`\n생성 ${ok}장 · 실패 ${fail}장 -> ${path.relative(root, outDir)}/`);
 if (fail && !ok) console.error('전부 실패했습니다. 키(GEMINI_API_KEY)를 확인하십시오 — 다만 브리핑은 그대로 진행합니다.');
