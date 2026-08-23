@@ -10,9 +10,9 @@
   "headline_sub_en": "Dow +0.98%, Nasdaq +0.43%, S&P 500 +0.43% — yet a second straight weekly loss",
   "cover_kicker": "US MARKET CLOSE · 8/21",
   "cover_facts": [
-    ["shield", "Dow +0.98% · S&P 500 +0.43%", "53,277.01 / 7,674.37 · 3대 지수 모두 상승 마감"],
-    ["rate", "US 10Y 4.69% → 4.74%", "재무부 바이백 확대 예고에도 금리는 다시 상승"],
-    ["chip", "NVDA AI 서버가 +15%", "HBM·서버D램 품귀 여파, 삼전·SK하이닉스엔 호재"]
+    ["shield", "Dow +0.98% · S&P 500 +0.43%", "53,277.01 / 7,674.37 pts · all 3 indexes up"],
+    ["rate", "US 10Y 4.69% → 4.74%", "Fed Chair Warsh · Jackson Hole 8/27-29"],
+    ["chip", "NVDA AI server +15%", "HBM · server DRAM prices surge"]
   ],
 
   "markets": [
@@ -22,7 +22,7 @@
     {"label":"VIX","value":"15.13","delta":"▼5.50%","dir":"down","note_ko":"美 정규장 마감 기준 · 국채금리 상승 속에도 진정","note_en":"As of US close · eased even as yields rose"},
     {"label":"Fear & Greed","value":"52 → 55","delta":"▲","dir":"up","note_ko":"중립 상단으로 회복","note_en":"Recovers to upper end of Neutral"},
     {"label":"US 10Y","value":"4.69% → 4.74%","delta":"▲","dir":"up","note_ko":"재무부 바이백 확대 예고에도 상승","note_en":"Rose despite the Treasury's expanded buyback plan"},
-    {"label":"USD/KRW","value":"1,385.9","value_sub":"· DXY 98.8","delta":"▼0.35%","dir":"down","note_ko":"달러인덱스 98.8 · 일요일 야간 기준(월요일 개장 전)","note_en":"Dollar index 98.8 · as of Sunday night, ahead of Monday's open"},
+    {"label":"USD/KRW","value":"1,385.9","value_sub":"· DXY 98.8(8/21)","delta":"▼0.35%","dir":"down","note_ko":"원/달러는 일요일 야간 기준(월요일 개장 전) · 달러인덱스는 8/21 종가","note_en":"USD/KRW as of Sunday night, ahead of Monday's open · dollar index is the 8/21 close"},
     {"label":"Gold","value":"$4,680.6","delta":"▲3.64%","dir":"up","note_ko":"안전자산 수요에 사흘째 강세","note_en":"Safe-haven demand extends a 3-day rally"},
     {"label":"WTI","value":"$87.06","delta":"▼0.88%","dir":"down","note_ko":"美 이란 제재 예고 속에도 소폭 진정","note_en":"Eased slightly even as the US preps new Iran sanctions"},
     {"label":"Bitcoin","value":"$77,794.3","delta":"▲1.05%","dir":"up","note_ko":"24시간 기준 · 주간 22%대 급등 후 숨고르기","note_en":"24h change · cooling after a ~22% weekly surge"}
@@ -48,8 +48,7 @@
       "cols": 1,
       "stats": [
         {"label_ko":"나스닥종합","label_en":"Nasdaq Composite","value":"26,180.46","delta":"▲0.43%","dir":"up","sub_ko":"8/21 마감 · 주간 -2.05%","sub_en":"8/21 close · -2.05% for the week"},
-        {"label_ko":"S&P 500","label_en":"S&P 500","value":"7,674.37","delta":"▲0.43%","dir":"up","sub_ko":"8/21 마감 · 주간 -1.43%","sub_en":"8/21 close · -1.43% for the week"},
-        {"label_ko":"다우존스","label_en":"Dow Jones","value":"53,277.01","delta":"▲0.98%","dir":"up","sub_ko":"8/21 마감 · 3대 지수 중 최대 상승폭","sub_en":"8/21 close · the biggest gainer of the three"}
+        {"label_ko":"S&P 500","label_en":"S&P 500","value":"7,674.37","delta":"▲0.43%","dir":"up","sub_ko":"8/21 마감 · 주간 -1.43%","sub_en":"8/21 close · -1.43% for the week"}
       ],
       "breadth": [
         {"label_ko":"거래대금 상위 300종목","label_en":"Top 300 by turnover","up":198,"flat":2,"down":100}
@@ -70,14 +69,14 @@
         {"label_ko":"필수소비재 (XLP)","label_en":"Cons. Staples (XLP)","value":0.79},
         {"label_ko":"커뮤니케이션 (XLC)","label_en":"Comm. Svcs (XLC)","value":0.65},
         {"label_ko":"산업재 (XLI)","label_en":"Industrials (XLI)","value":0.27},
-        {"label_ko":"기술 (XLK)","label_en":"Technology (XLK)","value":0.12},
+        {"label_ko":"기술 (XLK)","label_en":"Technology (XLK)","value":0.11},
         {"label_ko":"부동산 (XLRE)","label_en":"Real Estate (XLRE)","value":0.0},
         {"label_ko":"에너지 (XLE)","label_en":"Energy (XLE)","value":-0.17},
         {"label_ko":"반도체 (SMH)","label_en":"Semis (SMH)","value":-0.4},
         {"label_ko":"유틸리티 (XLU)","label_en":"Utilities (XLU)","value":-2.29}
       ],
-      "note_ko": "국채금리 상승에도 소재·헬스케어가 앞장섰고, 금리에 민감한 유틸리티(-2.29%)와 반도체(-0.40%)만 뒤처졌다.",
-      "note_en": "Materials and health care led even as yields climbed, while rate-sensitive utilities (-2.29%) and semiconductors (-0.40%) lagged."
+      "note_ko": "국채금리 상승에도 소재·헬스케어가 앞장섰고, 유틸리티(-2.29%)·반도체(-0.40%)·에너지(-0.17%)는 하락했다.",
+      "note_en": "Materials and health care led even as yields climbed, while utilities (-2.29%), semiconductors (-0.40%) and energy (-0.17%) fell."
     },
     {
       "title_ko": "거래대금 상위",
@@ -103,10 +102,12 @@
       "stats": [
         {"label_ko":"S&P 글로벌 제조업 PMI","label_en":"S&P Global Mfg PMI","value":"53.2","delta":"▼0.7p","dir":"down","sub_ko":"8/21 · 예상 53.9 · 이전 53.9","sub_en":"8/21 · est. 53.9 · prev. 53.9"},
         {"label_ko":"S&P 글로벌 서비스업 PMI","label_en":"S&P Global Services PMI","value":"56.8","delta":"▲2.8p","dir":"up","sub_ko":"8/21 · 예상 54.0 · 이전 54.6","sub_en":"8/21 · est. 54.0 · prev. 54.6"},
-        {"label_ko":"S&P 글로벌 종합 PMI","label_en":"S&P Global Composite PMI","value":"56.0","delta":"▲1.5p","dir":"up","sub_ko":"8/21 · 이전 54.5 (예상치 없음)","sub_en":"8/21 · prev. 54.5 (no consensus)"}
+        {"label_ko":"S&P 글로벌 종합 PMI","label_en":"S&P Global Composite PMI","value":"56.0","delta":"▲1.5p","dir":"up","sub_ko":"8/21 · 이전 54.5 (예상치 없음)","sub_en":"8/21 · prev. 54.5 (no consensus)"},
+        {"label_ko":"유로존 소비자신뢰지수","label_en":"Eurozone Consumer Confidence","value":"-15.5","delta":"▲0.8p","dir":"up","sub_ko":"8/21 · 예상 -16.3 · 이전 -15.9","sub_en":"8/21 · est. -16.3 · prev. -15.9"},
+        {"label_ko":"베이커휴즈 美 원유 리그 수","label_en":"Baker Hughes US Oil Rig Count","value":"452","delta":"▼4","dir":"down","sub_ko":"8/21 · 예상 456 · 이전 455","sub_en":"8/21 · est. 456 · prev. 455"}
       ],
-      "note_ko": "제조업은 예상을 하회했지만 서비스업·종합 지수는 예상을 웃돌며 미국 경기가 서비스업 중심으로 견조함을 보여줬다. delta는 예상치 대비(종합은 이전치 대비) 실측치 기준.",
-      "note_en": "Manufacturing missed estimates, but services and the composite topped forecasts, underscoring services-led resilience in the US economy. Delta = actual vs. estimate (vs. prior for the composite, which has no consensus)."
+      "note_ko": "제조업은 예상을 하회했지만 서비스업·종합 지수는 예상을 웃돌며 미국 경기가 서비스업 중심으로 견조함을 보여줬다. 유로존 소비심리도 예상보다 덜 위축됐다. delta는 예상치 대비(종합 PMI는 이전치 대비) 실측치 기준.",
+      "note_en": "Manufacturing missed estimates, but services and the composite topped forecasts, underscoring services-led resilience in the US economy. Eurozone sentiment also came in less negative than expected. Delta = actual vs. estimate (vs. prior for the composite PMI, which has no consensus)."
     },
     {
       "title_ko": "AI · 반도체 기술",
@@ -128,7 +129,11 @@
         {"headline_ko":"온디바이스 AI 확산에 LPDDR·SRAM 수요 부상","headline_en":"On-Device AI Boosts Demand for LPDDR, SRAM",
          "body_ko":"기기 자체에서 AI 연산을 처리하는 온디바이스 AI가 늘면서, 저전력 D램(LPDDR)과 SRAM 등 온디바이스향 메모리 수요가 새로운 성장축으로 떠오르고 있다.",
          "body_en":"As more AI processing shifts on-device, demand is rising for low-power DRAM (LPDDR) and SRAM tailored to on-device workloads, an emerging growth axis for memory makers.",
-         "src":"Industry press","time":"8/24"}
+         "src":"Industry press","time":"8/24"},
+        {"headline_ko":"SK하이닉스, 용인 클러스터 첫 클린룸 가동 3개월 앞당긴다","headline_en":"SK Hynix Moves Up Yongin Cluster's First Clean Room by 3 Months",
+         "body_ko":"SK하이닉스는 경기 용인 반도체 클러스터 1기 팹(Y1)의 첫 클린룸을 내년 2월 가동할 계획이라고 밝혔다 — 당초 계획(2027년 5월)보다 3개월 이른 일정으로, AI·HBM 수요 증가에 대응한 조치다.",
+         "body_en":"SK Hynix said it will bring forward the first clean room at its Yongin semiconductor cluster (Fab Y1) to next February, three months ahead of its original May 2027 schedule, to keep pace with surging AI and HBM demand.",
+         "src":"Korean press","time":"8/21"}
       ]
     },
     {
@@ -144,13 +149,17 @@
          "body_ko":"비트코인은 지난 한 주 새 약 22% 급등하며 한때 79,000달러 후반까지 올랐지만, 주말 들어 차익실현과 레버리지 청산이 겹치며 7만7천달러대로 밀렸다 — 현물 ETF 거래가 없는 주말이라 유동성이 얇았던 점도 변동성을 키웠다.",
          "body_en":"Bitcoin jumped roughly 22% over the past week, briefly nearing $79,500, before profit-taking and leverage unwinds pulled it back into the high-$77,000s over the weekend — thin weekend liquidity, with spot ETFs closed, amplified the swing.",
          "src":"Crypto press","time":"8/22-23"},
-        {"headline_ko":"美, 오늘 대이란 '역대급' 추가 제재 발표 예고","headline_en":"US to Unveil 'Unprecedented' New Iran Sanctions Today",
-         "body_ko":"트럼프 행정부가 24일(현지시간)부터 대이란 경제 제재를 대폭 강화해 발표할 예정이다. 이란은 제재에 동참하는 제3국을 '적국'으로 간주하겠다고 반발했다 — 국제유가·중동 리스크가 다시 부각될 수 있는 대목이다.",
-         "body_en":"The Trump administration is set to announce sharply expanded economic sanctions on Iran starting Aug. 24 (local time). Iran has warned it will treat any third country that joins the sanctions as an 'enemy state' — a flashpoint that could reawaken oil-price and Middle East risk.",
-         "src":"International press","time":"8/24"},
+        {"headline_ko":"美, 대이란 '역대급' 추가 제재 발표 예고…한국시간 새벽 발표","headline_en":"US to Unveil 'Unprecedented' New Iran Sanctions Early Tuesday KST",
+         "body_ko":"트럼프 행정부가 현지시간 24일 오후(한국시간 25일 새벽 3시경) 대이란 경제 제재를 대폭 강화해 발표할 예정이다. 이란은 제재에 동참하는 제3국을 '적국'으로 간주하겠다고 반발했다 — 국제유가·중동 리스크가 다시 부각될 수 있는 대목이다.",
+         "body_en":"The Trump administration is set to announce sharply expanded economic sanctions on Iran on Aug. 24 local time (around 3 AM KST Aug. 25). Iran has warned it will treat any third country that joins the sanctions as an 'enemy state' — a flashpoint that could reawaken oil-price and Middle East risk.",
+         "src":"International press","time":"8/24 현지시간"},
         {"headline_ko":"코스피, 삼성전자 110조 주주환원 이후 첫 거래일…7000선 도전","headline_en":"KOSPI's First Session Since Samsung's ₩110tn Buyback — Testing 7,000",
-         "body_ko":"지난 21일 삼성전자가 역대 최대 90조~110조원 규모 주주환원을 공시한 뒤 첫 거래일을 맞는 코스피가 7000선 안착을 시험받는다. 이번 주 예정된 엔비디아 실적과 잭슨홀 심포지엄이 추가 변수다.",
-         "body_en":"KOSPI opens its first session since Samsung Electronics disclosed a record ₩90-110 trillion shareholder return on Aug. 21, with the index testing whether it can hold above 7,000. Nvidia's earnings and the Jackson Hole symposium later this week add further swing factors.",
+         "body_ko":"지난 21일 장 마감 후 삼성전자가 역대 최대 90조~110조원 규모 주주환원을 공시한 뒤 처음 맞는 거래일, 코스피가 7000선 안착을 시험받는다. 이번 주 예정된 엔비디아 실적과 잭슨홀 심포지엄이 추가 변수다.",
+         "body_en":"In its first session since Samsung Electronics disclosed a record ₩90-110 trillion shareholder return after Aug. 21's close, KOSPI faces a test of whether it can hold above 7,000. Nvidia's earnings and the Jackson Hole symposium later this week add further swing factors.",
+         "src":"Korean press","time":"8/24"},
+        {"headline_ko":"카시카리 총재 \"국채시장 정상 작동…관리는 재무부 소관\"","headline_en":"Kashkari: Treasury Market 'Functioning Normally' — Not the Fed's Job to Manage",
+         "body_ko":"닐 카시카리 미니애폴리스 연은 총재는 국채시장이 펀더멘털을 반영해 정상적으로 작동하고 있다며, 베선트 재무장관의 국채 바이백 확대에 대해서는 '국채시장 관리는 재무부 소관'이라고 선을 그었다.",
+         "body_en":"Minneapolis Fed President Neel Kashkari said the Treasury market is functioning normally and reflecting fundamentals, while distancing the Fed from Treasury Secretary Bessent's expanded bond buybacks, calling Treasury market management 'the Treasury Department's job.'",
          "src":"Korean press","time":"8/24"}
       ]
     }
@@ -165,7 +174,7 @@
     "lines_en": ["Regular session 09:00–15:30 KST · Call auctions 08:30–09:00 / 15:20–15:30"]
   },
   "schedule": [
-    {"time":"8/24","title_ko":"美, 이란 대규모 추가 제재 발표","title_en":"US Unveils Major New Iran Sanctions","detail_ko":"트럼프 행정부, 경제 제재 대폭 강화 예고 · 국제유가·중동 리스크 변수","detail_en":"Trump administration to sharply expand sanctions · oil price, Mideast risk in focus","importance":"high"},
+    {"time":"8/25 03:00","title_ko":"美, 이란 대규모 추가 제재 발표(현지 8/24)","title_en":"US Unveils Major New Iran Sanctions (Aug. 24 local time)","detail_ko":"트럼프 행정부, 경제 제재 대폭 강화 예고 · 국제유가·중동 리스크 변수","detail_en":"Trump administration to sharply expand sanctions · oil price, Mideast risk in focus","importance":"high"},
     {"time":"8/25 23:00","title_ko":"美 8월 컨퍼런스보드 소비자신뢰지수","title_en":"US Aug. Conference Board Consumer Confidence","detail_ko":"월간 소비심리 지표 발표","detail_en":"Monthly consumer sentiment reading","importance":"mid"},
     {"time":"8/26 21:30","title_ko":"美 7월 PCE 물가지수","title_en":"US July PCE Price Index","detail_ko":"예상 전월비 +0.1% · 근원 PCE 전년비 예상 +3.3%","detail_en":"Est. MoM +0.1% · Core PCE YoY est. +3.3%","importance":"high"},
     {"time":"8/27 05:30","title_ko":"엔비디아(NVDA) 2분기 실적 발표","title_en":"Nvidia (NVDA) Q2 Earnings","detail_ko":"예상 EPS $2.09 · 매출 예상 920.6억달러","detail_en":"Est. EPS $2.09 · revenue est. $92.06B","importance":"high"},
