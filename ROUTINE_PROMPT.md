@@ -91,7 +91,7 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      | **한국 증시 하루치 기록** (본문 카드용) | `node scripts/fetch-krx.mjs <YYYY-MM-DD>` — 코스피·코스닥 종가·등락률·거래대금·거래량, 상승/하락/보합 종목 수, 등락률·거래대금 상위 종목을 JSON 으로 준다 |
      | 한국 개별 종목 시세·52주 고저 | `https://query1.finance.yahoo.com/v8/finance/chart/<종목코드>.KS` (코스닥은 `.KQ`) — 종가는 `meta.regularMarketPrice` 를 쓴다 |
      | **미국 거래대금 상위 · 공매도 비중 · 상승/하락 거래대금** | `node scripts/fetch-us-flows.mjs <YYYY-MM-DD>` — 야후 스크리너(가격×거래량) + FINRA 일별 공매도. **키가 필요 없다.** am 의 거래대금 상위 카드가 쓴다 |
-     | **한국 수출입 (품목·성질별)** | `node scripts/fetch-kr-trade.mjs` — 관세청을 먼저 두드리고 안 열리면 한국은행 ECOS 로 내려간다. 어느 쪽을 썼는지 출력 `source` 에 남으니 카드 각주에 그대로 옮긴다. `ECOS_API_KEY` 가 필요하다 |
+     | **한국 수출입 (품목·성질별)** | 1순위 `data/kr-trade.json`(아래 참고) · 2순위 `node scripts/fetch-kr-trade.mjs` 직접 실행 — 관세청을 먼저 두드리고 안 열리면 한국은행 ECOS 로 내려간다. 어느 쪽을 썼는지 출력 `source` 에 남으니 카드 각주에 그대로 옮긴다 |
 
      - **`fetch-krx.mjs` 는 KRX 원천 데이터를 미러링한 CSV 를 읽는다.** KRX 정보데이터시스템(`data.krx.co.kr`)과 네이버 금융은 이 실행 환경의 네트워크 정책에서 차단되므로 직접 조회할 수 없다 — 대신 이 스크립트를 쓴다. 휴장일이면 exit 2 로 조용히 빠지므로, **그때는 브리핑을 멈추지 말고** 한국 항목을 빼고 진행한다.
      - **Yahoo 차트 API 의 함정 2가지** (실측 확인): ① 응답의 `indicators.quote[0].close` 배열은 **당일 마지막 값이 `null`** 이다. 종가는 반드시 `meta.regularMarketPrice` 에서 읽는다. ② `meta.chartPreviousClose` 가 틀린 값을 주는 경우가 있다(2026-08-03 `^KS11` 기준 8088.34 로 나왔으나 실제 7/31 종가는 6595.45). **전일 대비는 직접 계산한다.**
@@ -119,11 +119,26 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
        카드에서는 `share.mode:"compare"` 와 `baseline`(표본 평균)으로 그린다 (`FORMAT_BRIEFING.md` §2).
        상승/하락 비교는 **거래량이 아니라 거래대금**으로 센다 — 거래량 기준은 저가주가 부풀린다
        (2026-08-21: 거래량 66.8% 대 거래대금 57.7%).
-     - **한국 품목별 수출은 관세청 승인을 기다리지 않는다.** 공공데이터포털
-       `1220000/Itemtrade/getItemtradeList` 는 서비스가 살아 있지만 이 계정 인증키가 등록돼 있지 않아
-       `등록되지 않은 서비스키`(코드 30) 가 온다(같은 키가 국토부 실거래가에는 `resultCode 000` 을 준다 —
-       키는 정상이고 이 서비스에만 안 붙어 있다). `fetch-kr-trade.mjs` 가 자동으로 ECOS 성질별 수출입
-       (`901Y092`)으로 내려가므로 카드는 그대로 만들어진다. 승인되면 그날부터 알아서 관세청 HS 품목별을 쓴다.
+     - **한국 수출입 — 1순위: `data/kr-trade.json`.** `.github/workflows/kr-trade.yml` 이 브리핑 직전(20:10 /
+       07:20 KST)에 GitHub Actions 러너에서 `fetch-kr-trade.mjs` 를 돌려 **main 브랜치에** 커밋해 둔다
+       (선물 캐시·econ 캘린더·krx-flows 와 같은 패턴). 읽는 법:
+       ```
+       git fetch origin main -q && git show origin/main:data/kr-trade.json > /tmp/kr-trade.json
+       ```
+       **반드시 `origin/main` 에서 읽는다.** 파일 안의 `month` 가 이번 세션이 다뤄야 할 확정월과 같은지
+       확인하고, 다르면(예: 전전월에서 멈춰 있음) 낡은 것으로 보고 2순위로 내려간다.
+       - **ECOS 키를 세션 환경변수가 아니라 GitHub Actions 시크릿으로 두는 이유**: 클라우드 라우틴 세션의
+         "환경 변수" 는 아직 전용 시크릿 저장소가 없어 그 환경을 쓰는 누구에게나 평문으로 보인다(공식 문서
+         경고). 이 저장소는 이미 KRX_ID·KRX_PW 를 그렇게 다루고 있어(`krx-flows.yml`), ECOS_API_KEY 도
+         같은 방식(GitHub 저장소 시크릿)을 따른다.
+       - **2순위**: 위 파일이 없거나 낡았는데 이 세션의 환경변수에 `ECOS_API_KEY` 가 실제로 설정돼 있으면
+         `node scripts/fetch-kr-trade.mjs` 를 직접 돌린다. 그것도 안 되면 이 항목만 비우고 진행하며(브리핑을
+         멈추지 않는다), 마무리 보고에 그 사실을 남긴다.
+       - **한국 품목별 수출은 관세청 승인을 기다리지 않는다.** 공공데이터포털
+         `1220000/Itemtrade/getItemtradeList` 는 서비스가 살아 있지만 이 계정 인증키가 등록돼 있지 않아
+         `등록되지 않은 서비스키`(코드 30) 가 온다(같은 키가 국토부 실거래가에는 `resultCode 000` 을 준다 —
+         키는 정상이고 이 서비스에만 안 붙어 있다). `fetch-kr-trade.mjs` 가 자동으로 ECOS 성질별 수출입
+         (`901Y092`)으로 내려가므로 카드는 그대로 만들어진다. 승인되면 그날부터 알아서 관세청 HS 품목별을 쓴다.
      - **2순위(2차 자료) 이하 — 직접 조회가 왜 막혀 있는지.** 아래는 다시 시도하지 말라는 기록이다:
        - `data.krx.co.kr`(KRX 정보데이터시스템)·`finance.naver.com`·`apis.data.go.kr`·증권사 오픈API 는 이 환경의 네트워크 정책에서 차단된다. `pykrx` 도 같은 이유로 실패하며, 1.2.8 부터는 KRX 계정까지 필요하다.
        - `openapi.krx.co.kr`(KRX 공식 OPEN API)은 접속되지만 **서비스 목록에 투자자별 매매동향 API 자체가 없다** — 지수·일별매매정보(OHLCV)·종목기본정보·채권·파생뿐이다. 인증키를 받아도 이 데이터는 나오지 않는다.
