@@ -1,0 +1,74 @@
+{
+  "month": "202607",
+  "unit": "천달러",
+  "source": "한국은행 ECOS 901Y092 성질별 수출입 · 901Y118 수출입 총괄",
+  "customsOpen": false,
+  "total": {
+    "export": 98959099,
+    "import": 68567473,
+    "balance": 30391626,
+    "exportYoyPct": 63,
+    "crosscheck": "총괄 표는 이 달 아직 미공표"
+  },
+  "exportByKind": [
+    {
+      "code": "E104",
+      "name_ko": "중화학 공업품",
+      "name_en": "Heavy & chemical",
+      "value": 87202818,
+      "sharePct": 88.1,
+      "yoyPct": 69.7
+    },
+    {
+      "code": "E103",
+      "name_ko": "경공업품",
+      "name_en": "Light industry",
+      "value": 3778039,
+      "sharePct": 3.8,
+      "yoyPct": 23.6
+    },
+    {
+      "code": "E102",
+      "name_ko": "원료 및 연료",
+      "name_en": "Raw materials & fuel",
+      "value": 6896402,
+      "sharePct": 7,
+      "yoyPct": 31.6
+    },
+    {
+      "code": "E101",
+      "name_ko": "식료 및 직접소비재",
+      "name_en": "Food & consumer",
+      "value": 1081841,
+      "sharePct": 1.1,
+      "yoyPct": 2.6
+    }
+  ],
+  "importByKind": [
+    {
+      "code": "I102",
+      "name_ko": "원자재",
+      "name_en": "Raw materials",
+      "value": 31627152,
+      "sharePct": 46.1,
+      "yoyPct": 29.1
+    },
+    {
+      "code": "I103",
+      "name_ko": "자본재",
+      "name_en": "Capital goods",
+      "value": 27980796,
+      "sharePct": 40.8,
+      "yoyPct": 36.7
+    },
+    {
+      "code": "I101",
+      "name_ko": "소비재",
+      "name_en": "Consumer goods",
+      "value": 8959525,
+      "sharePct": 13.1,
+      "yoyPct": -3
+    }
+  ],
+  "hsItems": null
+}
