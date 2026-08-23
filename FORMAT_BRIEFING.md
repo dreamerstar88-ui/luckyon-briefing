@@ -54,13 +54,40 @@
 | (없음) | 서술형 — 공시·정책 발표·인물 동정처럼 문장 설명이 필요한 항목 | `items:[{headline_ko/en, body_ko/en, src(선택), time(선택)}]` |
 | `stats` | 큰 숫자 몇 개 + (선택) 등락 종목 수 + (선택) 투자자별 순매수 | `stats:[{label_ko/en, value, delta, dir, sub_ko/en}]`, `cols`(선택), `breadth:[{label_ko/en, up, flat, down}]`(선택), `flows:{label_ko/en, unit_ko/en, rows:[{label_ko/en, value}]}`(선택) |
 | `bars` | 업종·섹터별 등락처럼 부호가 핵심인 데이터 | `bars:[{label_ko/en, value}]` — value 는 %, 0 기준 발산 막대, 상승 빨강·하락 파랑 자동 |
-| `rank` | 순위 + 상위 항목이 차지하는 비중 | `rows:[{name_ko/en, value, pct}]`, `share:{label_ko/en, segments:[{label_ko/en, pct, color}]}`(선택) |
+| `rank` | 순위 + 상위 항목이 차지하는 비중 | `rows:[{name_ko/en, value, pct, short(선택)}]`, `col_name_ko/en`·`col_value_ko/en`(선택, 열 제목), `share:{label_ko/en, mode, segments:[{label_ko/en, pct, color}], baseline(선택), baseline_label_ko/en(선택)}`(선택) |
+| `econ` | 실적·지표 발표 — 실측치를 예상치와 나란히 놓아 "예상보다 좋았나"를 보여준다 | `rows:[{region:"KR"|"US", name_ko/en, sub_ko/en(선택), actual, estimate(없으면 null), surprise(없으면 null)}]`, `col_delta_ko/en`(선택) |
 
 공통 필드는 `title_ko/en`, `color` (모든 유형 동일).
+
+**브랜드 표기는 글자로 그리지 않고 `assets/brand/` 의 로고 파일을 쓴다.** 로고의 `o` 자리는
+**앰버 원판 안의 흰 네잎클로버**라 글자로는 재현할 수 없다. 배경 밝기에 따라 파일이 다르다.
+
+| 렌더러 | 종이색 | 쓰는 파일 | 비고 |
+|---|---|---|---|
+| 평일 `render-cards.mjs` | 어두움 `#0d0d0d` | `wordmark-briefing.png` | luckyon+브리핑 통짜. 이 축은 영문 카드에서도 `브리핑` 을 한글로 둔다 |
+| 주말 `render-cards-sat/sun.mjs` | 크림 `#f2efe6` | `wordmark-luckyon-ink.png` | **먹색 글자판.** luckyon 까지만이고 `브리핑`/`Briefing` 은 글자로 남긴다 |
+
+주말이 통짜 로고를 못 쓰는 이유는 두 가지다. 첫째, 그 축은 영문 카드에서 `Briefing` 으로
+**번역**하고 색도 `P.accent`(sat 초록·sun 보라)를 따르는데, 통짜 로고를 넣으면 둘 다 사라진다.
+둘째, 어두운 배경용 로고(흰 글자)를 크림 종이에 얹으면 `luckyon` 이 묻혀 **앰버 클로버만**
+뜬다 (2026-08-23 에 실제로 그렇게 나왔다).
 
 - **`flows.unit_ko/en` 은 부호+숫자 바로 뒤에 공백 없이 그대로 이어 붙는다** (`${sign}${value}${unit}`). `unit_en` 을 `"KRW tn"` 처럼 두면 `+1.7KRW tn` 로 붙어버린다 — 앞에 공백을 넣어 `" tn"` 처럼 쓰면 `+1.7 tn` 로 자연스럽게 나온다 (2026-08-20 pm 세션에서 실제로 이 사고가 있었다). `unit_ko` 는 `"조원"` 처럼 공백 없이 붙어도 한국어라 자연스러우므로 그대로 둔다.
 - **`rank` 의 `rows[].pct` 는 "그 종목 자체의 등락률"이지, 상위 종목이 전체에서 차지하는 비중이 아니다.** 비중(거래대금 집중도 등)은 별도 필드인 `share.segments[].pct` 로 표현한다. 둘을 헷갈려 `rows[].pct` 에 비중을 넣으면 순위표 옆 등락 표시가 그 종목의 실제 등락과 달라진다.
 - **`rows[].value` 는 언어 무관(invariant) 필드다** (`FORMAT_BRIEFING.md` §4). 원화 단위를 넣을 때 `"9.11조"` 처럼 한글을 넣으면 영어 카드에도 그대로 새어 나간다 — `"₩9.11T"` 처럼 중립 표기를 쓴다.
+- **`rank` 의 `share.mode` 를 반드시 고른다.** 기본값은 `nested` 다.
+  - `nested` — 하나의 전체를 조각으로 나눈 값(합이 100). 예: "상위 2종목 52.4% / 나머지 47.6%". 한 줄에 이어 붙인다.
+  - `compare` — 서로 독립인 비율. 예: 종목별 공매도 비중. 각자 0~100 축 위의 제 막대로 그린다.
+    독립인 값을 `nested` 로 그리면 조각 사이에 구분선이 생겨 "합쳐서 100%" 로 읽힌다 —
+    47.5% 와 60.1% 를 이어 붙이면 합이 107% 인 그림이 나온다 (2026-08-22 실제 사고).
+    `baseline` 에 표본 평균을 주면 견줄 기준선이 함께 선다.
+- **`rank` 의 `rows[].short` 는 공매도 비중(%)이다.** 한 행이라도 있으면 열이 생기고 없는 행은 `—` 로 나온다.
+  FINRA 일별 공매도 거래량 기준이라 시장조성자 헤지가 섞여 있다 — 절대값이 아니라 **표본 평균과의 거리**로 읽는다.
+- **`econ` 의 마지막 열은 기본이 "예상 대비"(서프라이즈)다.** 예상치가 없는 지표에 전년동월
+  대비 증감률을 넣을 때는 `col_delta_ko` 로 열 제목을 바꾸고, 각 행의 `sub` 에 무엇과 견준
+  값인지 적는다. 열 제목이 "예상 대비" 인 채로 전년 대비 숫자를 넣으면 독자가 오해한다.
+- **`econ` 은 `region:"KR"` 을 위로 올려 그린다.** JSON 순서와 무관하게 렌더러가 정렬한다 —
+  한국 독자가 보는 카드이므로 한국 지표를 먼저 읽게 한다.
 
 - **`note_ko/en` 은 데이터 카드(`stats`·`bars`·`rank`)에만 그려진다.** 글 카드(`type` 없음)는 렌더러가 `newsCard()` 로 그리는데 여기엔 note 자리가 없어, 넣어도 **오류 없이 조용히 사라진다** (2026-08-08 sat 세션에서 ⑥ AI 카드의 note 한 줄이 그대로 증발했다). 글 카드에 붙이고 싶은 관찰은 **항목(`items`) 하나로 만들거나, 바로 옆 데이터 카드의 `note` 로 옮긴다.**
 
@@ -406,11 +433,12 @@ korea/weekend/ai/watch .items[].src
     {
       "title_ko","title_en",
       "color",                                 // 축별 절차서의 섹션 표에 있는 색
-      "type",                                  // 선택: "stats"|"bars"|"rank". 없으면 items 로 그린다 (§2)
+      "type",                                  // 선택: "stats"|"bars"|"rank"|"econ". 없으면 items 로 그린다 (§2)
       "items":[{"headline_ko","headline_en","body_ko","body_en","src(선택)","time(선택)"}],  // type 없을 때
       "stats":[...], "cols", "breadth":[...], "flows":{...},   // type:"stats"
       "bars":[...],                                            // type:"bars"
       "rows":[...], "share":{...},                             // type:"rank"
+      "rows":[...], "col_delta_ko", "col_delta_en",            // type:"econ"
       "note_ko","note_en"                                      // 모든 type 공통(선택)
     } x5
   ],
@@ -528,6 +556,8 @@ node scripts/render-cards.mjs <DATE> en <SESSION>
 | 글 카드(`items`) | 항목 4~5건일 때 마지막 항목의 출처 줄이 푸터에 닿음 | 본문을 각 **1줄**로. 헤드라인이 2줄로 넘어가면 그것만으로 한 항목이 밀린다 |
 | `stats` | `cols:2` 에서 타일 3개는 2행이 되고 라벨·부연이 길면 높이가 제각각 | `cols:1` 은 부연(`sub`)이 2줄로 넘어가지 않게 짧게 |
 | `bars` | 라벨이 잘림(ellipsis) | 한글 8자·영문 15자 안쪽 (예: "커뮤니케이션 (XLC)"→"통신 (XLC)", "Industrials (XLI)"→"Indu. (XLI)") |
+| `rank` | 이름 칸이 좁아 잘림(ellipsis). 고정 열(순위·값·등락률·공매도)이 554px 를 먹는다 | 종목명은 한글 10자·영문 18자 안쪽 |
+| `econ` | 열 제목이 두 줄로 접힘 | `col_delta_ko` 는 8자 안쪽. 행은 6건까지 |
 | 시장 카드(②) | 타일 note 가 3줄이 되면 10칸 격자가 밀림 | note 는 2줄 안쪽 |
 | 일요일 ③ 캘린더 | 요일당 5건 이상이면 타일이 눌리고, 2건 이하면 카드가 빈다 | 요일당 **3~4건** (§2-B) |
 | 일요일 ④ 지표 | 지표명이 2줄로 넘어감 | 한글 20자·영문 34자 안쪽 (`美 7월 소비자물가 (전년비)`) |

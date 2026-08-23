@@ -17,6 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { buildAltTexts } from './lib/alt-text.mjs';
 
+import { fileURLToPath } from 'node:url';
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
 const session = process.argv[4] || '';
@@ -36,7 +37,9 @@ function required(k) {
 }
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+// 경로에 공백이 있거나 윈도우에서 돌 때 URL.pathname 은 '/C:/…/SJ%20PARK%20Project/…' 를
+// 돌려줘 파일을 못 찾는다. fileURLToPath 는 두 경우 모두 올바른 경로를 준다.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const content = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const caption = lang === 'ko' ? content.caption_ko : content.caption_en;

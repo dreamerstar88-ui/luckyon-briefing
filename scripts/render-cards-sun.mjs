@@ -33,9 +33,12 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { fileURLToPath } from 'node:url';
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+// 경로에 공백이 있거나 윈도우에서 돌 때 URL.pathname 은 '/C:/…/SJ%20PARK%20Project/…' 를
+// 돌려줘 파일을 못 찾는다. fileURLToPath 는 두 경우 모두 올바른 경로를 준다.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', `${date}-sun.json`), 'utf8'));
 
 // 스키마를 여기서 막는다. 2026-08-09 개편 전 sun 콘텐츠에는 cover 가 없어 그대로 태우면
@@ -95,10 +98,24 @@ body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR","Noto Color E
 .note{font-size:20px;color:${P.mute};margin-top:14px;line-height:1.45}
 `;
 
+// 브랜드의 luckyon 은 확정 로고 파일을 쓴다. 글자로는 'o' 자리의 앰버 원판과 그 안의
+// 흰 네잎클로버를 그릴 수 없다. setContent 로 HTML 을 주입하므로 상대경로 이미지는
+// 못 읽어 base64 로 심는다.
+//
+// **밝은 배경용(ink) 을 쓴다.** 이 렌더러의 종이색은 P.paper(#f2efe6) 크림이다.
+// 어두운 배경용 로고(흰 글자)를 넣으면 luckyon 이 종이에 묻혀 앰버 클로버만 뜬다
+// (2026-08-23 실제로 그렇게 나왔다).
+//
+// **'브리핑' 은 글자로 남긴다.** 이 렌더러는 영문 카드에서 'Briefing' 으로 바꾸고
+// 색도 P.accent(sat 초록·sun 보라)를 따른다. luckyon 과 브리핑이 붙어 있는 통짜 로고를
+// 넣으면 번역도 색도 사라진다. 로고는 luckyon 까지만이다.
+const _luckyonPng = fs.readFileSync(path.join(root, 'assets', 'brand', 'wordmark-luckyon-ink.png')).toString('base64');
+const LUCKYON = h => `<img src="data:image/png;base64,${_luckyonPng}" style="height:${h}px;display:block" alt="luckyon">`;
+
 // 브랜드의 "luckyon 브리핑" 은 영어 카드에서도 한글 그대로 둔다 (다른 렌더러와 같은 규칙).
 const page = (inner, i, n) => `<!doctype html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
-<body>${inner}<div class="foot">luckyon 브리핑</div><div class="pg">${i} / ${n}</div></body></html>`;
-const bar = () => `<div class="bar"><div class="bd">luckyon <i>${t('브리핑', 'Briefing')}</i></div>
+<body>${inner}<div class="foot" style="display:flex;align-items:center;gap:8px;opacity:.75">${LUCKYON(19)}<span>브리핑</span></div><div class="pg">${i} / ${n}</div></body></html>`;
+const bar = () => `<div class="bar"><div class="bd" style="display:flex;align-items:center;gap:11px">${LUCKYON(26)}<i>${t('브리핑', 'Briefing')}</i></div>
   <div class="dt">${t(data.dateLabel_ko, data.dateLabel_en)}</div></div>`;
 const title = (main, sub) => `<div class="ttl"><s></s>${main}${sub ? `<u>${sub}</u>` : ''}</div>`;
 const note = s => (s ? `<div class="note">${s}</div>` : '');
@@ -330,7 +347,7 @@ function cardStart() {
 function cardOutro() {
   const o = data.outro;
   return `<div class="pad" style="justify-content:center;align-items:center;text-align:center">
-  <div class="bd" style="font-size:36px;margin-bottom:44px">luckyon <i>${t('브리핑', 'Briefing')}</i></div>
+  <div class="bd" style="font-size:36px;margin-bottom:44px;display:flex;align-items:center;justify-content:center;gap:14px">${LUCKYON(35)}<i>${t('브리핑', 'Briefing')}</i></div>
   <div style="font-size:52px;font-weight:800;line-height:1.32;letter-spacing:-.03em">${t(o.tagline_ko, o.tagline_en)}</div>
   <div style="font-size:29px;font-weight:800;color:${P.accent};margin-top:40px">${t(o.next_ko, o.next_en)}</div>
   <div style="font-size:30px;color:#4a453c;margin-top:46px;line-height:1.5">

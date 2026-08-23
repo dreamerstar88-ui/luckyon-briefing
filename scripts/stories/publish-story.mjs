@@ -11,6 +11,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { fileURLToPath } from 'node:url';
 const argv = process.argv.slice(2);
 const DRY = argv.includes('--dry-run');
 const pos = argv.filter((a) => !a.startsWith('--'));
@@ -34,7 +35,9 @@ const PAGES = required('PAGES_BASE_URL').replace(/\/$/, '');
 const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+// 경로에 공백이 있거나 윈도우에서 돌 때 URL.pathname 은 '/C:/…/SJ%20PARK%20Project/…' 를
+// 돌려줘 파일을 못 찾는다. fileURLToPath 는 두 경우 모두 올바른 경로를 준다.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const relDir = `cards/stories/${stamp}/${lang}`;
 const localPng = path.join(root, ...relDir.split('/'), 'story.png');
 if (!fs.existsSync(localPng)) {

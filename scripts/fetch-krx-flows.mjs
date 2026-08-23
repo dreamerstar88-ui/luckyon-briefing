@@ -28,9 +28,13 @@ function lastSessionKst() {
 }
 const DATE = (process.argv.find(a => /^\d{4}-\d{2}-\d{2}$/.test(a)) || lastSessionKst()).replace(/-/g, '');
 
+// 2026-08-22 확인: 이 페이지에 `sosok` 을 붙이면 표 헤더만 오고 데이터 행이 0개가 된다
+// (1.8KB 응답). `bizdate` 만 주면 정상적으로 데이터가 온다 (7.8KB). 그동안 조회가 계속
+// 실패한 원인이 이것이다 — 페이지가 살아 있는데 파라미터 하나가 표를 비우고 있었다.
+// 이 경로는 유가증권시장(코스피)만 준다. `sosok=1`·`market=KOSDAQ`·`code=KOSDAQ` 를
+// 붙여도 전부 무시되고 같은 코스피 수치가 돌아온다. 코스닥은 다른 출처가 필요하다.
 const PAGES = [
-  { key: 'KOSPI', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}&sosok=0` },
-  { key: 'KOSDAQ', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}&sosok=1` },
+  { key: 'KOSPI', url: `https://finance.naver.com/sise/investorDealTrendDay.naver?bizdate=${DATE}` },
 ];
 
 // 네이버 금융은 EUC-KR 로 내려온다. UTF-8 로 읽으면 한글이 깨져 표 헤더를 못 찾는다.
@@ -213,7 +217,9 @@ async function probe() {
 //   헤더 2행: 금융투자 | 보험 | 투신 (사모) | 은행 | 기타금융기관 | 연기금등
 // 데이터 행은 기관 세부가 펼쳐져 열 수가 헤더보다 많으므로, 헤더로 위치를 잡지 않고
 // 앞 네 칸(날짜·개인·외국인·기관계)을 자리로 읽는다. 헤더 존재 여부만 검증에 쓴다.
-// 값 단위는 백만원이다 (개인 순매수 4.65조 → 4,652,xxx).
+// 값 단위는 페이지 제목이 밝힌 대로 **억원**이다 ("일자별 순매수 (단위:억원)").
+// 2026-08-21 실측: 개인 -11,652 = -1조1,652억 (언론 보도치와 일치).
+// 개인·외국인·기관계·기타법인 네 값을 더하면 0 이 된다 — 검산에 쓸 수 있다.
 function parseFlows(html) {
   for (const tb of tables(html)) {
     const rs = rows(tb).filter(r => r.length >= 4);
@@ -224,10 +230,15 @@ function parseFlows(html) {
       if (!/^\d{2}[./]\d{2}([./]\d{2})?$/.test((r[0] || '').trim())) continue;
       const v = [num(r[1]), num(r[2]), num(r[3])];
       if (v.some(x => x === null)) continue;
+      // 마지막 칸이 기타법인이다. 네 값의 합이 0 이어야 하므로 검산값으로 함께 낸다.
+      const other = num(r[r.length - 1]);
+      const sum = other === null ? null : v[0] + v[1] + v[2] + other;
       return {
         date: r[0].trim(),
-        unit: '백만원',
+        unit: '억원',
         individual: v[0], foreign: v[1], institution: v[2],
+        otherCorp: other,
+        checksum: sum,          // 0 이면 네 주체가 서로 맞물린 것
       };
     }
   }

@@ -17,6 +17,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { fileURLToPath } from 'node:url';
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
 const session = process.argv[4] || '';
@@ -34,7 +35,9 @@ if (session === 'sun') {
   process.exit(0);
 }
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+// 경로에 공백이 있거나 윈도우에서 돌 때 URL.pathname 은 '/C:/…/SJ%20PARK%20Project/…' 를
+// 돌려줘 파일을 못 찾는다. fileURLToPath 는 두 경우 모두 올바른 경로를 준다.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentFile = session ? `${date}-${session}.json` : `${date}.json`;
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content', contentFile), 'utf8'));
 const outDir = session
@@ -44,6 +47,14 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const t = (ko, en) => (lang === 'ko' ? ko : en);
 const dateLabel = t(data.dateLabel_ko, data.dateLabel_en);
+
+// 브랜드 표기는 확정 로고 파일을 그대로 쓴다.
+// 예전에는 "luckyon <span class=k>브리핑</span>" 처럼 글자로 그렸는데, 로고의 'o' 자리에
+// 들어가는 앰버 원판과 그 안의 흰 네잎클로버는 글자로 재현할 수 없다. 글자판은 '브리핑'이
+// 파랑이지만 확정 로고는 앰버다 — 색까지 달랐다 (2026-08-23 확인).
+// setContent 로 HTML 을 주입하므로 상대경로 이미지는 못 읽는다. base64 로 심는다.
+const brandPng = fs.readFileSync(path.join(root, 'assets', 'brand', 'wordmark-briefing.png')).toString('base64');
+const BRAND = (h) => `<img src="data:image/png;base64,${brandPng}" style="height:${h}px; display:block;" alt="luckyon 브리핑">`;
 
 // ---------- 공통 스타일 ----------
 const BASE = `
@@ -69,7 +80,7 @@ const BASE = `
 // 브랜드 정체성을 위한 의도된 선택이다 (2026-08-01 확인).
 function page(inner, pageno, total) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
-  <body>${inner}<div class="foot">luckyon 브리핑</div><div class="pageno">${pageno} / ${total}</div></body></html>`;
+  <body>${inner}<div class="foot" style="opacity:0.55;">${BRAND(24)}</div><div class="pageno">${pageno} / ${total}</div></body></html>`;
 }
 
 // ---------- 카드별 마크업 ----------
@@ -101,7 +112,7 @@ function cardHook() {
     const lines = (t(data.summary.lines_ko, data.summary.lines_en) || []);
     return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
         <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:26px;">${
           session === 'pm' ? t('저녁 브리핑', 'EVENING BRIEF')
@@ -131,7 +142,7 @@ function cardHook() {
     : sub;
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
         <div style="font-size:30px; color:#3987e5; font-weight:800; letter-spacing:0.08em; margin-bottom:26px;">${
           session === 'pm' ? t('저녁 브리핑', 'EVENING BRIEF')
@@ -160,7 +171,7 @@ function cardMarkets() {
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="font-size:42px; font-weight:800; margin:26px 0 22px;">${t('시장 한눈에', 'Markets at a glance')}</div>
       <div style="flex:1; min-height:0; display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:1fr; gap:16px;">${tiles}</div>
       <div style="font-size:23px; color:#898781; margin-top:22px; margin-bottom:30px; line-height:1.5;">※ ${t(data.market_note_ko, data.market_note_en)}</div>
@@ -183,7 +194,7 @@ function newsCard(title, items, dotColor) {
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="display:flex; align-items:center; gap:16px; margin:32px 0 26px;">
         <span style="width:18px; height:18px; border-radius:50%; background:${dotColor};"></span>
         <span style="font-size:42px; font-weight:800;">${title}</span>
@@ -203,7 +214,7 @@ const fmtPct = v => `${v > 0 ? '▲' : v < 0 ? '▼' : ''}${Math.abs(v).toFixed(
 function sectionShell(title, dotColor, body, note) {
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="display:flex; align-items:center; gap:16px; margin:32px 0 30px;">
         <span style="width:18px; height:18px; border-radius:50%; background:${dotColor};"></span>
         <span style="font-size:42px; font-weight:800;">${title}</span>
@@ -336,29 +347,106 @@ function cardBars(s) {
 }
 
 // 순위 표 + 구성비 띠. 상위 몇 종목이 얼마나 차지했는지를 한눈에.
+//
+// 열 구성: 순위 · 이름 · 값 · 등락률 · 공매도 비중(rows 에 short 가 있을 때만).
+// 공매도 비중은 미국장 카드에서 쓴다. FINRA 일별 공매도 거래량 기준이라 시장조성자
+// 헤지가 대량 섞여 있고, 어느 날이든 전체 합산이 45~50% 에서 움직인다. 절대값에는
+// 정보가 없으므로 **같은 날 종목 사이의 차이**로만 읽는다
+// (scripts/fetch-us-flows.mjs 머리주석 참고).
 function cardRank(s) {
+  const hasShort = (s.rows || []).some(r => r.short != null);
+  const head = `
+    <div style="display:flex; align-items:center; gap:20px; padding:0 26px 12px; font-size:21px; color:#57564f; font-weight:700; white-space:nowrap;">
+      <span style="width:34px;"></span>
+      <span style="flex:1; min-width:0;">${t(s.col_name_ko || '종목', s.col_name_en || 'Name')}</span>
+      <span style="width:200px; text-align:right;">${t(s.col_value_ko || '거래대금', s.col_value_en || 'Value')}</span>
+      <span style="width:130px; text-align:right;">${t('등락률', 'Change')}</span>
+      ${hasShort ? `<span style="width:130px; text-align:right;">${t('공매도 비중', 'Short %')}</span>` : ''}
+    </div>`;
+
   const rows = (s.rows || []).map((r, i) => `
-    <div style="display:flex; align-items:center; gap:20px; padding:19px 26px; background:${i % 2 ? '#151514' : '#1a1a19'}; border-radius:12px; margin-bottom:8px;">
+    <div style="display:flex; align-items:center; gap:20px; padding:17px 26px; background:${i % 2 ? '#151514' : '#1a1a19'}; border-radius:12px; margin-bottom:7px;">
       <span style="font-size:26px; font-weight:800; color:#898781; width:34px;">${i + 1}</span>
-      <span style="font-size:30px; font-weight:700; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t(r.name_ko, r.name_en)}</span>
-      <span style="font-size:29px; font-weight:800; font-variant-numeric:tabular-nums;">${r.value}</span>
-      ${r.pct != null ? `<span style="font-size:26px; font-weight:800; color:${sign(r.pct)}; width:130px; text-align:right; font-variant-numeric:tabular-nums;">${fmtPct(r.pct)}</span>` : ''}
+      <span style="font-size:29px; font-weight:700; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t(r.name_ko, r.name_en)}</span>
+      <span style="font-size:28px; font-weight:800; width:200px; text-align:right; font-variant-numeric:tabular-nums;">${r.value}</span>
+      <span style="font-size:26px; font-weight:800; width:130px; text-align:right; font-variant-numeric:tabular-nums; color:${r.pct != null ? sign(r.pct) : '#57564f'};">${r.pct != null ? fmtPct(r.pct) : '—'}</span>
+      ${hasShort ? `<span style="font-size:26px; font-weight:800; width:130px; text-align:right; font-variant-numeric:tabular-nums; color:#c3c2b7;">${r.short != null ? r.short.toFixed(1) + '%' : '—'}</span>` : ''}
     </div>`).join('');
 
   const sh = s.share;
+  const legend = segs => `<div style="display:flex; gap:24px; margin-top:12px; font-size:23px; color:#a9a89f;">
+      ${segs.map(g => `<span><span style="display:inline-block; width:14px; height:14px; border-radius:4px; background:${g.color}; margin-right:8px;"></span>${t(g.label_ko, g.label_en)}</span>`).join('')}
+    </div>`;
+
+  // mode:'nested'(기본) — 하나의 전체를 조각으로 나눈 값. 합이 100 이라 한 줄에 이어 붙인다.
+  const nested = x => `
+    <div style="display:flex; gap:2px; height:40px; border-radius:8px; overflow:hidden; background:#0d0d0d;">
+      ${x.segments.map(g => `<div style="width:${g.pct}%; background:${g.color}; height:100%; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800; color:#0d0d0d;">${g.pct >= 12 ? g.pct.toFixed(1) + '%' : ''}</div>`).join('')}
+    </div>${legend(x.segments)}`;
+
+  // mode:'compare' — 서로 독립인 비율(예: 종목별 공매도 비중). 각자 0~100 축 위의 제 막대로 그린다.
+  // nested 처럼 한 줄에 이어 붙이면 조각 사이에 구분선이 생겨 "합쳐서 100%" 로 읽힌다.
+  // 47.5% 와 60.1% 를 나란히 붙이면 합이 107% 인 그림이 나온다 — 완전히 틀린 표현이다
+  // (2026-08-22 확인). baseline 을 주면 견줄 기준선(표본 평균)을 함께 세운다.
+  const compare = x => `
+    ${x.segments.map(g => `
+      <div style="display:flex; align-items:center; gap:18px; margin-bottom:11px;">
+        <span style="width:220px; font-size:25px; font-weight:700; color:#e8e7e0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t(g.label_ko, g.label_en)}</span>
+        <div style="flex:1; position:relative; height:26px; background:#0d0d0d; border-radius:6px; overflow:hidden;">
+          <div style="position:absolute; left:0; top:0; bottom:0; width:${g.pct}%; background:${g.color}; border-radius:6px;"></div>
+          ${x.baseline != null ? `<div style="position:absolute; left:${x.baseline}%; top:0; bottom:0; width:2px; background:#8a8880;"></div>` : ''}
+        </div>
+        <span style="width:96px; text-align:right; font-size:25px; font-weight:800; font-variant-numeric:tabular-nums;">${g.pct.toFixed(1)}%</span>
+      </div>`).join('')}
+    ${x.baseline != null ? `<div style="font-size:22px; color:#898781; margin-top:8px;">│ ${t(x.baseline_label_ko || '표본 평균', x.baseline_label_en || 'Sample average')} ${x.baseline.toFixed(1)}%</div>` : ''}`;
+
   const shareBar = sh ? `
-    <div style="margin-top:28px;">
-      <div style="font-size:26px; font-weight:800; margin-bottom:12px;">${t(sh.label_ko, sh.label_en)}</div>
-      <div style="display:flex; gap:2px; height:40px; border-radius:8px; overflow:hidden; background:#0d0d0d;">
-        ${sh.segments.map(g => `<div style="width:${g.pct}%; background:${g.color}; height:100%;
-            display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800; color:#0d0d0d;">${g.pct >= 12 ? g.pct.toFixed(1) + '%' : ''}</div>`).join('')}
-      </div>
-      <div style="display:flex; gap:24px; margin-top:12px; font-size:23px; color:#a9a89f;">
-        ${sh.segments.map(g => `<span><span style="display:inline-block; width:14px; height:14px; border-radius:4px; background:${g.color}; margin-right:8px;"></span>${t(g.label_ko, g.label_en)}</span>`).join('')}
-      </div>
+    <div style="margin-top:26px;">
+      <div style="font-size:26px; font-weight:800; margin-bottom:14px;">${t(sh.label_ko, sh.label_en)}</div>
+      ${sh.mode === 'compare' ? compare(sh) : nested(sh)}
     </div>` : '';
 
-  return sectionShell(t(s.title_ko, s.title_en), s.color || '#e0a94f', rows + shareBar, t(s.note_ko, s.note_en));
+  return sectionShell(t(s.title_ko, s.title_en), s.color || '#e0a94f', head + rows + shareBar, t(s.note_ko, s.note_en));
+}
+
+// 실적 · 지표 발표. 발표된 숫자(실측)를 시장 예상과 나란히 놓아 "예상보다 좋았나" 가
+// 한눈에 보이게 한다. 문장으로 풀면 카드 한 장에 서너 건밖에 못 담는다.
+//
+// 한국 항목을 먼저 둔다 — 한국 독자가 보는 카드이므로 region:'KR' 을 위로 올린다.
+// 미국 실적 실측치는 Alpha Vantage EARNINGS 의 reportedEPS·estimatedEPS·surprisePercentage,
+// 한국 실적은 공시(DART), 한국 지표는 ECOS·KOSIS 에서 온다
+// (scripts/fetch-kr-trade.mjs 가 수출입을 뽑아 준다).
+function cardEcon(s) {
+  const rows = [...(s.rows || [])].sort((a, b) => (a.region === 'KR' ? 0 : 1) - (b.region === 'KR' ? 0 : 1));
+
+  // '실측'·'예상' 은 열 제목으로 한 번만 쓴다. 행마다 되풀이하면 다섯 줄이면 열 번이 찍혀
+  // 정작 읽어야 할 숫자를 가린다 (2026-08-23 확인).
+  //
+  // 마지막 열은 기본이 '예상 대비'(서프라이즈)지만, 예상치가 없는 지표는 전년동월 대비
+  // 증감률이 들어간다. 그럴 때는 col_delta_ko 로 열 제목을 바꾸고, 각 행의 sub 에
+  // 무엇과 견준 값인지 적는다.
+  const head = `
+    <div style="display:flex; align-items:center; gap:18px; padding:0 24px 12px; font-size:21px; color:#57564f; font-weight:700; white-space:nowrap;">
+      <span style="width:52px;"></span>
+      <span style="flex:1; min-width:0;">${t(s.col_name_ko || '발표 항목', s.col_name_en || 'Item')}</span>
+      <span style="width:150px; text-align:right;">${t('실측', 'Actual')}</span>
+      <span style="width:130px; text-align:right;">${t('예상', 'Est.')}</span>
+      <span style="width:150px; text-align:right;">${t(s.col_delta_ko || '예상 대비', s.col_delta_en || 'vs Est.')}</span>
+    </div>`;
+
+  const body = rows.map((r, i) => `
+    <div style="display:flex; align-items:center; gap:18px; padding:20px 24px; background:${i % 2 ? '#151514' : '#1a1a19'}; border-radius:12px; margin-bottom:8px;">
+      <span style="width:52px; font-size:20px; font-weight:800; color:#57564f;">${r.region === 'KR' ? t('한국', 'KR') : t('미국', 'US')}</span>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:28px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t(r.name_ko, r.name_en)}</div>
+        ${r.sub_ko || r.sub_en ? `<div style="font-size:22px; color:#898781; margin-top:5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${t(r.sub_ko, r.sub_en)}</div>` : ''}
+      </div>
+      <span style="width:150px; text-align:right; font-size:29px; font-weight:800; font-variant-numeric:tabular-nums;">${r.actual}</span>
+      <span style="width:130px; text-align:right; font-size:27px; font-weight:700; color:#a9a89f; font-variant-numeric:tabular-nums;">${r.estimate == null ? '—' : r.estimate}</span>
+      <span style="width:150px; text-align:right; font-size:26px; font-weight:800; font-variant-numeric:tabular-nums; color:${r.surprise == null ? '#57564f' : sign(r.surprise)};">${r.surprise == null ? '—' : fmtPct(r.surprise)}</span>
+    </div>`).join('');
+
+  return sectionShell(t(s.title_ko, s.title_en), s.color || '#5b8dd6', head + body, t(s.note_ko, s.note_en));
 }
 
 function cardSchedule() {
@@ -385,7 +473,7 @@ function cardSchedule() {
   }).join('');
   return `
     <div class="pad">
-      <div class="brandbar"><div class="brand">luckyon<span class="k"> 브리핑</span></div><div class="date">${dateLabel}</div></div>
+      <div class="brandbar">${BRAND(34)}<div class="date">${dateLabel}</div></div>
       <div style="display:flex; align-items:center; gap:16px; margin:32px 0 26px;">
         <span style="width:18px; height:18px; border-radius:50%; background:#e0a94f;"></span>
         <span style="font-size:42px; font-weight:800;">${t(data.schedule_title_ko, data.schedule_title_en)}</span>
@@ -402,7 +490,7 @@ function cardOutro() {
   const nextBrief = t(data.next_brief_ko, data.next_brief_en);
   return `
     <div class="pad" style="justify-content:center; align-items:center; text-align:center;">
-      <div class="brand" style="font-size:40px; margin-bottom:40px;">luckyon<span class="k"> 브리핑</span></div>
+      <div style="margin-bottom:40px;">${BRAND(58)}</div>
       <div style="font-size:52px; font-weight:800; line-height:1.3;">${t(data.outro_tagline_ko, data.outro_tagline_en) || t('매일 아침·저녁, 경제와 AI를<br>한눈에 정리합니다', 'Economy & AI at a glance,<br>every morning & night')}</div>
       ${nextBrief ? `<div style="font-size:32px; font-weight:700; color:#3987e5; margin-top:36px;">${nextBrief}</div>` : ''}
       <div style="font-size:34px; color:#c3c2b7; margin-top:44px; line-height:1.5;">${t('팔로우하고 놓치지 마세요', 'Follow so you never miss it')}<br>🔖 ${t('저장', 'Save')} · 📤 ${t('공유', 'Share')} · 💬 ${t('댓글', 'Comment')}</div>
@@ -420,7 +508,7 @@ function cardOutro() {
 // 영원히 떠안는 비용만 남았고, 실제로 그 폴백이 주말 개편에서 «조용히 다른 포맷으로
 // 발행될 뻔한» 함정으로 작동했다. 과거 콘텐츠를 그때 모습대로 다시 그려야 하면
 // 저장소의 시간 기계(git)를 쓴다 — 아래 오류 메시지가 그 방법을 알려준다.
-const SECTION_RENDERERS = { stats: cardStats, bars: cardBars, rank: cardRank };
+const SECTION_RENDERERS = { stats: cardStats, bars: cardBars, rank: cardRank, econ: cardEcon };
 if (!Array.isArray(data.sections) || !data.sections.length) {
   console.error(`\n❌ sections 가 없습니다: content/${contentFile}`);
   console.error(`   평일 콘텐츠는 sections 5장이 필요합니다 (FORMAT_BRIEFING.md §1·§5).`);

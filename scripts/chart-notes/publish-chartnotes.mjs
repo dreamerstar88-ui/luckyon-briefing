@@ -22,6 +22,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { fileURLToPath } from 'node:url';
 const stamp = process.argv[2];
 const lang = process.argv[3] || 'ko';
 if (!stamp) {
@@ -44,7 +45,9 @@ const VER = process.env.GRAPH_VERSION || 'v21.0';
 const BASE = `https://graph.instagram.com/${VER}`;
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+// 경로에 공백이 있거나 윈도우에서 돌 때 URL.pathname 은 '/C:/…/SJ%20PARK%20Project/…' 를
+// 돌려줘 파일을 못 찾는다. fileURLToPath 는 두 경우 모두 올바른 경로를 준다.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const contentPath = path.join(root, 'content', 'chart-notes', `${stamp}.json`);
 if (!fs.existsSync(contentPath)) {
   console.error(`❌ 콘텐츠 파일이 없습니다: content/chart-notes/${stamp}.json`);
