@@ -343,17 +343,19 @@ function card5() {
 // ══════════════════════════════════════════════════════════
 function card6() {
   const s = sec('실적 · 지표 발표') || { stats: [] };
-  const st = (s.stats || []).slice(0, 6);
-  const gap = 20, u = (W - M * 2 - gap) / 2, h = 250, y0 = 296;
+  // 8개(4행)까지 채운다. 6개(3행)일 때보다 타일을 낮추고 글자를 줄여 4행이 각주와
+  // 안 겹치는 걸 실측으로 확인했다 — 빈칸보다 촘촘한 8개가 낫다는 판단(2026-08-23).
+  const st = (s.stats || []).slice(0, 8);
+  const gap = 16, u = (W - M * 2 - gap) / 2, h = 190, y0 = 296;
   const tiles = st.map((x, i) => {
     const r = Math.floor(i / 2), c = i % 2;
     return `
     <div style="position:absolute; left:${M + c * (u + gap)}px; top:${y0 + r * (h + gap)}px; width:${u}px; height:${h}px;
-                background:${PAL.tile}; border-radius:16px; padding:20px 22px; z-index:2;">
-      <div style="font-size:17px; font-weight:700; color:${PAL.dim}; line-height:1.35;">${esc(t(x.label_ko, x.label_en))}</div>
-      <div style="font-size:38px; font-weight:900; color:${PAL.text}; margin-top:16px;">${esc(x.value)}</div>
-      <div style="font-size:20px; font-weight:800; color:${dirColor(x.dir)}; margin-top:14px;">${esc(x.delta || '')}</div>
-      <div style="font-size:14px; color:${PAL.faint}; margin-top:16px; line-height:1.5;">${esc(t(x.sub_ko, x.sub_en))}</div>
+                background:${PAL.tile}; border-radius:16px; padding:16px 18px; z-index:2;">
+      <div style="font-size:14px; font-weight:700; color:${PAL.dim}; line-height:1.3;">${esc(t(x.label_ko, x.label_en))}</div>
+      <div style="font-size:30px; font-weight:900; color:${PAL.text}; margin-top:10px;">${esc(x.value)}</div>
+      <div style="font-size:16px; font-weight:800; color:${dirColor(x.dir)}; margin-top:8px;">${esc(x.delta || '')}</div>
+      <div style="font-size:12px; color:${PAL.faint}; margin-top:9px; line-height:1.4;">${esc(t(x.sub_ko, x.sub_en))}</div>
     </div>`;
   }).join('');
   return `
@@ -371,22 +373,23 @@ function card6() {
 // ══════════════════════════════════════════════════════════
 function cardItems(n, sectionName, kick, ttl, style) {
   const s = sec(sectionName) || { items: [] };
-  // 아이콘형(카드7)은 항목당 여백이 좁아 6건까지 실측으로 확인됐다. 번호형(카드8)은
-  // 항목당 글자 크기·여백이 더 커서 4건이 이미 한계다 — 5건째부터 overflow:hidden 에
-  // 조용히 잘려 나간다(에러 없이 사라지므로 늘리려면 반드시 다시 렌더해서 확인할 것).
-  const items = (s.items || []).slice(0, style === 'icon' ? 6 : 4);
+  // 번호형(카드8)의 글자·여백이 아이콘형(카드7)보다 커서 4건이 한계였다. 아이콘형과
+  // 같은 촘촘한 크기로 맞춰 6건까지 늘렸다 — 빈칸보다 촘촘한 6개가 낫다는 판단
+  // (2026-08-23). 두 스타일이 같은 크기를 쓰므로 style 에 따라 갈리는 건 아이콘·번호
+  // 배지 모양과 그 칸 너비뿐이다.
+  const items = (s.items || []).slice(0, 6);
   const icons = ['ai', 'chip', 'globe', 'target', 'rate', 'shield'];
   const body = items.map((it, i) => `
-    <div style="display:flex; gap:${style === 'icon' ? 26 : 30}px; padding-bottom:${style === 'icon' ? 34 : 44}px;
-                ${i < items.length - 1 ? `border-bottom:1px solid ${PAL.rule}; margin-bottom:${style === 'icon' ? 34 : 44}px;` : ''}">
-      <div style="flex:none; width:${style === 'icon' ? 44 : 56}px; padding-top:4px;">
+    <div style="display:flex; gap:26px; padding-bottom:30px;
+                ${i < items.length - 1 ? `border-bottom:1px solid ${PAL.rule}; margin-bottom:30px;` : ''}">
+      <div style="flex:none; width:${style === 'icon' ? 44 : 40}px; padding-top:4px;">
         ${style === 'icon'
           ? ICONS[icons[i]](42, PAL.accent)
-          : `<span style="font-size:26px; font-weight:900; color:${PAL.accent};">0${i + 1}</span>`}
+          : `<span style="font-size:23px; font-weight:900; color:${PAL.accent};">0${i + 1}</span>`}
       </div>
       <div style="flex:1; min-width:0;">
-        <div style="font-size:${style === 'icon' ? 26 : 31}px; font-weight:700; color:${PAL.text}; line-height:1.35;">${esc(t(it.headline_ko, it.headline_en))}</div>
-        <div style="font-size:${style === 'icon' ? 19 : 22}px; color:${PAL.body}; line-height:1.65; margin-top:${style === 'icon' ? 14 : 20}px;">${esc(t(it.body_ko, it.body_en))}</div>
+        <div style="font-size:24px; font-weight:700; color:${PAL.text}; line-height:1.32;">${esc(t(it.headline_ko, it.headline_en))}</div>
+        <div style="font-size:18px; color:${PAL.body}; line-height:1.55; margin-top:12px;">${esc(t(it.body_ko, it.body_en))}</div>
       </div>
     </div>`).join('');
   return `
