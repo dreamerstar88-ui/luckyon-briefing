@@ -206,12 +206,26 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      - **`chart_series_values` 를 빠뜨리면 3장의 차트가 통째로 비고 2장의 큰 타일도 밋밋해진다.** 최근 9거래일 종가를 `fetch-krx.mjs`(한국) 또는 야후 차트 API(미국)에서 받아 `chart_series_labels` 와 같은 길이로 넣는다.
      - **배경 사진을 그날 내용으로 만든다.** `card_photos` 에 카드 번호별 장면 설명을 적는다. 못 만든 장은 저장소에 든 예비 사진으로 내려가고 발행은 그대로 진행된다 — 사진 때문에 발행을 멈추지 않는다.
 
-       사진 생성에는 `GEMINI_API_KEY` 가 필요한데 이 키는 **저장소 시크릿**에 있고 이 세션 환경에는 없다. 그래서 **워크플로를 부른다** (`data/krx-flows.json` 과 같은 패턴 — 러너가 만들어 `main` 에 커밋해 두면 세션이 받아 쓴다):
-       ```
-       gh workflow run card-photos.yml -f date=<DATE> -f session=<SESSION>           -f prompts='{"1":"...","3":"..."}'
-       gh run watch $(gh run list --workflow=card-photos.yml -L1 --json databaseId -q '.[0].databaseId')
-       git fetch origin main -q && git checkout origin/main -- data/card-photos
-       ```
+       사진 생성에는 `GEMINI_API_KEY` 가 필요한데 이 키는 **저장소 시크릿**에 있고 이 세션 환경에는 없다. 그래서 **워크플로를 부른다** (`data/krx-flows.json` 과 같은 패턴 — 러너가 만들어 `main` 에 커밋해 두면 세션이 받아 쓴다).
+
+       **이 세션에는 `gh` CLI 가 없다** (`which gh` 로 확인됨 — 없음). `gh workflow run`/`gh run watch` 는 여기서 못 쓴다. 대신 GitHub MCP 도구로 같은 일을 한다:
+
+       1. 트리거 — `mcp__github__actions_run_trigger`
+          ```
+          method: "run_workflow", owner: "dreamerstar88-ui", repo: "luckyon-briefing",
+          workflow_id: "card-photos.yml", ref: "main",
+          inputs: { date: "<DATE>", session: "<SESSION>", prompts: "{\"1\":\"...\",\"3\":\"...\"}" }
+          ```
+          (`prompts` 는 카드 번호→장면 설명 JSON을 **문자열로 감싸서** 넣는다 — 워크플로 입력 자체가 문자열 필드다.)
+       2. 대기·확인 — 트리거 호출은 실행 ID를 돌려주지 않으므로, 잠시 뒤(예: 20~30초) `mcp__github__actions_list`
+          `method:"list_workflow_runs", resource_id:"card-photos.yml"` 로 목록을 받아 가장 최근 항목(`created_at`
+          최신)의 `status` 가 `"completed"` 가 될 때까지 다시 조회한다. `conclusion` 이 `"success"` 인지도 확인한다.
+          (실패해도 사진 없이 번들로 내려가니 브리핑을 멈추지 않지만, 왜 실패했는지는 `mcp__github__get_job_logs` 로
+          한 번 봐 둔다.)
+       3. 받아쓰기
+          ```
+          git fetch origin main -q && git checkout origin/main -- data/card-photos
+          ```
        세션 환경에 키가 **있다면** 워크플로 없이 바로 돌려도 된다:
        ```
        node scripts/gen-card-photos.mjs <DATE> <SESSION>

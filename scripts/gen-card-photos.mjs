@@ -6,11 +6,11 @@
 //   node scripts/gen-card-photos.mjs <YYYY-MM-DD> <am|pm>
 //
 // 키가 세션 환경에 없을 때 (클라우드 기본값)
-//   저장소 시크릿 GEMINI_API_KEY 를 쓰는 워크플로를 대신 돌린다:
-//     gh workflow run card-photos.yml -f date=<DATE> -f session=<am|pm> -f prompts='<JSON>'
-//   워크플로가 만든 사진을 main 에 커밋하므로, 끝난 뒤 아래로 받아 쓴다:
-//     git fetch origin main -q && git checkout origin/main -- data/card-photos
-//   자세한 절차는 ROUTINE_PROMPT.md 의 배경 사진 항목에 있다.
+//   저장소 시크릿 GEMINI_API_KEY 를 쓰는 워크플로(card-photos.yml)를 대신 돌린다.
+//   루틴 클라우드 세션에는 gh CLI 가 없으므로 GitHub MCP 도구
+//   (mcp__github__actions_run_trigger → mcp__github__actions_list 로 대기 →
+//   git checkout origin/main -- data/card-photos)로 부른다.
+//   자세한 절차는 ROUTINE_PROMPT.md 의 배경 사진 항목이 정본이다.
 //
 // 무엇을 만드나
 //   content/<date>-<session>.json 의 `card_photos` 를 읽는다. 카드 번호 → 장면 설명이다.
