@@ -34,6 +34,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const date = process.argv[2];
@@ -83,8 +84,32 @@ async function generate(prompt, outFile) {
   const parts = j?.candidates?.[0]?.content?.parts || [];
   const blob = parts.map(p => p.inlineData || p.inline_data).find(Boolean);
   if (!blob) throw new Error('응답에 이미지가 없음 ' + JSON.stringify(j).slice(0, 200));
-  fs.writeFileSync(outFile, Buffer.from(blob.data, 'base64'));
+  await shrink(blob.data, outFile);
   return fs.statSync(outFile).size;
+}
+
+// 생성본은 2K 라 한 장에 3MB 를 넘긴다. 회차마다 10장이면 저장소가 하루에 60MB 씩
+// 불어난다. 카드는 1080 논리폭을 2배(2160)로 찍으므로 1600px 이면 눈에 띄는 차이가
+// 없다 — 배경으로 쓰는 장은 어차피 크게 흐려진다.
+//
+// sharp 를 새로 넣지 않고 이미 있는 playwright 로 줄인다. 캔버스에 그려 다시 뽑는다.
+const SAVE_W = 1600, SAVE_Q = 0.8;
+let _browser = null;
+async function shrink(b64, outFile) {
+  _browser ||= await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
+  const pg = await _browser.newPage();
+  const out = await pg.evaluate(async ({ b64, w, q }) => {
+    const img = new Image();
+    await new Promise((ok, no) => { img.onload = ok; img.onerror = no; img.src = 'data:image/png;base64,' + b64; });
+    const scale = Math.min(1, w / img.naturalWidth);
+    const c = document.createElement('canvas');
+    c.width = Math.round(img.naturalWidth * scale);
+    c.height = Math.round(img.naturalHeight * scale);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    return c.toDataURL('image/jpeg', q).split(',')[1];
+  }, { b64, w: SAVE_W, q: SAVE_Q });
+  await pg.close();
+  fs.writeFileSync(outFile, Buffer.from(out, 'base64'));
 }
 
 // 장면 설명은 두 곳에서 온다.
