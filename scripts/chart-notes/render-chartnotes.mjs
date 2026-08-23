@@ -474,6 +474,53 @@ const R = {
     </div>`;
   },
 
+  // 개념 대 개념: 헷갈리는 둘을 «같은 항목별로» 한 줄씩 맞대어 놓는다.
+  //
+  // `compare` 는 캔들 두 개가 코드에 박혀 있어 «상승 캔들 vs 하락 캔들» 밖에 못 그린다.
+  // 그림으로 갈리지 않는 개념 쌍(거래량 vs 거래대금, PER vs PBR, 현물 vs 선물,
+  // 액면분할 전 vs 후)은 «항목별 표»여야 차이가 보인다. EP.04 의 p.06 이 이 타입이
+  // 없어 `bars` 로 만들어졌다가 "거래량을 강조하는 건지 주식 수를 강조하는 건지
+  // 모르겠다"는 지적을 받았다(2026-08-23 이슈 #23).
+  //
+  // **왼쪽 칸이 그 회차의 주제다** — 감청색으로 칠해져 "이 편이 다루는 건 이쪽"이
+  // 한눈에 보인다. 오른쪽은 «구별해야 할 다른 것»이므로 눌러 둔다. 순서를 뒤집으면
+  // 강조가 엉뚱한 개념에 붙으므로 바꾸지 않는다.
+  //
+  //   columns: [{ name, unit }] — 정확히 2개
+  //   rows:    [{ label, left, right, highlight }] — highlight 는 오른쪽 값을 붉게 짚는다
+  versus(c) {
+    const cols = d(c, 'columns', []);
+    const head = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      ${[0, 1].map(i => {
+        const col = cols[i] || {};
+        const main = i === 0;
+        return `<div style="border-radius:14px;padding:14px 18px;text-align:center;background:${main ? C.navy : '#eceade'}">
+          <div style="font-family:${FONT_TITLE};font-size:32px;font-weight:800;color:${main ? C.paper : C.ink}">${esc(t(col, 'name'))}</div>
+          <div style="font-size:24px;margin-top:4px;color:${main ? '#c9d1e2' : C.muted}">${esc(t(col, 'unit'))}</div>
+        </div>`;
+      }).join('')}
+    </div>`;
+    const rows = d(c, 'rows', []).map(r => `
+      <div style="margin-top:22px">
+        <div style="font-size:26px;color:${C.muted};margin-bottom:9px">${esc(t(r, 'label'))}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          ${['left', 'right'].map((k, i) => {
+            const hot = r.highlight && i === 1;
+            return `<div style="border:3px solid ${hot ? C.red : '#cac7bd'};border-radius:14px;padding:15px 12px;text-align:center;display:flex;align-items:center;justify-content:center;min-height:44px">
+              <span style="font-family:${FONT_TITLE};font-size:29px;font-weight:800;line-height:1.25;color:${i === 0 ? C.navy : (hot ? C.red : C.body)}">${esc(t(r, k))}</span>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`).join('');
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="margin-top:30px">${head}${rows}</div>
+      <div style="flex:1"></div>
+      ${t(c, 'closing') ? `<div style="margin-bottom:22px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.red}">${esc(t(c, 'closing'))}</span></div>` : ''}
+    </div>`;
+  },
+
   // 주가 + 거래량 2단 패널 — 실제 차트가 생긴 그대로.
   //
   // 거래량은 «가격 그래프 아래에 붙은 세로 막대»다. 그런데 이 렌더러에는 오랫동안
