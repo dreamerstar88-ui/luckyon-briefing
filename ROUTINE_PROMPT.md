@@ -204,7 +204,15 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      - **1·2·9·10 장(표지·시장 한눈에·일정·아웃트로)은 `sections` 가 아니라 최상위 필드로 그린다.** `FORMAT_BRIEFING.md` §5 스키마를 본다.
      - **7·8 장만 글 카드다.** 공시 내용·정책 발표·인물 동정처럼 문장 설명이 필요한 것을 여기에 모은다. 3~6 장은 수치 카드다.
      - **`chart_series_values` 를 빠뜨리면 3장의 차트가 통째로 비고 2장의 큰 타일도 밋밋해진다.** 최근 9거래일 종가를 `fetch-krx.mjs`(한국) 또는 야후 차트 API(미국)에서 받아 `chart_series_labels` 와 같은 길이로 넣는다.
-     - **배경 사진을 그날 내용으로 만든다.** `card_photos` 에 카드 번호별 장면 설명을 적고 렌더 전에 아래를 돌린다. 못 만든 장은 저장소에 든 사진으로 내려가고 발행은 그대로 진행된다.
+     - **배경 사진을 그날 내용으로 만든다.** `card_photos` 에 카드 번호별 장면 설명을 적는다. 못 만든 장은 저장소에 든 예비 사진으로 내려가고 발행은 그대로 진행된다 — 사진 때문에 발행을 멈추지 않는다.
+
+       사진 생성에는 `GEMINI_API_KEY` 가 필요한데 이 키는 **저장소 시크릿**에 있고 이 세션 환경에는 없다. 그래서 **워크플로를 부른다** (`data/krx-flows.json` 과 같은 패턴 — 러너가 만들어 `main` 에 커밋해 두면 세션이 받아 쓴다):
+       ```
+       gh workflow run card-photos.yml -f date=<DATE> -f session=<SESSION>           -f prompts='{"1":"...","3":"..."}'
+       gh run watch $(gh run list --workflow=card-photos.yml -L1 --json databaseId -q '.[0].databaseId')
+       git fetch origin main -q && git checkout origin/main -- data/card-photos
+       ```
+       세션 환경에 키가 **있다면** 워크플로 없이 바로 돌려도 된다:
        ```
        node scripts/gen-card-photos.mjs <DATE> <SESSION>
        ```

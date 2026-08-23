@@ -5,6 +5,13 @@
 // 사용법:
 //   node scripts/gen-card-photos.mjs <YYYY-MM-DD> <am|pm>
 //
+// 키가 세션 환경에 없을 때 (클라우드 기본값)
+//   저장소 시크릿 GEMINI_API_KEY 를 쓰는 워크플로를 대신 돌린다:
+//     gh workflow run card-photos.yml -f date=<DATE> -f session=<am|pm> -f prompts='<JSON>'
+//   워크플로가 만든 사진을 main 에 커밋하므로, 끝난 뒤 아래로 받아 쓴다:
+//     git fetch origin main -q && git checkout origin/main -- data/card-photos
+//   자세한 절차는 ROUTINE_PROMPT.md 의 배경 사진 항목에 있다.
+//
 // 무엇을 만드나
 //   content/<date>-<session>.json 의 `card_photos` 를 읽는다. 카드 번호 → 장면 설명이다.
 //   ```
@@ -80,10 +87,19 @@ async function generate(prompt, outFile) {
   return fs.statSync(outFile).size;
 }
 
-const contentFile = path.join(root, 'content', `${date}-${session}.json`);
-if (!fs.existsSync(contentFile)) { console.error('❌ 콘텐츠 파일이 없습니다:', contentFile); process.exit(1); }
-const C = JSON.parse(fs.readFileSync(contentFile, 'utf8'));
-const wanted = C.card_photos || {};
+// 장면 설명은 두 곳에서 온다.
+//   1) 환경변수 CARD_PHOTOS — GitHub Actions 로 돌 때. 러너에는 세션이 방금 쓴
+//      콘텐츠 파일이 없으므로 워크플로 입력으로 받아 넘긴다.
+//   2) content/<date>-<session>.json 의 card_photos — 로컬에서 돌 때.
+let wanted = {};
+if (process.env.CARD_PHOTOS) {
+  try { wanted = JSON.parse(process.env.CARD_PHOTOS); }
+  catch (e) { console.error('❌ CARD_PHOTOS 가 JSON 이 아닙니다:', e.message); process.exit(1); }
+} else {
+  const contentFile = path.join(root, 'content', `${date}-${session}.json`);
+  if (!fs.existsSync(contentFile)) { console.error('❌ 콘텐츠 파일이 없습니다:', contentFile); process.exit(1); }
+  wanted = JSON.parse(fs.readFileSync(contentFile, 'utf8')).card_photos || {};
+}
 const nums = Object.keys(wanted).filter(n => /^([1-9]|10)$/.test(n));
 
 if (!nums.length) {
