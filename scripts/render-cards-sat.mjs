@@ -104,7 +104,7 @@ const BASE = `
 html,body{width:1080px;height:1350px}
 body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR","Noto Color Emoji",sans-serif;
  background:${P.paper};color:${P.ink};width:1080px;height:1350px;display:flex;flex-direction:column;
- position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+ position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
 .pad{padding:62px 58px 96px;flex:1;display:flex;flex-direction:column}
 .bar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:30px}
 .bd{font-size:27px;font-weight:800;letter-spacing:-.01em}

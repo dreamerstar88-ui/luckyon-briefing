@@ -103,7 +103,7 @@ const page = inner => `<!doctype html><html><head><meta charset="utf-8"><style>
   html,body{width:${W}px;height:${H}px}
   body{font-family:'Pretendard',system-ui,sans-serif; background:${PAL.bg}; color:${PAL.text};
        width:${W}px; height:${H}px; position:relative; overflow:hidden;
-       -webkit-font-smoothing:antialiased;}
+       -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:break-word;}
 </style></head><body>${inner}</body></html>`;
 
 // ══════════════════════════════════════════════════════════
