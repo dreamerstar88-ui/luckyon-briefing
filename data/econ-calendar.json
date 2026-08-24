@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-24T11:39:27Z",
+  "fetchedAt": "2026-08-24T22:46:40Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-22T11:39:27Z",
-    "to": "2026-09-07T11:39:27Z"
+    "from": "2026-08-22T22:46:40Z",
+    "to": "2026-09-07T22:46:40Z"
   },
   "events": [
     {
@@ -23,7 +23,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.02,
-      "actual": null,
+      "actual": -0.08,
       "unit": null
     },
     {
@@ -33,7 +33,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.715,
-      "actual": null,
+      "actual": 3.715,
       "unit": "%"
     },
     {
@@ -43,7 +43,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.78,
-      "actual": null,
+      "actual": 3.79,
       "unit": "%"
     },
     {
@@ -53,7 +53,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 106.8,
-      "actual": null,
+      "actual": 104.5,
       "unit": null
     },
     {
@@ -231,7 +231,7 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.9,
       "previous": -0.328,
       "actual": null,
       "unit": null
@@ -421,7 +421,7 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.9,
       "previous": 4.405,
       "actual": null,
       "unit": null
@@ -1252,7 +1252,7 @@
       "name": "3-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.715,
       "actual": null,
       "unit": "%"
     },
@@ -1262,7 +1262,7 @@
       "name": "6-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.79,
       "actual": null,
       "unit": "%"
     },
@@ -1413,6 +1413,16 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 6.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-01T09:40:00Z",
+      "country": "DE",
+      "name": "5-y Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.93,
       "actual": null,
       "unit": "%"
     },
@@ -1737,7 +1747,27 @@
       "unit": null
     },
     {
-      "at": "2026-09-03T11:30:00Z",
+      "at": "2026-09-03T09:00:00Z",
+      "country": "EMU",
+      "name": "Producer Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-03T09:00:00Z",
+      "country": "EMU",
+      "name": "Producer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 4.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-03T09:30:00Z",
       "country": "US",
       "name": "Challenger Job Cuts",
       "impact": "MEDIUM",
@@ -1949,26 +1979,6 @@
     {
       "at": "2026-09-04T09:00:00Z",
       "country": "EMU",
-      "name": "Producer Price Index (MoM)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": -0.3,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-04T09:00:00Z",
-      "country": "EMU",
-      "name": "Producer Price Index (YoY)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 4.6,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-04T09:00:00Z",
-      "country": "EMU",
       "name": "Retail Sales (MoM)",
       "impact": "MEDIUM",
       "consensus": null,
@@ -2119,100 +2129,10 @@
     {
       "at": "2026-09-06T23:50:00Z",
       "country": "JP",
-      "name": "Gross Domestic Product (QoQ)",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": 0.3,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-06T23:50:00Z",
-      "country": "JP",
-      "name": "Gross Domestic Product Annualized",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 1.1,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-06T23:50:00Z",
-      "country": "JP",
-      "name": "Gross Domestic Product Deflator (YoY)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 2.6,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-06T23:50:00Z",
-      "country": "JP",
       "name": "JP Foreign Reserves",
       "impact": "LOW",
       "consensus": null,
       "previous": 1287.1,
-      "actual": null,
-      "unit": "$"
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Exports (YoY)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 23.9,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Exports (YoY) CNY",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 17.8,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Imports (YoY)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 27.5,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Imports (YoY) CNY",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 21.2,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Trade Balance CNY",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 767.07,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-07T03:00:00Z",
-      "country": "CN",
-      "name": "Trade Balance USD",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 112.5,
       "actual": null,
       "unit": "$"
     },
@@ -2245,6 +2165,26 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-09-07T06:00:00Z",
+      "country": "DE",
+      "name": "Industrial Production n.s.a. w.d.a. (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-07T06:00:00Z",
+      "country": "DE",
+      "name": "Industrial Production s.a. (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
     },
     {
       "at": "2026-09-07T08:00:00Z",
