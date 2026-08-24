@@ -1,0 +1,221 @@
+{
+  "date": "2026-08-24",
+  "session": "pm",
+  "dateLabel_ko": "2026년 8월 24일 저녁",
+  "dateLabel_en": "Monday, August 24, 2026 — Evening",
+
+  "headline_ko": "삼성전자 8.70% 급락에 코스피 6700선 붕괴",
+  "headline_en": "Samsung Electronics plunges 8.70%, KOSPI breaks below 6,700",
+  "headline_sub_ko": "코스닥은 반대로 상승 · 개인 3.3조 사들여도 못 막은 매도",
+  "headline_sub_en": "KOSDAQ moved the opposite way as ₩3.3T of individual buying couldn't offset the selling",
+  "cover_kicker": "KOSPI CLOSE · 8/24",
+  "cover_facts": [
+    ["shield", "KOSPI -3.12% · KOSDAQ +1.42%", "6,696.96 / 813.33 pts · opposite directions"],
+    ["chip", "Samsung Elec -8.70% · SK Hynix -3.41%", "Foreign -₩3.7T · Institution -₩1.3T"],
+    ["globe", "Asia mostly lower ahead of NVDA earnings", "Nikkei -0.74% · Shanghai -0.59% · Iran sanctions due"]
+  ],
+
+  "markets": [
+    {"label":"NASDAQ","value":"29,185.75","delta":"▼0.69%","dir":"down","note_ko":"나스닥 선물 · 8/21 종가 대비","note_en":"Nasdaq futures · vs 8/21 close"},
+    {"label":"S&P 500","value":"7,669.00","delta":"▼0.29%","dir":"down","note_ko":"S&P500 선물 · 8/21 종가 대비","note_en":"S&P 500 futures · vs 8/21 close"},
+    {"label":"KOSPI","value":"6,696.96","delta":"▼3.12%","dir":"down","note_ko":"오늘(8/24) 종가 · 6700선 이탈","note_en":"Today's (8/24) close · fell below 6,700"},
+    {"label":"VIX","value":"15.99","delta":"▲5.68%","dir":"up","note_ko":"8/21 15.13 대비","note_en":"vs 15.13 on 8/21"},
+    {"label":"Fear & Greed","value":"55","delta":"-","dir":"flat","note_ko":"美 증시 개장 전 · 8/21 기준 유지","note_en":"Unchanged · pre-market, based on 8/21 close"},
+    {"label":"US 10Y","value":"4.74%","delta":"-","dir":"flat","note_ko":"월요일 채권시장 마감 전 · 8/21 확정치 유지","note_en":"Unchanged · bond market not yet closed for Monday, holding 8/21 print"},
+    {"label":"USD/KRW","value":"1,383.7","value_sub":"· DXY 99.0","delta":"▼0.51%","dir":"down","note_ko":"8/21 1,390.8 대비","note_en":"vs 1,390.8 on 8/21"},
+    {"label":"Gold","value":"$4,701.1","delta":"▲1.67%","dir":"up","note_ko":"3개월 만의 최고치","note_en":"3-month high"},
+    {"label":"WTI","value":"$85.39","delta":"▼1.92%","dir":"down","note_ko":"7거래일 만에 하락 전환","note_en":"First decline in 7 sessions"},
+    {"label":"Bitcoin","value":"$78,026","delta":"▲0.35%","dir":"up","note_ko":"8만달러 재도전","note_en":"Testing the $80K level again"}
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ","S&P 500"],
+  "tile_rest": ["VIX","Fear & Greed","US 10Y","USD/KRW","Gold","WTI","Bitcoin"],
+  "market_note_ko": "코스피는 삼성전자·SK하이닉스 급락에 3.12% 밀렸지만 코스닥은 이차전지·소재 순환매에 1.42% 올랐다 — 금은 지정학 리스크 속 3개월 만의 최고치로 올라섰다.",
+  "market_note_en": "KOSPI slid 3.12% on Samsung Electronics and SK Hynix, while KOSDAQ rose 1.42% on rotation into battery and materials names — gold climbed to a 3-month high amid geopolitical risk.",
+
+  "chart_series_values": [6345.53, 6579.04, 6813.34, 6977.94, 6869.83, 6471.17, 6852.58, 6912.95, 6696.96],
+  "chart_series_labels": ["8.11","8.12","8.13","8.14","8.18","8.19","8.20","8.21","8.24"],
+  "chart_title": "8/14 고점 이후 두 번째로 큰 낙폭",
+  "chart_sub": "코스피 종가 · 최근 9거래일",
+  "chart_note": "8.14 고점 6,977.94 → 8.19 저점 6,471.17 → 8.24 6,696.96",
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "rank_title": "거래대금 상위",
+  "rank_sub": "Samsung + SK Hynix 58.5%",
+  "econ_title": "실적 · 지표 발표",
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록", "title_en": "KOSPI & KOSDAQ Record",
+      "color": "#e66767", "type": "stats",
+      "stats": [
+        {"label_ko":"코스피","label_en":"KOSPI","value":"6,696.96","delta":"▼3.12%","dir":"down","sub_ko":"이번 주 첫 거래일 · 월간 +1.54%","sub_en":"First session of the week · MTD +1.54%"},
+        {"label_ko":"코스닥","label_en":"KOSDAQ","value":"813.33","delta":"▲1.42%","dir":"up","sub_ko":"코스피와 반대 방향 · 월간 +13.00%","sub_en":"Moved opposite KOSPI · MTD +13.00%"}
+      ],
+      "breadth": [
+        {"label_ko":"코스피","label_en":"KOSPI","up":579,"flat":77,"down":286},
+        {"label_ko":"코스닥","label_en":"KOSDAQ","up":881,"flat":195,"down":697}
+      ],
+      "flows": {
+        "label_ko":"코스피 투자자별 순매수","label_en":"KOSPI net buy/sell by investor",
+        "unit_ko":"조원","unit_en":" tn",
+        "rows":[
+          {"label_ko":"개인","label_en":"Individual","value":3.3},
+          {"label_ko":"외국인","label_en":"Foreign","value":-3.7},
+          {"label_ko":"기관","label_en":"Institution","value":-1.3}
+        ]
+      },
+      "note_ko": "코스닥은 정반대로 외국인 +2,417억원·기관 +248억원 순매수, 개인만 -2,604억원 순매도했다.",
+      "note_en": "KOSDAQ flows ran the opposite way — foreign +₩241.7B, institution +₩24.8B, individual -₩260.4B."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "color": "#4f9d6e", "type": "bars",
+      "bars": [
+        {"label_ko":"2차전지","label_en":"Battery","value":7.01},
+        {"label_ko":"철강·금속","label_en":"Steel&Metals","value":6.38},
+        {"label_ko":"화학","label_en":"Chemicals","value":3.56},
+        {"label_ko":"바이오·제약","label_en":"Bio&Pharma","value":3.04},
+        {"label_ko":"전력·에너지","label_en":"Power&Energy","value":1.42},
+        {"label_ko":"IT·전자기기","label_en":"IT&Elec.","value":0.98},
+        {"label_ko":"기계·방산","label_en":"Machin.&Def.","value":0.91},
+        {"label_ko":"인터넷·SW","label_en":"Internet&SW","value":0.62},
+        {"label_ko":"건설·건자재","label_en":"Constr.","value":0.55},
+        {"label_ko":"자동차","label_en":"Autos","value":0.19},
+        {"label_ko":"통신서비스","label_en":"Telecom","value":0.12},
+        {"label_ko":"조선","label_en":"Shipbuild.","value":-0.09},
+        {"label_ko":"금융","label_en":"Financials","value":-1.93},
+        {"label_ko":"유통·소비재","label_en":"Retail","value":-4.75},
+        {"label_ko":"반도체","label_en":"Semis","value":-6.44}
+      ],
+      "note_ko": "반도체(-6.44%)만 홀로 급락하며 코스피 시총의 상당 부분을 끌어내렸다 — 2차전지·철강은 오히려 7%대 강세.",
+      "note_en": "Semiconductors (-6.44%) alone dragged heavily on the index — battery and steel names rallied more than 6-7%."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Value Traded",
+      "color": "#c98a3e", "type": "rank",
+      "rows": [
+        {"name_ko":"삼성전자","name_en":"Samsung Elec.","value":"₩8.46T","pct":-8.70},
+        {"name_ko":"SK하이닉스","name_en":"SK Hynix","value":"₩6.86T","pct":-3.41},
+        {"name_ko":"삼성전자우","name_en":"Samsung Elec.(Pfd)","value":"₩1.28T","pct":-8.55},
+        {"name_ko":"삼성전기","name_en":"Samsung Electro-Mech.","value":"₩0.66T","pct":0.15},
+        {"name_ko":"SK스퀘어","name_en":"SK Square","value":"₩0.50T","pct":-4.19}
+      ],
+      "share": {
+        "label_ko":"거래대금 비중","label_en":"Share of turnover",
+        "mode":"nested",
+        "segments":[
+          {"label_ko":"삼성전자·SK하이닉스","label_en":"Samsung+SK Hynix","pct":58.5,"color":"#c98a3e"},
+          {"label_ko":"나머지","label_en":"Rest of market","pct":41.5,"color":"#3a3a3a"}
+        ]
+      },
+      "note_ko": "삼성전자·SK하이닉스 두 종목 거래대금만 15.3조원으로 코스피 전체(26.2조원)의 58.5%를 차지했다.",
+      "note_en": "Samsung Electronics and SK Hynix alone accounted for ₩15.3T, or 58.5% of KOSPI's total ₩26.2T turnover."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "color": "#3987e5", "type": "stats",
+      "stats": [
+        {"label_ko":"한국 7월 수출","label_en":"Korea Jul. Exports","value":"$98.96B","delta":"▲63.0%","dir":"up","sub_ko":"전년동월비 · 잠정(성질별)","sub_en":"YoY · preliminary, by-nature basis"},
+        {"label_ko":"한국 7월 수입","label_en":"Korea Jul. Imports","value":"$68.57B","delta":"","dir":"flat","sub_ko":"무역수지 $30.39B 흑자","sub_en":"Trade surplus of $30.39B"},
+        {"label_ko":"중화학공업품 수출","label_en":"Heavy&Chem. Exports","value":"$87.20B","delta":"▲69.7%","dir":"up","sub_ko":"7월 · 전체 수출의 88.1%","sub_en":"July · 88.1% of total exports"},
+        {"label_ko":"美 10Y-2Y 스프레드","label_en":"US 10Y-2Y Spread","value":"+50bp","delta":"","dir":"flat","sub_ko":"8/21 확정치 · 정상 형태 유지","sub_en":"As of 8/21 · yield curve stays normal"}
+      ],
+      "note_ko": "한국 7월 수출입은 관세청 확정치가 아직 나오지 않아 한국은행 ECOS 성질별 수출입으로 대체했다.",
+      "note_en": "Korea's July trade figures use the Bank of Korea ECOS by-nature series as Customs' final figures aren't out yet."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "color": "#7a5fc9",
+      "items": [
+        {"headline_ko":"알리바바, 홍콩서 14조원 유상증자…전액 AI 인프라에","headline_en":"Alibaba raises ~₩14T in Hong Kong, all of it earmarked for AI",
+         "body_ko":"알리바바가 800억홍콩달러 규모 신주를 발행해 AI 반도체·컴퓨팅 인프라·모델 개발에 전액 투입한다. 순이익 75% 급감 발표와 겹쳐 홍콩 증시에서 주가는 장중 10%대 급락했다.",
+         "body_en":"Alibaba priced an HK$80B share placement, with proceeds going entirely to AI chips, computing infrastructure and model development. Shares fell more than 10% intraday in Hong Kong, coinciding with a 75% profit slump."},
+        {"headline_ko":"삼성전자 110조 vs SK하이닉스 40조…주주환원 '방식'이 갈랐다","headline_en":"Samsung's ₩110T vs SK Hynix's ₩40T buyback — the method, not just the size, diverged",
+         "body_ko":"두 반도체 대장주는 자사주 소각 시점·방식에서 차이를 보였고, 오늘 낙폭도 삼성전자(-8.70%)가 SK하이닉스(-3.41%)보다 컸다. 11월 취득기간 종료 이후 실제 소각 이행이 다음 확인 대상이다.",
+         "body_en":"The two chip giants differ in the timing and method of buyback cancellation, and Samsung Electronics fell more (-8.70%) than SK Hynix (-3.41%) today. Whether Samsung follows through with cancellation after its buyback window closes in November is the next thing to watch."},
+        {"headline_ko":"엔비디아 실적(8/27) 앞두고 국내 투자자 차익실현 나서","headline_en":"Korean investors book profits on Nvidia ahead of its Aug. 27 earnings",
+         "body_ko":"27일 새벽 예정된 엔비디아 실적 발표를 앞두고 국내 투자자들의 순매도가 이어졌다는 보도가 나왔다. 반도체 3배 레버리지 ETF SOXL 등 관련 상품 거래도 함께 늘었다.",
+         "body_en":"Reports say Korean retail investors have been net sellers of Nvidia ahead of its Aug. 27 (KST dawn) earnings report, with trading in related leveraged products like SOXL also picking up."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "color": "#5aa469",
+      "items": [
+        {"headline_ko":"코스피 3.12% 급락, 6700선 붕괴…삼성전자·SK하이닉스 동반 하락","headline_en":"KOSPI sinks 3.12%, breaks 6,700 as Samsung Electronics and SK Hynix fall together",
+         "body_ko":"개인이 3.3조원을 순매수하며 방어했지만 외국인 3.7조원·기관 1.3조원 매도를 막지 못했다. 코스닥은 반대로 외국인·기관 매수 속 1.42% 상승했다.",
+         "body_en":"Individuals net-bought ₩3.3T in defense but couldn't offset ₩3.7T in foreign and ₩1.3T in institutional selling. KOSDAQ moved the opposite way, up 1.42% on foreign and institutional buying."},
+        {"headline_ko":"美, '경제적 D-데이' 대이란 추가 제재 예고…한국시간 새벽 발표","headline_en":"US to unveil 'Economic D-Day' Iran sanctions, due before dawn KST",
+         "body_ko":"美 재무부가 이란의 무역 상대국을 겨냥한 \"역대 최대 규모\" 금융제재를 발표할 예정이다. 이란 리알화는 발표를 앞두고 비공식 환율 기준 사상 최저치로 폭락했다.",
+         "body_en":"The US Treasury is set to unveil what it calls its largest-ever financial offensive against Iran's trading partners. Iran's rial has plunged to a record low on the unofficial market ahead of the announcement."},
+        {"headline_ko":"아시아 증시 대부분 하락…닛케이 -0.74%·상하이 -0.59%·선전 -1.67%","headline_en":"Most of Asia falls — Nikkei -0.74%, Shanghai -0.59%, Shenzhen -1.67%",
+         "body_ko":"이란 제재 경계감과 잭슨홀 심포지엄, 엔비디아 실적 발표를 앞둔 관망 심리가 겹치며 AI·반도체 관련주 매물이 아시아 전역으로 확산됐다.",
+         "body_en":"Caution over the looming Iran sanctions, the Jackson Hole symposium and Nvidia's earnings combined to spread AI and semiconductor selling across Asia."},
+        {"headline_ko":"금, 온스당 4,701달러…3개월 만의 최고치","headline_en":"Gold climbs to $4,701 an ounce, a 3-month high",
+         "body_ko":"국제 금값이 하루 만에 1.67% 오르며 3개월 만의 최고치로 올라섰다. 지정학적 리스크가 부각되며 안전자산 수요가 몰린 결과로 풀이된다.",
+         "body_en":"Gold rose 1.67% in a day to its highest level in three months, as safe-haven demand built on heightened geopolitical risk."},
+        {"headline_ko":"셀트리온, 키트루다 바이오시밀러 'CTP51' 국내 품목허가 신청","headline_en":"Celltrion files for Korean approval of Keytruda biosimilar CTP51",
+         "body_ko":"셀트리온이 면역항암제 키트루다의 바이오시밀러 CTP51에 대해 식품의약품안전처에 국내 품목허가를 신청했다고 공시했다.",
+         "body_en":"Celltrion disclosed it has filed with Korea's MFDS for approval of CTP51, its biosimilar version of the cancer immunotherapy Keytruda."},
+        {"headline_ko":"WTI, 7거래일 만에 하락 전환…배럴당 85달러대","headline_en":"WTI snaps a 7-session rally, falls to the mid-$80s",
+         "body_ko":"서부텍사스산원유(WTI)는 1.92% 내린 85.39달러에 거래됐다. 호르무즈해협 공급 우려는 여전하지만 최근 상승분에 대한 차익실현 매물이 나온 것으로 풀이된다.",
+         "body_en":"WTI crude fell 1.92% to $85.39. Concerns over Strait of Hormuz supply persist, but profit-taking after the recent rally weighed on prices."}
+      ]
+    }
+  ],
+
+  "schedule_title_ko": "주요 일정", "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간", "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준)"],
+    "lines_en": ["Regular session 22:30–05:00 KST (DST in effect)"]
+  },
+  "schedule": [
+    {"time":"8/25 03:00","title_ko":"美, '경제적 D-데이' 대이란 추가 제재 발표","title_en":"US 'Economic D-Day' Iran Sanctions Announcement","detail_ko":"이란 무역 상대국 겨냥 · 역대 최대 규모 금융제재 예고","detail_en":"Targets Iran's trading partners · billed as the largest-ever US financial offensive","importance":"high"},
+    {"time":"8/25 06:00","title_ko":"韓 8월 소비자심리지수 발표","title_en":"Korea Aug. Consumer Sentiment Index","detail_ko":"이전 106.8 · 한국은행 발표","detail_en":"Previous 106.8 · Bank of Korea release","importance":"mid"},
+    {"time":"8/26 21:30","title_ko":"美 7월 근원 PCE 물가지수","title_en":"US Jul. Core PCE Price Index","detail_ko":"예상 전월비 +0.2% · 전년비 +3.3% · 이전 +0.1%","detail_en":"Consensus MoM +0.2% · YoY +3.3% · previous +0.1%","importance":"high"},
+    {"time":"8/27 05:30","title_ko":"엔비디아(NVDA) 2분기 실적 발표","title_en":"Nvidia (NVDA) Q2 Earnings","detail_ko":"AI 반도체 수요·가이던스 주목","detail_en":"Focus on AI chip demand and guidance","importance":"high"},
+    {"time":"8/27 10:00","title_ko":"한국은행 금융통화위원회","title_en":"Bank of Korea Rate Decision","detail_ko":"기준금리 동결·인하 여부 · 연 8회 개최","detail_en":"Whether to hold or cut the base rate","importance":"high"},
+    {"time":"8/27~29","title_ko":"잭슨홀 심포지엄 개막","title_en":"Jackson Hole Symposium Begins","detail_ko":"연준 통화정책 방향 신호 주목","detail_en":"Watched for signals on Fed policy direction","importance":"mid"},
+    {"time":"8/28 23:00","title_ko":"케빈 워시 연준 의장 잭슨홀 연설","title_en":"Fed Chair Kevin Warsh's Jackson Hole Speech","detail_ko":"통화정책 방향 힌트 주목","detail_en":"Watched for hints on policy direction","importance":"high"}
+  ],
+
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+
+  "card_photos": {
+    "1": "A dark Seoul stock exchange trading floor moments after a steep sell-off, red numbers glowing on a wall of screens, a lone trader in silhouette rubbing his temple, dramatic low-angle wide shot, deep red and amber tones",
+    "3": "A dark trading floor with a glowing red descending line chart projected across a bank of monitors, deep red accent lights, cinematic depth of field",
+    "4": "Abstract close-up of a circuit board with some sections glowing warm amber and others cool blue representing divergence, shallow depth of field, industrial texture",
+    "5": "Extreme close-up of a cracked semiconductor wafer under harsh industrial light, reflective surface, cool silver and red tones, shallow focus",
+    "6": "A minimalist shipping container port at dusk, stacked containers under crane lights, cool blue-grey tones, wide shot suggesting trade and export",
+    "7": "Extreme close-up of a data center server rack with AI chips, glowing blue LED indicators, cables in soft focus, cool tones",
+    "8": "A dim newsroom-style desk with a world map glow in the background, muted blues and greys, subtle sense of geopolitical tension, Middle East region faintly highlighted",
+    "9": "Seoul financial district skyline at night, city lights reflecting off glass towers, calm wide shot with a hint of dawn on the horizon"
+  },
+
+  "summary": {
+    "lines_ko": [
+      "코스피가 삼성전자·SK하이닉스 급락에 3.12% 밀리며 6,700선이 무너졌다.",
+      "삼성전자는 지난주 110조원 주주환원 발표 이후 첫 거래일 급등분을 하루 만에 반납하며 8.70% 급락했다.",
+      "개인이 3.3조원을 순매수하며 방어했지만 외국인·기관 약 5조원 매도를 막지 못했다 — 코스닥은 반대로 외국인·기관 매수에 1.42% 올랐다.",
+      "아시아 증시가 대이란 제재·잭슨홀 경계감에 대부분 하락한 가운데 금은 온스당 4,701달러로 3개월 만의 최고치를 기록했다."
+    ],
+    "lines_en": [
+      "KOSPI slid 3.12% and broke below 6,700 as Samsung Electronics and SK Hynix tumbled.",
+      "Samsung Electronics plunged 8.70%, erasing in a single session the gains from Friday's ₩110 trillion shareholder-return rally.",
+      "Individuals net-bought ₩3.3 trillion in defense, but combined foreign and institutional selling of about ₩5 trillion was too much — KOSDAQ moved the opposite way, up 1.42% on foreign and institutional buying.",
+      "Most of Asia fell on caution over new US Iran sanctions and the Jackson Hole symposium, even as gold hit a 3-month high above $4,700 an ounce."
+    ]
+  },
+
+  "caption_ko": "코스피가 삼성전자·SK하이닉스 급락에 3.12% 밀리며 6,700선을 내줬습니다. 지난주 110조원 주주환원 발표로 급등했던 삼성전자는 하루 만에 8.70% 급락하며 상승분을 반납했고, 코스닥은 반대로 1.42% 올랐습니다. 아시아 증시는 미국의 대이란 제재 발표를 앞두고 대부분 약세였고, 금은 3개월 만의 최고치를 새로 썼습니다. 저녁 브리핑에서 자세히 확인하세요. 저장하고 팔로우하면 매일 아침·저녁 놓치지 않아요.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#루키온브리핑 #저녁브리핑 #코스피 #코스닥 #삼성전자 #SK하이닉스 #반도체 #이란제재 #금값 #엔비디아 #경제뉴스 #주식 #투자",
+  "caption_en": "KOSPI slid 3.12% below 6,700 as Samsung Electronics and SK Hynix tumbled. Samsung, which surged after last week's ₩110T shareholder-return plan, gave it all back in a single session with an 8.70% drop, while KOSDAQ moved the opposite way, up 1.42%. Most of Asia was weaker ahead of new US Iran sanctions, and gold hit a 3-month high. Full details in tonight's brief. Save and follow so you never miss a morning or evening.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#luckyonbriefing #eveningbrief #KOSPI #KOSDAQ #SamsungElectronics #SKHynix #semiconductors #Iransanctions #gold #Nvidia #economy #stocks #investing",
+
+  "sources": ["KRX","DART","Bank of Korea ECOS","FMP","Yahoo Finance","Naver News"]
+}
