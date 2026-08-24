@@ -137,10 +137,12 @@
       "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data", "color": "#5b8dd6", "type": "stats", "cols": 2,
       "stats": [
         {"label_ko": "한국 8월 소비자심리지수(CCSI)", "label_en": "Korea Aug Consumer Sentiment Index", "value": "106.8 → 104.5", "delta": "▼", "dir": "down", "sub_ko": "넉 달 만에 하락 · 8/25 06시 발표 · 증시 조정 영향", "sub_en": "First drop in 4 months · released 6 AM KST · hit by the market pullback"},
-        {"label_ko": "미국 7월 시카고연은 전미경제활동지수", "label_en": "US Jul Chicago Fed National Activity Index", "value": "-0.08", "delta": "예상 -0.09 상회", "dir": "up", "sub_ko": "이전 -0.02(수정치 0.06) · 8/24 21:30 발표", "sub_en": "Prior -0.02 (revised to 0.06) · released 9:30 PM KST Aug 24"}
+        {"label_ko": "미국 7월 시카고연은 전미경제활동지수", "label_en": "US Jul Chicago Fed National Activity Index", "value": "-0.08", "delta": "예상 -0.09 상회", "dir": "up", "sub_ko": "이전 -0.02(수정치 0.06) · 8/24 21:30 발표", "sub_en": "Prior -0.02 (revised to 0.06) · released 9:30 PM KST Aug 24"},
+        {"label_ko": "미 국채 10년-2년 스프레드", "label_en": "US 10Y-2Y Treasury Spread", "value": "50bp → 46bp", "delta": "▼", "dir": "down", "sub_ko": "장단기 금리차 축소 · 국채 바이백 재원설에 장기물 금리 하락", "sub_en": "Curve narrowed as long yields fell on buyback funding chatter"},
+        {"label_ko": "미 국채 30년물", "label_en": "US 30Y Treasury Yield", "value": "5.27% → 5.23%", "delta": "▼", "dir": "down", "sub_ko": "8/21 대비 하락 · 10년물과 같은 방향", "sub_en": "Down from Aug 21 · moved with the 10-year"}
       ],
-      "note_ko": "한국은 전날 증시 조정 여파로 소비심리가 넉 달 만에 꺾였다. 미국 활동지수는 예상보다 소폭 양호했지만 방향은 여전히 마이너스권이다.",
-      "note_en": "Korea's sentiment reading cooled for the first time in four months after Monday's market drop. The US activity index beat estimates slightly but stayed in negative territory."
+      "note_ko": "한국은 전날 증시 조정 여파로 소비심리가 넉 달 만에 꺾였다. 미국 활동지수는 예상보다 소폭 양호했지만 방향은 여전히 마이너스권이다. 국채금리는 장단기물 모두 낮아졌다.",
+      "note_en": "Korea's sentiment reading cooled for the first time in four months after Monday's market drop. The US activity index beat estimates slightly but stayed negative. Treasury yields eased across the curve."
     },
     {
       "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis", "color": "#7b6cd9",
@@ -148,38 +150,38 @@
         {
           "headline_ko": "엔비디아, '순환금융' 우려에 급락…애플에 시총 1위 내줘",
           "headline_en": "Nvidia Slides on 'Circular Financing' Worries, Apple Retakes Top Spot",
-          "body_ko": "오픈AI의 데이터센터 컴퓨팅 임대 자금 2,500억달러를 엔비디아가 사실상 보증할 수 있다는 보도가 나오며 '순환금융' 논란이 재점화됐다. 엔비디아 채무불이행 방지 보험료(CDS)는 하루 상승폭 기준 역대 최대를 기록했다. 이날 낙폭으로 애플이 시가총액 1위 자리를 다시 가져갔다.",
-          "body_en": "Reports that Nvidia may effectively backstop $250B in OpenAI's data-center compute leasing revived 'circular financing' worries. The cost to insure Nvidia's debt against default rose the most on record in a single day. The pullback let Apple retake the title of world's most valuable company."
+          "body_ko": "오픈AI 데이터센터 임대자금 2,500억달러를 엔비디아가 보증할 수 있다는 보도에 순환금융 우려가 재점화됐다. 애플이 시총 1위를 다시 가져갔다.",
+          "body_en": "A report that Nvidia may backstop $250B of OpenAI's data-center leases revived circular-financing worries. Apple retook the top market-cap spot."
         },
         {
           "headline_ko": "엔비디아 7거래일 연속 하락, 2022년 이후 최장",
           "headline_en": "Nvidia's 7-Session Losing Streak Is Its Longest Since 2022",
-          "body_ko": "엔비디아는 2.91% 내린 208.48달러로 7거래일 연속 하락했다 — 2022년 9월 이후 가장 긴 하락세다. 26일 2분기 실적을 앞두고 시장의 눈높이는 이미 높아질 대로 높아져, 예상치를 웃도는 것만으로는 부족하다는 분석이 나온다.",
-          "body_en": "Nvidia fell 2.91% to $208.48, its seventh straight losing session — the longest since September 2022. Ahead of Wednesday's Q2 earnings, expectations have climbed so high that merely beating estimates may not be enough, analysts say."
+          "body_ko": "엔비디아는 2.91% 내린 208.48달러로 7거래일 연속 하락 — 2022년 9월 이후 최장이다. 26일 실적 발표를 앞두고 눈높이는 이미 높아졌다.",
+          "body_en": "Nvidia fell 2.91% to $208.48, a 7th straight losing session — the longest since Sept 2022. Expectations are already high before Wednesday earnings."
         },
         {
           "headline_ko": "샌디스크 6.45%↓, 애플의 中 메모리 조달 검토 보도에",
           "headline_en": "SanDisk Falls 6.45% on Report Apple May Source Chinese Memory",
-          "body_ko": "트럼프 행정부가 애플에 중국 메모리업체 창신메모리(CXMT)·YMTC로부터 D램·낸드를 조달하도록 허용하는 방안을 검토 중이라는 보도가 나오며 샌디스크가 급락했다. 낸드에서 직접 경쟁하는 YMTC의 시장 진입 가능성이 가격 경쟁 우려를 키웠다.",
-          "body_en": "SanDisk sank after a report that the Trump administration is weighing letting Apple source DRAM and NAND from Chinese suppliers CXMT and YMTC. YMTC competes directly with SanDisk in NAND, stoking pricing-pressure concerns."
+          "body_ko": "트럼프 행정부가 애플에 중국 CXMT·YMTC로부터 메모리 조달을 허용하는 방안을 검토 중이라는 보도에 샌디스크가 급락했다.",
+          "body_en": "SanDisk sank on a report the US may let Apple source memory from China's CXMT and YMTC, stoking pricing-pressure fears."
         },
         {
           "headline_ko": "알리바바, 홍콩 사상 최대 14조원 유상증자…버리는 지분 정리",
           "headline_en": "Alibaba Launches Hong Kong's Biggest-Ever Rights Offering, Burry Exits",
-          "body_ko": "알리바바가 AI 역량 강화를 위해 800억홍콩달러(약 14조원) 규모의 유상증자를 발표했다. 최근 분기 순이익이 75% 급감한 가운데 나온 결정으로, 지분 희석 우려에 홍콩 증시에서 주가는 8%대 급락했다. 지난 4월 알리바바에 신규 투자를 공개했던 마이클 버리는 이번 유상증자에 반대하며 지분을 정리했다고 밝혔다.",
-          "body_en": "Alibaba announced an HK$80B (about ₩14T) rights offering — Hong Kong's largest ever — to fund AI capacity, even after quarterly profit fell 75%. Shares sank about 8% in Hong Kong on dilution concerns. Michael Burry, who had disclosed a new Alibaba stake in April, said he opposed the raise and exited the position."
+          "body_ko": "알리바바가 AI 투자를 위해 800억홍콩달러(약 14조원) 유상증자를 발표하며 홍콩 증시에서 8%대 급락했다. 마이클 버리는 반대하며 지분을 정리했다.",
+          "body_en": "Alibaba announced an HK$80B (about ₩14T) rights offering for AI; shares sank about 8% in Hong Kong. Michael Burry opposed the raise and exited."
         },
         {
           "headline_ko": "텍사스 주지사 \"AI 데이터센터, 반발 자초했다\" 직격",
           "headline_en": "Texas Governor: AI Data Centers 'Brought the Backlash on Themselves'",
-          "body_ko": "그렉 애벗 텍사스 주지사가 지난 주말 방송 인터뷰에서 AI 데이터센터 기업들이 지역사회 지지를 얻지 못해 스스로 역풍을 자초했다고 비판했다. 그는 이달 들어 전력 수요 급증이 전력망 안정성을 위협할 수 있다며 텍사스 내 신규 데이터센터의 전력망 연계 승인을 일시 중단하도록 지시한 바 있다.",
-          "body_en": "Texas Governor Greg Abbott said in a weekend TV interview that AI data-center firms brought the current backlash on themselves by failing to win local community support. Earlier this month he ordered a pause on grid-connection approvals for new Texas data centers, citing risks to grid stability from surging power demand."
+          "body_ko": "애벗 텍사스 주지사가 주말 인터뷰에서 AI 데이터센터가 지역사회 지지를 못 얻어 반발을 자초했다고 비판했다.",
+          "body_en": "Texas Governor Abbott said in a weekend interview that AI data centers brought the backlash on themselves by failing to win local support."
         },
         {
           "headline_ko": "반도체 ETF(SMH) 2.43%↓, 12개 섹터 중 최대 낙폭",
           "headline_en": "Semiconductor ETF SMH Falls 2.43%, Worst of 12 Sectors",
-          "body_ko": "반도체 ETF SMH가 2.43% 내리며 집계한 12개 섹터 중 가장 크게 빠졌다. 기술(XLK)도 1.78% 내려 두 번째로 부진했다. 엔비디아 실적을 앞두고 AI 인프라 투자 지속 가능성에 대한 경계가 반도체 전반으로 번졌다는 평가다.",
-          "body_en": "The SMH semiconductor ETF fell 2.43%, the worst of the 12 sector gauges tracked. Tech (XLK) was second-worst at -1.78%. Caution about the durability of AI infrastructure spending ahead of Nvidia's earnings spread across the chip sector broadly."
+          "body_ko": "반도체 ETF SMH가 2.43% 내려 12개 섹터 중 최대 낙폭을 기록했다. 기술(XLK)도 1.78% 내려 두 번째로 부진했다.",
+          "body_en": "The SMH semiconductor ETF fell 2.43%, worst of 12 sectors tracked. Tech (XLK) was second-worst, down 1.78%."
         }
       ]
     },
@@ -189,32 +191,32 @@
         {
           "headline_ko": "현대차 노사, 111일 만에 임금협상 잠정합의…전면파업 사태 일단락",
           "headline_en": "Hyundai Motor Reaches Tentative Wage Deal After 111 Days, Averting Strike Escalation",
-          "body_ko": "현대차 노사가 24일 오후부터 25일 새벽까지 이어진 17차 교섭 끝에 임금협상 잠정합의안을 마련했다. 기본급 10만원 인상에 경영성과금 400%+1,270만원, 주식 15주, 복지포인트 50만원 등 총액 3,480만원 규모다. 지난 21일 10년 만의 8시간 전면파업까지 벌였던 노조는 24·25일 예정했던 부분파업을 유보했고, 31일 조합원 찬반투표를 거쳐 최종 확정된다.",
-          "body_en": "Hyundai Motor's union and management reached a tentative wage deal after a 17th round of talks that ran from Monday afternoon into Tuesday morning. The package includes a ₩100,000 monthly base-pay hike, a 400%+₩12.7M performance bonus, 15 company shares and ₩500,000 in welfare points — about ₩34.8M in total. The union, which staged its first full-day strike in a decade on Aug 21, held off planned partial strikes on Aug 24-25; members vote to ratify on Aug 31."
+          "body_ko": "현대차 노사가 임금협상 잠정합의안을 마련했다. 기본급 10만원 인상·성과금 400%+1,270만원 등 총액 3,480만원 규모로, 31일 찬반투표를 거친다.",
+          "body_en": "Hyundai Motor and its union reached a tentative wage deal: a ₩100K base-pay hike and a 400%+₩12.7M bonus, about ₩34.8M total. Members ratify on Aug 31."
         },
         {
           "headline_ko": "베선트 재무장관, 이란 제재 확대 예고…국채 바이백 질문엔 말 아껴",
           "headline_en": "Bessent Flags Expanded Iran Sanctions, Dodges Buyback Question",
-          "body_ko": "스콧 베선트 미 재무장관이 기자회견에서 이란은 물론 이란과 거래하는 국가까지 제재 대상에 포함할 수 있다며 \"미 달러 시스템에서 배제될 것\"이라고 경고했다. 다만 추가 제재를 실제로 발표하지는 않았다. 재무부가 국채 바이백 재원으로 TGA 계좌를 활용할 수 있다는 보도 이후 국채금리는 하락했지만, 베선트 장관은 바이백 확대 여부를 묻는 질문에 \"아직 한 장도 매입하지 않았다\"며 즉답을 피했다.",
-          "body_en": "Treasury Secretary Scott Bessent warned that sanctions could extend beyond Iran to countries doing business with it, saying they would be \"cut off from the dollar system,\" though he stopped short of announcing new measures. Treasury yields fell after a report the department could tap its TGA account to fund debt buybacks, but Bessent declined to say whether buybacks would expand, noting \"we haven't bought a single bond yet.\""
+          "body_ko": "베선트 재무장관이 이란과 거래하는 국가까지 제재 대상에 포함될 수 있다고 경고했다. 국채 바이백 재원으로 TGA 계좌를 쓸 수 있다는 보도 이후 금리는 하락했다.",
+          "body_en": "Treasury Secretary Bessent warned sanctions could extend to countries trading with Iran. Yields fell on a report Treasury may tap its TGA to fund buybacks."
         },
         {
           "headline_ko": "트럼프, 캐나다산 자동차·철강 관세 50%로 인상 예고",
           "headline_en": "Trump Announces 50% Tariffs on Canadian Autos and Steel",
-          "body_ko": "트럼프 대통령이 2027년 1월 1일부터 캐나다산 승용차·트럭·자동차 부품과 철강에 대한 관세를 50%로 올리겠다고 발표했다. 캐나다와의 무역협상이 결렬된 데 따른 조치로, 현재 25%인 자동차 관세를 두 배로 올리는 것이다. 미국에서 조립된 차량은 관세 대상에서 제외된다.",
-          "body_en": "President Trump announced 50% tariffs on Canadian cars, trucks, auto parts and steel effective Jan 1, 2027, after trade talks with Canada collapsed — doubling the current 25% auto tariff. Vehicles assembled in the US are exempt."
+          "body_ko": "트럼프 대통령이 2027년 1월 1일부터 캐나다산 자동차·부품·철강 관세를 50%로 올리겠다고 발표했다. 무역협상 결렬에 따른 조치다.",
+          "body_en": "President Trump announced 50% tariffs on Canadian cars, parts and steel effective Jan 1, 2027, after trade talks with Canada collapsed."
         },
         {
           "headline_ko": "정부, 내년 '800조+α' 슈퍼예산…반도체 호황에 국세수입 600조 넘본다",
           "headline_en": "Korea Plans Record ₩800T+ Budget as Chip Boom Lifts Tax Revenue Above ₩600T",
-          "body_ko": "정부가 역대 최대 규모인 800조원대 내년도 예산안을 편성할 전망이다. 반도체 호황에 따른 법인세 증가 등에 힘입어 국세수입도 600조원을 넘어설 것으로 보인다. 정부는 25일 관계부처 발표를 통해 구체적인 내용을 밝힐 예정이다.",
-          "body_en": "The Korean government is set to unveil a record budget of more than ₩800 trillion for next year. Corporate-tax gains from the semiconductor boom are expected to push tax revenue above ₩600 trillion for the first time. Details are due from relevant ministries later Tuesday."
+          "body_ko": "정부가 역대 최대인 800조원대 내년도 예산안을 편성할 전망이다. 반도체 호황에 따른 법인세 증가로 국세수입도 600조원을 넘어설 것으로 보인다.",
+          "body_en": "Korea plans a record budget of over ₩800 trillion for next year. Chip-boom corporate taxes are set to push revenue above ₩600 trillion."
         },
         {
           "headline_ko": "한은 8월 소비자심리지수 104.5, 넉 달 만에 하락",
           "headline_en": "Korea's Consumer Sentiment Index Falls to 104.5, First Drop in 4 Months",
-          "body_ko": "한국은행이 25일 발표한 8월 소비자동향조사에서 소비자심리지수(CCSI)는 104.5로 전월보다 2.3포인트 내렸다. 5월부터 석 달간 오르다 하락 전환한 것으로, 전날 삼성전자 급락 등 증시 조정이 심리를 눌렀다는 분석이다. 주택가격전망 CSI도 정부의 부동산 세제 개편·공급 대책 영향으로 전월보다 낮아졌다.",
-          "body_en": "The Bank of Korea's August survey put the Consumer Sentiment Index at 104.5, down 2.3 points from July — the first decline in four months after three straight months of gains. The pullback follows Monday's stock-market drop led by Samsung. The housing-price outlook sub-index also eased on the government's real-estate tax and supply-policy changes."
+          "body_ko": "한은 8월 소비자심리지수(CCSI)가 104.5로 전월보다 2.3포인트 내렸다. 넉 달 만의 하락으로, 전날 증시 조정이 심리를 눌렀다는 분석이다.",
+          "body_en": "The Bank of Korea's August Consumer Sentiment Index fell 2.3 points to 104.5, its first drop in four months, after Monday's market pullback."
         }
       ]
     }
