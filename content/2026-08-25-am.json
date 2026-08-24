@@ -1,0 +1,259 @@
+{
+  "date": "2026-08-25",
+  "session": "am",
+  "dateLabel_ko": "2026.8.25(화) 아침",
+  "dateLabel_en": "Tue, Aug 25, 2026 · AM",
+
+  "headline_ko": "나스닥 0.76% 내렸다 — 반도체가 발목 잡았다",
+  "headline_sub_ko": "엔비디아 7거래일 연속 하락 · 샌디스크는 대중국 메모리 경쟁 우려에 6.45%↓",
+  "headline_en": "Nasdaq Falls 0.76% as Chips Weigh",
+  "headline_sub_en": "Nvidia's losing streak hits 7 sessions · SanDisk sinks 6.45% on China memory fears",
+
+  "cover_kicker": "US OVERNIGHT · 8/24 CLOSE",
+  "cover_facts": [
+    ["chip", "Nasdaq -0.76% · S&P 500 -0.28%", "25,980.19 / 7,652.86 pts · chips led the drop"],
+    ["shield", "Dow +0.26%, the lone gainer", "53,417.16 · money rotated to financials"],
+    ["ai", "Nvidia's losing streak hits 7 sessions", "Longest since Sept 2022 · earnings due Wed"]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥이 0.76%, S&P 500이 0.28% 내리며 마감했다. 다우는 금융주 강세에 힘입어 0.26% 오르며 3대 지수 중 유일하게 상승했다.",
+      "반도체 ETF(SMH)가 12개 섹터 중 가장 큰 2.43% 하락. 엔비디아는 순환금융 우려와 애프터 낙폭에 2.91% 내려 7거래일 연속 하락(2022년 9월 이후 최장)을 기록했고, 샌디스크는 애플의 중국산 메모리 조달 검토 보도에 6.45% 급락했다.",
+      "거래대금 상위 293종목 중 상승 128 대 하락 160. 금액 기준으로는 상승 종목에 1,164억달러, 하락 종목에 2,105억달러가 몰려 돈은 하락 쪽에 더 많이 쏠렸다(64.4%).",
+      "반대로 금은 안전자산 수요에 1.92% 올라 4,712달러. 베선트 재무장관이 이란 제재 확대를 예고했고, 국채 바이백 재원 활용설에 10년물 금리는 4.70%로 소폭 내렸다."
+    ],
+    "lines_en": [
+      "The Nasdaq fell 0.76% and the S&P 500 0.28%. The Dow was the lone gainer among the three, up 0.26% on strength in financials.",
+      "The SMH semiconductor ETF fell 2.43%, worst of 12 sectors tracked. Nvidia dropped 2.91% on renewed 'circular financing' worries — its seventh straight losing session, the longest since September 2022 — while SanDisk sank 6.45% on a report the US may let Apple source memory from Chinese suppliers.",
+      "Among the 293 most-traded names, 128 rose and 160 fell. By value, $116.4B went into gainers versus $210.5B into decliners — 64.4% of turnover sat on the losing side.",
+      "Gold bucked the trend, up 1.92% to $4,712 on safe-haven demand as Treasury Secretary Bessent flagged expanded Iran sanctions. The 10-year yield eased to 4.70% on reports Treasury may tap its TGA account to fund buybacks."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "25,980.19", "delta": "▼0.76%", "dir": "down", "note_ko": "200.27p 하락 · 8/24 미국장 마감 종가", "note_en": "-200.27 pts · Aug 24 US close"},
+    {"label": "S&P 500", "value": "7,652.86", "delta": "▼0.28%", "dir": "down", "note_ko": "21.51p 하락 · 다우만 나홀로 상승", "note_en": "-21.51 pts · Dow was the lone gainer"},
+    {"label": "KOSPI", "value": "6,696.96", "delta": "▼3.12%", "dir": "down", "note_ko": "8/24 한국장 종가 · 장 열리기 전", "note_en": "Aug 24 Korea close · before the open"},
+    {"label": "VIX", "value": "15.85", "delta": "▲4.76%", "dir": "up", "note_ko": "0.72p 상승 · 반도체 급락에 경계 확대", "note_en": "+0.72 pts · caution rose with the chip selloff"},
+    {"label": "Fear & Greed", "value": "55", "delta": "-", "dir": "flat", "note_ko": "8/24 기준 · 중립 구간 유지", "note_en": "As of Aug 24 · holding in Neutral"},
+    {"label": "US 10Y", "value": "4.74% → 4.70%", "delta": "▼", "dir": "down", "note_ko": "전일 같은 시간대비 하락 · 국채 바이백 재원설", "note_en": "Down from a day earlier · buyback funding chatter"},
+    {"label": "USD/KRW", "value": "1,381.72", "value_sub": "· DXY 98.99", "delta": "▼0.24%", "dir": "down", "note_ko": "3.26원 하락 · 원화 강세", "note_en": "-3.26 · won strengthened"},
+    {"label": "Gold", "value": "$4,712.80", "delta": "▲1.92%", "dir": "up", "note_ko": "안전자산 수요에 급등 · 이란 제재 확대 예고", "note_en": "Jumped on safe-haven demand as Iran sanctions loom"},
+    {"label": "WTI", "value": "$85.06", "delta": "▼2.30%", "dir": "down", "note_ko": "이란 제재 우려에도 하락", "note_en": "Fell despite Iran sanctions risk"},
+    {"label": "Bitcoin", "value": "$78,848", "delta": "▲1.41%", "dir": "up", "note_ko": "위험자산 회복 속 상승", "note_en": "Rose as risk appetite firmed"}
+  ],
+  "market_note_ko": "나스닥·S&P500·VIX·금·WTI·비트코인은 8/24 미국장 마감 기준 · 코스피는 8/24 한국장 종가(장 열리기 전)",
+  "market_note_en": "Nasdaq/S&P/VIX/Gold/WTI/Bitcoin as of the Aug 24 US close · KOSPI is the Aug 24 Korea close (before today's open)",
+
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+
+  "chart_series_values": [26588.49, 26803.03, 26729.16, 26644.91, 26289.71, 26331.09, 26067.17, 26180.46, 25980.19],
+  "chart_series_labels": ["8.12", "8.13", "8.14", "8.17", "8.18", "8.19", "8.20", "8.21", "8.24"],
+  "chart_title": "엔비디아 실적 주간을 앞두고 숨고르기",
+  "chart_sub": "나스닥종합 종가 · 최근 9거래일",
+  "chart_note": "8.13 고점 26,803.03 → 8.20 저점 26,067.17 → 8.24 25,980.19",
+  "record_section": "미국장 기록",
+  "record_kicker": "US MARKET",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": "반도체가 가장 부진했다",
+  "sector_sub": "S&P 500 sector ETFs + SMH · 8/24 close · 8/12 up",
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": "거래대금 상위",
+  "rank_sub": "8/24 US session · % beside each bar",
+  "rank_unit": "단위 · 십억달러",
+  "econ_kicker": "DATA",
+  "econ_title": "실적 · 지표 발표",
+  "econ_sub": "Actual · Est · Prior",
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Scorecard", "color": "#e66767", "type": "stats", "cols": 1,
+      "stats": [
+        {"label_ko": "나스닥", "label_en": "Nasdaq", "value": "25,980.19", "delta": "▼0.76%", "dir": "down", "sub_ko": "200.27포인트 하락 · 반도체·기술주가 끌어내렸다", "sub_en": "Down 200.27 pts · dragged by chips and tech"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,652.86", "delta": "▼0.28%", "dir": "down", "sub_ko": "21.51포인트 하락 · 다우만 홀로 0.26% 상승", "sub_en": "Down 21.51 pts · Dow alone rose 0.26%"}
+      ],
+      "breadth": [
+        {"label_ko": "S&P500 섹터 ETF + SMH 12개", "label_en": "12 sector ETFs (incl. SMH)", "up": 8, "flat": 0, "down": 4},
+        {"label_ko": "거래대금 상위 293종목", "label_en": "293 most-traded", "up": 128, "flat": 5, "down": 160}
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금", "label_en": "Turnover: gainers vs decliners",
+        "unit_ko": "십억달러", "unit_en": " $B",
+        "rows": [
+          {"label_ko": "오른 종목", "label_en": "Gainers", "value": 116.4},
+          {"label_ko": "내린 종목", "label_en": "Decliners", "value": -210.5}
+        ]
+      },
+      "note_ko": "12개 섹터 중 8개가 올랐지만, 거래대금은 하락 종목에 64.4%(2,105억달러)가 몰렸다. 반도체(SMH −2.43%)·기술(XLK −1.78%)의 낙폭이 지수보다 컸던 하루였다.",
+      "note_en": "Eight of 12 sectors rose, but 64.4% of turnover ($210.5B) sat with decliners. Semis (SMH -2.43%) and tech (XLK -1.78%) fell harder than the index itself."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "US Sectors", "color": "#4a9d7f", "type": "bars",
+      "bars": [
+        {"label_ko": "필수소비 (XLP)", "label_en": "Staples (XLP)", "value": 1.70},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": 1.29},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": 1.05},
+        {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm (XLC)", "value": 0.83},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": 0.55},
+        {"label_ko": "임의소비 (XLY)", "label_en": "Cons Disc (XLY)", "value": 0.24},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": 0.07},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health (XLV)", "value": 0.05},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -0.83},
+        {"label_ko": "산업 (XLI)", "label_en": "Industrials (XLI)", "value": -0.69},
+        {"label_ko": "기술 (XLK)", "label_en": "Tech (XLK)", "value": -1.78},
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": -2.43}
+      ],
+      "note_ko": "경기방어주(필수소비·유틸리티)와 금융이 올랐고 반도체·기술이 가장 부진했다. 다우가 앞장선 하루의 구조가 여기에 그대로 있다 — 엔비디아 실적을 앞두고 자금이 방어적으로 움직였다.",
+      "note_en": "Defensives (staples, utilities) and financials led while chips and tech lagged badly. That's the same structure that let the Dow lead — money turned defensive ahead of Nvidia's earnings."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Turnover", "color": "#3987e5", "type": "rank",
+      "rows": [
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$28.02B", "pct": -2.91},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$20.80B", "pct": -6.45},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$13.62B", "pct": -3.83},
+        {"name_ko": "애플", "name_en": "Apple", "value": "$10.67B", "pct": 0.32},
+        {"name_ko": "알파벳", "name_en": "Alphabet", "value": "$9.15B", "pct": 0.94}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중 · 표본 293종목 합산 대비",
+        "label_en": "Top 5 vs the 293-name sample turnover",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 25.2, "color": "#3987e5"},
+          {"label_ko": "나머지 288종목", "label_en": "Other 288", "pct": 74.8, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "거래대금 1위 엔비디아(−2.91%)와 2위 샌디스크(−6.45%)가 표본 293종목 거래대금의 25.2%를 차지했다. 반면 애플·알파벳은 올라 매물이 반도체·메모리에만 집중됐음을 보여준다.",
+      "note_en": "Nvidia (-2.91%) and SanDisk (-6.45%), the two most-traded names, made up 25.2% of the 293-name sample's turnover. Apple and Alphabet rose instead — selling was concentrated in chips and memory."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data", "color": "#5b8dd6", "type": "stats", "cols": 2,
+      "stats": [
+        {"label_ko": "한국 8월 소비자심리지수(CCSI)", "label_en": "Korea Aug Consumer Sentiment Index", "value": "106.8 → 104.5", "delta": "▼", "dir": "down", "sub_ko": "넉 달 만에 하락 · 8/25 06시 발표 · 증시 조정 영향", "sub_en": "First drop in 4 months · released 6 AM KST · hit by the market pullback"},
+        {"label_ko": "미국 7월 시카고연은 전미경제활동지수", "label_en": "US Jul Chicago Fed National Activity Index", "value": "-0.08", "delta": "예상 -0.09 상회", "dir": "up", "sub_ko": "이전 -0.02(수정치 0.06) · 8/24 21:30 발표", "sub_en": "Prior -0.02 (revised to 0.06) · released 9:30 PM KST Aug 24"},
+        {"label_ko": "미 국채 10년-2년 스프레드", "label_en": "US 10Y-2Y Treasury Spread", "value": "50bp → 46bp", "delta": "▼", "dir": "down", "sub_ko": "장단기 금리차 축소 · 국채 바이백 재원설에 장기물 금리 하락", "sub_en": "Curve narrowed as long yields fell on buyback funding chatter"},
+        {"label_ko": "미 국채 30년물", "label_en": "US 30Y Treasury Yield", "value": "5.27% → 5.23%", "delta": "▼", "dir": "down", "sub_ko": "8/21 대비 하락 · 10년물과 같은 방향", "sub_en": "Down from Aug 21 · moved with the 10-year"}
+      ],
+      "note_ko": "한국은 전날 증시 조정 여파로 소비심리가 넉 달 만에 꺾였다. 미국 활동지수는 예상보다 소폭 양호했지만 방향은 여전히 마이너스권이다. 국채금리는 장단기물 모두 낮아졌다.",
+      "note_en": "Korea's sentiment reading cooled for the first time in four months after Monday's market drop. The US activity index beat estimates slightly but stayed negative. Treasury yields eased across the curve."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis", "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "엔비디아, '순환금융' 우려에 급락…애플에 시총 1위 내줘",
+          "headline_en": "Nvidia Slides on 'Circular Financing' Worries, Apple Retakes Top Spot",
+          "body_ko": "오픈AI 데이터센터 임대자금 2,500억달러를 엔비디아가 보증할 수 있다는 보도에 순환금융 우려가 재점화됐다. 애플이 시총 1위를 다시 가져갔다.",
+          "body_en": "A report that Nvidia may backstop $250B of OpenAI's data-center leases revived circular-financing worries. Apple retook the top market-cap spot."
+        },
+        {
+          "headline_ko": "엔비디아 7거래일 연속 하락, 2022년 이후 최장",
+          "headline_en": "Nvidia's 7-Session Losing Streak Is Its Longest Since 2022",
+          "body_ko": "엔비디아는 2.91% 내린 208.48달러로 7거래일 연속 하락 — 2022년 9월 이후 최장이다. 26일 실적 발표를 앞두고 눈높이는 이미 높아졌다.",
+          "body_en": "Nvidia fell 2.91% to $208.48, a 7th straight losing session — the longest since Sept 2022. Expectations are already high before Wednesday earnings."
+        },
+        {
+          "headline_ko": "샌디스크 6.45%↓, 애플의 中 메모리 조달 검토 보도에",
+          "headline_en": "SanDisk Falls 6.45% on Report Apple May Source Chinese Memory",
+          "body_ko": "트럼프 행정부가 애플에 중국 CXMT·YMTC로부터 메모리 조달을 허용하는 방안을 검토 중이라는 보도에 샌디스크가 급락했다.",
+          "body_en": "SanDisk sank on a report the US may let Apple source memory from China's CXMT and YMTC, stoking pricing-pressure fears."
+        },
+        {
+          "headline_ko": "알리바바, 홍콩 사상 최대 14조원 유상증자…버리는 지분 정리",
+          "headline_en": "Alibaba Launches Hong Kong's Biggest-Ever Rights Offering, Burry Exits",
+          "body_ko": "알리바바가 AI 투자를 위해 800억홍콩달러(약 14조원) 유상증자를 발표하며 홍콩 증시에서 8%대 급락했다. 마이클 버리는 반대하며 지분을 정리했다.",
+          "body_en": "Alibaba announced an HK$80B (about ₩14T) rights offering for AI; shares sank about 8% in Hong Kong. Michael Burry opposed the raise and exited."
+        },
+        {
+          "headline_ko": "텍사스 주지사 \"AI 데이터센터, 반발 자초했다\" 직격",
+          "headline_en": "Texas Governor: AI Data Centers 'Brought the Backlash on Themselves'",
+          "body_ko": "애벗 텍사스 주지사가 주말 인터뷰에서 AI 데이터센터가 지역사회 지지를 못 얻어 반발을 자초했다고 비판했다.",
+          "body_en": "Texas Governor Abbott said in a weekend interview that AI data centers brought the backlash on themselves by failing to win local support."
+        },
+        {
+          "headline_ko": "반도체 ETF(SMH) 2.43%↓, 12개 섹터 중 최대 낙폭",
+          "headline_en": "Semiconductor ETF SMH Falls 2.43%, Worst of 12 Sectors",
+          "body_ko": "반도체 ETF SMH가 2.43% 내려 12개 섹터 중 최대 낙폭을 기록했다. 기술(XLK)도 1.78% 내려 두 번째로 부진했다.",
+          "body_en": "The SMH semiconductor ETF fell 2.43%, worst of 12 sectors tracked. Tech (XLK) was second-worst, down 1.78%."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories", "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "현대차 노사, 111일 만에 임금협상 잠정합의…전면파업 사태 일단락",
+          "headline_en": "Hyundai Motor Reaches Tentative Wage Deal After 111 Days, Averting Strike Escalation",
+          "body_ko": "현대차 노사가 임금협상 잠정합의안을 마련했다. 기본급 10만원 인상·성과금 400%+1,270만원 등 총액 3,480만원 규모로, 31일 찬반투표를 거친다.",
+          "body_en": "Hyundai Motor and its union reached a tentative wage deal: a ₩100K base-pay hike and a 400%+₩12.7M bonus, about ₩34.8M total. Members ratify on Aug 31."
+        },
+        {
+          "headline_ko": "베선트 재무장관, 이란 제재 확대 예고…국채 바이백 질문엔 말 아껴",
+          "headline_en": "Bessent Flags Expanded Iran Sanctions, Dodges Buyback Question",
+          "body_ko": "베선트 재무장관이 이란과 거래하는 국가까지 제재 대상에 포함될 수 있다고 경고했다. 국채 바이백 재원으로 TGA 계좌를 쓸 수 있다는 보도 이후 금리는 하락했다.",
+          "body_en": "Treasury Secretary Bessent warned sanctions could extend to countries trading with Iran. Yields fell on a report Treasury may tap its TGA to fund buybacks."
+        },
+        {
+          "headline_ko": "트럼프, 캐나다산 자동차·철강 관세 50%로 인상 예고",
+          "headline_en": "Trump Announces 50% Tariffs on Canadian Autos and Steel",
+          "body_ko": "트럼프 대통령이 2027년 1월 1일부터 캐나다산 자동차·부품·철강 관세를 50%로 올리겠다고 발표했다. 무역협상 결렬에 따른 조치다.",
+          "body_en": "President Trump announced 50% tariffs on Canadian cars, parts and steel effective Jan 1, 2027, after trade talks with Canada collapsed."
+        },
+        {
+          "headline_ko": "정부, 내년 '800조+α' 슈퍼예산…반도체 호황에 국세수입 600조 넘본다",
+          "headline_en": "Korea Plans Record ₩800T+ Budget as Chip Boom Lifts Tax Revenue Above ₩600T",
+          "body_ko": "정부가 역대 최대인 800조원대 내년도 예산안을 편성할 전망이다. 반도체 호황에 따른 법인세 증가로 국세수입도 600조원을 넘어설 것으로 보인다.",
+          "body_en": "Korea plans a record budget of over ₩800 trillion for next year. Chip-boom corporate taxes are set to push revenue above ₩600 trillion."
+        },
+        {
+          "headline_ko": "한은 8월 소비자심리지수 104.5, 넉 달 만에 하락",
+          "headline_en": "Korea's Consumer Sentiment Index Falls to 104.5, First Drop in 4 Months",
+          "body_ko": "한은 8월 소비자심리지수(CCSI)가 104.5로 전월보다 2.3포인트 내렸다. 넉 달 만의 하락으로, 전날 증시 조정이 심리를 눌렀다는 분석이다.",
+          "body_en": "The Bank of Korea's August Consumer Sentiment Index fell 2.3 points to 104.5, its first drop in four months, after Monday's market pullback."
+        }
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": "KST · yellow dot = high-impact",
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "21:15", "title_ko": "美 ADP 주간 고용변화", "title_en": "US ADP Weekly Employment Change", "detail_ko": "주간 지표로 노동시장 온도 확인", "detail_en": "Weekly read on the labor market", "importance": "mid"},
+    {"time": "22:00", "title_ko": "美 6월 주택가격지수", "title_en": "US Jun Housing Price Index", "detail_ko": "S&P/케이스실러와 함께 발표", "detail_en": "Released alongside S&P/Case-Shiller", "importance": "mid"},
+    {"time": "23:00", "title_ko": "美 8월 컨퍼런스보드 소비자신뢰지수", "title_en": "US Aug Conference Board Consumer Confidence", "detail_ko": "예상치 대비 체감 경기 확인", "detail_en": "Gauges consumer mood vs. forecast", "importance": "high"},
+    {"time": "23:00", "title_ko": "美 7월 신규주택판매", "title_en": "US Jul New Home Sales", "detail_ko": "금리 부담 속 주택 수요 점검", "detail_en": "Housing demand under rate pressure", "importance": "high"},
+    {"time": "8/26 (수)", "title_ko": "엔비디아 2분기 실적", "title_en": "Nvidia Q2 Earnings", "detail_ko": "EPS 컨센서스 $2.09 · 반도체 방향 가른다", "detail_en": "EPS consensus $2.09 · sets the tone for chips", "importance": "high"},
+    {"time": "8/27 (목)", "title_ko": "한국은행 금융통화위원회", "title_en": "Bank of Korea Rate Decision", "detail_ko": "기준금리 결정 · 시장 컨센서스 25bp 인상", "detail_en": "Consensus points to a 25bp hike", "importance": "high"},
+    {"time": "8/28 (금)", "title_ko": "잭슨홀 · 케빈 워시 연준 의장 기조연설", "title_en": "Jackson Hole · Fed Chair Warsh Keynote", "detail_ko": "연내 통화정책 경로를 가늠할 발언", "detail_en": "A read on the Fed's rate path for the rest of the year", "importance": "high"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "caption_ko": "📊 luckyon 브리핑 · 2026.8.25(화) 아침\n\n나스닥이 0.76% 내렸습니다. 반도체 ETF(SMH)가 2.43% 빠지며 12개 섹터 중 가장 부진했고, 엔비디아는 순환금융 우려 속에 7거래일 연속 하락(2022년 9월 이후 최장)했습니다. 다우만 금융주 강세에 힘입어 0.26% 올랐습니다.\n\n샌디스크는 애플의 중국산 메모리 조달 검토 보도에 6.45% 급락했고, 알리바바는 14조원 유상증자 발표로 홍콩 증시에서 8%대 내렸습니다.\n\n국내에서는 현대차 노사가 111일 만에 임금협상 잠정합의를 이루며 전면파업 우려를 덜었습니다.\n\n이번 주 수요일 엔비디아 실적, 목요일 한국은행 금통위, 금요일 잭슨홀 연설이 줄줄이 대기 중입니다.\n\n#미국증시 #나스닥 #엔비디아 #반도체 #샌디스크 #현대차 #한국은행 #잭슨홀 #투자 #luckyon",
+  "caption_en": "📊 luckyon Briefing · Tue, Aug 25, 2026 · AM\n\nThe Nasdaq fell 0.76% as the SMH semiconductor ETF dropped 2.43%, worst of 12 sectors. Nvidia fell for a 7th straight session — its longest losing streak since Sept 2022 — on renewed circular-financing worries, while the Dow alone rose 0.26% on financials.\n\nSanDisk sank 6.45% on a report Apple may source memory from Chinese suppliers, and Alibaba fell about 8% in Hong Kong after a ₩14T rights offering.\n\nIn Korea, Hyundai Motor's union and management reached a tentative wage deal after 111 days, easing fears of an extended strike.\n\nNvidia earnings Wednesday, a Bank of Korea rate decision Thursday, and the Jackson Hole keynote Friday are all ahead this week.\n\n#USMarkets #Nasdaq #Nvidia #Semiconductors #SanDisk #HyundaiMotor #BankOfKorea #JacksonHole #investing #luckyon",
+
+  "sources": ["Yahoo Finance", "FMP", "FINRA (일별 공매도 거래량)", "FXStreet 경제캘린더", "OpenDART", "SAVE 마감 리포트", "연합뉴스", "SBS", "CBS News", "CNBC"],
+
+  "card_photos": {
+    "1": "A dim trading floor at dusk, red down-arrow chart lines glowing on a wall of screens, silhouettes of traders watching, cool blue and amber light mixing, shallow depth of field.",
+    "3": "A close-up of a curved monitor showing a falling stock chart line in red, semiconductor wafer reflected faintly in the glass, dark moody lighting, soft bokeh."
+  }
+}
