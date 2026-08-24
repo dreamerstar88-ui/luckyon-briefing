@@ -398,7 +398,8 @@ start.indexes[].close / .wk (숫자)   start.metrics[].value   start.metrics[].d
 korea/weekend/ai/watch .items[].src
 ```
 
-- **평일 `cover_kicker`·`cover_facts`·`tile_lead`·`main_tile_note`·`sector_sub`·`rank_sub`·`econ_sub`·`schedule_sub` 는 `_ko`/`_en` 쌍을 받지 않는다.** `render-cards-day.mjs` 가 이 필드들을 `t()` 언어분기 없이 그대로 찍는다 — 즉 한 필드값이 두 언어 카드에 똑같이 나간다. 2026-08-24 am 세션에서 `cover_facts` 상세문구에 한국어 문장을 그대로 넣었다가 영어 카드에 그 문장이 그대로 노출되는 사고가 있었다(검증 단계에서 발견해 발행 전 고쳤다). 이 필드들을 쓸 때는 처음부터 숫자·티커·영문 약어 등 두 언어 모두에서 자연스러운 중립 표기로 쓰거나, 아예 비워 둔다(전부 선택 필드라 비워도 카드는 정상 렌더된다).
+- **평일 `tile_lead`·`main_tile_note`·`sector_sub`·`rank_sub`·`econ_sub`·`schedule_sub` 는 `_ko`/`_en` 쌍을 받지 않는다.** `render-cards-day.mjs` 가 이 필드들을 `t()` 언어분기 없이 그대로 찍는다 — 즉 한 필드값이 두 언어 카드에 똑같이 나간다. 2026-08-24 am 세션에서 `cover_facts` 상세문구에 한국어 문장을 그대로 넣었다가 영어 카드에 그 문장이 그대로 노출되는 사고가 있었다(검증 단계에서 발견해 발행 전 고쳤다). 이 필드들을 쓸 때는 처음부터 숫자·티커·영문 약어 등 두 언어 모두에서 자연스러운 중립 표기로 쓰거나, 아예 비워 둔다(전부 선택 필드라 비워도 카드는 정상 렌더된다).
+- **`cover_kicker`·`cover_facts`·`sections[].stats[].delta`·`markets[].delta` 는 2026-08-25 부터 `{ko,en}` 객체를 받을 수 있다.** 문자열을 넣으면 예전처럼 invariant(양쪽 카드에 그대로)로 나가고, `{"ko":"...","en":"..."}` 객체를 넣으면 그 자리만 `t()`(렌더러 안에서는 `tf()`)로 번역된다 — 숫자·티커처럼 중립적인 조각은 문자열로 두고 서술형 문장은 객체로 감싼다. 같은 세션에서 **두 자리가 동시에 이 사고를 냈다**: ① 표지 `cover_facts` 상세문구를 통째로 영어 문자열(invariant)로 써서 한국어 카드 하단 3줄이 전부 영어로 나갔고(2026-08-24 pm 의 관행을 그대로 따라간 것 — 그 세션도 같은 문제가 있었으나 지적되지 않았을 뿐이었다), ② 카드6 `stats[].delta`에 `"예상 -0.09 상회"`(한국어 문장)를 그대로 넣어 영어 카드에도 한글이 그대로 노출됐다 — `delta`가 invariant 목록에 있다는 걸 알면서도 예전 예시(`content/example-am.json`)의 `"delta":"예상 54.0 상회"` 패턴을 그대로 베낀 게 원인이었다. `cover_kicker` 예: `{"ko":"간밤 미국장 · 8/24 마감","en":"US Overnight · 8/24 Close"}`. `cover_facts` 한 항목 예: `["chip", {"ko":"나스닥 -0.76% · S&P 500 -0.28%","en":"Nasdaq -0.76% · S&P 500 -0.28%"}, {"ko":"25,980.19 / 7,652.86 · 반도체가 끌어내렸다","en":"25,980.19 / 7,652.86 pts · chips led the drop"}]`. `stats[].delta` 예: `{"ko":"예상 -0.09 상회","en":"Beat est. -0.09"}`. **`sections[].stats[].value`·`sections[].rows[].value`는 여전히 순수 invariant다** — 애초에 숫자만 들어가야 하는 자리라 이 탈출구가 필요 없다.
 - **토요일의 `calendar[].rows[].est` / `.act` 는 `_ko`/`_en` 쌍도 받는다.** `18.1억`·`7.0만` 처럼
   단위가 한글인 값이 실제로 영어 카드에 그대로 새어 나간 적이 있다. 숫자만 있는 값(`0.34`, `4.1%`)은
   단일 필드로 두고, **한글 단위가 붙는 값에만 `est_ko`/`est_en` 쌍을 쓴다.** 쌍이 있으면 그쪽이 이긴다.
@@ -435,10 +436,11 @@ korea/weekend/ai/watch .items[].src
   // ── 1 표지 ────────────────────────────────────────────────
   "headline_ko","headline_en",                 // 한 줄. 40자 넘으면 두 줄로 접힌다
   "headline_sub_ko","headline_sub_en",
-  "cover_kicker":"간밤 미국장 · 8/21 마감",     // 사진 위 작은 글씨
+  "cover_kicker":{"ko":"간밤 미국장 · 8/21 마감","en":"US Overnight · Aug 21 Close"},  // 사진 위 작은 글씨. 문자열이면 invariant, {ko,en} 이면 번역(§4)
   "cover_facts":[                              // 3줄 고정. 아이콘 이름은 아래 목록에서
-    ["shield","다우 +0.98% · S&P 500 +0.43%","53,277.01 / 7,674.37 · 3대 지수 모두 상승"]
-  ],
+    ["shield", {"ko":"다우 +0.98% · S&P 500 +0.43%","en":"Dow +0.98% · S&P 500 +0.43%"},
+               {"ko":"53,277.01 / 7,674.37 · 3대 지수 모두 상승","en":"53,277.01 / 7,674.37 · all three indexes rose"}]
+  ],                                           // 각 문자열 자리도 순수 숫자·티커뿐이면 문자열(invariant)로 둬도 된다
   // 아이콘: shield · bond · chip · rate · ai · globe · clock · target
 
   // ── 2 시장 한눈에 ─────────────────────────────────────────

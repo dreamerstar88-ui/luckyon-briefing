@@ -30,6 +30,10 @@ const outDir = path.join(root, 'cards', date, session, lang);
 fs.mkdirSync(outDir, { recursive: true });
 
 const t = (ko, en) => (lang === 'ko' ? ko : en);
+// 언어무관(invariant) 필드 자리에 {ko,en} 객체를 넣으면 번역, 문자열이면 그대로(invariant) —
+// cover_kicker/cover_facts 와 같은 이유(§4). "예상 X 상회" 같은 문장형 delta 가 stats 에도
+// 새어 들어간 적이 있어(2026-08-25) stats[].delta 에도 같은 탈출구를 둔다.
+const tf = v => (v && typeof v === 'object') ? t(v.ko, v.en) : v;
 const DATE_LABEL = t(C.dateLabel_ko, C.dateLabel_en);
 const TOTAL = 10;
 
@@ -113,12 +117,15 @@ function card1() {
   const ph = Math.round(H * 0.50);
   const cover = coverSrc();
 
+  // cover_kicker·cover_facts 도 tf() 로 {ko,en} 객체를 받는다(§4) — 2026-08-25
+  // 사용자 피드백(한국어 카드 표지 하단이 통째로 영어로 나감)으로 추가했다.
+  const kickerTxt = tf(C.cover_kicker);
   const facts = (C.cover_facts || []).map(([icon, a, b]) => `
     <div style="display:flex; align-items:flex-start; gap:26px; margin-bottom:30px;">
       ${(ICONS[icon] || ICONS.chip)(42, PAL.accent)}
       <div style="flex:1; min-width:0;">
-        <div style="font-size:25px; font-weight:700; color:${PAL.text}; line-height:1.3;">${esc(a)}</div>
-        <div style="font-size:18px; color:${PAL.dim}; margin-top:8px; line-height:1.45;">${esc(b)}</div>
+        <div style="font-size:25px; font-weight:700; color:${PAL.text}; line-height:1.3;">${esc(tf(a))}</div>
+        <div style="font-size:18px; color:${PAL.dim}; margin-top:8px; line-height:1.45;">${esc(tf(b))}</div>
       </div>
     </div>`).join('');
 
@@ -128,7 +135,7 @@ function card1() {
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(9,10,12,0.29) 0%, rgba(9,10,12,0.62) 55%, ${PAL.bg} 100%);"></div>
   </div>
   ${header()}
-  <div style="position:absolute; left:${M}px; top:${ph - 70}px; font-size:15px; font-weight:700; color:${PAL.accent}; letter-spacing:0.18em; z-index:2;">${esc(C.cover_kicker || '')}</div>
+  <div style="position:absolute; left:${M}px; top:${ph - 70}px; font-size:15px; font-weight:700; color:${PAL.accent}; letter-spacing:0.18em; z-index:2;">${esc(kickerTxt || '')}</div>
   <div style="position:absolute; left:${M}px; right:${M}px; top:${ph + 40}px; z-index:2;">
     <div style="font-size:50px; font-weight:900; line-height:1.24; letter-spacing:-0.025em; color:${PAL.text};">${esc(t(C.headline_ko, C.headline_en))}</div>
     <div style="font-size:21px; color:${PAL.dim}; line-height:1.5; margin-top:20px;">${esc(t(C.headline_sub_ko, C.headline_sub_en))}</div>
@@ -162,10 +169,10 @@ function card2() {
     return `
     <div style="position:absolute; left:0; top:${i * (sh + gap)}px; width:${sw}px; height:${sh}px;
                 background:${PAL.tile}; border-radius:16px; padding:22px 24px;">
-      <div style="font-size:14px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
-      <div style="font-size:30px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
-      <div style="font-size:19px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:12px;">${esc(mm.delta)}</div>
-      <div style="font-size:13px; color:${PAL.faint}; margin-top:12px; line-height:1.45;">${esc(t(mm.note_ko, mm.note_en))}</div>
+      <div style="font-size:16px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
+      <div style="font-size:32px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
+      <div style="font-size:20px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:11px;">${esc(tf(mm.delta))}</div>
+      <div style="font-size:15px; color:${PAL.faint}; margin-top:11px; line-height:1.4;">${esc(t(mm.note_ko, mm.note_en))}</div>
     </div>`;
   }).join('');
 
@@ -174,10 +181,10 @@ function card2() {
     return `
     <div style="position:absolute; left:${M + i * (u + gap)}px; top:${y}px; width:${u}px; height:${h2}px;
                 background:${PAL.tile}; border-radius:14px; padding:20px 21px; z-index:2;">
-      <div style="font-size:13px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
-      <div style="font-size:${cols === 4 ? 23 : 26}px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
-      <div style="font-size:${cols === 4 ? 17 : 18}px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:10px;">${esc(mm.delta)}</div>
-      <div style="font-size:${cols === 4 ? 12 : 13}px; color:${PAL.faint}; margin-top:12px; line-height:1.45;">${esc(t(mm.note_ko, mm.note_en))}</div>
+      <div style="font-size:${cols === 4 ? 14 : 15}px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
+      <div style="font-size:${cols === 4 ? 25 : 28}px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
+      <div style="font-size:${cols === 4 ? 18 : 19}px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:9px;">${esc(tf(mm.delta))}</div>
+      <div style="font-size:${cols === 4 ? 14 : 15}px; color:${PAL.faint}; margin-top:10px; line-height:1.4;">${esc(t(mm.note_ko, mm.note_en))}</div>
     </div>`;
   };
 
@@ -189,10 +196,10 @@ function card2() {
   ${subline(226, C.tile_lead)}
   <div style="position:absolute; left:${M}px; top:${gy}px; width:${bw}px; height:${bh}px;
               background:${PAL.tile}; border-radius:20px; z-index:2;">
-    <div style="position:absolute; left:28px; top:26px; font-size:16px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(main)}</div>
+    <div style="position:absolute; left:28px; top:26px; font-size:17px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(main)}</div>
     <div style="position:absolute; left:28px; top:56px; font-size:50px; font-weight:900; color:${PAL.text};">${esc(m.value)}</div>
-    <div style="position:absolute; left:28px; top:126px; font-size:26px; font-weight:800; color:${dirColor(m.dir)};">${esc(m.delta)}</div>
-    <div style="position:absolute; left:28px; top:170px; font-size:16px; color:${PAL.dim};">${esc(C.main_tile_note || '')}</div>
+    <div style="position:absolute; left:28px; top:126px; font-size:26px; font-weight:800; color:${dirColor(m.dir)};">${esc(tf(m.delta))}</div>
+    <div style="position:absolute; left:28px; top:170px; font-size:17px; color:${PAL.dim};">${esc(C.main_tile_note || '')}</div>
     ${chart}
   </div>
   <div style="position:absolute; left:${M + bw + gap}px; top:${gy}px; width:${sw}px; height:${bh}px; z-index:2;">${sideTiles}</div>
@@ -215,7 +222,7 @@ function card3() {
       <div style="font-size:17px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(t(st.label_ko, st.label_en))}</div>
       <div style="display:flex; align-items:baseline; gap:18px; margin-top:12px;">
         <span style="font-size:44px; font-weight:900; color:${PAL.text};">${esc(st.value)}</span>
-        <span style="font-size:24px; font-weight:800; color:${dirColor(st.dir)};">${esc(st.delta)}</span>
+        <span style="font-size:24px; font-weight:800; color:${dirColor(st.dir)};">${esc(tf(st.delta))}</span>
       </div>
       <div style="font-size:15px; color:${PAL.faint}; margin-top:16px; line-height:1.5;">${esc(t(st.sub_ko, st.sub_en))}</div>
     </div>`).join('');
@@ -346,16 +353,20 @@ function card6() {
   // 8개(4행)까지 채운다. 6개(3행)일 때보다 타일을 낮추고 글자를 줄여 4행이 각주와
   // 안 겹치는 걸 실측으로 확인했다 — 빈칸보다 촘촘한 8개가 낫다는 판단(2026-08-23).
   const st = (s.stats || []).slice(0, 8);
-  const gap = 16, u = (W - M * 2 - gap) / 2, h = 190, y0 = 296;
+  // 4개(2행) 이하인 날은 남는 세로 공간을 타일을 키우는 데 쓴다 — 8개(4행) 꽉 찬 날의
+  // 촘촘한 크기를 그대로 쓰면 글자가 불필요하게 작아 보인다(2026-08-25 사용자 피드백).
+  const roomy = st.length <= 4;
+  const gap = roomy ? 20 : 16, u = (W - M * 2 - gap) / 2, h = roomy ? 300 : 190, y0 = 296;
+  const fLabel = roomy ? 18 : 14, fValue = roomy ? 38 : 30, fDelta = roomy ? 20 : 16, fSub = roomy ? 16 : 12;
   const tiles = st.map((x, i) => {
     const r = Math.floor(i / 2), c = i % 2;
     return `
     <div style="position:absolute; left:${M + c * (u + gap)}px; top:${y0 + r * (h + gap)}px; width:${u}px; height:${h}px;
-                background:${PAL.tile}; border-radius:16px; padding:16px 18px; z-index:2;">
-      <div style="font-size:14px; font-weight:700; color:${PAL.dim}; line-height:1.3;">${esc(t(x.label_ko, x.label_en))}</div>
-      <div style="font-size:30px; font-weight:900; color:${PAL.text}; margin-top:10px;">${esc(x.value)}</div>
-      <div style="font-size:16px; font-weight:800; color:${dirColor(x.dir)}; margin-top:8px;">${esc(x.delta || '')}</div>
-      <div style="font-size:12px; color:${PAL.faint}; margin-top:9px; line-height:1.4;">${esc(t(x.sub_ko, x.sub_en))}</div>
+                background:${PAL.tile}; border-radius:16px; padding:${roomy ? '22px 24px' : '16px 18px'}; z-index:2;">
+      <div style="font-size:${fLabel}px; font-weight:700; color:${PAL.dim}; line-height:1.3;">${esc(t(x.label_ko, x.label_en))}</div>
+      <div style="font-size:${fValue}px; font-weight:900; color:${PAL.text}; margin-top:10px;">${esc(x.value)}</div>
+      <div style="font-size:${fDelta}px; font-weight:800; color:${dirColor(x.dir)}; margin-top:8px;">${esc(tf(x.delta) || '')}</div>
+      <div style="font-size:${fSub}px; color:${PAL.faint}; margin-top:9px; line-height:1.4;">${esc(t(x.sub_ko, x.sub_en))}</div>
     </div>`;
   }).join('');
   return `
