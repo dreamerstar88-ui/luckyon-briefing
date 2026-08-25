@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-08-25T11:38:25Z",
+  "fetchedAt": "2026-08-25T22:47:55Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-23T11:38:25Z",
-    "to": "2026-09-08T11:38:25Z"
+    "from": "2026-08-23T22:47:55Z",
+    "to": "2026-09-08T22:47:55Z"
   },
   "events": [
     {
@@ -143,7 +143,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 9.5,
-      "actual": null,
+      "actual": 11.75,
       "unit": null
     },
     {
@@ -153,7 +153,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 7.6,
-      "actual": null,
+      "actual": 9.1,
       "unit": "%"
     },
     {
@@ -163,7 +163,7 @@
       "impact": "MEDIUM",
       "consensus": 0.2,
       "previous": 0.3,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -173,7 +173,7 @@
       "impact": "LOW",
       "consensus": 1.7,
       "previous": 1.6,
-      "actual": null,
+      "actual": 2.1,
       "unit": "%"
     },
     {
@@ -193,7 +193,7 @@
       "impact": "LOW",
       "consensus": 0.62,
       "previous": 0.628,
-      "actual": null,
+      "actual": 0.607,
       "unit": null
     },
     {
@@ -203,7 +203,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 1.6,
-      "actual": null,
+      "actual": -10.5,
       "unit": "%"
     },
     {
@@ -213,7 +213,7 @@
       "impact": "LOW",
       "consensus": 7,
       "previous": 5,
-      "actual": null,
+      "actual": 4,
       "unit": null
     },
     {
@@ -223,7 +223,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.315,
-      "actual": null,
+      "actual": 4.204,
       "unit": "%"
     },
     {
@@ -243,7 +243,7 @@
       "impact": "LOW",
       "consensus": 1.9,
       "previous": -0.328,
-      "actual": null,
+      "actual": 4.2,
       "unit": null
     },
     {
@@ -253,7 +253,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 82,
-      "actual": null,
+      "actual": 81,
       "unit": null
     },
     {
@@ -521,7 +521,7 @@
       "country": "DE",
       "name": "GfK Consumer Confidence Survey",
       "impact": "MEDIUM",
-      "consensus": -29.5,
+      "consensus": -29.6,
       "previous": -29.6,
       "actual": null,
       "unit": null
@@ -541,7 +541,7 @@
       "country": "EMU",
       "name": "M3 Money Supply (YoY)",
       "impact": "LOW",
-      "consensus": 3.3,
+      "consensus": 3.4,
       "previous": 3.3,
       "actual": null,
       "unit": "%"
@@ -691,7 +691,7 @@
       "country": "JP",
       "name": "Tokyo CPI ex Fresh Food (YoY)",
       "impact": "MEDIUM",
-      "consensus": 1.8,
+      "consensus": 1.7,
       "previous": 1.9,
       "actual": null,
       "unit": "%"
@@ -741,7 +741,7 @@
       "country": "DE",
       "name": "Unemployment Change",
       "impact": "MEDIUM",
-      "consensus": 8,
+      "consensus": 5,
       "previous": 6,
       "actual": null,
       "unit": null
@@ -791,7 +791,7 @@
       "country": "EMU",
       "name": "Industrial Confidence",
       "impact": "LOW",
-      "consensus": -5.8,
+      "consensus": -5.2,
       "previous": -6.1,
       "actual": null,
       "unit": null
@@ -801,7 +801,7 @@
       "country": "EMU",
       "name": "Services Sentiment",
       "impact": "LOW",
-      "consensus": 5,
+      "consensus": 4.9,
       "previous": 4.7,
       "actual": null,
       "unit": null
@@ -1442,7 +1442,7 @@
       "name": "Redbook Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 9.1,
       "actual": null,
       "unit": "%"
     },
@@ -1552,7 +1552,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.2,
       "actual": null,
       "unit": null
     },
@@ -2453,6 +2453,76 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 99.8,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-08T12:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change 4-week average",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 11.75,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-08T12:55:00Z",
+      "country": "US",
+      "name": "Redbook Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-08T15:30:00Z",
+      "country": "US",
+      "name": "3-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-08T15:30:00Z",
+      "country": "US",
+      "name": "6-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-08T17:00:00Z",
+      "country": "US",
+      "name": "3-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.291,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-08T19:00:00Z",
+      "country": "US",
+      "name": "Consumer Credit Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 14.17,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-09-08T20:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     }
