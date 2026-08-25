@@ -1,0 +1,232 @@
+{
+  "date": "2026-08-26",
+  "session": "am",
+  "dateLabel_ko": "2026.8.26(수) 아침",
+  "dateLabel_en": "Wed, Aug 26, 2026 · AM",
+
+  "headline_ko": "호르무즈 긴장완화에 유가 급락…반도체 반등에 나스닥 0.66%↑",
+  "headline_sub_ko": "다우 +0.30% · S&P500 +0.32% 3대 지수 동반 상승 · 엔비디아 8거래일만에 반등, 오늘 밤 실적 발표",
+  "headline_en": "Nasdaq Rises 0.66% as Oil Slides on Hormuz De-escalation, Chips Rebound",
+  "headline_sub_en": "Dow +0.30%, S&P 500 +0.32% — all three indexes gained; Nvidia snaps 7-session slide ahead of tonight's earnings",
+
+  "cover_kicker": {"ko": "간밤 미국장 · 8/25 마감", "en": "US Overnight · Aug 25 Close"},
+  "cover_facts": [
+    ["shield",
+      {"ko": "나스닥 +0.66% · S&P500 +0.32% · 다우 +0.30%", "en": "Nasdaq +0.66% · S&P 500 +0.32% · Dow +0.30%"},
+      {"ko": "26,151.30 / 7,677.28 · 3대 지수 모두 상승", "en": "26,151.30 / 7,677.28 pts · all three indexes rose"}],
+    ["globe",
+      {"ko": "WTI 4.6%↓ · 국제유가 2주만에 최저", "en": "WTI fell 4.6%, a 2-week low"},
+      {"ko": "트럼프 \"호르무즈 기뢰 제거\" 발표에 안도 랠리", "en": "Trump says Hormuz mines cleared; markets relieved"}],
+    ["chip",
+      {"ko": "엔비디아 8거래일만에 반등 · +2.19%", "en": "Nvidia snaps 7-session slide, +2.19%"},
+      {"ko": "AMD +4.91%(투자의견 상향) · 오늘 밤 실적 발표", "en": "AMD +4.91% on upgrade · earnings due tonight"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥이 0.66%, S&P 500이 0.32%, 다우가 0.30% 오르며 3대 지수가 모두 상승 마감했다.",
+      "트럼프 대통령이 호르무즈 해협 기뢰를 모두 제거했다고 밝혔고 이란·오만은 임시 공동 항로 개설에 합의했다(러시아 매체가 보도한 미·이란 '휴전'은 이란 정부가 부인). 긴장완화 기대에 WTI가 4.6% 급락했고 국채금리도 함께 내리며 위험자산 선호가 살아났다.",
+      "거래대금 상위 283종목 중 184개가 올라 하락 96개를 웃돌았다. 금액 기준으로도 상승 종목에 1,833억달러가 몰려 하락 종목(1,035억달러)의 1.8배에 달해, 전날과 정반대로 자금이 오른 쪽에 쏠렸다.",
+      "다만 소비 관련주는 부진했다 — 딕스스포팅굿즈가 연간 전망 하향에 31% 급락하며 나이키·언더아머를 끌어내렸고, 8월 소비자신뢰지수도 예상을 밑돌았다."
+    ],
+    "lines_en": [
+      "The Nasdaq rose 0.66%, the S&P 500 0.32% and the Dow 0.30% — all three indexes closed higher.",
+      "President Trump said the US Navy cleared all mines from the Strait of Hormuz, and Iran and Oman agreed to open a temporary joint shipping route (Iran's government denied a separate Russian-media report of a broader US-Iran 'truce'). De-escalation hopes sent WTI crude down 4.6% and eased Treasury yields, reviving risk appetite.",
+      "Among the 283 most-traded names, 184 rose against 96 decliners. By value, $183.3B flowed into gainers versus $103.5B into decliners — 1.8 times as much, a reversal from the day before.",
+      "Consumer names lagged, though — Dick's Sporting Goods sank 31% after cutting its annual outlook, dragging Nike and Under Armour down with it, while August consumer confidence also missed estimates."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,151.30", "delta": "▲0.66%", "dir": "up", "note_ko": "171.11p 상승 · 8/25 미국장 마감 종가", "note_en": "+171.11 pts · Aug 25 US close"},
+    {"label": "S&P 500", "value": "7,677.28", "delta": "▲0.32%", "dir": "up", "note_ko": "24.42p 상승 · 다우도 0.30% 동반 상승", "note_en": "+24.42 pts · Dow also rose 0.30%"},
+    {"label": "KOSPI", "value": "6,742.74", "delta": "▲0.68%", "dir": "up", "note_ko": "8/25 한국장 종가 · 장 열리기 전", "note_en": "Aug 25 Korea close · before today's open"},
+    {"label": "VIX", "value": "15.45", "delta": "▼2.52%", "dir": "down", "note_ko": "0.40p 하락 · 위험선호 회복", "note_en": "-0.40 pts · risk appetite recovered"},
+    {"label": "Fear & Greed", "value": "55", "delta": "-", "dir": "flat", "note_ko": "8/25 기준 · 중립~탐욕 구간 유지", "note_en": "As of Aug 25 · holding in Neutral-Greed"},
+    {"label": "US 10Y", "value": "4.70% → 4.64%", "delta": "▼", "dir": "down", "note_ko": "전일 대비 하락 · 유가 급락에 인플레 우려 완화", "note_en": "Down from a day earlier as the oil plunge eased inflation worries"},
+    {"label": "USD/KRW", "value": "1,381.77", "value_sub": "· DXY 98.91", "delta": "▼0.23%", "dir": "down", "note_ko": "3.21원 하락 · 원화 강세", "note_en": "-3.21 · won strengthened"},
+    {"label": "Gold", "value": "$4,717.80", "delta": "▲1.66%", "dir": "up", "note_ko": "디베이스먼트 트레이드 지속에 추가 상승", "note_en": "Extended gains on the ongoing 'debasement trade'"},
+    {"label": "WTI", "value": "$81.11", "delta": "▼4.59%", "dir": "down", "note_ko": "美-이란 호르무즈 긴장완화 보도에 2주만에 최저", "note_en": "Fell to a 2-week low on US-Iran Hormuz de-escalation reports"},
+    {"label": "Bitcoin", "value": "$78,875", "delta": "▼0.11%", "dir": "down", "note_ko": "8만1천달러 터치 후 숨고르기", "note_en": "Eased after touching $81K"}
+  ],
+  "market_note_ko": "나스닥·S&P500·VIX·금·WTI·비트코인은 8/25 미국장 마감 기준 · 코스피는 8/25 한국장 종가(장 열리기 전)",
+  "market_note_en": "Nasdaq/S&P/VIX/Gold/WTI/Bitcoin as of the Aug 25 US close · KOSPI is the Aug 25 Korea close (before today's open)",
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+
+  "chart_series_values": [26803.03, 26729.16, 26644.91, 26289.71, 26331.09, 26067.17, 26180.46, 25980.19, 26151.30],
+  "chart_series_labels": ["8.13", "8.14", "8.17", "8.18", "8.19", "8.20", "8.21", "8.24", "8.25"],
+  "chart_title": "26,151.30 ▲0.66%",
+  "chart_sub": "NASDAQ COMPOSITE · 9D",
+  "chart_note": "8.13 HI 26,803.03 → 8.24 LO 25,980.19 → 8.25 26,151.30",
+  "record_section": "미국장 기록",
+  "record_kicker": "US MARKET",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": "반도체·기술이 이끈 반등",
+  "sector_sub": "S&P 500 sector ETFs + SMH · 8/25 close · 7 up",
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": "거래대금 상위",
+  "rank_sub": "8/25 US session · % beside each bar",
+  "rank_unit": "단위 · 십억달러",
+  "econ_kicker": "DATA",
+  "econ_title": "실적 · 지표 발표",
+  "econ_sub": "Actual · Est · Prior",
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Scorecard", "color": "#e66767", "type": "stats", "cols": 1,
+      "stats": [
+        {"label_ko": "나스닥", "label_en": "Nasdaq", "value": "26,151.30", "delta": "▲0.66%", "dir": "up", "sub_ko": "171.11포인트 상승 · 8거래일만의 반도체 주도 반등", "sub_en": "+171.11 pts · chip-led rebound after 7 losing sessions"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,677.28", "delta": "▲0.32%", "dir": "up", "sub_ko": "24.42포인트 상승 · 다우도 0.30% 동반 상승", "sub_en": "+24.42 pts · Dow also gained 0.30%"}
+      ],
+      "breadth": [
+        {"label_ko": "S&P500 섹터 ETF + SMH 12개", "label_en": "12 sector ETFs (incl. SMH)", "up": 7, "flat": 1, "down": 4},
+        {"label_ko": "거래대금 상위 283종목", "label_en": "283 most-traded", "up": 184, "flat": 3, "down": 96}
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금", "label_en": "Turnover: gainers vs decliners",
+        "unit_ko": "십억달러", "unit_en": " $B",
+        "rows": [
+          {"label_ko": "오른 종목", "label_en": "Gainers", "value": 183.3},
+          {"label_ko": "내린 종목", "label_en": "Decliners", "value": -103.5}
+        ]
+      },
+      "note_ko": "12개 섹터 중 7개가 올랐고, 거래대금 상위 283종목 중 184개가 상승했다. 금액 기준으로도 상승 종목에 1,833억달러가 몰려 하락 종목(1,035억달러)의 1.8배에 달했다 — 어제와 정반대로 오늘은 자금이 오른 쪽에 쏠렸다.",
+      "note_en": "Seven of 12 sectors rose, and 184 of the 283 most-traded names advanced. By value, $183.3B flowed into gainers versus $103.5B into decliners — 1.8 times as much, a reversal from yesterday when money sat with the losers."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "US Sectors", "color": "#4a9d7f", "type": "bars",
+      "bars": [
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 1.65},
+        {"label_ko": "기술 (XLK)", "label_en": "Tech (XLK)", "value": 0.94},
+        {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm (XLC)", "value": 0.77},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health (XLV)", "value": 0.34},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": 0.21},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": 0.15},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": 0.07},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": 0.0},
+        {"label_ko": "임의소비 (XLY)", "label_en": "Cons Disc (XLY)", "value": -0.3},
+        {"label_ko": "산업 (XLI)", "label_en": "Industrials (XLI)", "value": -0.34},
+        {"label_ko": "필수소비 (XLP)", "label_en": "Staples (XLP)", "value": -1.06},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -1.66}
+      ],
+      "note_ko": "어제 방어주 중심이었던 흐름이 뒤집혔다 — 반도체·기술·커뮤니케이션이 상위권을 채웠고, 유가 급락 직격탄을 맞은 에너지(-1.66%)와 어제 1위였던 필수소비(-1.06%)가 가장 부진했다.",
+      "note_en": "Yesterday's defensive-led pattern flipped — semis, tech and communications topped the board, while energy (-1.66%, hit by the oil plunge) and staples (-1.06%, yesterday's leader) lagged most."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Turnover", "color": "#3987e5", "type": "rank",
+      "rows": [
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$25.66B", "pct": 2.19},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$13.28B", "pct": -0.83},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$10.41B", "pct": 0.37},
+        {"name_ko": "마이크로소프트", "name_en": "Microsoft", "value": "$9.41B", "pct": 0.9},
+        {"name_ko": "AMD", "name_en": "AMD", "value": "$9.06B", "pct": 4.91}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중 · 표본 283종목 합산 대비", "label_en": "Top 5 vs the 283-name sample turnover",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 23.7, "color": "#3987e5"},
+          {"label_ko": "나머지 278종목", "label_en": "Other 278", "pct": 76.3, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "레이먼드 제임스가 AMD 목표주가를 641달러(월요일 종가 대비 40% 상향)로 올려잡으며 투자의견을 '강력매수'로 상향, AMD가 4.91% 뛰었다. 엔비디아는 오늘 밤 실적 발표를 앞두고 2.19% 반등해 8거래일 만에 하락세를 끊었다.",
+      "note_en": "Raymond James upgraded AMD to Strong Buy with a $641 target (40% above Monday's close), sending shares up 4.91%. Nvidia rose 2.19% ahead of tonight's earnings, snapping a 7-session losing streak."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data", "color": "#5b8dd6", "type": "stats", "cols": 2,
+      "stats": [
+        {"label_ko": "한국 8월 전산업 기업심리지수(CBSI)", "label_en": "Korea Aug Composite Business Sentiment Index", "value": "99.6", "delta": "▲1.1p", "dir": "up", "sub_ko": "전월 98.5 · 3년11개월만에 최고 · 8/26 06시 발표", "sub_en": "Prior 98.5 · highest in 3y 11m · released 6 AM KST Aug 26"},
+        {"label_ko": "미국 8월 컨퍼런스보드 소비자신뢰지수", "label_en": "US Aug Conference Board Consumer Confidence", "value": "89.4", "delta": {"ko": "예상 90.2 하회", "en": "Missed est. 90.2"}, "dir": "down", "sub_ko": "이전 90.8 · 8/25 23:00 발표", "sub_en": "Prior 90.8 · released 11 PM KST Aug 25"},
+        {"label_ko": "미국 7월 신규주택판매", "label_en": "US Jul New Home Sales", "value": "607K", "delta": {"ko": "예상 620K 하회", "en": "Missed est. 620K"}, "dir": "down", "sub_ko": "이전 628K · 모기지 금리 부담", "sub_en": "Prior 628K · pressured by mortgage rates"},
+        {"label_ko": "미국 6월 주택가격지수", "label_en": "US Jun Housing Price Index", "value": "0.0%", "delta": {"ko": "예상 0.2% 하회", "en": "Missed est. 0.2%"}, "dir": "down", "sub_ko": "이전 0.3% · 6개월만에 최저 상승률", "sub_en": "Prior 0.3% · slowest gain in 6 months"},
+        {"label_ko": "미국 8월 리치몬드연은 제조업지수", "label_en": "US Aug Richmond Fed Manufacturing Index", "value": "4", "delta": {"ko": "예상 7 하회", "en": "Missed est. 7"}, "dir": "down", "sub_ko": "이전 5", "sub_en": "Prior 5"},
+        {"label_ko": "미 국채 10년-2년 스프레드", "label_en": "US 10Y-2Y Treasury Spread", "value": "46bp → 47bp", "delta": "▲", "dir": "up", "sub_ko": "장단기 금리차 소폭 확대", "sub_en": "Curve steepened slightly"},
+        {"label_ko": "미 국채 30년물", "label_en": "US 30Y Treasury Yield", "value": "5.23% → 5.17%", "delta": "▼", "dir": "down", "sub_ko": "유가 급락에 장기금리 동반 하락", "sub_en": "Fell alongside the oil plunge"},
+        {"label_ko": "한국 7월 수출(성질별 확정)", "label_en": "Korea Jul Exports (by kind, final)", "value": "$99.0B", "delta": {"ko": "전년동월 +63.0%", "en": "+63.0% YoY"}, "dir": "up", "sub_ko": "중화학공업품(반도체 등)이 88% 차지", "sub_en": "Heavy & chemical goods (incl. chips) made up 88%"}
+      ],
+      "note_ko": "한국 기업심리는 반도체 호조에 4년 만에 최고치를 찍었지만, 미국 쪽은 소비자신뢰·주택판매·제조업지수가 나란히 예상을 밑돌며 온도차를 보였다.",
+      "note_en": "Korea's business sentiment hit a near 4-year high on the chip boom, while US data — consumer confidence, home sales, manufacturing — all missed estimates, a split picture."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis", "color": "#7b6cd9",
+      "items": [
+        {"headline_ko": "엔비디아, 실적 발표 하루 앞두고 8거래일만에 반등", "headline_en": "Nvidia Snaps 7-Session Slide Ahead of Wednesday Earnings",
+         "body_ko": "엔비디아가 2.19% 오른 213.05달러로 7거래일 연속 하락을 끊었다. 오늘 밤 마감 후 발표될 2분기 실적은 매출 컨센서스 922.7억달러로 작년 동기 대비 약 두 배 성장이 예상된다.",
+         "body_en": "Nvidia rose 2.19% to $213.05, ending a 7-session losing streak. Q2 results due after tonight's close carry a revenue consensus of $92.27B, roughly double a year ago."},
+        {"headline_ko": "AMD, 레이먼드제임스 '강력매수' 상향에 4.91%↑", "headline_en": "AMD Jumps 4.91% on Raymond James Upgrade to Strong Buy",
+         "body_ko": "레이먼드제임스가 AMD 목표주가를 565달러에서 641달러로 올리며 서버 CPU 시장의 향후 5년 연평균 44% 성장 수혜를 근거로 들었다. 마이크론도 2.47% 올랐다.",
+         "body_en": "Raymond James raised its AMD price target to $641 from $565, citing a server-CPU market it expects to grow 44% annually over five years. Micron also gained 2.47%."},
+        {"headline_ko": "SK하이닉스 ADR도 2.33%↑, 반도체 동반 강세", "headline_en": "SK Hynix ADR Rises 2.33% as Chips Rally Together",
+         "body_ko": "미국 반도체주 반등에 SK하이닉스 미국주식예탁증서(ADR)가 2.33% 올랐다. 국내 코스피 반도체 업종도 전날 종가 기준 강세를 나타냈다.",
+         "body_en": "SK Hynix's US-listed ADR gained 2.33% as US chip stocks rebounded, with Korea's own semiconductor names also firm at Tuesday's KOSPI close."},
+        {"headline_ko": "AI 데이터센터發 전력 수요에 SMR株 동반 강세", "headline_en": "SMR Stocks Rise on AI Data-Center Power Demand",
+         "body_ko": "국제유가 급락에 에너지주가 부진한 가운데도 오클로·뉴스케일·엑스에너지 등 소형모듈원자로(SMR) 관련주는 AI 데이터센터 전력 수요 기대에 상승했다.",
+         "body_en": "Even as broad energy shares fell with oil, small modular reactor names like Oklo, NuScale and X-Energy rose on expectations of AI data-center power demand."},
+        {"headline_ko": "\"이제 실적만으론 부족\"…월가, 엔비디아 가이던스에 촉각", "headline_en": "'A Beat Alone Won't Cut It' — Wall Street Watches Nvidia's Guidance",
+         "body_ko": "시버트파이낸셜은 \"단순 호실적만으로는 충분치 않고 사소한 실수도 큰 타격이 될 수 있다\"고 경고했다. 밀러타박은 엔비디아 실적·가이던스가 이번 실적 시즌 반도체주 전반의 방향을 가를 것으로 봤다.",
+         "body_en": "Sibert Financial warned a mere beat 'won't be enough' and even a small miss 'could deliver a big blow.' Miller Tabak said Nvidia's results and guidance will set the tone for chip stocks this earnings season."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories", "color": "#d98a3c",
+      "items": [
+        {"headline_ko": "트럼프 \"호르무즈 기뢰 제거\"…이란은 \"휴전설은 거짓\"", "headline_en": "Trump Says Hormuz Mines Cleared; Iran Denies Broader Truce",
+         "body_ko": "트럼프가 호르무즈 기뢰 제거를 발표했고 이란·오만은 임시 공동 항로에 합의했다. 이란은 '휴전설'을 부인했지만 유가는 급락했다.",
+         "body_en": "Trump said the US Navy cleared Hormuz mines; Iran and Oman opened a joint shipping route. Iran denied a broader truce report, but oil still tumbled."},
+        {"headline_ko": "캐나다, 美에 최대 50% 보복관세…무역전쟁 격화", "headline_en": "Canada Slaps Up to 50% Retaliatory Tariffs on the US",
+         "body_ko": "캐나다가 9월 8일부터 미국산 약 700개 품목에 최대 50% 보복관세를 부과한다고 발표했다. 트럼프의 자동차·철강 관세에 대한 맞대응이다.",
+         "body_en": "Canada will impose tariffs up to 50% on ~700 US products from Sept 8, retaliating against Trump's tariffs on Canadian autos and steel."},
+        {"headline_ko": "딕스스포팅굿즈 31% 폭락…풋라커 부진에 연간 전망 하향", "headline_en": "Dick's Sporting Goods Plunges 31% on Cut Guidance",
+         "body_ko": "딕스스포팅굿즈가 풋라커 부진을 이유로 연간 전망을 낮추며 30% 넘게 급락했다. 나이키·언더아머도 동반 하락했다.",
+         "body_en": "Dick's Sporting Goods plunged over 30% after cutting its outlook on weak Foot Locker sales. Nike and Under Armour also fell."},
+        {"headline_ko": "금·비트코인 동반 강세…'디베이스먼트 트레이드' 재부상", "headline_en": "Gold and Bitcoin Rally Together as 'Debasement Trade' Returns",
+         "body_ko": "금리 하락과 미 국가부채 40조달러 돌파에 '디베이스먼트 트레이드'가 재부상, 금은 4,700달러 위로, 비트코인은 8만1천달러를 터치했다.",
+         "body_en": "Gold and bitcoin rallied on the 'debasement trade' as yields fell and US debt topped $40T — gold above $4,700, bitcoin touched $81,000."},
+        {"headline_ko": "美 재무부, 이란 관련 거래 2차 제재 \"예외 없다\" 경고", "headline_en": "US Treasury Warns of 'No Exceptions' on Iran-Related Sanctions",
+         "body_ko": "미 재무부가 이란과 거래하는 제3자에 예외 없이 2차 제재를 부과하겠다고 경고했다. 호르무즈 긴장완화 속에서도 압박은 이어진다.",
+         "body_en": "The US Treasury warned of 'no exceptions' on secondary sanctions for parties trading with Iran, even as Hormuz tensions ease."},
+        {"headline_ko": "기업심리 3년11개월만 최고…반도체 이어 서비스업도 온기", "headline_en": "Korea Business Sentiment Hits 3-Year, 11-Month High",
+         "body_ko": "한국 8월 기업심리지수(CBSI)가 99.6으로 2022년 9월 이후 최고치를 기록했다. 반도체發 회복이 서비스업까지 번졌다.",
+         "body_en": "Korea's August business sentiment index rose to 99.6, the highest since Sept 2022, as chip-led recovery spread to services."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": "KST · yellow dot = high-impact",
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "21:30", "title_ko": "美 7월 PCE 물가지수", "title_en": "US Jul PCE Price Index", "detail_ko": "근원 PCE 전년비 예상 3.3% · 연준의 핵심 물가지표", "detail_en": "Core PCE YoY est. 3.3% · the Fed's preferred inflation gauge", "importance": "high"},
+    {"time": "21:30", "title_ko": "美 7월 내구재수주", "title_en": "US Jul Durable Goods Orders", "detail_ko": "예상 +0.7% · 이전 +0.3%", "detail_en": "Est. +0.7% · prior +0.3%", "importance": "mid"},
+    {"time": "21:30", "title_ko": "美 2분기 GDP 성장률(확정치)", "title_en": "US Q2 GDP (Final)", "detail_ko": "예상 연율 +1.5%", "detail_en": "Est. annualized +1.5%", "importance": "mid"},
+    {"time": "23:30", "title_ko": "美 EIA 주간 원유재고", "title_en": "US EIA Weekly Crude Oil Stocks", "detail_ko": "국제유가 향방에 주목", "detail_en": "Watched for oil-price direction", "importance": "mid"},
+    {"time": "8/26", "title_ko": "엔비디아 2분기 실적 발표(오늘 밤)", "title_en": "Nvidia Q2 Earnings (Tonight)", "detail_ko": "EPS 컨센서스 $2.09 · 매출 컨센서스 922.7억달러 · 장 마감 후 발표", "detail_en": "EPS consensus $2.09 · revenue consensus $92.27B · after the close", "importance": "high"},
+    {"time": "8/27", "title_ko": "한국은행 금융통화위원회(목)", "title_en": "Bank of Korea Rate Decision (Thu)", "detail_ko": "기준금리 결정 · 시장 컨센서스 25bp 인상", "detail_en": "Rate decision · consensus points to a 25bp hike", "importance": "high"},
+    {"time": "8/28", "title_ko": "잭슨홀 · 케빈 워시 연준 의장 기조연설(금)", "title_en": "Jackson Hole · Fed Chair Warsh Keynote (Fri)", "detail_ko": "연내 통화정책 경로를 가늠할 발언", "detail_en": "A read on the Fed's rate path for the rest of the year", "importance": "high"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "card_photos": {
+    "1": "A dim NYSE trading floor at dawn, green up-arrow chart lines glowing on a wall of screens, silhouettes of traders looking relieved, warm amber and cool blue light mixing, shallow depth of field.",
+    "3": "A close-up of a curved monitor showing a rising stock chart line in warm amber, a semiconductor wafer reflected faintly in the glass, moody dark lighting, soft bokeh."
+  },
+
+  "caption_ko": "호르무즈 해협 긴장완화 보도에 국제유가가 급락했고, 엔비디아를 비롯한 반도체주가 실적 발표를 앞두고 일제히 반등했습니다. 3대 지수 모두 상승 마감! 오늘 밤 엔비디아 실적, 놓치지 마세요 🔔\n\n#루키온브리핑 #미국증시 #나스닥 #엔비디아 #반도체 #AMD #국제유가 #호르무즈해협 #금값 #비트코인 #코스피 #경제뉴스 #주식 #투자 #증시브리핑",
+  "caption_en": "Oil tumbled on Hormuz de-escalation reports while chip stocks — Nvidia included — rallied ahead of earnings. All three US indexes closed higher! Nvidia reports tonight — stay tuned 🔔\n\n#luckyonbriefing #usstocks #nasdaq #nvidia #semiconductors #amd #oilprices #hormuzstrait #gold #bitcoin #kospi #markets #investing #stocks #dailybriefing",
+  "sources": ["Yahoo Finance", "FMP", "KRX", "FINRA", "Naver News", "SAVE Ticker", "Bank of Korea", "ECOS"]
+}
