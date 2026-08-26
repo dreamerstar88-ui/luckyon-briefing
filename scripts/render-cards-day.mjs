@@ -19,6 +19,7 @@ import {
   W, H, M, PAL, FONT_CSS, esc, dirColor, pctColor, fmtPct,
   photoLayer, proLine, proBars, hbarRank, breadthRow, flowRows, timeline, ICONS,
 } from './lib/cardkit.mjs';
+import { lookupRef } from './lib/stat-refs.mjs';
 
 const date = process.argv[2];
 const lang = process.argv[3] || 'ko';
@@ -394,9 +395,16 @@ function card6() {
   }[tier];
   const u = (W - M * 2 - G.gap) / 2, y0 = 296;
 
+  // ref 는 회차마다 달라지지 않는 '읽는 법'이라 data/stat-refs.json 에 모아 두고
+  // 라벨로 찾아 채운다. 콘텐츠가 직접 쓴 ref 가 있으면 그쪽이 이긴다.
+  const autofilled = [];
   const tiles = st.map((x, i) => {
     const r = Math.floor(i / 2), c = i % 2;
-    const ref = t(x.ref_ko, x.ref_en);
+    let ref = t(x.ref_ko, x.ref_en);
+    if (!ref) {
+      const hit = lookupRef(x.label_ko, x.label_en);
+      if (hit) { ref = t(hit.ref_ko, hit.ref_en); autofilled.push(`${x.label_ko || x.label_en} → ${hit.key}`); }
+    }
     return `
     <div style="position:absolute; left:${M + c * (u + G.gap)}px; top:${y0 + r * (G.h + G.gap)}px; width:${u}px; height:${G.h}px;
                 background:${PAL.tile}; border-radius:16px; padding:${G.pad}; z-index:2; overflow:hidden;
@@ -411,6 +419,9 @@ function card6() {
       </div>` : ''}
     </div>`;
   }).join('');
+  if (autofilled.length && lang === 'ko') {
+    console.log(`· 카드6 기준문구 자동 채움 ${autofilled.length}건: ${autofilled.join(' / ')}`);
+  }
 
   return `
   ${bg(6)}${header()}

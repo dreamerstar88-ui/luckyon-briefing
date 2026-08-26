@@ -1,0 +1,478 @@
+{
+  "_doc": "카드6 stats[].ref 기준 문구 사전. 렌더러(render-cards-day.mjs)가 ref_ko/ref_en 이 비어 있을 때 label_ko/label_en 에서 alias 를 찾아 자동으로 채운다. 콘텐츠에 ref 를 직접 쓰면 그쪽이 이긴다. 조회·점검은 `node scripts/stat-ref.mjs`. 문구는 '그 숫자를 읽는 법'이지 '이번 회차의 사실'이 아니다 — 회차마다 달라지는 내용은 sub 에 쓴다. alias 는 긴 것부터 매칭하므로 '근원 PCE' 가 'PCE' 보다 먼저 잡힌다.",
+  "us-core-pce": {
+    "aliases": [
+      "근원 PCE",
+      "근원PCE",
+      "core pce",
+      "core personal consumption"
+    ],
+    "ref_ko": "연준이 가장 많이 보는 물가 · 목표는 2%",
+    "ref_en": "The Fed's preferred inflation gauge; its target is 2%"
+  },
+  "us-pce": {
+    "aliases": [
+      "PCE 물가",
+      "PCE가격",
+      "pce price",
+      "personal consumption expenditures"
+    ],
+    "ref_ko": "연준의 기준 물가지표 · 목표 2%",
+    "ref_en": "The Fed's headline inflation measure; 2% target"
+  },
+  "us-core-cpi": {
+    "aliases": [
+      "근원 소비자물가",
+      "근원CPI",
+      "근원 CPI",
+      "core cpi",
+      "core consumer price"
+    ],
+    "ref_ko": "식품·에너지를 뺀 물가 · 추세를 보는 쪽",
+    "ref_en": "Strips out food and energy to show the underlying trend"
+  },
+  "us-cpi": {
+    "aliases": [
+      "미국+소비자물가",
+      "美+소비자물가",
+      "us+cpi",
+      "소비자물가",
+      "CPI",
+      "consumer price index"
+    ],
+    "ref_ko": "체감 물가 · 연준 목표는 PCE 기준 2%",
+    "ref_en": "Headline inflation; the Fed's 2% target is set on PCE"
+  },
+  "us-ppi": {
+    "aliases": [
+      "생산자물가",
+      "PPI",
+      "producer price"
+    ],
+    "ref_ko": "기업이 받는 가격 · 소비자물가에 선행하는 편",
+    "ref_en": "Prices producers receive; tends to lead consumer prices"
+  },
+  "us-nonfarm": {
+    "aliases": [
+      "비농업고용",
+      "비농업 고용",
+      "nonfarm payroll",
+      "non-farm payroll"
+    ],
+    "ref_ko": "월 10~15만이면 인구 증가를 흡수하는 수준",
+    "ref_en": "100-150K a month roughly absorbs population growth"
+  },
+  "us-unemployment": {
+    "aliases": [
+      "미국+실업률",
+      "美+실업률",
+      "us+unemployment",
+      "실업률",
+      "unemployment rate"
+    ],
+    "ref_ko": "미국 완전고용은 대체로 4% 안팎으로 본다",
+    "ref_en": "US full employment is generally put near 4%"
+  },
+  "us-claims": {
+    "aliases": [
+      "실업수당청구",
+      "실업수당 청구",
+      "jobless claims",
+      "initial claims"
+    ],
+    "ref_ko": "주간 지표 · 30만을 넘으면 노동시장 악화 신호",
+    "ref_en": "Weekly; above 300K signals a weakening labor market"
+  },
+  "us-jolts": {
+    "aliases": [
+      "구인건수",
+      "JOLTS",
+      "job openings"
+    ],
+    "ref_ko": "구인/실업자 비율 1.0이 수급 균형선",
+    "ref_en": "One opening per unemployed worker is the balance line"
+  },
+  "us-adp": {
+    "aliases": [
+      "ADP 고용",
+      "ADP",
+      "adp employment"
+    ],
+    "ref_ko": "민간 급여 집계 · 정부 고용지표의 예고편 성격",
+    "ref_en": "Private payroll data, read as a preview of the official count"
+  },
+  "us-ism-services": {
+    "aliases": [
+      "ISM 서비스",
+      "ISM 비제조업",
+      "ism services",
+      "ism non-manufacturing"
+    ],
+    "ref_ko": "50이 확장·위축 경계 · 미국 경제의 대부분이 서비스업",
+    "ref_en": "50 splits growth from contraction; services dominate the US economy"
+  },
+  "us-ism-mfg": {
+    "aliases": [
+      "ISM 제조업",
+      "ism manufacturing"
+    ],
+    "ref_ko": "50이 확장·위축 경계 · 경기 선행지표로 본다",
+    "ref_en": "50 splits growth from contraction; watched as a leading indicator"
+  },
+  "us-pmi": {
+    "aliases": [
+      "S&P 글로벌 PMI",
+      "글로벌 PMI",
+      "s&p global pmi",
+      "composite pmi",
+      "PMI"
+    ],
+    "ref_ko": "50이 확장·위축 경계 · 기업 구매담당자 설문",
+    "ref_en": "50 splits growth from contraction; a survey of purchasing managers"
+  },
+  "us-regional-fed": {
+    "aliases": [
+      "리치몬드연은",
+      "필라델피아연은",
+      "엠파이어스테이트",
+      "리치몬드 연은",
+      "richmond fed",
+      "philadelphia fed",
+      "empire state",
+      "dallas fed"
+    ],
+    "ref_ko": "0 위 = 확장 · 아래 = 위축 · 지역 제조업 설문",
+    "ref_en": "Above 0 = expansion, below = contraction; a regional factory survey"
+  },
+  "us-cfnai": {
+    "aliases": [
+      "시카고연은",
+      "전미경제활동지수",
+      "chicago fed",
+      "national activity index"
+    ],
+    "ref_ko": "0 = 과거 평균 성장 · −0.7 아래면 침체 신호로 본다",
+    "ref_en": "0 = average historical growth; below -0.7 is read as recessionary"
+  },
+  "us-retail": {
+    "aliases": [
+      "소매판매",
+      "retail sales"
+    ],
+    "ref_ko": "미국 GDP의 약 3분의 2가 소비에서 나온다",
+    "ref_en": "Consumer spending drives about two-thirds of US GDP"
+  },
+  "us-conf-board": {
+    "aliases": [
+      "컨퍼런스보드",
+      "소비자신뢰지수",
+      "conference board",
+      "consumer confidence"
+    ],
+    "ref_ko": "1985년 = 100 기준 · 90 아래는 소비 위축 신호",
+    "ref_en": "1985 = 100; readings below 90 signal consumer retrenchment"
+  },
+  "us-umich": {
+    "aliases": [
+      "미시간대",
+      "소비자심리지수(미시간)",
+      "michigan sentiment",
+      "consumer sentiment"
+    ],
+    "ref_ko": "1966년 1분기 = 100 기준 · 기대심리를 본다",
+    "ref_en": "1966 Q1 = 100; a read on household expectations"
+  },
+  "us-durable": {
+    "aliases": [
+      "내구재수주",
+      "내구재 수주",
+      "durable goods"
+    ],
+    "ref_ko": "항공기 제외 자본재가 기업 설비투자의 대용치",
+    "ref_en": "Core capital goods ex-aircraft proxies business investment"
+  },
+  "us-gdp": {
+    "aliases": [
+      "미국+GDP",
+      "美+GDP",
+      "us+gdp",
+      "미국+국내총생산",
+      "GDP",
+      "국내총생산",
+      "gross domestic product"
+    ],
+    "ref_ko": "미국 잠재성장률은 대체로 연 2% 안팎으로 본다",
+    "ref_en": "US potential growth is generally estimated near 2% a year"
+  },
+  "us-indpro": {
+    "aliases": [
+      "미국+산업생산",
+      "us+industrial",
+      "산업생산",
+      "광공업생산",
+      "industrial production"
+    ],
+    "ref_ko": "제조·광업·유틸리티 생산량 · 경기 민감도가 높다",
+    "ref_en": "Factory, mining and utility output; highly cycle-sensitive"
+  },
+  "us-new-home": {
+    "aliases": [
+      "신규주택판매",
+      "신규 주택 판매",
+      "new home sales"
+    ],
+    "ref_ko": "연율 환산 채수 · 팬데믹 이전 평균은 약 650K",
+    "ref_en": "Annualized units; the pre-pandemic norm ran near 650K"
+  },
+  "us-existing-home": {
+    "aliases": [
+      "기존주택판매",
+      "기존 주택 판매",
+      "existing home sales"
+    ],
+    "ref_ko": "미국 주택거래의 대부분 · 연율 환산 채수",
+    "ref_en": "The bulk of US home sales; quoted as an annualized pace"
+  },
+  "us-housing-starts": {
+    "aliases": [
+      "주택착공",
+      "건축허가",
+      "housing starts",
+      "building permits"
+    ],
+    "ref_ko": "연율 140만 채 안팎을 수급 균형 수준으로 본다",
+    "ref_en": "An annual pace near 1.4M units is seen as balanced supply"
+  },
+  "us-home-price": {
+    "aliases": [
+      "주택가격지수",
+      "케이스실러",
+      "케이스-실러",
+      "case-shiller",
+      "house price index",
+      "housing price index"
+    ],
+    "ref_ko": "집값 상승률 · 시차가 커서 두세 달 전 시장을 보여준다",
+    "ref_en": "Home-price growth; it lags, showing the market two to three months back"
+  },
+  "us-fed-funds": {
+    "aliases": [
+      "기준금리(연준)",
+      "연방기금금리",
+      "fed funds",
+      "federal funds rate",
+      "FOMC 금리"
+    ],
+    "ref_ko": "중립금리 추정치는 대체로 2.5~3%로 본다",
+    "ref_en": "The neutral rate is generally estimated at 2.5-3%"
+  },
+  "us-2s10s": {
+    "aliases": [
+      "10년-2년",
+      "10년물-2년물",
+      "장단기 금리차",
+      "10y-2y",
+      "2s10s",
+      "yield curve"
+    ],
+    "ref_ko": "마이너스로 뒤집히면 대표적인 경기침체 경고",
+    "ref_en": "An inversion below zero is the classic recession warning"
+  },
+  "us-30y": {
+    "aliases": [
+      "30년물",
+      "30년 국채",
+      "30y treasury",
+      "30-year treasury"
+    ],
+    "ref_ko": "주택담보대출 금리가 이 구간에 연동된다",
+    "ref_en": "US mortgage rates track this end of the curve"
+  },
+  "us-10y": {
+    "aliases": [
+      "10년물",
+      "10년 국채",
+      "10y treasury",
+      "10-year treasury"
+    ],
+    "ref_ko": "세계 자산가격의 기준금리 노릇을 하는 수익률",
+    "ref_en": "The benchmark yield global asset prices are priced against"
+  },
+  "us-2y": {
+    "aliases": [
+      "2년물",
+      "2년 국채",
+      "2y treasury",
+      "2-year treasury"
+    ],
+    "ref_ko": "연준의 향후 금리 경로를 가장 민감하게 반영한다",
+    "ref_en": "The maturity most sensitive to the Fed's expected rate path"
+  },
+  "us-trade": {
+    "aliases": [
+      "미국+무역수지",
+      "美+무역수지",
+      "미국+수출",
+      "무역수지(미국)",
+      "trade balance",
+      "trade deficit"
+    ],
+    "ref_ko": "수출에서 수입을 뺀 값 · 미국은 만성 적자다",
+    "ref_en": "Exports minus imports; the US runs a persistent deficit"
+  },
+  "kr-base-rate": {
+    "aliases": [
+      "기준금리",
+      "금통위",
+      "bank of korea rate",
+      "bok rate"
+    ],
+    "ref_ko": "한국은행 금통위가 연 8회 결정한다",
+    "ref_en": "Set eight times a year by the Bank of Korea's rate board"
+  },
+  "kr-cpi": {
+    "aliases": [
+      "한국+소비자물가",
+      "korea+cpi",
+      "한국 소비자물가",
+      "국내 소비자물가",
+      "korea consumer price",
+      "korea cpi"
+    ],
+    "ref_ko": "한국은행 물가안정목표는 2%",
+    "ref_en": "The Bank of Korea's inflation target is 2%"
+  },
+  "kr-exports": {
+    "aliases": [
+      "한국+수출",
+      "korea+export",
+      "한국+수출입",
+      "수출",
+      "수출입",
+      "exports",
+      "korea exports"
+    ],
+    "ref_ko": "월간 통관 기준 · 반도체가 단일 최대 품목",
+    "ref_en": "Monthly customs basis; chips are the single largest category"
+  },
+  "kr-trade-balance": {
+    "aliases": [
+      "무역수지",
+      "trade surplus"
+    ],
+    "ref_ko": "수출에서 수입을 뺀 값 · 흑자면 외화가 들어온다",
+    "ref_en": "Exports minus imports; a surplus brings foreign currency in"
+  },
+  "kr-current-account": {
+    "aliases": [
+      "경상수지",
+      "current account"
+    ],
+    "ref_ko": "무역에 배당·이자까지 더한 대외거래 총합",
+    "ref_en": "Trade plus investment income — the broadest external balance"
+  },
+  "kr-ccsi": {
+    "aliases": [
+      "소비자심리지수",
+      "CCSI",
+      "consumer sentiment index"
+    ],
+    "ref_ko": "100 = 장기평균 · 넘으면 낙관이 우세하다는 뜻",
+    "ref_en": "100 = long-run average; above it, optimists outnumber pessimists"
+  },
+  "kr-cbsi": {
+    "aliases": [
+      "기업심리지수",
+      "CBSI",
+      "기업경기실사지수",
+      "BSI",
+      "business sentiment index"
+    ],
+    "ref_ko": "100 = 장기평균 · 넘으면 낙관이 우세하다는 뜻",
+    "ref_en": "100 = long-run average; above it, optimists outnumber pessimists"
+  },
+  "kr-employment": {
+    "aliases": [
+      "한국+실업률",
+      "korea+unemployment",
+      "취업자수",
+      "고용동향",
+      "korea employment",
+      "payroll korea"
+    ],
+    "ref_ko": "전년동월 대비 증감 · 인구 감소로 기준선이 낮아지는 중",
+    "ref_en": "Year-on-year change; a shrinking population is lowering the baseline"
+  },
+  "kr-industrial": {
+    "aliases": [
+      "산업활동동향",
+      "전산업생산",
+      "korea industrial output"
+    ],
+    "ref_ko": "생산·소비·투자를 한 번에 보는 월간 경기 종합판",
+    "ref_en": "A monthly composite of output, consumption and investment"
+  },
+  "kr-reserves": {
+    "aliases": [
+      "외환보유액",
+      "foreign reserves"
+    ],
+    "ref_ko": "환율 방어 여력 · 한국은 세계 10위권 규모다",
+    "ref_en": "Firepower to defend the won; Korea holds a top-10 stockpile"
+  },
+  "vix": {
+    "aliases": [
+      "VIX",
+      "변동성지수",
+      "volatility index"
+    ],
+    "ref_ko": "20 아래면 안정 · 30 위면 공포 구간으로 본다",
+    "ref_en": "Below 20 is calm; above 30 is read as fear"
+  },
+  "fear-greed": {
+    "aliases": [
+      "Fear & Greed",
+      "공포탐욕",
+      "fear and greed"
+    ],
+    "ref_ko": "0~100 · 25 아래 극단적 공포 · 75 위 극단적 탐욕",
+    "ref_en": "0-100; under 25 is extreme fear, over 75 extreme greed"
+  },
+  "dxy": {
+    "aliases": [
+      "달러인덱스",
+      "DXY",
+      "dollar index"
+    ],
+    "ref_ko": "주요 6개 통화 대비 달러값 · 1973년 = 100",
+    "ref_en": "The dollar against six major currencies; 1973 = 100"
+  },
+  "eps-surprise": {
+    "aliases": [
+      "EPS",
+      "주당순이익",
+      "earnings per share"
+    ],
+    "ref_ko": "컨센서스 대비 실제치 · 예상을 넘어야 주가가 반응한다",
+    "ref_en": "Actual versus consensus; the beat is what moves the stock"
+  },
+  "kr-gdp": {
+    "aliases": [
+      "한국+GDP",
+      "korea+gdp",
+      "한국+성장률",
+      "한국+국내총생산"
+    ],
+    "ref_ko": "한국 잠재성장률은 대체로 2% 안팎으로 본다",
+    "ref_en": "Korea's potential growth is generally estimated near 2%"
+  },
+  "kr-industrial-prod": {
+    "aliases": [
+      "한국+산업생산",
+      "한국+광공업생산",
+      "korea+industrial"
+    ],
+    "ref_ko": "제조업 생산량 · 반도체 비중이 커 변동이 크다",
+    "ref_en": "Factory output; a heavy chip weighting makes it swing"
+  }
+}
