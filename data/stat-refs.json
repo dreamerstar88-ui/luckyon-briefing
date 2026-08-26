@@ -7,8 +7,8 @@
       "core pce",
       "core personal consumption"
     ],
-    "ref_ko": "연준이 가장 많이 보는 물가 · 목표는 2%",
-    "ref_en": "The Fed's preferred inflation gauge; its target is 2%"
+    "ref_ko": "연준이 추세 판단에 가장 중시하는 물가 · 목표 2%는 PCE 기준",
+    "ref_en": "The Fed's preferred trend gauge; the 2% target is set on headline PCE"
   },
   "us-pce": {
     "aliases": [
@@ -49,8 +49,8 @@
       "PPI",
       "producer price"
     ],
-    "ref_ko": "기업이 받는 가격 · 소비자물가에 선행하는 편",
-    "ref_en": "Prices producers receive; tends to lead consumer prices"
+    "ref_ko": "기업이 받는 가격 · 소비자물가로 옮겨가기도 한다",
+    "ref_en": "Prices producers receive; some of it passes through to consumers"
   },
   "us-nonfarm": {
     "aliases": [
@@ -59,8 +59,8 @@
       "nonfarm payroll",
       "non-farm payroll"
     ],
-    "ref_ko": "월 10~15만이면 인구 증가를 흡수하는 수준",
-    "ref_en": "100-150K a month roughly absorbs population growth"
+    "ref_ko": "실업률을 유지하는 균형 증가폭은 이민 유입에 따라 달라진다",
+    "ref_en": "The breakeven pace that holds unemployment steady shifts with immigration"
   },
   "us-unemployment": {
     "aliases": [
@@ -80,8 +80,8 @@
       "jobless claims",
       "initial claims"
     ],
-    "ref_ko": "주간 지표 · 30만을 넘으면 노동시장 악화 신호",
-    "ref_en": "Weekly; above 300K signals a weakening labor market"
+    "ref_ko": "주간 지표 · 4주 평균이 추세적으로 오르면 노동시장 악화 신호",
+    "ref_en": "Weekly; a rising four-week average is the labor-market warning"
   },
   "us-jolts": {
     "aliases": [
@@ -98,8 +98,8 @@
       "ADP",
       "adp employment"
     ],
-    "ref_ko": "민간 급여 집계 · 정부 고용지표의 예고편 성격",
-    "ref_en": "Private payroll data, read as a preview of the official count"
+    "ref_ko": "민간 급여 집계 · 정부 통계와 자주 어긋난다",
+    "ref_en": "Private payroll data; it often diverges from the official count"
   },
   "us-ism-services": {
     "aliases": [
@@ -151,16 +151,16 @@
       "chicago fed",
       "national activity index"
     ],
-    "ref_ko": "0 = 과거 평균 성장 · −0.7 아래면 침체 신호로 본다",
-    "ref_en": "0 = average historical growth; below -0.7 is read as recessionary"
+    "ref_ko": "0 = 추세 성장 · 3개월 평균이 −0.7 아래면 침체 신호",
+    "ref_en": "0 = trend growth; a 3-month average below -0.7 signals recession"
   },
   "us-retail": {
     "aliases": [
       "소매판매",
       "retail sales"
     ],
-    "ref_ko": "미국 GDP의 약 3분의 2가 소비에서 나온다",
-    "ref_en": "Consumer spending drives about two-thirds of US GDP"
+    "ref_ko": "미국 소비가 GDP의 3분의 2 · 소매판매는 그중 상품 부분",
+    "ref_en": "Consumer spending is two-thirds of US GDP; retail covers the goods side"
   },
   "us-conf-board": {
     "aliases": [
@@ -169,8 +169,8 @@
       "conference board",
       "consumer confidence"
     ],
-    "ref_ko": "1985년 = 100 기준 · 90 아래는 소비 위축 신호",
-    "ref_en": "1985 = 100; readings below 90 signal consumer retrenchment"
+    "ref_ko": "1985년 = 100 기준 · 기대지수 80 아래는 침체 경고로 본다",
+    "ref_en": "1985 = 100; an Expectations Index under 80 is the recession warning"
   },
   "us-umich": {
     "aliases": [
@@ -188,8 +188,8 @@
       "내구재 수주",
       "durable goods"
     ],
-    "ref_ko": "항공기 제외 자본재가 기업 설비투자의 대용치",
-    "ref_en": "Core capital goods ex-aircraft proxies business investment"
+    "ref_ko": "국방·항공기를 뺀 핵심 자본재가 설비투자의 대용치",
+    "ref_en": "Core capital goods orders stand in for business investment"
   },
   "us-gdp": {
     "aliases": [
@@ -221,8 +221,8 @@
       "신규 주택 판매",
       "new home sales"
     ],
-    "ref_ko": "연율 환산 채수 · 팬데믹 이전 평균은 약 650K",
-    "ref_en": "Annualized units; the pre-pandemic norm ran near 650K"
+    "ref_ko": "연율 환산 판매량 · 팬데믹 직전 평균은 65만 채 안팎",
+    "ref_en": "An annualized sales pace; the pre-pandemic norm ran near 650K"
   },
   "us-existing-home": {
     "aliases": [
@@ -230,7 +230,7 @@
       "기존 주택 판매",
       "existing home sales"
     ],
-    "ref_ko": "미국 주택거래의 대부분 · 연율 환산 채수",
+    "ref_ko": "미국 주택거래의 대부분 · 연율 환산 판매량",
     "ref_en": "The bulk of US home sales; quoted as an annualized pace"
   },
   "us-housing-starts": {
@@ -240,8 +240,8 @@
       "housing starts",
       "building permits"
     ],
-    "ref_ko": "연율 140만 채 안팎을 수급 균형 수준으로 본다",
-    "ref_en": "An annual pace near 1.4M units is seen as balanced supply"
+    "ref_ko": "연율 140만~150만 채를 수급 균형 수준으로 본다",
+    "ref_en": "An annual pace of 1.4-1.5M units is seen as balanced supply"
   },
   "us-home-price": {
     "aliases": [
@@ -252,8 +252,8 @@
       "house price index",
       "housing price index"
     ],
-    "ref_ko": "집값 상승률 · 시차가 커서 두세 달 전 시장을 보여준다",
-    "ref_en": "Home-price growth; it lags, showing the market two to three months back"
+    "ref_ko": "집값 상승률 · 3개월 평균에 두 달 시차, 넉 달쯤 전 시장",
+    "ref_en": "Home-price growth; a 3-month average published two months late"
   },
   "us-fed-funds": {
     "aliases": [
@@ -263,8 +263,8 @@
       "federal funds rate",
       "FOMC 금리"
     ],
-    "ref_ko": "중립금리 추정치는 대체로 2.5~3%로 본다",
-    "ref_en": "The neutral rate is generally estimated at 2.5-3%"
+    "ref_ko": "중립금리 추정치는 대체로 3% 안팎으로 본다",
+    "ref_en": "The neutral rate is generally estimated around 3%"
   },
   "us-2s10s": {
     "aliases": [
@@ -285,8 +285,8 @@
       "30y treasury",
       "30-year treasury"
     ],
-    "ref_ko": "주택담보대출 금리가 이 구간에 연동된다",
-    "ref_en": "US mortgage rates track this end of the curve"
+    "ref_ko": "만기가 가장 긴 국채 · 장기 물가·재정 부담을 반영한다",
+    "ref_en": "The longest Treasury maturity; it prices long-run inflation and fiscal risk"
   },
   "us-10y": {
     "aliases": [
@@ -295,8 +295,8 @@
       "10y treasury",
       "10-year treasury"
     ],
-    "ref_ko": "세계 자산가격의 기준금리 노릇을 하는 수익률",
-    "ref_en": "The benchmark yield global asset prices are priced against"
+    "ref_ko": "세계 자산가격의 기준금리 · 미 주택담보대출 금리도 여기 연동",
+    "ref_en": "The global benchmark yield; US mortgage rates track it"
   },
   "us-2y": {
     "aliases": [
@@ -328,7 +328,7 @@
       "bok rate"
     ],
     "ref_ko": "한국은행 금통위가 연 8회 결정한다",
-    "ref_en": "Set eight times a year by the Bank of Korea's rate board"
+    "ref_en": "Set eight times a year by the Bank of Korea's Monetary Policy Board"
   },
   "kr-cpi": {
     "aliases": [
@@ -368,8 +368,8 @@
       "경상수지",
       "current account"
     ],
-    "ref_ko": "무역에 배당·이자까지 더한 대외거래 총합",
-    "ref_en": "Trade plus investment income — the broadest external balance"
+    "ref_ko": "상품·서비스 거래에 배당·이자까지 더한 대외거래 총합",
+    "ref_en": "Goods, services and investment income — the broad external balance"
   },
   "kr-ccsi": {
     "aliases": [
@@ -377,24 +377,20 @@
       "CCSI",
       "consumer sentiment index"
     ],
-    "ref_ko": "100 = 장기평균 · 넘으면 낙관이 우세하다는 뜻",
-    "ref_en": "100 = long-run average; above it, optimists outnumber pessimists"
+    "ref_ko": "100 = 장기평균 · 넘으면 평년보다 낙관적이라는 뜻",
+    "ref_en": "100 = the long-run average; above it, sentiment is better than normal"
   },
   "kr-cbsi": {
     "aliases": [
       "기업심리지수",
       "CBSI",
-      "기업경기실사지수",
-      "BSI",
-      "business sentiment index"
+      "composite business sentiment"
     ],
-    "ref_ko": "100 = 장기평균 · 넘으면 낙관이 우세하다는 뜻",
-    "ref_en": "100 = long-run average; above it, optimists outnumber pessimists"
+    "ref_ko": "100 = 장기평균 · 넘으면 평년보다 낙관적이라는 뜻",
+    "ref_en": "100 = the long-run average; above it, sentiment is better than normal"
   },
   "kr-employment": {
     "aliases": [
-      "한국+실업률",
-      "korea+unemployment",
       "취업자수",
       "고용동향",
       "korea employment",
@@ -417,8 +413,8 @@
       "외환보유액",
       "foreign reserves"
     ],
-    "ref_ko": "환율 방어 여력 · 한국은 세계 10위권 규모다",
-    "ref_en": "Firepower to defend the won; Korea holds a top-10 stockpile"
+    "ref_ko": "환율 방어 여력 · 통상 3개월치 수입액을 넘으면 충분하다고 본다",
+    "ref_en": "Firepower to defend the won; three months of imports is the usual adequacy bar"
   },
   "vix": {
     "aliases": [
@@ -453,8 +449,8 @@
       "주당순이익",
       "earnings per share"
     ],
-    "ref_ko": "컨센서스 대비 실제치 · 예상을 넘어야 주가가 반응한다",
-    "ref_en": "Actual versus consensus; the beat is what moves the stock"
+    "ref_ko": "컨센서스 대비 실제치 · 수치보다 예상과의 차이가 주가를 움직인다",
+    "ref_en": "Actual versus consensus; the gap, not the level, moves the stock"
   },
   "kr-gdp": {
     "aliases": [
@@ -463,8 +459,8 @@
       "한국+성장률",
       "한국+국내총생산"
     ],
-    "ref_ko": "한국 잠재성장률은 대체로 2% 안팎으로 본다",
-    "ref_en": "Korea's potential growth is generally estimated near 2%"
+    "ref_ko": "한국 잠재성장률은 2% 안팎 · 추세적으로 낮아지는 중",
+    "ref_en": "Korea's potential growth is near 2% and trending down"
   },
   "kr-industrial-prod": {
     "aliases": [
@@ -474,5 +470,23 @@
     ],
     "ref_ko": "제조업 생산량 · 반도체 비중이 커 변동이 크다",
     "ref_en": "Factory output; a heavy chip weighting makes it swing"
+  },
+  "kr-bsi": {
+    "aliases": [
+      "업황BSI",
+      "기업경기실사지수",
+      "BSI",
+      "business survey index"
+    ],
+    "ref_ko": "100 = 긍정·부정 응답이 같은 선 · 통상 100을 밑돈다",
+    "ref_en": "100 = equal shares of upbeat and downbeat firms; it usually runs below that"
+  },
+  "kr-unemployment": {
+    "aliases": [
+      "한국+실업률",
+      "korea+unemployment"
+    ],
+    "ref_ko": "실업률만으로는 부족 · 취업자수·고용률을 같이 본다",
+    "ref_en": "The rate alone is thin; read it with the employment count and employment rate"
   }
 }
