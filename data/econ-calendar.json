@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-08-25T22:47:55Z",
+  "fetchedAt": "2026-08-26T11:40:36Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-23T22:47:55Z",
-    "to": "2026-09-08T22:47:55Z"
+    "from": "2026-08-24T11:40:36Z",
+    "to": "2026-09-09T11:40:36Z"
   },
   "events": [
-    {
-      "at": "2026-08-24T07:00:00Z",
-      "country": "EMU",
-      "name": "ECB's Cipollone speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-24T12:30:00Z",
       "country": "US",
@@ -263,8 +253,18 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.2,
-      "actual": null,
+      "actual": 3.6,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-26T00:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Schnabel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-26T10:10:00Z",
@@ -283,7 +283,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.4,
-      "actual": null,
+      "actual": -1,
       "unit": "%"
     },
     {
@@ -391,7 +391,7 @@
       "country": "US",
       "name": "Personal Consumption Expenditures - Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.6,
       "previous": 3.7,
       "actual": null,
       "unit": "%"
@@ -621,7 +621,7 @@
       "country": "US",
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 19,
       "previous": 16,
       "actual": null,
       "unit": null
@@ -1592,7 +1592,7 @@
       "name": "MBA Mortgage Applications",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -1,
       "actual": null,
       "unit": "%"
     },
@@ -2525,6 +2525,66 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-09-08T23:50:00Z",
+      "country": "JP",
+      "name": "Money Supply M2+CD (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-09T01:30:00Z",
+      "country": "CN",
+      "name": "Consumer Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-09T01:30:00Z",
+      "country": "CN",
+      "name": "Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-09T01:30:00Z",
+      "country": "CN",
+      "name": "Producer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-09T06:00:00Z",
+      "country": "JP",
+      "name": "Machine Tool Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 50.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-09T11:00:00Z",
+      "country": "US",
+      "name": "MBA Mortgage Applications",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
