@@ -199,7 +199,7 @@ function card2() {
     <div style="position:absolute; left:0; top:${i * (sh + gap)}px; width:${sw}px; height:${sh}px;
                 background:${PAL.tile}; border-radius:16px; padding:22px 24px;">
       <div style="font-size:16px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
-      <div style="font-size:32px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
+      <div style="font-size:32px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}${mm.value_sub ? `<span style="font-size:15px; font-weight:600; color:${PAL.dim}; margin-left:6px;">${esc(mm.value_sub)}</span>` : ''}</div>
       <div style="font-size:20px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:11px;">${esc(tf(mm.delta))}</div>
       <div style="font-size:15px; color:${PAL.faint}; margin-top:11px; line-height:1.4;">${esc(t(mm.note_ko, mm.note_en))}</div>
     </div>`;
@@ -211,7 +211,7 @@ function card2() {
     <div style="position:absolute; left:${M + i * (u + gap)}px; top:${y}px; width:${u}px; height:${h2}px;
                 background:${PAL.tile}; border-radius:14px; padding:20px 21px; z-index:2;">
       <div style="font-size:${cols === 4 ? 14 : 15}px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(k)}</div>
-      <div style="font-size:${cols === 4 ? 25 : 28}px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}</div>
+      <div style="font-size:${cols === 4 ? 25 : 28}px; font-weight:800; color:${PAL.text}; margin-top:8px;">${esc(mm.value)}${mm.value_sub ? `<span style="font-size:${cols===4?12:14}px; font-weight:600; color:${PAL.dim}; margin-left:5px;">${esc(mm.value_sub)}</span>` : ''}</div>
       <div style="font-size:${cols === 4 ? 18 : 19}px; font-weight:700; color:${dirColor(mm.dir)}; margin-top:9px;">${esc(tf(mm.delta))}</div>
       <div style="font-size:${cols === 4 ? 14 : 15}px; color:${PAL.faint}; margin-top:10px; line-height:1.4;">${esc(t(mm.note_ko, mm.note_en))}</div>
     </div>`;
@@ -226,7 +226,7 @@ function card2() {
   <div style="position:absolute; left:${M}px; top:${gy}px; width:${bw}px; height:${bh}px;
               background:${PAL.tile}; border-radius:20px; z-index:2;">
     <div style="position:absolute; left:28px; top:26px; font-size:17px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(main)}</div>
-    <div style="position:absolute; left:28px; top:56px; font-size:50px; font-weight:900; color:${PAL.text};">${esc(m.value)}</div>
+    <div style="position:absolute; left:28px; top:56px; font-size:50px; font-weight:900; color:${PAL.text};">${esc(m.value)}${m.value_sub ? `<span style="font-size:22px; font-weight:600; color:${PAL.dim}; margin-left:8px;">${esc(m.value_sub)}</span>` : ''}</div>
     <div style="position:absolute; left:28px; top:126px; font-size:26px; font-weight:800; color:${dirColor(m.dir)};">${esc(tf(m.delta))}</div>
     <div style="position:absolute; left:28px; top:170px; font-size:17px; color:${PAL.dim};">${esc(tf(C.main_tile_note) || '')}</div>
     ${chart}
