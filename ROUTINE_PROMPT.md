@@ -87,7 +87,7 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      | 금 · WTI | 같은 도구 — `GC=F` / `CL=F` |
      | 비트코인 | 같은 도구 — `BTC-USD` |
      | 미 10년물 금리 | FMP `economics` 도구, `endpoint: "treasury-rates"`, `from_date`/`to_date` 로 해당 거래일 지정 → `year10` 값 |
-     | Fear & Greed | API가 없으므로 WebSearch (CNN Fear & Greed Index) |
+     | Fear & Greed | `NODE_USE_ENV_PROXY=1 node scripts/fetch-fear-greed.mjs` — CNN 원본 API 직접 조회(2026-08-26부터, 아래 참고) |
      | **한국 증시 하루치 기록** (본문 카드용) | `node scripts/fetch-krx.mjs <YYYY-MM-DD>` — 코스피·코스닥 종가·등락률·거래대금·거래량, 상승/하락/보합 종목 수, 등락률·거래대금 상위 종목을 JSON 으로 준다 |
      | 한국 개별 종목 시세·52주 고저 | `https://query1.finance.yahoo.com/v8/finance/chart/<종목코드>.KS` (코스닥은 `.KQ`) — 종가는 `meta.regularMarketPrice` 를 쓴다 |
      | **미국 거래대금 상위 · 공매도 비중 · 상승/하락 거래대금** | `node scripts/fetch-us-flows.mjs <YYYY-MM-DD>` — 야후 스크리너(가격×거래량) + FINRA 일별 공매도. **키가 필요 없다.** am 의 거래대금 상위 카드가 쓴다 |
@@ -172,6 +172,8 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
        - (구버전 경로) `scripts/fetch-futures.mjs` + Apify + `data/futures-cache.json` 캐시는 위 도구를 못 쓸 때를 위한 예비 수단으로만 남겨 둔다. 이 캐시는 GitHub Actions가 **main 브랜치**에 커밋하므로, 읽기 전에 반드시 `origin/main` 에서 최신본을 가져와야 한다 — 커밋 단계(`ROUTINE_COMMON.md` §4)는 이 시점보다 한참 뒤인 데다 `claude/live` 만 다루므로, 작업트리 파일을 그냥 읽으면 **직전 세션 때 들어온 낡은 캐시**를 쓰게 된다. (2026-08-03 pm 세션까지 이 이유로 당일 선물이 한 번도 반영되지 않았다. 지금은 `fetch-futures.mjs` 가 작업트리 캐시가 낡았으면 `origin/main` 에서 직접 읽는다.)
        - **이 경로를 쓸 때는 `delta` 값을 그대로 믿지 말고 반드시 직접 계산한다** — Apify 액터가 주는 `changePercent` 가 실제와 다른 사례가 확인됐다 (2026-08-03 캐시: `NASDAQ Fut 28,504.5 ▼3.56%` 로 기록됐으나 직전 종가 28,404.25 대비 실제로는 `+0.35%` 로 부호까지 반대였다).
        - **금지 표현 (중요)**: note_ko/note_en 에 "선물 조회 불가/실패/건너뜀", "Futures feed unavailable" 등 **내부 수집 과정이 실패했다는 사실을 독자에게 노출하는 문구를 절대 쓰지 않는다.** 독자는 이게 선물이었는지 아닌지, 조회가 됐는지 안 됐는지 알 필요가 없다 — 그냥 "종가" 데이터 하나로 보이게 자연스럽게 쓴다 (예: `"7/17 미국장 마감 종가"`). 조회 성공/실패 여부는 이 문서의 절차(스크립트 실행)에서만 판단하고, 카드 문구는 항상 독자 입장에서 자연스러운 결과만 담는다.
+   - **Fear & Greed (2026-08-26 확정)**: `NODE_USE_ENV_PROXY=1 node scripts/fetch-fear-greed.mjs` 로 CNN 원본 API(`production.dataviz.cnn.io`)를 직접 조회한다. **`NODE_USE_ENV_PROXY=1` 접두어를 빼먹지 않는다** — Node 내장 fetch가 이 환경의 egress 프록시를 안 타 그냥 실패한다. 출력 JSON의 `score`(반올림 정수)를 값으로 쓰고, `rating`은 참고만 한다(`greed`/`neutral`/`fear` 등). **이 지표는 그 자체가 이미 점수이므로 §"수치 표기" A절 규칙대로 `이전값 → 현재값` + 화살표로 쓴다** — 출력의 `previousClose`(전 거래일 종가)를 이전값으로 쓴다.
+     - **2026-08-24 am 부터 2026-08-26 pm 까지 6회 연속 "55 · 8/25 기준"이 반복되는 사고가 있었다** — WebSearch가 CNN Fear&Greed 주제에서만 날짜가 갱신되지 않는 고정된 요약을 계속 돌려줬기 때문이다(사용자가 발견, `DATA_SOURCES.md` 참고). **다시는 WebSearch로 이 지표를 조회하지 않는다.** 이 스크립트가 실패하면(예: `HTTP 403`) 도메인 허용목록에서 `cnn.com`·`*.cnn.io`가 빠진 것이니, WebSearch로 우회하지 말고 실패 사실을 그대로 마무리 보고에 적는다.
    - **원/달러 타일**: 원/달러 환율을 메인 값(`value`)으로, 달러인덱스(DXY)를 `value_sub` 로 병기한다 (예: `"value": "1,487"`, `"value_sub": "· DXY 100.8"`).
    - **휴장 처리 (중요)**: 한국·미국 등 해당 시장이 공휴일·주말로 휴장이어도 **타일을 절대 빼지 않는다.** 타일 개수·배치를 항상 10개로 일정하게 유지한다. 휴장 타일은 `value` 에 직전 종가(또는 마지막 고시가)를 그대로 두고, `delta` 는 `"휴장"`(또는 마지막 거래일 등락률), `dir` 은 상황에 맞게, 한 줄 해석(`note_ko`/`note_en`)에 기준일·사유를 적는다 (예: `"서울 제헌절 휴장 · 달러인덱스 +0.06%"` / `"Seoul holiday · Dollar index +0.06%"`). 지수 선물처럼 휴장 중에도 거래되는 항목은 정상 표기한다.
 
