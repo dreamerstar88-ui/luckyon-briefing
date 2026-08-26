@@ -101,6 +101,16 @@
 - **수치 카드가 최소 두 장은 되어야 한다.** 그날 재료가 축별 표의 성격과 안 맞으면 유형을 바꿔도 되지만, 전부 글 카드가 되면 안 된다.
 - **`type` 을 넣었다고 검증(`ROUTINE_COMMON.md` §3)이 면제되지 않는다.** 카드 형태만 바뀔 뿐 내용 기준은 같다.
 
+- **`stats[].ref_ko`/`ref_en` — 그 지표가 «무엇을 뜻하는 숫자인지» 한 줄** (2026-08-26 신설, 카드6).
+  타일 바닥에 구분선과 함께 작게 붙는다. 값이 없으면 그 줄만 안 그려지고 카드는 정상이다.
+  - **`sub` 와 역할이 다르다.** `sub` 는 «이번 회차의 사실»(이전치·발표 시각·배경)이고, `ref` 는
+    **회차와 무관한 읽는 법**이다 — `100 = 장기평균 · 넘으면 낙관이 우세하다는 뜻`,
+    `0 위 = 확장 · 아래 = 위축`, `마이너스로 뒤집히면 대표적인 경기침체 경고`. 둘을 섞지 않는다.
+  - **번역 필드다.** `ref_ko`/`ref_en` 을 둘 다 채운다. 한쪽만 채우면 다른 언어에서 그 줄이 빈다.
+  - **영문을 짧게 쓴다.** 같은 내용도 영문이 길어 2줄이 되기 쉽고, 타일이 꽉 차면 아래가 잘린다
+    (라벨 30자·부연 45자·ref 55자 안쪽이 실측 기준). 렌더러가 flex 라 **겹치지는 않고 잘린다** —
+    2026-08-26 에 절대위치로 뒀다가 영문 타일에서 부연과 ref 가 겹치는 것을 렌더 확인 단계에서 잡았다.
+
 ### `stats` 의 `cols`
 
 `1` 이면 가로로 긴 행(라벨·부연 왼쪽, 큰 숫자 오른쪽)을 위에서 아래로 쌓고, `2`(기본값)면 2열 격자로 놓는다. 타일이 하나뿐이면 자동으로 1열이다.
@@ -383,6 +393,9 @@ schedule[].time
 cover_kicker       cover_facts[][1]  cover_facts[][2]   (아이콘 뒤 두 문자열 — icon 이름만 제외)
 tile_lead          main_tile_note
 sector_sub         rank_sub          econ_sub           schedule_sub
+chart_title        chart_sub         chart_note
+sector_title       rank_title        econ_title         rank_unit
+record_kicker      rank_kicker       econ_kicker        schedule_kicker
 
 # sat (§2-A)
 cover.hero.value                  metrics[].value      metrics[].delta
@@ -401,6 +414,17 @@ korea/weekend/ai/watch .items[].src
 
 - **평일 `tile_lead`·`main_tile_note`·`sector_sub`·`rank_sub`·`econ_sub`·`schedule_sub` 는 `_ko`/`_en` 쌍을 받지 않는다.** `render-cards-day.mjs` 가 이 필드들을 `t()` 언어분기 없이 그대로 찍는다 — 즉 한 필드값이 두 언어 카드에 똑같이 나간다. 2026-08-24 am 세션에서 `cover_facts` 상세문구에 한국어 문장을 그대로 넣었다가 영어 카드에 그 문장이 그대로 노출되는 사고가 있었다(검증 단계에서 발견해 발행 전 고쳤다). 이 필드들을 쓸 때는 처음부터 숫자·티커·영문 약어 등 두 언어 모두에서 자연스러운 중립 표기로 쓰거나, 아예 비워 둔다(전부 선택 필드라 비워도 카드는 정상 렌더된다).
 - **`cover_kicker`·`cover_facts`·`sections[].stats[].delta`·`markets[].delta` 는 2026-08-25 부터 `{ko,en}` 객체를 받을 수 있다.** 문자열을 넣으면 예전처럼 invariant(양쪽 카드에 그대로)로 나가고, `{"ko":"...","en":"..."}` 객체를 넣으면 그 자리만 `t()`(렌더러 안에서는 `tf()`)로 번역된다 — 숫자·티커처럼 중립적인 조각은 문자열로 두고 서술형 문장은 객체로 감싼다. 같은 세션에서 **두 자리가 동시에 이 사고를 냈다**: ① 표지 `cover_facts` 상세문구를 통째로 영어 문자열(invariant)로 써서 한국어 카드 하단 3줄이 전부 영어로 나갔고(2026-08-24 pm 의 관행을 그대로 따라간 것 — 그 세션도 같은 문제가 있었으나 지적되지 않았을 뿐이었다), ② 카드6 `stats[].delta`에 `"예상 -0.09 상회"`(한국어 문장)를 그대로 넣어 영어 카드에도 한글이 그대로 노출됐다 — `delta`가 invariant 목록에 있다는 걸 알면서도 예전 예시(`content/example-am.json`)의 `"delta":"예상 54.0 상회"` 패턴을 그대로 베낀 게 원인이었다. `cover_kicker` 예: `{"ko":"간밤 미국장 · 8/24 마감","en":"US Overnight · 8/24 Close"}`. `cover_facts` 한 항목 예: `["chip", {"ko":"나스닥 -0.76% · S&P 500 -0.28%","en":"Nasdaq -0.76% · S&P 500 -0.28%"}, {"ko":"25,980.19 / 7,652.86 · 반도체가 끌어내렸다","en":"25,980.19 / 7,652.86 pts · chips led the drop"}]`. `stats[].delta` 예: `{"ko":"예상 -0.09 상회","en":"Beat est. -0.09"}`. **`sections[].stats[].value`·`sections[].rows[].value`는 여전히 순수 invariant다** — 애초에 숫자만 들어가야 하는 자리라 이 탈출구가 필요 없다.
+- **2026-08-26 부터 평일 표시용 invariant 필드는 «전부» `{ko,en}` 을 받는다.** 위 §4 목록의 평일 항목 중
+  `markets[].value`·`stats[].value`·`rows[].value`(순수 숫자 자리)를 뺀 나머지 — `chart_title`·`chart_sub`·
+  `chart_note`·`sector_title`·`rank_title`·`econ_title`·`rank_unit`·각 `*_kicker`·`tile_lead`·
+  `main_tile_note`·`*_sub` — 가 `tf()` 를 거친다. **한국어를 쓰고 싶으면 반드시 `{ko,en}` 객체로 감싼다.**
+  - **이 항목이 생긴 이유**: `rank_title`("거래대금 상위")·`econ_title`("실적 · 지표 발표")·`rank_unit`
+    ("단위 · 십억달러")·`sector_title` **네 개가 이 §4 목록에서 통째로 빠져 있었다.** 검증 에이전트는 이
+    목록을 정본으로 대조하라고 지시받으므로, 목록에 없는 필드는 검사 범위 밖이 된다 — 실제로 2026-08-26 am
+    검증에서 에이전트가 `chart_*`(렌더러를 직접 읽어 스스로 찾은 것)와 `schedule[].time` 은 잡았지만 이 네
+    개는 놓쳤고, **8/24 pm·8/25 am·8/25 pm 회차도 같은 한글이 영어 카드에 그대로 나가고 있었다**(사용자가
+    발견). 필드를 새로 만들면 **렌더러·이 목록·검증 지시를 같은 커밋에서 함께 고친다** — 목록에 없는 필드는
+    검증이 존재 자체를 모른다.
 - **토요일의 `calendar[].rows[].est` / `.act` 는 `_ko`/`_en` 쌍도 받는다.** `18.1억`·`7.0만` 처럼
   단위가 한글인 값이 실제로 영어 카드에 그대로 새어 나간 적이 있다. 숫자만 있는 값(`0.34`, `4.1%`)은
   단일 필드로 두고, **한글 단위가 붙는 값에만 `est_ko`/`est_en` 쌍을 쓴다.** 쌍이 있으면 그쪽이 이긴다.
@@ -482,7 +506,8 @@ korea/weekend/ai/watch .items[].src
               "segments":[{"label_ko","label_en","pct","color"}]},
      "note_ko","note_en"},
     {"title_ko":"실적 · 지표 발표",
-     "stats":[{"label_ko","label_en","value","delta","dir","sub_ko","sub_en"}],   // 최대 8개
+     "stats":[{"label_ko","label_en","value","delta","dir","sub_ko","sub_en",
+               "ref_ko","ref_en"}],   // 최대 8개 (6개 권장) · ref = 그 지표의 기준값·의미 한 줄
      "note_ko","note_en"},
     {"title_ko":"AI · 반도체 기술","items":[{"headline_ko","headline_en","body_ko","body_en"}]},  // 최대 6건
     {"title_ko":"주요 소식","items":[{"headline_ko","headline_en","body_ko","body_en"}]}          // 최대 6건
@@ -515,7 +540,7 @@ korea/weekend/ai/watch .items[].src
 | `chart_series_values` | 8~10점. 그보다 촘촘하면 x축 라벨이 겹친다 |
 | `bars` | 10~15개 |
 | `rows` (거래대금) | 5개 |
-| `stats` (실적·지표) | 최대 8개 (2열 × 4행). 2026-08-23 에 타일을 190px 로 낮추고 글자를 줄여 6→8로 늘렸다 |
+| `stats` (실적·지표) | 최대 8개. **개수가 글자 크기를 정한다** — ≤4 = 2행(가장 큼) · **5~6 = 3행(권장)** · 7~8 = 4행(가장 작음). 2026-08-26 에 숫자를 뺀 글자(라벨·delta·부연)를 키우면서, 1.5배가 온전히 들어가는 것은 **6개까지**가 됐다 (7~8개는 4행이라 약 1.2배까지만 — 더 키우면 각주와 겹친다). **재료가 7개 이상이면 덜 중요한 것을 덜어 6개로 맞추는 쪽을 권한다** |
 | `items` (AI·반도체, 카드7 / 주요 소식, 카드8) | 최대 6건씩. 본문 한글 90자·영문 160자 안쪽. 2026-08-23 에 두 카드의 글자·여백 크기를 통일해 카드8 도 카드7 과 같이 6건까지 늘렸다 |
 | `schedule` | 최대 7건 |
 | **채우는 순서**| 리서치 단계에서 이 상한보다 **여유 있게** 후보를 모아 두고(예: 실적·지표는 8~10개, 일정은 7~9개 조사), 검증을 통과한 것부터 상한까지 채운다. 상한에 못 미치게 조사해 놓고 빈 줄로 발행하지 않는다 — 아래 여백보다 촘촘한 카드가 낫다는 것이 2026-08-23 결정이다. |

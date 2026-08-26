@@ -35,6 +35,34 @@ const t = (ko, en) => (lang === 'ko' ? ko : en);
 // 새어 들어간 적이 있어(2026-08-25) stats[].delta 에도 같은 탈출구를 둔다.
 const tf = v => (v && typeof v === 'object') ? t(v.ko, v.en) : v;
 const DATE_LABEL = t(C.dateLabel_ko, C.dateLabel_en);
+
+// 영어 카드를 그릴 때 invariant 필드에 한글이 남아 있으면 **렌더 로그에 크게 경고한다.**
+// 문서(§4)와 검증 에이전트에만 맡겼더니 목록에서 빠진 필드가 그대로 새어 나갔다 —
+// rank_title/econ_title/rank_unit/sector_title 이 8/24~8/26 회차 영어 카드에 한글로
+// 나간 것을 사용자가 발견했다(2026-08-26). 사람이 목록을 관리하는 대신 렌더러가
+// 매번 스스로 검사하게 한다. 고치는 법은 그 필드를 {ko,en} 객체로 감싸는 것이다.
+const HANGUL = /[\u3131-\u318E\uAC00-\uD7A3]/;
+if (lang === 'en') {
+  const flat = v => (v && typeof v === 'object' && !Array.isArray(v)) ? '' : String(v ?? '');
+  const bad = [];
+  const chk = (name, v) => { if (HANGUL.test(flat(v))) bad.push(`${name}: ${flat(v)}`); };
+  for (const k of ['chart_title', 'chart_sub', 'chart_note', 'sector_title', 'rank_title',
+                   'econ_title', 'rank_unit', 'tile_lead', 'main_tile_note', 'sector_sub',
+                   'rank_sub', 'econ_sub', 'schedule_sub', 'record_kicker', 'rank_kicker',
+                   'econ_kicker', 'schedule_kicker', 'cover_kicker']) chk(k, C[k]);
+  (C.markets || []).forEach((m, i) => { chk(`markets[${i}].label`, m.label); chk(`markets[${i}].delta`, m.delta); chk(`markets[${i}].value_sub`, m.value_sub); });
+  (C.schedule || []).forEach((x, i) => chk(`schedule[${i}].time`, x.time));
+  (C.sections || []).forEach(sec => {
+    (sec.stats || []).forEach((x, i) => { chk(`${sec.title_ko}.stats[${i}].value`, x.value); chk(`${sec.title_ko}.stats[${i}].delta`, x.delta); });
+    (sec.rows || []).forEach((x, i) => chk(`${sec.title_ko}.rows[${i}].value`, x.value));
+    (sec.items || []).forEach((x, i) => { chk(`${sec.title_ko}.items[${i}].src`, x.src); chk(`${sec.title_ko}.items[${i}].time`, x.time); });
+  });
+  if (bad.length) {
+    console.warn(`\n⚠️  영어 카드인데 언어무관 필드에 한글이 남아 있다 (${bad.length}건) — {ko,en} 객체로 감싸라:`);
+    bad.forEach(b => console.warn(`   · ${b}`));
+    console.warn('');
+  }
+}
 const TOTAL = 10;
 
 // 본문 섹션은 제목으로 찾는다. 없으면 null 을 돌려주고 카드가 알아서 비운다 —
@@ -193,13 +221,13 @@ function card2() {
   ${bg(2)}${header()}
   ${kicker(132, 'MARKETS AT A GLANCE')}
   ${title(168, t('시장 한눈에', 'Markets at a Glance'))}
-  ${subline(226, C.tile_lead)}
+  ${subline(226, tf(C.tile_lead))}
   <div style="position:absolute; left:${M}px; top:${gy}px; width:${bw}px; height:${bh}px;
               background:${PAL.tile}; border-radius:20px; z-index:2;">
     <div style="position:absolute; left:28px; top:26px; font-size:17px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em;">${esc(main)}</div>
     <div style="position:absolute; left:28px; top:56px; font-size:50px; font-weight:900; color:${PAL.text};">${esc(m.value)}</div>
     <div style="position:absolute; left:28px; top:126px; font-size:26px; font-weight:800; color:${dirColor(m.dir)};">${esc(tf(m.delta))}</div>
-    <div style="position:absolute; left:28px; top:170px; font-size:17px; color:${PAL.dim};">${esc(C.main_tile_note || '')}</div>
+    <div style="position:absolute; left:28px; top:170px; font-size:17px; color:${PAL.dim};">${esc(tf(C.main_tile_note) || '')}</div>
     ${chart}
   </div>
   <div style="position:absolute; left:${M + bw + gap}px; top:${gy}px; width:${sw}px; height:${bh}px; z-index:2;">${sideTiles}</div>
@@ -242,11 +270,11 @@ function card3() {
 
   return `
   ${bg(3)}${header()}
-  ${kicker(132, C.record_kicker || 'TODAY')}
-  ${title(168, C.chart_title || '', 40)}
-  ${subline(228, C.chart_sub)}
+  ${kicker(132, tf(C.record_kicker) || 'TODAY')}
+  ${title(168, tf(C.chart_title) || '', 40)}
+  ${subline(228, tf(C.chart_sub))}
   ${C.chart_series_values ? proLine(C.chart_series_values, C.chart_series_labels, { y: 286, h: 244, yTicks: 4, lw: 4 }) : ''}
-  <div style="position:absolute; left:${M}px; top:552px; font-size:17px; font-weight:700; color:${PAL.accent}; z-index:2;">${esc(C.chart_note || '')}</div>
+  <div style="position:absolute; left:${M}px; top:552px; font-size:17px; font-weight:700; color:${PAL.accent}; z-index:2;">${esc(tf(C.chart_note) || '')}</div>
   <div style="position:absolute; left:${M}px; right:${M}px; top:598px; height:1px; background:${PAL.rule}; z-index:2;"></div>
   ${bigStats}
   <div style="position:absolute; left:${M}px; right:${M}px; top:834px; z-index:2;">
@@ -267,8 +295,8 @@ function card4() {
   return `
   ${bg(4)}${header()}
   ${kicker(132, 'SECTOR PERFORMANCE')}
-  ${title(168, C.sector_title || t('섹터별 등락', 'Sector Performance'), 38)}
-  ${subline(226, C.sector_sub)}
+  ${title(168, tf(C.sector_title) || t('섹터별 등락', 'Sector Performance'), 38)}
+  ${subline(226, tf(C.sector_sub))}
   <div style="z-index:2;">${proBars(rows, { y: 300, h: 730, labelW })}</div>
   ${noteBlock(t(s.note_ko, s.note_en), 132)}
   ${footer(4)}`;
@@ -327,15 +355,15 @@ function card5() {
 
   return `
   ${bg(5)}${header()}
-  ${kicker(132, C.rank_kicker || 'TOP TURNOVER')}
-  ${title(168, C.rank_title || t('거래대금 상위', 'Top Value Traded'), 40)}
-  ${subline(228, C.rank_sub)}
+  ${kicker(132, tf(C.rank_kicker) || 'TOP TURNOVER')}
+  ${title(168, tf(C.rank_title) || t('거래대금 상위', 'Top Value Traded'), 40)}
+  ${subline(228, tf(C.rank_sub))}
   ${hasShort ? `
     <div style="position:absolute; right:198px; top:286px; font-size:13px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em; z-index:2;">${t('등락률', 'Change')}</div>
     <div style="position:absolute; right:${M}px; top:286px; font-size:13px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em; z-index:2;">${t('공매도', 'Short')}</div>` : ''}
   <div style="z-index:2;">${hbarRank(rows, { y: top, h, w: W - M - (hasShort ? 290 : 200) - M, labelW })}</div>
   ${cols}
-  <div style="position:absolute; left:${M}px; top:752px; font-size:14px; color:${PAL.faint}; z-index:2;">${esc(C.rank_unit || '')}</div>
+  <div style="position:absolute; left:${M}px; top:752px; font-size:14px; color:${PAL.faint}; z-index:2;">${esc(tf(C.rank_unit) || '')}</div>
   <div style="position:absolute; left:${M}px; right:${M}px; top:800px; height:1px; background:${PAL.rule}; z-index:2;"></div>
   <div style="position:absolute; left:${M}px; right:${M}px; top:836px; z-index:2;">
     <div style="font-size:19px; font-weight:700; color:${PAL.text}; margin-bottom:28px;">${esc(t(sh.label_ko, sh.label_en) || '')}</div>
@@ -350,30 +378,45 @@ function card5() {
 // ══════════════════════════════════════════════════════════
 function card6() {
   const s = sec('실적 · 지표 발표') || { stats: [] };
-  // 8개(4행)까지 채운다. 6개(3행)일 때보다 타일을 낮추고 글자를 줄여 4행이 각주와
-  // 안 겹치는 걸 실측으로 확인했다 — 빈칸보다 촘촘한 8개가 낫다는 판단(2026-08-23).
   const st = (s.stats || []).slice(0, 8);
-  // 4개(2행) 이하인 날은 남는 세로 공간을 타일을 키우는 데 쓴다 — 8개(4행) 꽉 찬 날의
-  // 촘촘한 크기를 그대로 쓰면 글자가 불필요하게 작아 보인다(2026-08-25 사용자 피드백).
-  const roomy = st.length <= 4;
-  const gap = roomy ? 20 : 16, u = (W - M * 2 - gap) / 2, h = roomy ? 300 : 190, y0 = 296;
-  const fLabel = roomy ? 18 : 14, fValue = roomy ? 38 : 30, fDelta = roomy ? 20 : 16, fSub = roomy ? 16 : 12;
+
+  // 타일 개수에 따라 3단계로 크기를 고른다. 2026-08-26 사용자 요청으로 숫자(value)를
+  // 뺀 글자(label·delta·sub)를 약 1.5배로 키웠고, 타일마다 남던 아래 여백에는
+  // `ref_ko`/`ref_en`(그 지표의 기준값·의미 한 줄)을 바닥에 붙여 넣는다.
+  //   ≤4 → 2행(큰 타일) · 5~6 → 3행(1.5배 확대가 온전히 들어가는 기본 크기)
+  //   7~8 → 4행. 이 단계만은 1.5배를 다 못 준다 — 4행 × 확대 글자 + 기준줄은
+  //         각주와 겹친다(실측). 재료가 7개 이상인 날은 약 1.2배로 물러선다.
+  const tier = st.length <= 4 ? 'roomy' : st.length <= 6 ? 'mid' : 'tight';
+  const G = {
+    roomy: { h: 330, gap: 20, pad: '24px 26px', label: 24, value: 44, delta: 28, sub: 20, ref: 18 },
+    mid:   { h: 256, gap: 18, pad: '20px 22px', label: 21, value: 34, delta: 24, sub: 18, ref: 16 },
+    tight: { h: 190, gap: 16, pad: '15px 17px', label: 17, value: 34, delta: 19, sub: 14, ref: 13 },
+  }[tier];
+  const u = (W - M * 2 - G.gap) / 2, y0 = 296;
+
   const tiles = st.map((x, i) => {
     const r = Math.floor(i / 2), c = i % 2;
+    const ref = t(x.ref_ko, x.ref_en);
     return `
-    <div style="position:absolute; left:${M + c * (u + gap)}px; top:${y0 + r * (h + gap)}px; width:${u}px; height:${h}px;
-                background:${PAL.tile}; border-radius:16px; padding:${roomy ? '22px 24px' : '16px 18px'}; z-index:2;">
-      <div style="font-size:${fLabel}px; font-weight:700; color:${PAL.dim}; line-height:1.3;">${esc(t(x.label_ko, x.label_en))}</div>
-      <div style="font-size:${fValue}px; font-weight:900; color:${PAL.text}; margin-top:10px;">${esc(x.value)}</div>
-      <div style="font-size:${fDelta}px; font-weight:800; color:${dirColor(x.dir)}; margin-top:8px;">${esc(tf(x.delta) || '')}</div>
-      <div style="font-size:${fSub}px; color:${PAL.faint}; margin-top:9px; line-height:1.4;">${esc(t(x.sub_ko, x.sub_en))}</div>
+    <div style="position:absolute; left:${M + c * (u + G.gap)}px; top:${y0 + r * (G.h + G.gap)}px; width:${u}px; height:${G.h}px;
+                background:${PAL.tile}; border-radius:16px; padding:${G.pad}; z-index:2; overflow:hidden;
+                display:flex; flex-direction:column;">
+      <div style="font-size:${G.label}px; font-weight:700; color:${PAL.dim}; line-height:1.3;">${esc(t(x.label_ko, x.label_en))}</div>
+      <div style="font-size:${G.value}px; font-weight:900; color:${PAL.text}; margin-top:10px; line-height:1.1;">${esc(x.value)}</div>
+      <div style="font-size:${G.delta}px; font-weight:800; color:${dirColor(x.dir)}; margin-top:8px; line-height:1.2;">${esc(tf(x.delta) || '')}</div>
+      <div style="font-size:${G.sub}px; color:${PAL.faint}; margin-top:9px; line-height:1.4;">${esc(t(x.sub_ko, x.sub_en))}</div>
+      ${ref ? `<div style="margin-top:auto; padding-top:12px;">
+        <div style="height:1px; background:${PAL.rule}; margin-bottom:9px;"></div>
+        <div style="font-size:${G.ref}px; color:${PAL.dim}; line-height:1.35;">${esc(ref)}</div>
+      </div>` : ''}
     </div>`;
   }).join('');
+
   return `
   ${bg(6)}${header()}
-  ${kicker(132, C.econ_kicker || 'EARNINGS · DATA')}
-  ${title(168, C.econ_title || t('실적 · 지표 발표', 'Earnings & Data'), 40)}
-  ${subline(228, C.econ_sub)}
+  ${kicker(132, tf(C.econ_kicker) || 'EARNINGS · DATA')}
+  ${title(168, tf(C.econ_title) || t('실적 · 지표 발표', 'Earnings & Data'), 40)}
+  ${subline(228, tf(C.econ_sub))}
   ${tiles}
   ${noteBlock(t(s.note_ko, s.note_en), 132)}
   ${footer(6)}`;
@@ -424,9 +467,9 @@ function card9() {
   const mh = C.market_hours;
   return `
   ${bg(9)}${header()}
-  ${kicker(132, C.schedule_kicker || 'SCHEDULE')}
+  ${kicker(132, tf(C.schedule_kicker) || 'SCHEDULE')}
   ${title(168, t(C.schedule_title_ko, C.schedule_title_en) || t('주요 일정', 'Key Schedule'))}
-  ${subline(228, C.schedule_sub)}
+  ${subline(228, tf(C.schedule_sub))}
   <div style="position:absolute; left:${M}px; right:${M}px; top:296px; z-index:2;">${timeline(rows)}</div>
   ${mh ? `
   <div style="position:absolute; left:${M}px; right:${M}px; bottom:150px; background:${PAL.tile}; border-radius:16px;
