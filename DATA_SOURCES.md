@@ -112,6 +112,8 @@ PER 이든 PBR 이든 같다. 문제는 지표 종류가 아니라 **단위**다
 | ARM 로고 | `logos-cache` 에서 유일하게 실패. 모노그램으로 나감 |
 | FMP `calendar`→`earnings-calendar` (다음 주 실적) | **표본이 작다.** 2026-08-09 sun 세션 확인: `from_date`/`to_date`/`limit:1000` 을 어떻게 바꿔도 8월 한 달 전체가 티커 약 20개로 고정됐다(다른 날짜 범위로 반복해도 같은 집합이 나온다). 코어위브·슈퍼마이크로·어플라이드 머티어리얼즈처럼 언론에 이미 보도된 실적 일정이 이 20개 밖이면 아예 나오지 않는다 — "그 주에 실적이 없다"가 아니라 "이 API 표본 밖이다". **뉴스로 날짜만 다수 매체 대조되면 캘린더 카드(예: sun ③)엔 써도 되지만, 컨센서스 EPS 숫자가 필요한 카드(sun ⑤)엔 이 표본 안의 티커만 쓴다.** |
 | FMP `calendar`→`earnings-company`, `statements`→`income-statement` (개별 종목 과거 실적) | **대부분 ACCESS DENIED.** AAPL·HD·AMAT·DE·CSCO 로 시도 — WMT·BIDU 는 성공, 대부분은 플랜 제한 오류. 성공/실패가 종목별로 일관되지 않아 예측 불가. 과거 분기 실적(예: 전년 동기 EPS)이 필요하면 이 경로에 의존하지 말고 기업 발표 보도자료를 WebSearch 로 찾는 편이 낫다(2026-08-09 sun 에서 시스코 전년 동기 EPS 를 이렇게 확보). |
+| 미국 지수 구성종목(나스닥100·S&P500·다우존스) — **해결 (2026-08-27)** | FMP `indexes`(sp-500 등)와 FMP `etfAndMutualFunds`(holdings)는 둘 다 ACCESS DENIED(Premium/Ultimate 이상 전용, 이 계정 등급에선 안 열림). **대신 Alpha Vantage `ETF_PROFILE`이 무료 등급에서 동작한다** — `ETF_PROFILE(symbol="DIA")`→다우30 전량, `ETF_PROFILE(symbol="QQQ")`→나스닥100(~103행, 현금·선물 조정 라인 포함), `ETF_PROFILE(symbol="SPY")`→S&P500(~500행). 응답의 `holdings[].symbol`이 그 지수 구성종목이다. `ROUTINE_PROMPT.md`의 실적·공시 디폴트 유니버스 확인에 쓴다. |
+| 한국 지수 구성종목(코스피200·코스닥150) — **미해결** | Alpha Vantage `ETF_PROFILE`은 한국 상장 티커(`069500.KS` 등)에 빈 객체 `{}`를 반환한다 — 미국 상장 자산만 다룬다. Twelve Data 커넥터가 2026-08-27 이 루틴 실행 환경에 추가됐지만 그 회차 세션에는 로드되지 않았다(추가가 다음 정기 실행부터 반영되는 것으로 보임) — **다음 회차가 먼저 `ToolSearch`로 확인**해야 한다. |
 
 ## 6. 탐침 기록 (재실행 불필요)
 
