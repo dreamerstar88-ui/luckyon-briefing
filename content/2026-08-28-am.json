@@ -1,0 +1,221 @@
+{
+  "date": "2026-08-28",
+  "session": "am",
+  "dateLabel_ko": "2026.8.28(금) 아침",
+  "dateLabel_en": "Fri, Aug 28, 2026 · AM",
+
+  "headline_ko": "엔비디아 실적 서프라이즈에 나스닥 1.57%↑…쏠림은 여전",
+  "headline_sub_ko": "S&P500 +0.72%·다우 +0.20% 상승, 동일가중지수는 -0.30%로 반대 방향 · 세일즈포스 +22.6%·크라우드스트라이크 +20.5%",
+  "headline_en": "Nvidia Earnings Beat Lifts Nasdaq 1.57%—But the Rally Stayed Narrow",
+  "headline_sub_en": "S&P 500 +0.72%, Dow +0.20%, but the equal-weight index fell -0.30% · Salesforce +22.6%, CrowdStrike +20.5%",
+
+  "cover_kicker": {"ko": "간밤 미국장 · 8/27 마감", "en": "US Overnight · Aug 27 Close"},
+  "cover_facts": [
+    ["chip",
+      {"ko": "나스닥 +1.57% · S&P500 +0.72%", "en": "Nasdaq +1.57% · S&P 500 +0.72%"},
+      {"ko": "26,541.35 / 7,730.99 · 엔비디아 실적이 견인", "en": "26,541.35 / 7,730.99 pts · led by Nvidia's earnings"}],
+    ["ai",
+      {"ko": "엔비디아 +8.74% · 세일즈포스 +22.6%", "en": "Nvidia +8.74% · Salesforce +22.6%"},
+      {"ko": "크라우드스트라이크도 +20.5% · 모두 실적 서프라이즈", "en": "CrowdStrike +20.5% too · all beat estimates"}],
+    ["target",
+      {"ko": "S&P 500 동일가중지수는 -0.30%", "en": "S&P 500 equal-weight index fell 0.30%"},
+      {"ko": "기술주만 오르고 나머지는 대부분 하락", "en": "Tech carried it; most other stocks fell"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥이 1.57%, S&P 500이 0.72% 오르며 3대 지수가 상승 마감했지만 다우는 0.20% 상승에 그쳤다.",
+      "엔비디아가 2분기 매출 962.2억달러(예상 922.7억달러)·EPS 2.22달러(예상 2.09달러)를 발표하고 내년 매출 70%대 성장을 예고하며 주가가 8.74% 급등, 지수 상승을 견인했다. 세일즈포스(+22.6%)·크라우드스트라이크(+20.5%)도 실적 서프라이즈로 동반 강세를 보였다.",
+      "다만 상승은 기술주에 갇혔다 — S&P 500 동일가중지수는 오히려 0.30% 내렸고, 거래대금 상위 300종목 중 엔비디아 한 종목이 전체의 17.9%를 차지했다. 반도체(SMH +3.10%)·기술(XLK +3.16%) 두 섹터만 오르고 나머지 9개 섹터는 모두 내렸다.",
+      "잭슨홀 심포지엄이 개막한 가운데 클리블랜드 연은 해맥 총재(매파·투표권 O)는 \"지금이 행동할 때\"라고 밝히는 등 매파 발언이 이어졌다. 호르무즈 해협 유조선 피격 경보에 WTI는 1.59% 올랐다."
+    ],
+    "lines_en": [
+      "The Nasdaq rose 1.57% and the S&P 500 0.72%, with all three major indexes closing higher, though the Dow managed just 0.20%.",
+      "Nvidia jumped 8.74% after posting Q2 revenue of $96.22B (vs. $92.27B est.) and EPS of $2.22 (vs. $2.09 est.) and guiding to roughly 70% revenue growth next fiscal year, driving the index gains. Salesforce (+22.6%) and CrowdStrike (+20.5%) also surged on earnings beats.",
+      "But the rally stayed narrow — the S&P 500 equal-weight index actually fell 0.30%, and Nvidia alone made up 17.9% of the top 300 stocks' turnover. Only two sectors rose, semiconductors (SMH +3.10%) and tech (XLK +3.16%), while the other nine all fell.",
+      "As the Jackson Hole symposium opened, hawkish comments continued — Cleveland Fed's Hammack (hawkish, voting) said 'now is the time to act.' WTI crude rose 1.59% on a tanker-attack warning in the Strait of Hormuz."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,541.35", "delta": "▲1.57%", "dir": "up", "note_ko": "엔비디아 실적 서프라이즈가 견인", "note_en": "Led by Nvidia's earnings beat"},
+    {"label": "S&P 500", "value": "7,730.99", "delta": "▲0.72%", "dir": "up", "note_ko": "동일가중지수는 -0.30%, 상승은 기술주에 쏠렸다", "note_en": "Equal-weight index fell 0.30%; gains stayed in tech"},
+    {"label": "KOSPI", "value": "6,881.57", "delta": "▲1.08%", "dir": "up", "note_ko": "8/27 한국장 종가 · 3거래일 연속 상승 · 장 열리기 전", "note_en": "Aug 27 Korea close · 3rd straight gain · before today's open"},
+    {"label": "VIX", "value": "14.51", "delta": "▼4.60%", "dir": "down", "note_ko": "변동성 지표는 안정세", "note_en": "Volatility gauge eased"},
+    {"label": "Fear & Greed", "value": "58", "delta": "▲", "dir": "up", "note_ko": "전일 55 · 탐욕 국면 강화", "note_en": "From 55 · greed regime deepens"},
+    {"label": "US 10Y", "value": "4.67%", "delta": "▲", "dir": "up", "note_ko": "전일 4.66% · 소폭 상승", "note_en": "From 4.66% · edged up"},
+    {"label": "USD/KRW", "value": "1,381", "value_sub": "· DXY 99.12", "delta": "▼0.25%", "dir": "down", "note_ko": "24시간 기준 · 달러 약보합 속 원화 소폭 강세", "note_en": "24h basis · won edged up as the dollar held steady"},
+    {"label": "Gold", "value": "$4,654.80", "delta": "▲1.23%", "dir": "up", "note_ko": "안전자산 수요 지속", "note_en": "Safe-haven demand persists"},
+    {"label": "WTI", "value": "$83.54", "delta": "▲1.59%", "dir": "up", "note_ko": "호르무즈 해협 유조선 피격 경보에 상승", "note_en": "Rose on a tanker attack warning in the Strait of Hormuz"},
+    {"label": "Bitcoin", "value": "$80,285", "delta": "▲2.01%", "dir": "up", "note_ko": "24시간 기준 · 8만달러 회복", "note_en": "24h basis · reclaimed $80K"}
+  ],
+  "market_note_ko": "나스닥·S&P500·VIX·금·WTI는 8/27 미국장 마감 기준 · 코스피는 8/27 한국장 종가(장 열리기 전) · 원/달러·비트코인은 새벽 시각 기준 24시간 등락률",
+  "market_note_en": "Nasdaq/S&P/VIX/Gold/WTI as of the Aug 27 US close · KOSPI is the Aug 27 Korea close (before today's open) · USD/KRW and Bitcoin show 24h change as of early morning KST",
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+
+  "chart_series_values": [26644.91, 26289.71, 26331.09, 26067.17, 26180.46, 25980.19, 26151.30, 26130.20, 26541.35],
+  "chart_series_labels": ["8.17", "8.18", "8.19", "8.20", "8.21", "8.24", "8.25", "8.26", "8.27"],
+  "chart_title": {"ko": "26,541.35 ▲1.57%", "en": "26,541.35 ▲1.57%"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "8.17 고점 26,644.91 → 8.24 저점 25,980.19 → 8.27 26,541.35", "en": "8.17 high 26,644.91 → 8.24 low 25,980.19 → 8.27 26,541.35"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "반도체·기술만 오른 하루", "en": "Only Chips and Tech Rose"},
+  "sector_sub": {"ko": "S&P 500 섹터 ETF + SMH · 8/27 종가 · 2개만 상승", "en": "S&P 500 sector ETFs + SMH · Aug 27 close · only 2 up"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
+  "rank_sub": {"ko": "8/27 미국 정규장 · 막대 옆 숫자는 그 종목 자체의 등락률", "en": "Aug 27 US session · % beside each bar is the stock's own change"},
+  "rank_unit": {"ko": "단위 · 십억달러", "en": "Unit: $B"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "엔비디아·세일즈포스·크라우드스트라이크 실적 서프라이즈", "en": "Nvidia, Salesforce, CrowdStrike all beat estimates"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Scorecard", "color": "#e66767", "type": "stats", "cols": 1,
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,541.35", "delta": "▲1.57%", "dir": "up", "sub_ko": "엔비디아·세일즈포스 실적 서프라이즈가 견인", "sub_en": "Led by Nvidia and Salesforce earnings beats"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,730.99", "delta": "▲0.72%", "dir": "up", "sub_ko": "동일가중지수는 -0.30%로 정반대 방향", "sub_en": "Equal-weight version fell -0.30%, the opposite direction"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 stocks by turnover", "up": 162, "flat": 2, "down": 136}
+      ],
+      "note_ko": "상승 종목이 162개로 하락 136개보다 많았지만, 거래대금은 엔비디아 한 종목에 상위 300종목 전체의 17.9%가 몰렸다 — 폭보다 쏠림이 두드러진 상승이었다.",
+      "note_en": "Advancers (162) outnumbered decliners (136), but Nvidia alone accounted for 17.9% of the top-300 stocks' turnover — a rally driven more by concentration than breadth."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "US Sectors", "color": "#4a9d7f", "type": "bars",
+      "bars": [
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": 3.16},
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 3.10},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -0.22},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": -0.65},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": -0.76},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": -0.82},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": -0.85},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": -0.95},
+        {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm. (XLC)", "value": -1.07},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Cons. Disc. (XLY)", "value": -1.09},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": -1.13},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Cons. Staples (XLP)", "value": -1.38}
+      ],
+      "note_ko": "11개 섹터 중 기술·반도체만 올랐다 — 나머지 9개는 모두 내려, 상승이 두 섹터에 갇힌 하루였다.",
+      "note_en": "Only tech and semis rose among 11 sectors — the other nine all fell, keeping the day's gains boxed into two corners of the market."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Turnover", "color": "#3987e5", "type": "rank",
+      "rows": [
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$67.75B", "pct": 8.74},
+        {"name_ko": "마이크로소프트", "name_en": "Microsoft", "value": "$14.45B", "pct": 1.75},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$13.00B", "pct": -0.96},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$10.64B", "pct": 2.60},
+        {"name_ko": "애플", "name_en": "Apple", "value": "$10.14B", "pct": 0.36}
+      ],
+      "share": {
+        "label_ko": "엔비디아의 거래대금 비중 · 상위 300종목 표본 대비", "label_en": "Nvidia's share of turnover · vs. the top-300 sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "엔비디아", "label_en": "Nvidia", "pct": 17.9, "color": "#3987e5"},
+          {"label_ko": "나머지 299종목", "label_en": "Other 299 stocks", "pct": 82.1, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "엔비디아 한 종목이 상위 300종목 표본 거래대금의 17.9%를 차지했다. 마이크로소프트·테슬라·애플도 상위권에 들었지만 규모 차이가 컸다.",
+      "note_en": "Nvidia alone made up 17.9% of the top-300 sample's dollar turnover. Microsoft, Tesla and Apple also ranked high, but at a much smaller scale."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data", "color": "#5b8dd6", "type": "stats", "cols": 2,
+      "stats": [
+        {"label_ko": "엔비디아 EPS(2Q)", "label_en": "Nvidia EPS (Q2)", "value": "$2.22", "delta": {"ko": "예상 $2.09 상회", "en": "Beat est. $2.09"}, "dir": "up", "sub_ko": "매출 962.2억달러 · 예상 922.7억달러 · 내년 매출 70%대 성장 가이던스", "sub_en": "Revenue $96.22B vs $92.27B est. · guided to ~70% revenue growth next fiscal year"},
+        {"label_ko": "세일즈포스 EPS(2Q)", "label_en": "Salesforce EPS (Q2)", "value": "$5.90", "delta": {"ko": "예상 $3.27 상회", "en": "Beat est. $3.27"}, "dir": "up", "sub_ko": "매출 113.5억달러 · 전년비 +11% · 연간 EPS 전망 16.67~16.71달러로 상향", "sub_en": "Revenue $11.35B, +11% YoY · raised FY EPS guide to $16.67-16.71"},
+        {"label_ko": "크라우드스트라이크 EPS(2Q)", "label_en": "CrowdStrike EPS (Q2)", "value": "$0.31", "delta": {"ko": "예상 $0.29 상회", "en": "Beat est. $0.29"}, "dir": "up", "sub_ko": "매출 14.7억달러 · 전년비 +26% · AI 보안 수요가 견인", "sub_en": "Revenue $1.47B, +26% YoY · driven by AI security demand"},
+        {"label_ko": "美 7월 도매재고(전월비)", "label_en": "US Jul Wholesale Inventories (MoM)", "value": "+1.3%", "delta": {"ko": "예상 +0.2% 상회", "en": "Beat est. +0.2%"}, "dir": "up", "sub_ko": "21:30 발표 · 이전 +0.2%", "sub_en": "Released 9:30 PM KST · prior +0.2%"},
+        {"label_ko": "美 신규 실업수당청구", "label_en": "US Initial Jobless Claims", "value": "203K", "delta": {"ko": "예상 208K 하회", "en": "Below est. 208K"}, "dir": "down", "sub_ko": "21:30 발표 · 이전 206K", "sub_en": "Released 9:30 PM KST · prior 206K"},
+        {"label_ko": "美 7년물 국채입찰", "label_en": "US 7-Year Note Auction", "value": "4.512%", "delta": {"ko": "WI 4.512%와 부합", "en": "In line with WI 4.512%"}, "dir": "flat", "sub_ko": "입찰 전 시장금리(WI) 수준에서 낙찰 · 무난히 소화", "sub_en": "Priced at the pre-sale when-issued level · smoothly absorbed"}
+      ],
+      "note_ko": "엔비디아·세일즈포스·크라우드스트라이크가 나란히 실적 서프라이즈를 냈고, 도매재고도 예상을 크게 웃돌았다. 신규 실업수당청구는 예상보다 적어 고용시장은 여전히 견조했다.",
+      "note_en": "Nvidia, Salesforce and CrowdStrike all beat estimates, and wholesale inventories topped expectations by a wide margin. Jobless claims came in lower than forecast, pointing to a still-resilient labor market."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis", "color": "#7b6cd9",
+      "items": [
+        {"headline_ko": "엔비디아, 매출 962억달러 어닝서프라이즈…내년 매출 70%대 성장 가이던스", "headline_en": "Nvidia Posts $96.2B Revenue Beat, Guides to ~70% Growth Next Year",
+         "body_ko": "엔비디아가 2분기 매출 962.2억달러(예상 922.7억달러)·EPS 2.22달러(예상 2.09달러)를 발표, 주가가 8.74% 급등했다. 메모리 공급 부족 언급에 HBM·D램 수요 전망도 올랐다.",
+         "body_en": "Nvidia posted Q2 revenue of $96.22B (vs. $92.27B est.) and EPS of $2.22 (vs. $2.09 est.), sending shares up 8.74%. It also flagged memory shortages, lifting demand hopes for HBM and DRAM."},
+        {"headline_ko": "세일즈포스, '클로드포스'로 앤트로픽 제휴 확대…실적도 서프라이즈", "headline_en": "Salesforce Expands Anthropic Tie-Up via Claudeforce, Beats on Earnings",
+         "body_ko": "세일즈포스는 2분기 EPS 5.90달러(예상 3.27달러) 서프라이즈로 주가가 22.6% 급등했다. '클로드포스'로 앤트로픽 클로드 모델을 자사 생태계에 더 깊이 결합했다.",
+         "body_en": "Salesforce beat with Q2 EPS of $5.90 (vs. $3.27 est.), sending shares up 22.6%, and deepened its Anthropic tie-up via 'Claudeforce,' embedding Claude further into its ecosystem."},
+        {"headline_ko": "크라우드스트라이크, AI 보안 수요에 매출 26%↑…가이던스도 상향", "headline_en": "CrowdStrike Revenue Jumps 26% on AI Security Demand, Raises Guidance",
+         "body_ko": "크라우드스트라이크는 2분기 매출 14.7억달러(전년비 +26%)·EPS 0.31달러(예상 0.29달러)로 주가가 20.5% 뛰었다. AI 보안 수요 확대에 연간 가이던스도 올렸다.",
+         "body_en": "CrowdStrike reported Q2 revenue of $1.47B (+26% YoY) and EPS of $0.31 (vs. $0.29 est.), with shares up 20.5%, citing AI security demand and raising full-year guidance."},
+        {"headline_ko": "반도체·기술주만 오른 하루…삼성전자·SK하이닉스도 오늘 개장 주목", "headline_en": "Only Chips and Tech Rose — Samsung, SK Hynix Also in Focus at Seoul Open",
+         "body_ko": "반도체 ETF SMH(+3.10%)·기술섹터 XLK(+3.16%)만 오르고 나머지 9개 섹터는 내렸다. 메모리 공급부족 언급에 오늘 코스피 개장 때 삼성전자·SK하이닉스 반응이 관전 포인트다.",
+         "body_en": "Only chip ETF SMH (+3.10%) and tech sector XLK (+3.16%) rose; the other nine sectors fell. Nvidia's memory-shortage comments put Samsung and SK Hynix in focus at today's Seoul open."},
+        {"headline_ko": "엔비디아, 허깅페이스 129억달러 인수설…\"아직 서명 전\"", "headline_en": "Nvidia in Talks to Buy Hugging Face for $12.9B, Reports Say",
+         "body_ko": "CNBC·블룸버그가 The Information을 인용해 엔비디아의 허깅페이스 129억달러 인수 합의를 보도했다. 정식 서명 전이며 양사는 공식 확인을 거부했다.",
+         "body_en": "CNBC and Bloomberg, citing The Information, reported Nvidia agreed to buy Hugging Face for $12.9B. No signed deal is confirmed, and both firms declined to comment."},
+        {"headline_ko": "AWS·엔비디아, GPU 200만개 추가 공급 파트너십 확대", "headline_en": "AWS, Nvidia Expand Partnership to Add 2 Million More GPUs",
+         "body_ko": "AWS와 엔비디아가 2027~2028년 GPU 200만개를 추가 공급하기로 협력을 확대했다. AWS 도입 엔비디아 GPU 총량은 300만개를 넘어선다.",
+         "body_en": "AWS and Nvidia expanded their partnership to deploy 2 million more GPUs in 2027-2028, pushing Nvidia's total GPU footprint on AWS past 3 million."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories", "color": "#d98a3c",
+      "items": [
+        {"headline_ko": "잭슨홀 심포지엄 개막…연준 인사들 매파 발언 이어져", "headline_en": "Jackson Hole Opens With Hawkish Fed Commentary",
+         "body_ko": "클리블랜드 연은 해맥 총재(매파·투표권 O)는 \"지금이 행동할 때\"라며 현재 금리가 제약적이지 않다고 밝혔다. 캔자스시티 연은 슈미드 총재(매파·투표권 X)도 인플레이션 억제가 쉽지 않다고 경고했지만 9월 인상을 못박지는 않았고, 보스턴 연은 콜린스 총재(중도·투표권 X)는 \"현재 금리가 완만하게 제약적\"이라며 온도차를 보였다. 워시 의장의 첫 기조연설은 오늘 밤 23시(KST) 예정이다.",
+         "body_en": "Cleveland Fed's Hammack (hawkish, voting) said \"now is the time to act,\" arguing current rates aren't restrictive. Kansas City's Schmid (hawkish, non-voting) also warned inflation won't be easy to tame but stopped short of endorsing a September hike, while Boston's Collins (centrist, non-voting) called rates \"modestly restrictive.\" Chair Warsh's first keynote follows tonight at 11 PM KST."},
+        {"headline_ko": "호르무즈 해협 유조선 피격 경보에 WTI 1.6%↑", "headline_en": "WTI Rises 1.6% on Tanker Attack Warning in Strait of Hormuz",
+         "body_ko": "영국해사무역기구(UKMTO)가 오만 인근 호르무즈 해협에서 유조선이 미상 발사체 공격을 받았다고 경보했다. 이란과 오만·카타르의 항로 정상화 협상이 난항을 겪는 가운데, WTI는 배럴당 83.54달러로 전일보다 1.59% 올랐다.",
+         "body_en": "The UK Maritime Trade Organization warned that a tanker was struck by an unknown projectile in the Strait of Hormuz near Oman. With Iran-Oman-Qatar talks to normalize the waterway stalled, WTI rose 1.59% to $83.54 a barrel."},
+        {"headline_ko": "모더나, 20억달러 전환사채 발행 계획에 4.6%↓", "headline_en": "Moderna Falls 4.6% on $2B Convertible Note Plan",
+         "body_ko": "모더나가 20억달러 규모 전환사채 발행 계획을 발표한 뒤 주가가 142.77달러로 전일보다 4.60% 내렸다. 지분 희석 우려가 투자심리에 부담을 줬다.",
+         "body_en": "Moderna shares fell 4.60% to $142.77 after the company announced plans to issue $2B in convertible notes, with dilution concerns weighing on sentiment."},
+        {"headline_ko": "HP, PC 부문 출하량·마진 둔화에 3%↓", "headline_en": "HP Falls Nearly 3% on Weaker PC Shipments, Margins",
+         "body_ko": "HP는 3분기 PC 부문의 출하량과 마진이 동반 둔화됐다는 소식에 주가가 29.63달러로 전일보다 2.92% 내렸다.",
+         "body_en": "HP shares fell 2.92% to $29.63 after the company reported softer PC segment shipments and margins in its fiscal third quarter."},
+        {"headline_ko": "워크데이·오토데스크, 실적은 상회했지만 가이던스 둔화에 시간외 하락", "headline_en": "Workday, Autodesk Beat but Slide After Hours on Softer Guidance",
+         "body_ko": "워크데이는 2분기 EPS 2.75달러·매출 26.5억달러로 예상을 웃돌았지만 3분기 구독매출 가이던스가 시장 예상에 못 미쳐 시간외 5%대 내렸다. 오토데스크도 실적은 상회했으나 3분기 EPS 전망(3.04~3.09달러)이 예상(3.14달러)을 밑돌며 시간외 5%대 하락했다 — 같은 날 실적을 낸 세일즈포스·크라우드스트라이크와 대조적이다.",
+         "body_en": "Workday beat with Q2 EPS of $2.75 on revenue of $2.65B, but shares fell roughly 5% after hours as Q3 subscription revenue guidance missed expectations. Autodesk also topped estimates but slid about 5% after guiding Q3 EPS to $3.04-$3.09, below the $3.14 estimate — a contrast to the same-day beats from Salesforce and CrowdStrike."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {"ko": "지금 ~ 오늘 21:00", "en": "Now through 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "08:30", "title_ko": "일본 도쿄 소비자물가지수(전년비)", "title_en": "Tokyo CPI (YoY)", "detail_ko": "전월 2.0% · 전국 CPI의 선행지표", "detail_en": "Prior 2.0% · a leading indicator for national CPI", "importance": "high"},
+    {"time": "08:30", "title_ko": "일본 도쿄 근원 CPI(식품·에너지 제외, 전년비)", "title_en": "Tokyo Core-Core CPI (YoY)", "detail_ko": "전월 2.0% · BOJ가 주시하는 근원물가", "detail_en": "Prior 2.0% · closely watched by the BOJ", "importance": "high"},
+    {"time": "08:30", "title_ko": "일본 실업률", "title_en": "Japan Unemployment Rate", "detail_ko": "예상 2.5% · 이전 2.5%", "detail_en": "Est. 2.5% · prior 2.5%", "importance": "mid"},
+    {"time": "09:00", "title_ko": "잭슨홀 심포지엄 개막", "title_en": "Jackson Hole Symposium Opens", "detail_ko": "주제 '금융혁신과 지급결제·정책' · 워시 의장 첫 기조연설은 오늘 밤 23시", "detail_en": "Theme: 'Financial Innovation' · Chair Warsh's first keynote follows tonight at 11 PM KST", "importance": "high"},
+    {"time": "16:55", "title_ko": "독일 실업률(계절조정)", "title_en": "Germany Unemployment Rate (s.a.)", "detail_ko": "예상 6.4% · 이전 6.4%", "detail_en": "Est. 6.4% · prior 6.4%", "importance": "mid"},
+    {"time": "18:00", "title_ko": "유로존 경제심리지수(ESI)", "title_en": "Eurozone Economic Sentiment Indicator", "detail_ko": "예상 97.5 · 이전 96.9", "detail_en": "Est. 97.5 · prior 96.9", "importance": "mid"},
+    {"time": "18:00", "title_ko": "유로존 소비자신뢰지수(확정치)", "title_en": "Eurozone Consumer Confidence (Final)", "detail_ko": "예상 -15.5 · 이전 -15.5", "detail_en": "Est. -15.5 · prior -15.5", "importance": "mid"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "card_photos": {
+    "1": "A dim NYSE trading floor glowing at dawn, a rising green stock chart line reflected on a wall of screens, silhouettes of traders looking upbeat, warm amber light mixing with cool blue, shallow depth of field, cinematic.",
+    "3": "A close-up of a curved monitor showing a sharply rising stock chart line in warm amber against a dark background, a semiconductor wafer reflected faintly in the glass, moody dramatic lighting, soft bokeh."
+  },
+
+  "caption_ko": "엔비디아가 어닝서프라이즈와 내년 70%대 매출 성장 가이던스를 내놓으며 주가가 8.74% 급등, 나스닥을 1.57% 끌어올렸습니다. 세일즈포스(+22.6%)·크라우드스트라이크(+20.5%)도 실적 서프라이즈! 다만 S&P 500 동일가중지수는 -0.30%로 내려 상승은 기술주에 쏠렸습니다. 잭슨홀 심포지엄도 개막, 오늘 밤 워시 의장 첫 기조연설을 주목하세요 🔔\n\n#루키온브리핑 #미국증시 #나스닥 #엔비디아 #세일즈포스 #크라우드스트라이크 #반도체 #잭슨홀 #국제유가 #금값 #비트코인 #코스피 #경제뉴스 #주식 #증시브리핑",
+  "caption_en": "Nvidia surged 8.74% on an earnings beat and ~70% revenue growth guidance for next year, lifting the Nasdaq 1.57%. Salesforce (+22.6%) and CrowdStrike (+20.5%) also beat estimates! But the S&P 500 equal-weight index fell 0.30% — gains stayed concentrated in tech. Jackson Hole also opened; watch for Chair Warsh's first keynote tonight 🔔\n\n#luckyonbriefing #usstocks #nasdaq #nvidia #salesforce #crowdstrike #semiconductors #jacksonhole #oilprices #gold #bitcoin #kospi #markets #investing #dailybriefing",
+  "sources": ["Yahoo Finance", "FMP", "KRX (FinanceDataReader)", "SAVE Ticker", "U.S. Dept of Labor", "U.S. Census Bureau", "Federal Reserve", "Naver News"]
+}
