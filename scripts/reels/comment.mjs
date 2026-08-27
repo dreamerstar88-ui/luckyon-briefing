@@ -95,32 +95,19 @@ const POOL = {
       [`Moving ahead of ${e}`, `main event still to come`, `hm...`],
     ],
   },
-  newsDown: {
+  // 2026-08-27 사고 이후 재설계: 뉴스가 있다고 그 방향의 움직임을 뉴스 "때문"이라고
+  // 단정하지 않는다 (좋은 뉴스인데 창이 근소하게 빨갛다고 "이거 때문에 빠지네"라고 썼던 사고).
+  // 차트 모양 판정이 이미 끝난 뒤, 그 위에 "혹시 이거 때문인가?" 정도의 추측 한 줄만 얹는다.
+  newsMaybe: {
     ko: (n) => [
-      [`${n}`, `이거 때문에 빠지네`, `어디까지 가려고...`],
-      [`${n}`, `뜨자마자 쭉 미끄러짐`, `아 진짜...`],
+      `${n} 때문인가?`,
+      `혹시 ${n} 때문에?`,
+      `${n}... 영향 있나`,
     ],
     en: (n) => [
-      [`${n}`, `and down it goes`, `how far...`],
-      [`${n}`, `dropped the second it hit`, `ugh`],
-    ],
-  },
-  newsUp: {
-    ko: (n) => [
-      [`${n}`, `이걸로 올라가네!`, `계속 가줬으면`],
-      [`${n}`, `뜨자마자 튀어오름`, `오랜만이다 이런거`],
-    ],
-    en: (n) => [
-      [`${n}`, `and up it goes!`, `keep going please`],
-      [`${n}`, `popped right on the headline`, `been a while`],
-    ],
-  },
-  newsFlat: {
-    ko: (n) => [
-      [`${n}`, `나왔는데 반응이 없네`, `다들 관심 없나`],
-    ],
-    en: (n) => [
-      [`${n}`, `and... nothing`, `nobody cares?`],
+      `is it the ${n}?`,
+      `${n}... maybe why?`,
+      `could be the ${n}`,
     ],
   },
   // ---- 밤사이 흐름을 아는 문구 ----
@@ -497,65 +484,93 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
   };
 
   if (ctx.pendingEvent) {
+    // 앞으로 있을 이벤트는 인과 주장이 아니라 "대기 중"이라는 상태 묘사라 그대로 둔다.
     const a = { ko: ctx.pendingEvent.title_ko, en: ctx.pendingEvent.title_en };
     return out(sh.quiet ? 'pendingQuiet' : 'pendingMoving', a);
   }
-  if (ctx.recentNews) {
-    const a = { ko: ctx.recentNews.title_ko, en: ctx.recentNews.title_en };
-    return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
+
+  // ---- 차트 모양을 먼저 본다 — 뉴스 유무와 무관하게 항상 이 판정을 거친다 ----
+  // (예전엔 ctx.recentNews 가 있으면 이 판정을 통째로 건너뛰고 "그 뉴스 때문에
+  //  오르네/빠지네"로 단정했다. 좋은 뉴스인데 창이 근소하게 빨갛다는 이유만으로
+  //  "이거 때문에 빠지네"가 나온 사고가 있었다 — 인과가 거꾸로였다.)
+  const base = (() => {
+    // 세션 안에서 뚜렷한 방향 전환(초반 고점→하락, 또는 초반 저점→반등)이
+    // 있었는지를 밤사이 흐름 서사보다 먼저 본다 — 이 스토리의 요점은 지금 이
+    // 순간이라, 몇 시간 전 프리장 방향보다 그 뒤에 일어난 전환이 더 현재를
+    // 대표한다. "고점에서 얼마나 빠졌나"(fadeFromHighPct)와 "저점에서 얼마나
+    // 올라왔나"(bounceFromLowPct)를 후보로 두고 점수(되돌린 폭)가 더 큰 쪽을
+    // 쓴다 — 조건을 우선순위로 하나씩 쌓는 대신, 두 후보 중 지금 궤적에 더 잘
+    // 맞는 쪽을 고르는 방식이다. 어느 쪽도 REVERSAL 이상으로 되돌리지 못했다면
+    // "뚜렷한 전환"이라 부를 근거가 없다는 뜻이라 아래 단조 흐름 판정으로 넘어간다.
+    const REVERSAL = 0.15;
+    const { fadeFromHighPct, bounceFromLowPct } = sh;
+    if (fadeFromHighPct >= REVERSAL || bounceFromLowPct >= REVERSAL) {
+      if (fadeFromHighPct >= bounceFromLowPct) return out(down ? 'fadeFromHigh' : 'coolingOff', {});
+      return out(down ? 'bounceFromLow' : 'recovered', {});
+    }
+
+    const ov0 = nasdaq.overnight;
+
+    // 개장 전 흐름을 먼저 본다 — '아까부터 그랬던 것'과 '열자마자 뒤집힌 것'은 다른 이야기다.
+    if (ov0 && ov0.preDirPct != null && ov0.preBars >= 60) {
+      const preDir = ov0.preDirPct;
+      const preWild = (ov0.preRangePct ?? 0) >= 0.8;
+      const PRE_MOVE = 0.15;
+
+      if (preWild && sh.quiet) return out('preWildThenQuiet', {});
+      if (preDir <= -PRE_MOVE && down) return out('preFadeContinued', {});
+      if (preDir >= PRE_MOVE && down) return out('preRallyReversed', {});
+      if (preDir <= -PRE_MOVE && up) return out('preFadeReversed', {});
+      if (preDir >= PRE_MOVE && up) return out('preRallyContinued', {});
+    }
+
+    if (sh.quiet) return out('quiet', {});
+    if (diverging) return out('diverging', {});
+
+    // 밤사이 흐름을 아는 문구를 먼저 시도한다.
+    // 갭이 뚜렷하거나 전일 종가와 확실히 떨어져 있을 때만 쓴다 — 애매하면 창 모양으로 넘긴다.
+    const ov = nasdaq.overnight;
+    if (ov && ov.gapPct != null) {
+      const gap = ov.gapPct;
+      const vsPrev = ov.nowVsPrevPct;
+      const BIG_GAP = 0.3;
+      if (gap <= -BIG_GAP && down) return out('gapDownFalling', {});
+      if (gap <= -BIG_GAP && up) return out('gapDownRecovering', {});
+      if (gap >= BIG_GAP && up) return out('gapUpHolding', {});
+      if (gap >= BIG_GAP && down) return out('gapUpFading', {});
+      if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
+      if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
+    }
+    // 여기까지 왔다면 뚜렷한 방향 전환은 없었다는 뜻이다 — 지금 방향으로
+    // 쭉 온 단조 흐름이니, 세션 극값 근처인지로만 표현 세기를 가른다.
+    if (down && sh.nearLow) return out('sinking', {});
+    if (down) return out('drifting', {});
+    if (up && sh.nearHigh) return out('climbing', {});
+    return out('rising', {});
+  })();
+
+  // ---- 그 다음, 뉴스를 "이거 때문인가?" 정도로만 얹는다 — 기본은 안 붙인다 ----
+  // 2026-08-27 두 차례 사고로 확인된 두 가지 문제:
+  //  ① ctx.recentNews 가 있으면 그 순간의 등락 부호만 보고 "그 뉴스 때문에
+  //     오르네/빠지네"로 단정했다 (엔비디아의 좋은 실적을 "이거 때문에
+  //     빠지네"로 엮음 — 인과가 거꾸로였다).
+  //  ② ①을 "이거 때문인가?"라는 추측형으로 바꿔도, 이 스토리는 항상 개장
+  //     후 19분 창에서 도는데 실적은 항상 전날 마감 후에 나와 그 시점엔
+  //     이미 몇 시간~반나절 지난 뉴스다. 그 뉴스의 실제 효과(갭)는 이미
+  //     차트가 "위로 열었는데"로 보여주고 있고, 지금 이 순간의 되돌림은
+  //     뉴스와 무관한 라이브 수급이다 — 오래된 뉴스를 라이브 움직임에
+  //     다시 갖다붙이는 억지였다.
+  // 그래서 기본값은 "붙이지 않음"이다. 뉴스가 지금도 여전히 이 순간의
+  // 움직임을 설명한다고 확신할 때만(대략 창 시작 기준 1~2시간 이내에 나온
+  // 뉴스, 또는 그 자산이 지금도 그 뉴스로 튀는 게 화면에 보일 때)
+  // recentNews.stillMoving = true 를 절차서 3단계에서 명시적으로 넣는다.
+  // 전날 마감 후~오늘 개장 전 실적처럼 이미 지난 뉴스는 stillMoving 을
+  // 넣지 않는다 — 갭이 이미 그 이야기를 하고 있다.
+  if (ctx.recentNews && ctx.recentNews.stillMoving && sh.big) {
+    const tagKo = pick(POOL.newsMaybe.ko(ctx.recentNews.title_ko), seed);
+    const tagEn = pick(POOL.newsMaybe.en(ctx.recentNews.title_en), seed);
+    const cap = (arr, tag) => (arr.length >= 3 ? [...arr.slice(0, 2), tag] : [...arr, tag]);
+    return { ko: cap(base.ko, tagKo), en: cap(base.en, tagEn) };
   }
-
-  // 세션 안에서 뚜렷한 방향 전환(초반 고점→하락, 또는 초반 저점→반등)이
-  // 있었는지를 밤사이 흐름 서사보다 먼저 본다 — 이 스토리의 요점은 지금 이
-  // 순간이라, 몇 시간 전 프리장 방향보다 그 뒤에 일어난 전환이 더 현재를
-  // 대표한다. "고점에서 얼마나 빠졌나"(fadeFromHighPct)와 "저점에서 얼마나
-  // 올라왔나"(bounceFromLowPct)를 후보로 두고 점수(되돌린 폭)가 더 큰 쪽을
-  // 쓴다 — 조건을 우선순위로 하나씩 쌓는 대신, 두 후보 중 지금 궤적에 더 잘
-  // 맞는 쪽을 고르는 방식이다. 어느 쪽도 REVERSAL 이상으로 되돌리지 못했다면
-  // "뚜렷한 전환"이라 부를 근거가 없다는 뜻이라 아래 단조 흐름 판정으로 넘어간다.
-  const REVERSAL = 0.15;
-  const { fadeFromHighPct, bounceFromLowPct } = sh;
-  if (fadeFromHighPct >= REVERSAL || bounceFromLowPct >= REVERSAL) {
-    if (fadeFromHighPct >= bounceFromLowPct) return out(down ? 'fadeFromHigh' : 'coolingOff', {});
-    return out(down ? 'bounceFromLow' : 'recovered', {});
-  }
-
-  const ov0 = nasdaq.overnight;
-
-  // 개장 전 흐름을 먼저 본다 — '아까부터 그랬던 것'과 '열자마자 뒤집힌 것'은 다른 이야기다.
-  if (ov0 && ov0.preDirPct != null && ov0.preBars >= 60) {
-    const preDir = ov0.preDirPct;
-    const preWild = (ov0.preRangePct ?? 0) >= 0.8;
-    const PRE_MOVE = 0.15;
-
-    if (preWild && sh.quiet) return out('preWildThenQuiet', {});
-    if (preDir <= -PRE_MOVE && down) return out('preFadeContinued', {});
-    if (preDir >= PRE_MOVE && down) return out('preRallyReversed', {});
-    if (preDir <= -PRE_MOVE && up) return out('preFadeReversed', {});
-    if (preDir >= PRE_MOVE && up) return out('preRallyContinued', {});
-  }
-
-  if (sh.quiet) return out('quiet', {});
-  if (diverging) return out('diverging', {});
-
-  // 밤사이 흐름을 아는 문구를 먼저 시도한다.
-  // 갭이 뚜렷하거나 전일 종가와 확실히 떨어져 있을 때만 쓴다 — 애매하면 창 모양으로 넘긴다.
-  const ov = nasdaq.overnight;
-  if (ov && ov.gapPct != null) {
-    const gap = ov.gapPct;
-    const vsPrev = ov.nowVsPrevPct;
-    const BIG_GAP = 0.3;
-    if (gap <= -BIG_GAP && down) return out('gapDownFalling', {});
-    if (gap <= -BIG_GAP && up) return out('gapDownRecovering', {});
-    if (gap >= BIG_GAP && up) return out('gapUpHolding', {});
-    if (gap >= BIG_GAP && down) return out('gapUpFading', {});
-    if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
-    if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
-  }
-  // 여기까지 왔다면 뚜렷한 방향 전환은 없었다는 뜻이다 — 지금 방향으로
-  // 쭉 온 단조 흐름이니, 세션 극값 근처인지로만 표현 세기를 가른다.
-  if (down && sh.nearLow) return out('sinking', {});
-  if (down) return out('drifting', {});
-  if (up && sh.nearHigh) return out('climbing', {});
-  return out('rising', {});
+  return base;
 }
