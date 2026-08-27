@@ -58,6 +58,79 @@ export function shapeOf(sym) {
   };
 }
 
+// ---------- 저항/지지 다중 터치 판정 ----------
+// 2026-08-27 사고: 나스닥 선물이 29,589~29,605 구간을 다섯 번 넘게 건드리고도
+// 못 뚫었는데, 스크립트는 이 개념 자체가 없어 "위로 열고 그대로 밀고 가는 중"
+// 이라고 과하게 낙관적으로 썼다. 스윙 고점 1개가 아니라 "좁은 밴드 안에서
+// 여러 번 겹친 구간"이어야 저항/지지로 부를 근거가 있다는 게 핵심.
+// (`docs/technical-analysis-reference.md` 2·3장 참고)
+function findTouchZone(values, tolPct, minTouches) {
+  let best = null;
+  for (const level of values) {
+    const band = (level * tolPct) / 100;
+    const touches = values.filter((v) => Math.abs(v - level) <= band);
+    if (touches.length >= minTouches && (!best || touches.length > best.touches)) {
+      const avgLevel = touches.reduce((a, b) => a + b, 0) / touches.length;
+      best = { level: avgLevel, touches: touches.length };
+    }
+  }
+  return best;
+}
+
+// 창 안 저항/지지 구간과 지금 종가의 관계를 판정한다. "아직 살아있는 레벨"인지는
+// 지금 종가가 그 구간에서 얼마나 떨어져 있는지로 잰다(창 앞쪽 고가가 잠깐
+// 스쳤다는 것만으로는 부족하다 — 그새 멀리 밀려났으면 이건 더 이상 "레벨
+// 공방"이 아니라 그냥 되돌림/반전이라, 아래 REVERSAL 판정에 넘겨야 맞다).
+// 돌파 여부는 "종가" 기준으로만 판단한다(고가로 살짝 찍고 되돌아오는 건 가짜
+// 돌파 — 3장 "종가 기준 vs 고가 기준"). 저항이 있으면 저항부터 본다: 저항을
+// 테스트 중이면 지지는 애초에 덜 중요한 얘기다.
+//
+// 두 가지 안전장치(테스트 중 실제로 발견한 오탐):
+//  ① sh.quiet 면 아예 보지 않는다 — 거의 평평한 창은 모든 값이 서로의 밴드
+//     안에 들어와 "저항선"이 우연히 잡힌다(가짜 신호).
+//  ② 찾은 구간이 창의 고가/저가 "극단부"(extremityPct)에 있을 때만 인정한다
+//     — 안 그러면 그냥 창 중간의 흔한 잡음 뭉침(예: 초반 낙폭 중의 4틱짜리
+//     소소한 되돌림)을 "몇 번을 막히더니 드디어 뚫었다" 같은 거창한 돌파로
+//     과장하게 된다.
+function classifyLevel(bars, sh, { tolPct = 0.02, minTouches = 3, liveMult = 2, extremityPct = 0.4 } = {}) {
+  if (sh.quiet) return null;
+  if (bars.length < minTouches + 2) return null;
+  const highs = bars.map((b) => b.h);
+  const lows = bars.map((b) => b.l);
+  const lastClose = bars[bars.length - 1].c;
+  const hi = Math.max(...highs);
+  const lo = Math.min(...lows);
+  const range = hi - lo || 1;
+
+  // 돌파(종가가 레벨을 넘었다) 쪽은 거리 제한을 두지 않는다 — 막 넘어선
+  // 순간이라면 그게 바로 "뚫었다"는 이야기다. 반대로 아직 못 넘은 "테스트
+  // 중" 쪽만 지금도 그 근처에 있어야(liveMult) 인정한다 — 안 그러면 옛날에
+  // 부딪히고 이미 멀리 밀려난 레벨을 "아직 공방 중"이라고 착각하게 된다.
+  const res = findTouchZone(highs, tolPct, minTouches);
+  if (res && (hi - res.level) / range <= extremityPct) {
+    const band = (res.level * tolPct) / 100;
+    if (lastClose > res.level) {
+      return { type: 'resistanceBreakout', level: res.level, touches: res.touches };
+    }
+    if (Math.abs(lastClose - res.level) <= band * liveMult) {
+      return { type: 'resistanceTest', level: res.level, touches: res.touches };
+    }
+  }
+
+  const sup = findTouchZone(lows, tolPct, minTouches);
+  if (sup && (sup.level - lo) / range <= extremityPct) {
+    const band = (sup.level * tolPct) / 100;
+    if (lastClose < sup.level) {
+      return { type: 'supportBreakdown', level: sup.level, touches: sup.touches };
+    }
+    if (Math.abs(lastClose - sup.level) <= band * liveMult) {
+      return { type: 'supportTest', level: sup.level, touches: sup.touches };
+    }
+  }
+
+  return null;
+}
+
 // 날짜를 씨앗으로 변형을 고른다 (같은 날은 항상 같은 문구, 날마다는 달라짐)
 function seedOf(s) {
   let h = 0;
@@ -249,6 +322,51 @@ const POOL = {
     en: [
       [`These two disagree`, `who do I believe`],
       [`Nasdaq and S&P`, `going separate ways`, `confusing`],
+    ],
+  },
+  // ---- 저항/지지 다중 터치 ----
+  // classifyLevel() 이 감지한, "여러 번 부딪혔지만 아직 결판 안 난/결판 난" 구간.
+  // resistanceTest·supportTest 는 단정하지 않는다 — 이번에 뚫을지는 모른다.
+  resistanceTest: {
+    ko: [
+      [`이 자리서 몇 번째냐`, `못 뚫고 자꾸 튕기네`, `이번엔 가나`],
+      [`계속 여기서 막히네`, `뚫을듯 말듯`],
+      [`또 여기서 밀리네`, `이 자리가 문제인가`],
+    ],
+    en: [
+      [`Keeps hitting this level`, `and bouncing off`, `is this the time`],
+      [`Stuck at this ceiling`, `so close, not yet`],
+      [`Rejected here again`, `what's it gonna take`],
+    ],
+  },
+  resistanceBreakout: {
+    ko: [
+      [`몇 번을 막히더니`, `드디어 뚫었다`, `가보자`],
+      [`계속 부딪히던 자리`, `결국 넘어섰네`],
+    ],
+    en: [
+      [`Kept getting rejected here`, `finally broke through`, `let's go`],
+      [`Broke the level`, `that kept holding it back`],
+    ],
+  },
+  supportTest: {
+    ko: [
+      [`이 아래로는 안 뚫리네`, `몇 번째 버티는거지`],
+      [`계속 여기서 받치네`, `버텨줘`],
+    ],
+    en: [
+      [`Won't break below this`, `holding it, again`],
+      [`Keeps getting caught here`, `hold on`],
+    ],
+  },
+  supportBreakdown: {
+    ko: [
+      [`버티던 자리였는데`, `결국 뚫려버렸다`, `아래로`],
+      [`몇 번을 버티더니`, `여기서 무너지네`],
+    ],
+    en: [
+      [`Was holding here`, `finally gave way`, `heading lower`],
+      [`Defended this a few times`, `now it's breaking`],
     ],
   },
   // 아래 세 가지는 "창의 앞쪽"을 가리키는 표현이 들어가므로,
@@ -494,6 +612,13 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
   //  오르네/빠지네"로 단정했다. 좋은 뉴스인데 창이 근소하게 빨갛다는 이유만으로
   //  "이거 때문에 빠지네"가 나온 사고가 있었다 — 인과가 거꾸로였다.)
   const base = (() => {
+    // 저항/지지 다중 터치를 가장 먼저 본다 — "여러 번 부딪힌 구체적인 레벨"이
+    // 있다면, 그게 초반 고점 대비 되돌림 같은 추상적인 방향 판정보다 지금
+    // 이 순간을 더 정확히 설명한다(2026-08-27 사고 케이스). 진짜 레벨이
+    // 없으면(터치 3회 미만) null 이라 아래로 그대로 넘어간다.
+    const level = classifyLevel(nasdaq.bars, sh);
+    if (level) return out(level.type, {});
+
     // 세션 안에서 뚜렷한 방향 전환(초반 고점→하락, 또는 초반 저점→반등)이
     // 있었는지를 밤사이 흐름 서사보다 먼저 본다 — 이 스토리의 요점은 지금 이
     // 순간이라, 몇 시간 전 프리장 방향보다 그 뒤에 일어난 전환이 더 현재를
