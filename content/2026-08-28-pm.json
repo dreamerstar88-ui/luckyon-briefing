@@ -6,7 +6,7 @@
 
   "headline_ko": "코스피, 반도체 관세 우려·삼성바이오 유증에 4거래일 만에 하락…6788선",
   "headline_sub_ko": "SK하이닉스 -4.45%·삼성전자 -3.38% 급락에도 상승종목(640)이 하락(238)보다 많았다 · 원/달러는 13개월래 최저 1,372원대",
-  "headline_en": "KOSPI Snaps 4-Day Win Streak on Chip-Tariff Fears, Samsung Bio Share Sale",
+  "headline_en": "KOSPI Snaps 4-Day Win Streak on Chip-Tariff Fears",
   "headline_sub_en": "SK Hynix -4.45%, Samsung Electronics -3.38% led the drop, but advancers (640) beat decliners (238) · Won hit a 13-month low near 1,372",
 
   "cover_kicker": {"ko": "오늘 한국장 마감 · 8/28", "en": "Korea Market Close · Aug 28"},
@@ -84,8 +84,7 @@
         {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "838.41", "delta": "▲0.09%", "dir": "up", "sub_ko": "코스피와 반대로 2거래일 연속 상승", "sub_en": "Rose for a 2nd straight day, the opposite of the KOSPI"}
       ],
       "breadth": [
-        {"label_ko": "코스피 (944종목)", "label_en": "KOSPI (944 stocks)", "up": 640, "flat": 66, "down": 238},
-        {"label_ko": "코스닥 (1,773종목)", "label_en": "KOSDAQ (1,773 stocks)", "up": 926, "flat": 176, "down": 671}
+        {"label_ko": "코스피 (944종목)", "label_en": "KOSPI (944 stocks)", "up": 640, "flat": 66, "down": 238}
       ],
       "flows": {
         "label_ko": "코스피 투자자별 순매수", "label_en": "KOSPI net buying by investor type",
@@ -96,8 +95,8 @@
           {"label_ko": "기관", "label_en": "Institution", "value": -0.28}
         ]
       },
-      "note_ko": "코스피는 1.79% 빠졌지만 상승 종목(640개)이 하락(238개)보다 많았다 — 지수는 대형주 쏠림으로 내렸을 뿐 시장 내부는 견조했다. 외국인·기관이 동반 순매도한 반면 개인은 순매수로 맞섰다.",
-      "note_en": "The index fell 1.79%, yet advancers (640) beat decliners (238) — the drop was concentrated in large caps, not broad market weakness. Foreign and institutional investors both sold net while individuals bought."
+      "note_ko": "상승 종목(640개)이 하락(238개)보다 많았다 — 대형주 쏠림으로 지수만 내렸다. 코스닥(926 vs 671)도 코스피와 반대로 상승 우위였다.",
+      "note_en": "Advancers (640) beat decliners (238) — the drop was concentrated in large caps. KOSDAQ breadth (926 vs 671) also skewed positive, unlike the KOSPI."
     },
     {
       "title_ko": "섹터별 등락", "title_en": "Korea Sectors", "color": "#4a9d7f", "type": "bars",
@@ -144,7 +143,7 @@
     {
       "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data", "color": "#5b8dd6", "type": "stats", "cols": 2,
       "stats": [
-        {"label_ko": "日 8월 도쿄 근원 CPI(전년비)", "label_en": "Japan Aug Tokyo Core CPI (YoY)", "value": "+1.8%", "delta": {"ko": "예상 +1.7% 상회", "en": "Beat est. +1.7%"}, "dir": "up", "sub_ko": "08:30 발표 · 3개월 연속 상승 · BOJ 9월 인상 확률 85%로 상승", "sub_en": "Released 8:30 AM KST · 3rd straight monthly rise · BOJ Sept. hike odds now 85%"},
+        {"label_ko": "日 도쿄 근원 CPI(전년비)", "label_en": "Japan Tokyo Core CPI (YoY)", "value": "+1.8%", "delta": {"ko": "예상 +1.7% 상회", "en": "Beat est. +1.7%"}, "dir": "up", "sub_ko": "3개월 연속 상승 · BOJ 9월 인상 확률 85%", "sub_en": "3rd straight rise · BOJ Sept. hike odds 85%", "ref_ko": "식품·에너지 제외 물가 · 추세 지표", "ref_en": "Ex food & energy, for the trend"},
         {"label_ko": "삼성바이오로직스 주가", "label_en": "Samsung Biologics Share Price", "value": "₩1,486,000", "delta": "▼6.78%", "dir": "down", "sub_ko": "3조원 유상증자 발표(신주 227만주, 기존 대비 4.9%) · 지분 희석 우려", "sub_en": "Announced ₩3T share sale (2.27M new shares, 4.9% of existing) · dilution concerns"},
         {"label_ko": "SK하이닉스 美 인디애나 투자", "label_en": "SK Hynix US Indiana Investment", "value": "$4.0B", "delta": {"ko": "최초 발표 $3.87B 대비 확대", "en": "Up from initial $3.87B"}, "dir": "up", "sub_ko": "27일(현지시간) 기공식 · 2028년 클린룸 완공, 2029년 하반기 HBM 양산", "sub_en": "Groundbreaking held Aug 27 (US time) · clean room done 2028, HBM output starts H2 2029"},
         {"label_ko": "코스피 8월 누적 등락률", "label_en": "KOSPI Month-to-Date", "value": "+2.93%", "delta": "-", "dir": "up", "sub_ko": "19거래일 기준 · 이번 주(5거래일)는 -1.79%", "sub_en": "Over 19 sessions · this week (5 sessions) is -1.79%"}
@@ -156,43 +155,43 @@
       "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis", "color": "#7b6cd9",
       "items": [
         {"headline_ko": "SK하이닉스, 美 첫 HBM 생산기지 '인디애나 팹' 기공…CEO \"2030년까지 공급부족\"", "headline_en": "SK Hynix Breaks Ground on First US HBM Site, CEO Sees Shortage Through 2030",
-         "body_ko": "SK하이닉스가 27일(현지시간) 인디애나주 웨스트라피엣에서 첫 미국 HBM 생산거점 '인디애나 팹' 기공식을 열었다. 투자금은 최초 발표 38.7억달러에서 40억달러(약 5.3조원)로 늘었다. 곽노정 사장은 \"2030년까지 반도체 공급부족이 지속될 것\"이라며 침체 신호는 없다고 말했다.",
-         "body_en": "SK Hynix held a groundbreaking ceremony for its first US HBM production site, the 'Indiana Fab,' in West Lafayette on Aug 27 (US time). Investment grew from an initial $3.87B to $4.0B (~₩5.3T). CEO Kwak No-jung said memory supply shortages will persist through 2030, with no signs of a downturn."},
+         "body_ko": "SK하이닉스가 27일(현지시간) 인디애나주에서 첫 미국 HBM 생산기지 기공식을 열었다. 투자금은 최초 발표보다 늘어난 40억달러(약 5.3조원)다.",
+         "body_en": "SK Hynix held a groundbreaking ceremony for its first US HBM plant in Indiana on Aug 27 (US time). Investment grew to $4.0B (~₩5.3T), up from the initial plan."},
         {"headline_ko": "트럼프 행정부, 수입 반도체·IT기기 고율 관세 검토…데이터센터 서버도 포함", "headline_en": "Trump Admin Weighs Steep Tariffs on Imported Chips, IT Gear Including Servers",
-         "body_ko": "폴리티코 등 외신에 따르면 트럼프 행정부가 수입 반도체와 노트북 등 IT기기에 고율 관세를 부과하는 방안을 검토 중이며, 데이터센터 서버용도 대상에 포함된다. 국내 반도체 대형주가 이 소식에 이날 나란히 하락했다.",
-         "body_en": "Politico and other outlets reported the Trump administration is weighing steep tariffs on imported semiconductors and IT hardware like laptops, with data-center servers also included. Korean chip heavyweights fell in tandem on the news."},
+         "body_ko": "폴리티코 등 외신에 따르면 트럼프 행정부가 수입 반도체·IT기기에 고율 관세를 검토 중이며, 데이터센터 서버도 대상에 포함된다.",
+         "body_en": "Politico and other outlets reported the Trump administration is weighing steep tariffs on imported chips and IT hardware, with data-center servers also included."},
         {"headline_ko": "메타, 韓서 1조원 채권 발행 검토…AI 데이터센터 자금조달 다변화", "headline_en": "Meta Weighs ₩1T Bond Sale in Korea to Diversify AI Datacenter Funding",
-         "body_ko": "메타가 보유 현금 125조원에도 한국 채권시장에서 약 1조원을 조달하는 방안을 검토 중이라고 알려졌다. 미국 빅테크의 회사채 발행이 급증하면서 조달처를 여러 나라로 넓히려는 움직임이 나타나고 있다.",
-         "body_en": "Meta, despite holding roughly $90B in cash, is reportedly weighing raising about ₩1T in the Korean bond market as US Big Tech's debt issuance surges and firms diversify funding sources across countries."},
+         "body_ko": "메타가 보유 현금 125조원에도 한국 채권시장에서 약 1조원을 조달하는 방안을 검토 중이다. 빅테크의 조달처 다변화 움직임이다.",
+         "body_en": "Meta is reportedly weighing raising about ₩1T in Korea's bond market despite holding roughly $90B in cash, part of Big Tech's push to diversify funding."},
         {"headline_ko": "AI 데이터센터 스타트업, 빅테크 신용 업고 7조원대 부채 조달", "headline_en": "AI Datacenter Startups Borrow ~₩7T Leveraging Big Tech Creditworthiness",
-         "body_ko": "블룸버그통신에 따르면 AI 데이터센터를 짓는 신생기업들이 메타 등 고신용 고객사와의 계약을 활용해 약 7조원 규모의 부채를 조달했다. AI 경쟁이 고성능 반도체 확보와 대규모 데이터센터 구축으로 확대되며 필요 자금도 커지고 있다.",
-         "body_en": "Bloomberg reported AI-datacenter startups have raised roughly ₩7T in debt by leveraging contracts with high-credit customers like Meta, as the AI race's need for capital grows alongside chip and datacenter buildouts."},
+         "body_ko": "블룸버그에 따르면 AI 데이터센터 스타트업들이 메타 등 고신용 고객사와의 계약을 활용해 약 7조원 규모의 부채를 조달했다.",
+         "body_en": "Bloomberg reported AI-datacenter startups raised roughly ₩7T in debt by leveraging contracts with high-credit customers like Meta."},
         {"headline_ko": "美, 중국산 전력망 장비 사실상 차단…K-전력기기 슈퍼사이클 길어진다", "headline_en": "US Blocks Chinese Grid Gear, Extending Supercycle for Korean Power Equipment",
-         "body_ko": "미국이 사이버 보안을 이유로 중국산 전력망 장비 공급망을 사실상 차단하면서 효성중공업·LS일렉트릭·HD현대일렉트릭 등 한국 전력기기 업체의 수주 기회가 커지고 있다. AI 데이터센터 확대로 초고압 변압기 납기는 2024년 143주에서 최근 최대 160주까지 늘었다(로이터).",
-         "body_en": "As the US effectively blocks Chinese power-grid equipment over cybersecurity concerns, Korean makers like Hyosung Heavy Industries, LS Electric and HD Hyundai Electric are seeing more order opportunities. AI-driven datacenter demand has stretched ultra-high-voltage transformer lead times from 143 weeks in 2024 to as long as 160 weeks now, per Reuters."},
+         "body_ko": "美가 사이버 보안을 이유로 중국산 전력망 장비를 사실상 차단하며 효성중공업·LS일렉트릭 등 K-전력기기 수주 기회가 커졌다. 초고압 변압기 납기는 143주에서 160주로 늘었다(로이터).",
+         "body_en": "As the US effectively blocks Chinese grid gear over security concerns, Korean makers like Hyosung and LS Electric see more orders; transformer lead times stretched from 143 to 160 weeks, per Reuters."},
         {"headline_ko": "SK브로드밴드, 데이터센터 사업부 분사…'SK호라이즌'으로 AI 인프라 재편", "headline_en": "SK Broadband to Spin Off Datacenter Unit as 'SK Horizon' in AI Infra Overhaul",
-         "body_ko": "SK브로드밴드가 CDN 서비스를 포함한 데이터센터 사업부를 분사해 'SK호라이즌'(잠정)을 설립하기로 했다. AI 인프라 사업을 SK텔레콤 직할 체제로 옮기며 외부 투자 유치와 재원 조달을 용이하게 하려는 조치다.",
-         "body_en": "SK Broadband will spin off its datacenter unit, including CDN services, into a new entity tentatively named 'SK Horizon.' The move shifts AI infrastructure operations under direct SK Telecom control to make it easier to attract outside investment and funding."}
+         "body_ko": "SK브로드밴드가 데이터센터 사업부를 분사해 'SK호라이즌'을 설립한다. AI 인프라를 SK텔레콤 직할 체제로 옮겨 외부 투자 유치를 노린다.",
+         "body_en": "SK Broadband will spin off its datacenter unit into a new entity, 'SK Horizon,' shifting AI infrastructure under direct SK Telecom control to attract outside investment."}
       ]
     },
     {
       "title_ko": "주요 소식", "title_en": "Top Stories", "color": "#d98a3c",
       "items": [
         {"headline_ko": "삼성바이오로직스, 3조원 유상증자…폴리펩타이드그룹 인수·송도 증설", "headline_en": "Samsung Biologics Announces ₩3T Share Sale for M&A, Songdo Expansion",
-         "body_ko": "삼성바이오로직스가 신주 227만주를 발행해 3조9억원을 조달하는 주주배정 후 실권주 일반공모 유상증자를 결정했다. 조달자금의 90.2%(2조7,061억원)는 펩타이드 원료의약품 CDMO 기업 폴리펩타이드그룹 인수에, 9.8%(2,948억원)는 송도 2바이오캠퍼스 증설에 쓴다. 주가는 6.78% 내린 148만6,000원에 마쳤다.",
-         "body_en": "Samsung Biologics decided to raise ₩3.0009T by issuing 2.27M new shares in a rights-then-public offering. Of the proceeds, 90.2% (₩2.706T) will fund the acquisition of peptide API CDMO firm Polypeptide Group, and 9.8% (₩295B) will go to expanding its second Songdo bio campus. Shares fell 6.78% to ₩1,486,000."},
+         "body_ko": "삼성바이오로직스가 신주 227만주로 3조9억원을 조달한다. 90.2%는 폴리펩타이드그룹 인수, 9.8%는 송도 2캠퍼스 증설에 쓴다. 주가는 6.78% 내렸다.",
+         "body_en": "Samsung Biologics will raise ₩3.0T via 2.27M new shares — 90.2% for buying Polypeptide Group, 9.8% for a Songdo campus expansion. Shares fell 6.78%."},
         {"headline_ko": "원/달러 환율 13개월 만에 최저…1,372원대까지 밀려", "headline_en": "Won Slides to 13-Month Low Near 1,372 Per Dollar",
-         "body_ko": "원/달러 환율이 15:30 기준 1,372.5원으로 전날 같은 시각보다 8.4원 내려, 2025년 7월 24일 이후 최저치를 기록했다. 월말 수출업체의 달러 매도(네고) 물량이 몰린 데다 전날 한국은행의 기준금리 인상(2.75%→3.00%)도 원화 강세 요인으로 작용했다.",
-         "body_en": "The won closed the 3:30 PM session at 1,372.5 per dollar, down 8.4 won from the same time a day earlier and its lowest since July 24, 2025. Month-end exporter dollar sales combined with yesterday's Bank of Korea rate hike (2.75% to 3.00%) both pushed the won higher."},
+         "body_ko": "원/달러 환율이 15:30 기준 1,372.5원으로 2025년 7월 이후 최저치를 기록했다. 월말 수출업체 네고 물량에 전날 한은 금리인상 여파까지 겹쳤다.",
+         "body_en": "The won closed at 1,372.5 per dollar, its lowest since July 2025, on month-end exporter dollar sales plus yesterday's BOK rate hike."},
         {"headline_ko": "美 반도체 관세 검토 우려에 코스피 반도체株 동반 하락", "headline_en": "Korean Chip Stocks Fall Together on US Tariff-Review Concerns", "src": "Politico, KRX",
-         "body_ko": "한국거래소는 이날 코스피 하락 배경으로 전날 한국은행 기준금리 인상에 이어 미국의 반도체 관세 검토 우려를 꼽았다. 폴리티코 등 외신은 트럼프 행정부가 수입 반도체와 IT기기에 고율 관세를 검토 중이라고 전했다.",
-         "body_en": "The Korea Exchange cited yesterday's BOK rate hike and concerns over a potential US semiconductor tariff as behind today's KOSPI decline. Politico and other outlets reported the Trump administration is weighing steep tariffs on imported chips and IT hardware."},
+         "body_ko": "한국거래소는 코스피 하락 배경으로 전날 기준금리 인상에 이어 美 반도체 관세 검토 우려를 꼽았다.",
+         "body_en": "The Korea Exchange cited yesterday's rate hike and US semiconductor tariff-review concerns as behind today's KOSPI decline."},
         {"headline_ko": "아시아 증시 대체로 상승…닛케이 +0.41%, 대만 +0.77%", "headline_en": "Asian Markets Mostly Higher: Nikkei +0.41%, Taiwan +0.77%",
-         "body_ko": "간밤 뉴욕 3대 지수 상승 여파로 28일 아시아 증시는 대체로 올랐다. 일본 닛케이225는 0.41% 오른 66,405.56, 토픽스는 0.72% 오른 4,146.71로 마쳤다. 대만 가권지수는 0.77% 오른 46,331.45, 홍콩 항셍지수는 0.19% 올랐다. 반면 중국 상하이종합지수는 0.10% 내린 3,952.6으로 홀로 약세였다.",
-         "body_en": "Asian markets mostly rose Aug 28 on the back of overnight gains on Wall Street. Japan's Nikkei 225 rose 0.41% to 66,405.56 and the Topix gained 0.72% to 4,146.71. Taiwan's Taiex added 0.77% to 46,331.45 and Hong Kong's Hang Seng rose 0.19%. China's Shanghai Composite was the lone decliner, down 0.10% to 3,952.6."},
+         "body_ko": "간밤 뉴욕 상승 여파로 아시아 증시는 대체로 올랐다. 닛케이 +0.41%, 대만 +0.77%, 항셍 +0.19% · 중국만 -0.10%로 홀로 약세.",
+         "body_en": "Asian markets mostly rose on overnight Wall Street gains: Nikkei +0.41%, Taiwan +0.77%, Hang Seng +0.19%. China's Shanghai was the lone decliner, -0.10%."},
         {"headline_ko": "유럽증시, 프랑스 정치·재정 불안에 하락…CAC40 한달래 최저", "headline_en": "European Stocks Fall on French Political Turmoil, CAC 40 at 1-Month Low",
-         "body_ko": "대선 국면에 접어든 프랑스의 정치·재정 불확실성이 부각되며 28일 유럽증시가 대체로 내렸다. 범유럽 STOXX 유럽600지수는 0.69% 내렸고, 프랑스 CAC40지수는 1.68% 하락한 8,319.87로 한 달 만에 최저치를 기록했다.",
-         "body_en": "European stocks mostly fell Aug 28 as France's political and fiscal uncertainty came into focus heading into an election cycle. The pan-European STOXX Europe 600 fell 0.69%, while France's CAC 40 dropped 1.68% to 8,319.87, its lowest in a month."}
+         "body_ko": "대선 국면의 프랑스 정치·재정 불확실성에 유럽증시가 내렸다. STOXX600 -0.69%, 프랑스 CAC40 -1.68%로 한 달래 최저.",
+         "body_en": "European stocks fell as France's political and fiscal uncertainty came into focus ahead of an election. STOXX 600 -0.69%, France's CAC 40 -1.68% to a 1-month low."}
       ]
     }
   ],
