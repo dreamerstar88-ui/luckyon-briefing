@@ -1,231 +1,11 @@
 {
-  "fetchedAt": "2026-08-27T03:21:18Z",
+  "fetchedAt": "2026-08-28T06:09:55Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-25T03:21:18Z",
-    "to": "2026-09-10T03:21:18Z"
+    "from": "2026-08-26T06:09:55Z",
+    "to": "2026-09-11T06:09:55Z"
   },
   "events": [
-    {
-      "at": "2026-08-25T05:00:00Z",
-      "country": "JP",
-      "name": "Coincident Index",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 118.2,
-      "actual": 118.5,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T05:00:00Z",
-      "country": "JP",
-      "name": "Leading Economic Index",
-      "impact": "LOW",
-      "consensus": 116.4,
-      "previous": 116.4,
-      "actual": 116.5,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T06:00:00Z",
-      "country": "DE",
-      "name": "Gross Domestic Product (QoQ)",
-      "impact": "MEDIUM",
-      "consensus": 0.2,
-      "previous": 0.2,
-      "actual": 0.3,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T06:00:00Z",
-      "country": "DE",
-      "name": "Gross Domestic Product (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 0.9,
-      "previous": 0.9,
-      "actual": 1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T06:00:00Z",
-      "country": "DE",
-      "name": "Gross Domestic Product w.d.a (YoY)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 0.9,
-      "actual": 1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T08:00:00Z",
-      "country": "DE",
-      "name": "IFO – Business Climate",
-      "impact": "MEDIUM",
-      "consensus": 87.2,
-      "previous": 86.6,
-      "actual": 88.8,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T08:00:00Z",
-      "country": "DE",
-      "name": "IFO – Current Assessment",
-      "impact": "MEDIUM",
-      "consensus": 87,
-      "previous": 86.5,
-      "actual": 88.5,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T08:00:00Z",
-      "country": "DE",
-      "name": "IFO – Expectations",
-      "impact": "MEDIUM",
-      "consensus": 87.5,
-      "previous": 86.7,
-      "actual": 89.1,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T12:15:00Z",
-      "country": "US",
-      "name": "ADP Employment Change 4-week average",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 9.5,
-      "actual": 11.75,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T12:55:00Z",
-      "country": "US",
-      "name": "Redbook Index (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 7.6,
-      "actual": 9.1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T13:00:00Z",
-      "country": "US",
-      "name": "Housing Price Index (MoM)",
-      "impact": "MEDIUM",
-      "consensus": 0.2,
-      "previous": 0.3,
-      "actual": 0,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T13:00:00Z",
-      "country": "US",
-      "name": "S&P/Case-Shiller Home Price Indices (YoY)",
-      "impact": "LOW",
-      "consensus": 1.7,
-      "previous": 1.6,
-      "actual": 2.1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T14:00:00Z",
-      "country": "US",
-      "name": "Consumer Confidence",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T14:00:00Z",
-      "country": "US",
-      "name": "New Home Sales (MoM)",
-      "impact": "LOW",
-      "consensus": 0.62,
-      "previous": 0.628,
-      "actual": 0.607,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T14:00:00Z",
-      "country": "US",
-      "name": "New Home Sales Change (MoM)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 1.6,
-      "actual": -10.5,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T14:00:00Z",
-      "country": "US",
-      "name": "Richmond Fed Manufacturing Index",
-      "impact": "LOW",
-      "consensus": 7,
-      "previous": 5,
-      "actual": 4,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T17:00:00Z",
-      "country": "US",
-      "name": "2-Year Note Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.315,
-      "actual": 4.204,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-25T20:00:00Z",
-      "country": "US",
-      "name": "Fed's Barkin speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T20:30:00Z",
-      "country": "US",
-      "name": "API Weekly Crude Oil Stock",
-      "impact": "LOW",
-      "consensus": 1.9,
-      "previous": -0.328,
-      "actual": 4.2,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T21:00:00Z",
-      "country": "KR",
-      "name": "BOK Manufacturing BSI",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 82,
-      "actual": 81,
-      "unit": null
-    },
-    {
-      "at": "2026-08-25T23:50:00Z",
-      "country": "JP",
-      "name": "Corporate Service Price Index (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.2,
-      "actual": 3.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-26T00:30:00Z",
-      "country": "EMU",
-      "name": "ECB's Schnabel speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-26T10:10:00Z",
       "country": "EMU",
@@ -273,7 +53,7 @@
       "impact": "MEDIUM",
       "consensus": 3.4,
       "previous": 3.4,
-      "actual": 3.7,
+      "actual": 3.6,
       "unit": "%"
     },
     {
@@ -457,16 +237,6 @@
       "unit": "¥"
     },
     {
-      "at": "2026-08-27T00:00:00Z",
-      "country": "US",
-      "name": "Jackson Hole Symposium",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
       "at": "2026-08-27T01:00:00Z",
       "country": "KR",
       "name": "BoK Interest Rate Decision",
@@ -483,7 +253,7 @@
       "impact": "MEDIUM",
       "consensus": -29.6,
       "previous": -29.6,
-      "actual": null,
+      "actual": -26.6,
       "unit": null
     },
     {
@@ -493,7 +263,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3,
-      "actual": null,
+      "actual": 3.2,
       "unit": "%"
     },
     {
@@ -503,7 +273,7 @@
       "impact": "LOW",
       "consensus": 3.4,
       "previous": 3.3,
-      "actual": null,
+      "actual": 3.4,
       "unit": "%"
     },
     {
@@ -513,7 +283,7 @@
       "impact": "LOW",
       "consensus": 2.9,
       "previous": 3,
-      "actual": null,
+      "actual": 3.1,
       "unit": "%"
     },
     {
@@ -527,13 +297,33 @@
       "unit": null
     },
     {
+      "at": "2026-08-27T11:30:00Z",
+      "country": "US",
+      "name": "Fed's Schmid speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-27T12:15:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-08-27T12:30:00Z",
       "country": "US",
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.79,
       "previous": 1.799,
-      "actual": null,
+      "actual": 1.778,
       "unit": null
     },
     {
@@ -543,7 +333,7 @@
       "impact": "LOW",
       "consensus": -99,
       "previous": -102.1,
-      "actual": null,
+      "actual": -118.8,
       "unit": "$"
     },
     {
@@ -553,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": 208,
       "previous": 206,
-      "actual": null,
+      "actual": 203,
       "unit": null
     },
     {
@@ -563,7 +353,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 204,
-      "actual": null,
+      "actual": 205.5,
       "unit": null
     },
     {
@@ -573,8 +363,18 @@
       "impact": "LOW",
       "consensus": 0.1,
       "previous": 0.2,
-      "actual": null,
+      "actual": 1.3,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-27T14:00:00Z",
+      "country": "US",
+      "name": "Jackson Hole Symposium",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-27T14:30:00Z",
@@ -583,6 +383,16 @@
       "impact": "LOW",
       "consensus": 19,
       "previous": 16,
+      "actual": 15,
+      "unit": null
+    },
+    {
+      "at": "2026-08-27T14:30:00Z",
+      "country": "US",
+      "name": "Fed's Hammack speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -593,7 +403,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 17,
-      "actual": null,
+      "actual": 17,
       "unit": null
     },
     {
@@ -603,7 +413,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.64,
-      "actual": null,
+      "actual": 3.65,
       "unit": "%"
     },
     {
@@ -613,8 +423,18 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.473,
-      "actual": null,
+      "actual": 4.512,
       "unit": "%"
+    },
+    {
+      "at": "2026-08-27T18:00:00Z",
+      "country": "US",
+      "name": "Fed's Collins speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-08-27T23:30:00Z",
@@ -623,7 +443,7 @@
       "impact": "LOW",
       "consensus": 1.19,
       "previous": 1.18,
-      "actual": null,
+      "actual": 1.18,
       "unit": null
     },
     {
@@ -633,7 +453,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 2,
-      "actual": null,
+      "actual": 1.9,
       "unit": "%"
     },
     {
@@ -643,7 +463,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 2,
-      "actual": null,
+      "actual": 2,
       "unit": "%"
     },
     {
@@ -653,7 +473,7 @@
       "impact": "MEDIUM",
       "consensus": 1.7,
       "previous": 1.9,
-      "actual": null,
+      "actual": 1.8,
       "unit": "%"
     },
     {
@@ -663,18 +483,8 @@
       "impact": "MEDIUM",
       "consensus": 2.5,
       "previous": 2.5,
-      "actual": null,
+      "actual": 2.4,
       "unit": "%"
-    },
-    {
-      "at": "2026-08-28T00:00:00Z",
-      "country": "US",
-      "name": "Jackson Hole Symposium",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
     },
     {
       "at": "2026-08-28T06:00:00Z",
@@ -683,7 +493,7 @@
       "impact": "LOW",
       "consensus": 0.2,
       "previous": -0.7,
-      "actual": null,
+      "actual": 0.2,
       "unit": "%"
     },
     {
@@ -693,7 +503,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 6.1,
-      "actual": null,
+      "actual": 6.8,
       "unit": "%"
     },
     {
@@ -789,9 +599,19 @@
     {
       "at": "2026-08-28T14:00:00Z",
       "country": "US",
+      "name": "Jackson Hole Symposium",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-08-28T14:00:00Z",
+      "country": "US",
       "name": "Michigan Consumer Expectations Index",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 50.6,
       "previous": 50.6,
       "actual": null,
       "unit": null
@@ -821,7 +641,7 @@
       "country": "US",
       "name": "UoM 1-year Consumer Inflation Expectations",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 4.3,
       "previous": 4.3,
       "actual": null,
       "unit": "%"
@@ -907,7 +727,7 @@
       "unit": "$"
     },
     {
-      "at": "2026-08-29T00:00:00Z",
+      "at": "2026-08-29T14:00:00Z",
       "country": "US",
       "name": "Jackson Hole Symposium",
       "impact": "HIGH",
@@ -1001,7 +821,7 @@
       "country": "CN",
       "name": "NBS Manufacturing PMI",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 49.7,
       "previous": 49.2,
       "actual": null,
       "unit": null
@@ -1371,7 +1191,7 @@
       "country": "EMU",
       "name": "Harmonized Index of Consumer Prices (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 3.3,
       "previous": 2.9,
       "actual": null,
       "unit": "%"
@@ -1451,7 +1271,7 @@
       "country": "US",
       "name": "ISM Manufacturing PMI",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 55.3,
       "previous": 55.6,
       "actual": null,
       "unit": null
@@ -1752,7 +1572,7 @@
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.778,
       "actual": null,
       "unit": null
     },
@@ -1772,7 +1592,7 @@
       "name": "Goods Trade Balance",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -118.8,
       "actual": null,
       "unit": "$"
     },
@@ -1782,7 +1602,7 @@
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 203,
       "actual": null,
       "unit": null
     },
@@ -1792,7 +1612,7 @@
       "name": "Initial Jobless Claims 4-week average",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 205.5,
       "actual": null,
       "unit": null
     },
@@ -1882,7 +1702,7 @@
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 15,
       "actual": null,
       "unit": null
     },
@@ -1892,7 +1712,7 @@
       "name": "4-Week Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.65,
       "actual": null,
       "unit": "%"
     },
@@ -2655,6 +2475,226 @@
       "previous": 7.2,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-10T06:00:00Z",
+      "country": "DE",
+      "name": "Consumer Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T06:00:00Z",
+      "country": "DE",
+      "name": "Consumer Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T06:00:00Z",
+      "country": "DE",
+      "name": "Harmonized Index of Consumer Prices (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T06:00:00Z",
+      "country": "DE",
+      "name": "Harmonized Index of Consumer Prices (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:15:00Z",
+      "country": "EMU",
+      "name": "ECB Main Refinancing Operations Rate",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:15:00Z",
+      "country": "EMU",
+      "name": "ECB Monetary Policy Statement",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T12:15:00Z",
+      "country": "EMU",
+      "name": "ECB Rate On Deposit Facility",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.25,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Continuing Jobless Claims",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims 4-week average",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 4.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index ex Food & Energy (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index ex Food & Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 4.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:30:00Z",
+      "country": "US",
+      "name": "Wholesale Inventories",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T12:45:00Z",
+      "country": "EMU",
+      "name": "ECB Press Conference",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T14:00:00Z",
+      "country": "US",
+      "name": "Existing Home Sales (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.06,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T14:00:00Z",
+      "country": "US",
+      "name": "Existing Home Sales Change (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -1.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T14:30:00Z",
+      "country": "US",
+      "name": "EIA Natural Gas Storage Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-10T15:30:00Z",
+      "country": "US",
+      "name": "4-Week Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T17:00:00Z",
+      "country": "US",
+      "name": "30-Year Bond Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5.216,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-10T18:00:00Z",
+      "country": "US",
+      "name": "Monthly Budget Statement",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -432,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
