@@ -45,7 +45,7 @@
     {"label": "Fear & Greed", "value": "58", "delta": "-", "dir": "flat", "note_ko": "전일과 동일 · 탐욕 국면 유지", "note_en": "Unchanged from yesterday · still in greed territory"},
     {"label": "US 10Y", "value": "4.67%", "delta": "▲", "dir": "up", "note_ko": "8/27 종가 기준 · 오늘 美 채권시장 개장 전", "note_en": "As of the Aug 27 close · ahead of today's session"},
     {"label": "USD/KRW", "value": "1,372.50", "value_sub": "· DXY 99.18", "delta": "▼0.61%", "dir": "down", "note_ko": "15:30 서울외환시장 기준 · 13개월래 최저", "note_en": "Seoul FX 3:30 PM close · 13-month low"},
-    {"label": "Gold", "value": "$4,651.40", "delta": "▲0.90%", "dir": "up", "note_ko": "안전자산 수요 지속", "note_en": "Safe-haven demand persists"},
+    {"label": "Gold", "value": "$4,651.30", "delta": "▼0.27%", "dir": "down", "note_ko": "워시 연설 경계 속 소폭 조정", "note_en": "Edged down as markets await Warsh's speech"},
     {"label": "WTI", "value": "$83.29", "delta": "▼0.29%", "dir": "down", "note_ko": "호르무즈 경계감 속 소폭 조정", "note_en": "Edged down amid lingering Hormuz jitters"},
     {"label": "Bitcoin", "value": "$79,697", "delta": "▼0.70%", "dir": "down", "note_ko": "24시간 기준", "note_en": "24h basis"}
   ],
@@ -170,9 +170,9 @@
         {"headline_ko": "美, 중국산 전력망 장비 사실상 차단…K-전력기기 슈퍼사이클 길어진다", "headline_en": "US Blocks Chinese Grid Gear, Extending Supercycle for Korean Power Equipment",
          "body_ko": "미국이 사이버 보안을 이유로 중국산 전력망 장비 공급망을 사실상 차단하면서 효성중공업·LS일렉트릭·HD현대일렉트릭 등 한국 전력기기 업체의 수주 기회가 커지고 있다. AI 데이터센터 확대로 초고압 변압기 납기는 2024년 143주에서 최근 최대 160주까지 늘었다(로이터).",
          "body_en": "As the US effectively blocks Chinese power-grid equipment over cybersecurity concerns, Korean makers like Hyosung Heavy Industries, LS Electric and HD Hyundai Electric are seeing more order opportunities. AI-driven datacenter demand has stretched ultra-high-voltage transformer lead times from 143 weeks in 2024 to as long as 160 weeks now, per Reuters."},
-        {"headline_ko": "인도 요타, 엔비디아 '베라 루빈' GPU 10조원대 구매 논의", "headline_en": "India's Yotta in Talks to Buy Over ₩10T of Nvidia's Next-Gen Vera Rubin GPUs",
-         "body_ko": "인도 데이터센터 기업 요타 데이터 서비스가 엔비디아의 차세대 GPU '베라 루빈' 도입을 위해 10조원 이상 규모의 대량 구매를 논의 중이라고 블룸버그가 보도했다. 구체적인 기업가치나 조달 규모는 확인되지 않았다.",
-         "body_en": "Bloomberg reported Indian datacenter firm Yotta Data Services is in talks for a bulk purchase exceeding ₩10T of Nvidia's next-generation Vera Rubin GPUs, though exact valuation or funding details were not confirmed."}
+        {"headline_ko": "SK브로드밴드, 데이터센터 사업부 분사…'SK호라이즌'으로 AI 인프라 재편", "headline_en": "SK Broadband to Spin Off Datacenter Unit as 'SK Horizon' in AI Infra Overhaul",
+         "body_ko": "SK브로드밴드가 CDN 서비스를 포함한 데이터센터 사업부를 분사해 'SK호라이즌'(잠정)을 설립하기로 했다. AI 인프라 사업을 SK텔레콤 직할 체제로 옮기며 외부 투자 유치와 재원 조달을 용이하게 하려는 조치다.",
+         "body_en": "SK Broadband will spin off its datacenter unit, including CDN services, into a new entity tentatively named 'SK Horizon.' The move shifts AI infrastructure operations under direct SK Telecom control to make it easier to attract outside investment and funding."}
       ]
     },
     {
@@ -208,7 +208,7 @@
   },
   "schedule": [
     {"time": "22:45", "title_ko": "美 8월 시카고 PMI", "title_en": "US Aug Chicago PMI", "detail_ko": "예상 57.0 · 이전 57.6", "detail_en": "Est. 57.0 · prior 57.6", "importance": "mid"},
-    {"time": "23:00", "title_ko": "워시 연준 의장, 잭슨홀 첫 기조연설", "title_en": "Fed Chair Warsh's First Jackson Hole Keynote", "detail_ko": "중립·투표권 O · 향후 통화정책 단서 주목", "detail_en": "Centrist, voting · markets watch for policy signals", "importance": "high"},
+    {"time": "23:00", "title_ko": "워시 연준 의장, 잭슨홀 첫 기조연설", "title_en": "Fed Chair Warsh's First Jackson Hole Keynote", "detail_ko": "투표권 O · 향후 통화정책 단서 주목", "detail_en": "Voting · markets watch for policy signals", "importance": "high"},
     {"time": "23:00", "title_ko": "美 비농업고용 벤치마크 수정치", "title_en": "US Nonfarm Payrolls Benchmark Revision", "detail_ko": "연례 고용 통계 수정 발표", "detail_en": "Annual payrolls data revision", "importance": "high"},
     {"time": "23:00", "title_ko": "美 8월 미시간대 소비자심리지수(확정치)", "title_en": "US Aug Michigan Consumer Sentiment (Final)", "detail_ko": "예상 51.0 · 1년 기대인플레 예상 4.3% · 5년 3.3%", "detail_en": "Est. 51.0 · 1-yr inflation exp. est. 4.3% · 5-yr 3.3%", "importance": "mid"},
     {"time": "00:55", "title_ko": "슈나벨 ECB 집행이사 연설", "title_en": "ECB's Schnabel Speech", "detail_ko": "익일 · 통화정책 스탠스 주목", "detail_en": "Overnight · watched for policy tone", "importance": "mid"},
@@ -226,7 +226,7 @@
     "3": "A close-up of a curved monitor showing a volatile stock chart line in red against a dark background, a semiconductor wafer reflected faintly in the glass, moody dramatic lighting, soft bokeh, Korean market data overlay feel."
   },
 
-  "caption_ko": "코스피가 반도체 관세 우려와 삼성바이오로직스 3조원 유상증자에 1.79% 내린 6,788.88로 4거래일 만에 하락했습니다. 하지만 상승 종목이 640개로 하락(238개)보다 많았던 거 아세요? 지수만 보면 놓치는 이야기입니다. 원/달러 환율은 13개월래 최저인 1,372원대까지 밀렸고, SK하이닉스는 美 인디애나에 HBM 생산기지를 착공했습니다. 오늘 밤 워시 연준 의장의 첫 잭슨홀 연설도 주목하세요 🔔\n\n#루키온브리핑 #코스피 #코스닥 #반도체 #삼성바이오로직스 #SK하이닉스 #원달러환율 #잭슨홀 #경제뉴스 #주식 #증시브리핑 #투자 #재테크 #경제 #뉴스",
-  "caption_en": "The KOSPI fell 1.79% to 6,788.88, snapping a 4-day win streak, on chip-tariff fears and Samsung Biologics' ₩3T share sale. But did you know advancers (640) actually beat decliners (238)? The index alone doesn't tell that story. The won slid to a 13-month low near 1,372, and SK Hynix broke ground on its first US HBM plant in Indiana. Watch for Fed Chair Warsh's first Jackson Hole keynote tonight 🔔\n\n#luckyonbriefing #kospi #kosdaq #semiconductors #samsungbiologics #skhynix #usdkrw #jacksonhole #markets #investing #dailybriefing #stocks #economy #news",
+  "caption_ko": "🌙 8/28(금) 저녁 브리핑 — 코스피가 반도체 관세 우려와 삼성바이오로직스 3조원 유상증자에 1.79% 내린 6,788.88로 4거래일 만에 하락했습니다. 하지만 상승 종목이 640개로 하락(238개)보다 많았던 거 아세요? 지수만 보면 놓치는 이야기입니다. 원/달러 환율은 13개월래 최저인 1,372원대까지 밀렸고, SK하이닉스는 美 인디애나에 HBM 생산기지를 착공했습니다. 오늘 밤 워시 연준 의장의 첫 잭슨홀 연설도 주목하세요 🔔\n\n📊 다음 브리핑 — 내일 아침 8시, 한 주 결산\n\n#루키온브리핑 #코스피 #코스닥 #반도체 #삼성바이오로직스 #SK하이닉스 #원달러환율 #잭슨홀 #경제뉴스 #주식 #증시브리핑 #투자 #재테크 #경제 #뉴스",
+  "caption_en": "🌙 Fri 8/28 Evening Briefing — The KOSPI fell 1.79% to 6,788.88, snapping a 4-day win streak, on chip-tariff fears and Samsung Biologics' ₩3T share sale. But did you know advancers (640) actually beat decliners (238)? The index alone doesn't tell that story. The won slid to a 13-month low near 1,372, and SK Hynix broke ground on its first US HBM plant in Indiana. Watch for Fed Chair Warsh's first Jackson Hole keynote tonight 🔔\n\n📊 Next brief — 8 AM KST, the week in review\n\n#luckyonbriefing #kospi #kosdaq #semiconductors #samsungbiologics #skhynix #usdkrw #jacksonhole #markets #investing #dailybriefing #stocks #economy #news",
   "sources": ["KRX (FinanceDataReader)", "Yahoo Finance", "FMP", "DART", "Naver News", "Bank of Korea", "Bloomberg", "Politico", "Reuters"]
 }
