@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-21T21:00:15.022Z",
+  "fetchedAt": "2026-08-29T02:55:07.663Z",
   "runner": "github-actions",
   "source": "WSJ Market Data — P/E Ratios & Earnings Yields",
   "sourceUrl": "https://www.wsj.com/market-data/stocks/peyields",
@@ -7,18 +7,18 @@
   "basis_en": "P/E on as-reported earnings; estimates on operating earnings (per WSJ)",
   "caveat_ko": "산출 방법이 기관마다 달라 같은 지수의 PER 도 벤더별로 벌어진다(같은 날 S&P 500: WSJ 26.02 / multpl 29.88 / iShares 30.65). 그래서 세 지수를 한 소스에서 받아 출처를 함께 적는다.",
   "status": 200,
-  "asOfLabel": "8/21/26",
+  "asOfLabel": "8/28/26",
   "rows": [
     {
       "key": "DJI",
       "name_ko": "다우",
       "name_en": "Dow",
       "wsjRow": "Dow Jones Industrial Average",
-      "per": 21.89,
-      "perYearAgo": 25.06,
-      "perEstimate": 20.41,
+      "per": 21.8,
+      "perYearAgo": 24.98,
+      "perEstimate": 20.36,
       "divYield": 1.46,
-      "divYieldYearAgo": 1.57
+      "divYieldYearAgo": 1.6
     },
     {
       "key": "GSPC",
