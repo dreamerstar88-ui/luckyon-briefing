@@ -278,39 +278,101 @@ const R = {
       </div>`;
   },
 
-  // 도입: 큰 제목 + 짧은 밑줄 + 본문 + 스케치 꺾은선 + 캡션
+  // 도입: 큰 제목 + 짧은 밑줄 + 본문 + 스케치 + 캡션
+  //
+  // `sketch` 로 그림을 고른다. **회차마다 반드시 골라 준다** — 예전에는 스케치가 코드에
+  // 하나만 박혀 있어서 EP.02·EP.03·EP.05 의 p.02 가 «픽셀 단위로 같은 그림»이었다
+  // (2026-08-30 이슈 #25: "시각적 자료가 이전 회차와 똑같은 그림도 있고 심심합니다").
+  // 도입 카드는 그 회차의 질문을 그림으로 던지는 자리이므로, 제목이 묻는 것이 화면에
+  // 실제로 그려져 있어야 한다 — EP.05 제목은 «가로선»을 묻는데 그림에는 가로선이
+  // 한 줄도 없었다.
+  //
+  //   'zigzag'         — 꺾은선 + 물음표 (EP.02·03 이 쓴 기본 그림)
+  //   'mystery-levels' — 꺾은선 위에 정체불명의 붉은 가로선 두 줄 + 물음표
+  //                      («이 선은 누가 왜 그었나»를 묻는 회차)
   intro(c) {
+    const sketch = d(c, 'sketch', 'zigzag');
+    const q = (x, y, size) => `<text x="${x}" y="${y}" font-size="${size}" font-weight="800" fill="${C.red}">?</text>`;
+    let fig;
+    if (sketch === 'mystery-levels') {
+      const RES = 63, SUP = 203;
+      const lvl = (y) => `<line x1="40" y1="${y}" x2="790" y2="${y}" stroke="${C.red}" stroke-width="5"
+                                stroke-dasharray="16 11" opacity="0.9"/>`;
+      // 꺾은선은 x=780 에서 끝낸다 — 물음표는 «이 가로선들이 뭐냐»를 묻는 것이므로
+      // 선의 오른쪽 끝(=가로선이 끝나는 자리) 바깥에 있어야 가리키는 대상이 분명해진다.
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <polyline points="20,235 110,64 200,160 300,203 400,110 500,63 600,170 700,203 780,140"
+                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          ${lvl(RES)}${lvl(SUP)}
+          ${q(798, 84, 54)}${q(798, 224, 54)}${q(852, 156, 34)}
+        </svg>`;
+    } else {
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <polyline points="20,225 130,125 200,175 330,75 430,35 620,35 760,155 830,220"
+                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          ${q(812, 95, 62)}${q(866, 137, 42)}${q(820, 173, 34)}
+        </svg>`;
+    }
     return `<div class="pad">
       <div class="ttl">${t(c, 'title')}</div>
       <svg width="160" height="14" style="margin-top:12px"><path d="M 2 7 Q 60 1, 156 8" stroke="${C.red}" stroke-width="5" fill="none"/></svg>
       <div class="body" style="margin-top:28px">${t(c, 'body')}</div>
-      <div style="flex:1;display:flex;align-items:center">
-        <svg width="900" height="260" viewBox="0 0 900 260">
-          <polyline points="20,220 130,120 200,170 330,70 430,30 620,30 760,150 830,215"
-                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          <text x="812" y="90"  font-size="62" font-weight="800" fill="${C.red}">?</text>
-          <text x="866" y="132" font-size="42" font-weight="800" fill="${C.red}">?</text>
-          <text x="820" y="168" font-size="34" font-weight="800" fill="${C.red}">?</text>
-        </svg>
-      </div>
+      <div style="flex:1;display:flex;align-items:center">${fig}</div>
       <div style="font-family:${FONT_TITLE};font-size:27px;font-weight:700;color:${C.navy};margin-bottom:18px">${esc(t(c, 'caption'))}</div>
     </div>`;
   },
 
   // 체크리스트: 제목 + 본문 + 용어 4개 (체크박스 + 형광펜 칩 + 점선 + 설명)
+  //
+  // `figure` 를 주면 용어 목록 아래에 «그 이름들이 차트 어디에 있는지» 한 장으로 보여준다.
+  // 용어만 네 줄 늘어놓으면 카드 아래 절반이 통째로 비어 «공부 못하는 사람이 정리한 노트»가
+  // 된다(2026-08-30 이슈 #25). 이름을 그림 위 제자리에 얹어야 그 다음 카드부터 그 이름이
+  // 무엇을 가리키는지 알고 읽는다.
+  //
+  //   figure: { kind:'levels-map', resistance, support, range, breakout }  ← 각 필드 _ko/_en
   checklist(c) {
+    const FIG = d(c, 'figure', null);
+    const tight = !!FIG;
     const rows = (c.items || []).map(it => `
-      <div style="display:flex;align-items:center;gap:22px;margin-bottom:${(c.items.length > 3) ? 26 : 34}px">
+      <div style="display:flex;align-items:center;gap:22px;margin-bottom:${tight ? 18 : ((c.items.length > 3) ? 26 : 34)}px">
         <div class="cb"></div>
         <span style="background:${C.yellow};padding:6px 16px;font-family:${FONT_TITLE};font-size:32px;font-weight:800;color:${it.color || C.ink};white-space:nowrap">${esc(t(it, 'term'))}</span>
         <span class="dash"></span>
         <span style="font-size:29px;color:${C.body};white-space:nowrap">${esc(t(it, 'desc'))}</span>
       </div>`).join('');
+
+    // levels-map — 저항선·지지선 두 줄, 그 사이 박스권 띠, 오른쪽 끝에서 위로 뚫고 나가는 돌파.
+    // 네 용어가 한 그림 안에서 서로의 관계로 정의된다.
+    let fig = '';
+    if (FIG && d(FIG, 'kind', 'levels-map') === 'levels-map') {
+      // 라벨은 그림 **왼쪽 바깥**에 세로로 쌓는다. 오른쪽에 붙이면 돌파해 올라가는 선의
+      // 끝과 겹치고(실제로 겹쳤다), 띠 한가운데에 «박스권»을 놓으면 꺾은선이 그 글자를
+      // 관통한다. 왼쪽 여백은 가격이 절대 가지 않는 자리라 어느 회차에서도 비어 있다.
+      const RES = 58, SUP = 212, X0 = 200, X1 = 760, LX = 186;
+      const lvl = (y) => `<line x1="${X0}" y1="${y}" x2="${X1}" y2="${y}" stroke="${C.red}"
+                                stroke-width="4" stroke-dasharray="14 10"/>`;
+      const lab = (txt, y, col, op) => `<text x="${LX}" y="${y + 9}" text-anchor="end" font-family="${FONT_TITLE}"
+              font-size="26" font-weight="800" fill="${col}" opacity="${op}">${esc(txt)}</text>`;
+      fig = `<svg width="900" height="272" viewBox="0 0 900 272">
+        <rect x="${X0}" y="${RES}" width="${X1 - X0}" height="${SUP - RES}" fill="${C.navy}" opacity="0.07"/>
+        ${lvl(RES)}${lvl(SUP)}
+        <polyline points="200,184 240,60 285,166 330,212 378,60 425,209 470,116 515,190 560,212 610,138 700,26 820,14"
+                  stroke="${C.navy}" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="672" cy="${RES}" r="15" fill="none" stroke="${C.red}" stroke-width="5"/>
+        <path d="M 706 96 L 684 70" stroke="${C.red}" stroke-width="3" fill="none"/>
+        <text x="710" y="106" font-family="${FONT_TITLE}" font-size="26" font-weight="800"
+              fill="${C.red}">${esc(t(FIG, 'breakout'))}</text>
+        ${lab(t(FIG, 'resistance'), RES, C.red, 1)}
+        ${lab(t(FIG, 'range'), (RES + SUP) / 2, C.navy, 0.6)}
+        ${lab(t(FIG, 'support'), SUP, C.red, 1)}
+      </svg>`;
+    }
+
     return `<div class="pad">
       <div class="ttl">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="margin-top:38px">${rows}</div>
-      <div style="flex:1"></div>
+      <div style="margin-top:${tight ? 28 : 38}px">${rows}</div>
+      ${fig ? `<div style="flex:1;display:flex;align-items:center">${fig}</div>` : `<div style="flex:1"></div>`}
       <div style="font-family:${FONT_TITLE};font-size:30px;font-weight:800;color:${C.navy};margin-bottom:22px">${esc(t(c, 'closing'))}</div>
     </div>`;
   },
@@ -453,13 +515,24 @@ const R = {
         <span style="width:38px;height:7px;background:${s.color || C.navy};border-radius:4px"></span>
         <span style="font-family:${FONT_TITLE};font-size:26px;font-weight:700;color:${C.body}">${esc(t(s, 'label'))}</span>
       </span>`).join('');
+    // touches: [{x,y,n}] — 선이 그 높이에서 «몇 번째로» 멈췄는지 번호를 매겨 짚는다.
+    // 「한 번은 우연, 두 번부터 자리」가 이 시리즈의 핵심 문장인데 그림이 세어 주지 않으면
+    // 독자는 그 말을 글로만 읽는다. 번호가 붙으면 카드가 스스로 근거를 보여 준다.
+    const touches = (d(c, 'touches', [])).map(p => `
+      <circle cx="${px(p.x)}" cy="${py(p.y)}" r="16" fill="${C.paper}" stroke="${C.red}" stroke-width="5"/>
+      <text x="${px(p.x)}" y="${py(p.y) + 9}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="24" font-weight="800" fill="${C.red}">${esc(String(p.n))}</text>`).join('');
+    // 바닥 축선은 «0 이 의미 있는» 그림(VIX·거래대금 등)에서만 쓸모가 있다. 데이터가 0 근처에
+    // 가지 않는 그림(지지·저항처럼 가격대만 보는 것)에서는 화면 한가운데 떠 있는 회색 선이
+    // 되어 정체불명의 세 번째 수평선으로 읽힌다 — EP.05 p.04 에서 실제로 그랬다.
+    const axis = d(c, 'axis', true)
+      ? `<line x1="${px(0)}" y1="${py(0)}" x2="${px(100)}" y2="${py(0)}" stroke="#c9c6bc" stroke-width="3"/>` : '';
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
       <div style="flex:1;display:flex;align-items:center">
         <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
-          <line x1="${px(0)}" y1="${py(0)}" x2="${px(100)}" y2="${py(0)}" stroke="#c9c6bc" stroke-width="3"/>
-          ${band}${levels}${series}${mk}
+          ${axis}${band}${levels}${series}${mk}${touches}
         </svg>
       </div>
       ${legend ? `<div style="margin-bottom:14px">${legend}</div>` : ''}
@@ -550,6 +623,63 @@ const R = {
       <div style="margin-top:30px">${head}${rows}</div>
       <div style="flex:1"></div>
       ${t(c, 'closing') ? `<div style="margin-bottom:22px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.red}">${esc(t(c, 'closing'))}</span></div>` : ''}
+    </div>`;
+  },
+
+  // 역할 반전: «뚫린 저항선이 지지선이 된다»를 선 하나로 보여준다.
+  //
+  // 이 개념은 지지·저항 회차의 핵심인데 `versus` 표의 한 칸이나 `numbered` 의 한 줄로는
+  // 전달되지 않는다 — 「위에서 누르는 자리로」라는 말만 읽고 그림을 못 본다.
+  // 사용자가 EP.05 검토에서 이 부분을 콕 집어 보강을 요청했다(2026-08-30 이슈 #25).
+  //
+  // 그림의 요점은 «선이 하나뿐»이라는 것이다. 되밀린 자리와 받쳐 준 자리가 같은 높이임을
+  // 눈으로 확인해야 "이름만 바뀐다"는 말이 들어온다. 그래서 선을 두 개로 나눠 그리지
+  // 않고, 하나의 가로선 위아래에 라벨을 갈라 붙인다 — 라벨은 각각 «가격이 아직 닿지 않은
+  // 쪽»의 빈 공간에 놓이므로 겹치지 않는다.
+  //
+  //   before / after — 돌파 전·후의 이름 (예: 저항선 / → 이제는 지지선)
+  //   break / retest — 돌파 지점·되돌아와 멈춘 지점의 문구
+  flip(c) {
+    const W = 900, H = 440, LV = 210;
+    const arrow = (x, y1, y2) => {
+      const dir = y2 > y1 ? 1 : -1;
+      return `<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="${C.red}" stroke-width="5"
+                    stroke-linecap="round" opacity="0.85"/>
+              <path d="M ${x - 11} ${y2 - dir * 14} L ${x} ${y2} L ${x + 11} ${y2 - dir * 14}"
+                    stroke="${C.red}" stroke-width="5" fill="none" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.85"/>`;
+    };
+    const mark = (x, y) => `<circle cx="${x}" cy="${y}" r="17" fill="none" stroke="${C.red}" stroke-width="6"/>`;
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="flex:1;display:flex;align-items:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+          <line x1="24" y1="${LV}" x2="${W - 24}" y2="${LV}" stroke="${C.red}" stroke-width="5"
+                stroke-dasharray="16 11"/>
+          <polyline points="30,380 140,216 240,330 350,214 445,340 560,122 625,104 700,205 800,96 870,62"
+                    stroke="${C.navy}" stroke-width="7" fill="none"
+                    stroke-linejoin="round" stroke-linecap="round"/>
+          ${arrow(140, 242, 292)}${arrow(350, 240, 290)}${arrow(768, 200, 156)}
+          ${mark(514, LV)}${mark(700, 205)}
+          <path d="M 462 158 L 503 200" stroke="${C.red}" stroke-width="3" fill="none"/>
+          <text x="456" y="150" text-anchor="end" font-family="${FONT_TITLE}" font-size="27"
+                font-weight="800" fill="${C.red}">${esc(t(c, 'break'))}</text>
+          <text x="34" y="${LV - 20}" font-family="${FONT_TITLE}" font-size="28" font-weight="800"
+                fill="${C.red}">${esc(t(c, 'before'))}</text>
+          <path d="M 676 256 L 704 226" stroke="${C.red}" stroke-width="3" fill="none"/>
+          <text x="${W - 24}" y="${LV + 62}" text-anchor="end" font-family="${FONT_TITLE}" font-size="28"
+                font-weight="800" fill="${C.red}">${esc(t(c, 'after'))}</text>
+          <text x="${W - 24}" y="${LV + 100}" text-anchor="end" font-family="${FONT_SANS}" font-size="25"
+                fill="${C.muted}">${esc(t(c, 'retest'))}</text>
+        </svg>
+      </div>
+      ${/* note — 그림이 한 방향만 보여 주므로 «반대 방향도 같다»를 글로 마저 채운다.
+            지지선이 무너져 저항선이 되는 쪽까지 그리면 선이 둘이 되어 «같은 선 하나»라는
+            그림의 요점이 무너진다. 사용자가 요청한 것은 양방향 개념이지 양방향 그림이 아니다. */
+      t(c, 'note') ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin-bottom:20px;
+             font-family:${FONT_TITLE};font-size:27px;font-weight:700;color:${C.body}">${esc(t(c, 'note'))}</div>` : ''}
+      ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
     </div>`;
   },
 
