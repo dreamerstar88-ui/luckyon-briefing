@@ -1,0 +1,148 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>검토 · EP.05 지지선과 저항선</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px 14px 60px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
+       background:#14140f;color:#f0efe6;line-height:1.6;max-width:760px;margin-inline:auto}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:18px;border-top:1px solid #35342c}
+  h3{font-size:16px;margin:20px 0 8px;color:#b9b6a8}
+  .meta{font-size:14px;color:#9b9889;margin-bottom:18px}
+  .chk{background:#1e1e18;border-left:4px solid #ddc158;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .chk b{color:#ddc158}
+  .chk li{margin:5px 0}
+  .fact{background:#16211a;border-left:4px solid #3f8f6d;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .fact b{color:#6fc79c}
+  .cards{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  img{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  figcaption{font-size:13px;color:#9b9889;margin-top:7px}
+  figcaption b{color:#e0dfd4}
+  .cap{white-space:normal;background:#1e1e18;border-radius:10px;padding:14px 16px;font-size:14px;color:#d9d7cb}
+  .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
+  code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+  .act{display:flex;gap:12px;margin:22px 0 10px}
+  .btn{flex:1;display:block;text-align:center;padding:18px 10px;border-radius:12px;
+       font-size:17px;font-weight:800;text-decoration:none}
+  .btn.ok{background:#2f7d5b;color:#fff}
+  .btn.fix{background:#8a4436;color:#fff}
+  .hint{font-size:13px;color:#9b9889;margin:0 0 6px}
+</style></head><body>
+
+<h1>EP.05 · 지지선과 저항선</h1>
+<div class="meta">투자 3분 노트 · 발행 예정 2026-08-30 · stamp <code>2026-08-30-ep05</code></div>
+
+<div class="chk"><b>검토 체크리스트</b>
+<ul>
+  <li>개념 설명이 <b>사실로 맞는가</b> (정의·인과·용어)</li>
+  <li>p.06 실제 시세의 <b>숫자와 날짜</b>가 맞는가</li>
+  <li>카드 밖으로 <b>넘치거나 겹친 글자</b>가 없는가 (특히 영어)</li>
+  <li><b>투자 권유</b>로 읽힐 문장이 없는가</li>
+  <li>한국어 <b>맞춤법·띄어쓰기</b>, 영어판에 한글 잔존 없는가</li>
+  <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
+</ul></div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-30-ep05&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-30-ep05%0AEP.05%20%EC%A7%80%EC%A7%80%EC%84%A0%EA%B3%BC%20%EC%A0%80%ED%95%AD%EC%84%A0" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-30-ep05&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-30-ep05%0AEP.05%20%EC%A7%80%EC%A7%80%EC%84%A0%EA%B3%BC%20%EC%A0%80%ED%95%AD%EC%84%A0" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<div class="fact"><b>시세 검증 기록</b>
+<div>KO — 삼성전자(005930.KS) 일봉을 UsStockInfo 원본과 대조. KRX 일봉의 15:00Z 표기는 KST 다음 날 00:00 이므로 거래일 = 표기일 +1 로 환산했고, 8/17(광복절 대체공휴일) 자리가 정확히 비어 있는 것과 마지막 봉(8/28) 종가 257,000원이 get_stock_info 의 currentPrice 와 일치하는 것으로 교차검증. p.06 에 실은 2026-08-03~08-12 8개 봉의 시·고·저·종·거래량 전부 원본과 자릿수까지 일치. 지지 구간 근거: 8/4 저가 228,000 · 8/6 228,000 · 8/7 229,000 · 8/10 228,500 · 8/11 227,500원 (다섯 번, 폭 1,500원). 그 사이 8/5 저가는 244,000원으로 구간 밖이라 세지 않음.</div><div>EN — AAPL daily bars checked against the UsStockInfo source (US bars are stamped at 04:00Z = same trading day). All 10 bars in p.06 (Aug 10–21, 2026) match the source open/high/low/close/volume to the cent. Support zone evidence: lows of 302.79 (Aug 11), 300.57 (Aug 12), 302.05 (Aug 13), 302.94 (Aug 17) — four sessions inside a $2.37 band. Aug 14 (low 304.30) sits above the band and is not counted. The Aug 28 row was excluded because the source returns null OHLC for it.</div></div>
+
+
+    <h2>🇰🇷 한국어 — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="ko/card1.png" alt="표지. 크림색 모눈 노트 위에 캔들 아홉 개가 위아래 두 개의 붉은 점선 사이를 오간다. 아래 점선을 가리키며 '여기서 자꾸 멈췄다 — 그 자리를 이은 선'이라는 주석이 붙어 있다. 큰 제목 '지지선은 예언이 아니라 기록입니다', 부제 'EP.05 · 지지선과 저항선', 노란 형광펜 칩 '저장하고 넘겨보세요'." loading="lazy">
+      <figcaption><b>p.01</b> 표지. 크림색 모눈 노트 위에 캔들 아홉 개가 위아래 두 개의 붉은 점선 사이를 오간다. 아래 점선을 가리키며 '여기서 자꾸 멈췄다 — 그 자리를 이은 선'이라는 주석이 붙어 있다. 큰 제목 '지지선은 예언이 아니라 기록입니다', 부제 'EP.05 · 지지선과 저항선', 노란 형광펜 칩 '저장하고 넘겨보세요'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card2.png" alt="도입 카드. 제목 '차트에 가로선을 그어 놓은 그림, 보신 적 있나요?' 아래에 '누가 왜 거기에 그었는지 모르면 차트는 계속 남의 그림으로 남는다'는 본문이 있고, 물음표 세 개가 붙은 회색 꺾은선 스케치가 그려져 있다. 맨 아래 '이번 편에서 그 선이 어떻게 그어지는지 봅니다'." loading="lazy">
+      <figcaption><b>p.02</b> 도입 카드. 제목 '차트에 가로선을 그어 놓은 그림, 보신 적 있나요?' 아래에 '누가 왜 거기에 그었는지 모르면 차트는 계속 남의 그림으로 남는다'는 본문이 있고, 물음표 세 개가 붙은 회색 꺾은선 스케치가 그려져 있다. 맨 아래 '이번 편에서 그 선이 어떻게 그어지는지 봅니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card3.png" alt="용어 정리 카드. 체크박스와 노란 형광펜 칩으로 네 항목이 나열돼 있다. 지지선 — 내려올 때마다 멈춘 가격대. 저항선 — 올라갈 때마다 되밀린 가격대. 박스권 — 두 선 사이를 오가는 구간. 돌파 — 그 선을 넘어 자리 잡는 것. 마무리 문구 '이름을 알면 그 가로선이 기록으로 보입니다'." loading="lazy">
+      <figcaption><b>p.03</b> 용어 정리 카드. 체크박스와 노란 형광펜 칩으로 네 항목이 나열돼 있다. 지지선 — 내려올 때마다 멈춘 가격대. 저항선 — 올라갈 때마다 되밀린 가격대. 박스권 — 두 선 사이를 오가는 구간. 돌파 — 그 선을 넘어 자리 잡는 것. 마무리 문구 '이름을 알면 그 가로선이 기록으로 보입니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card4.png" alt="원리 카드. 감청색 꺾은선 하나가 위아래 두 개의 붉은 점선 사이를 세 번씩 오간다. 위 점선에는 '저항선', 아래 점선에는 '지지선' 라벨이 붙어 있다. 본문은 되돌아선 지점을 비슷한 높이끼리 잇는다고 설명하고, 노란 형광펜 마무리 문구는 '한 번은 우연, 두 번부터 자리입니다'." loading="lazy">
+      <figcaption><b>p.04</b> 원리 카드. 감청색 꺾은선 하나가 위아래 두 개의 붉은 점선 사이를 세 번씩 오간다. 위 점선에는 '저항선', 아래 점선에는 '지지선' 라벨이 붙어 있다. 본문은 되돌아선 지점을 비슷한 높이끼리 잇는다고 설명하고, 노란 형광펜 마무리 문구는 '한 번은 우연, 두 번부터 자리입니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card5.png" alt="비교 표 카드. 왼쪽 감청색 칸은 '지지선 · 가격 아래', 오른쪽 회색 칸은 '저항선 · 가격 위'. 세 줄로 맞대어 놓았다. 가격은 이 선의 — 위에 있다 / 아래에 있다. 그 자리에서 이전에 이긴 쪽 — 사려는 쪽 / 팔려는 쪽. 뚫리고 나면 (보통 이렇게 봅니다) — 위에서 누르는 자리로 / 아래서 받치는 자리로. 마무리 '뚫린 자리는 지우지 말고 반대쪽에서 봅니다'." loading="lazy">
+      <figcaption><b>p.05</b> 비교 표 카드. 왼쪽 감청색 칸은 '지지선 · 가격 아래', 오른쪽 회색 칸은 '저항선 · 가격 위'. 세 줄로 맞대어 놓았다. 가격은 이 선의 — 위에 있다 / 아래에 있다. 그 자리에서 이전에 이긴 쪽 — 사려는 쪽 / 팔려는 쪽. 뚫리고 나면 (보통 이렇게 봅니다) — 위에서 누르는 자리로 / 아래서 받치는 자리로. 마무리 '뚫린 자리는 지우지 말고 반대쪽에서 봅니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card6.png" alt="실제 사례 카드. 삼성전자 2026년 8월 3일부터 8월 12일까지 여덟 개의 일봉과 그 아래 거래량 막대가 두 칸으로 그려져 있다. 22만 7,500원에서 22만 9,000원 사이가 붉은 점선 두 줄로 좁게 표시돼 '지지 구간'이라 이름이 붙어 있고, x축에 8/3부터 8/12까지 여덟 거래일이 모두 찍혀 있다. 8월 4일·6일·7일·10일·11일 다섯 번의 저가가 그 구간까지 내려왔고, 8월 3일·5일·12일 저가는 그보다 위에서 멈춘다. 마무리 문구 '다시 그 값에 닿는 날이 오면 눈에 들어옵니다'." loading="lazy">
+      <figcaption><b>p.06</b> 실제 사례 카드. 삼성전자 2026년 8월 3일부터 8월 12일까지 여덟 개의 일봉과 그 아래 거래량 막대가 두 칸으로 그려져 있다. 22만 7,500원에서 22만 9,000원 사이가 붉은 점선 두 줄로 좁게 표시돼 '지지 구간'이라 이름이 붙어 있고, x축에 8/3부터 8/12까지 여덟 거래일이 모두 찍혀 있다. 8월 4일·6일·7일·10일·11일 다섯 번의 저가가 그 구간까지 내려왔고, 8월 3일·5일·12일 저가는 그보다 위에서 멈춘다. 마무리 문구 '다시 그 값에 닿는 날이 오면 눈에 들어옵니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card7.png" alt="실수 카드. 번호 붙은 세 항목. 1. 정확히 그 값으로 믿는다 — 선이 아니라 폭이 있는 띠다. 2. 한 번 멈춘 곳을 선이라 부른다 — 두 번 이상이라야 기록이다. 3. 뚫리면 틀렸다고 생각한다 — 뚫리는 것도 정보다. 아래 붉은 테두리 상자에 '가장 흔한 오해 — 지지선에 닿으면 반드시 오른다는 뜻이 아닙니다. 사는 자리가 아니라, 여기서 어떻게 되나 보는 자리입니다'." loading="lazy">
+      <figcaption><b>p.07</b> 실수 카드. 번호 붙은 세 항목. 1. 정확히 그 값으로 믿는다 — 선이 아니라 폭이 있는 띠다. 2. 한 번 멈춘 곳을 선이라 부른다 — 두 번 이상이라야 기록이다. 3. 뚫리면 틀렸다고 생각한다 — 뚫리는 것도 정보다. 아래 붉은 테두리 상자에 '가장 흔한 오해 — 지지선에 닿으면 반드시 오른다는 뜻이 아닙니다. 사는 자리가 아니라, 여기서 어떻게 되나 보는 자리입니다'.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card8.png" alt="요약 카드. 체크박스 세 줄: 예측이 아니라 기록입니다 / 한 번은 우연, 두 번부터 자리 / 뚫린 선은 반대쪽에서 다시 봅니다. 노란 형광펜 칩 두 개로 저장 유도와 해시태그, 그 아래 '다음 편 ▶ 추세선과 박스권', 맨 아래에 교육 목적 고지." loading="lazy">
+      <figcaption><b>p.08</b> 요약 카드. 체크박스 세 줄: 예측이 아니라 기록입니다 / 한 번은 우연, 두 번부터 자리 / 뚫린 선은 반대쪽에서 다시 봅니다. 노란 형광펜 칩 두 개로 저장 유도와 해시태그, 그 아래 '다음 편 ▶ 추세선과 박스권', 맨 아래에 교육 목적 고지.</figcaption>
+    </figure></div>
+    <h3>캡션 (427자)</h3>
+    <div class="cap">차트 위 그 가로선, 누가 앞일을 맞혀서 그은 게 아닙니다.<br><br>가격이 여러 번 되돌아선 자리를 이은 «기록»입니다. 아래쪽을 이으면 지지선, 위쪽을 이으면 저항선이죠.<br><br>이번 편은 실제 삼성전자 일봉으로 확인했습니다. 2026년 8월 4일부터 11일까지 다섯 번, 그날의 저가가 22만 7,500원~22만 9,000원 안에 들어왔습니다. 1,500원 폭 안에 다섯 번이 모인 겁니다.<br><br>기억할 세 가지<br>① 지지선·저항선은 예측이 아니라 기록<br>② 한 번은 우연, 두 번부터 자리<br>③ 뚫린 선은 지우지 말고 반대쪽에서 계속 본다<br><br>저장해 두고 차트 볼 때 꺼내 보세요 📌<br><br>#지지선 #저항선 #박스권 #주식차트 #주식공부 #주식초보 #차트분석 #기술적분석 #삼성전자 #투자3분노트<br><br>다음 편 ▶ 추세선과 박스권<br><br>※ 본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.</div>
+
+    <h2>🇺🇸 English — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="en/card1.png" alt="Cover. On cream grid paper, nine candlesticks travel between two red dashed horizontal lines. An annotation points at the lower line: 'It kept stopping here — that's the line'. Headline 'Support lines don't predict. They record.', subtitle 'EP.05 · Support &amp; resistance', yellow highlighter chip 'Save this and swipe'." loading="lazy">
+      <figcaption><b>p.01</b> Cover. On cream grid paper, nine candlesticks travel between two red dashed horizontal lines. An annotation points at the lower line: 'It kept stopping here — that's the line'. Headline 'Support lines don't predict. They record.', subtitle 'EP.05 · Support &amp; resistance', yellow highlighter chip 'Save this and swipe'.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card2.png" alt="Intro card. Headline 'Seen a chart with flat lines drawn across it?' with body text explaining that if you can't tell where someone else's line came from, the chart stays their picture. A grey sketched zigzag line with three question marks. Footer line: 'You'll see exactly how that line gets drawn'." loading="lazy">
+      <figcaption><b>p.02</b> Intro card. Headline 'Seen a chart with flat lines drawn across it?' with body text explaining that if you can't tell where someone else's line came from, the chart stays their picture. A grey sketched zigzag line with three question marks. Footer line: 'You'll see exactly how that line gets drawn'.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card3.png" alt="Vocabulary card headed 'Four names first'. Four checkbox rows with yellow highlighter chips. Support — price kept bouncing up here. Resistance — price kept getting turned back. Range — the zone between the two lines. Breakout — price settles past the line. Closing line: 'Name them and those lines read as history'." loading="lazy">
+      <figcaption><b>p.03</b> Vocabulary card headed 'Four names first'. Four checkbox rows with yellow highlighter chips. Support — price kept bouncing up here. Resistance — price kept getting turned back. Range — the zone between the two lines. Breakout — price settles past the line. Closing line: 'Name them and those lines read as history'.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card4.png" alt="Mechanics card. A single navy line bounces three times each off two red dashed horizontal lines, labelled 'Resistance' above and 'Support' below. Body text explains joining turning points that sit at a similar height. Yellow highlighter closing: 'Once is chance. Twice is a level.'" loading="lazy">
+      <figcaption><b>p.04</b> Mechanics card. A single navy line bounces three times each off two red dashed horizontal lines, labelled 'Resistance' above and 'Support' below. Body text explains joining turning points that sit at a similar height. Yellow highlighter closing: 'Once is chance. Twice is a level.'</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card5.png" alt="Comparison table. Left navy column 'Support · below the price', right grey column 'Resistance · above the price'. Three rows. Price sits — above this line / below this line. Who won there last time — the buyers / the sellers. Once it breaks, how it's usually read — a cap from above / a floor from below. Closing: 'Don't erase a broken line. Watch it flip.'" loading="lazy">
+      <figcaption><b>p.05</b> Comparison table. Left navy column 'Support · below the price', right grey column 'Resistance · above the price'. Three rows. Price sits — above this line / below this line. Who won there last time — the buyers / the sellers. Once it breaks, how it's usually read — a cap from above / a floor from below. Closing: 'Don't erase a broken line. Watch it flip.'</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card6.png" alt="Real-chart card. Ten Apple daily candlesticks from August 10 to August 21, 2026, with a volume panel beneath. A red band between $300.57 and $302.94 is shaded and labelled 'Support zone', and every trading day from 8/10 to 8/21 is marked on the x-axis. On August 11, 12, 13 and 17 the day's low lands inside that band; August 10, 14, and 18 through 21 all stay above it. Closing line: 'If price returns there, you'll spot the day'." loading="lazy">
+      <figcaption><b>p.06</b> Real-chart card. Ten Apple daily candlesticks from August 10 to August 21, 2026, with a volume panel beneath. A red band between $300.57 and $302.94 is shaded and labelled 'Support zone', and every trading day from 8/10 to 8/21 is marked on the x-axis. On August 11, 12, 13 and 17 the day's low lands inside that band; August 10, 14, and 18 through 21 all stay above it. Closing line: 'If price returns there, you'll spot the day'.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card7.png" alt="Mistakes card. Three numbered items. 1. Treating it as one exact price — it's a band, not a number. 2. Calling one stop a level — it takes two or more. 3. Thinking a break means it failed — a break is information too, and you now watch that level from the other side. A red-bordered box below reads 'The biggest misconception — touching support doesn't mean price must rise. It's a place to watch what happens next, not a signal to act.'" loading="lazy">
+      <figcaption><b>p.07</b> Mistakes card. Three numbered items. 1. Treating it as one exact price — it's a band, not a number. 2. Calling one stop a level — it takes two or more. 3. Thinking a break means it failed — a break is information too, and you now watch that level from the other side. A red-bordered box below reads 'The biggest misconception — touching support doesn't mean price must rise. It's a place to watch what happens next, not a signal to act.'</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card8.png" alt="Recap card. Three checkbox lines: They record. They don't predict. / Once is chance, twice is a level / Broken lines get watched, not erased. Two yellow highlighter chips with a save prompt and hashtags, then 'Next up ▶ Trendlines &amp; ranges', and an educational-purpose disclaimer at the bottom." loading="lazy">
+      <figcaption><b>p.08</b> Recap card. Three checkbox lines: They record. They don't predict. / Once is chance, twice is a level / Broken lines get watched, not erased. Two yellow highlighter chips with a save prompt and hashtags, then 'Next up ▶ Trendlines &amp; ranges', and an educational-purpose disclaimer at the bottom.</figcaption>
+    </figure></div>
+    <h3>캡션 (844자)</h3>
+    <div class="cap">That flat line across the chart wasn't drawn by predicting anything.<br><br>It's a record: the heights where price turned around again and again. Join the lows and you get support; join the highs and you get resistance.<br><br>This episode checks it on real Apple daily bars. On four sessions between August 11 and 17, 2026, the day's low landed between $300.57 and $302.94 — four stops inside a band just $2.37 wide.<br><br>Three things to keep<br>1. Support and resistance record, they don't predict<br>2. Once is chance, twice is a level<br>3. Don't erase a broken line — watch it from the other side<br><br>Save it and pull it up next time you open a chart 📌<br><br>#support #resistance #tradingrange #stockcharts #investingbasics #stockmarket101 #technicalanalysis #charting #apple #3mininvesting<br><br>Next up ▶ Trendlines &amp; ranges<br><br>Educational content only. Not investment advice.</div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-08-30-ep05&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-08-30-ep05%0AEP.05%20%EC%A7%80%EC%A7%80%EC%84%A0%EA%B3%BC%20%EC%A0%80%ED%95%AD%EC%84%A0" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-08-30-ep05&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-08-30-ep05%0AEP.05%20%EC%A7%80%EC%A7%80%EC%84%A0%EA%B3%BC%20%EC%A0%80%ED%95%AD%EC%84%A0" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<footer>
+버튼 대신 Claude 에게 직접 <code>차트노트 2026-08-30-ep05 발행해</code> 라고 해도 됩니다.<br>
+※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
+</footer>
+</body></html>

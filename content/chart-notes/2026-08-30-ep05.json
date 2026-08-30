@@ -31,13 +31,13 @@
       "title_en": "Seen a chart with flat<br>lines drawn across it?",
       "body_ko": "누가 왜 거기에 그었는지 모르면, 차트는 계속 «남의 그림»으로 남습니다. 그런데 그 선을 긋는 방법은 생각보다 단순합니다.",
       "body_en": "If you can't tell where someone else's line came from, the chart stays their picture, not yours. Drawing that line is simpler than it looks.",
-      "caption_ko": "이번 편에서 그 선을 직접 그어 봅니다",
-      "caption_en": "In this episode you draw that line yourself"
+      "caption_ko": "이번 편에서 그 선이 어떻게 그어지는지 봅니다",
+      "caption_en": "You'll see exactly how that line gets drawn"
     },
     {
       "type": "checklist",
       "title_ko": "이름부터 정리합니다",
-      "title_en": "Three names first",
+      "title_en": "Four names first",
       "body_ko": "가격이 자주 멈춘 자리에 붙이는 이름입니다.",
       "body_en": "Names for places where price kept stopping.",
       "items": [
@@ -84,10 +84,10 @@
       "rows": [
         { "label_ko": "가격은 이 선의", "label_en": "Price sits", "left_ko": "위에 있다", "left_en": "above this line", "right_ko": "아래에 있다", "right_en": "below this line" },
         { "label_ko": "그 자리에서 이전에 이긴 쪽", "label_en": "Who won there last time", "left_ko": "사려는 쪽", "left_en": "the buyers", "right_ko": "팔려는 쪽", "right_en": "the sellers" },
-        { "label_ko": "뚫리고 나면", "label_en": "Once it breaks", "left_ko": "위에서 누르는 자리로", "left_en": "it starts capping from above", "right_ko": "아래서 받치는 자리로", "right_en": "it starts holding from below" }
+        { "label_ko": "뚫리고 나면 (보통 이렇게 봅니다)", "label_en": "Once it breaks (how it's usually read)", "left_ko": "위에서 누르는 자리로", "left_en": "a cap from above", "right_ko": "아래서 받치는 자리로", "right_en": "a floor from below" }
       ],
-      "closing_ko": "뚫린 선은 사라지지 않고 역할만 바꿉니다",
-      "closing_en": "Broken lines switch sides, they don't vanish"
+      "closing_ko": "뚫린 자리는 지우지 말고 반대쪽에서 봅니다",
+      "closing_en": "Don't erase a broken line. Watch it flip."
     },
     {
       "type": "pricevol",
@@ -135,8 +135,8 @@
         { "i": 6, "text": "8/18" }, { "i": 7, "text": "8/19" }, { "i": 8, "text": "8/20" },
         { "i": 9, "text": "8/21" }
       ],
-      "closing_ko": "이제 그 값에 다시 닿는 날이 눈에 들어옵니다",
-      "closing_en": "Now you'll spot the day it returns there"
+      "closing_ko": "다시 그 값에 닿는 날이 오면 눈에 들어옵니다",
+      "closing_en": "If price returns there, you'll spot the day"
     },
     {
       "type": "numbered",
@@ -158,14 +158,14 @@
         {
           "title_ko": "뚫리면 «틀렸다»고 생각한다",
           "title_en": "Thinking a break means it failed",
-          "desc_ko": "뚫리는 것도 정보입니다. 지켜보던 자리가 반대 역할로 넘어갔다는 뜻입니다.",
-          "desc_en": "A break is information too. The level you were watching just switched roles."
+          "desc_ko": "뚫리는 것도 정보입니다. 지켜보던 자리를 이제 반대쪽에서 봅니다.",
+          "desc_en": "A break is information too. You now watch that level from the other side."
         }
       ],
       "warn_title_ko": "가장 흔한 오해",
       "warn_title_en": "The biggest misconception",
-      "warn_body_ko": "지지선에 닿으면 반드시 오른다는 뜻이 아닙니다. 자주 멈췄던 자리라는 기록일 뿐입니다.",
-      "warn_body_en": "Touching support doesn't mean price must rise. It only records where it often stopped."
+      "warn_body_ko": "지지선에 닿으면 반드시 오른다는 뜻이 아닙니다. 사는 자리가 아니라, 여기서 어떻게 되나 보는 자리입니다.",
+      "warn_body_en": "Touching support doesn't mean price must rise. It's a place to watch what happens next, not a signal to act."
     },
     {
       "type": "recap",
@@ -174,7 +174,7 @@
       "points": [
         { "text_ko": "예측이 아니라 기록입니다", "text_en": "They record. They don't predict." },
         { "text_ko": "한 번은 우연, 두 번부터 자리", "text_en": "Once is chance, twice is a level" },
-        { "text_ko": "뚫린 선은 역할을 바꿔 남습니다", "text_en": "A broken line switches sides" }
+        { "text_ko": "뚫린 선은 반대쪽에서 다시 봅니다", "text_en": "Broken lines get watched, not erased" }
       ],
       "ctas": [
         { "text_ko": "저장해 두고 차트 볼 때 꺼내 보세요", "text_en": "Save it for your next chart" },
@@ -188,27 +188,27 @@
       "disclaimer_en": "Educational content only. Not investment advice."
     }
   ],
-  "caption_ko": "차트 위 그 가로선, 누가 앞일을 맞혀서 그은 게 아닙니다.\n\n가격이 여러 번 되돌아선 자리를 이은 «기록»입니다. 아래쪽을 이으면 지지선, 위쪽을 이으면 저항선이죠.\n\n이번 편은 실제 삼성전자 일봉으로 확인했습니다. 2026년 8월 4일부터 11일까지 다섯 번, 그날의 저가가 22만 7,500원~22만 9,000원 안에 들어왔습니다. 1,500원 폭 안에 다섯 번이 모인 겁니다.\n\n기억할 세 가지\n① 지지선·저항선은 예측이 아니라 기록\n② 한 번은 우연, 두 번부터 자리\n③ 뚫린 선은 사라지지 않고 역할을 바꾼다\n\n저장해 두고 차트 볼 때 꺼내 보세요 📌\n\n#지지선 #저항선 #박스권 #주식차트 #주식공부 #주식초보 #차트분석 #기술적분석 #삼성전자 #투자3분노트\n\n다음 편 ▶ 추세선과 박스권\n\n※ 본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
-  "caption_en": "That flat line across the chart wasn't drawn by predicting anything.\n\nIt's a record: the heights where price turned around again and again. Join the lows and you get support; join the highs and you get resistance.\n\nThis episode checks it on real Apple daily bars. On four sessions between August 11 and 17, 2026, the day's low landed between $300.57 and $302.94 — four stops inside a band just $2.37 wide.\n\nThree things to keep\n1. Support and resistance record, they don't predict\n2. Once is chance, twice is a level\n3. A broken line switches sides instead of vanishing\n\nSave it and pull it up next time you open a chart 📌\n\n#support #resistance #tradingrange #stockcharts #investingbasics #stockmarket101 #technicalanalysis #charting #apple #3mininvesting\n\nNext up ▶ Trendlines & ranges\n\nEducational content only. Not investment advice.",
+  "caption_ko": "차트 위 그 가로선, 누가 앞일을 맞혀서 그은 게 아닙니다.\n\n가격이 여러 번 되돌아선 자리를 이은 «기록»입니다. 아래쪽을 이으면 지지선, 위쪽을 이으면 저항선이죠.\n\n이번 편은 실제 삼성전자 일봉으로 확인했습니다. 2026년 8월 4일부터 11일까지 다섯 번, 그날의 저가가 22만 7,500원~22만 9,000원 안에 들어왔습니다. 1,500원 폭 안에 다섯 번이 모인 겁니다.\n\n기억할 세 가지\n① 지지선·저항선은 예측이 아니라 기록\n② 한 번은 우연, 두 번부터 자리\n③ 뚫린 선은 지우지 말고 반대쪽에서 계속 본다\n\n저장해 두고 차트 볼 때 꺼내 보세요 📌\n\n#지지선 #저항선 #박스권 #주식차트 #주식공부 #주식초보 #차트분석 #기술적분석 #삼성전자 #투자3분노트\n\n다음 편 ▶ 추세선과 박스권\n\n※ 본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+  "caption_en": "That flat line across the chart wasn't drawn by predicting anything.\n\nIt's a record: the heights where price turned around again and again. Join the lows and you get support; join the highs and you get resistance.\n\nThis episode checks it on real Apple daily bars. On four sessions between August 11 and 17, 2026, the day's low landed between $300.57 and $302.94 — four stops inside a band just $2.37 wide.\n\nThree things to keep\n1. Support and resistance record, they don't predict\n2. Once is chance, twice is a level\n3. Don't erase a broken line — watch it from the other side\n\nSave it and pull it up next time you open a chart 📌\n\n#support #resistance #tradingrange #stockcharts #investingbasics #stockmarket101 #technicalanalysis #charting #apple #3mininvesting\n\nNext up ▶ Trendlines & ranges\n\nEducational content only. Not investment advice.",
   "alt_ko": [
     "표지. 크림색 모눈 노트 위에 캔들 아홉 개가 위아래 두 개의 붉은 점선 사이를 오간다. 아래 점선을 가리키며 '여기서 자꾸 멈췄다 — 그 자리를 이은 선'이라는 주석이 붙어 있다. 큰 제목 '지지선은 예언이 아니라 기록입니다', 부제 'EP.05 · 지지선과 저항선', 노란 형광펜 칩 '저장하고 넘겨보세요'.",
-    "도입 카드. 제목 '차트에 가로선을 그어 놓은 그림, 보신 적 있나요?' 아래에 '누가 왜 거기에 그었는지 모르면 차트는 계속 남의 그림으로 남는다'는 본문이 있고, 물음표 세 개가 붙은 회색 꺾은선 스케치가 그려져 있다. 맨 아래 '이번 편에서 그 선을 직접 그어 봅니다'.",
-    "용어 정리 카드. 체크박스와 노란 형광펜 칩으로 세 항목이 나열돼 있다. 지지선 — 내려올 때마다 멈춘 가격대. 저항선 — 올라갈 때마다 되밀린 가격대. 박스권 — 두 선 사이를 오가는 구간. 마무리 문구 '이름을 알면 그 가로선이 기록으로 보입니다'.",
+    "도입 카드. 제목 '차트에 가로선을 그어 놓은 그림, 보신 적 있나요?' 아래에 '누가 왜 거기에 그었는지 모르면 차트는 계속 남의 그림으로 남는다'는 본문이 있고, 물음표 세 개가 붙은 회색 꺾은선 스케치가 그려져 있다. 맨 아래 '이번 편에서 그 선이 어떻게 그어지는지 봅니다'.",
+    "용어 정리 카드. 체크박스와 노란 형광펜 칩으로 네 항목이 나열돼 있다. 지지선 — 내려올 때마다 멈춘 가격대. 저항선 — 올라갈 때마다 되밀린 가격대. 박스권 — 두 선 사이를 오가는 구간. 돌파 — 그 선을 넘어 자리 잡는 것. 마무리 문구 '이름을 알면 그 가로선이 기록으로 보입니다'.",
     "원리 카드. 감청색 꺾은선 하나가 위아래 두 개의 붉은 점선 사이를 세 번씩 오간다. 위 점선에는 '저항선', 아래 점선에는 '지지선' 라벨이 붙어 있다. 본문은 되돌아선 지점을 비슷한 높이끼리 잇는다고 설명하고, 노란 형광펜 마무리 문구는 '한 번은 우연, 두 번부터 자리입니다'.",
-    "비교 표 카드. 왼쪽 감청색 칸은 '지지선 · 가격 아래', 오른쪽 회색 칸은 '저항선 · 가격 위'. 세 줄로 맞대어 놓았다. 가격은 이 선의 — 위에 있다 / 아래에 있다. 그 자리에서 이전에 이긴 쪽 — 사려는 쪽 / 팔려는 쪽. 뚫리고 나면 — 위에서 누르는 자리로 / 아래서 받치는 자리로. 마무리 '뚫린 선은 사라지지 않고 역할만 바꿉니다'.",
-    "실제 사례 카드. 삼성전자 2026년 8월 3일부터 8월 12일까지 여덟 개의 일봉과 그 아래 거래량 막대가 두 칸으로 그려져 있다. 22만 7,500원에서 22만 9,000원 사이가 붉은 띠로 칠해져 '지지 구간'이라 표시돼 있고, x축에 8/3부터 8/12까지 여덟 거래일이 모두 찍혀 있다. 8월 4일·6일·7일·10일·11일 다섯 번의 저가가 그 띠 안에 들어왔고, 8월 5일 저가만 띠보다 위에 있다. 마무리 문구 '이제 그 값에 다시 닿는 날이 눈에 들어옵니다'.",
-    "실수 카드. 번호 붙은 세 항목. 1. 정확히 그 값으로 믿는다 — 선이 아니라 폭이 있는 띠다. 2. 한 번 멈춘 곳을 선이라 부른다 — 두 번 이상이라야 기록이다. 3. 뚫리면 틀렸다고 생각한다 — 뚫리는 것도 정보다. 아래 붉은 테두리 상자에 '가장 흔한 오해 — 지지선에 닿으면 반드시 오른다는 뜻이 아닙니다'.",
-    "요약 카드. 체크박스 세 줄: 예측이 아니라 기록입니다 / 한 번은 우연, 두 번부터 자리 / 뚫린 선은 역할을 바꿔 남습니다. 노란 형광펜 칩 두 개로 저장 유도와 해시태그, 그 아래 '다음 편 ▶ 추세선과 박스권', 맨 아래에 교육 목적 고지."
+    "비교 표 카드. 왼쪽 감청색 칸은 '지지선 · 가격 아래', 오른쪽 회색 칸은 '저항선 · 가격 위'. 세 줄로 맞대어 놓았다. 가격은 이 선의 — 위에 있다 / 아래에 있다. 그 자리에서 이전에 이긴 쪽 — 사려는 쪽 / 팔려는 쪽. 뚫리고 나면 (보통 이렇게 봅니다) — 위에서 누르는 자리로 / 아래서 받치는 자리로. 마무리 '뚫린 자리는 지우지 말고 반대쪽에서 봅니다'.",
+    "실제 사례 카드. 삼성전자 2026년 8월 3일부터 8월 12일까지 여덟 개의 일봉과 그 아래 거래량 막대가 두 칸으로 그려져 있다. 22만 7,500원에서 22만 9,000원 사이가 붉은 점선 두 줄로 좁게 표시돼 '지지 구간'이라 이름이 붙어 있고, x축에 8/3부터 8/12까지 여덟 거래일이 모두 찍혀 있다. 8월 4일·6일·7일·10일·11일 다섯 번의 저가가 그 구간까지 내려왔고, 8월 3일·5일·12일 저가는 그보다 위에서 멈춘다. 마무리 문구 '다시 그 값에 닿는 날이 오면 눈에 들어옵니다'.",
+    "실수 카드. 번호 붙은 세 항목. 1. 정확히 그 값으로 믿는다 — 선이 아니라 폭이 있는 띠다. 2. 한 번 멈춘 곳을 선이라 부른다 — 두 번 이상이라야 기록이다. 3. 뚫리면 틀렸다고 생각한다 — 뚫리는 것도 정보다. 아래 붉은 테두리 상자에 '가장 흔한 오해 — 지지선에 닿으면 반드시 오른다는 뜻이 아닙니다. 사는 자리가 아니라, 여기서 어떻게 되나 보는 자리입니다'.",
+    "요약 카드. 체크박스 세 줄: 예측이 아니라 기록입니다 / 한 번은 우연, 두 번부터 자리 / 뚫린 선은 반대쪽에서 다시 봅니다. 노란 형광펜 칩 두 개로 저장 유도와 해시태그, 그 아래 '다음 편 ▶ 추세선과 박스권', 맨 아래에 교육 목적 고지."
   ],
   "alt_en": [
     "Cover. On cream grid paper, nine candlesticks travel between two red dashed horizontal lines. An annotation points at the lower line: 'It kept stopping here — that's the line'. Headline 'Support lines don't predict. They record.', subtitle 'EP.05 · Support & resistance', yellow highlighter chip 'Save this and swipe'.",
-    "Intro card. Headline 'Seen a chart with flat lines drawn across it?' with body text explaining that if you can't tell where someone else's line came from, the chart stays their picture. A grey sketched zigzag line with three question marks. Footer line: 'In this episode you draw that line yourself'.",
-    "Vocabulary card. Three checkbox rows with yellow highlighter chips. Support — price kept bouncing up here. Resistance — price kept getting turned back. Range — the zone between the two lines. Closing line: 'Name them and those lines read as history'.",
+    "Intro card. Headline 'Seen a chart with flat lines drawn across it?' with body text explaining that if you can't tell where someone else's line came from, the chart stays their picture. A grey sketched zigzag line with three question marks. Footer line: 'You'll see exactly how that line gets drawn'.",
+    "Vocabulary card headed 'Four names first'. Four checkbox rows with yellow highlighter chips. Support — price kept bouncing up here. Resistance — price kept getting turned back. Range — the zone between the two lines. Breakout — price settles past the line. Closing line: 'Name them and those lines read as history'.",
     "Mechanics card. A single navy line bounces three times each off two red dashed horizontal lines, labelled 'Resistance' above and 'Support' below. Body text explains joining turning points that sit at a similar height. Yellow highlighter closing: 'Once is chance. Twice is a level.'",
-    "Comparison table. Left navy column 'Support · below the price', right grey column 'Resistance · above the price'. Three rows. Price sits — above this line / below this line. Who won there last time — the buyers / the sellers. Once it breaks — it starts capping from above / it starts holding from below. Closing: 'A broken line switches sides, not vanishes'.",
-    "Real-chart card. Ten Apple daily candlesticks from August 10 to August 21, 2026, with a volume panel beneath. A red band between $300.57 and $302.94 is shaded and labelled 'Support zone', and every trading day from 8/10 to 8/21 is marked on the x-axis. On August 11, 12, 13 and 17 the day's low lands inside that band; August 14 stays just above it. Closing line: 'Now you'll spot the day it returns there'.",
-    "Mistakes card. Three numbered items. 1. Treating it as one exact price — it's a band, not a number. 2. Calling one stop a level — it takes two or more. 3. Thinking a break means it failed — a break is information too. A red-bordered box below reads 'The biggest misconception — touching support doesn't mean price must rise'.",
-    "Recap card. Three checkbox lines: They record. They don't predict. / Once is chance, twice is a level / A broken line switches sides. Two yellow highlighter chips with a save prompt and hashtags, then 'Next up ▶ Trendlines & ranges', and an educational-purpose disclaimer at the bottom."
+    "Comparison table. Left navy column 'Support · below the price', right grey column 'Resistance · above the price'. Three rows. Price sits — above this line / below this line. Who won there last time — the buyers / the sellers. Once it breaks, how it's usually read — a cap from above / a floor from below. Closing: 'Don't erase a broken line. Watch it flip.'",
+    "Real-chart card. Ten Apple daily candlesticks from August 10 to August 21, 2026, with a volume panel beneath. A red band between $300.57 and $302.94 is shaded and labelled 'Support zone', and every trading day from 8/10 to 8/21 is marked on the x-axis. On August 11, 12, 13 and 17 the day's low lands inside that band; August 10, 14, and 18 through 21 all stay above it. Closing line: 'If price returns there, you'll spot the day'.",
+    "Mistakes card. Three numbered items. 1. Treating it as one exact price — it's a band, not a number. 2. Calling one stop a level — it takes two or more. 3. Thinking a break means it failed — a break is information too, and you now watch that level from the other side. A red-bordered box below reads 'The biggest misconception — touching support doesn't mean price must rise. It's a place to watch what happens next, not a signal to act.'",
+    "Recap card. Three checkbox lines: They record. They don't predict. / Once is chance, twice is a level / Broken lines get watched, not erased. Two yellow highlighter chips with a save prompt and hashtags, then 'Next up ▶ Trendlines & ranges', and an educational-purpose disclaimer at the bottom."
   ],
   "published": {}
 }
