@@ -65,6 +65,28 @@
 
 **이 단계를 건너뛰지 않는다.** 아래 순서대로 상태를 확인해 경로를 정한다.
 
+### 0-0. 먼저 `claude/live` 를 가져온다 — 콘텐츠 상태는 거기에만 있다
+
+```
+git fetch origin claude/live
+git checkout -B claude-live-work FETCH_HEAD
+```
+
+**세션은 `main` 에서 시작하는데, 이 축의 콘텐츠(`content/chart-notes/`)는 `claude/live` 에서만 갱신된다.**
+따라서 `main` 의 `_series.json`·회차 JSON 은 **몇 회차씩 뒤처져 있는 것이 정상**이다. 이걸 모르고
+`main` 의 파일을 읽으면 아래 두 단계가 **조용히 틀린 답**을 낸다:
+
+- **0-2** 가 `main` 의 `content/chart-notes/*.json` 만 보면, 승인 대기 중인 회차가 거기 없으므로
+  «대기 중 없음»으로 판정해 제작 경로로 내려간다.
+- **2단계**가 `main` 의 `_series.json` 을 읽으면 `next_up` 이 옛 값이라 **이미 발행한 회차를 다시 만든다.**
+
+2026-08-30 점검 시점의 실제 격차: `main` 은 `published: [EP.01]` · `next_up: 이동평균선`,
+`claude/live` 는 `published: [EP.01~EP.04]` · `next_up: 지지선과 저항선`. 그대로 믿었다면
+**EP.02(이동평균선)를 통째로 다시 만들 상황**이었다.
+
+`_series.json` 을 `main` 에도 복사해 두는 방식은 쓰지 않는다 — 상태가 두 곳에 생기면 반드시 다시 어긋난다.
+**정본은 `claude/live` 하나이고, 세션이 그걸 먼저 가져오는 것으로 맞춘다.**
+
 ### 0-1. 밀린 승인 요청이 있는가
 
 `mcp__github__list_issues` 로 `dreamerstar88-ui/luckyon-briefing` 의 **열린(OPEN)** 이슈 중
@@ -131,7 +153,7 @@
 
 ### 2. 시리즈 대장 읽기 — 다음 주제 결정
 
-`content/chart-notes/_series.json` 을 읽는다. 이 파일이 **"무엇을 이미 다뤘고 다음은 무엇인가"의 유일한 근거**다.
+`content/chart-notes/_series.json` 을 **`claude/live` 기준으로**(0-0 참고) 읽는다. 이 파일이 **"무엇을 이미 다뤘고 다음은 무엇인가"의 유일한 근거**다. `main` 쪽 사본은 뒤처져 있으므로 읽지 않는다.
 편성 의도와 회차별 기획(훅·사례 후보)은 `content/chart-notes/_roadmap.md` 에 있으니 함께 읽는다.
 
 - `published` 배열 = 이미 발행한 회차. **여기 있는 주제는 최근 30일 내라면 다시 쓰지 않는다.**
