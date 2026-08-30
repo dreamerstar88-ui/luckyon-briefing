@@ -202,6 +202,37 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'levels' — 캔들이 «두 가로선 사이»를 오가는 그림. 주석이 그 수평선을 가리키는
+    // 회차(지지선·저항선·박스권)에서 쓴다. 'ma'·'cross' 는 비스듬한 곡선이라 «가격이 자꾸
+    // 멈춘 높이»를 가리킬 대상이 화면에 없다 — EP.03 이 그 이유로 검증에서 걸렸다.
+    if (c.overlay === 'levels') {
+      const RES = 76, SUP = 246;
+      const seq = [ // o,c,h,l 은 SVG y(px). 아래로 갈수록 낮은 가격.
+        { o: 230, c: 200, h: 190, l: 242 }, { o: 200, c: 120, h: 110, l: 205 },
+        { o: 120, c: 92, h: 80, l: 125 }, { o: 92, c: 150, h: 88, l: 158 },
+        { o: 150, c: 225, h: 145, l: 243 }, { o: 225, c: 160, h: 152, l: 238 },
+        { o: 160, c: 110, h: 84, l: 165 }, { o: 110, c: 180, h: 105, l: 190 },
+        { o: 180, c: 232, h: 175, l: 244 },
+      ];
+      const x0 = 46, step = 54, bw = 26;
+      const cand = seq.map((s, i) => {
+        const cxp = x0 + i * step, col = s.c < s.o ? UP : DOWN;   // y 가 작을수록 높은 가격
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - bw / 2}" y="${Math.min(s.o, s.c)}" width="${bw}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      const lvl = (y) => `<line x1="30" y1="${y}" x2="530" y2="${y}" stroke="${C.red}"
+                                stroke-width="4" stroke-dasharray="14 10"/>`;
+      return `<div class="pad">
+        <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
+          ${cand}${lvl(RES)}${lvl(SUP)}
+          <path d="M 600 220 L 532 ${SUP}" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="606" y="${226 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     return `<div class="pad">
       <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
         ${candleSVG({ x: 190, w: 104, open: 190, close: 78, high: 30, low: 250, color: C.red, id: 'a' })}
@@ -619,6 +650,26 @@ const R = {
                     font-size="27" font-weight="800" fill="${C.red}">${esc(t(CO, 'text'))}</text>`;
     })() : '';
 
+    // levels: [{ price, to, label, color }] — 실제 가격 값에 가로 기준선을 긋는다
+    // (지지선·저항선·목표가·배당락 기준가 등). 좌표가 아니라 «그 회차가 인용한 진짜 가격»을
+    // 그대로 주므로, 4단계에서 대조한 수치와 그림이 어긋날 수 없다.
+    // `to` 를 함께 주면 두 값 사이를 «구간»으로 칠한다 — 지지·저항은 한 값이 아니라 폭이 있는
+    // 띠이고(그래서 카드도 그렇게 가르친다), 선 하나로 그리면 그림이 설명을 배반한다.
+    const zones = (d(c, 'levels', [])).map((l) => {
+      const col = l.color || C.red;
+      const ya = py(l.price), yb = (l.to != null) ? py(l.to) : null;
+      const top = (yb != null) ? Math.min(ya, yb) : ya;
+      const band = (yb != null) ? `<rect x="${PADL}" y="${top}" width="${W - PADL - PADR}"
+            height="${Math.max(Math.abs(yb - ya), 3)}" fill="${col}" opacity="0.20"/>` : '';
+      const edges = [ya, yb].filter((v) => v != null).map((y) =>
+        `<line x1="${PADL}" y1="${y}" x2="${W - PADR}" y2="${y}" stroke="${col}"
+               stroke-width="4" stroke-dasharray="14 10"/>`).join('');
+      return `${band}${edges}
+        <text x="${W - PADR}" y="${top - 12}" text-anchor="end" font-family="${FONT_TITLE}"
+              font-size="25" font-weight="800" fill="${col}"
+              stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(l, 'label'))}</text>`;
+    }).join('');
+
     const frame = d(c, 'frame', false) ? `
       <rect x="${PADL - 10}" y="${VT - 6}" width="${W - PADL - PADR + 20}" height="${VB - VT + 22}"
             fill="none" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10" rx="12"/>` : '';
@@ -638,7 +689,7 @@ const R = {
         <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
           <line x1="${PADL}" y1="${PB}" x2="${W - PADR}" y2="${PB}" stroke="#c9c6bc" stroke-width="3"/>
           <line x1="${PADL}" y1="${VB}" x2="${W - PADR}" y2="${VB}" stroke="#c9c6bc" stroke-width="3"/>
-          ${frame}${price}${vbars}${avgLine}${callout}
+          ${frame}${zones}${price}${vbars}${avgLine}${callout}
           ${tag(t(c, 'price_label'), PT - 14)}
           ${tag(t(c, 'panel_label'), HDY)}
           ${xlabels}
