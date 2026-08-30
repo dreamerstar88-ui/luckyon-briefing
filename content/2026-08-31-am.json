@@ -1,0 +1,703 @@
+{
+  "date": "2026-08-31",
+  "session": "am",
+  "dateLabel_ko": "2026년 8월 31일 월요일",
+  "dateLabel_en": "Monday, August 31, 2026",
+  "headline_ko": "워시 '매파 발언'에 반도체 급락, 나스닥 9거래일만에 반락",
+  "headline_en": "Chip Stocks Slide as Fed Chair Warsh Turns Hawkish",
+  "headline_sub_ko": "9월 금리인상 확률 35%→57%로 급등 · 마벨은 실적 호조에도 급락",
+  "headline_sub_en": "Sept hike odds jump from 35% to 57% · Marvell fell despite beating estimates",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 8/28 마감",
+    "en": "US Overnight · Aug 28 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 -0.52% · S&P 500 -0.25%",
+        "en": "Nasdaq -0.52% · S&P 500 -0.25%"
+      },
+      {
+        "ko": "26,402.42 / 7,711.76 · 반도체주가 끌어내렸다",
+        "en": "26,402.42 / 7,711.76 · chip stocks led the drop"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "필라델피아 반도체지수 -3.47%",
+        "en": "Philly Semiconductor Index -3.47%"
+      },
+      {
+        "ko": "엔비디아 -4.57% · 마벨은 실적 호조에도 -10.3%",
+        "en": "Nvidia -4.57% · Marvell fell 10.3% despite a beat"
+      }
+    ],
+    [
+      "bond",
+      {
+        "ko": "9월 금리인상 확률 35.4%→57.5%",
+        "en": "Sept hike odds 35.4%→57.5%"
+      },
+      {
+        "ko": "워시 잭슨홀 연설 직후 급등 · 2년물 금리도 동반 상승",
+        "en": "Surged right after Warsh's Jackson Hole speech · 2Y yield jumped too"
+      }
+    ]
+  ],
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,402.42",
+      "delta": "▼0.52%",
+      "dir": "down",
+      "note_ko": "8/28 미국장 마감 종가 · 반도체주 급락이 끌어내렸다",
+      "note_en": "Aug 28 US close · dragged down by the chip-stock selloff"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,711.76",
+      "delta": "▼0.25%",
+      "dir": "down",
+      "note_ko": "8/28 마감 종가 · 다우는 -0.02%에 그쳤다",
+      "note_en": "Aug 28 close · the Dow slipped just 0.02%"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,788.88",
+      "delta": "▼1.79%",
+      "dir": "down",
+      "note_ko": "전 거래일(8/28) 종가 · 오늘 개장 전",
+      "note_en": "Previous close (Aug 28) · ahead of today's open"
+    },
+    {
+      "label": "VIX",
+      "value": "14.43",
+      "delta": "▼0.55%",
+      "dir": "down",
+      "note_ko": "8/28 마감 · 변동성은 낮은 수준 유지",
+      "note_en": "Aug 28 close · volatility stayed near recent lows"
+    },
+    {
+      "label": "Fear & Greed",
+      "value": "54",
+      "delta": "-",
+      "dir": "down",
+      "note_ko": "전일 58 → 54 · 중립 구간으로 낮아졌다",
+      "note_en": "Down from 58 to 54 · eased into neutral territory"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.73%",
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "8/27 4.67% → 8/28 4.73% · 워시 발언에 상승",
+      "note_en": "Aug 27 4.67% → Aug 28 4.73% · rose on Warsh's remarks"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,377.50",
+      "value_sub": "· DXY 99.68",
+      "delta": "▼0.21%",
+      "dir": "down",
+      "note_ko": "31일 오전 기준 · 한은 연속 인상에 원화 강세",
+      "note_en": "As of Aug 31 morning · won firm after back-to-back BOK hikes"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,504.80",
+      "delta": "▲0.60%",
+      "dir": "up",
+      "note_ko": "금리 발언 충격에 급락했다 주말 사이 일부 되돌림",
+      "note_en": "Slumped on the rate-hike shock, then pared some losses over the weekend"
+    },
+    {
+      "label": "WTI",
+      "value": "$84.96",
+      "delta": "▲1.87%",
+      "dir": "up",
+      "note_ko": "8/28 종가보다 상승 · 31일 오전 기준",
+      "note_en": "Above the Aug 28 close · as of Aug 31 morning"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$78,438",
+      "delta": "▲0.78%",
+      "dir": "up",
+      "note_ko": "24시간 기준 · 8만달러선 붕괴 후 소폭 반등",
+      "note_en": "24h basis · a small bounce after breaking below $80K"
+    }
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear & Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "market_note_ko": "나스닥·S&P 500은 8/28 미국장 마감 종가, 코스피는 전 거래일(8/28) 종가·오늘 개장 전 기준",
+  "market_note_en": "Nasdaq/S&P 500 are the Aug 28 US close; KOSPI is the Aug 28 close, ahead of today's open",
+  "chart_series_values": [
+    26289.71,
+    26331.09,
+    26067.17,
+    26180.46,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42
+  ],
+  "chart_series_labels": [
+    "8.18",
+    "8.19",
+    "8.20",
+    "8.21",
+    "8.24",
+    "8.25",
+    "8.26",
+    "8.27",
+    "8.28"
+  ],
+  "chart_title": {
+    "ko": "9거래일 고점 찍고 하루 만에 반락",
+    "en": "A pullback the day after a 9-session high"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "8.24 저점 25,980.19 → 8.27 26,541.35(구간 고점) → 8.28 26,402.42로 반락",
+    "en": "Aug 24 low 25,980.19 → Aug 27 26,541.35 (range high) → pulled back to 26,402.42 on Aug 28"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_title": {
+    "ko": "5개 업종만 웃었다",
+    "en": "Only 5 of 11 sectors rose"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF · 8/28 종가 기준",
+    "en": "S&P 500 sector ETFs · Aug 28 close"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "8/28 미국장 · 막대 옆은 등락률",
+    "en": "Aug 28 US session · bar shows the day's change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit: $ Billion"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "엔비디아·마벨 실적 · 금리 확률 · 8/27~28 발표분",
+    "en": "Nvidia/Marvell earnings · rate odds · released Aug 27-28"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "summary": {
+    "lines_ko": [
+      "나스닥 -0.52%·S&P 500 -0.25%로 마감, 다우는 -0.02% 소폭 하락에 그쳤다.",
+      "케빈 워시 연준 의장이 잭슨홀 연설에서 매파적 발언을 내놓으며 9월 금리인상 확률이 35.4%에서 57.5%로 뛰었다.",
+      "반도체주 중심 매도로 거래대금 상위 300종목은 120 대 177로 하락 종목이 많았지만, 11개 업종 중 5개는 올랐다.",
+      "마벨테크놀로지는 실적과 가이던스 모두 예상을 웃돌았지만 마진 전망 실망에 10.3% 급락했다."
+    ],
+    "lines_en": [
+      "The Nasdaq fell 0.52% and the S&P 500 0.25%, while the Dow barely slipped 0.02%.",
+      "Fed Chair Kevin Warsh's hawkish Jackson Hole remarks sent September rate-hike odds from 35.4% to 57.5%.",
+      "Chip-led selling left 177 of the 300 most-traded names lower versus 120 higher, even as 5 of 11 sectors rose.",
+      "Marvell beat on both earnings and guidance yet fell 10.3% on disappointing margin guidance."
+    ]
+  },
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,402.42",
+          "delta": "▼0.52%",
+          "dir": "down",
+          "sub_ko": "138.93포인트 하락 · 필라델피아 반도체지수 -3.47%가 끌어내렸다",
+          "sub_en": "Down 138.93 pts · dragged by a 3.47% drop in the Philly semi index"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,711.76",
+          "delta": "▼0.25%",
+          "dir": "down",
+          "sub_ko": "19.23포인트 하락 · 다우는 0.02% 소폭 하락에 그쳤다",
+          "sub_en": "Down 19.23 pts · the Dow slipped just 0.02%"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 5,
+          "flat": 0,
+          "down": 6
+        },
+        {
+          "label_ko": "거래대금 상위 300종목",
+          "label_en": "300 most-traded",
+          "up": 120,
+          "flat": 3,
+          "down": 177
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금",
+        "label_en": "Turnover: gainers vs decliners",
+        "unit_ko": "십억달러",
+        "unit_en": " $B",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 158.1
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -211.0
+          }
+        ]
+      },
+      "note_ko": "11개 업종 중 5개만 올랐고 거래대금 상위 300종목은 120 대 177로 하락이 더 많았다 — 지수 하락폭보다 시장 내부는 더 반도체에 쏠려 있었다.",
+      "note_en": "Only 5 of 11 sectors rose, and the 300 most-traded names split 120 up to 177 down — the internals were even more chip-concentrated than the index move suggests."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Moves",
+      "color": "#5b8dd6",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "커뮤니케이션 (XLC)",
+          "label_en": "Comm. (XLC)",
+          "value": 1.42
+        },
+        {
+          "label_ko": "경기소비재 (XLY)",
+          "label_en": "Cons. Disc. (XLY)",
+          "value": 1.15
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 0.63
+        },
+        {
+          "label_ko": "필수소비재 (XLP)",
+          "label_en": "Cons. Staples (XLP)",
+          "value": 0.43
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": 0.38
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": -0.09
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health Care (XLV)",
+          "value": -0.24
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.4
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": -0.93
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -1.04
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Technology (XLK)",
+          "value": -1.55
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -3.47
+        }
+      ],
+      "note_ko": "반도체(SMH)·기술(XLK)만 크게 빠졌고 나머지 9개 업종은 보합권을 지켰다 — 지수를 끌어내린 건 소수의 초대형 칩주였다.",
+      "note_en": "Only semis (SMH) and tech (XLK) fell sharply; the other nine sectors held roughly flat — a handful of mega-cap chip names did most of the damage."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#e6a367",
+      "type": "rank",
+      "col_name_ko": "종목",
+      "col_name_en": "Stock",
+      "col_value_ko": "거래대금",
+      "col_value_en": "Turnover",
+      "rows": [
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$42.4B",
+          "pct": -4.57
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$21.3B",
+          "pct": -0.27
+        },
+        {
+          "name_ko": "마이크로소프트",
+          "name_en": "Microsoft",
+          "value": "$15.0B",
+          "pct": 1.68
+        },
+        {
+          "name_ko": "아마존",
+          "name_en": "Amazon",
+          "value": "$13.2B",
+          "pct": 3.97
+        },
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$12.3B",
+          "pct": 1.63
+        }
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중",
+        "label_en": "Share of top 5 by turnover",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5",
+            "pct": 28.2,
+            "color": "#e6a367"
+          },
+          {
+            "label_ko": "나머지 295종목",
+            "label_en": "Other 295",
+            "pct": 71.8,
+            "color": "#3987e5"
+          }
+        ]
+      },
+      "note_ko": "엔비디아 홀로 424억달러가 거래돼 표본(300종목) 거래대금의 11%를 차지했다 — 실적 발표 이틀째 매물 소화가 이어졌다.",
+      "note_en": "Nvidia alone traded $42.4B, about 11% of the 300-stock sample's turnover — profit-taking continued into the second session after earnings."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "엔비디아 2분기 EPS",
+          "label_en": "Nvidia Q2 EPS",
+          "value": "$2.22",
+          "delta": {
+            "ko": "예상 $2.09 상회",
+            "en": "Beat est. $2.09"
+          },
+          "dir": "up",
+          "sub_ko": "매출 962.2억달러 · 예상 922.7억달러 상회 · 발표 다음 거래일 -4.57%",
+          "sub_en": "Revenue $96.22B vs est. $92.27B · shares fell 4.57% the next session",
+          "ref_ko": "회계연도 기준 2분기(5~7월) 실적",
+          "ref_en": "Fiscal Q2 (May-Jul) results"
+        },
+        {
+          "label_ko": "마벨테크놀로지 3분기 매출 가이던스",
+          "label_en": "Marvell Q3 Revenue Guidance",
+          "value": "$3.15B",
+          "delta": {
+            "ko": "컨센서스 $30.4억 상회",
+            "en": "Beat consensus $3.04B"
+          },
+          "dir": "up",
+          "sub_ko": "2분기 EPS $0.94 · 마진 전망 실망에 주가 10.3% 급락",
+          "sub_en": "Q2 EPS $0.94 · shares fell 10.3% on disappointing margin guidance",
+          "ref_ko": "",
+          "ref_en": ""
+        },
+        {
+          "label_ko": "9월 FOMC 금리인상 확률",
+          "label_en": "Sept FOMC Hike Odds",
+          "value": "35.4% → 57.5%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "CME 페드워치 · 워시 의장 잭슨홀 연설 직후 급등",
+          "sub_en": "CME FedWatch · surged right after Chair Warsh's Jackson Hole remarks",
+          "ref_ko": "9/15~16 FOMC서 0.25%p 인상할 확률 · 선물시장 반영치",
+          "ref_en": "Futures-implied odds of a 0.25pp hike at the Sept 15-16 FOMC meeting"
+        },
+        {
+          "label_ko": "미 2년물 국채금리",
+          "label_en": "US 2Y Treasury Yield",
+          "value": "4.20% → 4.34%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "8/27→8/28 하루새 0.14%p 상승 · 한 달래 최고",
+          "sub_en": "Up 0.14pp in a single session · a one-month high",
+          "ref_ko": "",
+          "ref_en": ""
+        },
+        {
+          "label_ko": "한국은행 기준금리",
+          "label_en": "Bank of Korea Base Rate",
+          "value": "2.75% → 3.00%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "8/27 결정 · 두 달 연속 인상 · 2024년 11월 이후 첫 3%대",
+          "sub_en": "Decided Aug 27 · second straight hike · first time above 3% since Nov 2024",
+          "ref_ko": "두 달간 0.50%p 인상 · 최근 원화 강세의 배경",
+          "ref_en": "Up 0.50pp over two months · part of why the won has strengthened"
+        }
+      ],
+      "note_ko": "엔비디아·마벨 모두 예상을 웃돌았지만 주가는 반대로 움직였다. 시장을 더 크게 흔든 건 금리 — 워시 발언 후 9월 인상 확률이 하루 만에 22%p 뛰었다.",
+      "note_en": "Both Nvidia and Marvell beat estimates, yet their stocks fell — what really moved the market was rates: September hike odds jumped 22 points in a single day after Warsh's remarks."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "color": "#67c2a3",
+      "items": [
+        {
+          "headline_ko": "마벨테크놀로지, 실적 서프라이즈에도 마진 전망 실망에 10.3% 급락",
+          "headline_en": "Marvell falls 10.3% on margin guidance despite beat-and-raise",
+          "body_ko": "2분기 EPS 0.94달러, 3분기 매출 가이던스 31.5억달러로 컨센서스(30.4억달러)를 웃돌았지만, 3분기 비GAAP 총마진 가이던스(57.5~58.5%)가 기대에 못 미쳐 주가가 급락했다.",
+          "body_en": "Q2 EPS came in at $0.94 and Q3 revenue guidance of $3.15B beat the $3.04B consensus, but Q3 non-GAAP gross margin guidance of 57.5-58.5% disappointed, sending shares sharply lower.",
+          "src": "FMP · Nasdaq"
+        },
+        {
+          "headline_ko": "SK하이닉스, 미국 현지 생산기지 기공 — HBM 앞세워 'AI 본토 진출' 발판",
+          "headline_en": "SK Hynix breaks ground on US plant, leaning on its HBM lead",
+          "body_ko": "SK하이닉스가 미국 인디애나 공장 기공식을 갖고 현지 생산기지 구축에 착수했다. HBM으로 쌓은 기술 리더십을 앞세워 기존 빅테크 고객들과의 협력을 더 강화한다는 전략이다. 실제 HBM 양산은 2029년 하반기로 예정돼 있다.",
+          "body_en": "SK Hynix held a groundbreaking ceremony for its Indiana plant, starting construction of a US production base. The move leans on its HBM technology lead to deepen ties with existing Big Tech customers, though actual HBM production isn't slated until the second half of 2029.",
+          "src": "TheBell"
+        },
+        {
+          "headline_ko": "삼성전자, 1.4나노 대신 2나노+HBM 통합 공급으로 AI칩 고객 선점",
+          "headline_en": "Samsung prioritizes 2nm+HBM bundling over 1.4nm to win AI chip customers",
+          "body_ko": "삼성전자가 1.4나노 양산 시점을 2029년으로 늦추는 대신, 수요가 몰리는 2나노 공정에 HBM과 첨단 패키징을 묶은 통합 공급으로 AI 반도체 고객사를 먼저 확보하는 전략을 택했다.",
+          "body_en": "Samsung pushed 1.4nm mass production back to 2029, instead bundling 2nm production with HBM and advanced packaging to lock in AI chip customers where demand is concentrated now.",
+          "src": "Kukinews"
+        },
+        {
+          "headline_ko": "GS그룹, 동해 AI캠퍼스 3곳 신설 — 데이터센터 사업 본격화",
+          "headline_en": "GS Group launches three 'Donghae AI Campus' sites, entering data centers",
+          "body_ko": "GS그룹이 AI 인프라를 중심으로 한 캠퍼스 법인 3곳을 별도로 세우고 초기 투자를 단행했다. 전력·건설·에너지·냉각 기술을 결합한 종합 데이터센터 사업으로 확장하는 모습이다.",
+          "body_en": "GS Group set up three separate campus entities centered on AI infrastructure and made initial investments, expanding into data centers that combine power, construction, energy and cooling.",
+          "src": "TheBell"
+        },
+        {
+          "headline_ko": "SK텔레콤, AI 데이터센터를 MW·GW급으로 이원화해 육성",
+          "headline_en": "SK Telecom splits AI data center strategy into MW- and GW-scale tracks",
+          "body_ko": "SK텔레콤이 메가와트(MW)급과 기가와트(GW)급 AI 데이터센터를 별도 조직으로 나눠 키운다. GW급은 부지·전력 확보부터 글로벌 빅테크와의 협업까지 새로 설계하는 대형 프로젝트다.",
+          "body_en": "SK Telecom is splitting its AI data center push into separate MW-scale and GW-scale organizations, with the GW track a from-scratch project covering site selection, power and Big Tech partnerships.",
+          "src": "News1"
+        },
+        {
+          "headline_ko": "오픈AI, 스페이스X 인수 여파로 커서에 모델 제공 중단",
+          "headline_en": "OpenAI cuts off Cursor after its acquisition by SpaceX",
+          "body_ko": "오픈AI가 머스크 소유 스페이스X에 인수된 AI 코딩 에이전트 커서에 대한 모델 제공을 중단했다. 경영권 변경 조항과, 신모델 아스트라를 자사 약관대로 쓰려는 판단이 작용했다고 설명했다.",
+          "body_en": "OpenAI halted model access for coding agent Cursor after its acquisition by Elon Musk's SpaceX, citing a change-of-control clause and wanting its new Astra model used on its own terms.",
+          "src": "DigitalDaily"
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#c77dd1",
+      "items": [
+        {
+          "headline_ko": "워시 연준 의장, 잭슨홀서 매파 발언 — 9월 금리인상 확률 급등",
+          "headline_en": "Fed Chair Warsh turns hawkish at Jackson Hole; Sept hike odds surge",
+          "body_ko": "케빈 워시 연준 의장이 잭슨홀 심포지엄 첫 기조연설에서 인플레이션이 '우려스러운' 수준이라며 물가 안정에 집중하겠다고 밝혔다. 시장은 이를 강한 매파 신호로 받아들였고, CME 페드워치의 9월 금리인상 확률은 35.4%에서 57.5%로 뛰었다.",
+          "body_en": "Fed Chair Kevin Warsh's first Jackson Hole keynote called inflation 'concerning,' and CME FedWatch's September hike odds jumped from 35.4% to 57.5%.",
+          "src": "Yonhap · SBS Biz"
+        },
+        {
+          "headline_ko": "한미 대미투자 2000억달러 1호 프로젝트, 9월 발표 예정",
+          "headline_en": "First project in Korea's $200B US investment package due in September",
+          "body_ko": "정부가 한미 관세 합의에 따른 2000억달러 규모 대미 투자의 1호 프로젝트를 9월 중 발표할 전망이다. 에너지 분야가 유력하지만 미국 측이 반도체·AI 분야 투자까지 요구하고 있어 협상이 막바지 조율 중이다.",
+          "body_en": "Korea plans to announce the first project in its $200B US investment package sometime in September. Energy is the frontrunner, but Washington is also pushing for chip and AI investments.",
+          "src": "Maeil Ilbo · News1"
+        },
+        {
+          "headline_ko": "비트코인 8만달러선 붕괴 — 워시 발언에 위험자산 회피 확산",
+          "headline_en": "Bitcoin breaks below $80,000 as Warsh remarks spark risk-off move",
+          "body_ko": "워시 의장의 매파 발언 이후 위험자산 회피 심리가 확산하며 비트코인이 8만달러선 아래로 내려갔다. 금 역시 같은 날 큰 폭으로 조정받았다가 주말 사이 일부를 되돌렸다.",
+          "body_en": "Risk-off sentiment spread after Warsh's hawkish remarks, pushing bitcoin below the $80,000 level. Gold also fell sharply the same day before recovering part of the drop over the weekend.",
+          "src": "Newsian"
+        },
+        {
+          "headline_ko": "금리 민감주 러셀2000, -1.4%로 3대 지수보다 크게 하락",
+          "headline_en": "Rate-sensitive Russell 2000 falls 1.4%, underperforming the big three",
+          "body_ko": "소형주 중심의 러셀2000지수는 금리 상승에 더 민감하게 반응하며 1.4% 급락한 2,972.37을 기록했다. 나스닥·S&P 500·다우의 낙폭을 모두 웃돌았다.",
+          "body_en": "The small-cap Russell 2000, more sensitive to rising rates, fell 1.4% to 2,972.37 — a steeper drop than the Nasdaq, S&P 500 or Dow.",
+          "src": "Newsian"
+        },
+        {
+          "headline_ko": "삼성전자, 110조원 자사주 매입에도 25만원대 부진 지속",
+          "headline_en": "Samsung shares stuck near 250,000 won despite 110tn won buyback",
+          "body_ko": "삼성전자가 110조원 규모 자사주 매입 등 주주환원에 나섰지만 주가는 25만원대에 머물며 부진하다. 저평가 매력과 투자심리 사이의 온도차가 이번 주 코스피 반등 여부를 가늠할 변수로 꼽힌다.",
+          "body_en": "Despite a 110-trillion-won buyback, Samsung Electronics shares remain stuck around 250,000 won — a key swing factor for KOSPI this week.",
+          "src": "ThePublic"
+        },
+        {
+          "headline_ko": "한국은행, 두 달 연속 기준금리 인상 — 2024년 11월 이후 첫 3%대",
+          "headline_en": "Bank of Korea hikes for a second straight month",
+          "body_ko": "한국은행 금융통화위원회가 지난 27일 기준금리를 2.75%에서 3.00%로 0.25%포인트 올렸다. 지난달에 이은 두 달 연속 인상으로 2024년 11월 이후 21개월 만에 3%대에 복귀했다.",
+          "body_en": "The BOK's board raised its base rate 25bp to 3.00% on Aug 27 — a second straight hike and the first time above 3% since Nov 2024.",
+          "src": "Newsis · Dailian"
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "All times KST · dot = high impact"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "08:00",
+      "title_ko": "한국 7월 산업생산·서비스업생산",
+      "title_en": "Korea Jul Industrial & Service Output",
+      "detail_ko": "08:00 · 이전 산업생산 +5.8%(전년비)",
+      "detail_en": "08:00 · Prior industrial output +5.8% YoY",
+      "importance": "mid"
+    },
+    {
+      "time": "08:50",
+      "title_ko": "일본 7월 산업생산·소매판매",
+      "title_en": "Japan Jul Industrial Output & Retail Sales",
+      "detail_ko": "08:50 · 소매판매 예상 +3.0%·이전 +0.5%(전년비)",
+      "detail_en": "08:50 · Retail sales est. +3.0% vs prior +0.5% YoY",
+      "importance": "mid"
+    },
+    {
+      "time": "10:30",
+      "title_ko": "중국 8월 NBS 제조업·비제조업 PMI",
+      "title_en": "China Aug NBS Manufacturing & Non-Mfg PMI",
+      "detail_ko": "10:30 · 제조업 예상 49.7·이전 49.2 / 비제조업 이전 49.0",
+      "detail_en": "10:30 · Mfg est. 49.7 vs prior 49.2 / Non-mfg prior 49.0",
+      "importance": "high"
+    },
+    {
+      "time": "21:00",
+      "title_ko": "독일 8월 소비자물가지수",
+      "title_en": "Germany Aug Consumer Price Index",
+      "detail_ko": "21:00 · 예상 +2.9%·이전 +2.8%(전년비)",
+      "detail_en": "21:00 · Est. +2.9% vs prior +2.8% YoY",
+      "importance": "mid"
+    },
+    {
+      "time": "9/1",
+      "title_ko": "[미리보기] 중국 니오 실적 발표",
+      "title_en": "[Preview] China's NIO reports earnings",
+      "detail_ko": "9/1 예정 · 예상 EPS −0.07달러",
+      "detail_en": "Due Sep 1 · est. EPS −$0.07",
+      "importance": "mid"
+    },
+    {
+      "time": "9/4 21:30",
+      "title_ko": "[미리보기] 美 8월 비농업고용·실업률",
+      "title_en": "[Preview] US Aug Nonfarm Payrolls & Unemployment",
+      "detail_ko": "9/4(금) 21:30 · 예상 +4.5만명 · 실업률 예상 4.2%",
+      "detail_en": "Fri Sep 4, 9:30 PM KST · est. +45K, unemployment est. 4.2%",
+      "importance": "high"
+    },
+    {
+      "time": "9/17",
+      "title_ko": "[미리보기] 9월 FOMC 정례회의",
+      "title_en": "[Preview] September FOMC Meeting",
+      "detail_ko": "9/15~16(현지) · 워시 의장 매파 발언 이후 최대 변수",
+      "detail_en": "Sep 15-16 (local) · the biggest swing factor after Chair Warsh's hawkish remarks",
+      "importance": "high"
+    }
+  ],
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "card_photos": {
+    "1": "A dim, empty NYSE trading floor after the closing bell, red ticker glow on distant screens, a single trader's silhouette walking away, cinematic low light, wide shot",
+    "3": "A dark trading floor wall of screens showing a falling stock index line chart in red, out-of-focus foreground, moody blue-red lighting",
+    "7": "A vast dim data center corridor lined with server racks, faint blue LED lights, cooling pipes overhead, cinematic depth, no people"
+  },
+  "caption_ko": "[아침 브리핑] 워시 연준 의장의 매파 발언에 반도체주가 급락하며 나스닥이 9거래일 만에 반락했습니다. 9월 금리인상 확률은 하루 만에 35%에서 57%로 뛰었어요. 마벨테크놀로지는 실적 서프라이즈에도 마진 전망 실망에 10%대 급락, 한미 대미투자 1호 프로젝트는 9월 발표를 앞두고 있습니다. 오늘 하루도 luckyon 브리핑과 함께 시작하세요 — 저장하고 팔로우하면 저녁 브리핑도 놓치지 않습니다.\n#luckyon브리핑 #주식 #증시 #나스닥 #코스피 #연준 #금리인상 #반도체 #AI반도체 #워시 #잭슨홀 #마벨테크놀로지 #엔비디아 #환율 #경제뉴스 #투자\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "[Morning Brief] Chip stocks tumbled after Fed Chair Warsh's hawkish Jackson Hole remarks, pulling the Nasdaq down from a 9-session high. September rate-hike odds jumped from 35% to 57% in a single day. Marvell fell double digits despite beating estimates, and Korea's first $200B US-investment project is due in September. Start your day with luckyon Briefing — save and follow so you don't miss tonight's brief.\n#luckyonbriefing #stocks #markets #nasdaq #kospi #fed #ratehike #semiconductors #aichips #warsh #jacksonhole #marvell #nvidia #forex #econnews #investing\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "CME FedWatch",
+    "연합뉴스",
+    "SBS Biz",
+    "서울경제",
+    "뉴시스",
+    "데일리안",
+    "뉴시안",
+    "매일일보",
+    "뉴스1",
+    "더벨",
+    "쿠키뉴스",
+    "디지털데일리",
+    "더퍼블릭",
+    "한국은행",
+    "CNN Fear & Greed"
+  ]
+}
