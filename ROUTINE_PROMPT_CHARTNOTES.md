@@ -286,25 +286,43 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 (한국어판 상승=빨강·하락=파랑 / 영어판 상승=초록·하락=빨강). 이 시리즈가 EP.01 에서 가르친 내용이므로
 여기서 틀리면 안 된다 — 그래서 코드가 강제한다.
 
-**쓸 수 있는 카드 타입 13종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
+**쓸 수 있는 카드 타입 14종** (`cards[].type`) — 각 타입이 요구하는 필드는 렌더러 소스의 `R` 객체를 보고 맞춘다:
 
 | type | 쓰임 | 주요 필드 |
 |---|---|---|
 | `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈), `overlay`(선택) |
 | `pricevol` | **주가 + 거래량 2단 패널** — 실제 차트가 생긴 그대로 | `title`, `body`, `mode`(`candle`\|`line`), `bars[].{o,h,l,c,v,hi}`, `avg`, `avg_label`, `levels[].{price,to,label,color}`, `callout.{i,text}`, `xlabels[].{i,text}`, `price_label`, `panel_label`, `frame`, `closing` |
-| `intro` | p.02 도입 | `title`, `body`, `caption` |
-| `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing` |
+| `intro` | p.02 도입 | `title`, `body`, `caption`, **`sketch`**(`zigzag`\|`mystery-levels` — 아래 «도입 스케치» 참고) |
+| `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing`, **`figure`**`.{kind:'levels-map', resistance, support, range, breakout}` |
 | `anatomy` | 구조를 화살표로 분해 | `title`, `body`, `labels.upper/body/lower` |
 | `compare` | **캔들 둘**을 나란히 비교 (상승 캔들 vs 하락 캔들) | `title`, `legend[]`, `rows[]`, `closing` |
 | `versus` | **개념 대 개념 표** — 항목별로 한 줄씩 맞대어 놓는다 | `title`, `body`, `columns[].{name,unit}`(정확히 2개), `rows[].{label,left,right,highlight}`, `closing` |
 | `example` | **실제 시세 사례** | `title`, `sub`, `direction`, `values.{high,close,open,low}`, `conclusion`, `note` |
 | `numbered` | 번호 매긴 3가지 + 경고 | `title`, `items[].title/desc`, `warn_title`, `warn_body` |
 | `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
-| `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing` |
+| `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing`, **`touches[].{x,y,n}`**(닿은 자리에 번호 동그라미), **`axis`**(기본 true) |
+| `flip` | **역할 반전** — 뚫린 저항선이 지지선이 되는 것을 **선 하나**로 | `title`, `body`, `before`, `after`, `break`, `retest`, `note`, `closing` |
 | `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` |
 | `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
+
+**도입 스케치(`intro.sketch`) — 회차마다 반드시 고른다.** 예전에는 도입 그림이 렌더러에 하나만 박혀 있어서 **EP.02·EP.03·EP.05 의 p.02 가 픽셀 단위로 같은 그림**이었다. 사용자가 "시각적 자료가 이전 회차와 똑같은 그림도 있고 심심합니다"라고 반려한 직접 원인이다(2026-08-30 이슈 #25). **값을 안 주면 기본값 `zigzag` 로 돌아가 같은 사고가 그대로 재발한다.**
+
+| 값 | 그림 | 쓸 때 |
+|---|---|---|
+| `zigzag` | 회색 꺾은선 + 물음표 3개 (기본값) | 「이 그래프가 뭘 말하는지 모르겠다」는 막막함을 그리는 회차 |
+| `mystery-levels` | 꺾은선 위에 **정체불명의 붉은 가로선 두 줄** + 그 끝을 묻는 물음표 | 「이 선은 누가 왜 그었나」를 묻는 회차 (지지·저항·추세선·박스권) |
+
+**제목이 묻는 것이 그림에 실제로 있어야 한다.** EP.05 제목은 «가로선»을 묻는데 그림에는 가로선이 한 줄도 없었다 — 표지의 `overlay` 와 같은 종류의 사고다. 마땅한 스케치가 없으면 **새로 하나 추가하고 이 표에 한 줄 적는다.**
+
+**`checklist.figure`** — 용어 목록 아래에 «그 이름들이 차트 어디에 있는지» 한 장으로 보여준다. 용어를 네 줄 늘어놓기만 하면 **카드 아래 절반이 통째로 비어** «공부 못하는 사람이 정리한 노트»가 된다(같은 이슈). `levels-map` 은 저항선·지지선 두 줄, 그 사이 박스권 띠, 오른쪽 끝에서 위로 뚫고 나가는 돌파를 한 그림에 담아 **네 용어가 서로의 관계로 정의되게** 한다. 라벨은 그림 왼쪽 바깥에 세로로 쌓인다 — 오른쪽에 붙이면 돌파해 올라가는 선의 끝과 겹친다.
+
+**`lines.touches`** — 선이 그 높이에서 **몇 번째로 멈췄는지** 번호 동그라미를 찍는다. 「한 번은 우연, 두 번부터 자리」가 이 시리즈의 핵심 문장인데 그림이 세어 주지 않으면 독자는 그 말을 글로만 읽는다. **좌표는 `series[].points` 의 실제 꼭짓점이자 `levels[].y` 와 정확히 같은 값이어야 한다** — 닿지도 않은 곳에 번호를 붙이면 그림이 설명을 배반한다. 반대로 **닿았는데 번호가 없는 자리도 없어야** 독자가 셈을 믿는다.
+
+**`lines.axis`** — 바닥 축선은 «0 이 의미 있는» 그림(VIX·거래대금 등)에서만 쓸모가 있다. 데이터가 0 근처에 가지 않는 그림에서는 화면 한가운데 떠 있는 회색 선이 되어 **정체불명의 세 번째 수평선**으로 읽힌다(EP.05 p.04 에서 실제로 그랬다). 그런 회차는 `"axis": false`.
+
+**`flip`** — «뚫린 저항선이 지지선이 된다»를 **선 하나**로 보여준다. 이 개념은 지지·저항 회차의 핵심인데 `versus` 표의 한 칸이나 `numbered` 의 한 줄로는 전달되지 않는다 — 사용자가 EP.05 검토에서 이 부분을 콕 집어 보강을 요청했다(같은 이슈). 그림의 요점은 **선이 하나뿐**이라는 것이다: 되밀린 자리와 받쳐 준 자리가 같은 높이임을 눈으로 확인해야 「이름만 바뀐다」가 들어온다. 그래서 선을 둘로 나눠 그리지 않고 하나의 가로선 **위아래로 라벨을 갈라** 붙인다(각각 «가격이 아직 닿지 않은 쪽»의 빈 공간이라 겹치지 않는다). **반대 방향(지지선이 무너져 저항선이 되는 것)은 그리지 말고 `note` 로 적는다** — 두 방향을 다 그리면 선이 둘이 되어 «같은 선 하나»라는 요점이 무너진다. 추세선·박스권 이탈·배당락에도 그대로 쓴다.
 
 **표지의 `overlay`** — 캔들 위에 무엇을 얹을지 고른다. **표지 주석(`annot`)이 가리키는 대상이 실제로 그려지는지 반드시 확인한다.**
 
