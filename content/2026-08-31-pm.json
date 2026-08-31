@@ -40,8 +40,8 @@
       "note_ko": "8/28 종가 대비 · 장중 등락은 엇갈렸다", "note_en": "Vs the Aug 28 close · choppy intraday trade"},
     {"label": "WTI", "value": "$86.21", "delta": "▲3.37%", "dir": "up",
       "note_ko": "美, 이란 재공격에 중동 긴장 재점화", "note_en": "Middle East tensions flared after fresh US strikes on Iran"},
-    {"label": "Bitcoin", "value": "$78,571", "delta": "▲0.95%", "dir": "up",
-      "note_ko": "24시간 기준 · 8만달러선 아래서 견조", "note_en": "24h basis · holding steady just below $80K"}
+    {"label": "Bitcoin", "value": "$78,571", "delta": "▲0.52%", "dir": "up",
+      "note_ko": "8만달러선 아래서 견조 · 워시 발언 이후 위험회피 진정", "note_en": "Holding steady just below $80K · risk-off from Warsh's remarks has eased"}
   ],
   "tile_main": "KOSPI",
   "tile_side": ["NASDAQ", "S&P 500"],
@@ -187,8 +187,8 @@
           "sub_ko": "전월과 동일 · 2022년 12월 이후 최약세권", "sub_en": "Unchanged from July · weakest reading since Dec 2022",
           "ref_ko": "50 기준 · 위는 확장, 아래는 위축", "ref_en": "50 is the breakeven — above expands, below contracts"},
         {"label_ko": "9월 FOMC 금리인상 확률", "label_en": "Sept FOMC Hike Odds",
-          "value": "57.5% → 59.8%", "delta": "▲", "dir": "up",
-          "sub_ko": "CME 페드워치 · 저녁(KST) 기준, 오전 대비 추가 상승", "sub_en": "CME FedWatch · risen further since this morning as of this evening (KST)",
+          "value": "57.5% → 58%", "delta": "▲", "dir": "up",
+          "sub_ko": "CME 페드워치 · 오후 한때 63%까지 올랐다 저녁 무렵 58%로 진정", "sub_en": "CME FedWatch · spiked as high as 63% in the afternoon, eased to 58% by evening",
           "ref_ko": "9/15~16 FOMC서 0.25%p 인상할 확률 · 선물시장 반영치", "ref_en": "Futures-implied odds of a 0.25pp hike at the Sept 15-16 FOMC meeting"}
       ],
       "note_ko": "한국 산업생산·서비스업생산 모두 전월보다 둔화됐고, 중국 제조업은 예상을 웃돌았지만 여전히 위축 국면이다. 시장의 초점은 결국 금리 — 9월 인상 확률이 하루 새 또 올랐다.",
@@ -251,21 +251,21 @@
           "body_ko": "31일 서울 외환시장에서 원/달러 환율이 전 거래일 대비 3.9원 내린 1,368.6원에 마감했다. 월말 수출기업의 달러 매도 물량이 유입되며 워시 의장의 매파 발언과 중동 긴장에도 원화가 강세를 보였다.",
           "body_en": "The won closed at 1,368.6 per dollar in Seoul trading Aug 31, down 3.9 won from the prior session, as month-end dollar selling by exporters outweighed pressure from Chair Warsh's hawkish remarks and Middle East tensions.",
           "src": "Newsian · Betanews"},
-        {"headline_ko": "CME 페드워치 9월 금리인상 확률, 하루 만에 60%대 육박",
-          "headline_en": "CME FedWatch Sept hike odds near 60% within a day",
-          "body_ko": "케빈 워시 연준 의장의 잭슨홀 매파 발언 여파로 9월 FOMC 금리인상 확률이 이날 아침 57.5%에서 저녁 무렵 59%대 후반까지 추가로 올랐다. 국채 중단기물 금리도 함께 급등했다.",
-          "body_en": "Following Fed Chair Warsh's hawkish Jackson Hole remarks, September FOMC hike odds climbed further from 57.5% this morning to the high-50s percent by evening (KST), with short- and medium-term Treasury yields also jumping.",
-          "src": "Infomax · Kukmin Ilbo"},
+        {"headline_ko": "CME 페드워치 9월 금리인상 확률, 오후 63%까지 치솟았다 58%로 진정",
+          "headline_en": "CME FedWatch Sept hike odds spike to 63%, ease back to 58%",
+          "body_ko": "케빈 워시 연준 의장의 잭슨홀 매파 발언 여파로 9월 FOMC 금리인상 확률이 이날 낮 한때 63%까지 치솟았다가 저녁 무렵 58%로 진정됐다. 그래도 아침(57.5%)보다는 여전히 높은 수준이다. 국채 중단기물 금리도 함께 급등했다.",
+          "body_en": "Following Fed Chair Warsh's hawkish Jackson Hole remarks, September FOMC hike odds spiked as high as 63% around midday before easing to 58% by evening (KST) — still above this morning's 57.5%. Short- and medium-term Treasury yields jumped as well.",
+          "src": "Betanews · Newsian · Newspim"},
         {"headline_ko": "중국 8월 제조업 PMI 49.8 — 두 달 연속 위축이지만 예상 상회",
           "headline_en": "China's Aug manufacturing PMI hits 49.8, beating estimates but still contracting",
           "body_ko": "중국 국가통계국이 발표한 8월 제조업 PMI가 전월(49.2)보다 0.6포인트 오른 49.8을 기록해 시장 예상(49.5~49.7)을 웃돌았다. 다만 경기 확장·위축의 기준선인 50은 두 달 연속 밑돌았다. 비제조업 PMI는 49.0으로 2022년 12월 이후 최약세권에 머물렀다.",
           "body_en": "China's NBS manufacturing PMI rose to 49.8 in August from 49.2, beating the 49.5-49.7 consensus, but stayed below the 50 breakeven for a second straight month. Non-manufacturing PMI held at 49.0, the weakest since Dec 2022.",
           "src": "Newsis"},
-        {"headline_ko": "대만 가권지수, 미 금리 부담에 닷새 만에 반락",
-          "headline_en": "Taiwan's Taiex falls for the first time in 5 sessions on US rate pressure",
-          "body_ko": "대만 가권지수가 0.44% 내리며 닷새 만에 반락했다. 미 국채금리 상승과 잭슨홀發 긴축 우려가 아시아 증시 전반에 부담으로 작용했다.",
-          "body_en": "Taiwan's Taiex fell 0.44%, its first decline in five sessions, as rising US Treasury yields and post-Jackson-Hole tightening fears weighed on Asian markets broadly.",
-          "src": "Newsis"}
+        {"headline_ko": "코스피200 선물시장, 외국인·기관 동반 순매수",
+          "headline_en": "KOSPI200 futures: foreigners and institutions both net buyers",
+          "body_ko": "코스피200 선물시장에서는 외국인이 1,024억원, 기관이 134억원을 순매수했고 개인은 705억원을 순매도했다. 현물시장에서 3대 수급 주체가 동반 순매도한 것과 달리, 선물시장에서는 외국인 매수세가 살아있었다.",
+          "body_en": "In KOSPI200 futures trading, foreigners bought a net KRW 102.4bn and institutions KRW 13.4bn, while individuals sold a net KRW 70.5bn — a contrast to the cash market, where individuals, foreigners and institutions all sold together.",
+          "src": "Yonhap · Jnilbo · Seouleconews"}
       ]
     }
   ],
