@@ -3,82 +3,236 @@
   "session": "am",
   "dateLabel_ko": "2026.9.1(화) 아침",
   "dateLabel_en": "Tue, Sep 1, 2026 · AM",
-
-  "headline_ko": "美, 한 달 만에 이란 재공격…유가 급등, 국채금리 19개월래 최고",
-  "headline_sub_ko": "나스닥 −0.12%·S&P500 −0.33% 소폭 하락, 반도체는 반등 · 코스피는 밤사이 6,820선",
-  "headline_en": "US Strikes Iran Again After a Month, Oil Jumps and Yields Hit a 19-Month High",
-  "headline_sub_en": "Nasdaq −0.12%, S&P 500 −0.33% — a mild dip as chips rebounded · KOSPI holds near 6,820",
-
-  "cover_kicker": {"ko": "간밤 미국장 · 8/31 마감", "en": "US Overnight · Aug 31 Close"},
+  "headline_ko": "美 국채금리 19개월래 최고…지수는 소폭 하락, 반도체는 반등",
+  "headline_sub_ko": "이란 재충돌에 유가 급등 · 팀 쿡, 오늘 15년 만에 애플 CEO 퇴임",
+  "headline_en": "US 10-Year Yield Hits a 19-Month High as Indexes Dip and Chips Rebound",
+  "headline_sub_en": "Oil jumped on renewed Iran clash · Tim Cook steps down as Apple CEO today after 15 years",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 8/31 마감",
+    "en": "US Overnight · Aug 31 Close"
+  },
   "cover_facts": [
-    ["shield",
-      {"ko": "S&P500 ▼0.33% · 나스닥 ▼0.12%", "en": "S&P 500 ▼0.33% · Nasdaq ▼0.12%"},
-      {"ko": "7,686.14 / 26,370.89 · 반도체는 오히려 반등", "en": "7,686.14 / 26,370.89 pts · chips rebounded despite the dip"}],
-    ["rate",
-      {"ko": "美 10년물 4.73%→4.75% · 19개월래 최고", "en": "US 10Y 4.73% → 4.75% · a 19-month high"},
-      {"ko": "9월 금리인상 확률도 58%→66%로 뛰었다", "en": "Sept hike odds jumped from 58% to 66%"}],
-    ["globe",
-      {"ko": "WTI +2.83% $85.76 · 브렌트유 90달러 돌파", "en": "WTI +2.83% to $85.76 · Brent tops $90"},
-      {"ko": "美, 호르무즈 인근 이란 시설 재타격 · 이란도 보복", "en": "US struck Iran targets near Hormuz again; Iran retaliated"}]
+    [
+      "shield",
+      {
+        "ko": "S&P500 ▼0.33% · 나스닥 ▼0.12%",
+        "en": "S&P 500 ▼0.33% · Nasdaq ▼0.12%"
+      },
+      {
+        "ko": "7,686.14 / 26,370.89 · 반도체는 오히려 반등",
+        "en": "7,686.14 / 26,370.89 pts · chips rebounded despite the dip"
+      }
+    ],
+    [
+      "rate",
+      {
+        "ko": "美 10년물 4.73%→4.75% · 19개월래 최고",
+        "en": "US 10Y 4.73% → 4.75% · a 19-month high"
+      },
+      {
+        "ko": "9월 금리인상 확률, 일주일 전 41%대→66%대로 급등",
+        "en": "Sept hike odds surged from ~41% a week ago to ~66%"
+      }
+    ],
+    [
+      "ai",
+      {
+        "ko": "팀 쿡, 오늘 애플 CEO 퇴임 · 존 터너스 취임",
+        "en": "Tim Cook steps down as Apple CEO today · John Ternus takes over"
+      },
+      {
+        "ko": "재임 15년간 주주가치 10배 · 유가는 이란 재충돌에 급등",
+        "en": "Shareholder value grew 10x over 15 years · oil jumped on the renewed Iran clash"
+      }
+    ]
   ],
-
   "summary": {
     "lines_ko": [
-      "미국이 호르무즈 해협 인근 이란 라라크섬의 기뢰부설용 로켓발사대를 타격했고, 이란이 요르단 주둔 미군기지를 미사일로 보복하면서 한 달 만에 무력 충돌이 재개됐다.",
-      "국제유가가 급등했다 — WTI는 2.83% 오른 배럴당 85.76달러, 브렌트유는 90달러를 돌파했다. 유가발 물가 우려에 美 10년물 국채금리는 4.75%로 19개월 만에 최고치를 찍었고, CME 페드워치의 9월 금리인상 확률은 58%에서 66%대로 뛰었다.",
-      "지수는 소폭 하락했지만(S&P500 −0.33%·나스닥 −0.12%) 거래대금 상위 300종목 기준으로는 오른 종목에 몰린 돈(2,337억달러)이 내린 종목(1,740억달러)보다 많아 상승 비중이 57.3%였다 — 반도체·에너지주가 자금을 끌어당겼다.",
-      "코스피는 개장 직후 2%대 급락해 장중 −3.55%(6,547.76)까지 밀렸다가 삼성전자·SK하이닉스 자사주 매입에 힘입어 +0.46% 6,820.02로 마감했다(8/31 종가)."
+      "나스닥과 S&P500이 각각 0.12%·0.33% 내리며 소폭 하락 마감했다. 미국이 호르무즈 해협 인근 이란 라라크섬을 재차 타격하고 이란이 요르단 주둔 미군기지에 보복하면서, 한 달 만에 재개된 무력 충돌이 위험회피 심리를 키웠다.",
+      "국제유가가 급등했다 — WTI는 2.83% 오른 배럴당 85.76달러, 브렌트유는 90달러를 돌파했다. 유가발 물가 우려에 美 10년물 국채금리는 4.75%로 19개월 만에 최고치를 찍었고, CME 페드워치의 9월 금리인상 확률은 일주일 전 41%대에서 66%대로 뛰었다.",
+      "지수는 소폭 하락했지만 거래대금 상위 300종목 기준으로는 오른 종목에 몰린 돈(2,337억달러)이 내린 종목(1,740억달러)보다 많아 상승 비중이 57.3%였다 — 반도체·에너지주가 자금을 끌어당기며 실제로는 반등한 하루였다.",
+      "코스피는 자사주 매입에 힘입어 전날 장중 급락분을 딛고 +0.46% 6,820.02로 마감했다(8/31 종가). 오늘(현지시간) 팀 쿡이 15년 만에 애플 CEO에서 물러나고 존 터너스가 새 CEO로 취임한다."
     ],
     "lines_en": [
-      "The US struck mine-laying rocket launchers on Iran's Larak Island near the Strait of Hormuz, and Iran retaliated with a missile strike on a US base in Jordan — reigniting conflict after a month-long pause.",
-      "Oil jumped on the news — WTI rose 2.83% to $85.76 a barrel and Brent broke $90. The inflation scare pushed the US 10-year Treasury yield to 4.75%, a 19-month high, and CME FedWatch's odds of a September rate hike jumped from 58% to roughly 66%.",
-      "Indexes dipped only slightly (S&P 500 −0.33%, Nasdaq −0.12%), but among the 300 most-traded names, turnover in advancers ($233.7B) outweighed decliners ($174.0B) — a 57.3% share, as chip and energy names pulled in the flow.",
-      "KOSPI opened down more than 2% and slid as much as 3.55% intraday to 6,547.76 before rallying to close up 0.46% at 6,820.02 on Aug 31, powered by Samsung Electronics and SK Hynix buybacks."
+      "Nasdaq and the S&P 500 closed lower by 0.12% and 0.33% respectively. The US struck Iran's Larak Island near the Strait of Hormuz again, and Iran retaliated against a US base in Jordan — the renewed conflict, resuming after a month-long pause, drove risk-off sentiment.",
+      "Oil jumped on the news — WTI rose 2.83% to $85.76 a barrel and Brent broke $90. The inflation scare pushed the US 10-year Treasury yield to 4.75%, a 19-month high, and CME FedWatch's odds of a September rate hike jumped from roughly 41% a week ago to about 66%.",
+      "Indexes dipped only slightly, but among the 300 most-traded names, turnover in advancers ($233.7B) outweighed decliners ($174.0B) — a 57.3% share, as chip and energy names pulled in the flow, making it a rebound day beneath the surface.",
+      "KOSPI closed up 0.46% at 6,820.02 on Aug 31, recovering from an intraday plunge on buyback support. Today (US time), Tim Cook steps down as Apple CEO after 15 years, handing the reins to John Ternus."
     ]
   },
-
   "markets": [
-    {"label": "NASDAQ", "value": "26,370.89", "delta": "▼0.12%", "dir": "down", "note_ko": "31.53p 하락 · 8/31 미국장 마감 종가", "note_en": "-31.53 pts · Aug 31 US close"},
-    {"label": "S&P 500", "value": "7,686.14", "delta": "▼0.33%", "dir": "down", "note_ko": "25.62p 하락 · 이란 재충돌에 위험회피", "note_en": "-25.62 pts · risk-off on renewed Iran clash"},
-    {"label": "KOSPI", "value": "6,820.02", "delta": "▲0.46%", "dir": "up", "note_ko": "8/31 종가 · 장중 −3.55%(6,547.76)까지 밀렸다 반등 · 오늘 개장 전", "note_en": "Aug 31 close · rallied from an intraday low of -3.55% (6,547.76) · ahead of today's open"},
-    {"label": "VIX", "value": "14.92", "delta": "▲3.40%", "dir": "up", "note_ko": "0.49p 상승 · 중동 긴장에 변동성 확대", "note_en": "+0.49 pts · volatility rose on Mideast tension"},
-    {"label": "Fear & Greed", "value": "50", "delta": "-", "dir": "flat", "note_ko": "54 → 50 · 탐욕에서 중립으로", "note_en": "54 → 50 · from greed toward neutral"},
-    {"label": "US 10Y", "value": "4.73% → 4.75%", "delta": "▲", "dir": "up", "note_ko": "19개월래 최고 · 유가발 인플레 우려", "note_en": "A 19-month high · oil-driven inflation worry"},
-    {"label": "USD/KRW", "value": "1,368", "value_sub": "· DXY 99.42", "delta": "▼0.89%", "dir": "down", "note_ko": "13개월래 최저권 지속 · 월말 수출업체 달러 매도", "note_en": "Holding near a 13-month low · month-end exporter dollar selling"},
-    {"label": "Gold", "value": "$4,501", "delta": "▲0.51%", "dir": "up", "note_ko": "8/28 종가 대비 · 장중 등락은 엇갈렸다", "note_en": "Vs the Aug 28 close · choppy intraday trade"},
-    {"label": "WTI", "value": "$85.76", "delta": "▲2.83%", "dir": "up", "note_ko": "美, 이란 재공격에 중동 긴장 재점화 · 브렌트유는 90달러 돌파", "note_en": "Middle East tension flared after fresh US strikes on Iran · Brent broke $90"},
-    {"label": "Bitcoin", "value": "$78,876", "delta": "▲1.34%", "dir": "up", "note_ko": "8만달러선 아래서 등락 · 위험회피 속 견조", "note_en": "Choppy just below $80K · holding up despite risk-off"}
+    {
+      "label": "NASDAQ",
+      "value": "26,370.89",
+      "delta": "▼0.12%",
+      "dir": "down",
+      "note_ko": "31.53p 하락 · 8/31 미국장 마감 종가",
+      "note_en": "-31.53 pts · Aug 31 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,686.14",
+      "delta": "▼0.33%",
+      "dir": "down",
+      "note_ko": "25.62p 하락 · 이란 재충돌에 위험회피",
+      "note_en": "-25.62 pts · risk-off on renewed Iran clash"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,820.02",
+      "delta": "▲0.46%",
+      "dir": "up",
+      "note_ko": "8/31 종가 · 장중 −3.55%(6,547.76)까지 밀렸다 반등 · 오늘 개장 전",
+      "note_en": "Aug 31 close · rallied from an intraday low of -3.55% (6,547.76) · ahead of today's open"
+    },
+    {
+      "label": "VIX",
+      "value": "14.92",
+      "delta": "▲3.40%",
+      "dir": "up",
+      "note_ko": "0.49p 상승 · 중동 긴장에 변동성 확대",
+      "note_en": "+0.49 pts · volatility rose on Mideast tension"
+    },
+    {
+      "label": "Fear & Greed",
+      "value": "50",
+      "delta": "-",
+      "dir": "flat",
+      "note_ko": "54 → 50 · 탐욕에서 중립으로",
+      "note_en": "54 → 50 · from greed toward neutral"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.73% → 4.75%",
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "19개월래 최고 · 유가발 인플레 우려",
+      "note_en": "A 19-month high · oil-driven inflation worry"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,368",
+      "value_sub": "· DXY 99.42",
+      "delta": "▼0.89%",
+      "dir": "down",
+      "note_ko": "13개월래 최저권 지속 · 월말 수출업체 달러 매도",
+      "note_en": "Holding near a 13-month low · month-end exporter dollar selling"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,501",
+      "delta": "▲0.51%",
+      "dir": "up",
+      "note_ko": "8/28 종가 대비 · 장중 등락은 엇갈렸다",
+      "note_en": "Vs the Aug 28 close · choppy intraday trade"
+    },
+    {
+      "label": "WTI",
+      "value": "$85.76",
+      "delta": "▲2.83%",
+      "dir": "up",
+      "note_ko": "美, 이란 재공격에 중동 긴장 재점화 · 브렌트유는 90달러 돌파",
+      "note_en": "Middle East tension flared after fresh US strikes on Iran · Brent broke $90"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$78,876",
+      "delta": "▲1.34%",
+      "dir": "up",
+      "note_ko": "8만달러선 아래서 등락 · 위험회피 속 견조",
+      "note_en": "Choppy just below $80K · holding up despite risk-off"
+    }
   ],
   "market_note_ko": "나스닥·S&P500은 8/31 미국장 마감 종가 · 코스피는 8/31 한국장 종가(장 열리기 전)",
   "market_note_en": "Nasdaq and S&P 500 are the Aug 31 US close · KOSPI is the Aug 31 Korea close, ahead of today's open",
-
   "tile_main": "NASDAQ",
-  "tile_side": ["S&P 500", "KOSPI"],
-  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear & Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
   "tile_lead": "-31.53p",
-  "main_tile_note": "26,370.89 · 최근 9거래일",
-
-  "chart_series_values": [26331.09, 26067.17, 26180.45, 25980.19, 26151.30, 26130.20, 26541.35, 26402.42, 26370.89],
-  "chart_series_labels": ["8.19", "8.20", "8.21", "8.24", "8.25", "8.26", "8.27", "8.28", "8.31"],
-  "chart_title": {"ko": "고점 대비 −0.64%, 낙폭은 크지 않았다", "en": "Just -0.64% off the recent high"},
-  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
-  "chart_note": {"ko": "8.27 고점 26,541.35 → 8.31 26,370.89 · 반도체 매수세가 낙폭을 방어했다", "en": "Aug 27 high 26,541.35 → Aug 31 26,370.89 · chip buying cushioned the dip"},
+  "main_tile_note": {
+    "ko": "31.53p 하락 · 최근 9거래일",
+    "en": "-31.53 pts · last 9 sessions"
+  },
+  "chart_series_values": [
+    26331.09,
+    26067.17,
+    26180.45,
+    25980.19,
+    26151.3,
+    26130.2,
+    26541.35,
+    26402.42,
+    26370.89
+  ],
+  "chart_series_labels": [
+    "8.19",
+    "8.20",
+    "8.21",
+    "8.24",
+    "8.25",
+    "8.26",
+    "8.27",
+    "8.28",
+    "8.31"
+  ],
+  "chart_title": {
+    "ko": "고점 대비 −0.64%, 낙폭은 크지 않았다",
+    "en": "Just -0.64% off the recent high"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "8.27 고점 26,541.35 → 8.31 26,370.89 · 반도체 매수세가 낙폭을 방어했다",
+    "en": "Aug 27 high 26,541.35 → Aug 31 26,370.89 · chip buying cushioned the dip"
+  },
   "record_section": "미국장 기록",
   "record_kicker": "TODAY",
-
   "sector_section": "섹터별 등락",
-  "sector_title": {"ko": "에너지가 끌고 커뮤니케이션이 끌어내렸다", "en": "Energy led, Communications lagged"},
-  "sector_sub": {"ko": "S&P 섹터 ETF · 8/28 종가 대비 · 12개 중 3개만 상승", "en": "S&P sector ETFs · vs Aug 28 close · only 3 of 12 rose"},
+  "sector_title": {
+    "ko": "에너지가 끌고 커뮤니케이션이 끌어내렸다",
+    "en": "Energy led, Communications lagged"
+  },
+  "sector_sub": {
+    "ko": "S&P 섹터 ETF · 8/28 종가 대비 · 12개 중 3개만 상승",
+    "en": "S&P sector ETFs · vs Aug 28 close · only 3 of 12 rose"
+  },
   "rank_kicker": "TOP TURNOVER",
-  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
-  "rank_sub": {"ko": "8/31 미국장 · 막대 옆은 등락률", "en": "Aug 31 US session · bar shows the day's change"},
-  "rank_unit": {"ko": "단위 · 십억달러", "en": "Unit · $B"},
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "8/31 미국장 · 막대 옆은 등락률",
+    "en": "Aug 31 US session · bar shows the day's change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $B"
+  },
   "econ_kicker": "EARNINGS · DATA",
-  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
-  "econ_sub": {"ko": "8/31 발표분 · 실측 · 예상 · 이전", "en": "Released Aug 31 · actual · estimate · prior"},
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "8/31 발표분 · 실측 · 예상 · 이전",
+    "en": "Released Aug 31 · actual · estimate · prior"
+  },
   "tech_section": "AI · 반도체 기술",
   "stories_section": "주요 소식",
-
   "sections": [
     {
       "title_ko": "미국장 기록",
@@ -87,14 +241,40 @@
       "type": "stats",
       "cols": 1,
       "stats": [
-        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,370.89", "delta": "▼0.12%", "dir": "down",
-         "sub_ko": "31.53포인트 하락 · 8.27 고점(26,541.35) 대비 −0.64%", "sub_en": "Down 31.53 pts · -0.64% off the Aug 27 high of 26,541.35"},
-        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,686.14", "delta": "▼0.33%", "dir": "down",
-         "sub_ko": "25.62포인트 하락 · 이란 재충돌 소식에 하락 출발", "sub_en": "Down 25.62 pts · opened lower on the renewed Iran clash"}
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,370.89",
+          "delta": "▼0.12%",
+          "dir": "down",
+          "sub_ko": "31.53포인트 하락 · 8.27 고점(26,541.35) 대비 −0.64%",
+          "sub_en": "Down 31.53 pts · -0.64% off the Aug 27 high of 26,541.35"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,686.14",
+          "delta": "▼0.33%",
+          "dir": "down",
+          "sub_ko": "25.62포인트 하락 · 이란 재충돌 소식에 하락 출발",
+          "sub_en": "Down 25.62 pts · opened lower on the renewed Iran clash"
+        }
       ],
       "breadth": [
-        {"label_ko": "핵심 섹터 ETF 12개", "label_en": "12 core sector ETFs", "up": 3, "flat": 0, "down": 9},
-        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 128, "flat": 3, "down": 169}
+        {
+          "label_ko": "핵심 섹터 ETF 12개",
+          "label_en": "12 core sector ETFs",
+          "up": 3,
+          "flat": 0,
+          "down": 9
+        },
+        {
+          "label_ko": "거래대금 상위 300종목",
+          "label_en": "Top 300 by turnover",
+          "up": 128,
+          "flat": 3,
+          "down": 169
+        }
       ],
       "note_ko": "12개 섹터 중 9개가 내렸지만, 거래대금 상위 300종목 기준으로는 오른 종목에 2,337억달러, 내린 종목에 1,740억달러가 몰려 상승 비중이 57.3%였다. 지수는 눌렸어도 큰돈은 에너지·반도체 대형주로 쏠렸다는 뜻이다.",
       "note_en": "Nine of twelve sectors fell, but among the 300 most-traded names, $233.7B went into gainers against $174.0B into decliners — a 57.3% share. Even as the index dipped, big money leaned into energy and chip mega-caps."
@@ -105,18 +285,66 @@
       "color": "#4a9d7f",
       "type": "bars",
       "bars": [
-        {"label_ko": "에너지", "label_en": "Energy", "value": 2.04},
-        {"label_ko": "반도체", "label_en": "Semis", "value": 0.64},
-        {"label_ko": "기술", "label_en": "Tech", "value": 0.44},
-        {"label_ko": "헬스케어", "label_en": "Health Care", "value": -0.36},
-        {"label_ko": "경기소비재", "label_en": "Cons Disc", "value": -0.53},
-        {"label_ko": "필수소비재", "label_en": "Cons Staples", "value": -0.55},
-        {"label_ko": "금융", "label_en": "Financials", "value": -0.67},
-        {"label_ko": "부동산", "label_en": "Real Estate", "value": -0.83},
-        {"label_ko": "소재", "label_en": "Materials", "value": -0.92},
-        {"label_ko": "산업재", "label_en": "Industrials", "value": -1.13},
-        {"label_ko": "유틸리티", "label_en": "Utilities", "value": -1.17},
-        {"label_ko": "커뮤니케이션", "label_en": "Comm Svcs", "value": -1.35}
+        {
+          "label_ko": "에너지",
+          "label_en": "Energy",
+          "value": 2.04
+        },
+        {
+          "label_ko": "반도체",
+          "label_en": "Semis",
+          "value": 0.64
+        },
+        {
+          "label_ko": "기술",
+          "label_en": "Tech",
+          "value": 0.44
+        },
+        {
+          "label_ko": "헬스케어",
+          "label_en": "Health Care",
+          "value": -0.36
+        },
+        {
+          "label_ko": "경기소비재",
+          "label_en": "Cons Disc",
+          "value": -0.53
+        },
+        {
+          "label_ko": "필수소비재",
+          "label_en": "Cons Staples",
+          "value": -0.55
+        },
+        {
+          "label_ko": "금융",
+          "label_en": "Financials",
+          "value": -0.67
+        },
+        {
+          "label_ko": "부동산",
+          "label_en": "Real Estate",
+          "value": -0.83
+        },
+        {
+          "label_ko": "소재",
+          "label_en": "Materials",
+          "value": -0.92
+        },
+        {
+          "label_ko": "산업재",
+          "label_en": "Industrials",
+          "value": -1.13
+        },
+        {
+          "label_ko": "유틸리티",
+          "label_en": "Utilities",
+          "value": -1.17
+        },
+        {
+          "label_ko": "커뮤니케이션",
+          "label_en": "Comm Svcs",
+          "value": -1.35
+        }
       ],
       "note_ko": "유가 급등에 에너지(XLE)가 홀로 2%대 올랐고 반도체(SMH)·기술(XLK)도 소폭 상승했다. 반면 금리 상승에 민감한 유틸리티·부동산·산업재는 1%대 하락, 커뮤니케이션(XLC)이 가장 부진했다.",
       "note_en": "Energy (XLE) jumped alone on the oil spike, with Semis (SMH) and Tech (XLK) also edging up. Rate-sensitive Utilities, Real Estate and Industrials fell more than 1%, and Communications (XLC) was the day's worst performer."
@@ -127,19 +355,54 @@
       "color": "#3987e5",
       "type": "rank",
       "rows": [
-        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$36.32B", "pct": 5.5},
-        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$27.38B", "pct": 1.48},
-        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$22.50B", "pct": 5.51},
-        {"name_ko": "마이크론", "name_en": "Micron", "value": "$21.42B", "pct": 2.77},
-        {"name_ko": "마이크로소프트", "name_en": "Microsoft", "value": "$13.51B", "pct": -1.22}
+        {
+          "name_ko": "샌디스크",
+          "name_en": "SanDisk",
+          "value": "$36.32B",
+          "pct": 5.5
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$27.38B",
+          "pct": 1.48
+        },
+        {
+          "name_ko": "테슬라",
+          "name_en": "Tesla",
+          "value": "$22.50B",
+          "pct": 5.51
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$21.42B",
+          "pct": 2.77
+        },
+        {
+          "name_ko": "마이크로소프트",
+          "name_en": "Microsoft",
+          "value": "$13.51B",
+          "pct": -1.22
+        }
       ],
       "share": {
         "label_ko": "상위 5종목 vs 표본 나머지 295종목 (거래대금 기준)",
         "label_en": "Top 5 vs the rest of the 295-name sample (by turnover)",
         "mode": "nested",
         "segments": [
-          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 29.7, "color": "#3987e5"},
-          {"label_ko": "나머지 295종목", "label_en": "Other 295", "pct": 70.3, "color": "#8c8a85"}
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5",
+            "pct": 29.7,
+            "color": "#3987e5"
+          },
+          {
+            "label_ko": "나머지 295종목",
+            "label_en": "Other 295",
+            "pct": 70.3,
+            "color": "#8c8a85"
+          }
         ]
       },
       "note_ko": "메모리·AI 반도체 관련주가 거래대금 상위를 휩쓸었다. 샌디스크(+5.5%)가 1위, 엔비디아·마이크론이 나란히 올랐다. 테슬라는 목요일 오스틴 사이버캡 출시 행사를 앞두고 5.51% 상승하며 3위에 올랐다.",
@@ -152,17 +415,48 @@
       "type": "stats",
       "cols": 2,
       "stats": [
-        {"label_ko": "독일 8월 소비자물가 (전년비)", "label_en": "Germany Aug CPI (YoY)", "value": "2.8% → 2.9%", "delta": "▲", "dir": "up",
-         "sub_ko": "21:00 KST 발표 · 예상 2.9%", "sub_en": "Released 21:00 KST · est. 2.9%",
-         "ref_ko": "유로존 최대 경제국 물가 · ECB 목표는 2%", "ref_en": "Inflation in the eurozone's largest economy; the ECB targets 2%"},
-        {"label_ko": "독일 8월 소비자물가 (전월비)", "label_en": "Germany Aug CPI (MoM)", "value": "0.8% → 0.2%", "delta": "▼", "dir": "down",
-         "sub_ko": "21:00 KST 발표 · 예상 0.3%", "sub_en": "Released 21:00 KST · est. 0.3%",
-         "ref_ko": "유로존 최대 경제국 물가 · ECB 목표는 2%", "ref_en": "Inflation in the eurozone's largest economy; the ECB targets 2%"},
-        {"label_ko": "美 8월 댈러스 연은 제조업지수", "label_en": "US Aug Dallas Fed Mfg Index", "value": "1.3 → 11.6", "delta": "▲", "dir": "up",
-         "sub_ko": "23:30 KST 발표 · 예상 1.6 큰 폭 상회", "sub_en": "Released 23:30 KST · far above the 1.6 estimate"},
-        {"label_ko": "SK하이닉스 HBM 평균 수출단가", "label_en": "SK Hynix HBM Avg Export Price", "value": "$40.94 → $60.22", "delta": "▲47%", "dir": "up",
-         "sub_ko": "1분기→2분기 평균 · HBM4 양산 반영", "sub_en": "Q1 to Q2 average · reflects the HBM4 ramp",
-         "ref_ko": "관세청 무역통계 HBM 수출 단가 기준", "ref_en": "Basis: Korea Customs Service HBM export-price data"}
+        {
+          "label_ko": "독일 8월 소비자물가 (전년비)",
+          "label_en": "Germany Aug CPI (YoY)",
+          "value": "2.8% → 2.9%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "21:00 KST 발표 · 예상 2.9%",
+          "sub_en": "Released 21:00 KST · est. 2.9%",
+          "ref_ko": "유로존 최대 경제국 물가 · ECB 목표는 2%",
+          "ref_en": "Inflation in the eurozone's largest economy; the ECB targets 2%"
+        },
+        {
+          "label_ko": "독일 8월 소비자물가 (전월비)",
+          "label_en": "Germany Aug CPI (MoM)",
+          "value": "0.8% → 0.2%",
+          "delta": "▼",
+          "dir": "down",
+          "sub_ko": "21:00 KST 발표 · 예상 0.3%",
+          "sub_en": "Released 21:00 KST · est. 0.3%",
+          "ref_ko": "유로존 최대 경제국 물가 · ECB 목표는 2%",
+          "ref_en": "Inflation in the eurozone's largest economy; the ECB targets 2%"
+        },
+        {
+          "label_ko": "美 8월 댈러스 연은 제조업지수",
+          "label_en": "US Aug Dallas Fed Mfg Index",
+          "value": "1.3 → 11.6",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "23:30 KST 발표 · 예상 1.6 큰 폭 상회",
+          "sub_en": "Released 23:30 KST · far above the 1.6 estimate"
+        },
+        {
+          "label_ko": "SK하이닉스 HBM 평균 수출단가",
+          "label_en": "SK Hynix HBM Avg Export Price",
+          "value": "$40.94 → $60.22",
+          "delta": "▲47%",
+          "dir": "up",
+          "sub_ko": "1분기→2분기 평균 · HBM4 양산 반영",
+          "sub_en": "Q1 to Q2 average · reflects the HBM4 ramp",
+          "ref_ko": "관세청 무역통계 HBM 수출 단가 기준",
+          "ref_en": "Basis: Korea Customs Service HBM export-price data"
+        }
       ],
       "note_ko": "미국 지표는 댈러스 연은 제조업지수가 예상을 크게 웃돌며 지역 경기 훈풍을 확인시켰다. 독일 물가는 예상과 대체로 부합했다. HBM 수출단가는 HBM4 양산이 본격화되며 1분기 대비 47% 뛰었다.",
       "note_en": "The Dallas Fed index far outpaced expectations, confirming regional strength. German inflation broadly matched forecasts. HBM export prices jumped 47% quarter-over-quarter as HBM4 production ramped up."
@@ -172,24 +466,42 @@
       "title_en": "AI & Semis",
       "color": "#7b6cd9",
       "items": [
-        {"headline_ko": "엔비디아, 미디어텍에 35억달러 투자 — 'NV-HBM' 공개",
-         "headline_en": "Nvidia Invests $3.5B in MediaTek, Unveils 'NV-HBM'",
-         "body_ko": "엔비디아가 대만 팹리스 미디어텍에 전환사채 35억달러(약 4조8,000억원)를 투자하며 파트너십을 확대한다. 미디어텍은 엔비디아의 NVLink Fusion과 새로 공개된 'NV-HBM' 기술을 자사 칩에 적용해 AI 데이터센터 연결 표준을 함께 노린다."},
-        {"headline_ko": "SK하이닉스, HBM 수출단가 1분기 만에 47% 급등",
-         "headline_en": "SK Hynix HBM Export Prices Jump 47% in a Quarter",
-         "body_ko": "HBM 평균 수출단가가 1분기 40.94달러에서 HBM4 양산이 시작된 2분기 60.22달러로 뛰었다. 최태원 SK그룹 회장은 풀가동해도 HBM·D램 공급이 부족하다며 일본 신공장 검토를 언급했다."},
-        {"headline_ko": "스페이스X, 데이터센터 전력난에 가스터빈 부품 자체 생산",
-         "headline_en": "SpaceX to Make Its Own Gas-Turbine Parts for Data Centers",
-         "body_ko": "일론 머스크는 데이터센터 전력난의 진짜 병목이 가스터빈 블레이드·베인 주조라며, 스페이스X가 이를 직접 생산하면 가동 시점을 최대 18개월 앞당길 수 있다고 밝혔다. GE 버노바 등 터빈 수주 물량은 이미 2030년까지 밀려 있다."},
-        {"headline_ko": "엔비디아 RTX 스파크 PC, 470만원대에도 완판 행렬",
-         "headline_en": "Nvidia's RTX Spark PCs Sell Out Despite $3,400+ Price Tags",
-         "body_ko": "AI 개발용 미니 워크스테이션 RTX 스파크를 탑재한 PC들이 대당 470만원이 넘는 가격에도 잇따라 매진되고 있다. 최상위 AI 가속기 중심이던 수요가 소비자용 하드웨어까지 번지는 모습이다."},
-        {"headline_ko": "美 반도체주 반등에 정부도 지원사격",
-         "headline_en": "Korean Government Backs Chip Stocks as US Peers Rebound",
-         "body_ko": "간밤 뉴욕증시에서 엔비디아(+1.48%)·마이크론(+2.77%)이 오르며 매크로 악재에도 반등하자, 국내에서도 정부의 반도체 지원책이 맞물리며 삼성전자·SK하이닉스 반등 기대가 커지고 있다."},
-        {"headline_ko": "K-전선, AI 데이터센터·노후 전력망 교체 수요로 수주 12.5조원",
-         "headline_en": "Korean Cable Makers' Backlog Hits ₩12.5T on AI and Grid Upgrades",
-         "body_ko": "LS전선·대한전선·가온전선의 수주 잔고가 전년 대비 43.5% 늘어난 12.5조원에 달한다. AI 데이터센터 확산과 미국·유럽의 노후 전력망 교체 수요가 겹치며 북미·유럽向 수주가 늘고 있다."}
+        {
+          "headline_ko": "엔비디아, 미디어텍에 35억달러 투자 — 'NV-HBM' 공개",
+          "headline_en": "Nvidia Invests $3.5B in MediaTek, Unveils 'NV-HBM'",
+          "body_ko": "엔비디아가 대만 팹리스 미디어텍에 전환사채 35억달러(약 4조8,000억원)를 투자하며 파트너십을 확대한다. 미디어텍은 엔비디아의 NVLink Fusion과 새로 공개된 'NV-HBM' 기술을 자사 칩에 적용해 AI 데이터센터 연결 표준을 함께 노린다.",
+          "body_en": "Nvidia is investing $3.5B in MediaTek via a convertible bond, deepening ties. MediaTek will build Nvidia's NVLink Fusion and new 'NV-HBM' tech into its own AI chips."
+        },
+        {
+          "headline_ko": "SK하이닉스, HBM 수출단가 1분기 만에 47% 급등",
+          "headline_en": "SK Hynix HBM Export Prices Jump 47% in a Quarter",
+          "body_ko": "HBM 평균 수출단가가 1분기 40.94달러에서 HBM4 양산이 시작된 2분기 60.22달러로 뛰었다. 최태원 SK그룹 회장은 풀가동해도 HBM·D램 공급이 부족하다며 일본 신공장 검토를 언급했다.",
+          "body_en": "SK Hynix's HBM export price jumped from $40.94 to $60.22 in a quarter as HBM4 output ramped up. SK's chairman flagged tight supply and floated a new plant in Japan."
+        },
+        {
+          "headline_ko": "스페이스X, 데이터센터 전력난에 가스터빈 부품 자체 생산",
+          "headline_en": "SpaceX to Make Its Own Gas-Turbine Parts for Data Centers",
+          "body_ko": "일론 머스크는 데이터센터 전력난의 진짜 병목이 가스터빈 블레이드·베인 주조라며, 스페이스X가 이를 직접 생산하면 가동 시점을 최대 18개월 앞당길 수 있다고 밝혔다. GE 버노바 등 터빈 수주 물량은 이미 2030년까지 밀려 있다.",
+          "body_en": "Elon Musk says the real data-center power bottleneck is turbine blade casting. SpaceX making its own could speed up commissioning by as much as 18 months."
+        },
+        {
+          "headline_ko": "엔비디아 RTX 스파크 PC, 470만원대에도 완판 행렬",
+          "headline_en": "Nvidia's RTX Spark PCs Sell Out Despite $3,400+ Price Tags",
+          "body_ko": "AI 개발용 미니 워크스테이션 RTX 스파크를 탑재한 PC들이 대당 470만원이 넘는 가격에도 잇따라 매진되고 있다. 최상위 AI 가속기 중심이던 수요가 소비자용 하드웨어까지 번지는 모습이다.",
+          "body_en": "PCs built around Nvidia's RTX Spark mini AI workstation keep selling out despite price tags above $3,400, as AI-accelerator demand spills into consumer hardware."
+        },
+        {
+          "headline_ko": "美 반도체주 반등에 정부도 지원사격",
+          "headline_en": "Korean Government Backs Chip Stocks as US Peers Rebound",
+          "body_ko": "간밤 뉴욕증시에서 엔비디아(+1.48%)·마이크론(+2.77%)이 오르며 매크로 악재에도 반등하자, 국내에서도 정부의 반도체 지원책이 맞물리며 삼성전자·SK하이닉스 반등 기대가 커지고 있다.",
+          "body_en": "Nvidia (+1.48%) and Micron (+2.77%) rebounded overnight despite the headwinds, fueling hopes Korean government support lifts Samsung and SK Hynix too."
+        },
+        {
+          "headline_ko": "K-전선, AI 데이터센터·노후 전력망 교체 수요로 수주 12.5조원",
+          "headline_en": "Korean Cable Makers' Backlog Hits ₩12.5T on AI and Grid Upgrades",
+          "body_ko": "LS전선·대한전선·가온전선의 수주 잔고가 전년 대비 43.5% 늘어난 12.5조원에 달한다. AI 데이터센터 확산과 미국·유럽의 노후 전력망 교체 수요가 겹치며 북미·유럽向 수주가 늘고 있다.",
+          "body_en": "LS Cable, Daehan Cable and Gaon Cable's combined backlog hit ₩12.5T, up 43.5% YoY, as AI data centers and grid upgrades drive US and European orders."
+        }
       ]
     },
     {
@@ -197,68 +509,144 @@
       "title_en": "Top Stories",
       "color": "#d98a3c",
       "items": [
-        {"headline_ko": "美, 한 달 만에 이란 재공격 — 호르무즈 긴장 재점화",
-         "headline_en": "US Strikes Iran Again After a Month, Reviving Hormuz Tension",
-         "body_ko": "미군이 호르무즈 해협 인근 이란 라라크섬의 기뢰부설용 로켓발사대를 공습했고, 이란은 요르단 주둔 미군기지를 미사일로 보복했다. 지난달 소강 상태에 들어갔던 양국 무력 충돌이 한 달 만에 재개됐다."},
-        {"headline_ko": "팀 쿡, 15년 만에 애플 CEO 퇴임 — 존 터너스 취임",
-         "headline_en": "Tim Cook Steps Down as Apple CEO After 15 Years, John Ternus Takes Over",
-         "body_ko": "2011년 스티브 잡스의 뒤를 이어 애플을 이끌어온 팀 쿡이 오늘(현지시간 9/1)부로 CEO에서 물러나 이사회 의장을 맡는다. 후임은 하드웨어 엔지니어링 수석부사장이던 존 터너스다. 쿡 재임 기간 애플 주주가치는 10배 넘게 늘었다."},
-        {"headline_ko": "美 10년물 국채금리 4.75%, 19개월래 최고 — 트럼프 \"금리 너무 높다\"",
-         "headline_en": "US 10-Year Yield Hits 4.75%, a 19-Month High — Trump Says Rates 'Too High'",
-         "body_ko": "유가 급등에 따른 인플레이션 우려로 美 10년물 국채금리가 2025년 1월 이후 최고 수준으로 올랐다. CME 페드워치의 9월 FOMC 금리인상 확률은 일주일 전 41.4%에서 66%대까지 뛰었다."},
-        {"headline_ko": "에디슨인터내셔널 23% 폭락 — 2001년 이후 최대 낙폭",
-         "headline_en": "Edison International Plunges 23%, Its Worst Drop Since 2001",
-         "body_ko": "캘리포니아주 의회의 산불 대응 개편 법안에서 전력회사 화재 책임 면제 조항이 빠지자 전력회사 에디슨인터내셔널 주가가 급락했다. S&P500 개별 종목 중 이날 최대 낙폭이었다."},
-        {"headline_ko": "오픈AI 챗GPT 광고, 200일 만에 연환산 매출 10억달러 돌파",
-         "headline_en": "OpenAI's ChatGPT Ads Top $1B Annualized Revenue in 200 Days",
-         "body_ko": "오픈AI가 지난 2월 미국에서 챗GPT 광고를 시작한 지 약 200일 만에 연환산 매출 10억달러(약 1조4,000억원)를 넘어섰다고 밝혔다. 현재 40여개국에서 운영 중이며, 이 소식에 구글·메타 주가가 흔들렸다."},
-        {"headline_ko": "코스피 개인투자자 '국장 이탈' — 3개월새 거래대금 60%↓",
-         "headline_en": "Retail Investors Retreat from KOSPI as Turnover Falls 60% in 3 Months",
-         "body_ko": "6월 22일 사상 최고치(9,114.55) 이후 조정 국면이 이어지며 코스피에서 20·30대 개인 투자자의 거래대금이 석 달 새 60%, 투자자 수는 30% 줄었다는 분석이 나왔다. 급등락 장세에 지친 자금 일부가 美 증시로 이동하고 있다."}
+        {
+          "headline_ko": "美, 한 달 만에 이란 재공격 — 호르무즈 긴장 재점화",
+          "headline_en": "US Strikes Iran Again After a Month, Reviving Hormuz Tension",
+          "body_ko": "미군이 호르무즈 해협 인근 이란 라라크섬의 기뢰부설용 로켓발사대를 공습했고, 이란은 요르단 주둔 미군기지를 미사일로 보복했다. 지난달 소강 상태에 들어갔던 양국 무력 충돌이 한 달 만에 재개됐다.",
+          "body_en": "US forces struck rocket launchers on Iran's Larak Island near Hormuz; Iran retaliated against a US base in Jordan, reviving the conflict after a month's pause."
+        },
+        {
+          "headline_ko": "팀 쿡, 15년 만에 애플 CEO 퇴임 — 존 터너스 취임",
+          "headline_en": "Tim Cook Steps Down as Apple CEO After 15 Years, John Ternus Takes Over",
+          "body_ko": "2011년 스티브 잡스의 뒤를 이어 애플을 이끌어온 팀 쿡이 오늘(현지시간 9/1)부로 CEO에서 물러나 이사회 의장을 맡는다. 후임은 하드웨어 엔지니어링 수석부사장이었던 존 터너스다. 쿡 재임 기간 애플 주주가치는 10배 넘게 늘었다.",
+          "body_en": "Tim Cook, who led Apple since 2011, steps down today to become chairman; John Ternus takes over as CEO. Shareholder value grew over tenfold under Cook."
+        },
+        {
+          "headline_ko": "美 10년물 국채금리 4.75%, 19개월래 최고 — 트럼프 \"금리 너무 높다\"",
+          "headline_en": "US 10-Year Yield Hits 4.75%, a 19-Month High — Trump Says Rates 'Too High'",
+          "body_ko": "유가 급등에 따른 인플레이션 우려로 美 10년물 국채금리가 2025년 1월 이후 최고 수준으로 올랐다. CME 페드워치의 9월 FOMC 금리인상 확률은 전 거래일(약 57%) 대비 더 높아진 66%대로, 일주일 전(약 41%)과 비교하면 25%p 가까이 뛰었다.",
+          "body_en": "Oil-driven inflation fears pushed the US 10-year yield to its highest since January 2025. September rate-hike odds rose to about 66%, from roughly 41% a week ago."
+        },
+        {
+          "headline_ko": "에디슨인터내셔널 23% 폭락 — 2001년 이후 최대 낙폭",
+          "headline_en": "Edison International Plunges 23%, Its Worst Drop Since 2001",
+          "body_ko": "캘리포니아주 의회의 산불 대응 개편 법안에서 전력회사 화재 책임 면제 조항이 빠지자 전력회사 에디슨인터내셔널 주가가 급락했다. S&P500 개별 종목 중 이날 최대 낙폭이었다.",
+          "body_en": "Edison International's shares plunged after California's wildfire bill dropped a liability shield for utilities — the S&P 500's biggest drop of the day."
+        },
+        {
+          "headline_ko": "오픈AI 챗GPT 광고, 200일 만에 연환산 매출 10억달러 돌파",
+          "headline_en": "OpenAI's ChatGPT Ads Top $1B Annualized Revenue in 200 Days",
+          "body_ko": "오픈AI가 지난 2월 미국에서 챗GPT 광고를 시작한 지 약 200일 만에 연환산 매출 10억달러(약 1조4,000억원)를 넘어섰다고 밝혔다. 현재 40여개국에서 운영 중이며, 이 소식에 구글·메타 주가가 흔들렸다.",
+          "body_en": "OpenAI says ChatGPT ads, launched in the US in February, topped $1B in annualized revenue within 200 days. Now live in 40+ countries, rattling Google and Meta."
+        },
+        {
+          "headline_ko": "코스피 20·30대 '국장 이탈' — 6월 이후 거래대금 60%↓",
+          "headline_en": "Younger Retail Investors Retreat from KOSPI, Turnover Down 60% Since June",
+          "body_ko": "국내 주요 증권사 분석 결과, 20·30대 개인 투자자의 코스피 거래대금이 6월 이후 60% 넘게 급감했고 투자자 수도 30%가까이 줄었다. 6월 22일 사상 최고치(9,114.55) 이후 이어진 급등락 장세에 지친 자금 일부가 美 증시로 이동하고 있다.",
+          "body_en": "Trading value from investors in their 20s and 30s has fallen over 60% since June, per Korean brokerages, as volatility pushes some money into US stocks."
+        }
       ]
     }
   ],
-
   "schedule_kicker": "KEY SCHEDULE",
-  "schedule_sub": {"ko": "한국시간 기준 · 노란 점 = 주목", "en": "All times KST · amber dot = high importance"},
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "All times KST · amber dot = high importance"
+  },
   "schedule_title_ko": "주요 일정",
   "schedule_title_en": "Key Schedule",
   "market_hours": {
     "title_ko": "한국 증시 운영시간",
     "title_en": "Korea Market Hours",
-    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
-    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
   },
   "schedule": [
-    {"time": "09:00", "title_ko": "한국 8월 수출입동향", "title_en": "Korea Aug Trade Balance",
-     "detail_ko": "예상 흑자 30.7억달러 · 이전 30.4억달러", "detail_en": "Est. $3.07B surplus · prior $3.04B", "importance": "high"},
-    {"time": "09:00", "title_ko": "G20 재무장관·중앙은행총재 회의 폐막", "title_en": "G20 Finance Ministers Meeting Wraps Up",
-     "detail_ko": "8/29부터 사흘간 진행", "detail_en": "Three-day meeting since Aug 29", "importance": "mid"},
-    {"time": "09:30", "title_ko": "한국 8월 S&P Global 제조업 PMI", "title_en": "Korea Aug S&P Global Mfg PMI",
-     "detail_ko": "이전 53.1", "detail_en": "Prior 53.1", "importance": "mid"},
-    {"time": "10:45", "title_ko": "중국 8월 차이신 제조업 PMI", "title_en": "China Aug Caixin Mfg PMI",
-     "detail_ko": "예상·이전 50.9", "detail_en": "Est. and prior 50.9", "importance": "high"},
-    {"time": "15:00", "title_ko": "독일 8월 소매판매 (전월비)", "title_en": "Germany Aug Retail Sales (MoM)",
-     "detail_ko": "예상 +0.4% · 이전 −1.1%", "detail_en": "Est. +0.4% · prior -1.1%", "importance": "mid"},
-    {"time": "18:00", "title_ko": "유로존 8월 근원 소비자물가 (전년비)", "title_en": "Eurozone Aug Core CPI (YoY)",
-     "detail_ko": "예상·이전 2.5%", "detail_en": "Est. and prior 2.5%", "importance": "high"},
-    {"time": "19:00", "title_ko": "니오(NIO) 2분기 실적 발표", "title_en": "NIO Q2 Earnings (Pre-Market)",
-     "detail_ko": "장전 발표 · EPS 예상 −0.07달러", "detail_en": "Before the bell · EPS est. -$0.07", "importance": "mid"}
+    {
+      "time": "09:00",
+      "title_ko": "한국 8월 수출입동향",
+      "title_en": "Korea Aug Trade Balance",
+      "detail_ko": "예상 흑자 30.7억달러 · 이전 30.4억달러",
+      "detail_en": "Est. $3.07B surplus · prior $3.04B",
+      "importance": "high"
+    },
+    {
+      "time": "09:00",
+      "title_ko": "G20 재무장관·중앙은행총재 회의 폐막",
+      "title_en": "G20 Finance Ministers Meeting Wraps Up",
+      "detail_ko": "8/29부터 사흘간 진행",
+      "detail_en": "Three-day meeting since Aug 29",
+      "importance": "mid"
+    },
+    {
+      "time": "09:30",
+      "title_ko": "한국 8월 S&P Global 제조업 PMI",
+      "title_en": "Korea Aug S&P Global Mfg PMI",
+      "detail_ko": "이전 53.1",
+      "detail_en": "Prior 53.1",
+      "importance": "mid"
+    },
+    {
+      "time": "10:45",
+      "title_ko": "중국 8월 차이신 제조업 PMI",
+      "title_en": "China Aug Caixin Mfg PMI",
+      "detail_ko": "예상·이전 50.9",
+      "detail_en": "Est. and prior 50.9",
+      "importance": "high"
+    },
+    {
+      "time": "15:00",
+      "title_ko": "독일 8월 소매판매",
+      "title_en": "Germany Aug Retail Sales",
+      "detail_ko": "전월비 예상 +0.4%(이전 −1.1%) · 전년비 이전 −0.2%",
+      "detail_en": "MoM est. +0.4% (prior -1.1%) · YoY prior -0.2%",
+      "importance": "mid"
+    },
+    {
+      "time": "18:00",
+      "title_ko": "유로존 8월 근원 소비자물가 (전년비)",
+      "title_en": "Eurozone Aug Core CPI (YoY)",
+      "detail_ko": "예상·이전 2.5%",
+      "detail_en": "Est. and prior 2.5%",
+      "importance": "high"
+    },
+    {
+      "time": "19:00",
+      "title_ko": "니오(NIO) 2분기 실적 발표",
+      "title_en": "NIO Q2 Earnings (Pre-Market)",
+      "detail_ko": "장전 발표 · EPS 예상 −0.07달러",
+      "detail_en": "Before the bell · EPS est. -$0.07",
+      "importance": "mid"
+    }
   ],
-
   "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
   "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
   "outro_tagline_ko": "",
   "outro_tagline_en": "",
-
   "card_photos": {
     "1": "The New York Stock Exchange trading floor moments after the closing bell, traders in silhouette against a wall of glowing red and green screens, warm amber light raking across the room, a subtle sense of tension in the air",
     "3": "A dark trading floor with index numbers streaming across a bank of monitors, red numbers dominating, one green ticker glowing among them",
     "7": "A moody blue-lit server room / data center corridor, rows of glowing rack lights receding into darkness, a faint industrial hum implied by motion blur on cooling fans"
   },
-
   "caption_ko": "📊 luckyon 브리핑 · 2026.9.1(화) 아침\n\n미국이 호르무즈 해협 인근 이란 라라크섬을 공습했고, 이란이 요르단 미군기지를 보복 공격하며 한 달 만에 무력 충돌이 재개됐습니다. 국제유가는 급등했고(WTI +2.83%), 美 10년물 국채금리는 19개월래 최고인 4.75%를 찍었습니다.\n\n지수는 소폭 하락(S&P500 −0.33%·나스닥 −0.12%)했지만 거래대금 상위 300종목 기준으로는 오른 종목에 더 많은 돈이 몰렸습니다 — 반도체·에너지주가 자금을 끌었습니다.\n\n오늘(현지시간) 팀 쿡이 15년 만에 애플 CEO에서 물러나고 존 터너스가 새 CEO로 취임합니다.\n\n코스피는 밤사이 6,820선, 장중 −3.55%까지 밀렸다 자사주 매입에 힘입어 반등 마감했습니다.\n\n저장하고 팔로우하면 매일 아침·저녁 놓치지 않고 받아보실 수 있습니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n\n#미국증시 #이란 #국제유가 #국채금리 #애플 #팀쿡 #엔비디아 #HBM #코스피 #반도체 #경제브리핑 #luckyon",
   "caption_en": "📊 luckyon Briefing · Tue, Sep 1, 2026 · AM\n\nThe US struck Iran's Larak Island near the Strait of Hormuz, and Iran retaliated against a US base in Jordan — reigniting conflict after a month-long pause. Oil jumped (WTI +2.83%) and the US 10-year yield hit a 19-month high of 4.75%.\n\nIndexes dipped only slightly (S&P 500 -0.33%, Nasdaq -0.12%), but among the 300 most-traded names, more money flowed into gainers than decliners — chips and energy led.\n\nToday (US time), Tim Cook steps down as Apple CEO after 15 years, handing the reins to John Ternus.\n\nKOSPI held near 6,820 overnight after an intraday plunge to -3.55%, rescued by buybacks.\n\nSave and follow to catch every morning and evening brief.\n\n🌙 Next brief — 9 PM KST, before the US open\n\n#USMarkets #Iran #OilPrices #TreasuryYields #Apple #TimCook #Nvidia #HBM #KOSPI #Semiconductors #luckyon",
-
-  "sources": ["Yahoo Finance", "FMP", "FINRA (일별 공매도 거래량)", "FXStreet 경제캘린더", "KRX", "관세청/한국은행 ECOS", "CNN Fear & Greed", "연합뉴스", "SBS Biz", "서울경제", "전자신문", "AI타임스", "SaveTicker"]
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "FINRA (일별 공매도 거래량)",
+    "FXStreet 경제캘린더",
+    "KRX",
+    "관세청/한국은행 ECOS",
+    "CNN Fear & Greed",
+    "연합뉴스",
+    "SBS Biz",
+    "서울경제",
+    "전자신문",
+    "AI타임스",
+    "SaveTicker"
+  ]
 }
