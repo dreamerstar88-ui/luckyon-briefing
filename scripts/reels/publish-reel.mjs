@@ -53,7 +53,11 @@ if (!fs.existsSync(localMp4)) {
   process.exit(1);
 }
 const videoUrl = `${PAGES}/${relDir}/reel.mp4`;
-const coverUrl = `${PAGES}/${relDir}/cover.png`;
+// 표지는 **JPEG 를 먼저 쓴다.** 인스타 cover_url 은 JPEG 를 요구한다 —
+//   PNG 를 주면 컨테이너 생성에서 막힐 수 있다. cover.jpg 가 있으면 그것을,
+//   없으면 예전처럼 cover.png 를 쓴다. (2026-08-31)
+const coverName = fs.existsSync(path.join(root, ...relDir.split('/'), 'cover.jpg')) ? 'cover.jpg' : 'cover.png';
+const coverUrl = `${PAGES}/${relDir}/${coverName}`;
 
 // 캡션
 const captionFile = path.join(root, ...relDir.split('/'), 'caption.txt');
