@@ -5,7 +5,7 @@
   "dateLabel_en": "Tue, Sep 1, 2026 · PM",
 
   "headline_ko": "코스피, 3대 주체 매도에도 자사주 힘으로 6,835 사수…반도체 수출 역대 최대",
-  "headline_en": "KOSPI Holds 6,835 on Buybacks Despite Broad Selling as Chip Exports Hit a Record",
+  "headline_en": "KOSPI Holds 6,835 on Buybacks as Chip Exports Hit a Record",
   "headline_sub_ko": "8월 수출 68.7%↑ 무역흑자 347억달러…유로존 물가 3년래 최고, 中 PMI 9개월째 확장",
   "headline_sub_en": "August exports jumped 68.7%, trade surplus hit $34.75B; eurozone inflation hit a 3-year high, China's PMI expanded for a 9th month",
   "cover_kicker": {
@@ -171,7 +171,7 @@
   "chart_series_labels": ["8.20", "8.21", "8.24", "8.25", "8.26", "8.27", "8.28", "8.31", "9.1"],
   "chart_title": {
     "ko": "장중 -3.55%까지 밀렸다 자사주 매입에 반등",
-    "en": "Fell -3.55% intraday before buybacks drove a rebound"
+    "en": "Buybacks reversed a -3.55% intraday drop"
   },
   "chart_sub": {
     "ko": "코스피 종가 · 최근 9거래일",
@@ -233,7 +233,7 @@
           "delta": "▲0.23%",
           "dir": "up",
           "sub_ko": "15.78포인트 상승 · 장중 -3.55%(6,732.47)까지 밀렸다 반등, 2거래일 연속 상승",
-          "sub_en": "Up 15.78 pts · rallied off an intraday low of -3.55% (6,732.47), 2nd straight gain"
+          "sub_en": "Up 15.78 pts · rallied off a -3.55% intraday low, 2nd straight gain"
         },
         {
           "label_ko": "코스닥",
@@ -262,18 +262,16 @@
         }
       ],
       "flows": {
-        "label_ko": "코스피 투자자별 순매수",
-        "label_en": "KOSPI net buy/sell by investor",
-        "unit_ko": "억원",
-        "unit_en": " ₩100M",
+        "label_ko": "코스피 투자자별 순매수 (억원)",
+        "label_en": "KOSPI net buy/sell by investor (₩100M)",
         "rows": [
           { "label_ko": "개인", "label_en": "Individual", "value": -5397 },
           { "label_ko": "외국인", "label_en": "Foreign", "value": -4867 },
           { "label_ko": "기관", "label_en": "Institution", "value": -6340 }
         ]
       },
-      "note_ko": "개인·외국인·기관이 모두 순매도했지만 기타법인이 1조6,657억원을 순매수하며 지수를 방어했다 — 대부분 삼성전자·SK하이닉스의 자사주 매입분이다. 코스닥은 반도체 소부장 강세에도 낙폭을 만회하지 못했다.",
-      "note_en": "All three investor groups sold, but other corporates net-bought ₩1.67T — mostly Samsung Electronics and SK Hynix buying back their own shares — to defend the index. KOSDAQ couldn't recover despite strength in chip equipment names."
+      "note_ko": "개인·외국인·기관 모두 순매도했지만 기타법인이 1조6,657억원(삼전·SK하이닉스 자사주)을 순매수하며 지수를 방어했다.",
+      "note_en": "All three groups sold, but other corporates — mostly Samsung/SK Hynix buybacks — net-bought ₩1.67T to defend the index."
     },
     {
       "title_ko": "섹터별 등락",
@@ -334,7 +332,7 @@
         {
           "label_ko": "한국 8월 무역수지",
           "label_en": "Korea Aug Trade Balance",
-          "value": "307.4억$ → 347.5억$",
+          "value": "$30.7B → $34.75B",
           "delta": "▲",
           "dir": "up",
           "sub_ko": "09:00 KST 발표 · 예상 307억달러 상회 · 19개월 연속 흑자",
@@ -404,37 +402,37 @@
           "headline_ko": "정부, 2027년 예산에 AI·반도체 메가프로젝트 21.3조원 편성",
           "headline_en": "Korea Earmarks ₩21.3T for AI/Chip Megaprojects in 2027 Budget",
           "body_ko": "정부가 2027년도 예산안에 반도체·피지컬AI·AI데이터센터(AIDC) 3대 메가프로젝트를 담았다. SMR·핵융합 등 7대 시드 기술에 3.7조원, ESS 10GW 구축에 2030년까지 9조원, 전력망 확충에 1.5조원을 배정했다.",
-          "body_en": "The government's 2027 budget draft funds three megaprojects — semiconductors, physical AI, and AI data centers — plus ₩3.7T for seed techs like SMRs and fusion, and ₩9T through 2030 for a 10GW ESS buildout."
+          "body_en": "Korea's 2027 budget draft funds three megaprojects — chips, physical AI, and AI data centers — plus ₩3.7T for SMRs and fusion, and ₩9T through 2030 for a 10GW ESS buildout."
         },
         {
           "headline_ko": "삼성전자, HBM5·적층형 'zHBM' 등 신규 메모리 전략 공개",
           "headline_en": "Samsung Unveils HBM5, Stacked 'zHBM' Memory Strategy",
           "body_ko": "삼성전자가 세미콘 타이완 2026에서 차세대 HBM5(8세대)를 공개했다. HBM4E 대비 성능 2배, 열저항은 20% 낮추는 것이 목표다. 로직다이 위에 HBM을 수직 적층하는 신제품 'zHBM'도 개발 중이라고 밝혔다.",
-          "body_en": "At SEMICON Taiwan 2026, Samsung unveiled its next-gen HBM5, targeting 2x the performance and 20% lower thermal resistance versus HBM4E, plus a new 'zHBM' stacked directly on logic dies."
+          "body_en": "At SEMICON Taiwan, Samsung unveiled HBM5, targeting 2x the performance and 20% lower heat resistance versus HBM4E, plus a new 'zHBM' stacked directly on logic dies."
         },
         {
           "headline_ko": "TSMC, 실리콘포토닉스·CPO 패키징 전략 확대 발표",
           "headline_en": "TSMC Expands Silicon Photonics and CPO Packaging Roadmap",
           "body_ko": "TSMC가 세미콘 타이완에서 광학 패키징 플랫폼 'COUPE'를 확대한다고 밝혔다. 2029년까지 AI 시스템에 실리콘포토닉스를 상용화하는 것이 목표로, 칩 성능뿐 아니라 패키징 경쟁으로 무게중심이 옮겨가고 있다는 평가다.",
-          "body_en": "TSMC said it's expanding its 'COUPE' optical packaging platform, aiming to commercialize silicon photonics in AI systems by 2029 — a sign the AI chip race is shifting toward packaging, not just raw performance."
+          "body_en": "TSMC is expanding its 'COUPE' optical packaging platform, aiming to commercialize silicon photonics in AI systems by 2029 — a sign the chip race is shifting toward packaging."
         },
         {
           "headline_ko": "중국 CXMT, HBM3E 소량양산 성공 — 한중 기술격차 3년으로 좁혀져",
-          "headline_en": "China's CXMT Starts Small-Batch HBM3E Output, Narrowing Gap to 3 Years",
+          "headline_en": "China's CXMT Starts Small-Batch HBM3E, Gap Narrows to 3 Years",
           "body_ko": "중국 메모리 업체 CXMT가 HBM3E 소량양산에 성공했다고 전해졌다. 알리바바 티헤드·캠브리콘 등이 자사 AI칩에 CXMT의 HBM3E 탑재를 검증 중이며, 삼성전자·SK하이닉스와의 기술격차가 3년 수준으로 좁혀졌다는 평가가 나온다.",
-          "body_en": "China's CXMT reportedly began small-batch HBM3E production, with Alibaba's T-Head and Cambricon testing it in their own AI chips — narrowing the gap with Samsung and SK Hynix to about three years, analysts say."
+          "body_en": "China's CXMT reportedly began small-batch HBM3E output, with Alibaba's T-Head and Cambricon testing it in their AI chips — narrowing the gap with Samsung and SK Hynix to about 3 years."
         },
         {
           "headline_ko": "LS전선, 초전도 케이블로 AI데이터센터 전력 컨소시엄 'AFF' 합류",
-          "headline_en": "LS Cable Joins 'AFF' Consortium Powering AI Data Centers with Superconducting Cable",
+          "headline_en": "LS Cable Joins 'AFF' AI Data Center Power Consortium",
           "body_ko": "LS전선이 GPU·전력설비·냉각·건축·사업개발 5개사가 모인 컨소시엄에 합류해 초전도 케이블을 공급한다. 변전소 신설 없이도 대용량 전력을 끌어올 수 있어 AI데이터센터의 전력 확보 부담을 줄여준다는 설명이다.",
-          "body_en": "LS Cable joined a five-company consortium spanning GPUs, power gear, cooling and construction, supplying superconducting cable that can deliver high-capacity power to AI data centers without building new substations."
+          "body_en": "LS Cable joined a five-company consortium spanning GPUs, power gear, cooling and construction, supplying superconducting cable that delivers high-capacity power without new substations."
         },
         {
           "headline_ko": "SK온, 美 ESS 시장 첫 진출 — 네오볼타와 5년 9GWh 공급계약",
-          "headline_en": "SK On Enters US ESS Market with 5-Year, 9GWh Deal with NeoVolta",
+          "headline_en": "SK On Enters US ESS Market via 9GWh NeoVolta Deal",
           "body_ko": "SK온이 미국 에너지저장장치(ESS) 업체 네오볼타와 5년간 9GWh 규모 배터리 공급계약을 체결하며 미국 ESS 시장에 처음 진출했다. AI 데이터센터발 정전 대비 수요가 배터리 업계의 새 성장축으로 떠오르고 있다.",
-          "body_en": "SK On signed a 5-year, 9GWh battery supply deal with US energy storage firm NeoVolta, its first entry into the US ESS market — part of a wider shift as AI data centers' blackout-hedging demand becomes a new growth axis for battery makers."
+          "body_en": "SK On signed a 5-year, 9GWh battery deal with US firm NeoVolta, its first US ESS entry — part of a shift as AI data centers' blackout-hedging demand becomes a new growth axis for batteries."
         }
       ]
     },
@@ -445,37 +443,37 @@
       "items": [
         {
           "headline_ko": "삼성전자·SK하이닉스, 8월 자사주 매입 한도 21% 집행 — 오늘 반등의 배경",
-          "headline_en": "Samsung and SK Hynix Executed 21% of August Buyback Limits — Behind Today's Rebound",
+          "headline_en": "Samsung, SK Hynix Buybacks Drove Today's Rebound",
           "body_ko": "한국거래소에 따르면 두 회사는 8월 말까지 계획한 자사주 매입 한도의 21%를 집행했으며, 매입은 10월 종료 예정이다. 이날 삼성전자 732만1,653주·SK하이닉스 240만7,000주를 사들이며 3대 주체 동반 매도 속에서도 지수를 방어했다.",
-          "body_en": "Per the Korea Exchange, the two firms had executed 21% of their planned August buyback limits, running through October. Today they bought 7.32M and 2.41M shares respectively, offsetting selling from all three investor groups."
+          "body_en": "The two firms had executed 21% of their planned August buyback limits, running through October. Today they bought 7.32M and 2.41M shares, offsetting selling from all three investor groups."
         },
         {
           "headline_ko": "이란 대통령, 美에 조건부 외교 재개 시사",
-          "headline_en": "Iran's President Signals Conditional Openness to Renewed Diplomacy with US",
+          "headline_en": "Iran's President Signals Openness to Renewed US Diplomacy",
           "body_ko": "이란 대통령이 \"미국이 합의를 이행하면 즉각 상응조치에 나서겠다\"고 밝혔다. 다만 호르무즈 해협은 이란의 선박 통제·공격과 미국의 이란 항구 봉쇄가 겹치며 여전히 막혀 있고, 트럼프 행정부는 이란을 상대로 한 '경제 전쟁' 기조를 유지하고 있다.",
-          "body_en": "Iran's president said Tehran would \"respond in kind immediately\" if the US honors an agreement. The Strait of Hormuz remains blocked by Iranian vessel controls and a US blockade of Iranian ports, and the Trump administration is maintaining its 'economic war' stance toward Iran."
+          "body_en": "Iran's president said Tehran would \"respond in kind\" if the US honors an agreement. Hormuz remains blocked by Iranian vessel controls and a US port blockade; Trump keeps his 'economic war' stance."
         },
         {
           "headline_ko": "일본 10년물 국채금리, 30년 만에 처음 3% 돌파",
           "headline_en": "Japan's 10-Year Bond Yield Tops 3% for the First Time in 30 Years",
           "body_ko": "미·이란 충돌 재개로 호르무즈발 에너지 흐름 차질 우려가 커지며 유가·인플레 압력이 확산, 일본 장기금리를 30년 만에 처음 3%대로 밀어올렸다. 시장에서는 일본은행의 추가 긴축 속도에도 영향을 줄 수 있다는 분석이 나온다.",
-          "body_en": "Renewed US-Iran conflict and fears over Hormuz energy flows pushed oil and inflation pressure higher, driving Japan's long-term bond yield above 3% for the first time in three decades — a move analysts say could affect the pace of further BOJ tightening."
+          "body_en": "Renewed US-Iran conflict and Hormuz energy fears pushed oil and inflation pressure higher, driving Japan's long-term yield above 3% for the first time in three decades — a move that could affect BOJ tightening."
         },
         {
           "headline_ko": "아시아 증시 혼조 마감 — 대만은 반도체 훈풍에 강세",
           "headline_en": "Asian Markets Close Mixed, Taiwan Bucks Trend on Chip Optimism",
           "body_ko": "닛케이225는 장중 반등 후 막판 하락 전환해 -0.15% 66,215.34, 토픽스는 +0.62% 4,181.86으로 마감했다. 상하이종합은 -0.16% 3,979.89, 항셍은 -0.93% 25,329.73으로 밀렸다. 금리 상승 압력과 반도체 훈풍이 시장별로 엇갈린 결과를 낳았다.",
-          "body_en": "The Nikkei 225 reversed a rally to close down 0.15% at 66,215.34, while the TOPIX rose 0.62% to 4,181.86. Shanghai Composite fell 0.16% to 3,979.89 and the Hang Seng dropped 0.93% to 25,329.73, as rising rates and chip optimism pulled markets in different directions."
+          "body_en": "The Nikkei 225 reversed a rally to close down 0.15% at 66,215.34, while the TOPIX rose 0.62%. Shanghai fell 0.16% and the Hang Seng dropped 0.93%, as rates and chip optimism pulled markets apart."
         },
         {
           "headline_ko": "한화오션, 오세아니아 선주와 VLGC 3척 건조계약 4,778억원",
-          "headline_en": "Hanwha Ocean Signs ₩477.8B Deal to Build 3 VLGCs for an Oceania Owner",
+          "headline_en": "Hanwha Ocean Signs ₩477.8B Deal for 3 VLGCs",
           "body_ko": "한화오션이 지난달 31일 오세아니아 지역 선주와 초대형 가스운반선(VLGC) 3척에 대한 단일판매·공급계약을 체결했다고 공시했다. 조선업 수주 호조가 이어지고 있다는 신호로 읽힌다.",
-          "body_en": "Hanwha Ocean disclosed a contract signed Aug 31 with an Oceania-based shipowner to build three very large gas carriers (VLGCs), worth ₩477.8B — another sign of the sector's strong order momentum."
+          "body_en": "Hanwha Ocean disclosed a contract with an Oceania shipowner to build three very large gas carriers, worth ₩477.8B — another sign of the sector's strong order momentum."
         },
         {
           "headline_ko": "까뮤이앤씨, SK하이닉스 용인클러스터 공사 1,956.79억원 수주 — 주가 급등",
-          "headline_en": "Kumho E&C Wins ₩195.7B SK Hynix Yongin Cluster Contract, Shares Jump",
+          "headline_en": "Kumho E&C Wins ₩195.7B SK Hynix Fab Contract",
           "body_ko": "까뮤이앤씨가 SK에코플랜트를 통해 SK하이닉스 용인 클러스터 1기 Ph-4 IBL FAB 건설공사를 수주했다고 공시했다. 계약금액은 지난해 매출의 65.8%에 달하는 규모로, 이날 주가가 급등했다.",
           "body_en": "Kumho E&C disclosed it won a construction contract for SK Hynix's Yongin cluster Phase-4 IBL fab, via SK Ecoplant — worth 65.8% of last year's revenue. Shares surged on the news."
         }
