@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-08-31T17:59:01Z",
+  "fetchedAt": "2026-09-01T01:18:50Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-29T17:59:01Z",
-    "to": "2026-09-14T17:59:01Z"
+    "from": "2026-08-30T01:18:50Z",
+    "to": "2026-09-15T01:18:50Z"
   },
   "events": [
-    {
-      "at": "2026-08-30T00:00:00Z",
-      "country": "EMU",
-      "name": "G20 Finance Ministers and Central Bank Governors Meeting",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-08-30T23:00:00Z",
       "country": "KR",
@@ -353,7 +343,7 @@
       "impact": "LOW",
       "consensus": 0.2,
       "previous": 0,
-      "actual": null,
+      "actual": 1.6,
       "unit": "%"
     },
     {
@@ -373,7 +363,7 @@
       "impact": "LOW",
       "consensus": 30.7,
       "previous": 30.39,
-      "actual": null,
+      "actual": 34.75,
       "unit": "$"
     },
     {
@@ -383,7 +373,7 @@
       "impact": "LOW",
       "consensus": 55.1,
       "previous": 55.1,
-      "actual": null,
+      "actual": 54.9,
       "unit": null
     },
     {
@@ -393,7 +383,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 53.1,
-      "actual": null,
+      "actual": 52.3,
       "unit": null
     },
     {
@@ -1451,7 +1441,7 @@
       "country": "JP",
       "name": "Gross Domestic Product (QoQ)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 0.3,
       "actual": null,
       "unit": "%"
@@ -1461,7 +1451,7 @@
       "country": "JP",
       "name": "Gross Domestic Product Annualized",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.1,
       "previous": 1.1,
       "actual": null,
       "unit": "%"
@@ -1471,7 +1461,7 @@
       "country": "JP",
       "name": "Gross Domestic Product Deflator (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 2.6,
       "previous": 2.6,
       "actual": null,
       "unit": "%"
@@ -2295,6 +2285,36 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-14T21:00:00Z",
+      "country": "KR",
+      "name": "Export Price Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 49.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-14T21:00:00Z",
+      "country": "KR",
+      "name": "Import Price Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 18.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-14T23:55:00Z",
+      "country": "KR",
+      "name": "Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34.75,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
