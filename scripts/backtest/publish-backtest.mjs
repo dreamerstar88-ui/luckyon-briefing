@@ -97,7 +97,11 @@ for (const b of BANNED) {
   if (m) problems.push(`${b.msg}: "${m[0]}"`)
 }
 const tagCount = (caption.match(/#[^\s#]+/g) ?? []).length
-if (tagCount > 5) problems.push(`해시태그 ${tagCount}개 (인스타그램 상한 5개)`)
+// 인스타그램 게시물당 해시태그 상한은 **30개**다.
+// 여기 5 로 적혀 있었는데 틀린 값이다 — backtest-reels/scripts/write-caption.mjs 는
+// 2026-08-31 에 이미 바로잡고 20개를 쓰고 있었다. 그런데 EP.07~EP.10 을 인스타에
+// 안 올려서 이 불일치가 오늘(2026-09-02 EP.11)까지 안 드러났다.
+if (tagCount > 30) problems.push(`해시태그 ${tagCount}개 (인스타그램 상한 30개)`)
 
 if (problems.length) {
   console.error('\n캡션 안전장치에 걸렸습니다. 발행을 중단합니다.')
