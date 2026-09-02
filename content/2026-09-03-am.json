@@ -19,8 +19,8 @@
         "en": "Nasdaq +0.45% · S&P 500 +0.46%"
       },
       {
-        "ko": "26,217.83 / 7,666.60 · 3거래일 만의 반등",
-        "en": "26,217.83 / 7,666.60 pts · snapped a losing streak"
+        "ko": "26,217.83 / 7,666.60 · 최근 하락세 딛고 반등",
+        "en": "26,217.83 / 7,666.60 pts · snapped a recent losing streak"
       }
     ],
     [
@@ -48,13 +48,13 @@
   ],
   "summary": {
     "lines_ko": [
-      "美 10년물 국채금리가 장중 4.821%까지 치솟아 2023년 11월 이후 최고치를 찍었다가 4.79%로 진정되며, 나스닥·S&P500·다우 3대 지수가 3거래일 만에 동반 반등했다.",
+      "美 10년물 국채금리가 장중 4.821%까지 치솟아 2023년 11월 이후 최고치를 찍었다가 4.79%로 진정되며, 나스닥·S&P500·다우 3대 지수가 최근 하락세를 딛고 동반 반등했다.",
       "브로드컴이 FY26 3분기 매출 295.9억달러·EPS 3.32달러로 시장 예상을 모두 상회하고 AI칩 매출을 FY27에 약 1,150억달러(2배)로 전망하면서, 델에 이어 또 한 번 AI 실적 훈풍이 불었다. 엔비디아 +3.21%, 마이크론 +2.43%, 퀄컴 +2.01%로 반도체주가 동반 강세를 보였다.",
       "거래대금 상위 300종목 기준 상승 종목에 2,253억달러, 하락 종목에 1,095억달러가 몰려 상승 비중이 67.3%였다 — 지수 반등이 특정 종목이 아닌 폭넓은 매수세를 동반했다는 뜻이다.",
       "다만 미국이 이란 정부 소유 유조선을 처음으로 공격하며 중동발 확전 우려는 가라앉지 않았고, 코스피는 전날 외국인·기관 동반 매도 속 4%대 급락(6,562.72)의 여진이 남은 채 개장을 앞두고 있다."
     ],
     "lines_en": [
-      "The US 10-year Treasury yield spiked to 4.821% intraday — its highest since November 2023 — before easing to 4.79%, helping the Nasdaq, S&P 500, and Dow all rebound together after three days of losses.",
+      "The US 10-year Treasury yield spiked to 4.821% intraday — its highest since November 2023 — before easing to 4.79%, helping the Nasdaq, S&P 500, and Dow all rebound together after a recent stretch of losses.",
       "Broadcom beat estimates with FQ3 revenue of $29.59B and EPS of $3.32, and guided AI chip revenue to roughly double to about $115B in FY27 — extending the AI earnings cheer that started with Dell. Nvidia rose 3.21%, Micron 2.43%, and Qualcomm 2.01% as chipmakers rallied together.",
       "Among the 300 most-traded stocks, $225.3B flowed into gainers versus $109.5B into decliners, a 67.3% share — a sign the rebound was broad-based rather than driven by a handful of names.",
       "Still, the US struck an Iranian government-owned tanker for the first time, keeping fears of a wider Mideast conflict alive, while Seoul heads into today's open still digesting yesterday's near-4% KOSPI plunge on heavy foreign and institutional selling (6,562.72)."
@@ -66,8 +66,8 @@
       "value": "26,217.83",
       "delta": "▲0.45%",
       "dir": "up",
-      "note_ko": "국채금리 진정에 3거래일 만에 반등",
-      "note_en": "Rebounded after 3 days as yields eased"
+      "note_ko": "국채금리 진정에 최근 하락세 딛고 반등",
+      "note_en": "Rebounded as yields eased, snapping a recent slide"
     },
     {
       "label": "S&P 500",
@@ -121,7 +121,7 @@
     {
       "label": "Gold",
       "value": "$4,434",
-      "delta": "▲1.99%",
+      "delta": "▲1.98%",
       "dir": "up",
       "note_ko": "9/1 종가 대비 · 실물 금값 강세 지속",
       "note_en": "Vs the Sep 1 close · physical gold prices stayed strong"
@@ -223,8 +223,8 @@
     "en": "Earnings & Data"
   },
   "econ_sub": {
-    "ko": "브로드컴 실적 서프라이즈 · 韓 반도체 수출 역대 최대",
-    "en": "Broadcom beats big · Korea's chip exports hit a record"
+    "ko": "브로드컴 실적 서프라이즈 · S&P500 기업 86% 예상 상회",
+    "en": "Broadcom beats big · 86% of S&P 500 firms topped estimates"
   },
   "tech_section": "AI · 반도체 기술",
   "stories_section": "주요 소식",
@@ -411,18 +411,6 @@
       "cols": 2,
       "stats": [
         {
-          "label_ko": "韓 8월 반도체 수출",
-          "label_en": "Korea Aug Semiconductor Exports",
-          "value": "$46.65B",
-          "delta": {
-            "ko": "전년比 +209%",
-            "en": "+209% YoY"
-          },
-          "dir": "up",
-          "sub_ko": "월간 역대 최대 · 전체 수출의 47.5% 차지",
-          "sub_en": "Record high for any August · 47.5% of total exports"
-        },
-        {
           "label_ko": "美 8월 ADP 민간고용",
           "label_en": "US Aug ADP Private Payrolls",
           "value": "+38K",
@@ -471,20 +459,20 @@
           "sub_en": "Shares fell about 20% on margin concerns"
         },
         {
-          "label_ko": "팔로알토네트웍스 FQ4 EPS",
-          "label_en": "Palo Alto Networks FQ4 EPS",
-          "value": "$1.02",
+          "label_ko": "S&P500 2분기 실적 서프라이즈율",
+          "label_en": "S&P 500 Q2 Earnings Beat Rate",
+          "value": "86%",
           "delta": {
-            "ko": "예상 $0.98 상회",
-            "en": "Beat $0.98 est."
+            "ko": "489개 기업 발표분 기준",
+            "en": "Among 489 companies reporting"
           },
           "dir": "up",
-          "sub_ko": "매출 $34.1억 · AI 보안 수요 견조",
-          "sub_en": "Revenue $3.41B · AI-driven security demand held up"
+          "sub_ko": "AI 인프라 관련 기업들이 서프라이즈를 주도",
+          "sub_en": "AI-infrastructure names led the beats"
         }
       ],
-      "note_ko": "ADP 민간고용은 예상을 밑돌아 국채금리 진정에 힘을 보탰지만, 브로드컴·크레도·팔로알토네트웍스의 실적과 한국 반도체 수출 기록은 AI 수요 자체가 여전히 견조하다는 것을 보여줬다.",
-      "note_en": "ADP's soft payrolls reading helped ease Treasury yields, while Broadcom, Credo, Palo Alto Networks, and Korea's record chip exports all showed underlying AI demand is still running hot."
+      "note_ko": "ADP 민간고용은 예상을 밑돌아 국채금리 진정에 힘을 보탰지만, 브로드컴·크레도의 실적과 이번 분기 S&P500 기업의 86% 서프라이즈율은 AI 수요 자체가 여전히 견조하다는 것을 보여줬다.",
+      "note_en": "ADP's soft payrolls reading helped ease Treasury yields, while Broadcom, Credo, and an 86% Q2 beat rate across the S&P 500 all showed underlying AI demand is still running hot."
     },
     {
       "title_ko": "AI · 반도체 기술",
@@ -492,10 +480,10 @@
       "color": "#7b6cd9",
       "items": [
         {
-          "headline_ko": "브로드컴, AI칩 매출 전망 2배로 상향…시간외 출렁",
-          "headline_en": "Broadcom Doubles AI Chip Forecast, Stock Wobbles After Hours",
-          "body_ko": "브로드컴이 FY26 3분기 매출 295.9억달러·EPS 3.32달러로 시장 예상을 모두 상회했다. 훅 탄 CEO는 AI칩 매출이 FY27에 약 1,150억달러로 2배 늘어날 것이라 밝혔지만, 눈높이가 높아진 투자자들 반응에 주가는 시간외 초반 하락했다가 낙폭을 줄였다.",
-          "body_en": "Broadcom beat estimates with FQ3 revenue of $29.59B and EPS of $3.32. CEO Hock Tan guided AI chip revenue to roughly double to about $115B in FY27, but shares initially fell after hours on sky-high expectations before paring losses."
+          "headline_ko": "브로드컴, AI칩 매출 전년比 221% 폭증…FY27 전망도 2배로 상향",
+          "headline_en": "Broadcom's AI Chip Revenue Surges 221%, Doubles FY27 Guidance",
+          "body_ko": "브로드컴이 FY26 3분기 AI 반도체 매출 167억달러(전년比 +221%)를 포함해 전체 매출 295.9억달러·EPS 3.32달러(전년比 +96%)로 시장 예상을 모두 상회했다. 훅 탄 CEO는 AI칩 매출이 FY27 약 1,150억달러, FY28에는 2,300억달러(2배 더)로 늘어날 것이라 밝혔지만, 눈높이가 높아진 투자자들 반응에 주가는 시간외 초반 하락했다가 낙폭을 줄였다.",
+          "body_en": "Broadcom beat estimates with FQ3 revenue of $29.59B and EPS of $3.32 (+96% YoY), including AI chip revenue of $16.7B, up 221% year over year. CEO Hock Tan guided AI chip revenue to about $115B in FY27 and roughly double again to $230B in FY28, but shares initially fell after hours on sky-high expectations before paring losses."
         },
         {
           "headline_ko": "엔비디아·마이크론 동반 강세…어제 하락했던 메모리주 하루 만에 반등",
@@ -510,22 +498,16 @@
           "body_en": "AI networking chipmaker Credo Technology grew revenue 20% year over year, beating estimates, but shares plunged about 20% on disappointing profitability — a sign investors are now screening AI names by margin quality, not just demand."
         },
         {
-          "headline_ko": "앤트로픽, 클로드 페이블·미토스 5.1 공개…캐시 요금 75% 인하",
-          "headline_en": "Anthropic Unveils Claude Fable & Mythos 5.1, Cuts Cache Pricing 75%",
-          "body_ko": "앤트로픽이 실전 수행 능력에 초점을 맞춘 클로드 페이블 5.1과 연구용 미토스 5.1을 공개했다. 캐시 읽기 요금을 기존보다 75% 낮췄고 고강도 작업은 비용이 최대 45%까지 줄어든다. 중국산 저가 모델 공세에 맞선 가격 대응이다.",
-          "body_en": "Anthropic launched Claude Fable 5.1, built for real-world task performance, alongside the research-focused Mythos 5.1. Cache-read pricing dropped 75%, cutting costs up to 45% on heavy workloads — a direct response to cheaper Chinese models."
-        },
-        {
           "headline_ko": "철강도 AI 특수…데이터센터용 변압기 강판·송전탑 강재 수출 늘어",
           "headline_en": "Steel Catches an AI Tailwind From Data-Center Power Gear",
           "body_ko": "EU 수입규제로 위축됐던 국내 철강 수출이 미국 AI 데이터센터 건설 특수로 일부 만회됐다. 변압기용 전기강판과 송전탑용 강재 등 전력 인프라 관련 품목 수출이 늘었다.",
           "body_en": "Korean steel exports, squeezed by EU import curbs, got a partial offset from US AI data-center construction — exports of transformer-grade electrical steel and transmission-tower steel both rose."
         },
         {
-          "headline_ko": "韓 반도체 수출 역대 최대…AI發 메모리 슈퍼사이클 지속",
-          "headline_en": "Korea's Chip Exports Hit a Record on the AI Memory Supercycle",
-          "body_ko": "8월 한국 반도체 수출이 전년 대비 209% 급증한 466.5억달러로 월간 역대 최대를 기록했다. HBM·서버 D램 수요가 이어지며 전체 수출의 47.5%를 차지, 3개월 연속 900억달러대 수출을 이끌었다.",
-          "body_en": "South Korea's semiconductor exports surged 209% year over year to a record $46.65B in August. Sustained HBM and server DRAM demand made chips 47.5% of total exports, powering a third straight month above $90B."
+          "headline_ko": "깃랩, AI 코딩 수요에 연간 매출 전망 상향…주가 14%↑",
+          "headline_en": "GitLab Raises Annual Revenue Guidance on AI Coding Demand, Shares Jump 14%",
+          "body_ko": "AI 코딩·개발 플랫폼 깃랩이 연간 매출 전망을 11억3,000만달러로 상향 조정하며 주가가 14% 넘게 뛰었다. 실적 발표를 마친 S&P500 기업 489개 중 86%가 시장 예상을 웃돌았는데, 그중 상당수가 AI 인프라 관련 기업이었다.",
+          "body_en": "AI coding and DevOps platform GitLab raised its annual revenue outlook to $1.13B, sending shares up more than 14%. Among the 489 S&P 500 companies that have reported this quarter, 86% beat estimates, with AI-infrastructure names driving many of the surprises."
         }
       ]
     },
@@ -553,10 +535,16 @@
           "body_en": "The won has strengthened nearly 200 won against the dollar in two months to the high-1,350s, driven by the Bank of Korea's hawkish stance and strong chip exports — prompting wealthy Koreans to buy dollar assets while they're cheap."
         },
         {
-          "headline_ko": "美 국채 10년물 장중 4.82%…2023년 11월來 최고치 찍고 진정",
-          "headline_en": "US 10-Year Yield Hits 4.82%, Highest Since Nov 2023, Then Eases",
-          "body_ko": "미국 10년물 국채금리가 장중 한때 4.821%까지 치솟아 2023년 11월 이후 최고치를 기록했다. 이후 상승폭을 반납하며 4.79%로 마감했고, 이 진정세가 뉴욕증시 반등의 발판이 됐다.",
-          "body_en": "The US 10-year Treasury yield spiked to 4.821% intraday — its highest since November 2023 — before paring the move to close at 4.79%. That retreat helped fuel Wall Street's rebound."
+          "headline_ko": "美 상무장관, 반도체 표적관세 예고…\"삼성·SK하이닉스 美서 생산해야\"",
+          "headline_en": "US Commerce Secretary Warns of Targeted Chip Tariffs — \"Samsung, SK Hynix Must Produce in the US\"",
+          "body_ko": "하워드 러트닉 美 상무장관이 미국 내 생산 여부에 따라 관세율을 달리 매기는 '반도체 표적관세'를 검토 중이라고 밝혔다. 국가별 관세율·수입쿼터 도입도 거론되면서, 미국에 생산시설을 확대해온 삼성전자·SK하이닉스의 관세 감면 폭이 핵심 변수로 떠올랐다. 트럼프 행정부는 임기 말까지 미국 내 반도체 생산 비중을 1%에서 40~50%로 끌어올리겠다는 목표를 세운 것으로 전해졌다.",
+          "body_en": "US Commerce Secretary Howard Lutnick said Washington is weighing 'targeted' semiconductor tariffs that would vary by whether chips are made domestically, along with country-specific rates and quotas. That puts Samsung Electronics and SK Hynix — which have been expanding US manufacturing — in the spotlight over how much tariff relief they'll get. The administration reportedly aims to lift the US share of chip production from about 1% to 40-50% by the end of its term."
+        },
+        {
+          "headline_ko": "글로벌 국채금리 발작, 왜?…\"인플레·부채·AI\" 3각파도",
+          "headline_en": "What's Behind the Global Bond Rout? Inflation, Debt, and AI",
+          "body_ko": "미 10년물이 2023년 11월 이후 최고치를 찍은 배경에는 인플레이션 우려, 정부 부채 증가에 따른 국채 공급 부담, 그리고 AI 투자 자금 조달을 위한 빅테크의 회사채 발행 러시가 겹쳐 있다는 분석이 나온다. 전문가들은 이 세 요인이 단시간에 풀리기 어려워 한국을 포함한 글로벌 채권시장의 변동성이 당분간 이어질 수 있다고 본다.",
+          "body_en": "Analysts say the spike in the US 10-year yield to its highest since November 2023 reflects three overlapping pressures: inflation worries, heavier Treasury supply from rising government debt, and a wave of corporate bond issuance by Big Tech to fund AI investment. None of the three is likely to resolve quickly, they say, meaning bond-market volatility — including in Korea — could persist."
         }
       ]
     }
@@ -644,8 +632,8 @@
     "1": "A trading floor at dawn, a green ascending index line glowing on dark curved monitors, a faint reflection of a bond-yield chart curling downward in the glass, warm amber highlights easing into cool blue, cinematic shallow depth of field.",
     "3": "Close-up of a monitor showing a steep green rebound candle after a dip, silhouettes of semiconductor wafer patterns faintly overlaid in the reflection, moody dramatic lighting, soft bokeh."
   },
-  "caption_ko": "美 10년물 국채금리가 장중 4.82%까지 치솟았다가 진정되며 나스닥·S&P500이 동반 반등했습니다. 브로드컴이 델에 이어 AI 실적 서프라이즈를 내며 엔비디아·마이크론 등 반도체주가 강세! 한국 8월 반도체 수출은 466.5억달러로 역대 최대를 기록했습니다. 다만 미국의 이란 유조선 첫 공격으로 중동 리스크는 여전하고, 코스피는 전날 4%대 급락의 여진 속에 개장을 앞두고 있어요 🔔\n\n#luckyon브리핑 #미국증시 #나스닥 #국채금리 #브로드컴 #엔비디아 #반도체 #AI반도체 #코스피 #원달러환율 #이란 #호르무즈해협 #경제뉴스 #증시브리핑 #오늘의증시",
-  "caption_en": "US 10-year Treasury yields spiked to 4.82% before easing, helping the Nasdaq and S&P 500 rebound together. Broadcom followed Dell with an AI earnings beat, lifting Nvidia, Micron, and other chipmakers. Korea's August chip exports hit a record $46.65B. Still, the first-ever US strike on an Iranian tanker keeps Mideast risk alive, and Seoul opens today still digesting yesterday's near-4% KOSPI plunge 🔔\n\n#luckyonbriefing #usstocks #nasdaq #treasuryyields #broadcom #nvidia #semiconductors #aichips #kospi #wonvsdollar #iran #straitofhormuz #markets #dailybriefing #economy",
+  "caption_ko": "美 10년물 국채금리가 장중 4.82%까지 치솟았다가 진정되며 나스닥·S&P500이 동반 반등했습니다. 브로드컴 AI칩 매출이 전년比 221% 폭증하며 엔비디아·마이크론 등 반도체주가 강세! 다만 美 상무장관이 반도체 표적관세를 예고하며 삼성·SK하이닉스가 주목받고, 미국의 이란 유조선 첫 공격으로 중동 리스크도 여전합니다. 코스피는 전날 4%대 급락의 여진 속에 개장을 앞두고 있어요 🔔\n\n#luckyon브리핑 #미국증시 #나스닥 #국채금리 #브로드컴 #엔비디아 #반도체 #AI반도체 #코스피 #반도체관세 #이란 #호르무즈해협 #경제뉴스 #증시브리핑 #오늘의증시",
+  "caption_en": "US 10-year Treasury yields spiked to 4.82% before easing, helping the Nasdaq and S&P 500 rebound together. Broadcom's AI chip revenue surged 221% year over year, lifting Nvidia, Micron, and other chipmakers. Still, the US Commerce Secretary is warning of targeted chip tariffs that put Samsung and SK Hynix in the spotlight, and the first-ever US strike on an Iranian tanker keeps Mideast risk alive. Seoul opens today still digesting yesterday's near-4% KOSPI plunge 🔔\n\n#luckyonbriefing #usstocks #nasdaq #treasuryyields #broadcom #nvidia #semiconductors #aichips #kospi #chiptariffs #iran #straitofhormuz #markets #dailybriefing #economy",
   "sources": [
     "Yahoo Finance",
     "FMP",
