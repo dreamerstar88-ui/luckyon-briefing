@@ -1,0 +1,658 @@
+{
+  "date": "2026-09-03",
+  "session": "am",
+  "dateLabel_ko": "2026.9.3(목) 아침",
+  "dateLabel_en": "Thu, Sep 3, 2026 · AM",
+  "headline_ko": "美 국채금리 정점 찍고 진정…뉴욕증시 3대 지수 동반 반등",
+  "headline_en": "Treasury Yields Peak and Ease as Wall Street Rebounds",
+  "headline_sub_ko": "나스닥 +0.45%·S&P500 +0.46% · 브로드컴·델 AI 실적 훈풍 속 이란 리스크는 여전",
+  "headline_sub_en": "Nasdaq +0.45%, S&P 500 +0.46% · Broadcom and Dell's AI beats offset lingering Iran risk",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 9/2 마감",
+    "en": "US Overnight · Sep 2 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 +0.45% · S&P500 +0.46%",
+        "en": "Nasdaq +0.45% · S&P 500 +0.46%"
+      },
+      {
+        "ko": "26,217.83 / 7,666.60 · 3거래일 만의 반등",
+        "en": "26,217.83 / 7,666.60 pts · snapped a losing streak"
+      }
+    ],
+    [
+      "rate",
+      {
+        "ko": "美 10년물 장중 4.82% 찍고 4.79%로 마감",
+        "en": "US 10Y hit 4.82% intraday, closed at 4.79%"
+      },
+      {
+        "ko": "2023년 11월 이후 최고치서 진정",
+        "en": "Eased off its highest level since Nov 2023"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "브로드컴, 델 이어 AI 실적 서프라이즈",
+        "en": "Broadcom follows Dell with an AI earnings beat"
+      },
+      {
+        "ko": "엔비디아 +3.21% · 반도체주 동반 강세",
+        "en": "Nvidia +3.21% led chipmakers higher"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "美 10년물 국채금리가 장중 4.821%까지 치솟아 2023년 11월 이후 최고치를 찍었다가 4.79%로 진정되며, 나스닥·S&P500·다우 3대 지수가 3거래일 만에 동반 반등했다.",
+      "브로드컴이 FY26 3분기 매출 295.9억달러·EPS 3.32달러로 시장 예상을 모두 상회하고 AI칩 매출을 FY27에 약 1,150억달러(2배)로 전망하면서, 델에 이어 또 한 번 AI 실적 훈풍이 불었다. 엔비디아 +3.21%, 마이크론 +2.43%, 퀄컴 +2.01%로 반도체주가 동반 강세를 보였다.",
+      "거래대금 상위 300종목 기준 상승 종목에 2,253억달러, 하락 종목에 1,095억달러가 몰려 상승 비중이 67.3%였다 — 지수 반등이 특정 종목이 아닌 폭넓은 매수세를 동반했다는 뜻이다.",
+      "다만 미국이 이란 정부 소유 유조선을 처음으로 공격하며 중동발 확전 우려는 가라앉지 않았고, 코스피는 전날 외국인·기관 동반 매도 속 4%대 급락(6,562.72)의 여진이 남은 채 개장을 앞두고 있다."
+    ],
+    "lines_en": [
+      "The US 10-year Treasury yield spiked to 4.821% intraday — its highest since November 2023 — before easing to 4.79%, helping the Nasdaq, S&P 500, and Dow all rebound together after three days of losses.",
+      "Broadcom beat estimates with FQ3 revenue of $29.59B and EPS of $3.32, and guided AI chip revenue to roughly double to about $115B in FY27 — extending the AI earnings cheer that started with Dell. Nvidia rose 3.21%, Micron 2.43%, and Qualcomm 2.01% as chipmakers rallied together.",
+      "Among the 300 most-traded stocks, $225.3B flowed into gainers versus $109.5B into decliners, a 67.3% share — a sign the rebound was broad-based rather than driven by a handful of names.",
+      "Still, the US struck an Iranian government-owned tanker for the first time, keeping fears of a wider Mideast conflict alive, while Seoul heads into today's open still digesting yesterday's near-4% KOSPI plunge on heavy foreign and institutional selling (6,562.72)."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,217.83",
+      "delta": "▲0.45%",
+      "dir": "up",
+      "note_ko": "국채금리 진정에 3거래일 만에 반등",
+      "note_en": "Rebounded after 3 days as yields eased"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,666.60",
+      "delta": "▲0.46%",
+      "dir": "up",
+      "note_ko": "3대 지수 동반 반등 · 다우는 +0.56%",
+      "note_en": "All 3 indexes rose · Dow led with +0.56%"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,562.72",
+      "delta": "▼3.99%",
+      "dir": "down",
+      "note_ko": "9/2 한국장 종가 · 장 열리기 전 · 외국인·기관 동반 매도",
+      "note_en": "Sep 2 Korea close · before today's open · foreign & institutional selling"
+    },
+    {
+      "label": "VIX",
+      "value": "15.20",
+      "delta": "▼6.98%",
+      "dir": "down",
+      "note_ko": "국채금리 진정에 변동성 완화",
+      "note_en": "Volatility eased as yields calmed"
+    },
+    {
+      "label": "Fear & Greed",
+      "value": "45 → 33",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "공포 국면 지속 · 지수 반등에도 심리 회복은 더뎌",
+      "note_en": "Still in Fear · sentiment lags the market's rebound"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.79% → 4.79%",
+      "delta": "-",
+      "dir": "flat",
+      "note_ko": "장중 4.82%(2023년 11월래 최고) 찍고 되돌림",
+      "note_en": "Hit 4.82% intraday (highest since Nov 2023) before retreating"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,357",
+      "value_sub": "· DXY 99.58",
+      "delta": "▼1.23%",
+      "dir": "down",
+      "note_ko": "24시간 기준 · 13개월래 최저권, 한은 매파 기조·반도체 수출 호조",
+      "note_en": "24h basis · near a 13-month low on BOK's hawkish stance and strong chip exports"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,434",
+      "delta": "▲1.99%",
+      "dir": "up",
+      "note_ko": "9/1 종가 대비 · 실물 금값 강세 지속",
+      "note_en": "Vs the Sep 1 close · physical gold prices stayed strong"
+    },
+    {
+      "label": "WTI",
+      "value": "$90.69",
+      "delta": "▲0.52%",
+      "dir": "up",
+      "note_ko": "브렌트유 $95선 상회 · 호르무즈 리스크 지속",
+      "note_en": "Brent above $95 a barrel · Hormuz risk persists"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$77,129",
+      "delta": "▼0.12%",
+      "dir": "down",
+      "note_ko": "24시간 기준 · 약보합",
+      "note_en": "24h basis · little changed"
+    }
+  ],
+  "market_note_ko": "나스닥·S&P500·Gold·WTI는 9/2 미국장 마감 기준 · 코스피는 9/2 한국장 종가(장 열리기 전) · 원/달러·비트코인은 이른 아침 시각 기준 24시간 등락률",
+  "market_note_en": "Nasdaq/S&P/Gold/WTI as of the Sep 2 US close · KOSPI is the Sep 2 Korea close (before today's open) · USD/KRW and Bitcoin show 24h change as of early morning KST",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear & Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "chart_series_values": [
+    26067.169921875,
+    26180.4609375,
+    25980.189453125,
+    26151.30078125,
+    26130.19921875,
+    26541.349609375,
+    26370.890625,
+    26099.76953125,
+    26217.828125
+  ],
+  "chart_series_labels": [
+    "8.20",
+    "8.21",
+    "8.24",
+    "8.25",
+    "8.26",
+    "8.27",
+    "8.31",
+    "9.1",
+    "9.2"
+  ],
+  "chart_title": {
+    "ko": "26,217.83 ▲0.45%",
+    "en": "26,217.83 ▲0.45%"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "8.27 고점 26,541.35 → 9.1 저점 26,099.77 → 9.2 26,217.83로 반등",
+    "en": "8.27 high 26,541.35 → 9.1 low 26,099.77 → rebounded to 26,217.83 on 9.2"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "소재·통신·반도체가 이끈 폭넓은 반등",
+    "en": "Materials, Comm, and Chips Led a Broad Rebound"
+  },
+  "sector_sub": {
+    "ko": "S&P 500 섹터 ETF + SMH · 9/2 종가 · 10개 상승 2개 하락",
+    "en": "S&P 500 sector ETFs + SMH · Sep 2 close · 10 up, 2 down"
+  },
+  "rank_kicker": "TODAY",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "9/2 미국 정규장 · 막대 옆 숫자는 그 종목 자체의 등락률",
+    "en": "Sep 2 US session · % beside each bar is the stock's own change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit: $B"
+  },
+  "econ_kicker": "DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "브로드컴 실적 서프라이즈 · 韓 반도체 수출 역대 최대",
+    "en": "Broadcom beats big · Korea's chip exports hit a record"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,217.83",
+          "delta": "▲0.45%",
+          "dir": "up",
+          "sub_ko": "118.06포인트 상승 · 8.27 고점(26,541.35) 대비 -1.22%",
+          "sub_en": "Up 118.06 pts · -1.22% off the Aug 27 high of 26,541.35"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,666.60",
+          "delta": "▲0.46%",
+          "dir": "up",
+          "sub_ko": "35.13포인트 상승 · 국채금리 진정에 반등, 3대 지수 중 다우가 +0.56%로 최대",
+          "sub_en": "Up 35.13 pts · rose as yields eased; Dow led the 3 indexes at +0.56%"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "핵심 섹터 ETF 12개",
+          "label_en": "12 core sector ETFs",
+          "up": 10,
+          "flat": 0,
+          "down": 2
+        },
+        {
+          "label_ko": "거래대금 상위 300종목",
+          "label_en": "Top 300 by turnover",
+          "up": 202,
+          "flat": 3,
+          "down": 95
+        }
+      ],
+      "note_ko": "12개 핵심 섹터 중 10개가 올랐고, 거래대금 상위 300종목 기준으로도 상승 종목에 2,253억달러·하락 종목에 1,095억달러가 몰려 상승 비중이 67.3%였다. 지수 반등이 폭넓은 매수세를 동반했다는 뜻이다.",
+      "note_en": "10 of 12 core sectors rose, and among the 300 most-traded names, $225.3B went into gainers against $109.5B into decliners — a 67.3% share. The rebound was broad, not concentrated in a few names."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 1.69
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm. (XLC)",
+          "value": 1.39
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": 0.96
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": 0.8
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health Care (XLV)",
+          "value": 0.75
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 0.51
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Cons. Staples (XLP)",
+          "value": 0.33
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": 0.26
+        },
+        {
+          "label_ko": "소비재 (XLY)",
+          "label_en": "Cons. Disc. (XLY)",
+          "value": 0.24
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 0.03
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Technology (XLK)",
+          "value": -0.02
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.7
+        }
+      ],
+      "note_ko": "12개 섹터 중 10개가 올랐다 — 국채금리 진정에 소재(XLB +1.69%)·통신(XLC +1.39%)·반도체(SMH +0.96%)가 강세를 보였고, 금리에 민감한 부동산(XLRE -0.70%)만 뚜렷하게 밀렸다.",
+      "note_en": "10 of 12 sectors rose as yields eased — materials (XLB +1.69%), communications (XLC +1.39%), and semis (SMH +0.96%) led, while rate-sensitive real estate (XLRE -0.70%) was the clear laggard."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$35.00B",
+          "pct": 3.21
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$20.30B",
+          "pct": 2.43
+        },
+        {
+          "name_ko": "델 테크놀로지",
+          "name_en": "Dell",
+          "value": "$17.92B",
+          "pct": 15.81
+        },
+        {
+          "name_ko": "샌디스크",
+          "name_en": "SanDisk",
+          "value": "$13.77B",
+          "pct": 1.08
+        },
+        {
+          "name_ko": "테슬라",
+          "name_en": "Tesla",
+          "value": "$12.05B",
+          "pct": 0.26
+        }
+      ],
+      "share": {
+        "label_ko": "상위 5종목의 거래대금 비중 · 표본 300종목 대비",
+        "label_en": "Top 5 stocks' share of turnover · vs. the 300-stock sample",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5 stocks",
+            "pct": 29.6,
+            "color": "#3987e5"
+          },
+          {
+            "label_ko": "나머지 295종목",
+            "label_en": "Other 295 stocks",
+            "pct": 70.4,
+            "color": "#8c8a85"
+          }
+        ]
+      },
+      "note_ko": "상위 5종목이 표본 거래대금의 29.6%를 차지했다. 엔비디아·마이크론·델 등 AI·반도체 관련주에 자금이 집중됐고, 델은 실적 서프라이즈 여진으로 15.81% 급등했다.",
+      "note_en": "The top five stocks made up 29.6% of the sample's turnover, dominated by AI and chip names — Nvidia, Micron, Dell. Dell still jumped 15.81% on the lingering reaction to its earnings beat."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "韓 8월 반도체 수출",
+          "label_en": "Korea Aug Semiconductor Exports",
+          "value": "$46.65B",
+          "delta": {
+            "ko": "전년比 +209%",
+            "en": "+209% YoY"
+          },
+          "dir": "up",
+          "sub_ko": "월간 역대 최대 · 전체 수출의 47.5% 차지",
+          "sub_en": "Record high for any August · 47.5% of total exports"
+        },
+        {
+          "label_ko": "美 8월 ADP 민간고용",
+          "label_en": "US Aug ADP Private Payrolls",
+          "value": "+38K",
+          "delta": {
+            "ko": "예상 +4.7만 하회",
+            "en": "Missed +47K est."
+          },
+          "dir": "down",
+          "sub_ko": "1월 이후 최소 증가폭",
+          "sub_en": "Smallest gain since January"
+        },
+        {
+          "label_ko": "브로드컴 FY26 3Q 매출",
+          "label_en": "Broadcom FQ3 FY26 Revenue",
+          "value": "$29.59B",
+          "delta": {
+            "ko": "예상 $293.6억 상회",
+            "en": "Beat $29.36B est."
+          },
+          "dir": "up",
+          "sub_ko": "전년동기 대비 +85.5%",
+          "sub_en": "+85.5% YoY"
+        },
+        {
+          "label_ko": "브로드컴 FY26 3Q EPS",
+          "label_en": "Broadcom FQ3 FY26 EPS",
+          "value": "$3.32",
+          "delta": {
+            "ko": "예상 $3.24 상회",
+            "en": "Beat $3.24 est."
+          },
+          "dir": "up",
+          "ref_ko": "AI칩 매출 FY27 전망 약 $1,150억(2배)",
+          "ref_en": "Guided FY27 AI chip revenue to ~$115B (2x)"
+        },
+        {
+          "label_ko": "크레도 테크놀로지 매출(YoY)",
+          "label_en": "Credo Technology Revenue (YoY)",
+          "value": "+20%",
+          "delta": {
+            "ko": "예상 상회",
+            "en": "Beat estimate"
+          },
+          "dir": "up",
+          "sub_ko": "수익성 우려로 주가는 20%대 급락",
+          "sub_en": "Shares fell about 20% on margin concerns"
+        },
+        {
+          "label_ko": "팔로알토네트웍스 FQ4 EPS",
+          "label_en": "Palo Alto Networks FQ4 EPS",
+          "value": "$1.02",
+          "delta": {
+            "ko": "예상 $0.98 상회",
+            "en": "Beat $0.98 est."
+          },
+          "dir": "up",
+          "sub_ko": "매출 $34.1억 · AI 보안 수요 견조",
+          "sub_en": "Revenue $3.41B · AI-driven security demand held up"
+        }
+      ],
+      "note_ko": "ADP 민간고용은 예상을 밑돌아 국채금리 진정에 힘을 보탰지만, 브로드컴·크레도·팔로알토네트웍스의 실적과 한국 반도체 수출 기록은 AI 수요 자체가 여전히 견조하다는 것을 보여줬다.",
+      "note_en": "ADP's soft payrolls reading helped ease Treasury yields, while Broadcom, Credo, Palo Alto Networks, and Korea's record chip exports all showed underlying AI demand is still running hot."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "브로드컴, AI칩 매출 전망 2배로 상향…시간외 출렁",
+          "headline_en": "Broadcom Doubles AI Chip Forecast, Stock Wobbles After Hours",
+          "body_ko": "브로드컴이 FY26 3분기 매출 295.9억달러·EPS 3.32달러로 시장 예상을 모두 상회했다. 훅 탄 CEO는 AI칩 매출이 FY27에 약 1,150억달러로 2배 늘어날 것이라 밝혔지만, 눈높이가 높아진 투자자들 반응에 주가는 시간외 초반 하락했다가 낙폭을 줄였다.",
+          "body_en": "Broadcom beat estimates with FQ3 revenue of $29.59B and EPS of $3.32. CEO Hock Tan guided AI chip revenue to roughly double to about $115B in FY27, but shares initially fell after hours on sky-high expectations before paring losses."
+        },
+        {
+          "headline_ko": "엔비디아·마이크론 동반 강세…어제 하락했던 메모리주 하루 만에 반등",
+          "headline_en": "Nvidia, Micron Rally Together as Memory Names Snap Back",
+          "body_ko": "엔비디아가 3.21%, 마이크론이 2.43%, 퀄컴이 2.01% 올랐다. 애플의 중국산 메모리 소싱 우려로 전날 하락했던 마이크론은 델의 AI서버 수요 확인에 하루 만에 반등했다.",
+          "body_en": "Nvidia rose 3.21%, Micron 2.43%, and Qualcomm 2.01%. Micron, which fell a day earlier on worries over Apple sourcing memory from China, reversed course on confirmed AI-server demand."
+        },
+        {
+          "headline_ko": "크레도 테크놀로지, 매출 20%↑에도 수익성 우려로 급락",
+          "headline_en": "Credo Grows Revenue 20%, Falls on Margin Miss",
+          "body_ko": "AI 네트워킹칩 업체 크레도 테크놀로지는 매출이 전년 대비 20% 늘며 예상을 웃돌았지만, 수익성이 기대에 못 미쳤다는 평가에 주가가 20%대 급락했다. AI 수요 자체보다 마진의 질을 따지는 옥석가리기가 나타났다.",
+          "body_en": "AI networking chipmaker Credo Technology grew revenue 20% year over year, beating estimates, but shares plunged about 20% on disappointing profitability — a sign investors are now screening AI names by margin quality, not just demand."
+        },
+        {
+          "headline_ko": "앤트로픽, 클로드 페이블·미토스 5.1 공개…캐시 요금 75% 인하",
+          "headline_en": "Anthropic Unveils Claude Fable & Mythos 5.1, Cuts Cache Pricing 75%",
+          "body_ko": "앤트로픽이 실전 수행 능력에 초점을 맞춘 클로드 페이블 5.1과 연구용 미토스 5.1을 공개했다. 캐시 읽기 요금을 기존보다 75% 낮췄고 고강도 작업은 비용이 최대 45%까지 줄어든다. 중국산 저가 모델 공세에 맞선 가격 대응이다.",
+          "body_en": "Anthropic launched Claude Fable 5.1, built for real-world task performance, alongside the research-focused Mythos 5.1. Cache-read pricing dropped 75%, cutting costs up to 45% on heavy workloads — a direct response to cheaper Chinese models."
+        },
+        {
+          "headline_ko": "철강도 AI 특수…데이터센터용 변압기 강판·송전탑 강재 수출 늘어",
+          "headline_en": "Steel Catches an AI Tailwind From Data-Center Power Gear",
+          "body_ko": "EU 수입규제로 위축됐던 국내 철강 수출이 미국 AI 데이터센터 건설 특수로 일부 만회됐다. 변압기용 전기강판과 송전탑용 강재 등 전력 인프라 관련 품목 수출이 늘었다.",
+          "body_en": "Korean steel exports, squeezed by EU import curbs, got a partial offset from US AI data-center construction — exports of transformer-grade electrical steel and transmission-tower steel both rose."
+        },
+        {
+          "headline_ko": "韓 반도체 수출 역대 최대…AI發 메모리 슈퍼사이클 지속",
+          "headline_en": "Korea's Chip Exports Hit a Record on the AI Memory Supercycle",
+          "body_ko": "8월 한국 반도체 수출이 전년 대비 209% 급증한 466.5억달러로 월간 역대 최대를 기록했다. HBM·서버 D램 수요가 이어지며 전체 수출의 47.5%를 차지, 3개월 연속 900억달러대 수출을 이끌었다.",
+          "body_en": "South Korea's semiconductor exports surged 209% year over year to a record $46.65B in August. Sustained HBM and server DRAM demand made chips 47.5% of total exports, powering a third straight month above $90B."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "美, 이란 정부 소유 유조선 첫 공격…확전 우려 고조",
+          "headline_en": "US Strikes Iranian Government-Owned Tanker for First Time",
+          "body_ko": "미 중부사령부가 현지시각 1일 이란 혁명수비대 시설과 함께 이란 정부 소유 유조선을 처음으로 공격했다. 미국이 이란 소유 선박을 직접 타격한 것은 이번이 처음으로, 호르무즈 해협을 둘러싼 확전 우려가 다시 커졌다.",
+          "body_en": "US Central Command struck an Iranian government-owned tanker on Sept. 1 local time, alongside IRGC facilities — the first direct US strike on an Iranian-flagged vessel, reigniting fears of a wider conflict around the Strait of Hormuz."
+        },
+        {
+          "headline_ko": "아시아 증시 일제히 하락…니케이 2.9% 급락",
+          "headline_en": "Asian Markets Slide as Nikkei Drops 2.9%",
+          "body_ko": "2일 아시아 주요 증시가 미 국채금리 급등과 글로벌 채권 매도세 속에 일제히 하락했다. 일본 니케이가 2.9% 급락했고 중국 상하이종합도 약세를 보였다.",
+          "body_en": "Major Asian indexes fell in tandem on Sept. 2 amid a global bond selloff and surging US Treasury yields, with Japan's Nikkei tumbling 2.9% and China's Shanghai Composite also weaker."
+        },
+        {
+          "headline_ko": "원/달러 1,357원, 13개월래 최저…\"쌀 때 달러 사자\"",
+          "headline_en": "Won Nears 13-Month High at 1,357, Spurring Dollar-Buying",
+          "body_ko": "원/달러 환율이 두 달 새 200원 가까이 떨어지며 1,350원대 후반까지 내려왔다. 한국은행의 매파적 기조와 반도체 수출 호조가 원화 강세를 이끌자, 자산가들 사이에서는 저가에 달러 자산을 매수하려는 움직임이 확산하고 있다.",
+          "body_en": "The won has strengthened nearly 200 won against the dollar in two months to the high-1,350s, driven by the Bank of Korea's hawkish stance and strong chip exports — prompting wealthy Koreans to buy dollar assets while they're cheap."
+        },
+        {
+          "headline_ko": "美 국채 10년물 장중 4.82%…2023년 11월來 최고치 찍고 진정",
+          "headline_en": "US 10-Year Yield Hits 4.82%, Highest Since Nov 2023, Then Eases",
+          "body_ko": "미국 10년물 국채금리가 장중 한때 4.821%까지 치솟아 2023년 11월 이후 최고치를 기록했다. 이후 상승폭을 반납하며 4.79%로 마감했고, 이 진정세가 뉴욕증시 반등의 발판이 됐다.",
+          "body_en": "The US 10-year Treasury yield spiked to 4.821% intraday — its highest since November 2023 — before paring the move to close at 4.79%. That retreat helped fuel Wall Street's rebound."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "지금 ~ 오늘 21:00",
+    "en": "Now through 9 PM KST today"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "09:30",
+      "title_ko": "일본 8월 지분은행 서비스업 PMI",
+      "title_en": "Japan Aug Jibun Bank Services PMI",
+      "detail_ko": "예상 52.3 · 이전 52.3",
+      "detail_en": "Est. 52.3 · prior 52.3",
+      "importance": "mid"
+    },
+    {
+      "time": "10:45",
+      "title_ko": "중국 8월 차이신 서비스업 PMI",
+      "title_en": "China Aug Caixin Services PMI",
+      "detail_ko": "예상 50.6 · 이전 50.4",
+      "detail_en": "Est. 50.6 · prior 50.4",
+      "importance": "high"
+    },
+    {
+      "time": "16:55",
+      "title_ko": "독일 8월 HCOB 서비스업 PMI(확정치)",
+      "title_en": "Germany Aug HCOB Services PMI (Final)",
+      "detail_ko": "예상(속보치) 48.5 · 이전 48.5",
+      "detail_en": "Est. (flash) 48.5 · prior 48.5",
+      "importance": "mid"
+    },
+    {
+      "time": "17:00",
+      "title_ko": "유로존 8월 HCOB 종합 PMI(확정치)",
+      "title_en": "Eurozone Aug HCOB Composite PMI (Final)",
+      "detail_ko": "예상(속보치) 52.1 · 이전 52.1",
+      "detail_en": "Est. (flash) 52.1 · prior 52.1",
+      "importance": "mid"
+    },
+    {
+      "time": "18:00",
+      "title_ko": "유로존 7월 생산자물가(PPI, 전월비)",
+      "title_en": "Eurozone Jul PPI (MoM)",
+      "detail_ko": "예상 +1.2% · 이전 -0.3%",
+      "detail_en": "Est. +1.2% · prior -0.3%",
+      "importance": "mid"
+    },
+    {
+      "time": "18:30",
+      "title_ko": "美 8월 챌린저 감원보고서",
+      "title_en": "US Aug Challenger Job Cuts",
+      "detail_ko": "이전 33,429명",
+      "detail_en": "Prior 33,429",
+      "importance": "mid"
+    },
+    {
+      "time": "9/4 21:30",
+      "title_ko": "美 8월 비농업고용·실업률",
+      "title_en": "US Aug Nonfarm Payrolls & Unemployment",
+      "detail_ko": "예상 +5.8만 · 전월 -2.3만(수정치) · 실업률 예상 4.1%",
+      "detail_en": "Est. +58K · prior -23K (revised) · unemployment rate est. 4.1%",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "card_photos": {
+    "1": "A trading floor at dawn, a green ascending index line glowing on dark curved monitors, a faint reflection of a bond-yield chart curling downward in the glass, warm amber highlights easing into cool blue, cinematic shallow depth of field.",
+    "3": "Close-up of a monitor showing a steep green rebound candle after a dip, silhouettes of semiconductor wafer patterns faintly overlaid in the reflection, moody dramatic lighting, soft bokeh."
+  },
+  "caption_ko": "美 10년물 국채금리가 장중 4.82%까지 치솟았다가 진정되며 나스닥·S&P500이 동반 반등했습니다. 브로드컴이 델에 이어 AI 실적 서프라이즈를 내며 엔비디아·마이크론 등 반도체주가 강세! 한국 8월 반도체 수출은 466.5억달러로 역대 최대를 기록했습니다. 다만 미국의 이란 유조선 첫 공격으로 중동 리스크는 여전하고, 코스피는 전날 4%대 급락의 여진 속에 개장을 앞두고 있어요 🔔\n\n#luckyon브리핑 #미국증시 #나스닥 #국채금리 #브로드컴 #엔비디아 #반도체 #AI반도체 #코스피 #원달러환율 #이란 #호르무즈해협 #경제뉴스 #증시브리핑 #오늘의증시",
+  "caption_en": "US 10-year Treasury yields spiked to 4.82% before easing, helping the Nasdaq and S&P 500 rebound together. Broadcom followed Dell with an AI earnings beat, lifting Nvidia, Micron, and other chipmakers. Korea's August chip exports hit a record $46.65B. Still, the first-ever US strike on an Iranian tanker keeps Mideast risk alive, and Seoul opens today still digesting yesterday's near-4% KOSPI plunge 🔔\n\n#luckyonbriefing #usstocks #nasdaq #treasuryyields #broadcom #nvidia #semiconductors #aichips #kospi #wonvsdollar #iran #straitofhormuz #markets #dailybriefing #economy",
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "KRX (FinanceDataReader)",
+    "FINRA",
+    "CNN Fear & Greed",
+    "산업통상부",
+    "Naver News"
+  ]
+}
