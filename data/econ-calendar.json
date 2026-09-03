@@ -1,61 +1,11 @@
 {
-  "fetchedAt": "2026-09-02T15:04:12Z",
+  "fetchedAt": "2026-09-03T00:19:43Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-08-31T15:04:12Z",
-    "to": "2026-09-16T15:04:12Z"
+    "from": "2026-09-01T00:19:43Z",
+    "to": "2026-09-17T00:19:43Z"
   },
   "events": [
-    {
-      "at": "2026-08-31T15:30:00Z",
-      "country": "US",
-      "name": "3-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.715,
-      "actual": 3.77,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-31T15:30:00Z",
-      "country": "US",
-      "name": "6-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.79,
-      "actual": 3.885,
-      "unit": "%"
-    },
-    {
-      "at": "2026-08-31T23:50:00Z",
-      "country": "JP",
-      "name": "Capital Spending",
-      "impact": "LOW",
-      "consensus": 0.2,
-      "previous": 0,
-      "actual": 1.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-01T00:00:00Z",
-      "country": "EMU",
-      "name": "G20 Finance Ministers and Central Bank Governors Meeting",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-01T00:00:00Z",
-      "country": "KR",
-      "name": "Trade Balance",
-      "impact": "LOW",
-      "consensus": 30.7,
-      "previous": 30.39,
-      "actual": 34.75,
-      "unit": "$"
-    },
     {
       "at": "2026-09-01T00:30:00Z",
       "country": "JP",
@@ -493,7 +443,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -1978.4,
-      "actual": null,
+      "actual": -824,
       "unit": "¥"
     },
     {
@@ -503,7 +453,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -764.1,
-      "actual": null,
+      "actual": 35.8,
       "unit": "¥"
     },
     {
@@ -1512,7 +1462,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -824,
       "actual": null,
       "unit": "¥"
     },
@@ -1522,7 +1472,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 35.8,
       "actual": null,
       "unit": "¥"
     },
@@ -2465,6 +2415,116 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Fed Interest Rate Decision",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.75,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Fed Monetary Policy Statement",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "FOMC Economic Projections",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 1st year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 2nd year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 3rd year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - Current",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - Longer",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-16T18:30:00Z",
+      "country": "US",
+      "name": "FOMC Press Conference",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-16T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-16T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
     }
   ]
 }
