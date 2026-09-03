@@ -1,0 +1,286 @@
+{
+  "date": "2026-09-04",
+  "session": "am",
+  "dateLabel_ko": "2026.9.4(금) 아침",
+  "dateLabel_en": "Fri, Sep 4, 2026 · AM",
+
+  "headline_ko": "월러 \"9월 금리 동결 지지\"…뉴욕 3대 지수 동반 상승, 금·비트코인 급등",
+  "headline_en": "Fed's Waller Backs a September Hold, Wall Street Rallies as Gold and Bitcoin Surge",
+  "headline_sub_ko": "나스닥 +1.40% · S&P500 +1.06% · 국채금리 진정에 위험자산 전반 강세",
+  "headline_sub_en": "Nasdaq +1.40%, S&P 500 +1.06% · Easing yields lift risk assets across the board",
+  "cover_kicker": {"ko": "간밤 미국장 · 9/3 마감", "en": "US Overnight · Sep 3 Close"},
+  "cover_facts": [
+    ["shield",
+      {"ko": "나스닥 +1.40% · S&P500 +1.06%", "en": "Nasdaq +1.40% · S&P 500 +1.06%"},
+      {"ko": "26,584.06 / 7,747.71 · 다우도 +1.18%로 3대 지수 동반 상승", "en": "26,584.06 / 7,747.71 pts · Dow also rose 1.18%, all three up"}
+    ],
+    ["rate",
+      {"ko": "월러 연준 이사 \"9월 금리 동결 지지\"", "en": "Fed's Waller signals support for a Sept. hold"},
+      {"ko": "美 10년물 국채금리 4.79%→4.77%로 하락, 인상 우려 완화", "en": "US 10Y yield eased 4.79%→4.77% as hike fears cooled"}
+    ],
+    ["globe",
+      {"ko": "금 온스당 $4,524·비트코인 8만1,000달러 재돌파", "en": "Gold hit $4,524/oz, Bitcoin back above $81,000"},
+      {"ko": "달러 약세에 금·가상자산까지 동반 강세", "en": "A weaker dollar lifted gold and crypto together"}
+    ]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "크리스토퍼 월러 연준 이사가 8월 물가지표가 뒷받침되면 9월 FOMC에서 금리 동결을 지지하겠다고 밝히며, 그동안 시장을 짓눌러온 추가 금리 인상 우려가 완화됐다. 다우존스가 1.18%, S&P500이 1.06%, 나스닥종합이 1.40% 오르며 3대 지수가 동반 상승했다.",
+      "국채금리가 장중 4.74%까지 내려앉으며 위험자산 전반에 매수세가 몰렸다. 비트코인이 5%대 급등해 3개월 만에 8만달러선을 재돌파했고, 금 선물도 2%대 상승하며 최근 조정폭을 되돌렸다.",
+      "거래대금 상위 300종목 기준으로 상승 종목에 3,202억달러, 하락 종목에 831억달러가 몰려 상승 비중이 79.4%에 달했다 — 지수 반등이 특정 종목이 아닌 폭넓은 매수세를 동반했다는 뜻이다.",
+      "다만 국제유가는 미·이란 무력 충돌 여파로 높은 수준을 유지했고, 국내에서는 나스닥 강세에도 삼성전자·SK하이닉스가 동반 약세를 보이며 코스피가 244포인트 급등락 끝에 0.26% 강보합에 그쳤다."
+    ],
+    "lines_en": [
+      "Fed Governor Christopher Waller said he would support holding rates steady at the September FOMC meeting if August inflation data cooperates, easing the rate-hike fears that had weighed on markets. The Dow rose 1.18%, the S&P 500 1.06%, and the Nasdaq Composite 1.40%, with all three indexes rallying together.",
+      "Treasury yields fell as low as 4.74% intraday, pulling buyers into risk assets broadly. Bitcoin jumped more than 5% to reclaim $80,000 for the first time in three months, and gold futures rose over 2%, clawing back a recent pullback.",
+      "Among the top 300 stocks by turnover, $320.2B flowed into gainers versus $83.1B into decliners — a 79.4% share — a sign the rally was broad-based rather than concentrated in a handful of names.",
+      "Still, oil stayed elevated on lingering US-Iran military tension, and back home, Samsung Electronics and SK Hynix both slipped despite Wall Street's strength, leaving KOSPI to eke out just a 0.26% gain after swinging 244 points intraday."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,584.06", "delta": "▲1.40%", "dir": "up", "note_ko": "3대 지수 동반 상승 견인 · 9거래일 최고치", "note_en": "Led the rally · a 9-session high"},
+    {"label": "S&P 500", "value": "7,747.71", "delta": "▲1.06%", "dir": "up", "note_ko": "다우는 +1.18%로 3대 지수 중 최대 상승", "note_en": "Dow led the 3 indexes at +1.18%"},
+    {"label": "KOSPI", "value": "6,579.48", "delta": "▲0.26%", "dir": "up", "note_ko": "9/3 한국장 종가 · 장 열리기 전 · 244p 급등락 끝 강보합", "note_en": "Sep 3 Korea close · before today's open · swung 244pts to a slim gain"},
+    {"label": "VIX", "value": "14.32", "delta": "▼5.79%", "dir": "down", "note_ko": "국채금리 진정에 변동성 완화", "note_en": "Volatility eased as yields calmed"},
+    {"label": "Fear & Greed", "value": "33 → 35", "delta": "▲", "dir": "up", "note_ko": "공포 국면 지속 · 소폭 개선", "note_en": "Still in Fear, edging higher"},
+    {"label": "US 10Y", "value": "4.79% → 4.77%", "delta": "▼", "dir": "down", "note_ko": "월러 발언에 장중 4.74%까지 하락", "note_en": "Fell as low as 4.74% intraday on Waller's remarks"},
+    {"label": "USD/KRW", "value": "1,356", "value_sub": "· DXY 99.00", "delta": "▼0.23%", "dir": "down", "note_ko": "24시간 기준 · 달러 전반 약세", "note_en": "24h basis · broad dollar weakness"},
+    {"label": "Gold", "value": "$4,524", "delta": "▲2.13%", "dir": "up", "note_ko": "달러 약세에 반등, 최근 조정폭 되돌림", "note_en": "Rebounded on a weaker dollar, clawing back a recent pullback"},
+    {"label": "WTI", "value": "$91.67", "delta": "▲1.00%", "dir": "up", "note_ko": "미·이란 충돌 여파로 높은 수준 유지", "note_en": "Stayed elevated on lingering US-Iran tension"},
+    {"label": "Bitcoin", "value": "$81,421", "delta": "▲5.74%", "dir": "up", "note_ko": "3개월 만에 8만달러 재돌파, 숏스퀴즈 동반", "note_en": "Topped $80K again for the first time in 3 months amid a short squeeze"}
+  ],
+  "market_note_ko": "나스닥·S&P500·Gold·WTI는 9/3 미국장 마감 기준 · 코스피는 9/3 한국장 종가(장 열리기 전) · 원/달러·비트코인은 이른 아침 시각 기준 24시간 등락률",
+  "market_note_en": "Nasdaq/S&P/Gold/WTI as of the Sep 3 US close · KOSPI is the Sep 3 Korea close (before today's open) · USD/KRW and Bitcoin show 24h change as of early morning KST",
+
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": "",
+  "main_tile_note": "",
+
+  "chart_series_values": [25980.189453125, 26151.30078125, 26130.19921875, 26541.349609375, 26402.419921875, 26370.890625, 26099.76953125, 26217.828125, 26584.060546875],
+  "chart_series_labels": ["8.24", "8.25", "8.26", "8.27", "8.28", "8.31", "9.1", "9.2", "9.3"],
+  "chart_title": {"ko": "26,584.06 ▲1.40%", "en": "26,584.06 ▲1.40%"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "8.27 고점 26,541.35 → 9.1 저점 26,099.77 → 9.3 26,584.06로 9거래일 최고치 경신", "en": "8.27 high 26,541.35 → 9.1 low 26,099.77 → climbed to a 9-day high of 26,584.06 on 9.3"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "금융·경기소비재가 이끈 폭넓은 반등", "en": "Financials and Discretionary Lead a Broad Rebound"},
+  "sector_sub": {"ko": "S&P 500 섹터 ETF + SMH · 9/3 종가 · 10개 상승 2개 하락", "en": "S&P 500 sector ETFs + SMH · Sep 3 close · 10 up, 2 down"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
+  "rank_sub": {"ko": "9/3 미국 정규장 · 막대 옆 숫자는 그 종목 자체의 등락률", "en": "Sep 3 US session · % beside each bar is the stock's own change"},
+  "rank_unit": {"ko": "단위 · 십억달러", "en": "Unit: $B"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "ISM 서비스업 서프라이즈 상회 · 고용 냉각 신호 확산", "en": "ISM services beat, but labor-market signals keep cooling"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,584.06", "delta": "▲1.40%", "dir": "up",
+          "sub_ko": "366.23포인트 상승 · 9거래일 최고치 경신", "sub_en": "Up 366.23 pts · a fresh 9-session high"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,747.71", "delta": "▲1.06%", "dir": "up",
+          "sub_ko": "81.11포인트 상승 · 다우는 +1.18%로 3대 지수 중 최대", "sub_en": "Up 81.11 pts · Dow led the 3 indexes at +1.18%"}
+      ],
+      "breadth": [
+        {"label_ko": "핵심 섹터 ETF 12개", "label_en": "12 core sector ETFs", "up": 10, "flat": 0, "down": 2},
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 183, "flat": 5, "down": 112}
+      ],
+      "note_ko": "12개 핵심 섹터 중 10개가 올랐고, 거래대금 상위 300종목 기준으로도 상승 종목에 3,202억달러·하락 종목에 831억달러가 몰려 상승 비중이 79.4%에 달했다. 국채금리 진정이 특정 종목이 아닌 폭넓은 매수세로 이어졌다는 뜻이다.",
+      "note_en": "10 of 12 core sectors rose, and among the top 300 stocks by turnover, $320.2B flowed into gainers versus $83.1B into decliners — a 79.4% share. The rally was broad-based, not concentrated in a handful of names, as Treasury yields eased."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": 1.56},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Cons. Disc. (XLY)", "value": 1.39},
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": 1.29},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": 1.19},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": 1.03},
+        {"label_ko": "통신 (XLC)", "label_en": "Comm. (XLC)", "value": 0.85},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": 0.84},
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 0.39},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": 0.18},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Cons. Staples (XLP)", "value": -0.32},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": -0.62},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -0.74}
+      ],
+      "note_ko": "금리에 민감한 금융(XLF +1.56%)·부동산(XLRE +1.19%)이 강세를 보였고, 반도체(SMH +0.39%)는 브로드컴 차익실현(-2.74%)에 상대적으로 부진했다. 에너지(XLE -0.74%)·소재(XLB -0.62%)만 하락했다.",
+      "note_en": "Rate-sensitive financials (XLF +1.56%) and real estate (XLRE +1.19%) led, while semis (SMH +0.39%) lagged as Broadcom fell 2.74% on profit-taking. Only energy (XLE -0.74%) and materials (XLB -0.62%) declined."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$30.59B", "pct": 1.8},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$23.65B", "pct": 5.42},
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$23.10B", "pct": 0.22},
+        {"name_ko": "브로드컴", "name_en": "Broadcom", "value": "$21.47B", "pct": -2.74},
+        {"name_ko": "스페이스X", "name_en": "SpaceX", "value": "$18.11B", "pct": 6.42}
+      ],
+      "share": {
+        "label_ko": "상위 5종목의 거래대금 비중 · 표본 300종목 대비",
+        "label_en": "Top 5 stocks' share of turnover · vs. the 300-stock sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5 stocks", "pct": 29.0, "color": "#3987e5"},
+          {"label_ko": "나머지 295종목", "label_en": "Other 295 stocks", "pct": 71.0, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "상위 5종목이 표본 거래대금의 29.0%를 차지했다. 엔비디아·테슬라·마이크론 등 AI·반도체 관련주에 자금이 몰렸고, 브로드컴은 실적 발표 다음 날 차익실현 매물로 유일하게 하락했다. 상장기업 스페이스X(SPCX)는 +6.42%로 상위권에 이름을 올렸다.",
+      "note_en": "The top 5 stocks made up 29.0% of the sample's turnover, dominated by AI and chip names like Nvidia, Tesla, and Micron. Broadcom was the lone decliner among them on profit-taking a day after its earnings beat, while publicly traded Space Exploration Technologies (SPCX) jumped 6.42% to crack the top 5."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {"label_ko": "美 8월 ISM 서비스업 PMI", "label_en": "US Aug ISM Services PMI", "value": "55.4",
+          "delta": {"ko": "예상 54.3 상회", "en": "Beat 54.3 est."}, "dir": "up",
+          "sub_ko": "전월 54.1", "sub_en": "Prior 54.1"},
+        {"label_ko": "美 신규 실업수당청구(주간)", "label_en": "US Initial Jobless Claims (weekly)", "value": "20.6만건",
+          "delta": {"ko": "예상 20.5만 소폭 상회", "en": "Slightly above 20.5K est."}, "dir": "up",
+          "sub_ko": "4주 평균 20.73만건 · 전주 20.3만", "sub_en": "4-week avg 207.25K · prior 203K"},
+        {"label_ko": "美 2분기 비농업생산성(확정치)", "label_en": "US Q2 Nonfarm Productivity (final)", "value": "+1.4%",
+          "delta": {"ko": "예상치 부합", "en": "In line with est."}, "dir": "flat",
+          "sub_ko": "연율 기준", "sub_en": "Annualized",
+          "ref_ko": "근로자 1인당 산출량 증가율 · 높을수록 임금 인상 여력", "ref_en": "Output per worker, annualized · higher gives more room for wage gains"},
+        {"label_ko": "美 2분기 단위노동비용(확정치)", "label_en": "US Q2 Unit Labor Costs (final)", "value": "+1.2%",
+          "delta": {"ko": "예상 1.3% 하회", "en": "Below 1.3% est."}, "dir": "down",
+          "sub_ko": "비용 압력 둔화 신호", "sub_en": "A sign of easing cost pressure",
+          "ref_ko": "생산량 대비 인건비 증가율 · 낮을수록 물가 압력 완화", "ref_en": "Labor cost per unit of output · lower eases inflation pressure"},
+        {"label_ko": "美 8월 챌린저 감원보고서", "label_en": "US Aug Challenger Job Cuts", "value": "52,881명",
+          "delta": {"ko": "전월 33,429명 대비 급증", "en": "Up sharply from 33,429 prior"}, "dir": "up",
+          "sub_ko": "감원 증가는 고용시장 냉각 신호", "sub_en": "Rising cuts point to a cooling job market",
+          "ref_ko": "기업이 발표한 감원 계획 인원 집계 · 늘수록 고용 둔화 신호", "ref_en": "Tally of announced layoff plans · a rising count signals hiring is slowing"},
+        {"label_ko": "도큐사인 2분기 EPS", "label_en": "DocuSign Q2 EPS", "value": "$1.16",
+          "delta": {"ko": "예상 $1.09 상회", "en": "Beat $1.09 est."}, "dir": "up",
+          "sub_ko": "매출 8억7,570만달러로 예상치도 상회", "sub_en": "Revenue $875.7M also topped estimates"}
+      ],
+      "note_ko": "ISM 서비스업 PMI가 예상을 웃돌며 경기 자체는 견조함을 보였지만, 챌린저 감원보고서·신규 실업수당청구·생산성 지표는 모두 고용시장이 식고 있다는 신호를 냈다. 오늘 밤 발표될 8월 비농업고용(예상 +5.8만) 결과가 다음 방향을 결정할 전망이다.",
+      "note_en": "The ISM services PMI beat estimates, showing the economy itself remains solid, but Challenger job cuts, jobless claims, and productivity data all pointed to a cooling labor market. Tonight's August nonfarm payrolls report (est. +58K) will likely set the next direction."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {"headline_ko": "젠슨 황 \"美 AI 인프라에 올해 1조달러 투자\"…AI를 도로·전기 같은 필수 인프라로",
+          "headline_en": "Nvidia's Huang Pledges $1 Trillion in US AI Infrastructure This Year",
+          "body_ko": "엔비디아 CEO 젠슨 황이 올해 미국 AI 인프라 투자 규모를 1조달러까지 늘리겠다고 밝혔다. 그는 AI를 도로·전기와 같은 필수 인프라로 규정하며, 데이터센터 건설 지원을 위해 금융회사들과 약 5,000억달러 규모의 대출·보증 프로그램도 추진 중이라고 전했다.",
+          "body_en": "Nvidia CEO Jensen Huang said the company plans to boost US AI infrastructure investment to $1 trillion this year, framing AI as essential infrastructure on par with roads and electricity. He said Nvidia is also arranging roughly $500 billion in financing and guarantees with banks to support data-center construction."},
+        {"headline_ko": "엔비디아, 오픈소스 AI 허브 '허깅페이스' 130억달러에 인수",
+          "headline_en": "Nvidia to Acquire Open-Source AI Hub Hugging Face for $13 Billion",
+          "body_ko": "엔비디아가 오픈소스 AI 모델 공유 플랫폼 허깅페이스를 약 130억달러에 인수한다고 발표했다. GPU·데이터센터 장비를 넘어 AI 모델의 개발·유통 단계까지 영향력을 넓히려는 행보로, 시장에서는 엔비디아의 AI 생태계 지배력 확대에 대한 경계도 이어지고 있다.",
+          "body_en": "Nvidia announced it will acquire Hugging Face, the open-source AI model-sharing platform, for roughly $13 billion. The deal extends Nvidia's reach beyond GPUs and data-center hardware into how AI models are built and distributed, though some investors remain wary of the chipmaker's growing grip on the AI ecosystem."},
+        {"headline_ko": "G20 혁신장관회의서 젠슨 황·올트먼·저커버그·머스크 \"AI 규제 최소화\" 한목소리",
+          "headline_en": "Nvidia, OpenAI, Meta, xAI Chiefs Urge G20 to Ease AI Regulation",
+          "body_ko": "노스캐롤라이나 채플힐에서 열린 G20 혁신장관회의에서 엔비디아 젠슨 황, 오픈AI 샘 올트먼, 메타 마크 저커버그, xAI 일론 머스크가 나란히 각국 정부에 AI 규제보다 데이터센터·전력 등 인프라 투자를 우선해달라고 촉구했다. 미국은 이 자리에서 G20과 AI 규제 완화에 합의했다.",
+          "body_en": "At the G20 Innovation Ministers meeting in Chapel Hill, North Carolina, Nvidia's Jensen Huang, OpenAI's Sam Altman, Meta's Mark Zuckerberg, and xAI's Elon Musk jointly urged governments to prioritize infrastructure investment — data centers and power — over regulation. The US reached an agreement with the G20 to ease AI rules at the meeting."},
+        {"headline_ko": "챗GPT·클로드·그록 한때 동시 '먹통'…이례적 장애에 신고 4만 건",
+          "headline_en": "ChatGPT, Claude, and Grok Suffer Simultaneous Outages",
+          "body_ko": "오픈AI 챗GPT, 앤트로픽 클로드, xAI 그록이 3일(현지시간) 비슷한 시간대에 잇따라 접속 장애를 일으켰다. 다운디텍터에는 4만 건 넘는 신고가 몰렸고, 일부 이용자는 구글 제미나이에서도 문제가 있었다고 보고했다. xAI는 그록 서비스가 정상화됐다고 밝혔다.",
+          "body_en": "OpenAI's ChatGPT, Anthropic's Claude, and xAI's Grok all experienced connectivity issues within a similar window on Sept. 3, with Downdetector logging more than 40,000 reports. Some users also reported problems with Google's Gemini. xAI said Grok has since been restored."},
+        {"headline_ko": "LS일렉트릭, 북미 AI 데이터센터에 전력기기 1조원 넘게 수주",
+          "headline_en": "LS Electric Wins Over 1 Trillion Won in North American AI Data-Center Power Orders",
+          "body_ko": "LS일렉트릭이 KT클라우드와 손잡고 북미 빅테크의 하이퍼스케일 AI 데이터센터에 초고압 변압기·가스절연개폐장치 등을 공급하는 계약을 잇달아 수주했다. 생성형 AI 확산에 따른 데이터센터 전력 수요 증가가 국내 전력기기 업체 실적으로 이어지는 모습이다.",
+          "body_en": "LS Electric, partnering with KT Cloud, has won a string of orders to supply ultra-high-voltage transformers and gas-insulated switchgear to hyperscale AI data centers built by major North American tech firms. Surging AI-driven data-center power demand is translating directly into orders for Korean power-equipment makers."},
+        {"headline_ko": "키옥시아, CXL 낸드로 D램 대체 도전…HBM 투자 셈법 흔드나",
+          "headline_en": "Kioxia Pushes CXL NAND as a DRAM Alternative, Testing Korea's HBM Bet",
+          "body_ko": "일본 키옥시아가 D램의 한계를 CXL(컴퓨트 익스프레스 링크) 기반 낸드로 우회하는 방안을 추진하고 있다. AI 데이터센터에서 연산장치와 메모리 사이 병목이 커지는 가운데 나온 시도로, 삼성전자·SK하이닉스 등 HBM 중심 투자 전략에도 변수가 될 수 있다는 분석이 나온다.",
+          "body_en": "Japan's Kioxia is advancing CXL (Compute Express Link)-based NAND as a workaround for DRAM's limits, as compute-to-memory bottlenecks widen inside AI data centers. Analysts say the push could complicate the HBM-centric investment calculus at Samsung Electronics and SK Hynix."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {"headline_ko": "코스피, 244p 급등락 끝 0.26% 강보합…삼성전자·SK하이닉스는 동반 약세",
+          "headline_en": "KOSPI Swings 244 Points, Ekes Out a Gain as Samsung and SK Hynix Slip",
+          "body_ko": "코스피가 장중 244포인트를 오르내리는 롤러코스터 장세 끝에 6,579.48로 소폭 상승 마감했다. 삼성전자(-0.2%)·SK하이닉스(-1.0%)는 나스닥 강세에도 동반 하락했지만, 삼성전자의 15조원 규모 자사주 매입과 SK하이닉스의 자사주 소각 매입이 하단을 지지했다. 외국인은 코스피200 선물을 2,528억원 순매수했다.",
+          "body_en": "KOSPI swung as much as 244 points intraday before closing marginally higher at 6,579.48. Samsung Electronics (-0.2%) and SK Hynix (-1.0%) fell despite Wall Street's rally, but Samsung's 15 trillion won buyback program and SK Hynix's share-cancellation purchases helped cushion the downside. Foreigners were net buyers of KOSPI 200 futures worth 252.8 billion won."},
+        {"headline_ko": "월러 연준 이사 \"9월 금리 동결 지지\"…금리 인상 확률 반토막",
+          "headline_en": "Fed's Waller Signals Support for a September Hold, Hike Odds Cut in Half",
+          "body_ko": "크리스토퍼 월러 연준 이사가 8월 물가지표가 뒷받침되면 9월 FOMC에서 기준금리를 동결하는 쪽을 지지하겠다고 밝혔다. 그동안 시장을 짓눌러온 추가 인상 우려가 완화되며 국채금리·달러가 동반 하락했고, 엔화는 2% 급등했다.",
+          "body_en": "Fed Governor Christopher Waller said he would support holding rates steady at the September FOMC meeting if August inflation data cooperates. The remarks eased rate-hike fears that had weighed on markets, sending Treasury yields and the dollar lower while the yen jumped 2%."},
+        {"headline_ko": "비트코인, 숏스퀴즈 속 3개월 만에 8만달러 재돌파…크립토 테마주 급등",
+          "headline_en": "Bitcoin Reclaims $80K for the First Time in 3 Months on a Short Squeeze",
+          "body_ko": "비트코인이 5%대 급등하며 8만1,000달러 선을 넘어섰다. 금리 인상 우려가 후퇴하며 공매도 베팅이 대거 청산된 영향이다. 비트코인 최대 보유 기업 스트래티지가 17.6%, 코인베이스가 10.1%, 로빈후드가 16.6% 급등하는 등 가상자산 관련주가 동반 강세를 보였다.",
+          "body_en": "Bitcoin jumped more than 5% past $81,000 as fading rate-hike fears triggered a wave of short-covering. Crypto-linked stocks surged in sympathy — Strategy gained 17.6%, Coinbase 10.1%, and Robinhood 16.6%."},
+        {"headline_ko": "금값, 달러 약세에 2%대 급등…최근 조정폭 되돌려",
+          "headline_en": "Gold Jumps Over 2% as the Dollar Weakens, Clawing Back Recent Losses",
+          "body_ko": "국제 금 선물이 달러 약세에 힘입어 2%대 상승했다. 최근 국채금리 상승과 함께 조정을 받았던 금값이 월러 이사 발언을 계기로 반등폭을 키웠다.",
+          "body_en": "Gold futures rose more than 2% as the dollar weakened broadly. The metal, which had pulled back alongside rising Treasury yields in recent weeks, extended its rebound after Waller's remarks."},
+        {"headline_ko": "국제유가, 미·이란 충돌 여파로 높은 수준 유지",
+          "headline_en": "Oil Holds Near Multi-Week Highs as US-Iran Tensions Persist",
+          "body_ko": "서부텍사스산원유(WTI)는 소폭 상승한 배럴당 91달러대에, 브렌트유는 95달러대에 거래를 마쳤다. 미국과 이란의 무력 충돌이 계속되면서 유가는 최근 며칠간의 급등분을 대부분 유지하고 있다.",
+          "body_en": "WTI crude settled modestly higher in the low-$90s a barrel and Brent near $95, holding most of the past few sessions' sharp gains as the US and Iran continue to clash militarily."},
+        {"headline_ko": "스페이스X, 성장 기대감에 6%대 급등",
+          "headline_en": "SpaceX Shares Jump 6% Amid Growth Optimism",
+          "body_ko": "상장기업인 스페이스X(SPCX)가 6.42% 급등하며 거래대금 상위권에 이름을 올렸다. 위성 인터넷·AI 사업 확장에 대한 투자자 관심이 반영된 것으로 풀이된다.",
+          "body_en": "Space Exploration Technologies (SPCX) shares surged 6.42%, landing among the day's most heavily traded names, as investors grew more optimistic about its satellite internet and AI business expansion."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {"ko": "지금 ~ 오늘 21:30", "en": "Now through 9:30 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "15:00", "title_ko": "독일 8월 공장수주(전월비)", "title_en": "Germany Aug Factory Orders (MoM)",
+      "detail_ko": "예상 +0.5% · 이전 +3.1%", "detail_en": "Est. +0.5% · prior +3.1%", "importance": "mid"},
+    {"time": "18:00", "title_ko": "유로존 7월 소매판매(전년비)", "title_en": "Eurozone Jul Retail Sales (YoY)",
+      "detail_ko": "전월비 예상 +0.3% · 전년비 이전 +0.7%", "detail_en": "MoM est. +0.3% · prior YoY +0.7%", "importance": "high"},
+    {"time": "18:00", "title_ko": "ECB 레인 수석이코노미스트 연설", "title_en": "ECB's Lane Speech",
+      "detail_ko": "통화정책 관련 발언 주목", "detail_en": "Watch for policy-related remarks", "importance": "mid"},
+    {"time": "21:30", "title_ko": "美 8월 비농업고용·실업률", "title_en": "US Aug Nonfarm Payrolls & Unemployment Rate",
+      "detail_ko": "예상 +5.8만 · 전월 -2.3만(수정치) · 실업률 예상 4.1%", "detail_en": "Est. +58K · prior -23K (revised) · unemployment rate est. 4.1%", "importance": "high"},
+    {"time": "21:30", "title_ko": "美 8월 시간당 임금", "title_en": "US Aug Average Hourly Earnings",
+      "detail_ko": "전월비 예상 +0.3%(이전 +0.1%) · 전년비 예상 +3.0%(이전 +3.2%)", "detail_en": "MoM est. +0.3% (prior +0.1%) · YoY est. +3.0% (prior +3.2%)", "importance": "high"},
+    {"time": "9/7", "title_ko": "미국 증시 노동절 휴장", "title_en": "US Markets Closed for Labor Day",
+      "detail_ko": "다음 주 월요일 미국 증시 정규장 휴장", "detail_en": "US markets closed next Monday", "importance": "mid"},
+    {"time": "9/10 21:15", "title_ko": "유럽중앙은행(ECB) 통화정책회의", "title_en": "ECB Monetary Policy Meeting",
+      "detail_ko": "예금금리 이전 2.25% · 21:45 라가르드 총재 기자회견", "detail_en": "Deposit rate previously 2.25% · Lagarde press conference at 21:45 KST", "importance": "mid"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "card_photos": {
+    "1": "A trading floor at dawn lit in warm gold and cool blue tones, a sharply rising green index line glowing on a dark curved monitor, faint reflections of gold bars and a bitcoin symbol shimmering in the glass, cinematic shallow depth of field, optimistic atmosphere.",
+    "3": "Close-up of financial monitors showing a steep green rally candle breaking above a prior high, soft bokeh of blurred numbers in the background, cool blue and amber lighting, moody dramatic composition."
+  },
+
+  "caption_ko": "월러 연준 이사가 9월 금리 동결을 지지한다고 밝히며 뉴욕 3대 지수가 동반 상승했습니다! 국채금리가 진정되자 금·비트코인까지 급등했는데요, 비트코인은 3개월 만에 8만달러를 재돌파했습니다 🚀 국내에서는 나스닥 강세에도 삼성전자·SK하이닉스가 약세를 보이며 코스피가 244포인트 급등락 끝에 겨우 강보합에 그쳤습니다. 오늘 밤 9시 반엔 미국 8월 고용지표까지 나오니 주목하세요!\n\n#luckyon브리핑 #미국증시 #나스닥 #월러 #연준 #금리동결 #비트코인 #금값 #코스피 #삼성전자 #SK하이닉스 #국제유가 #경제뉴스 #증시브리핑 #오늘의증시",
+  "caption_en": "Fed Governor Waller signaled support for holding rates in September, and Wall Street's three major indexes rallied together! As Treasury yields eased, gold and Bitcoin surged too — Bitcoin topped $80K for the first time in 3 months 🚀 Back home, Samsung and SK Hynix slipped despite Nasdaq's strength, leaving KOSPI to eke out only a slim gain after swinging 244 points. Watch for tonight's US August jobs report at 9:30 PM KST!\n\n#luckyonbriefing #usstocks #nasdaq #fedwatch #ratehold #bitcoin #gold #kospi #samsung #skhynix #oilprices #economy #dailybriefing #markets #forex",
+  "sources": ["Yahoo Finance", "FMP", "KRX (FinanceDataReader)", "FINRA", "CNN Fear & Greed", "FXStreet (econ-calendar)", "Naver News"]
+}
