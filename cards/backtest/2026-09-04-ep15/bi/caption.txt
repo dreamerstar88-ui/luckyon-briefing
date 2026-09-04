@@ -1,0 +1,31 @@
+같은 TQQQ를 12.9년. 한쪽은 매 거래일 $1씩, 한쪽은 매 거래일 1주씩 샀습니다. 넣은 돈 대비로는 매일 $1가 3.5배 앞섰습니다.
+
+저장해두면 나중에 다시 볼 수 있습니다. 팔로우하시면 다음 회차를 받아보실 수 있어요.
+
+같은 종목을 사는 방법만 바꿔 본 적립식 백테스트입니다. 2013-10-17부터 매 거래일 종가에, 한쪽은 금액을 $1로 고정하고 한쪽은 수량을 1주로 고정해 샀습니다. TQQQ 1주 값이 $1이던 날을 시작으로 잡아 첫날 두 방식이 똑같은 돈을 쓰게 했습니다.
+금액을 고정하면 값이 쌀 때 더 많은 주식을 사게 되어 평단가가 종가의 조화평균($4.76)이 되고, 수량을 고정하면 산술평균($16.58)이 됩니다. 조화평균은 산술평균보다 늘 작거나 같아 금액 고정 쪽의 평단가가 반드시 더 낮습니다. TQQQ에서 정해지는 것은 어느 쪽이 이기느냐가 아니라 차이가 얼마나 벌어지느냐입니다.
+
+매일 $1 14.63배 (최대낙폭 -81.1%) · 매일 1주 4.2배 (최대낙폭 -79.2%)
+넣은 돈은 매일 $1 $3,238 · 매일 1주 $55,919 입니다.
+
+과거 데이터 기반 시뮬레이션이며 수수료·세금은 반영하지 않았습니다. 과거 성과가 미래 수익을 보장하지 않습니다. 투자 권유가 아닙니다.
+
+다음 회차도 궁금하다면 저장하고 팔로우해 주세요. 보고 싶은 주제는 댓글에 남겨주세요.
+
+- - -
+
+The same TQQQ for 12.9 years — $1 a day on one side, 1 share a day on the other. Per dollar put in, $1 a day came out 3.5x ahead.
+
+Save this to come back to it later. Follow for the next run.
+
+A dollar-cost-averaging backtest where only the way of buying changes. From 2013-10-17, at every trading day close, one side fixes the amount at $1 and the other fixes the quantity at 1 share. The start date is the day 1 share of TQQQ cost $1, so both spend the same money on day one.
+Fixing the amount buys more shares when the price is low, so the average cost becomes the harmonic mean of the closes ($4.76); fixing the quantity gives the arithmetic mean ($16.58). The harmonic mean is always less than or equal to the arithmetic mean, so fixed-amount buying always ends with the lower average cost. What TQQQ decides is not which side wins but how wide the gap gets.
+
+매일 $1 14.63x (max DD -81.1%) · 매일 1주 4.2x (max DD -79.2%)
+Money put in: 매일 $1 $3,238 · 매일 1주 $55,919.
+
+Simulation based on historical data; fees and taxes are not reflected. Past performance does not guarantee future results. Not investment advice.
+
+Save and follow for the next one. Suggest a topic in the comments.
+
+#luckyon #백테스트 #레버리지ETF #적립식투자 #미국주식 #ETF투자 #지수투자 #주식투자 #투자공부 #경제공부 #재테크 #장기투자 #미국증시 #해외주식 #서학개미 #주식공부 #데이터분석 #분할매수 #복리 #자산배분
