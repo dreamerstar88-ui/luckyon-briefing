@@ -1,0 +1,337 @@
+{
+  "date": "2026-09-04",
+  "session": "pm",
+  "dateLabel_ko": "2026년 9월 4일 (금) 저녁",
+  "dateLabel_en": "Sep 4, 2026 (Fri) Evening",
+
+  "headline_ko": "외국인·기관 6거래일 만에 동반 매수…코스피 1.64% 올라 6,687",
+  "headline_en": "Foreign & Institutional Buyers Return After 6 Sessions — KOSPI Jumps 1.64%",
+  "headline_sub_ko": "반도체가 이끈 상승, 국채금리 안정이 배경",
+  "headline_sub_en": "Chips lead the rally as US yields calm",
+  "cover_kicker": {"ko": "오늘 한국장 마감 · 9/4", "en": "Korea Market Close · Sep 4"},
+  "cover_facts": [
+    ["chip", {"ko": "코스피 +1.64% · 코스닥 +2.95%", "en": "KOSPI +1.64% · KOSDAQ +2.95%"},
+              {"ko": "6,687.21 / 813.50 · 반도체가 지수 견인", "en": "6,687.21 / 813.50 pts · chips led the gains"}],
+    ["target", {"ko": "외국인 +4,796억 · 기관 +1조6,694억", "en": "Foreign +₩480B · Institutions +₩1.67T"},
+               {"ko": "6거래일 만의 동반 순매수", "en": "First joint buying in 6 sessions"}],
+    ["globe", {"ko": "WTI $90.41 · 정부 호르무즈 파병 검토", "en": "WTI $90.41 · Seoul weighs Hormuz deployment"},
+              {"ko": "미·이란 긴장 지속", "en": "US-Iran tensions persist"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "코스피가 전 거래일보다 107.73포인트(1.64%) 오른 6,687.21에 마감했고, 코스닥도 2.95% 올라 5거래일 만에 반등하며 813.50을 기록했다.",
+      "크리스토퍼 월러 연준 이사가 9월 FOMC에서 금리 동결을 지지하겠다고 밝히며 미 국채 10년물 금리가 4.77%로 내려앉았고, 그 여파로 삼성전자(+2.2%)·SK하이닉스(+3.2%) 등 반도체 대장주가 강세를 보이며 지수 상승을 이끌었다.",
+      "외국인이 4,796억원, 기관이 1조6,694억원을 순매수하며 6거래일 만에 동반 '사자'에 나섰다. 개인은 3조7,229억원을 순매도했다.",
+      "다만 미·이란 갈등 여파로 국제유가는 WTI 기준 $90선 위 높은 수준을 유지했고, 정부는 호르무즈 해협 파병을 검토하기 시작했다. 오늘 밤에는 미국 8월 고용보고서 발표가 예정돼 있어 변동성 확대 가능성이 남아 있다."
+    ],
+    "lines_en": [
+      "KOSPI rose 107.73 points (1.64%) to close at 6,687.21, while KOSDAQ gained 2.95% to 813.50, rebounding for the first time in 5 sessions.",
+      "Fed Governor Christopher Waller said he would support holding rates steady at the September FOMC meeting, pulling the 10-year Treasury yield down to 4.77%. Chip bellwethers Samsung Electronics (+2.2%) and SK Hynix (+3.2%) led the index higher on the news.",
+      "Foreign investors bought a net ₩480B and institutions ₩1.67T, buying together for the first time in 6 sessions. Retail investors sold a net ₩3.72T.",
+      "Still, oil stayed elevated above $90 WTI on lingering US-Iran tension, and Seoul began reviewing a troop deployment to the Strait of Hormuz. Tonight's US August jobs report could still stir volatility."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "29,665.00", "delta": "▲0.48%", "dir": "up", "note_ko": "나스닥 선물(NQ) 기준 · 정규장 개장 전", "note_en": "Nasdaq futures (NQ) · before the regular session opens"},
+    {"label": "S&P 500", "value": "7,762.00", "delta": "▲0.09%", "dir": "up", "note_ko": "S&P500 선물(ES) 기준 · 정규장 개장 전", "note_en": "S&P 500 futures (ES) · before the regular session opens"},
+    {"label": "KOSPI", "value": "6,687.21", "delta": "▲1.64%", "dir": "up", "note_ko": "오늘 종가 · 반도체 강세 속 2거래일 연속 상승", "note_en": "Today's close · up for a 2nd straight session on chip strength"},
+    {"label": "VIX", "value": "14.17", "delta": "▼1.05%", "dir": "down", "note_ko": "월러 발언에 안정세 지속", "note_en": "Stayed calm after Waller's dovish comments"},
+    {"label": "Fear & Greed", "value": "35 → 45", "delta": "-", "dir": "up", "note_ko": "공포 국면에서 반등, 중립권에 근접", "note_en": "Rebounding from Fear, nearing Neutral"},
+    {"label": "US 10Y", "value": "4.79% → 4.77%", "delta": "-", "dir": "down", "note_ko": "9/3 확정 종가 · 월러 발언에 하락", "note_en": "Sep 3 confirmed close · fell on Waller's remarks"},
+    {"label": "USD/KRW", "value": "1,351", "value_sub": "· DXY 99.07", "delta": "▼0.51%", "dir": "down", "note_ko": "달러 약세 속 원화 강세", "note_en": "Won firmed as the dollar softened"},
+    {"label": "Gold", "value": "$4,521", "delta": "▲0.65%", "dir": "up", "note_ko": "달러 약세에 상승세 지속", "note_en": "Extended gains as the dollar weakened"},
+    {"label": "WTI", "value": "$90.41", "delta": "▼0.98%", "dir": "down", "note_ko": "미·이란 긴장에 여전히 높은 수준", "note_en": "Still elevated on US-Iran tension"},
+    {"label": "Bitcoin", "value": "$81,136", "delta": "▼0.17%", "dir": "down", "note_ko": "24시간 기준 · 전일 급등 후 숨고르기", "note_en": "24h basis · consolidating after yesterday's surge"}
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ", "S&P 500"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "미국 지수는 선물(정규장 개장 전) 기준, 코스피는 오늘 종가 기준",
+  "market_note_en": "US indexes are futures (before the regular session); KOSPI is today's close",
+
+  "chart_series_values": [6742.74, 6808.21, 6912.37, 6788.88, 6820.02, 6835.80, 6562.72, 6579.48, 6687.21],
+  "chart_series_labels": ["8.25", "8.26", "8.27", "8.28", "8.31", "9.1", "9.2", "9.3", "9.4"],
+  "chart_title": {"ko": "반도체가 이끈 반등, 이번 주 낙폭은 아직 못 지웠다", "en": "Chip-led rebound hasn't erased this week's loss yet"},
+  "chart_sub": {"ko": "코스피 종가 · 최근 9거래일", "en": "KOSPI close · last 9 sessions"},
+  "chart_note": {"ko": "8.27 고점 6,912.37 → 9.2 저점 6,562.72 → 9.4 6,687.21로 반등", "en": "8/27 high 6,912.37 → 9/2 low 6,562.72 → rebounded to 6,687.21 on 9/4"},
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "섹터별 등락", "en": "Sector Moves"},
+  "sector_sub": {"ko": "15개 주력 업종 · 시가총액 가중", "en": "15 major sectors · cap-weighted"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
+  "rank_sub": {"ko": "코스피 · 거래대금 기준", "en": "KOSPI · by turnover"},
+  "rank_unit": {"ko": "단위 · 조원", "en": "Unit · ₩ trillion"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "한국 우선 · 해외 병기", "en": "Korea first, global alongside"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록",
+      "title_en": "KOSPI & KOSDAQ Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "코스피",
+          "label_en": "KOSPI",
+          "value": "6,687.21",
+          "delta": "▲1.64%",
+          "dir": "up",
+          "sub_ko": "107.73포인트 상승 · 반도체 강세가 견인 · 2거래일 연속 상승",
+          "sub_en": "Up 107.73 pts, led by chip strength · 2nd straight gain"
+        },
+        {
+          "label_ko": "코스닥",
+          "label_en": "KOSDAQ",
+          "value": "813.50",
+          "delta": "▲2.95%",
+          "dir": "up",
+          "sub_ko": "5거래일 만에 반등 · 800선 회복",
+          "sub_en": "Rebounded after 4 straight losses · back above 800"
+        }
+      ],
+      "breadth": [
+        {"label_ko": "코스피 전 종목", "label_en": "KOSPI - all listed", "up": 549, "flat": 85, "down": 309},
+        {"label_ko": "코스닥 전 종목", "label_en": "KOSDAQ - all listed", "up": 1157, "flat": 187, "down": 428}
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (억원)",
+        "label_en": "KOSPI net buy/sell by investor (₩100M)",
+        "rows": [
+          {"label_ko": "개인", "label_en": "Retail", "value": -37229},
+          {"label_ko": "외국인", "label_en": "Foreign", "value": 4796},
+          {"label_ko": "기관", "label_en": "Institution", "value": 16694}
+        ]
+      },
+      "note_ko": "개인이 3조7,229억원을 순매도했지만 외국인(+4,796억원)·기관(+1조6,694억원)이 6거래일 만에 동반 순매수하며 지수를 밀어올렸다. 기타법인도 1조5,739억원을 순매수했다. 코스피는 이틀 연속 올랐지만 이번 주 누적으로는 여전히 -1.50%다.",
+      "note_en": "Retail sold a net ₩3.72T, but foreign (+₩480B) and institutional (+₩1.67T) investors bought together for the first time in 6 sessions, lifting the index. \"Other corporations\" also bought a net ₩1.57T. KOSPI rose for a 2nd day but is still down 1.50% for the week."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Moves",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {"label_ko": "반도체", "label_en": "Semis", "value": 2.72},
+        {"label_ko": "IT·전자기기", "label_en": "IT Devices", "value": 2.65},
+        {"label_ko": "통신서비스", "label_en": "Telecom", "value": 2.21},
+        {"label_ko": "인터넷·SW", "label_en": "Internet/SW", "value": 2.18},
+        {"label_ko": "기계·방산", "label_en": "Machine/Defense", "value": 1.76},
+        {"label_ko": "전력·에너지", "label_en": "Power/Energy", "value": 0.87},
+        {"label_ko": "금융", "label_en": "Financials", "value": 0.75},
+        {"label_ko": "건설·건자재", "label_en": "Construction", "value": 0.64},
+        {"label_ko": "조선", "label_en": "Shipbuild.", "value": 0.05},
+        {"label_ko": "자동차", "label_en": "Autos", "value": -0.19},
+        {"label_ko": "2차전지", "label_en": "Batteries", "value": -0.55},
+        {"label_ko": "철강·금속", "label_en": "Steel/Metals", "value": -0.55},
+        {"label_ko": "바이오·제약", "label_en": "Biotech", "value": -0.56},
+        {"label_ko": "유통·소비재", "label_en": "Retail/Cons.", "value": -0.72},
+        {"label_ko": "화학", "label_en": "Chemicals", "value": -0.75}
+      ],
+      "note_ko": "15개 업종 중 9개가 올랐다. 반도체(+2.72%)·IT전자기기(+2.65%)가 나란히 상위권을 차지하며 미 국채금리 안정의 최대 수혜주가 됐고, 화학(-0.75%)·유통소비재(-0.72%)는 하락 업종 최하위에 머물렀다.",
+      "note_en": "9 of 15 sectors rose. Semis (+2.72%) and IT devices (+2.65%) topped the list as the biggest beneficiaries of calmer US yields, while chemicals (-0.75%) and retail/consumer (-0.72%) lagged."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "₩4.66T", "pct": 3.2},
+        {"name_ko": "삼성전자", "name_en": "Samsung Elec.", "value": "₩3.59T", "pct": 2.2},
+        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mech.", "value": "₩0.87T", "pct": 3.93},
+        {"name_ko": "삼성전자우", "name_en": "Samsung Elec. Pfd.", "value": "₩0.47T", "pct": 4.07},
+        {"name_ko": "SK스퀘어", "name_en": "SK Square", "value": "₩0.46T", "pct": 6.12}
+      ],
+      "share": {
+        "label_ko": "상위 5종목의 거래대금 비중 · 코스피 전체 대비",
+        "label_en": "Top 5 stocks' share of turnover · vs. all of KOSPI",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5 stocks", "pct": 57.6, "color": "#3987e5"},
+          {"label_ko": "나머지 종목", "label_en": "Rest of KOSPI", "pct": 42.4, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "거래대금 상위 5종목이 코스피 전체 거래대금의 57.6%를 차지했다. 반도체 대장주 SK하이닉스(+3.2%)·삼성전자(+2.2%)가 1·2위를 지켰고, SK스퀘어는 자회사 SK하이닉스 강세에 +6.12%까지 오르며 거래대금 5위에 들었다.",
+      "note_en": "The top 5 stocks made up 57.6% of KOSPI's total turnover. Chip bellwethers SK Hynix (+3.2%) and Samsung Electronics (+2.2%) held the top two spots, while SK Square jumped 6.12% on subsidiary SK Hynix's strength to rank fifth."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "한국 7월 경상수지",
+          "label_en": "Korea Jul Current Account",
+          "value": "$42.08B",
+          "delta": {"ko": "전년比 +$30.13B", "en": "+$30.13B YoY"},
+          "dir": "up",
+          "sub_ko": "월간 기준 역대 2위 흑자 · 반도체 수출 호조",
+          "sub_en": "2nd-largest July surplus on record, on strong chip exports"
+        },
+        {
+          "label_ko": "코스피 변동성지수(VKOSPI)",
+          "label_en": "KOSPI Volatility Index (VKOSPI)",
+          "value": "39.33",
+          "delta": "▼7.28%",
+          "dir": "down",
+          "sub_ko": "코스피 반등에 변동성 진정 · KRX 발표",
+          "sub_en": "Eased as KOSPI rebounded, per KRX"
+        },
+        {
+          "label_ko": "日 8월 가계지출(전년비)",
+          "label_en": "Japan Aug Household Spending (YoY)",
+          "value": "-3.6%",
+          "delta": {"ko": "예상 -1.6% 하회", "en": "Missed -1.6% est."},
+          "dir": "down",
+          "sub_ko": "전월 -3.3% · 소비 위축 지속",
+          "sub_en": "vs -3.3% prior · consumption still soft"
+        },
+        {
+          "label_ko": "한국 8월 외환보유액",
+          "label_en": "Korea Aug FX Reserves",
+          "value": "$442.28B",
+          "delta": {"ko": "전월比 +$14.33B", "en": "+$14.33B MoM"},
+          "dir": "up",
+          "sub_ko": "역대 최대치 · 한국은행 9/3 발표",
+          "sub_en": "All-time high · BOK release on Sep 3"
+        }
+      ],
+      "note_ko": "한국 수출 호조가 경상수지를 역대급으로 밀어올렸고 외환보유액도 사상 최대를 새로 썼다. 일본은 소비 위축이 예상보다 깊었다.",
+      "note_en": "Korea's export strength drove a record-setting current account surplus and FX reserves to a fresh all-time high, while Japan's consumer spending slump ran deeper than expected."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "SK하이닉스, 솔리다임 나스닥 상장설에 \"확정된 바 없다\" 해명",
+          "headline_en": "SK Hynix Denies Confirmed Plan for Solidigm Nasdaq IPO",
+          "body_ko": "SK하이닉스가 솔리다임의 5~10조원대 프리IPO·나스닥 상장 추진 보도에 \"확정된 사항 없다\"고 공시했다. 8월부터 반복된 해명이다.",
+          "body_en": "SK Hynix denied reports of a $5-10T won Solidigm pre-IPO raise and Nasdaq listing, saying nothing is finalized — its latest such denial since August."
+        },
+        {
+          "headline_ko": "삼성전자, 2분기 HBM 점유율 33%로 급등…SK하이닉스 추격",
+          "headline_en": "Samsung's HBM Share Jumps to 33% in Q2, Closing Gap on SK Hynix",
+          "body_ko": "카운터포인트리서치에 따르면 삼성전자의 2분기 HBM 매출 점유율이 21%에서 33%로 뛰었다. SK하이닉스는 58%→50%로 내려앉았다.",
+          "body_en": "Counterpoint Research: Samsung's Q2 HBM revenue share jumped to 33% from 21%, while SK Hynix slipped to 50% from 58% — a sharply narrower gap."
+        },
+        {
+          "headline_ko": "네이버 이해진 의장, 브룩필드 회장과 회동…1GW AI 팩토리 논의",
+          "headline_en": "Naver's Lee Hae-jin Meets Brookfield Chair on 1GW AI Factory",
+          "body_ko": "네이버 이해진 의장이 브룩필드 회장과 만나 엔비디아·브룩필드와 짓는 1GW급 AI 팩토리 후속 논의를 했다. 1단계 최대 90억달러 투입.",
+          "body_en": "Naver's Lee Hae-jin met Brookfield's chairman on their 1GW AI Factory project with Nvidia, whose first phase could see up to $9B invested."
+        },
+        {
+          "headline_ko": "정부 '모두의 AI', 9월 말~10월 베타 거쳐 12월 정식 출시",
+          "headline_en": "Korea's 'AI for All' Targets December Launch After Fall Beta",
+          "body_ko": "과기정통부가 SKT·카카오·KT '모두의 AI' 계획을 공개했다. 순차 베타 후 12월 정식 출시가 목표다. 예산 1,700억원은 B200 GPU 2,000장 임차 비용.",
+          "body_en": "Korea's science ministry unveiled \"AI for All\" from SKT, Kakao and KT, with staggered betas ahead of a December launch, funded partly by leasing 2,000 Nvidia B200 GPUs."
+        },
+        {
+          "headline_ko": "구글·AMD, HBM 수요 엔비디아 추월 전망 나와",
+          "headline_en": "Analysts See Google, AMD HBM Demand Overtaking Nvidia",
+          "body_ko": "국내 증권가에서 구글·AMD의 HBM 수요가 엔비디아를 앞지를 것이란 전망이 나왔다. 구글 자체 TPU, AMD AI 가속기 수요 확대가 근거다.",
+          "body_en": "Korean brokerages forecast Google and AMD's HBM demand could overtake Nvidia's, citing Google's in-house TPUs and AMD's growing accelerator needs."
+        },
+        {
+          "headline_ko": "한전, 삼성전자·SK하이닉스에 25조원 전기료 선납 제안",
+          "headline_en": "KEPCO Proposes ₩25T Prepaid Power Deal for Samsung, SK Hynix",
+          "body_ko": "한국전력이 반도체·AI 데이터센터 전력망 투자 재원 마련을 위해 삼성전자·SK하이닉스에 25조원 규모 전기료 선납을 제안했다. 용인·호남 클러스터 송변전망 투자가 배경.",
+          "body_en": "KEPCO reportedly proposed a ₩25T prepaid power deal to Samsung and SK Hynix to fund grid buildouts for the Yongin and Honam chip clusters."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "정부, 호르무즈 파병 검토…이달 국회 동의안 제출 관측",
+          "headline_en": "Seoul Reviews Hormuz Deployment, Assembly Vote Possible This Month",
+          "body_ko": "정부가 호르무즈 해협에 군수지원함(소양함)과 P-8A 해상초계기 파병을 검토 중이며, 이달 중 파병동의안을 국회에 제출할 수 있다는 관측이 나온다. 미국의 대이란 군사작전 압박이 배경이다.",
+          "body_en": "Korea's government is reviewing deployment of a naval support ship and P-8A patrol aircraft to the Strait of Hormuz, with a National Assembly consent bill possibly coming this month, amid US pressure over its Iran operations."
+        },
+        {
+          "headline_ko": "美 8월 고용보고서 오늘 밤 발표…컨센서스 +5.6만명",
+          "headline_en": "US August Jobs Report Due Tonight, Consensus +56K",
+          "body_ko": "미국 8월 비농업고용 발표를 앞두고 시장이 긴장하고 있다. 시장 컨센서스는 5만6,000명 증가(7월 -2만3,000명)이며, 월러 이사의 금리 동결 지지 발언에 9월 동결 전망이 49.8%로 높아졌다.",
+          "body_en": "Markets are bracing for tonight's US nonfarm payrolls report, with consensus at +56K (vs -23K in July). Odds of a September rate hold rose to 49.8% after Fed Governor Waller's dovish comments."
+        },
+        {
+          "headline_ko": "닛케이, 국채금리 안정에 5거래일 만에 반등…6만5000엔대 회복",
+          "headline_en": "Nikkei Rebounds After 4-Day Slide as Yields Calm, Tops 65,000",
+          "body_ko": "일본 닛케이평균주가가 806.46엔(1.26%) 올라 6만5,020.94엔에 마감하며 4거래일 연속 하락을 멈췄다. 미 국채금리 안정에 힘입은 기술주 반등이 배경이다.",
+          "body_en": "Japan's Nikkei average rose 806.46 yen (1.26%) to close at 65,020.94, snapping a 4-session losing streak as calmer US yields lifted tech shares."
+        },
+        {
+          "headline_ko": "국제유가 혼조 속 고공행진 지속…S-Oil·GS 등 정유주 강세",
+          "headline_en": "Oil Stays Elevated on Mixed Trade, Lifting Refiners S-Oil, GS",
+          "body_ko": "WTI가 배럴당 91.30달러로 소폭 올랐고 브렌트유는 소폭 내리며 혼조세를 보였지만, 미·이란 충돌 여파로 여전히 높은 수준이다. 국내 증시에서는 S-Oil이 6%대(+6.83%), GS가 4%대(+4.21%) 오르며 정유주가 강세를 보였다.",
+          "body_en": "WTI edged up to $91.30/bbl while Brent slipped slightly, a mixed session that still leaves oil elevated on US-Iran tension. On KOSPI, refiners S-Oil (+6.83%) and GS (+4.21%) rallied on the back of high crude prices."
+        },
+        {
+          "headline_ko": "삼성전자 외국인 지분율 47.71%, 금융위기 이후 최저권",
+          "headline_en": "Samsung's Foreign Ownership at 47.71%, Lowest Since Financial Crisis",
+          "body_ko": "한국거래소에 따르면 전날(9/3) 기준 삼성전자 외국인 지분율이 47.71%로 2009년 이후 최저 수준까지 낮아졌다. 연초 51%를 웃돌았으나 외국인의 지속적 순매도로 하락했다.",
+          "body_en": "Per KRX, Samsung Electronics' foreign ownership stood at 47.71% as of Sep 3 — the lowest since 2009 — down from above 51% early this year amid sustained foreign selling."
+        },
+        {
+          "headline_ko": "SK하이닉스 ADR, 원주 대비 40% 프리미엄에 거래",
+          "headline_en": "SK Hynix's Nasdaq ADR Trades at a 40% Premium to Local Shares",
+          "body_ko": "나스닥 상장 두 달을 맞은 SK하이닉스 ADR이 원주보다 40%가량 비싸게 거래되고 있다. 손자회사 솔리다임의 별도 상장 기대가 프리미엄에 반영됐다는 분석이 나온다.",
+          "body_en": "Two months after its Nasdaq listing, SK Hynix's ADR is trading roughly 40% above its Korea-listed shares, which analysts attribute partly to expectations for a separate Solidigm listing."
+        }
+      ]
+    }
+  ],
+
+  "schedule_kicker": "NEXT",
+  "schedule_sub": {"ko": "지금 ~ 내일 오전 8시", "en": "Now through 8 AM tomorrow"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준)", "프리마켓 17:00 ~ 22:30 · 애프터마켓 05:00 ~ 09:00"],
+    "lines_en": ["Regular session 10:30 PM - 5:00 AM KST (DST)", "Pre-market 5:00 PM - 10:30 PM · After-hours 5:00 - 9:00 AM"]
+  },
+  "schedule": [
+    {"time": "21:30", "title_ko": "美 8월 비농업고용·실업률", "title_en": "US Aug Nonfarm Payrolls & Unemployment", "detail_ko": "예상 +5.6만명(전월 -2.3만명) · 실업률 예상 4.1%(전월 4.1%)", "detail_en": "Est. +56K (prior -23K) · unemployment est. 4.1% (prior 4.1%)", "importance": "high"},
+    {"time": "21:30", "title_ko": "美 8월 평균시간당임금", "title_en": "US Aug Average Hourly Earnings", "detail_ko": "전월비 예상 +0.3%(전월 +0.1%) · 전년비 예상 +3.0%(전월 +3.2%)", "detail_en": "MoM est. +0.3% (prior +0.1%) · YoY est. +3.0% (prior +3.2%)", "importance": "mid"},
+    {"time": "9/8 08:00", "title_ko": "한국 2분기 GDP 성장률(확정)", "title_en": "Korea Q2 GDP Growth (Final)", "detail_ko": "다음 주 · 미리보기", "detail_en": "Next week · preview", "importance": "mid"},
+    {"time": "9/8 08:50", "title_ko": "일본 2분기 GDP(확정)", "title_en": "Japan Q2 GDP (Final)", "detail_ko": "다음 주 · 미리보기", "detail_en": "Next week · preview", "importance": "mid"},
+    {"time": "9/9 10:30", "title_ko": "중국 8월 소비자물가(CPI)", "title_en": "China Aug CPI", "detail_ko": "다음 주 · 미리보기", "detail_en": "Next week · preview", "importance": "high"},
+    {"time": "9/10 21:15", "title_ko": "유럽중앙은행(ECB) 통화정책회의", "title_en": "ECB Monetary Policy Meeting", "detail_ko": "다음 주 · 금리 결정 · 미리보기", "detail_en": "Next week · rate decision · preview", "importance": "high"},
+    {"time": "9/10 21:30", "title_ko": "美 8월 생산자물가(PPI)", "title_en": "US Aug Producer Price Index", "detail_ko": "다음 주 · 미리보기", "detail_en": "Next week · preview", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "🌙 Next brief — 8 AM KST tomorrow, US close wrap-up",
+
+  "card_photos": {
+    "1": "The KOSPI trading floor at close, green candlestick charts glowing on a wall of screens, silhouettes of traders in the foreground, dark cinematic lighting, amber accent glow",
+    "3": "A dark trading floor with a rising green line chart streaming across a large wall display, soft blue ambient light, shallow depth of field",
+    "7": "A vast AI data center corridor at night, rows of server racks with blue LED lights receding into darkness, cool futuristic atmosphere",
+    "8": "An oil tanker silhouette on dark water at dusk, distant industrial lights on the horizon, moody blue-orange gradient sky"
+  },
+
+  "caption_ko": "외국인·기관이 6거래일 만에 동반 매수에 나서며 코스피가 1.64% 오른 6,687.21에 마감했습니다. 반도체 대장주가 지수를 이끌었고, 오늘 밤엔 미국 8월 고용보고서가 발표됩니다. 저녁 브리핑으로 오늘 하루를 정리해드립니다. 저장하고 팔로우하면 다음 브리핑도 놓치지 않아요 🔔\n\n다음 브리핑 — 내일 아침 8시\n\n#코스피 #주식 #증시브리핑 #반도체 #SK하이닉스 #삼성전자 #미국증시 #나스닥 #고용보고서 #투자 #재테크 #경제뉴스 #luckyon브리핑 #저녁브리핑 #호르무즈",
+  "caption_en": "Foreign and institutional investors bought together for the first time in 6 sessions, sending KOSPI up 1.64% to close at 6,687.21. Chip bellwethers led the index, and the US August jobs report drops tonight. This is your evening wrap. Save & follow so you never miss the next brief 🔔\n\nNext brief — 8 AM KST tomorrow\n\n#KOSPI #StockMarket #Semiconductors #SKHynix #Samsung #Nasdaq #USMarkets #JobsReport #Investing #Finance #MarketBrief #EveningBrief #luckyonbriefing",
+  "sources": ["KRX", "FMP", "Yahoo Finance", "한국은행", "DART", "CNN", "FXStreet", "Naver News"]
+}
