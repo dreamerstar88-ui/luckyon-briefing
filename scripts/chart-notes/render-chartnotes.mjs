@@ -202,6 +202,40 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'trend' — 캔들의 «저점들이 하나의 비스듬한 선 위에 얹혀» 계단처럼 올라가는 그림.
+    // 주석이 그 기울어진 선을 가리키는 회차(추세선·채널)에서 쓴다. 'levels' 는 가로선이라
+    // «저점이 점점 높아진다»를 말할 수 없고, 'ma'·'cross' 의 곡선은 «두 점을 이어 그은 직선»이
+    // 아니라서 이 회차가 가르치는 것과 다른 그림이 된다.
+    if (c.overlay === 'trend') {
+      // 붉은 추세선: (30,268) → (500,120). 아래 캔들의 저가(l) 중 다섯 개가 이 선에 닿고
+      // 나머지는 그 위에 뜬다 — «닿은 자리»가 있어야 주석이 가리킬 대상이 생긴다.
+      const TX1 = 30, TY1 = 268, TX2 = 500, TY2 = 120;
+      const ty = (x) => TY1 + ((x - TX1) / (TX2 - TX1)) * (TY2 - TY1);
+      const seq = [ // o,c,h,l 은 SVG y(px). 아래로 갈수록 낮은 가격.
+        { o: 252, c: 222, h: 212, l: 260 }, { o: 230, c: 204, h: 196, l: 236 },
+        { o: 218, c: 190, h: 180, l: 224 }, { o: 170, c: 200, h: 160, l: 206 },
+        { o: 184, c: 156, h: 148, l: 189 }, { o: 162, c: 134, h: 126, l: 168 },
+        { o: 148, c: 122, h: 116, l: 154 }, { o: 130, c: 100, h: 94, l: 136 },
+      ];
+      const x0 = 52, step = 56, bw = 28;
+      const cand = seq.map((s, i) => {
+        const cxp = x0 + i * step, col = s.c < s.o ? UP : DOWN;   // y 가 작을수록 높은 가격
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - bw / 2}" y="${Math.min(s.o, s.c)}" width="${bw}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      return `<div class="pad">
+        <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
+          ${cand}
+          <line x1="${TX1}" y1="${TY1}" x2="${TX2}" y2="${TY2}" stroke="${C.red}"
+                stroke-width="4" stroke-dasharray="14 10"/>
+          <path d="M 600 128 L 506 ${Math.round(ty(500)) + 2}" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="606" y="${118 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     // overlay:'levels' — 캔들이 «두 가로선 사이»를 오가는 그림. 주석이 그 수평선을 가리키는
     // 회차(지지선·저항선·박스권)에서 쓴다. 'ma'·'cross' 는 비스듬한 곡선이라 «가격이 자꾸
     // 멈춘 높이»를 가리킬 대상이 화면에 없다 — EP.03 이 그 이유로 검증에서 걸렸다.
@@ -290,11 +324,23 @@ const R = {
   //   'zigzag'         — 꺾은선 + 물음표 (EP.02·03 이 쓴 기본 그림)
   //   'mystery-levels' — 꺾은선 위에 정체불명의 붉은 가로선 두 줄 + 물음표
   //                      («이 선은 누가 왜 그었나»를 묻는 회차)
+  //   'mystery-slope'  — 꺾은선 아래에 정체불명의 붉은 «비스듬한» 선 한 줄 + 물음표
+  //                      («이 기울어진 선은 어떻게 그은 건가»를 묻는 회차 — 추세선·채널)
   intro(c) {
     const sketch = d(c, 'sketch', 'zigzag');
     const q = (x, y, size) => `<text x="${x}" y="${y}" font-size="${size}" font-weight="800" fill="${C.red}">?</text>`;
     let fig;
-    if (sketch === 'mystery-levels') {
+    if (sketch === 'mystery-slope') {
+      // 꺾은선의 «저점 다섯 개»가 이 비스듬한 선 위에 얹혀 있다. 제목이 묻는 것(비스듬한 선)이
+      // 화면에 실제로 있어야 하므로 가로선(mystery-levels)을 돌려 쓰지 않는다.
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <polyline points="20,252 90,225 155,160 230,194 300,120 370,162 440,96 510,131 580,70 650,100 720,42 780,66"
+                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="30" y1="240" x2="790" y2="70" stroke="${C.red}" stroke-width="5"
+                stroke-dasharray="16 11" opacity="0.9"/>
+          ${q(802, 84, 54)}${q(858, 132, 36)}${q(806, 178, 40)}
+        </svg>`;
+    } else if (sketch === 'mystery-levels') {
       const RES = 63, SUP = 203;
       const lvl = (y) => `<line x1="40" y1="${y}" x2="790" y2="${y}" stroke="${C.red}" stroke-width="5"
                                 stroke-dasharray="16 11" opacity="0.9"/>`;
@@ -800,6 +846,37 @@ const R = {
               stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(l, 'label'))}</text>`;
     }).join('');
 
+    // trendline: { from:{i,price}, to:{i,price}, label } — 주가 패널에 «비스듬한» 기준선을 긋는다.
+    // `levels` 는 가로선이라 추세선·채널을 그릴 수 없다. 두 끝점을 «봉 번호 + 실제 가격»으로 받으므로,
+    // 4단계에서 대조한 저점(예: 7/30 저가 202,000원)이 그대로 선의 끝이 되어 그림이 설명을 배반할 수 없다.
+    // 오른쪽 끝점에는 선을 늘려 얻은 «그 선 위의 값»을 넣는다 — 그래야 본문이 인용한 값과 그림이 일치한다.
+    const TL = d(c, 'trendline', null);
+    const trend = TL ? (() => {
+      const x1 = cx(TL.from.i), y1 = py(TL.from.price), x2 = cx(TL.to.i), y2 = py(TL.to.price);
+      // 라벨은 선의 72% 지점에 «가격이 아직 오지 않은 쪽»으로 붙인다 — 우상향 추세선이면 선 아래,
+      // 우하향이면 선 위가 그 빈 공간이다. 끝점(오른쪽 끝)에 붙였더니 마지막 캔들·마지막 번호
+      // 동그라미와 정확히 겹쳤다(ko·en 양쪽에서 실제로 겹쳤다).
+      // `label_at`(0~1) 로 선 위 어디에 붙일지 회차가 정한다. 기본 0.72 가 늘 비어 있지는 않다 —
+      // 그 자리에 `marks` 의 번호 동그라미가 있으면 정확히 겹친다(en 판에서 실제로 겹쳤다).
+      // 번호 동그라미가 없는 구간을 골라 준다.
+      const up = y2 < y1;   // SVG y 는 작을수록 높은 가격
+      const at = d(TL, 'label_at', 0.72);
+      const lx = x1 + (x2 - x1) * at, ly = y1 + (y2 - y1) * at;
+      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${C.red}" stroke-width="5"
+                    stroke-dasharray="15 10" stroke-linecap="round"/>
+              ${t(TL, 'label') ? `<text x="${lx}" y="${ly + (up ? 38 : -22)}" text-anchor="middle"
+                    font-family="${FONT_TITLE}" font-size="25" font-weight="800" fill="${C.red}"
+                    stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(TL, 'label'))}</text>` : ''}`;
+    })() : '';
+
+    // marks: [{ i, price, n }] — 그 선에서 «몇 번째로» 멈춘 날인지 번호 동그라미를 찍는다.
+    // `lines.touches` 와 같은 역할이되 좌표가 아니라 실제 가격을 받는다. 카드가 "세 번 닿았다"고
+    // 써 놓고 그림이 세어 주지 않으면 독자는 그 말을 글로만 읽는다(EP.05 에서 확인된 것과 같은 이유).
+    const marks = (d(c, 'marks', [])).map(m => `
+      <circle cx="${cx(m.i)}" cy="${py(m.price)}" r="16" fill="${C.paper}" stroke="${C.red}" stroke-width="5"/>
+      <text x="${cx(m.i)}" y="${py(m.price) + 9}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="24" font-weight="800" fill="${C.red}">${esc(String(m.n))}</text>`).join('');
+
     const frame = d(c, 'frame', false) ? `
       <rect x="${PADL - 10}" y="${VT - 6}" width="${W - PADL - PADR + 20}" height="${VB - VT + 22}"
             fill="none" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10" rx="12"/>` : '';
@@ -819,7 +896,7 @@ const R = {
         <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
           <line x1="${PADL}" y1="${PB}" x2="${W - PADR}" y2="${PB}" stroke="#c9c6bc" stroke-width="3"/>
           <line x1="${PADL}" y1="${VB}" x2="${W - PADR}" y2="${VB}" stroke="#c9c6bc" stroke-width="3"/>
-          ${frame}${zones}${price}${vbars}${avgLine}${callout}
+          ${frame}${zones}${price}${trend}${marks}${vbars}${avgLine}${callout}
           ${tag(t(c, 'price_label'), PT - 14)}
           ${tag(t(c, 'panel_label'), HDY)}
           ${xlabels}
