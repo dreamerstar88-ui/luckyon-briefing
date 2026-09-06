@@ -206,6 +206,41 @@ const R = {
     // 주석이 그 기울어진 선을 가리키는 회차(추세선·채널)에서 쓴다. 'levels' 는 가로선이라
     // «저점이 점점 높아진다»를 말할 수 없고, 'ma'·'cross' 의 곡선은 «두 점을 이어 그은 직선»이
     // 아니라서 이 회차가 가르치는 것과 다른 그림이 된다.
+    // overlay:'trend2' — 기울어진 선 «두 개»를 나란히. 왼쪽은 저점을 이어 우상향, 오른쪽은 고점을
+    // 이어 우하향. 선이 향한 쪽에서 «방향»이, 기울어진 정도에서 «속도»가 한눈에 읽힌다.
+    // 추세선은 이 둘을 «함께» 보는 도구인데 표지가 한 방향만 그리면 방향이 이미 정해진 것처럼 읽힌다
+    // (EP.06 초안이 그랬다). 캔들 색까지 상승·하락이 갈려 언어권 관행도 같이 보인다.
+    if (c.overlay === 'trend2') {
+      const LINE_A = [[36, 242], [444, 130]], LINE_B = [[486, 130], [890, 242]];
+      const SEQ_A = [ // 우상향: 저점이 계단처럼 올라간다 (전부 상승 캔들)
+        { o: 220, c: 190, h: 180, l: 228 }, { o: 194, c: 166, h: 156, l: 198 },
+        { o: 174, c: 144, h: 134, l: 180 }, { o: 146, c: 118, h: 108, l: 150 },
+        { o: 126, c: 94, h: 84, l: 132 },
+      ];
+      const SEQ_B = [ // 우하향: 고점이 계단처럼 내려온다 (전부 하락 캔들)
+        { o: 149, c: 181, h: 143, l: 187 }, { o: 174, c: 206, h: 168, l: 212 },
+        { o: 202, c: 234, h: 196, l: 240 }, { o: 222, c: 254, h: 216, l: 260 },
+        { o: 247, c: 278, h: 241, l: 284 },
+      ];
+      const bw = 34, step = 88;
+      const group = (seq, x0) => seq.map((s, i) => {
+        const cxp = x0 + i * step, col = s.c < s.o ? UP : DOWN;
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - bw / 2}" y="${Math.min(s.o, s.c)}" width="${bw}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      const tline = (p) => `<line x1="${p[0][0]}" y1="${p[0][1]}" x2="${p[1][0]}" y2="${p[1][1]}"
+            stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>`;
+      return `<div class="pad">
+        <svg width="956" height="356" viewBox="0 0 956 356" style="margin-top:4px">
+          ${group(SEQ_A, 80)}${group(SEQ_B, 530)}${tline(LINE_A)}${tline(LINE_B)}
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="468" y="${312 + i * 34}" text-anchor="middle" font-family="${FONT_SANS}"
+               font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     if (c.overlay === 'trend') {
       // 붉은 추세선: (30,268) → (500,120). 아래 캔들의 저가(l) 중 다섯 개가 이 선에 닿고
       // 나머지는 그 위에 뜬다 — «닿은 자리»가 있어야 주석이 가리킬 대상이 생긴다.
