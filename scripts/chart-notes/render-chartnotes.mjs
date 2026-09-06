@@ -869,13 +869,24 @@ const R = {
                     stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(TL, 'label'))}</text>` : ''}`;
     })() : '';
 
-    // marks: [{ i, price, n }] — 그 선에서 «몇 번째로» 멈춘 날인지 번호 동그라미를 찍는다.
+    // marks: [{ i, price, n, label }] — 그 선에서 «몇 번째로» 멈춘 날인지 번호 동그라미를 찍는다.
     // `lines.touches` 와 같은 역할이되 좌표가 아니라 실제 가격을 받는다. 카드가 "세 번 닿았다"고
     // 써 놓고 그림이 세어 주지 않으면 독자는 그 말을 글로만 읽는다(EP.05 에서 확인된 것과 같은 이유).
-    const marks = (d(c, 'marks', [])).map(m => `
-      <circle cx="${cx(m.i)}" cy="${py(m.price)}" r="16" fill="${C.paper}" stroke="${C.red}" stroke-width="5"/>
-      <text x="${cx(m.i)}" y="${py(m.price) + 9}" text-anchor="middle" font-family="${FONT_TITLE}"
-            font-size="24" font-weight="800" fill="${C.red}">${esc(String(m.n))}</text>`).join('');
+    //
+    // `n` 을 빼면 빈 동그라미가 된다 — «세는 자리»가 아니라 «끊긴 자리»를 짚을 때 쓴다(추세 이탈).
+    // `label` 은 그 위에 붙는다. 오른쪽 절반이면 글자를 왼쪽으로 뻗어 카드 밖으로 넘치지 않게 한다.
+    // (거래량 패널을 가리키는 `callout` 과 혼동하지 말 것 — 그쪽은 막대를, 이쪽은 주가를 짚는다.)
+    const marks = (d(c, 'marks', [])).map(m => {
+      const mx = cx(m.i), my = py(m.price), right = mx > W / 2;
+      return `
+      <circle cx="${mx}" cy="${my}" r="16" fill="${C.paper}" stroke="${C.red}" stroke-width="5"/>
+      ${m.n != null ? `<text x="${mx}" y="${my + 9}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="24" font-weight="800" fill="${C.red}">${esc(String(m.n))}</text>` : ''}
+      ${t(m, 'label') ? `<text x="${right ? Math.min(mx + 40, W - PADR) : Math.max(mx - 40, PADL)}"
+            y="${my + 44}" text-anchor="${right ? 'end' : 'start'}" font-family="${FONT_TITLE}"
+            font-size="25" font-weight="800" fill="${C.red}" stroke="${C.paper}" stroke-width="7"
+            paint-order="stroke">${esc(t(m, 'label'))}</text>` : ''}`;
+    }).join('');
 
     const frame = d(c, 'frame', false) ? `
       <rect x="${PADL - 10}" y="${VT - 6}" width="${W - PADL - PADR + 20}" height="${VB - VT + 22}"
