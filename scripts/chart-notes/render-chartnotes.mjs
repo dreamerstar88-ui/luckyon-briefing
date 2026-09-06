@@ -558,7 +558,9 @@ const R = {
                 stroke-linejoin="round" stroke-linecap="round" ${s.dashed ? 'stroke-dasharray="12 9"' : ''}/>`).join('');
     const mk = MARKER ? `
       <circle cx="${px(MARKER.x)}" cy="${py(MARKER.y)}" r="17" fill="none" stroke="${C.red}" stroke-width="6"/>
-      <text x="${px(MARKER.x)}" y="${py(MARKER.y) - 32}" text-anchor="middle" font-family="${FONT_TITLE}"
+      ${/* marker 가 기준선에 가까우면 라벨을 위에 두었을 때 그 선이 글자를 관통한다(en 판에서 실제로
+            «Tre—nd break» 로 갈렸다). `below: true` 면 점 아래로 내린다 — 위아래 중 «선이 없는 쪽»을 고른다. */''}
+      <text x="${px(MARKER.x)}" y="${py(MARKER.y) + (MARKER.below ? 46 : -32)}" text-anchor="middle" font-family="${FONT_TITLE}"
             font-size="28" font-weight="800" fill="${C.red}"
             stroke="${C.paper}" stroke-width="8" paint-order="stroke">${esc(t(MARKER, 'label'))}</text>` : '';
     const legend = SERIES.filter(s => t(s, 'label')).map(s => `
