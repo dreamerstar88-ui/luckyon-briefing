@@ -67,6 +67,23 @@ if (altTexts && altTexts.length !== CARD_COUNT) {
   console.warn(`⚠️  alt_${lang} 이 ${altTexts.length}개인데 카드가 ${CARD_COUNT}장입니다 — 남는 슬라이드는 alt 없이 나갑니다.`);
 }
 
+// 인스타그램 한도를 «올리기 전에» 확인한다. EP.06 en 은 alt_en[5] 가 1006자라
+// 슬라이드 5 를 만들다 API 가 거절했는데, 그때는 이미 슬라이드 4개가 만들어진 뒤였다.
+// 한도를 넘는 것은 고치면 그만이지만 «절반쯤 올라간 상태에서 죽는 것»은 매번 사람이
+// 중복 게시물이 생겼는지 확인해야 한다. 그래서 API 를 건드리기 전에 여기서 멈춘다.
+const LIMITS = { alt_text: 1000, caption: 2200 };
+const tooLong = [];
+if (caption.length > LIMITS.caption) tooLong.push(`caption_${lang} ${caption.length}자`);
+(altTexts || []).forEach((a, i) => {
+  if (typeof a === 'string' && a.length > LIMITS.alt_text) tooLong.push(`alt_${lang}[${i + 1}] ${a.length}자`);
+});
+if (tooLong.length) {
+  console.error(`❌ 인스타그램 길이 한도 초과 (alt_text ${LIMITS.alt_text}자 · caption ${LIMITS.caption}자):`);
+  tooLong.forEach(t => console.error(`   - ${t}`));
+  console.error('   줄인 뒤 다시 실행한다. alt 는 이미지에 들어가지 않으므로 재렌더는 필요 없다.');
+  process.exit(1);
+}
+
 const bust = process.env.CACHE_BUST ? `?v=${encodeURIComponent(process.env.CACHE_BUST)}` : '';
 const imageUrls = Array.from({ length: CARD_COUNT }, (_, i) =>
   `${PAGES}/${cardSubPath}/card${i + 1}.png${bust}`);
