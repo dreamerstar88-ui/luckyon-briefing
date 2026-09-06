@@ -618,8 +618,13 @@ const R = {
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="flex:1;display:flex;align-items:center">
-        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+      ${/* 본문이 한 줄만 길어져도(ko·en 모두 4줄이 되는 회차가 있다) 고정 높이 그림이 종이 아래로
+            밀려 마무리 칩이 잘렸다 — EP.06 p.06 이 ko·en 양쪽에서 그랬다. `min-height:0` 으로 이 칸이
+            줄어들 수 있게 하고 그림에 `max-height:100%` 를 줘서, 자리가 모자라면 그림이 «비율 그대로
+            조금 작아지도록» 한다. 본문을 깎아 사실을 버리는 것보다 그림이 몇 % 작아지는 편이 낫다. */''}
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}"
+             style="max-width:100%;max-height:100%">
           ${axis}${band}${levels}${series}${mk}${touches}
         </svg>
       </div>
@@ -743,8 +748,13 @@ const R = {
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="flex:1;display:flex;align-items:center">
-        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+      ${/* 본문이 한 줄만 길어져도(ko·en 모두 4줄이 되는 회차가 있다) 고정 높이 그림이 종이 아래로
+            밀려 마무리 칩이 잘렸다 — EP.06 p.06 이 ko·en 양쪽에서 그랬다. `min-height:0` 으로 이 칸이
+            줄어들 수 있게 하고 그림에 `max-height:100%` 를 줘서, 자리가 모자라면 그림이 «비율 그대로
+            조금 작아지도록» 한다. 본문을 깎아 사실을 버리는 것보다 그림이 몇 % 작아지는 편이 낫다. */''}
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}"
+             style="max-width:100%;max-height:100%">
           <line x1="24" y1="${LV}" x2="${W - 24}" y2="${LV}" stroke="${C.red}" stroke-width="5"
                 stroke-dasharray="16 11"/>
           <polyline points="30,380 140,216 240,330 350,214 445,340 560,122 625,104 700,205 800,96 870,62"
@@ -947,8 +957,13 @@ const R = {
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="flex:1;display:flex;align-items:center">
-        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}">
+      ${/* 본문이 한 줄만 길어져도(ko·en 모두 4줄이 되는 회차가 있다) 고정 높이 그림이 종이 아래로
+            밀려 마무리 칩이 잘렸다 — EP.06 p.06 이 ko·en 양쪽에서 그랬다. `min-height:0` 으로 이 칸이
+            줄어들 수 있게 하고 그림에 `max-height:100%` 를 줘서, 자리가 모자라면 그림이 «비율 그대로
+            조금 작아지도록» 한다. 본문을 깎아 사실을 버리는 것보다 그림이 몇 % 작아지는 편이 낫다. */''}
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${W} ${H}"
+             style="max-width:100%;max-height:100%">
           <line x1="${PADL}" y1="${PB}" x2="${W - PADR}" y2="${PB}" stroke="#c9c6bc" stroke-width="3"/>
           <line x1="${PADL}" y1="${VB}" x2="${W - PADR}" y2="${VB}" stroke="#c9c6bc" stroke-width="3"/>
           ${frame}${zones}${price}${trend}${marks}${vbars}${avgLine}${callout}
@@ -1069,6 +1084,33 @@ const R = {
   },
 };
 
+// ---------- 변종 이름 검사 ----------
+// `type` 이 틀리면 아래에서 바로 죽지만, 그림을 «고르는» 값들(overlay·sketch·direction·mode)은
+// 지금까지 모르는 값을 만나면 조용히 기본 그림으로 떨어졌다. 그러면 카드는 멀쩡히 만들어지는데
+// 본문이 말하는 그림과 다른 그림이 실린다 — EP.06 에서 표지 제목은 «기울어진 선»을 말하는데
+// overlay:'trend2' 가 없는 옛 렌더러로 돌아 선이 하나도 없는 표지가 나왔고, 렌더는 성공으로
+// 끝나서 아무도 못 봤다. direction 은 더 위험하다: 'down' 을 조금이라도 다르게 적으면
+// «하락»이라고 써 놓고 상승 그림이 그려진다. 그래서 모르는 값은 여기서 멈춘다.
+const VARIANTS = {
+  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross'] },
+  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels'] },
+  lines: { direction: ['up', 'down'] },
+  pricevol: { mode: ['candle', 'line'] },
+};
+for (const [i, c] of data.cards.entries()) {
+  for (const [field, allowed] of Object.entries(VARIANTS[c.type] || {})) {
+    if (c[field] == null) continue;                     // 없으면 기본값 — 그건 의도된 것이다
+    if (!allowed.includes(c[field])) {
+      console.error(`❌ 카드 ${i + 1}(${c.type}): 알 수 없는 ${field} "${c[field]}". `
+        + `가능한 값: ${allowed.join(', ')}\n`
+        + `   ※ 값이 맞는데도 이 오류가 난다면 렌더러가 옛 버전이다. `
+        + `스크립트 정본은 main 이므로 claude/live 에서 렌더하기 전에\n`
+        + `     git fetch origin main && git checkout FETCH_HEAD -- scripts/chart-notes/`);
+      process.exit(1);
+    }
+  }
+}
+
 // ---------- 렌더 ----------
 const htmls = data.cards.map((c, i) => {
   const fn = c.type && !String(c.type).startsWith('_') ? R[c.type] : null;   // `_` 로 시작하는 것은 내부 조각이다
@@ -1078,12 +1120,79 @@ const htmls = data.cards.map((c, i) => {
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const pg = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
+// 넘침은 이 시리즈에서 가장 자주 난 사고다(한 회차에서만 여덟 번). 절차서는 «눈으로 확인»을
+// 요구하지만 사람 눈은 여덟 번 중 몇 번을 놓친다 — 실제로 EP.06 p.06 은 ko·en 양쪽이 잘린 채
+// 사용자에게 갔다. 그래서 브라우저에게 직접 묻는다: 종이(.paper) 안쪽 아래·오른쪽 경계를
+// 넘어간 요소가 있나. 있으면 그 카드 번호와 요소를 찍고 렌더를 실패시킨다.
+const overflowOf = () => pg.evaluate(() => {
+  const paper = document.querySelector('.paper');
+  if (!paper) return [];
+  const pr = paper.getBoundingClientRect();
+  const TOL = 2;                          // 반올림 오차
+  const bad = [];
+  paper.querySelectorAll('*').forEach((el) => {
+    if (!el.getClientRects().length) return;
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) return;
+    const over = Math.max(r.bottom - pr.bottom, r.right - pr.right);
+    if (over <= TOL) return;
+    if (el.querySelector('*')) return;     // 넘친 «가장 안쪽» 요소만 보고한다
+    bad.push({ kind: 'over', over: Math.round(over), tag: el.tagName.toLowerCase(),
+      text: (el.textContent || '').trim().slice(0, 40) });
+  });
+
+  // 넘침만 보면 놓치는 사고가 하나 더 있다: 종이 «안»에서 겹치는 것.
+  // en p.04 는 표 칸 글씨가 두 줄로 늘어나 표가 커지자 노란 마무리 칩이 마지막 칸 위에 올라탔는데,
+  // 종이 밖으로는 안 나가서 위 검사를 그대로 통과했다. 형광펜 칩은 늘 «단독으로» 놓이는 것이라
+  // 다른 요소와 겹치면 그건 예외 없이 레이아웃 사고다. 그래서 칩만 따로 본다.
+  const YELLOW = 'rgb(221, 193, 88)';
+  // «내용이 있는» 것만 상대로 본다. 글자를 가진 가장 안쪽 요소와, 테두리가 그려진 상자다.
+  // 자리만 밀어 주는 빈 `flex:1` 칸은 겹쳐도 눈에 보이는 사고가 아니므로 뺀다(ko p.04 오탐).
+  // 반대로 표의 칸 상자는 안에 <span> 이 들어 있어 «가장 안쪽»이 아니지만, 테두리가 보이므로
+  // 반드시 넣어야 한다 — 이걸 빼서 en p.04 의 실제 겹침을 놓쳤다.
+  const candidates = [...paper.querySelectorAll('*')].filter((el) => {
+    const cs = getComputedStyle(el);
+    const bordered = parseFloat(cs.borderTopWidth) > 0 || parseFloat(cs.borderLeftWidth) > 0;
+    const texted = !el.querySelector('*') && (el.textContent || '').trim().length > 0;
+    return bordered || texted;
+  });
+  paper.querySelectorAll('*').forEach((chip) => {
+    if (getComputedStyle(chip).backgroundColor !== YELLOW) return;
+    const cr = chip.getBoundingClientRect();
+    candidates.forEach((el) => {
+      if (chip.contains(el) || el.contains(chip)) return;
+      const r = el.getBoundingClientRect();
+      if (r.width === 0 || r.height === 0) return;
+      const dx = Math.min(cr.right, r.right) - Math.max(cr.left, r.left);
+      const dy = Math.min(cr.bottom, r.bottom) - Math.max(cr.top, r.top);
+      if (dx > 4 && dy > 4) {
+        bad.push({ kind: 'hit', over: Math.round(dy), tag: el.tagName.toLowerCase(),
+          text: (el.textContent || '').trim().slice(0, 40),
+          chip: (chip.textContent || '').trim().slice(0, 30) });
+      }
+    });
+  });
+  return bad;
+});
+
+let clipped = 0;
 for (let i = 0; i < htmls.length; i++) {
   await pg.setContent(htmls[i], { waitUntil: 'networkidle' });
+  for (const b of await overflowOf()) {
+    clipped++;
+    console.error(b.kind === 'hit'
+      ? `❌ 카드 ${i + 1}: 형광펜 «${b.chip}» 이 ${b.over}px 겹침 — <${b.tag}> "${b.text}"`
+      : `❌ 카드 ${i + 1}: 종이 밖으로 ${b.over}px 넘침 — <${b.tag}> "${b.text}"`);
+  }
   const file = path.join(outDir, `card${i + 1}.png`);
   await pg.screenshot({ path: file, clip: { x: 0, y: 0, width: 1080, height: 1350 } });
   console.log('wrote', path.relative(root, file));
 }
 await browser.close();
+if (clipped) {
+  console.error(`\n❌ ${lang.toUpperCase()}: ${clipped}곳이 종이 밖으로 넘쳤다. PNG 는 남겨 두었으니 열어서 확인하고`
+    + ` 본문·제목을 줄이거나 그림 높이를 고친 뒤 다시 렌더한다. 이 상태로 발행하지 않는다.`);
+  process.exit(1);
+}
 console.log(`\n✅ ${lang.toUpperCase()} ${htmls.length}장 생성 완료 -> ${path.relative(root, outDir)}/`);
-console.log('※ 렌더 후 반드시 각 카드를 열어 텍스트가 넘치거나 겹치지 않는지 확인하세요 (절차서 5단계).');
+console.log('※ 넘침은 자동으로 검사했다. 그래도 각 카드를 열어 «그림이 본문과 맞는지»는 눈으로 확인하세요 (절차서 5단계).');
