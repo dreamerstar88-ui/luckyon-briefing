@@ -1,0 +1,254 @@
+{
+  "date": "2026-09-07",
+  "session": "am",
+  "dateLabel_ko": "2026.9.7(월) 아침",
+  "dateLabel_en": "Mon, Sep 7, 2026 · AM",
+
+  "headline_ko": "나스닥·S&P 소폭 조정, 반도체는 나 홀로 강세",
+  "headline_en": "Nasdaq, S&P Dip Slightly as Chips Buck the Trend",
+  "headline_sub_ko": "美 8월 고용 서프라이즈에 금리 부담 재부각 · 코스피는 지난 거래일 +1.64%",
+  "headline_sub_en": "Hot US jobs data revives rate worries; KOSPI's last session was +1.64%",
+
+  "cover_kicker": {"ko": "간밤 미국장 · 9/4 마감", "en": "US Overnight · Sep 4 Close"},
+  "cover_facts": [
+    ["chip",
+      {"ko": "나스닥 ▼0.29% · S&P 500 ▼0.38%", "en": "Nasdaq ▼0.29% · S&P 500 ▼0.38%"},
+      {"ko": "26,506.99 / 7,718.60 · 반도체 강세가 낙폭을 방어", "en": "26,506.99 / 7,718.60 · chip strength cushioned the drop"}],
+    ["rate",
+      {"ko": "美 8월 고용 +16.2만 (예상 +5.3만)", "en": "US Aug payrolls +162K (est. +53K)"},
+      {"ko": "실업률 4.1% 유지 · 10년물 국채 4.78%로 상승", "en": "Unemployment steady at 4.1% · 10Y yield up to 4.78%"}],
+    ["shield",
+      {"ko": "코스피 6,687.21 · 지난 거래일 +1.64%", "en": "KOSPI 6,687.21 · +1.64% last session"},
+      {"ko": "장 열리기 전 · 지난주는 −1.50%로 마감", "en": "Before today's open · last week ended -1.50%"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥이 0.29%, S&P 500이 0.38% 내리며 최근 9거래일 최고치(9/3)에서 소폭 밀렸다.",
+      "예상(+5.3만)의 3배를 웃돈 8월 비농업고용(+16.2만)에 금리 인하 기대가 후퇴하며 국채 10년물이 4.78%로 올랐다.",
+      "종목 수는 하락(162개)이 상승(132개)보다 많았지만 거래대금은 58%가 상승 종목에 몰렸다 — 마이크론(+6.1%)·샌디스크(+11.9%) 등 메모리 반도체가 주도했다.",
+      "반대로 테슬라는 사이버캡 행사 흥행 부진과 규제 조사 소식에 5.9% 급락했고, 코스피는 지난 거래일 6,687.21로 1.64% 반등해 마감했다."
+    ],
+    "lines_en": [
+      "Nasdaq slipped 0.29% and the S&P 500 fell 0.38%, pulling back slightly from the 9-session high set a day earlier (9/3).",
+      "August nonfarm payrolls came in at +162K, triple the +53K estimate, denting rate-cut hopes and pushing the 10-year yield up to 4.78%.",
+      "More stocks fell (162) than rose (132), but 58% of dollar volume flowed into advancers — led by memory chipmakers Micron (+6.1%) and SanDisk (+11.9%).",
+      "Tesla bucked the trend, sinking 5.9% on a lackluster Cybercab event and a new safety probe, while KOSPI closed its last session up 1.64% at 6,687.21."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,506.99", "delta": "▼0.29%", "dir": "down", "note_ko": "9/4 미국장 마감 종가 · 9/3 고점 대비 소폭 하락", "note_en": "Sep 4 US close · slightly off the Sep 3 high"},
+    {"label": "S&P 500", "value": "7,718.60", "delta": "▼0.38%", "dir": "down", "note_ko": "9/4 마감 종가", "note_en": "Sep 4 close"},
+    {"label": "KOSPI", "value": "6,687.21", "delta": "▲1.64%", "dir": "up", "note_ko": "9/4 한국장 종가 · 장 열리기 전", "note_en": "Sep 4 Korea close · before today's open"},
+    {"label": "VIX", "value": "14.53", "delta": "▲1.47%", "dir": "up", "note_ko": "9/4 마감 · 여전히 낮은 변동성 구간", "note_en": "Sep 4 close · still a low-volatility zone"},
+    {"label": "Fear&Greed", "value": "42", "delta": "35 → 42", "dir": "up", "note_ko": "등급 '공포(Fear)' · 9/4 기준", "note_en": "Rated 'Fear' · as of Sep 4"},
+    {"label": "US 10Y", "value": "4.78%", "delta": "4.77 → 4.78", "dir": "up", "note_ko": "9/4 확정 종가 · 고용 서프라이즈로 소폭 상승", "note_en": "Sep 4 confirmed close · up slightly on the jobs surprise"},
+    {"label": "USD/KRW", "value": "1,345", "value_sub": "· DXY 99.2", "delta": "▼0.76%", "dir": "down", "note_ko": "역외 시장 기준 · 전 거래일 대비", "note_en": "Offshore quote · vs prior session"},
+    {"label": "Gold", "value": "$4,476.60", "delta": "▲1.06%", "dir": "up", "note_ko": "선물 기준 · 재개장 후 상승", "note_en": "Futures · higher after reopen"},
+    {"label": "WTI", "value": "$91.48", "delta": "▲0.20%", "dir": "up", "note_ko": "5거래일 연속 상승 · 호르무즈 해협 긴장 지속", "note_en": "Up a 5th straight session · Hormuz tension persists"},
+    {"label": "Bitcoin", "value": "$79,727", "delta": "▼0.12%", "dir": "down", "note_ko": "9/6 기준", "note_en": "As of Sep 6"}
+  ],
+  "market_note_ko": "미국·코스피는 9/4 마감 종가 기준 · 원자재·환율·코인은 재개장 후 최신값",
+  "market_note_en": "US and KOSPI are Sep 4 closes · commodities, FX and crypto reflect the latest reopened quotes",
+
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": "-0.29%",
+  "main_tile_note": "9/3 고점 대비 소폭 하락 · 최근 9거래일",
+
+  "chart_series_values": [26151.30, 26130.20, 26541.35, 26402.42, 26370.89, 26099.77, 26217.83, 26584.06, 26506.99],
+  "chart_series_labels": ["8.25", "8.26", "8.27", "8.28", "8.31", "9.1", "9.2", "9.3", "9.4"],
+  "chart_title": {"ko": "9/3 고점 대비 소폭 후퇴", "en": "A slight pullback from the Sep 3 high"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9/3 26,584.06(9거래일 최고) → 9/4 26,506.99, 강한 고용지표에 상승분 일부 반납", "en": "9/3 26,584.06 (9-session high) → 9/4 26,506.99, giving back some gains on the hot jobs data"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "반도체만 나 홀로 강세", "en": "Chips Stand Alone"},
+  "sector_sub": {"ko": "S&P500 섹터 ETF · 9/4 종가 기준 · 12개 중 반도체·기술·산업재·유틸만 상승", "en": "S&P 500 sector ETFs · Sep 4 close · only chips, tech, industrials, utilities rose"},
+
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
+  "rank_sub": {"ko": "9/4 미국장 · 막대 옆은 등락률", "en": "Sep 4 US session · bar shows daily % change"},
+  "rank_unit": {"ko": "단위 · 십억달러", "en": "Unit · $ billion"},
+
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "9/4 발표분 · 실측 · 예상 · 이전", "en": "Released Sep 4 · actual · estimate · prior"},
+
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,506.99", "delta": "▼0.29%", "dir": "down",
+         "sub_ko": "9/3 최고 종가(26,584.06) 대비 0.29% 낮은 수준", "sub_en": "0.29% below the Sep 3 high close of 26,584.06"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,718.60", "delta": "▼0.38%", "dir": "down",
+         "sub_ko": "9/3 고점(7,747.71) 대비 0.38% 낮은 수준", "sub_en": "0.38% below the Sep 3 high of 7,747.71"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 132, "flat": 6, "down": 162}
+      ],
+      "flows": {
+        "label_ko": "상승 · 하락 종목 거래대금 (10억달러)", "label_en": "Advancers vs decliners turnover (US$ billion)",
+        "rows": [
+          {"label_ko": "상승 종목", "label_en": "Advancers", "value": "229.1"},
+          {"label_ko": "하락 종목", "label_en": "Decliners", "value": "165.3"}
+        ]
+      },
+      "note_ko": "종목 수는 하락(162)이 상승(132)보다 많았지만, 거래대금은 58%가 상승 종목에 쏠렸다 — 메모리 반도체 랠리가 대형 기술주 약세를 상쇄했다.",
+      "note_en": "More stocks fell (162) than rose (132), but 58% of dollar volume flowed into advancers — the memory-chip rally offset mega-cap tech weakness."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 2.61},
+        {"label_ko": "기술 (XLK)", "label_en": "Tech (XLK)", "value": 0.70},
+        {"label_ko": "산업재 (XLI)", "label_en": "Indu. (XLI)", "value": 0.41},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Util. (XLU)", "value": 0.12},
+        {"label_ko": "소재 (XLB)", "label_en": "Matls (XLB)", "value": -0.34},
+        {"label_ko": "부동산 (XLRE)", "label_en": "R.Estate (XLRE)", "value": -0.72},
+        {"label_ko": "금융 (XLF)", "label_en": "Fin. (XLF)", "value": -0.79},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Staples (XLP)", "value": -0.80},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -0.87},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health (XLV)", "value": -1.04},
+        {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm (XLC)", "value": -1.19},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Cons.Disc (XLY)", "value": -1.33}
+      ],
+      "note_ko": "반도체(SMH)가 유일하게 2%대 상승, 경기소비재(XLY)는 테슬라 급락에 최하위로 밀렸다.",
+      "note_en": "SMH (chips) was the only sector up over 2%; XLY lagged worst on Tesla's slide."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$35.83B", "pct": 6.1},
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$31.18B", "pct": 0.84},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$28.81B", "pct": 11.9},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$23.02B", "pct": -5.92},
+        {"name_ko": "애플", "name_en": "Apple", "value": "$12.67B", "pct": -2.51}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중 · 표본 300종목 기준", "label_en": "Top-5 share of turnover · 300-name sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 33.3, "color": "#e2574c"},
+          {"label_ko": "나머지 295종목", "label_en": "Remaining 295", "pct": 66.7, "color": "#4a4a4a"}
+        ]
+      },
+      "note_ko": "메모리 반도체 3종목(마이크론·엔비디아·샌디스크)과 테슬라·애플이 거래대금 상위를 채웠다 — 메모리는 상승, 대형 기술주는 하락으로 갈렸다.",
+      "note_en": "Memory names (Micron, Nvidia, SanDisk) plus Tesla and Apple topped turnover — memory rose while the mega-caps fell."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {"label_ko": "美 8월 비농업고용", "label_en": "US Aug Nonfarm Payrolls", "value": "+16.2만", "delta": {"ko": "예상 +5.3만 상회", "en": "Beat est. +53K"}, "dir": "up",
+         "sub_ko": "최근 5개월래 최대 증가폭 · 6·7월치도 상향조정", "sub_en": "Biggest gain in 5 months · June, July revised up",
+         "ref_ko": "예상보다 크게 나오면 통상 금리 인하 기대가 낮아진다", "ref_en": "A big beat typically lowers rate-cut expectations"},
+        {"label_ko": "美 8월 실업률", "label_en": "US Aug Unemployment Rate", "value": "4.1%", "delta": {"ko": "예상과 동일", "en": "In line with est."}, "dir": "flat",
+         "sub_ko": "전월(4.1%)과 동일", "sub_en": "Unchanged from July's 4.1%"},
+        {"label_ko": "美 8월 평균시간당임금 (전월비)", "label_en": "US Aug Avg Hourly Earnings (MoM)", "value": "+0.3%", "delta": {"ko": "전년비 +3.1%", "en": "YoY +3.1%"}, "dir": "up",
+         "sub_ko": "시간당 $37.75로 10센트 상승", "sub_en": "Up 10 cents to $37.75/hour"}
+      ],
+      "note_ko": "예상을 크게 웃돈 고용 서프라이즈에 금리 인하 기대가 후퇴했다 (출처: 美 노동부).",
+      "note_en": "The payroll surprise cooled rate-cut expectations. (Source: US Labor Dept.)"
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {"headline_ko": "메모리 슈퍼사이클, 이번 분기 D램 50%·낸드 60% 가격 인상 전망", "headline_en": "Memory Supercycle: DRAM Seen Up 50%, NAND 60% This Quarter",
+         "body_ko": "서스쿼해나는 AI 데이터센터발 수요로 D램 계약가가 이번 분기 50% 이상, 낸드는 60%가량 오를 것으로 내다봤다. 마이크론은 최선단 생산라인 물량을 이미 연말까지 소진했다고 밝혔다.",
+         "body_en": "Susquehanna expects AI-datacenter demand to lift DRAM contract prices over 50% and NAND about 60% this quarter. Micron says its leading-edge capacity is already sold out through year-end."},
+        {"headline_ko": "UBS, HBM 가격 성장률 전망 67%→79%로 상향", "headline_en": "UBS Raises HBM Price Growth Forecast to 79% From 67%",
+         "body_ko": "UBS는 고대역폭메모리(HBM) 가격이 연간 79% 오를 것으로 전망치를 높였다. 이전 전망은 67%였다.",
+         "body_en": "UBS now sees HBM prices rising 79% annually, up from its prior 67% estimate."},
+        {"headline_ko": "노무라, 삼성전자·SK하이닉스 목표가 유지 — '저평가'", "headline_en": "Nomura Keeps Samsung, SK Hynix Targets — Calls Them 'Undervalued'",
+         "body_ko": "노무라증권은 최근 주가 조정에도 삼성전자 67만원, SK하이닉스 470만원 목표가를 그대로 유지하며 '심각한 저평가'라고 평가했다.",
+         "body_en": "Nomura kept its price targets — 670,000 won for Samsung Electronics, 4.7 million won for SK Hynix — despite the recent pullback, calling both 'severely undervalued.'"},
+        {"headline_ko": "메모리 품귀에 전자기기 가격 최대 20% 인상 '램마겟돈'", "headline_en": "'RAMageddon': Memory Shortage Pushes Device Prices Up to 20%",
+         "body_ko": "파이낸셜타임스는 AI발 메모리 공급난이 소비자 가전 가격 상승으로 번지고 있다고 보도했다 — 이른바 '램마겟돈'이다.",
+         "body_en": "The Financial Times reports the AI-driven memory shortage is spilling into higher consumer-electronics prices — dubbed 'RAMageddon.'"},
+        {"headline_ko": "SK하이닉스 40조 자사주 소각 vs 삼성전자는 배당 중심", "headline_en": "SK Hynix's $30B Buyback vs Samsung's Dividend Focus",
+         "body_ko": "SK하이닉스는 순현금 약 69조원을 확보하며 대규모 자사주 소각에 나선 반면, 삼성전자는 배당 중심 주주환원 정책에 무게를 두고 있다.",
+         "body_en": "SK Hynix, holding about 69 trillion won in net cash, is pursuing large-scale buybacks, while Samsung Electronics is leaning toward dividend-focused returns."},
+        {"headline_ko": "반도체 장비·소재(소부장) 업체, 캐파 증설 가속", "headline_en": "Chip Equipment and Materials Makers Speed Up Capacity Expansion",
+         "body_ko": "AI 투자發 반도체 슈퍼사이클 장기화 전망에 국내 반도체 장비·소재 업체들이 생산능력 증설 속도를 내고 있다.",
+         "body_en": "Expecting the AI-driven chip supercycle to last, Korean equipment and materials suppliers are accelerating capacity expansion."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {"headline_ko": "美 8월 고용 서프라이즈, '굿뉴스가 배드뉴스' 된 하루", "headline_en": "US Payroll Surprise: A 'Good News Is Bad News' Day",
+         "body_ko": "예상의 3배를 넘는 8월 비농업고용(+16.2만)에 투자자들은 오히려 이달 금리 인상 가능성에 베팅을 늘렸다. 전쟁발 에너지 가격 상승이 물가로 번질 것을 우려한 워시 연준 의장 체제의 매파적 해석이다.",
+         "body_en": "August payrolls tripled expectations at +162K, and investors responded by raising bets on a rate hike this month rather than a cut — a hawkish read under Fed Chair Kevin Warsh, wary that war-driven energy prices could broaden into inflation."},
+        {"headline_ko": "반도체 슈퍼사이클發 한국 경상흑자, GDP 대비 20% 육박 전망", "headline_en": "Korea's Current-Account Surplus Nears 20% of GDP on Chip Boom",
+         "body_ko": "AI 투자 확대에 따른 메모리 반도체 공급 부족과 가격 상승으로, 올해 한국의 GDP 대비 경상수지 흑자 비율이 사상 처음 20%에 근접할 것이라는 전망이 나왔다.",
+         "body_en": "A memory-chip supply crunch driven by AI investment could push Korea's current-account surplus to nearly 20% of GDP this year — a first, forecasters say."},
+        {"headline_ko": "이번 주 코스피, 6200~7300 밴드 전망 — 반도체가 버팀목", "headline_en": "This Week's KOSPI: Brokers See 6,200-7,300 Band, Chips the Ballast",
+         "body_ko": "국내 증권사들은 이번 주 코스피가 미국 물가지표와 금리 부담 속에서도 반도체 강세에 힘입어 박스권 등락을 이어갈 것으로 내다봤다.",
+         "body_en": "Korean brokerages expect KOSPI to trade in a range this week, with chip strength offsetting pressure from upcoming US inflation data and rate concerns."},
+        {"headline_ko": "국제유가 5거래일 연속 상승", "headline_en": "Crude Oil Rises for a 5th Straight Session",
+         "body_ko": "WTI는 호르무즈 해협 긴장이 이어지며 5거래일 연속 오름세로 배럴당 91.48달러에 마감했다.",
+         "body_en": "WTI extended its rally to a fifth session, closing at $91.48 a barrel as Strait of Hormuz tensions persisted."},
+        {"headline_ko": "테슬라, 사이버캡 행사 흥행 부진에 급락", "headline_en": "Tesla Slides on Underwhelming Cybercab Event",
+         "body_ko": "일론 머스크가 불참한 채 비공개로 진행된 사이버캡 행사가 시장 기대에 못 미쳤다. 美 도로교통안전국(NHTSA)이 안전인증 조사에 착수했다는 소식까지 겹치며 주가는 5.9% 급락했다.",
+         "body_en": "A low-key Cybercab event without Elon Musk fell short of expectations, and news that US regulator NHTSA opened a safety-certification probe sent the stock down 5.9%."},
+        {"headline_ko": "미국 증시, 노동절로 오늘 밤 정규장 휴장", "headline_en": "US Markets Closed Tonight for Labor Day",
+         "body_ko": "9월 첫째 월요일인 노동절(Labor Day)로 미국 증시는 오늘 정규장이 열리지 않는다. 다음 정규 거래일은 화요일이다.",
+         "body_en": "US markets are closed today for Labor Day, the first Monday in September. The next regular session is Tuesday."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {"ko": "한국시간 기준 · 노란 점 = 주목", "en": "All times KST · dot marks a high-importance item"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "종일", "title_ko": "미국 증시 휴장 — 노동절", "title_en": "US Markets Closed — Labor Day", "detail_ko": "정규장 휴장 · 다음 거래일은 화요일", "detail_en": "No regular session · next trading day is Tuesday", "importance": "high"},
+    {"time": "14:00", "title_ko": "일본 8월 경기동행·선행지수", "title_en": "Japan Aug Coincident & Leading Index", "detail_ko": "이전 동행 118.5 · 선행 116.5", "detail_en": "Prior: coincident 118.5, leading 116.5", "importance": "mid"},
+    {"time": "15:00", "title_ko": "독일 7월 산업생산", "title_en": "Germany Jul Industrial Production", "detail_ko": "전월비 예상 +0.3% · 이전 +0.2%", "detail_en": "MoM est. +0.3% · prior +0.2%", "importance": "mid"},
+    {"time": "17:00", "title_ko": "중국 8월 외환보유액", "title_en": "China Aug FX Reserves", "detail_ko": "이전 3.419조달러", "detail_en": "Prior $3.419T", "importance": "mid"},
+    {"time": "17:30", "title_ko": "유로존 9월 센틱스 투자자신뢰지수", "title_en": "Eurozone Sep Sentix Investor Confidence", "detail_ko": "이전 0.9", "detail_en": "Prior 0.9", "importance": "mid"},
+    {"time": "18:00", "title_ko": "유로존 2분기 GDP·고용 확정치", "title_en": "Eurozone Q2 GDP & Employment (Final)", "detail_ko": "GDP 전기비 예상 +0.4% · 고용 전기비 예상 +0.1%", "detail_en": "GDP QoQ est. +0.4% · employment QoQ est. +0.1%", "importance": "mid"},
+    {"time": "9/10(목)", "title_ko": "[미리보기] 美 8월 PPI · 코스피200 선물옵션 동시만기일", "title_en": "[Preview] US Aug PPI · KOSPI200 Quad Witching", "detail_ko": "'네 마녀의 날' · 뒤이어 9/11 CPI, 9/15~16 FOMC", "detail_en": "'Quadruple witching' · followed by CPI (9/11) and FOMC (9/15-16)", "importance": "high"}
+  ],
+
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "card_photos": {
+    "1": "An empty Wall Street trading floor moments after the closing bell on a quiet Friday, warm amber ticker light washing over rows of dark monitors, a faint green glow from semiconductor tickers standing out against a sea of red.",
+    "3": "A dark financial trading floor with a single glowing line chart projected across a bank of screens, subtle circuit-board and silicon-wafer motifs reflected in the glass."
+  },
+
+  "caption_ko": "📊 luckyon 브리핑 · 2026.9.7(월) 아침\n\n나스닥이 0.29%, S&P 500이 0.38% 내리며 최근 9거래일 최고치에서 소폭 밀렸습니다. 예상의 3배를 웃돈 8월 비농업고용(+16.2만)에 금리 인하 기대가 후퇴하며 국채 10년물이 4.78%로 올랐습니다.\n\n종목 수는 하락이 더 많았지만 거래대금은 58%가 상승 종목에 몰렸습니다 — 마이크론(+6.1%)·샌디스크(+11.9%) 등 메모리 반도체가 주도했습니다. 반면 테슬라는 사이버캡 행사 흥행 부진에 5.9% 급락했습니다.\n\n코스피는 지난 거래일 1.64% 반등한 6,687.21로 마감했고, 오늘 밤 미국 증시는 노동절로 휴장합니다.\n\n#미국증시 #나스닥 #코스피 #반도체슈퍼사이클 #마이크론 #샌디스크 #테슬라 #고용지표 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "📊 luckyon Briefing · Mon, Sep 7, 2026 · AM\n\nNasdaq slipped 0.29% and the S&P 500 fell 0.38%, pulling back slightly from the 9-session high. August payrolls tripled estimates at +162K, cooling rate-cut hopes and lifting the 10-year yield to 4.78%.\n\nMore stocks fell than rose, but 58% of dollar volume flowed into advancers, led by memory chipmakers Micron (+6.1%) and SanDisk (+11.9%). Tesla bucked the trend, sliding 5.9% on a lackluster Cybercab event.\n\nKOSPI closed its last session up 1.64% at 6,687.21. US markets are closed tonight for Labor Day.\n\n#USstocks #Nasdaq #KOSPI #ChipSupercycle #Micron #SanDisk #Tesla #JobsReport #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+
+  "sources": ["FMP", "Yahoo Finance", "KRX (FinanceDataReader)", "FINRA", "美 노동부(BLS)", "FXStreet 경제캘린더", "CNN Fear & Greed", "Nomura", "UBS", "Susquehanna", "Financial Times", "SBS Biz", "연합뉴스", "네이버뉴스"]
+}
