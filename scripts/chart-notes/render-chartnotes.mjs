@@ -926,6 +926,60 @@ const R = {
     </div>`;
   },
 
+  // 거울 두 칸: 같은 방법이 «방향만 반대»로 쓰이는 것을 나란히 보여준다.
+  //
+  // 한 방향만 그린 그림은 한 방향만 가르치는 회차가 된다. EP.06(추세선) 이 그랬다 —
+  // 하락 추세선을 본문 주석으로는 적었는데 그림 다섯 개가 전부 상승이라, 카드를 훑는 사람은
+  // 상승만 가져갔다. 주석은 읽히지 않고 그림이 읽힌다.
+  //
+  // 왼쪽은 저점을 이어 «아래»에 긋는 선, 오른쪽은 고점을 이어 «위»에 긋는 선.
+  // 선이 가격의 어느 쪽에 붙는지가 이 그림의 요점이라 두 칸을 반드시 나란히 둔다.
+  // 갭 상승/하락, 골든/데드크로스, 상승/하락 채널처럼 대칭이 있는 회차에 그대로 쓴다.
+  //
+  //   left/right = { label, caption }  ← 각각 _ko/_en
+  mirror(c) {
+    const PW = 420, PH = 250, GAP = 50, H = 330, TOP = 44;
+    const dot = (x, y) => `<circle cx="${x}" cy="${y}" r="9" fill="${C.paper}" stroke="${C.red}" stroke-width="4"/>`;
+    // 왼쪽: 저점 세 개가 우상향 직선 위에 얹힌다(선은 가격 «아래»).
+    const UP_LINE = [[10, 215], [405, 95]];
+    const UP_ZIG = [[20, 205], [60, 198], [110, 150], [180, 162], [240, 110], [300, 125], [360, 75], [405, 90]];
+    const UP_DOTS = [[60, 198], [180, 162], [300, 125]];
+    // 오른쪽: 고점 세 개가 우하향 직선에 닿는다(선은 가격 «위»).
+    const DN_LINE = [[10, 95], [405, 215]];
+    const DN_ZIG = [[20, 120], [60, 112], [110, 160], [180, 148], [240, 195], [300, 185], [360, 235], [405, 220]];
+    const DN_DOTS = [[60, 112], [180, 148], [300, 185]];
+
+    const panel = (ox, line, zig, dots, key) => `
+      <g transform="translate(${ox},0)">
+        <text x="${PW / 2}" y="26" text-anchor="middle" font-family="${FONT_TITLE}" font-size="30"
+              font-weight="800" fill="${C.navy}">${esc(t(c, `${key}_label`))}</text>
+        <g transform="translate(0,${TOP})">
+          <rect x="0" y="0" width="${PW}" height="${PH}" fill="none" stroke="#dcd8cc" stroke-width="2" rx="10"/>
+          <line x1="${line[0][0]}" y1="${line[0][1]}" x2="${line[1][0]}" y2="${line[1][1]}"
+                stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>
+          <polyline points="${zig.map(p => p.join(',')).join(' ')}" stroke="${C.navy}" stroke-width="6"
+                    fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          ${dots.map(p => dot(p[0], p[1])).join('')}
+        </g>
+        <text x="${PW / 2}" y="${TOP + PH + 34}" text-anchor="middle" font-family="${FONT_SANS}"
+              font-size="23" fill="${C.body}">${esc(t(c, `${key}_caption`))}</text>
+      </g>`;
+
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="flex:1;display:flex;align-items:center">
+        <svg width="900" height="${H}" viewBox="0 0 ${PW * 2 + GAP} ${H}">
+          ${panel(0, UP_LINE, UP_ZIG, UP_DOTS, 'left')}
+          ${panel(PW + GAP, DN_LINE, DN_ZIG, DN_DOTS, 'right')}
+        </svg>
+      </div>
+      ${t(c, 'note') ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin-bottom:18px;
+             font-family:${FONT_TITLE};font-size:26px;font-weight:700;line-height:1.5;color:${C.body}">${esc(t(c, 'note'))}</div>` : ''}
+      ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
+    </div>`;
+  },
+
   // 공식: 분수 꼴 수식 + 각 항 설명 + 실제 숫자로 계산해 보기
   // PER·PBR·EPS·배당수익률·ROE 처럼 "나누기 하나로 끝나는" 지표에 쓴다.
   formula(c) {
