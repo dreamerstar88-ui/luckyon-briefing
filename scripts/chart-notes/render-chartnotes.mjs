@@ -533,7 +533,12 @@ const R = {
   // 이동평균선/골든크로스·지지저항·추세선·VIX·볼린저밴드·배당락 등에 두루 쓴다.
   // points 는 0~100 정규화 좌표 (x 왼→오, y 아래→위). 실제 픽셀은 렌더러가 계산한다.
   lines(c) {
-    const W = 900, H = 470, P = 30;
+    // `note` 를 주면 그림 아래에 붉은 세로줄 문단이 붙는다(`flip.note` 와 같은 장치).
+    // 그림은 한 방향만 그리고 «반대 방향도 같다»는 글로 마저 채우는 자리다 — 두 방향을 다 그리면
+    // 선이 둘이 되어 그림의 요점이 무너진다(EP.05 에서 확인된 것과 같은 이유). 문단이 들어가는
+    // 만큼 그림 높이를 줄여야 카드 밖으로 밀리지 않는다.
+    const NOTE = t(c, 'note');
+    const W = 900, H = NOTE ? 372 : 470, P = 30;
     const px = (x) => P + (x / 100) * (W - P * 2);
     const py = (y) => (H - P) - (y / 100) * (H - P * 2);
     const SERIES = d(c, 'series', []), MARKER = d(c, 'marker', null);
@@ -582,6 +587,8 @@ const R = {
         </svg>
       </div>
       ${legend ? `<div style="margin-bottom:14px">${legend}</div>` : ''}
+      ${NOTE ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin-bottom:18px;
+             font-family:${FONT_TITLE};font-size:26px;font-weight:700;line-height:1.5;color:${C.body}">${esc(NOTE)}</div>` : ''}
       ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
     </div>`;
   },

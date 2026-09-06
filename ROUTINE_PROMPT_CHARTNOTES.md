@@ -337,7 +337,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `example` | **실제 시세 사례** | `title`, `sub`, `direction`, `values.{high,close,open,low}`, `conclusion`, `note` |
 | `numbered` | 번호 매긴 3가지 + 경고 | `title`, `items[].title/desc`, `warn_title`, `warn_body` |
 | `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
-| `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing`, **`touches[].{x,y,n}`**(닿은 자리에 번호 동그라미), **`axis`**(기본 true) |
+| `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, `band`, `closing`, **`touches[].{x,y,n}`**(닿은 자리에 번호 동그라미), **`axis`**(기본 true), **`note`**(그림 아래 붉은 세로줄 문단) |
 | `flip` | **역할 반전** — 뚫린 저항선이 지지선이 되는 것을 **선 하나**로 | `title`, `body`, `before`, `after`, `break`, `retest`, `note`, `closing` |
 | `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` |
 | `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
@@ -357,6 +357,10 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 **`checklist.figure`** — 용어 목록 아래에 «그 이름들이 차트 어디에 있는지» 한 장으로 보여준다. 용어를 네 줄 늘어놓기만 하면 **카드 아래 절반이 통째로 비어** «공부 못하는 사람이 정리한 노트»가 된다(같은 이슈). `levels-map` 은 저항선·지지선 두 줄, 그 사이 박스권 띠, 오른쪽 끝에서 위로 뚫고 나가는 돌파를 한 그림에 담아 **네 용어가 서로의 관계로 정의되게** 한다. 라벨은 그림 왼쪽 바깥에 세로로 쌓인다 — 오른쪽에 붙이면 돌파해 올라가는 선의 끝과 겹친다.
 
 **`lines.touches`** — 선이 그 높이에서 **몇 번째로 멈췄는지** 번호 동그라미를 찍는다. 「한 번은 우연, 두 번부터 자리」가 이 시리즈의 핵심 문장인데 그림이 세어 주지 않으면 독자는 그 말을 글로만 읽는다. **좌표는 `series[].points` 의 실제 꼭짓점이자 `levels[].y` 와 정확히 같은 값이어야 한다** — 닿지도 않은 곳에 번호를 붙이면 그림이 설명을 배반한다. 반대로 **닿았는데 번호가 없는 자리도 없어야** 독자가 셈을 믿는다.
+
+**`lines.note`** — 그림 아래에 붉은 세로줄 문단을 붙인다(`flip.note` 와 같은 장치이고, 문단이 들어가면 그림 높이가 470 → 372 로 줄어든다). **한 방향만 그리고 «반대 방향도 같다»는 글로 마저 채우는 자리다.** 두 방향을 다 그리면 선이 둘이 되어 그림의 요점이 무너진다.
+
+> **«한쪽 방향만 그린 그림»이 곧 «한쪽 방향만 가르치는 회차»가 되지 않게 한다.** EP.06 초안은 그림도 문장도 전부 «저점을 잇는 상승 추세선»이어서, 카드 8장에 **「저점」이 32번·「고점」이 0번** 나왔다 — 하락 추세선은 고점을 잇고 그 고점이 점점 «낮아지는데», 그 말이 카드 어디에도 없어 사실상 «추세선 = 저점을 잇는 선»으로 가르치는 꼴이었다(사용자 지적). 캡션에만 한 줄 적는 것으로는 부족하다 — **저장·재공유되는 것은 카드 이미지이지 캡션이 아니다.** 최종판은 ① 개념 카드와 이탈 카드에 `note` 로 반대 방향을 적고, ② 비교표·요약·경고문의 «저점/오르는/내려가면»을 «점/옮겨 가는/벗어나면»으로 바꿔 방향 중립으로 만들고, ③ 워크드 예시(표지·도입·실제 사례)만 상승 한 방향으로 두었다. **일반적인 용어를 제목으로 걸었으면(«추세선», «갭», «이동평균선») 그 용어의 반대·대칭 경우가 카드 위에 최소 한 번은 글자로 있어야 한다.**
 
 **`lines.axis`** — 바닥 축선은 «0 이 의미 있는» 그림(VIX·거래대금 등)에서만 쓸모가 있다. 데이터가 0 근처에 가지 않는 그림에서는 화면 한가운데 떠 있는 회색 선이 되어 **정체불명의 세 번째 수평선**으로 읽힌다(EP.05 p.04 에서 실제로 그랬다). 그런 회차는 `"axis": false`.
 
