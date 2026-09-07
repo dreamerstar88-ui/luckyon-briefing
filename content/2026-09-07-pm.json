@@ -1,0 +1,220 @@
+{
+  "date": "2026-09-07",
+  "session": "pm",
+  "dateLabel_ko": "2026.9.7(월) 저녁",
+  "dateLabel_en": "Mon, Sep 7, 2026 · PM",
+
+  "headline_ko": "코스피, 오픈AI발 반도체 훈풍에 4.61% 폭등…7,000선 눈앞",
+  "headline_en": "KOSPI Surges 4.61% on OpenAI-Fueled Chip Rally, Nears 7,000",
+  "headline_sub_ko": "SK하이닉스 +8.26%·삼성전자 +5.68% 견인 · 원/달러는 23개월래 최저",
+  "headline_sub_en": "SK Hynix +8.26%, Samsung +5.68% lead; won hits 23-month high",
+
+  "cover_kicker": {"ko": "오늘 한국장 마감 · 9/7", "en": "Korea Market Close · Sep 7"},
+  "cover_facts": [
+    ["chip", {"ko": "코스피 +4.61% · 코스닥 +1.07%", "en": "KOSPI +4.61% · KOSDAQ +1.07%"},
+              {"ko": "6,995.39 / 822.19 · 반도체가 지수 견인, 7,000선 목전", "en": "6,995.39 / 822.19 pts · chips drove gains, 7,000 in sight"}],
+    ["ai", {"ko": "오픈AI 'GPT-6 아스트라' 공개 · 엔비디아 허깅페이스 인수", "en": "OpenAI unveils 'GPT-6 Astra' · Nvidia buys Hugging Face"},
+           {"ko": "130억달러 인수 · AGI 도달 논쟁 속 AI 수요 기대 확산", "en": "$13B deal · AGI debate fuels AI demand hopes"}],
+    ["globe", {"ko": "원/달러 장중 1,330원대 · 23개월래 최저", "en": "Won hits 1,330s intraday · 23-month high"},
+              {"ko": "외국인·기관 각 2.6조 순매수, 개인 6.8조 순매도", "en": "Foreign & institutions bought ₩2.6T each; retail sold ₩6.8T"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "코스피가 오픈AI의 새 모델 공개와 엔비디아의 대형 인수 소식에 반도체주가 급등하며 4.61% 오른 6,995.39에 마감, 7,000선을 눈앞에 뒀다.",
+      "SK하이닉스가 8.26%, 삼성전자가 5.68% 뛰며 지수를 견인했고, 두 종목의 거래대금이 코스피 전체의 절반을 넘었다.",
+      "외국인과 기관이 각각 2조6,000억원 안팎을 순매수하며 지수를 밀어올린 반면, 개인은 홀로 6조8,000억원을 순매도했다 — 두 주체 동반 2조원대 순매수는 6월 12일 이후 처음이다.",
+      "반도체 훈풍은 아시아 전역으로 번져 닛케이가 2.12% 올랐지만 홍콩 항셍은 나홀로 내렸고, 원/달러 환율은 장중 1,330원대까지 밀려 23개월 만에 최저치를 찍었다."
+    ],
+    "lines_en": [
+      "KOSPI jumped 4.61% to close at 6,995.39, nearing 7,000, as chip stocks surged on OpenAI's new model launch and Nvidia's major acquisition.",
+      "SK Hynix rose 8.26% and Samsung Electronics 5.68% to lead the index, with the two names alone accounting for over half of KOSPI's turnover.",
+      "Foreign and institutional investors each bought roughly ₩2.6 trillion, while retail investors alone sold about ₩6.8 trillion — the first time both bought over ₩2T on the same day since June 12.",
+      "The chip rally spread across Asia as the Nikkei rose 2.12%, though Hong Kong's Hang Seng bucked the trend and fell; the won briefly hit its weakest level against the dollar in 23 months, touching the 1,330s."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "29,565.25", "delta": "0.00%", "dir": "flat", "note_ko": "나스닥 선물(NQ) 기준 · 노동절 휴장으로 보합", "note_en": "Nasdaq futures (NQ) · flat, Labor Day holiday"},
+    {"label": "S&P 500", "value": "7,722.00", "delta": "0.00%", "dir": "flat", "note_ko": "S&P500 선물(ES) 기준 · 노동절 휴장으로 보합", "note_en": "S&P 500 futures (ES) · flat, Labor Day holiday"},
+    {"label": "KOSPI", "value": "6,995.39", "delta": "▲4.61%", "dir": "up", "note_ko": "오늘 종가 · 3거래일 연속 상승, 20일래 최고", "note_en": "Today's close · up a 3rd straight session, 20-day high"},
+    {"label": "VIX", "value": "15.07", "delta": "▲3.72%", "dir": "up", "note_ko": "노동절 휴장 중 지표성 소폭 상승", "note_en": "Indicative move during the Labor Day holiday"},
+    {"label": "Fear&Greed", "value": "42", "delta": "-", "dir": "flat", "note_ko": "노동절 휴장으로 9/4(금) 수치 유지", "note_en": "Unchanged from Friday's (Sep 4) close — US holiday"},
+    {"label": "US 10Y", "value": "4.78%", "delta": "-", "dir": "flat", "note_ko": "노동절 휴장으로 9/4 확정 종가 유지", "note_en": "Holding at the Sep 4 confirmed close — US holiday"},
+    {"label": "USD/KRW", "value": "1,346", "value_sub": "· DXY 98.9", "delta": "▼0.70%", "dir": "down", "note_ko": "수출업체 네고물량에 장중 1,330원대(23개월래 최저)", "note_en": "Exporter dollar-selling pushed it to the 1,330s intraday, a 23-month low"},
+    {"label": "Gold", "value": "$4,477", "delta": "▲1.06%", "dir": "up", "note_ko": "달러 약세에 상승", "note_en": "Rose as the dollar softened"},
+    {"label": "WTI", "value": "$91.48", "delta": "0.00%", "dir": "flat", "note_ko": "노동절 휴장 속 보합", "note_en": "Flat amid the Labor Day holiday"},
+    {"label": "Bitcoin", "value": "$79,309", "delta": "▼1.30%", "dir": "down", "note_ko": "24시간 기준 · 소폭 조정", "note_en": "24h basis · a modest pullback"}
+  ],
+  "market_note_ko": "미국 지수는 선물 기준(노동절 휴장으로 보합), 코스피는 오늘 종가 기준",
+  "market_note_en": "US indexes are futures (flat, Labor Day holiday); KOSPI is today's close",
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ", "S&P 500"],
+  "tile_rest": ["VIX", "Fear & Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+
+  "chart_series_values": [6808.21, 6912.37, 6788.88, 6820.02, 6835.80, 6562.72, 6579.48, 6687.21, 6995.39],
+  "chart_series_labels": ["8.26", "8.27", "8.28", "8.31", "9.1", "9.2", "9.3", "9.4", "9.7"],
+  "chart_title": {"ko": "코스피, 3거래일 연속 상승하며 20일래 최고", "en": "KOSPI rises for a 3rd day, hits a 20-day high"},
+  "chart_sub": {"ko": "코스피 종가 · 최근 9거래일", "en": "KOSPI close · last 9 sessions"},
+  "chart_note": {"ko": "9.2 저점 6,562.72 → 9.7 6,995.39, 5거래일간 +6.6%", "en": "From the 9/2 low of 6,562.72 to 6,995.39 on 9/7, +6.6% over 5 sessions"},
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "섹터별 등락", "en": "Sector Moves"},
+  "sector_sub": {"ko": "15개 주력 업종 · 시가총액 가중", "en": "15 major sectors · cap-weighted"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Turnover"},
+  "rank_sub": {"ko": "코스피 · 거래대금 기준", "en": "KOSPI · by turnover"},
+  "rank_unit": {"ko": "단위 · 조원", "en": "Unit · ₩ trillion"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "한국 우선 · 해외 병기", "en": "Korea first, global alongside"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록", "title_en": "KOSPI & KOSDAQ Records",
+      "color": "#e66767", "type": "stats", "cols": 1,
+      "stats": [
+        {"label_ko": "코스피", "label_en": "KOSPI", "value": "6,995.39", "delta": "▲4.61%", "dir": "up", "sub_ko": "3거래일 연속 상승 · 20일래 최고", "sub_en": "Up a 3rd straight session · 20-day high"},
+        {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "822.19", "delta": "▲1.07%", "dir": "up", "sub_ko": "2거래일 연속 상승", "sub_en": "Up a 2nd straight session"}
+      ],
+      "breadth": [
+        {"label_ko": "코스피 등락 종목수", "label_en": "KOSPI advancers/decliners", "up": 478, "flat": 84, "down": 381},
+        {"label_ko": "코스닥 등락 종목수", "label_en": "KOSDAQ advancers/decliners", "up": 799, "flat": 182, "down": 791}
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (조원)", "label_en": "KOSPI net buy/sell by investor (₩ trillion)",
+        "rows": [
+          {"label_ko": "개인", "label_en": "Retail", "value": -6.8},
+          {"label_ko": "외국인", "label_en": "Foreign", "value": 2.6},
+          {"label_ko": "기관", "label_en": "Institutions", "value": 2.6}
+        ]
+      },
+      "note_ko": "SK하이닉스(8.26%)·삼성전자(5.68%) 거래대금이 코스피 전체의 절반을 넘었고, 외국인·기관 동반 2조원대 순매수는 6월 12일 이후 처음이다 (수급은 매체 3곳 대조 · 코스피 시장 기준, 기타법인 순매수분 제외).",
+      "note_en": "SK Hynix and Samsung alone made up over half of KOSPI turnover, and joint foreign-institutional buying above ₩2T each was the first since June 12 (flows cross-checked across 3 outlets; KOSPI market, excludes other-corporate net buying)."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Moves",
+      "color": "#4a9d7f", "type": "bars",
+      "bars": [
+        {"label_ko": "반도체", "label_en": "Semis", "value": 6.71},
+        {"label_ko": "전력·에너지", "label_en": "Power & Energy", "value": 5.84},
+        {"label_ko": "건설·건자재", "label_en": "Construction", "value": 4.69},
+        {"label_ko": "IT·전자기기", "label_en": "IT & Electronics", "value": 4.53},
+        {"label_ko": "기계·방산", "label_en": "Machinery & Defense", "value": 3.99},
+        {"label_ko": "유통·소비재", "label_en": "Retail & Consumer", "value": 3.49},
+        {"label_ko": "금융", "label_en": "Financials", "value": 3.30},
+        {"label_ko": "자동차", "label_en": "Autos", "value": 2.13},
+        {"label_ko": "조선", "label_en": "Shipbuilding", "value": 1.62},
+        {"label_ko": "통신서비스", "label_en": "Telecom", "value": 1.42},
+        {"label_ko": "인터넷·SW", "label_en": "Internet & SW", "value": 1.24},
+        {"label_ko": "바이오·제약", "label_en": "Bio & Pharma", "value": 0.21},
+        {"label_ko": "2차전지", "label_en": "Batteries", "value": 0.08},
+        {"label_ko": "화학", "label_en": "Chemicals", "value": -0.23},
+        {"label_ko": "철강·금속", "label_en": "Steel & Metals", "value": -0.25}
+      ],
+      "note_ko": "반도체가 유일하게 6%대 상승했고, 화학·철강은 나홀로 약세였다.",
+      "note_en": "Semis was the only sector up over 6%; chemicals and steel lagged in the red."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Turnover",
+      "color": "#3987e5", "type": "rank",
+      "rows": [
+        {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "₩6.11T", "pct": 8.26},
+        {"name_ko": "삼성전자", "name_en": "Samsung Electronics", "value": "₩4.90T", "pct": 5.68},
+        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mechanics", "value": "₩0.79T", "pct": 3.78},
+        {"name_ko": "삼성전자우", "name_en": "Samsung Elec. (Pfd)", "value": "₩0.78T", "pct": 4.18},
+        {"name_ko": "SK스퀘어", "name_en": "SK Square", "value": "₩0.60T", "pct": 8.07}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중 · 코스피 기준", "label_en": "Top-5 share of KOSPI turnover",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 61.4, "color": "#e2574c"},
+          {"label_ko": "나머지 종목", "label_en": "Remaining", "pct": 38.6, "color": "#4a4a4a"}
+        ]
+      },
+      "note_ko": "SK하이닉스·삼성전자 단 2종목이 코스피 거래대금의 51%를 차지했다 — 반도체 쏠림이 뚜렷한 하루였다.",
+      "note_en": "SK Hynix and Samsung alone made up 51% of KOSPI turnover — a day of heavy concentration in chips."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "color": "#5b8dd6", "type": "stats", "cols": 1,
+      "stats": [
+        {"label_ko": "日 8월 외환보유액", "label_en": "Japan Aug FX Reserves", "value": "$1.21T", "delta": {"ko": "전월비 6.2% 감소", "en": "Down 6.2% MoM"}, "dir": "down", "sub_ko": "역대 최대 월간 감소폭 · 엔화 방어용 미국채 매도 영향", "sub_en": "Biggest monthly drop on record, on yen-defense Treasury sales", "ref_ko": "외환보유액 감소는 통화 방어 개입 강도를 보여주는 지표", "ref_en": "A reserve drawdown signals the scale of currency-defense intervention"}
+      ],
+      "note_ko": "일본 재무성 발표 · 오늘 국내 언론(연합인포맥스 등) 보도로 확인.",
+      "note_en": "Released by Japan's Ministry of Finance; confirmed via today's market wrap coverage."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "color": "#7b6cd9",
+      "items": [
+        {"headline_ko": "오픈AI 'GPT-6 아스트라' 공개, AGI 도달 논쟁 점화", "headline_en": "OpenAI Unveils 'GPT-6 Astra,' Reigniting the AGI Debate",
+         "body_ko": "오픈AI가 지난 3일 새 모델 '아스트라'를 공개하며 그렉 브록먼 사장이 AGI 달성을 주장했고, 엔비디아 젠슨 황 CEO도 \"AGI가 도착했다\"며 GPU 40만개 투자 계획을 예고했다. 다만 학계에서는 \"시기상조\"라는 반론도 나왔다.",
+         "body_en": "OpenAI unveiled its new 'Astra' model on Sep 3, with president Greg Brockman claiming AGI had been reached; Nvidia CEO Jensen Huang echoed the claim and previewed plans for 400,000 GPUs. Some academics call the AGI claim premature."},
+        {"headline_ko": "엔비디아, AI 플랫폼 허깅페이스 130억달러에 인수", "headline_en": "Nvidia to Acquire AI Platform Hugging Face for $13B",
+         "body_ko": "엔비디아가 오픈소스 AI 모델 허브 허깅페이스를 약 130억달러(약 17.6조원)에 인수하기로 확정했다. 젠슨 황 CEO는 \"입찰 경쟁에서 이기려 그 금액이 필요했다\"고 밝혔고, 2016년 초기 투자자들은 큰 수익을 거두게 됐다.",
+         "body_en": "Nvidia confirmed a roughly $13B deal to acquire open-source AI hub Hugging Face. CEO Jensen Huang said he needed that price tag to win a bidding war, and the platform's 2016 seed investors are set for a huge return."},
+        {"headline_ko": "AI·반도체 훈풍, 아시아 전역 밸류체인으로 확산", "headline_en": "AI-Driven Rally Spreads Across Asia's Chip Supply Chain",
+         "body_ko": "오픈AI발 반도체 기대감에 한국 SK하이닉스(+8.26%)·삼성전자(+5.68%)는 물론 대만 TSMC, 일본 반도체 장비주까지 동반 강세를 보이며 닛케이지수가 5거래일 만에 66,000선을 회복했다.",
+         "body_en": "Chip optimism from the OpenAI news lifted not just Korea's SK Hynix (+8.26%) and Samsung (+5.68%) but also Taiwan's TSMC and Japanese chip-equipment makers, helping the Nikkei reclaim the 66,000 line for the first time in 5 sessions."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {"headline_ko": "아시아 증시, 반도체 강세 속 홍콩만 나홀로 하락", "headline_en": "Asian Markets Rise on Chip Strength — Except Hong Kong",
+         "body_ko": "닛케이225가 2.12% 오른 66,399.84로 5거래일 만에 66,000선을 회복했고 대만 가권지수도 1.67% 상승했다. 반면 홍콩 항셍지수는 0.93% 내린 25,413.12로 나홀로 약세를 보였다.",
+         "body_en": "The Nikkei 225 rose 2.12% to 66,399.84, reclaiming 66,000 for the first time in 5 sessions, while Taiwan's Taiex gained 1.67%. Hong Kong's Hang Seng bucked the trend, falling 0.93% to 25,413.12."},
+        {"headline_ko": "원/달러 환율, 장중 1,330원대로 23개월래 최저", "headline_en": "Won Touches 23-Month High Against the Dollar, Hitting the 1,330s",
+         "body_ko": "원/달러 환율이 수출업체의 달러 매도 물량에 장중 1,330원대까지 내려가며 약 2년 만의 최저치를 기록했다. 이후 낙폭을 일부 되돌려 1,340원대에서 마감했다.",
+         "body_en": "The won briefly touched the 1,330s against the dollar on exporter dollar-selling, its strongest level in about two years, before paring gains to close in the 1,340s."},
+        {"headline_ko": "코스피, 외국인·기관 동반 2조원대 순매수는 6월 이후 처음", "headline_en": "Foreign, Institutional Buying Above ₩2T Each — First Since June",
+         "body_ko": "외국인과 기관이 코스피 시장에서 각각 2조6,000억원 안팎을 순매수했다(매체 3곳 대조). 두 주체가 함께 2조원 이상을 사들인 것은 6월 12일 이후 처음으로, 개인은 홀로 6조8,000억원을 순매도했다.",
+         "body_en": "Foreign and institutional investors each bought roughly ₩2.6T of KOSPI stocks (cross-checked across 3 outlets) — the first time both bought over ₩2T on the same day since June 12 — while retail investors alone sold about ₩6.8T."},
+        {"headline_ko": "한화에어로스페이스 \"크로아티아 '천무' 수출설, 아직 미확정\"", "headline_en": "Hanwha Aerospace: Croatia 'Chunmoo' Export Report 'Unconfirmed'",
+         "body_ko": "한화에어로스페이스는 자사 다연장로켓 '천무'의 크로아티아 수출설이 보도되자 \"확정된 바 없다\"는 조회공시 답변을 냈다.",
+         "body_en": "Hanwha Aerospace filed a disclosure denying reports of a Croatia export deal for its Chunmoo multiple rocket launcher, saying nothing has been finalized."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "NEXT",
+  "schedule_sub": {"ko": "지금 ~ 내일 오전 8시", "en": "Now through 8 AM tomorrow"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간", "title_en": "US Market Hours",
+    "lines_ko": ["※ 오늘 밤(9/7)은 노동절로 정규장 휴장", "다음 정규장은 화요일(9/8) 22:30 ~ 익일 05:00 (서머타임 기준)"],
+    "lines_en": ["※ Regular session closed tonight (Sep 7) for Labor Day", "Next session: Tue (Sep 8) 10:30 PM - 5:00 AM KST (DST)"]
+  },
+  "schedule": [
+    {"time": "오늘밤", "title_ko": "미국 증시 휴장 — 노동절", "title_en": "US Markets Closed — Labor Day", "detail_ko": "정규장 없음 · 다음 개장은 화요일(9/8) 22:30 KST", "detail_en": "No regular session · next open Tue (9/8) 22:30 KST", "importance": "high"},
+    {"time": "08:00", "title_ko": "한국 2분기 GDP 성장률(확정치)", "title_en": "Korea Q2 GDP Growth (Final)", "detail_ko": "전기비 예상 +0.6% · 전년비 예상 +3.7%", "detail_en": "QoQ est. +0.6% · YoY est. +3.7%", "importance": "high"},
+    {"time": "08:30", "title_ko": "일본 7월 근로자 현금급여(전년비)", "title_en": "Japan Jul Labor Cash Earnings (YoY)", "detail_ko": "예상 +3.9% · 이전 +3.4%", "detail_en": "Est. +3.9% · prior +3.4%", "importance": "mid"},
+    {"time": "08:50", "title_ko": "일본 2분기 GDP(확정치)", "title_en": "Japan Q2 GDP (Final)", "detail_ko": "전기비 예상 +0.4% · 속보치와 비교", "detail_en": "QoQ est. +0.4% · vs. preliminary read", "importance": "high"},
+    {"time": "08:50", "title_ko": "일본 8월 경상수지", "title_en": "Japan Aug Current Account", "detail_ko": "전월 적자에서 흑자 전환 예상", "detail_en": "Expected to swing from deficit to surplus", "importance": "mid"},
+    {"time": "12:00", "title_ko": "중국 8월 수출입", "title_en": "China Aug Trade Data", "detail_ko": "수출 YoY 이전 +23.9% · 수입 YoY 이전 +27.5%", "detail_en": "Exports YoY prior +23.9% · imports YoY prior +27.5%", "importance": "mid"},
+    {"time": "9/10~11", "title_ko": "[미리보기] ECB 금리결정(9/10)·美 CPI(9/11)", "title_en": "[Preview] ECB Rate Decision (9/10) · US CPI (9/11)", "detail_ko": "이어 9/15~16 FOMC", "detail_en": "Followed by FOMC on 9/15-16", "importance": "high"}
+  ],
+
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST tomorrow, US close wrap-up",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+
+  "card_photos": {
+    "1": "A KOSPI trading floor at close, green candlestick charts glowing on a wall of screens showing a sharp rally, silhouettes of traders reacting, dark cinematic lighting, amber accent glow",
+    "3": "A dark trading floor with a steep rising green line chart streaming across a large wall display, semiconductor wafer imagery overlaid subtly, soft blue ambient light, shallow depth of field",
+    "7": "A vast AI data center corridor at night, rows of glowing server racks receding into darkness, blue-white light trails suggesting a neural network, cool cinematic tone"
+  },
+
+  "caption_ko": "코스피가 오픈AI의 신모델 공개와 엔비디아의 대형 인수 소식에 반도체주가 급등하며 4.61% 오른 6,995.39에 마감, 7,000선을 눈앞에 뒀습니다. 원/달러 환율은 장중 23개월 만에 최저치를 찍었고, 아시아 증시도 대부분 동반 상승했습니다. 저녁 브리핑으로 오늘 하루를 정리해드립니다. 저장하고 팔로우하면 다음 브리핑도 놓치지 않아요 🔔\n\n다음 브리핑 — 내일 아침 8시\n\n#코스피 #주식 #증시브리핑 #반도체 #SK하이닉스 #삼성전자 #오픈AI #엔비디아 #환율 #투자 #재테크 #경제뉴스 #luckyon브리핑 #저녁브리핑 #AI",
+  "caption_en": "KOSPI jumped 4.61% to close at 6,995.39, nearing 7,000, as chip stocks surged on OpenAI's new model launch and Nvidia's big acquisition news. The won briefly hit a 23-month high against the dollar, and most Asian markets rose in sympathy. This is your evening wrap. Save & follow so you never miss the next brief 🔔\n\nNext brief — 8 AM KST tomorrow\n\n#KOSPI #StockMarket #Semiconductors #SKHynix #Samsung #OpenAI #Nvidia #ForexMarket #Investing #EconomicNews #luckyonBriefing #EveningBrief #AI",
+  "sources": ["KRX", "Yahoo Finance", "FMP", "일본 재무성", "연합인포맥스", "DART", "Naver News"]
+}
