@@ -1,0 +1,646 @@
+{
+ "date": "2026-09-08",
+ "session": "am",
+ "dateLabel_ko": "2026.9.8(화) 아침",
+ "dateLabel_en": "Tue, Sep 8, 2026 · AM",
+ "headline_ko": "코스피 7000 코앞, 골드만 \"1년 내 1만2000\" 목표 재확인",
+ "headline_en": "KOSPI Nears 7,000; Goldman Reaffirms 12,000 Target",
+ "headline_sub_ko": "美 증시는 노동절 여파로 이틀째 휴장 · 한미 대미투자 1호 텍사스 가스발전 확정",
+ "headline_sub_en": "US markets stay shut a 2nd day post-Labor Day · Korea-US finalize Texas gas plant as first investment project",
+ "cover_kicker": {
+  "ko": "간밤 동향 · 미국장 이틀째 휴장",
+  "en": "Overnight · US Markets Closed, Day 2"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 6,995.39, 전 거래일 +4.61%",
+    "en": "KOSPI 6,995.39, +4.61% last session"
+   },
+   {
+    "ko": "3거래일 연속 상승 · 20일래 최고 · 반도체가 주도",
+    "en": "3rd straight gain, 20-day high · led by chips"
+   }
+  ],
+  [
+   "rate",
+   {
+    "ko": "골드만삭스, 코스피 12개월 목표 1만2000 유지",
+    "en": "Goldman Keeps 12-Month KOSPI Target at 12,000"
+   },
+   {
+    "ko": "현재가 대비 71.5% 높은 수준 · 메모리 공급부족 심화를 근거로 제시",
+    "en": "71.5% above current level, citing a deepening memory shortage"
+   }
+  ],
+  [
+   "shield",
+   {
+    "ko": "한미, 대미투자 1호 텍사스 가스발전 확정",
+    "en": "Korea-US Finalize First Investment Project: Texas Gas Plant"
+   },
+   {
+    "ko": "약 30조원 규모 · 원전 최대 8기 건설도 후속 논의, 9/18 MOU 서명 예정",
+    "en": "~$22B project · up to 8 nuclear reactors also under discussion, MOU due Sep 18"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "나스닥·S&P 500은 노동절 연휴 이틀째로 9/4(금) 마감치(각각 ▼0.29%·▼0.38%)가 그대로 이어지고 있다 — 재개장은 오늘 밤 22:30 KST다.",
+   "코스피는 지난 거래일(9/7) 반도체 강세에 힘입어 4.61% 폭등한 6,995.39로 마감, 3거래일 연속 상승하며 20일래 최고치를 갈아치웠다.",
+   "골드만삭스는 이날 코스피 12개월 목표치 1만2000을 재확인했다 — 현재 종가보다 71.5% 높은 수준으로, 데이터센터발 메모리 공급부족 심화를 근거로 들었다.",
+   "정부는 한미 3500억달러 대미투자의 1호 사업으로 텍사스 엔시날 가스복합화력발전소(약 30조원)를 낙점했고, 후속으로 대형 원전 최대 8기 건설안도 논의 중이다."
+  ],
+  "lines_en": [
+   "Nasdaq and the S&P 500 remain frozen at Friday's (9/4) close (▼0.29% and ▼0.38%) for a second straight day under the Labor Day holiday, with trading set to resume tonight at 10:30 PM KST.",
+   "KOSPI surged 4.61% to 6,995.39 in its last session (9/7) on chip strength, marking a third straight gain and a 20-day high.",
+   "Goldman Sachs reaffirmed its 12-month KOSPI target of 12,000 that day — 71.5% above the current close — citing a deepening memory-chip shortage driven by data-center demand.",
+   "Korea picked a roughly $22B LNG plant in Encinal, Texas as the first project under its $350B US investment pledge, with up to 8 large nuclear reactors under discussion as a follow-up."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "26,506.99",
+   "delta": "▼0.29%",
+   "dir": "down",
+   "note_ko": "9/4 마감 종가 · 노동절로 이틀째 갱신 없음",
+   "note_en": "Sep 4 close · frozen for a 2nd day on Labor Day"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,718.60",
+   "delta": "▼0.38%",
+   "dir": "down",
+   "note_ko": "9/4 마감 종가 · 노동절로 이틀째 갱신 없음",
+   "note_en": "Sep 4 close · frozen for a 2nd day on Labor Day"
+  },
+  {
+   "label": "KOSPI",
+   "value": "6,995.39",
+   "delta": "▲4.61%",
+   "dir": "up",
+   "note_ko": "전 거래일(9/7) 종가 · 장 열리기 전 · 3거래일 연속 상승",
+   "note_en": "Sep 7 close · before today's open · 3rd straight gain"
+  },
+  {
+   "label": "VIX",
+   "value": "15.30",
+   "delta": "▲5.30%",
+   "dir": "up",
+   "note_ko": "9/7 관측치 · 노동절 휴장 속 지표성 소폭 상승",
+   "note_en": "As of Sep 7 · edged up despite the holiday closure"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "42",
+   "delta": "35 → 42",
+   "dir": "up",
+   "note_ko": "등급 '공포(Fear)' · 노동절로 9/4 수치 유지",
+   "note_en": "Rated 'Fear' · unchanged from Sep 4 on the holiday"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.78%",
+   "delta": "4.77 → 4.78",
+   "dir": "up",
+   "note_ko": "노동절로 9/4 확정 종가 유지",
+   "note_en": "Unchanged from the Sep 4 confirmed close on the holiday"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,345",
+   "value_sub": "· DXY 99.18",
+   "delta": "▼0.7%",
+   "dir": "down",
+   "note_ko": "9/7 23개월래 저점(1,330원대) 터치 후 보합",
+   "note_en": "Steady after touching a 23-month low near 1,330 on 9/7"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,476.60",
+   "delta": "▲1.06%",
+   "dir": "up",
+   "note_ko": "9/7 정산가 · 노동절 속 달러 약세에 강세",
+   "note_en": "Sep 7 settle · gained on dollar weakness through the holiday"
+  },
+  {
+   "label": "WTI",
+   "value": "$91.48",
+   "delta": "0.00%",
+   "dir": "flat",
+   "note_ko": "9/7 정산가 · 노동절 속 보합",
+   "note_en": "Sep 7 settle · flat through the holiday"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$79,134",
+   "delta": "▼1.51%",
+   "dir": "down",
+   "note_ko": "24시간 기준 · 알트코인 변동성 확대 속 소폭 조정",
+   "note_en": "24-hour basis · slight pullback amid altcoin volatility"
+  }
+ ],
+ "market_note_ko": "나스닥·S&P500·미 10년물·F&G는 노동절로 9/4 수치 유지 · 코스피는 전 거래일 종가 · 원자재·환율·코인은 최신값",
+ "market_note_en": "Nasdaq, S&P 500, US 10Y and F&G are unchanged Sep 4 readings on Labor Day · KOSPI is the last session's close · commodities, FX and crypto are latest quotes",
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "tile_lead": "-0.29%",
+ "main_tile_note": {
+  "ko": "9/4 마감 · 노동절로 이틀째 정지",
+  "en": "Sep 4 close · frozen for a 2nd day"
+ },
+ "chart_series_values": [
+  26151.3,
+  26130.2,
+  26541.35,
+  26402.42,
+  26370.89,
+  26099.77,
+  26217.83,
+  26584.06,
+  26506.99
+ ],
+ "chart_series_labels": [
+  "8.25",
+  "8.26",
+  "8.27",
+  "8.28",
+  "8.31",
+  "9.1",
+  "9.2",
+  "9.3",
+  "9.4"
+ ],
+ "chart_title": {
+  "ko": "9/3 고점에서 이틀째 그대로",
+  "en": "Still Parked Below the Sep 3 High"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일(노동절로 갱신 없음)",
+  "en": "Nasdaq Composite close · last 9 sessions (no update — Labor Day)"
+ },
+ "chart_note": {
+  "ko": "9/3 26,584.06(9거래일 최고) → 9/4 26,506.99에서 멈춰 있다 · 재개장은 오늘 밤 22:30 KST",
+  "en": "Parked at 9/4's 26,506.99, down from the 9/3 high of 26,584.06 · reopens tonight at 10:30 PM KST"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "STILL CLOSED",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "반도체 강세, 이틀째 유효",
+  "en": "Chip Strength Still Holds"
+ },
+ "sector_sub": {
+  "ko": "S&P500 섹터 ETF · 9/4 종가(노동절로 갱신 없음) · 코스피 반등도 반도체가 주도",
+  "en": "S&P 500 sector ETFs · Sep 4 close (no update) · KOSPI's rebound was chip-led too"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top Turnover"
+ },
+ "rank_sub": {
+  "ko": "9/4 미국장 · 노동절로 갱신 없음 · 막대 옆은 등락률",
+  "en": "Sep 4 US session (no update) · bar shows daily % change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $ billion"
+ },
+ "econ_kicker": "WEEKLY MOVES",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "美 지표 발표가 없는 휴장 구간 · 주간 원자재·환율 변동과 이번 주 실적 일정",
+  "en": "No US data releases on the holiday · weekly commodity/FX moves and this week's earnings"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "나스닥종합",
+     "label_en": "Nasdaq Composite",
+     "value": "26,506.99",
+     "delta": "▼0.29%",
+     "dir": "down",
+     "sub_ko": "9/3 최고 종가(26,584.06) 대비 0.29% 낮은 수준 · 노동절로 이틀째 갱신 없음",
+     "sub_en": "0.29% below the Sep 3 high close of 26,584.06 · frozen for a 2nd day"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,718.60",
+     "delta": "▼0.38%",
+     "dir": "down",
+     "sub_ko": "9/3 고점(7,747.71) 대비 0.38% 낮은 수준 · 노동절로 이틀째 갱신 없음",
+     "sub_en": "0.38% below the Sep 3 high of 7,747.71 · frozen for a 2nd day"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "거래대금 상위 300종목(9/4)",
+     "label_en": "Top 300 by turnover (Sep 4)",
+     "up": 132,
+     "flat": 6,
+     "down": 162
+    }
+   ],
+   "note_ko": "미국 증시는 오늘 밤 22:30 KST 재개장한다 — 그 사이 코스피는 반도체 강세에 4.61% 급등하며 나 홀로 최고치를 새로 썼다.",
+   "note_en": "US markets reopen tonight at 10:30 PM KST — in the meantime, KOSPI surged 4.61% on chip strength to set a fresh high of its own."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "US Sectors",
+   "color": "#4a9d7f",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "반도체 (SMH)",
+     "label_en": "Semis (SMH)",
+     "value": 2.61
+    },
+    {
+     "label_ko": "기술 (XLK)",
+     "label_en": "Tech (XLK)",
+     "value": 0.7
+    },
+    {
+     "label_ko": "산업재 (XLI)",
+     "label_en": "Indu. (XLI)",
+     "value": 0.41
+    },
+    {
+     "label_ko": "유틸리티 (XLU)",
+     "label_en": "Util. (XLU)",
+     "value": 0.12
+    },
+    {
+     "label_ko": "소재 (XLB)",
+     "label_en": "Matls (XLB)",
+     "value": -0.34
+    },
+    {
+     "label_ko": "부동산 (XLRE)",
+     "label_en": "R.Estate (XLRE)",
+     "value": -0.72
+    },
+    {
+     "label_ko": "금융 (XLF)",
+     "label_en": "Fin. (XLF)",
+     "value": -0.79
+    },
+    {
+     "label_ko": "필수소비재 (XLP)",
+     "label_en": "Staples (XLP)",
+     "value": -0.8
+    },
+    {
+     "label_ko": "에너지 (XLE)",
+     "label_en": "Energy (XLE)",
+     "value": -0.87
+    },
+    {
+     "label_ko": "헬스케어 (XLV)",
+     "label_en": "Health (XLV)",
+     "value": -1.04
+    },
+    {
+     "label_ko": "커뮤니케이션 (XLC)",
+     "label_en": "Comm (XLC)",
+     "value": -1.19
+    },
+    {
+     "label_ko": "경기소비재 (XLY)",
+     "label_en": "Cons.Disc (XLY)",
+     "value": -1.33
+    }
+   ],
+   "note_ko": "9/4 종가 기준(노동절로 갱신 없음) — 반도체(SMH)의 강세가 이틀째 유효한 가운데, 같은 흐름이 9/7 코스피 반도체 급등으로 이어졌다.",
+   "note_en": "Sep 4 close (no update) — chip sector (SMH) strength held for a 2nd day, feeding directly into KOSPI's Sep 7 chip-led surge."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top Turnover",
+   "color": "#3987e5",
+   "type": "rank",
+   "rows": [
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$35.83B",
+     "pct": 6.1
+    },
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$31.18B",
+     "pct": 0.84
+    },
+    {
+     "name_ko": "샌디스크",
+     "name_en": "SanDisk",
+     "value": "$28.81B",
+     "pct": 11.9
+    },
+    {
+     "name_ko": "테슬라",
+     "name_en": "Tesla",
+     "value": "$23.02B",
+     "pct": -5.92
+    },
+    {
+     "name_ko": "애플",
+     "name_en": "Apple",
+     "value": "$12.67B",
+     "pct": -2.51
+    }
+   ],
+   "share": {
+    "label_ko": "거래대금 상위 5종목 비중 · 표본 300종목 기준",
+    "label_en": "Top-5 share of turnover · 300-name sample",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 33.3,
+      "color": "#e2574c"
+     },
+     {
+      "label_ko": "나머지 295종목",
+      "label_en": "Remaining 295",
+      "pct": 66.7,
+      "color": "#4a4a4a"
+     }
+    ]
+   },
+   "note_ko": "9/4 데이터 그대로다(노동절로 갱신 없음) — 메모리 3종목(마이크론·엔비디아·샌디스크)이 여전히 상위를 채운 가운데, 오늘 아침 중국 딥시크의 '추론칩 16만개 자립' 선언이 메모리 수요 전망의 새 변수로 떠올랐다.",
+   "note_en": "Unchanged from Sep 4 (no update on the holiday) — memory names (Micron, Nvidia, SanDisk) still dominate turnover, while China's DeepSeek claiming self-sufficiency with 160K inference chips emerged this morning as a new variable for memory demand."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#5b8dd6",
+   "type": "stats",
+   "cols": 2,
+   "stats": [
+    {
+     "label_ko": "금 (주간)",
+     "label_en": "Gold (weekly)",
+     "value": "+2.96%",
+     "dir": "up",
+     "sub_ko": "9/1 $4,348 → 9/7 $4,476.6 · 달러 약세·안전자산 수요",
+     "sub_en": "$4,348 (9/1) to $4,476.6 (9/7) · dollar weakness, safe-haven demand"
+    },
+    {
+     "label_ko": "WTI 원유 (주간)",
+     "label_en": "WTI Crude (weekly)",
+     "value": "+1.40%",
+     "dir": "up",
+     "sub_ko": "9/1 $90.22 → 9/7 $91.48 · 5거래일 연속 상승 흐름 지속",
+     "sub_en": "$90.22 (9/1) to $91.48 (9/7) · extended a 5-session rally"
+    },
+    {
+     "label_ko": "달러인덱스 (주간)",
+     "label_en": "Dollar Index (weekly)",
+     "value": "-0.49%",
+     "dir": "down",
+     "sub_ko": "9/1 99.67 → 9/7 99.18 · 금리인하 기대에 약세",
+     "sub_en": "99.67 (9/1) to 99.18 (9/7) · softer on rate-cut expectations"
+    },
+    {
+     "label_ko": "원/달러 (주간)",
+     "label_en": "USD/KRW (weekly)",
+     "value": "-1.58%",
+     "dir": "down",
+     "sub_ko": "9/1 1,366원 → 9/7 1,345원 · 23개월래 저점 근접",
+     "sub_en": "₩1,366 (9/1) to ₩1,345 (9/7) · nearing a 23-month low"
+    },
+    {
+     "label_ko": "어도비 3분기 실적",
+     "label_en": "Adobe Q3 Earnings",
+     "value": "9/10 발표 예정",
+     "dir": "flat",
+     "sub_ko": "EPS 컨센서스 $6.08 · 매출 컨센서스 약 66.9억달러",
+     "sub_en": "EPS consensus $6.08 · revenue consensus ~$6.69B",
+     "ref_ko": "이번 주 미국 빅테크 실적 중 첫 타자",
+     "ref_en": "First major US tech earnings of the week"
+    }
+   ],
+   "note_ko": "미국 지표 발표가 없는 노동절 휴장 구간이라, 이번 주(9/1~9/7) 원자재·환율 변동과 다음 실적 일정으로 대신한다.",
+   "note_en": "With no US data releases during the Labor Day closure, this covers the week's (9/1-9/7) commodity/FX moves and the next earnings date instead."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semis",
+   "color": "#7b6cd9",
+   "items": [
+    {
+     "headline_ko": "브룩필드, 네이버·엔비디아와 'AI 동맹' 공식화 — 한국에 100억달러 베팅",
+     "headline_en": "Brookfield Formalizes AI Alliance With Naver, Nvidia — $10B Bet on Korea",
+     "body_ko": "브룩필드가 네이버·엔비디아와 함께 세종 데이터센터 'AI 팩토리' 구축 협력을 공식화했다. 기존 55MW 규모를 200MW로 확대하는 방안이 논의된다.",
+     "body_en": "Brookfield formalized its AI-factory partnership with Naver and Nvidia at the 'Gak Sejong' data center, discussing an expansion from 55MW to 200MW."
+    },
+    {
+     "headline_ko": "중국 딥시크, 추론 칩 16만개로 '자립' 선언 — 한국 메모리 공급선 흔들",
+     "headline_en": "China's DeepSeek Claims Self-Sufficiency With 160K Inference Chips",
+     "body_ko": "딥시크가 미국 수출 통제 속에서도 자체 추론 칩 16만개로 대규모 서비스 전환에 나섰다고 밝혔다. 네이멍구 기가와트급 데이터센터가 무대다.",
+     "body_en": "DeepSeek said it's shifting large-scale services onto 160,000 of its own inference chips despite US export controls, at a gigawatt-scale Inner Mongolia data center."
+    },
+    {
+     "headline_ko": "SK텔레콤, 'AI 인프라 사업자'로 전환 — SK하이퍼 설립, 2030년까지 7500억원",
+     "headline_en": "SK Telecom Pivots to 'AI Infrastructure Provider' — Launches SK Hyper",
+     "body_ko": "SK텔레콤이 AI 데이터센터 사업 전담 신설법인 SK하이퍼를 세우고 2030년까지 7500억원을 출자, 중장기 15GW 규모 AI 데이터센터 구축을 목표로 내걸었다.",
+     "body_en": "SK Telecom launched SK Hyper, a dedicated AI data-center unit, pledging ₩750B through 2030 toward a mid-to-long-term goal of 15GW of AI data-center capacity."
+    },
+    {
+     "headline_ko": "골드만삭스 \"데이터센터發 메모리 공급부족, 내년 더 심화\"",
+     "headline_en": "Goldman: Data-Center-Driven Memory Shortage 'to Deepen Next Year'",
+     "body_ko": "골드만삭스 팀 모 아태 수석 주식전략가는 데이터센터 경쟁이 촉발한 메모리 공급 부족이 내년 더 심해질 것이라며, 이를 코스피 1만2000 목표 유지의 근거로 들었다.",
+     "body_en": "Goldman's Asia-Pacific chief equity strategist Timothy Moe said data-center-driven memory shortages will worsen next year, citing it as the basis for keeping the 12,000 KOSPI target."
+    },
+    {
+     "headline_ko": "AI 데이터센터 전력 수요, 2차전지·ESS로도 확산",
+     "headline_en": "AI Data-Center Power Demand Spills Into Batteries, ESS",
+     "body_ko": "AI 데이터센터의 전력 수요 확대가 2차전지·에너지저장장치(ESS) 관련주로도 옮겨붙고 있다는 분석이 나왔다 — 최근 한 달 K-AI·2차전지 관련 지수는 15%대 올랐다.",
+     "body_en": "Analysts say AI data centers' surging power needs are spilling into battery and ESS names — a related K-AI/battery index has risen about 15% over the past month."
+    },
+    {
+     "headline_ko": "필라델피아반도체지수 3.37% 급등, 코스피 반도체 랠리로 연결",
+     "headline_en": "Philadelphia Semiconductor Index Jumps 3.37%, Feeding KOSPI's Chip Rally",
+     "body_ko": "지난 금요일 SOX 지수가 3.37% 오른 여진이 이어지며, 9/7 삼성전자·SK하이닉스가 각각 5.68%·8.26% 급등해 코스피 상승을 이끌었다.",
+     "body_en": "The aftershock of Friday's 3.37% SOX rally carried through, with Samsung Electronics and SK Hynix jumping 5.68% and 8.26% respectively to drive Sep 7's KOSPI gain."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#d98a3c",
+   "items": [
+    {
+     "headline_ko": "한미, 대미투자 1호 텍사스 가스발전 확정 — 원전 8기도 후속 논의",
+     "headline_en": "Korea-US Finalize Texas Gas Plant as First Investment; 8 Reactors Discussed Next",
+     "body_ko": "정부는 3500억달러 대미투자의 1호 사업으로 텍사스 엔시날 가스복합화력발전소(약 30조원)를 낙점하고 국회 보고에 착수했다. 후속으로 대형 원전 최대 8기 건설안도 논의되며, MOU는 9/18쯤 공식 서명될 예정이다.",
+     "body_en": "The government picked a roughly $22B gas-fired plant in Encinal, Texas as the first project under its $350B US investment pledge and began briefing the National Assembly. Up to 8 large nuclear reactors are also under discussion as a follow-up, with an MOU expected around Sep 18."
+    },
+    {
+     "headline_ko": "골드만삭스, 코스피 12개월 목표 1만2000 재확인",
+     "headline_en": "Goldman Sachs Reaffirms 12-Month KOSPI Target of 12,000",
+     "body_ko": "골드만삭스 팀 모 아태 수석 주식전략가는 블룸버그 인터뷰에서 코스피 12개월 목표치 1만2000을 유지한다고 밝혔다. 9/7 종가(6,995.39) 대비 71.5% 높은 수준이다.",
+     "body_en": "Goldman's Timothy Moe told Bloomberg he's maintaining a 12-month KOSPI target of 12,000, 71.5% above the Sep 7 close of 6,995.39."
+    },
+    {
+     "headline_ko": "코스피 7000 문턱, 개인 8조원 던져도 지수는 끄떡없어",
+     "headline_en": "KOSPI Near 7,000 Holds Firm Even as Retail Sells ₩8T",
+     "body_ko": "9/7 개인 투자자가 8조원 안팭을 순매도했지만 외국인·기관의 동반 매수가 이를 상쇄하며 지수는 4.61% 급등 마감했다.",
+     "body_en": "Retail investors net-sold roughly ₩8 trillion on Sep 7, but combined foreign and institutional buying offset it as the index still closed up 4.61%."
+    },
+    {
+     "headline_ko": "비트코인·알트코인 변동성 확대 — 지캐시 15% 급등에 숏 포지션 청산",
+     "headline_en": "Crypto Volatility Rises — Zcash's 15% Surge Triggers Short Liquidations",
+     "body_ko": "지캐시(ZEC)가 15%대 급등해 1,170달러선을 돌파하며 파생상품 시장의 대규모 숏 포지션 청산을 촉발했다. 비트코인은 같은 기간 1%대 조정을 보였다.",
+     "body_en": "Zcash (ZEC) surged over 15% past $1,170, triggering large short-position liquidations in derivatives markets, while Bitcoin saw a roughly 1% pullback over the same period."
+    },
+    {
+     "headline_ko": "한국은행, 코스피 7000 목전에 '가계부채·영끌' 경고",
+     "headline_en": "Bank of Korea Warns on Household Debt as KOSPI Nears 7,000",
+     "body_ko": "한국은행이 코스피가 7000선에 근접한 날 가계부채와 빚투(영끌) 위험을 경계하는 메시지를 냈다 — 반도체 한 업종이 이끄는 상승의 이면을 짚은 것이라는 해석이 나온다.",
+     "body_en": "The Bank of Korea issued a warning on household debt and leveraged retail investing the same day KOSPI approached 7,000 — seen as flagging the flip side of a rally concentrated in one sector."
+    },
+    {
+     "headline_ko": "미국 증시, 오늘 밤 22:30 KST 노동절 이후 첫 개장",
+     "headline_en": "US Markets Reopen Tonight at 10:30 PM KST After Labor Day",
+     "body_ko": "미국 증시는 노동절 연휴를 마치고 오늘 밤 정규장을 재개한다. 지난 금요일 반도체 강세를 이어갈지, 국채금리 상승 부담을 소화할지가 관건이다.",
+     "body_en": "US markets resume regular trading tonight after the Labor Day break. The key question is whether Friday's chip strength continues or rising bond yields weigh on sentiment."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "All times KST · dot marks a high-importance item"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "08:00",
+   "title_ko": "한국 2분기 GDP 성장률(확정치)",
+   "title_en": "Korea Q2 GDP Growth (Final)",
+   "detail_ko": "전기비 예상 +0.6% · 전년비 예상 +3.7%",
+   "detail_en": "QoQ est. +0.6% · YoY est. +3.7%",
+   "importance": "mid"
+  },
+  {
+   "time": "08:50",
+   "title_ko": "일본 2분기 GDP(확정치)",
+   "title_en": "Japan Q2 GDP (Final)",
+   "detail_ko": "전기비 예상 +0.4% · 속보치(+0.3%)와 비교",
+   "detail_en": "QoQ est. +0.4% · vs. preliminary +0.3%",
+   "importance": "high"
+  },
+  {
+   "time": "08:50",
+   "title_ko": "일본 8월 경상수지",
+   "title_en": "Japan Aug Current Account",
+   "detail_ko": "전월 적자에서 흑자 전환 예상",
+   "detail_en": "Expected to swing from deficit to surplus",
+   "importance": "mid"
+  },
+  {
+   "time": "12:00",
+   "title_ko": "중국 8월 수출입",
+   "title_en": "China Aug Trade Data",
+   "detail_ko": "수출 YoY 예상 +25% · 수입 YoY 예상 +30%",
+   "detail_en": "Exports YoY est. +25% · imports YoY est. +30%",
+   "importance": "mid"
+  },
+  {
+   "time": "15:00",
+   "title_ko": "독일 7월 무역수지",
+   "title_en": "Germany Jul Trade Balance",
+   "detail_ko": "예상 165억유로 흑자",
+   "detail_en": "Est. €16.5B surplus",
+   "importance": "mid"
+  },
+  {
+   "time": "TONIGHT",
+   "title_ko": "미국 증시 재개장 — 노동절 이후 첫 거래일",
+   "title_en": "US Markets Reopen — First Session After Labor Day",
+   "detail_ko": "22:30 KST 정규장 개장 · 반도체 강세 지속 여부 주목",
+   "detail_en": "Regular session opens 10:30 PM KST · watch for continued chip strength",
+   "importance": "high"
+  },
+  {
+   "time": "9/10~11",
+   "title_ko": "[미리보기] 어도비 실적(9/10)·ECB 금리결정(9/10)·美 CPI(9/11)",
+   "title_en": "[Preview] Adobe Earnings (9/10) · ECB Rate Decision (9/10) · US CPI (9/11)",
+   "detail_ko": "이어 9/15~16 FOMC",
+   "detail_en": "Followed by FOMC on 9/15-16",
+   "importance": "high"
+  }
+ ],
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "card_photos": {
+  "1": "A dark Seoul trading floor at dawn, glowing green ticker numbers climbing sharply across a wide screen, a faint semiconductor circuit-board pattern etched into the reflection, warm amber accent light in one corner.",
+  "3": "An empty, dim New York trading floor with the lights mostly off and a single illuminated 'CLOSED' style clock, dust motes in a shaft of light, screens on standby with a faint countdown glow."
+ },
+ "caption_ko": "📊 luckyon 브리핑 · 2026.9.8(화) 아침\n\n미국 증시는 노동절 연휴 이틀째로 9/4(금) 마감치가 그대로 이어지고 있습니다 — 재개장은 오늘 밤 22:30입니다.\n\n그 사이 코스피는 반도체 강세에 힘입어 4.61% 폭등한 6,995.39로 마감, 3거래일 연속 상승하며 20일래 최고치를 새로 썼습니다. 골드만삭스는 코스피 12개월 목표치 1만2000을 재확인했습니다 — 현재가보다 71.5% 높은 수준입니다.\n\n정부는 한미 3500억달러 대미투자의 1호 사업으로 텍사스 가스발전소(약 30조원)를 낙점했고, 후속으로 원전 최대 8기 건설안도 논의 중입니다.\n\n#코스피 #골드만삭스 #반도체 #나스닥 #노동절 #대미투자 #원전 #딥시크 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Tue, Sep 8, 2026 · AM\n\nUS markets remain frozen at Friday's (9/4) close for a second day under the Labor Day holiday — trading resumes tonight at 10:30 PM KST.\n\nMeanwhile, KOSPI surged 4.61% to 6,995.39 on chip strength, marking a third straight gain and a 20-day high. Goldman Sachs reaffirmed its 12-month KOSPI target of 12,000 — 71.5% above the current level.\n\nKorea picked a Texas gas plant (~$22B) as the first project under its $350B US investment pledge, with up to 8 nuclear reactors under discussion as a follow-up.\n\n#KOSPI #GoldmanSachs #Semiconductors #Nasdaq #LaborDay #USInvestment #Nuclear #DeepSeek #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "FMP",
+  "Yahoo Finance",
+  "KRX (FinanceDataReader)",
+  "FINRA",
+  "美 재무부",
+  "CNN Fear & Greed",
+  "FXStreet 경제캘린더",
+  "Goldman Sachs(블룸버그 인터뷰)",
+  "연합뉴스",
+  "SBS Biz",
+  "동아일보",
+  "EBN",
+  "머니투데이",
+  "이데일리",
+  "네이버뉴스"
+ ]
+}
