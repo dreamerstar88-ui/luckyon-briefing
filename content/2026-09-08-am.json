@@ -269,6 +269,22 @@
      "down": 162
     }
    ],
+   "flows": {
+    "label_ko": "상승 · 하락 종목 거래대금 (10억달러, 9/4)",
+    "label_en": "Advancers vs decliners turnover (US$ billion, Sep 4)",
+    "rows": [
+     {
+      "label_ko": "상승 종목",
+      "label_en": "Advancers",
+      "value": 229.1
+     },
+     {
+      "label_ko": "하락 종목",
+      "label_en": "Decliners",
+      "value": -165.3
+     }
+    ]
+   },
    "note_ko": "미국 증시는 오늘 밤 22:30 KST 재개장한다 — 그 사이 코스피는 반도체 강세에 4.61% 급등하며 나 홀로 최고치를 새로 썼다.",
    "note_en": "US markets reopen tonight at 10:30 PM KST — in the meantime, KOSPI surged 4.61% on chip strength to set a fresh high of its own."
   },
@@ -398,8 +414,8 @@
      }
     ]
    },
-   "note_ko": "9/4 데이터 그대로다(노동절로 갱신 없음) — 메모리 3종목(마이크론·엔비디아·샌디스크)이 여전히 상위를 채운 가운데, 오늘 아침 중국 딥시크의 '추론칩 16만개 자립' 선언이 메모리 수요 전망의 새 변수로 떠올랐다.",
-   "note_en": "Unchanged from Sep 4 (no update on the holiday) — memory names (Micron, Nvidia, SanDisk) still dominate turnover, while China's DeepSeek claiming self-sufficiency with 160K inference chips emerged this morning as a new variable for memory demand."
+   "note_ko": "9/4 데이터 그대로다(노동절로 갱신 없음) — 메모리 3종목(마이크론·엔비디아·샌디스크)이 여전히 상위를 채운 가운데, 오늘 미래에셋증권이 삼성전자·SK하이닉스 목표주가를 나란히 상향하며 메모리 강세 기대를 뒷받침했다.",
+   "note_en": "Unchanged from Sep 4 (no update on the holiday) — memory names (Micron, Nvidia, SanDisk) still dominate turnover, while Mirae Asset's price-target hikes for Samsung Electronics and SK Hynix today reinforced bullish memory sentiment."
   },
   {
    "title_ko": "실적 · 지표 발표",
@@ -443,10 +459,10 @@
     {
      "label_ko": "어도비 3분기 실적",
      "label_en": "Adobe Q3 Earnings",
-     "value": "9/10 발표 예정",
+     "value": "9/10",
      "dir": "flat",
-     "sub_ko": "EPS 컨센서스 $6.08 · 매출 컨센서스 약 66.9억달러",
-     "sub_en": "EPS consensus $6.08 · revenue consensus ~$6.69B",
+     "sub_ko": "9/10 발표 예정 · EPS 컨센서스 $6.08 · 매출 컨센서스 약 66.9억달러",
+     "sub_en": "Due Sep 10 · EPS consensus $6.08 · revenue consensus ~$6.69B",
      "ref_ko": "이번 주 미국 빅테크 실적 중 첫 타자",
      "ref_en": "First major US tech earnings of the week"
     }
@@ -466,10 +482,10 @@
      "body_en": "Brookfield formalized its AI-factory partnership with Naver and Nvidia at the 'Gak Sejong' data center, discussing an expansion from 55MW to 200MW."
     },
     {
-     "headline_ko": "중국 딥시크, 추론 칩 16만개로 '자립' 선언 — 한국 메모리 공급선 흔들",
-     "headline_en": "China's DeepSeek Claims Self-Sufficiency With 160K Inference Chips",
-     "body_ko": "딥시크가 미국 수출 통제 속에서도 자체 추론 칩 16만개로 대규모 서비스 전환에 나섰다고 밝혔다. 네이멍구 기가와트급 데이터센터가 무대다.",
-     "body_en": "DeepSeek said it's shifting large-scale services onto 160,000 of its own inference chips despite US export controls, at a gigawatt-scale Inner Mongolia data center."
+     "headline_ko": "미래에셋증권, 삼성전자·SK하이닉스 목표주가 동반 상향",
+     "headline_en": "Mirae Asset Raises Price Targets for Samsung Electronics and SK Hynix",
+     "body_ko": "미래에셋증권이 HBM 탑재량 증가와 가격 상승을 근거로 삼성전자 목표주가를 37만원→40만원, SK하이닉스를 280만원→310만원으로 각각 상향했다.",
+     "body_en": "Mirae Asset raised its price targets to 400,000 won for Samsung Electronics (from 370,000) and 3.1 million won for SK Hynix (from 2.8 million), citing rising HBM volumes and prices."
     },
     {
      "headline_ko": "SK텔레콤, 'AI 인프라 사업자'로 전환 — SK하이퍼 설립, 2030년까지 7500억원",
@@ -515,10 +531,10 @@
      "body_en": "Goldman's Timothy Moe told Bloomberg he's maintaining a 12-month KOSPI target of 12,000, 71.5% above the Sep 7 close of 6,995.39."
     },
     {
-     "headline_ko": "코스피 7000 문턱, 개인 8조원 던져도 지수는 끄떡없어",
-     "headline_en": "KOSPI Near 7,000 Holds Firm Even as Retail Sells ₩8T",
-     "body_ko": "9/7 개인 투자자가 8조원 안팭을 순매도했지만 외국인·기관의 동반 매수가 이를 상쇄하며 지수는 4.61% 급등 마감했다.",
-     "body_en": "Retail investors net-sold roughly ₩8 trillion on Sep 7, but combined foreign and institutional buying offset it as the index still closed up 4.61%."
+     "headline_ko": "코스피 7000 문턱, 개인 6.8조원 던져도 지수는 끄떡없어",
+     "headline_en": "KOSPI Near 7,000 Holds Firm Even as Retail Sells ₩6.8T",
+     "body_ko": "9/7 개인 투자자가 6.8조원을 순매도했지만 외국인(+2.6조원)·기관(+2.6조원)의 동반 매수가 이를 상쇄하며 지수는 4.61% 급등 마감했다.",
+     "body_en": "Retail investors net-sold ₩6.8 trillion on Sep 7, but combined foreign (+₩2.6T) and institutional (+₩2.6T) buying offset it as the index still closed up 4.61%."
     },
     {
      "headline_ko": "비트코인·알트코인 변동성 확대 — 지캐시 15% 급등에 숏 포지션 청산",
@@ -527,10 +543,10 @@
      "body_en": "Zcash (ZEC) surged over 15% past $1,170, triggering large short-position liquidations in derivatives markets, while Bitcoin saw a roughly 1% pullback over the same period."
     },
     {
-     "headline_ko": "한국은행, 코스피 7000 목전에 '가계부채·영끌' 경고",
-     "headline_en": "Bank of Korea Warns on Household Debt as KOSPI Nears 7,000",
-     "body_ko": "한국은행이 코스피가 7000선에 근접한 날 가계부채와 빚투(영끌) 위험을 경계하는 메시지를 냈다 — 반도체 한 업종이 이끄는 상승의 이면을 짚은 것이라는 해석이 나온다.",
-     "body_en": "The Bank of Korea issued a warning on household debt and leveraged retail investing the same day KOSPI approached 7,000 — seen as flagging the flip side of a rally concentrated in one sector."
+     "headline_ko": "한은, 가계부채 리스크 보고서 — \"고DSR 가구, 금리상승에 취약\"",
+     "headline_en": "BOK Report: High-DSR Households Most Exposed to Rate Hikes",
+     "body_ko": "한국은행이 가구DB를 이용한 가계부채 리스크 평가 이슈노트를 냈다 — 총부채원리금상환비율(DSR)이 높은 가구일수록 금리가 오르면 연체 위험이 커진다고 진단했다.",
+     "body_en": "The Bank of Korea published a household-debt risk assessment using household-level data, finding that homes with a high debt-service ratio (DSR) face rising delinquency risk if interest rates climb."
     },
     {
      "headline_ko": "미국 증시, 오늘 밤 22:30 KST 노동절 이후 첫 개장",
@@ -624,8 +640,8 @@
   "1": "A dark Seoul trading floor at dawn, glowing green ticker numbers climbing sharply across a wide screen, a faint semiconductor circuit-board pattern etched into the reflection, warm amber accent light in one corner.",
   "3": "An empty, dim New York trading floor with the lights mostly off and a single illuminated 'CLOSED' style clock, dust motes in a shaft of light, screens on standby with a faint countdown glow."
  },
- "caption_ko": "📊 luckyon 브리핑 · 2026.9.8(화) 아침\n\n미국 증시는 노동절 연휴 이틀째로 9/4(금) 마감치가 그대로 이어지고 있습니다 — 재개장은 오늘 밤 22:30입니다.\n\n그 사이 코스피는 반도체 강세에 힘입어 4.61% 폭등한 6,995.39로 마감, 3거래일 연속 상승하며 20일래 최고치를 새로 썼습니다. 골드만삭스는 코스피 12개월 목표치 1만2000을 재확인했습니다 — 현재가보다 71.5% 높은 수준입니다.\n\n정부는 한미 3500억달러 대미투자의 1호 사업으로 텍사스 가스발전소(약 30조원)를 낙점했고, 후속으로 원전 최대 8기 건설안도 논의 중입니다.\n\n#코스피 #골드만삭스 #반도체 #나스닥 #노동절 #대미투자 #원전 #딥시크 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
- "caption_en": "📊 luckyon Briefing · Tue, Sep 8, 2026 · AM\n\nUS markets remain frozen at Friday's (9/4) close for a second day under the Labor Day holiday — trading resumes tonight at 10:30 PM KST.\n\nMeanwhile, KOSPI surged 4.61% to 6,995.39 on chip strength, marking a third straight gain and a 20-day high. Goldman Sachs reaffirmed its 12-month KOSPI target of 12,000 — 71.5% above the current level.\n\nKorea picked a Texas gas plant (~$22B) as the first project under its $350B US investment pledge, with up to 8 nuclear reactors under discussion as a follow-up.\n\n#KOSPI #GoldmanSachs #Semiconductors #Nasdaq #LaborDay #USInvestment #Nuclear #DeepSeek #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "caption_ko": "📊 luckyon 브리핑 · 2026.9.8(화) 아침\n\n미국 증시는 노동절 연휴 이틀째로 9/4(금) 마감치가 그대로 이어지고 있습니다 — 재개장은 오늘 밤 22:30입니다.\n\n그 사이 코스피는 반도체 강세에 힘입어 4.61% 폭등한 6,995.39로 마감, 3거래일 연속 상승하며 20일래 최고치를 새로 썼습니다. 골드만삭스는 코스피 12개월 목표치 1만2000을 재확인했습니다 — 현재가보다 71.5% 높은 수준입니다.\n\n정부는 한미 3500억달러 대미투자의 1호 사업으로 텍사스 가스발전소(약 30조원)를 낙점했고, 후속으로 원전 최대 8기 건설안도 논의 중입니다.\n\n#코스피 #골드만삭스 #반도체 #나스닥 #노동절 #대미투자 #원전 #메모리반도체 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Tue, Sep 8, 2026 · AM\n\nUS markets remain frozen at Friday's (9/4) close for a second day under the Labor Day holiday — trading resumes tonight at 10:30 PM KST.\n\nMeanwhile, KOSPI surged 4.61% to 6,995.39 on chip strength, marking a third straight gain and a 20-day high. Goldman Sachs reaffirmed its 12-month KOSPI target of 12,000 — 71.5% above the current level.\n\nKorea picked a Texas gas plant (~$22B) as the first project under its $350B US investment pledge, with up to 8 nuclear reactors under discussion as a follow-up.\n\n#KOSPI #GoldmanSachs #Semiconductors #Nasdaq #LaborDay #USInvestment #Nuclear #MemoryChips #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
  "sources": [
   "FMP",
   "Yahoo Finance",
