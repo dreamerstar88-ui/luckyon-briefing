@@ -132,7 +132,7 @@ function eventLines(ctx,upto,mode){
     ctx.beginPath();ctx.arc(x,CY-20,17,0,7);ctx.fill();
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(String(k+1),x,CY-19);ctx.restore();
-    // 세로 글씨 (선 위에 올린다)
+    // 세로 글씨 (주가 선 아래에 깐다 — polyline 보다 먼저 그린다)
     const LH=31, PADX=14, PADY=12, BW=PADX*2+26;
     const h=vtextH(ev.tag,LH);
     const right=x+16, left=x-16-BW;
@@ -223,7 +223,7 @@ function drawReplay(ctx,t){
   numT(ctx,bar.kst,60,400,'700 44px PD','#d8d8d8');
   txt(ctx,'고점 대비',1024,300,'700 36px PD',C.muted,'right');
   numT(ctx,dd.toFixed(2)+'%',1024,372,'900 76px PD',dd<-0.05?C.down:C.muted,'right');
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');polyline(ctx,i);eventLines(ctx,i,'labels');
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
   const px=X(i),py=Y(bar.c);
   ctx.save();ctx.fillStyle=C.line;ctx.beginPath();ctx.arc(px,py,11,0,7);ctx.fill();
   ctx.strokeStyle=C.line;ctx.globalAlpha=.45;ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,24,0,7);ctx.stroke();ctx.restore();
@@ -284,7 +284,7 @@ function drawAnswer(ctx,t){
     ctx.beginPath();ctx.moveTo(X(a),Y(BARS[b].l));ctx.lineTo(X(b),Y(BARS[b].l));ctx.stroke();
     ctx.setLineDash([]);ctx.restore();
   }
-  eventLines(ctx,BARS.length-1,'lines');polyline(ctx,BARS.length-1);eventLines(ctx,BARS.length-1,'labels');dayAxis(ctx);
+  eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   enBand(ctx,'Peak 29,571 to trough 28,927 — a 2.18% drawdown',q);
   brand(ctx);
 }
@@ -310,7 +310,7 @@ function drawSumm(ctx,t){
     ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();
     ctx.restore();
   });
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');polyline(ctx,BARS.length-1);eventLines(ctx,BARS.length-1,'labels');dayAxis(ctx);
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   const c=easeOut(seg(st,1.1,1.6));
   if(c>0){ctx.save();ctx.globalAlpha=(1-out)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);

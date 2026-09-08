@@ -30,15 +30,15 @@ const C={down:'#ff4d4d',up:'#3ddc84',hi:'#ffe14d'};
 //     — 프리장·애프터장은 거래량이 얕아 등락률을 그대로 비교하기 어렵다
 //  ④ 별표는 트레이딩이코노믹스 캘린더의 실제 중요도 등급 (작업자가 매긴 값 아님)
 const EVENTS=[
- {i:idxOf('2026-08-31 10:30'),when:'월 밤 11시 30분',l1:'댈러스 연은 제조업 11.6.',l2:'1.3에서 급등, 지수는 무반응.',tag:'댈러스연은',en:'Dallas Fed Manufacturing 11.6 (prev 1.3) — no reaction',col:C.hi,
+ {i:idxOf('2026-08-31 10:30'),when:'월 밤 11시 30분',l1:'댈러스 연은 제조업 11.6.',l2:'직전은 1.3이었다.',tag:'댈러스연은',en:'Dallas Fed Manufacturing 11.6, up from 1.3 the month before',col:C.hi,
   why:'★★ · 그날 ★★★ 없음 · 장중 · +0.00% 1164위'},
- {i:idxOf('2026-09-01 10:00'),when:'화 밤 11시',l1:'ISM 제조업 54.6.',l2:'예상 하회, 그래도 무반응.',tag:'제조업지표',en:'ISM Manufacturing 54.6, below the 55.2 forecast',col:C.hi,
+ {i:idxOf('2026-09-01 10:00'),when:'화 밤 11시',l1:'ISM 제조업 54.6.',l2:'예상은 55.2였다.',tag:'제조업지표',en:'ISM Manufacturing 54.6, forecast 55.2',col:C.hi,
   why:'★★★ · 그날 유일 · 장중 · -0.00% 1123위'},
- {i:idxOf('2026-09-02 10:00'),when:'수 밤 11시',l1:'7월 공장주문 +0.9%.',l2:'예상 +0.6%을 넘겼다.',tag:'공장주문',en:'July factory orders +0.9%, above the +0.6% forecast',col:C.up,
+ {i:idxOf('2026-09-02 10:00'),when:'수 밤 11시',l1:'7월 공장주문 +0.9%.',l2:'예상은 +0.6%였다.',tag:'공장주문',en:'July factory orders +0.9%, forecast +0.6%',col:C.up,
   why:'★★ 4건 중 장중 2건, 그중 등락률 큰 쪽 · +0.07% 187위'},
- {i:idxOf('2026-09-03 10:00'),when:'목 밤 11시',l1:'ISM 서비스업 55.4.',l2:'예상을 넘겼는데 지수는 하락.',tag:'서비스지표',en:'ISM Services 55.4 beat 54.3 — index fell anyway',col:C.down,
+ {i:idxOf('2026-09-03 10:00'),when:'목 밤 11시',l1:'ISM 서비스업 55.4.',l2:'예상은 54.3이었다.',tag:'서비스지표',en:'ISM Services 55.4, forecast 54.3',col:C.down,
   why:'★★★ · 그날 유일 · 장중 · -0.22% 6위'},
- {i:idxOf('2026-09-04 08:30'),when:'금 저녁 9시 30분',l1:'8월 고용 16.2만 명.',l2:'예상은 5.6만이었다.',tag:'고용지표',en:'August payrolls 162K vs 56K expected',col:C.down,
+ {i:idxOf('2026-09-04 08:30'),when:'금 저녁 9시 30분',l1:'8월 고용 16.2만 명.',l2:'예상은 5.6만이었다.',tag:'고용지표',en:'August payrolls 162K, forecast 56K',col:C.down,
   why:'★★★ · 그날 유일 · 그 주 최대 변동 · -0.41% 1위'},
 ].filter(e=>e.i>0).sort((a,b)=>a.i-b.i);
 EVENTS.forEach((e,k)=>console.log(`  사건${k+1} idx ${e.i} ${e.when} — ${e.why}`));
