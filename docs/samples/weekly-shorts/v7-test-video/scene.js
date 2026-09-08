@@ -1,7 +1,11 @@
-// ===== 넘버뷰 주간 되감기 v2 — 30초 =====
+// ===== 넘버뷰 주간 되감기 v3 — 35초 =====
+// 30초 판에서 훅이 너무 빨리 지나가 읽히지 않는다는 지적을 받아 늘렸다.
+// 늘린 5초 중 2.4초를 훅에, 2.0초를 되감기에, 나머지를 정답·요약에 나눠 줬다.
 const W=1080,H=1920,FPS=30;
-const HOOK=[0,2.6], REPLAY=[2.6,21.8], ANSWER=[21.8,25.6], SUMM=[25.6,30.0];
-const DUR=30.0;
+const HOOK=[0,5.0], REPLAY=[5.0,26.2], ANSWER=[26.2,30.3], SUMM=[30.3,35.0];
+const DUR=35.0;
+// 훅 안쪽 연출 시각은 2.6초 기준으로 짜여 있다. 훅 길이가 바뀌면 같은 비율로 늘린다.
+const HS=(HOOK[1]-HOOK[0])/2.6;
 const C={bg:'#000000',text:'#ffffff',muted:'#8f9aad',dim:'#6a7383',line:'#4ea8ff',
          down:'#ff4d4d',up:'#3ddc84',hi:'#ffe14d',panel:'rgba(0,0,0,.55)'};
 const CX=60,CW=960,CY=790,CH=500;
@@ -157,12 +161,12 @@ function polyline(ctx,upto){
 function drawHook(ctx,t){
   ctx.drawImage(BGC,0,0);
   txt(ctx,'지난주 나스닥 · 월 개장 ~ 금 마감',60,206,'700 48px PD','#d8d8d8','left','.04em');
-  const p=easeOut(seg(t,.05,.62));
+  const p=easeOut(seg(t,.05*HS,.62*HS));
   shadow(ctx,true);
   txt(ctx,'결과는',56,362,'700 84px PD',C.muted);
   numT(ctx,pct(STATS.weekPct*p),44,552,'900 250px PD',C.up,'left','-.06em');
   shadow(ctx,false);
-  const q=seg(t,.72,1.02);
+  const q=seg(t,.72*HS,1.02*HS);
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
     shadow(ctx,true);
     txt(ctx,'한 주 등락률은 이게 전부입니다.',60,688,'700 58px PD',C.text);
@@ -170,7 +174,7 @@ function drawHook(ctx,t){
     shadow(ctx,false);ctx.restore();}
   const opts=[['①','-0.5%'],['②','-1.2%'],['③','-2.2%']];
   opts.forEach((o,k)=>{
-    const a=seg(t,1.12+k*.2,1.34+k*.2);if(a<=0)return;
+    const a=seg(t,(1.12+k*.22)*HS,(1.40+k*.22)*HS);if(a<=0)return;
     ctx.save();ctx.globalAlpha=a;ctx.translate(0,(1-easeOut(a))*26);
     const y=880+k*132;
     ctx.fillStyle='rgba(255,255,255,.09)';rr(ctx,56,y,700,108,16);ctx.fill();
@@ -179,7 +183,7 @@ function drawHook(ctx,t){
     numT(ctx,o[1],186,y+75,'900 60px PD',C.text);
     ctx.restore();
   });
-  const h=seg(t,1.9,2.2);
+  const h=seg(t,1.94*HS,2.24*HS);
   if(h>0){ctx.save();ctx.globalAlpha=h;
     txt(ctx,'5분봉 1,179개, 지금부터 되감습니다',60,1360,'900 52px PD',C.text);
     txt(ctx,'월요일 개장 → 금요일 마감',60,1434,'700 40px PD',C.muted);

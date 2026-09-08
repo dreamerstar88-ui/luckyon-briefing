@@ -5,7 +5,7 @@ const SP='/tmp/claude-0/-home-user-luckyon-briefing/4df77974-546d-5987-a418-39f3
 const R='/home/user/luckyon-briefing', F=`${R}/assets/fonts`;
 const args=Object.fromEntries(process.argv.slice(2).map(a=>{const [k,...v]=a.replace(/^--/,'').split('=');return [k,v.join('=')||true]}));
 const OUT=args.out||`${SP}/vid/frames`;
-const W=1080,H=1920,FPS=30,DUR=30.0;
+const W=1080,H=1920,FPS=30,DUR=35.0;
 
 // ── 데이터
 const all=JSON.parse(fs.readFileSync(`${SP}/us5m_nqf.json`,'utf8'));
