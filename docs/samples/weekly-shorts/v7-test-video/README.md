@@ -4,34 +4,36 @@
 
 | 파일 | 내용 |
 |---|---|
-| `reel_nasdaq-week_30s_synthwave.mp4` | **완성본 (권장).** 30.00초 · 1080×1920 · 30fps · H.264 CRF18 · AAC 192k/48kHz. Lyria synthwave |
-| `reel_nasdaq-week_30s_build.mp4` | 같은 영상, Lyria build 곡 |
+| `reel_nasdaq-week_30s_build.mp4` | **완성본.** 30.00초 · 1080×1920 · 30fps · H.264 CRF18 · AAC 192k/48kHz · -14.0 LUFS. 배경음악 Lyria build |
 | `reel_nasdaq-week_30s_무음.mp4` | 소리 없는 판. 다른 음악을 넣을 때 이걸 쓴다 |
 | `cover_nasdaq-week.png` | 썸네일. 2.5초 훅 프레임 |
 | `발행문구.md` | 제목·설명·태그·고정 댓글·마무리 문구·점검표 |
 | `사건선정기준.md` | 어떤 지점에 라벨을 붙였고 왜 그것만 골랐는지 |
 | `배경음악-선택지.md` | Suno·TopView·ElevenLabs·기존 음원 — 실제로 확인한 결과와 명령 |
 | `scene.js` · `render.mjs` | 재생성 스크립트 |
-| `bgm-synthwave-waveform.png` · `bgm-build-waveform.png` | 배경음악 파형 |
+| `bgm-build-waveform.png` | 배경음악 파형 |
+| `te-calendar-parse.mjs` · `te-events-2026-0831-0904.json` | 트레이딩이코노믹스 캘린더 파서와 그 주 추출 결과 |
 
 ## 구성 (30초)
 
 | 구간 | 시각 | 내용 |
 |---|---|---|
 | 훅 | 0 ~ 2.6초 | 0초부터 숫자가 보인다. +0.36% 카운트업 → "최대 낙폭은?" → 보기 3개 |
-| 되감기 | 2.6 ~ 21.8초 | 5분봉 1,179개. 사건 4곳에서 1.5초씩 정지하고 라벨. 지나간 사건은 세로 점선으로 남는다 |
+| 되감기 | 2.6 ~ 21.8초 | 5분봉 1,179개. 사건 5곳(요일당 1개)에서 1.5초씩 정지하고 라벨. 지나간 사건은 세로 점선으로 남는다 |
 | 정답 | 21.8 ~ 25.6초 | -2.18% 공개 + 낙폭 구간 음영 |
 | 요약·루프 | 25.6 ~ 30.0초 | 요약 3줄 → 손글씨 CTA → 마지막 1.05초 첫 프레임 구도로 복귀 |
 
 58.4초 판(9/7 제작)에서 30초로 줄였다. 되감기 구간이 42.8초에서 19.2초로 줄어
-봉이 넘어가는 속도가 약 2.2배 빨라졌다. 사건 정지는 5곳 1.8초에서 4곳 1.5초로 줄였다.
+봉이 넘어가는 속도가 약 2.2배 빨라졌다. 사건 정지는 5곳 1.8초에서 5곳 1.5초로 줄였다.
+사건이 요일당 하나씩이라 그래프 위에 고르게 퍼진다.
 
 ## 사건 표기
 
 사건이 지나가면 그래프에 **세로 점선 + 번호 배지 + 사건 내용 세로 글씨**가 남는다.
 글씨는 한 글자씩 똑바로 세워 위에서 아래로 쌓는다(`vtext()`). 선 위에 그려서 주가 선에
 가리지 않고, 오른쪽 여백이 좁으면 선 왼쪽으로 자동으로 넘어간다.
-마지막 요약 화면까지 ①유조선 피격 ②주간 최저 ③반등 시작 ④고용지표 네 개가 남는다.
+마지막 요약 화면까지 ①댈러스연은 ②제조업지표 ③공장주문 ④서비스지표 ⑤고용지표 다섯 개가 남는다.
+무엇을 골랐고 왜 그것만 골랐는지는 `사건선정기준.md` 에 있다.
 
 ## 줄간격
 
@@ -56,13 +58,14 @@ Pretendard 에는 고정폭 숫자 기능(`tabular-nums`)이 캔버스에서 안
 ## 다시 만드는 법
 
 ```bash
-node vid/render.mjs      # 프레임 900장, 약 55초
-node vid/music.mjs       # bgm-raw.wav 30초
+node render.mjs --out=frames   # 프레임 900장, 약 55초
 FF=node_modules/ffmpeg-static/ffmpeg
-$FF -y -framerate 30 -i frames/f%05d.jpg -c:v libx264 -pix_fmt yuv420p -crf 18 \
-   -preset medium -movflags +faststart silent30.mp4
-$FF -y -i bgm-raw.wav -af "afade=t=in:st=0:d=1.0,afade=t=out:st=28.2:d=1.8,\
-   loudnorm=I=-14:TP=-1.5:LRA=11" -ar 48000 -ac 2 -t 30 bgm30.wav
+$FF -y -framerate 30 -i frames/f%05d.jpg -c:v libx264 -preset slow -crf 18 \
+   -pix_fmt yuv420p -movflags +faststart silent30.mp4
+# loudnorm 을 페이드보다 먼저 걸어야 끝이 제대로 무음이 된다
+$FF -y -ss 23.5 -i lyria-build-v1.mp3 -t 30 \
+   -af "loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=2.5,afade=t=out:st=25.6:d=4.4:curve=ipar" \
+   -ar 48000 -ac 2 bgm30.wav
 $FF -y -i silent30.mp4 -i bgm30.wav -map 0:v:0 -map 1:a:0 -c:v copy \
    -c:a aac -b:a 192k -ar 48000 -ac 2 -shortest -movflags +faststart reel.mp4
 ```
@@ -71,6 +74,7 @@ $FF -y -i silent30.mp4 -i bgm30.wav -map 0:v:0 -map 1:a:0 -c:v copy \
 
 ## 배경음악
 
-대표가 올린 **Lyria 원곡**을 쓴다. 자세한 것은 `배경음악-선택지.md`.
-권장은 synthwave — 곡의 전환(21초)이 영상의 정답 공개(21.8초)와 맞는다.
-두 곡 모두 페이드인 2.5초 · 페이드아웃 3.0초, 음량 -14 LUFS 기준.
+대표가 올린 **Lyria build** 곡으로 확정했다. 자세한 것은 `배경음악-선택지.md`.
+원곡 23.5~53.5초 구간을 써서 곡이 가장 고조되는 지점이 영상의 정답 공개(21.8초)에 오게 했다.
+페이드인 2.5초, 페이드아웃은 25.6초부터 4.4초에 걸쳐 천천히(`curve=ipar`) 잦아든다.
+완성본 음량은 -14.0 LUFS · 트루피크 -1.8 dBTP.
