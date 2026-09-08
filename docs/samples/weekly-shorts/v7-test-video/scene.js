@@ -4,8 +4,11 @@
 const W=1080,H=1920,FPS=30;
 const HOOK=[0,5.0], REPLAY=[5.0,26.2], ANSWER=[26.2,30.3], SUMM=[30.3,35.0];
 const DUR=35.0;
-// 훅 안쪽 연출 시각은 2.6초 기준으로 짜여 있다. 훅 길이가 바뀌면 같은 비율로 늘린다.
-const HS=(HOOK[1]-HOOK[0])/2.6;
+// 훅 연출: 문구를 다 띄운 뒤 HOLD 만큼 세워 두고 다음으로 넘어간다.
+// 등장 동작은 [0, 등장창] 안에서 끝나고, 나머지는 전부 정지 시간이다.
+const HOOK_HOLD=1.95;
+const HOOK_RV=(HOOK[1]-HOOK[0])-HOOK_HOLD;   // 등장창 = 3.05초
+const hs=t=>t/3.05*HOOK_RV;                  // 3.05초 기준 대본을 등장창에 맞춘다
 const C={bg:'#000000',text:'#ffffff',muted:'#8f9aad',dim:'#6a7383',line:'#4ea8ff',
          down:'#ff4d4d',up:'#3ddc84',hi:'#ffe14d',panel:'rgba(0,0,0,.55)'};
 const CX=60,CW=960,CY=790,CH=500;
@@ -161,12 +164,12 @@ function polyline(ctx,upto){
 function drawHook(ctx,t){
   ctx.drawImage(BGC,0,0);
   txt(ctx,'지난주 나스닥 · 월 개장 ~ 금 마감',60,206,'700 48px PD','#d8d8d8','left','.04em');
-  const p=easeOut(seg(t,.05*HS,.62*HS));
+  const p=easeOut(seg(t,hs(.10),hs(1.00)));
   shadow(ctx,true);
   txt(ctx,'결과는',56,362,'700 84px PD',C.muted);
   numT(ctx,pct(STATS.weekPct*p),44,552,'900 250px PD',C.up,'left','-.06em');
   shadow(ctx,false);
-  const q=seg(t,.72*HS,1.02*HS);
+  const q=seg(t,hs(1.05),hs(1.50));
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
     shadow(ctx,true);
     txt(ctx,'한 주 등락률은 이게 전부입니다.',60,688,'700 58px PD',C.text);
@@ -174,7 +177,7 @@ function drawHook(ctx,t){
     shadow(ctx,false);ctx.restore();}
   const opts=[['①','-0.5%'],['②','-1.2%'],['③','-2.2%']];
   opts.forEach((o,k)=>{
-    const a=seg(t,(1.12+k*.22)*HS,(1.40+k*.22)*HS);if(a<=0)return;
+    const a=seg(t,hs(1.60+k*.35),hs(2.00+k*.35));if(a<=0)return;
     ctx.save();ctx.globalAlpha=a;ctx.translate(0,(1-easeOut(a))*26);
     const y=880+k*132;
     ctx.fillStyle='rgba(255,255,255,.09)';rr(ctx,56,y,700,108,16);ctx.fill();
@@ -183,7 +186,7 @@ function drawHook(ctx,t){
     numT(ctx,o[1],186,y+75,'900 60px PD',C.text);
     ctx.restore();
   });
-  const h=seg(t,1.94*HS,2.24*HS);
+  const h=seg(t,hs(2.75),hs(3.05));
   if(h>0){ctx.save();ctx.globalAlpha=h;
     txt(ctx,'5분봉 1,179개, 지금부터 다시 돌려봅니다',60,1360,'900 52px PD',C.text);
     txt(ctx,'월요일 개장 → 금요일 마감',60,1434,'700 40px PD',C.muted);
