@@ -13,6 +13,17 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+
+// node 의 전역 fetch 는 HTTPS_PROXY 환경변수를 스스로 타지 않는다. 그대로 두면 에이전트
+// 프록시를 건너뛰고 방화벽에 직접 부딪혀 "Host not in allowlist" 403 이 돌아온다 —
+// 허용 목록과는 아무 상관이 없는 오류다. (2026-09-08 에 이걸 허용 목록 문제로 오진했다.)
+// NODE_USE_ENV_PROXY 는 시작 전에 정해져야 하므로, 없으면 그 값을 켜고 자기 자신을 다시 띄운다.
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && process.env.NODE_USE_ENV_PROXY !== '1') {
+  const r = spawnSync(process.execPath, [process.argv[1], ...process.argv.slice(2)],
+    { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' } });
+  process.exit(r.status ?? 1);
+}
 
 const argv = process.argv.slice(2);
 const manifestPath = argv.find((a) => !a.startsWith('--'));
@@ -30,7 +41,11 @@ const ok = (label, got, want) => { passes++; console.log(`  ✅ ${label}: ${got}
 const bad = (label, got, want) => { fails++; console.log(`  ❌ ${label}: 매니페스트 ${want} · 재계산 ${got}`); };
 const cmp = (label, got, want, tol = 0) => {
   const same = typeof want === 'number' ? Math.abs(got - want) <= tol : String(got) === String(want);
-  same ? ok(label, got) : bad(label, got, want);
+  // 오차 범위로 통과했는데 값이 다르면 그 사실을 숨기지 않는다.
+  // 예전에는 주간 최고 29705(재계산) vs 29704(매니페스트)가 ✅ 뒤에 가려졌다.
+  if (same && String(got) !== String(want)) ok(`${label} (오차 내)`, `${got} · 매니페스트 ${want}`);
+  else if (same) ok(label, got);
+  else bad(label, got, want);
   return same;
 };
 
@@ -114,21 +129,37 @@ const d1 = M.window.from_et.slice(0, 10), d2 = M.window.to_et.slice(0, 10);
 try {
   const resp = await fetch(`https://tradingeconomics.com/united-states/calendar?d1=${d1}&d2=${d2}`,
     { headers: { 'User-Agent': UA } });
-  const html = await resp.text();
+  let html = await resp.text();
   if (!resp.ok || /Host not in allowlist/.test(html)) {
     throw new Error(`BLOCKED:${resp.status} ${html.slice(0, 120)}`);
   }
+  // 사이트가 대상 주를 안 주면(지난 주는 GET 으로 못 받는다) 제작 시점에 받아 둔 스냅샷을 쓴다.
+  // 스냅샷은 사이트가 준 원본 HTML 이지 우리가 만든 값이 아니다. 다만 실시간 재조회보다
+  // 증거력이 약하므로 그 사실을 반드시 화면에 남긴다.
+  if (!new RegExp(`class='\\s*${d1}'`).test(html) && M.calendar_snapshot && fs.existsSync(M.calendar_snapshot)) {
+    html = fs.readFileSync(M.calendar_snapshot, 'utf8');
+    console.log(`  ⚠ 사이트가 대상 주를 주지 않아 제작 시점 스냅샷으로 대조한다 — ${M.calendar_snapshot}`);
+  }
   const rows = html.split(/<tr\s+data-url=/).slice(1);
   const table = new Map();
+  let outOfRange = 0;
   for (const r0 of rows) {
     const r = r0.replace(/\s+/g, ' ');
     const name = (r.match(/data-event="([^"]*)"/) || [])[1];
     const imp = (r.match(/calendar-date-(\d)/) || [])[1];
+    const day = (r.match(/class='\s*(\d{4}-\d{2}-\d{2})'/) || [])[1];
     if (!name || !imp) continue;
+    // 트레이딩이코노믹스는 GET 의 d1/d2 를 무시하고 현재 주를 돌려줄 때가 있다.
+    // 행에 찍힌 날짜를 확인하지 않으면 다른 주의 값과 대조하게 된다 — 실제로 그런 적이 있다.
+    if (!day || day < d1 || day > d2) { outOfRange++; continue; }
     const get = (id) => { const m = r.match(new RegExp(`id='${id}'[^>]*>([^<]*)<`)); return m ? m[1].trim() : ''; };
     table.set(name, { stars: +imp, actual: get('actual'), previous: get('previous'), consensus: get('consensus') });
   }
-  if (table.size === 0) throw new Error('캘린더 행을 하나도 파싱하지 못했다 (페이지 구조 변경 의심)');
+  if (table.size === 0) {
+    throw new Error(outOfRange > 0
+      ? `RANGE:대상 주(${d1}~${d2}) 행이 하나도 없다. 받은 ${outOfRange}건은 전부 다른 날짜다`
+      : '캘린더 행을 하나도 파싱하지 못했다 (페이지 구조 변경 의심)');
+  }
   console.log(`  · 캘린더 ${table.size}건 파싱`);
   for (const e of M.events) {
     const row = table.get(e.te_event);
@@ -139,7 +170,13 @@ try {
   }
 } catch (err) {
   fails++;
-  if (err.message.startsWith('BLOCKED:')) {
+  if (err.message.startsWith('RANGE:')) {
+    console.log(`  ⛔ ${err.message.slice(6)}`);
+    console.log('     트레이딩이코노믹스는 지난 주 구간을 GET 으로 주지 않는다(항상 현재 주부터 돌려준다).');
+    console.log('     → 캘린더 HTML 은 그 주가 끝난 직후 제작 단계에서 받아 두고,');
+    console.log('        검증은 지표별 페이지(예: /united-states/non-manufacturing-pmi)에서 확인한다.');
+    console.log('     대조하지 못한 항목은 통과가 아니다.');
+  } else if (err.message.startsWith('BLOCKED:')) {
     console.log(`  ⛔ 캘린더에 접속하지 못했다 — ${err.message.slice(8)}`);
     console.log('     이 세션의 네트워크 허용 목록에 tradingeconomics.com 이 없다.');
     console.log('     클로드 환경 편집 > 접속 가능 사이트에 추가해야 별표·실제값·예상값을 대조할 수 있다.');
@@ -181,7 +218,23 @@ let contiguous = true;
 for (let i = 1; i < order.length; i++) if (S[order[i]][0] !== S[order[i - 1]][1]) contiguous = false;
 contiguous ? ok('구간 연속', order.map((k) => S[k].join('~')).join(' ')) : bad('구간 연속', '끊김', '앞 구간 끝 = 뒤 구간 시작');
 cmp('전체 길이', S.summ[1], M.video.duration, 0.001);
-cmp('훅 정지 시간', +(S.hook[1] - S.hook[0] - (S.hook[1] - S.hook[0] - M.video.hook_hold)).toFixed(2), M.video.hook_hold, 0.01);
+// 예전 검사는 (a-b)-((a-b)-c) === c 라는 항등식이라 무엇도 검증하지 않았다.
+// 이제 scene.js 에 박힌 실제 상수를 읽어 매니페스트와 대조한다.
+const sceneCandidates = [
+  process.env.SCENE_JS,
+  srtDir && path.join(srtDir, 'scene.js'),
+].filter(Boolean).filter((f) => fs.existsSync(f));
+if (sceneCandidates.length === 0) {
+  console.log('  ⛔ scene.js 를 못 찾아 훅 정지 시간을 대조하지 못했다 (SCENE_JS 로 경로를 주면 된다)');
+  fails++;
+} else {
+  const src = fs.readFileSync(sceneCandidates[0], 'utf8');
+  const hh = src.match(/const\s+HOOK_HOLD\s*=\s*([\d.]+)/);
+  const hk = src.match(/const\s+HOOK\s*=\s*\[\s*([\d.]+)\s*,\s*([\d.]+)\s*\]/);
+  hh ? cmp('훅 정지 시간(scene.js)', +hh[1], M.video.hook_hold, 0.001)
+     : bad('훅 정지 시간', 'HOOK_HOLD 상수를 못 찾음', M.video.hook_hold);
+  if (hk) cmp('훅 구간(scene.js)', `${+hk[1]}~${+hk[2]}`, `${S.hook[0]}~${S.hook[1]}`);
+}
 const replayTotal = S.replay[1] - S.replay[0];
 const drawT = replayTotal - M.video.hold * M.events.length;
 drawT > 0 ? ok('되감기 그리기 시간', `${drawT.toFixed(2)}초`) : bad('되감기 그리기 시간', `${drawT.toFixed(2)}초`, '0보다 커야 한다');

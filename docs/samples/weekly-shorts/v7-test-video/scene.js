@@ -164,12 +164,23 @@ function polyline(ctx,upto){
 // ── 영어 병기 밴드
 // 기본 자리는 화면 아래(구분선 y1468 · 글 y1524). 이 띠는 훅·되감기·정답에서 같은 자리에 온다.
 // 요약 화면만 손글씨 CTA(y1512)와 겹치므로 제목 바로 밑(y344)으로 올린다.
+const BAND_MAXW=968;   // 56 ~ 1024. 구분선과 같은 폭 안에 반드시 들어와야 한다.
 function enBand(ctx,line,a=1,y=1524,rule=true){
   if(!line)return;
   ctx.save();ctx.globalAlpha=a;
   if(rule){ctx.strokeStyle='rgba(255,255,255,.14)';ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(56,y-56);ctx.lineTo(1024,y-56);ctx.stroke();}
-  txt(ctx,line,56,y,'500 34px PD','#b9c2d0');
+  // 영어 문장은 회차마다 길이가 다르다. 넘치면 글자를 줄여 안으로 넣는다.
+  // 26px 까지 줄여도 안 들어가면 그 문장이 너무 긴 것이니, 화면을 망가뜨리는 대신 잘라 표시한다.
+  let px=34;
+  ctx.font=`500 ${px}px PD`;
+  while(px>26&&ctx.measureText(line).width>BAND_MAXW){px--;ctx.font=`500 ${px}px PD`;}
+  let out=line;
+  if(ctx.measureText(out).width>BAND_MAXW){
+    while(out.length>4&&ctx.measureText(out+'…').width>BAND_MAXW)out=out.slice(0,-1);
+    out+='…';
+  }
+  txt(ctx,out,56,y,`500 ${px}px PD`,'#b9c2d0');
   ctx.restore();
 }
 
@@ -269,12 +280,17 @@ function drawAnswer(ctx,t){
   ctx.save();ctx.globalAlpha=p;ctx.translate(0,(1-p)*26);
   shadow(ctx,true);
   txt(ctx,'③',56,330,'900 62px PD',C.hi);
-  numT(ctx,'-2.18%',150,330,'900 190px PD',C.down,'left','-.05em');
+  numT(ctx,pct(STATS.mdd),150,330,'900 190px PD',C.down,'left','-.05em');
   shadow(ctx,false);ctx.restore();
   const q=seg(at,.6,.95);
   if(q>0){ctx.save();ctx.globalAlpha=q;
-    numT(ctx,'고점 29,571 → 저점 28,927',60,436,'700 54px PD',C.text);
-    txt(ctx,'화요일 오후 → 수요일 저녁, 하루 반 만에',60,512,'700 44px PD',C.muted);
+    numT(ctx,`고점 ${fmt(BARS[STATS.peakIdx].h)} → 저점 ${fmt(BARS[STATS.troughIdx].l)}`,60,436,'700 54px PD',C.text);
+    // 걸린 시간은 봉 간격에서 계산한다. "하루 반" 같은 어림말을 손으로 적으면
+    // 회차가 바뀌어도 그대로 남고, 1회차에서 실제 29시간을 36시간으로 부풀린 적이 있다.
+    const mins=(STATS.troughIdx-STATS.peakIdx)*5;
+    const span=mins<60?`${mins}분`:(mins<1440?`${(mins/60).toFixed(1)}시간`:`${(mins/1440).toFixed(1)}일`);
+    txt(ctx,`${BARS[STATS.peakIdx].kst.slice(0,-6)} → ${BARS[STATS.troughIdx].kst.slice(0,-6)}, ${span} 만에`,
+        60,512,'700 44px PD',C.muted);
     ctx.restore();}
   chartPanel(ctx);dayShade(ctx);
   const s=seg(at,.9,1.6);
@@ -296,17 +312,22 @@ function drawAnswer(ctx,t){
 function drawSumm(ctx,t){
   ctx.drawImage(BGC,0,0);
   const st=t-SUMM[0];
-  const out=seg(t,SUMM[1]-1.2,SUMM[1]-0.15);
-  ctx.save();ctx.globalAlpha=1-out;
+  // 예전에는 요약과 루프 카드가 1초 넘게 동시에 반투명으로 겹쳐 글자 위에 글자가 얹혔다.
+  // 요약은 앞 0.5초에 먼저 사라지고, 루프 카드는 그 뒤에 들어온다.
+  const fadeOut=seg(t,SUMM[1]-1.2,SUMM[1]-0.7);   // 요약이 빠지는 구간
+  const out=seg(t,SUMM[1]-0.7,SUMM[1]-0.1);       // 루프 카드가 들어오는 구간
+  ctx.save();ctx.globalAlpha=1-fadeOut;
   txt(ctx,'이번 주 바닥도, 꼭대기도',60,206,'900 52px PD',C.text);
   txt(ctx,'한국 저녁에 나왔다.',60,278,'900 52px PD',C.hi);
   enBand(ctx,"The week's low and high both landed in Korean evening hours",1,344,false);
-  const rows=[['주간 최저 · 수 저녁 8시','28,927',C.down],
-              ['주간 최고 · 금 저녁 7시 45분','29,704',C.up],
-              ['결국 한 주 결과','+0.36%',C.up]];
+  let lo=1e9,li=0,hi2=-1e9,hi_i=0;
+  BARS.forEach((b,i)=>{if(b.l<lo){lo=b.l;li=i;}if(b.h>hi2){hi2=b.h;hi_i=i;}});
+  const rows=[[`주간 최저 · ${BARS[li].kst.slice(0,-6)}`,fmt(lo),C.down],
+              [`주간 최고 · ${BARS[hi_i].kst.slice(0,-6)}`,fmt(hi2),C.up],
+              ['결국 한 주 결과',pct(STATS.weekPct),STATS.weekPct>=0?C.up:C.down]];
   rows.forEach((r,k)=>{
     const a=easeOut(seg(st,.15+k*.22,.5+k*.22));if(a<=0)return;
-    ctx.save();ctx.globalAlpha=(1-out)*a;ctx.translate(0,(1-a)*20);
+    ctx.save();ctx.globalAlpha=(1-fadeOut)*a;ctx.translate(0,(1-a)*20);
     const y=390+k*118;
     txt(ctx,r[0],56,y+52,'700 46px PD',C.text);
     numT(ctx,r[1],1024,y+56,'900 56px PD',r[2],'right');
@@ -315,7 +336,7 @@ function drawSumm(ctx,t){
   });
   chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   const c=easeOut(seg(st,1.1,1.6));
-  if(c>0){ctx.save();ctx.globalAlpha=(1-out)*c;
+  if(c>0){ctx.save();ctx.globalAlpha=(1-fadeOut)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
     txt(ctx,'다음 주도 다시 돌려 드립니다',60,1594,'700 44px PD','#d8d8d8');
     ctx.restore();}
@@ -327,9 +348,9 @@ function drawSumm(ctx,t){
       txt(g,'지난주 나스닥 · 월 개장 ~ 금 마감',60,206,'700 48px PD','#d8d8d8','left','.04em');
       shadow(g,true);
       txt(g,'결과는',56,362,'700 84px PD',C.muted);
-      numT(g,'+0.36%',44,552,'900 250px PD',C.up,'left','-.06em');
+      numT(g,pct(STATS.weekPct),44,552,'900 250px PD',STATS.weekPct>=0?C.up:C.down,'left','-.06em');
       txt(g,'과정은',56,700,'700 84px PD',C.muted);
-      numT(g,'-2.18%',44,890,'900 250px PD',C.down,'left','-.06em');
+      numT(g,pct(STATS.mdd),44,890,'900 250px PD',C.down,'left','-.06em');
       shadow(g,false);
       txt(g,'한 주 등락률 뒤에 숨은 낙폭',60,1000,'700 56px PD',C.text);
       window.__loopC=lc;
