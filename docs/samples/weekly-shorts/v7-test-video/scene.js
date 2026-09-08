@@ -160,6 +160,19 @@ function polyline(ctx,upto){
   ctx.stroke();ctx.restore();
 }
 
+
+// ── 영어 병기 밴드
+// 기본 자리는 화면 아래(구분선 y1468 · 글 y1524). 이 띠는 훅·되감기·정답에서 같은 자리에 온다.
+// 요약 화면만 손글씨 CTA(y1512)와 겹치므로 제목 바로 밑(y344)으로 올린다.
+function enBand(ctx,line,a=1,y=1524,rule=true){
+  if(!line)return;
+  ctx.save();ctx.globalAlpha=a;
+  if(rule){ctx.strokeStyle='rgba(255,255,255,.14)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(56,y-56);ctx.lineTo(1024,y-56);ctx.stroke();}
+  txt(ctx,line,56,y,'500 34px PD','#b9c2d0');
+  ctx.restore();
+}
+
 // ── 훅
 function drawHook(ctx,t){
   ctx.drawImage(BGC,0,0);
@@ -191,6 +204,7 @@ function drawHook(ctx,t){
     txt(ctx,'5분봉 1,179개, 지금부터 다시 돌려봅니다',60,1360,'900 52px PD',C.text);
     txt(ctx,'월요일 개장 → 금요일 마감',60,1434,'700 40px PD',C.muted);
     ctx.restore();}
+  enBand(ctx,'Nasdaq 100 futures, Mon open to Fri close. How deep was the drawdown?',h);
   brand(ctx);
 }
 
@@ -239,6 +253,7 @@ function drawReplay(ctx,t){
     shadow(ctx,false);
     ctx.restore();
   }
+  enBand(ctx,show?show.en:'Replaying 1,179 five-minute bars');
   brand(ctx);
 }
 
@@ -270,6 +285,7 @@ function drawAnswer(ctx,t){
     ctx.setLineDash([]);ctx.restore();
   }
   eventLines(ctx,BARS.length-1,'lines');polyline(ctx,BARS.length-1);eventLines(ctx,BARS.length-1,'labels');dayAxis(ctx);
+  enBand(ctx,'Peak 29,571 to trough 28,927 — a 2.18% drawdown',q);
   brand(ctx);
 }
 
@@ -281,6 +297,7 @@ function drawSumm(ctx,t){
   ctx.save();ctx.globalAlpha=1-out;
   txt(ctx,'이번 주 바닥도, 꼭대기도',60,206,'900 52px PD',C.text);
   txt(ctx,'한국 저녁에 나왔다.',60,278,'900 52px PD',C.hi);
+  enBand(ctx,"The week's low and high both landed in Korean evening hours",1,344,false);
   const rows=[['주간 최저 · 수 저녁 8시','28,927',C.down],
               ['주간 최고 · 금 저녁 7시 45분','29,704',C.up],
               ['결국 한 주 결과','+0.36%',C.up]];
