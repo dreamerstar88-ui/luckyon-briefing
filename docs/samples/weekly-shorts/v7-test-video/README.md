@@ -4,14 +4,15 @@
 
 | 파일 | 내용 |
 |---|---|
-| `reel_nasdaq-week_30s.mp4` | **완성본.** 30.00초 · 1080×1920 · 30fps · H.264 CRF18 yuv420p · AAC 192k/48kHz |
+| `reel_nasdaq-week_30s_synthwave.mp4` | **완성본 (권장).** 30.00초 · 1080×1920 · 30fps · H.264 CRF18 · AAC 192k/48kHz. Lyria synthwave |
+| `reel_nasdaq-week_30s_build.mp4` | 같은 영상, Lyria build 곡 |
 | `reel_nasdaq-week_30s_무음.mp4` | 소리 없는 판. 다른 음악을 넣을 때 이걸 쓴다 |
 | `cover_nasdaq-week.png` | 썸네일. 2.5초 훅 프레임 |
 | `발행문구.md` | 제목·설명·태그·고정 댓글·마무리 문구·점검표 |
 | `사건선정기준.md` | 어떤 지점에 라벨을 붙였고 왜 그것만 골랐는지 |
 | `배경음악-선택지.md` | Suno·TopView·ElevenLabs·기존 음원 — 실제로 확인한 결과와 명령 |
-| `scene.js` · `render.mjs` · `music.mjs` | 재생성 스크립트 |
-| `bgm-waveform.png` | 배경음악 파형 |
+| `scene.js` · `render.mjs` | 재생성 스크립트 |
+| `bgm-synthwave-waveform.png` · `bgm-build-waveform.png` | 배경음악 파형 |
 
 ## 구성 (30초)
 
@@ -68,34 +69,8 @@ $FF -y -i silent30.mp4 -i bgm30.wav -map 0:v:0 -map 1:a:0 -c:v copy \
 
 5분봉 원본은 `../v6-nasdaq-week/data-nq-5m.json`.
 
-## 배경음악 — 지금 들어간 것과 바꾸는 법
+## 배경음악
 
-**지금 들어간 소리는 `music.mjs` 가 오실레이터로 직접 만든 것이다.**
-외부 음원이나 샘플을 쓰지 않았다. 사인파·톱니파로 패드·아르페지오·베이스·킥·하이햇을
-합성하고, 사건 4곳과 정답 1곳에 저역 임팩트를, 정답 직전 1.5초에 상승 잡음을 넣었다.
-Am–F–C–G 진행, 100 BPM. 저작권 문제는 없지만 **완성도는 Suno 음원에 못 미친다.**
-
-이 세션에는 Suno MCP 가 연결돼 있지 않아 새 곡을 만들 수 없었다
-(연결된 음악 관련 커넥터: Play Sheet Music, Spotify, Viberate — 모두 곡 생성용이 아니다).
-
-### 바꾸는 방법 세 가지
-
-**1. 기존 기준 음원을 쓴다 (권장).** 대표 컴퓨터의
-`sj-park-investment-backtest/backtest-reels/배경음악/기준-배경음악3.wav` (58.4초).
-뒤쪽 30초를 쓰면 고조 구간이 영상 끝에 온다.
-
-```bash
-$FF -y -ss 28.4 -i "배경음악/기준-배경음악3.wav" \
-   -af "afade=t=in:st=0:d=1.0,afade=t=out:st=28.2:d=1.8,loudnorm=I=-14:TP=-1.5:LRA=11" \
-   -ar 48000 -ac 2 -t 30 bgm30.wav
-$FF -y -i "reel_nasdaq-week_30s_무음.mp4" -i bgm30.wav -map 0:v:0 -map 1:a:0 \
-   -c:v copy -c:a aac -b:a 192k -ar 48000 -ac 2 -shortest -movflags +faststart 완성.mp4
-```
-
-**2. Suno 로 새로 만든다.** 만드는 법은
-`배경음악/제작 스크립트/Suno MCP 활용법.md` 에 정리돼 있다.
-이 세션에서 하려면 Suno MCP 커넥터를 이 대화에 연결해야 한다.
-그때 쓸 프롬프트 방향: *어두운 신스 배경, 100 BPM, 가사 없음, 30초, 22초 지점에 전환,
-금융 데이터 영상용, 급하지 않고 긴장감 있게.*
-
-**3. 유튜브 오디오 보관함**에서 저작권 없는 곡을 받아 위 1번 명령의 파일명만 바꿔 쓴다.
+대표가 올린 **Lyria 원곡**을 쓴다. 자세한 것은 `배경음악-선택지.md`.
+권장은 synthwave — 곡의 전환(21초)이 영상의 정답 공개(21.8초)와 맞는다.
+두 곡 모두 페이드인 2.5초 · 페이드아웃 3.0초, 음량 -14 LUFS 기준.
