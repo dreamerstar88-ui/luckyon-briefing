@@ -22,7 +22,11 @@
 | 차트 노트 | `ROUTINE_PROMPT_CHARTNOTES.md` | `content/chart-notes/<STAMP>.json` | `cards/chart-notes/<STAMP>/<LANG>/` | `scripts/chart-notes/publish-chartnotes.mjs` | 일 10:30 |
 | 릴스 | (문서 없음 · 보류) | `data/reels/<STAMP>.json` | `cards/reels/<STAMP>/<LANG>/` | `scripts/reels/publish-reel.mjs` | — |
 | 숫자로 보는 기업 공시 | `ROUTINE_PROMPT_FILINGS.md` | `content/filings/<STAMP>.json` | `cards/filings/<STAMP>/<LANG>/` | `scripts/filings/publish-filings.mjs` | 스케줄 없음 · 수동 |
+| 주간 쇼츠 | `ROUTINE_PROMPT_WEEKLY_SHORTS.md` | `content/weekly-shorts/<DATE>.json` | `cards/reels/<STAMP>/<LANG>/` | 유튜브: Zapier · 인스타: `scripts/reels/publish-reel.mjs` | 스케줄 없음 · 수동(주 1편) |
 
+- **주간 쇼츠는 두 플랫폼에 발행하는 유일한 축이다.** 유튜브 쇼츠와 인스타그램 릴스에 같은 영상을 올린다.
+  카드 경로는 릴스와 같은 `cards/reels/` 를 쓰지만 콘텐츠 매니페스트는 `content/weekly-shorts/` 에 따로 둔다.
+  발행 전 검증은 `scripts/weekly-shorts/verify-shorts.mjs` + `shorts-verifier` 에이전트다(§3 의 축별 적용).
 - **스토리와 릴스는 시세 JSON(`data/reels/`)을 공유한다.** 같은 `fetch-window.mjs` 출력을 스토리는 정지 이미지로, 릴스는 영상으로 렌더할 뿐이다. 이미지 산출 경로만 다르다.
 - `content/` **루트**의 json 은 브리핑 전용이다 (세션 없는 구버전 파일 포함). 다른 축의 콘텐츠를 여기 두면 렌더러·발행 스크립트가 서로의 파일을 집어 든다.
 - **모든 축이 `claude/live` 브랜치 하나와 GitHub Pages 를 공유한다.**

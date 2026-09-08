@@ -248,8 +248,11 @@ function drawReplay(ctx,t){
     ctx.fillStyle=show.col;rr(ctx,0,0,pw,fs+24,6);ctx.fill();
     ctx.fillStyle=show.col===C.hi?'#111':'#fff';ctx.fillText(num+show.when,26,fs+6);ctx.restore();
     shadow(ctx,!!cur);
-    txt(ctx,show.l1,60,cur?600:594,`900 ${ts}px PD`,C.text);
-    if(show.l2)txt(ctx,show.l2,60,cur?680:656,`900 ${ts}px PD`,show.col);
+    // 첫 줄 = 발표된 실제값(주인공) → 사건 색. 둘째 줄 = 예상값(비교 기준) → 회색.
+    // 초안에서는 반대였다. 둘째 줄이 "지수는 하락" 같은 반응 해석이던 시절의 배색인데,
+    // 그 문구를 뺀 뒤에도 색만 남아 예상값이 실제값보다 눈에 먼저 들어왔다.
+    txt(ctx,show.l1,60,cur?600:594,`900 ${ts}px PD`,show.col);
+    if(show.l2)txt(ctx,show.l2,60,cur?680:656,`900 ${ts}px PD`,C.muted);
     shadow(ctx,false);
     ctx.restore();
   }

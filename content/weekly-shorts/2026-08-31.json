@@ -1,0 +1,154 @@
+{
+  "stamp": "nasdaq-week-2026-08-31",
+  "episode": 1,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQ=F",
+    "interval": "5m",
+    "from_et": "2026-08-31 09:30",
+    "to_et": "2026-09-04 16:00",
+    "note": "월요일 정규장 개장부터 금요일 정규장 마감까지. 그 사이 야간 선물 거래도 모두 포함한다."
+  },
+  "video": {
+    "duration": 35.0,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "hold": 1.5,
+    "hook_hold": 1.95,
+    "sections": {
+      "hook": [
+        0,
+        5.0
+      ],
+      "replay": [
+        5.0,
+        26.2
+      ],
+      "answer": [
+        26.2,
+        30.3
+      ],
+      "summ": [
+        30.3,
+        35.0
+      ]
+    }
+  },
+  "numbers": {
+    "bars": 1179,
+    "changes": 1178,
+    "week_pct": 0.36,
+    "mdd_pct": -2.18,
+    "peak": 29571,
+    "trough": 28927,
+    "week_high": 29704,
+    "week_low": 28927
+  },
+  "quiz": {
+    "options": [
+      "-0.5%",
+      "-1.2%",
+      "-2.2%"
+    ],
+    "answer_index": 3
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-08-31 10:30",
+      "kst_label": "월 밤 11시 30분",
+      "te_event": "dallas fed manufacturing index",
+      "stars": 2,
+      "actual": "11.6",
+      "compare_field": "previous",
+      "compare": "1.3",
+      "pct": 0.0,
+      "rank": 1164,
+      "l1": "댈러스 연은 제조업 11.6.",
+      "l2": "직전은 1.3이었다.",
+      "tag": "댈러스연은",
+      "color": "hi",
+      "en": "Dallas Fed Manufacturing 11.6, up from 1.3 the month before"
+    },
+    {
+      "n": 2,
+      "et": "2026-09-01 10:00",
+      "kst_label": "화 밤 11시",
+      "te_event": "ism manufacturing pmi",
+      "stars": 3,
+      "actual": "54.6",
+      "compare_field": "consensus",
+      "compare": "55.2",
+      "pct": -0.002,
+      "rank": 1123,
+      "l1": "ISM 제조업 54.6.",
+      "l2": "예상은 55.2였다.",
+      "tag": "제조업지표",
+      "color": "hi",
+      "en": "ISM Manufacturing 54.6, forecast 55.2"
+    },
+    {
+      "n": 3,
+      "et": "2026-09-02 10:00",
+      "kst_label": "수 밤 11시",
+      "te_event": "factory orders mom",
+      "stars": 2,
+      "actual": "0.9%",
+      "compare_field": "consensus",
+      "compare": "0.6%",
+      "pct": 0.069,
+      "rank": 187,
+      "l1": "7월 공장주문 +0.9%.",
+      "l2": "예상은 +0.6%였다.",
+      "tag": "공장주문",
+      "color": "up",
+      "en": "July factory orders +0.9%, forecast +0.6%"
+    },
+    {
+      "n": 4,
+      "et": "2026-09-03 10:00",
+      "kst_label": "목 밤 11시",
+      "te_event": "ism services pmi",
+      "stars": 3,
+      "actual": "55.4",
+      "compare_field": "consensus",
+      "compare": "54.3",
+      "pct": -0.223,
+      "rank": 6,
+      "l1": "ISM 서비스업 55.4.",
+      "l2": "예상은 54.3이었다.",
+      "tag": "서비스지표",
+      "color": "down",
+      "en": "ISM Services 55.4, forecast 54.3"
+    },
+    {
+      "n": 5,
+      "et": "2026-09-04 08:30",
+      "kst_label": "금 저녁 9시 30분",
+      "te_event": "non farm payrolls",
+      "stars": 3,
+      "actual": "162K",
+      "compare_field": "consensus",
+      "compare": "56K",
+      "pct": -0.41,
+      "rank": 1,
+      "l1": "8월 고용 16.2만 명.",
+      "l2": "예상은 5.6만이었다.",
+      "tag": "고용지표",
+      "color": "down",
+      "en": "August payrolls 162K, forecast 56K",
+      "session_exception": "그날 ★★★ 는 이 발표 한 시점뿐이라 동점 비교 대상이 없다. 미 동부 08:30 프리장 발표."
+    }
+  ],
+  "publish": {
+    "title": "지난주 나스닥 +0.36%, 그 사이 최대 낙폭은? [주간복기 01] #Shorts",
+    "category_id": "25",
+    "default_language": "ko",
+    "made_for_kids": false,
+    "privacy_status": "public",
+    "youtube_video_id": "dIfR_J4TrAA",
+    "instagram_media_id": "17948065695051099",
+    "instagram_permalink": "https://www.instagram.com/reel/DdBTl_OjfI4/"
+  }
+}
