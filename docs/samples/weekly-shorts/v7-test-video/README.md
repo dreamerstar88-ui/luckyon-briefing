@@ -189,3 +189,35 @@ $FF -y -i silent30.mp4 -i bgm30.wav -map 0:v:0 -map 1:a:0 -c:v copy \
 | ⑤ | 8월 고용 16.2만 명. | 예상은 5.6만이었다. |
 
 다섯 개가 "실제값 / 예상값" 한 형태로 통일돼 리듬이 생긴다. 자막과 설명란도 같게 맞췄다.
+
+## 발행 기록 (1회차)
+
+2026-09-08 08:54~08:57 UTC 에 유튜브·인스타그램 동시 발행했다.
+
+| 플랫폼 | 주소 | 비고 |
+|---|---|---|
+| 유튜브 쇼츠 | https://www.youtube.com/watch?v=dIfR_J4TrAA | 공개 · 카테고리 25(News & Politics) · 태그 39개 |
+| 인스타그램 릴스 | https://www.instagram.com/reel/DdBTl_OjfI4/ | media id 17948065695051099 |
+| 자막 (ko) | 유튜브 트랙 `AUieDaY7ulB0QLKacZDGYodyDXb6LaOxlv_y8gJuFGDdAKaBwgdbXyi9Zec` | status: serving |
+| 자막 (en) | 유튜브 트랙 `AUieDaaI_ZV_g8ACBEUI_pQxJZwOLuN7hQv3Jl12Q2lvig8LjttEMvgt` | status: serving |
+
+### 발행 경로 — 다음 회차에도 그대로 쓴다
+
+두 플랫폼 모두 **로컬 파일 업로드를 받지 않는다.** 공개 URL 이 먼저 있어야 한다.
+
+1. `cards/reels/<stamp>/ko/` 에 `reel.mp4` · `cover.png` · `caption.txt` 를 넣고
+   `claude/live` 브랜치에 커밋·푸시한다 (인스타 파이프라인이 쓰는 것과 같은 경로 규칙).
+2. GitHub Pages 배포(`pages-deploy.yml`)가 끝날 때까지 기다린다. 보통 3분 안쪽.
+   **이 세션에서는 `github.io` 로 직접 접속이 막혀 있다**(프록시 403). 배포 완료 여부는
+   GitHub Actions 워크플로 실행 상태로 확인하고, 인스타 발행은 `SKIP_PAGES_WAIT=1` 로 돌린다.
+   유튜브·메타 서버가 직접 URL 을 받아 가므로 세션의 접속 차단은 문제가 되지 않는다.
+3. **유튜브** — Zapier MCP 의 YouTube 커넥션(`YouTube #2` = 채널 UCdqD5SpqpXZJUzCZILyeRAA)으로
+   `upload_video` 를 호출한다. `video` · `thumbnail` 에 공개 URL 을 그대로 넣는다.
+   채널 기존 관행을 따른다: 카테고리 25, `defaultLanguage`/`defaultAudioLanguage` = ko,
+   `made_for_kids` = false, 제목 끝은 `[시리즈 nn] #Shorts`.
+4. **자막** — Zapier 의 YouTube 액션 목록에는 자막 업로드가 없다. 대신
+   `_zap_raw_request`(Make API Mutating Request)로
+   `POST https://www.googleapis.com/upload/youtube/v3/captions?part=snippet&uploadType=multipart` 에
+   `multipart/related` 본문을 직접 만들어 보내면 된다. SRT 는 텍스트라 이 경로로 올라간다.
+5. **인스타그램** — `SKIP_PAGES_WAIT=1 node scripts/reels/publish-reel.mjs <stamp> ko`.
+   컨테이너 인코딩에 1분 안쪽 걸린다.
