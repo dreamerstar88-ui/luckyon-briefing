@@ -185,7 +185,7 @@ function drawHook(ctx,t){
   });
   const h=seg(t,1.94*HS,2.24*HS);
   if(h>0){ctx.save();ctx.globalAlpha=h;
-    txt(ctx,'5분봉 1,179개, 지금부터 되감습니다',60,1360,'900 52px PD',C.text);
+    txt(ctx,'5분봉 1,179개, 지금부터 다시 돌려봅니다',60,1360,'900 52px PD',C.text);
     txt(ctx,'월요일 개장 → 금요일 마감',60,1434,'700 40px PD',C.muted);
     ctx.restore();}
   brand(ctx);
@@ -199,7 +199,7 @@ function drawReplay(ctx,t){
   const bar=BARS[i];
   let peak=-1e9;for(let k=0;k<=i;k++)peak=Math.max(peak,BARS[k].h);
   const dd=(bar.c/peak-1)*100;
-  txt(ctx,'나스닥100 선물 · 5분봉 되감기',60,186,'700 46px PD',C.muted);
+  txt(ctx,'나스닥100 선물 · 5분봉 다시 돌려보기',60,186,'700 46px PD',C.muted);
   shadow(ctx,true);
   numT(ctx,fmt(bar.c),56,330,'900 145px PD',C.text,'left','-.04em');
   shadow(ctx,false);
@@ -294,7 +294,7 @@ function drawSumm(ctx,t){
   const c=easeOut(seg(st,1.1,1.6));
   if(c>0){ctx.save();ctx.globalAlpha=(1-out)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
-    txt(ctx,'다음 주도 되감아 드립니다',60,1594,'700 44px PD','#d8d8d8');
+    txt(ctx,'다음 주도 다시 돌려 드립니다',60,1594,'700 44px PD','#d8d8d8');
     ctx.restore();}
   ctx.restore();
   if(out>0){
