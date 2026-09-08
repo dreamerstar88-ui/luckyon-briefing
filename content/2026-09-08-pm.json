@@ -1,0 +1,239 @@
+{
+  "date": "2026-09-08",
+  "session": "pm",
+  "dateLabel_ko": "2026.9.8(화) 저녁",
+  "dateLabel_en": "Sep 8, 2026 (Tue) Evening",
+
+  "headline_ko": "코스피, 7171 찍고 6954 반납···유가는 사우디發 급등",
+  "headline_en": "KOSPI Hits 7,171, Slips to 6,954 as Oil Jumps on Saudi Strike",
+  "headline_sub_ko": "삼성전자, 미스트랄AI에 4.7조원 투자 주도 · 美 증시 오늘 밤 노동절 이후 첫 개장",
+  "headline_sub_en": "Samsung leads $3.5B Mistral AI round · US markets reopen tonight after Labor Day",
+
+  "cover_kicker": {"ko": "오늘 낮 동향 · 9/8 코스피 마감", "en": "Today's Session · KOSPI Sep 8 Close"},
+  "cover_facts": [
+    ["chip", {"ko": "코스피 6,954.52 ▼0.58%", "en": "KOSPI 6,954.52 ▼0.58%"},
+              {"ko": "장중 7,171.52까지 올랐다 반납 · 4거래일만의 하락", "en": "Rose to 7,171.52 intraday before giving it back — 1st drop in 4 sessions"}],
+    ["globe", {"ko": "사우디 아람코 정유시설, 후티 반군 공습", "en": "Houthi Rebels Strike Saudi Aramco Refinery"},
+               {"ko": "WTI $93.91로 급등(+2.66%) · 중동 리스크 재부상", "en": "WTI jumps 2.66% to $93.91 as Mideast risk resurfaces"}],
+    ["ai", {"ko": "삼성전자, 프랑스 미스트랄AI에 4.7조원 투자 주도", "en": "Samsung Leads $3.5B Investment in France's Mistral AI"},
+            {"ko": "기업가치 1년새 2배 · HBM·서버D램 수요 확대 노림수", "en": "Valuation doubled in a year · Samsung eyes more HBM, server DRAM demand"}]
+  ],
+
+  "markets": [
+    {"label": "NASDAQ", "value": "29,561.75", "delta": "▼0.01%", "dir": "down", "note_ko": "선물(NQ=F) · 9/8 낮 관측 · 노동절 이후 첫 정규장 대기", "note_en": "Futures (NQ=F) · midday 9/8 · awaiting 1st regular session after Labor Day"},
+    {"label": "S&P 500", "value": "7,699.00", "delta": "▼0.30%", "dir": "down", "note_ko": "선물(ES=F) · 9/8 낮 관측", "note_en": "Futures (ES=F) · midday 9/8"},
+    {"label": "KOSPI", "value": "6,954.52", "delta": "▼0.58%", "dir": "down", "note_ko": "9/8 종가 · 장중 7,171.52까지 상승 후 반납", "note_en": "Sep 8 close · rose to 7,171.52 intraday before giving it back"},
+    {"label": "VIX", "value": "15.74", "delta": "▲2.88%", "dir": "up", "note_ko": "9/8 관측치", "note_en": "Sep 8 reading"},
+    {"label": "Fear&Greed", "value": "42", "delta": "42 → 42", "dir": "flat", "note_ko": "등급 '공포(Fear)' 유지 · 변동 없음", "note_en": "Rating holds at 'Fear' · unchanged"},
+    {"label": "US 10Y", "value": "4.78%", "delta": "4.78% → 4.78%", "dir": "flat", "note_ko": "9/4 확정 종가 유지 · 노동절 이후 첫 정규장 대기, 신규 종가 아직 없음", "note_en": "Holding at the Sep 4 settle · no new close yet ahead of tonight's reopen"},
+    {"label": "USD/KRW", "value": "1,345.60", "value_sub": "· DXY 98.98", "delta": "▲0.38%", "dir": "up", "note_ko": "15:30 서울 외환시장 마감 기준 · 유가 급등에 달러 강세", "note_en": "Seoul FX close (3:30 PM KST) · dollar firmer on the oil spike"},
+    {"label": "Gold", "value": "$4,447.30", "delta": "▲0.40%", "dir": "up", "note_ko": "9/8 정산가", "note_en": "Sep 8 settle"},
+    {"label": "WTI", "value": "$93.91", "delta": "▲2.66%", "dir": "up", "note_ko": "사우디 아람코 정유시설 피격 여파 · 6주만의 최고치", "note_en": "After the Saudi Aramco refinery strike · 6-week high"},
+    {"label": "Bitcoin", "value": "$78,628.94", "delta": "▼0.62%", "dir": "down", "note_ko": "24시간 기준", "note_en": "24-hour change"}
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ", "S&P 500"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": "▼0.58%",
+  "main_tile_note": {"ko": "장중 7,171.52까지 상승 후 반납 · 4거래일만의 하락", "en": "Rose to 7,171.52 intraday before giving it back — 1st drop in 4 sessions"},
+  "market_note_ko": "나스닥·S&P500은 선물(NQ=F·ES=F) 9/8 낮 관측치 · 코스피·코스닥은 당일 종가 · 미 10년물은 노동절로 9/4 확정 종가 유지 · 그 외는 최신값",
+  "market_note_en": "Nasdaq/S&P 500 are futures (NQ=F/ES=F) observed midday Sep 8 · KOSPI/KOSDAQ are today's close · US 10Y holds at the Sep 4 settle (Labor Day gap) · others are latest values",
+
+  "chart_series_values": [6912.37, 6788.88, 6820.02, 6835.80, 6562.72, 6579.48, 6687.21, 6995.39, 6954.52],
+  "chart_series_labels": ["8.27", "8.28", "8.31", "9.1", "9.2", "9.3", "9.4", "9.7", "9.8"],
+  "chart_title": {"ko": "코스피, 장중 7171 찍고 6954로 밀려 마감", "en": "KOSPI Hits 7,171 Intraday, Slips Back to 6,954"},
+  "chart_sub": {"ko": "코스피 종가 · 최근 9거래일", "en": "KOSPI close · last 9 sessions"},
+  "chart_note": {"ko": "9/7 마감 6,995.39 → 9/8 장중고점 7,171.52 → 9/8 마감 6,954.52(-0.58%)", "en": "9/7 close 6,995.39 → 9/8 intraday high 7,171.52 → 9/8 close 6,954.52 (-0.58%)"},
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "업종별 등락률", "en": "Sector Performance"},
+  "sector_sub": {"ko": "WICS 기준 · 코스피", "en": "WICS classification · KOSPI"},
+  "rank_kicker": "TOP VALUE",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top by Value Traded"},
+  "rank_sub": {"ko": "코스피", "en": "KOSPI"},
+  "rank_unit": {"ko": "단위 · 원", "en": "Unit · KRW"},
+  "econ_kicker": "DATA WATCH",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "한국 우선 · 아시아 지표", "en": "Korea first · Asia data"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록", "title_en": "KOSPI · KOSDAQ Record",
+      "stats": [
+        {"label_ko": "코스피", "label_en": "KOSPI", "value": "6,954.52", "delta": "▼0.58%", "dir": "down",
+         "sub_ko": "장중 7,171.52까지 상승 후 반납 · 4거래일만의 하락", "sub_en": "Rose to 7,171.52 intraday before giving it back — 1st drop in 4 sessions"},
+        {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "811.88", "delta": "▼1.25%", "dir": "down",
+         "sub_ko": "거래대금 약 8.0조원 · 개인 이틀째 순매수", "sub_en": "~₩8.0T traded · retail net buyers for a 2nd day"}
+      ],
+      "breadth": [
+        {"label_ko": "코스피 등락", "label_en": "KOSPI Breadth", "up": 231, "flat": 45, "down": 634}
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (억원)", "label_en": "KOSPI Net Buy/Sell by Investor (₩100M)",
+        "rows": [
+          {"label_ko": "개인", "label_en": "Retail", "value": -30332},
+          {"label_ko": "외국인", "label_en": "Foreign", "value": 6482},
+          {"label_ko": "기관", "label_en": "Institution", "value": 6428}
+        ]
+      },
+      "note_ko": "SK하이닉스(+0.56%)·삼성전자(-0.19%) 대형주는 선방했지만 하락 종목(634개)이 상승(231개)의 거의 3배에 달해, 중소형주 매도가 지수 전체를 끌어내렸다.",
+      "note_en": "Big caps like SK hynix (+0.56%) and Samsung Electronics (-0.19%) held up, but decliners (634) outnumbered advancers (231) nearly 3-to-1 — broad selling in smaller names dragged the index down."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "전기유틸리티", "label_en": "Elec. Utilities", "value": 6.04},
+        {"label_ko": "건설", "label_en": "Construction", "value": 2.64},
+        {"label_ko": "유통(백화점)", "label_en": "Retail (Dept.)", "value": 1.55},
+        {"label_ko": "가전", "label_en": "Appliances", "value": 1.00},
+        {"label_ko": "기타금융", "label_en": "Other Fin.", "value": 0.94},
+        {"label_ko": "전기장비", "label_en": "Electrical Equip.", "value": -3.37},
+        {"label_ko": "IT서비스", "label_en": "IT Services", "value": -3.87},
+        {"label_ko": "전자제품", "label_en": "Consumer Elec.", "value": -4.14},
+        {"label_ko": "전자장비", "label_en": "Electronic Equip.", "value": -5.01},
+        {"label_ko": "전기제품", "label_en": "Elec. Products", "value": -2.92}
+      ],
+      "note_ko": "국제유가 급등 속 전기유틸리티·건설이 강세를 보인 반면, 전자장비·IT서비스는 약세였다.",
+      "note_en": "Electric utilities and construction led gains amid the oil spike, while electronic equipment and IT services lagged."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Value Traded",
+      "rows": [
+        {"name_ko": "SK하이닉스", "name_en": "SK hynix", "value": "₩4.03T", "pct": 0.56},
+        {"name_ko": "삼성전자", "name_en": "Samsung Electronics", "value": "₩3.25T", "pct": -0.19},
+        {"name_ko": "두산에너빌리티", "name_en": "Doosan Enerbility", "value": "₩0.36T", "pct": 1.82}
+      ],
+      "col_name_ko": "종목", "col_name_en": "Stock",
+      "col_value_ko": "거래대금", "col_value_en": "Value Traded",
+      "note_ko": "SK하이닉스·삼성전자 거래대금은 13:29 기준(장중 스냅샷) · 두산에너빌리티는 한미 원전 협력 기대감에 상승.",
+      "note_en": "SK hynix/Samsung Electronics value traded as of 13:29 (intraday snapshot) · Doosan Enerbility rose on Korea-US nuclear cooperation hopes."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "한국 2분기 GDP(전기비)", "label_en": "Korea Q2 GDP (QoQ)", "value": "+0.6%", "delta": {"ko": "예상 부합", "en": "In line with est."}, "dir": "up",
+         "sub_ko": "전분기도 +0.6%로 동일", "sub_en": "Matches prior quarter's +0.6%"},
+        {"label_ko": "한국 2분기 GDP(전년비)", "label_en": "Korea Q2 GDP (YoY)", "value": "+3.7%", "delta": {"ko": "예상 부합", "en": "In line with est."}, "dir": "up",
+         "sub_ko": "전년동기 대비", "sub_en": "Year-over-year"},
+        {"label_ko": "일본 2분기 GDP(연율)", "label_en": "Japan Q2 GDP (Annualized)", "value": "+1.4%", "delta": {"ko": "예상 +1.1% 상회", "en": "Beat est. +1.1%"}, "dir": "up",
+         "sub_ko": "분기 성장률을 1년 기준으로 환산", "sub_en": "Quarterly growth rate expressed at an annual pace",
+         "ref_ko": "전기비 성장률 × 4 로 환산한 값 · 미국식 표기와 비교하기 쉽게 일본도 함께 발표", "ref_en": "Quarter-on-quarter growth compounded to an annual rate, in the US style"},
+        {"label_ko": "일본 7월 근로자 현금급여(전년비)", "label_en": "Japan Labor Cash Earnings (YoY)", "value": "+4.7%", "delta": {"ko": "예상 +3.9% 상회", "en": "Beat est. +3.9%"}, "dir": "up",
+         "sub_ko": "전월 +4.0%에서 가속 · 1997년 이후 최고", "sub_en": "Accelerated from +4.0% prior · highest since 1997",
+         "ref_ko": "잔업수당·상여금 포함 명목 임금 · 실질임금은 물가상승률을 더 빼야 나온다", "ref_en": "Nominal pay incl. overtime & bonuses, before inflation"},
+        {"label_ko": "일본 7월 경상수지", "label_en": "Japan Current Account", "value": "¥2.99T", "delta": {"ko": "예상 상회", "en": "Beat est."}, "dir": "up",
+         "sub_ko": "예상 ¥2.87T · 전월 -¥923억 적자에서 흑자 전환", "sub_en": "Est. ¥2.87T · swung from a -¥92.3B deficit prior"},
+        {"label_ko": "중국 8월 수출(전년비)", "label_en": "China Aug Exports (YoY)", "value": "+25.0%", "delta": {"ko": "예상 부합", "en": "In line with est."}, "dir": "up",
+         "sub_ko": "전월 +23.9%에서 가속", "sub_en": "Accelerated from +23.9% prior",
+         "ref_ko": "전년동월 대비 증감률 · 글로벌 수요를 보여주는 선행 지표", "ref_en": "Year-over-year change · a leading gauge of global demand"},
+        {"label_ko": "중국 8월 무역수지", "label_en": "China Aug Trade Balance", "value": "$119.1B", "delta": {"ko": "예상 부합", "en": "In line with est."}, "dir": "flat",
+         "sub_ko": "1~8월 누적 흑자 $805.5B", "sub_en": "Jan-Aug cumulative surplus $805.5B"}
+      ],
+      "note_ko": "중국은 수출(+25.0%)이 예상에 부합하며 가속했지만 수입(+28.2%)은 예상(+30.0%)을 밑돌아 내수 회복은 아직 더디다.",
+      "note_en": "China's exports (+25.0%) matched estimates and accelerated, but imports (+28.2%) missed the +30.0% forecast — a sign domestic demand is still lagging."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "삼성전자, 프랑스 미스트랄AI에 4.7조원 투자 주도",
+         "headline_en": "Samsung Leads $3.5B Investment in France's Mistral AI",
+         "body_ko": "미스트랄이 삼성전자 주도로 30억유로(약 4.7조원)를 조달, 기업가치가 1년새 2배인 210억유로로 뛰었다. EU 집행위 SPV도 참여했다. 삼성은 HBM·서버D램 공급 확대를 노린다.",
+         "body_en": "Mistral raised €3B (~$3.5B) in a round led by Samsung, doubling its valuation to €21B in a year, with an EU Commission SPV also joining. Samsung is positioning for more HBM and server DRAM demand."},
+        {"headline_ko": "국내 팹리스 하이퍼엑셀, 첫 AI반도체 '베르다' 양산 돌입",
+         "headline_en": "Korean Fabless Hyperaccel Starts Mass Production of AI Chip 'Verda'",
+         "body_ko": "LLM 추론에 특화한 하이퍼엑셀의 AI반도체 '베르다'가 세미파이브 지원으로 양산에 들어갔다. HBM 대신 저전력D램(LPDDR)을 채택한 것이 특징이다.",
+         "body_en": "Hyperaccel's inference-focused AI chip 'Verda' entered mass production with SemiFive's turnkey support, notably using low-power DRAM (LPDDR) instead of HBM."},
+        {"headline_ko": "中 CXMT, D램 점유율 10%로 급등…HBM 진출 예고",
+         "headline_en": "China's CXMT DRAM Share Jumps to 10%, Eyes HBM Entry",
+         "body_ko": "카운터포인트리서치 집계로 2분기 CXMT의 글로벌 D램 매출 점유율이 전년 4%에서 10%로 뛰었다. 5세대 HBM3E 소량생산에 들어가 연내 HBM 시장 진출을 예고했다.",
+         "body_en": "Counterpoint Research data shows CXMT's global DRAM revenue share jumped from 4% to 10% in Q2. It has begun small-batch HBM3E production, signaling an HBM market entry by year-end."},
+        {"headline_ko": "삼성전자, 日 요코하마에 첨단 패키징 연구소 신설",
+         "headline_en": "Samsung Opens Advanced Packaging Lab in Yokohama, Japan",
+         "body_ko": "삼성전자가 요코하마에 첨단 패키징 연구소를 세우고 5년간 3500억원을 투입한다. AI반도체 성능을 좌우하는 패키징 경쟁이 치열해지는 가운데, 인근 소부장 생태계를 겨냥한 선택이다.",
+         "body_en": "Samsung is investing ₩350B over five years in a new advanced packaging lab in Yokohama, tapping the region's materials and equipment ecosystem as packaging becomes a key AI chip battleground."},
+        {"headline_ko": "구리 가격 사상 최고치…AI데이터센터發 수요가 주도",
+         "headline_en": "Copper Hits Record High on AI Data Center Demand",
+         "body_ko": "구리 가격이 사상 최고치를 새로 썼다. 1년 새 47% 상승했는데, AI 인프라 투자 붐이 서버 배선·변압기 등 핵심 원료 수요를 밀어올린 결과다.",
+         "body_en": "Copper prices hit a fresh record, up 47% over the past year, as the AI infrastructure investment boom drives demand for server wiring, transformers and other core materials."},
+        {"headline_ko": "SGC에너지-버티브, 군산 AI데이터센터 전력·냉각 인프라 구축",
+         "headline_en": "SGC Energy, Vertiv Partner on Power & Cooling for Gunsan AI Data Center",
+         "body_ko": "SGC에너지가 군산에 조성 중인 300MW 규모 모듈형 AI데이터센터에 글로벌 인프라기업 버티브가 참여, 전력·냉각 인프라 설계·구축을 함께한다.",
+         "body_en": "SGC Energy is building a 300MW modular AI data center in Gunsan, with global infrastructure firm Vertiv joining to design and build its power and cooling systems."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "후티 반군, 사우디 아람코 정유시설 공습···국제유가 급등",
+         "headline_en": "Houthi Rebels Strike Saudi Aramco Refinery, Oil Prices Surge",
+         "body_ko": "예멘 친이란 후티 반군이 사우디 아람코의 자잔 정유시설과 인근 공군기지를 공습했다. 미·이란 군사 긴장이 해상까지 번지는 가운데 벌어진 일로, WTI는 6주만의 최고치인 $93.91까지 뛰었다.",
+         "body_en": "Yemen's Iran-aligned Houthi rebels struck Saudi Aramco's Jazan refinery and a nearby air base, as US-Iran tensions spread to the sea. WTI jumped to a 6-week high of $93.91."},
+        {"headline_ko": "코스피, 장중 7171 찍고 6954로 밀려 마감",
+         "headline_en": "KOSPI Hits 7,171 Intraday, Slips to Close at 6,954",
+         "body_ko": "코스피가 7,045.79로 출발해 장중 7,171.52까지 올랐지만 중동 리스크·유가 급등·금리 상승 부담에 상승분을 모두 반납, 0.58% 내린 6,954.52로 나흘 만에 하락 마감했다.",
+         "body_en": "KOSPI opened at 7,045.79 and climbed to 7,171.52 intraday, but gave it all back on Mideast risk, higher oil and rising rates, closing down 0.58% at 6,954.52 — its first drop in four sessions."},
+        {"headline_ko": "유럽 반도체주 강세가 코스피 반도체 랠리 견인",
+         "headline_en": "European Chip Stock Strength Fueled KOSPI Semiconductor Rally",
+         "body_ko": "간밤 유럽 증시에서 인피니온(+6.91%)·ASML(+2.25%) 등 반도체주가 강세를 보였다. ECB 통화정책회의를 앞두고도 이 훈풍이 이날 삼성전자·SK하이닉스의 장 초반 강세로 이어졌다.",
+         "body_en": "European chipmakers Infineon (+6.91%) and ASML (+2.25%) rallied overnight ahead of the ECB policy meeting, and that strength carried into early gains for Samsung Electronics and SK hynix."},
+        {"headline_ko": "아시아 마감 — 닛케이 엔고 급락, 상하이는 수출 호조로 상승",
+         "headline_en": "Asia Close — Nikkei Slides on Yen Strength, Shanghai Rises on Exports",
+         "body_ko": "도쿄 닛케이지수는 엔/달러가 152엔대까지 떨어지는 급격한 엔고에 1.70% 내린 65,269엔으로 마감했다. 상하이는 8월 수출이 전년비 25.0% 늘며 예상에 부합, 0.20% 올랐다.",
+         "body_en": "Tokyo's Nikkei fell 1.70% to 65,269 as the yen strengthened sharply past 152/dollar. Shanghai rose 0.20% after August exports grew 25.0% year-on-year, matching estimates."},
+        {"headline_ko": "원/달러 1,345.60원, 미 국채 10년물 4.8%대로 상승",
+         "headline_en": "Won Weakens to 1,345.60/USD, US 10-Year Yield Climbs Near 4.8%",
+         "body_ko": "서울 외환시장에서 원/달러 환율은 전 거래일보다 5.1원 오른 1,345.60원에 마감했다. 유가 급등에 따른 인플레 우려 속 미 국채 10년물 금리도 4.8%대로 함께 올랐다.",
+         "body_en": "The won closed at 1,345.60 per dollar in Seoul trading, up ₩5.1, as the US 10-year Treasury yield also climbed near 4.8% amid inflation concerns tied to the oil spike."},
+        {"headline_ko": "한미사이언스發 한미약품 지분 변동···신동국 회장 담보물량 주목",
+         "headline_en": "Hanmi Pharm Stake Shifts as Chairman Shin's Pledged Shares Draw Attention",
+         "body_ko": "한양정밀 신동국 회장이 보유한 한미약품 지분이 교환사채(EB) 교환 영향으로 5.5만주 줄었다. 이달 하순 만기가 돌아오는 2800억원 규모 주식담보대출을 앞두고 지분 유동화 관측이 나온다.",
+         "body_en": "Chairman Shin Dong-kook's Hanmi Pharm stake fell by 55,000 shares due to an exchangeable bond conversion, fueling speculation ahead of a ₩280B stock-backed loan maturing later this month."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {"ko": "한국시간 기준 · 노란 점 = 주목", "en": "All times KST · dot marks a high-importance item"},
+  "schedule_title_ko": "주요 일정", "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간", "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 오늘 밤 노동절 연휴 이후 첫 정규장"],
+    "lines_en": ["Regular session 10:30 PM - 5:00 AM KST (DST) · 1st regular session tonight after Labor Day"]
+  },
+  "schedule": [
+    {"time": "22:30", "title_ko": "미국 증시, 노동절 이후 첫 정규장 개장", "title_en": "US Markets Reopen After Labor Day",
+     "detail_ko": "사우디 아람코 피격발 유가 급등 속 재개장 — 변동성 주목", "detail_en": "Reopening amid an oil spike from the Saudi Aramco strike — watch for volatility", "importance": "high"},
+    {"time": "21:15", "title_ko": "美 ADP 고용 4주 평균", "title_en": "US ADP Employment Change (4-wk avg)",
+     "detail_ko": "이전 +11.75만명", "detail_en": "Prior +117.5K", "importance": "mid"},
+    {"time": "9/9 00:00", "title_ko": "ECB 엘더슨 이사 발언", "title_en": "ECB's Elderson Speech",
+     "detail_ko": "9/10 통화정책회의를 앞둔 사전 발언", "detail_en": "Ahead of the Sep 10 ECB policy meeting", "importance": "mid"},
+    {"time": "9/9 04:00", "title_ko": "美 소비자신용 변동", "title_en": "US Consumer Credit Change",
+     "detail_ko": "예상 +120억달러 · 이전 +141.7억달러", "detail_en": "Est. +$12.0B · Prior +$14.17B", "importance": "mid"},
+    {"time": "9/9 05:30", "title_ko": "API 주간 원유재고", "title_en": "API Weekly Crude Oil Stock",
+     "detail_ko": "유가 급등 국면이라 주목도 상승 · 이전 -260만 배럴", "detail_en": "Higher-than-usual focus amid the oil spike · Prior -2.6M bbl", "importance": "mid"},
+    {"time": "9/9 08:00", "title_ko": "한국 8월 실업률", "title_en": "Korea August Unemployment Rate",
+     "detail_ko": "이전 2.8%", "detail_en": "Prior 2.8%", "importance": "mid"},
+    {"time": "9/16", "title_ko": "[미리보기] 美 FOMC 금리 결정", "title_en": "[Preview] US FOMC Rate Decision",
+     "detail_ko": "이번 회차 이후 가장 큰 이벤트 — 인하·동결 여부 주목", "detail_en": "The biggest event ahead — watch for a cut or a hold", "importance": "high"}
+  ],
+
+  "outro_tagline_ko": "", "outro_tagline_en": "",
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+
+  "card_photos": {
+    "1": "A Seoul stock exchange trading floor in early evening light, glowing red and blue ticker numbers reflecting off a wide dark screen, a faint semiconductor circuit pattern etched into the glass, warm amber accent in one corner, mood of a rally that faded.",
+    "3": "A dim trading floor with an index chart line rising sharply then curving back down across a large wall screen, warm-to-cool color gradient, dust motes in a shaft of light.",
+    "7": "A softly lit semiconductor cleanroom, workers in white bunny suits silhouetted, blue-tinted machinery glow, a wafer reflecting overhead light.",
+    "8": "An oil refinery silhouette at dusk under a hazy amber-orange sky, distant flare stacks, a faint radar/alert overlay motif, mood of geopolitical tension."
+  },
+
+  "caption_ko": "📊 luckyon 브리핑 · 2026.9.8(화) 저녁\n\n코스피는 오늘 장중 한때 7,171.52까지 올랐지만 중동발 리스크에 상승분을 모두 반납, 0.58% 내린 6,954.52로 나흘 만에 하락 마감했습니다. 예멘 후티 반군이 사우디 아람코의 정유시설을 공습하면서 국제유가가 급등(WTI +2.66%, $93.91)한 여파입니다.\n\n코스피에서는 외국인·기관이 순매수했지만 개인이 3조원 넘게 팔아치우며 지수를 흔들었고, 하락 종목이 상승 종목의 3배에 달했습니다. 코스닥은 1.25% 내린 811.88로 마감했습니다.\n\n삼성전자는 프랑스 AI 스타트업 미스트랄에 4.7조원 투자를 주도하며 HBM 수요 확대를 노렸습니다. 미국 증시는 오늘 밤 22:30 노동절 연휴 이후 첫 정규장을 엽니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#luckyon브리핑 #코스피 #국제유가 #사우디아람코 #삼성전자 #미스트랄AI #코스닥 #원달러환율 #미국증시 #반도체 #경제브리핑 #투자 #주식 #증시마감 #경제뉴스",
+  "caption_en": "📊 luckyon Briefing · Sep 8, 2026 (Tue) Evening\n\nKOSPI touched 7,171.52 intraday but gave it all back on Middle East risk, closing down 0.58% at 6,954.52 — its first drop in four sessions. Yemen's Houthi rebels struck a Saudi Aramco refinery, sending oil sharply higher (WTI +2.66% to $93.91).\n\nForeign and institutional investors bought net, but retail sold over ₩3T, tipping the index — decliners outnumbered advancers 3-to-1. KOSDAQ fell 1.25% to 811.88.\n\nSamsung Electronics led a $3.5B investment round in France's Mistral AI, positioning for more HBM demand. US markets reopen tonight at 10:30 PM KST after the Labor Day holiday.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#luckyonbriefing #KOSPI #oilprices #SaudiAramco #Samsung #MistralAI #KOSDAQ #USDKRW #USstocks #semiconductors #economy #investing #stockmarket #markets #finance",
+
+  "sources": ["KRX", "Yahoo Finance", "FMP", "FXStreet", "연합뉴스", "머니투데이", "한국경제", "폴리뉴스", "서울신문", "세계일보", "fnnews", "DART", "네이버뉴스"]
+}
