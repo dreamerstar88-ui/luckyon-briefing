@@ -32,6 +32,15 @@ function numT(ctx,s,x,y,font,col,align='left',ls=''){
   ctx.restore();return total;
 }
 
+// 세로쓰기: 글자를 똑바로 세운 채 위에서 아래로 쌓는다
+function vtext(ctx,str,x,y,font,col,lh){
+  ctx.save();ctx.font=font;ctx.fillStyle=col;ctx.textAlign='center';ctx.textBaseline='middle';
+  let k=0;
+  for(const ch of str){ if(ch===' '){k+=0.45;continue;} ctx.fillText(ch,x,y+k*lh); k+=1; }
+  ctx.restore();
+}
+function vtextH(str,lh){let k=0;for(const ch of str){k+=(ch===' ')?0.45:1;}return k*lh;}
+
 const Y=v=>CY+CH-(v-LO)/(HI-LO)*CH;
 const X=i=>CX+i/(BARS.length-1)*CW;
 
@@ -100,18 +109,33 @@ function dayShade(ctx){
   ctx.setLineDash([]);ctx.restore();
 }
 // ── 지나간 사건은 그래프에 세로선으로 남긴다
-function eventLines(ctx,upto){
+function eventLines(ctx,upto,mode){
   ctx.save();
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
     const x=X(ev.i);
-    ctx.globalAlpha=.55;ctx.strokeStyle=ev.col;ctx.lineWidth=2.5;ctx.setLineDash([7,7]);
-    ctx.beginPath();ctx.moveTo(x,CY);ctx.lineTo(x,CY+CH);ctx.stroke();ctx.setLineDash([]);
+    if(mode==='lines'){
+      ctx.globalAlpha=.55;ctx.strokeStyle=ev.col;ctx.lineWidth=2.5;ctx.setLineDash([7,7]);
+      ctx.beginPath();ctx.moveTo(x,CY);ctx.lineTo(x,CY+CH);ctx.stroke();ctx.setLineDash([]);
+      continue;
+    }
+    // 번호 배지
     ctx.globalAlpha=1;ctx.fillStyle=ev.col;
     ctx.beginPath();ctx.arc(x,CY-20,17,0,7);ctx.fill();
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(String(k+1),x,CY-19);ctx.restore();
+    // 세로 글씨 (선 위에 올린다)
+    const LH=31, PADX=14, PADY=12, BW=PADX*2+26;
+    const h=vtextH(ev.tag,LH);
+    const right=x+16, left=x-16-BW;
+    const bx=(right+BW<CX+CW-40)?right:left;
+    const by=CY+14;
+    ctx.globalAlpha=1;ctx.fillStyle='rgba(0,0,0,.86)';
+    rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
+    ctx.strokeStyle=ev.col;ctx.globalAlpha=.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
+    ctx.globalAlpha=1;
+    vtext(ctx,ev.tag,bx+PADX+13,by+PADY+LH/2,'700 26px PD',ev.col,LH);
   }
   ctx.restore();
 }
@@ -141,8 +165,8 @@ function drawHook(ctx,t){
   const q=seg(t,.72,1.02);
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
     shadow(ctx,true);
-    txt(ctx,'한 주 등락률은 이게 전부입니다.',60,690,'700 58px PD',C.text);
-    txt(ctx,'그 사이 최대 낙폭은?',60,782,'900 70px PD',C.hi);
+    txt(ctx,'한 주 등락률은 이게 전부입니다.',60,688,'700 58px PD',C.text);
+    txt(ctx,'그 사이 최대 낙폭은?',60,790,'900 70px PD',C.hi);
     shadow(ctx,false);ctx.restore();}
   const opts=[['①','-0.5%'],['②','-1.2%'],['③','-2.2%']];
   opts.forEach((o,k)=>{
@@ -158,7 +182,7 @@ function drawHook(ctx,t){
   const h=seg(t,1.9,2.2);
   if(h>0){ctx.save();ctx.globalAlpha=h;
     txt(ctx,'5분봉 1,179개, 지금부터 되감습니다',60,1360,'900 52px PD',C.text);
-    txt(ctx,'월요일 개장 → 금요일 마감',60,1428,'700 40px PD',C.muted);
+    txt(ctx,'월요일 개장 → 금요일 마감',60,1434,'700 40px PD',C.muted);
     ctx.restore();}
   brand(ctx);
 }
@@ -178,7 +202,7 @@ function drawReplay(ctx,t){
   numT(ctx,bar.kst,60,400,'700 44px PD','#d8d8d8');
   txt(ctx,'고점 대비',1024,300,'700 36px PD',C.muted,'right');
   numT(ctx,dd.toFixed(2)+'%',1024,372,'900 76px PD',dd<-0.05?C.down:C.muted,'right');
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i);polyline(ctx,i);
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');polyline(ctx,i);eventLines(ctx,i,'labels');
   const px=X(i),py=Y(bar.c);
   ctx.save();ctx.fillStyle=C.line;ctx.beginPath();ctx.arc(px,py,11,0,7);ctx.fill();
   ctx.strokeStyle=C.line;ctx.globalAlpha=.45;ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,24,0,7);ctx.stroke();ctx.restore();
@@ -204,7 +228,7 @@ function drawReplay(ctx,t){
     ctx.fillStyle=show.col===C.hi?'#111':'#fff';ctx.fillText(num+show.when,26,fs+6);ctx.restore();
     shadow(ctx,!!cur);
     txt(ctx,show.l1,60,cur?600:594,`900 ${ts}px PD`,C.text);
-    if(show.l2)txt(ctx,show.l2,60,cur?670:650,`900 ${ts}px PD`,show.col);
+    if(show.l2)txt(ctx,show.l2,60,cur?680:656,`900 ${ts}px PD`,show.col);
     shadow(ctx,false);
     ctx.restore();
   }
@@ -225,7 +249,7 @@ function drawAnswer(ctx,t){
   const q=seg(at,.6,.95);
   if(q>0){ctx.save();ctx.globalAlpha=q;
     numT(ctx,'고점 29,571 → 저점 28,927',60,436,'700 54px PD',C.text);
-    txt(ctx,'화요일 오후 → 수요일 저녁, 하루 반 만에',60,506,'700 44px PD',C.muted);
+    txt(ctx,'화요일 오후 → 수요일 저녁, 하루 반 만에',60,512,'700 44px PD',C.muted);
     ctx.restore();}
   chartPanel(ctx);dayShade(ctx);
   const s=seg(at,.9,1.6);
@@ -238,7 +262,7 @@ function drawAnswer(ctx,t){
     ctx.beginPath();ctx.moveTo(X(a),Y(BARS[b].l));ctx.lineTo(X(b),Y(BARS[b].l));ctx.stroke();
     ctx.setLineDash([]);ctx.restore();
   }
-  eventLines(ctx,BARS.length-1);polyline(ctx,BARS.length-1);dayAxis(ctx);
+  eventLines(ctx,BARS.length-1,'lines');polyline(ctx,BARS.length-1);eventLines(ctx,BARS.length-1,'labels');dayAxis(ctx);
   brand(ctx);
 }
 
@@ -249,7 +273,7 @@ function drawSumm(ctx,t){
   const out=seg(t,SUMM[1]-1.2,SUMM[1]-0.15);
   ctx.save();ctx.globalAlpha=1-out;
   txt(ctx,'이번 주 바닥도, 꼭대기도',60,206,'900 52px PD',C.text);
-  txt(ctx,'한국 저녁에 나왔다.',60,272,'900 52px PD',C.hi);
+  txt(ctx,'한국 저녁에 나왔다.',60,278,'900 52px PD',C.hi);
   const rows=[['주간 최저 · 수 저녁 8시','28,927',C.down],
               ['주간 최고 · 금 저녁 7시 45분','29,704',C.up],
               ['결국 한 주 결과','+0.36%',C.up]];
@@ -262,11 +286,11 @@ function drawSumm(ctx,t){
     ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();
     ctx.restore();
   });
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1);polyline(ctx,BARS.length-1);dayAxis(ctx);
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');polyline(ctx,BARS.length-1);eventLines(ctx,BARS.length-1,'labels');dayAxis(ctx);
   const c=easeOut(seg(st,1.1,1.6));
   if(c>0){ctx.save();ctx.globalAlpha=(1-out)*c;
-    txt(ctx,'몇 번 고르셨나요?',60,1516,'400 88px PEN',C.hi);
-    txt(ctx,'다음 주도 되감아 드립니다',60,1590,'700 44px PD','#d8d8d8');
+    txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
+    txt(ctx,'다음 주도 되감아 드립니다',60,1594,'700 44px PD','#d8d8d8');
     ctx.restore();}
   ctx.restore();
   if(out>0){
