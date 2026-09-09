@@ -1,0 +1,201 @@
+{
+  "date": "2026-09-10",
+  "session": "am",
+  "dateLabel_ko": "2026년 9월 10일 (목) 아침",
+  "dateLabel_en": "Thu, Sep 10, 2026 · Morning",
+
+  "summary": {
+    "lines_ko": [
+      "美 3대지수가 이란의 보복 공격에 사흘째 하락했다 — 나스닥 -0.64%, S&P500 -0.48%.",
+      "이란이 호르무즈 인근 선박과 요르단 기지를 공격하자 브렌트유가 100달러를 돌파했고, 美 10년물 금리도 4.83%로 올랐다.",
+      "거래대금 상위 300종목 중 231개가 내려 하락 종목 비중이 압도적이었다.",
+      "메타는 홀로 반대로 움직였다 — AI 에이전트 '뮤즈' 출시로 6.55% 급등해 지수 하락을 방어했다."
+    ],
+    "lines_en": [
+      "US stocks fell for a 3rd day after Iran's retaliation — Nasdaq -0.64%, S&P 500 -0.48%.",
+      "Iran struck ships near Hormuz and a base in Jordan, sending Brent above $100 and the 10-year Treasury yield up to 4.83%.",
+      "231 of the top 300 stocks by turnover declined, an overwhelmingly negative breadth.",
+      "Meta was the outlier, jumping 6.55% on its new Muse AI agent to cushion the market's slide."
+    ]
+  },
+  "headline_ko": "이란 보복에 브렌트유 100달러 돌파…뉴욕지수 사흘째 하락",
+  "headline_en": "Iran Retaliates, Brent Tops $100 as Wall Street Falls a 3rd Day",
+  "headline_sub_ko": "메타는 AI 에이전트 '뮤즈' 출시로 나 홀로 6.55% 급등",
+  "headline_sub_en": "Meta bucked the slide, jumping 6.55% on its new Muse AI agent",
+  "cover_kicker": {"ko":"간밤 미국장 · 9/9 마감","en":"US Overnight · Sep 9 Close"},
+  "cover_facts": [
+    ["shield",
+      {"ko":"나스닥 -0.64% · S&P500 -0.48%","en":"Nasdaq -0.64% · S&P 500 -0.48%"},
+      {"ko":"26,253.34 / 7,636.36 · 3거래일 연속 하락","en":"26,253.34 / 7,636.36 · down for a 3rd straight day"}],
+    ["globe",
+      {"ko":"WTI +4.82% · 브렌트유 100달러 돌파","en":"WTI +4.82% · Brent tops $100"},
+      {"ko":"이란, 호르무즈 인근·요르단 기지 보복 공격","en":"Iran retaliates near Hormuz and at a base in Jordan"}],
+    ["ai",
+      {"ko":"메타 +6.55% · AI에이전트 '뮤즈' 출시","en":"Meta +6.55% · launched its Muse AI agent"},
+      {"ko":"나스닥 하락 속에서도 나 홀로 급등","en":"Rallied alone against the Nasdaq's slide"}]
+  ],
+
+  "markets": [
+    {"label":"NASDAQ","value":"26,253.34","delta":"▼0.64%","dir":"down","note_ko":"3거래일 연속 하락 · S&P500도 동반 약세","note_en":"Fell for a 3rd straight day, alongside the S&P 500"},
+    {"label":"S&P 500","value":"7,636.36","delta":"▼0.48%","dir":"down","note_ko":"9/3 고점 7,747.71 대비 -1.44%","note_en":"-1.44% from the Sep 3 high of 7,747.71"},
+    {"label":"KOSPI","value":"7,051.64","delta":"▲1.40%","dir":"up","note_ko":"9/9 종가 · 코스피는 아직 개장 전","note_en":"Sep 9 close · Kospi has yet to open"},
+    {"label":"VIX","value":"16.46","delta":"▲4.71%","dir":"up","note_ko":"유가 급등에 이틀째 상승","note_en":"Rose for a 2nd day on the oil spike"},
+    {"label":"Fear&Greed","value":"39","delta":"41 → 39","dir":"down","note_ko":"등급 '공포(Fear)' 유지","note_en":"Rating holds at 'Fear'"},
+    {"label":"US 10Y","value":"4.83%","delta":"4.80% → 4.83%","dir":"up","note_ko":"9/9 확정 종가","note_en":"Sep 9 settle"},
+    {"label":"USD/KRW","value":"1,339.4","value_sub":"· DXY 98.77","delta":"▼0.06%","dir":"flat","note_ko":"보합권 · 9/10 07시 KST 기준","note_en":"Roughly flat · as of 07:00 KST Sep 10"},
+    {"label":"Gold","value":"$4,447.20","delta":"▲1.21%","dir":"up","note_ko":"이틀 하락 후 반등, 안전자산 선호","note_en":"Rebounded on safe-haven demand after 2 down days"},
+    {"label":"WTI","value":"$97.51","delta":"▲4.82%","dir":"up","note_ko":"이란 보복 공격에 3거래일 연속 급등","note_en":"Rose for a 3rd straight day after Iran's retaliation"},
+    {"label":"Bitcoin","value":"$78,011.92","delta":"▼0.68%","dir":"down","note_ko":"위험자산 회피 속 9/9 종가 대비 하락","note_en":"Fell vs the Sep 9 close amid risk-off flows"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500","KOSPI"],
+  "tile_rest": ["VIX","Fear&Greed","US 10Y","USD/KRW","Gold","WTI","Bitcoin"],
+  "tile_lead": {"ko":"이란 보복에 유가·금리가 지수를 눌렀다","en":"Oil and yields weighed on the tape after Iran's retaliation"},
+  "main_tile_note": {"ko":"나스닥 3거래일 연속 하락","en":"Nasdaq's 3rd straight decline"},
+  "market_note_ko": "이란의 보복 공격에 국제유가·금리 부담이 커지며 지수는 사흘째 밀렸지만, 메타는 AI 에이전트 출시로 나 홀로 급등했다.",
+  "market_note_en": "Oil and rate pressure built after Iran's retaliation pushed indexes lower for a 3rd day, but Meta rallied alone on its new AI agent launch.",
+
+  "chart_series_values": [26541.35, 26402.42, 26370.89, 26099.77, 26217.83, 26584.06, 26506.99, 26421.41, 26253.34],
+  "chart_series_labels": ["8.27","8.28","8.31","9.1","9.2","9.3","9.4","9.8","9.9"],
+  "chart_title": {"ko":"9/3 고점 이후 사흘째 밀렸다","en":"Down for a 3rd day since the Sep 3 peak"},
+  "chart_sub": {"ko":"나스닥종합 종가 · 최근 9거래일","en":"Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko":"9/3 고점 26,584.06 → 9/9 26,253.34 (-1.24%)","en":"Sep 3 high 26,584.06 → Sep 9 close 26,253.34 (-1.24%)"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko":"에너지만 올랐다, 산업재는 최대 낙폭","en":"Only energy rose; industrials led the declines"},
+  "sector_sub": {"ko":"美 섹터 ETF 등락률 · 9/9 종가 기준","en":"US sector ETFs · Sep 9 close"},
+
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko":"거래대금 상위","en":"Top Dollar Volume"},
+  "rank_sub": {"ko":"美 개별 종목 거래대금 상위 5 · 9/9","en":"Top 5 US stocks by dollar volume · Sep 9"},
+  "rank_unit": {"ko":"단위 · 달러 거래대금","en":"Unit · USD dollar volume"},
+
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko":"실적 · 지표 발표","en":"Earnings & Data"},
+  "econ_sub": {"ko":"美 국채 시장 · 원자재 지표","en":"US Treasury market & commodity indicators"},
+
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko":"나스닥 종합","label_en":"Nasdaq Composite","value":"26,253.34","delta":"▼0.64%","dir":"down","sub_ko":"9/3 고점 26,584.06 대비 -1.24% · 3거래일 연속 하락","sub_en":"-1.24% from the Sep 3 high of 26,584.06 · down 3 straight"},
+        {"label_ko":"S&P 500","label_en":"S&P 500","value":"7,636.36","delta":"▼0.48%","dir":"down","sub_ko":"9/3 고점 7,747.71 대비 -1.44% · 3거래일 연속 하락","sub_en":"-1.44% from the Sep 3 high of 7,747.71 · down 3 straight"}
+      ],
+      "breadth": [
+        {"label_ko":"거래대금 상위 300종목 등락","label_en":"Advancers/decliners, top 300 by turnover","up":68,"flat":1,"down":231}
+      ],
+      "note_ko": "이란·유조선 충돌로 국제유가가 급등하며 지수는 사흘째 밀렸지만, 메타는 AI 에이전트 '뮤즈' 출시로 홀로 6.55% 급등해 낙폭을 방어했다.",
+      "note_en": "Oil surged after clashes tied to Iran and tanker attacks pushed indexes lower for a 3rd day, but Meta bucked the trend, jumping 6.55% on its new Muse AI agent."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Moves",
+      "bars": [
+        {"label_ko":"에너지 (XLE)","label_en":"Energy (XLE)","value":0.83},
+        {"label_ko":"반도체 (SMH)","label_en":"Semis (SMH)","value":0.10},
+        {"label_ko":"기술 (XLK)","label_en":"Tech (XLK)","value":0.00},
+        {"label_ko":"금융 (XLF)","label_en":"Financials (XLF)","value":-0.42},
+        {"label_ko":"통신 (XLC)","label_en":"Comm. (XLC)","value":-0.62},
+        {"label_ko":"헬스케어 (XLV)","label_en":"Health Care (XLV)","value":-0.33},
+        {"label_ko":"소재 (XLB)","label_en":"Materials (XLB)","value":-1.06},
+        {"label_ko":"부동산 (XLRE)","label_en":"Real Estate (XLRE)","value":-1.12},
+        {"label_ko":"유틸리티 (XLU)","label_en":"Utilities (XLU)","value":-1.17},
+        {"label_ko":"필수소비재 (XLP)","label_en":"Cons. Staples (XLP)","value":-1.15},
+        {"label_ko":"경기소비재 (XLY)","label_en":"Cons. Disc. (XLY)","value":-1.34},
+        {"label_ko":"산업재 (XLI)","label_en":"Industrials (XLI)","value":-1.51}
+      ],
+      "note_ko": "에너지(XLE)만 유가 급등에 힘입어 올랐고 나머지 11개 섹터는 모두 내렸다. 산업재·경기소비재가 최대 낙폭을 기록했다.",
+      "note_en": "Only energy (XLE) rose, lifted by the oil spike; all 11 other sectors fell, led lower by industrials and consumer discretionary."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Dollar Volume",
+      "rows": [
+        {"name_ko":"마이크론","name_en":"Micron","value":"$24.23B","pct":2.75},
+        {"name_ko":"메타","name_en":"Meta","value":"$23.11B","pct":6.55},
+        {"name_ko":"애플","name_en":"Apple","value":"$20.47B","pct":-0.28},
+        {"name_ko":"스페이스X","name_en":"SpaceX","value":"$17.73B","pct":-3.86},
+        {"name_ko":"엔비디아","name_en":"Nvidia","value":"$17.72B","pct":-0.91}
+      ],
+      "share": {
+        "label_ko":"거래대금 상위 5종목 비중","label_en":"Top 5 share of dollar volume",
+        "mode":"nested",
+        "segments":[
+          {"label_ko":"상위 5종목","label_en":"Top 5 stocks","pct":28.0,"color":"#f5a623"},
+          {"label_ko":"나머지 295종목","label_en":"Other 295 stocks","pct":72.0,"color":"#9aa5b1"}
+        ]
+      },
+      "note_ko": "메타(2위·231억달러)가 AI에이전트 '뮤즈' 출시로 6.55% 급등하며 거래대금 상위에 올랐고, 마이크론(1위)도 HBM 수요에 2.75% 상승했다. 시장 전체로는 거래대금 상위 300종목 중 231개가 하락했다.",
+      "note_en": "Meta (No. 2, $23.1B) jumped 6.55% on its new Muse AI agent, and Micron (No. 1) rose 2.75% on HBM demand. Market-wide, 231 of the top 300 stocks by turnover declined."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko":"美 10년물 국채입찰 낙찰금리","label_en":"US 10-Year Note Auction (high yield)","value":"4.834%","delta":"WI 4.849% → 4.834%","dir":"down","sub_ko":"9/10 02:00 발표 · 사전 예상(WI)보다 낮게 낙찰 · 응찰률 2.71배(2016년 이후 최고)","sub_en":"Released 2 AM KST Sep 10 · priced below the pre-auction (WI) yield · bid-to-cover 2.71x, highest since 2016"},
+        {"label_ko":"美 10년-2년 국채 스프레드","label_en":"US 10Y-2Y Treasury Spread","value":"+0.40%p","delta":"+0.41%p → +0.40%p","dir":"flat","sub_ko":"10년물 4.83% · 2년물 4.43%","sub_en":"10Y 4.83% · 2Y 4.43%","ref_ko":"0 아래로 뒤집히면 대표적인 경기침체 신호","ref_en":"A drop below 0 is a classic recession warning"},
+        {"label_ko":"WTI 주간 변동","label_en":"WTI Weekly Change","value":"+6.80%","dir":"up","sub_ko":"9/3 $91.30 → 9/9 $97.51","sub_en":"Sep 3 $91.30 → Sep 9 $97.51","ref_ko":"최근 5거래일(1주일) 종가 기준 변동률","ref_en":"% change over the last 5 trading sessions"},
+        {"label_ko":"금(金) 주간 변동","label_en":"Gold Weekly Change","value":"-0.99%","dir":"down","sub_ko":"9/3 $4,491.70 → 9/9 $4,447.20","sub_en":"Sep 3 $4,491.70 → Sep 9 $4,447.20","ref_ko":"최근 5거래일(1주일) 종가 기준 변동률","ref_en":"% change over the last 5 trading sessions"}
+      ],
+      "note_ko": "이번 회차는 예정된 경제지표·실적 발표가 거의 없어 국채·원자재 지표로 채웠다. 美 10년물 입찰은 응찰률이 2016년 이후 최고로, 사전 예상보다 낮은 금리에 낙찰됐다 — 다만 같은 날 재무부 바이백 규모가 시장 기대에 못 미치며 국채금리 자체는 올랐다.",
+      "note_en": "With almost no scheduled data releases this cycle, this card uses Treasury and commodity indicators instead. The 10-year auction drew the strongest demand since 2016 and priced below expectations — though Treasury yields still rose that day after the Treasury's bond buyback fell short of market hopes."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko":"메타, AI 에이전트 '뮤즈' 출시…주가 6.55%↑","headline_en":"Meta Launches Muse AI Agent, Stock Jumps 6.55%","body_ko":"메타가 쇼핑·예약·일정관리를 대신하는 개인용 AI 에이전트 '뮤즈'를 출시하자 주가가 653.69달러로 급등, 나스닥 낙폭을 방어했다.","body_en":"Meta launched Muse, a personal AI agent that can shop, book travel and manage schedules, sending shares up to $653.69 and cushioning the Nasdaq's slide."},
+        {"headline_ko":"구글, 핀란드에 15조원 AI인프라·원전전력 확보","headline_en":"Google to Invest $15B in Finnish AI Infrastructure, Secures Nuclear Power","body_ko":"구글이 2028년까지 핀란드 AI·데이터센터에 최대 151억달러를 투자하고, 현지 원전 전력 최대 50%를 22년간 구매하는 계약도 체결했다. 美 밖 첫 원전 전력계약이다.","body_en":"Google will invest up to $15.1B in Finnish AI/data-center infrastructure through 2028 and signed a 22-year deal for up to 50% of a Finnish nuclear plant's output — its first such deal outside the US."},
+        {"headline_ko":"HBM 공급부족 심화…SK하이닉스 ADR·마이크론 급등","headline_en":"HBM Supply Crunch Deepens, SK Hynix ADR and Micron Jump","body_ko":"AI서버용 HBM·서버D램 수요 폭발로 SK하이닉스 ADR이 7%대, 마이크론이 2.75% 급등했다. UBS는 3분기 메모리가격 전망치를 17%에서 32% 상승으로 상향했다.","body_en":"Surging AI-server demand for HBM and server DRAM sent SK Hynix's US shares up over 7% and Micron up 2.75%, with UBS raising its Q3 memory price forecast from 17% to 32%."},
+        {"headline_ko":"삼성전자, 프랑스 미스트랄AI와 반도체특화 AI 개발","headline_en":"Samsung to Co-Develop Chip-Specialized AI Model With France's Mistral AI","body_ko":"삼성전자가 프랑스 AI기업 미스트랄AI에 투자를 주도하고 반도체 설계·제조 특화 AI모델을 공동개발키로 했다. 한·프랑스 정상회담을 계기로 체결됐다.","body_en":"Samsung Electronics is leading an investment in France's Mistral AI and will jointly develop a semiconductor-specialized AI model, sealed during a Korea-France summit."},
+        {"headline_ko":"GPU 속도 넘어 '연결 전쟁'…AI데이터센터 기술경쟁","headline_en":"Beyond GPU Speed: AI Data Centers Race on the 'Interconnect War'","body_ko":"엔비디아 NVLink에 맞서 AMD·인텔·구글·메타·MS·AWS가 GPU 수만개를 한 칩처럼 묶는 고속연결 기술 경쟁에 뛰어들었다.","body_en":"Rivaling Nvidia's NVLink, AMD, Intel, Google, Meta, Microsoft and AWS are racing to build faster GPU-interconnect fabrics for AI clusters."},
+        {"headline_ko":"과기정통부, 'AIDC특별법' 공청회…내년 시행 준비","headline_en":"Korea Holds Hearing on AI Data Center Special Act Ahead of Rollout","body_ko":"과학기술정보통신부가 AI데이터센터 인정범위·인허가 특례·전력 특례를 담은 'AIDC특별법' 시행령 공청회를 열고 의견수렴에 나섰다.","body_en":"Korea's science ministry held a public hearing on enforcement rules for its new AI Data Center Special Act, covering permitting and power-supply exemptions."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko":"美, 이란 유조선 5척 타격…이란 보복에 유가 100달러 돌파","headline_en":"US Strikes 5 Iranian Tankers, Iran Retaliates as Oil Tops $100","body_ko":"이란혁명수비대(IRGC)의 美 군함 공격 시도에 대응해 美軍이 이란 유조선 5척을 타격했고, 이란이 다시 호르무즈 인근 선박과 요르단 기지에 보복하며 WTI가 4.82% 오른 97.51달러, 브렌트유는 100달러를 넘었다.","body_en":"After an IRGC attempt to strike a US warship, US forces hit 5 Iranian tankers; Iran retaliated with strikes near Hormuz and on a base in Jordan, sending WTI up 4.82% to $97.51 and Brent above $100."},
+        {"headline_ko":"美 국채금리 급등…재무부 바이백 규모 시장 기대 못 미쳐","headline_en":"US Treasury Yields Jump as Bond Buyback Size Disappoints","body_ko":"美 재무부가 장기채 바이백 규모를 60억달러로 발표하자 시장 기대치(100억달러)에 못 미쳐 10년물 금리가 4.83%로 올랐다.","body_en":"The US Treasury announced a $6B long-bond buyback, short of the $10B markets wanted, pushing the 10-year yield up to 4.83%."},
+        {"headline_ko":"애플, 첫 폴더블 '아이폰 듀오' 공개","headline_en":"Apple Unveils First Foldable iPhone, the Duo","body_ko":"애플이 새 CEO 존 터너스 체제 첫 행사에서 접이식 '아이폰 듀오'를 공개했다. 미국 1999달러·한국 329만원부터, 애플 주가는 되레 0.28% 하락했다.","body_en":"Apple unveiled its first foldable iPhone, the Duo, at new CEO John Ternus's first keynote, priced from $1,999; shares still fell 0.28%."},
+        {"headline_ko":"美, 캐나다산 유제품·주류 등 수입 제한…무역분쟁 격화","headline_en":"US Bans Canadian Dairy, Alcohol as Trade Dispute Escalates","body_ko":"트럼프 대통령이 캐나다산 유제품·주류·오토바이 등에 금수·관세 조치를 발표(9/29 발효)하자 캐나다도 27.6조원 규모 보복관세로 맞대응했다.","body_en":"Trump banned or tariffed Canadian dairy, alcohol and motorcycles (effective Sept 29) after Canada imposed C$27.6B in retaliatory tariffs on US goods."},
+        {"headline_ko":"유럽증시 일제히 하락…중동 확전 우려","headline_en":"European Stocks Fall Broadly on Middle East Escalation Fears","body_ko":"호르무즈·홍해發 확전 우려와 유가 100달러 돌파에 유럽 스톡스600 지수가 1.41% 하락했다.","body_en":"European shares fell broadly, with the STOXX 600 down 1.41%, as fears of a wider Hormuz/Red Sea conflict and oil topping $100 hit sentiment."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko":"지금 ~ 오늘 밤 9시(KST)","en":"Now through 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"]
+  },
+  "schedule": [
+    {"time":"15:00","title_ko":"獨 8월 확정 소비자물가(HICP, YoY)","title_en":"Germany Aug Final HICP (YoY)","detail_ko":"예상·이전 모두 +2.9% · 유럽장 초반 이벤트","detail_en":"Est./prior both +2.9% · early Europe-session event","importance":"mid"},
+    {"time":"19:55","title_ko":"메이시스(M) 실적 발표","title_en":"Macy's (M) Earnings","detail_ko":"장 시작 전 발표","detail_en":"Reports before the US market open","importance":"mid"},
+    {"time":"21:15","title_ko":"유럽 ECB 기준금리 결정","title_en":"ECB Interest Rate Decision","detail_ko":"통화정책 핵심 변수","detail_en":"A key monetary-policy event","importance":"high"},
+    {"time":"21:30","title_ko":"美 8월 생산자물가(PPI, 근원 YoY)","title_en":"US Aug Core PPI (YoY)","detail_ko":"예상 +4.6% · 9/11 CPI를 앞둔 핵심 선행지표","detail_en":"Est. +4.6% YoY — key input ahead of Friday's CPI","importance":"high"},
+    {"time":"21:30","title_ko":"美 신규·계속 실업수당청구","title_en":"US Initial & Continuing Jobless Claims","detail_ko":"신규 청구 예상 20.5만건","detail_en":"Initial claims est. 205K","importance":"high"},
+    {"time":"23:00","title_ko":"美 8월 기존주택판매","title_en":"US Existing Home Sales","detail_ko":"","detail_en":"","importance":"high"},
+    {"time":"9/11","title_ko":"[미리보기] 美 8월 소비자물가(CPI)","title_en":"[Preview] US Aug CPI","detail_ko":"다음 FOMC 결정의 핵심 변수","detail_en":"A key input for the next FOMC decision","importance":"high"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "A tense NYSE trading floor moments after the closing bell, red numbers streaming across a wall of screens, traders in dark silhouette, dramatic low key lighting, moody blue and amber tones",
+    "3": "A dark trading floor with an oil rig silhouette faintly overlaid on falling stock ticker screens, crude oil barrels in shadow, tense red-lit atmosphere",
+    "6": "A stack of US Treasury bond certificates and gold bars under dramatic side lighting, dark navy background, financial data glow"
+  },
+
+  "caption_ko": "이란의 보복 공격에 브렌트유가 100달러를 돌파하며 뉴욕 3대 지수가 사흘째 밀렸어요. 메타는 AI 에이전트 '뮤즈' 출시로 나 홀로 6.55% 급등! 코스피는 전일 33거래일 만에 7,000선을 회복했습니다. 오늘 하루도 luckyon 브리핑과 함께 시작해보세요 📈\n\n#luckyon브리핑 #경제브리핑 #주식 #미국주식 #나스닥 #국제유가 #중동정세 #메타 #AI에이전트 #코스피 #투자 #재테크 #경제뉴스 #모닝브리핑 #주식투자",
+  "caption_en": "Brent crude topped $100 after Iran's retaliation, and Wall Street fell for a third straight day. Meta bucked the trend, jumping 6.55% on its new Muse AI agent. Kospi reclaimed 7,000 the day before, after 33 sessions. Start your day with luckyon Briefing 📈\n\n#luckyonbriefing #morningbrief #stockmarket #wallstreet #nasdaq #oilprices #meta #aiagent #kospi #investing #finance #economy #stocks #markets",
+  "sources": ["KRX","FMP","Yahoo Finance","CNN Fear & Greed Index","US Department of the Treasury","Al Jazeera","Washington Times","Bloomberg","Naver News","연합뉴스","뉴스핌"]
+}
