@@ -6,12 +6,19 @@
 //   node scripts/fetch-krx-flows.mjs            # 파싱해서 JSON 출력
 //   node scripts/fetch-krx-flows.mjs --probe    # 페이지 구조만 진단 출력 (파서 수정용)
 //
-// 왜 워크플로에서 도나:
-//   finance.naver.com 은 브리핑 세션의 네트워크 정책에서 차단된다(HTTP 000).
-//   data.krx.co.kr 은 허용목록에 있으나 로그인을 요구해 LOGOUT 만 돌려준다.
-//   GitHub Actions 러너는 프록시 밖이라 네이버 금융에 그대로 접속된다.
-//   그래서 .github/workflows/krx-flows.yml 이 이 스크립트를 돌려 결과를
-//   커밋하고, 세션은 커밋된 JSON 을 읽는다 (futures-cache·econ-calendar 와 같은 패턴).
+// 왜 워크플로에서 도나 (그리고 세션에서도 되는 이유, 2026-09-09 정정):
+//   finance.naver.com 이 "브리핑 세션의 네트워크 정책에서 차단된다(HTTP 000)"는 예전 주석은
+//   틀렸다 — curl 로는 처음부터 200 이었다. 진짜 원인은 Node 내장 fetch(undici)가 이 환경의
+//   egress 프록시를 안 타는 것이었다(fetch-fear-greed.mjs 의 CNN API 사고와 동일 패턴).
+//   **`NODE_USE_ENV_PROXY=1 node scripts/fetch-krx-flows.mjs <YYYY-MM-DD>` 로 세션에서 직접
+//   돌리면 그날 종가 기준 최신 수급을 바로 받는다** — 워크플로 커밋을 기다릴 필요가 없다
+//   (2026-09-09 pm 세션에서 실측: main 의 워크플로 커밋은 그날 08:00 이전에 멈춰 있었는데
+//   세션에서 이 접두어로 직접 돌리니 그날 마감 수급이 정상 조회됐다).
+//   data.krx.co.kr 은 허용목록에 있으나 로그인을 요구해 LOGOUT 만 돌려준다(여전히 막힘).
+//   워크플로(.github/workflows/krx-flows.yml)는 이 스크립트를 예비 경로로 계속 돌려 main 에
+//   커밋해 둔다 — 세션 직접 호출이 막히는 환경으로 되돌아갈 경우의 대비책이다. 1순위는
+//   `data/krx-flows.json`(기준일 일치 확인 후)이고, 없거나 낡았으면 위 명령으로 세션에서
+//   직접 재조회한다(과거처럼 "안 된다"고 바로 포기하지 않는다).
 //
 // 인증이 필요 없다 — 공개 페이지다.
 
