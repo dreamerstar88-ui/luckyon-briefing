@@ -42,10 +42,10 @@
     {"label":"VIX","value":"16.46","delta":"▲4.71%","dir":"up","note_ko":"유가 급등에 이틀째 상승","note_en":"Rose for a 2nd day on the oil spike"},
     {"label":"Fear&Greed","value":"39","delta":"41 → 39","dir":"down","note_ko":"등급 '공포(Fear)' 유지","note_en":"Rating holds at 'Fear'"},
     {"label":"US 10Y","value":"4.83%","delta":"4.80% → 4.83%","dir":"up","note_ko":"9/9 확정 종가","note_en":"Sep 9 settle"},
-    {"label":"USD/KRW","value":"1,339.1","value_sub":"· DXY 98.77","delta":"▼0.29%","dir":"down","note_ko":"달러 약세 지속 · 9/10 07시 KST 기준","note_en":"Dollar weakness continues · as of 07:00 KST Sep 10"},
+    {"label":"USD/KRW","value":"1,339.4","value_sub":"· DXY 98.77","delta":"▼0.06%","dir":"flat","note_ko":"보합권 · 9/10 07시 KST 기준","note_en":"Roughly flat · as of 07:00 KST Sep 10"},
     {"label":"Gold","value":"$4,447.20","delta":"▲1.21%","dir":"up","note_ko":"이틀 하락 후 반등, 안전자산 선호","note_en":"Rebounded on safe-haven demand after 2 down days"},
     {"label":"WTI","value":"$97.51","delta":"▲4.82%","dir":"up","note_ko":"이란 보복 공격에 3거래일 연속 급등","note_en":"Rose for a 3rd straight day after Iran's retaliation"},
-    {"label":"Bitcoin","value":"$77,804.57","delta":"▼0.94%","dir":"down","note_ko":"위험자산 회피 속 9/9 종가 대비 하락","note_en":"Fell vs the Sep 9 close amid risk-off flows"}
+    {"label":"Bitcoin","value":"$78,011.92","delta":"▼0.68%","dir":"down","note_ko":"위험자산 회피 속 9/9 종가 대비 하락","note_en":"Fell vs the Sep 9 close amid risk-off flows"}
   ],
   "tile_main": "NASDAQ",
   "tile_side": ["S&P 500","KOSPI"],
@@ -134,20 +134,20 @@
     {
       "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
       "stats": [
-        {"label_ko":"美 10년물 국채입찰 낙찰금리","label_en":"US 10-Year Note Auction (high yield)","value":"4.834%","delta":"WI 4.849% → 4.834%","dir":"down","sub_ko":"9/10 02:00 발표 · 사전 예상(WI)보다 낮게 낙찰 · 응찰률 2.71배(2019년 이후 최고)","sub_en":"Released 2 AM KST Sep 10 · priced below the pre-auction (WI) yield · bid-to-cover 2.71x, highest since 2019"},
+        {"label_ko":"美 10년물 국채입찰 낙찰금리","label_en":"US 10-Year Note Auction (high yield)","value":"4.834%","delta":"WI 4.849% → 4.834%","dir":"down","sub_ko":"9/10 02:00 발표 · 사전 예상(WI)보다 낮게 낙찰 · 응찰률 2.71배(2016년 이후 최고)","sub_en":"Released 2 AM KST Sep 10 · priced below the pre-auction (WI) yield · bid-to-cover 2.71x, highest since 2016"},
         {"label_ko":"美 10년-2년 국채 스프레드","label_en":"US 10Y-2Y Treasury Spread","value":"+0.40%p","delta":"+0.41%p → +0.40%p","dir":"flat","sub_ko":"10년물 4.83% · 2년물 4.43%","sub_en":"10Y 4.83% · 2Y 4.43%","ref_ko":"0 아래로 뒤집히면 대표적인 경기침체 신호","ref_en":"A drop below 0 is a classic recession warning"},
         {"label_ko":"WTI 주간 변동","label_en":"WTI Weekly Change","value":"+6.80%","dir":"up","sub_ko":"9/3 $91.30 → 9/9 $97.51","sub_en":"Sep 3 $91.30 → Sep 9 $97.51","ref_ko":"최근 5거래일(1주일) 종가 기준 변동률","ref_en":"% change over the last 5 trading sessions"},
         {"label_ko":"금(金) 주간 변동","label_en":"Gold Weekly Change","value":"-0.99%","dir":"down","sub_ko":"9/3 $4,491.70 → 9/9 $4,447.20","sub_en":"Sep 3 $4,491.70 → Sep 9 $4,447.20","ref_ko":"최근 5거래일(1주일) 종가 기준 변동률","ref_en":"% change over the last 5 trading sessions"}
       ],
-      "note_ko": "이번 회차는 예정된 경제지표·실적 발표가 거의 없어 국채·원자재 지표로 채웠다. 美 10년물 입찰은 응찰률이 2019년 이후 최고로, 사전 예상보다 낮은 금리에 낙찰됐다 — 다만 같은 날 재무부 바이백 규모가 시장 기대에 못 미치며 국채금리 자체는 올랐다.",
-      "note_en": "With almost no scheduled data releases this cycle, this card uses Treasury and commodity indicators instead. The 10-year auction drew the strongest demand since 2019 and priced below expectations — though Treasury yields still rose that day after the Treasury's bond buyback fell short of market hopes."
+      "note_ko": "이번 회차는 예정된 경제지표·실적 발표가 거의 없어 국채·원자재 지표로 채웠다. 美 10년물 입찰은 응찰률이 2016년 이후 최고로, 사전 예상보다 낮은 금리에 낙찰됐다 — 다만 같은 날 재무부 바이백 규모가 시장 기대에 못 미치며 국채금리 자체는 올랐다.",
+      "note_en": "With almost no scheduled data releases this cycle, this card uses Treasury and commodity indicators instead. The 10-year auction drew the strongest demand since 2016 and priced below expectations — though Treasury yields still rose that day after the Treasury's bond buyback fell short of market hopes."
     },
     {
       "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
       "items": [
         {"headline_ko":"메타, AI 에이전트 '뮤즈' 출시…주가 6.55%↑","headline_en":"Meta Launches Muse AI Agent, Stock Jumps 6.55%","body_ko":"메타가 쇼핑·예약·일정관리를 대신하는 개인용 AI 에이전트 '뮤즈'를 출시하자 주가가 653.69달러로 급등, 나스닥 낙폭을 방어했다.","body_en":"Meta launched Muse, a personal AI agent that can shop, book travel and manage schedules, sending shares up to $653.69 and cushioning the Nasdaq's slide."},
         {"headline_ko":"구글, 핀란드에 15조원 AI인프라·원전전력 확보","headline_en":"Google to Invest $15B in Finnish AI Infrastructure, Secures Nuclear Power","body_ko":"구글이 2028년까지 핀란드 AI·데이터센터에 최대 151억달러를 투자하고, 현지 원전 전력 최대 50%를 22년간 구매하는 계약도 체결했다. 美 밖 첫 원전 전력계약이다.","body_en":"Google will invest up to $15.1B in Finnish AI/data-center infrastructure through 2028 and signed a 22-year deal for up to 50% of a Finnish nuclear plant's output — its first such deal outside the US."},
-        {"headline_ko":"HBM 공급부족 심화…SK하이닉스 ADR·마이크론 급등","headline_en":"HBM Supply Crunch Deepens, SK Hynix ADR and Micron Jump","body_ko":"AI서버용 HBM·서버D램 수요 폭발로 SK하이닉스 ADR이 7%대, 마이크론이 2.75% 급등했다. UBS는 3분기 메모리가격 20% 이상 상승을 전망했다.","body_en":"Surging AI-server demand for HBM and server DRAM sent SK Hynix's US shares up over 7% and Micron up 2.75%, with UBS projecting Q3 memory prices to climb over 20%."},
+        {"headline_ko":"HBM 공급부족 심화…SK하이닉스 ADR·마이크론 급등","headline_en":"HBM Supply Crunch Deepens, SK Hynix ADR and Micron Jump","body_ko":"AI서버용 HBM·서버D램 수요 폭발로 SK하이닉스 ADR이 7%대, 마이크론이 2.75% 급등했다. UBS는 3분기 메모리가격 전망치를 17%에서 32% 상승으로 상향했다.","body_en":"Surging AI-server demand for HBM and server DRAM sent SK Hynix's US shares up over 7% and Micron up 2.75%, with UBS raising its Q3 memory price forecast from 17% to 32%."},
         {"headline_ko":"삼성전자, 프랑스 미스트랄AI와 반도체특화 AI 개발","headline_en":"Samsung to Co-Develop Chip-Specialized AI Model With France's Mistral AI","body_ko":"삼성전자가 프랑스 AI기업 미스트랄AI에 투자를 주도하고 반도체 설계·제조 특화 AI모델을 공동개발키로 했다. 한·프랑스 정상회담을 계기로 체결됐다.","body_en":"Samsung Electronics is leading an investment in France's Mistral AI and will jointly develop a semiconductor-specialized AI model, sealed during a Korea-France summit."},
         {"headline_ko":"GPU 속도 넘어 '연결 전쟁'…AI데이터센터 기술경쟁","headline_en":"Beyond GPU Speed: AI Data Centers Race on the 'Interconnect War'","body_ko":"엔비디아 NVLink에 맞서 AMD·인텔·구글·메타·MS·AWS가 GPU 수만개를 한 칩처럼 묶는 고속연결 기술 경쟁에 뛰어들었다.","body_en":"Rivaling Nvidia's NVLink, AMD, Intel, Google, Meta, Microsoft and AWS are racing to build faster GPU-interconnect fabrics for AI clusters."},
         {"headline_ko":"과기정통부, 'AIDC특별법' 공청회…내년 시행 준비","headline_en":"Korea Holds Hearing on AI Data Center Special Act Ahead of Rollout","body_ko":"과학기술정보통신부가 AI데이터센터 인정범위·인허가 특례·전력 특례를 담은 'AIDC특별법' 시행령 공청회를 열고 의견수렴에 나섰다.","body_en":"Korea's science ministry held a public hearing on enforcement rules for its new AI Data Center Special Act, covering permitting and power-supply exemptions."}
@@ -156,7 +156,7 @@
     {
       "title_ko": "주요 소식", "title_en": "Top Stories",
       "items": [
-        {"headline_ko":"美, 이란 유조선 5척 타격…이란 보복에 유가 100달러 돌파","headline_en":"US Strikes 5 Iranian Tankers, Iran Retaliates as Oil Tops $100","body_ko":"美軍이 이란 유조선 5척을 타격하자 이란이 호르무즈 인근 선박과 요르단 기지에 보복 공격을 가하며 WTI가 4.82% 오른 97.51달러, 브렌트유는 100달러를 넘었다.","body_en":"US forces struck 5 Iranian tankers; Iran retaliated with strikes near Hormuz and on a base in Jordan, sending WTI up 4.82% to $97.51 and Brent above $100."},
+        {"headline_ko":"美, 이란 유조선 5척 타격…이란 보복에 유가 100달러 돌파","headline_en":"US Strikes 5 Iranian Tankers, Iran Retaliates as Oil Tops $100","body_ko":"이란혁명수비대(IRGC)의 美 군함 공격 시도에 대응해 美軍이 이란 유조선 5척을 타격했고, 이란이 다시 호르무즈 인근 선박과 요르단 기지에 보복하며 WTI가 4.82% 오른 97.51달러, 브렌트유는 100달러를 넘었다.","body_en":"After an IRGC attempt to strike a US warship, US forces hit 5 Iranian tankers; Iran retaliated with strikes near Hormuz and on a base in Jordan, sending WTI up 4.82% to $97.51 and Brent above $100."},
         {"headline_ko":"美 국채금리 급등…재무부 바이백 규모 시장 기대 못 미쳐","headline_en":"US Treasury Yields Jump as Bond Buyback Size Disappoints","body_ko":"美 재무부가 장기채 바이백 규모를 60억달러로 발표하자 시장 기대치(100억달러)에 못 미쳐 10년물 금리가 4.83%로 올랐다.","body_en":"The US Treasury announced a $6B long-bond buyback, short of the $10B markets wanted, pushing the 10-year yield up to 4.83%."},
         {"headline_ko":"애플, 첫 폴더블 '아이폰 듀오' 공개","headline_en":"Apple Unveils First Foldable iPhone, the Duo","body_ko":"애플이 새 CEO 존 터너스 체제 첫 행사에서 접이식 '아이폰 듀오'를 공개했다. 미국 1999달러·한국 329만원부터, 애플 주가는 되레 0.28% 하락했다.","body_en":"Apple unveiled its first foldable iPhone, the Duo, at new CEO John Ternus's first keynote, priced from $1,999; shares still fell 0.28%."},
         {"headline_ko":"美, 캐나다산 유제품·주류 등 수입 제한…무역분쟁 격화","headline_en":"US Bans Canadian Dairy, Alcohol as Trade Dispute Escalates","body_ko":"트럼프 대통령이 캐나다산 유제품·주류·오토바이 등에 금수·관세 조치를 발표(9/29 발효)하자 캐나다도 27.6조원 규모 보복관세로 맞대응했다.","body_en":"Trump banned or tariffed Canadian dairy, alcohol and motorcycles (effective Sept 29) after Canada imposed C$27.6B in retaliatory tariffs on US goods."},
