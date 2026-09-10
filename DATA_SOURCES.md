@@ -297,6 +297,43 @@ am 루틴 발화 시각 07:35 기준으로 **10일 중 3일은 아직 안 올라
 
 ---
 
+## 10. `finance.naver.com` 사이트 이전 — GET 은 막히고 레거시 엔드포인트만 산다 (2026-09-10 확인)
+
+**증상**: `ROUTINE_PROMPT.md` A절이 안내하는 대체 경로 — `finance.naver.com/sise/sise_index.naver`·
+`sise_group.naver?type=upjong`·`sise_quant.naver?sosok=0` — 가 전부 GET 요청에 **302** 로
+`stock.naver.com`(이 환경에서 차단된 도메인, `connect_rejected`)으로 리다이렉트된다. 2026-08-22~09-09
+사이 세션들이 200을 받았던 것과 달리, 09-10 pm 세션에서 처음 이 리다이렉트를 만났다 — 네이버가
+그 사이 데스크톱 증권 페이지를 새 도메인으로 옮긴 것으로 보인다. **HEAD 요청은 여전히 200 + 예전
+본문을 주지만 HEAD 는 body 가 없어 실질적으로 못 쓴다.** `-A`(User-Agent) 유무는 무관하다.
+
+**그래도 사는 레거시 엔드포인트 (2026-09-10 실측, 전부 GET 200 확인)** — 신규 디자인으로 이전되지
+않은 구 JSP 페이지들이다. 전부 EUC-KR 인코딩(`iconv -f EUC-KR -t UTF-8` 필수):
+
+| 용도 | URL | 대체하는 것 |
+|---|---|---|
+| 지수 일별 종가·거래량·거래대금 | `sise_index_day.naver?code=KOSPI` (`&page=2`로 더 과거) | `sise_index.naver` 의 일별 표 |
+| 지수 당일 체결(시간대별) | `sise_index_time.naver?code=KOSPI&thistime=<YYYYMMDDHHMMSS>&type=day` | 당일 등락 실시간 확인 |
+| 코스피 투자자별 순매수(일별) | `investorDealTrendDay.naver?bizdate=<YYYYMMDD>` | 수급 — `fetch-krx-flows.mjs` 가 이미 이 경로를 쓴다, checksum 0 으로 정합성 확인됨 |
+| 종목 리스트(정렬 가능, 시총 상위 기준) | `entryJongmok.naver?order=<field>&isRightDirection=<true|false>&page=<n>` | `sise_quant.naver`(거래대금 상위) 대체. `order=acc_amount&isRightDirection=true` 로 거래대금 내림차순. `isRightDirection=false` 는 **오름차순**이니 반대로 헷갈리지 않는다. 페이지당 10행, 코스피200 근방(~21페이지)까지만 있어 전종목은 아니다 |
+
+**여전히 못 구하는 것**: `sise_group.naver`(업종별 등락, 코스피 전체) 대체 경로는 못 찾았다 —
+`entryJongmok.naver` 는 종목 리스트일 뿐 업종 집계가 없다. 09-10 pm 세션은 이 카드를 **한국
+섹터 ETF(KODEX/PLUS, 예: `091160.KS` 반도체·`305720.KS` 2차전지·`117460.KS` 에너지화학 등)를
+Yahoo(`UsStockInfo`)로 개별 조회**해 대신했다 — `fetch-krx.mjs`의 KSIC 시총가중 방법론과는
+다른 근사치다. ETF 티커를 미리 검증(존재 확인)하지 않으면 오탈자로 조용히 빈 데이터가 나올 수
+있으니, 매 회차 `period:"1d"` 로 최소 1건 존재 확인 후 5일치를 받는다.
+
+**전종목 상승/하락 종목수(코스피 전체 breadth)도 대체 경로가 없다.** 09-10 pm 세션은
+`entryJongmok.naver`(시총 상위 50, ~기본 정렬)를 5페이지 받아 그 안에서만 상승/하락을 세어
+"코스피 시총 상위 50종목 등락"으로 축소해 실었다 — 전체 943종목 등락이 아니라는 점을
+카드 라벨에 반드시 명시한다.
+
+**다시 시도해도 되는 조건**: 위 GET 302 리다이렉트가 원복되거나, `stock.naver.com` 이 이
+환경의 허용목록에 추가되면 원래 절차(`sise_index.naver` 등)로 돌아간다. 그 전까지는 이 표의
+레거시 엔드포인트를 1순위로 쓴다.
+
+---
+
 ## 이 문서를 고칠 때
 
 - **측정값에는 날짜를 붙인다.** 소스 정책은 바뀐다. 날짜 없는 "안 된다"는 반년 뒤에 쓸모가 없다.
