@@ -280,33 +280,72 @@
   },
   "us-30y": {
     "aliases": [
-      "30년물",
-      "30년 국채",
+      "미국+30년물",
+      "美+30년물",
+      "미국+30년 국채",
+      "美+30년 국채",
       "30y treasury",
-      "30-year treasury"
+      "30-year treasury",
+      "30년물",
+      "30년 국채"
     ],
-    "ref_ko": "만기가 가장 긴 국채 · 장기 물가·재정 부담을 반영한다",
-    "ref_en": "The longest Treasury maturity; it prices long-run inflation and fiscal risk"
+    "ref_ko": "만기가 가장 긴 美 국채 · 장기 물가·재정 부담을 반영한다",
+    "ref_en": "The longest US Treasury maturity; it prices long-run inflation and fiscal risk"
   },
   "us-10y": {
     "aliases": [
-      "10년물",
-      "10년 국채",
+      "미국+10년물",
+      "美+10년물",
+      "미국+10년 국채",
+      "美+10년 국채",
       "10y treasury",
-      "10-year treasury"
+      "10-year treasury",
+      "10년물",
+      "10년 국채"
     ],
     "ref_ko": "세계 자산가격의 기준금리 · 미 주택담보대출 금리도 여기 연동",
     "ref_en": "The global benchmark yield; US mortgage rates track it"
   },
   "us-2y": {
     "aliases": [
-      "2년물",
-      "2년 국채",
+      "미국+2년물",
+      "美+2년물",
+      "미국+2년 국채",
+      "美+2년 국채",
       "2y treasury",
-      "2-year treasury"
+      "2-year treasury",
+      "2년물",
+      "2년 국채"
     ],
     "ref_ko": "연준의 향후 금리 경로를 가장 민감하게 반영한다",
     "ref_en": "The maturity most sensitive to the Fed's expected rate path"
+  },
+  "kr-10y": {
+    "aliases": [
+      "국고채+10년물",
+      "국고채+10년",
+      "한국+10년물"
+    ],
+    "ref_ko": "한국에서 가장 널리 보는 장기 국채금리 · 물가·재정 부담을 반영한다",
+    "ref_en": "Korea's most-watched long-term bond yield; it reflects inflation and fiscal risk"
+  },
+  "kr-3y": {
+    "aliases": [
+      "국고채+3년물",
+      "국고채+3년",
+      "한국+3년물"
+    ],
+    "ref_ko": "통화정책 기대를 가장 먼저 반영하는 한국 국채금리",
+    "ref_en": "The Korean bond maturity most sensitive to near-term policy expectations"
+  },
+  "kr-30y": {
+    "aliases": [
+      "국고채+30년물",
+      "국고채+30년",
+      "한국+30년물"
+    ],
+    "ref_ko": "만기가 가장 긴 한국 국채 · 장기 물가·재정 부담을 반영한다",
+    "ref_en": "Korea's longest government bond maturity; it prices long-run inflation and fiscal risk"
   },
   "us-trade": {
     "aliases": [
