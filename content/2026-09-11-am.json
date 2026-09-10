@@ -1,0 +1,632 @@
+{
+  "date": "2026-09-11",
+  "session": "am",
+  "dateLabel_ko": "2026년 9월 11일 (금) 아침",
+  "dateLabel_en": "Fri, Sep 11, 2026 · Morning",
+  "headline_ko": "유가 100달러 재돌파·PPI 쇼크…뉴욕지수 나흘째 하락",
+  "headline_en": "Oil Tops $100 Again, Hot PPI Rattle Wall Street as Stocks Fall a 4th Day",
+  "headline_sub_ko": "오라클은 실적 서프라이즈로 시간외 7%대 급등",
+  "headline_sub_en": "Oracle bucked the slide, surging ~7% after hours on blowout earnings",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 9/10 마감",
+    "en": "US Overnight · Sep 10 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 -0.65% · S&P500 -0.58%",
+        "en": "Nasdaq -0.65% · S&P 500 -0.58%"
+      },
+      {
+        "ko": "26,081.72 / 7,591.75 · 나흘 연속 하락",
+        "en": "26,081.72 / 7,591.75 · down for a 4th straight day"
+      }
+    ],
+    [
+      "globe",
+      {
+        "ko": "WTI +6.69% · 8거래일 연속 상승(3년來 최장)",
+        "en": "WTI +6.69% · up 8 straight days, longest since 2023"
+      },
+      {
+        "ko": "예멘 후티, 모카 점거…중동 확전 우려",
+        "en": "Yemen's Houthis seize Mocha, fanning wider Mideast fears"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "오라클 시간외 +7%대 · 매출 30%↑ 사상최대",
+        "en": "Oracle +7% after hours · revenue +30%, a record"
+      },
+      {
+        "ko": "클라우드 인프라 매출 2배 급증",
+        "en": "Cloud infrastructure revenue roughly doubled"
+      }
+    ]
+  ],
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,081.72",
+      "delta": "▼0.65%",
+      "dir": "down",
+      "note_ko": "4거래일 연속 하락 · PPI 쇼크·유가 급등 부담",
+      "note_en": "Fell for a 4th straight day on the PPI shock and oil spike"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,591.75",
+      "delta": "▼0.58%",
+      "dir": "down",
+      "note_ko": "9/3 고점 7,747.71 대비 -2.01%",
+      "note_en": "-2.01% from the Sep 3 high of 7,747.71"
+    },
+    {
+      "label": "KOSPI",
+      "value": "7,033.92",
+      "delta": "▼0.25%",
+      "dir": "down",
+      "note_ko": "9/10 종가 · 네 마녀의 날 · 코스피는 아직 개장 전",
+      "note_en": "Sep 10 close, quad-witching day · Kospi has yet to open"
+    },
+    {
+      "label": "VIX",
+      "value": "17.84",
+      "delta": "▲8.39%",
+      "dir": "up",
+      "note_ko": "유가·금리 부담에 급등",
+      "note_en": "Jumped on oil and rate pressure"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "33",
+      "delta": "38 → 33",
+      "dir": "down",
+      "note_ko": "등급 '공포(Fear)'로 악화",
+      "note_en": "Rating worsened to 'Fear'"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.95%",
+      "delta": "4.83% → 4.95%",
+      "dir": "up",
+      "note_ko": "9/10 확정 종가 · 5% 목전",
+      "note_en": "Sep 10 settle · nearing 5%"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,349.2",
+      "value_sub": "· DXY 99.09",
+      "delta": "▲0.75%",
+      "dir": "up",
+      "note_ko": "위험회피에 원화 약세 · 9/11 07시 KST 기준",
+      "note_en": "Won weakened on risk-off flows · as of 07:00 KST Sep 11"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,362.10",
+      "delta": "▼1.22%",
+      "dir": "down",
+      "note_ko": "국채금리 급등에 안전자산 선호 밀려 하락",
+      "note_en": "Fell as surging bond yields outweighed safe-haven demand"
+    },
+    {
+      "label": "WTI",
+      "value": "$102.48",
+      "delta": "▲6.69%",
+      "dir": "up",
+      "note_ko": "중동發 공급 우려에 급등 · 8거래일 연속 상승",
+      "note_en": "Surged on Mideast supply fears · up 8 straight sessions"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$77,145.22",
+      "delta": "▼1.42%",
+      "dir": "down",
+      "note_ko": "물가 충격에 위험자산 회피 속 하락",
+      "note_en": "Fell amid risk-off flows after the inflation shock"
+    }
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "tile_lead": {
+    "ko": "PPI 쇼크·유가 100달러에 지수는 밀렸다",
+    "en": "Hot PPI and $100 oil dragged the indexes lower"
+  },
+  "main_tile_note": {
+    "ko": "나스닥 4거래일 연속 하락",
+    "en": "Nasdaq's 4th straight decline"
+  },
+  "market_note_ko": "예멘 후티 반군의 모카 점거로 중동 확전 우려가 커지며 유가가 급등했고, 8월 PPI까지 예상을 웃돌며 지수는 나흘째 밀렸다. 장 마감 후 실적을 낸 오라클만 홀로 시간외 급등했다.",
+  "market_note_en": "Oil spiked as Yemen's Houthis seized Mocha, fanning wider Mideast fears, and a hotter-than-expected August PPI added pressure, pushing indexes lower for a 4th day. Oracle was the lone bright spot, jumping after hours on its earnings beat.",
+  "chart_series_values": [
+    26402.42,
+    26370.89,
+    26099.77,
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72
+  ],
+  "chart_series_labels": [
+    "8.28",
+    "8.31",
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.8",
+    "9.9",
+    "9.10"
+  ],
+  "chart_title": {
+    "ko": "9/3 고점 이후 나흘째 밀렸다",
+    "en": "Down for a 4th day since the Sep 3 peak"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9/3 고점 26,584.06 → 9/10 26,081.72 (-1.89%)",
+    "en": "Sep 3 high 26,584.06 → Sep 10 close 26,081.72 (-1.89%)"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "2개 섹터만 상승, 반도체 최대 낙폭",
+    "en": "Only 2 Sectors Rose; Semis Led the Slide"
+  },
+  "sector_sub": {
+    "ko": "美 섹터 ETF 등락률 · 9/10 종가 기준",
+    "en": "US sector ETFs · Sep 10 close"
+  },
+  "rank_kicker": "TODAY",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Dollar Volume"
+  },
+  "rank_sub": {
+    "ko": "美 개별 종목 거래대금 상위 5 · 9/10",
+    "en": "Top 5 US stocks by dollar volume · Sep 10"
+  },
+  "rank_unit": {
+    "ko": "단위 · 달러 거래대금",
+    "en": "Unit · USD dollar volume"
+  },
+  "econ_kicker": "TODAY",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "美 물가·국채 지표 · ECB 결정 · 오라클 실적",
+    "en": "US inflation & Treasury data · ECB decision · Oracle earnings"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Market Record",
+      "stats": [
+        {
+          "label_ko": "나스닥 종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,081.72",
+          "delta": "▼0.65%",
+          "dir": "down",
+          "sub_ko": "9/3 고점 26,584.06 대비 -1.89% · 4거래일 연속 하락",
+          "sub_en": "-1.89% from the Sep 3 high of 26,584.06 · down 4 straight"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,591.75",
+          "delta": "▼0.58%",
+          "dir": "down",
+          "sub_ko": "9/3 고점 7,747.71 대비 -2.01% · 4거래일 연속 하락",
+          "sub_en": "-2.01% from the Sep 3 high of 7,747.71 · down 4 straight"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "거래대금 상위 300종목 등락",
+          "label_en": "Advancers/decliners, top 300 by turnover",
+          "up": 92,
+          "flat": 5,
+          "down": 203
+        }
+      ],
+      "note_ko": "PPI 쇼크와 유가 100달러 재돌파에 지수는 나흘째 밀렸다. 거래대금 상위 300종목 중 203개가 내려 하락이 광범위했지만, 정작 에너지(XLE)는 유가 급등에도 0.58% 내려 반도체발 매도가 전 섹터로 번진 하루였다.",
+      "note_en": "Indexes fell a 4th day on the PPI shock and oil's return above $100. 203 of the top 300 stocks by turnover declined, but energy (XLE) itself fell 0.58% despite the oil spike, as the semiconductor-led selloff spread across sectors."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Moves",
+      "bars": [
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -2.44
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": -1.23
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": -1.41
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -0.98
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": -0.72
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.83
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health Care (XLV)",
+          "value": -0.55
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": -0.58
+        },
+        {
+          "label_ko": "경기소비재 (XLY)",
+          "label_en": "Cons. Disc. (XLY)",
+          "value": -0.44
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.33
+        },
+        {
+          "label_ko": "필수소비재 (XLP)",
+          "label_en": "Cons. Staples (XLP)",
+          "value": 0.05
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm. (XLC)",
+          "value": 0.6
+        }
+      ],
+      "note_ko": "마이크론·인텔·AMD 등 대형 반도체주 급락에 SMH가 -2.44%로 최대 낙폭을 기록했다. 유가 급등에도 에너지(XLE)는 오히려 0.58% 내렸고, 커뮤니케이션(XLC)·필수소비재(XLP) 2개 섹터만 소폭 올랐다.",
+      "note_en": "SMH fell 2.44%, the worst performer, as Micron, Intel and AMD slid. Energy (XLE) actually fell 0.58% despite the oil spike, and only communications (XLC) and staples (XLP) eked out small gains."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Dollar Volume",
+      "rows": [
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$24.98B",
+          "pct": -4.9
+        },
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$22.80B",
+          "pct": 3.56
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$22.02B",
+          "pct": -2.37
+        },
+        {
+          "name_ko": "스페이스X",
+          "name_en": "SpaceX",
+          "value": "$17.52B",
+          "pct": 0.43
+        },
+        {
+          "name_ko": "샌디스크",
+          "name_en": "SanDisk",
+          "value": "$14.63B",
+          "pct": -4.06
+        }
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중",
+        "label_en": "Top 5 share of dollar volume",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5 stocks",
+            "pct": 29.5,
+            "color": "#f5a623"
+          },
+          {
+            "label_ko": "나머지 290종목",
+            "label_en": "Other 290 stocks",
+            "pct": 70.5,
+            "color": "#9aa5b1"
+          }
+        ]
+      },
+      "note_ko": "마이크론이 4.90% 급락에도 거래대금 1위를 지켰다. 애플은 전날 공개한 폴더블 '아이폰 듀오'에 월가가 우호적으로 반응하며 3.56% 올라 거래대금 2위(228억달러)에 올랐다. 상위 5종목이 표본 300종목 거래대금의 29.5%를 차지했다.",
+      "note_en": "Micron held the top spot despite falling 4.90%. Apple jumped 3.56% to No. 2 ($22.8B) as Wall Street reacted positively to its newly unveiled foldable iPhone Duo. The top 5 stocks made up 29.5% of turnover among the 300-stock sample."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "stats": [
+        {
+          "label_ko": "美 8월 PPI (전년비)",
+          "label_en": "US Aug PPI (YoY)",
+          "value": "5.4%",
+          "delta": "4.8% → 5.4%",
+          "dir": "up",
+          "sub_ko": "9/10 21:30 발표 · 예상 5.3% · 근원 PPI는 4.6%(예상 부합)",
+          "sub_en": "Released 21:30 KST Sep 10 · est. 5.3% · core PPI 4.6% (in line)",
+          "ref_ko": "전년 대비 도매물가 상승률 · 에너지값 급등이 주도",
+          "ref_en": "Wholesale price growth YoY · driven by the jump in energy prices"
+        },
+        {
+          "label_ko": "美 신규 실업수당청구",
+          "label_en": "US Initial Jobless Claims",
+          "value": "206K",
+          "delta": "207K → 206K",
+          "dir": "down",
+          "sub_ko": "9/5일 마감 주간 · 예상 20.5만건",
+          "sub_en": "Week ended Sep 5 · est. 205K",
+          "ref_ko": "주간 신규 실업수당 청구 건수 · 노동시장 강도를 보여주는 지표",
+          "ref_en": "Weekly new jobless claims · a gauge of labor market strength"
+        },
+        {
+          "label_ko": "美 10년-2년 국채 스프레드",
+          "label_en": "US 10Y-2Y Treasury Spread",
+          "value": "+0.39%p",
+          "delta": "+0.40%p → +0.39%p",
+          "dir": "flat",
+          "sub_ko": "10년물 4.95% · 2년물 4.56%",
+          "sub_en": "10Y 4.95% · 2Y 4.56%",
+          "ref_ko": "0 아래로 뒤집히면 대표적인 경기침체 신호",
+          "ref_en": "A drop below 0 is a classic recession warning"
+        },
+        {
+          "label_ko": "美 30년물 국채입찰 낙찰금리",
+          "label_en": "US 30-Year Bond Auction (high yield)",
+          "value": "5.308%",
+          "delta": "5.216% → 5.308%",
+          "dir": "up",
+          "sub_ko": "9/10 발표 · 2001년 8월 이후 최고 · 간접수요 79.5%(역대 2위)",
+          "sub_en": "Released Sep 10 · highest since Aug 2001 · indirect bidder demand 79.5%, 2nd-highest ever",
+          "ref_ko": "장기 국채 발행 금리 · 재정 부담과 인플레 기대를 반영",
+          "ref_en": "Long-bond yield · reflects fiscal strain and inflation expectations"
+        },
+        {
+          "label_ko": "ECB 예금금리",
+          "label_en": "ECB Deposit Facility Rate",
+          "value": "2.50%",
+          "delta": "2.25% → 2.50%",
+          "dir": "up",
+          "sub_ko": "9/10 결정 · 만장일치 · 올해 두 번째 인상",
+          "sub_en": "Decided Sep 10 · unanimous · 2nd hike this year",
+          "ref_ko": "유로존 정책금리 · 중동발 인플레 압력에 긴축 재개",
+          "ref_en": "Eurozone policy rate · resumed tightening on Mideast-driven inflation"
+        },
+        {
+          "label_ko": "오라클 1분기 EPS(비GAAP)",
+          "label_en": "Oracle Q1 EPS (non-GAAP)",
+          "value": "$1.92",
+          "delta": "$1.74 → $1.92",
+          "dir": "up",
+          "sub_ko": "예상 대비 실제 · 매출 +30%(사상 최대) · 클라우드 인프라 매출 2배",
+          "sub_en": "Estimate vs. actual · revenue +30% (record) · cloud infrastructure revenue roughly doubled",
+          "ref_ko": "장 마감 후 발표 · 시간외 주가 +7%대",
+          "ref_en": "Reported after the close · shares +7% after hours"
+        }
+      ],
+      "note_ko": "PPI가 예상을 웃돌며 9월 FOMC 금리인상 확률이 73%까지 뛰었고, 30년물 국채는 2001년 이후 최고 금리에 낙찰됐다. ECB도 같은 날 올해 두 번째 금리 인상을 단행했다. 장 마감 후 실적을 낸 오라클만 시장 예상을 크게 웃돌며 홀로 웃었다.",
+      "note_en": "A hotter PPI pushed the odds of a September Fed hike to 73%, and the 30-year Treasury auction priced at its highest yield since 2001. The ECB also delivered its 2nd rate hike this year on the same day. Oracle was the lone winner, crushing estimates after the close."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "items": [
+        {
+          "headline_ko": "오라클, 클라우드 인프라 매출 2배…시간외 7%대 급등",
+          "headline_en": "Oracle Cloud Revenue Roughly Doubles, Shares Jump 7%",
+          "body_ko": "오라클이 1분기 매출 30% 증가(사상 최대)·비GAAP EPS 1.92달러(예상 1.74달러 상회)를 발표했다. 클라우드 인프라 매출이 전년 대비 약 2배로 뛰며 AI 클라우드 수요가 견조함을 보여줬다.",
+          "body_en": "Oracle's Q1 revenue rose 30% to a record, with EPS of $1.92 beating the $1.74 estimate. Cloud infrastructure revenue nearly doubled."
+        },
+        {
+          "headline_ko": "TSMC, 대만 타이중 1.4나노 공장 가동 앞당긴다",
+          "headline_en": "TSMC Moves Up 1.4nm Fab Timeline in Taichung",
+          "body_ko": "TSMC가 차세대 1.4나노 공정 첫 생산라인(P1)을 내년 상반기 시험생산에 들어가도록 일정을 앞당겼다. P2에 이어 2028년까지 P4까지 순차 가동해 최선단 공정 경쟁에서 격차를 벌린다는 전략이다.",
+          "body_en": "TSMC's first Taichung 1.4nm fab (P1) will start trial production as early as next year, with P2 and P4 to follow through 2028."
+        },
+        {
+          "headline_ko": "AI 데이터센터 전력 수요에 변압기·전력기기 '슈퍼사이클'",
+          "headline_en": "AI Power Demand Fuels a Transformer Supercycle",
+          "body_ko": "AI 데이터센터·반도체 팹·2차전지 공장의 전력 수요가 겹치며 변압기 등 전력기기 산업이 구조적 호황에 진입했다. HD현대일렉트릭 등은 전력 생산부터 인프라까지 역량을 결집하고 있다.",
+          "body_en": "Overlapping power demand from AI data centers, chip fabs and battery plants is fueling a boom in transformers and power gear."
+        },
+        {
+          "headline_ko": "AI 데이터센터發 구리 수요 폭증…니켈값 추월 눈앞",
+          "headline_en": "AI Data Centers Push Copper Near Nickel Prices",
+          "body_ko": "AI 데이터센터의 서버 연결선·냉각·전력 설비에 구리 수요가 몰리며 가격이 급등, 니켈 가격을 추월하기 직전이다. 트럼프 관세 우려에 따른 사재기까지 겹쳤다.",
+          "body_en": "Copper demand from AI data center wiring, cooling and power gear is pushing prices near a rare crossover above nickel."
+        },
+        {
+          "headline_ko": "SK하이닉스, HBM 점유율 1위 전략 재정비",
+          "headline_en": "SK Hynix Recalibrates Strategy to Defend HBM Lead",
+          "body_ko": "SK하이닉스가 이천캠퍼스에서 '2026 미래포럼'을 열고 HBM 시장 점유율 1위를 지키기 위한 전략·ESG·노사관계 재정비 방향을 제시했다. HBM 확대가 범용 D램 공급 부족으로 이어지고 있다.",
+          "body_en": "SK Hynix outlined strategy, ESG and labor plans at its 2026 Future Forum to defend its No. 1 HBM share as output growth tightens DRAM supply."
+        },
+        {
+          "headline_ko": "삼성전자 파운드리, SMIC에 점유율 역전 위기",
+          "headline_en": "Samsung Foundry Risks Losing Ground to SMIC",
+          "body_ko": "트렌드포스는 SMIC가 PC·노트북용 반도체 선구매와 AI 서버용 반도체 주문 증가로 삼성전자 파운드리를 점유율에서 역전할 수 있다고 분석했다. 삼성은 연말 美 테일러 공장 가동으로 두자릿수 점유율 회복을 노린다.",
+          "body_en": "TrendForce warns SMIC could overtake Samsung's foundry on rising PC and AI server chip orders, as Samsung counts on its Taylor, Texas fab."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "items": [
+        {
+          "headline_ko": "예멘 후티 반군 모카 점거…국제유가 100달러 재돌파",
+          "headline_en": "Yemen's Houthis Seize Mocha, Oil Tops $100 Again",
+          "body_ko": "이란의 지원을 받는 예멘 후티 반군이 홍해 연안 도시 모카를 접수하며 중동 확전 우려가 커졌다. WTI는 6.69% 급등한 배럴당 102.48달러, 브렌트유는 6.34% 오른 107.63달러(장중 108달러)에 거래됐다. WTI는 8거래일 연속 상승, 3년 만에 최장 오름세다.",
+          "body_en": "Iran-backed Houthi rebels seized the Red Sea port city of Mocha in Yemen, fanning fears of a wider Mideast conflict. WTI jumped 6.69% to $102.48 a barrel and Brent rose 6.34% to $107.63 (intraday $108), extending WTI's rally to 8 straight sessions, its longest since 2023."
+        },
+        {
+          "headline_ko": "美 8월 PPI 예상 상회…9월 금리인상 확률 73%로 급등",
+          "headline_en": "US August PPI Beats Estimates, September Fed Hike Odds Jump to 73%",
+          "body_ko": "美 노동부가 8월 생산자물가지수(PPI)가 전년 대비 5.4%(예상 5.3%, 전월 4.8%) 상승했다고 발표했다. 근원 PPI도 4.6% 올랐다. 물가 경계감에 CME 페드워치 기준 9월 FOMC 금리인상 확률이 73%로 뛰었고 10년물 국채금리는 5%에 근접했다.",
+          "body_en": "The US Labor Department said August PPI rose 5.4% year over year (vs. 5.3% estimate, 4.8% prior), with core PPI up 4.6%. The data lifted CME FedWatch odds of a September rate hike to 73%, pushing the 10-year Treasury yield toward 5%."
+        },
+        {
+          "headline_ko": "ECB, 올해 두 번째 금리 인상…예금금리 2.50%",
+          "headline_en": "ECB Delivers Its 2nd Rate Hike This Year, Deposit Rate to 2.50%",
+          "body_ko": "유럽중앙은행(ECB)이 예금금리를 25bp 올려 2.50%로 결정했다. 라가르드 총재는 중동발 유가 충격에 따른 물가 압력이 상당 기간 이어질 수 있다며 올해 성장률 전망을 0.8%에서 0.9%로 높였다.",
+          "body_en": "The European Central Bank raised its deposit rate 25bp to 2.50%. President Lagarde said inflation pressure from the Mideast-driven oil shock could persist for some time, and the ECB raised its 2026 growth forecast to 0.9% from 0.8%."
+        },
+        {
+          "headline_ko": "코스피, 외국인 2.5조 매도에도 자사주가 7000선 지켰다",
+          "headline_en": "Kospi Holds 7,000 as Buybacks Offset $1.8B in Foreign Selling",
+          "body_ko": "코스피가 '네 마녀의 날' 겸 외국인이 유가증권시장에서 약 2조4820억원을 순매도했음에도 0.25% 하락에 그치며 7,033.92로 마감했다. 삼성전자·SK하이닉스의 자사주 매입에 힘입은 '기타법인'이 약 1조6670억원을 사들이며 매도 충격을 흡수했다.",
+          "body_en": "Despite quad-witching and roughly ₩2.48 trillion in foreign net selling, the Kospi closed down just 0.25% at 7,033.92. 'Other corporations' -- largely Samsung Electronics and SK Hynix buying back their own shares -- bought about ₩1.67 trillion, cushioning the outflow."
+        },
+        {
+          "headline_ko": "애플, 폴더블 '아이폰 듀오' 공개 다음날 주가 3.56%↑",
+          "headline_en": "Apple Shares Rise 3.56% a Day After Unveiling Foldable iPhone Duo",
+          "body_ko": "애플이 전날 첫 폴더블폰 '아이폰 듀오'(미국 1,999달러·한국 329만원부터)를 공개한 데 이어 이날 주가가 3.56% 올라 326.57달러에 마감했다. 멜리우스리서치 등은 2027 회계연도 아이폰 판매 전망에 긍정적 의견을 냈다.",
+          "body_en": "A day after unveiling its first foldable phone, the iPhone Duo (from $1,999 in the US), Apple shares rose 3.56% to close at $326.57. Analysts including Melius Research turned more bullish on Apple's fiscal 2027 iPhone outlook."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {
+    "ko": "지금 ~ 오늘 밤 9시(KST)",
+    "en": "Now through 9 PM KST today"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "08:50",
+      "title_ko": "日 8월 생산자물가지수(PPI)",
+      "title_en": "Japan Aug PPI",
+      "detail_ko": "예상 전년비 +7.4% · 전월 +7.2%",
+      "detail_en": "Est. YoY +7.4% · prior +7.2%",
+      "importance": "mid"
+    },
+    {
+      "time": "21:30",
+      "title_ko": "美 8월 소비자물가지수(CPI)",
+      "title_en": "US August CPI",
+      "detail_ko": "예상 전년비 +3.4% · 근원 +2.4% · FOMC 직전 최대 변수",
+      "detail_en": "Est. YoY +3.4% · core +2.4% · the last big data point before the Fed meeting",
+      "importance": "high"
+    },
+    {
+      "time": "23:00",
+      "title_ko": "美 9월 미시간대 소비자심리지수",
+      "title_en": "US Sep Michigan Consumer Sentiment",
+      "detail_ko": "예상 51.0 · 전월 51.7 · 기대인플레이션 동시 발표",
+      "detail_en": "Est. 51.0 · prior 51.7 · inflation expectations released alongside",
+      "importance": "mid"
+    },
+    {
+      "time": "9/17 03:00",
+      "title_ko": "FOMC 기준금리 결정·기자회견",
+      "title_en": "FOMC Rate Decision & Press Conference",
+      "detail_ko": "CME 페드워치 기준 9월 인상 확률 73% · PPI·CPI가 최대 변수",
+      "detail_en": "CME FedWatch puts Sept. hike odds at 73% · PPI/CPI are the swing factors",
+      "importance": "high"
+    },
+    {
+      "time": "9/18 03:00",
+      "title_ko": "일본은행(BOJ) 기준금리 결정",
+      "title_en": "Bank of Japan Rate Decision",
+      "detail_ko": "엔화 강세 흐름 속 결정",
+      "detail_en": "Decision comes amid a firming yen",
+      "importance": "mid"
+    }
+  ],
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "summary": {
+    "lines_ko": [
+      "뉴욕 3대 지수가 나흘 연속 하락했다 — 나스닥 -0.65%, S&P500 -0.58%.",
+      "예멘 후티 반군의 모카 점거로 중동 확전 우려가 커지며 WTI가 6.69% 급등해 100달러를 재돌파했고, 8월 PPI가 예상(5.3%)을 웃돈 5.4%로 나오며 9월 FOMC 금리인상 확률이 73%까지 뛰었다.",
+      "거래대금 상위 300종목 중 203개가 내렸고, 반도체(SMH -2.44%)가 최대 낙폭을 기록했다.",
+      "애플은 폴더블 '아이폰 듀오' 공개 다음날 3.56% 올랐고, 장 마감 후 실적을 낸 오라클은 매출 30% 성장에 시간외 7%대 급등했다."
+    ],
+    "lines_en": [
+      "Wall Street's 3 major indexes fell for a 4th straight day -- Nasdaq -0.65%, S&P 500 -0.58%.",
+      "Oil surged after Yemen's Houthis seized Mocha, fanning wider Mideast fears -- WTI jumped 6.69% back above $100 -- while a hotter-than-expected August PPI (5.4% vs. 5.3% est.) pushed September Fed hike odds to 73%.",
+      "203 of the top 300 stocks by turnover declined, with semiconductors (SMH -2.44%) the worst performer.",
+      "Apple bucked the trend, rising 3.56% a day after unveiling its foldable iPhone Duo, and Oracle jumped ~7% after hours on 30% revenue growth."
+    ]
+  },
+  "card_photos": {
+    "1": "A tense oil tanker silhouette near a shipping strait at dusk, dark storm clouds gathering, distant amber refinery flares reflecting on dark water, cinematic wide shot, moody atmosphere",
+    "3": "A dim Wall Street trading floor moments after the closing bell, red index numbers glowing on a wall of screens, traders in silhouette, high contrast, cinematic"
+  },
+  "caption_ko": "예멘 후티 반군이 홍해 항구 모카를 점거하며 국제유가가 6%대 급등, WTI가 100달러를 재돌파했어요. 8월 PPI까지 예상을 웃돌며 9월 FOMC 금리인상 확률이 73%로 뛰었고, 뉴욕 3대 지수는 나흘째 하락했습니다. 장 마감 후 실적을 낸 오라클만 매출 30% 성장에 시간외 7%대 급등! 코스피는 외국인 매도에도 자사주 방어로 7000선을 지켰어요. 오늘 하루도 luckyon 브리핑과 함께 시작해보세요 📈\n\n#luckyon브리핑 #경제브리핑 #주식 #미국주식 #나스닥 #국제유가 #중동정세 #PPI #금리인상 #오라클 #코스피 #투자 #재테크 #경제뉴스 #모닝브리핑",
+  "caption_en": "Yemen's Houthis seized the port city of Mocha, sending oil surging over 6% and WTI back above $100. A hotter August PPI pushed September Fed hike odds to 73%, and Wall Street fell a 4th straight day. Oracle was the lone winner, jumping ~7% after hours on 30% revenue growth. The Kospi held 7,000 despite foreign selling, defended by buybacks. Start your day with luckyon Briefing 📈\n\n#luckyonbriefing #marketbrief #stocks #wallstreet #nasdaq #oilprices #middleeast #ppi #fedratehike #oracle #kospi #investing #morningbrief",
+  "sources": [
+    "FMP",
+    "Yahoo Finance",
+    "KRX",
+    "Naver News",
+    "FXStreet",
+    "US BLS",
+    "ECB",
+    "CNN Fear & Greed"
+  ]
+}
