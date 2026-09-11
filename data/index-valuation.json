@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-04T22:32:20.792Z",
+  "fetchedAt": "2026-09-11T22:48:00.984Z",
   "runner": "github-actions",
   "source": "WSJ Market Data — P/E Ratios & Earnings Yields",
   "sourceUrl": "https://www.wsj.com/market-data/stocks/peyields",
@@ -7,40 +7,40 @@
   "basis_en": "P/E on as-reported earnings; estimates on operating earnings (per WSJ)",
   "caveat_ko": "산출 방법이 기관마다 달라 같은 지수의 PER 도 벤더별로 벌어진다(같은 날 S&P 500: WSJ 26.02 / multpl 29.88 / iShares 30.65). 그래서 세 지수를 한 소스에서 받아 출처를 함께 적는다.",
   "status": 200,
-  "asOfLabel": "9/04/26",
+  "asOfLabel": "9/11/26",
   "rows": [
     {
       "key": "DJI",
       "name_ko": "다우",
       "name_en": "Dow",
       "wsjRow": "Dow Jones Industrial Average",
-      "per": 21.75,
-      "perYearAgo": 24.86,
-      "perEstimate": 20.29,
-      "divYield": 1.5,
-      "divYieldYearAgo": 1.63
+      "per": 21.4,
+      "perYearAgo": 25.1,
+      "perEstimate": 19.76,
+      "divYield": 1.51,
+      "divYieldYearAgo": 1.61
     },
     {
       "key": "GSPC",
       "name_ko": "S&P 500",
       "name_en": "S&P 500",
       "wsjRow": "S&P 500 Index",
-      "per": 24.5,
-      "perYearAgo": 25.15,
-      "perEstimate": 21.12,
-      "divYield": 1.07,
-      "divYieldYearAgo": 1.21
+      "per": 23.22,
+      "perYearAgo": 25.1,
+      "perEstimate": 20.25,
+      "divYield": 1.08,
+      "divYieldYearAgo": 1.18
     },
     {
       "key": "IXIC",
       "name_ko": "나스닥 100",
       "name_en": "Nasdaq 100",
       "wsjRow": "NASDAQ 100 Index",
-      "per": 34.37,
-      "perYearAgo": 32.97,
-      "perEstimate": 24.17,
-      "divYield": 0.54,
-      "divYieldYearAgo": 0.68
+      "per": 33.89,
+      "perYearAgo": 32.01,
+      "perEstimate": 24.56,
+      "divYield": 0.58,
+      "divYieldYearAgo": 0.65
     }
   ],
   "missing": [],
