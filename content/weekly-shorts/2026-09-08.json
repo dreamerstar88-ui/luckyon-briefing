@@ -1,0 +1,133 @@
+{
+ "stamp": "nasdaq-week-2026-09-08",
+ "episode": 2,
+ "series": "주간복기",
+ "window": {
+  "symbol": "NQ=F",
+  "interval": "5m",
+  "from_et": "2026-09-08 09:30",
+  "to_et": "2026-09-11 16:00",
+  "note": "9월 7일 월요일이 미국 노동절이라 휴장. 그래서 화요일 정규장 개장부터 금요일 정규장 마감까지다. 그 사이 야간 선물 거래는 모두 포함한다."
+ },
+ "video": {
+  "duration": 35,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "hold": 1.8,
+  "hook_hold": 1.95,
+  "sections": {
+   "hook": [
+    0,
+    5
+   ],
+   "replay": [
+    5,
+    26.2
+   ],
+   "answer": [
+    26.2,
+    30.3
+   ],
+   "summ": [
+    30.3,
+    35
+   ]
+  },
+  "layout_note": "1회차 발행본 배치를 그대로 쓴다(대표 결정 2026-09-12). 고친 것은 결함 셋 — x축 요일을 날짜에서 뽑기, 세로 라벨을 주가 선이 지나지 않는 쪽에 세우기, 회차마다 달라지는 문구를 코드에서 빼기."
+ },
+ "numbers": {
+  "bars": 904,
+  "changes": 903,
+  "week_pct": -0.88,
+  "mdd_pct": -2.17,
+  "peak": 29687,
+  "trough": 29043,
+  "week_high": 29687,
+  "week_low": 29043
+ },
+ "quiz": {
+  "options": [
+   "-0.9%",
+   "-1.5%",
+   "-2.2%"
+  ],
+  "answer_index": 3
+ },
+ "events": [
+  {
+   "n": 1,
+   "et": "2026-09-08 13:00",
+   "kst_label": "화 장중 · 한국 새벽 2시",
+   "te_event": "3-year note auction",
+   "stars": 1,
+   "actual": "4.474%",
+   "compare_field": "previous",
+   "compare": "4.291%",
+   "l1": "3년물 국채 입찰 4.474%.",
+   "l2": "직전은 4.291%였다.",
+   "tag": "국채입찰",
+   "color": "hi",
+   "en": "3-year Treasury auction yield 4.474%, up from 4.291%",
+   "why": "그날 최고 등급(★) · 장중 · 그중 등락률 1위",
+   "pct": 0.192,
+   "rank": 13
+  },
+  {
+   "n": 2,
+   "et": "2026-09-09 08:15",
+   "kst_label": "수 프리장 · 한국 밤 9시 15분",
+   "te_event": "adp employment change weekly",
+   "stars": 2,
+   "actual": "12K",
+   "compare_field": "previous",
+   "compare": "10K",
+   "l1": "ADP 주간 고용 1.2만 명.",
+   "l2": "직전은 1.0만이었다.",
+   "tag": "고용지표",
+   "color": "hi",
+   "en": "ADP weekly employment change 12K, up from 10K",
+   "why": "그날 최고 등급(★★) · 그날 ★★ 중 장중 발표가 없어 등락률로 결정",
+   "session_exception": "9월 9일 수요일의 최고 등급은 ★★ 세 건뿐이고 그중 장중 발표가 하나도 없다(모기지금리 07:00 프리장, ADP 주간고용 08:15 프리장, API 원유재고 17:00 애프터장). 장중 우선 규칙을 적용할 후보가 없어 ★★ 안에서 등락률로 골랐다.",
+   "pct": 0.025,
+   "rank": 477
+  },
+  {
+   "n": 3,
+   "et": "2026-09-10 10:00",
+   "kst_label": "목 장중 · 한국 밤 11시",
+   "te_event": "existing home sales",
+   "stars": 3,
+   "actual": "3.98M",
+   "compare_field": "consensus",
+   "compare": "3.98M",
+   "l1": "기존주택 판매 398만 채.",
+   "l2": "예상도 398만이었다.",
+   "tag": "주택지표",
+   "color": "up",
+   "en": "Existing home sales 3.98M, matching forecast",
+   "why": "★★★ 두 건 중 장중(PPI 는 프리장 08:30)",
+   "pct": 0.168,
+   "rank": 17
+  },
+  {
+   "n": 4,
+   "et": "2026-09-11 10:00",
+   "kst_label": "금 장중 · 한국 밤 11시",
+   "te_event": "michigan consumer sentiment prel",
+   "stars": 3,
+   "actual": "47.8",
+   "compare_field": "consensus",
+   "compare": "51",
+   "l1": "미시간 소비자심리 47.8.",
+   "l2": "예상은 51이었다.",
+   "tag": "소비심리",
+   "color": "down",
+   "en": "Michigan consumer sentiment 47.8, forecast 51",
+   "why": "★★★ 두 건 중 장중(CPI 는 프리장 08:30)",
+   "pct": -0.272,
+   "rank": 6
+  }
+ ],
+ "calendar_snapshot": "content/weekly-shorts/2026-09-08.calendar.html"
+}
