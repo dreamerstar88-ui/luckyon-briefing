@@ -85,20 +85,29 @@
 ## 3. 경제 캘린더 수집
 
 ```
-https://tradingeconomics.com/united-states/calendar?d1=YYYY-MM-DD&d2=YYYY-MM-DD
+# 지난 주를 받는 방법 — 쿠키로 기간을 고른다 (GET 파라미터는 무시된다)
+curl -sSL -A 'Mozilla/5.0 ... Chrome/120.0 Safari/537.36' \
+     -H 'Cookie: calendar-range=-2' \
+     https://tradingeconomics.com/united-states/calendar -o cal_prev.html
 ```
+
+`calendar-range` 값은 페이지의 `getDatesForCalendar()` 가 해석한다.
+`1`=오늘, `3`=이번 주, `-1`=어제, **`-2`=지난 주(오늘−7일 ~ 오늘+1일)**, `-3`=지난 달.
+주말에 받으면 `-2` 가 직전 거래주 전체를 덮는다.
 
 - 중요도는 HTML 의 CSS 클래스 `calendar-date-1|2|3` 에 들어 있다. 1=★, 2=★★, 3=★★★.
 - 발표 시각은 그 안의 `<span>` 에 **UTC** 로 찍힌다. ET = UTC−4, KST = UTC+9.
 - 실제값 `id='actual'`, 시장 예상 `id='consensus'`, 직전값 `id='previous'`.
-- 파서: `docs/samples/weekly-shorts/v7-test-video/te-calendar-parse.mjs`
+- 파서: `docs/samples/weekly-shorts/v8-design-options/te-calendar-parse-v2.mjs`
+  (행 나누기는 `/<tr\s+data-url=/`. `/<tr\b/` 로 자르면 표 안의 표에서 끊긴다.)
 - 같은 발표 시각의 세부 지표들은 5분봉에서 한 봉이므로 **하나로 묶는다.**
   묶을 때 등급이 가장 높은 지표 이름을 대표로 쓴다.
 
 > **캘린더 HTML 은 그 주가 끝난 직후 받아 `content/weekly-shorts/<날짜>.calendar.html` 로 저장한다.**
-> 트레이딩이코노믹스는 GET 의 `d1`/`d2` 를 **무시하고 현재 주부터 돌려줄 때가 있다.**
-> 지난 주 구간을 나중에 다시 받을 방법이 없으므로, 제작 시점의 원본을 남겨 두지 않으면
-> 검증 단계에서 별표·실제값·예상값을 대조할 수 없다. 검증 스크립트는 실시간 조회가
+> 트레이딩이코노믹스는 GET 의 `d1`/`d2` 를 **무시한다.** 기본 화면은 오늘부터 앞으로만 준다.
+> 지난 주는 위의 `calendar-range=-2` 쿠키로 받는다(2026-09-12 확인). 다만 이 값은
+> **오늘 기준 상대 구간**이라 시간이 더 지나면 대상 주를 벗어난다. 그러니 제작 시점의 원본을
+> 반드시 남긴다. 남겨 두지 않으면 검증 단계에서 별표·실제값·예상값을 대조할 수 없다. 검증 스크립트는 실시간 조회가
 > 대상 주를 주지 않으면 이 스냅샷으로 넘어가고, 그 사실을 화면에 남긴다.
 
 > **`node` 로 받을 때는 `NODE_USE_ENV_PROXY=1` 이 필요하다.**
