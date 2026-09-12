@@ -98,12 +98,16 @@ if (M.question) {
   const Q = QUESTIONS.find((q) => q.id === M.question.id);
   if (!Q) bad('질문 은행', M.question.id, '은행에 없는 id');
   else {
-    let got; try { got = Q.fn(buildCtx(BARS, [])); } catch (e) { got = null; }
+    let got; try { got = Q.fn(buildCtx(BARS, [], M.events)); } catch (e) { got = null; }
     if (got === null) bad('질문 재계산', '계산 실패', M.question.id);
     else {
       cmp('질문 답 재계산', typeof got === 'number' ? +got.toFixed(2) : got,
           typeof M.question.answer_value === 'number' ? +M.question.answer_value.toFixed(2) : M.question.answer_value, 0.01);
-      if (Number.isFinite(answerNum) && Number.isFinite(+M.question.answer_value)) {
+      if (typeof M.question.answer_value === 'string') {
+        // 고르는 형 질문은 정답 보기가 그 답을 담고 있어야 한다
+        if (answer.includes(M.question.answer_value)) ok('퀴즈 정답 보기', `${answer} ⊇ ${M.question.answer_value}`);
+        else bad('퀴즈 정답 보기', answer, `"${M.question.answer_value}" 를 담은 보기`);
+      } else if (Number.isFinite(answerNum) && Number.isFinite(+M.question.answer_value)) {
         if (Math.abs(answerNum - +M.question.answer_value) <= 0.51)
           ok('퀴즈 정답 보기', `${answer} ≈ ${M.question.answer_value}${M.question.unit || ''}`);
         else bad('퀴즈 정답 보기', answer, `${M.question.answer_value}${M.question.unit || ''}`);

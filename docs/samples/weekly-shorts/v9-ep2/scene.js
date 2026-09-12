@@ -60,7 +60,7 @@ const X=i=>CX+i/(BARS.length-1)*CW;
 
 function buildSchedule(){
   // 사건 수는 주마다 다르다(휴장일). 멈춰 서는 총 시간을 7.2초로 두고 건수로 나눈다.
-  const HOLD=Math.min(1.8,7.2/Math.max(1,EVENTS.length)), total=REPLAY[1]-REPLAY[0];
+  const HOLD=Math.min(1.8,9.0/Math.max(1,EVENTS.length)), total=REPLAY[1]-REPLAY[0];
   const drawT=total-HOLD*EVENTS.length;
   const segs=[];let prev=0,t=0;
   for(const ev of EVENTS){
@@ -124,10 +124,23 @@ function dayShade(ctx){
   ctx.setLineDash([]);ctx.restore();
 }
 // ── 지나간 사건은 그래프에 세로선으로 남긴다
+// 가까이 붙은 사건은 위아래로 엇갈리게 놓는다.
+// 같은 날 08:30 과 10:00 은 5분봉으로 18칸, 화면에서는 19px 밖에 안 떨어져 있어
+// 배지도 라벨 상자도 그대로 겹친다. 사건이 6개가 되면서 두 쌍이 그렇게 됐다.
+function eventSlots(){
+  const MINX=90, slot=[];
+  for(let k=0;k<EVENTS.length;k++){
+    const near = k>0 && (X(EVENTS[k].i)-X(EVENTS[k-1].i))<MINX;
+    slot.push(near ? 1-slot[k-1] : 0);
+  }
+  return slot;
+}
 function eventLines(ctx,upto,mode){
   ctx.save();
   // 바깥에서 준 투명도를 덮어쓰면 요약이 사라져도 배지·라벨만 남아 루프 카드 위에 얹힌다.
   const A=ctx.globalAlpha;
+  const SLOT=eventSlots();
+  const crowded=SLOT.some(v=>v===1);
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
@@ -138,10 +151,13 @@ function eventLines(ctx,upto,mode){
       continue;
     }
     // 번호 배지
+    const by0=CY-20-SLOT[k]*46;
     ctx.globalAlpha=A;ctx.fillStyle=ev.col;
-    ctx.beginPath();ctx.arc(x,CY-20,17,0,7);ctx.fill();
+    ctx.beginPath();ctx.arc(x,by0,17,0,7);ctx.fill();
+    if(SLOT[k]){ctx.strokeStyle=ev.col;ctx.lineWidth=2;ctx.globalAlpha=A*.5;
+      ctx.beginPath();ctx.moveTo(x,by0+17);ctx.lineTo(x,CY);ctx.stroke();ctx.globalAlpha=A;}
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(String(k+1),x,CY-19);ctx.restore();
+    ctx.fillText(String(k+1),x,by0+1);ctx.restore();
     // 세로 글씨 (주가 선 아래에 깐다 — polyline 보다 먼저 그린다)
     const LH=31, PADX=14, PADY=12, BW=PADX*2+26;
     const h=vtextH(ev.tag,LH);
@@ -152,11 +168,17 @@ function eventLines(ctx,upto,mode){
     // 사건 봉의 종가 한 점만 보면 바로 뒤 스파이크가 상자를 뚫고 지나간다.
     // 자리는 전체 봉 기준으로 한 번 정한다 — 그래야 선이 다가와도 상자가 안 움직인다.
     const box=h+PADY*2;
-    let top=1e9,bot=-1e9;
-    for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW+4)continue;
-      const yj=Y(BARS[j].c);if(yj<top)top=yj;if(yj>bot)bot=yj;}
-    if(top>bot){top=bot=Y(BARS[ev.i].c);}
-    const by=((top-CY) >= (CY+CH-bot)) ? CY+14 : CY+CH-box-14;
+    let by;
+    if(crowded){
+      // 붙어 있는 쌍은 선을 피하는 것보다 서로 안 겹치는 게 먼저다. 위아래로 나눈다.
+      by = SLOT[k] ? CY+CH-box-14 : CY+14;
+    }else{
+      let top=1e9,bot=-1e9;
+      for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW+4)continue;
+        const yj=Y(BARS[j].c);if(yj<top)top=yj;if(yj>bot)bot=yj;}
+      if(top>bot){top=bot=Y(BARS[ev.i].c);}
+      by=((top-CY) >= (CY+CH-bot)) ? CY+14 : CY+CH-box-14;
+    }
     ctx.globalAlpha=A;ctx.fillStyle='rgba(0,0,0,.86)';
     rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
     ctx.strokeStyle=ev.col;ctx.globalAlpha=A*.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
@@ -242,38 +264,38 @@ function enBand(ctx,line,a=1,y=1524,rule=true){
 // ── 훅
 function drawHook(ctx,t){
   ctx.drawImage(BGC,0,0);
-  txt(ctx,COPY.kicker,60,206,'700 48px PD','#d8d8d8','left','.04em');
+  txt(ctx,COPY.kicker,60,200,'700 48px PD','#d8d8d8','left','.04em');
   const p=easeOut(seg(t,hs(.10),hs(1.00)));
   shadow(ctx,true);
-  txt(ctx,'결과는',56,362,'700 84px PD',C.muted);
+  txt(ctx,'결과는',56,330,'700 84px PD',C.muted);
   // 색과 부호는 최종값의 방향을 따른다. 예전에는 색이 C.up 으로 박혀 있어 하락 주에도
   // 훅만 초록이었고, 카운트업 첫 프레임(-0)이 '+0.00%' 로 찍혀 표지에 걸렸다.
   const wsign=STATS.weekPct>=0?'+':'-';
-  numT(ctx,wsign+Math.abs(STATS.weekPct*p).toFixed(2)+'%',44,552,'900 250px PD',
+  numT(ctx,wsign+Math.abs(STATS.weekPct*p).toFixed(2)+'%',44,560,'900 250px PD',
        STATS.weekPct>=0?C.up:C.down,'left','-.06em');
   shadow(ctx,false);
   const q=seg(t,hs(1.05),hs(1.50));
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
     shadow(ctx,true);
-    txt(ctx,COPY.q1,60,688,'700 54px PD',C.text);
-    txt(ctx,COPY.q2,60,790,'900 64px PD',C.hi);
+    txt(ctx,COPY.q1,60,700,'700 54px PD',C.text);
+    txt(ctx,COPY.q2,60,782,'900 64px PD',C.hi);
     shadow(ctx,false);ctx.restore();}
   const NUM='①②③';
   const opts=QUIZ.opts.map((v,k)=>[NUM[k],v]);
   opts.forEach((o,k)=>{
     const a=seg(t,hs(1.60+k*.35),hs(2.00+k*.35));if(a<=0)return;
     ctx.save();ctx.globalAlpha=a;ctx.translate(0,(1-easeOut(a))*26);
-    const y=880+k*132;
-    ctx.fillStyle='rgba(255,255,255,.09)';rr(ctx,56,y,700,108,16);ctx.fill();
-    ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=2;rr(ctx,56,y,700,108,16);ctx.stroke();
-    txt(ctx,o[0],96,y+75,'900 60px PD',C.hi);
-    numT(ctx,o[1],186,y+75,'900 60px PD',C.text);
+    const y=852+k*122;
+    ctx.fillStyle='rgba(255,255,255,.09)';rr(ctx,56,y,700,104,16);ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=2;rr(ctx,56,y,700,104,16);ctx.stroke();
+    txt(ctx,o[0],96,y+70,'900 60px PD',C.hi);
+    numT(ctx,o[1],186,y+70,'900 60px PD',C.text);
     ctx.restore();
   });
   const h=seg(t,hs(2.75),hs(3.05));
   if(h>0){ctx.save();ctx.globalAlpha=h;
-    txt(ctx,`5분봉 ${STATS.n.toLocaleString('en-US')}개, 지금부터 다시 돌려봅니다`,60,1360,'900 52px PD',C.text);
-    txt(ctx,COPY.span,60,1434,'700 40px PD',C.muted);
+    txt(ctx,`5분봉 ${STATS.n.toLocaleString('en-US')}개, 지금부터 다시 돌려봅니다`,60,1290,'900 52px PD',C.text);
+    txt(ctx,COPY.span,60,1356,'700 40px PD',C.muted);
     ctx.restore();}
   enBand(ctx,COPY.enHook,h);
   brand(ctx);
@@ -294,7 +316,7 @@ function drawReplay(ctx,t){
   numT(ctx,bar.kst,60,400,'700 44px PD','#d8d8d8');
   txt(ctx,'고점 대비',1024,300,'700 36px PD',C.muted,'right');
   numT(ctx,dd.toFixed(2)+'%',1024,372,'900 76px PD',dd<-0.05?C.down:C.muted,'right');
-  chartPanel(ctx);dayShade(ctx);openLine(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
   const px=X(i),py=Y(bar.c);
   ctx.save();ctx.fillStyle=C.line;ctx.beginPath();ctx.arc(px,py,11,0,7);ctx.fill();
   ctx.strokeStyle=C.line;ctx.globalAlpha=.45;ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,24,0,7);ctx.stroke();ctx.restore();
@@ -339,25 +361,28 @@ function drawAnswer(ctx,t){
   const p=easeOut(seg(at,.05,.5));
   ctx.save();ctx.globalAlpha=p;ctx.translate(0,(1-p)*26);
   shadow(ctx,true);
-  txt(ctx,'①②③'[QUIZ.ans],56,330,'900 62px PD',C.hi);
-  numT(ctx,COPY.ansBig,150,330,'900 190px PD',C.down,'left','-.05em');
+  txt(ctx,'①②③'[QUIZ.ans],56,312,'900 58px PD',C.hi);
+  txt(ctx,COPY.ansName,140,312,'900 74px PD',C.text);
+  numT(ctx,COPY.ansBig,52,476,'900 180px PD',C.down,'left','-.05em');
   shadow(ctx,false);ctx.restore();
   const q=seg(at,.6,.95);
   if(q>0){ctx.save();ctx.globalAlpha=q;
-    numT(ctx,COPY.ansSub1,60,436,'700 54px PD',C.text);
+    numT(ctx,COPY.ansSub1,60,566,'700 50px PD',C.text);
     // 걸린 시간은 봉 간격에서 계산한다. "하루 반" 같은 어림말을 손으로 적으면
     // 회차가 바뀌어도 그대로 남고, 1회차에서 실제 29시간을 36시간으로 부풀린 적이 있다.
-    txt(ctx,COPY.ansSub2,60,512,'700 44px PD',C.muted);
+    txt(ctx,COPY.ansSub2,60,632,'700 42px PD',C.muted);
     ctx.restore();}
   chartPanel(ctx);dayShade(ctx);
-  // 시가선 위쪽을 통째로 칠해 "여기 위에서 끝난 봉이 하나도 없다"를 보이게 한다
+  // 1위 사건이 일어난 자리를 세로 띠로 짚어 준다
   const s=seg(at,.9,1.6);
-  if(s>0){
-    ctx.save();ctx.globalAlpha=s*.20;ctx.fillStyle=C.down;
-    ctx.fillRect(CX,CY,CW*easeOut(s),Y(BARS[0].o)-CY);ctx.restore();
+  if(s>0&&EVENTS[QUIZ.ans]){
+    const wi=EVENTS.findIndex(e=>e.rankTop);
+    if(wi>=0){const xw=X(EVENTS[wi].i);
+      ctx.save();ctx.globalAlpha=s*.40;ctx.fillStyle=C.down;
+      ctx.fillRect(xw-30,CY,60,CH);ctx.restore();}
   }
-  openLine(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
-  enBand(ctx,COPY.enAnswer,q);
+  eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
+  enBand(ctx,COPY.enAnswer,q,690,true);
   brand(ctx);
 }
 
@@ -373,11 +398,7 @@ function drawSumm(ctx,t){
   txt(ctx,COPY.summ1,60,206,'900 52px PD',C.text);
   txt(ctx,COPY.summ2,60,278,'900 52px PD',C.hi);
   enBand(ctx,COPY.enSumm,1,344,false);
-  let lo=1e9,li=0,hi2=-1e9,hi_i=0;
-  BARS.forEach((b,i)=>{if(b.l<lo){lo=b.l;li=i;}if(b.h>hi2){hi2=b.h;hi_i=i;}});
-  const rows=[[`주간 최저 · ${BARS[li].kst.slice(0,-6)}`,fmt(lo),C.down],
-              [`주간 최고 · ${BARS[hi_i].kst.slice(0,-6)}`,fmt(hi2),C.up],
-              ['결국 한 주 결과',pct(STATS.weekPct),STATS.weekPct>=0?C.up:C.down]];
+  const rows=COPY.rows.map(r=>[r[0],r[1],C[r[2]]||C.text]);
   rows.forEach((r,k)=>{
     const a=easeOut(seg(st,.15+k*.22,.5+k*.22));if(a<=0)return;
     ctx.save();ctx.globalAlpha=(1-fadeOut)*a;ctx.translate(0,(1-a)*20);
@@ -387,7 +408,7 @@ function drawSumm(ctx,t){
     ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();
     ctx.restore();
   });
-  chartPanel(ctx);dayShade(ctx);openLine(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
+  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   const c=easeOut(seg(st,1.1,1.6));
   if(c>0){ctx.save();ctx.globalAlpha=(1-fadeOut)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);

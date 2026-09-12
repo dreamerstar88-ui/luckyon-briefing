@@ -22,51 +22,88 @@ BARS.forEach((b,i)=>{if(b.h>pk){pk=b.h;pi=i;}const dd=b.l/pk-1;if(dd<mdd){mdd=dd
 const STATS={weekPct:(BARS[BARS.length-1].c/BARS[0].o-1)*100,peakIdx:mp,troughIdx:mt,mdd:mdd*100,n:BARS.length};
 console.log(`봉 ${BARS.length} · 주간 ${STATS.weekPct.toFixed(2)}% · 최대낙폭 ${STATS.mdd.toFixed(2)}% (${BARS[mp].kst} → ${BARS[mt].kst})`);
 const C={down:'#ff4d4d',up:'#3ddc84',hi:'#ffe14d'};
-// 사건 선정: ① 거래일마다 1개 ② TE 중요도 높은 순 ③ 동률이면 장중 우선, 다음 등락률
-const EVENTS=[
- {i:idxOf('2026-09-08 13:00'),when:'화 장중 · 한국 수 새벽 2시',l1:'3년물 국채 입찰 4.474%.',l2:'직전은 4.291%였다.',tag:'국채입찰',
-  en:'3-year Treasury auction yield 4.474%, up from 4.291%',col:C.up,why:'★ · 그날 최고등급 · 장중 · +0.19% 13위'},
- {i:idxOf('2026-09-09 08:15'),when:'수 프리장 · 한국 밤 9시 15분',l1:'ADP 주간 고용 1.2만 명.',l2:'직전은 1.0만이었다.',tag:'고용지표',
-  en:'ADP weekly employment change 12K, up from 10K',col:C.hi,why:'★★ · 그날 최고등급 · 장중 없음 · +0.02% 477위'},
- {i:idxOf('2026-09-10 10:00'),when:'목 장중 · 한국 밤 11시',l1:'기존주택 판매 398만 채.',l2:'예상도 398만이었다.',tag:'주택지표',
-  en:'Existing home sales 3.98M, matching forecast',col:C.up,why:'★★★ · 장중(PPI는 프리장) · +0.17% 17위'},
- {i:idxOf('2026-09-11 10:00'),when:'금 장중 · 한국 밤 11시',l1:'미시간 소비자심리 47.8.',l2:'예상은 51이었다.',tag:'소비심리',
-  en:'Michigan consumer sentiment 47.8, forecast 51',col:C.down,why:'★★★ · 장중(CPI는 프리장) · -0.27% 6위'},
-].filter(e=>e.i>0).sort((a,b)=>a.i-b.i);
-EVENTS.forEach((e,k)=>console.log(`  사건${k+1} idx ${e.i} ${e.when} — ${e.why}`));
-if(EVENTS.length!==4){console.error('사건 수가 4가 아니다:',EVENTS.length);process.exit(1);}
-
-// ── 회차 문구와 퀴즈 보기 (코드에 박지 않는다)
-const d0=BARS[0].d.slice(0,10), d1=BARS[BARS.length-1].d.slice(0,10);
+const d0=BARS[0].d.slice(0,10), d1=BARS.at(-1).d.slice(0,10);
 const DOW='일월화수목금토';
 const EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const dw=x=>DOW[new Date(x+'T00:00:00Z').getUTCDay()];
 const fmt0=n=>Math.round(n).toLocaleString('en-US');
-const DAYN={1:'하루',2:'이틀',3:'사흘',4:'나흘',5:'닷새'};
-const dw=s=>DOW[new Date(s+'T00:00:00Z').getUTCDay()];
-// ── 이번 회차 질문: "시가 위에서 끝난 봉이 있었나"
-// 고르는 근거는 scripts/weekly-shorts/pick-question.mjs 의 특이도 순위다.
-// 과거 100주 중앙값은 69%인데 이번 주는 0%다 — 904개 봉 중 하나도 시가 위에서 끝나지 못했다.
-// 1·2회차처럼 "최대 낙폭"을 되풀이하지 않는다. 낙폭은 정의상 늘 음수라 매주 같은 그림이 된다.
-const openPx=BARS[0].o;
-const aboveN=BARS.filter(b=>b.c>=openPx).length;
-const hiBar=BARS.reduce((a,b)=>b.h>a.h?b:a,BARS[0]);
+// 사건 선정 규칙 (대표 지시, 2026-09-12 개정)
+//  ① 그날 ★★★ 이 있으면 전부 넣는다. 장중이든 프리장이든 상관없다.
+//  ② ★★★ 이 하나도 없는 날만: 최고 등급 → 장중 우선 → 등락률
+//  ③ 같은 시각 여러 지표는 한 사건으로 묶는다(5분봉에서 한 봉)
+// 예전 규칙은 ★★★ 끼리도 장중 우선을 적용해 CPI·PPI 가 둘 다 빠졌었다.
+const chgAll=[];for(let k=1;k<BARS.length;k++)chgAll.push({d:BARS[k].d,p:(BARS[k].c/BARS[k-1].c-1)*100});
+const rankOf=new Map([...chgAll].sort((a,b)=>Math.abs(b.p)-Math.abs(a.p)).map((x,k)=>[x.d,k+1]));
+const pctOfET=new Map(chgAll.map(x=>[x.d,x.p]));
+const colOf=p=>Math.abs(p)<0.05?C.hi:(p>0?C.up:C.down);
+const RAW=[
+ {et:'2026-09-08 13:00',stars:1,when:'화 장중 · 한국 수 새벽 2시',
+  l1:'3년물 국채 입찰 4.474%.',l2:'직전은 4.291%였다.',tag:'국채입찰',
+  en:'3-year Treasury auction 4.474%, up from 4.291%',
+  te:'3-year note auction',actual:'4.474%',cf:'previous',cv:'4.291%',
+  why:'그날 ★★★ 없음 · 최고등급 ★ · 장중 · 등락률 1위'},
+ {et:'2026-09-09 08:15',stars:2,when:'수 프리장 · 한국 밤 9시 15분',
+  l1:'ADP 주간 고용 1.2만 명.',l2:'직전은 1.0만이었다.',tag:'고용지표',
+  en:'ADP weekly employment 12K, up from 10K',
+  te:'adp employment change weekly',actual:'12K',cf:'previous',cv:'10K',
+  why:'그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로',
+  session_exception:'9월 9일 수요일은 ★★★ 이 없고 최고 등급 ★★ 세 건이 전부 장 밖이었다(모기지금리 07:00 프리장, ADP 08:15 프리장, API 원유재고 17:00 애프터장). 장중 우선을 적용할 후보가 없어 등락률로 골랐다.'},
+ {et:'2026-09-10 08:30',stars:3,when:'목 프리장 · 한국 밤 9시 30분',
+  l1:'생산자물가 +0.4%.',l2:'직전은 +0.1%였다.',tag:'생산자물가',
+  en:'Producer prices +0.4% MoM, up from +0.1%',
+  te:'ppi mom',actual:'0.4%',cf:'previous',cv:'0.1%',
+  why:'★★★ 전부 넣는다'},
+ {et:'2026-09-10 10:00',stars:3,when:'목 장중 · 한국 밤 11시',
+  l1:'기존주택 판매 398만 채.',l2:'예상도 398만이었다.',tag:'주택지표',
+  en:'Existing home sales 3.98M, matching forecast',
+  te:'existing home sales',actual:'3.98M',cf:'consensus',cv:'3.98M',
+  why:'★★★ 전부 넣는다'},
+ {et:'2026-09-11 08:30',stars:3,when:'금 프리장 · 한국 밤 9시 30분',
+  l1:'근원 소비자물가 +0.3%.',l2:'예상은 +0.2%였다.',tag:'소비자물가',
+  en:'Core CPI +0.3% MoM, forecast +0.2%',
+  te:'core inflation rate mom',actual:'0.3%',cf:'consensus',cv:'0.2%',
+  why:'★★★ 전부 넣는다'},
+ {et:'2026-09-11 10:00',stars:3,when:'금 장중 · 한국 밤 11시',
+  l1:'미시간 소비자심리 47.8.',l2:'예상은 51이었다.',tag:'소비심리',
+  en:'Michigan consumer sentiment 47.8, forecast 51',
+  te:'michigan consumer sentiment prel',actual:'47.8',cf:'consensus',cv:'51',
+  why:'★★★ 전부 넣는다'},
+];
+const EVENTS=RAW.map(e=>{const p=pctOfET.get(e.et);
+  return {...e,i:idxOf(e.et),pct:+p.toFixed(3),rank:rankOf.get(e.et),col:colOf(p)};})
+  .filter(e=>e.i>0).sort((a,b)=>a.i-b.i);
+if(EVENTS.length!==RAW.length){console.error('사건 인덱스 실패');process.exit(1);}
+// 발표 직후 5분 충격이 가장 큰 사건 = 이번 회차 정답
+const top=EVENTS.reduce((a,b)=>Math.abs(b.pct)>Math.abs(a.pct)?b:a);
+top.rankTop=true;
+EVENTS.forEach((e,k)=>console.log(`  사건${k+1} ${e.et} ${'★'.repeat(e.stars)} ${e.pct>=0?'+':''}${e.pct}% ${e.rank}위 — ${e.l1}${e===top?'  ← 정답':''}`));
+
+// ── 이번 회차 질문: 발표 순간 지수를 가장 크게 움직인 사건은?
+const NAMES={'생산자물가':'생산자물가 PPI','소비자물가':'근원 소비자물가','소비심리':'미시간 소비자심리',
+             '주택지표':'기존주택 판매','고용지표':'ADP 주간 고용','국채입찰':'3년물 국채 입찰'};
+const OPT_TAGS=['생산자물가','소비자물가','소비심리'];
+const QUIZ={ans:OPT_TAGS.indexOf(top.tag),opts:OPT_TAGS.map(t=>NAMES[t])};
+if(QUIZ.ans<0){console.error('정답 사건이 보기에 없다:',top.tag);process.exit(1);}
+const rank3=[...EVENTS].sort((a,b)=>Math.abs(b.pct)-Math.abs(a.pct)).slice(0,3);
+const sgn=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
 const COPY={
   kicker:`지난주 나스닥 · ${dw(d0)} 개장 ~ ${dw(d1)} 마감`,
   span:`${dw(d0)}요일 개장 → ${dw(d1)}요일 마감`,
-  q1:`고점은 ${dw(hiBar.d.slice(0,10))}요일 개장 첫 5분이었습니다.`,
-  q2:'시가 위에서 끝난 5분봉은?',
-  enHook:`Nasdaq 100, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]}. How many bars closed above the open?`,
-  ansBig:`${aboveN}개`,
-  ansSub1:`5분봉 ${BARS.length.toLocaleString('en-US')}개 중 하나도 없었다`,
-  // 마감은 한국시간으로 쓰면 '9/12 토' 가 되어 헷갈린다. 거래일(미국 날짜)로 적는다.
-  ansSub2:`${hiBar.kst.slice(0,-6)} 고점 ${fmt0(hiBar.h)} → ${dw(d1)}요일 마감 ${fmt0(BARS.at(-1).c)}`,
-  enAnswer:`Not one of ${BARS.length.toLocaleString('en-US')} bars closed above the open`,
-  summ1:`${DAYN[DAYS.length]||DAYS.length+'일'} 내내`, summ2:'종가가 시가를 넘지 못했다.',
-  enSumm:'Four trading days, and it never closed back above where it opened',
-  loopLabel:'시가 위에서 끝난 봉', loopBig:`${aboveN}개`, loopTail:`${BARS.length.toLocaleString('en-US')}개를 다 돌려봐도 하나도 없었다`,
+  q1:`그 주 지표 발표는 ${['','한','두','세','네','다섯','여섯','일곱','여덟'][EVENTS.length]||EVENTS.length} 번.`,
+  q2:'지수를 가장 크게 움직인 건?',
+  enHook:`Nasdaq 100, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]}. Which release moved it most?`,
+  ansName:NAMES[top.tag],
+  ansBig:sgn(top.pct),
+  ansSub1:`${top.when.split(' · ')[1]||top.when}, 발표 5분 만에`,
+  ansSub2:`5분봉 ${chgAll.length.toLocaleString('en-US')}개 변동 중 ${top.rank}위`,
+  enAnswer:`${NAMES[top.tag]} — ${sgn(top.pct)} in the five minutes after the release`,
+  summ1:`지표 ${['','한','두','세','네','다섯','여섯'][EVENTS.length]||EVENTS.length} 번 중`,
+  summ2:'가장 세게 때린 건 이것이었다.',
+  enSumm:'The three biggest reactions of the week, in order',
+  rows:rank3.map((e,k)=>[`${k+1}위 · ${NAMES[e.tag]}`,sgn(e.pct),e.pct>=0?'up':'down']),
+  loopLabel:'가장 크게 움직인 사건', loopBig:NAMES[top.tag], loopTail:`발표 5분 만에 ${sgn(top.pct)}`,
 };
-const QUIZ={ans:0,opts:['0개','87개','240개']};
-console.log(`질문: 시가 ${fmt0(openPx)} 위에서 끝난 봉 = ${aboveN}개 / ${BARS.length}개`);
+console.log(`질문: 가장 크게 움직인 사건 = ${NAMES[top.tag]} ${sgn(top.pct)} (${top.rank}위)`);
 
 const b64=p=>fs.readFileSync(p).toString('base64');
 const photo='data:image/jpeg;base64,'+b64(`${R}/data/card-photos/2026-08-28-pm/card3.jpg`);

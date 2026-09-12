@@ -21,7 +21,7 @@ const kstHour = (d) => { const x = new Date(d.replace(' ', 'T') + 'Z'); x.setUTC
 const dow = (d) => '일월화수목금토'[new Date(d.slice(0, 10) + 'T00:00:00Z').getUTCDay()];
 const pctOf = (a, b) => (a / b - 1) * 100;
 
-export function buildCtx(bars, hist = []) {
+export function buildCtx(bars, hist = [], events = []) {
   const days = [...new Set(bars.map((b) => b.d.slice(0, 10)))];
   const chg = [];
   for (let i = 1; i < bars.length; i++) chg.push({ d: bars[i].d, p: pctOf(bars[i].c, bars[i - 1].c) });
@@ -40,7 +40,7 @@ export function buildCtx(bars, hist = []) {
   const share = (pred) => { let r = 1; for (let i = 1; i < bars.length; i++) if (pred(bars[i].d)) r *= bars[i].c / bars[i - 1].c; return (r - 1) * 100; };
   const minutesBetween = (i, j) => (Date.parse(bars[j].d.replace(' ', 'T') + 'Z') - Date.parse(bars[i].d.replace(' ', 'T') + 'Z')) / 60000;
   return {
-    bars, days, chg, hist,
+    bars, days, chg, hist, events,
     open: bars[0].o, close: bars.at(-1).c, hi, lo, hiI, loI,
     mdd: mdd * 100, mddFrom: mp, mddTo: mt,
     mru: mru * 100, mruFrom: rp, mruTo: rt,
@@ -214,6 +214,10 @@ export const QUESTIONS = [
     ko: '지표 발표 순간 가장 크게 움직인 건 몇 %였을까요?', en: 'What was the biggest move on a scheduled release?',
     fn: (c) => c.events.reduce((a, e) => Math.abs(e.pct) > Math.abs(a) ? e.pct : a, 0),
     guard: '어떤 지표가 그 주에 걸렸는지에 달려 있다. CPI·고용 주와 아닌 주가 크게 다르다.' },
+  { id: 'evmaxwhich', cat: '지표', unit: '', needsEvents: true, kind: 'choice',
+    ko: '지수를 가장 크게 움직인 발표는?', en: 'Which release moved the index most?',
+    fn: (c) => c.events.reduce((a, e) => Math.abs(e.pct) > Math.abs(a.pct) ? e : a).tag,
+    guard: '그 주에 어떤 지표가 걸렸는지, 그리고 시장이 그중 무엇에 반응했는지에 달려 있다. CPI 가 있는 주에도 CPI 가 1위가 아닌 경우가 흔하다 — 2회차가 그랬다(PPI 가 1위, CPI 는 3위).' },
   { id: 'evmin', cat: '지표', unit: '%', needsEvents: true,
     ko: '가장 반응이 없던 지표는 몇 %였을까요?', en: 'Which release moved it least?',
     fn: (c) => c.events.reduce((a, e) => Math.abs(e.pct) < Math.abs(a) ? e.pct : a, c.events[0].pct),
