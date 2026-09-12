@@ -61,7 +61,7 @@ const COPY={
   // 마감은 한국시간으로 쓰면 '9/12 토' 가 되어 헷갈린다. 거래일(미국 날짜)로 적는다.
   ansSub2:`${hiBar.kst.slice(0,-6)} 고점 ${fmt0(hiBar.h)} → ${dw(d1)}요일 마감 ${fmt0(BARS.at(-1).c)}`,
   enAnswer:`Not one of ${BARS.length.toLocaleString('en-US')} bars closed above the open`,
-  summ1:`${DAYN[BARS.length&&DAYS.length]||DAYS.length+'일'} 내내`, summ2:'종가가 시가를 넘지 못했다.',
+  summ1:`${DAYN[DAYS.length]||DAYS.length+'일'} 내내`, summ2:'종가가 시가를 넘지 못했다.',
   enSumm:'Four trading days, and it never closed back above where it opened',
   loopLabel:'시가 위에서 끝난 봉', loopBig:`${aboveN}개`, loopTail:`${BARS.length.toLocaleString('en-US')}개를 다 돌려봐도 하나도 없었다`,
 };

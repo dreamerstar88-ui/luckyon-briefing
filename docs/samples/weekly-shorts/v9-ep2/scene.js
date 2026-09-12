@@ -191,6 +191,12 @@ function openLine(ctx,a=1){
     blocked.push([bx3-8,bx3+BW2+8]);      // 세로 라벨 상자
     blocked.push([x-34,x+34]);            // 사건 커서 링
   }
+  // 주가 곡선이 칩의 세로 대역을 지나가는 구간도 막는다. 이번 회차는 모든 종가가
+  // 시가 아래라 걸리지 않지만, 곡선이 시가선 위로 올라가는 주에는 칩과 겹친다.
+  for(let i=0;i<BARS.length;i++){
+    const yi=Y(BARS[i].c);
+    if(yi>=y-40&&yi<=y){const xi=X(i);blocked.push([xi-6,xi+6]);}
+  }
   let bx2=CX+6, best=-1e9;
   for(let c0=CX+6;c0<=CX+CW-CW_-6;c0+=10){
     let d=1e9;
