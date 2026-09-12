@@ -14,7 +14,7 @@ const KO=[
  ['③ 목 장중 · 기존주택 판매 398만 채','예상도 398만이었다'],
  ['④ 금 장중 · 미시간 소비자심리 47.8','예상은 51이었다'],
  ['시가 위에서 끝난 5분봉은 0개','904개를 다 돌려봐도 하나도 없었다'],
- ['나흘 내내 시가를 되찾지 못했다','몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다'],
+ ['나흘 내내 종가가 시가를 넘지 못했다','몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다'],
 ];
 const EN=[
  ['Nasdaq 100 futures, Tuesday open to Friday close','The week ended -0.88%. The high came in the first five minutes of Tuesday'],

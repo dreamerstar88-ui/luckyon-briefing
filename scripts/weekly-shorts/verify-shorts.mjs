@@ -39,6 +39,7 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/
 let fails = 0, passes = 0;
 const ok = (label, got, want) => { passes++; console.log(`  ✅ ${label}: ${got}`); };
 const bad = (label, got, want) => { fails++; console.log(`  ❌ ${label}: 매니페스트 ${want} · 재계산 ${got}`); };
+const warn = (label, msg) => { console.log(`  ⚠ ${label}: ${msg}`); };
 const cmp = (label, got, want, tol = 0) => {
   const same = typeof want === 'number' ? Math.abs(got - want) <= tol : String(got) === String(want);
   // 오차 범위로 통과했는데 값이 다르면 그 사실을 숨기지 않는다.
@@ -112,9 +113,44 @@ if (M.question) {
     // 나왔다"(미국 정규장 = 한국 밤이라 정의상 참)를 발견인 양 쓸 뻔했다.
     if (M.question.guard && M.question.guard.length > 20) ok('질문 자명성 근거', '적혀 있음');
     else bad('질문 자명성 근거', '없음', '이 질문의 답이 미리 정해져 있지 않은 이유');
+    // guard 에 적은 분포 수치가 맞는지는 문자열 길이로는 알 수 없다. 과거 봉을 주면 다시 센다.
+    const histIdx = argv.indexOf('--hist');
+    if (M.question.dist && histIdx >= 0) {
+      const D = M.question.dist;
+      const HB = JSON.parse(fs.readFileSync(argv[histIdx + 1], 'utf8'));
+      const wk = new Map();
+      for (const b0 of HB) {
+        const dd = new Date(b0.d.slice(0, 10) + 'T00:00:00Z'), dw = dd.getUTCDay();
+        if (dw === 0 || dw === 6) continue;
+        const mo = new Date(dd); mo.setUTCDate(dd.getUTCDate() - (dw - 1));
+        const k = mo.toISOString().slice(0, 10);
+        if (!wk.has(k)) wk.set(k, []); wk.get(k).push(b0);
+      }
+      const RQ = QUESTIONS.find((q) => q.id === (D.ref_id || M.question.id));
+      const vs = [...wk.values()].filter((v) => v.length >= 40).map((v) => RQ.fn(buildCtx(v, []))).sort((x, y) => x - y);
+      const qq = (p) => vs[Math.floor(vs.length * p)];
+      cmp('분포 표본 수', vs.length, D.n);
+      cmp('분포 중앙값', +qq(0.5).toFixed(1), D.median, 0.2);
+      cmp('분포 10%', +qq(0.1).toFixed(1), D.p10, 0.2);
+      cmp('분포 90%', +qq(0.9).toFixed(1), D.p90, 0.2);
+      if (D.zero_weeks !== undefined) cmp('0 인 주 수', vs.filter((v) => v === 0).length, D.zero_weeks);
+    } else if (M.question.dist) {
+      warn('분포 주장 재계산', '--hist <시간봉json> 을 주면 다시 센다');
+    }
   }
 } else if (Math.abs(answerNum - M.numbers.mdd_pct) <= 0.1) ok('퀴즈 정답 보기', `${answer} ≈ ${M.numbers.mdd_pct}%`);
 else bad('퀴즈 정답 보기', `${answer}`, `${M.numbers.mdd_pct}% 에 가장 가까운 보기`);
+
+// 영어 줄은 26px 까지 줄여도 가로 968px 안에 들어와야 한다. 넘치면 말없이 잘린다.
+// 2회차에서 88자짜리 훅이 "…above the ope…" 로 잘린 채 표지에까지 들어갔다.
+// 글자 폭을 여기서 정확히 잴 수는 없으니 글자 수로 막는다(26px 기준 약 74자가 한계).
+const EN_MAX = 72;
+console.log(`\n[2-2] 영어 줄 길이(최대 ${EN_MAX}자)`);
+for (const e of M.events) {
+  if (!e.en) continue;
+  if (e.en.length <= EN_MAX) ok(`사건${e.n} 영어 줄`, `${e.en.length}자`);
+  else bad(`사건${e.n} 영어 줄`, `${e.en.length}자`, `${EN_MAX}자 이하`);
+}
 
 // ── 3. 사건별 등락률·순위를 독립 재계산 ──────────────────────────────────────
 console.log(`\n[3] 사건별 반응 재계산`);

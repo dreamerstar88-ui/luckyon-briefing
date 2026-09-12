@@ -178,9 +178,27 @@ function openLine(ctx,a=1){
   ctx.save();ctx.globalAlpha*=a;
   ctx.strokeStyle='#9aa6b8';ctx.lineWidth=2.5;ctx.setLineDash([10,8]);
   ctx.beginPath();ctx.moveTo(CX,y);ctx.lineTo(CX+CW,y);ctx.stroke();ctx.setLineDash([]);
-  // 라벨은 왼쪽 끝에 둔다. 오른쪽은 마지막 사건 세로 라벨과 겹친다.
-  ctx.fillStyle='rgba(10,14,22,.85)';rr(ctx,CX+6,y-36,186,32,6);ctx.fill();
-  txt(ctx,'시가 '+fmt(BARS[0].o),CX+16,y-13,'700 24px PD','#c8d0dc');
+  // 라벨 자리는 사건 커서와 세로 라벨 상자를 둘 다 피해서 고른다.
+  // 왼쪽 끝에 두었더니 첫 사건 커서가 1.8초 내내 '시가' 두 글자를 덮었고,
+  // 사건 x 만 피했더니 이번엔 마지막 사건의 세로 라벨 상자와 겹쳤다.
+  // 그래서 상자의 실제 x 구간을 그대로 구해 놓고, 그 어느 것과도 안 겹치는 자리를 찾는다.
+  const CW_=186;
+  const blocked=[];
+  for(const ev of EVENTS){
+    const x=X(ev.i);
+    const BW2=14*2+26, right=x+16, left=x-16-BW2;
+    const bx3=(right+BW2<CX+CW-40)?right:left;
+    blocked.push([bx3-8,bx3+BW2+8]);      // 세로 라벨 상자
+    blocked.push([x-34,x+34]);            // 사건 커서 링
+  }
+  let bx2=CX+6, best=-1e9;
+  for(let c0=CX+6;c0<=CX+CW-CW_-6;c0+=10){
+    let d=1e9;
+    for(const [a0,b0] of blocked) d=Math.min(d, (c0>b0)?c0-b0 : (c0+CW_<a0)?a0-(c0+CW_) : -1);
+    if(d>best){best=d;bx2=c0;}
+  }
+  ctx.fillStyle='rgba(10,14,22,.85)';rr(ctx,bx2,y-36,CW_,32,6);ctx.fill();
+  txt(ctx,'시가 '+fmt(BARS[0].o),bx2+10,y-13,'700 24px PD','#c8d0dc');
   ctx.restore();
 }
 function polyline(ctx,upto){
@@ -378,8 +396,11 @@ function drawSumm(ctx,t){
       shadow(g,true);
       txt(g,'결과는',56,362,'700 84px PD',C.muted);
       numT(g,pct(STATS.weekPct),44,552,'900 250px PD',STATS.weekPct>=0?C.up:C.down,'left','-.06em');
-      txt(g,COPY.loopLabel,56,700,'700 84px PD',C.muted);
-      numT(g,COPY.loopBig,44,890,'900 250px PD',C.down,'left','-.06em');
+      // 이 자리는 원래 "-2.17%" 같은 숫자만 들어오던 곳이라 250px 이었다. 한글이 섞이면
+      // 글리프가 숫자보다 높아 위 라벨을 뚫는다. 내용을 보고 크기를 정한다.
+      const lbig=/[가-힣]/.test(COPY.loopBig)?170:250;
+      txt(g,COPY.loopLabel,56,690,'700 76px PD',C.muted);
+      numT(g,COPY.loopBig,44,890,`900 ${lbig}px PD`,C.down,'left','-.06em');
       shadow(g,false);
       txt(g,COPY.loopTail,60,1000,'700 56px PD',C.text);
       window.__loopC=lc;

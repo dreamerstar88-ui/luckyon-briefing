@@ -174,6 +174,10 @@ export const QUESTIONS = [
     guard: '결과가 같아도 과정이 다르다. 내내 위에 있다 끝에 무너진 주와 내내 아래였던 주가 구분된다.' },
 
   // ── D. 연속성 ────────────────────────────────────────────────────
+  { id: 'aboveopencount', cat: '모양', unit: '개',
+    ko: '시가 위에서 끝난 5분봉은 몇 개였을까요?', en: 'How many 5-minute bars closed above the opening price?',
+    fn: (c) => c.bars.filter((b) => b.c >= c.open).length, kind: 'count',
+    guard: 'aboveopen 과 같은 사실을 개수로 묻는다. 화면이 "개" 로 말하면 이쪽을 쓴다 — 매니페스트 단위와 은행 단위가 어긋나면 검증이 헛돈다.' },
   { id: 'upstreak', cat: '연속', unit: '개',
     ko: '가장 길게 연속으로 오른 5분봉은 몇 개였을까요?', en: 'What was the longest streak of rising 5-minute bars?',
     fn: (c) => { let b = 0, n = 0; for (const x of c.chg) { if (x.p > 0) { n++; b = Math.max(b, n); } else n = 0; } return b; }, kind: 'count',

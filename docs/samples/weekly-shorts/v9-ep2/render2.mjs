@@ -41,6 +41,7 @@ const d0=BARS[0].d.slice(0,10), d1=BARS[BARS.length-1].d.slice(0,10);
 const DOW='일월화수목금토';
 const EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const fmt0=n=>Math.round(n).toLocaleString('en-US');
+const DAYN={1:'하루',2:'이틀',3:'사흘',4:'나흘',5:'닷새'};
 const dw=s=>DOW[new Date(s+'T00:00:00Z').getUTCDay()];
 // ── 이번 회차 질문: "시가 위에서 끝난 봉이 있었나"
 // 고르는 근거는 scripts/weekly-shorts/pick-question.mjs 의 특이도 순위다.
@@ -52,15 +53,15 @@ const hiBar=BARS.reduce((a,b)=>b.h>a.h?b:a,BARS[0]);
 const COPY={
   kicker:`지난주 나스닥 · ${dw(d0)} 개장 ~ ${dw(d1)} 마감`,
   span:`${dw(d0)}요일 개장 → ${dw(d1)}요일 마감`,
-  q1:`고점은 ${hiBar.kst.slice(-8,-6)==='  '?'':''}${dw(hiBar.d.slice(0,10))}요일 개장 첫 5분이었습니다.`,
+  q1:`고점은 ${dw(hiBar.d.slice(0,10))}요일 개장 첫 5분이었습니다.`,
   q2:'시가 위에서 끝난 5분봉은?',
-  enHook:`Nasdaq 100 futures, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} open to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]} close. How many bars closed above the opening price?`,
+  enHook:`Nasdaq 100, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]}. How many bars closed above the open?`,
   ansBig:`${aboveN}개`,
   ansSub1:`5분봉 ${BARS.length.toLocaleString('en-US')}개 중 하나도 없었다`,
   // 마감은 한국시간으로 쓰면 '9/12 토' 가 되어 헷갈린다. 거래일(미국 날짜)로 적는다.
   ansSub2:`${hiBar.kst.slice(0,-6)} 고점 ${fmt0(hiBar.h)} → ${dw(d1)}요일 마감 ${fmt0(BARS.at(-1).c)}`,
-  enAnswer:`Not one of ${BARS.length.toLocaleString('en-US')} bars closed above the opening price`,
-  summ1:'나흘 내내', summ2:'시가를 되찾지 못했다.',
+  enAnswer:`Not one of ${BARS.length.toLocaleString('en-US')} bars closed above the open`,
+  summ1:`${DAYN[BARS.length&&DAYS.length]||DAYS.length+'일'} 내내`, summ2:'종가가 시가를 넘지 못했다.',
   enSumm:'Four trading days, and it never closed back above where it opened',
   loopLabel:'시가 위에서 끝난 봉', loopBig:`${aboveN}개`, loopTail:`${BARS.length.toLocaleString('en-US')}개를 다 돌려봐도 하나도 없었다`,
 };
