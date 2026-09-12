@@ -313,8 +313,19 @@ if (srtDir) {
   console.log(`\n[8] 자막 구간 대조`);
   const idxOf = (et) => BARS.findIndex((b) => b.d === et);
   const N = BARS.length - 1;
+  // 사건이 화면에 머무는 시간을 고르게 맞추느라 정지 시간이 사건마다 다르다.
+  // 그 배분은 매니페스트 video.holds 가 갖고 있다(mkmanifest 가 정한다).
+  const HS = M.video.holds || M.events.map(() => M.video.hold);
+  cmp('정지 시간 합계', +HS.reduce((a2, b2) => a2 + b2, 0).toFixed(2), +(M.video.hold * M.events.length).toFixed(2), 0.02);
+  if (HS.some((h) => h < 0.6)) bad('정지 시간 바닥', Math.min(...HS), '0.6초 이상');
+  else ok('정지 시간 바닥', `${Math.min(...HS).toFixed(2)}초`);
   const holds = []; let prev = 0, t = 0;
-  for (const e of M.events) { const i = idxOf(e.et); t += (i - prev) / N * drawT; holds.push(S.replay[0] + t); t += M.video.hold; prev = i; }
+  M.events.forEach((e, k) => { const i = idxOf(e.et); t += (i - prev) / N * drawT; holds.push(S.replay[0] + t); t += HS[k]; prev = i; });
+  // 사건 하나가 화면에 머무는 시간이 너무 짧으면 두 줄을 못 읽는다
+  const shown = holds.map((h, k) => (k < holds.length - 1 ? holds[k + 1] : S.replay[1]) - h);
+  const minShown = Math.min(...shown);
+  if (minShown >= 2.4) ok('사건 노출 최소', `${minShown.toFixed(2)}초`);
+  else bad('사건 노출 최소', `${minShown.toFixed(2)}초`, '2.4초 이상');
   const want = [S.hook[0], S.hook[1], ...holds.slice(1), S.answer[0], S.summ[0], S.summ[1]];
   for (const f of fs.readdirSync(srtDir).filter((f) => f.endsWith('.srt'))) {
     const body = fs.readFileSync(path.join(srtDir, f), 'utf8');

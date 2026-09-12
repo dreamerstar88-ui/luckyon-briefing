@@ -11,8 +11,12 @@ if(IDX.some(i=>i<0)){console.error('사건 인덱스를 못 찾았다',IDX);proc
 const N=B.length-1;
 const HOLD=Math.min(1.8,9.0/IDX.length);
 const drawT=(REPLAY[1]-REPLAY[0])-HOLD*IDX.length;
+// 배분은 매니페스트가 갖고 있다. 공식을 두 곳에 두면 갈라진다.
+const M=JSON.parse(fs.readFileSync('/home/user/luckyon-briefing/content/weekly-shorts/2026-09-08.json','utf8'));
+const HS=M.video.holds;
+if(HS.length!==IDX.length){console.error('정지 시간 개수가 사건 수와 다르다');process.exit(1);}
 const holds=[]; let prev=0,t=0;
-for(const i of IDX){ t+=(i-prev)/N*drawT; holds.push(REPLAY[0]+t); t+=HOLD; prev=i; }
+IDX.forEach((i,k)=>{ t+=(i-prev)/N*drawT; holds.push(REPLAY[0]+t); t+=HS[k]; prev=i; });
 const cuts=[HOOK[0],HOOK[1],...holds.slice(1),ANSWER[0],SUMM[0],SUMM[1]];
 const KO=[
  ['지난주 나스닥, 화요일 개장 ~ 금요일 마감','결과는 -0.88%. 지표 발표는 여섯 번 있었다'],
@@ -42,5 +46,6 @@ const ts=s=>{const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
 const build=L=>L.map((l,k)=>`${k+1}\n${ts(cuts[k])} --> ${ts(cuts[k+1])}\n${l.join('\n')}\n`).join('\n');
 fs.writeFileSync(`${SP}/luckyon-nasdaq-week2.ko.srt`,build(KO));
 fs.writeFileSync(`${SP}/luckyon-nasdaq-week2.en.srt`,build(EN));
-console.log(`사건 ${IDX.length}개 · 정지 ${HOLD.toFixed(2)}초 · 그리기 ${drawT.toFixed(2)}초`);
+console.log(`사건 ${IDX.length}개 · 정지 ${HS.map(h=>h.toFixed(2)).join('/')} · 그리기 ${drawT.toFixed(2)}초`);
+console.log('구간 길이(초):',cuts.slice(1).map((c,i)=>(c-cuts[i]).toFixed(2)).join(' / '));
 console.log('구간 경계(초):',cuts.map(x=>x.toFixed(2)).join(' → '));

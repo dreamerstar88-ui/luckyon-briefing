@@ -62,13 +62,32 @@ function buildSchedule(){
   // 사건 수는 주마다 다르다(휴장일). 멈춰 서는 총 시간을 7.2초로 두고 건수로 나눈다.
   const HOLD=Math.min(1.8,9.0/Math.max(1,EVENTS.length)), total=REPLAY[1]-REPLAY[0];
   const drawT=total-HOLD*EVENTS.length;
+  // 사건 하나가 화면에 머무는 시간 = 그 사건의 정지 시간 + 다음 사건까지 그리는 시간.
+  // 정지 시간을 똑같이 주면 이 값이 크게 벌어진다. 같은 날 08:30·10:00 처럼 붙은 쌍은
+  // 앞 사건이 1.7초, 멀리 떨어진 사건은 5.3초가 된다. 하필 붙은 쌍의 앞이 이번 회차 정답이었다.
+  // 그래서 정지 시간을 "머무는 시간이 고르게" 되도록 나눠 준다. 바닥은 0.6초.
+  const N1=BARS.length-1;
+  const gap=EVENTS.map((e,k)=>((k<EVENTS.length-1?EVENTS[k+1].i:N1)-e.i)/N1*drawT);
+  const budget=HOLD*EVENTS.length;
+  const V=(budget+gap.reduce((a,b)=>a+b,0))/EVENTS.length;
+  let holds=gap.map(g=>Math.max(0.6,V-g));
+  // 바닥에 걸려 예산을 넘으면 여유 있는 쪽에서 비례해 깎는다
+  for(let pass=0;pass<8;pass++){
+    const over=holds.reduce((a,b)=>a+b,0)-budget;
+    if(Math.abs(over)<0.01)break;
+    const slack=holds.map(h=>Math.max(0,h-0.6));
+    const tot=slack.reduce((a,b)=>a+b,0);
+    if(over>0&&tot>0)holds=holds.map((h,k)=>h-over*slack[k]/tot);
+    else if(over<0)holds=holds.map(h=>h-over/holds.length);
+    else break;
+  }
   const segs=[];let prev=0,t=0;
-  for(const ev of EVENTS){
+  EVENTS.forEach((ev,k)=>{
     const d=(ev.i-prev)/(BARS.length-1)*drawT;
     segs.push({t0:t,t1:t+d,i0:prev,i1:ev.i,hold:false});t+=d;
-    segs.push({t0:t,t1:t+HOLD,i0:ev.i,i1:ev.i,hold:true});t+=HOLD;
+    segs.push({t0:t,t1:t+holds[k],i0:ev.i,i1:ev.i,hold:true});t+=holds[k];
     prev=ev.i;
-  }
+  });
   const n=(BARS.length-1)-prev;
   segs.push({t0:t,t1:t+n/(BARS.length-1)*drawT,i0:prev,i1:BARS.length-1,hold:false});
   SCHED=segs;
@@ -127,20 +146,48 @@ function dayShade(ctx){
 // 가까이 붙은 사건은 위아래로 엇갈리게 놓는다.
 // 같은 날 08:30 과 10:00 은 5분봉으로 18칸, 화면에서는 19px 밖에 안 떨어져 있어
 // 배지도 라벨 상자도 그대로 겹친다. 사건이 6개가 되면서 두 쌍이 그렇게 됐다.
+const MINX=90, LH_=31, PADX_=14, PADY_=12, BW_=PADX_*2+26;
+// 라벨 상자 하나의 x 범위와 높이. side 가 -1 이면 세로선 왼쪽, +1 이면 오른쪽.
+function boxOf(ev,side){
+  const x=X(ev.i), h=vtextH(ev.tag,LH_), box=h+PADY_*2;
+  const right=x+16, left=x-16-BW_;
+  let bx = side<0 ? left : right;
+  // 그림 영역 안에만 있으면 된다. 예전 한계(CX+CW-40)가 너무 빡빡해서, 오른쪽 끝 사건의
+  // 상자가 왼쪽으로 튕기며 짝꿍 상자와 같은 자리에 겹쳤다.
+  if(bx+BW_>CX+CW-4)bx=left;
+  if(bx<CX+4)bx=right;
+  return {bx,box};
+}
+// 그 상자를 위/아래에 뒀을 때 주가 선과 얼마나 떨어지는가 (음수면 선이 상자를 지난다)
+function clearOf(ev,top,side){
+  const {bx,box}=boxOf(ev,side);
+  let hi=1e9,lo=-1e9;
+  for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW_+4)continue;
+    const yj=Y(BARS[j].c);if(yj<hi)hi=yj;if(yj>lo)lo=yj;}
+  if(hi>lo)hi=lo=Y(BARS[ev.i].c);
+  return top ? hi-(CY+14+box) : (CY+CH-box-14)-lo;
+}
 function eventSlots(){
-  const MINX=90, slot=[];
+  const pair=[],place=[],side=[];
   for(let k=0;k<EVENTS.length;k++){
-    const near = k>0 && (X(EVENTS[k].i)-X(EVENTS[k-1].i))<MINX;
-    slot.push(near ? 1-slot[k-1] : 0);
+    const prevNear = k>0 && (X(EVENTS[k].i)-X(EVENTS[k-1].i))<MINX;
+    const nextNear = k<EVENTS.length-1 && (X(EVENTS[k+1].i)-X(EVENTS[k].i))<MINX;
+    pair.push(prevNear||nextNear);
+    // 붙은 쌍은 좌우로 갈라 놓는다. 같은 쪽에 두면 19px 간격에서 상자끼리 겹치고,
+    // 위아래로만 나누면 한쪽이 반드시 주가 선을 물게 된다.
+    side.push(prevNear ? 1 : (nextNear ? -1 : 1));
+    place.push(true);
   }
-  return slot;
+  // 자리는 각자 선에서 먼 쪽으로 (§5-4). 좌우가 갈렸으니 위아래는 서로 눈치 볼 필요가 없다.
+  for(let k=0;k<EVENTS.length;k++)
+    place[k]=clearOf(EVENTS[k],true,side[k])>=clearOf(EVENTS[k],false,side[k]);
+  return {pair,place,side};
 }
 function eventLines(ctx,upto,mode){
   ctx.save();
   // 바깥에서 준 투명도를 덮어쓰면 요약이 사라져도 배지·라벨만 남아 루프 카드 위에 얹힌다.
   const A=ctx.globalAlpha;
-  const SLOT=eventSlots();
-  const crowded=SLOT.some(v=>v===1);
+  const {pair:PAIR,place:PLACE,side:SIDE}=eventSlots();
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
@@ -151,34 +198,23 @@ function eventLines(ctx,upto,mode){
       continue;
     }
     // 번호 배지
-    const by0=CY-20-SLOT[k]*46;
+    const by0=CY-20-(PAIR[k]&&SIDE[k]<0?46:0);
     ctx.globalAlpha=A;ctx.fillStyle=ev.col;
     ctx.beginPath();ctx.arc(x,by0,17,0,7);ctx.fill();
-    if(SLOT[k]){ctx.strokeStyle=ev.col;ctx.lineWidth=2;ctx.globalAlpha=A*.5;
+    if(PAIR[k]&&SIDE[k]<0){ctx.strokeStyle=ev.col;ctx.lineWidth=2;ctx.globalAlpha=A*.5;
       ctx.beginPath();ctx.moveTo(x,by0+17);ctx.lineTo(x,CY);ctx.stroke();ctx.globalAlpha=A;}
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(String(k+1),x,by0+1);ctx.restore();
     // 세로 글씨 (주가 선 아래에 깐다 — polyline 보다 먼저 그린다)
     const LH=31, PADX=14, PADY=12, BW=PADX*2+26;
     const h=vtextH(ev.tag,LH);
-    const right=x+16, left=x-16-BW;
-    const bx=(right+BW<CX+CW-40)?right:left;
+    const bx=boxOf(ev,SIDE[k]).bx;
     // 선이 라벨을 덮어 글자가 안 보이던 자리를 피한다. 상자가 덮는 x 구간에서 선의
     // 가장 높은 점과 가장 낮은 점을 보고, 위아래 중 여유가 큰 쪽에 세운다.
     // 사건 봉의 종가 한 점만 보면 바로 뒤 스파이크가 상자를 뚫고 지나간다.
     // 자리는 전체 봉 기준으로 한 번 정한다 — 그래야 선이 다가와도 상자가 안 움직인다.
     const box=h+PADY*2;
-    let by;
-    if(crowded){
-      // 붙어 있는 쌍은 선을 피하는 것보다 서로 안 겹치는 게 먼저다. 위아래로 나눈다.
-      by = SLOT[k] ? CY+CH-box-14 : CY+14;
-    }else{
-      let top=1e9,bot=-1e9;
-      for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW+4)continue;
-        const yj=Y(BARS[j].c);if(yj<top)top=yj;if(yj>bot)bot=yj;}
-      if(top>bot){top=bot=Y(BARS[ev.i].c);}
-      by=((top-CY) >= (CY+CH-bot)) ? CY+14 : CY+CH-box-14;
-    }
+    const by = PLACE[k] ? CY+14 : CY+CH-box-14;
     ctx.globalAlpha=A;ctx.fillStyle='rgba(0,0,0,.86)';
     rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
     ctx.strokeStyle=ev.col;ctx.globalAlpha=A*.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
