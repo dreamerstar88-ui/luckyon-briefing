@@ -126,17 +126,19 @@ function dayShade(ctx){
 // ── 지나간 사건은 그래프에 세로선으로 남긴다
 function eventLines(ctx,upto,mode){
   ctx.save();
+  // 바깥에서 준 투명도를 덮어쓰면 요약이 사라져도 배지·라벨만 남아 루프 카드 위에 얹힌다.
+  const A=ctx.globalAlpha;
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
     const x=X(ev.i);
     if(mode==='lines'){
-      ctx.globalAlpha=.55;ctx.strokeStyle=ev.col;ctx.lineWidth=2.5;ctx.setLineDash([7,7]);
+      ctx.globalAlpha=A*.55;ctx.strokeStyle=ev.col;ctx.lineWidth=2.5;ctx.setLineDash([7,7]);
       ctx.beginPath();ctx.moveTo(x,CY);ctx.lineTo(x,CY+CH);ctx.stroke();ctx.setLineDash([]);
       continue;
     }
     // 번호 배지
-    ctx.globalAlpha=1;ctx.fillStyle=ev.col;
+    ctx.globalAlpha=A;ctx.fillStyle=ev.col;
     ctx.beginPath();ctx.arc(x,CY-20,17,0,7);ctx.fill();
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(String(k+1),x,CY-19);ctx.restore();
@@ -145,14 +147,20 @@ function eventLines(ctx,upto,mode){
     const h=vtextH(ev.tag,LH);
     const right=x+16, left=x-16-BW;
     const bx=(right+BW<CX+CW-40)?right:left;
-    // 선이 라벨을 덮어 글자가 안 보이던 자리를 피한다. 선 위쪽 여백과 아래쪽 여백을
-    // 견줘 넓은 쪽에 상자를 세운다. 선을 라벨 위로 그리는 순서는 그대로 둔다.
-    const ly=Y(BARS[ev.i].c), box=h+PADY*2;
-    const by=(ly-CY >= CY+CH-ly) ? CY+14 : CY+CH-box-14;
-    ctx.globalAlpha=1;ctx.fillStyle='rgba(0,0,0,.86)';
+    // 선이 라벨을 덮어 글자가 안 보이던 자리를 피한다. 상자가 덮는 x 구간에서 선의
+    // 가장 높은 점과 가장 낮은 점을 보고, 위아래 중 여유가 큰 쪽에 세운다.
+    // 사건 봉의 종가 한 점만 보면 바로 뒤 스파이크가 상자를 뚫고 지나간다.
+    // 자리는 전체 봉 기준으로 한 번 정한다 — 그래야 선이 다가와도 상자가 안 움직인다.
+    const box=h+PADY*2;
+    let top=1e9,bot=-1e9;
+    for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW+4)continue;
+      const yj=Y(BARS[j].c);if(yj<top)top=yj;if(yj>bot)bot=yj;}
+    if(top>bot){top=bot=Y(BARS[ev.i].c);}
+    const by=((top-CY) >= (CY+CH-bot)) ? CY+14 : CY+CH-box-14;
+    ctx.globalAlpha=A;ctx.fillStyle='rgba(0,0,0,.86)';
     rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
-    ctx.strokeStyle=ev.col;ctx.globalAlpha=.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
-    ctx.globalAlpha=1;
+    ctx.strokeStyle=ev.col;ctx.globalAlpha=A*.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
+    ctx.globalAlpha=A;
     vtext(ctx,ev.tag,bx+PADX+13,by+PADY+LH/2,'700 26px PD',ev.col,LH);
   }
   ctx.restore();
@@ -161,7 +169,7 @@ function dayAxis(ctx){
   ctx.save();
   const wSeg=CW/DAYS.length;
   DAYS.forEach((d,i)=>numT(ctx,d.slice(5).replace('-','/')+' '+dowOf(d),CX+wSeg*(i+.5),CY+CH+62,'700 32px PD',C.muted,'center'));
-  txt(ctx,'밝은 구간 = 미국 정규장(한국시간 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 30px PD',C.dim);
+  txt(ctx,'가로축은 미국 날짜 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
   ctx.restore();
 }
 function polyline(ctx,upto){
@@ -178,7 +186,8 @@ function polyline(ctx,upto){
 const BAND_MAXW=968;   // 56 ~ 1024. 구분선과 같은 폭 안에 반드시 들어와야 한다.
 function enBand(ctx,line,a=1,y=1524,rule=true){
   if(!line)return;
-  ctx.save();ctx.globalAlpha=a;
+  // 바깥 투명도를 덮어쓰면 요약이 사라진 뒤에도 이 띠만 남는다. 곱해서 같이 사라지게 한다.
+  ctx.save();ctx.globalAlpha*=a;
   if(rule){ctx.strokeStyle='rgba(255,255,255,.14)';ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(56,y-56);ctx.lineTo(1024,y-56);ctx.stroke();}
   // 영어 문장은 회차마다 길이가 다르다. 넘치면 글자를 줄여 안으로 넣는다.
@@ -202,7 +211,11 @@ function drawHook(ctx,t){
   const p=easeOut(seg(t,hs(.10),hs(1.00)));
   shadow(ctx,true);
   txt(ctx,'결과는',56,362,'700 84px PD',C.muted);
-  numT(ctx,pct(STATS.weekPct*p),44,552,'900 250px PD',C.up,'left','-.06em');
+  // 색과 부호는 최종값의 방향을 따른다. 예전에는 색이 C.up 으로 박혀 있어 하락 주에도
+  // 훅만 초록이었고, 카운트업 첫 프레임(-0)이 '+0.00%' 로 찍혀 표지에 걸렸다.
+  const wsign=STATS.weekPct>=0?'+':'-';
+  numT(ctx,wsign+Math.abs(STATS.weekPct*p).toFixed(2)+'%',44,552,'900 250px PD',
+       STATS.weekPct>=0?C.up:C.down,'left','-.06em');
   shadow(ctx,false);
   const q=seg(t,hs(1.05),hs(1.50));
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
@@ -299,7 +312,10 @@ function drawAnswer(ctx,t){
     numT(ctx,`고점 ${fmt(BARS[STATS.peakIdx].h)} → 저점 ${fmt(BARS[STATS.troughIdx].l)}`,60,436,'700 54px PD',C.text);
     // 걸린 시간은 봉 간격에서 계산한다. "하루 반" 같은 어림말을 손으로 적으면
     // 회차가 바뀌어도 그대로 남고, 1회차에서 실제 29시간을 36시간으로 부풀린 적이 있다.
-    const mins=(STATS.troughIdx-STATS.peakIdx)*5;
+    // 봉 개수로 세면 선물 정비시간(미 동부 17~18시) 공백만큼 짧게 나온다. 시각 차이로 잰다.
+    const tp=Date.parse(BARS[STATS.peakIdx].d.replace(' ','T')+'Z');
+    const tt=Date.parse(BARS[STATS.troughIdx].d.replace(' ','T')+'Z');
+    const mins=Math.round((tt-tp)/60000);
     const span=mins<60?`${mins}분`:(mins<1440?`${(mins/60).toFixed(1)}시간`:`${(mins/1440).toFixed(1)}일`);
     txt(ctx,`${BARS[STATS.peakIdx].kst.slice(0,-6)} → ${BARS[STATS.troughIdx].kst.slice(0,-6)}, ${span} 만에`,
         60,512,'700 44px PD',C.muted);
@@ -329,9 +345,9 @@ function drawSumm(ctx,t){
   const fadeOut=seg(t,SUMM[1]-1.2,SUMM[1]-0.7);   // 요약이 빠지는 구간
   const out=seg(t,SUMM[1]-0.7,SUMM[1]-0.1);       // 루프 카드가 들어오는 구간
   ctx.save();ctx.globalAlpha=1-fadeOut;
-  txt(ctx,'이번 주 바닥도, 꼭대기도',60,206,'900 52px PD',C.text);
-  txt(ctx,'한국 저녁에 나왔다.',60,278,'900 52px PD',C.hi);
-  enBand(ctx,"The week's low and high both landed in Korean evening hours",1,344,false);
+  txt(ctx,COPY.summ1,60,206,'900 52px PD',C.text);
+  txt(ctx,COPY.summ2,60,278,'900 52px PD',C.hi);
+  enBand(ctx,COPY.enSumm,1,344,false);
   let lo=1e9,li=0,hi2=-1e9,hi_i=0;
   BARS.forEach((b,i)=>{if(b.l<lo){lo=b.l;li=i;}if(b.h>hi2){hi2=b.h;hi_i=i;}});
   const rows=[[`주간 최저 · ${BARS[li].kst.slice(0,-6)}`,fmt(lo),C.down],

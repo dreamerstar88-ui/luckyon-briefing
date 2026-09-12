@@ -24,8 +24,8 @@ console.log(`봉 ${BARS.length} · 주간 ${STATS.weekPct.toFixed(2)}% · 최대
 const C={down:'#ff4d4d',up:'#3ddc84',hi:'#ffe14d'};
 // 사건 선정: ① 거래일마다 1개 ② TE 중요도 높은 순 ③ 동률이면 장중 우선, 다음 등락률
 const EVENTS=[
- {i:idxOf('2026-09-08 13:00'),when:'화 장중 · 한국 새벽 2시',l1:'3년물 국채 입찰 4.474%.',l2:'직전은 4.291%였다.',tag:'국채입찰',
-  en:'3-year Treasury auction yield 4.474%, up from 4.291%',col:C.hi,why:'★ · 그날 최고등급 · 장중 · +0.19% 13위'},
+ {i:idxOf('2026-09-08 13:00'),when:'화 장중 · 한국 수 새벽 2시',l1:'3년물 국채 입찰 4.474%.',l2:'직전은 4.291%였다.',tag:'국채입찰',
+  en:'3-year Treasury auction yield 4.474%, up from 4.291%',col:C.up,why:'★ · 그날 최고등급 · 장중 · +0.19% 13위'},
  {i:idxOf('2026-09-09 08:15'),when:'수 프리장 · 한국 밤 9시 15분',l1:'ADP 주간 고용 1.2만 명.',l2:'직전은 1.0만이었다.',tag:'고용지표',
   en:'ADP weekly employment change 12K, up from 10K',col:C.hi,why:'★★ · 그날 최고등급 · 장중 없음 · +0.02% 477위'},
  {i:idxOf('2026-09-10 10:00'),when:'목 장중 · 한국 밤 11시',l1:'기존주택 판매 398만 채.',l2:'예상도 398만이었다.',tag:'주택지표',
@@ -44,8 +44,22 @@ const COPY={
   kicker:`지난주 나스닥 · ${dw(d0)} 개장 ~ ${dw(d1)} 마감`,
   span:`${dw(d0)}요일 개장 → ${dw(d1)}요일 마감`,
   enHook:`Nasdaq 100 futures, ${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(d0+'T00:00:00Z').getUTCDay()]} open to ${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(d1+'T00:00:00Z').getUTCDay()]} close. How deep was the drawdown?`,
-  summ1:'이번 주 바닥도, 꼭대기도', summ2:'한국 저녁에 나왔다.',
-  enSumm:"The week's low and high both landed in Korean evening hours",
+  ...(()=>{
+    // 고점·저점이 한국시간으로 어느 때였는지 직접 재서 문구를 만든다.
+    // 예전에는 '한국 저녁에 나왔다' 가 박혀 있었는데, 실제로는 밤 9시 55분과 밤 10시 30분이라
+    // 같은 화면 아래 범례("한국 밤 10:30~새벽 5:00")와 어긋났다.
+    let lo=1e9,li=0,hi2=-1e9,hi_i=0;
+    BARS.forEach((b,i)=>{if(b.l<lo){lo=b.l;li=i;}if(b.h>hi2){hi2=b.h;hi_i=i;}});
+    const kh=i=>{const d=new Date(BARS[i].d.replace(' ','T')+'Z');d.setUTCHours(d.getUTCHours()+13);return d.getUTCHours();};
+    const ko=h=>h>=18?'밤':(h<6?'새벽':(h<12?'오전':'오후'));
+    const en=h=>h>=18?'night':(h<6?'pre-dawn':(h<12?'morning':'afternoon'));
+    const a=ko(kh(li)),b=ko(kh(hi_i));
+    return a===b
+      ? {summ1:'이번 주 바닥도, 꼭대기도', summ2:`한국 ${a}에 나왔다.`,
+         enSumm:`The week's low and high both landed in Korean ${en(kh(li))} hours`}
+      : {summ1:'이번 주 바닥은 한국 '+a+',', summ2:'꼭대기는 '+b+'이었다.',
+         enSumm:`The week's low came in Korean ${en(kh(li))} hours, the high in the ${en(kh(hi_i))}`};
+  })(),
 };
 // 정답이 늘 ③이면 몇 회차 만에 패턴이 읽힌다. 주차에 따라 자리를 옮긴다.
 const wk=Math.floor((Date.UTC(2026,8,8)-Date.UTC(2026,0,1))/864e5/7);

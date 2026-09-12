@@ -104,6 +104,12 @@ for (const e of M.events) {
   if (!byD.has(e.et)) { bad(`사건${e.n} 봉 존재`, '없음', e.et); continue; }
   cmp(`사건${e.n} 등락률(%)`, +byD.get(e.et).toFixed(3), e.pct, 0.001);
   cmp(`사건${e.n} 순위`, rank.get(e.et), e.rank);
+  // 사건 색은 그 봉의 반응을 따른다 — |등락률| 0.05% 미만이면 노랑(hi), 상승이면 초록(up),
+  // 하락이면 빨강(down). 2회차에서 +0.19% 짜리 사건이 노랑으로 나갈 뻔했는데 검사 항목이
+  // 없어 49건 통과가 그걸 잡지 못했다. 그래서 여기에 넣는다.
+  const p0 = byD.get(e.et);
+  const want = Math.abs(p0) < 0.05 ? 'hi' : (p0 > 0 ? 'up' : 'down');
+  cmp(`사건${e.n} 색`, want, e.color);
 }
 
 // 규칙 검사: 요일당 최소 1개
