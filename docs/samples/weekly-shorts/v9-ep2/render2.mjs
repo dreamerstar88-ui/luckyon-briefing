@@ -39,35 +39,33 @@ if(EVENTS.length!==4){console.error('사건 수가 4가 아니다:',EVENTS.lengt
 // ── 회차 문구와 퀴즈 보기 (코드에 박지 않는다)
 const d0=BARS[0].d.slice(0,10), d1=BARS[BARS.length-1].d.slice(0,10);
 const DOW='일월화수목금토';
+const EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const fmt0=n=>Math.round(n).toLocaleString('en-US');
 const dw=s=>DOW[new Date(s+'T00:00:00Z').getUTCDay()];
+// ── 이번 회차 질문: "시가 위에서 끝난 봉이 있었나"
+// 고르는 근거는 scripts/weekly-shorts/pick-question.mjs 의 특이도 순위다.
+// 과거 100주 중앙값은 69%인데 이번 주는 0%다 — 904개 봉 중 하나도 시가 위에서 끝나지 못했다.
+// 1·2회차처럼 "최대 낙폭"을 되풀이하지 않는다. 낙폭은 정의상 늘 음수라 매주 같은 그림이 된다.
+const openPx=BARS[0].o;
+const aboveN=BARS.filter(b=>b.c>=openPx).length;
+const hiBar=BARS.reduce((a,b)=>b.h>a.h?b:a,BARS[0]);
 const COPY={
   kicker:`지난주 나스닥 · ${dw(d0)} 개장 ~ ${dw(d1)} 마감`,
   span:`${dw(d0)}요일 개장 → ${dw(d1)}요일 마감`,
-  enHook:`Nasdaq 100 futures, ${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(d0+'T00:00:00Z').getUTCDay()]} open to ${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(d1+'T00:00:00Z').getUTCDay()]} close. How deep was the drawdown?`,
-  ...(()=>{
-    // 고점·저점이 한국시간으로 어느 때였는지 직접 재서 문구를 만든다.
-    // 예전에는 '한국 저녁에 나왔다' 가 박혀 있었는데, 실제로는 밤 9시 55분과 밤 10시 30분이라
-    // 같은 화면 아래 범례("한국 밤 10:30~새벽 5:00")와 어긋났다.
-    let lo=1e9,li=0,hi2=-1e9,hi_i=0;
-    BARS.forEach((b,i)=>{if(b.l<lo){lo=b.l;li=i;}if(b.h>hi2){hi2=b.h;hi_i=i;}});
-    const kh=i=>{const d=new Date(BARS[i].d.replace(' ','T')+'Z');d.setUTCHours(d.getUTCHours()+13);return d.getUTCHours();};
-    const ko=h=>h>=18?'밤':(h<6?'새벽':(h<12?'오전':'오후'));
-    const en=h=>h>=18?'night':(h<6?'pre-dawn':(h<12?'morning':'afternoon'));
-    const a=ko(kh(li)),b=ko(kh(hi_i));
-    return a===b
-      ? {summ1:'이번 주 바닥도, 꼭대기도', summ2:`한국 ${a}에 나왔다.`,
-         enSumm:`The week's low and high both landed in Korean ${en(kh(li))} hours`}
-      : {summ1:'이번 주 바닥은 한국 '+a+',', summ2:'꼭대기는 '+b+'이었다.',
-         enSumm:`The week's low came in Korean ${en(kh(li))} hours, the high in the ${en(kh(hi_i))}`};
-  })(),
+  q1:`고점은 ${hiBar.kst.slice(-8,-6)==='  '?'':''}${dw(hiBar.d.slice(0,10))}요일 개장 첫 5분이었습니다.`,
+  q2:'시가 위에서 끝난 5분봉은?',
+  enHook:`Nasdaq 100 futures, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} open to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]} close. How many bars closed above the opening price?`,
+  ansBig:`${aboveN}개`,
+  ansSub1:`5분봉 ${BARS.length.toLocaleString('en-US')}개 중 하나도 없었다`,
+  // 마감은 한국시간으로 쓰면 '9/12 토' 가 되어 헷갈린다. 거래일(미국 날짜)로 적는다.
+  ansSub2:`${hiBar.kst.slice(0,-6)} 고점 ${fmt0(hiBar.h)} → ${dw(d1)}요일 마감 ${fmt0(BARS.at(-1).c)}`,
+  enAnswer:`Not one of ${BARS.length.toLocaleString('en-US')} bars closed above the opening price`,
+  summ1:'나흘 내내', summ2:'시가를 되찾지 못했다.',
+  enSumm:'Four trading days, and it never closed back above where it opened',
+  loopLabel:'시가 위에서 끝난 봉', loopBig:`${aboveN}개`, loopTail:`${BARS.length.toLocaleString('en-US')}개를 다 돌려봐도 하나도 없었다`,
 };
-// 정답이 늘 ③이면 몇 회차 만에 패턴이 읽힌다. 주차에 따라 자리를 옮긴다.
-const wk=Math.floor((Date.UTC(2026,8,8)-Date.UTC(2026,0,1))/864e5/7);
-const ansIdx=wk%3;
-const M=[[1,1.5,2.1],[0.58,1,1.5],[0.42,0.7,1]][ansIdx];
-const r1=v=>(Math.round(v*10)/10).toFixed(1)+'%';
-const QUIZ={ans:ansIdx,opts:M.map((m,k)=>k===ansIdx?r1(STATS.mdd):r1(STATS.mdd*m))};
-console.log('퀴즈',QUIZ.opts.join(' / '),'정답',['①','②','③'][ansIdx]);
+const QUIZ={ans:0,opts:['0개','87개','240개']};
+console.log(`질문: 시가 ${fmt0(openPx)} 위에서 끝난 봉 = ${aboveN}개 / ${BARS.length}개`);
 
 const b64=p=>fs.readFileSync(p).toString('base64');
 const photo='data:image/jpeg;base64,'+b64(`${R}/data/card-photos/2026-08-28-pm/card3.jpg`);

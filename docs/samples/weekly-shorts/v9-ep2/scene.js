@@ -172,6 +172,17 @@ function dayAxis(ctx){
   txt(ctx,'가로축은 미국 날짜 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
   ctx.restore();
 }
+// ── 주간 시가 기준선. 이번 회차의 질문이 "시가를 되찾았나" 라서 선으로 보여 준다.
+function openLine(ctx,a=1){
+  const y=Y(BARS[0].o);
+  ctx.save();ctx.globalAlpha*=a;
+  ctx.strokeStyle='#9aa6b8';ctx.lineWidth=2.5;ctx.setLineDash([10,8]);
+  ctx.beginPath();ctx.moveTo(CX,y);ctx.lineTo(CX+CW,y);ctx.stroke();ctx.setLineDash([]);
+  // 라벨은 왼쪽 끝에 둔다. 오른쪽은 마지막 사건 세로 라벨과 겹친다.
+  ctx.fillStyle='rgba(10,14,22,.85)';rr(ctx,CX+6,y-36,186,32,6);ctx.fill();
+  txt(ctx,'시가 '+fmt(BARS[0].o),CX+16,y-13,'700 24px PD','#c8d0dc');
+  ctx.restore();
+}
 function polyline(ctx,upto){
   ctx.save();ctx.strokeStyle=C.line;ctx.lineWidth=5;ctx.lineJoin='round';ctx.lineCap='round';
   ctx.beginPath();
@@ -220,8 +231,8 @@ function drawHook(ctx,t){
   const q=seg(t,hs(1.05),hs(1.50));
   if(q>0){ctx.save();ctx.globalAlpha=q;ctx.translate(0,(1-easeOut(q))*30);
     shadow(ctx,true);
-    txt(ctx,'한 주 등락률은 이게 전부입니다.',60,688,'700 58px PD',C.text);
-    txt(ctx,'그 사이 최대 낙폭은?',60,790,'900 70px PD',C.hi);
+    txt(ctx,COPY.q1,60,688,'700 54px PD',C.text);
+    txt(ctx,COPY.q2,60,790,'900 64px PD',C.hi);
     shadow(ctx,false);ctx.restore();}
   const NUM='①②③';
   const opts=QUIZ.opts.map((v,k)=>[NUM[k],v]);
@@ -259,7 +270,7 @@ function drawReplay(ctx,t){
   numT(ctx,bar.kst,60,400,'700 44px PD','#d8d8d8');
   txt(ctx,'고점 대비',1024,300,'700 36px PD',C.muted,'right');
   numT(ctx,dd.toFixed(2)+'%',1024,372,'900 76px PD',dd<-0.05?C.down:C.muted,'right');
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
+  chartPanel(ctx);dayShade(ctx);openLine(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
   const px=X(i),py=Y(bar.c);
   ctx.save();ctx.fillStyle=C.line;ctx.beginPath();ctx.arc(px,py,11,0,7);ctx.fill();
   ctx.strokeStyle=C.line;ctx.globalAlpha=.45;ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,24,0,7);ctx.stroke();ctx.restore();
@@ -305,34 +316,24 @@ function drawAnswer(ctx,t){
   ctx.save();ctx.globalAlpha=p;ctx.translate(0,(1-p)*26);
   shadow(ctx,true);
   txt(ctx,'①②③'[QUIZ.ans],56,330,'900 62px PD',C.hi);
-  numT(ctx,pct(STATS.mdd),150,330,'900 190px PD',C.down,'left','-.05em');
+  numT(ctx,COPY.ansBig,150,330,'900 190px PD',C.down,'left','-.05em');
   shadow(ctx,false);ctx.restore();
   const q=seg(at,.6,.95);
   if(q>0){ctx.save();ctx.globalAlpha=q;
-    numT(ctx,`고점 ${fmt(BARS[STATS.peakIdx].h)} → 저점 ${fmt(BARS[STATS.troughIdx].l)}`,60,436,'700 54px PD',C.text);
+    numT(ctx,COPY.ansSub1,60,436,'700 54px PD',C.text);
     // 걸린 시간은 봉 간격에서 계산한다. "하루 반" 같은 어림말을 손으로 적으면
     // 회차가 바뀌어도 그대로 남고, 1회차에서 실제 29시간을 36시간으로 부풀린 적이 있다.
-    // 봉 개수로 세면 선물 정비시간(미 동부 17~18시) 공백만큼 짧게 나온다. 시각 차이로 잰다.
-    const tp=Date.parse(BARS[STATS.peakIdx].d.replace(' ','T')+'Z');
-    const tt=Date.parse(BARS[STATS.troughIdx].d.replace(' ','T')+'Z');
-    const mins=Math.round((tt-tp)/60000);
-    const span=mins<60?`${mins}분`:(mins<1440?`${(mins/60).toFixed(1)}시간`:`${(mins/1440).toFixed(1)}일`);
-    txt(ctx,`${BARS[STATS.peakIdx].kst.slice(0,-6)} → ${BARS[STATS.troughIdx].kst.slice(0,-6)}, ${span} 만에`,
-        60,512,'700 44px PD',C.muted);
+    txt(ctx,COPY.ansSub2,60,512,'700 44px PD',C.muted);
     ctx.restore();}
   chartPanel(ctx);dayShade(ctx);
+  // 시가선 위쪽을 통째로 칠해 "여기 위에서 끝난 봉이 하나도 없다"를 보이게 한다
   const s=seg(at,.9,1.6);
   if(s>0){
-    const a=STATS.peakIdx,b=STATS.troughIdx;
-    ctx.save();ctx.globalAlpha=s*.34;ctx.fillStyle=C.down;
-    ctx.fillRect(X(a),CY,(X(b)-X(a))*easeOut(s),CH);ctx.restore();
-    ctx.save();ctx.globalAlpha=s;ctx.strokeStyle=C.down;ctx.lineWidth=4;ctx.setLineDash([12,8]);
-    ctx.beginPath();ctx.moveTo(X(a),Y(BARS[a].h));ctx.lineTo(X(b),Y(BARS[a].h));ctx.stroke();
-    ctx.beginPath();ctx.moveTo(X(a),Y(BARS[b].l));ctx.lineTo(X(b),Y(BARS[b].l));ctx.stroke();
-    ctx.setLineDash([]);ctx.restore();
+    ctx.save();ctx.globalAlpha=s*.20;ctx.fillStyle=C.down;
+    ctx.fillRect(CX,CY,CW*easeOut(s),Y(BARS[0].o)-CY);ctx.restore();
   }
-  eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
-  enBand(ctx,`Peak ${fmt(BARS[STATS.peakIdx].h)} to trough ${fmt(BARS[STATS.troughIdx].l)} — a ${Math.abs(STATS.mdd).toFixed(2)}% drawdown`,q);
+  openLine(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
+  enBand(ctx,COPY.enAnswer,q);
   brand(ctx);
 }
 
@@ -362,7 +363,7 @@ function drawSumm(ctx,t){
     ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();
     ctx.restore();
   });
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
+  chartPanel(ctx);dayShade(ctx);openLine(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   const c=easeOut(seg(st,1.1,1.6));
   if(c>0){ctx.save();ctx.globalAlpha=(1-fadeOut)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
@@ -377,10 +378,10 @@ function drawSumm(ctx,t){
       shadow(g,true);
       txt(g,'결과는',56,362,'700 84px PD',C.muted);
       numT(g,pct(STATS.weekPct),44,552,'900 250px PD',STATS.weekPct>=0?C.up:C.down,'left','-.06em');
-      txt(g,'과정은',56,700,'700 84px PD',C.muted);
-      numT(g,pct(STATS.mdd),44,890,'900 250px PD',C.down,'left','-.06em');
+      txt(g,COPY.loopLabel,56,700,'700 84px PD',C.muted);
+      numT(g,COPY.loopBig,44,890,'900 250px PD',C.down,'left','-.06em');
       shadow(g,false);
-      txt(g,'한 주 등락률 뒤에 숨은 낙폭',60,1000,'700 56px PD',C.text);
+      txt(g,COPY.loopTail,60,1000,'700 56px PD',C.text);
       window.__loopC=lc;
     }
     ctx.save();ctx.globalAlpha=out;ctx.drawImage(window.__loopC,0,0);ctx.restore();

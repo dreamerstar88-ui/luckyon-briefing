@@ -87,10 +87,33 @@ cmp('낙폭 바닥 저점', Math.round(BARS[mt].l), M.numbers.trough, 1);
 cmp('주간 최고', Math.round(Math.max(...BARS.map((b) => b.h))), M.numbers.week_high, 1);
 cmp('주간 최저', Math.round(Math.min(...BARS.map((b) => b.l))), M.numbers.week_low, 1);
 
-// 불변식: 정답 보기와 실제 낙폭이 어긋나면 퀴즈가 거짓말이 된다
+// 불변식: 정답 보기와 실제 값이 어긋나면 퀴즈가 거짓말이 된다.
+// 회차마다 질문이 다르므로(1·2회차처럼 매번 최대 낙폭을 묻지 않는다) 질문 은행에서
+// 그 회차 질문을 찾아 원본 봉으로 다시 계산해 맞춘다.
 const answer = M.quiz.options[M.quiz.answer_index - 1];
 const answerNum = parseFloat(answer);
-if (Math.abs(answerNum - M.numbers.mdd_pct) <= 0.1) ok('퀴즈 정답 보기', `${answer} ≈ ${M.numbers.mdd_pct}%`);
+if (M.question) {
+  const { QUESTIONS, buildCtx } = await import('./questions.mjs');
+  const Q = QUESTIONS.find((q) => q.id === M.question.id);
+  if (!Q) bad('질문 은행', M.question.id, '은행에 없는 id');
+  else {
+    let got; try { got = Q.fn(buildCtx(BARS, [])); } catch (e) { got = null; }
+    if (got === null) bad('질문 재계산', '계산 실패', M.question.id);
+    else {
+      cmp('질문 답 재계산', typeof got === 'number' ? +got.toFixed(2) : got,
+          typeof M.question.answer_value === 'number' ? +M.question.answer_value.toFixed(2) : M.question.answer_value, 0.01);
+      if (Number.isFinite(answerNum) && Number.isFinite(+M.question.answer_value)) {
+        if (Math.abs(answerNum - +M.question.answer_value) <= 0.51)
+          ok('퀴즈 정답 보기', `${answer} ≈ ${M.question.answer_value}${M.question.unit || ''}`);
+        else bad('퀴즈 정답 보기', answer, `${M.question.answer_value}${M.question.unit || ''}`);
+      }
+    }
+    // 자명한 질문을 거르는 근거가 적혀 있는지 본다. 2회차에서 "바닥도 꼭대기도 한국 밤에
+    // 나왔다"(미국 정규장 = 한국 밤이라 정의상 참)를 발견인 양 쓸 뻔했다.
+    if (M.question.guard && M.question.guard.length > 20) ok('질문 자명성 근거', '적혀 있음');
+    else bad('질문 자명성 근거', '없음', '이 질문의 답이 미리 정해져 있지 않은 이유');
+  }
+} else if (Math.abs(answerNum - M.numbers.mdd_pct) <= 0.1) ok('퀴즈 정답 보기', `${answer} ≈ ${M.numbers.mdd_pct}%`);
 else bad('퀴즈 정답 보기', `${answer}`, `${M.numbers.mdd_pct}% 에 가장 가까운 보기`);
 
 // ── 3. 사건별 등락률·순위를 독립 재계산 ──────────────────────────────────────
