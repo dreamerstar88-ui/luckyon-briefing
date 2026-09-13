@@ -1,187 +1,189 @@
 {
- "stamp": "nasdaq-week-2026-09-08",
- "episode": 2,
- "series": "주간복기",
- "window": {
-  "symbol": "NQ=F",
-  "interval": "5m",
-  "from_et": "2026-09-08 09:30",
-  "to_et": "2026-09-11 16:00",
-  "note": "9월 7일 월요일이 미국 노동절이라 휴장. 화요일 정규장 개장부터 금요일 정규장 마감까지다."
- },
- "video": {
-  "duration": 35,
-  "width": 1080,
-  "height": 1920,
-  "fps": 30,
-  "hold": 1.5,
-  "holds": [
-   0.6,
-   0.6,
-   2.586,
-   0.6,
-   2.586,
-   2.028
+  "stamp": "nasdaq-week-2026-09-08",
+  "episode": 2,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQ=F",
+    "interval": "5m",
+    "from_et": "2026-09-08 09:30",
+    "to_et": "2026-09-11 16:00",
+    "note": "9월 7일 월요일이 미국 노동절이라 휴장. 화요일 정규장 개장부터 금요일 정규장 마감까지다."
+  },
+  "video": {
+    "duration": 35,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "hold": 1.5,
+    "holds": [
+      0.6,
+      0.6,
+      2.586,
+      0.6,
+      2.586,
+      2.028
+    ],
+    "hook_hold": 1.95,
+    "sections": {
+      "hook": [
+        0,
+        5
+      ],
+      "replay": [
+        5,
+        26.2
+      ],
+      "answer": [
+        26.2,
+        30.3
+      ],
+      "summ": [
+        30.3,
+        35
+      ]
+    },
+    "layout_note": "1회차 발행본 배치를 그대로 쓴다. 사건이 6개라 같은 날 08:30·10:00 처럼 붙은 쌍은 배지와 라벨을 위아래로 엇갈리게 놓는다."
+  },
+  "numbers": {
+    "bars": 904,
+    "changes": 903,
+    "week_pct": -0.88,
+    "mdd_pct": -2.17,
+    "peak": 29687,
+    "trough": 29043,
+    "week_high": 29687,
+    "week_low": 29043
+  },
+  "question": {
+    "id": "evmaxwhich",
+    "ko": "지수를 가장 크게 움직인 발표는?",
+    "answer_value": "생산자물가",
+    "unit": "",
+    "why": "대표 지시(2026-09-12). 시청자가 실제로 궁금해하는 것은 통계적으로 희귀한 값이 아니라 그 주 무엇이 시장을 움직였는가다.",
+    "guard": "CPI 가 있는 주라고 CPI 가 1위인 것이 아니다. 이번 주는 PPI 가 1위(-0.435%), 미시간이 2위(-0.272%), CPI 는 3위(-0.174%)였다. 어느 지표에 시장이 반응할지는 발표 전에 알 수 없다."
+  },
+  "quiz": {
+    "options": [
+      "생산자물가 PPI",
+      "근원 소비자물가",
+      "미시간 소비자심리"
+    ],
+    "answer_index": 1
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-09-08 13:00",
+      "kst_label": "화 장중 · 한국 수 새벽 2시",
+      "te_event": "3-year note auction",
+      "stars": 1,
+      "actual": "4.474%",
+      "compare_field": "previous",
+      "compare": "4.291%",
+      "l1": "3년물 국채 입찰 4.474%.",
+      "l2": "직전은 4.291%였다.",
+      "tag": "국채입찰",
+      "en": "3-year Treasury auction 4.474%, up from 4.291%",
+      "why": "그날 ★★★ 없음 · 최고등급 ★ · 장중 · 등락률 1위",
+      "tiebreak": "같은 시각(협정세계시 17:00)에 ★ 두 건 — 3년물 국채 입찰, 6주물 단기국채 입찰. 입찰은 예상치가 없어 직전값 변동으로 골랐다. 3년물은 4.291%→4.474%로 0.183%p, 6주물은 3.735%→3.740%로 0.005%p 움직였다. 지침서 4장 3번.",
+      "pct": 0.192,
+      "rank": 13,
+      "color": "up"
+    },
+    {
+      "n": 2,
+      "et": "2026-09-09 08:15",
+      "kst_label": "수 프리장 · 한국 밤 9시 15분",
+      "te_event": "adp employment change weekly",
+      "stars": 2,
+      "actual": "12K",
+      "compare_field": "previous",
+      "compare": "10K",
+      "l1": "ADP 주간 고용 1.2만 명.",
+      "l2": "직전은 1.0만이었다.",
+      "tag": "고용지표",
+      "en": "ADP weekly employment 12K, up from 10K",
+      "why": "그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로",
+      "session_exception": "9월 9일 수요일은 ★★★ 이 없고 최고 등급 ★★ 세 건이 전부 장 밖이었다(모기지금리 07:00 프리장, ADP 08:15 프리장, API 원유재고 17:00 애프터장). 장중 우선을 적용할 후보가 없어 등락률로 골랐다.",
+      "pct": 0.025,
+      "rank": 477,
+      "color": "hi"
+    },
+    {
+      "n": 3,
+      "et": "2026-09-10 08:30",
+      "kst_label": "목 프리장 · 한국 밤 9시 30분",
+      "te_event": "ppi mom",
+      "stars": 3,
+      "actual": "0.4%",
+      "compare_field": "previous",
+      "compare": "0.1%",
+      "l1": "생산자물가 +0.4%.",
+      "l2": "직전은 +0.1%였다.",
+      "tag": "생산자물가",
+      "en": "Producer prices +0.4% MoM, up from +0.1%",
+      "why": "★★★ 전부 넣는다(2026-09-12 규칙 개정). 프리장이어도 뺀다는 뜻이 아니다.",
+      "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
+      "pct": -0.435,
+      "rank": 1,
+      "color": "down"
+    },
+    {
+      "n": 4,
+      "et": "2026-09-10 10:00",
+      "kst_label": "목 장중 · 한국 밤 11시",
+      "te_event": "existing home sales",
+      "stars": 3,
+      "actual": "3.98M",
+      "compare_field": "consensus",
+      "compare": "3.98M",
+      "l1": "기존주택 판매 398만 채.",
+      "l2": "예상도 398만이었다.",
+      "tag": "주택지표",
+      "en": "Existing home sales 3.98M, matching forecast",
+      "why": "★★★ 전부 넣는다",
+      "pct": 0.168,
+      "rank": 17,
+      "color": "up"
+    },
+    {
+      "n": 5,
+      "et": "2026-09-11 08:30",
+      "kst_label": "금 프리장 · 한국 밤 9시 30분",
+      "te_event": "core inflation rate mom",
+      "stars": 3,
+      "actual": "0.3%",
+      "compare_field": "consensus",
+      "compare": "0.2%",
+      "l1": "근원 소비자물가 +0.3%.",
+      "l2": "예상은 +0.2%였다.",
+      "tag": "소비자물가",
+      "en": "Core CPI +0.3% MoM, forecast +0.2%",
+      "why": "★★★ 전부 넣는다",
+      "tiebreak": "같은 시각(협정세계시 12:30)에 ★★★ 네 건 — 근원 소비자물가 전월비/전년비, 소비자물가 전월비/전년비. 이 중 예상을 벗어난 건 근원 소비자물가 전월비 하나뿐이었다(실제 0.3% / 예상 0.2%). 나머지 셋은 예상과 같았다. 지침서 4장 3번.",
+      "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
+      "pct": -0.174,
+      "rank": 15,
+      "color": "down"
+    },
+    {
+      "n": 6,
+      "et": "2026-09-11 10:00",
+      "kst_label": "금 장중 · 한국 밤 11시",
+      "te_event": "michigan consumer sentiment prel",
+      "stars": 3,
+      "actual": "47.8",
+      "compare_field": "consensus",
+      "compare": "51",
+      "l1": "미시간 소비자심리 47.8.",
+      "l2": "예상은 51이었다.",
+      "tag": "소비심리",
+      "en": "Michigan consumer sentiment 47.8, forecast 51",
+      "why": "★★★ 전부 넣는다",
+      "pct": -0.272,
+      "rank": 6,
+      "color": "down"
+    }
   ],
-  "hook_hold": 1.95,
-  "sections": {
-   "hook": [
-    0,
-    5
-   ],
-   "replay": [
-    5,
-    26.2
-   ],
-   "answer": [
-    26.2,
-    30.3
-   ],
-   "summ": [
-    30.3,
-    35
-   ]
-  },
-  "layout_note": "1회차 발행본 배치를 그대로 쓴다. 사건이 6개라 같은 날 08:30·10:00 처럼 붙은 쌍은 배지와 라벨을 위아래로 엇갈리게 놓는다."
- },
- "numbers": {
-  "bars": 904,
-  "changes": 903,
-  "week_pct": -0.88,
-  "mdd_pct": -2.17,
-  "peak": 29687,
-  "trough": 29043,
-  "week_high": 29687,
-  "week_low": 29043
- },
- "question": {
-  "id": "evmaxwhich",
-  "ko": "지수를 가장 크게 움직인 발표는?",
-  "answer_value": "생산자물가",
-  "unit": "",
-  "why": "대표 지시(2026-09-12). 시청자가 실제로 궁금해하는 것은 통계적으로 희귀한 값이 아니라 그 주 무엇이 시장을 움직였는가다.",
-  "guard": "CPI 가 있는 주라고 CPI 가 1위인 것이 아니다. 이번 주는 PPI 가 1위(-0.435%), 미시간이 2위(-0.272%), CPI 는 3위(-0.174%)였다. 어느 지표에 시장이 반응할지는 발표 전에 알 수 없다."
- },
- "quiz": {
-  "options": [
-   "생산자물가 PPI",
-   "근원 소비자물가",
-   "미시간 소비자심리"
-  ],
-  "answer_index": 1
- },
- "events": [
-  {
-   "n": 1,
-   "et": "2026-09-08 13:00",
-   "kst_label": "화 장중 · 한국 수 새벽 2시",
-   "te_event": "3-year note auction",
-   "stars": 1,
-   "actual": "4.474%",
-   "compare_field": "previous",
-   "compare": "4.291%",
-   "l1": "3년물 국채 입찰 4.474%.",
-   "l2": "직전은 4.291%였다.",
-   "tag": "국채입찰",
-   "en": "3-year Treasury auction 4.474%, up from 4.291%",
-   "why": "그날 ★★★ 없음 · 최고등급 ★ · 장중 · 등락률 1위",
-   "pct": 0.192,
-   "rank": 13,
-   "color": "up"
-  },
-  {
-   "n": 2,
-   "et": "2026-09-09 08:15",
-   "kst_label": "수 프리장 · 한국 밤 9시 15분",
-   "te_event": "adp employment change weekly",
-   "stars": 2,
-   "actual": "12K",
-   "compare_field": "previous",
-   "compare": "10K",
-   "l1": "ADP 주간 고용 1.2만 명.",
-   "l2": "직전은 1.0만이었다.",
-   "tag": "고용지표",
-   "en": "ADP weekly employment 12K, up from 10K",
-   "why": "그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로",
-   "session_exception": "9월 9일 수요일은 ★★★ 이 없고 최고 등급 ★★ 세 건이 전부 장 밖이었다(모기지금리 07:00 프리장, ADP 08:15 프리장, API 원유재고 17:00 애프터장). 장중 우선을 적용할 후보가 없어 등락률로 골랐다.",
-   "pct": 0.025,
-   "rank": 477,
-   "color": "hi"
-  },
-  {
-   "n": 3,
-   "et": "2026-09-10 08:30",
-   "kst_label": "목 프리장 · 한국 밤 9시 30분",
-   "te_event": "ppi mom",
-   "stars": 3,
-   "actual": "0.4%",
-   "compare_field": "previous",
-   "compare": "0.1%",
-   "l1": "생산자물가 +0.4%.",
-   "l2": "직전은 +0.1%였다.",
-   "tag": "생산자물가",
-   "en": "Producer prices +0.4% MoM, up from +0.1%",
-   "why": "★★★ 전부 넣는다(2026-09-12 규칙 개정). 프리장이어도 뺀다는 뜻이 아니다.",
-   "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
-   "pct": -0.435,
-   "rank": 1,
-   "color": "down"
-  },
-  {
-   "n": 4,
-   "et": "2026-09-10 10:00",
-   "kst_label": "목 장중 · 한국 밤 11시",
-   "te_event": "existing home sales",
-   "stars": 3,
-   "actual": "3.98M",
-   "compare_field": "consensus",
-   "compare": "3.98M",
-   "l1": "기존주택 판매 398만 채.",
-   "l2": "예상도 398만이었다.",
-   "tag": "주택지표",
-   "en": "Existing home sales 3.98M, matching forecast",
-   "why": "★★★ 전부 넣는다",
-   "pct": 0.168,
-   "rank": 17,
-   "color": "up"
-  },
-  {
-   "n": 5,
-   "et": "2026-09-11 08:30",
-   "kst_label": "금 프리장 · 한국 밤 9시 30분",
-   "te_event": "core inflation rate mom",
-   "stars": 3,
-   "actual": "0.3%",
-   "compare_field": "consensus",
-   "compare": "0.2%",
-   "l1": "근원 소비자물가 +0.3%.",
-   "l2": "예상은 +0.2%였다.",
-   "tag": "소비자물가",
-   "en": "Core CPI +0.3% MoM, forecast +0.2%",
-   "why": "★★★ 전부 넣는다",
-   "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
-   "pct": -0.174,
-   "rank": 15,
-   "color": "down"
-  },
-  {
-   "n": 6,
-   "et": "2026-09-11 10:00",
-   "kst_label": "금 장중 · 한국 밤 11시",
-   "te_event": "michigan consumer sentiment prel",
-   "stars": 3,
-   "actual": "47.8",
-   "compare_field": "consensus",
-   "compare": "51",
-   "l1": "미시간 소비자심리 47.8.",
-   "l2": "예상은 51이었다.",
-   "tag": "소비심리",
-   "en": "Michigan consumer sentiment 47.8, forecast 51",
-   "why": "★★★ 전부 넣는다",
-   "pct": -0.272,
-   "rank": 6,
-   "color": "down"
-  }
- ],
- "calendar_snapshot": "content/weekly-shorts/2026-09-08.calendar.html"
+  "calendar_snapshot": "content/weekly-shorts/2026-09-08.calendar.html"
 }

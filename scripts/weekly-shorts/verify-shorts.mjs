@@ -211,18 +211,25 @@ try {
   }
   const rows = html.split(/<tr\s+data-url=/).slice(1);
   const table = new Map();
+  const all = [];
   let outOfRange = 0;
   for (const r0 of rows) {
     const r = r0.replace(/\s+/g, ' ');
     const name = (r.match(/data-event="([^"]*)"/) || [])[1];
     const imp = (r.match(/calendar-date-(\d)/) || [])[1];
     const day = (r.match(/class='\s*(\d{4}-\d{2}-\d{2})'/) || [])[1];
+    // 캘린더가 찍는 시각은 협정세계시다(동부 08:30 → 12:30 PM). 같은 시각에 걸린
+    // 지표들을 한 사건으로 묶으려면 이 값이 필요하다.
+    const tm = (r.match(/calendar-date-\d"?>\s*([\d:]+\s*[AP]M)/) || [])[1];
     if (!name || !imp) continue;
     // 트레이딩이코노믹스는 GET 의 d1/d2 를 무시하고 현재 주를 돌려줄 때가 있다.
     // 행에 찍힌 날짜를 확인하지 않으면 다른 주의 값과 대조하게 된다 — 실제로 그런 적이 있다.
     if (!day || day < d1 || day > d2) { outOfRange++; continue; }
     const get = (id) => { const m = r.match(new RegExp(`id='${id}'[^>]*>([^<]*)<`)); return m ? m[1].trim() : ''; };
-    table.set(name, { stars: +imp, actual: get('actual'), previous: get('previous'), consensus: get('consensus') });
+    const rec = { name, day, at: tm ? `${day} ${tm}` : '', stars: +imp,
+      actual: get('actual'), previous: get('previous'), consensus: get('consensus') };
+    table.set(name, rec);
+    all.push(rec);
   }
   if (table.size === 0) {
     throw new Error(outOfRange > 0
@@ -236,6 +243,61 @@ try {
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
     cmp(`사건${e.n} 실제값`, row.actual, e.actual);
     cmp(`사건${e.n} ${e.compare_field}`, row[e.compare_field], e.compare);
+  }
+
+  // ── 5-1. 같은 시각에 여러 지표가 걸렸을 때 대표를 제대로 골랐는지 ──────────
+  // 지침서 4장 3번. 최고 등급이 여럿이면 예상을 벗어난 것을 대표로 쓴다.
+  // 2회차 금요일 협정세계시 12:30 에 ★★★ 네 건이 동시에 걸렸고 그중 예상을
+  // 벗어난 건 근원 소비자물가 전월비 하나뿐이었다. 그때는 규칙이 없어 제작자
+  // 판단으로 골랐다 — 다음 회차에서 달라지지 않도록 기계가 본다.
+  const num = (v) => { const m = String(v).match(/-?[\d.]+/); return m ? parseFloat(m[0]) : null; };
+  for (const e of M.events) {
+    const row = table.get(e.te_event);
+    if (!row || !row.at) continue;
+    const group = all.filter((r) => r.at === row.at);
+    const maxStars = Math.max(...group.map((r) => r.stars));
+    if (row.stars < maxStars) {
+      bad(`사건${e.n} 대표 등급`, `같은 시각 최고 등급은 ★${maxStars}`, `★${row.stars}`);
+      continue;
+    }
+    const top = group.filter((r) => r.stars === maxStars);
+    if (top.length === 1) { ok(`사건${e.n} 같은 시각 묶음`, `★${maxStars} 단독`); continue; }
+    const missed = top.filter((r) => r.consensus && r.actual && r.actual !== r.consensus);
+    if (missed.length > 0) {
+      if (!missed.some((r) => r.name === e.te_event)) {
+        bad(`사건${e.n} 대표 선정`, `예상을 벗어난 ${missed.map((r) => r.name).join(' / ')} 중에서 골라야 한다`,
+          `${e.te_event}(예상대로 나옴)`);
+        continue;
+      }
+      if (missed.length > 1 && !e.tiebreak) {
+        bad(`사건${e.n} 타이브레이크 사유`, `예상을 벗어난 게 ${missed.length}건이다 — tiebreak 에 고른 근거를 적어라`,
+          '없음');
+        continue;
+      }
+      ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 중 예상을 벗어난 ${missed.length}건 — 대표 맞음`);
+    } else {
+      // 예상을 벗어난 게 하나도 없다(전부 예상과 같거나, 국채 입찰처럼 애초에 예상치가 없다).
+      // 이때는 직전값에서 가장 많이 움직인 것을 대표로 쓴다.
+      const why0 = top.every((r) => !r.consensus) ? '예상치 없음' : '전부 예상대로';
+      // 단위가 서로 다르면(% 와 만 채) 움직인 정도를 비교할 수 없다. 사람이 고르고 사유를 적는다.
+      const unit = (v) => (String(v).match(/[%KMB]|만|억/) || [''])[0];
+      const units = new Set(top.map((r) => unit(r.actual)));
+      if (units.size > 1) {
+        if (!e.tiebreak) { bad(`사건${e.n} 대표 선정`, `단위가 다른 ★${maxStars} ${top.length}건이라 tiebreak 에 사람이 고른 근거가 있어야 한다`, '사유 없음'); continue; }
+        ok(`사건${e.n} 대표 선정`, `단위가 달라 기계 비교 불가 — tiebreak 사유로 확인`);
+      } else {
+        const moved = top.map((r) => ({ r, d: Math.abs((num(r.actual) ?? 0) - (num(r.previous) ?? 0)) }));
+        const best = moved.reduce((a, b) => (b.d > a.d ? b : a));
+        if (best.r.name !== e.te_event) {
+          bad(`사건${e.n} 대표 선정`, `${why0} 이니 직전값에서 가장 많이 움직인 ${best.r.name} 를 써야 한다`,
+            e.te_event);
+          continue;
+        }
+        ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} — 직전값 변동 최대 선택`);
+      }
+    }
+    if (!e.tiebreak) bad(`사건${e.n} 타이브레이크 사유`, '같은 시각 최고 등급이 여럿이면 tiebreak 를 적어라', '없음');
+    else ok(`사건${e.n} 타이브레이크 사유`, e.tiebreak.slice(0, 40) + '…');
   }
 } catch (err) {
   fails++;
