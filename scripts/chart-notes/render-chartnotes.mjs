@@ -241,6 +241,42 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'gap' — 캔들이 촘촘히 이어지다 한 자리에서 «훌쩍 떠서» 다시 이어지고,
+    // 그 사이가 빈 띠로 남는다. 주석이 «아무도 거래하지 않은 빈칸»을 가리키는 회차
+    // (갭 상승·갭 하락, 배당락)에서 쓴다. 다른 표지 변종은 전부 «선»(ma·cross·trend)이나
+    // «높이»(levels)를 가리키는 그림이라, 빈칸을 가리킬 대상이 화면에 아예 없다 —
+    // 그대로 두면 EP.03·EP.06 과 같은 «주석이 없는 것을 가리키는» 사고가 난다.
+    if (c.overlay === 'gap') {
+      const GT = 150, GB = 200;      // 빈 띠의 천장·바닥 (SVG y: 작을수록 높은 가격)
+      // 앞 다섯 개의 최고가가 정확히 GB, 뒤 세 개의 최저가가 정확히 GT 다.
+      // 그래서 GT~GB 사이는 이 그림 안에서 «정말로» 거래가 없는 구간이 된다.
+      const seq = [ // o,c,h,l 은 SVG y(px). 아래로 갈수록 낮은 가격.
+        { o: 236, c: 222, h: 214, l: 244 }, { o: 222, c: 232, h: 216, l: 240 },
+        { o: 232, c: 214, h: 206, l: 238 }, { o: 214, c: 224, h: 208, l: 232 },
+        { o: 224, c: 210, h: GB, l: 230 },
+        { o: GT, c: 120, h: 112, l: GT }, { o: 120, c: 134, h: 114, l: 140 },
+        { o: 134, c: 108, h: 100, l: 140 },
+      ];
+      const x0 = 52, step = 56, bw = 28;
+      const cand = seq.map((s, i) => {
+        const cxp = x0 + i * step, col = s.c < s.o ? UP : DOWN;   // y 가 작을수록 높은 가격
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - bw / 2}" y="${Math.min(s.o, s.c)}" width="${bw}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      return `<div class="pad">
+        <svg width="956" height="300" viewBox="0 0 956 300" style="margin-top:8px">
+          <rect x="30" y="${GT}" width="470" height="${GB - GT}" fill="${C.red}" opacity="0.16"/>
+          <line x1="30" y1="${GT}" x2="500" y2="${GT}" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10"/>
+          <line x1="30" y1="${GB}" x2="500" y2="${GB}" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10"/>
+          ${cand}
+          <path d="M 600 168 L 502 ${(GT + GB) / 2}" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="606" y="${158 + i * 34}" font-family="${FONT_SANS}" font-size="26" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     if (c.overlay === 'trend') {
       // 붉은 추세선: (30,268) → (500,120). 아래 캔들의 저가(l) 중 다섯 개가 이 선에 닿고
       // 나머지는 그 위에 뜬다 — «닿은 자리»가 있어야 주석이 가리킬 대상이 생긴다.
@@ -374,6 +410,22 @@ const R = {
           <line x1="30" y1="240" x2="790" y2="70" stroke="${C.red}" stroke-width="5"
                 stroke-dasharray="16 11" opacity="0.9"/>
           ${q(802, 84, 54)}${q(858, 132, 36)}${q(806, 178, 40)}
+        </svg>`;
+    } else if (sketch === 'mystery-gap') {
+      // 꺾은선이 «한 자리에서 끊겼다가» 훌쩍 위에서 다시 이어진다. 물음표는 그 사이의
+      // 빈 띠를 가리킨다 — 「이 빈칸은 뭐냐」를 묻는 회차(갭·배당락)에서 쓴다.
+      // 선을 둘로 끊어 그리는 것이 이 그림의 요점이다: 하나로 이으면 «그냥 급등»이 되어
+      // 제목이 묻는 «빈칸»이 화면에서 사라진다.
+      const GT = 148, GB = 206;
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <rect x="20" y="${GT}" width="770" height="${GB - GT}" fill="${C.red}" opacity="0.16"/>
+          <line x1="20" y1="${GT}" x2="790" y2="${GT}" stroke="${C.red}" stroke-width="5" stroke-dasharray="16 11"/>
+          <line x1="20" y1="${GB}" x2="790" y2="${GB}" stroke="${C.red}" stroke-width="5" stroke-dasharray="16 11"/>
+          <polyline points="20,236 80,224 140,246 200,218 260,234 320,212 380,228"
+                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="430,140 490,116 550,132 610,96 670,112 730,74 780,92"
+                    stroke="#7d7a72" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          ${q(800, 194, 54)}${q(856, 152, 36)}${q(804, 246, 34)}
         </svg>`;
     } else if (sketch === 'mystery-levels') {
       const RES = 63, SUP = 203;
@@ -578,9 +630,12 @@ const R = {
     const py = (y) => (H - P) - (y / 100) * (H - P * 2);
     const SERIES = d(c, 'series', []), MARKER = d(c, 'marker', null);
     const bd = d(c, 'band', null);
+    // `color` 를 주면 띠 색을 바꾼다. 한 회차 안에서 같은 개념을 다른 색으로 칠하면 독자가
+    // 두 그림을 이어 보지 못한다 — EP.07 은 표지·개념·실제 사례의 «갭 띠»가 전부 붉은색인데
+    // 이 카드만 기본 감청색이라 같은 빈칸으로 읽히지 않았다.
     const band = bd ? `<polygon points="${[...bd.upper.map(p => `${px(p[0])},${py(p[1])}`),
     ...[...bd.lower].reverse().map(p => `${px(p[0])},${py(p[1])}`)].join(' ')}"
-      fill="${C.navy}" opacity="0.10"/>` : '';
+      fill="${bd.color || C.navy}" opacity="${bd.opacity ?? 0.10}"/>` : '';
     const levels = (d(c, 'levels', [])).map(l => `
       <line x1="${px(0)}" y1="${py(l.y)}" x2="${px(100)}" y2="${py(l.y)}"
             stroke="${l.color || C.red}" stroke-width="4" stroke-dasharray="14 10"/>
@@ -999,29 +1054,67 @@ const R = {
     const DN_ZIG = [[20, 120], [60, 112], [110, 160], [180, 148], [240, 195], [300, 185], [360, 235], [405, 220]];
     const DN_DOTS = [[60, 112], [180, 148], [300, 185]];
 
-    const panel = (ox, line, zig, dots, key) => `
+    // ---- figure:'gap' — 캔들이 이어지다 한 자리에서 끊기고, 그 사이가 빈 띠로 남는다.
+    // 갭 회차(갭 상승·갭 하락, 배당락)의 «대칭»은 추세선의 대칭과 그림이 다르다:
+    // 추세선은 «선이 가격의 어느 쪽에 붙는가»가 요점이지만, 갭은 «빈칸이 어느 쪽으로
+    // 벌어졌는가»가 요점이다. 위 UP_LINE/DN_LINE 을 그대로 쓰면 제목은 «갭»이라 써 놓고
+    // 그림은 추세선을 그리게 된다 — EP.06 표지(overlay:'trend2')와 똑같은 종류의 사고다.
+    const GT = 118, GB = 168;        // 빈 띠의 천장·바닥 (SVG y: 작을수록 높은 가격)
+    // 앞 세 개의 «최고가»가 정확히 GB, 뒤 세 개의 «최저가»가 정확히 GT 라서
+    // 그 사이는 이 그림 안에서 정말로 거래가 없는 구간이 된다(갭 상승). 하락은 위아래가 바뀐다.
+    const GAP_UP = {
+      before: [{ o: 196, c: 182, h: 174, l: 204 }, { o: 182, c: 192, h: 176, l: 200 }, { o: 192, c: 176, h: GB, l: 198 }],
+      after: [{ o: 115, c: 96, h: 88, l: GT }, { o: 96, c: 106, h: 90, l: 114 }, { o: 106, c: 84, h: 76, l: 112 }],
+    };
+    const GAP_DN = {
+      before: [{ o: 96, c: 110, h: 88, l: 116 }, { o: 110, c: 100, h: 94, l: 114 }, { o: 100, c: 114, h: 92, l: GT }],
+      after: [{ o: 180, c: 196, h: GB, l: 204 }, { o: 196, c: 186, h: 178, l: 202 }, { o: 186, c: 200, h: 180, l: 208 }],
+    };
+    const XS = [48, 108, 168, 252, 312, 372];   // 앞 세 개 · 빈칸 · 뒤 세 개
+    const CW = 30;
+    const gapFig = (g) => {
+      const rows = [...g.before, ...g.after];
+      const cand = rows.map((s, i) => {
+        const cxp = XS[i], col = s.c < s.o ? UP : DOWN;    // y 가 작을수록 높은 가격
+        return `<line x1="${cxp}" y1="${s.h}" x2="${cxp}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cxp - CW / 2}" y="${Math.min(s.o, s.c)}" width="${CW}"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      }).join('');
+      return `<rect x="14" y="${GT}" width="${PW - 28}" height="${GB - GT}" fill="${C.red}" opacity="0.16"/>
+              <line x1="14" y1="${GT}" x2="${PW - 14}" y2="${GT}" stroke="${C.red}" stroke-width="4" stroke-dasharray="13 9"/>
+              <line x1="14" y1="${GB}" x2="${PW - 14}" y2="${GB}" stroke="${C.red}" stroke-width="4" stroke-dasharray="13 9"/>
+              ${cand}`;
+    };
+
+    const trendFig = (line, zig, dots) => `
+          <line x1="${line[0][0]}" y1="${line[0][1]}" x2="${line[1][0]}" y2="${line[1][1]}"
+                stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>
+          <polyline points="${zig.map(p => p.join(',')).join(' ')}" stroke="${C.navy}" stroke-width="6"
+                    fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          ${dots.map(p => dot(p[0], p[1])).join('')}`;
+
+    const FIG = d(c, 'figure', 'trendline');
+    const panel = (ox, key, inner) => `
       <g transform="translate(${ox},0)">
         <text x="${PW / 2}" y="26" text-anchor="middle" font-family="${FONT_TITLE}" font-size="30"
               font-weight="800" fill="${C.navy}">${esc(t(c, `${key}_label`))}</text>
         <g transform="translate(0,${TOP})">
           <rect x="0" y="0" width="${PW}" height="${PH}" fill="none" stroke="#dcd8cc" stroke-width="2" rx="10"/>
-          <line x1="${line[0][0]}" y1="${line[0][1]}" x2="${line[1][0]}" y2="${line[1][1]}"
-                stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>
-          <polyline points="${zig.map(p => p.join(',')).join(' ')}" stroke="${C.navy}" stroke-width="6"
-                    fill="none" stroke-linejoin="round" stroke-linecap="round"/>
-          ${dots.map(p => dot(p[0], p[1])).join('')}
+          ${inner}
         </g>
         <text x="${PW / 2}" y="${TOP + PH + 34}" text-anchor="middle" font-family="${FONT_SANS}"
               font-size="23" fill="${C.body}">${esc(t(c, `${key}_caption`))}</text>
       </g>`;
+    const leftFig = FIG === 'gap' ? gapFig(GAP_UP) : trendFig(UP_LINE, UP_ZIG, UP_DOTS);
+    const rightFig = FIG === 'gap' ? gapFig(GAP_DN) : trendFig(DN_LINE, DN_ZIG, DN_DOTS);
 
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
       <div style="flex:1;display:flex;align-items:center">
         <svg width="900" height="${H}" viewBox="0 0 ${PW * 2 + GAP} ${H}">
-          ${panel(0, UP_LINE, UP_ZIG, UP_DOTS, 'left')}
-          ${panel(PW + GAP, DN_LINE, DN_ZIG, DN_DOTS, 'right')}
+          ${panel(0, 'left', leftFig)}
+          ${panel(PW + GAP, 'right', rightFig)}
         </svg>
       </div>
       ${t(c, 'note') ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin-bottom:18px;
@@ -1092,10 +1185,11 @@ const R = {
 // 끝나서 아무도 못 봤다. direction 은 더 위험하다: 'down' 을 조금이라도 다르게 적으면
 // «하락»이라고 써 놓고 상승 그림이 그려진다. 그래서 모르는 값은 여기서 멈춘다.
 const VARIANTS = {
-  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross'] },
-  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels'] },
+  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap'] },
+  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap'] },
   lines: { direction: ['up', 'down'] },
   pricevol: { mode: ['candle', 'line'] },
+  mirror: { figure: ['trendline', 'gap'] },
 };
 for (const [i, c] of data.cards.entries()) {
   for (const [field, allowed] of Object.entries(VARIANTS[c.type] || {})) {
