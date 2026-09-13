@@ -1098,6 +1098,63 @@ const R = {
               ${cand}`;
     };
 
+    // ---- figure:'gap-open' — «어제 캔들 하나 + 오늘 캔들 하나»를 실제 시세로 그리고,
+    // 어제의 «고가»와 «종가»에 기준선을 깔아 **오늘 시가가 그 둘 사이 어디에 떨어지는지**를 보여준다.
+    //
+    // 이 카드가 하려는 말(«종가 기준으로는 갭 상승인데 차트엔 빈칸이 없다»)은 본질적으로 공간적이라
+    // 표로 쓰면 독자가 한 번 더 번역해서 읽어야 한다. 시가가 두 기준선 사이에 끼어 있는 그림을
+    // 보면 설명이 필요 없다. 두 칸의 가격대가 서로 달라도 되므로 **칸마다 따로 축을 잡는다.**
+    //
+    //   left_bars / right_bars = { prev:{o,h,l,c}, today:{o,h,l,c} }   ← _ko/_en 로 갈라 쓴다
+    const gapOpenFig = (g) => {
+      if (!g || !g.prev || !g.today) return '';
+      const P = g.prev, T = g.today;
+      const hi = Math.max(P.h, T.h), lo = Math.min(P.l, T.l), span = (hi - lo) || 1;
+      const TOPY = 44, BOTY = 226;
+      const y = (v) => BOTY - ((v - (lo - span * 0.07)) / (span * 1.14)) * (BOTY - TOPY);
+      const cand = (cx, b) => {
+        const col = (b.c >= b.o) ? UP : DOWN, top = Math.min(y(b.o), y(b.c));
+        return `<line x1="${cx}" y1="${y(b.h)}" x2="${cx}" y2="${y(b.l)}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cx - 25}" y="${top}" width="50" height="${Math.max(Math.abs(y(b.c) - y(b.o)), 4)}"
+                      fill="${col}" opacity="0.85"/>`;
+      };
+      // 빈칸은 «어제 고가 위» 또는 «어제 저가 아래»로 완전히 벗어났을 때만 생긴다.
+      // 오늘 캔들이 어제 레인지에 조금이라도 걸치면 띠가 아예 그려지지 않는다 — 그게 이 카드의 요점이다.
+      const band = (T.l > P.h) ? [y(T.l), y(P.h)] : (T.h < P.l) ? [y(P.l), y(T.h)] : null;
+      // 기준선 라벨은 «왼쪽», 시가 표시는 «오른쪽»으로 갈라 놓는다. 둘 다 오른쪽에 두었더니
+      // 어제 캔들이 시가와 비슷한 높이에 올 때(8/4 처럼) 시가 라벨이 그 캔들 몸통 위에 얹혔다.
+      // 캔들 두 개는 가운데에 모아 양쪽 여백을 라벨이 나눠 쓴다.
+      const CX1 = 135, CX2 = 265;
+      const ref = (v, lab, below) => `
+        <line x1="14" y1="${y(v)}" x2="${PW - 14}" y2="${y(v)}" stroke="${C.red}" stroke-width="3" stroke-dasharray="11 8"/>
+        <text x="16" y="${y(v) + (below ? 20 : -7)}" text-anchor="start" font-family="${FONT_TITLE}" font-size="18"
+              font-weight="800" fill="${C.red}" stroke="${C.paper}" stroke-width="6"
+              paint-order="stroke">${esc(lab)}</text>`;
+      // 갭 상승이면 «어제 고가»가, 갭 하락이면 «어제 저가»가 빈칸의 경계다. 방향에 상관없이
+      // 고가만 그리면 하락 갭 칸에서 **아무 상관 없는 선**을 기준선이라 부르게 된다(en 7/31 이 그랬다).
+      const up = T.o >= P.c;
+      const edgeV = up ? P.h : P.l;
+      const edgeLab = up ? (t(c, 'hi_label') || '어제 고가') : (t(c, 'lo_label') || '어제 저가');
+      // 두 기준선이 붙어 있으면 라벨끼리 겹친다(어제가 좁은 날이면 흔하다 — en 7/30 은 종가와 저가가
+      // $3.83 차이였다). 그럴 때는 아래쪽 선의 라벨만 선 밑으로 내려 둘을 떼어 놓는다.
+      const tight = Math.abs(y(edgeV) - y(P.c)) < 26;
+      const edgeLower = y(edgeV) > y(P.c);
+      return `
+        ${band ? `<rect x="14" y="${band[0]}" width="${PW - 28}" height="${Math.max(band[1] - band[0], 3)}"
+                        fill="${C.red}" opacity="0.16"/>` : ''}
+        ${ref(edgeV, edgeLab, tight && edgeLower)}
+        ${ref(P.c, t(c, 'close_label') || '어제 종가', tight && !edgeLower)}
+        ${cand(CX1, P)}${cand(CX2, T)}
+        ${/* 오늘 «시가»가 어디인지 못 박는다. 이 카드의 비교 대상은 캔들 몸통이 아니라 시가 하나다 —
+             영어판 8/20 처럼 시가는 어제 고가 아래인데 그날 고가는 그 위로 뚫고 올라간 날이 있어서,
+             표시가 없으면 그림이 «레인지 안에서 열렸다»는 본문을 배반한다. */''}
+        <path d="M ${CX2 + 44} ${y(T.o)} L ${CX2 + 28} ${y(T.o)}" stroke="${C.ink}" stroke-width="4"/>
+        <path d="M ${CX2 + 28} ${y(T.o)} l 9 -6 l 0 12 z" fill="${C.ink}"/>
+        <text x="${CX2 + 50}" y="${y(T.o) + 7}" text-anchor="start" font-family="${FONT_TITLE}" font-size="18"
+              font-weight="800" fill="${C.ink}" stroke="${C.paper}" stroke-width="6"
+              paint-order="stroke">${esc(t(c, 'open_label') || '시가')}</text>`;
+    };
+
     const trendFig = (line, zig, dots) => `
           <line x1="${line[0][0]}" y1="${line[0][1]}" x2="${line[1][0]}" y2="${line[1][1]}"
                 stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>
@@ -1117,8 +1174,10 @@ const R = {
         <text x="${PW / 2}" y="${TOP + PH + 34}" text-anchor="middle" font-family="${FONT_SANS}"
               font-size="23" fill="${C.body}">${esc(t(c, `${key}_caption`))}</text>
       </g>`;
-    const leftFig = FIG === 'gap' ? gapFig(GAP_UP) : trendFig(UP_LINE, UP_ZIG, UP_DOTS);
-    const rightFig = FIG === 'gap' ? gapFig(GAP_DN) : trendFig(DN_LINE, DN_ZIG, DN_DOTS);
+    const leftFig = FIG === 'gap-open' ? gapOpenFig(d(c, 'left_bars', null))
+      : FIG === 'gap' ? gapFig(GAP_UP) : trendFig(UP_LINE, UP_ZIG, UP_DOTS);
+    const rightFig = FIG === 'gap-open' ? gapOpenFig(d(c, 'right_bars', null))
+      : FIG === 'gap' ? gapFig(GAP_DN) : trendFig(DN_LINE, DN_ZIG, DN_DOTS);
 
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
@@ -1201,7 +1260,7 @@ const VARIANTS = {
   intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap'] },
   lines: { direction: ['up', 'down'] },
   pricevol: { mode: ['candle', 'line'] },
-  mirror: { figure: ['trendline', 'gap'] },
+  mirror: { figure: ['trendline', 'gap', 'gap-open'] },
 };
 for (const [i, c] of data.cards.entries()) {
   for (const [field, allowed] of Object.entries(VARIANTS[c.type] || {})) {

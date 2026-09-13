@@ -494,7 +494,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `flip` | **역할 반전** — 뚫린 저항선이 지지선이 되는 것을 **선 하나**로 | `title`, `body`, `before`, `after`, `break`, `retest`, `note`, `closing` |
 | `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` |
 | `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
-| `mirror` | **거울 두 칸** — 같은 방법이 «방향만 반대»로 쓰이는 것을 나란히 | `title`, `body`, **`figure`**(`trendline`\|`gap`), `left_label`/`left_caption`, `right_label`/`right_caption`, `note`, `closing` |
+| `mirror` | **두 칸 맞대기** — 같은 방법이 «방향만 반대»이거나, 같은 규칙이 «한쪽만 들어맞는» 것을 나란히 | `title`, `body`, **`figure`**(`trendline`\|`gap`\|`gap-open`), `left_label`/`left_caption`, `right_label`/`right_caption`, `note`, `closing` · `gap-open` 은 **`left_bars`/`right_bars`**`.{prev,today}.{o,h,l,c}` 와 `hi_label`·`lo_label`·`close_label`·`open_label` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
 
@@ -522,8 +522,18 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 그린 p.05 만 회색이라 같은 빈칸으로 읽히지 않았다. `band.color`(붉은 띠는 `#c0523c`)·`band.opacity` 로 맞춘다.
 
 **`mirror`** — «같은 방법이 방향만 반대로 쓰이는 것»을 두 칸으로 나란히 보여준다. `figure` 로 그림을 고른다:
-`trendline`(기본, 상승·하락 추세선)과 `gap`(위로 벌어진 빈칸 · 아래로 벌어진 빈칸). **`figure` 를 안 주면
-추세선이 그려지므로 갭 회차에서 빠뜨리면 제목은 «갭»인데 그림은 추세선이 된다** — EP.06 표지(`overlay:'trend2'`)와
+`trendline`(기본, 상승·하락 추세선), `gap`(위로 벌어진 빈칸 · 아래로 벌어진 빈칸),
+`gap-open`(**실제 시세 두 날**을 맞대어 «오늘 시가가 어제 캔들의 어디에 떨어지는가»를 보여준다).
+
+> **`gap-open` 은 «규칙이 한쪽에만 들어맞는 것»을 가르치는 자리다.** EP.07 p.04 가 처음에 용어표
+> (`versus`)였는데 사용자가 「설명은 좋은데 딱 봐서 바로 와닿지 않는다」고 했다. 내용이 아니라 형식이
+> 문제였다 — 「오늘 시가가 어제 캔들의 어디냐」는 **본질적으로 공간적인 이야기**라 표로 쓰면 독자가 한 번
+> 더 번역해서 읽는다. 어제 캔들·오늘 캔들 두 개와 기준선 두 줄(어제 종가 + 빈칸의 경계)을 그리고 시가에
+> 화살표를 찍으면 설명이 필요 없다. **실제 두 날을 쓴다** — 3단계의 «가상의 숫자보다 실제 데이터 두 개»가
+> 그대로 적용된다. 렌더러가 방향을 보고 경계선을 고르고(상승이면 어제 고가, 하락이면 어제 저가),
+> 두 기준선이 붙어 있으면 아래쪽 라벨을 선 밑으로 내려 겹침을 피한다.
+
+**`figure` 를 안 주면 추세선이 그려지므로, 갭 회차에서 빠뜨리면 제목은 «갭»인데 그림은 추세선이 된다** — EP.06 표지(`overlay:'trend2'`)와
 똑같은 종류의 사고다. **패널 캡션(`left_caption`·`right_caption`)은 SVG 글자라 자동 넘침 검사에 걸리지 않는다.**
 길면 패널 밖으로 넘쳐 양쪽 캡션이 가운데서 겹치는데도 렌더가 성공한다(EP.07 en p.03 에서 실제로 그랬다) —
 **영어 28자 · 한국어 13자 이내**로 쓰고, 렌더 뒤 눈으로 확인한다.
