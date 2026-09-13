@@ -1,0 +1,233 @@
+{
+  "date": "2026-09-14",
+  "session": "am",
+  "dateLabel_ko": "2026년 9월 14일 월요일",
+  "dateLabel_en": "Monday, September 14, 2026",
+
+  "headline_ko": "나스닥 나흘만에 반등, 유가는 '3중 봉쇄' 속 100달러",
+  "headline_en": "Nasdaq Rebounds After 4-Day Skid as Oil Holds Above $100",
+  "headline_sub_ko": "CPI는 예상 부합, 중동發 공급위기에 금리인상 확률은 86%로",
+  "headline_sub_en": "CPI matched forecasts, but Mideast supply risk pushed Fed hike odds to 86%",
+  "cover_kicker": {"ko": "간밤 미국장 · 9/11 마감", "en": "US Overnight · Sep 11 Close"},
+  "cover_facts": [
+    ["shield", {"ko": "나스닥 +0.96%·S&P500 +0.86%", "en": "Nasdaq +0.96% · S&P 500 +0.86%"},
+               {"ko": "26,333.04 / 7,656.98 · 4거래일 하락 끊었다", "en": "26,333.04 / 7,656.98 · snapped a 4-day slide"}],
+    ["rate", {"ko": "美 10년물 4.96%, 장중 3년래 최고", "en": "US 10Y 4.96%, a 3-yr intraday high"},
+              {"ko": "근원CPI 예상 상회에 9월 인상 확률 86%로", "en": "Hot core CPI pushed Sept hike odds to 86%"}],
+    ["globe", {"ko": "WTI $100.05, 사우디 송유관 공격 여파", "en": "WTI $100.05 after the Saudi pipeline attack"},
+               {"ko": "우회 송유관까지 피격돼 '3중 봉쇄' 우려", "en": "Bypass pipeline also hit, adding a 'triple blockade' risk"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥 +0.96%(26,333.04)·S&P500 +0.86%(7,656.98)로 4거래일 연속 하락을 끊고 반등했다.",
+      "美 8월 CPI가 전년비 3.4%로 예상에 부합해 시장은 안도했지만, 근원 CPI는 전월비 0.3%로 예상(0.2%)을 웃돌며 9월 금리 인상 확률을 86%까지 끌어올렸다.",
+      "거래대금 상위 299종목 중 185개가 올라 상승이 넓게 퍼졌고, 마이크론·엔비디아가 거래대금 최상위를 지켰다.",
+      "주말 사이 사우디 동서 송유관이 드론 공격으로 가동을 멈추고 후티 반군이 홍해 관문까지 장악하며, WTI는 $100 위에서 새 주를 맞는다."
+    ],
+    "lines_en": [
+      "Nasdaq (+0.96% to 26,333.04) and the S&P 500 (+0.86% to 7,656.98) snapped a 4-day losing streak.",
+      "August CPI matched forecasts at 3.4% YoY, but a hotter-than-expected core reading (+0.3% MoM vs. +0.2% est.) pushed September rate-hike odds to 86%.",
+      "185 of the top 299 stocks by turnover advanced; Micron and Nvidia again led dollar volume.",
+      "Over the weekend a drone attack halted Saudi Arabia's East-West pipeline and Houthi forces tightened their grip on the Red Sea, leaving WTI above $100 as the new week begins."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,333.04", "delta": "▲0.96%", "dir": "up", "note_ko": "4거래일 연속 하락 끊고 반등 · CPI 예상 부합에 안도", "note_en": "Snapped a 4-day slide as CPI matched forecasts"},
+    {"label": "S&P 500", "value": "7,656.98", "delta": "▲0.86%", "dir": "up", "note_ko": "9/3 고점 7,747.71 대비 -1.17%", "note_en": "-1.17% from the Sep 3 high of 7,747.71"},
+    {"label": "KOSPI", "value": "6,909.91", "delta": "▼1.76%", "dir": "down", "note_ko": "9/11 종가 · 코스피는 아직 개장 전", "note_en": "Sep 11 close · Kospi has yet to open"},
+    {"label": "VIX", "value": "15.84", "delta": "▼11.21%", "dir": "down", "note_ko": "CPI 안도에 공포지수 진정", "note_en": "Eased on CPI relief"},
+    {"label": "Fear&Greed", "value": "33", "delta": "33 → 33", "dir": "flat", "note_ko": "등급 '공포(Fear)' 그대로 유지", "note_en": "Stayed in 'Fear' territory"},
+    {"label": "US 10Y", "value": "4.96%", "delta": "4.95% → 4.96%", "dir": "up", "note_ko": "장중 4.99%까지, 2023년 이후 최고", "note_en": "Hit 4.99% intraday, highest since 2023"},
+    {"label": "USD/KRW", "value": "1,344.2", "value_sub": "· DXY 99.1", "delta": "▼0.30%", "dir": "down", "note_ko": "최근 고시가 기준 · 달러인덱스는 99선 위 유지", "note_en": "Latest available quote · dollar index holds above 99"},
+    {"label": "Gold", "value": "$4,408.90", "delta": "▲1.02%", "dir": "up", "note_ko": "국채금리 급등 속에도 안전자산 수요 유입", "note_en": "Safe-haven demand held up despite the yield spike"},
+    {"label": "WTI", "value": "$100.05", "delta": "▼2.37%", "dir": "down", "note_ko": "장중 $104 육박 후 진정 · 송유관 공격으로 다시 주목", "note_en": "Eased from a near-$104 intraday high; pipeline attack keeps risk elevated"},
+    {"label": "Bitcoin", "value": "$76,924.13", "delta": "▼0.45%", "dir": "down", "note_ko": "위험선호 약화 속 보합권", "note_en": "Flat-to-lower amid softer risk appetite"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": {"ko": "CPI는 안도, 근원물가는 경계", "en": "CPI brought relief, core inflation kept nerves up"},
+  "main_tile_note": {"ko": "나스닥 4거래일만의 반등", "en": "Nasdaq's first gain in 4 sessions"},
+  "market_note_ko": "美 8월 CPI가 예상에 부합하며 지수는 나흘 만에 반등했지만, 근원물가가 예상을 웃돌며 9월 FOMC 금리 인상 확률을 86%까지 끌어올렸다. 주말 사이 사우디 동서 송유관이 드론 공격으로 멈추고 후티 반군이 홍해 관문을 장악하며 유가는 여전히 100달러 위에 머문다.",
+  "market_note_en": "Indexes rebounded for the first time in 4 sessions as August CPI matched forecasts, but a hotter-than-expected core reading pushed September rate-hike odds to 86%. Over the weekend, a drone attack halted Saudi Arabia's East-West pipeline and Houthi forces tightened their grip on the Red Sea, keeping oil above $100.",
+
+  "chart_series_values": [26370.89, 26099.77, 26217.83, 26584.06, 26506.99, 26421.41, 26253.34, 26081.72, 26333.04],
+  "chart_series_labels": ["8.31", "9.1", "9.2", "9.3", "9.4", "9.8", "9.9", "9.10", "9.11"],
+  "chart_title": {"ko": "나흘 연속 하락을 끊고 반등", "en": "Snapped a 4-day slide"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9/3 고점 26,584.06 → 9/10 저점 26,081.72 → 9/11 26,333.04(+0.96%)", "en": "Sep 3 high 26,584.06 → Sep 10 low 26,081.72 → Sep 11 close 26,333.04 (+0.96%)"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "반도체·기술이 반등 주도, 9개 섹터 상승", "en": "Semis and Tech Led the Rebound; 9 Sectors Rose"},
+  "sector_sub": {"ko": "美 섹터 ETF 등락률 · 9/11 종가 기준", "en": "US sector ETFs · Sep 11 close"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Dollar Volume"},
+  "rank_sub": {"ko": "美 개별 종목 거래대금 상위 5 · 9/11", "en": "Top 5 US stocks by dollar volume · Sep 11"},
+  "rank_unit": {"ko": "단위 · 달러 거래대금", "en": "Unit · USD dollar volume"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "美 CPI·소비자심리 · 어도비 실적", "en": "US CPI & consumer sentiment · Adobe earnings"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥 종합", "label_en": "Nasdaq Composite", "value": "26,333.04", "delta": "▲0.96%", "dir": "up",
+         "sub_ko": "9/3 고점 대비 -0.94% · 4거래일 연속 하락 끊었다", "sub_en": "-0.94% from the Sep 3 high · snapped a 4-day slide"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,656.98", "delta": "▲0.86%", "dir": "up",
+         "sub_ko": "9/3 고점 7,747.71 대비 -1.17%", "sub_en": "-1.17% from the Sep 3 high of 7,747.71"}
+      ],
+      "breadth": [{"label_ko": "거래대금 상위 299종목 등락", "label_en": "Advancers/decliners, top 299 by turnover", "up": 185, "flat": 0, "down": 114}],
+      "note_ko": "CPI가 예상에 부합하며 지수는 나흘 만에 반등했다. 거래대금 상위 299종목 중 185개가 올라 상승이 넓게 퍼졌지만, 근원물가가 예상을 웃돌고 유가가 여전히 100달러 위에 머물며 랠리의 발목을 잡았다.",
+      "note_en": "Indexes rebounded after 4 days as CPI matched forecasts. 185 of the top 299 stocks by turnover advanced, but a hotter-than-expected core reading and oil still above $100 capped the rally."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "반도체(SMH)", "label_en": "Semis (SMH)", "value": 1.47},
+        {"label_ko": "기술(XLK)", "label_en": "Tech (XLK)", "value": 1.32},
+        {"label_ko": "산업재(XLI)", "label_en": "Indu. (XLI)", "value": 1.07},
+        {"label_ko": "통신(XLC)", "label_en": "Comm (XLC)", "value": 0.99},
+        {"label_ko": "소비재(XLY)", "label_en": "Disc. (XLY)", "value": 0.89},
+        {"label_ko": "부동산(XLRE)", "label_en": "REITs (XLRE)", "value": 0.86},
+        {"label_ko": "금융(XLF)", "label_en": "Fin. (XLF)", "value": 0.67},
+        {"label_ko": "소재(XLB)", "label_en": "Matl (XLB)", "value": 0.37},
+        {"label_ko": "필수소비(XLP)", "label_en": "Staples (XLP)", "value": 0.35},
+        {"label_ko": "에너지(XLE)", "label_en": "Energy (XLE)", "value": 0.32},
+        {"label_ko": "헬스(XLV)", "label_en": "Health (XLV)", "value": -0.18},
+        {"label_ko": "유틸(XLU)", "label_en": "Util. (XLU)", "value": -0.31}
+      ],
+      "note_ko": "반도체(SMH)·기술(XLK)이 강세를 이끌며 GICS 11개 섹터 중 9개가 상승했다. 유가가 여전히 100달러 위에 있는데도 에너지(XLE)는 +0.32%에 그쳐, 유가와 에너지주 사이 괴리가 이어졌다.",
+      "note_en": "Semis (SMH) and tech (XLK) led as 9 of 11 GICS sectors rose. Energy (XLE) gained just 0.32% even with oil still above $100, extending the gap between crude and energy stocks."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Dollar Volume",
+      "rows": [
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$21.20B", "pct": -0.22},
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$19.44B", "pct": -0.03},
+        {"name_ko": "애플", "name_en": "Apple", "value": "$16.85B", "pct": 1.75},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$15.31B", "pct": -3.50},
+        {"name_ko": "스페이스X", "name_en": "SpaceX", "value": "$11.99B", "pct": 2.04}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중", "label_en": "Top 5 share of dollar volume", "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5 stocks", "pct": 25.1, "color": "#f5a623"},
+          {"label_ko": "나머지 294종목", "label_en": "Other 294 stocks", "pct": 74.9, "color": "#9aa5b1"}
+        ]
+      },
+      "note_ko": "마이크론이 소폭 하락에도 거래대금 1위를 지켰고 엔비디아가 뒤를 이었다. 샌디스크만 -3.50%로 큰 폭 하락했다. 상위 5종목이 표본 299종목 거래대금의 25.1%를 차지했다.",
+      "note_en": "Micron held the top spot despite a small decline, with Nvidia close behind. SanDisk was the lone big decliner at -3.50%. The top 5 stocks made up 25.1% of turnover among the 299-stock sample."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "美 8월 CPI(전년비)", "label_en": "US Aug CPI (YoY)", "value": "3.4%", "delta": {"ko": "예상 3.4% 부합", "en": "In line with est. 3.4%"}, "dir": "flat",
+         "sub_ko": "전월비 +0.4% · 예상 부합", "sub_en": "+0.4% MoM · matched estimate"},
+        {"label_ko": "美 8월 근원 CPI(전월비)", "label_en": "US Aug Core CPI (MoM)", "value": "0.3%", "delta": {"ko": "예상 0.2% 상회", "en": "Beat est. 0.2%"}, "dir": "up",
+         "sub_ko": "전년비 2.4% · 에너지·식품 제외", "sub_en": "+2.4% YoY · ex food & energy"},
+        {"label_ko": "美 9월 미시간대 소비자심리(예비치)", "label_en": "US Sep Michigan Sentiment (Prelim)", "value": "47.8", "delta": {"ko": "예상 51.4 하회", "en": "Missed est. 51.4"}, "dir": "down",
+         "sub_ko": "전월 51.7 · 역대 두 번째로 낮은 수준", "sub_en": "Down from 51.7 · second-lowest on record"},
+        {"label_ko": "美 소비자 1년 기대인플레이션", "label_en": "US 1-Yr Inflation Expectations", "value": "4.6%", "delta": "4.0% → 4.6%", "dir": "up",
+         "sub_ko": "미시간대 조사 · 6월 이후 최고치 · 5년 기대치도 3.3%→3.4%", "sub_en": "Michigan survey · highest since June (5-yr: 3.3%→3.4%)",
+         "ref_ko": "가계가 예상하는 향후 물가상승률 · 기대인플레이션 자체가 실제 물가에 영향을 준다", "ref_en": "Households' expected future inflation, which itself feeds back into prices"},
+        {"label_ko": "어도비(ADBE) 3분기 EPS", "label_en": "Adobe (ADBE) Q3 EPS", "value": "$6.13", "delta": {"ko": "예상 $6.08 상회", "en": "Beat est. $6.08"}, "dir": "up",
+         "sub_ko": "매출 $67.6억 · 예상 $66.9억", "sub_en": "Revenue $6.76B vs. est. $6.69B"},
+        {"label_ko": "美 9월 FOMC 금리인상 확률", "label_en": "Sept FOMC Rate-Hike Odds", "value": "86%", "delta": {"ko": "CPI 직후 83%→현재 86%", "en": "83% right after CPI → 86% now"}, "dir": "up",
+         "sub_ko": "3년 만의 금리 인상 여부 저울질", "sub_en": "Markets weigh the first hike in 3 years",
+         "ref_ko": "시장이 가격에 반영한 확률 · 실제 결정은 FOMC가 9/16~17에 발표", "ref_en": "Market-implied odds · the FOMC decides and announces Sep 16-17"},
+        {"label_ko": "두바이유(주간)", "label_en": "Dubai Crude (Weekly)", "value": "+21%", "delta": {"ko": "일주일 새 급등", "en": "Surged in a week"}, "dir": "up",
+         "sub_ko": "亞 정제마진은 $26.4로 축소 · 하나증권", "sub_en": "Asian refining margins fell to $26.4 · Hana Securities",
+         "ref_ko": "아시아 원유 벤치마크 · 정제마진은 원유를 석유제품으로 바꿀 때 남는 이윤", "ref_en": "Asia's crude benchmark; refining margin is the profit from making fuel"}
+      ],
+      "note_ko": "CPI는 예상에 부합했지만 근원물가·소비자심리는 모두 경계 신호를 보냈다. 어도비는 실적을 상회했고, 시장은 이제 9/16~17 FOMC의 금리 인상 여부를 저울질하고 있다.",
+      "note_en": "CPI matched forecasts, but core inflation and consumer sentiment both flashed caution. Adobe beat estimates, and markets now weigh whether the Fed hikes at its Sep 16-17 meeting."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "美 남부 AI데이터센터 건설현장, 인력난에 공기 지연", "headline_en": "US Data Center Site Hits Delays on Worker Shortage",
+         "body_ko": "옛 남북전쟁 격전지에 들어서는 대형 AI 데이터센터 공사가 숙련 전기·배관 인력 부족으로 늦어지고 있다. 변압기·초고압 케이블 설치 일정이 함께 밀리며 전력 인프라 확충 계획 전반에 영향을 주고 있다.",
+         "body_en": "A major AI data center under construction on a former Civil War battlefield is falling behind schedule due to a shortage of skilled electrical and piping workers, delaying transformer and high-voltage cable installs across the broader power buildout."},
+        {"headline_ko": "스페이스X, 가스터빈 부품 자체생산으로 전력난 대비", "headline_en": "SpaceX Builds Its Own Gas-Turbine Parts to Beat Power Crunch",
+         "body_ko": "스페이스X가 AI 데이터센터 전력난에 대비해 가스발전소 핵심 부품인 블레이드·베인을 자체 생산하기 시작했다. 외부 공급망 병목에 기대지 않고 전력 확보 속도를 스스로 높이려는 시도다.",
+         "body_en": "SpaceX has started producing gas-turbine blades and vanes in-house to secure power for AI data centers faster, rather than relying on bottlenecked outside suppliers."},
+        {"headline_ko": "韓 전력기기 업계, 머스크 만나 美 데이터센터 수출 논의", "headline_en": "Korean Power-Equipment Makers Court Musk for US Data Center Deals",
+         "body_ko": "한국전력·한국전기공업협동조합 등이 미국 현지를 방문해 변압기·배전 설비 공급을 논의했다. AI 데이터센터發 전력기기 수요가 급증하며 K-전력기기 수출 기회로 이어지고 있다.",
+         "body_en": "Korea Electric Power and Korean power-equipment makers visited the US to discuss transformer and distribution-gear supply, as AI data center demand opens export opportunities for Korean power equipment."},
+        {"headline_ko": "UAE, 5GW AI데이터센터 분산 배치로 안보 리스크 관리", "headline_en": "UAE Spreads 5GW of AI Data Centers to Manage Security Risk",
+         "body_ko": "UAE가 대규모 AI 데이터센터를 한 곳에 집중하지 않고 여러 지역에 분산 배치하는 구조로 전환했다. 전력·안보 제약을 동시에 완화하려는 전략으로 평가된다.",
+         "body_en": "The UAE has restructured its large-scale AI data center buildout to spread capacity across multiple sites rather than concentrating it, aiming to ease both power and security constraints at once."},
+        {"headline_ko": "효성중공업, 2GW HVDC로 AI시대 장거리 송전 도전", "headline_en": "Hyosung Heavy Industries Pushes 2GW HVDC for the AI Power Era",
+         "body_ko": "효성중공업이 2GW급 초고압직류송전(HVDC) 기술 개발에 나섰다. AI·데이터센터 확산으로 대용량 전력을 먼 거리까지 안정적으로 보내야 할 필요성이 커진 데 따른 것이다.",
+         "body_en": "Hyosung Heavy Industries is developing 2GW-class HVDC transmission technology, responding to the growing need to move large amounts of power reliably over long distances for AI and data centers."},
+        {"headline_ko": "앤트로픽 CEO \"AI 개발 속도 늦춰야\"…4천단어 에세이로 경고", "headline_en": "Anthropic CEO Warns Industry to 'Pace the Frontier' in 4,000-Word Essay",
+         "body_ko": "다리오 아모데이 앤트로픽 CEO가 12일 'We Must Pace the Frontier'라는 에세이를 공개하고 재귀적 자기개선·AI 에이전트 군집 확산을 이유로 최첨단 모델 개발 속도 조절을 촉구했다. 업계에서는 중국과의 경쟁 구도가 감속론의 최대 딜레마라는 반론도 나온다.",
+         "body_en": "Anthropic CEO Dario Amodei published an essay titled 'We Must Pace the Frontier' on Sep 12, urging the industry to slow frontier-model development over risks from recursive self-improvement and swarms of AI agents — sparking pushback that competition with China is the biggest flaw in any slowdown argument."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "美 9월 FOMC 금리인상 확률 86%로 상승", "headline_en": "Sept FOMC Rate-Hike Odds Climb to 86%",
+         "body_ko": "8월 근원 CPI가 예상을 웃돌면서 시장이 반영하는 9월 금리 인상 확률이 CPI 발표 직후 83%에서 이날 오전 86%로 올라갔다. 실제로 인상되면 약 3년 만의 첫 금리 인상이다.",
+         "body_en": "After a hotter-than-expected core CPI, market-implied odds of a September hike rose from 83% to 86% — the Fed's first hike in roughly 3 years."},
+        {"headline_ko": "美 10년물 국채, 장중 4.99%…3년래 최고, 30년물은 19년래 최고", "headline_en": "US 10Y Hits 4.99% Intraday, a 3-Year High; 30Y Highest Since 2007",
+         "body_ko": "미 10년물 국채금리가 지난 11일 장중 4.99%까지 치솟은 뒤 4.96~4.97% 선에서 마감했다. 30년물은 5.35~5.38%까지 올라 2007년 이후 최고 수준을 기록했다.",
+         "body_en": "The 10-year Treasury hit 4.99% intraday on Sep 11, a 3-year high, before settling near 4.96%. The 30-year climbed to 5.35%, its highest since 2007."},
+        {"headline_ko": "사우디 동서 송유관, 드론 공격에 가동 중단…공급 4% 차질 우려", "headline_en": "Saudi East-West Pipeline Halted After Drone Strike, Risking 4% of Supply",
+         "body_ko": "사우디아라비아가 이라크발 드론 공격을 받은 동서 송유관 가동을 예방 차원에서 멈췄다. 하루 500만 배럴을 실어나르는 노선으로, 재가동이 늦어지면 전 세계 원유 공급의 최대 4%가 차질을 빚을 수 있다는 우려가 나온다.",
+         "body_en": "Saudi Arabia halted its 5M-barrel-a-day East-West pipeline after a drone strike from Iraq, risking up to 4% of global oil supply."},
+        {"headline_ko": "호르무즈·홍해·육상 송유관까지…사우디 원유수송 '3중 봉쇄' 위기", "headline_en": "Hormuz, the Red Sea, and Now a Pipeline: Saudi Oil Faces a 'Triple Blockade'",
+         "body_ko": "이란의 호르무즈 해협 봉쇄를 우회해 온 사우디가 홍해 관문 바브엘만데브 해협에서 후티 반군의 공세에 이어, 우회로였던 동서 송유관까지 이라크발 드론에 피격되며 해상·육상 모두 막히는 '3중 압박'에 놓였다.", "body_en": "Saudi oil had routed around Iran's Hormuz blockade — but Houthis now hold Bab-el-Mandeb, and even the overland bypass pipeline was hit by a drone strike."},
+        {"headline_ko": "브릭스, 중동 확전 자제 촉구…호르무즈 임시항로 협상은 연기", "headline_en": "BRICS Urges Restraint as Hormuz Interim-Route Talks Slip",
+         "body_ko": "브릭스 국가들이 중동 확전 자제를 촉구했지만, 이란·오만·걸프국 간 호르무즈 해협 임시 항로 협상은 예정보다 늦어지고 있다. 긴장 완화 신호가 뚜렷하지 않은 채 새 주가 시작됐다.",
+         "body_en": "BRICS urged restraint in the Middle East, but Iran-Oman-Gulf talks on an interim Hormuz route have slipped past schedule, with little sign of de-escalation."},
+        {"headline_ko": "두바이유 일주일새 21% 급등…亞 정제마진은 오히려 축소", "headline_en": "Dubai Crude Jumps 21% in a Week as Asian Refining Margins Shrink",
+         "body_ko": "두바이유가 일주일 새 21% 급등하며 WTI보다 가파르게 올랐다. 반면 아시아 복합정제마진은 배럴당 33.6달러에서 26.4달러로 줄어 6주 연속 하락했다.",
+         "body_en": "Dubai crude surged 21% in a week, outpacing WTI. Asian refining margins fell to $26.4/bbl from $33.6, a sixth straight weekly decline."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko": "지금 ~ 오늘 밤 9시(KST)", "en": "Now through 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"]
+  },
+  "schedule": [
+    {"time": "13:30", "title_ko": "日 8월 산업생산(확정치)", "title_en": "Japan Industrial Production (Final)", "detail_ko": "예상 전월비 +0.1% · 이전 +0.1%", "detail_en": "Est. +0.1% MoM · prev +0.1%", "importance": "mid"},
+    {"time": "18:15", "title_ko": "ECB 쉬나벨 이사 연설", "title_en": "ECB's Schnabel Speaks", "detail_ko": "통화정책 정상화 속도 관련 발언 주목", "detail_en": "Markets watch for policy-normalization signals", "importance": "mid"},
+    {"time": "19:00", "title_ko": "中 8월 M2·신규대출", "title_en": "China M2 & New Loans (Aug)", "detail_ko": "M2 전년비 예상 +7.6% · 이전 +7.7%", "detail_en": "M2 YoY est. +7.6% · prev +7.7%", "importance": "mid"},
+    {"time": "9/15", "title_ko": "中 8월 산업생산·소매판매 [미리보기]", "title_en": "China Industrial Output & Retail Sales (Aug) [Preview]", "detail_ko": "산업생산 예상 +4.8% · 소매판매 예상 +0.8%", "detail_en": "IP est. +4.8% YoY · retail sales est. +0.8% YoY", "importance": "high"},
+    {"time": "9/15", "title_ko": "韓 8월 무역수지·수출입물가 [미리보기]", "title_en": "Korea Trade Balance & Import/Export Prices (Aug) [Preview]", "detail_ko": "전월 무역수지 +34.75억달러", "detail_en": "Prior trade balance +$3.475B", "importance": "mid"},
+    {"time": "9/16~17", "title_ko": "美 FOMC 금리결정 [미리보기]", "title_en": "US FOMC Rate Decision [Preview]", "detail_ko": "3년 만의 금리 인상 여부 · 시장 반영 확률 86%", "detail_en": "First hike in 3 years? Markets price ~86% odds", "importance": "high"},
+    {"time": "9/17", "title_ko": "유로존·일본 8월 CPI [미리보기]", "title_en": "Eurozone & Japan CPI (Aug) [Preview]", "detail_ko": "유로존 예상 전년비 +3.3% · 일본 전년비 발표", "detail_en": "Eurozone est. +3.3% YoY · Japan YoY due", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "A dim, moody trading floor moments after the closing bell, warm amber terminal lights reflecting off dark glass, silhouettes of traders in the distance, cinematic low-key lighting",
+    "3": "A wide shot of a New York trading floor at dusk, rows of monitors streaming green and red index numbers, soft bokeh, dark blue and amber color grade",
+    "7": "An industrial power substation at twilight, rows of transformers and high-voltage lines under a dramatic sky, cool blue tones with warm sodium light accents",
+    "8": "A tanker silhouette on open water at dusk near a narrow strait, distant oil-rig lights, tense amber-and-navy color palette, wide cinematic composition"
+  },
+
+  "caption_ko": "美 CPI는 예상에 부합했지만 근원물가·유가·금리는 모두 경계 신호. 사우디 송유관 공격에 WTI는 100달러 위, 국채 10년물은 3년래 최고, 9월 FOMC 금리인상 확률은 86%까지 올랐습니다. 오늘 아침 놓치면 안 될 시장 브리핑, 저장하고 팔로우하세요. 🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#루키온브리핑 #증시브리핑 #나스닥 #SP500 #코스피 #국제유가 #WTI #미국금리 #FOMC #국채금리 #CPI #인플레이션 #중동정세 #호르무즈 #경제뉴스 #주식투자",
+  "caption_en": "US CPI matched forecasts, but core inflation, oil and yields all flashed caution. WTI holds above $100 after the Saudi pipeline attack, the 10-year Treasury hit a 3-year high, and September rate-hike odds climbed to 86%. Save and follow so you don't miss the morning market brief. 🌙 Next brief tonight at 9 PM KST, before the US open.\n\n#luckyonbriefing #marketbrief #nasdaq #sp500 #kospi #oilprice #wti #fedrate #fomc #treasuryyields #cpi #inflation #middleeast #hormuz #economicnews #investing",
+  "sources": ["Yahoo Finance", "FMP", "FINRA", "Naver News", "Yonhap", "News1", "CNN Fear & Greed Index"]
+}
