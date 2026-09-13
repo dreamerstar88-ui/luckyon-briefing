@@ -921,7 +921,10 @@ const R = {
     const CO = d(c, 'callout', null);
     const callout = CO ? (() => {
       const x = cx(CO.i), yTop = vy(BARS[CO.i]?.v || 0);
-      const right = x > W / 2;
+      // 기본은 «막대가 오른쪽 절반이면 문구를 왼쪽에». 봉이 많아 짚을 막대가 맨 왼쪽에 오면
+      // 문구가 오른쪽으로 뻗으면서 지시선의 수직 구간이 아래 패널명(`panel_label`)을 관통한다
+      // (EP.07 en p.06, 27봉이라 i=1 의 x 가 62 였다). `side` 로 그 회차가 직접 고를 수 있다.
+      const right = CO.side ? (CO.side === 'left') : (x > W / 2);
       const anchor = right ? 'end' : 'start';
       const tx = right ? Math.max(x - 34, PADL + 60) : Math.min(x + 34, W - PADR - 60);
       // 지시선은 «가로로 빠졌다가 막대 바로 위에서 수직으로 내려꽂는» ㄱ자로 그린다.
@@ -949,8 +952,13 @@ const R = {
       const edges = [ya, yb].filter((v) => v != null).map((y) =>
         `<line x1="${PADL}" y1="${y}" x2="${W - PADR}" y2="${y}" stroke="${col}"
                stroke-width="4" stroke-dasharray="14 10"/>`).join('');
+      // 라벨은 기본적으로 오른쪽 끝에 붙는데, 그 자리에 마지막 캔들이 있으면 글자가 캔들 위에 얹힌다
+      // (EP.07 ko p.06 에서 「7/31 갭 226,000~243,000」이 8/12 캔들 몸통을 가로질렀다 — 같은 색 계열이라
+      // 라벨이 그 캔들의 것처럼 읽혔다). `label_at`(0~1) 을 주면 그 자리에 가운데 정렬로 놓는다.
+      const LA = l.label_at;
+      const lx = (LA != null) ? PADL + (W - PADL - PADR) * LA : (W - PADR);
       return `${band}${edges}
-        <text x="${W - PADR}" y="${top - 12}" text-anchor="end" font-family="${FONT_TITLE}"
+        <text x="${lx}" y="${top - 12}" text-anchor="${(LA != null) ? 'middle' : 'end'}" font-family="${FONT_TITLE}"
               font-size="25" font-weight="800" fill="${col}"
               stroke="${C.paper}" stroke-width="7" paint-order="stroke">${esc(t(l, 'label'))}</text>`;
     }).join('');
@@ -987,8 +995,12 @@ const R = {
     // (거래량 패널을 가리키는 `callout` 과 혼동하지 말 것 — 그쪽은 막대를, 이쪽은 주가를 짚는다.)
     const marks = (d(c, 'marks', [])).map(m => {
       const mx = cx(m.i), my = py(m.price), right = mx > W / 2;
+      // 번호가 있는 동그라미는 숫자를 읽어야 하므로 종이색으로 채우지만, **번호 없는 동그라미는
+      // 비워 둔다** — 채우면 그 자리의 캔들 몸통을 지워 버린다. EP.07 ko p.06 에서 회차의 주인공인
+      // 갭 당일 캔들이 «시가» 표시 동그라미에 뚫려 시·종가를 읽을 수 없었다. 빈 동그라미는
+      // «가리키는» 장치이지 «덮는» 장치가 아니다.
       return `
-      <circle cx="${mx}" cy="${my}" r="16" fill="${C.paper}" stroke="${C.red}" stroke-width="5"/>
+      <circle cx="${mx}" cy="${my}" r="16" fill="${m.n != null ? C.paper : 'none'}" stroke="${C.red}" stroke-width="5"/>
       ${m.n != null ? `<text x="${mx}" y="${my + 9}" text-anchor="middle" font-family="${FONT_TITLE}"
             font-size="24" font-weight="800" fill="${C.red}">${esc(String(m.n))}</text>` : ''}
       ${t(m, 'label') ? `<text x="${right ? Math.min(mx + 40, W - PADR) : Math.max(mx - 40, PADL)}"
@@ -1230,7 +1242,17 @@ const overflowOf = () => pg.evaluate(() => {
     if (r.width === 0 || r.height === 0) return;
     const over = Math.max(r.bottom - pr.bottom, r.right - pr.right);
     if (over <= TOL) return;
-    if (el.querySelector('*')) return;     // 넘친 «가장 안쪽» 요소만 보고한다
+    // 넘친 «가장 안쪽» 요소만 보고한다 — 다만 **스스로 테두리·배경을 그리는 상자**는 예외다.
+    // 그런 상자는 자기 눈에 보이는 가장자리가 따로 있어서, 글자는 종이 안에 들어와 있는데
+    // 상자의 아래 테두리만 종이 밖으로 잘려 나갈 수 있다. EP.07 en p.07 의 경고 상자가 그랬다 —
+    // 글자는 다 보이는데 아래 테두리가 없어서, 사람이 눈으로 볼 때까지 아무도 몰랐다.
+    if (el.querySelector('*')) {
+      const st = getComputedStyle(el);
+      const hasEdge = st.borderBottomWidth !== '0px' || st.borderTopWidth !== '0px'
+        || st.borderLeftWidth !== '0px' || st.borderRightWidth !== '0px'
+        || (st.backgroundColor && st.backgroundColor !== 'rgba(0, 0, 0, 0)' && st.backgroundColor !== 'transparent');
+      if (!hasEdge) return;
+    }
     bad.push({ kind: 'over', over: Math.round(over), tag: el.tagName.toLowerCase(),
       text: (el.textContent || '').trim().slice(0, 40) });
   });

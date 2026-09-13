@@ -455,6 +455,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | **변종 이름** (`type` · `overlay` · `sketch` · `direction` · `mode`) | 모르는 값이면 멈춘다. 예전에는 조용히 기본 그림으로 떨어져 **본문이 말하는 것과 다른 그림**이 실렸다(0-0 의 EP.06 표지). `direction` 은 오타 하나로 「하락」이라 써 놓고 상승 그림이 그려지던 자리다. 값이 맞는데 이 오류가 나면 **렌더러가 낡은 것**이니 0-0 의 명령으로 `main` 것을 가져온다. |
 | **종이 밖 넘침** | 제목·본문이 길어져 글자가 종이 밖으로 잘리는 것. 넘친 요소와 몇 px 인지 찍어 준다. |
 | **형광펜 칩 겹침** | 종이 «안»에서 마무리 칩이 다른 요소 위에 올라타는 것. 넘치지는 않아 눈으로 놓치기 쉽다 — EP.06 en p.04 가 그랬다. |
+| **테두리 상자 잘림** | `numbered` 의 경고 상자처럼 **스스로 테두리를 그리는 상자**가 종이 밖으로 밀리는 것. 예전에는 «가장 안쪽» 요소만 검사해서 **글자는 다 보이는데 아래 테두리만 없는** 카드가 통과했다(EP.07 en p.07). 지금은 테두리·배경이 있는 요소도 함께 본다. |
 
 넘침·겹침은 **본문·제목을 줄여서** 푼다. 그림(`pricevol`·`lines`·`versus`)은 자리가 모자라면 비율 그대로
 조금 작아지므로 대개 글자 쪽이 원인이다.
@@ -480,7 +481,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | type | 쓰임 | 주요 필드 |
 |---|---|---|
 | `cover` | p.01 표지 | `title`, `sub`, `cta`, `annot`(`\|` 로 줄바꿈), `overlay`(선택) |
-| `pricevol` | **주가 + 거래량 2단 패널** — 실제 차트가 생긴 그대로 | `title`, `body`, `mode`(`candle`\|`line`), `bars[].{o,h,l,c,v,hi}`, `avg`, `avg_label`, `levels[].{price,to,label,color}`, **`trendline.{from,to,label,label_at}`**, **`marks[].{i,price,n}`**, `callout.{i,text}`, `xlabels[].{i,text}`, `price_label`, `panel_label`, `frame`, `closing` |
+| `pricevol` | **주가 + 거래량 2단 패널** — 실제 차트가 생긴 그대로 | `title`, `body`, `mode`(`candle`\|`line`), `bars[].{o,h,l,c,v,hi}`, `avg`, `avg_label`, `levels[].{price,to,label,color,**label_at**}`, **`trendline.{from,to,label,label_at}`**, **`marks[].{i,price,n}`**, `callout.{i,text,**side**}`, `xlabels[].{i,text}`, `price_label`, `panel_label`, `frame`, `closing` |
 | `intro` | p.02 도입 | `title`, `body`, `caption`, **`sketch`**(`zigzag`\|`mystery-levels` — 아래 «도입 스케치» 참고) |
 | `checklist` | 용어 여러 개 나열 | `title`, `body`, `items[].term/desc`, `closing`, **`figure`**`.{kind:'levels-map', resistance, support, range, breakout}` |
 | `anatomy` | 구조를 화살표로 분해 | `title`, `body`, `labels.upper/body/lower` |
@@ -564,6 +565,14 @@ EP.03 을 `ma` 로 두었더니 주석은 "선 두 개가 만나는 순간"인�
 
 **`pricevol` 의 `levels`** 는 «실제 가격 값»에 가로 기준선을 긋는다(지지선·저항선·목표가·배당락 기준가). `lines` 의 `levels` 가 0~100 정규화 좌표를 받는 것과 달리 **진짜 가격을 그대로** 주므로, 4단계에서 대조한 수치와 그림이 어긋날 수 없다. `to` 를 함께 주면 두 값 사이를 **구간(띠)** 으로 칠한다 — 지지·저항은 한 값이 아니라 폭이 있는 띠이고 카드도 그렇게 가르치므로, 선 하나로 그리면 그림이 설명을 배반한다.
 
+> **`levels` 라벨은 기본이 오른쪽 끝이라 마지막 캔들 위에 얹힌다.** 색까지 비슷하면 그 캔들의 라벨처럼
+> 읽힌다(EP.07 ko p.06). `label_at`(0~1)으로 **글자도 캔들도 없는 구간**에 놓는다. `callout.side` 도 같은
+> 종류의 문제다 — 봉이 스무 개를 넘으면 왼쪽 끝 봉을 가리키는 지시선이 아래 패널명을 관통한다.
+>
+> **번호 없는 `marks` 동그라미는 속이 비어 있다.** 채우면 가리키려던 캔들을 지운다 — EP.07 에서 회차의
+> 주인공인 갭 당일 캔들이 «시가» 표시에 뚫려 시·종가를 읽을 수 없었다. **가리키는 장치가 가리키는 것을
+> 덮으면 안 된다.**
+>
 > **띠에 이름을 붙일 때는 그 이름이 «창 전체»에서 참인지 본다.** 띠는 한 번 칠하면 마지막 봉까지 계속 그려지는데,
 > 이름이 «그 순간의 사실»이면 뒤쪽 봉에서 거짓이 된다. EP.07 초안이 그랬다 — 갭 구간을 「빈칸 226,000~243,000원」
 > 이라 적었는데 **그 뒤 캔들들이 띠 안으로 들어와 있었다**(8/11 저가 227,500). 갭은 «생긴 순간»에 비어 있던
