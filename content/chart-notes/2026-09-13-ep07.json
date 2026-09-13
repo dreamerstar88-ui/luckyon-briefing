@@ -8,14 +8,12 @@
   "byline": "by luckyon",
   "term_ko": "갭 상승·갭 하락",
   "term_en": "Gap up & gap down",
-
   "teaching_points": [
     "① 갭 = 거래가 없던 빈칸. 장이 닫힌 사이 값이 다시 매겨져 생긴다",
     "② 축이 셋 — 방향(위/아래) · 크기(폭) · 메웠는가",
     "③ 차트의 빈칸은 전일 고가·저가 기준. 종가 기준으로 부르는 '갭 상승'과 다를 수 있다 (실무자의 선택)",
     "④ '갭은 메워진다'는 규칙이 아니다"
   ],
-
   "fact_check": {
     "ko": "삼성전자(005930.KS) KST 2026-07-31 봉 — 시가 257,000 / 고가 267,000 / 저가 243,000 / 종가 262,500 / 거래량 58,478,873. 전일(7/30) 고가 226,000 · 종가 207,000. 시가가 전일 고가보다 31,000원 위 → 진짜 갭(빈칸 226,000~243,000). PlayMCP UsStockInfo-get_historical_stock_prices 조회. ※ 이 도구의 KRX 일봉은 15:00Z 로 찍히며 실제 거래일은 KST 기준 +1일이다. 오프셋 증명: 이 시리즈의 봉 날짜가 **일~목에만** 떨어지고 금·토에는 한 번도 없다(예: 2026-06-14는 일요일인데 봉이 있다 — KRX 는 일요일에 열지 않으므로 날짜가 밀린 것이다). 휴장일 교차검증도 했으나 8/17(광복절 대체공휴일)은 어느 해석으로도 비어 있어 판별력이 없고, 판별력이 있는 것은 어린이날 5/5·지방선거 6/3 두 건이다. 뉴스 대조: 7/28 삼성전자 -13.39% 220,000원 마감(토큰포스트·더벨) / 7/29 장중 저가 189,200원(위키트리) / 7/30 종가 207,000원(뉴스1) / 7/31 +26.81% 262,500원(아주경제·더벨) — 네 건 모두 조회값과 원 단위까지 일치. 7/31 급등 배경: 7/30 2분기 컨퍼런스콜에서 잉여현금흐름 50%를 배당·자사주 소각 재원으로 쓰겠다는 주주환원 방침 재확인 + 미국 반도체주 급반등(연합뉴스 2026-07-31, 매일경제 계열 보도). 코스피는 이날 +17.91% 6595.45(뉴시스·더벨). 미메움 확인: 7/31 이후 9/11까지 최저 저가는 8/11의 227,500원으로 빈칸 아래끝 226,000원을 1,500원 남겼다. 창(7/30~8/12) 밖 8/13~9/11 구간의 최저 저가도 243,000원(9/3)이라 화면 밖에서 주장이 뒤집히지 않는다. 10봉 평균 거래량 29,839,859주, 7/31 거래량은 그 1.96배.",
     "en": "Apple (AAPL) 2026-07-31 bar — open 304.55 / high 310.42 / low 299.74 / close 308.64 / volume 132,489,100. Prior session (07-30) low 329.31 / close 333.14. Open was $24.76 below the prior low → true gap down; untraded band 310.42–329.31. Source: PlayMCP UsStockInfo-get_historical_stock_prices (US bars are stamped 04:00Z and the date part is the trading day — no offset). News cross-check: Apple reported FQ3 after the close on Thu 2026-07-30; revenue and EPS beat (iPhone +22%) but Q4 guidance of +9–11% revenue missed the >12% consensus, management citing supply constraints and DRAM/NAND price inflation (CNBC live blog 2026-07-30, Bloomberg 2026-07-30, Seeking Alpha, TradingKey). Fill check: the band's upper edge 329.31 was first traded through on 2026-09-03 (high 330.81), 24 trading days after the gap; by 09-11 the high of 336.22 exceeded even the pre-gap close of 333.14. 27-bar average volume 47,166,393 (bars 07-30 through 09-04, matching avg_en); the gap day's 132,489,100 was 2.81x that.",
@@ -29,7 +27,6 @@
       "연합뉴스 2026-07-31 [마켓뷰] · 뉴시스 2026-07-31 · 더벨 2026-09-02 (코스피/삼성전자 7월 등락률)"
     ]
   },
-
   "cards": [
     {
       "type": "cover",
@@ -81,20 +78,60 @@
       "body_ko": "어제 종가보다 높게 시작하면 흔히 '갭 상승'이라고 합니다. 그런데 차트에 빈칸이 남으려면 어제 고가보다 위에서 시작해야 합니다.",
       "body_en": "People call it a gap whenever a stock opens past yesterday's close. But a band only shows if the open clears yesterday's high — or drops below its low.",
       "left_bars_ko": {
-        "prev": { "o": 214000, "h": 226000, "l": 202000, "c": 207000 },
-        "today": { "o": 257000, "h": 267000, "l": 243000, "c": 262500 }
+        "prev": {
+          "o": 214000,
+          "h": 226000,
+          "l": 202000,
+          "c": 207000
+        },
+        "today": {
+          "o": 257000,
+          "h": 267000,
+          "l": 243000,
+          "c": 262500
+        }
       },
       "right_bars_ko": {
-        "prev": { "o": 248000, "h": 249500, "l": 238000, "c": 239500 },
-        "today": { "o": 244500, "h": 244500, "l": 228000, "c": 240000 }
+        "prev": {
+          "o": 248000,
+          "h": 249500,
+          "l": 238000,
+          "c": 239500
+        },
+        "today": {
+          "o": 244500,
+          "h": 244500,
+          "l": 228000,
+          "c": 240000
+        }
       },
       "left_bars_en": {
-        "prev": { "o": 332.81, "h": 334.46, "l": 329.31, "c": 333.14 },
-        "today": { "o": 304.55, "h": 310.42, "l": 299.74, "c": 308.64 }
+        "prev": {
+          "o": 332.81,
+          "h": 334.46,
+          "l": 329.31,
+          "c": 333.14
+        },
+        "today": {
+          "o": 304.55,
+          "h": 310.42,
+          "l": 299.74,
+          "c": 308.64
+        }
       },
       "right_bars_en": {
-        "prev": { "o": 310.14, "h": 319.28, "l": 309.60, "c": 316.83 },
-        "today": { "o": 317.46, "h": 320.28, "l": 310.65, "c": 311.30 }
+        "prev": {
+          "o": 310.14,
+          "h": 319.28,
+          "l": 309.6,
+          "c": 316.83
+        },
+        "today": {
+          "o": 317.46,
+          "h": 320.28,
+          "l": 310.65,
+          "c": 311.3
+        }
       },
       "hi_label_ko": "어제 고가",
       "hi_label_en": "prior high",
@@ -125,15 +162,102 @@
       "body_ko": "빈칸이 생긴 뒤 가격이 되돌아와 그 구간을 지나가면 '갭을 메웠다'고 합니다. 위로 벌어진 빈칸은 가격이 내려와야, 아래로 벌어진 빈칸은 올라가야 메워집니다.",
       "body_en": "When price returns and trades through the empty band, traders say the gap has been filled. A band above needs price to come down; a band below needs it to come up.",
       "series": [
-        { "points": [[0, 30], [6, 25], [13, 32], [20, 27], [26, 31]] },
-        { "points": [[36, 58], [42, 66], [48, 61], [54, 50], [59, 40], [64, 30]] }
+        {
+          "points": [
+            [
+              0,
+              30
+            ],
+            [
+              6,
+              25
+            ],
+            [
+              13,
+              32
+            ],
+            [
+              20,
+              27
+            ],
+            [
+              26,
+              31
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              36,
+              58
+            ],
+            [
+              42,
+              66
+            ],
+            [
+              48,
+              61
+            ],
+            [
+              54,
+              50
+            ],
+            [
+              59,
+              40
+            ],
+            [
+              64,
+              30
+            ]
+          ]
+        }
       ],
-      "band": { "upper": [[0, 55], [100, 55]], "lower": [[0, 33], [100, 33]], "color": "#c0523c", "opacity": 0.16 },
+      "band": {
+        "upper": [
+          [
+            0,
+            55
+          ],
+          [
+            100,
+            55
+          ]
+        ],
+        "lower": [
+          [
+            0,
+            33
+          ],
+          [
+            100,
+            33
+          ]
+        ],
+        "color": "#c0523c",
+        "opacity": 0.16
+      },
       "levels": [
-        { "y": 55, "label_ko": "빈칸 위끝", "label_en": "top edge" },
-        { "y": 33, "label_ko": "빈칸 아래끝", "label_en": "bottom edge" }
+        {
+          "y": 55,
+          "label_ko": "빈칸 위끝",
+          "label_en": "top edge"
+        },
+        {
+          "y": 33,
+          "label_ko": "빈칸 아래끝",
+          "label_en": "bottom edge"
+        }
       ],
-      "marker": { "x": 64, "y": 30, "below": true, "label_ko": "여기서 메워졌습니다", "label_en": "filled here" },
+      "marker": {
+        "x": 64,
+        "y": 30,
+        "below": true,
+        "label_ko": "여기서 메워졌습니다",
+        "label_en": "filled here"
+      },
       "note_ko": "띠 안에 들어온 것과 반대쪽 끝까지 닿은 것은 다릅니다 — 여기서는 끝까지 닿아야 메워진 것으로 봅니다. 걸리는 시간도 정해져 있지 않아, 그날 바로 메워지기도 하고 몇 주가 걸리기도 합니다.",
       "note_en": "Entering the band and crossing all the way out are different things — here, filled means reaching the far edge. There is no set time either: some fill the same day, some take weeks.",
       "closing_ko": "'언젠가는 메워진다'가 규칙은 아닙니다",
@@ -147,72 +271,357 @@
       "body_ko": "7월 28일부터 사흘 내리 밀린 뒤였습니다. 30일 컨퍼런스콜의 주주환원 방침과 미국 반도체주 급반등이 겹치자, 31일 삼성전자는 전날 고가 226,000원보다 높은 257,000원에 시작했습니다.",
       "body_en": "Apple reported after the close on July 30: revenue and profit beat, but next-quarter guidance came in light. The next morning it opened at $304.55, below the $329.31 low of the session before.",
       "bars_ko": [
-        { "o": 214000, "h": 226000, "l": 202000, "c": 207000, "v": 46694193 },
-        { "o": 257000, "h": 267000, "l": 243000, "c": 262500, "v": 58478873, "hi": true },
-        { "o": 248000, "h": 249500, "l": 238000, "c": 239500, "v": 27825493 },
-        { "o": 244500, "h": 244500, "l": 228000, "c": 240000, "v": 29433821 },
-        { "o": 254000, "h": 254500, "l": 244000, "c": 246000, "v": 22577128 },
-        { "o": 241500, "h": 246000, "l": 228000, "c": 230500, "v": 26101823 },
-        { "o": 235000, "h": 239500, "l": 229000, "c": 231000, "v": 20546010 },
-        { "o": 236000, "h": 238500, "l": 228500, "c": 230000, "v": 16327805 },
-        { "o": 229500, "h": 243000, "l": 227500, "c": 239500, "v": 23310969 },
-        { "o": 243500, "h": 260500, "l": 241000, "c": 255500, "v": 27102479 }
+        {
+          "o": 214000,
+          "h": 226000,
+          "l": 202000,
+          "c": 207000,
+          "v": 46694193
+        },
+        {
+          "o": 257000,
+          "h": 267000,
+          "l": 243000,
+          "c": 262500,
+          "v": 58478873,
+          "hi": true
+        },
+        {
+          "o": 248000,
+          "h": 249500,
+          "l": 238000,
+          "c": 239500,
+          "v": 27825493
+        },
+        {
+          "o": 244500,
+          "h": 244500,
+          "l": 228000,
+          "c": 240000,
+          "v": 29433821
+        },
+        {
+          "o": 254000,
+          "h": 254500,
+          "l": 244000,
+          "c": 246000,
+          "v": 22577128
+        },
+        {
+          "o": 241500,
+          "h": 246000,
+          "l": 228000,
+          "c": 230500,
+          "v": 26101823
+        },
+        {
+          "o": 235000,
+          "h": 239500,
+          "l": 229000,
+          "c": 231000,
+          "v": 20546010
+        },
+        {
+          "o": 236000,
+          "h": 238500,
+          "l": 228500,
+          "c": 230000,
+          "v": 16327805
+        },
+        {
+          "o": 229500,
+          "h": 243000,
+          "l": 227500,
+          "c": 239500,
+          "v": 23310969
+        },
+        {
+          "o": 243500,
+          "h": 260500,
+          "l": 241000,
+          "c": 255500,
+          "v": 27102479
+        }
       ],
       "bars_en": [
-        { "o": 332.81, "h": 334.46, "l": 329.31, "c": 333.14, "v": 74817800 },
-        { "o": 304.55, "h": 310.42, "l": 299.74, "c": 308.64, "v": 132489100, "hi": true },
-        { "o": 309.31, "h": 311.53, "l": 302.30, "c": 303.16, "v": 75052000 },
-        { "o": 302.47, "h": 310.15, "l": 301.06, "c": 309.11, "v": 68001000 },
-        { "o": 309.09, "h": 311.44, "l": 305.41, "c": 310.73, "v": 49438800 },
-        { "o": 314.07, "h": 316.02, "l": 308.96, "c": 312.14, "v": 46139900 },
-        { "o": 311.18, "h": 314.54, "l": 310.47, "c": 313.06, "v": 34437200 },
-        { "o": 306.83, "h": 308.26, "l": 304.61, "c": 308.26, "v": 44812500 },
-        { "o": 307.75, "h": 309.97, "l": 302.79, "c": 304.91, "v": 37476700 },
-        { "o": 305.10, "h": 305.66, "l": 300.57, "c": 302.25, "v": 41657800 },
-        { "o": 304.21, "h": 306.00, "l": 302.05, "c": 305.26, "v": 40349300 },
-        { "o": 306.00, "h": 307.49, "l": 304.30, "c": 305.93, "v": 28229400 },
-        { "o": 306.21, "h": 307.66, "l": 302.94, "c": 305.59, "v": 38169300 },
-        { "o": 307.58, "h": 311.49, "l": 305.74, "c": 310.03, "v": 53424500 },
-        { "o": 310.14, "h": 319.28, "l": 309.60, "c": 316.83, "v": 50505600 },
-        { "o": 317.46, "h": 320.28, "l": 310.65, "c": 311.30, "v": 40959200 },
-        { "o": 312.05, "h": 312.38, "l": 307.01, "c": 309.35, "v": 46876800 },
-        { "o": 311.47, "h": 313.36, "l": 309.97, "c": 310.34, "v": 34673600 },
-        { "o": 310.79, "h": 313.59, "l": 308.21, "c": 309.90, "v": 25869800 },
-        { "o": 310.30, "h": 315.43, "l": 308.80, "c": 313.45, "v": 34024500 },
-        { "o": 310.55, "h": 315.40, "l": 309.40, "c": 314.58, "v": 32419200 },
-        { "o": 316.85, "h": 322.37, "l": 315.45, "c": 319.70, "v": 38649400 },
-        { "o": 319.60, "h": 321.24, "l": 312.80, "c": 316.85, "v": 41242700 },
-        { "o": 316.98, "h": 327.30, "l": 314.73, "c": 325.13, "v": 53167400 },
-        { "o": 326.87, "h": 328.40, "l": 323.53, "c": 324.96, "v": 33776400 },
-        { "o": 324.87, "h": 330.81, "l": 324.11, "c": 328.21, "v": 37225800 },
-        { "o": 328.31, "h": 328.93, "l": 317.86, "c": 319.97, "v": 39606900 }
+        {
+          "o": 332.81,
+          "h": 334.46,
+          "l": 329.31,
+          "c": 333.14,
+          "v": 74817800
+        },
+        {
+          "o": 304.55,
+          "h": 310.42,
+          "l": 299.74,
+          "c": 308.64,
+          "v": 132489100,
+          "hi": true
+        },
+        {
+          "o": 309.31,
+          "h": 311.53,
+          "l": 302.3,
+          "c": 303.16,
+          "v": 75052000
+        },
+        {
+          "o": 302.47,
+          "h": 310.15,
+          "l": 301.06,
+          "c": 309.11,
+          "v": 68001000
+        },
+        {
+          "o": 309.09,
+          "h": 311.44,
+          "l": 305.41,
+          "c": 310.73,
+          "v": 49438800
+        },
+        {
+          "o": 314.07,
+          "h": 316.02,
+          "l": 308.96,
+          "c": 312.14,
+          "v": 46139900
+        },
+        {
+          "o": 311.18,
+          "h": 314.54,
+          "l": 310.47,
+          "c": 313.06,
+          "v": 34437200
+        },
+        {
+          "o": 306.83,
+          "h": 308.26,
+          "l": 304.61,
+          "c": 308.26,
+          "v": 44812500
+        },
+        {
+          "o": 307.75,
+          "h": 309.97,
+          "l": 302.79,
+          "c": 304.91,
+          "v": 37476700
+        },
+        {
+          "o": 305.1,
+          "h": 305.66,
+          "l": 300.57,
+          "c": 302.25,
+          "v": 41657800
+        },
+        {
+          "o": 304.21,
+          "h": 306,
+          "l": 302.05,
+          "c": 305.26,
+          "v": 40349300
+        },
+        {
+          "o": 306,
+          "h": 307.49,
+          "l": 304.3,
+          "c": 305.93,
+          "v": 28229400
+        },
+        {
+          "o": 306.21,
+          "h": 307.66,
+          "l": 302.94,
+          "c": 305.59,
+          "v": 38169300
+        },
+        {
+          "o": 307.58,
+          "h": 311.49,
+          "l": 305.74,
+          "c": 310.03,
+          "v": 53424500
+        },
+        {
+          "o": 310.14,
+          "h": 319.28,
+          "l": 309.6,
+          "c": 316.83,
+          "v": 50505600
+        },
+        {
+          "o": 317.46,
+          "h": 320.28,
+          "l": 310.65,
+          "c": 311.3,
+          "v": 40959200
+        },
+        {
+          "o": 312.05,
+          "h": 312.38,
+          "l": 307.01,
+          "c": 309.35,
+          "v": 46876800
+        },
+        {
+          "o": 311.47,
+          "h": 313.36,
+          "l": 309.97,
+          "c": 310.34,
+          "v": 34673600
+        },
+        {
+          "o": 310.79,
+          "h": 313.59,
+          "l": 308.21,
+          "c": 309.9,
+          "v": 25869800
+        },
+        {
+          "o": 310.3,
+          "h": 315.43,
+          "l": 308.8,
+          "c": 313.45,
+          "v": 34024500
+        },
+        {
+          "o": 310.55,
+          "h": 315.4,
+          "l": 309.4,
+          "c": 314.58,
+          "v": 32419200
+        },
+        {
+          "o": 316.85,
+          "h": 322.37,
+          "l": 315.45,
+          "c": 319.7,
+          "v": 38649400
+        },
+        {
+          "o": 319.6,
+          "h": 321.24,
+          "l": 312.8,
+          "c": 316.85,
+          "v": 41242700
+        },
+        {
+          "o": 316.98,
+          "h": 327.3,
+          "l": 314.73,
+          "c": 325.13,
+          "v": 53167400
+        },
+        {
+          "o": 326.87,
+          "h": 328.4,
+          "l": 323.53,
+          "c": 324.96,
+          "v": 33776400
+        },
+        {
+          "o": 324.87,
+          "h": 330.81,
+          "l": 324.11,
+          "c": 328.21,
+          "v": 37225800
+        },
+        {
+          "o": 328.31,
+          "h": 328.93,
+          "l": 317.86,
+          "c": 319.97,
+          "v": 39606900
+        }
       ],
       "avg_ko": 29839859,
       "avg_en": 47166393,
       "avg_label_ko": "평균 2,984만 주",
       "avg_label_en": "avg 47.2M",
       "levels_ko": [
-        { "price": 226000, "to": 243000, "label_at": 0.68, "label_ko": "7/31 갭 226,000~243,000" }
+        {
+          "price": 226000,
+          "to": 243000,
+          "label_at": 0.68,
+          "label_ko": "7/31 갭 226,000~243,000"
+        }
       ],
       "levels_en": [
-        { "price": 310.42, "to": 329.31, "label_at": 0.30, "label_en": "gap 310.42–329.31" }
+        {
+          "price": 310.42,
+          "to": 329.31,
+          "label_at": 0.3,
+          "label_en": "gap 310.42–329.31"
+        }
       ],
       "marks_ko": [
-        { "i": 1, "price": 257000, "label_ko": "시가 257,000" },
-        { "i": 8, "price": 227500, "label_ko": "8/11 저가 227,500 — 1,500 남음" }
+        {
+          "i": 1,
+          "price": 257000,
+          "label_ko": "시가 257,000"
+        },
+        {
+          "i": 8,
+          "price": 227500,
+          "label_ko": "8/11 저가 227,500 — 1,500 남음"
+        }
       ],
       "marks_en": [
-        { "i": 1, "price": 304.55, "label_en": "opened at $304.55" }
+        {
+          "i": 1,
+          "price": 304.55,
+          "label_en": "opened at $304.55"
+        }
       ],
-      "callout_ko": { "i": 1, "text_ko": "평균의 2배 · 5,848만 주" },
-      "callout_en": { "i": 1, "side": "right", "text_en": "2.8x average · 132.5M" },
+      "callout_ko": {
+        "i": 1,
+        "text_ko": "평균의 2배 · 5,848만 주"
+      },
+      "callout_en": {
+        "i": 1,
+        "side": "right",
+        "text_en": "2.8x average · 132.5M"
+      },
       "xlabels_ko": [
-        { "i": 0, "text_ko": "7/30" }, { "i": 1, "text_ko": "7/31" },
-        { "i": 5, "text_ko": "8/6" }, { "i": 8, "text_ko": "8/11" }, { "i": 9, "text_ko": "8/12" }
+        {
+          "i": 0,
+          "text_ko": "7/30"
+        },
+        {
+          "i": 1,
+          "text_ko": "7/31"
+        },
+        {
+          "i": 5,
+          "text_ko": "8/6"
+        },
+        {
+          "i": 8,
+          "text_ko": "8/11"
+        },
+        {
+          "i": 9,
+          "text_ko": "8/12"
+        }
       ],
       "xlabels_en": [
-        { "i": 1, "text_en": "Jul 31" }, { "i": 9, "text_en": "Aug 12" },
-        { "i": 17, "text_en": "Aug 24" }, { "i": 25, "text_en": "Sep 3" }
+        {
+          "i": 1,
+          "text_en": "Jul 31"
+        },
+        {
+          "i": 9,
+          "text_en": "Aug 12"
+        },
+        {
+          "i": 17,
+          "text_en": "Aug 24"
+        },
+        {
+          "i": 25,
+          "text_en": "Sep 3"
+        }
       ],
       "price_label_ko": "주가(원)",
       "price_label_en": "Price (USD)",
@@ -255,13 +664,28 @@
       "title_ko": "3줄 정리",
       "title_en": "Three lines",
       "points": [
-        { "text_ko": "갭은 거래가 없던 빈칸입니다", "text_en": "A gap is a stretch nobody traded" },
-        { "text_ko": "어제 고가 위면 갭 상승, 저가 아래면 갭 하락", "text_en": "Above yesterday's high: gap up. Below its low: gap down." },
-        { "text_ko": "메워지는 시점은 정해져 있지 않습니다", "text_en": "There's no set time for a gap to fill" }
+        {
+          "text_ko": "갭은 거래가 없던 빈칸입니다",
+          "text_en": "A gap is a stretch nobody traded"
+        },
+        {
+          "text_ko": "어제 고가 위면 갭 상승, 저가 아래면 갭 하락",
+          "text_en": "Above yesterday's high: gap up. Below its low: gap down."
+        },
+        {
+          "text_ko": "메워지는 시점은 정해져 있지 않습니다",
+          "text_en": "There's no set time for a gap to fill"
+        }
       ],
       "ctas": [
-        { "text_ko": "캔들로 놓고 빈칸을 찾아보세요", "text_en": "Switch to candles, then go find one" },
-        { "text_ko": "#투자3분노트 #갭상승 #갭하락", "text_en": "#3MinInvestingNotes #GapUp #GapDown" }
+        {
+          "text_ko": "캔들로 놓고 빈칸을 찾아보세요",
+          "text_en": "Switch to candles, then go find one"
+        },
+        {
+          "text_ko": "#투자3분노트 #갭상승 #갭하락",
+          "text_en": "#3MinInvestingNotes #GapUp #GapDown"
+        }
       ],
       "next_label_ko": "다음 편",
       "next_label_en": "Next up",
@@ -271,7 +695,6 @@
       "disclaimer_en": "Educational content only. Not investment advice."
     }
   ],
-
   "caption_ko": "차트가 한 자리에서 뚝 끊겨 있는 걸 본 적 있으신가요. 그 빈칸이 '갭'입니다.\n\n갭은 가격이 많이 움직인 게 아니라, 그 사이 구간을 아무도 거래하지 않고 건너뛴 것입니다. 어제 고가보다 위에서 시작하면 갭 상승, 어제 저가보다 아래에서 시작하면 갭 하락이고, 빈칸의 두 끝은 어제 캔들과 오늘 캔들이 정합니다.\n\n이번 회차에서 짚은 것\n· 차트에 진짜 빈칸이 남으려면 전일 고가·저가 밖에서 시작해야 합니다. 흔히 말하는 '갭 상승 출발'은 전일 종가 기준이라, 그렇게 불러도 차트엔 빈칸이 없을 수 있습니다.\n· '갭은 언젠가 메워진다'는 규칙이 아닙니다. 그날 바로 메워지기도 하고, 몇 주가 걸리기도 하고, 끝내 안 메워지기도 합니다. 띠 안에 들어온 것과 반대쪽 끝까지 닿은 것도 다릅니다.\n· 실제 사례는 2026년 7월 31일 삼성전자입니다. 전날 고가 226,000원보다 높은 257,000원에 시작해 262,500원(+26.81%)에 끝났고, 226,000~243,000원 구간이 빈칸으로 남았습니다. 8월에 되돌아왔지만 가장 가까이 간 8월 11일 저가가 227,500원으로 아래끝을 1,500원 남겼습니다.\n\n갭 상승이 '오른다'는 뜻은 아닙니다. 빈칸으로 확실해지는 건 '여기 거래가 없었다' 하나뿐입니다.\n\n차트를 캔들(봉)로 놓고 빈칸을 하나 찾아보세요 — 선 차트로는 빈칸이 보이지 않습니다. 다음 편은 시가총액입니다.\n\n#투자3분노트 #갭상승 #갭하락 #주식차트 #캔들차트 #주식공부 #주식초보 #차트분석 #삼성전자 #재테크공부\n\n본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
   "caption_en": "Ever seen a chart break off at one spot and pick up somewhere else? That empty stretch is a gap.\n\nA gap is not a big move in price. It is a stretch of prices that nobody traded, because the market was closed while opinion changed. Open above yesterday's high and you get a gap up; open below yesterday's low and you get a gap down. Yesterday's candle and today's candle set the two edges.\n\nIn this episode\n- For a real band to show on the chart, price has to open outside yesterday's range. A stock that merely opens above yesterday's close is often called a gap up, but it can leave no band at all.\n- 'Gaps always fill' is not a rule. Some fill the same day, some take weeks, and some are never filled.\n- The worked example is Apple on July 31, 2026. It reported after the close on July 30 with a beat on revenue and profit but light guidance for the next quarter. The next morning it opened at $304.55, below the prior session's $329.31 low, leaving a band from 310.42 to 329.31. Price traded back through it 24 trading days later, on September 3.\n\nA gap up does not mean 'it will rise'. All a gap establishes is that nobody traded in that range.\n\nSwitch your chart to candles and go find a band — a line chart hides them. Next up: market capitalization.\n\n#3MinInvestingNotes #GapUp #GapDown #StockCharts #Candlesticks #InvestingBasics #TechnicalAnalysis #StockMarket #AAPL #LearnToInvest\n\nEducational content only. Not investment advice.",
   "alt_ko": [
@@ -294,5 +717,17 @@
     "Title: 'Three things beginners get wrong'. 1. Reading a gap up as 'it will rise' - The band opens at the bell, but today's low is its lower edge, so its width is not settled until the close. A stock can gap up and still close below its open. 2. Waiting because 'it always fills' - Apple's band took 24 trading days to fill. Samsung gapped up the same day and still hadn't filled six weeks later. 3. Measuring from yesterday's close - A stock can open above yesterday's close and still leave no band, because it opened inside yesterday's range. Highs and lows are what reveal it. Red bordered box: A gap is a fact, not a signal. All it establishes: between yesterday's close and today's open, no regular-session trade happened in that range. Nothing more.",
     "Title: 'Three lines'. Three checked lines: A gap is a stretch nobody traded / Above yesterday's high: gap up. Below its low: gap down. / There's no set time for a gap to fill. Two yellow highlighter chips: 'Switch to candles, then go find one' and '#3MinInvestingNotes #GapUp #GapDown'. Below: 'Next up > Market capitalization'. Small print at the bottom: Educational content only. Not investment advice."
   ],
-  "published": {}
+  "published": {
+    "date": "2026-09-13",
+    "ko": {
+      "media_id": "18342562696251763",
+      "permalink": "https://www.instagram.com/p/DdN8OUrFdfu/",
+      "at": "2026-09-13T06:41:35+0000"
+    },
+    "en": {
+      "media_id": "17987840127022242",
+      "permalink": "https://www.instagram.com/p/DdN8ToXFvAX/",
+      "at": "2026-09-13T06:42:19+0000"
+    }
+  }
 }
