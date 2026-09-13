@@ -74,20 +74,46 @@
       "closing_en": "Read the direction and the width together"
     },
     {
-      "type": "versus",
-      "title_ko": "갭이 있다고도, 없다고도 합니다",
-      "title_en": "Two ways to measure it",
-      "body_ko": "'갭 상승 출발'이라고 들었는데 차트엔 빈칸이 안 보일 때가 있습니다. 기준이 둘이라 그렇습니다.",
-      "body_en": "You hear a stock 'gapped up', then find no empty band on the chart. There are two yardsticks.",
-      "columns": [
-        { "name_ko": "차트의 빈칸", "name_en": "The band on the chart", "unit_ko": "어제 고가·저가 기준", "unit_en": "measured to yesterday's high/low" },
-        { "name_ko": "말로 하는 '갭 상승'", "name_en": "'Gapped up' in a headline", "unit_ko": "어제 종가 기준", "unit_en": "measured to yesterday's close" }
-      ],
-      "rows": [
-        { "label_ko": "언제 그렇게 부르나", "label_en": "Called a gap when", "left_ko": "어제 고가보다 위에서 시작", "left_en": "Opens above that high", "right_ko": "어제 종가보다 눈에 띄게 높게 시작", "right_en": "Opens well above that close" },
-        { "label_ko": "차트에 빈칸이 남나", "label_en": "Leaves an empty band?", "left_ko": "남습니다", "left_en": "Yes", "right_ko": "안 남을 수도 있습니다", "right_en": "Not always", "highlight": true },
-        { "label_ko": "무엇을 알 수 있나", "label_en": "What it establishes", "left_ko": "그 구간에 거래가 없었습니다", "left_en": "Nobody traded there", "right_ko": "어제 종가보다 높게 출발했습니다", "right_en": "It opened above its close" }
-      ],
+      "type": "mirror",
+      "figure": "gap-open",
+      "title_ko": "둘 다 '갭 상승 출발'인데<br>한쪽만 빈칸이 남습니다",
+      "title_en": "Both opened past the close.<br>Only one left a band.",
+      "body_ko": "어제 종가보다 높게 시작하면 흔히 '갭 상승'이라고 합니다. 그런데 차트에 빈칸이 남으려면 어제 고가보다 위에서 시작해야 합니다.",
+      "body_en": "People call it a gap whenever a stock opens past yesterday's close. But a band only shows if the open clears yesterday's high — or drops below its low.",
+      "left_bars_ko": {
+        "prev": { "o": 214000, "h": 226000, "l": 202000, "c": 207000 },
+        "today": { "o": 257000, "h": 267000, "l": 243000, "c": 262500 }
+      },
+      "right_bars_ko": {
+        "prev": { "o": 248000, "h": 249500, "l": 238000, "c": 239500 },
+        "today": { "o": 244500, "h": 244500, "l": 228000, "c": 240000 }
+      },
+      "left_bars_en": {
+        "prev": { "o": 332.81, "h": 334.46, "l": 329.31, "c": 333.14 },
+        "today": { "o": 304.55, "h": 310.42, "l": 299.74, "c": 308.64 }
+      },
+      "right_bars_en": {
+        "prev": { "o": 310.14, "h": 319.28, "l": 309.60, "c": 316.83 },
+        "today": { "o": 317.46, "h": 320.28, "l": 310.65, "c": 311.30 }
+      },
+      "hi_label_ko": "어제 고가",
+      "hi_label_en": "prior high",
+      "lo_label_ko": "어제 저가",
+      "lo_label_en": "prior low",
+      "close_label_ko": "어제 종가",
+      "close_label_en": "prior close",
+      "open_label_ko": "오늘 시가",
+      "open_label_en": "open",
+      "left_label_ko": "7월 31일",
+      "left_label_en": "July 31",
+      "right_label_ko": "8월 4일",
+      "right_label_en": "Aug 20",
+      "left_caption_ko": "빈칸이 남습니다",
+      "left_caption_en": "A band is left",
+      "right_caption_ko": "빈칸이 없습니다",
+      "right_caption_en": "No band at all",
+      "note_ko": "8월 4일은 어제 종가보다 5,000원 위, 어제 고가보다는 5,000원 아래에서 시작했습니다. 같은 5,000원인데 어느 쪽을 기준으로 삼느냐에 따라 답이 갈립니다.",
+      "note_en": "Aug 20 opened $0.63 above the prior close but $1.82 below the prior high — still inside yesterday's range, so the chart leaves nothing blank.",
       "closing_ko": "빈칸은 종가 말고 고가·저가로 찾습니다",
       "closing_en": "Use highs and lows, not the close"
     },
@@ -252,7 +278,7 @@
     "크림색 모눈 노트 스타일 표지 카드. 위쪽 작은 차트에 캔들 여덟 개가 있고, 붉은 점선 두 줄 사이가 연분홍 띠로 칠해져 있다. 띠 아래에 캔들 다섯 개, 띠 위에 캔들 세 개가 있어 띠 안에는 캔들이 하나도 걸치지 않는다. 오른쪽 붉은 주석: '어제 고가 위에서 오늘이 시작했습니다. 이 띠는 거래가 없던 자리'. 큰 제목 '어제와 오늘 사이, 아무도 사고팔지 못한 자리입니다'. 아래에 'EP.07 · 갭 상승과 갭 하락'과 노란 형광펜 칩 '저장하고 넘겨보세요'.",
     "제목 '차트가 한 자리에서 뚝 끊겨 있던데요'. 본문: 차트가 쭉 이어지다가 어느 날 한 자리만 뚝 끊겨 있는 걸 본 적 있으실 겁니다. 차트가 뭘 빠뜨린 게 아닙니다. 장이 닫힌 사이, 그 가격대에서는 아무도 사고팔지 못했습니다. 그림은 회색 꺾은선이 왼쪽 아래에서 이어지다 한 자리에서 끊기고, 붉은 점선 두 줄 사이의 연분홍 띠를 건너뛴 뒤 오른쪽 위에서 다시 이어지는 모습이다. 띠 오른쪽에 붉은 물음표 세 개. 캡션 '그 빈칸에 이름이 있습니다 — 갭'.",
     "제목 '빈칸은 두 방향으로 벌어집니다'. 본문: 어제 고가보다 위에서 오늘이 시작하면 갭 상승, 어제 저가보다 아래에서 시작하면 갭 하락입니다. 어느 쪽이든 그 사이는 거래가 없던 구간입니다. 그림은 칸 두 개다. 왼쪽 '갭 상승'은 캔들 세 개가 연분홍 띠 아래에 있고 다음 세 개가 띠 위에 있다. 오른쪽 '갭 하락'은 반대로 캔들 세 개가 띠 위에, 다음 세 개가 띠 아래에 있다. 두 칸 모두 띠 안에는 캔들이 없다. 각각 캡션 '어제 고가 위에서 시작', '어제 저가 아래에서 시작'. 붉은 세로줄 문단: 빈칸의 위아래 끝을 정하는 건 어제 캔들과 오늘 캔들입니다. 형광펜 '어느 쪽으로, 얼마나 벌어졌는지를 함께 봅니다'.",
-    "제목 '갭이 있다고도, 없다고도 합니다'. 본문: '갭 상승 출발'이라고 들었는데 차트엔 빈칸이 안 보일 때가 있습니다. 기준이 둘이라 그렇습니다. 표는 두 칸이다. 왼쪽 감청색 '차트의 빈칸 — 어제 고가·저가 기준', 오른쪽 회색 '말로 하는 갭 상승 — 어제 종가 기준'. 세 줄 비교. 언제 그렇게 부르나: 어제 고가보다 위에서 시작 / 어제 종가보다 눈에 띄게 높게 시작. 차트에 빈칸이 남나: 남습니다 / 안 남을 수도 있습니다(붉게 강조). 무엇을 알 수 있나: 그 구간에 거래가 없었습니다 / 어제 종가보다 높게 출발했습니다. 형광펜 '빈칸은 종가 말고 고가·저가로 찾습니다'.",
+    "제목 '둘 다 갭 상승 출발인데 한쪽만 빈칸이 남습니다'. 본문: 어제 종가보다 높게 시작하면 흔히 '갭 상승'이라고 합니다. 그런데 차트에 빈칸이 남으려면 어제 고가보다 위에서 시작해야 합니다. 그림은 실제 삼성전자 두 날을 나란히 놓은 칸 두 개다. 왼쪽 '7월 31일'은 어제 캔들이 아래에 있고 붉은 점선 '어제 고가' 위로 연분홍 빈 띠가 있으며, 그 위의 오늘 캔들에 '오늘 시가' 화살표가 붙어 있다. 오른쪽 '8월 4일'은 '어제 고가'와 '어제 종가' 두 점선 사이에 '오늘 시가' 화살표가 끼어 있고, 두 캔들이 서로 겹쳐 빈 띠가 없다. 칸 아래 설명은 각각 '빈칸이 남습니다', '빈칸이 없습니다'. 붉은 세로줄 문단: 8월 4일은 어제 종가보다 5,000원 위, 어제 고가보다는 5,000원 아래에서 시작했습니다. 같은 5,000원인데 어느 쪽을 기준으로 삼느냐에 따라 답이 갈립니다. 형광펜 '빈칸은 종가 말고 고가·저가로 찾습니다'.",
     "제목 '메운다는 건 되돌아와 그 구간을 지나가는 것'. 본문: 빈칸이 생긴 뒤 가격이 다시 그 구간을 통과하면 '갭을 메웠다'고 합니다. 위로 벌어진 빈칸은 내려와서, 아래로 벌어진 빈칸은 올라가서 메웁니다. 그림은 붉은 점선 두 줄 사이가 연분홍 띠로 칠해져 있고, 왼쪽 아래의 감청색 선이 띠 아래에서 끊긴 뒤 띠 위에서 다시 시작해 올라갔다가 내려오며 띠를 통과한다. 통과한 지점에 붉은 동그라미와 '여기서 메워졌습니다'. 띠의 두 끝에 '빈칸 위끝', '빈칸 아래끝' 표시. 붉은 세로줄 문단: 띠 안에 들어온 것과 반대쪽 끝까지 닿은 것은 다릅니다 — 여기서는 끝까지 닿아야 메워진 것으로 봅니다. 걸리는 시간도 정해져 있지 않아, 그날 바로 메워지기도 하고 몇 주가 걸리기도 합니다. 형광펜 ''언젠가는 메워진다'가 규칙은 아닙니다'.",
     "제목 '2026년 7월 31일, 삼성전자'. 본문: 7월 28일부터 사흘 내리 밀린 뒤였습니다. 30일 컨퍼런스콜에서 회사가 주주환원 방침을 다시 확인했고 미국 반도체주도 급반등하자, 31일은 전날 고가 226,000원보다 높은 257,000원에 문을 열었습니다. 위 칸은 주가 캔들 열 개(7월 30일~8월 12일)이고 226,000원과 243,000원 사이가 연분홍 띠로 칠해져 '7/31 갭 226,000~243,000'이라 적혀 있다. 7월 31일 캔들의 시가 자리에 붉은 빈 동그라미와 '시가 257,000', 8월 11일 캔들의 저가 자리에 동그라미와 '8/11 저가 227,500 — 1,500 남음'. 8월 초 캔들 여럿이 이 띠 안으로 들어와 있지만 아래끝 226,000원 아래로는 내려가지 않는다. 아래 칸은 거래량 막대이고 7월 31일 막대가 검은 테두리로 강조돼 '평균의 2배 · 5,848만 주', 점선은 '평균 2,984만 주'. 형광펜 '1,500원을 남기고 돌아섰습니다 — 가까이 간 것과 메운 것은 다릅니다'.",
     "제목 '초보가 자주 하는 세 가지'. 1. 갭 상승이면 오른다고 본다 — 빈칸은 문을 열 때 벌어지지만 폭은 그날이 끝나야 정해집니다. 오늘 저가가 아래 끝이기 때문입니다. 갭 상승으로 열고도 시가보다 낮게 끝나는 날이 있습니다. 2. 언젠가 메운다고 기다린다 — '언젠가 메워진다'는 메워지는 갭이 많다는 뜻이지, 이 갭이 메워진다는 뜻은 아닙니다. 앞 장처럼 코앞에서 돌아서기도 하고, 같은 날 애플의 갭 하락은 메워지는 데 24거래일이 걸렸습니다. 3. 전날 종가만 보고 빈칸을 찾는다 — 종가보다 높게 시작해도 전날 고가 안쪽이면 차트에 빈칸이 없습니다. 고가·저가를 봐야 빈칸이 보입니다. 붉은 테두리 상자: 빈칸은 신호가 아니라 사실입니다. '어제 장이 끝난 뒤부터 오늘 열릴 때까지 이 값에 거래가 없었다' — 갭으로 확실해지는 건 여기까지입니다. 다음에 오를지 내릴지는 빈칸만 봐서는 알 수 없습니다.",
@@ -262,7 +288,7 @@
     "Cream grid-paper cover card. A small chart at the top shows eight candles. Two red dashed lines enclose a pale pink band; five candles sit below the band and three sit above it, with none crossing into it. Red annotation at right: 'Today opened above yesterday's high. Nobody traded in this band.' Large title: 'Between yesterday and today, a price range nobody could trade.' Below: 'EP.07 - Gap ups & gap downs' and a yellow highlighter chip 'Save this and swipe'.",
     "Title: 'Why does the chart break off right here?' Body: A chart usually runs unbroken, and then one morning it picks up well away from where it left off. Nothing is missing from the chart. While the market was shut, nobody could trade at those prices. The sketch shows a grey zigzag line running along the lower left, stopping, skipping a pale pink band bounded by two red dashed lines, and resuming higher on the right. Three red question marks sit to the right of the band. Caption: 'That empty stretch has a name - a gap'.",
     "Title: 'The empty band opens two ways'. Body: Open above yesterday's high and you get a gap up. Open below yesterday's low and you get a gap down. Either way, the stretch in between went untraded. Two panels. Left, 'Gap up': three candles below a pale pink band, then three candles above it. Right, 'Gap down': three candles above the band, then three below it. No candle enters the band in either panel. Captions read 'Opens above yesterday's high' and 'Opens below yesterday's low'. A red side-rule paragraph reads: Yesterday's candle and today's candle set the two edges. Highlighter: 'Read the direction and the width together'.",
-    "Title: 'Two ways to measure it'. Body: You hear a stock 'gapped up', then find no empty band on the chart. There are two yardsticks. A two-column table: left in navy, 'The band on the chart - measured to yesterday's high/low'; right in grey, ''Gapped up' in a headline - measured to yesterday's close'. Three rows. Called a gap when: Opens above that high / Opens above that close. Leaves an empty band? Yes / Not always (highlighted in red). What it establishes: Nobody traded there / Opened above its close. Highlighter: 'Use highs and lows, not the close'.",
+    "Title: 'Both opened past the close. Only one left a band.' Body: People call it a gap whenever a stock opens past yesterday's close. But a band only shows if the open clears yesterday's high - or drops below its low. Two panels show real Apple sessions side by side. Left, 'July 31': red dashed lines mark the prior close and the prior low, a pale pink empty band sits below them, and the day's candle hangs beneath it with an 'open' arrow. Right, 'Aug 20': the 'open' arrow sits between the 'prior high' and 'prior close' dashed lines, and the two candles overlap so no band forms. Captions read 'A band is left' and 'No band at all'. Red side-rule paragraph: Aug 20 opened $0.63 above the prior close but $1.82 below the prior high - still inside yesterday's range, so the chart leaves nothing blank. Highlighter: 'Use highs and lows, not the close'.",
     "Title: 'Filling the gap means coming back through it'. Body: When price returns and trades through the empty band, traders say the gap has been filled. A band above gets filled on the way down; a band below, on the way up. The figure shows a pale pink band between two red dashed lines. A navy line runs along below the band on the left, stops, restarts above the band, rises, then falls back down through the band. A red circle marks where it crosses out, labelled 'filled here'. The band edges are labelled 'top edge' and 'bottom edge'. Red side-rule paragraph: There is no set time for it. Some gaps fill the same day, some take weeks, and some are never filled at all. Highlighter: ''It always fills' is not a rule'.",
     "Title: 'Apple, July 31, 2026'. Body: Apple reported after the close on July 30: revenue and profit beat, but next-quarter guidance came in light. The following morning the stock opened at $304.55 - below the $329.31 low of the day before. The upper panel shows 27 daily candles from July 30 to September 4, with a pale pink band between 310.42 and 329.31 labelled 'gap 310.42-329.31'. A red circle on the July 31 candle is labelled 'opened at $304.55'. Candles climb back into the band through late August, and at the 'Sep 3' label a single wick pierces its upper edge, though no candle closes above it. The lower panel shows volume bars; the July 31 bar is outlined in black and labelled '2.8x average - 132.5M', with a dashed line marked 'avg 47.2M'. Highlighter: '24 sessions to come all the way back - unknowable on day one'.",
     "Title: 'Three things beginners get wrong'. 1. Reading a gap up as 'it will rise' - The band opens at the bell, but today's low is its lower edge, so its width is not settled until the close. A stock can gap up and still close below its open. 2. Waiting because 'it always fills' - Apple's band took 24 trading days to fill. Samsung gapped up the same day and still hadn't filled six weeks later. 3. Measuring from yesterday's close - A stock can open above yesterday's close and still leave no band, because it opened inside yesterday's range. Highs and lows are what reveal it. Red bordered box: A gap is a fact, not a signal. All it establishes: between yesterday's close and today's open, no regular-session trade happened in that range. Nothing more.",
