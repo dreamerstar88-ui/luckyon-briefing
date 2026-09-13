@@ -86,7 +86,7 @@
         "day_en": "Mon 9/14",
         "rows": [
           {
-            "time": "종일",
+            "time": "-",
             "name_ko": "이란·오만·걸프국, 호르무즈 다자회담",
             "name_en": "Iran, Oman & Gulf states: Hormuz talks",
             "tag_ko": "무스카트",
@@ -103,8 +103,8 @@
           },
           {
             "time": "13:30",
-            "name_ko": "日 8월 산업생산 (확정치)",
-            "name_en": "Japan Aug industrial output (final)",
+            "name_ko": "日 7월 산업생산 (확정치)",
+            "name_en": "Japan July industrial output (final)",
             "tag_ko": "확정치",
             "tag_en": "Final reading",
             "importance": "mid"
@@ -252,7 +252,7 @@
       {
         "name_ko": "美 9월 FOMC 기준금리",
         "name_en": "US Sept FOMC rate decision",
-        "when": "9/17(목) 03:00 KST",
+        "when": "9/17 Thu 03:00 KST",
         "prev": "3.75%",
         "est": "4.00%",
         "dir": 1
@@ -260,7 +260,7 @@
       {
         "name_ko": "日 BOJ 기준금리",
         "name_en": "Japan BOJ rate decision",
-        "when": "9/18(금) 12:00 KST",
+        "when": "9/18 Fri 12:00 KST",
         "prev": "1.00%",
         "est": "1.25%",
         "dir": 1
@@ -268,7 +268,7 @@
       {
         "name_ko": "美 8월 소매판매 (전월비)",
         "name_en": "US Aug retail sales (MoM)",
-        "when": "9/16(수) 21:30 KST",
+        "when": "9/16 Wed 21:30 KST",
         "prev": "-0.6%",
         "est": "0.9%",
         "dir": 1
@@ -276,7 +276,7 @@
       {
         "name_ko": "中 8월 산업생산 (전년비)",
         "name_en": "China Aug industrial output (YoY)",
-        "when": "9/15(화) 11:00 KST",
+        "when": "9/15 Tue 11:00 KST",
         "prev": "4.5%",
         "est": "4.8%",
         "dir": 1
@@ -284,7 +284,7 @@
       {
         "name_ko": "中 8월 소매판매 (전년비)",
         "name_en": "China Aug retail sales (YoY)",
-        "when": "9/15(화) 11:00 KST",
+        "when": "9/15 Tue 11:00 KST",
         "prev": "0.6%",
         "est": "0.8%",
         "dir": 1
@@ -420,7 +420,7 @@
     "metrics": [
       { "emoji": "📉", "name_ko": "VIX", "name_en": "VIX", "value": "15.84", "delta": "▲9.02%", "dir": 1 },
       { "emoji": "🏦", "name_ko": "미 10년물", "name_en": "US 10Y", "value": "4.96%", "delta": "▲18bp", "dir": 1 },
-      { "emoji": "$₩", "name_ko": "원/달러", "name_en": "USD/KRW", "value": "1,341", "delta": "▼1.06%", "dir": -1 },
+      { "emoji": "$₩", "name_ko": "원/달러", "name_en": "USD/KRW", "value": "1,341", "delta": "▼0.30%", "dir": -1 },
       { "emoji": "🥇", "name_ko": "금", "name_en": "Gold", "value": "$4,349", "delta": "▼1.83%", "dir": -1 },
       { "emoji": "🛢", "name_ko": "WTI", "name_en": "WTI", "value": "$99.99", "delta": "▲9.30%", "dir": 1 },
       { "emoji": "₿", "name_ko": "비트코인", "name_en": "Bitcoin", "value": "$77,165", "delta": "▼3.15%", "dir": -1 }
