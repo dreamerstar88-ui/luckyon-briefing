@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-09-14T00:14:34Z",
+  "fetchedAt": "2026-09-14T16:56:29Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-12T00:14:34Z",
-    "to": "2026-09-28T00:14:34Z"
+    "from": "2026-09-12T16:56:29Z",
+    "to": "2026-09-28T16:56:29Z"
   },
   "events": [
-    {
-      "at": "2026-09-12T08:00:00Z",
-      "country": "EMU",
-      "name": "ECB's President Lagarde speech",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-09-14T04:30:00Z",
       "country": "JP",
@@ -23,7 +13,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.1,
-      "actual": null,
+      "actual": 0.5,
       "unit": "%"
     },
     {
@@ -33,7 +23,7 @@
       "impact": "LOW",
       "consensus": 0.1,
       "previous": 0.1,
-      "actual": null,
+      "actual": -0.2,
       "unit": "%"
     },
     {
@@ -43,8 +33,28 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.1,
-      "actual": null,
+      "actual": 3.9,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-14T09:00:00Z",
+      "country": "CN",
+      "name": "M2 Money Supply (YoY)",
+      "impact": "LOW",
+      "consensus": 7.6,
+      "previous": 7.7,
+      "actual": 7.5,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-14T09:00:00Z",
+      "country": "CN",
+      "name": "New Loans",
+      "impact": "LOW",
+      "consensus": 400,
+      "previous": -340,
+      "actual": 60,
+      "unit": null
     },
     {
       "at": "2026-09-14T09:15:00Z",
@@ -53,26 +63,6 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-14T10:00:00Z",
-      "country": "CN",
-      "name": "M2 Money Supply (YoY)",
-      "impact": "LOW",
-      "consensus": 7.6,
-      "previous": 7.7,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T10:00:00Z",
-      "country": "CN",
-      "name": "New Loans",
-      "impact": "LOW",
-      "consensus": 400,
-      "previous": -340,
       "actual": null,
       "unit": null
     },
@@ -103,7 +93,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.8,
-      "actual": null,
+      "actual": 3.97,
       "unit": "%"
     },
     {
@@ -113,7 +103,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.89,
-      "actual": null,
+      "actual": 4.06,
       "unit": "%"
     },
     {
@@ -171,7 +161,7 @@
       "country": "CN",
       "name": "Fixed Asset Investment (YTD) (YoY)",
       "impact": "LOW",
-      "consensus": -7.1,
+      "consensus": -7.2,
       "previous": -6.7,
       "actual": null,
       "unit": "%"
@@ -211,7 +201,7 @@
       "country": "JP",
       "name": "Tertiary Industry Index (MoM)",
       "impact": "LOW",
-      "consensus": 0.4,
+      "consensus": 0.3,
       "previous": -0.2,
       "actual": null,
       "unit": "%"
@@ -241,7 +231,7 @@
       "country": "DE",
       "name": "ZEW Survey – Current Situation",
       "impact": "MEDIUM",
-      "consensus": -53,
+      "consensus": -52.2,
       "previous": -61.1,
       "actual": null,
       "unit": null
@@ -281,7 +271,7 @@
       "country": "EMU",
       "name": "ZEW Survey – Economic Sentiment",
       "impact": "MEDIUM",
-      "consensus": 39.5,
+      "consensus": 39.9,
       "previous": 31.4,
       "actual": null,
       "unit": null
@@ -301,7 +291,7 @@
       "country": "US",
       "name": "NY Empire State Manufacturing Index",
       "impact": "MEDIUM",
-      "consensus": 15,
+      "consensus": 14.75,
       "previous": 20.6,
       "actual": null,
       "unit": null
@@ -411,7 +401,7 @@
       "country": "EMU",
       "name": "Industrial Production s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": -0.7,
+      "consensus": -0.4,
       "previous": 0,
       "actual": null,
       "unit": "%"
@@ -421,7 +411,7 @@
       "country": "EMU",
       "name": "Industrial Production w.d.a. (YoY)",
       "impact": "LOW",
-      "consensus": -0.4,
+      "consensus": -0.3,
       "previous": 0.1,
       "actual": null,
       "unit": "%"
@@ -471,7 +461,7 @@
       "country": "US",
       "name": "Export Price Index (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": -1.3,
       "actual": null,
       "unit": "%"
@@ -491,7 +481,7 @@
       "country": "US",
       "name": "Import Price Index (MoM)",
       "impact": "LOW",
-      "consensus": 0.2,
+      "consensus": 0.4,
       "previous": -0.4,
       "actual": null,
       "unit": "%"
@@ -541,7 +531,7 @@
       "country": "US",
       "name": "Retail Sales ex Autos (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.5,
+      "consensus": 0.6,
       "previous": -0.3,
       "actual": null,
       "unit": "%"
@@ -561,7 +551,7 @@
       "country": "US",
       "name": "Business Inventories",
       "impact": "LOW",
-      "consensus": 0.2,
+      "consensus": 0.8,
       "previous": 0,
       "actual": null,
       "unit": "%"
@@ -851,7 +841,7 @@
       "country": "US",
       "name": "Housing Starts (MoM)",
       "impact": "MEDIUM",
-      "consensus": 1.32,
+      "consensus": 1.31,
       "previous": 1.239,
       "actual": null,
       "unit": null
@@ -871,7 +861,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 209,
+      "consensus": 205,
       "previous": 206,
       "actual": null,
       "unit": null
@@ -891,7 +881,7 @@
       "country": "US",
       "name": "Philadelphia Fed Manufacturing Survey",
       "impact": "MEDIUM",
-      "consensus": 30,
+      "consensus": 32.5,
       "previous": 47.4,
       "actual": null,
       "unit": null
@@ -933,6 +923,16 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.775,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-17T17:00:00Z",
+      "country": "US",
+      "name": "10-year TIPS Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.438,
       "actual": null,
       "unit": "%"
     },
@@ -1011,7 +1011,7 @@
       "country": "DE",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.6,
+      "consensus": 0.4,
       "previous": 1.1,
       "actual": null,
       "unit": "%"
@@ -1021,7 +1021,7 @@
       "country": "DE",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.9,
       "previous": 3,
       "actual": null,
       "unit": "%"
@@ -1237,6 +1237,16 @@
       "unit": null
     },
     {
+      "at": "2026-09-21T12:30:00Z",
+      "country": "US",
+      "name": "Chicago Fed National Activity Index ",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.08,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-09-21T15:00:00Z",
       "country": "JP",
       "name": "Autumnal Equinox Day",
@@ -1252,7 +1262,7 @@
       "name": "3-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.97,
       "actual": null,
       "unit": "%"
     },
@@ -1262,7 +1272,17 @@
       "name": "6-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.06,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-22T09:30:00Z",
+      "country": "DE",
+      "name": "5-y Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.09,
       "actual": null,
       "unit": "%"
     },
@@ -1305,6 +1325,16 @@
       "previous": 4,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-09-22T17:00:00Z",
+      "country": "US",
+      "name": "2-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.204,
+      "actual": null,
+      "unit": "%"
     },
     {
       "at": "2026-09-22T20:30:00Z",
@@ -1475,6 +1505,16 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-09-23T17:00:00Z",
+      "country": "US",
+      "name": "5-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.393,
+      "actual": null,
+      "unit": "%"
     },
     {
       "at": "2026-09-24T00:30:00Z",
@@ -1659,32 +1699,12 @@
     {
       "at": "2026-09-24T17:00:00Z",
       "country": "US",
-      "name": "10-year TIPS Auction",
+      "name": "7-Year Note Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": 2.438,
+      "previous": 4.512,
       "actual": null,
       "unit": "%"
-    },
-    {
-      "at": "2026-09-25T05:00:00Z",
-      "country": "JP",
-      "name": "Coincident Index",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 120.6,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-25T05:00:00Z",
-      "country": "JP",
-      "name": "Leading Economic Index",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 117.9,
-      "actual": null,
-      "unit": null
     },
     {
       "at": "2026-09-25T06:00:00Z",
@@ -1903,6 +1923,36 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-28T14:30:00Z",
+      "country": "US",
+      "name": "Dallas Fed Manufacturing Business Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 11.6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-28T15:30:00Z",
+      "country": "US",
+      "name": "3-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-28T15:30:00Z",
+      "country": "US",
+      "name": "6-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": "%"
     }
