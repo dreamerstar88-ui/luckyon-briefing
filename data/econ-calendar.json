@@ -1,101 +1,11 @@
 {
-  "fetchedAt": "2026-09-13T14:54:15Z",
+  "fetchedAt": "2026-09-14T00:14:34Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-11T14:54:15Z",
-    "to": "2026-09-27T14:54:15Z"
+    "from": "2026-09-12T00:14:34Z",
+    "to": "2026-09-28T00:14:34Z"
   },
   "events": [
-    {
-      "at": "2026-09-11T16:00:00Z",
-      "country": "US",
-      "name": "USDA WASDE Report",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-11T17:00:00Z",
-      "country": "EMU",
-      "name": "ECB's Lane speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-11T17:00:00Z",
-      "country": "US",
-      "name": "Baker Hughes US Oil Rig Count",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 449,
-      "actual": 450,
-      "unit": null
-    },
-    {
-      "at": "2026-09-11T18:00:00Z",
-      "country": "US",
-      "name": "Monthly Budget Statement",
-      "impact": "MEDIUM",
-      "consensus": -404,
-      "previous": -432,
-      "actual": -166.8,
-      "unit": "$"
-    },
-    {
-      "at": "2026-09-11T19:30:00Z",
-      "country": "EMU",
-      "name": "CFTC EUR NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -24.9,
-      "actual": -42.6,
-      "unit": "€"
-    },
-    {
-      "at": "2026-09-11T19:30:00Z",
-      "country": "JP",
-      "name": "CFTC JPY NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -92.2,
-      "actual": 10.8,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-09-11T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Gold NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 228.1,
-      "actual": 232,
-      "unit": "$"
-    },
-    {
-      "at": "2026-09-11T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Oil NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 129.9,
-      "actual": 136.6,
-      "unit": null
-    },
-    {
-      "at": "2026-09-11T19:30:00Z",
-      "country": "US",
-      "name": "CFTC S&P 500 NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -75.9,
-      "actual": -76,
-      "unit": "$"
-    },
     {
       "at": "2026-09-12T08:00:00Z",
       "country": "EMU",
@@ -1975,6 +1885,26 @@
       "previous": null,
       "actual": null,
       "unit": "$"
+    },
+    {
+      "at": "2026-09-27T23:50:00Z",
+      "country": "JP",
+      "name": "BoJ Monetary Policy Meeting Minutes",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-27T23:50:00Z",
+      "country": "JP",
+      "name": "Corporate Service Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.6,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
