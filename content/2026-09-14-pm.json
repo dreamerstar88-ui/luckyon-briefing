@@ -1,0 +1,695 @@
+{
+  "date": "2026-09-14",
+  "session": "pm",
+  "dateLabel_ko": "2026년 9월 14일 월요일",
+  "dateLabel_en": "Monday, September 14, 2026",
+  "headline_ko": "AI 속도조절 공포에 코스피 3.26% 급락, 유가는 $100 재돌파",
+  "headline_en": "AI Slowdown Fears Sink Kospi 3.26% as Oil Retakes $100",
+  "headline_sub_ko": "3거래일 연속 하락 · 반도체 대형주 투매, FOMC 금리인상 확률은 86.5%로",
+  "headline_sub_en": "3rd straight drop as chip giants get dumped; Fed hike odds climb to 86.5%",
+  "cover_kicker": {
+    "ko": "코스피 마감 · 9/14",
+    "en": "KOSPI Close · Sep 14"
+  },
+  "cover_facts": [
+    [
+      "chip",
+      {
+        "ko": "코스피 -3.26%·코스닥 -1.69%",
+        "en": "Kospi -3.26% · Kosdaq -1.69%"
+      },
+      {
+        "ko": "6,684.37 / 806.79 · SK하이닉스 -7.06%·삼성전자 -4.43%",
+        "en": "6,684.37 / 806.79 · SK Hynix -7.06%, Samsung -4.43%"
+      }
+    ],
+    [
+      "ai",
+      {
+        "ko": "AI 속도조절론 확산에 반도체 투매",
+        "en": "AI-pace fears trigger a chip selloff"
+      },
+      {
+        "ko": "앤트로픽 CEO 경고 여파로 대형 반도체주 급락",
+        "en": "Fallout from Anthropic CEO's warning hits Korea's chip giants"
+      }
+    ],
+    [
+      "globe",
+      {
+        "ko": "WTI $102.36, 사우디 송유관 피격 여파",
+        "en": "WTI $102.36 after the Saudi pipeline strike"
+      },
+      {
+        "ko": "브렌트유 $107대, 재고 '5~7일 한도' 경고",
+        "en": "Brent near $107 amid warnings of a 5-7 day reserve limit"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "코스피가 전 거래일보다 225.54포인트(3.26%) 내린 6,684.37에 마감하며 3거래일 연속 하락했다. 코스닥도 1.69% 내린 806.79로 거래를 마쳤다.",
+      "앤트로픽 CEO의 'AI 속도조절' 경고가 주말 사이 확산하며 SK하이닉스(-7.06%)·삼성전자(-4.43%) 등 대형 반도체주가 투매를 맞았다. 반도체 업종은 -5.59%로 15개 업종 중 낙폭이 가장 컸다.",
+      "외국인과 기관이 각각 3조3,363억원·1조1,869억원 순매도했고 개인이 3조351억원 순매수하며 방어했지만 지수 하락을 막지 못했다.",
+      "사우디 송유관이 드론 공격으로 가동을 멈추며 WTI는 다시 $100 위로 올라섰고, CME 페드워치 기준 9월 금리인상 확률은 86.5%까지 높아졌다."
+    ],
+    "lines_en": [
+      "Kospi fell 225.54 points (3.26%) to 6,684.37, a third straight decline. Kosdaq also fell 1.69% to 806.79.",
+      "Anthropic CEO's 'pace the frontier' warning rippled through markets over the weekend, hitting large-cap chipmakers SK Hynix (-7.06%) and Samsung Electronics (-4.43%) with heavy selling. Semiconductors fell 5.59%, the worst of 15 sectors.",
+      "Foreign investors and institutions net-sold ₩3.34 trillion and ₩1.19 trillion respectively, while individuals net-bought ₩3.04 trillion — not enough to offset the decline.",
+      "A drone strike halted Saudi Arabia's pipeline, pushing WTI back above $100, while CME FedWatch put September rate-hike odds at 86.5%."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "28,928.50",
+      "delta": "▼1.56%",
+      "dir": "down",
+      "note_ko": "선물(NQ=F) · 美 정규장 개장 전",
+      "note_en": "Futures (NQ=F) · ahead of the US open"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,609.75",
+      "delta": "▼0.65%",
+      "dir": "down",
+      "note_ko": "선물(ES=F) · 美 정규장 개장 전",
+      "note_en": "Futures (ES=F) · ahead of the US open"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,684.37",
+      "delta": "▼3.26%",
+      "dir": "down",
+      "note_ko": "AI 속도조절론에 3거래일 연속 하락",
+      "note_en": "3rd straight drop on AI-pace fears"
+    },
+    {
+      "label": "VIX",
+      "value": "17.65",
+      "delta": "▲11.43%",
+      "dir": "up",
+      "note_ko": "정규장 개장 전 · 코스피 급락에 연동 상승",
+      "note_en": "Ahead of the US open · tracking the Kospi selloff"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "33",
+      "delta": "33 → 33",
+      "dir": "flat",
+      "note_ko": "등급 '공포(Fear)' 유지 · 주말 사이 변동 없음",
+      "note_en": "Rating holds at 'Fear' · unchanged over the weekend"
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.96%",
+      "delta": "4.95% → 4.96%",
+      "dir": "up",
+      "note_ko": "9/11 확정 종가 유지 · 美 채권시장 개장 전",
+      "note_en": "Holding at the Sep 11 settle · ahead of the US bond open"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,345.1",
+      "value_sub": "· DXY 99.6",
+      "delta": "▼0.23%",
+      "dir": "down",
+      "note_ko": "코스피 급락에도 원화 소폭 강세 · 달러인덱스는 99선 위",
+      "note_en": "Won firmed slightly even as Kospi fell; dollar index holds above 99"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,336.10",
+      "delta": "▼0.69%",
+      "dir": "down",
+      "note_ko": "달러 강세에 밀려 소폭 하락 · 안전자산 수요는 여전",
+      "note_en": "Eased on a firmer dollar; safe-haven demand still intact"
+    },
+    {
+      "label": "WTI",
+      "value": "$102.36",
+      "delta": "▲2.31%",
+      "dir": "up",
+      "note_ko": "사우디 송유관 피격에 장중 $103대 · 브렌트유는 $107대",
+      "note_en": "Hit the $103s intraday on the Saudi strike; Brent near $107"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$77,734.00",
+      "delta": "▲1.17%",
+      "dir": "up",
+      "note_ko": "위험선호 소폭 회복 · $77,000대 회복",
+      "note_en": "Risk appetite ticked up · back above $77,000"
+    }
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": [
+    "NASDAQ",
+    "S&P 500"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "tile_lead": {
+    "ko": "AI 속도조절 공포가 코스피를 끌어내렸다",
+    "en": "AI-pace fears dragged the Kospi down"
+  },
+  "main_tile_note": {
+    "ko": "코스피 3거래일 연속 하락",
+    "en": "Kospi's 3rd straight losing session"
+  },
+  "market_note_ko": "AI 속도조절론이 확산하며 코스피가 3.26% 급락, 3거래일 연속 하락했다. 사우디 송유관이 드론 공격으로 멈추며 WTI는 다시 $100 위로 올라섰고, 9월 FOMC 금리인상 확률은 86.5%까지 높아졌다.",
+  "market_note_en": "AI-pace fears spread and Kospi sank 3.26% for a third straight decline. Saudi Arabia's pipeline was halted by a drone strike, pushing WTI back above $100, while September Fed hike odds climbed to 86.5%.",
+  "chart_series_values": [
+    6562.72,
+    6579.48,
+    6687.21,
+    6995.39,
+    6954.52,
+    7051.64,
+    7033.92,
+    6909.91,
+    6684.37
+  ],
+  "chart_series_labels": [
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.7",
+    "9.8",
+    "9.9",
+    "9.10",
+    "9.11",
+    "9.14"
+  ],
+  "chart_title": {
+    "ko": "3거래일 연속 하락, 낙폭 확대",
+    "en": "3rd Straight Drop on AI-Pace Fears"
+  },
+  "chart_sub": {
+    "ko": "코스피 종가 · 최근 9거래일",
+    "en": "KOSPI close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9/9 고점 7,051.64 → 9/14 6,684.37(-3.26%) · 3거래일 연속 하락",
+    "en": "Sep 9 high 7,051.64 → Sep 14 close 6,684.37 (-3.26%), a 3rd straight decline"
+  },
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "전 업종 하락, 반도체 낙폭 최대",
+    "en": "All Sectors Fell, Semis Led the Slide"
+  },
+  "sector_sub": {
+    "ko": "KSIC 주력 15개 업종 시총가중 등락률 · 9/14 마감",
+    "en": "Cap-weighted returns across 15 core KSIC sectors · Sep 14 close"
+  },
+  "rank_kicker": "TODAY",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Trading Value"
+  },
+  "rank_sub": {
+    "ko": "코스피 개별 종목 거래대금 상위 5 · 9/14",
+    "en": "Top 5 KOSPI stocks by trading value · Sep 14"
+  },
+  "rank_unit": {
+    "ko": "단위 · 원화 거래대금",
+    "en": "Unit · KRW trading value"
+  },
+  "econ_kicker": "TODAY",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "韓 7월 수출입·FOMC 금리인상 확률·HD현대중공업 실적",
+    "en": "Korea July trade · Fed hike odds · HD Hyundai Heavy earnings"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록",
+      "title_en": "KOSPI & KOSDAQ Record",
+      "stats": [
+        {
+          "label_ko": "코스피",
+          "label_en": "KOSPI",
+          "value": "6,684.37",
+          "delta": "▼3.26%",
+          "dir": "down",
+          "sub_ko": "3거래일 연속 하락 · 9월 누적 -1.99%",
+          "sub_en": "3rd straight decline · September MTD -1.99%"
+        },
+        {
+          "label_ko": "코스닥",
+          "label_en": "KOSDAQ",
+          "value": "806.79",
+          "delta": "▼1.69%",
+          "dir": "down",
+          "sub_ko": "2거래일 연속 하락 · 9월 누적 -3.30%",
+          "sub_en": "2nd straight decline · September MTD -3.30%"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "코스피 등락 종목수",
+          "label_en": "KOSPI advancers/decliners",
+          "up": 326,
+          "flat": 64,
+          "down": 553
+        },
+        {
+          "label_ko": "코스닥 등락 종목수",
+          "label_en": "KOSDAQ advancers/decliners",
+          "up": 670,
+          "flat": 149,
+          "down": 952
+        }
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (억원)",
+        "label_en": "KOSPI net buy/sell by investor (₩100M)",
+        "rows": [
+          {
+            "label_ko": "개인",
+            "label_en": "Individuals",
+            "value": 30351
+          },
+          {
+            "label_ko": "외국인",
+            "label_en": "Foreign",
+            "value": -33363
+          },
+          {
+            "label_ko": "기관",
+            "label_en": "Institutions",
+            "value": -11869
+          }
+        ]
+      },
+      "note_ko": "AI 속도조절론에 반도체 대형주가 투매를 맞으며 코스피가 3거래일 연속 하락했다. 외국인·기관이 순매도, 개인이 순매수하며 방어했지만 막지 못했다.",
+      "note_en": "Kospi fell a 3rd session as AI-pace fears hit chipmakers. Foreign/institutions net-sold; individuals net-bought but couldn't offset the drop."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Performance",
+      "bars": [
+        {
+          "label_ko": "통신서비스",
+          "label_en": "Telecom",
+          "value": -0.48
+        },
+        {
+          "label_ko": "바이오·제약",
+          "label_en": "Biotech/Pharma",
+          "value": -0.5
+        },
+        {
+          "label_ko": "기계·방산",
+          "label_en": "Mach./Defense",
+          "value": -0.52
+        },
+        {
+          "label_ko": "조선",
+          "label_en": "Shipbuilding",
+          "value": -0.71
+        },
+        {
+          "label_ko": "화학",
+          "label_en": "Chemicals",
+          "value": -0.77
+        },
+        {
+          "label_ko": "인터넷·SW",
+          "label_en": "Internet/SW",
+          "value": -1.38
+        },
+        {
+          "label_ko": "금융",
+          "label_en": "Financials",
+          "value": -1.76
+        },
+        {
+          "label_ko": "철강·금속",
+          "label_en": "Steel/Metals",
+          "value": -1.86
+        },
+        {
+          "label_ko": "유통·소비재",
+          "label_en": "Retail/Consumer",
+          "value": -2.18
+        },
+        {
+          "label_ko": "전력·에너지",
+          "label_en": "Power/Energy",
+          "value": -2.98
+        },
+        {
+          "label_ko": "2차전지",
+          "label_en": "Batteries",
+          "value": -3
+        },
+        {
+          "label_ko": "자동차",
+          "label_en": "Autos",
+          "value": -3.48
+        },
+        {
+          "label_ko": "IT·전자기기",
+          "label_en": "IT/Electronics",
+          "value": -4.38
+        },
+        {
+          "label_ko": "건설·건자재",
+          "label_en": "Construction",
+          "value": -5.02
+        },
+        {
+          "label_ko": "반도체",
+          "label_en": "Semis",
+          "value": -5.59
+        }
+      ],
+      "note_ko": "코스피 15개 주력 업종이 전부 하락했다. 반도체(-5.59%)·건설(-5.02%)·IT전자기기(-4.38%) 낙폭이 가장 컸고, 통신서비스(-0.48%)·바이오제약(-0.50%)은 상대적으로 견조했다.",
+      "note_en": "All 15 core KOSPI sectors fell. Semis (-5.59%), Construction (-5.02%) and IT/Electronics (-4.38%) led losses, while Telecom (-0.48%) and Biotech/Pharma (-0.50%) held up relatively well."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Trading Value",
+      "rows": [
+        {
+          "name_ko": "SK하이닉스",
+          "name_en": "SK Hynix",
+          "value": "₩6.57T",
+          "pct": -7.06
+        },
+        {
+          "name_ko": "삼성전자",
+          "name_en": "Samsung Elec.",
+          "value": "₩4.25T",
+          "pct": -4.43
+        },
+        {
+          "name_ko": "삼성전기",
+          "name_en": "Samsung Electro-M.",
+          "value": "₩0.61T",
+          "pct": -5.64
+        },
+        {
+          "name_ko": "삼성전자우",
+          "name_en": "Samsung Elec. Pfd",
+          "value": "₩0.57T",
+          "pct": -5.17
+        },
+        {
+          "name_ko": "SK스퀘어",
+          "name_en": "SK Square",
+          "value": "₩0.51T",
+          "pct": -8.08
+        }
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중",
+        "label_en": "Top 5 share of trading value",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5 stocks",
+            "pct": 61.98,
+            "color": "#f5a623"
+          },
+          {
+            "label_ko": "나머지 938종목",
+            "label_en": "Other 938 stocks",
+            "pct": 38.02,
+            "color": "#9aa5b1"
+          }
+        ]
+      },
+      "note_ko": "SK하이닉스·삼성전자 단 2종목이 코스피 전체 거래대금의 53.6%를 차지했다. 상위 5종목은 61.98%로, 반도체 대형주 매도가 오늘 하락을 사실상 주도했다.",
+      "note_en": "SK Hynix and Samsung Electronics alone accounted for 53.6% of total Kospi trading value. The top 5 stocks made up 61.98% — large-cap chip selling effectively drove today's decline."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "stats": [
+        {
+          "label_ko": "韓 7월 수출(전년비)",
+          "label_en": "Korea July Exports (YoY)",
+          "value": "63.3%",
+          "delta": {
+            "ko": "7월 확정치",
+            "en": "July final"
+          },
+          "dir": "up",
+          "sub_ko": "수출 $99.19B · 수입 $68.54B · 무역흑자 $30.65B",
+          "sub_en": "Exports $99.19B · imports $68.54B · surplus $30.65B",
+          "ref_ko": "한국은행 ECOS 성질별 수출입(잠정) 기준",
+          "ref_en": "Bank of Korea ECOS, by-nature trade statistics (provisional)"
+        },
+        {
+          "label_ko": "HD현대중공업 8월 누적 수주액",
+          "label_en": "HD Hyundai Heavy Aug YTD Orders",
+          "value": "$17.48B",
+          "delta": {
+            "ko": "2026년 1~8월 누적",
+            "en": "Jan-Aug 2026 cumulative"
+          },
+          "dir": "flat",
+          "sub_ko": "계열사 HD한국조선해양은 $1.57B",
+          "sub_en": "Affiliate HD Korea Shipbuilding: $1.57B"
+        },
+        {
+          "label_ko": "CME 9월 FOMC 금리인상 확률",
+          "label_en": "CME Sept FOMC Hike Odds",
+          "value": "86.5%",
+          "delta": {
+            "ko": "CPI 직후 86%→현재 86.5%",
+            "en": "86% right after CPI → 86.5% now"
+          },
+          "dir": "up",
+          "sub_ko": "9/16(현지시간) 결정 · 12월까지 추가인상 확률 72.6%",
+          "sub_en": "Decision due Sep 16 (local) · 72.6% odds of a further hike by December",
+          "ref_ko": "시카고상품거래소(CME) 페드워치 · 시장이 가격에 반영한 확률",
+          "ref_en": "CME FedWatch; market-implied odds"
+        },
+        {
+          "label_ko": "브렌트유",
+          "label_en": "Brent Crude",
+          "value": "$107.55",
+          "delta": "▲2.81%",
+          "dir": "up",
+          "sub_ko": "WTI $102.36과 격차 $5.19로 확대 · 사우디 송유관 피격 여파",
+          "sub_en": "Spread over WTI ($102.36) widens to $5.19 after the Saudi pipeline strike"
+        },
+        {
+          "label_ko": "코스피 거래대금",
+          "label_en": "KOSPI Turnover",
+          "value": "₩20.19T",
+          "delta": {
+            "ko": "장중 급락에 거래 급증",
+            "en": "Trading surged amid the selloff"
+          },
+          "dir": "up",
+          "sub_ko": "거래대금 상위 2종목이 53.6% 차지",
+          "sub_en": "Top 2 stocks made up 53.6% of turnover"
+        }
+      ],
+      "note_ko": "한국 7월 수출은 전년비 63.3% 늘며 무역흑자를 이어갔다. HD현대중공업·HD한국조선해양은 8월 누적 수주 실적을 공시했고, 시장은 이제 9/16~17 FOMC의 금리 인상 여부를 저울질하고 있다.",
+      "note_en": "Korea's July exports rose 63.3% YoY, extending the trade surplus. HD Hyundai Heavy and HD Korea Shipbuilding disclosed August YTD order results, and markets now weigh whether the Fed hikes at its Sep 16-17 meeting."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "items": [
+        {
+          "headline_ko": "엔비디아, 앤트로픽 IPO에 13.5조원 앵커투자…나스닥 상장 채비",
+          "headline_en": "Nvidia to Anchor Anthropic's Nasdaq Listing With Up to ₩13.5T",
+          "body_ko": "엔비디아가 앤트로픽 나스닥 상장에 앵커투자자로 최대 13.5조원을 투자하는 방안을 협상 중이다. 국민연금도 공모에 참여한다.",
+          "body_en": "Nvidia is negotiating to invest up to ₩13.5T as anchor investor in Anthropic's Nasdaq listing, with Korea's National Pension Service also joining the offering."
+        },
+        {
+          "headline_ko": "\"AI 속도조절 현실화하면 반도체·전력도 연쇄 영향\"…韓 수출 경보음",
+          "headline_en": "Analysts: A Real AI Slowdown Would Ripple Into Chips and Power Exports",
+          "body_ko": "한국은 美 수입시장에서 고압 전력케이블 1위·초고압 변압기 2위다. AI 투자 지연 시 전력기기 수출 발주도 밀릴 수 있다는 분석이다.",
+          "body_en": "Korea is the top US import source for high-voltage cables and No. 2 for transformers — analysts warn delayed AI buildouts could push back Korean export orders too."
+        },
+        {
+          "headline_ko": "교보증권 \"AI 속도조절 확산에 GPU·메모리 발주도 밀릴 수 있다\"",
+          "headline_en": "Kyobo Securities: GPU, Memory Orders Could Slip as AI-Pace Fears Spread",
+          "body_ko": "교보증권은 AI 속도조절이 현실화하면 빅테크의 GPU·서버·통신장비 발주(CAPEX) 시점도 순연될 수 있다고 짚었다.",
+          "body_en": "Kyobo Securities warned that if AI-pace concerns materialize, big tech's CAPEX timing for GPUs, servers and networking gear could slip."
+        },
+        {
+          "headline_ko": "HD현대중공업, '탈조선' 승부수…美 AI데이터센터 전력시장 진출",
+          "headline_en": "HD Hyundai Heavy Pivots Beyond Shipbuilding Into US AI Data Center Power",
+          "body_ko": "HD현대중공업이 美 AI 데이터센터向 발전엔진·SMR 공급에 나섰다. 계열사 HD현대일렉트릭은 변압기·배전기기를 맡는다.",
+          "body_en": "HD Hyundai Heavy is supplying power engines and SMRs for US AI data centers, with affiliate HD Hyundai Electric handling transformers and switchgear."
+        },
+        {
+          "headline_ko": "SK텔레콤, 앤트로픽 지분 0.2% 보유…IPO 앞두고 재평가 기대",
+          "headline_en": "SK Telecom Holds 0.2% of Anthropic, Eyes Re-Rating Ahead of IPO",
+          "body_ko": "SK텔레콤이 앤트로픽 지분 386만330주(0.2%)를 보유 중인 것으로 나타났다. 앤트로픽 나스닥 상장이 가까워지며 지분가치 재평가 기대가 커지고 있다.",
+          "body_en": "SK Telecom holds 3.86 million Anthropic shares (0.2%), per its half-year report. Re-rating hopes are building as Anthropic's Nasdaq listing nears."
+        },
+        {
+          "headline_ko": "\"AI 속도조절도 결국 반도체 수요 전제\"…금리가 진짜 변수",
+          "headline_en": "'Even a Slowdown Still Needs Chips' — Rates May Be the Real Swing Factor",
+          "body_ko": "속도 조절도 AI의 지속 발전을 전제로 해 반도체 수요가 꺾인 건 아니라는 분석이다. 9월 금리 인상 여부가 더 직접적 변수로 꼽힌다.",
+          "body_en": "Analysts note 'pacing' still assumes AI keeps advancing, so chip demand hasn't reversed — the Fed's September decision may be the bigger swing factor."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "items": [
+        {
+          "headline_ko": "AI 속도조절 공포에 코스피 3.26% 급락…반도체 대형주 투매",
+          "headline_en": "AI-Pace Fears Sink Kospi 3.26% as Chipmakers Get Dumped",
+          "body_ko": "주말 사이 확산한 'AI 속도조절론'에 반도체 대형주가 투매를 맞으며 코스피가 3거래일 연속 하락, 6,684.37로 밀려났다.",
+          "body_en": "Spreading AI-pace fears triggered heavy chip-stock selling over the weekend, sending Kospi to a third straight decline at 6,684.37."
+        },
+        {
+          "headline_ko": "사우디 송유관 파괴 여파, 원유 재고 '5~7일 한도' 경고…유가 $200 전망까지",
+          "headline_en": "Saudi Pipeline Strike Threatens Oil Reserves in Days",
+          "body_ko": "사우디 핵심 송유관이 파괴되며 수출용 원유 재고가 5~7일 안에 바닥날 수 있다는 전망이 나왔다. 유가 $200 전망까지 제기됐다.",
+          "body_en": "With Saudi Arabia's key pipeline destroyed, forecasts warn export oil reserves could run out within 5-7 days, with some seeing crude at $200."
+        },
+        {
+          "headline_ko": "후티 반군, 홍해 통제 범위 확대…WTI 다시 $103까지",
+          "headline_en": "Houthis Expand Red Sea Control as WTI Rebounds to $103",
+          "body_ko": "후티 반군이 홍해 관문 통제 범위를 넓히고 있다. 호르무즈 임시 항로 협상 지연이 이어지는 가운데 WTI는 한때 $100 아래로 내려왔다가 다시 $103까지 반등했다.",
+          "body_en": "Houthi forces are expanding control over the Red Sea gateway. WTI briefly dipped below $100 before rebounding to $103 as Hormuz talks stay stalled."
+        },
+        {
+          "headline_ko": "산업통상자원부 \"원유 90% 이상 확보…단기 영향 제한적\"",
+          "headline_en": "Korea: '90%+ of Oil Secured, Impact Limited'",
+          "body_ko": "산업통상자원부는 9~10월 물량도 90% 이상 확보돼 사우디 송유관 사태의 단기 수급 영향은 크지 않다고 밝혔다.",
+          "body_en": "Korea's trade ministry said Sept-Oct oil volumes are 90%+ secured, so the near-term impact from the Saudi pipeline incident should be limited."
+        },
+        {
+          "headline_ko": "제이알글로벌리츠, ARS 협의기간 한 달 추가 연장…상장리츠 최초 회생절차",
+          "headline_en": "JR Global REIT Wins Another Month for Creditor Talks",
+          "body_ko": "서울회생법원이 국내 상장리츠 최초로 회생절차를 신청한 제이알글로벌리츠의 ARS 협의기간을 한 달 더 연장했다.",
+          "body_en": "The Seoul court extended by a month the creditor-talks period for JR Global REIT, Korea's first listed REIT in court rehabilitation."
+        },
+        {
+          "headline_ko": "KRX 애프터마켓 개장 첫날…정규장 마감 후 밤 8시까지 거래",
+          "headline_en": "KRX Launches After-Market Trading Until 8 PM",
+          "body_ko": "한국거래소가 이날부터 정규장 마감 후 오후 4~8시 코스피·코스닥을 실시간 매매할 수 있는 애프터마켓을 시작했다.",
+          "body_en": "The Korea Exchange launched after-market trading from 4-8 PM after the regular close, on its first day in operation."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {
+    "ko": "지금 ~ 내일 아침 8시(KST)",
+    "en": "Now through 8 AM KST tomorrow"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US Market Hours",
+    "lines_ko": [
+      "정규장 22:30 ~ 익일 05:00 (서머타임 기준)"
+    ],
+    "lines_en": [
+      "Regular session 22:30-05:00 KST (DST in effect)"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "9/15 00:15",
+      "title_ko": "ECB 라가르드 총재 연설",
+      "title_en": "ECB's Lagarde Speaks",
+      "detail_ko": "통화정책 정상화 속도 관련 발언 주목",
+      "detail_en": "Markets watch for policy-normalization signals",
+      "importance": "high"
+    },
+    {
+      "time": "9/15 03:00",
+      "title_ko": "韓 8월 통화량(M2) 증가율",
+      "title_en": "Korea M2 Money Supply Growth (Aug)",
+      "detail_ko": "전월 +9.4%",
+      "detail_en": "Prior +9.4%",
+      "importance": "mid"
+    },
+    {
+      "time": "9/15 06:00",
+      "title_ko": "韓 8월 수출입물가(전년비)",
+      "title_en": "Korea Aug Export/Import Prices (YoY)",
+      "detail_ko": "전월 수출가 +49.1%·수입가 +18.7%",
+      "detail_en": "Prior export +49.1% · import +18.7%",
+      "importance": "mid"
+    },
+    {
+      "time": "9/15 08:55",
+      "title_ko": "韓 8월 무역수지",
+      "title_en": "Korea Trade Balance (Aug)",
+      "detail_ko": "전월 +34.75억달러",
+      "detail_en": "Prior +$3.475B",
+      "importance": "mid"
+    },
+    {
+      "time": "9/17",
+      "title_ko": "美 FOMC 금리결정 [미리보기]",
+      "title_en": "US FOMC Rate Decision [Preview]",
+      "detail_ko": "25bp 인상 시 3.75%→4.00% · 시장반영확률 86.5%",
+      "detail_en": "A 25bp hike would move 3.75%→4.00% · markets price ~86.5% odds",
+      "importance": "high"
+    },
+    {
+      "time": "9/18",
+      "title_ko": "日銀 BOJ 금리결정 [미리보기]",
+      "title_en": "Bank of Japan Rate Decision [Preview]",
+      "detail_ko": "시장 예상 1.25%로 인상 · 이전 1.00%",
+      "detail_en": "Markets expect a hike to 1.25% from 1.00%",
+      "importance": "high"
+    },
+    {
+      "time": "9/21",
+      "title_ko": "中 PBOC 금리결정 [미리보기]",
+      "title_en": "China PBOC Rate Decision [Preview]",
+      "detail_ko": "이전 3.00%",
+      "detail_en": "Prior 3.00%",
+      "importance": "mid"
+    }
+  ],
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+  "card_photos": {
+    "1": "A dim Seoul trading floor at dusk, red down-arrow numbers glowing on a wall of monitors, silhouettes of traders watching, tense cinematic low-key lighting, navy and red color grade",
+    "3": "A wide shot of the Korea Exchange trading floor, streaming red index numbers reflected on dark glass, soft bokeh, deep blue and crimson tones",
+    "7": "A large-scale power substation and data center exterior at dusk, rows of transformers and high-voltage lines, cool blue tones with warm amber accent lighting, cinematic wide composition",
+    "8": "An oil tanker silhouette on open water near a narrow strait at dusk, distant refinery lights, tense amber-and-navy palette, wide cinematic shot"
+  },
+  "caption_ko": "AI 속도조절 공포에 코스피가 3.26% 급락하며 3거래일 연속 하락, 반도체 대형주가 투매를 맞았습니다. 사우디 송유관 피격에 유가는 다시 100달러를 넘어섰고, 9월 FOMC 금리인상 확률은 86.5%까지 올랐습니다. 오늘 저녁 브리핑, 저장하고 팔로우하세요. ☀️ 다음 브리핑은 내일 아침 8시, 미국장 마감 정리입니다.\n\n#루키온브리핑 #저녁브리핑 #코스피 #코스닥 #반도체 #SK하이닉스 #삼성전자 #AI속도조절 #국제유가 #WTI #미국금리 #FOMC #앤트로픽 #엔비디아 #경제뉴스 #주식투자",
+  "caption_en": "Kospi sank 3.26% for a third straight decline as AI-pace fears sparked heavy selling in large-cap chipmakers. WTI climbed back above $100 after the Saudi pipeline strike, and September Fed hike odds rose to 86.5%. Save and follow for tonight's evening market brief. ☀️ Next brief tomorrow at 8 AM KST, wrapping up the US close.\n\n#luckyonbriefing #eveningbrief #kospi #kosdaq #semiconductors #skhynix #samsung #aipace #oilprice #wti #fedrate #fomc #anthropic #nvidia #economicnews #investing",
+  "sources": [
+    "KRX",
+    "Naver Finance",
+    "Naver News",
+    "FMP",
+    "Yahoo Finance",
+    "CME FedWatch",
+    "한국은행 ECOS",
+    "DART",
+    "CNN Fear & Greed Index"
+  ]
+}
