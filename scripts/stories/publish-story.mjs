@@ -47,7 +47,13 @@ if (!fs.existsSync(localPng)) {
     + `    data/stories/ 의 구버전 '주간 미리보기' 스토리 전용입니다.)`);
   process.exit(1);
 }
-const imageUrl = `${PAGES}/${relDir}/story.png`;
+// CACHE_BUST 를 지정하면(예: 커밋 SHA) 쿼리스트링으로 붙여 GitHub Pages CDN·Meta 쪽
+// 이전 응답 캐시를 우회한다 — 같은 경로에 이미지를 다시 렌더링해 재발행할 때 필수
+// (publish-instagram.mjs 와 동일한 이유. 스토리는 매일 같은 stamp 로 딱 한 번만 발행하는
+// 게 보통이라 이 문제가 늦게 발견됐다 — 2026-09-14, 같은 stamp 를 재렌더해 재발행했더니
+// Meta 가 최초 발행 때의 이미지를 계속 캐싱해 내용이 안 바뀌는 사고가 있었다).
+const bust = process.env.CACHE_BUST ? `?v=${encodeURIComponent(process.env.CACHE_BUST)}` : '';
+const imageUrl = `${PAGES}/${relDir}/story.png${bust}`;
 
 // 대체 텍스트 — 넘기지 않으면 인스타가 이미지 속 텍스트를 OCR 로 읽어 엉뚱한 설명을 붙인다.
 // 손글씨 문구는 렌더 시점에만 만들어지므로 render-reel.mjs --still 이 alt.txt 로 남겨 둔다.
