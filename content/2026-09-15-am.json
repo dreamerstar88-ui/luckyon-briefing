@@ -21,13 +21,13 @@
   "summary": {
     "lines_ko": [
       "나스닥이 전 거래일보다 0.56% 내린 26,186.41에 마감하며 반등 하루 만에 다시 하락했다. S&P500도 0.48% 내린 7,619.98로 거래를 마쳤다.",
-      "'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 5.86% 급락한 11,131.28로 마감했다. 엔비디아(-3.36%)·마이크론(-5.25%)·AMD(-4.4%) 등 대형 반도체주가 일제히 투매를 맞았다.",
+      "다리오 아모데이 앤트로픽 CEO의 지난 12일 경고 에세이에서 촉발된 'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 5.86% 급락한 11,131.28로 마감했다. 엔비디아(-3.36%)·마이크론(-5.25%)·AMD(-4.4%) 등 대형 반도체주가 일제히 투매를 맞았다.",
       "반면 속도조절이 데이터센터 투자 부담을 낮출 것이란 기대에 구글(+3.22%)·메타(+2.71%) 등 하이퍼스케일러와 크라우드스트라이크 등 사이버보안주는 오히려 강세를 보였다.",
       "트럼프 대통령은 젠슨 황 엔비디아 CEO와 통화하며 속도조절론을 \"사기(Hoax)\"라 반박했고, 사우디 송유관 폐쇄 여파로 브렌트유는 $106대까지 올랐으며 9월 FOMC 금리인상 확률은 92%까지 치솟았다."
     ],
     "lines_en": [
       "Nasdaq fell 0.56% to 26,186.41, giving back its rebound after just one up day. The S&P 500 also fell 0.48% to 7,619.98.",
-      "The Philadelphia Semiconductor Index sank 5.86% to 11,131.28 as AI-pace fears spread, with large-cap chipmakers Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all sold off.",
+      "AI-pace fears, sparked by an essay Anthropic CEO Dario Amodei published on Sep 12 warning the industry to slow down, sent the Philadelphia Semiconductor Index down 5.86% to 11,131.28, with large-cap chipmakers Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all sold off.",
       "Hyperscalers Google (+3.22%) and Meta (+2.71%), along with cybersecurity stocks like CrowdStrike, rallied instead on hopes a slower AI buildout would ease data-center capex pressure.",
       "President Trump called Nvidia CEO Jensen Huang and dismissed the AI-pace theory as a 'hoax,' while Brent crude climbed to $106 after Saudi Arabia's pipeline shutdown and September Fed hike odds surged to 92%."
     ]
@@ -83,9 +83,9 @@
         {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,619.98", "delta": "▼0.48%", "dir": "down",
          "sub_ko": "9/3 고점 7,747.71 대비 -1.65%", "sub_en": "-1.65% from the Sep 3 high of 7,747.71"}
       ],
-      "breadth": [{"label_ko": "거래대금 상위 299종목 등락", "label_en": "Advancers/decliners, top 299 by turnover", "up": 134, "flat": 5, "down": 160}],
-      "note_ko": "AI 속도조절 논쟁이 격화하며 필라델피아 반도체지수가 5.86% 급락, 지수 전체가 하루 만에 다시 하락했다. 거래대금 상위 299종목 중 160개가 내려 하락이 반도체에 국한되지 않았다.",
-      "note_en": "The AI-pace debate intensified, and a 5.86% plunge in the Philly Semiconductor Index pulled the broader market down again after just one up day. 160 of the top 299 stocks by turnover fell, showing the weakness wasn't limited to chips."
+      "breadth": [{"label_ko": "거래대금 상위 299종목 등락", "label_en": "Advancers/decliners, top 299 by turnover", "up": 134, "flat": 6, "down": 159}],
+      "note_ko": "AI 속도조절 논쟁이 격화하며 필라델피아 반도체지수가 5.86% 급락, 지수 전체가 하루 만에 다시 하락했다. 거래대금 상위 299종목 중 159개가 내려 하락이 반도체에 국한되지 않았다.",
+      "note_en": "The AI-pace debate intensified, and a 5.86% plunge in the Philly Semiconductor Index pulled the broader market down again after just one up day. 159 of the top 299 stocks by turnover fell, showing the weakness wasn't limited to chips."
     },
     {
       "title_ko": "섹터별 등락", "title_en": "Sector Performance",
@@ -137,7 +137,7 @@
          "sub_ko": "AI 속도조절 논쟁 확산에 반도체 대형주 투매", "sub_en": "Large-cap chipmakers sold off as AI-pace fears spread"},
         {"label_ko": "브렌트유", "label_en": "Brent Crude", "value": "$106.41", "delta": "▲1.72%", "dir": "up",
          "sub_ko": "WTI $101.96과 격차 $4.45로 확대 · 사우디 송유관 폐쇄 여파", "sub_en": "Spread over WTI ($101.96) widens to $4.45 after the Saudi pipeline shutdown"},
-        {"label_ko": "SK하이닉스 ADR", "label_en": "SK Hynix NY ADR", "value": "-7.6%", "delta": {"ko": "코스피 개장 전 프리뷰", "en": "A preview ahead of today's Kospi open"}, "dir": "down",
+        {"label_ko": "SK하이닉스 ADR", "label_en": "SK Hynix NY ADR", "value": "-7.6%", "delta": {"ko": "코스피 개장 전", "en": "Ahead of Kospi's open"}, "dir": "down",
          "sub_ko": "뉴욕 예탁증서(ADR) 기준 · 美 반도체 투매 여파", "sub_en": "NY-listed depositary receipt · hit by the US chip selloff",
          "ref_ko": "국내 상장 주식을 해외 증시에서 사고팔 수 있게 만든 예탁증서", "ref_en": "A depositary receipt that lets a Korean-listed stock trade overseas"}
       ],
@@ -148,8 +148,8 @@
       "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
       "items": [
         {"headline_ko": "필라델피아 반도체지수 5.86% 급락…엔비디아·마이크론 동반 약세", "headline_en": "Philly Semiconductor Index Sinks 5.86% as Nvidia, Micron Slide",
-         "body_ko": "'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 692.72포인트(5.86%) 내린 11,131.28로 마감했다. 엔비디아 -3.36%, 마이크론 -5.25%, AMD -4.4% 등 대형 반도체주가 일제히 하락했다.",
-         "body_en": "The Philadelphia Semiconductor Index fell 692.72 points (5.86%) to 11,131.28 as AI-pace fears spread. Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all fell."},
+         "body_ko": "다리오 아모데이 앤트로픽 CEO가 지난 12일 AI 개발 속도를 늦춰야 한다는 경고 에세이를 낸 이후 커진 'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 692.72포인트(5.86%) 내린 11,131.28로 마감했다. 엔비디아 -3.36%, 마이크론 -5.25%, AMD -4.4% 등 대형 반도체주가 일제히 하락했다.",
+         "body_en": "AI-pace fears — which grew out of an essay Anthropic CEO Dario Amodei published on Sep 12 warning the industry to slow AI development — spread further, sending the Philadelphia Semiconductor Index down 692.72 points (5.86%) to 11,131.28. Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all fell."},
         {"headline_ko": "트럼프, 젠슨 황과 통화…\"AI 속도조절론은 사기\"", "headline_en": "Trump Calls Nvidia's Huang, Dismisses AI-Pace Fears as a 'Hoax'",
          "body_ko": "트럼프 대통령이 14일 젠슨 황 엔비디아 CEO에게 전화해 \"로봇이 세상을 지배한다는 건 사기(Hoax)\"라고 말했다고 밝혔다. 트루스소셜에도 여러 차례 속도조절론을 비난하는 글을 올렸다.",
          "body_en": "President Trump said he called Nvidia CEO Jensen Huang on Sep 14, telling him claims that 'robots will take over the world' are a hoax, and posted repeatedly on Truth Social attacking the AI-pace-slowdown theory."},
