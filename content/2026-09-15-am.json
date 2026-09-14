@@ -1,0 +1,229 @@
+{
+  "date": "2026-09-15",
+  "session": "am",
+  "dateLabel_ko": "2026년 9월 15일 화요일",
+  "dateLabel_en": "Tuesday, September 15, 2026",
+
+  "headline_ko": "AI·금리·유가 '3중 악재'에 반도체 5.86%↓…트럼프 \"사기\" 반박",
+  "headline_en": "Chips Sink 5.86% on AI, Rate and Oil Fears; Trump Calls It a 'Hoax'",
+  "headline_sub_ko": "나스닥 0.56%·S&P500 0.48% 하락, 브렌트유 $106대·금리인상 확률 92%로",
+  "headline_sub_en": "Nasdaq -0.56%, S&P 500 -0.48% as Brent nears $106 and Fed-hike odds hit 92%",
+  "cover_kicker": {"ko": "간밤 미국장 · 9/14 마감", "en": "US Overnight · Sep 14 Close"},
+  "cover_facts": [
+    ["chip", {"ko": "나스닥 -0.56%·S&P500 -0.48%", "en": "Nasdaq -0.56% · S&P 500 -0.48%"},
+              {"ko": "26,186.41 / 7,619.98 · 필라델피아 반도체지수는 -5.86%", "en": "26,186.41 / 7,619.98 · Philly Semis (SOX) sank 5.86%"}],
+    ["ai", {"ko": "AI 속도조절 논쟁 격화…트럼프 \"사기\" 반박", "en": "AI-pace debate escalates; Trump calls it a 'hoax'"},
+           {"ko": "젠슨 황과 통화 \"로봇이 세상 못 지배\"…하이퍼스케일러는 강세", "en": "Called Nvidia's Huang; hyperscalers like Google, Meta rallied instead"}],
+    ["globe", {"ko": "브렌트유 $106.41, 사우디 송유관 폐쇄 여파", "en": "Brent at $106.41 after the Saudi pipeline shutdown"},
+              {"ko": "호르무즈 우회로까지 막혀 공급 차질 우려 확산", "en": "Hormuz bypass route now blocked too, stoking supply fears"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥이 전 거래일보다 0.56% 내린 26,186.41에 마감하며 반등 하루 만에 다시 하락했다. S&P500도 0.48% 내린 7,619.98로 거래를 마쳤다.",
+      "다리오 아모데이 앤트로픽 CEO의 지난 12일 경고 에세이에서 촉발된 'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 5.86% 급락한 11,131.28로 마감했다. 엔비디아(-3.36%)·마이크론(-5.25%)·AMD(-4.4%) 등 대형 반도체주가 일제히 투매를 맞았다.",
+      "반면 속도조절이 데이터센터 투자 부담을 낮출 것이란 기대에 구글(+3.22%)·메타(+2.71%) 등 하이퍼스케일러와 크라우드스트라이크 등 사이버보안주는 오히려 강세를 보였다.",
+      "트럼프 대통령은 젠슨 황 엔비디아 CEO와 통화하며 속도조절론을 \"사기(Hoax)\"라 반박했고, 사우디 송유관 폐쇄 여파로 브렌트유는 $106대까지 올랐으며 9월 FOMC 금리인상 확률은 92%까지 치솟았다."
+    ],
+    "lines_en": [
+      "Nasdaq fell 0.56% to 26,186.41, giving back its rebound after just one up day. The S&P 500 also fell 0.48% to 7,619.98.",
+      "AI-pace fears, sparked by an essay Anthropic CEO Dario Amodei published on Sep 12 warning the industry to slow down, sent the Philadelphia Semiconductor Index down 5.86% to 11,131.28, with large-cap chipmakers Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all sold off.",
+      "Hyperscalers Google (+3.22%) and Meta (+2.71%), along with cybersecurity stocks like CrowdStrike, rallied instead on hopes a slower AI buildout would ease data-center capex pressure.",
+      "President Trump called Nvidia CEO Jensen Huang and dismissed the AI-pace theory as a 'hoax,' while Brent crude climbed to $106 after Saudi Arabia's pipeline shutdown and September Fed hike odds surged to 92%."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,186.41", "delta": "▼0.56%", "dir": "down", "note_ko": "필라델피아 반도체지수 -5.86%에 발목", "note_en": "Dragged by a 5.86% drop in the Philly Semiconductor Index"},
+    {"label": "S&P 500", "value": "7,619.98", "delta": "▼0.48%", "dir": "down", "note_ko": "10년물 금리 4.97%·유가 상승 부담", "note_en": "Weighed by a 4.97% 10-year yield and rising oil"},
+    {"label": "KOSPI", "value": "6,684.37", "delta": "▼3.26%", "dir": "down", "note_ko": "9/14 종가 · 코스피는 아직 개장 전", "note_en": "Sep 14 close · Kospi has yet to open"},
+    {"label": "VIX", "value": "17.10", "delta": "▲7.95%", "dir": "up", "note_ko": "AI 속도조절 우려에 공포지수 재상승", "note_en": "Fear gauge climbed again on AI-pace jitters"},
+    {"label": "Fear&Greed", "value": "31", "delta": "33 → 31", "dir": "down", "note_ko": "등급 '공포(Fear)' 유지", "note_en": "Stayed in 'Fear' territory"},
+    {"label": "US 10Y", "value": "4.97%", "delta": "4.96% → 4.97%", "dir": "up", "note_ko": "3거래일 연속 상승 · FOMC 앞두고 긴축 경계", "note_en": "3rd straight rise ahead of the Fed decision"},
+    {"label": "USD/KRW", "value": "1,347.4", "value_sub": "· DXY 99.5", "delta": "▲0.21%", "dir": "up", "note_ko": "달러 강세 속 원화 약세 · 달러인덱스 99선 위", "note_en": "Won weakened as the dollar firmed; dollar index holds above 99"},
+    {"label": "Gold", "value": "$4,339.60", "delta": "▼1.57%", "dir": "down", "note_ko": "국채금리 상승에 안전자산 매력 약화", "note_en": "Eased as rising yields dulled its safe-haven appeal"},
+    {"label": "WTI", "value": "$101.96", "delta": "▲1.91%", "dir": "up", "note_ko": "브렌트유는 $106대, 사우디 송유관 폐쇄 여파", "note_en": "Brent near $106 after the Saudi pipeline shutdown"},
+    {"label": "Bitcoin", "value": "$78,824.03", "delta": "▲2.58%", "dir": "up", "note_ko": "위험선호 회복 속 $78,000대 진입", "note_en": "Risk appetite improved, topping $78,000"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": {"ko": "AI 속도조절 논쟁에 반도체가 흔들렸다", "en": "AI-pace debate rattled semiconductors"},
+  "main_tile_note": {"ko": "나스닥 반등 하루 만에 다시 하락", "en": "Nasdaq's rebound lasted just one day"},
+  "market_note_ko": "AI 속도조절 논쟁이 격화하며 필라델피아 반도체지수가 5.86% 급락했고 나스닥도 0.56% 내렸다. 트럼프 대통령은 이를 '사기'라 반박했다. 사우디 송유관 폐쇄로 브렌트유는 $106대까지 올랐고, 9월 FOMC 금리인상 확률은 92%까지 높아졌다.",
+  "market_note_en": "The AI-pace debate intensified, sending the Philadelphia Semiconductor Index down 5.86% and the Nasdaq down 0.56%. President Trump dismissed the theory as a 'hoax.' Brent crude climbed to $106 after Saudi Arabia shut a key pipeline, and September Fed hike odds rose to 92%.",
+
+  "chart_series_values": [26099.77, 26217.83, 26584.06, 26506.99, 26421.41, 26253.34, 26081.72, 26333.04, 26186.41],
+  "chart_series_labels": ["9.1", "9.2", "9.3", "9.4", "9.8", "9.9", "9.10", "9.11", "9.14"],
+  "chart_title": {"ko": "반등 하루 만에 다시 하락", "en": "Rebound Lasted Just One Day"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9/11 26,333.04(+0.96%) → 9/14 26,186.41(-0.56%) · 반도체 급락이 발목", "en": "Sep 11 close 26,333.04 (+0.96%) → Sep 14 close 26,186.41 (-0.56%), dragged by the chip selloff"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "반도체 -4.75%로 최악, 통신은 견조", "en": "Semis (SMH) Worst at -4.75%; Comm. Held Up"},
+  "sector_sub": {"ko": "美 섹터 ETF 등락률 · 9/14 종가 기준", "en": "US sector ETFs · Sep 14 close"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Dollar Volume"},
+  "rank_sub": {"ko": "美 개별 종목 거래대금 상위 5 · 9/14", "en": "Top 5 US stocks by dollar volume · Sep 14"},
+  "rank_unit": {"ko": "단위 · 달러 거래대금", "en": "Unit · USD dollar volume"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "CME 금리인상 확률·美 10년물·브렌트유", "en": "CME hike odds · US 10Y · Brent crude"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥 종합", "label_en": "Nasdaq Composite", "value": "26,186.41", "delta": "▼0.56%", "dir": "down",
+         "sub_ko": "필라델피아 반도체지수 -5.86%가 지수 전체를 끌어내렸다", "sub_en": "Dragged down by the Philly Semiconductor Index's 5.86% slide"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,619.98", "delta": "▼0.48%", "dir": "down",
+         "sub_ko": "9/3 고점 7,747.71 대비 -1.65%", "sub_en": "-1.65% from the Sep 3 high of 7,747.71"}
+      ],
+      "breadth": [{"label_ko": "거래대금 상위 299종목 등락", "label_en": "Advancers/decliners, top 299 by turnover", "up": 134, "flat": 6, "down": 159}],
+      "note_ko": "AI 속도조절 논쟁이 격화하며 필라델피아 반도체지수가 5.86% 급락, 지수 전체가 하루 만에 다시 하락했다. 거래대금 상위 299종목 중 159개가 내려 하락이 반도체에 국한되지 않았다.",
+      "note_en": "The AI-pace debate intensified, and a 5.86% plunge in the Philly Semiconductor Index pulled the broader market down again after just one up day. 159 of the top 299 stocks by turnover fell, showing the weakness wasn't limited to chips."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "통신(XLC)", "label_en": "Comm (XLC)", "value": 2.19},
+        {"label_ko": "헬스(XLV)", "label_en": "Health (XLV)", "value": 1.45},
+        {"label_ko": "필수소비(XLP)", "label_en": "Staples (XLP)", "value": 1.25},
+        {"label_ko": "소비재(XLY)", "label_en": "Disc. (XLY)", "value": -0.1},
+        {"label_ko": "금융(XLF)", "label_en": "Fin. (XLF)", "value": -0.38},
+        {"label_ko": "부동산(XLRE)", "label_en": "REITs (XLRE)", "value": -0.69},
+        {"label_ko": "소재(XLB)", "label_en": "Matl (XLB)", "value": -0.9},
+        {"label_ko": "에너지(XLE)", "label_en": "Energy (XLE)", "value": -0.94},
+        {"label_ko": "유틸(XLU)", "label_en": "Util. (XLU)", "value": -1.34},
+        {"label_ko": "산업재(XLI)", "label_en": "Indu. (XLI)", "value": -1.42},
+        {"label_ko": "기술(XLK)", "label_en": "Tech (XLK)", "value": -1.81},
+        {"label_ko": "반도체(SMH)", "label_en": "Semis (SMH)", "value": -4.75}
+      ],
+      "note_ko": "커뮤니케이션(XLC)·헬스케어(XLV)·필수소비재(XLP) 3개 섹터만 상승했고 나머지 9개는 하락했다. 반도체(SMH)가 -4.75%로 낙폭이 가장 컸고 기술(XLK)도 -1.81%로 부진했다.",
+      "note_en": "Only Communication (XLC), Healthcare (XLV) and Staples (XLP) rose among the 12 sectors tracked. Semis (SMH) led losses at -4.75%, with Tech (XLK) also weak at -1.81%."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top Dollar Volume",
+      "rows": [
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$27.76B", "pct": -3.36},
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$24.93B", "pct": -5.25},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$14.81B", "pct": -4.98},
+        {"name_ko": "애플", "name_en": "Apple", "value": "$12.89B", "pct": 0.24},
+        {"name_ko": "메타", "name_en": "Meta", "value": "$12.83B", "pct": 2.71}
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 5종목 비중", "label_en": "Top 5 share of dollar volume", "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5 stocks", "pct": 23.26, "color": "#f5a623"},
+          {"label_ko": "나머지 294종목", "label_en": "Other 294 stocks", "pct": 76.74, "color": "#9aa5b1"}
+        ]
+      },
+      "note_ko": "마이크론·샌디스크가 각각 5%대 하락하며 반도체 매도를 주도했지만, 엔비디아 하락폭은 -3.36%로 상대적으로 덜했다. 애플·메타는 오히려 상승하며 거래대금 상위에 이름을 올렸다.",
+      "note_en": "Micron and SanDisk led chip selling with declines above 5%, while Nvidia's drop was a comparatively milder -3.36%. Apple and Meta bucked the trend, rising even as they ranked among the top by turnover."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "美 9월 FOMC 금리인상 확률", "label_en": "Sept FOMC Rate-Hike Odds", "value": "92%", "delta": "86.5% → 92%", "dir": "up",
+         "sub_ko": "3년 만의 금리 인상 여부 저울질 · FOMC는 9/16~17 발표", "sub_en": "Markets weigh the first hike in 3 years · the FOMC decides Sep 16-17",
+         "ref_ko": "시카고상품거래소(CME) 페드워치 · 시장이 가격에 반영한 확률", "ref_en": "CME FedWatch; market-implied odds"},
+        {"label_ko": "美 10년물 국채금리", "label_en": "US 10-Year Treasury Yield", "value": "4.97%", "delta": "4.96% → 4.97%", "dir": "up",
+         "sub_ko": "3거래일 연속 상승 · 30년물은 5.34%로 고공행진", "sub_en": "3rd straight rise · the 30-year holds near 5.34%"},
+        {"label_ko": "필라델피아 반도체지수(SOX)", "label_en": "Philadelphia Semiconductor Index (SOX)", "value": "11,131.28", "delta": "▼5.86%", "dir": "down",
+         "sub_ko": "AI 속도조절 논쟁 확산에 반도체 대형주 투매", "sub_en": "Large-cap chipmakers sold off as AI-pace fears spread"},
+        {"label_ko": "브렌트유", "label_en": "Brent Crude", "value": "$106.41", "delta": "▲1.72%", "dir": "up",
+         "sub_ko": "WTI $101.96과 격차 $4.45로 확대 · 사우디 송유관 폐쇄 여파", "sub_en": "Spread over WTI ($101.96) widens to $4.45 after the Saudi pipeline shutdown"},
+        {"label_ko": "SK하이닉스 ADR", "label_en": "SK Hynix NY ADR", "value": "-7.6%", "delta": {"ko": "코스피 개장 전", "en": "Ahead of Kospi's open"}, "dir": "down",
+         "sub_ko": "뉴욕 예탁증서(ADR) 기준 · 美 반도체 투매 여파", "sub_en": "NY-listed depositary receipt · hit by the US chip selloff",
+         "ref_ko": "국내 상장 주식을 해외 증시에서 사고팔 수 있게 만든 예탁증서", "ref_en": "A depositary receipt that lets a Korean-listed stock trade overseas"}
+      ],
+      "note_ko": "9월 FOMC 금리인상 확률이 86.5%에서 92%로 뛰었고, 10년물 금리도 4.97%로 3거래일째 올랐다. 필라델피아 반도체지수는 5.86% 급락했고, SK하이닉스 ADR도 7.6% 내리며 오늘 코스피 개장을 무겁게 한다.",
+      "note_en": "September Fed hike odds jumped from 86.5% to 92%, and the 10-year yield rose for a 3rd straight session to 4.97%. The Philadelphia Semiconductor Index sank 5.86%, and SK Hynix's ADR fell 7.6%, foreshadowing a heavy open for Kospi today."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "필라델피아 반도체지수 5.86% 급락…엔비디아·마이크론 동반 약세", "headline_en": "Philly Semiconductor Index Sinks 5.86% as Nvidia, Micron Slide",
+         "body_ko": "다리오 아모데이 앤트로픽 CEO가 지난 12일 AI 개발 속도를 늦춰야 한다는 경고 에세이를 낸 이후 커진 'AI 속도조절'론이 확산하며 필라델피아 반도체지수가 692.72포인트(5.86%) 내린 11,131.28로 마감했다. 엔비디아 -3.36%, 마이크론 -5.25%, AMD -4.4% 등 대형 반도체주가 일제히 하락했다.",
+         "body_en": "AI-pace fears — which grew out of an essay Anthropic CEO Dario Amodei published on Sep 12 warning the industry to slow AI development — spread further, sending the Philadelphia Semiconductor Index down 692.72 points (5.86%) to 11,131.28. Nvidia (-3.36%), Micron (-5.25%) and AMD (-4.4%) all fell."},
+        {"headline_ko": "트럼프, 젠슨 황과 통화…\"AI 속도조절론은 사기\"", "headline_en": "Trump Calls Nvidia's Huang, Dismisses AI-Pace Fears as a 'Hoax'",
+         "body_ko": "트럼프 대통령이 14일 젠슨 황 엔비디아 CEO에게 전화해 \"로봇이 세상을 지배한다는 건 사기(Hoax)\"라고 말했다고 밝혔다. 트루스소셜에도 여러 차례 속도조절론을 비난하는 글을 올렸다.",
+         "body_en": "President Trump said he called Nvidia CEO Jensen Huang on Sep 14, telling him claims that 'robots will take over the world' are a hoax, and posted repeatedly on Truth Social attacking the AI-pace-slowdown theory."},
+        {"headline_ko": "AI 속도조절이 오히려 호재?…구글·메타·사이버보안주 강세", "headline_en": "AI-Pace Fears Read as Good News for Big Tech, Cybersecurity Stocks",
+         "body_ko": "속도조절이 대규모 데이터센터 투자 부담을 낮출 것이란 기대에 구글(+3.22%)·메타(+2.71%)·마이크로소프트가 상승했다. 크라우드스트라이크는 사상 최고가를 새로 썼다.",
+         "body_en": "Google (+3.22%), Meta (+2.71%) and Microsoft rose on hopes a slower AI buildout would ease capex pressure, while CrowdStrike hit a fresh record high."},
+        {"headline_ko": "구글, 뉴멕시코주 신규 데이터센터 건설 검토", "headline_en": "Google Weighs a New Data Center in New Mexico",
+         "body_ko": "간밤 구글이 뉴멕시코주에 새 데이터센터 건설 프로젝트를 검토하고 있다는 소식이 전해졌다. AI 속도조절 논쟁 속에서도 인프라 확장은 이어지는 모습이다.",
+         "body_en": "Google is reportedly weighing a new data center project in New Mexico, a sign that infrastructure expansion continues even amid the AI-pace debate."},
+        {"headline_ko": "SK하이닉스 ADR 7.6%↓…코스피 개장 앞두고 반도체 경계감", "headline_en": "SK Hynix's NY ADR Falls 7.6%, Flagging Chip Jitters Ahead of Kospi's Open",
+         "body_ko": "뉴욕 예탁증서(ADR) 기준 SK하이닉스가 7.6% 내렸다. 미국발 반도체 투매가 오늘 코스피 개장에도 부담으로 작용할 전망이다.",
+         "body_en": "SK Hynix's New York-listed ADR fell 7.6%, a sign that the US chip selloff could weigh on Kospi's open today."},
+        {"headline_ko": "\"반도체 의존 큰 코스피, 조정 국면 진입 우려\"…증권가 진단", "headline_en": "Analysts Warn Chip-Heavy Kospi May Be Entering a Correction",
+         "body_ko": "증권가에서는 반도체 비중이 큰 코스피가 AI 속도조절 논쟁의 여파로 본격적인 조정 국면에 들어설 수 있다는 진단이 나왔다.",
+         "body_en": "Analysts warned that Kospi, heavily weighted toward semiconductors, could be entering a full correction as the AI-pace debate weighs on sentiment."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "AI·금리·유가 '3중 악재'에 뉴욕증시 하락 마감", "headline_en": "Wall Street Falls on a 'Triple Threat' of AI, Rates and Oil",
+         "body_ko": "AI 속도조절 논쟁, 국채금리 상승, 국제유가 급등이 겹치며 나스닥(-0.56%)·S&P500(-0.48%)이 나란히 하락 마감했다.",
+         "body_en": "The AI-pace debate, rising Treasury yields and surging oil prices combined to send the Nasdaq (-0.56%) and S&P 500 (-0.48%) lower."},
+        {"headline_ko": "9월 금리인상 확률 92%로 급등…골드만·JP모건도 인상 전망 수정", "headline_en": "September Hike Odds Surge to 92% as Goldman, JPMorgan Revise Forecasts",
+         "body_ko": "CME 페드워치 기준 9월 FOMC 금리인상 확률이 92%까지 올랐다. 골드만삭스·JP모건 등 월가 주요 투자은행도 잇따라 인상 전망으로 돌아섰다.",
+         "body_en": "CME FedWatch now prices a 92% chance of a September Fed hike, with Goldman Sachs and JPMorgan among the banks that revised forecasts toward a hike."},
+        {"headline_ko": "사우디 송유관 폐쇄에 브렌트유 한때 $110 육박", "headline_en": "Brent Nears $110 as Saudi Pipeline Shutdown Persists",
+         "body_ko": "사우디아라비아가 드론 공격을 받은 '동서 송유관'(하루 최대 700만 배럴) 가동을 중단하면서 브렌트유가 장중 $110에 육박했다가 $106대로 마감했다.",
+         "body_en": "Saudi Arabia halted its drone-struck East-West pipeline, capable of moving up to 7 million barrels a day, sending Brent briefly toward $110 before it settled near $106."},
+        {"headline_ko": "오만, 호르무즈 임시항로 회담 돌연 연기…유가 불안 가중", "headline_en": "Oman Abruptly Postpones Hormuz Interim-Route Talks, Adding to Oil Jitters",
+         "body_ko": "이란과 걸프협력회의(GCC) 국가 간 호르무즈 해협 통항 안전 논의가 오만 측 발표로 돌연 연기됐다. 사우디 송유관 사태와 겹치며 유가 불안을 키웠다.",
+         "body_en": "Talks between Iran and Gulf states on Hormuz Strait transit safety were abruptly postponed by Oman, compounding oil-market anxiety alongside the Saudi pipeline crisis."},
+        {"headline_ko": "사우디 송유관 피격 후폭풍…\"전 세계 공급 4% 차질\" 경고", "headline_en": "Saudi Pipeline Strike Threatens 4% of Global Oil Supply",
+         "body_ko": "피격된 송유관은 복구에 6주가 걸릴 것으로 전망되며, 사우디 비축유는 5~7일치만 남은 것으로 알려졌다. 공급 차질이 전 세계 원유의 최대 4%에 달할 수 있다는 경고가 나온다.",
+         "body_en": "The struck pipeline could take six weeks to repair, and Saudi reserves are said to have only 5-7 days of supply left, raising warnings that up to 4% of global oil supply could be disrupted."},
+        {"headline_ko": "트럼프 \"AI 위험론은 사기\"…美 중간선거 쟁점으로 번져", "headline_en": "Trump's 'AI Fear Is a Hoax' Claim Becomes a Midterm Election Issue",
+         "body_ko": "트럼프 대통령이 AI 개발 속도를 늦춰야 한다는 주장을 \"사기(Hoax)\"라 비난하며 \"중국만 기뻐할 것\"이라고 말했다. 이 논쟁이 미국 중간선거 쟁점으로 확산하는 모습이다.",
+         "body_en": "President Trump blasted calls to slow AI development as a 'hoax' and said only China would benefit, as the debate spills into US midterm election politics."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko": "지금 ~ 오늘 밤 9시(KST)", "en": "Now through 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"]
+  },
+  "schedule": [
+    {"time": "08:55", "title_ko": "韓 8월 무역수지", "title_en": "Korea Trade Balance (Aug)", "detail_ko": "전월 +34.75억달러", "detail_en": "Prior +$3.475B", "importance": "mid"},
+    {"time": "11:00", "title_ko": "中 8월 산업생산(전년비)", "title_en": "China Industrial Production (Aug, YoY)", "detail_ko": "예상 +4.8% · 이전 +4.5%", "detail_en": "Est. +4.8% YoY · prior +4.5%", "importance": "high"},
+    {"time": "11:00", "title_ko": "中 8월 소매판매(전년비)", "title_en": "China Retail Sales (Aug, YoY)", "detail_ko": "예상 +0.8% · 이전 +0.6%", "detail_en": "Est. +0.8% YoY · prior +0.6%", "importance": "high"},
+    {"time": "12:00", "title_ko": "韓 8월 통화량(M2) 증가율", "title_en": "Korea M2 Money Supply Growth (Aug)", "detail_ko": "전월 +9.4%", "detail_en": "Prior +9.4%", "importance": "mid"},
+    {"time": "18:00", "title_ko": "獨 9월 ZEW 경기기대지수", "title_en": "Germany ZEW Economic Sentiment (Sep)", "detail_ko": "예상 37.0 · 이전 34.2", "detail_en": "Est. 37.0 · prior 34.2", "importance": "mid"},
+    {"time": "9/16~17", "title_ko": "美 FOMC 금리결정 [미리보기]", "title_en": "US FOMC Rate Decision [Preview]", "detail_ko": "25bp 인상 시 3.75%→4.00% · 시장반영확률 92%", "detail_en": "A 25bp hike would move 3.75%→4.00% · markets price ~92% odds", "importance": "high"},
+    {"time": "9/18", "title_ko": "日銀 BOJ 금리결정 [미리보기]", "title_en": "Bank of Japan Rate Decision [Preview]", "detail_ko": "시장 예상 1.25%로 인상 · 이전 1.00%", "detail_en": "Markets expect a hike to 1.25% from 1.00%", "importance": "high"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "A dim, tense New York trading floor moments after the closing bell, red down-arrow numbers glowing across a wall of monitors, a lone trader silhouette watching falling chip-stock tickers, cinematic low-key lighting, deep navy and crimson color grade",
+    "3": "A wide cinematic shot of a Wall Street trading floor at dusk, streaming red semiconductor stock tickers reflected on dark glass, soft bokeh, moody blue and amber tones",
+    "7": "A vast silicon wafer fabrication cleanroom bathed in amber safety lighting, robotic arms handling chips, a faint red warning glow overlay, cinematic wide shot, cool blue and warm amber contrast",
+    "8": "An oil tanker silhouette near a narrow desert strait at dusk, a distant pipeline and refinery lights glowing on the horizon, tense amber-and-navy palette, wide cinematic composition"
+  },
+
+  "caption_ko": "AI 속도조절 논쟁과 금리·유가 부담이 겹치며 필라델피아 반도체지수가 5.86% 급락했습니다. 트럼프 대통령은 이를 '사기'라 반박했고, 브렌트유는 사우디 송유관 폐쇄 여파로 $106대까지 올랐습니다. 9월 FOMC 금리인상 확률은 92%까지 치솟았습니다. 오늘 아침 놓치면 안 될 시장 브리핑, 저장하고 팔로우하세요. 🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#루키온브리핑 #증시브리핑 #나스닥 #반도체 #필라델피아반도체지수 #SK하이닉스 #엔비디아 #AI속도조절 #국제유가 #브렌트유 #미국금리 #FOMC #국채금리 #트럼프 #경제뉴스 #주식투자",
+  "caption_en": "The Philadelphia Semiconductor Index sank 5.86% as AI-pace fears combined with rising rates and oil prices. President Trump called the slowdown theory a 'hoax,' while Brent crude climbed to $106 after Saudi Arabia's pipeline shutdown. September Fed hike odds surged to 92%. Save and follow so you don't miss this morning's market brief. 🌙 Next brief tonight at 9 PM KST, before the US open.\n\n#luckyonbriefing #marketbrief #nasdaq #semiconductors #sox #skhynix #nvidia #aipace #oilprice #brentcrude #fedrate #fomc #treasuryyields #trump #economicnews #investing",
+  "sources": ["Yahoo Finance", "FMP", "FINRA", "Naver News", "Yonhap", "CNN Fear & Greed Index", "CME FedWatch"]
+}
