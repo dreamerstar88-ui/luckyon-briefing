@@ -1,0 +1,672 @@
+{
+  "date": "2026-09-16",
+  "session": "am",
+  "dateLabel_ko": "2026년 9월 16일 수요일",
+  "dateLabel_en": "Wednesday, September 16, 2026",
+  "headline_ko": "美 10년물 국채, 19년 만에 5%대 마감…유가 급등에 3대 지수 이틀째 하락",
+  "headline_en": "US 10-Year Treasury Closes Above 5% for First Time in 19 Years as Oil Surges, Stocks Fall a 2nd Day",
+  "headline_sub_ko": "국채금리·유가 급등에 AI 속도조절 여진까지 겹쳐 흔들린 밤사이 시장",
+  "headline_sub_en": "Bond yields, oil, and lingering AI-slowdown jitters all pressured markets overnight",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 9/15 마감",
+    "en": "US Overnight · Sep 15 Close"
+  },
+  "cover_facts": [
+    [
+      "rate",
+      {
+        "ko": "美 10년물 국채 5.00% 마감",
+        "en": "US 10Y Treasury closes at 5.00%"
+      },
+      {
+        "ko": "장중 5.041%·2007년 7월 이후 최고",
+        "en": "Hit 5.041% intraday, highest since Jul 2007"
+      }
+    ],
+    [
+      "shield",
+      {
+        "ko": "나스닥 -0.78%·S&P500 -0.45%",
+        "en": "Nasdaq -0.78% · S&P 500 -0.45%"
+      },
+      {
+        "ko": "25,981.57 / 7,585.73 · 이틀 연속 하락",
+        "en": "25,981.57 / 7,585.73 · a 2nd straight decline"
+      }
+    ],
+    [
+      "globe",
+      {
+        "ko": "WTI $105.48·사우디 송유관 폐쇄",
+        "en": "WTI $105.48 as Saudi pipeline shuts"
+      },
+      {
+        "ko": "리비아 유전 중단까지 겹쳐 5월來 최고",
+        "en": "Libyan field halts add to the surge, highest since May"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "미국 3대 지수가 이틀 연속 하락했다. 다우존스가 0.29%, S&P500이 0.45%, 나스닥종합이 0.78% 내렸다.",
+      "美 10년물 국채금리가 장중 5.041%까지 오르며 2007년 7월 이후 처음으로 5%를 넘어섰고, 예멘 후티 반군의 사우디 송유관·아람코 정유시설 공격 여파로 WTI가 4.03% 급등해 105달러를 넘어섰다.",
+      "거래대금 상위 299개 종목 중에서는 하락 종목의 거래대금(약 2,048억달러)이 상승 종목(약 1,253억달러)의 1.6배에 달해, 자금이 오른 종목보다 내린 종목에 더 많이 몰렸다.",
+      "다만 에너지 섹터(XLE)는 유가 급등에 힘입어 11개 업종 중 홀로 2.17% 올랐고, 비트코인은 美 상원의 가상자산 '클래리티법' 부결 여파로 3.64% 급락했다."
+    ],
+    "lines_en": [
+      "US stocks fell for a 2nd straight session: the Dow slid 0.29%, the S&P 500 fell 0.45%, and the Nasdaq Composite dropped 0.78%.",
+      "The 10-year Treasury yield touched 5.041% intraday, topping 5% for the first time since July 2007, while WTI crude jumped 4.03% past $105 after Houthi attacks hit a Saudi pipeline and an Aramco refinery.",
+      "Among the top 299 stocks by turnover, declining shares moved about $204.8B versus $125.3B for advancers — 1.6x more dollar volume flowed into fallers than risers.",
+      "The energy sector (XLE) was the lone gainer among 11 sectors, up 2.17% on the oil spike, while bitcoin sank 3.64% after the US Senate's crypto 'CLARITY Act' failed a cloture vote."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "25,981.57",
+      "delta": "▼0.78%",
+      "dir": "down",
+      "note_ko": "미국장 마감 종가 · 이틀 연속 하락",
+      "note_en": "US close · 2nd straight decline"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,585.73",
+      "delta": "▼0.45%",
+      "dir": "down",
+      "note_ko": "마감 종가 · 다우는 0.29% 하락",
+      "note_en": "Close · Dow fell 0.29% the same session"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,627.26",
+      "delta": "▼0.85%",
+      "dir": "down",
+      "note_ko": "9/15 종가 · 개장 전(전 거래일 종가 유지)",
+      "note_en": "Sep 15 close, carried over ahead of today's open"
+    },
+    {
+      "label": "VIX",
+      "value": "17.20",
+      "delta": "▲0.58%",
+      "dir": "up",
+      "note_ko": "17선 유지 · 변동성 확대 국면",
+      "note_en": "Holding near 17 amid rising volatility"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "29",
+      "delta": "31 → 29",
+      "dir": "down",
+      "note_ko": "'공포(Fear)' 국면 지속",
+      "note_en": "Stays in 'Fear' territory"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.00%",
+      "delta": "4.97% → 5.00%",
+      "dir": "up",
+      "note_ko": "2007년 7월 이후 첫 5%대 마감 · 장중 5.041%",
+      "note_en": "First 5%+ close since Jul 2007, intraday high 5.041%"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,362.68",
+      "value_sub": "· DXY 99.6",
+      "delta": "▲1.23%",
+      "dir": "up",
+      "note_ko": "24시간 전 대비 · 1,360원대 진입",
+      "note_en": "vs 24 hours ago · broke above 1,360"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,333.40",
+      "delta": "▼0.43%",
+      "dir": "down",
+      "note_ko": "국채금리 상승에 하락",
+      "note_en": "Fell as bond yields rose"
+    },
+    {
+      "label": "WTI",
+      "value": "$105.48",
+      "delta": "▲4.03%",
+      "dir": "up",
+      "note_ko": "사우디·리비아發 공급차질에 급등",
+      "note_en": "Jumped on Saudi and Libyan supply disruptions"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$75,317.52",
+      "delta": "▼3.64%",
+      "dir": "down",
+      "note_ko": "美 클래리티법 부결 여파",
+      "note_en": "Weighed by the failed CLARITY Act vote"
+    }
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "tile_lead": {
+    "ko": "美 국채금리, 19년 만에 5% 마감",
+    "en": "US 10-Year Treasury Closes at 5% for the First Time in 19 Years"
+  },
+  "main_tile_note": {
+    "ko": "나스닥 이틀 연속 하락",
+    "en": "Nasdaq's 2nd straight decline"
+  },
+  "market_note_ko": "美 10년물 국채금리가 2007년 7월 이후 처음으로 5%를 넘어섰고, 국제유가는 중동發 공급 차질에 4%대 급등했다. 3대 지수는 이틀 연속 하락했고 원/달러 환율은 1,360원대에 진입했다.",
+  "market_note_en": "The US 10-year Treasury yield topped 5% for the first time since July 2007, and crude oil jumped more than 4% on Middle East supply disruptions. All three major indexes fell for a 2nd straight day, and the won weakened past 1,360 per dollar.",
+  "chart_series_values": [
+    26217.83,
+    26584.06,
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57
+  ],
+  "chart_series_labels": [
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.8",
+    "9.9",
+    "9.10",
+    "9.11",
+    "9.14",
+    "9.15"
+  ],
+  "chart_title": {
+    "ko": "9월 고점 대비 -2.27%, 이틀 연속 하락",
+    "en": "2nd Straight Drop, -2.27% Off the Sep High"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9/3 고점 26,584.06 → 9/15 25,981.57(-2.27%) · 이틀 연속 하락",
+    "en": "Sep 3 high 26,584.06 → Sep 15 close 25,981.57 (-2.27%), a 2nd straight decline"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "11개 업종 중 에너지만 홀로 상승",
+    "en": "Energy Was the Only One of 11 Sectors to Rise"
+  },
+  "sector_sub": {
+    "ko": "GICS 11개 섹터 ETF 등락률 · 9/15 마감",
+    "en": "GICS 11 sector ETFs · Sep 15 close"
+  },
+  "rank_kicker": "TODAY",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Trading Value"
+  },
+  "rank_sub": {
+    "ko": "미국 개별 종목 거래대금 상위 5 · 9/15(현지시간)",
+    "en": "Top 5 US stocks by trading value · Sep 15 (ET)"
+  },
+  "rank_unit": {
+    "ko": "단위 · 달러 거래대금",
+    "en": "Unit · USD trading value"
+  },
+  "econ_kicker": "TODAY",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "한국 8월 수출 급증·유럽 경기기대 급랭·美 지역 제조업 부진",
+    "en": "Korea's Aug exports surge, Europe's outlook chills, US regional factory activity softens"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Market Record",
+      "stats": [
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "NASDAQ Composite",
+          "value": "25,981.57",
+          "delta": "▼0.78%",
+          "dir": "down",
+          "sub_ko": "이틀 연속 하락 · 9/3 고점 대비 -2.27%",
+          "sub_en": "2nd straight decline · -2.27% from the Sep 3 high"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,585.73",
+          "delta": "▼0.45%",
+          "dir": "down",
+          "sub_ko": "다우존스는 0.29% 하락 · 국채금리·유가 부담",
+          "sub_en": "Dow fell 0.29% · pressured by yields and oil"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "미 거래대금 상위 299종목 등락",
+          "label_en": "US top-299 by turnover, adv/decl",
+          "up": 93,
+          "flat": 2,
+          "down": 204
+        }
+      ],
+      "flows": {
+        "label_ko": "美 거래대금 상위 종목 상승·하락 거래대금 (십억달러)",
+        "label_en": "US top-turnover names — up vs down $ volume (US$B)",
+        "rows": [
+          {
+            "label_ko": "상승 종목",
+            "label_en": "Advancers",
+            "value": 125.3
+          },
+          {
+            "label_ko": "하락 종목",
+            "label_en": "Decliners",
+            "value": -204.8
+          }
+        ]
+      },
+      "note_ko": "거래대금 상위 299종목 중 하락 종목의 거래대금이 상승 종목의 1.6배에 달해 자금이 내린 종목에 더 몰렸다. 어제 저녁 브리핑 시점엔 나스닥 선물이 +0.81%로 상승 출발을 예고했지만, 밤사이 국채금리 5%·유가 급등·AI 속도조절 우려가 겹치며 하락 반전했다.",
+      "note_en": "Among the top 299 names by turnover, decliners moved 1.6x more dollar volume than advancers. Nasdaq futures had pointed to a +0.81% open in last evening's briefing, but the session reversed lower overnight as the 10-year yield topped 5%, oil surged, and AI-slowdown worries weighed."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Performance",
+      "bars": [
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 2.17
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 0.48
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health Care (XLV)",
+          "value": -0.05
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.12
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Technology (XLK)",
+          "value": -0.29
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.32
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": -0.64
+        },
+        {
+          "label_ko": "필수소비재 (XLP)",
+          "label_en": "Cons. Staples (XLP)",
+          "value": -0.82
+        },
+        {
+          "label_ko": "커뮤니케이션 (XLC)",
+          "label_en": "Communication (XLC)",
+          "value": -0.9
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -1.2
+        },
+        {
+          "label_ko": "경기소비재 (XLY)",
+          "label_en": "Cons. Discretionary (XLY)",
+          "value": -1.75
+        }
+      ],
+      "note_ko": "11개 GICS 섹터 중 에너지(+2.17%)만 상승했다. 국채금리에 민감한 경기소비재(-1.75%)·유틸리티(-1.20%)가 가장 부진했다.",
+      "note_en": "Energy (+2.17%) was the only one of 11 GICS sectors to rise. Rate-sensitive Consumer Discretionary (-1.75%) and Utilities (-1.20%) led the declines."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Trading Value",
+      "rows": [
+        {
+          "name_ko": "마이크론 (MU)",
+          "name_en": "Micron (MU)",
+          "value": "$18.84B",
+          "pct": 0.39
+        },
+        {
+          "name_ko": "엔비디아 (NVDA)",
+          "name_en": "Nvidia (NVDA)",
+          "value": "$18.06B",
+          "pct": 0.57
+        },
+        {
+          "name_ko": "메타 (META)",
+          "name_en": "Meta (META)",
+          "value": "$12.47B",
+          "pct": 0.7
+        },
+        {
+          "name_ko": "테슬라 (TSLA)",
+          "name_en": "Tesla (TSLA)",
+          "value": "$10.77B",
+          "pct": -0.67
+        },
+        {
+          "name_ko": "샌디스크 (SNDK)",
+          "name_en": "SanDisk (SNDK)",
+          "value": "$10.46B",
+          "pct": -1.36
+        }
+      ],
+      "share": {
+        "label_ko": "표본 내 상위 5종목 비중",
+        "label_en": "Top 5 share of the sample",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5 stocks",
+            "pct": 21.4,
+            "color": "#f5a623"
+          },
+          {
+            "label_ko": "나머지 294종목",
+            "label_en": "Other 294 stocks",
+            "pct": 78.6,
+            "color": "#9aa5b1"
+          }
+        ]
+      },
+      "note_ko": "메모리 반도체 마이크론이 거래대금 1위(188.4억달러)에 올랐고, AI 대장주 엔비디아가 뒤를 이었다. 반도체 대형주 샌디스크는 1.36% 내리며 AI 속도조절 여진이 이어졌다.",
+      "note_en": "Memory chipmaker Micron topped turnover at $18.84B, with AI bellwether Nvidia close behind. Memory peer SanDisk fell 1.36%, still feeling the AI-slowdown chip selloff."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "stats": [
+        {
+          "label_ko": "한국 8월 수출 (전년비)",
+          "label_en": "Korea Aug Exports (YoY)",
+          "value": "+68.7%",
+          "delta": {
+            "ko": "7월 +63.3% → 8월 +68.7%",
+            "en": "Jul +63.3% → Aug +68.7%"
+          },
+          "dir": "up",
+          "sub_ko": "7월 대비 증가폭 확대 · 반도체 수출 호조",
+          "sub_en": "Accelerated from July · driven by strong chip exports",
+          "ref_ko": "한국은행 ECOS 성질별 수출입 기준(잠정) · 관세청 통관 속보치와는 별도 통계",
+          "ref_en": "BOK ECOS trade-by-nature basis (provisional), a separate series from customs clearance data"
+        },
+        {
+          "label_ko": "한국 8월 무역수지",
+          "label_en": "Korea Aug Trade Balance",
+          "value": "+$34.79B",
+          "delta": {
+            "ko": "7월 +$30.65B → 8월 +$34.79B",
+            "en": "Jul +$30.65B → Aug +$34.79B"
+          },
+          "dir": "up",
+          "sub_ko": "수출 호조에 흑자 규모 확대",
+          "sub_en": "Surplus widened on strong exports",
+          "ref_ko": "수출에서 수입을 뺀 값 · 흑자면 외화가 들어온다",
+          "ref_en": "Exports minus imports; a surplus brings foreign currency in"
+        },
+        {
+          "label_ko": "美 9월 엠파이어스테이트 제조업지수",
+          "label_en": "US Sep Empire State Mfg Index",
+          "value": "7.6",
+          "delta": {
+            "ko": "예상 14.75 하회",
+            "en": "Missed est. 14.75"
+          },
+          "dir": "down",
+          "sub_ko": "예상 14.75 · 이전 20.6",
+          "sub_en": "Est. 14.75 · prior 20.6",
+          "ref_ko": "0 위 = 확장 · 아래 = 위축 · 지역 제조업 설문",
+          "ref_en": "Above 0 = expansion, below = contraction; a regional factory survey"
+        },
+        {
+          "label_ko": "유로존 9월 ZEW 경기기대지수",
+          "label_en": "Eurozone Sep ZEW Economic Sentiment",
+          "value": "25.8",
+          "delta": {
+            "ko": "예상 39.9 큰 폭 하회",
+            "en": "Sharply missed est. 39.9"
+          },
+          "dir": "down",
+          "sub_ko": "예상 39.9 · 이전 31.4",
+          "sub_en": "Est. 39.9 · prior 31.4",
+          "ref_ko": "기관투자자 대상 6개월 후 경기 기대 설문 · 0 위가 낙관 우세",
+          "ref_en": "A survey of institutional investors' 6-month outlook; above 0 means optimists outnumber pessimists"
+        },
+        {
+          "label_ko": "독일 9월 ZEW 현재상황지수",
+          "label_en": "Germany Sep ZEW Current Situation",
+          "value": "-47.1",
+          "delta": {
+            "ko": "예상 -52.2 상회",
+            "en": "Beat est. -52.2"
+          },
+          "dir": "up",
+          "sub_ko": "예상 -52.2 · 이전 -61.1, 개선됐지만 여전히 마이너스",
+          "sub_en": "Est. -52.2 · prior -61.1 — improved but still negative",
+          "ref_ko": "0 위가 평년 수준 · 마이너스면 현재 경기를 나쁘게 본다는 뜻",
+          "ref_en": "Above 0 = normal conditions; negative means the current economy is seen as weak"
+        }
+      ],
+      "note_ko": "한국 8월 수출은 반도체 호조에 힘입어 전년비 68.7% 늘며 무역흑자를 키웠다. 반면 유럽 ZEW 지표는 나란히 예상을 밑돌았고, 美 엠파이어스테이트 지수도 예상보다 크게 부진해 3대 권역 온도차가 뚜렷했다.",
+      "note_en": "Korea's Aug exports rose 68.7% YoY on strong chip demand, widening the trade surplus. Europe's ZEW readings both missed estimates, and the US Empire State index badly undershot forecasts — a clear divergence across the three regions."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "items": [
+        {
+          "headline_ko": "젠슨 황·아모데이, 세일즈포스 행사서 AI 안전 놓고 공개 충돌",
+          "headline_en": "Jensen Huang, Amodei Clash Publicly Over AI Safety at Salesforce Event",
+          "body_ko": "아모데이 앤트로픽 CEO가 9/15 SF 행사서 \"자동차처럼 AI 안전표준을\" 재차 촉구하자, 젠슨 황 엔비디아 CEO는 \"속도 늦추면 안 된다\"고 맞받았다.",
+          "body_en": "At a Sep 15 SF event, Anthropic's Amodei again urged auto-style AI safety rules; Nvidia's Jensen Huang shot back that slowing down is wrong."
+        },
+        {
+          "headline_ko": "마벨 -7.59%·필라델피아반도체지수 -5.9%…AI 속도조절 후폭풍 반도체주 강타",
+          "headline_en": "Marvell -7.59%, Philly Semi Index -5.9% as AI-Slowdown Fallout Hits Chips",
+          "body_ko": "아모데이의 'AI 속도조절' 에세이(9/12) 이후 인텔·AMD가 4%대, 마이크론·샌디스크가 3.9~4.5%대 내리며 반도체주 조정이 이어졌다.",
+          "body_en": "Since Amodei's Sep 12 slowdown essay, Intel and AMD each fell over 4% and Micron/SanDisk dropped 3.9-4.5%, extending the chip selloff."
+        },
+        {
+          "headline_ko": "중국, 美 AI 속도조절론에 반발…\"위험은 관리해도 속도는 못 늦춘다\"",
+          "headline_en": "China Pushes Back on US AI-Slowdown Call: 'We Can't Afford to Slow Down'",
+          "body_ko": "중국 매체들은 미국發 AI 속도조절론에 \"경쟁에서 뒤처질 수 없다\"며 반발, 글로벌 차원의 속도조절 합의는 쉽지 않다고 짚었다.",
+          "body_en": "Chinese outlets pushed back on the US AI-slowdown call, saying China can't fall behind, and doubted a global pacing consensus is likely."
+        },
+        {
+          "headline_ko": "GPT-6 아스트라·클로드 페이블 5.1, 새 AI 벤치마크서 공동 1위",
+          "headline_en": "GPT-6 Astra and Claude Fable 5.1 Tie for First on New AI Benchmark",
+          "body_ko": "오픈AI GPT-6 아스트라와 앤트로픽 클로드 페이블 5.1이 새 추론 벤치마크서 53점 공동 1위에 올랐다.",
+          "body_en": "OpenAI's GPT-6 Astra and Anthropic's Claude Fable 5.1 tied for first at 53 points on a new reasoning benchmark."
+        },
+        {
+          "headline_ko": "세일즈포스·엔비디아, 합작 추론모델 '코아' 공개…고객데이터 없이 작동",
+          "headline_en": "Salesforce and Nvidia Unveil Joint Reasoning Model 'Core,' No Customer Data Needed",
+          "body_ko": "세일즈포스·엔비디아가 공동 개발한 추론모델 '코아'를 공개했다. 고객 데이터 없이 작동해 기업 도입 문턱을 낮췄다.",
+          "body_en": "Salesforce and Nvidia unveiled a jointly built reasoning model, 'Core,' designed to run without customer data."
+        },
+        {
+          "headline_ko": "\"AI 개발 늦추면 삼성전자·SK하이닉스 폭락?\"…국내 증권가 \"실제 내용과 다르다\" 반박",
+          "headline_en": "'Will an AI Slowdown Crash Samsung and SK Hynix?' Korean Analysts Say No",
+          "body_ko": "국내 증권가는 아모데이의 에세이가 개발 중단이 아닌 안전 점검 강화라며, 추론용 반도체 수요는 견조하다고 반박했다.",
+          "body_en": "Korean brokerages say Amodei's essay calls for stronger safety checks, not a halt, and that inference-chip demand stays solid."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "items": [
+        {
+          "headline_ko": "美 10년물 국채, 2007년來 첫 5%대 마감…베선트 재무 \"국제 요인 때문\" 해명",
+          "headline_en": "US 10-Year Yield Tops 5% for First Time Since 2007",
+          "body_ko": "베선트 재무장관은 하원 청문회서 국채금리 급등이 \"국제 요인과 재정적자를 반영\"한다며, 두 차례 국채 바이백이 없었다면 더 나빴을 것이라 밝혔다.",
+          "body_en": "Bessent cites 'global factors and deficit'; says buybacks softened the blow."
+        },
+        {
+          "headline_ko": "예멘 후티, 사우디 송유관·아람코 정유시설 공격…유가 급등에 美 디젤 사상 최고",
+          "headline_en": "Houthi Attack on Saudi Oil Sends Diesel to a Record",
+          "body_ko": "예멘 후티가 사우디 송유관·아람코 정유시설을 공격했고 리비아 유전 3곳도 멈췄다. WTI가 4%대 급등, 美 디젤은 갤런당 $6.23로 최고치를 찍었다.",
+          "body_en": "Saudi pipeline, Aramco refinery hit; Libyan fields shut. WTI +4%, diesel hits $6.23/gal."
+        },
+        {
+          "headline_ko": "美 상원 클래리티법 부결…트럼프 이해충돌 논란 속 비트코인 등 가상자산 급락",
+          "headline_en": "US Senate Rejects Crypto Bill; Bitcoin Tumbles",
+          "body_ko": "가상자산 클래리티법이 상원 표결(50대49)서 부결됐다. 트럼프 일가 이해충돌 논란 속 비트코인 3.64%, 이더리움 6%대 급락했다.",
+          "body_en": "CLARITY Act fails 50-49 amid Trump conflict concerns; bitcoin -3.64%, ether -6%."
+        },
+        {
+          "headline_ko": "트럼프 \"이란과 대화\" 제안에도 이란 안보수장 \"조건 충족 전 협상 없다\" 거부",
+          "headline_en": "Trump Floats Iran Talks, but Iran Rejects Negotiating",
+          "body_ko": "트럼프 대통령이 이란과 대화 가능성을 띄웠지만, 이란 안보수장은 조건 충족 전엔 협상하지 않겠다고 선을 그었다.",
+          "body_en": "Iran's top security official says talks won't happen until its conditions are met."
+        },
+        {
+          "headline_ko": "오늘 새벽 FOMC 결정 앞두고 3년 만의 금리 인상 가능성에 시장 긴장",
+          "headline_en": "Markets Brace for Tonight's FOMC Rate Decision",
+          "body_ko": "국채금리 5%·유가 급등에 따른 인플레이션 우려 속, 시장은 오늘 밤 FOMC서 기준금리가 3.75%→4.00%로 오를 가능성에 무게를 둔다.",
+          "body_en": "With yields above 5% and oil surging, markets expect the Fed to hike to 4.00%."
+        },
+        {
+          "headline_ko": "뉴욕 3대 지수 이틀째 하락…다우 -0.29%·S&P500 -0.45%·나스닥 -0.78%",
+          "headline_en": "Wall Street Falls a 2nd Day on Yields, Oil",
+          "body_ko": "국채금리·유가 급등과 AI 속도조절 우려가 겹치며 3대 지수가 이틀 연속 밀렸다. 에너지株만 유가 급등 수혜로 상승했다.",
+          "body_en": "Rising yields, oil, and AI worries pulled all 3 indexes lower a 2nd day."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {
+    "ko": "지금부터 오늘 21:00까지 · 새벽엔 FOMC",
+    "en": "From now through 9 PM KST today · FOMC decision overnight"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM–3:30 PM KST · Call auction 8:30–9:00 AM / 3:20–3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "08:50",
+      "title_ko": "日 8월 무역수지·수출입",
+      "title_en": "Japan Aug Trade Balance & Exports/Imports",
+      "detail_ko": "수출 예상 +18.2%(전월 +23.2%) · 수입 예상 +26.3%(전월 +27.8%)",
+      "detail_en": "Exports est. +18.2% (prior +23.2%) · imports est. +26.3% (prior +27.8%)",
+      "importance": "mid"
+    },
+    {
+      "time": "18:00",
+      "title_ko": "유로존 7월 산업생산 (전월비)",
+      "title_en": "Eurozone Jul Industrial Production (MoM)",
+      "detail_ko": "예상 -0.2% · 이전 0.0%",
+      "detail_en": "Est. -0.2% · prior 0.0%",
+      "importance": "mid"
+    },
+    {
+      "time": "20:00",
+      "title_ko": "美 주간 MBA 모기지신청지수",
+      "title_en": "US MBA Mortgage Applications (Weekly)",
+      "detail_ko": "이전 -2.7%(전주비)",
+      "detail_en": "Prior -2.7% (week-on-week)",
+      "importance": "mid"
+    },
+    {
+      "time": "21:30",
+      "title_ko": "美 8월 소매판매",
+      "title_en": "US Aug Retail Sales",
+      "detail_ko": "예상 +0.8% · 이전 -0.6%(전월비) · 근원 소매판매도 함께 발표",
+      "detail_en": "Est. +0.8% · prior -0.6% (MoM) · core retail sales due alongside",
+      "importance": "high"
+    },
+    {
+      "time": "9/17 02:00",
+      "title_ko": "라가르드 ECB 총재 연설",
+      "title_en": "ECB President Lagarde Speech",
+      "detail_ko": "FOMC 결정 전 발언이라 통화정책 신호에 시장 주목",
+      "detail_en": "Speaks ahead of the FOMC decision; markets watch for policy signals",
+      "importance": "high"
+    },
+    {
+      "time": "9/17 03:00",
+      "title_ko": "美 FOMC 기준금리 결정",
+      "title_en": "US FOMC Rate Decision",
+      "detail_ko": "컨센서스 3.75%→4.00%(0.25%p 인상 전망) · 국채금리 5%·유가 급등이 배경",
+      "detail_en": "Consensus 3.75%→4.00% (a 25bp hike expected) · against a backdrop of 5% yields and surging oil",
+      "importance": "high"
+    },
+    {
+      "time": "9/17 03:30",
+      "title_ko": "파월 연준 의장 기자회견",
+      "title_en": "Fed Chair Powell Press Conference",
+      "detail_ko": "인상 배경과 향후 금리 경로에 시장 촉각",
+      "detail_en": "Markets watch for the rationale and the path ahead",
+      "importance": "mid"
+    }
+  ],
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "card_photos": {
+    "1": "A dim New York Stock Exchange floor at night, red numbers glowing on a wall of monitors showing falling stock charts, a lone trader silhouette watching, tense cinematic low-key lighting, navy and crimson color grade",
+    "3": "A wide shot of a dark trading floor with a large digital ticker streaming falling index numbers, deep blue tones with a hint of amber glow from a rising oil-price ticker in the corner",
+    "6": "A bond market trading desk at night, a yield curve chart glowing on a monitor spiking past the 5 percent mark, blue and amber accent lighting, cinematic wide composition",
+    "7": "A dim data center exterior at dusk with rows of server racks and glowing status lights, a faint holographic AI network pattern overlaid, cool blue tones with warm amber highlights"
+  },
+  "caption_ko": "美 10년물 국채금리가 19년 만에 5%대로 마감했습니다. 국제유가는 중동發 공급 차질에 4%대 급등했고, 뉴욕 3대 지수는 이틀 연속 하락했습니다. 오늘 새벽엔 FOMC 금리 결정도 예정돼 있습니다. 오늘 아침 브리핑, 저장하고 팔로우하세요. 🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#루키온브리핑 #아침브리핑 #국채금리 #미국금리5퍼센트 #국제유가 #FOMC #나스닥 #SP500 #비트코인 #AI속도조절 #반도체 #원달러환율 #뉴욕증시 #클래리티법 #경제브리핑",
+  "caption_en": "The US 10-year Treasury yield closed above 5% for the first time in 19 years. Oil surged more than 4% on Middle East supply disruptions, and Wall Street's three major indexes fell for a 2nd straight day. The Fed's rate decision is due before dawn KST tonight. Save and follow for today's morning briefing. 🌙 Next brief tonight at 9 PM KST, before the US open.\n\n#luckyonbriefing #morningbriefing #treasuryyield #tenyearyield #oilprices #FOMC #nasdaq #sp500 #bitcoin #AIpacing #semiconductors #usdkrw #wallstreet #clarityact #econbriefing",
+  "sources": [
+    "FMP",
+    "PlayMCP UsStockInfo (Yahoo Finance)",
+    "Yahoo Finance",
+    "한국은행 ECOS",
+    "CNN Fear & Greed Index",
+    "FINRA",
+    "Naver News",
+    "OpenDART",
+    "econ-calendar (FXStreet, via origin/main)"
+  ]
+}
