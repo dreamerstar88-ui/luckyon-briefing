@@ -16,7 +16,7 @@
     ["rate", {"ko": "美 10년물 아시아장 5.03% 터치", "en": "US 10Y touches 5.03% in Asia trade"},
               {"ko": "국고채도 연고점 경신 · 원/달러 1,360원 근접", "en": "Korean bond yields hit fresh highs, won nears 1,360"}],
     ["globe", {"ko": "KRX 애프터마켓 첫날 VI 다발 발동", "en": "KRX after-hours debut triggers volatility halts"},
-               {"ko": "유동성 7% 수준에도 정규장 기준 그대로 적용", "en": "Regular-session halt rules applied to thin after-hours liquidity"}]
+               {"ko": "유동성 7% 수준에도 정규장 기준 그대로 적용", "en": "Same halt rules on much thinner liquidity"}]
   ],
 
   "summary": {
@@ -96,8 +96,8 @@
           {"label_ko": "기관", "label_en": "Institutions", "value": -9585}
         ]
       },
-      "note_ko": "외국인이 1조5,458억원을 순매도하며 나흘째 지수를 눌렀고 기관도 9,585억원을 팔았다. 개인이 8,596억원을 받아냈지만 낙폭을 막기엔 역부족이었다. 코스닥은 상승 종목이 늘며 하루 만에 반등했다.",
-      "note_en": "Foreign investors net-sold ₩1.5458 trillion, weighing on the index for a 4th straight day, while institutions sold ₩958.5 billion. Individuals bought ₩859.6 billion but couldn't offset the drop. Kosdaq rebounded as advancers outnumbered decliners."
+      "note_ko": "외국인이 1조5,458억원을 순매도하며 나흘째 지수를 눌렀고 기관도 9,585억원을 팔았다. 개인 매수(+8,596억)로도 낙폭을 못 막았다.",
+      "note_en": "Foreign investors net-sold ₩1.5T, weighing on the index for a 4th day; institutions sold ₩959B. Individual buying (+₩860B) wasn't enough to offset it."
     },
     {
       "title_ko": "섹터별 등락",
@@ -161,23 +161,23 @@
       "title_ko": "AI · 반도체 기술",
       "title_en": "AI & Semiconductors",
       "items": [
-        {"headline_ko": "효성중공업, 美 빅테크 2곳과 3,865억원 초고압 변압기 공급계약", "headline_en": "Hyosung Heavy Industries Signs ₩386.5B Transformer Deal With Two US Big Tech Firms", "body_ko": "효성중공업이 미국 데이터센터향 초고압 변압기 공급계약을 체결했다. 이달 들어서만 수주 규모가 4,000억원에 육박하며, 조현준 회장은 'AI발 전력 인프라 슈퍼사이클'을 강조했다.", "body_en": "Hyosung Heavy Industries signed a deal to supply extra-high-voltage transformers for US data centers. Its orders this month alone approach ₩400 billion, with Chairman Cho Hyun-joon citing an AI-driven power infrastructure supercycle."},
+        {"headline_ko": "효성중공업, 美 빅테크 2곳과 3,865억원 초고압 변압기 계약", "headline_en": "Hyosung Heavy Signs ₩386.5B Transformer Deal With Two US Tech Firms", "body_ko": "효성중공업이 美 데이터센터向 초고압 변압기 공급계약을 체결했다. 이달 누적 수주만 4,000억원에 육박한다.", "body_en": "Hyosung Heavy signed a deal to supply extra-high-voltage transformers for US data centers, taking its orders this month alone to nearly ₩400B."},
         {"headline_ko": "브로드컴 CEO \"AI 속도조절론에도 칩 수요 안 꺾여\"", "headline_en": "Broadcom CEO: Chip Demand Hasn't Slowed Despite AI-Pace Fears", "body_ko": "탄 혹 브로드컴 CEO는 CNBC 인터뷰에서 AI 개발 속도조절 논쟁에도 불구하고 회사의 장기 수요 전망은 변함없다고 밝혔다.", "body_en": "Broadcom CEO Hock Tan told CNBC that the company's long-term demand outlook is unchanged despite the AI-pace debate."},
         {"headline_ko": "오픈AI, 앤트로픽 속도조절론에 동조…\"속내는 IPO 흥행\" 분석", "headline_en": "OpenAI Echoes Anthropic's AI-Pace Warning — Analysts See IPO Motive", "body_ko": "오픈AI가 앤트로픽의 AI 속도조절 주장에 동조했지만, 증권가는 '안전성'을 내세운 속내가 상장 흥행을 위한 것이라는 분석을 내놨다.", "body_en": "OpenAI backed Anthropic's call to slow AI development, but analysts say the 'safety' framing may really be aimed at a successful IPO."},
         {"headline_ko": "\"AI 속도조절, 찻잔 속 태풍\"…K반도체 추론칩 수요는 여전", "headline_en": "'A Storm in a Teacup': Korean Chipmakers Say Inference-Chip Demand Holds Up", "body_ko": "전문가들은 AI 속도조절론이 반도체 실물 경기 둔화를 뜻하지 않는다며, 추론 칩 수요 폭증에 국내 반도체 업황은 타격이 제한적이라고 짚었다.", "body_en": "Analysts say the AI-pace debate doesn't signal a real slowdown in chip demand, noting surging inference-chip orders are cushioning Korean chipmakers."},
         {"headline_ko": "AI 속도조절 논쟁, 美 중간선거 새 쟁점으로 부상", "headline_en": "AI-Pace Debate Emerges as a Flashpoint in US Midterm Politics", "body_ko": "일부 공화당 상원 후보들이 AI 개발 속도조절을 공식 요구하고 나서며 논쟁이 정치권으로 번지고 있다.", "body_en": "Some Republican Senate candidates have formally called for slowing AI development, spreading the debate into US politics."},
-        {"headline_ko": "삼성전자·SK하이닉스, 간밤 미국발 급락에도 낙폭은 제한적", "headline_en": "Samsung, SK Hynix See Limited Declines Despite Overnight US Chip Selloff", "body_ko": "삼성전자는 0.2%, SK하이닉스는 0.47% 내리는 데 그쳐 전날 뉴욕 반도체주 투매(필라델피아 반도체지수 -5.86%)에 비해 낙폭이 크지 않았다.", "body_en": "Samsung Electronics fell just 0.2% and SK Hynix 0.47%, far milder than the overnight New York chip selloff that sent the Philadelphia Semiconductor Index down 5.86%."}
+        {"headline_ko": "삼성전자·SK하이닉스, 간밤 미국발 급락에도 낙폭은 제한적", "headline_en": "Samsung, SK Hynix See Limited Declines Despite Overnight US Selloff", "body_ko": "삼성전자 -0.2%, SK하이닉스 -0.47%로 전날 필라델피아 반도체지수(-5.86%) 급락에 비해 낙폭이 크지 않았다.", "body_en": "Samsung fell just 0.2% and SK Hynix 0.47%, far milder than the overnight 5.86% plunge in the Philadelphia Semiconductor Index."}
       ]
     },
     {
       "title_ko": "주요 소식",
       "title_en": "Top Stories",
       "items": [
-        {"headline_ko": "코스피 4거래일 연속 하락 6,627선…코스닥은 반등", "headline_en": "Kospi Falls for a 4th Day to 6,627; Kosdaq Rebounds", "body_ko": "코스피가 57.11포인트(0.85%) 내린 6,627.26에 마감하며 4거래일 연속 하락했다. 외국인이 1조5,458억원을 순매도했고 기관도 9,585억원을 팔았다. 코스닥은 5.62포인트(0.70%) 오른 812.41로 하루 만에 반등했다.", "body_en": "Kospi closed down 57.11 points (0.85%) at 6,627.26, its 4th straight decline, as foreigners sold a net ₩1.5458 trillion and institutions sold ₩958.5 billion. Kosdaq rebounded 0.70% to 812.41."},
-        {"headline_ko": "KRX 애프터마켓 첫날, 변동성완화장치 정규장의 3배 발동", "headline_en": "KRX After-Hours Debut Triggers 3x More Volatility Halts Than Regular Session", "body_ko": "전날(9/14) 오후 4~8시 처음 열린 KRX 애프터마켓에서 변동성완화장치(VI)가 중복 집계를 빼고도 정규장의 약 2.8배 발동했다. 거래소는 유동성이 정규장의 7% 수준인데도 동일한 VI 기준을 적용한 영향이라고 설명했다.", "body_en": "In KRX's inaugural after-hours session (4-8pm, Sep 14), volatility halts (VIs) fired roughly 2.8x more often than the regular session, even excluding duplicates. The exchange said thin liquidity — about 7% of regular-session volume — combined with unchanged VI thresholds caused the spike."},
-        {"headline_ko": "美 국채금리 5% 돌파에 국내 국고채도 연고점 경신", "headline_en": "Korean Bond Yields Hit Fresh Highs as US 10-Year Tops 5%", "body_ko": "미국 10년물 금리가 아시아 시간대 장중 5.03%까지 오르며 19년여 만에 5%를 넘어서자, 국내 국고채 금리도 2년물 4.005%·5년물 4.345%로 연고점을 새로 썼다.", "body_en": "As the US 10-year yield touched 5.03% intraday in Asian trading — its first time above 5% in about 19 years — Korean government bond yields also hit fresh highs, with the 2-year at 4.005% and the 5-year at 4.345%."},
-        {"headline_ko": "원/달러 환율, 12원 넘게 올라 1,360원 턱밑", "headline_en": "Won Weakens Past 1,359, Nearing the 1,360 Threshold", "body_ko": "미 금리·유가 상승에 달러가 강세를 보이며 원/달러 환율이 전일보다 12원 넘게 오른 1,359원대로 마감했다.", "body_en": "The dollar strengthened on rising US rates and oil prices, pushing the won down more than ₩12 to close near 1,359.8 per dollar."},
-        {"headline_ko": "中 8월 생산은 호조, 소비는 부진…홍콩 증시 하락", "headline_en": "China's August Data Show Strong Output, Weak Consumption; Hong Kong Stocks Fall", "body_ko": "中 8월 산업생산은 전년비 5.2% 늘어 예상(4.8%)을 웃돌았지만 소매판매는 0.4% 증가에 그쳐 예상(0.8%)을 밑돌았다. 내수 부진 우려에 홍콩 H주는 0.96% 내렸다.", "body_en": "China's August industrial output rose 5.2% YoY, beating the 4.8% forecast, but retail sales grew just 0.4%, missing the 0.8% estimate. Hong Kong's H-shares fell 0.96% on renewed consumption concerns."},
+        {"headline_ko": "코스피 4거래일 연속 하락 6,627선…코스닥은 반등", "headline_en": "Kospi Falls for a 4th Day to 6,627; Kosdaq Rebounds", "body_ko": "코스피가 0.85% 내린 6,627.26에 4거래일 연속 하락 마감했다. 외국인 1.5조·기관 9,585억 순매도. 코스닥은 0.70% 올라 하루 만에 반등했다.", "body_en": "Kospi fell 0.85% to 6,627.26, a 4th straight decline, on ₩1.5T foreign and ₩959B institutional selling. Kosdaq rebounded 0.70%."},
+        {"headline_ko": "KRX 애프터마켓 첫날, 변동성완화장치 정규장의 3배 발동", "headline_en": "KRX After-Hours Debut Sees 3x More Volatility Halts", "body_ko": "9/14 첫 운영된 KRX 애프터마켓에서 변동성완화장치가 정규장의 약 2.8배 발동했다. 거래소는 유동성 7% 수준에도 같은 기준을 적용한 영향이라고 설명했다.", "body_en": "KRX's debut after-hours session (Sep 14) saw volatility halts fire ~2.8x more than usual — thin liquidity under unchanged halt rules, the exchange said."},
+        {"headline_ko": "美 국채금리 5% 돌파에 국내 국고채도 연고점 경신", "headline_en": "Korean Bond Yields Hit Highs as US 10-Year Tops 5%", "body_ko": "美 10년물이 아시아 장중 5.03%까지 오르며 19년여 만에 5%를 넘자, 국내 국고채도 2년물 4.005%·5년물 4.345%로 연고점을 새로 썼다.", "body_en": "As the US 10-year touched 5.03% in Asian trading — first above 5% in ~19 years — Korean bond yields hit highs too: 2-year 4.005%, 5-year 4.345%."},
+        {"headline_ko": "원/달러 환율, 12원 넘게 올라 1,360원 턱밑", "headline_en": "Won Weakens Past 1,359, Nearing 1,360", "body_ko": "미 금리·유가 상승에 달러가 강세를 보이며 원/달러 환율이 전일보다 12원 넘게 오른 1,359원대로 마감했다.", "body_en": "A firmer dollar on rising US rates and oil pushed the won down more than ₩12 to close near 1,359.8 per dollar."},
+        {"headline_ko": "中 8월 생산은 호조, 소비는 부진…홍콩 증시 하락", "headline_en": "China's Aug Data: Strong Output, Weak Consumption; HK Stocks Fall", "body_ko": "中 8월 산업생산은 5.2%로 예상(4.8%)을 웃돌았지만 소매판매는 0.4%로 예상(0.8%)을 밑돌았다. 홍콩 H주는 0.96% 내렸다.", "body_en": "China's Aug output rose 5.2%, beating 4.8% consensus, but retail sales grew just 0.4% vs. 0.8% forecast. Hong Kong H-shares fell 0.96%."},
         {"headline_ko": "IPARK현대산업개발, 미아9-2구역 재건축 2,988억원 수주", "headline_en": "IPARK Hyundai E&C Wins ₩298.8B Mia 9-2 Redevelopment Contract", "body_ko": "IPARK현대산업개발이 서울 미아9-2구역 재건축 공사를 2,988억원에 수주했다고 공시했다.", "body_en": "IPARK Hyundai E&C disclosed it won a ₩298.8 billion contract for the Mia 9-2 redevelopment project in Seoul."}
       ]
     }
