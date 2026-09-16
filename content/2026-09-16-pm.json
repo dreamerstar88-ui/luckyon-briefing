@@ -297,8 +297,8 @@
           }
         ]
       },
-      "note_ko": "코스피는 1.37% 올랐지만 상승 종목(346개)보다 하락 종목(537개)이 더 많았다 — SK하이닉스(+3.55%)·삼성전자(+1.81%) 등 반도체 대형주 중심의 좁은 상승이었다. 외국인은 6거래일 연속 순매도(-1조6,726억원)했지만 기관(+1조2,251억원)과 기타법인(+1조6,536억원)의 매수가 지수를 끌어올렸다.",
-      "note_en": "Kospi rose 1.37%, but decliners (537) outnumbered advancers (346) — a narrow rally led by large-cap chipmakers SK Hynix (+3.55%) and Samsung Electronics (+1.81%). Foreign investors net-sold for a 6th straight session (-₩1.67T), but buying from institutions (+₩1.23T) and other corporates (+₩1.65T) lifted the index."
+      "note_ko": "코스피는 1.37% 올랐지만 하락 종목(537개)이 상승 종목(346개)보다 많은 반도체 중심의 좁은 상승이었다. 외국인은 6거래일 연속 순매도했다.",
+      "note_en": "Decliners (537) outnumbered advancers (346) despite the 1.37% gain — a narrow, chip-led rally. Foreign investors sold for a 6th straight day."
     },
     {
       "title_ko": "섹터별 등락",
@@ -461,8 +461,8 @@
           "value": "$103.58",
           "delta": "▼2.13%",
           "dir": "down",
-          "sub_ko": "전날 +4.03% 급등 후 조정 · 후티, 얀부 수출터미널까지 공격",
-          "sub_en": "Cooled after the prior day's +4.03% spike · Houthis struck the Yanbu export terminal",
+          "sub_ko": "전날 +4.38% 급등 후 조정 · 후티, 얀부 수출터미널까지 공격",
+          "sub_en": "Cooled after the prior day's +4.38% spike · Houthis struck the Yanbu export terminal",
           "ref_ko": "사우디 동서 송유관 폐쇄 · 리비아 유전 3곳 가동 중단",
           "ref_en": "Saudi's east-west pipeline shut · 3 Libyan oilfields halted"
         },
@@ -470,7 +470,10 @@
           "label_ko": "日 8월 수출 (전년비)",
           "label_en": "Japan Aug Exports (YoY)",
           "value": "19.3%",
-          "delta": "예상 18.2% 상회",
+          "delta": {
+            "ko": "예상 18.2% 상회",
+            "en": "Beat est. of 18.2%"
+          },
           "dir": "up",
           "sub_ko": "이전 23.2% · 3개월 연속 증가폭 둔화",
           "sub_en": "Prev. 23.2% · growth has slowed for 3 straight months",
@@ -481,7 +484,10 @@
           "label_ko": "日 8월 수입 (전년비)",
           "label_en": "Japan Aug Imports (YoY)",
           "value": "28.0%",
-          "delta": "예상 26.3% 상회",
+          "delta": {
+            "ko": "예상 26.3% 상회",
+            "en": "Beat est. of 26.3%"
+          },
           "dir": "up",
           "sub_ko": "이전 27.8%",
           "sub_en": "Prev. 27.8%",
@@ -491,8 +497,11 @@
         {
           "label_ko": "日 8월 무역수지",
           "label_en": "Japan Aug Trade Balance",
-          "value": "-1조1,056억엔",
-          "delta": "적자 528억엔 확대",
+          "value": "-¥1.106T",
+          "delta": {
+            "ko": "적자 530억엔 확대",
+            "en": "Deficit ¥53.0B wider than est."
+          },
           "dir": "down",
           "sub_ko": "예상 -1조526억엔 · 수입 증가세가 수출을 웃돌았다",
           "sub_en": "Est. -¥1.0526T · import growth outpaced export growth",
@@ -514,10 +523,10 @@
           "body_en": "Following Anthropic CEO Dario Amodei's Sep 12 call for an 'AI slowdown,' executives at OpenAI and Google DeepMind reportedly held follow-up talks on balancing safety and development pace."
         },
         {
-          "headline_ko": "SK하이닉스, 美 메모리 현지생산 논의 소식에 장막판 급등",
-          "headline_en": "SK Hynix jumps late on report of US memory production talks",
-          "body_ko": "SK하이닉스가 미국 내 메모리 반도체 생산 확대 논의 소식에 장 막판 4%대 급등하며 강세로 마감했다. AI 속도조절론에 따른 경계감을 딛고 현지 생산 확대 기대가 새 호재로 부각됐다.",
-          "body_en": "SK Hynix jumped more than 4% late in the session on reports of talks to expand US-based memory chip production, offsetting concerns from the AI-slowdown debate."
+          "headline_ko": "SK하이닉스, 인텔과 美 메모리 생산 협상설에 애프터마켓 강세",
+          "headline_en": "SK Hynix rises in after-hours trading on report of Intel memory talks",
+          "body_ko": "로이터가 복수 소식통을 인용해 SK하이닉스와 인텔이 미국 내 메모리 반도체 생산을 놓고 협상 중이라고 보도했다. 인텔이 오하이오에 지어온 공장 부지 일부를 SK하이닉스가 빌려 쓰는 방안이 유력하게 거론됐지만, SK하이닉스는 \"확정된 사안은 없다\"고 공식 부인했다. 정규장에서 3.55% 오른 주가는 마감 후 KRX 애프터마켓에서 4%대까지 추가 상승했다.",
+          "body_en": "Reuters reported, citing multiple sources, that SK Hynix and Intel are negotiating US-based memory chip production, with one option said to involve SK Hynix leasing part of Intel's long-planned Ohio fab site. SK Hynix officially denied anything is finalized. The stock closed the regular session up 3.55% and extended gains into the 4% range in KRX's after-hours trading following the report."
         },
         {
           "headline_ko": "엔비디아, '전력 한계 넘는다' 베라 루빈·DSX 풀스택 공개",
@@ -526,8 +535,8 @@
           "body_en": "Nvidia unveiled its next-generation Vera Rubin and DSX full-stack platforms aimed at overcoming data-center power constraints, while cloud provider Lambda said it demonstrated improved performance-per-watt using Blackwell servers."
         },
         {
-          "headline_ko": "AI發 전력기기 슈퍼사이클, 히타치도 美 공장에 7,300억 베팅",
-          "headline_en": "AI-driven power-equipment boom: Hitachi bets $730M on a new US plant",
+          "headline_ko": "AI發 전력기기 슈퍼사이클, 히타치도 美 공장에 7,300억원 베팅",
+          "headline_en": "AI-driven power-equipment boom: Hitachi bets $528M on a new US plant",
           "body_ko": "히타치가 미국 전력망 교체 수요에 대응해 남부에 대규모 공장 건설을 발표했다. AI 데이터센터 증설과 전력망 교체가 겹치며 HD현대일렉트릭·LS일렉트릭·효성중공업 등 한국 전력기기 3사도 수년치 일감을 확보한 상태다.",
           "body_en": "Hitachi announced a large new US plant to meet grid-replacement demand, as AI data-center buildouts and aging grid upgrades collide. Korean power-equipment makers HD Hyundai Electric, LS Electric, and Hyosung Heavy Industries have likewise locked in years of backlog."
         },
@@ -551,39 +560,39 @@
       "items": [
         {
           "headline_ko": "중동 정세 격화 — 후티, 홍해 얀부 수출터미널까지 공격",
-          "headline_en": "Middle East tensions escalate as Houthis strike Red Sea export terminal",
+          "headline_en": "Houthis Strike Red Sea Terminal as Mideast Tensions Rise",
           "body_ko": "예멘 후티 반군이 사우디 동서 송유관에 이어 홍해 얀부 수출터미널의 원유 선적까지 중단시켰다. 리비아에서도 유전 3곳의 가동이 멈췄고, 후티는 사우디 접경 미군기지 인근까지 진격한 것으로 전해졌다.",
-          "body_en": "Yemen's Houthi rebels halted oil loading at the Red Sea export terminal in Yanbu, adding to the earlier shutdown of Saudi's east-west pipeline. Three Libyan oilfields also stopped output, while Houthi forces reportedly advanced near a US base close to the Saudi border."
+          "body_en": "Houthi rebels halted oil loading at Saudi's Yanbu terminal, adding to the pipeline shutdown. Three Libyan oilfields also stopped output as Houthi forces reportedly advanced near a US base."
         },
         {
           "headline_ko": "亞증시, FOMC 대기 속 반도체 저가매수 유입",
-          "headline_en": "Asian markets rise on chip bargain-hunting ahead of the Fed",
+          "headline_en": "Asian Markets Rise on Chip Bargain-Hunting Before the Fed",
           "body_ko": "일본 닛케이225는 0.69% 오른 63,923.00에, 홍콩 항셍지수는 0.19% 오른 24,713.78에 마감했다. 대만 가권지수도 0.74% 상승했다. 최근 낙폭이 컸던 반도체·기술주 중심의 저가 매수세가 유입됐다.",
-          "body_en": "Japan's Nikkei 225 rose 0.69% to 63,923.00 and Hong Kong's Hang Seng gained 0.19% to 24,713.78, while Taiwan's Weighted Index added 0.74%, as bargain-hunting flowed into recently battered chip and tech names."
+          "body_en": "Japan's Nikkei rose 0.69% to 63,923.00 and Hong Kong's Hang Seng gained 0.19% to 24,713.78, while Taiwan's Weighted Index added 0.74% on bargain-hunting in battered chip and tech names."
         },
         {
           "headline_ko": "STX, 서울회생법원 회생계획 인가…범한산업 품으로",
-          "headline_en": "STX wins court approval for rehabilitation plan, heads to new owner Beomhan",
+          "headline_en": "STX Wins Court Approval for Its Rehabilitation Plan",
           "body_ko": "종합상사 STX가 서울회생법원으로부터 회생계획 인가 결정을 받았다. 범한산업이 인수를 추진 중이며, 회사는 회생채권 출자전환과 재무구조 개선을 위한 대규모 제3자배정 유상증자를 함께 공시했다.",
-          "body_en": "Trading company STX received court approval for its rehabilitation plan from the Seoul Rehabilitation Court, clearing the way for its acquisition by Beomhan Industrial. The company also disclosed a large third-party capital raise to convert rehabilitation claims into equity and improve its balance sheet."
+          "body_en": "Trading firm STX won court approval for its rehabilitation plan, clearing the way for acquisition by Beomhan Industrial. It also disclosed a large capital raise to convert debt into equity."
         },
         {
           "headline_ko": "셀트리온, 962억원 규모 자사주 소각 결정",
-          "headline_en": "Celltrion to cancel ₩96.2B of treasury shares",
+          "headline_en": "Celltrion to Cancel ₩96.2B of Treasury Shares",
           "body_ko": "셀트리온이 주가 안정과 주주가치 제고를 위해 보유 중인 자사주 54만4,299주(약 962억원 규모)를 오는 9월 30일 소각하기로 했다.",
-          "body_en": "Celltrion said it will cancel 544,299 treasury shares worth roughly ₩96.2 billion on September 30 to support its share price and boost shareholder value."
+          "body_en": "Celltrion will cancel 544,299 treasury shares worth about ₩96.2 billion on September 30 to support its share price and boost shareholder value."
         },
         {
           "headline_ko": "가비아, 행동주의펀드와 경영권 분쟁 격화…의결권행사금지 가처분",
-          "headline_en": "Gabia-activist fund dispute escalates with a voting-rights injunction",
+          "headline_en": "Gabia-Activist Fund Dispute Escalates Further",
           "body_ko": "IT 인프라 기업 가비아가 얼라인파트너스자산운용 등을 상대로 진행 중인 경영권 분쟁 속에서 의결권행사금지 가처분 신청을 공시했다. 지난 7월 공개매수 이후 회계장부 열람 가처분 등으로 갈등이 이어져 왔다.",
-          "body_en": "IT infrastructure firm Gabia disclosed a fresh voting-rights injunction filing in its ongoing management dispute with activist fund Align Partners. The clash has escalated since a July tender offer, including earlier injunctions over access to company books."
+          "body_en": "Gabia disclosed a fresh voting-rights injunction filing in its management dispute with activist fund Align Partners, which has escalated since a July tender offer."
         },
         {
           "headline_ko": "다원시스, 상장폐지 결정에 효력정지 가처분 신청",
-          "headline_en": "Daewon Systems seeks injunction against delisting decision",
+          "headline_en": "Daewon Systems Seeks Injunction Against Delisting",
           "body_ko": "코스닥 상장사 다원시스가 거래소의 상장폐지 결정에 불복해 효력정지 가처분을 신청했다고 공시했다. 주권 매매거래는 투자자 보호를 이유로 정지된 상태다.",
-          "body_en": "KOSDAQ-listed Daewon Systems disclosed it has filed an injunction to suspend the exchange's delisting decision. Trading in its shares remains halted for investor protection."
+          "body_en": "KOSDAQ-listed Daewon Systems filed an injunction to suspend the exchange's delisting decision. Trading in its shares remains halted for investor protection."
         }
       ]
     }
