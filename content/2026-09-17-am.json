@@ -5,8 +5,8 @@
   "dateLabel_en": "Sep 17 (Thu) AM",
   "headline_ko": "연준, 3년2개월 만에 기준금리 인상…이란 유가 쇼크에 긴축 전환",
   "headline_en": "Fed hikes for first time in 3.5 years as Iran oil shock forces a pivot",
-  "headline_sub_ko": "다우 -1.21% · S&P500 -0.43%, 나스닥은 -0.01% 선방 · 트럼프 \"금리 1%대여야\" 반발",
-  "headline_sub_en": "Dow -1.21% · S&P 500 -0.43%, Nasdaq nearly flat at -0.01% · Trump blasts hike, wants rate \"below 1%\"",
+  "headline_sub_ko": "다우 -1.21% · S&P500 -0.45%, 나스닥은 -0.01% 선방 · 트럼프 \"금리 1% 이하여야\" 반발",
+  "headline_sub_en": "Dow -1.21% · S&P 500 -0.45%, Nasdaq nearly flat at -0.01% · Trump blasts hike, wants rate \"below 1%\"",
   "cover_kicker": {
     "ko": "간밤 미국장 · 9/16 마감",
     "en": "US Overnight · Sep 16 Close"
@@ -26,8 +26,8 @@
     [
       "shield",
       {
-        "ko": "다우 -1.21% · S&P500 -0.43%",
-        "en": "Dow -1.21% · S&P 500 -0.43%"
+        "ko": "다우 -1.21% · S&P500 -0.45%",
+        "en": "Dow -1.21% · S&P 500 -0.45%"
       },
       {
         "ko": "나스닥은 -0.01%로 거의 버텼다",
@@ -57,8 +57,8 @@
     },
     {
       "label": "S&P 500",
-      "value": "7,553.33",
-      "delta": "▼0.43%",
+      "value": "7,551.81",
+      "delta": "▼0.45%",
       "dir": "down",
       "note_ko": "다우는 -1.21%로 더 크게 하락",
       "note_en": "Dow fell harder, -1.21%"
@@ -148,7 +148,7 @@
     "en": "Bracing for the first session after the Fed hike · Kospi yet to open"
   },
   "main_tile_note": {
-    "ko": "9거래일來 최저 마감",
+    "ko": "9거래일 내 최저 마감",
     "en": "Lowest close in 9 sessions"
   },
   "market_note_ko": "나스닥·S&P500은 9/16 미국장 마감 종가, 코스피는 9/16 종가(개장 전 표시).",
@@ -176,7 +176,7 @@
     "9.16"
   ],
   "chart_title": {
-    "ko": "나스닥, 3거래일 연속 하락하며 9거래일來 최저",
+    "ko": "나스닥, 3거래일 연속 하락하며 9거래일 내 최저",
     "en": "Nasdaq falls a 3rd straight day to a 9-session low"
   },
   "chart_sub": {
@@ -202,14 +202,14 @@
           "value": "25,978.42",
           "delta": "▼0.01%",
           "dir": "down",
-          "sub_ko": "3거래일 연속 하락 · 9거래일來 최저",
+          "sub_ko": "3거래일 연속 하락 · 9거래일 내 최저",
           "sub_en": "Down 3rd straight day · 9-session low"
         },
         {
           "label_ko": "S&P 500",
           "label_en": "S&P 500",
-          "value": "7,553.33",
-          "delta": "▼0.43%",
+          "value": "7,551.81",
+          "delta": "▼0.45%",
           "dir": "down",
           "sub_ko": "다우는 -1.21%로 더 크게 하락",
           "sub_en": "Dow fell harder, -1.21%"
@@ -486,7 +486,7 @@
         {
           "headline_ko": "美 긴축 전환에 한은도 연내 추가 인상 가능성",
           "headline_en": "Fed's pivot raises odds BOK hikes again",
-          "body_ko": "한국은행은 이미 7·8월 두 차례 연속 기준금리를 올려 3.00%까지 인상했다. 황건일 금통위원은 취약부문 부담을 이유로 두 달째 동결 소수의견을 냈지만, 美 연준의 인상으로 한은의 추가 인상 명분에 무게가 실린다.",
+          "body_ko": "한국은행은 이미 7·8월 두 차례 연속 기준금리를 올려 3.00%까지 인상했다. 황건일 금통위원은 취약부문 부담을 이유로 동결 소수의견을 냈지만, 美 연준의 인상으로 한은의 추가 인상 명분에 무게가 실린다.",
           "body_en": "BOK already hiked to 3.00% in July-August. One dissent wants a hold, but the Fed move adds odds of another BOK hike this year.",
           "src": "Yonhap"
         },
@@ -498,7 +498,7 @@
           "src": "Yonhap · Reuters"
         },
         {
-          "headline_ko": "트럼프 \"금리 1%대여야\"…워시 의장과 정면 충돌",
+          "headline_ko": "트럼프 \"금리 1% 이하여야\"…워시 의장과 정면 충돌",
           "headline_en": "Trump clashes with Warsh over hike",
           "body_ko": "트럼프 대통령은 이번 인상 결정에 \"기준금리는 1% 이하여야 한다\"며 공개 비판했다. 자신이 임명한 워시 의장의 첫 결정이 인하가 아닌 인상이었다는 점에서 중간선거를 앞두고 갈등이 고조되는 모습이다.",
           "body_en": "Trump says rates \"should be below 1%,\" blasting his own pick for Fed chair for hiking, not cutting, as tension builds before midterms.",
@@ -514,8 +514,8 @@
         {
           "headline_ko": "클래리티법, 美 상원서 부결(49대50)…비트코인 등 급락",
           "headline_en": "CLARITY Act fails in Senate, crypto slides",
-          "body_ko": "가상자산 시장구조법인 '클래리티법'이 민주당 전원 반대로 상원에서 부결됐다. 비트코인은 장중 5%대까지 급락했다가 소폭 반등했다. 번스타인은 오히려 SEC 규정 제정이 가속될 수 있다고 봤다.",
-          "body_en": "Crypto market-structure bill failed 49-50, all Democrats opposed. Bitcoin fell as much as 5% before recovering some.",
+          "body_ko": "가상자산 시장구조법인 '클래리티법'이 민주당 전원 반대에 공화당 일부 이탈표까지 겹쳐 클로처(60표) 문턱을 넘지 못하고 상원에서 부결됐다(49대50). 비트코인은 장중 5%대까지 급락했다가 소폭 반등했다. 번스타인은 오히려 SEC 규정 제정이 가속될 수 있다고 봤다.",
+          "body_en": "Crypto market-structure bill failed a 49-50 cloture vote — all Democrats opposed, plus some Republican defections. Bitcoin fell as much as 5% before recovering some.",
           "src": "Naver News"
         },
         {
