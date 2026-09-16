@@ -1,91 +1,11 @@
 {
-  "fetchedAt": "2026-09-16T00:25:41Z",
+  "fetchedAt": "2026-09-16T15:24:31Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-14T00:25:41Z",
-    "to": "2026-09-30T00:25:41Z"
+    "from": "2026-09-14T15:24:31Z",
+    "to": "2026-09-30T15:24:31Z"
   },
   "events": [
-    {
-      "at": "2026-09-14T04:30:00Z",
-      "country": "JP",
-      "name": "Capacity Utilization",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.1,
-      "actual": 0.5,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (MoM)",
-      "impact": "LOW",
-      "consensus": 0.1,
-      "previous": 0.1,
-      "actual": -0.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.1,
-      "actual": 3.9,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T09:00:00Z",
-      "country": "CN",
-      "name": "M2 Money Supply (YoY)",
-      "impact": "LOW",
-      "consensus": 7.6,
-      "previous": 7.7,
-      "actual": 7.5,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T09:00:00Z",
-      "country": "CN",
-      "name": "New Loans",
-      "impact": "LOW",
-      "consensus": 400,
-      "previous": -340,
-      "actual": 60,
-      "unit": null
-    },
-    {
-      "at": "2026-09-14T09:15:00Z",
-      "country": "EMU",
-      "name": "ECB's Schnabel speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-14T13:00:00Z",
-      "country": "EMU",
-      "name": "ECB's Cipollone speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-14T15:15:00Z",
-      "country": "EMU",
-      "name": "ECB's President Lagarde speech",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-09-14T15:30:00Z",
       "country": "US",
@@ -327,16 +247,6 @@
       "unit": "%"
     },
     {
-      "at": "2026-09-15T20:30:00Z",
-      "country": "US",
-      "name": "API Weekly Crude Oil Stock",
-      "impact": "LOW",
-      "consensus": -1.8,
-      "previous": -0.3,
-      "actual": null,
-      "unit": null
-    },
-    {
       "at": "2026-09-15T23:50:00Z",
       "country": "JP",
       "name": "Adjusted Merchandise Trade Balance",
@@ -403,7 +313,7 @@
       "impact": "MEDIUM",
       "consensus": -0.2,
       "previous": 0,
-      "actual": null,
+      "actual": -0.1,
       "unit": "%"
     },
     {
@@ -413,7 +323,7 @@
       "impact": "LOW",
       "consensus": -0.1,
       "previous": 0.1,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -423,17 +333,17 @@
       "impact": "LOW",
       "consensus": 3,
       "previous": 3.2,
-      "actual": null,
+      "actual": 3.1,
       "unit": "%"
     },
     {
-      "at": "2026-09-16T09:30:00Z",
+      "at": "2026-09-16T09:40:00Z",
       "country": "DE",
       "name": "30-y Bond Auction",
       "impact": "LOW",
       "consensus": null,
       "previous": 3.65,
-      "actual": null,
+      "actual": 3.9,
       "unit": "%"
     },
     {
@@ -443,7 +353,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -2.7,
-      "actual": null,
+      "actual": -4.1,
       "unit": "%"
     },
     {
@@ -463,7 +373,7 @@
       "impact": "LOW",
       "consensus": 0.5,
       "previous": -1.3,
-      "actual": null,
+      "actual": 0.6,
       "unit": "%"
     },
     {
@@ -473,7 +383,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 8.2,
-      "actual": null,
+      "actual": 8.6,
       "unit": "%"
     },
     {
@@ -483,7 +393,7 @@
       "impact": "LOW",
       "consensus": 0.4,
       "previous": -0.4,
-      "actual": null,
+      "actual": 0.7,
       "unit": "%"
     },
     {
@@ -493,7 +403,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.9,
-      "actual": null,
+      "actual": 7,
       "unit": "%"
     },
     {
@@ -503,7 +413,7 @@
       "impact": "HIGH",
       "consensus": 0.8,
       "previous": -0.6,
-      "actual": null,
+      "actual": 1.2,
       "unit": "%"
     },
     {
@@ -513,7 +423,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5,
-      "actual": null,
+      "actual": 6,
       "unit": "%"
     },
     {
@@ -523,7 +433,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": -0.4,
-      "actual": null,
+      "actual": 1.4,
       "unit": "%"
     },
     {
@@ -533,7 +443,7 @@
       "impact": "MEDIUM",
       "consensus": 0.5,
       "previous": -0.3,
-      "actual": null,
+      "actual": 1.4,
       "unit": "%"
     },
     {
@@ -553,7 +463,7 @@
       "impact": "LOW",
       "consensus": 0.3,
       "previous": 0,
-      "actual": null,
+      "actual": 0.8,
       "unit": "%"
     },
     {
@@ -563,7 +473,7 @@
       "impact": "LOW",
       "consensus": 34,
       "previous": 35,
-      "actual": null,
+      "actual": 32,
       "unit": null
     },
     {
@@ -571,9 +481,9 @@
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -1.6,
       "previous": -0.391,
-      "actual": null,
+      "actual": -0.64,
       "unit": null
     },
     {
@@ -583,7 +493,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.087,
-      "actual": null,
+      "actual": 1.585,
       "unit": null
     },
     {
@@ -593,7 +503,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.269,
-      "actual": null,
+      "actual": 0.794,
       "unit": null
     },
     {
@@ -603,7 +513,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.01,
-      "actual": null,
+      "actual": 0.684,
       "unit": null
     },
     {
@@ -725,6 +635,16 @@
       "previous": 133.5,
       "actual": null,
       "unit": "$"
+    },
+    {
+      "at": "2026-09-16T21:00:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": -1.8,
+      "previous": -0.3,
+      "actual": 7.14,
+      "unit": null
     },
     {
       "at": "2026-09-16T23:50:05Z",
@@ -911,7 +831,7 @@
       "country": "US",
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 49,
       "previous": 40,
       "actual": null,
       "unit": null
@@ -1342,7 +1262,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 7.14,
       "actual": null,
       "unit": null
     },
@@ -1422,7 +1342,7 @@
       "name": "MBA Mortgage Applications",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -4.1,
       "actual": null,
       "unit": "%"
     },
@@ -1462,7 +1382,7 @@
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -0.64,
       "actual": null,
       "unit": null
     },
@@ -1472,7 +1392,7 @@
       "name": "EIA Distillate Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.585,
       "actual": null,
       "unit": null
     },
@@ -1482,7 +1402,7 @@
       "name": "EIA Gasoline Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 0.794,
       "actual": null,
       "unit": null
     },
@@ -1492,7 +1412,7 @@
       "name": "EIA Heating Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 0.684,
       "actual": null,
       "unit": null
     },
@@ -2185,6 +2105,506 @@
       "previous": 2.4,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-09-30T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49.8,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Non-Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T01:45:00Z",
+      "country": "CN",
+      "name": "RatingDog Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 51.5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T01:45:00Z",
+      "country": "CN",
+      "name": "RatingDog Services PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 51.4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T05:00:00Z",
+      "country": "JP",
+      "name": "Annualized Housing Starts",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.774,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T05:00:00Z",
+      "country": "JP",
+      "name": "Construction Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -13.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T05:00:00Z",
+      "country": "JP",
+      "name": "Housing Starts (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 8.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T06:00:00Z",
+      "country": "DE",
+      "name": "Import Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T06:00:00Z",
+      "country": "DE",
+      "name": "Import Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 6.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T06:00:00Z",
+      "country": "DE",
+      "name": "Retail Sales (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -3.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T06:00:00Z",
+      "country": "DE",
+      "name": "Retail Sales (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": -2.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T07:00:00Z",
+      "country": "EMU",
+      "name": "Non-Monetary Policy ECB Meeting",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T07:55:00Z",
+      "country": "DE",
+      "name": "Unemployment Change",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T07:55:00Z",
+      "country": "DE",
+      "name": "Unemployment Rate s.a.",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Baden-Wuerttemberg CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Baden-Wuerttemberg CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Bavaria CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Bavaria CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Brandenburg CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Brandenburg CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Hesse CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Hesse CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "North Rhine-Westphalia CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "North Rhine-Westphalia CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Saxony CPI (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T08:00:00Z",
+      "country": "DE",
+      "name": "Saxony CPI (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T09:30:00Z",
+      "country": "DE",
+      "name": "10-y Bond Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.26,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T11:00:00Z",
+      "country": "US",
+      "name": "MBA Mortgage Applications",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:00:00Z",
+      "country": "DE",
+      "name": "Consumer Price Index (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:00:00Z",
+      "country": "DE",
+      "name": "Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:00:00Z",
+      "country": "DE",
+      "name": "Harmonized Index of Consumer Prices (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:00:00Z",
+      "country": "DE",
+      "name": "Harmonized Index of Consumer Prices (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 38,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures - Price Index (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures - Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Core Personal Consumption Expenditures (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Goods Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -119.6,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Gross Domestic Product Annualized",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Gross Domestic Product Price Index",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures - Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures - Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Personal Consumption Expenditures Prices (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 5.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Personal Income (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Personal Spending",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T12:30:00Z",
+      "country": "US",
+      "name": "Wholesale Inventories",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T13:45:00Z",
+      "country": "US",
+      "name": "Chicago PMI",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 47.1,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T14:30:00Z",
+      "country": "US",
+      "name": "EIA Crude Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T14:30:00Z",
+      "country": "US",
+      "name": "EIA Distillate Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T14:30:00Z",
+      "country": "US",
+      "name": "EIA Gasoline Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T14:30:00Z",
+      "country": "US",
+      "name": "EIA Heating Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
