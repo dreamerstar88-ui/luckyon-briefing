@@ -1,0 +1,684 @@
+{
+  "date": "2026-09-18",
+  "session": "am",
+  "dateLabel_ko": "2026.9.18(금) 아침",
+  "dateLabel_en": "Fri, Sep 18, 2026 · Morning",
+  "headline_ko": "나스닥 1.69%↑, 인텔·SK하이닉스 'AI메모리 동맹설'에 반도체 불기둥",
+  "headline_en": "Nasdaq Jumps 1.69% as Intel-SK Hynix Memory Deal Talk Ignites Chip Rally",
+  "headline_sub_ko": "필라델피아 반도체지수 +3.14% · 매파 FOMC 충격은 하루 만에 진정",
+  "headline_sub_en": "Philly Semis +3.14% · Hawkish-Fed Shock Fades in a Day",
+  "cover_photo": "photos/nyse.jpg",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 9/17 마감",
+    "en": "US Overnight · Sep 17 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 +1.69% · S&P 500 +1.14%",
+        "en": "Nasdaq +1.69% · S&P 500 +1.14%"
+      },
+      {
+        "ko": "26,418.30 / 7,637.76 · 3대 지수 동반 반등",
+        "en": "26,418.30 / 7,637.76 pts · all three indexes rebounded"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "인텔 +7.67% · 마이크론 +5.50%",
+        "en": "Intel +7.67% · Micron +5.50%"
+      },
+      {
+        "ko": "SK하이닉스와 美 메모리 생산 협력 논의 보도",
+        "en": "Reuters: Intel-SK Hynix in US memory talks"
+      }
+    ],
+    [
+      "bond",
+      {
+        "ko": "美 10년물 5.01%→4.94% · WTI 101달러대",
+        "en": "US 10Y 5.01%→4.94% · WTI near $101"
+      },
+      {
+        "ko": "매파 FOMC 충격, 유가·금리 진정에 하루 만에 완화",
+        "en": "Hawkish-FOMC shock eased in a day as yields, oil retreat"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥종합이 1.69%, S&P 500이 1.14% 오르며 3대 지수가 하루 만에 반등했다. 필라델피아 반도체지수는 3.14% 급등했다.",
+      "로이터통신이 인텔과 SK하이닉스가 미국 내 메모리 반도체 생산 협력을 논의 중이라고 보도하며 인텔이 7.67%, 마이크론이 5.50% 급등했다. 전날 매파적 FOMC로 5%대까지 올랐던 美 10년물 금리가 4.94%로, 사우디 동서송유관 공급 우려가 완화되며 WTI도 101달러대로 내려온 것도 위험자산 선호를 도왔다.",
+      "거래대금 상위 299종목 중 212개가 올랐고 79개만 내렸다. 금액으로는 오른 종목에 $330.17B, 내린 종목에 $55.53B가 몰려 자금도 뚜렷하게 상승 쪽으로 쏠렸다.",
+      "다만 커뮤니케이션(XLC, −0.58%)과 금융(XLF, −0.09%) 업종은 약세를 보였다. 간밤 미국 반도체 랠리에 국내 역외 지표도 강세를 보여, 오늘 코스피도 그 온기를 받을 가능성이 있다."
+    ],
+    "lines_en": [
+      "The Nasdaq Composite rose 1.69% and the S&P 500 gained 1.14%, both rebounding after a rough session. The Philadelphia Semiconductor Index jumped 3.14%.",
+      "Reuters reported Intel and SK Hynix are discussing US memory-chip production cooperation, sending Intel up 7.67% and Micron up 5.50%. The US 10-year yield eased to 4.94% from a hawkish-FOMC spike near 5%, and WTI slipped near $101 as Saudi pipeline supply fears eased — both helped revive risk appetite.",
+      "Among the 299 most-traded names, 212 rose against 79 decliners. By value, $330.17B flowed into gainers versus $55.53B into decliners — money clearly favored the upside.",
+      "Communication Services (XLC, -0.58%) and Financials (XLF, -0.09%) lagged. Korea's offshore indicators also firmed on the overnight chip rally, hinting today's KOSPI could catch some of the same tailwind."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,418.30",
+      "delta": "▲1.69%",
+      "dir": "up",
+      "note_ko": "439.87p 상승 · 9/17 미국장 마감 종가",
+      "note_en": "+439.87 pts · Sep 17 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,637.76",
+      "delta": "▲1.14%",
+      "dir": "up",
+      "note_ko": "85.95p 상승 · 9/17 미국장 마감 종가",
+      "note_en": "+85.95 pts · Sep 17 US close"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,715.41",
+      "delta": "▼0.04%",
+      "dir": "down",
+      "note_ko": "9/17 한국장 종가 · 장 열리기 전",
+      "note_en": "Sep 17 Korea close · before the open"
+    },
+    {
+      "label": "VIX",
+      "value": "15.44",
+      "delta": "▼12.82%",
+      "dir": "down",
+      "note_ko": "2.27p 하락 · 반도체 랠리에 진정",
+      "note_en": "-2.27 pts · calmed by the chip rally"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "29",
+      "delta": "▲3",
+      "dir": "up",
+      "note_ko": "이전 26 · Fear 구간 유지",
+      "note_en": "Prior 26 · still in Fear zone"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.01% → 4.94%",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "9/17 확정 종가 기준 · 매파 FOMC 충격 되돌림",
+      "note_en": "Sep 17 settle · retracing hawkish-FOMC spike"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,382",
+      "delta": {
+        "ko": "▲13.6원",
+        "en": "+₩13.6"
+      },
+      "dir": "up",
+      "note_ko": "9/17 오후 3시 30분 서울외환시장 고시가 · 장 열리기 전",
+      "note_en": "Sep 17 3:30 PM KST Seoul fixing · before the open"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,380.60",
+      "delta": "▼0.16%",
+      "dir": "down",
+      "note_ko": "9/17 종가",
+      "note_en": "Sep 17 close"
+    },
+    {
+      "label": "WTI",
+      "value": "$101.09",
+      "delta": "▼1.31%",
+      "dir": "down",
+      "note_ko": "이틀 연속 하락 · 사우디 공급 우려 완화",
+      "note_en": "Down 2nd day · Saudi supply fears ease"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$76,267",
+      "delta": "▲0.86%",
+      "dir": "up",
+      "note_ko": "24시간 기준",
+      "note_en": "24-hour change"
+    }
+  ],
+  "market_note_ko": "모두 9/17 미국장 마감 종가 · 코스피·원/달러는 9/17 한국장 기준",
+  "market_note_en": "All figures as of the Sep 17 US close · KOSPI and USD/KRW as of Sep 17 Korea market",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "tile_lead": {
+    "ko": "반도체가 이끈 반등",
+    "en": "Chips Lead the Rebound"
+  },
+  "main_tile_note": {
+    "ko": "439.87p 상승 · 최근 9거래일",
+    "en": "+439.87 pts · last 9 sessions"
+  },
+  "chart_series_values": [
+    26506.99,
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3
+  ],
+  "chart_series_labels": [
+    "9.4",
+    "9.8",
+    "9.9",
+    "9.10",
+    "9.11",
+    "9.14",
+    "9.15",
+    "9.16",
+    "9.17"
+  ],
+  "chart_title": {
+    "ko": "이틀 만에 낙폭을 되돌렸다",
+    "en": "Erasing the Slide in Two Days"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9.16 저점 25,978.43 → 9.17 26,418.30(+1.69%) · 9.4 고점 26,506.99 근접",
+    "en": "9.16 low 25,978.43 → 9.17 26,418.30 (+1.69%) · nearing the 9.4 high of 26,506.99"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": {
+    "ko": "TODAY",
+    "en": "TODAY"
+  },
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "기술·경기소비재가 이끌었다",
+    "en": "Tech and Discretionary Lead"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF · 9/17 종가 기준 · 11개 중 9개 상승",
+    "en": "S&P 500 sector ETFs · Sep 17 close · 9 of 11 rose"
+  },
+  "rank_kicker": {
+    "ko": "TOP TURNOVER",
+    "en": "TOP TURNOVER"
+  },
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "9/17 미국장 · 반도체가 거래대금 상위를 휩쓸었다",
+    "en": "Sep 17 US session · chips swept the top of the list"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $B"
+  },
+  "econ_kicker": {
+    "ko": "EARNINGS · DATA",
+    "en": "EARNINGS · DATA"
+  },
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "9/17~18 발표분 · 실측 · 예상 · 이전",
+    "en": "Released Sep 17-18 · actual · estimate · prior"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,418.30",
+          "delta": "▲1.69%",
+          "dir": "up",
+          "sub_ko": "439.87포인트 상승 · 9.16 저점에서 반등",
+          "sub_en": "Up 439.87 pts · rebounding off the Sep 16 low"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,637.76",
+          "delta": "▲1.14%",
+          "dir": "up",
+          "sub_ko": "85.95포인트 상승 · 이틀 연속 하락 후 반등",
+          "sub_en": "Up 85.95 pts · rebounding after two down days"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P500 11개 섹터",
+          "label_en": "S&P 500 sectors",
+          "up": 9,
+          "flat": 0,
+          "down": 2
+        },
+        {
+          "label_ko": "거래대금 상위 299종목",
+          "label_en": "299 most-traded",
+          "up": 212,
+          "flat": 8,
+          "down": 79
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금",
+        "label_en": "Turnover: gainers vs decliners",
+        "unit_ko": "십억달러",
+        "unit_en": "$B",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 330.17
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -55.53
+          }
+        ]
+      },
+      "note_ko": "11개 업종 중 9개가 올랐고, 거래대금으로도 오른 종목에 $330.17B가 몰려 내린 종목($55.53B)의 6배에 달했다. 지수 반등이 시장 전체의 상승이었다는 뜻이다.",
+      "note_en": "Nine of eleven sectors rose, and $330.17B flowed into gainers versus $55.53B into decliners — six times as much. The index rebound reflected a genuinely broad advance."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": 2.25
+        },
+        {
+          "label_ko": "경기소비재 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": 1.1
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": 0.9
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 0.7
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 0.7
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": 0.62
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": 0.3
+        },
+        {
+          "label_ko": "필수소비재 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 0.19
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 0.18
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.09
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": -0.58
+        }
+      ],
+      "note_ko": "기술(XLK)이 반도체 랠리를 타고 2.25%로 가장 크게 올랐다. 금리 진정에 유틸리티(+0.90%)도 함께 강세였고, 금융(−0.09%)과 통신(−0.58%)만 약세였다.",
+      "note_en": "Tech (XLK) led with +2.25% on the chip rally. Utilities (+0.90%) also gained as yields eased; only Financials (-0.09%) and Communication (-0.58%) lagged."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$21.39B",
+          "pct": 5.5
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$20.36B",
+          "pct": 2.54
+        },
+        {
+          "name_ko": "인텔",
+          "name_en": "Intel",
+          "value": "$16.09B",
+          "pct": 7.67
+        },
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "value": "$15.44B",
+          "pct": 6.36
+        },
+        {
+          "name_ko": "테슬라",
+          "name_en": "Tesla",
+          "value": "$14.20B",
+          "pct": 2.27
+        }
+      ],
+      "share": {
+        "label_ko": "상위 5종목 거래대금 집중도 · 표본 299종목 총 $385.7B",
+        "label_en": "Top-5 share of turnover · sample of 299 names, $385.7B total",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5",
+            "pct": 22.7,
+            "color": "#3987e5"
+          },
+          {
+            "label_ko": "나머지 294종목",
+            "label_en": "Other 294",
+            "pct": 77.3,
+            "color": "#8c8a85"
+          }
+        ]
+      },
+      "note_ko": "거래대금 상위 5종목이 전부 반도체·AI 관련주다. 1위 마이크론(+5.5%)부터 4위 AMD(+6.36%)까지 반도체 4종목이 상위 5위 안에 들었다 — FINRA 공매도 데이터는 이날 미배포로 비중 열은 비웠다.",
+      "note_en": "All top-5 names by turnover were chip or AI plays, with four semiconductor names in the top five. FINRA's short-volume file was unavailable today, so the short column is blank."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "한국 8월 생산자물가 (전년비)",
+          "label_en": "Korea Aug PPI (YoY)",
+          "value": "7.9%",
+          "delta": "▲0.2%p",
+          "dir": "up",
+          "sub_ko": "6:00 발표 · 이전 7.7% · 폭염에 농축산물 가격 상승",
+          "sub_en": "Released 6:00 KST · Prior 7.7% · heatwave lifted farm prices"
+        },
+        {
+          "label_ko": "한국 8월 생산자물가 (전월비)",
+          "label_en": "Korea Aug PPI (MoM)",
+          "value": "0.2%",
+          "delta": "▲0.6%p",
+          "dir": "up",
+          "sub_ko": "6:00 발표 · 이전 −0.4% · 한 달 만에 반등",
+          "sub_en": "Released 6:00 KST · Prior -0.4% · first rise in a month"
+        },
+        {
+          "label_ko": "美 주간 신규 실업수당 청구",
+          "label_en": "US Initial Jobless Claims",
+          "value": "196K",
+          "delta": "▼12K",
+          "dir": "down",
+          "sub_ko": "21:30 발표 · 예상 208K · 이전 206K",
+          "sub_en": "Released 21:30 KST · Est. 208K · Prior 206K"
+        },
+        {
+          "label_ko": "美 9월 필라델피아 연준 제조업지수",
+          "label_en": "US Sep Philly Fed Index",
+          "value": "37.8",
+          "delta": "▲7.3p",
+          "dir": "up",
+          "sub_ko": "21:30 발표 · 예상 30.5 · 이전 47.4",
+          "sub_en": "Released 21:30 KST · Est. 30.5 · Prior 47.4",
+          "ref_ko": "0 위 = 확장 · 아래 = 위축",
+          "ref_en": "Above 0 = expansion · below = contraction"
+        },
+        {
+          "label_ko": "美 8월 신규 주택착공 (연율)",
+          "label_en": "US Aug Housing Starts (annualized)",
+          "value": "1.275M",
+          "delta": "▼35K",
+          "dir": "down",
+          "sub_ko": "21:30 발표 · 예상 1.31M · 이전 1.239M",
+          "sub_en": "Released 21:30 KST · Est. 1.31M · Prior 1.239M"
+        },
+        {
+          "label_ko": "유로존 8월 소비자물가 확정치 (전년비)",
+          "label_en": "Eurozone Aug HICP Final (YoY)",
+          "value": "3.2%",
+          "delta": "▼0.1%p",
+          "dir": "down",
+          "sub_ko": "18:00 발표 · 예상 3.3% · 이전 3.3%",
+          "sub_en": "Released 18:00 KST · Est. 3.3% · Prior 3.3%",
+          "ref_ko": "ECB 목표는 2% · 유로존 19개국 평균치",
+          "ref_en": "ECB targets 2% · averaged across the 19 eurozone members"
+        }
+      ],
+      "note_ko": "한국 생산자물가는 폭염 영향으로 한 달 만에 반등했다. 미국 지표는 엇갈렸다 — 신규 실업수당 청구는 예상보다 적었고 필라델피아 연준지수는 예상을 크게 웃돌았지만, 주택착공은 예상에 못 미쳤다.",
+      "note_en": "Korea's PPI rebounded after a heatwave. US data was mixed — jobless claims beat and the Philly Fed index topped estimates by a wide margin, while housing starts missed."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "인텔·SK하이닉스 '美 메모리 생산 협력' 논의설에 인텔 7.67% 급등",
+          "headline_en": "Intel Jumps 7.67% on Report of US Memory Talks with SK Hynix",
+          "body_ko": "로이터통신이 인텔과 SK하이닉스가 미국 내에서 메모리 반도체를 함께 생산하는 방안을 논의 중이라고 보도했다. 인텔은 전날(4.03%)에 이어 이틀 연속 급등해 7.67% 올랐고, SK하이닉스 미국 예탁증서(ADR)도 4.64% 상승했다.",
+          "body_en": "Reuters reported Intel and SK Hynix are in talks to jointly produce memory chips in the US. Intel jumped 7.67% for a second straight day after Wednesday's 4.03% gain, and SK Hynix's US ADR rose 4.64%."
+        },
+        {
+          "headline_ko": "인텔 CEO '메모리 가격 5~7배 뛰었다'…AI 수요 둔화 조짐 없어",
+          "headline_en": "Intel CEO: Memory Prices Up 5-7x, No Sign of AI Demand Slowing",
+          "body_ko": "립부 탄 인텔 CEO가 최근 메모리 반도체 가격이 5~7배 상승했다며 AI 인프라 구축에 따른 수요 둔화 조짐이 보이지 않는다고 말했다. 마이크론이 5.50%, 마벨 테크놀로지가 4.81% 오르며 메모리 업종 전반에 온기가 확산했다.",
+          "body_en": "Intel CEO Lip-Bu Tan said memory chip prices have jumped 5 to 7 times, with no sign of slowing AI infrastructure demand. Micron rose 5.50% and Marvell 4.81% as the rally spread across memory names."
+        },
+        {
+          "headline_ko": "젠슨 황 '내년 엔비디아 칩 판매 2배로'",
+          "headline_en": "Jensen Huang: Nvidia Chip Sales Could Double Next Year",
+          "body_ko": "젠슨 황 엔비디아 CEO가 내년 반도체 판매량이 2배로 늘어날 것이라며 AI 수요에 대한 자신감을 재확인했다. 엔비디아는 2.54% 올랐고 필라델피아 반도체지수(SOX)는 3.14% 상승해 12개 테마 중 최고 상승폭을 기록했다.",
+          "body_en": "Nvidia CEO Jensen Huang reaffirmed confidence in AI demand, saying next year's chip sales could double. Nvidia rose 2.54%, and the Philadelphia Semiconductor Index (SOX) jumped 3.14%, the day's best-performing group."
+        },
+        {
+          "headline_ko": "AMD 6.36%·ARM 8.57% 급등…반도체 랠리, 개별 종목 전반 확산",
+          "headline_en": "AMD +6.36%, ARM +8.57% as Chip Rally Broadens",
+          "body_ko": "AMD가 6.36%, ARM이 8.57% 오르며 반도체 랠리가 특정 종목을 넘어 업종 전반으로 번졌다. 거래대금 상위 5위 안에 마이크론·엔비디아·인텔·AMD 등 반도체 관련주 4개가 이름을 올렸다.",
+          "body_en": "AMD gained 6.36% and ARM 8.57% as the chip rally broadened beyond single names. Four semiconductor names — Micron, Nvidia, Intel and AMD — landed in the day's top five by turnover."
+        },
+        {
+          "headline_ko": "데이터센터 전력 부담 법안에 원전·SMR 관련주 강세",
+          "headline_en": "Nuclear, SMR Stocks Rally on Data-Center Power Cost Bill",
+          "body_ko": "데이터센터 전기요금 부담을 다루는 법안 소식에 원전과 소형모듈원자로(SMR) 관련주가 동반 강세를 보였다. AI 인프라발 전력 수요 증가가 반도체를 넘어 에너지 밸류체인 전반으로 온기를 넓히는 모습이다.",
+          "body_en": "Nuclear and small modular reactor stocks rallied on news of a bill addressing data-center electricity costs, showing how AI-driven power demand is spreading beyond chips into the broader energy value chain."
+        },
+        {
+          "headline_ko": "아마존, 제네락과 데이터센터 비상발전기 대규모 공급계약",
+          "headline_en": "Amazon Signs Major Generac Deal for Data-Center Backup Power",
+          "body_ko": "아마존이 제네락과 데이터센터용 비상발전기 공급계약을 체결했다고 밝히며 제네락에 최대 169만주를 매입할 수 있는 신주인수권도 발행했다. 소식에 제네락 주가는 18% 넘게 급등해, AI 데이터센터발 전력 인프라 수요가 반도체를 넘어 발전 설비로도 번지고 있음을 보여줬다.",
+          "body_en": "Amazon signed a major deal with Generac to supply standby generators for its data centers and issued Generac warrants for up to 1.69 million shares. Generac shares surged more than 18%, underscoring how AI-driven data-center power demand is spreading from chips into backup power equipment."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "사우디, 후티에 첫 탄도미사일 실전 발사…원유는 우회 공급으로 진정",
+          "headline_en": "Saudi Fires First Combat Ballistic Missile at Houthis as Oil Supply Fears Ease",
+          "body_ko": "예멘 후티 반군이 자체 제작 지대공미사일로 사우디 F-15 전투기를 격추했고, 사우디는 같은 날 중국산 둥펑-15 탄도미사일을 후티를 향해 처음으로 실전 발사했다. 앞선 드론 공격으로 멈췄던 사우디 동서송유관은 수일 내 처리 능력 절반 복구를 추진 중이고 오만 소하르항을 통한 우회 공급도 시작되며, WTI는 이틀 연속 하락해 101달러대로 내려왔다.",
+          "body_en": "Houthi rebels downed a Saudi F-15 with a homemade surface-to-air missile, and Saudi Arabia carried out its first combat use of a Chinese-made DF-15 ballistic missile against the Houthis the same day. Saudi aims to restore roughly half of its drone-damaged East-West pipeline's capacity within days and has begun rerouting supply via Oman's Sohar port, helping WTI fall for a second day to near $101."
+        },
+        {
+          "headline_ko": "연준 점도표, 물가 둔화 전망에도 내년 추가 인상 시사",
+          "headline_en": "Fed Dot Plot Signals Another Hike Next Year Despite Cooling Inflation Outlook",
+          "body_ko": "케빈 워시 연준 의장은 최신 소비자·생산자물가 자료를 근거로 8월 개인소비지출(PCE) 물가가 더 낮아질 것으로 예상된다고 밝히면서도, 이번 점도표는 내년 추가 기준금리 인상 가능성을 시사했다. 가장 최근 공식 PCE(7월)는 전년비 3.7%(근원 3.3%)였고 8월분은 9월 30일 발표된다.",
+          "body_en": "Fed Chair Kevin Warsh said August PCE inflation likely cooled further based on recent CPI and PPI data, even as the new dot plot signaled another possible rate hike next year. The latest official PCE reading (July) stood at 3.7% YoY (3.3% core); the August print is due Sept 30."
+        },
+        {
+          "headline_ko": "간밤 美 반도체 랠리, 국내 역외 지표에도 온기",
+          "headline_en": "Overnight US Chip Rally Warms Korea's Offshore Indicators",
+          "body_ko": "간밤 미국 반도체 랠리에 국내 역외 지표도 강세를 보였다는 보도가 나왔다. 전날 매파적 FOMC와 외국인 매도(약 2조3천억원)로 6,715선까지 밀렸던 코스피가 오늘은 반등을 시도할 것이라는 전망이 나온다.",
+          "body_en": "Reports said Korea's offshore indicators also firmed overnight on the US chip rally. After Thursday's hawkish-FOMC selloff and roughly ₩2.3 trillion of foreign selling pulled KOSPI down near 6,715, some traders expect a rebound attempt today."
+        },
+        {
+          "headline_ko": "긴축 고삐 죄는 연준에 '코스피, 내년 상반기까지 박스권' 전망도",
+          "headline_en": "Some Analysts See KOSPI Boxed Through H1 Next Year on Fed Tightening",
+          "body_ko": "한 증권가 분석은 매파적 연준의 긴축 기조가 이어지면 코스피가 내년 상반기까지 뚜렷한 방향성 없이 박스권에 머물 수 있다고 내다봤다. 유동성 환경이 타이트해지는 국면에서는 지수보다 종목별 대응이 유리하다는 진단이다.",
+          "body_en": "One brokerage note warned that if the Fed's hawkish tightening persists, KOSPI could stay range-bound without clear direction through the first half of next year, adding that stock-picking may outperform index-level bets as liquidity conditions tighten."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": {
+    "ko": "KEY SCHEDULE",
+    "en": "KEY SCHEDULE"
+  },
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "All times KST · yellow dot = high importance"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "9/18 12:00",
+      "title_ko": "일본은행(BOJ) 금리 결정",
+      "title_en": "BOJ Interest Rate Decision",
+      "detail_ko": "시장은 1.00%→1.25% 인상 전망 · 15:30 총재 회견",
+      "detail_en": "Market expects a hike to 1.25% from 1.00% · 3:30 PM presser",
+      "importance": "high"
+    },
+    {
+      "time": "9/18 08:30",
+      "title_ko": "일본 8월 전국 소비자물가 (전년비)",
+      "title_en": "Japan Aug National CPI (YoY)",
+      "detail_ko": "이전 1.9% · BOJ 결정 직전 발표",
+      "detail_en": "Prior 1.9% · released just before the BOJ decision",
+      "importance": "mid"
+    },
+    {
+      "time": "9/21",
+      "title_ko": "중국인민은행(PBoC) 대출우대금리 결정",
+      "title_en": "PBoC Loan Prime Rate Decision",
+      "detail_ko": "1년 만기 기준 이전 3.00%",
+      "detail_en": "Prior 1-year rate 3.00%",
+      "importance": "mid"
+    },
+    {
+      "time": "9/23 06:00",
+      "title_ko": "한국 9월 소비자심리지수",
+      "title_en": "Korea Sep Consumer Sentiment Index",
+      "detail_ko": "한국은행 발표 · 이전 104.5",
+      "detail_en": "Bank of Korea release · prior 104.5",
+      "importance": "mid"
+    },
+    {
+      "time": "9/23",
+      "title_ko": "유로존·독일 9월 PMI 속보치",
+      "title_en": "Eurozone & Germany Sep Flash PMIs",
+      "detail_ko": "유로존 종합 PMI 이전 52.0 · 확장 지속 여부 주목",
+      "detail_en": "Eurozone composite prior 52.0 · watch for continued expansion",
+      "importance": "mid"
+    },
+    {
+      "time": "9/24~25",
+      "title_ko": "한국 추석 연휴, 코스피·코스닥 휴장",
+      "title_en": "Korea Chuseok Holiday — KOSPI/KOSDAQ Closed",
+      "detail_ko": "주말과 이어져 나흘 연휴 · 28일(월) 개장",
+      "detail_en": "A four-day break with the weekend · markets reopen Mon Sep 28",
+      "importance": "high"
+    },
+    {
+      "time": "9/24",
+      "title_ko": "코스트코 회계연도 4분기 실적",
+      "title_en": "Costco FY Q4 Earnings",
+      "detail_ko": "EPS 컨센서스 $6.53 · 장전 발표",
+      "detail_en": "EPS consensus $6.53 · reports before the open",
+      "importance": "mid"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.9.18(금) 아침\n\n나스닥이 1.69%, S&P 500이 1.14% 오르며 3대 지수가 하루 만에 반등했습니다. 필라델피아 반도체지수는 3.14% 급등했습니다.\n\n로이터통신이 인텔과 SK하이닉스가 미국 내 메모리 생산 협력을 논의 중이라고 보도하며 인텔이 7.67%, 마이크론이 5.50% 급등했습니다. 전날 매파적 FOMC로 5%대까지 올랐던 美 10년물 금리는 4.94%로, 국제유가도 사우디 공급 우려 완화에 101달러대로 내려왔습니다.\n\n간밤 국내 역외 지표도 함께 강세를 보여 오늘 국내 증시도 반도체 온기를 받을 가능성이 있습니다.\n\n🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#나스닥 #인텔 #SK하이닉스 #마이크론 #엔비디아 #반도체 #코스피 #미국증시 #투자 #luckyon",
+  "caption_en": "📊 luckyon Briefing · Fri, Sep 18, 2026 Morning\n\nThe Nasdaq rose 1.69% and the S&P 500 gained 1.14%, both rebounding in a single session. The Philadelphia Semiconductor Index jumped 3.14%.\n\nReuters reported Intel and SK Hynix are discussing US memory-chip production cooperation, sending Intel up 7.67% and Micron up 5.50%. The US 10-year yield eased to 4.94% from a hawkish-FOMC spike near 5%, and oil slipped near $101 as Saudi supply fears eased.\n\nKorea's offshore indicators also firmed overnight, hinting Korea's market could catch some of the same tailwind today.\n\n🌙 Next brief — 9 PM KST tonight, before the US open.\n\n#Nasdaq #Intel #SKHynix #Micron #Nvidia #Semiconductors #KOSPI #USStocks #Investing #luckyon",
+  "sources": [
+    "Yahoo Finance",
+    "FMP (Treasury Rates)",
+    "CNN Fear & Greed Index",
+    "FXStreet 경제캘린더",
+    "FINRA (일별 공매도 거래량)",
+    "한국은행",
+    "Reuters",
+    "연합인포맥스",
+    "SBS Biz",
+    "한국경제",
+    "이데일리"
+  ],
+  "card_photos": {
+    "1": "The New York Stock Exchange trading floor moments after a strong closing bell, traders energized, a wall of glowing green screens, warm amber light, semiconductor chip motif subtly reflected in glass.",
+    "3": "A dark trading floor with a rising line chart projected large on a wall of screens, glowing green uptick, silhouettes of traders watching, cinematic contrast."
+  }
+}
