@@ -6,8 +6,8 @@
 
   "headline_ko": "코스피, 매파 연준에도 6,700선 지켜냈다",
   "headline_en": "KOSPI Holds 6,700 Line Despite Hawkish Fed",
-  "headline_sub_ko": "조선·방산·금융이 방어, 반도체는 숨고르기",
-  "headline_sub_en": "Shipbuilders, defense, financials cushion the fall as chips pause",
+  "headline_sub_ko": "조선·방산·금융이 방어, 반도체는 약세",
+  "headline_sub_en": "Shipbuilders, defense, financials cushion the fall as chips slip",
   "cover_kicker": {"ko": "코스피 마감 · 9/17", "en": "KOSPI Close · Sep 17"},
   "cover_facts": [
     ["rate", {"ko": "코스피 ▼0.04% · 코스닥 ▲0.76%", "en": "KOSPI ▼0.04% · KOSDAQ ▲0.76%"},
@@ -15,7 +15,7 @@
     ["shield", {"ko": "조선·방산·금융 강세, 반도체는 약세", "en": "Shipbuilding, defense, financials up; chips lag"},
                 {"ko": "한화시스템 +13.5% · HD현대중공업 +6%대", "en": "Hanwha Systems +13.5%, HD Hyundai H.I. +6%"}],
     ["globe", {"ko": "WTI 100달러대 유지 · 美-이란 전쟁 200일", "en": "WTI holds above $100 as US-Iran war hits 200 days"},
-               {"ko": "원/달러 1,384원대 · 美 3년만의 금리인상 여진", "en": "Won near 1,384 · aftershocks from first US hike in 3 years"}]
+               {"ko": "원/달러 1,382원대 · 美 3년만의 금리인상 여진", "en": "Won near 1,382 · aftershocks from first US hike in 3 years"}]
   ],
 
   "summary": {
@@ -23,54 +23,54 @@
       "코스피가 매파적 FOMC 여파 속에서도 6,715.41로 소폭(-0.04%) 하락 마감했고, 코스닥은 822.18로 이틀 연속 올랐다.",
       "외국인이 이날 약 2조 2,800억원을 순매도하며 9일부터 이어온 7거래일 연속 매도를 지속했지만, 개인·기관·기타법인의 매수세가 낙폭을 방어했다.",
       "조선·방산·금융주가 강세를 보인 반면 삼성전자·SK하이닉스 등 대형 반도체주는 약세를 나타내며 업종 간 온도차가 뚜렷했다.",
-      "국제유가는 미·이란 전쟁이 200일째 이어지는 가운데 WTI 100달러선을 지켰고, 원/달러 환율은 1,384원대로 급등했다."
+      "국제유가는 미·이란 전쟁이 200일째 이어지는 가운데 WTI 100달러선을 지켰고, 원/달러 환율은 1,382원대로 급등했다."
     ],
     "lines_en": [
       "KOSPI closed at 6,715.41, down a slim 0.04%, while KOSDAQ rose 0.76% to 822.18, its second straight gain.",
       "Foreign investors sold about ₩2.28 trillion, extending a selling streak that began Sep 9 to a 7th session, but retail, institutional and other-corporate buying limited the damage.",
       "Shipbuilders, defense and financial names rallied while heavyweight chipmakers Samsung Electronics and SK Hynix slipped, underscoring a sharp sector rotation.",
-      "Crude held above $100 a barrel as the US-Iran war reached its 200th day, and the won weakened past 1,384 per dollar."
+      "Crude held above $100 a barrel as the US-Iran war reached its 200th day, and the won weakened past 1,382 per dollar."
     ]
   },
 
   "markets": [
-    {"label": "나스닥", "value": "29,580.75", "delta": "▲2.13%", "dir": "up", "note_ko": "나스닥 선물(NQ) · 정규장 개장 전", "note_en": "Nasdaq futures (NQ) · ahead of the open"},
+    {"label": "NASDAQ", "value": "29,580.75", "delta": "▲2.13%", "dir": "up", "note_ko": "나스닥 선물(NQ) · 정규장 개장 전", "note_en": "Nasdaq futures (NQ) · ahead of the open"},
     {"label": "S&P 500", "value": "7,687.50", "delta": "▲1.73%", "dir": "up", "note_ko": "S&P 500 선물(ES) · 정규장 개장 전", "note_en": "S&P 500 futures (ES) · ahead of the open"},
-    {"label": "코스피", "value": "6,715.41", "delta": "▼0.04%", "dir": "down", "note_ko": "오늘 종가 · 외국인 7거래일 연속 매도", "note_en": "Today's close · foreigners sell for a 7th day"},
+    {"label": "KOSPI", "value": "6,715.41", "delta": "▼0.04%", "dir": "down", "note_ko": "오늘 종가 · 외국인 7거래일 연속 매도", "note_en": "Today's close · foreigners sell for a 7th day"},
     {"label": "VIX", "value": "15.98", "delta": "▼9.77%", "dir": "down", "note_ko": "전일 급등분 되돌림", "note_en": "Retraces prior day's spike"},
-    {"label": "Fear & Greed", "value": "26", "delta": "-", "dir": "flat", "note_ko": "이전 26 · Fear 구간 유지", "note_en": "Prev 26 · stays in Fear zone"},
-    {"label": "美 10년물", "value": "5.00% → 5.01%", "delta": "▲", "dir": "up", "note_ko": "9/16 확정 종가 기준", "note_en": "As of Sep 16 confirmed close"},
-    {"label": "원/달러", "value": "1,384", "value_sub": "· DXY 100.16", "delta": "▲1.52%", "dir": "up", "note_ko": "달러인덱스는 보합 · 원화 단독 약세", "note_en": "Dollar index flat · won weakens on its own"},
-    {"label": "금", "value": "$4,364.30", "delta": "▼0.53%", "dir": "down", "note_ko": "", "note_en": ""},
+    {"label": "Fear&Greed", "value": "26", "delta": "-", "dir": "flat", "note_ko": "이전 26 · Fear 구간 유지", "note_en": "Prev 26 · stays in Fear zone"},
+    {"label": "US 10Y", "value": "5.00% → 5.01%", "delta": "▲", "dir": "up", "note_ko": "9/16 확정 종가 기준", "note_en": "As of Sep 16 confirmed close"},
+    {"label": "USD/KRW", "value": "1,382", "value_sub": "· DXY 100.16", "delta": "▲1.35%", "dir": "up", "note_ko": "서울외환시장 15:30 고시가 기준 · 달러인덱스는 보합", "note_en": "Seoul FX market 3:30 PM fixing · dollar index flat"},
+    {"label": "Gold", "value": "$4,364.30", "delta": "▼0.53%", "dir": "down", "note_ko": "", "note_en": ""},
     {"label": "WTI", "value": "$100.62", "delta": "▼1.77%", "dir": "down", "note_ko": "美-이란 전쟁 200일째에도 100달러 상회", "note_en": "Stays above $100 as US-Iran war hits day 200"},
-    {"label": "비트코인", "value": "$76,279", "delta": "▲0.17%", "dir": "up", "note_ko": "", "note_en": ""}
+    {"label": "Bitcoin", "value": "$76,279", "delta": "▲0.17%", "dir": "up", "note_ko": "", "note_en": ""}
   ],
-  "tile_main": "코스피",
-  "tile_side": ["나스닥", "S&P 500"],
-  "tile_rest": ["VIX", "Fear & Greed", "美 10년물", "원/달러", "금", "WTI", "비트코인"],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ", "S&P 500"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
   "tile_lead": "KOSPI",
-  "main_tile_note": "9 trading days",
-  "market_note_ko": "※ 나스닥·S&P500은 선물(NQ·ES) 기준, 美 10년물은 9/16 확정 종가 기준입니다.",
-  "market_note_en": "※ Nasdaq/S&P 500 are futures (NQ/ES); US 10Y is the confirmed Sep 16 close.",
+  "main_tile_note": {"ko": "최근 9거래일", "en": "9 trading days"},
+  "market_note_ko": "나스닥·S&P500은 선물(NQ·ES) 기준, 美 10년물은 9/16 확정 종가 기준입니다.",
+  "market_note_en": "Nasdaq/S&P 500 are futures (NQ/ES); US 10Y is the confirmed Sep 16 close.",
 
   "chart_series_values": [6995.39, 6954.52, 7051.64, 7033.92, 6909.91, 6684.37, 6627.26, 6717.97, 6715.41],
   "chart_series_labels": ["9.7", "9.8", "9.9", "9.10", "9.11", "9.14", "9.15", "9.16", "9.17"],
-  "chart_title": "9일 고점 찍고 조정, 오늘은 숨고르기",
-  "chart_sub": "코스피 종가 · 최근 9거래일",
-  "chart_note": "9.9 고점 7,051.64 → 9.15 저점 6,627.26 → 9.17 6,715.41 소폭 반등 후 보합",
+  "chart_title": {"ko": "9일 고점 찍고 조정, 오늘은 숨고르기", "en": "Off the Sep 9 high, catching its breath today"},
+  "chart_sub": {"ko": "코스피 종가 · 최근 9거래일", "en": "KOSPI close · last 9 trading days"},
+  "chart_note": {"ko": "9.9 고점 7,051.64 → 9.15 저점 6,627.26 → 9.17 6,715.41 소폭 반등 후 보합", "en": "Sep 9 high 7,051.64 → Sep 15 low 6,627.26 → Sep 17 6,715.41, a small bounce then flat"},
   "record_section": "코스피 · 코스닥 기록",
   "record_kicker": "TODAY",
 
   "sector_section": "섹터별 등락",
   "sector_title": {"ko": "업종별 등락률", "en": "Sector Performance"},
-  "sector_sub": "KOSPI 주력 15개 업종 · 시가총액 가중",
+  "sector_sub": {"ko": "KOSPI 주력 15개 업종 · 시가총액 가중", "en": "KOSPI top 15 sectors · market-cap weighted"},
   "rank_kicker": "VALUE",
   "rank_title": {"ko": "거래대금 상위", "en": "Top Trading Value"},
-  "rank_sub": "코스피 개별 종목 기준",
-  "rank_unit": "단위 · 조원",
+  "rank_sub": {"ko": "코스피 개별 종목 기준", "en": "KOSPI individual stocks"},
+  "rank_unit": {"ko": "단위 · 조원", "en": "Unit · ₩ trillion"},
   "econ_kicker": "DATA",
   "econ_title": {"ko": "실적 · 지표 발표", "en": "Data & Earnings"},
-  "econ_sub": "지난 브리핑 이후 발표된 지표",
+  "econ_sub": {"ko": "지난 브리핑 이후 발표된 지표", "en": "Data released since the last brief"},
   "tech_section": "AI · 반도체 기술",
   "stories_section": "주요 소식",
 
@@ -83,7 +83,7 @@
         {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "822.18", "delta": "▲0.76%", "dir": "up", "sub_ko": "이틀 연속 상승", "sub_en": "Second straight gain"}
       ],
       "breadth": [
-        {"label_ko": "코스피 등락 종목수", "label_en": "KOSPI Advance/Decline", "up": 524, "flat": 73, "down": 345}
+        {"label_ko": "코스피 등락 종목수", "label_en": "KOSPI Advance/Decline", "up": 453, "flat": 62, "down": 398}
       ],
       "flows": {
         "label_ko": "코스피 투자자별 순매수 (억원)",
@@ -108,7 +108,7 @@
         {"label_ko": "유통·소비재", "label_en": "Retail/Staples", "value": 0.37},
         {"label_ko": "금융", "label_en": "Financials", "value": 0.31},
         {"label_ko": "건설·건자재", "label_en": "Construction", "value": 0.22},
-        {"label_ko": "반도체", "label_en": "Semiconductors", "value": 0.16},
+        {"label_ko": "반도체", "label_en": "Semiconductors", "value": -0.35},
         {"label_ko": "자동차", "label_en": "Autos", "value": 0.15},
         {"label_ko": "인터넷·SW", "label_en": "Internet/SW", "value": 0.08},
         {"label_ko": "통신서비스", "label_en": "Telecom", "value": -0.01},
@@ -117,8 +117,8 @@
         {"label_ko": "화학", "label_en": "Chemicals", "value": -0.46},
         {"label_ko": "2차전지", "label_en": "Battery", "value": -0.71}
       ],
-      "note_ko": "조선·방산이 수주 기대감에 가장 크게 올랐고, 대형 반도체주 약세에도 업종 지수는 소부장 강세로 보합권을 유지했다.",
-      "note_en": "Shipbuilding and defense led on order-book optimism; the chip sector index held roughly flat as equipment/materials names offset weakness in megacap chipmakers."
+      "note_ko": "조선·방산이 수주 기대감에 가장 크게 올랐다. 반도체는 삼성전자·SK하이닉스·삼성전기 등 대형주가 나란히 내리며 업종 전체가 약세로 마감했다.",
+      "note_en": "Shipbuilding and defense led on order-book optimism, while the chip sector closed lower as megacaps Samsung Electronics, SK Hynix and Samsung Electro-Mechanics all fell together."
     },
     {
       "title_ko": "거래대금 상위",
@@ -127,7 +127,7 @@
         {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "₩4.78T", "pct": -0.80},
         {"name_ko": "삼성전자", "name_en": "Samsung Electronics", "value": "₩2.92T", "pct": -0.39},
         {"name_ko": "삼성전자우", "name_en": "Samsung Elec. Pfd.", "value": "₩0.67T", "pct": -0.57},
-        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mech.", "value": "₩0.56T", "pct": -2.03},
+        {"name_ko": "삼성전기", "name_en": "Samsung Electro-Mech.", "value": "₩0.56T", "pct": -3.69},
         {"name_ko": "넷마블", "name_en": "Netmarble", "value": "₩0.38T", "pct": 0.59}
       ],
       "note_ko": "거래대금 상위는 여전히 반도체 대형주가 차지했지만 오늘은 나란히 약세로 마감했다.",
@@ -165,14 +165,14 @@
         {"headline_ko": "SK온-엘앤에프, 1,600억원 규모 LFP 양극재 공급계약", "headline_en": "SK On, L&F sign ₩160B LFP cathode supply deal", "body_ko": "SK온이 엘앤에프와 2026~2028년 3년간 ESS용 LFP 배터리에 쓰일 양극재를 공급받는 계약을 체결했다.", "body_en": "SK On signed a three-year deal with L&F to supply LFP cathode material for ESS batteries through 2028.", "src": "DART"},
         {"headline_ko": "DL건설 현장서 근로자 사망…중대재해 여부 조사 중", "headline_en": "Worker dies at DL Engineering site, probe into severe-accident status", "body_ko": "DL이앤씨 계열 DL건설의 충남 내포 신도시 아파트 건설현장에서 작업자가 숨진 채 발견됐다. 회사는 중대재해법 해당 여부가 아직 불분명하다고 밝혔다.", "body_en": "A worker was found dead at a DL Construction apartment site in Naepo, South Chungcheong; DL E&C says it is unclear whether it qualifies as a severe accident under the law.", "src": "DART"},
         {"headline_ko": "해태제과·크라운해태홀딩스, 회계기준 위반 검찰 고발", "headline_en": "Haitai, Crown Haitai Holdings referred to prosecutors over accounting violations", "body_ko": "해태제과식품과 모회사 크라운해태홀딩스가 회계처리기준 위반으로 검찰 고발 조치를 공시했다. 크라운해태홀딩스 주가는 이날 7%대 급락했다.", "body_en": "Haitai Confectionery & Foods and parent Crown Haitai Holdings disclosed a prosecutorial referral over accounting rule violations; Crown Haitai shares fell about 7% today.", "src": "DART"},
-        {"headline_ko": "美-이란 전쟁 200일…호르무즈·홍해 항행 불안 지속", "headline_en": "US-Iran war hits 200 days as Hormuz, Red Sea shipping risks persist", "body_ko": "미국과 이란의 전쟁이 200일째 이어지며 국제유가가 100달러대를 유지하고 있다. 호르무즈 해협과 홍해의 항행 불안도 계속되고 있다.", "body_en": "The US-Iran war reached its 200th day, keeping crude above $100 a barrel as shipping risks continue around the Strait of Hormuz and the Red Sea.", "src": "연합뉴스 등"},
-        {"headline_ko": "美 금리인상發 도미노…홍콩·사우디도 금리 올려", "headline_en": "Fed hike triggers rate dominoes in Hong Kong, Saudi Arabia", "body_ko": "미 연준의 기준금리 인상 직후 홍콩과 사우디아라비아 중앙은행이 잇따라 금리를 인상하며 글로벌 긴축 랠리가 확산했다.", "body_en": "Hong Kong and Saudi Arabia's central banks raised rates shortly after the Fed's hike, extending a global tightening wave.", "src": "조선비즈 등"}
+        {"headline_ko": "美-이란 전쟁 200일…호르무즈·홍해 항행 불안 지속", "headline_en": "US-Iran war hits 200 days as Hormuz, Red Sea shipping risks persist", "body_ko": "미국과 이란의 전쟁이 200일째 이어지며 국제유가가 100달러대를 유지하고 있다. 호르무즈 해협과 홍해의 항행 불안도 계속되고 있다.", "body_en": "The US-Iran war reached its 200th day, keeping crude above $100 a barrel as shipping risks continue around the Strait of Hormuz and the Red Sea.", "src": "Yonhap"},
+        {"headline_ko": "美 금리인상發 도미노…홍콩·사우디도 금리 올려", "headline_en": "Fed hike triggers rate dominoes in Hong Kong, Saudi Arabia", "body_ko": "미 연준의 기준금리 인상 직후 홍콩과 사우디아라비아 중앙은행이 잇따라 금리를 인상하며 글로벌 긴축 랠리가 확산했다.", "body_en": "Hong Kong and Saudi Arabia's central banks raised rates shortly after the Fed's hike, extending a global tightening wave.", "src": "Chosun Biz"}
       ]
     }
   ],
 
   "schedule_kicker": "NEXT",
-  "schedule_sub": "지금부터 내일 오전 8시까지",
+  "schedule_sub": {"ko": "지금부터 내일 오전 8시까지", "en": "From now until 8 AM tomorrow"},
   "schedule_title_ko": "주요 일정",
   "schedule_title_en": "Key Schedule",
   "market_hours": {
@@ -182,7 +182,7 @@
     "lines_en": ["Regular session 10:30 PM ~ 5:00 AM KST (DST)", "Pre-market 5:00 PM~10:30 PM · After-hours 5:00 AM~9:00 AM"]
   },
   "schedule": [
-    {"time": "20:00", "title_ko": "영란은행(BOE) 기준금리 발표", "title_en": "Bank of England rate decision", "detail_ko": "3.75% 동결 유력 · 7월 표결은 찬성 6·반대 3", "detail_en": "Hold at 3.75% expected · July vote was 6-3 to hold", "importance": "high"},
+    {"time": "20:00", "title_ko": "영란은행(BOE) 기준금리 발표", "title_en": "Bank of England rate decision", "detail_ko": "3.75% 동결 확정 · 표결 찬성 6·반대 3", "detail_en": "Held at 3.75% · vote 6-3 to hold", "importance": "high"},
     {"time": "21:30", "title_ko": "美 주간 신규실업수당청구", "title_en": "US Initial Jobless Claims", "detail_ko": "예상 20.8만 · 이전 20.6만", "detail_en": "Est 208K · Prev 206K", "importance": "high"},
     {"time": "21:30", "title_ko": "美 필라델피아 연은 제조업지수", "title_en": "Philadelphia Fed Manufacturing Survey", "detail_ko": "예상 30.5 · 이전 47.4 — 큰 폭 둔화 전망", "detail_en": "Est 30.5 · Prev 47.4, a sharp slowdown expected", "importance": "mid"},
     {"time": "21:30", "title_ko": "美 8월 신규주택착공·건축허가", "title_en": "US Aug Housing Starts & Building Permits", "detail_ko": "착공 예상 +1.3% · 허가 예상 +1.4%", "detail_en": "Starts est +1.3% · Permits est +1.4%", "importance": "mid"},
@@ -201,7 +201,7 @@
     "3": "A dark financial data wall with a Korean stock index line chart glowing amber, subtle candlestick shapes in the background, moody blue-black palette"
   },
 
-  "caption_ko": "코스피는 매파적 FOMC 여파에도 6,715선을 지켰습니다. 조선·방산·금융이 방어했지만 반도체 대형주는 약세였고, 외국인은 7거래일째 팔았습니다. 국제유가는 미-이란 전쟁 200일째에도 100달러를 지켰고 원/달러는 1,384원대로 급등했습니다. 저녁 브리핑으로 오늘 하루를 정리합니다. 팔로우·저장해두고 내일 아침 브리핑도 확인하세요. #luckyon브리핑 #코스피 #코스닥 #증시마감 #미국연준 #금리인상 #원달러환율 #국제유가 #반도체 #조선주 #방산주 #고려아연 #투자 #경제뉴스 #주식\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
-  "caption_en": "KOSPI held the 6,715 line despite a hawkish Fed. Shipbuilders, defense and financials cushioned the drop while megacap chipmakers slipped, and foreigners sold for a 7th straight day. Crude stayed above $100 as the US-Iran war hit day 200, and the won weakened past 1,384. Follow and save for tomorrow morning's brief. #luckyonbriefing #KOSPI #KOSDAQ #StockMarket #FederalReserve #RateHike #USDKRW #OilPrices #Semiconductors #Shipbuilding #DefenseStocks #KoreaZinc #Investing #MarketNews\n☀️ Next brief — 8 AM KST, US close wrap-up",
+  "caption_ko": "코스피는 매파적 FOMC 여파에도 6,715선을 지켰습니다. 조선·방산·금융이 방어했지만 반도체 대형주는 약세였고, 외국인은 7거래일째 팔았습니다. 국제유가는 미-이란 전쟁 200일째에도 100달러를 지켰고 원/달러는 1,382원대로 급등했습니다. 저녁 브리핑으로 오늘 하루를 정리합니다. 팔로우·저장해두고 내일 아침 브리핑도 확인하세요. #luckyon브리핑 #코스피 #코스닥 #증시마감 #미국연준 #금리인상 #원달러환율 #국제유가 #반도체 #조선주 #방산주 #고려아연 #투자 #경제뉴스 #주식\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "KOSPI held the 6,715 line despite a hawkish Fed. Shipbuilders, defense and financials cushioned the drop while megacap chipmakers slipped, and foreigners sold for a 7th straight day. Crude stayed above $100 as the US-Iran war hit day 200, and the won weakened past 1,382. Follow and save for tomorrow morning's brief. #luckyonbriefing #KOSPI #KOSDAQ #StockMarket #FederalReserve #RateHike #USDKRW #OilPrices #Semiconductors #Shipbuilding #DefenseStocks #KoreaZinc #Investing #MarketNews\n☀️ Next brief — 8 AM KST, US close wrap-up",
   "sources": ["KRX (FinanceDataReader mirror)", "Yahoo Finance", "FMP", "DART", "한국은행 ECOS", "관세청", "CNN Fear & Greed Index", "연합뉴스", "KBS", "뉴스핌", "이투데이", "조선비즈", "매일경제"]
 }
