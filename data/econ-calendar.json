@@ -1,71 +1,11 @@
 {
-  "fetchedAt": "2026-09-16T15:24:31Z",
+  "fetchedAt": "2026-09-17T00:35:48Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-14T15:24:31Z",
-    "to": "2026-09-30T15:24:31Z"
+    "from": "2026-09-15T00:35:48Z",
+    "to": "2026-10-01T00:35:48Z"
   },
   "events": [
-    {
-      "at": "2026-09-14T15:30:00Z",
-      "country": "US",
-      "name": "3-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.8,
-      "actual": 3.97,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T15:30:00Z",
-      "country": "US",
-      "name": "6-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.89,
-      "actual": 4.06,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T15:35:00Z",
-      "country": "EMU",
-      "name": "ECB's President Lagarde speech",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-09-14T21:00:00Z",
-      "country": "KR",
-      "name": "Export Price Growth (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 49.1,
-      "actual": 42.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T21:00:00Z",
-      "country": "KR",
-      "name": "Import Price Growth (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 18.7,
-      "actual": 15.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-09-14T23:55:00Z",
-      "country": "KR",
-      "name": "Trade Balance",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 34.75,
-      "actual": 34.79,
-      "unit": "$"
-    },
     {
       "at": "2026-09-15T01:30:00Z",
       "country": "CN",
@@ -533,7 +473,7 @@
       "impact": "HIGH",
       "consensus": 4,
       "previous": 3.75,
-      "actual": null,
+      "actual": 4,
       "unit": "%"
     },
     {
@@ -563,7 +503,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.6,
-      "actual": null,
+      "actual": 4.1,
       "unit": "%"
     },
     {
@@ -573,7 +513,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.4,
-      "actual": null,
+      "actual": 3.9,
       "unit": "%"
     },
     {
@@ -583,7 +523,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.1,
-      "actual": null,
+      "actual": 3.6,
       "unit": "%"
     },
     {
@@ -593,7 +533,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.8,
-      "actual": null,
+      "actual": 4.1,
       "unit": "%"
     },
     {
@@ -603,7 +543,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.1,
-      "actual": null,
+      "actual": 3.2,
       "unit": "%"
     },
     {
@@ -623,7 +563,7 @@
       "impact": "LOW",
       "consensus": 146.3,
       "previous": 172.7,
-      "actual": null,
+      "actual": -27.9,
       "unit": "$"
     },
     {
@@ -633,7 +573,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 133.5,
-      "actual": null,
+      "actual": 83.7,
       "unit": "$"
     },
     {
@@ -2603,6 +2543,166 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T16:00:00Z",
+      "country": "CN",
+      "name": "National Day",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T16:00:00Z",
+      "country": "US",
+      "name": "Grain Stock Report",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T20:05:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "BoJ Summary of Opinions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Tankan Large All Industry Capex",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 11.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Tankan Large Manufacturing Index",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 22,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Tankan Large Manufacturing Outlook",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 17,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Tankan Non - Manufacturing Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 37,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:00Z",
+      "country": "JP",
+      "name": "Tankan Non - Manufacturing Outlook",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 28,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-09-30T23:50:05Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-09-30T23:50:05Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-10-01T00:00:00Z",
+      "country": "KR",
+      "name": "Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 34.79,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-10-01T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-01T00:30:00Z",
+      "country": "KR",
+      "name": "S&P Global Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 52.3,
       "actual": null,
       "unit": null
     }
