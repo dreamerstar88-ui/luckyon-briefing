@@ -52,13 +52,13 @@
       "나스닥종합이 1.69%, S&P 500이 1.14% 오르며 3대 지수가 하루 만에 반등했다. 필라델피아 반도체지수는 3.14% 급등했다.",
       "로이터통신이 인텔과 SK하이닉스가 미국 내 메모리 반도체 생산 협력을 논의 중이라고 보도하며 인텔이 7.67%, 마이크론이 5.50% 급등했다. 전날 매파적 FOMC로 5%대까지 올랐던 美 10년물 금리가 4.94%로, 사우디 동서송유관 공급 우려가 완화되며 WTI도 101달러대로 내려온 것도 위험자산 선호를 도왔다.",
       "거래대금 상위 299종목 중 212개가 올랐고 79개만 내렸다. 금액으로는 오른 종목에 $330.17B, 내린 종목에 $55.53B가 몰려 자금도 뚜렷하게 상승 쪽으로 쏠렸다.",
-      "다만 커뮤니케이션(XLC, −0.58%)과 금융(XLF, −0.09%) 업종은 약세를 보였다. 국내 증시 야간선물은 3%, MSCI 한국지수는 3.90% 올라 오늘 코스피도 반도체 온기를 받을 가능성이 크다."
+      "다만 커뮤니케이션(XLC, −0.58%)과 금융(XLF, −0.09%) 업종은 약세를 보였다. 간밤 미국 반도체 랠리에 국내 역외 지표도 강세를 보여, 오늘 코스피도 그 온기를 받을 가능성이 있다."
     ],
     "lines_en": [
       "The Nasdaq Composite rose 1.69% and the S&P 500 gained 1.14%, both rebounding after a rough session. The Philadelphia Semiconductor Index jumped 3.14%.",
       "Reuters reported Intel and SK Hynix are discussing US memory-chip production cooperation, sending Intel up 7.67% and Micron up 5.50%. The US 10-year yield eased to 4.94% from a hawkish-FOMC spike near 5%, and WTI slipped near $101 as Saudi pipeline supply fears eased — both helped revive risk appetite.",
       "Among the 299 most-traded names, 212 rose against 79 decliners. By value, $330.17B flowed into gainers versus $55.53B into decliners — money clearly favored the upside.",
-      "Communication Services (XLC, -0.58%) and Financials (XLF, -0.09%) lagged. Korea's KOSPI night futures rose 3% and the MSCI Korea index jumped 3.90%, hinting today's KOSPI could catch the same chip tailwind."
+      "Communication Services (XLC, -0.58%) and Financials (XLF, -0.09%) lagged. Korea's offshore indicators also firmed on the overnight chip rally, hinting today's KOSPI could catch some of the same tailwind."
     ]
   },
   "markets": [
@@ -113,7 +113,10 @@
     {
       "label": "USD/KRW",
       "value": "1,382",
-      "delta": "▲13.6원",
+      "delta": {
+        "ko": "▲13.6원",
+        "en": "+₩13.6"
+      },
       "dir": "up",
       "note_ko": "9/17 오후 3시 30분 서울외환시장 고시가 · 장 열리기 전",
       "note_en": "Sep 17 3:30 PM KST Seoul fixing · before the open"
@@ -553,8 +556,8 @@
         {
           "headline_ko": "사우디, 후티에 첫 탄도미사일 실전 발사…원유는 우회 공급으로 진정",
           "headline_en": "Saudi Fires First Combat Ballistic Missile at Houthis as Oil Supply Fears Ease",
-          "body_ko": "예멘 후티 반군이 자체 제작 지대공미사일로 사우디 F-15 전투기를 격추하자, 사우디는 중국산 둥펑-15 탄도미사일로 처음 맞대응했다. 앞선 드론 공격으로 멈췄던 사우디 동서송유관은 수일 내 처리 능력 절반 복구를 추진 중이고 오만 소하르항을 통한 우회 공급도 시작되며, WTI는 이틀 연속 하락해 101달러대로 내려왔다.",
-          "body_en": "After Houthi rebels downed a Saudi F-15 with a homemade surface-to-air missile, Saudi Arabia responded with its first combat use of a Chinese-made DF-15 ballistic missile. Saudi aims to restore roughly half of its drone-damaged East-West pipeline's capacity within days and has begun rerouting supply via Oman's Sohar port, helping WTI fall for a second day to near $101."
+          "body_ko": "예멘 후티 반군이 자체 제작 지대공미사일로 사우디 F-15 전투기를 격추했고, 사우디는 같은 날 중국산 둥펑-15 탄도미사일을 후티를 향해 처음으로 실전 발사했다. 앞선 드론 공격으로 멈췄던 사우디 동서송유관은 수일 내 처리 능력 절반 복구를 추진 중이고 오만 소하르항을 통한 우회 공급도 시작되며, WTI는 이틀 연속 하락해 101달러대로 내려왔다.",
+          "body_en": "Houthi rebels downed a Saudi F-15 with a homemade surface-to-air missile, and Saudi Arabia carried out its first combat use of a Chinese-made DF-15 ballistic missile against the Houthis the same day. Saudi aims to restore roughly half of its drone-damaged East-West pipeline's capacity within days and has begun rerouting supply via Oman's Sohar port, helping WTI fall for a second day to near $101."
         },
         {
           "headline_ko": "연준 점도표, 물가 둔화 전망에도 내년 추가 인상 시사",
@@ -563,10 +566,10 @@
           "body_en": "Fed Chair Kevin Warsh said August PCE inflation likely cooled further based on recent CPI and PPI data, even as the new dot plot signaled another possible rate hike next year. The latest official PCE reading (July) stood at 3.7% YoY (3.3% core); the August print is due Sept 30."
         },
         {
-          "headline_ko": "코스피 야간선물 3%·MSCI 한국지수 3.90% 급등…반도체 온기 예고",
-          "headline_en": "KOSPI Night Futures +3%, MSCI Korea +3.90% on Overnight Chip Rally",
-          "body_ko": "간밤 미국 반도체 랠리에 코스피200 야간선물이 3% 올랐고 MSCI 한국지수도 3.90% 급등했다. 전날 매파적 FOMC와 외국인 매도(약 2조3천억원)로 6,715선까지 밀렸던 코스피가 오늘은 반등을 시도할 것이라는 전망이 나온다.",
-          "body_en": "KOSPI 200 night futures rose 3% and the MSCI Korea index jumped 3.90% overnight on the US chip rally. After Thursday's hawkish-FOMC selloff and roughly ₩2.3 trillion of foreign selling pulled KOSPI down near 6,715, traders expect a rebound attempt today."
+          "headline_ko": "간밤 美 반도체 랠리, 국내 역외 지표에도 온기",
+          "headline_en": "Overnight US Chip Rally Warms Korea's Offshore Indicators",
+          "body_ko": "간밤 미국 반도체 랠리에 국내 역외 지표도 강세를 보였다는 보도가 나왔다. 전날 매파적 FOMC와 외국인 매도(약 2조3천억원)로 6,715선까지 밀렸던 코스피가 오늘은 반등을 시도할 것이라는 전망이 나온다.",
+          "body_en": "Reports said Korea's offshore indicators also firmed overnight on the US chip rally. After Thursday's hawkish-FOMC selloff and roughly ₩2.3 trillion of foreign selling pulled KOSPI down near 6,715, some traders expect a rebound attempt today."
         },
         {
           "headline_ko": "긴축 고삐 죄는 연준에 '코스피, 내년 상반기까지 박스권' 전망도",
@@ -599,7 +602,7 @@
   },
   "schedule": [
     {
-      "time": "9/18 (금) 12:00",
+      "time": "9/18 12:00",
       "title_ko": "일본은행(BOJ) 금리 결정",
       "title_en": "BOJ Interest Rate Decision",
       "detail_ko": "시장은 1.00%→1.25% 인상 전망 · 15:30 총재 회견",
@@ -607,7 +610,7 @@
       "importance": "high"
     },
     {
-      "time": "9/18 (금) 08:30",
+      "time": "9/18 08:30",
       "title_ko": "일본 8월 전국 소비자물가 (전년비)",
       "title_en": "Japan Aug National CPI (YoY)",
       "detail_ko": "이전 1.9% · BOJ 결정 직전 발표",
@@ -615,7 +618,7 @@
       "importance": "mid"
     },
     {
-      "time": "9/21 (월)",
+      "time": "9/21",
       "title_ko": "중국인민은행(PBoC) 대출우대금리 결정",
       "title_en": "PBoC Loan Prime Rate Decision",
       "detail_ko": "1년 만기 기준 이전 3.00%",
@@ -623,7 +626,7 @@
       "importance": "mid"
     },
     {
-      "time": "9/23 (수) 06:00",
+      "time": "9/23 06:00",
       "title_ko": "한국 9월 소비자심리지수",
       "title_en": "Korea Sep Consumer Sentiment Index",
       "detail_ko": "한국은행 발표 · 이전 104.5",
@@ -631,7 +634,7 @@
       "importance": "mid"
     },
     {
-      "time": "9/23 (수)",
+      "time": "9/23",
       "title_ko": "유로존·독일 9월 PMI 속보치",
       "title_en": "Eurozone & Germany Sep Flash PMIs",
       "detail_ko": "유로존 종합 PMI 이전 52.0 · 확장 지속 여부 주목",
@@ -639,7 +642,7 @@
       "importance": "mid"
     },
     {
-      "time": "9/24~25 (목~금)",
+      "time": "9/24~25",
       "title_ko": "한국 추석 연휴, 코스피·코스닥 휴장",
       "title_en": "Korea Chuseok Holiday — KOSPI/KOSDAQ Closed",
       "detail_ko": "주말과 이어져 나흘 연휴 · 28일(월) 개장",
@@ -647,7 +650,7 @@
       "importance": "high"
     },
     {
-      "time": "9/24 (목)",
+      "time": "9/24",
       "title_ko": "코스트코 회계연도 4분기 실적",
       "title_en": "Costco FY Q4 Earnings",
       "detail_ko": "EPS 컨센서스 $6.53 · 장전 발표",
@@ -659,8 +662,8 @@
   "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
   "outro_tagline_ko": "",
   "outro_tagline_en": "",
-  "caption_ko": "📊 luckyon 브리핑 · 2026.9.18(금) 아침\n\n나스닥이 1.69%, S&P 500이 1.14% 오르며 3대 지수가 하루 만에 반등했습니다. 필라델피아 반도체지수는 3.14% 급등했습니다.\n\n로이터통신이 인텔과 SK하이닉스가 미국 내 메모리 생산 협력을 논의 중이라고 보도하며 인텔이 7.67%, 마이크론이 5.50% 급등했습니다. 전날 매파적 FOMC로 5%대까지 올랐던 美 10년물 금리는 4.94%로, 국제유가도 사우디 공급 우려 완화에 101달러대로 내려왔습니다.\n\n간밤 코스피200 야간선물은 3%, MSCI 한국지수는 3.90% 올라 오늘 국내 증시도 반도체 온기를 받을 가능성이 있습니다.\n\n🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#나스닥 #인텔 #SK하이닉스 #마이크론 #엔비디아 #반도체 #코스피 #미국증시 #투자 #luckyon",
-  "caption_en": "📊 luckyon Briefing · Fri, Sep 18, 2026 Morning\n\nThe Nasdaq rose 1.69% and the S&P 500 gained 1.14%, both rebounding in a single session. The Philadelphia Semiconductor Index jumped 3.14%.\n\nReuters reported Intel and SK Hynix are discussing US memory-chip production cooperation, sending Intel up 7.67% and Micron up 5.50%. The US 10-year yield eased to 4.94% from a hawkish-FOMC spike near 5%, and oil slipped near $101 as Saudi supply fears eased.\n\nKOSPI 200 night futures rose 3% and the MSCI Korea index jumped 3.90% overnight, hinting Korea's market could catch the same tailwind today.\n\n🌙 Next brief — 9 PM KST tonight, before the US open.\n\n#Nasdaq #Intel #SKHynix #Micron #Nvidia #Semiconductors #KOSPI #USStocks #Investing #luckyon",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.9.18(금) 아침\n\n나스닥이 1.69%, S&P 500이 1.14% 오르며 3대 지수가 하루 만에 반등했습니다. 필라델피아 반도체지수는 3.14% 급등했습니다.\n\n로이터통신이 인텔과 SK하이닉스가 미국 내 메모리 생산 협력을 논의 중이라고 보도하며 인텔이 7.67%, 마이크론이 5.50% 급등했습니다. 전날 매파적 FOMC로 5%대까지 올랐던 美 10년물 금리는 4.94%로, 국제유가도 사우디 공급 우려 완화에 101달러대로 내려왔습니다.\n\n간밤 국내 역외 지표도 함께 강세를 보여 오늘 국내 증시도 반도체 온기를 받을 가능성이 있습니다.\n\n🌙 다음 브리핑은 오늘 밤 9시, 미국장 개장 전입니다.\n\n#나스닥 #인텔 #SK하이닉스 #마이크론 #엔비디아 #반도체 #코스피 #미국증시 #투자 #luckyon",
+  "caption_en": "📊 luckyon Briefing · Fri, Sep 18, 2026 Morning\n\nThe Nasdaq rose 1.69% and the S&P 500 gained 1.14%, both rebounding in a single session. The Philadelphia Semiconductor Index jumped 3.14%.\n\nReuters reported Intel and SK Hynix are discussing US memory-chip production cooperation, sending Intel up 7.67% and Micron up 5.50%. The US 10-year yield eased to 4.94% from a hawkish-FOMC spike near 5%, and oil slipped near $101 as Saudi supply fears eased.\n\nKorea's offshore indicators also firmed overnight, hinting Korea's market could catch some of the same tailwind today.\n\n🌙 Next brief — 9 PM KST tonight, before the US open.\n\n#Nasdaq #Intel #SKHynix #Micron #Nvidia #Semiconductors #KOSPI #USStocks #Investing #luckyon",
   "sources": [
     "Yahoo Finance",
     "FMP (Treasury Rates)",
