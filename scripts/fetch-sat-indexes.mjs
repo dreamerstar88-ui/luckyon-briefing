@@ -39,8 +39,8 @@ const SPEC = [
   { key: 'IXIC', market: 'us', symbol: '^IXIC', name_ko: '나스닥',   name_en: 'Nasdaq' },
   { key: 'GSPC', market: 'us', symbol: '^GSPC', name_ko: 'S&P 500',  name_en: 'S&P 500' },
   { key: 'DJI',  market: 'us', symbol: '^DJI',  name_ko: '다우',     name_en: 'Dow' },
-  { key: 'KS11', market: 'kr', symbol: 'ks11',  name_ko: '코스피',   name_en: 'KOSPI' },
-  { key: 'KQ11', market: 'kr', symbol: 'kq11',  name_ko: '코스닥',   name_en: 'KOSDAQ' },
+  { key: 'KS11', market: 'kr', symbol: 'ks11',  yf: '^KS11', name_ko: '코스피',   name_en: 'KOSPI' },
+  { key: 'KQ11', market: 'kr', symbol: 'kq11',  yf: '^KQ11', name_ko: '코스닥',   name_en: 'KOSDAQ' },
 ];
 
 function kstToday() {
@@ -101,25 +101,45 @@ async function fetchKr(spec, asOf) {
     .filter(b => b.date && b.o !== null && b.h !== null && b.l !== null && b.c !== null)
     .sort((a, b) => a.date.localeCompare(b.date))
     .filter(b => b.date <= asOf);
-  return bars.length ? bars : null;
+  if (!bars.length) return null;
+
+  // ── 미러가 asOf 까지 안 왔으면 Yahoo 로 «뒤쪽만» 메운다 (2026-09-19 sat 에서 발견).
+  // FDR 미러는 하루 이상 밀리는 일이 있는데, 그대로 두면 목요일 종가가 금요일 종가인 척
+  // 실려 «주간 등락률»이 통째로 틀린다 (그날 실측: 코스피 주간 -2.69% 로 나왔으나 금요일
+  // +2.66% 반등을 반영한 실제는 -0.23%). 기준선은 미러로 유지하고 없는 최근 봉만 붙인다 —
+  // 러너에서는 Yahoo 가 막히므로 실패하면 조용히 미러만 쓰고 아래 stale 경고로 드러낸다.
+  if (spec.yf && bars[bars.length - 1].date < asOf) {
+    const last = bars[bars.length - 1].date;
+    const top = await fetchYahooBars(spec.yf, asOf, '1mo');
+    if (top) for (const b of top) if (b.date > last) bars.push(b);
+  }
+  return bars;
 }
 
-/* ───────── 미국: Yahoo chart API ───────── */
-async function fetchUs(spec, asOf) {
-  const text = await get(`${YF}/${encodeURIComponent(spec.symbol)}?range=2y&interval=1d`,
+/* ───────── Yahoo chart API (미국 전체 · 한국은 미러가 밀렸을 때만) ───────── */
+async function fetchYahooBars(symbol, asOf, range = '2y') {
+  const text = await get(`${YF}/${encodeURIComponent(symbol)}?range=${range}&interval=1d`,
                          { Accept: 'application/json' });
   if (!text) return null;
   let j; try { j = JSON.parse(text); } catch { return null; }
   const r = j?.chart?.result?.[0];
   const q = r?.indicators?.quote?.[0];
   if (!r?.timestamp || !q) return null;
+  // 마지막 봉의 close 는 장 마감 뒤에도 null 로 오는 일이 있다(문서화된 Yahoo 함정).
+  // 그 한 칸만 meta.regularMarketPrice 로 메운다 — o/h/l 은 배열에 정상적으로 들어 있다.
+  const n = r.timestamp.length - 1;
   const bars = r.timestamp.map((ts, i) => ({
     // Yahoo 의 일봉 타임스탬프는 거래소 개장 시각이다. 날짜만 쓰므로 UTC 로 잘라도 안전하다.
     date: new Date(ts * 1000).toISOString().slice(0, 10),
-    o: q.open?.[i], h: q.high?.[i], l: q.low?.[i], c: q.close?.[i],
+    o: q.open?.[i], h: q.high?.[i], l: q.low?.[i],
+    c: (i === n && q.close?.[i] == null) ? r.meta?.regularMarketPrice : q.close?.[i],
   })).filter(b => [b.o, b.h, b.l, b.c].every(v => typeof v === 'number' && Number.isFinite(v)))
      .filter(b => b.date <= asOf);
   return bars.length ? bars : null;
+}
+
+async function fetchUs(spec, asOf) {
+  return fetchYahooBars(spec.symbol, asOf);
 }
 
 /* ───────── 지표 계산 ───────── */
@@ -206,10 +226,14 @@ function build(spec, bars) {
 
 /* ───────── 실행 ───────── */
 const asOf = argDate || kstToday();
-const indexes = [], missing = [];
+const indexes = [], missing = [], stale = [];
 for (const spec of SPEC) {          // 순차 — 동시 요청은 Yahoo 429 를 부른다
   const bars = spec.market === 'kr' ? await fetchKr(spec, asOf) : await fetchUs(spec, asOf);
   if (!bars || bars.length < 30) { missing.push(spec.key); continue; }
+  // asOf 에 못 미치는 마지막 봉을 그대로 실으면 «주간 등락률»이 하루치 틀린 채 나간다.
+  // 빠뜨리지 않고 드러내서 세션이 note 에 기준일을 밝히거나 값을 바로잡게 한다.
+  const lastBar = bars[bars.length - 1].date;
+  if (lastBar < asOf) stale.push({ key: spec.key, lastBar });
   indexes.push(build(spec, bars));
 }
 
@@ -223,6 +247,7 @@ const out = {
     us: 'Yahoo Finance chart API v8 — 세션에서는 되고 Actions 러너에서는 막힌다(클라우드 IP 차단)',
   },
   missing,
+  stale,          // 마지막 봉이 asOf 보다 이른 지수 — close·wk 가 그 날짜 기준이다
   note: 'indexes[] 는 FORMAT_BRIEFING.md §2-A 스키마와 필드가 같다. note_ko/note_en 은 세션이 채운다. _check 는 대조용이라 콘텐츠 JSON 에 옮기지 않는다.',
   indexes,
 };
@@ -232,6 +257,11 @@ if (missing.length) {
   process.stderr.write(`\n⚠ 못 받은 지수: ${missing.join(', ')} — 이 지수는 카드에서 빠진다\n`);
   // 일부만 빠진 것은 실패로 보지 않는다. 빈 파일로 덮어써 낡은 데이터까지 잃는 것이 더 나쁘다.
   if (indexes.length === 0) process.exit(1);
+}
+if (stale.length) {
+  process.stderr.write(`\n⚠ 기준일(${asOf})까지 못 온 지수: `
+    + stale.map(s => `${s.key}=${s.lastBar}`).join(', ')
+    + `\n  → 이 지수의 close·wk 는 그 날짜 기준이다. 카드에 그대로 쓰지 말고 값을 보정하거나 note 에 기준일을 밝힌다.\n`);
 }
 process.stderr.write(`\n✅ ${indexes.length}/${SPEC.length}개 지수 · 기준 ${asOf} · 봉 ${BARS}개\n`);
 for (const x of indexes) {
