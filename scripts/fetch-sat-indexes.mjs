@@ -103,15 +103,24 @@ async function fetchKr(spec, asOf) {
     .filter(b => b.date <= asOf);
   if (!bars.length) return null;
 
-  // ── 미러가 asOf 까지 안 왔으면 Yahoo 로 «뒤쪽만» 메운다 (2026-09-19 sat 에서 발견).
+  // ── 미러가 asOf 까지 안 왔으면 Yahoo 로 뒤쪽을 덮어쓴다 (2026-09-19 sat 에서 발견).
   // FDR 미러는 하루 이상 밀리는 일이 있는데, 그대로 두면 목요일 종가가 금요일 종가인 척
   // 실려 «주간 등락률»이 통째로 틀린다 (그날 실측: 코스피 주간 -2.69% 로 나왔으나 금요일
-  // +2.66% 반등을 반영한 실제는 -0.23%). 기준선은 미러로 유지하고 없는 최근 봉만 붙인다 —
+  // +2.66% 반등을 반영한 실제는 -0.23%).
+  //
+  // 그리고 «없는 봉만 붙이는» 것으로는 모자란다 — **미러의 마지막 행 자체가 장중 부분
+  // 스냅샷일 수 있다.** 같은 날 실측: 미러의 9/17 코스피가 종가 6,724.34·거래량 1.20억
+  // 이었는데 확정치는 6,715.41·2.21억이었다(코스닥도 821.67 vs 822.18). 그 행을 남겨 두면
+  // 카드 ③ 봉차트의 목요일 봉과 MA20 이 틀리고, 본문이 쓰는 금요일 기준 등락률과 같은
+  // 회차 안에서 어긋난다. 그래서 겹치는 구간은 **미러를 버리고 Yahoo 를 쓴다.**
   // 러너에서는 Yahoo 가 막히므로 실패하면 조용히 미러만 쓰고 아래 stale 경고로 드러낸다.
   if (spec.yf && bars[bars.length - 1].date < asOf) {
-    const last = bars[bars.length - 1].date;
+    const from = bars[bars.length - 1].date;          // 이 날짜부터가 의심 구간이다
     const top = await fetchYahooBars(spec.yf, asOf, '1mo');
-    if (top) for (const b of top) if (b.date > last) bars.push(b);
+    if (top && top.some(b => b.date >= from)) {
+      const kept = bars.filter(b => b.date < from);
+      return kept.concat(top.filter(b => b.date >= from));
+    }
   }
   return bars;
 }
