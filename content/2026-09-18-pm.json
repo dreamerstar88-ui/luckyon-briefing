@@ -1,0 +1,211 @@
+{
+  "date": "2026-09-18",
+  "session": "pm",
+  "dateLabel_ko": "9월 18일 (금) 저녁",
+  "dateLabel_en": "Sep 18 (Fri) PM",
+
+  "headline_ko": "코스피 2.66%↑ 6,894 마감…BOJ 31년 만의 최고 금리",
+  "headline_en": "KOSPI Jumps 2.66% to 6,894 as BOJ Hikes to a 31-Year High",
+  "headline_sub_ko": "외국인 8거래일 만에 순매수 전환, 엔화는 오히려 약세",
+  "headline_sub_en": "Foreigners Return After 8 Sessions as the Yen Weakens Despite the Hike",
+  "cover_kicker": {"ko": "오늘 한국장 마감 · 9/18", "en": "Korea Close · Sep 18"},
+  "cover_facts": [
+    ["shield", {"ko": "코스피 +2.66%·코스닥 +0.60%", "en": "KOSPI +2.66% · KOSDAQ +0.60%"},
+               {"ko": "6,894.23 / 827.12 · 반도체 대형주가 지수 견인", "en": "6,894.23 / 827.12 pts · megacap chips led the index"}],
+    ["rate", {"ko": "BOJ 기준금리 1.00%→1.25% 인상", "en": "BOJ Hikes Rate to 1.25% from 1.00%"},
+              {"ko": "9명 중 7명 찬성 · 1995년 이후 최고 수준", "en": "7-2 vote · highest level since 1995"}],
+    ["globe", {"ko": "WTI 100달러 붕괴 · 원/달러 1,383원대", "en": "WTI Dips Below $100 · Won Near 1,383"},
+               {"ko": "사우디 송유관 복구 기대 · 엔저에 원화도 약세", "en": "Saudi pipeline hopes · won weakens along with yen"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "코스피가 2.66% 오른 6,894.23에 마감했고 코스닥도 0.60% 올라 4거래일 연속 상승했다. 간밤 미국 반도체 랠리가 국내 증시로 이어졌다.",
+      "일본은행이 기준금리를 1.00%에서 1.25%로 올려 1995년 이후 최고 수준을 기록했다. 우에다 총재가 회견에서 속도조절을 시사하며 엔화는 오히려 약세를 보였고, 원/달러 환율도 7거래일 연속 올라 1,383원대를 기록했다.",
+      "외국인이 8거래일 만에 코스피를 순매수(약 4,300억원)로 전환했고 기관도 1조 5,000억원 넘게 사들였다. 반면 개인은 3조 5,900억원을 순매도하며 차익 실현에 나섰다.",
+      "다만 상승 종목(407개)보다 하락 종목(465개)이 더 많아 반도체 등 일부 대형주 쏠림이 뚜렷했다. 국제유가는 사우디 송유관 복구 기대에 사흘째 내려 WTI가 장중 100달러 밑으로 떨어졌다."
+    ],
+    "lines_en": [
+      "KOSPI closed up 2.66% at 6,894.23 and KOSDAQ rose 0.60% for a 4th straight gain, as the overnight US chip rally carried into Korea's session.",
+      "The Bank of Japan raised its policy rate to 1.25% from 1.00%, the highest since 1995. But Governor Ueda signaled a slower pace ahead, and the yen weakened instead of strengthening — the won also fell for a 7th straight session to near 1,383 per dollar.",
+      "Foreign investors flipped to net buying (about ₩430B) after 8 sessions, and institutions bought over ₩1.5 trillion. Retail investors sold ₩3.59 trillion, taking profits.",
+      "Still, decliners (465) outnumbered advancers (407), showing the rally was concentrated in chip megacaps. Crude fell for a third day on hopes Saudi Arabia's pipeline will be restored, with WTI briefly dipping below $100 intraday."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "29,833.25", "delta": "▲1.31%", "dir": "up", "note_ko": "나스닥 선물(NQ) · 정규장 개장 전", "note_en": "Nasdaq futures (NQ) · ahead of the open"},
+    {"label": "S&P 500", "value": "7,717.50", "delta": "▲1.01%", "dir": "up", "note_ko": "S&P 500 선물(ES) · 정규장 개장 전", "note_en": "S&P 500 futures (ES) · ahead of the open"},
+    {"label": "KOSPI", "value": "6,894.23", "delta": "▲2.66%", "dir": "up", "note_ko": "오늘 종가 · 외국인 8거래일 만에 순매수 전환", "note_en": "Today's close · foreigners buy for the first time in 8 sessions"},
+    {"label": "VIX", "value": "15.35", "delta": "▼0.58%", "dir": "down", "note_ko": "반도체 랠리·위험선호 회복에 이틀 연속 하락", "note_en": "Down a 2nd day as the chip rally revives risk appetite"},
+    {"label": "Fear&Greed", "value": "29", "delta": "-", "dir": "flat", "note_ko": "이전 29 · Fear 구간 유지", "note_en": "Prev 29 · stays in Fear zone"},
+    {"label": "US 10Y", "value": "4.94%", "delta": "-", "dir": "flat", "note_ko": "9/17 확정 종가 기준 · 美 채권시장 개장 전", "note_en": "As of Sep 17 confirmed close · ahead of the US bond market open"},
+    {"label": "USD/KRW", "value": "1,383", "value_sub": "· DXY 100.4", "delta": {"ko": "▲1.1원", "en": "+₩1.1"}, "dir": "up", "note_ko": "서울외환시장 15:30 고시가 · 7거래일 연속 상승 · BOJ 인상에도 엔저", "note_en": "Seoul FX 3:30 PM fixing · up a 7th day as the yen weakens despite the BOJ hike"},
+    {"label": "Gold", "value": "$4,420.60", "delta": "▲0.48%", "dir": "up", "note_ko": "", "note_en": ""},
+    {"label": "WTI", "value": "$99.57", "delta": "▼2.30%", "dir": "down", "note_ko": "사우디 송유관 복구 기대에 사흘째 하락 · 100달러 하회", "note_en": "Down a 3rd day on Saudi pipeline-repair hopes · fell below $100"},
+    {"label": "Bitcoin", "value": "$78,100", "delta": "▲2.22%", "dir": "up", "note_ko": "24시간 기준", "note_en": "24-hour change"}
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ", "S&P 500"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "tile_lead": "KOSPI",
+  "main_tile_note": {"ko": "최근 9거래일", "en": "9 trading days"},
+  "market_note_ko": "나스닥·S&P500은 선물(NQ·ES) 기준, 美 10년물은 9/17 확정 종가 기준입니다.",
+  "market_note_en": "Nasdaq/S&P 500 are futures (NQ/ES); US 10Y is the confirmed Sep 17 close.",
+
+  "chart_series_values": [6954.52, 7051.64, 7033.92, 6909.91, 6684.37, 6627.26, 6717.97, 6715.41, 6894.23],
+  "chart_series_labels": ["9.8", "9.9", "9.10", "9.11", "9.14", "9.15", "9.16", "9.17", "9.18"],
+  "chart_title": {"ko": "9.15 저점 이후 최대 하루 반등", "en": "Biggest One-Day Rebound Since the Sep 15 Low"},
+  "chart_sub": {"ko": "코스피 종가 · 최근 9거래일", "en": "KOSPI close · last 9 trading days"},
+  "chart_note": {"ko": "9.15 저점 6,627.26 → 9.18 6,894.23(+2.66%) · 9.9 고점 7,051.64엔 아직 못 미쳐", "en": "9.15 low 6,627.26 → 9.18 6,894.23 (+2.66%) · still below the 9.9 high of 7,051.64"},
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "반도체가 4%대로 견인했다", "en": "Semiconductors Lead With a 4%+ Gain"},
+  "sector_sub": {"ko": "KOSPI 주력 15개 업종 · 시가총액 가중", "en": "KOSPI top 15 sectors · market-cap weighted"},
+  "rank_kicker": "VALUE",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top Trading Value"},
+  "rank_sub": {"ko": "코스피 개별 종목 기준", "en": "KOSPI individual stocks"},
+  "rank_unit": {"ko": "단위 · 조원", "en": "Unit · ₩ trillion"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Data & Earnings"},
+  "econ_sub": {"ko": "지난 브리핑 이후 발표된 지표", "en": "Data released since the last brief"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록",
+      "title_en": "KOSPI · KOSDAQ Record",
+      "stats": [
+        {"label_ko": "코스피", "label_en": "KOSPI", "value": "6,894.23", "delta": "▲2.66%", "dir": "up", "sub_ko": "외국인 8거래일 만에 순매수 전환", "sub_en": "Foreigners buy for the first time in 8 sessions"},
+        {"label_ko": "코스닥", "label_en": "KOSDAQ", "value": "827.12", "delta": "▲0.60%", "dir": "up", "sub_ko": "4거래일 연속 상승", "sub_en": "4th straight gain"}
+      ],
+      "breadth": [
+        {"label_ko": "코스피 등락 종목수", "label_en": "KOSPI Advance/Decline", "up": 407, "flat": 41, "down": 465}
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (억원)",
+        "label_en": "KOSPI Net Buy/Sell by Investor (₩100M)",
+        "rows": [
+          {"label_ko": "개인", "label_en": "Retail", "value": -35900},
+          {"label_ko": "외국인", "label_en": "Foreign", "value": 4300},
+          {"label_ko": "기관", "label_en": "Institution", "value": 15050}
+        ]
+      },
+      "note_ko": "지수는 2.66% 급등했지만 하락 종목(465개)이 상승 종목(407개)보다 많았다 — 반도체 등 시가총액 상위 대형주가 지수를 끌어올린 '대형주 장세'였다. 기타법인도 약 +1.66조원 순매수(자사주 매입 등)로 집계됐다.",
+      "note_en": "The index jumped 2.66%, yet decliners (465) outnumbered advancers (407) — a megacap-led rally concentrated in chips and other large caps. Other corporates also bought roughly +₩1.66T, largely buybacks."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "반도체", "label_en": "Semiconductors", "value": 4.38},
+        {"label_ko": "IT·전자기기", "label_en": "IT Hardware", "value": 3.16},
+        {"label_ko": "전력·에너지", "label_en": "Power/Energy", "value": 1.89},
+        {"label_ko": "건설·건자재", "label_en": "Construction", "value": 1.40},
+        {"label_ko": "철강·금속", "label_en": "Steel/Metals", "value": 0.56},
+        {"label_ko": "자동차", "label_en": "Autos", "value": 0.48},
+        {"label_ko": "금융", "label_en": "Financials", "value": 0.48},
+        {"label_ko": "화학", "label_en": "Chemicals", "value": 0.44},
+        {"label_ko": "2차전지", "label_en": "Battery", "value": 0.33},
+        {"label_ko": "기계·방산", "label_en": "Machinery/Def.", "value": 0.20},
+        {"label_ko": "인터넷·SW", "label_en": "Internet/SW", "value": 0.18},
+        {"label_ko": "통신서비스", "label_en": "Telecom", "value": 0.05},
+        {"label_ko": "바이오·제약", "label_en": "Bio/Pharma", "value": -0.46},
+        {"label_ko": "유통·소비재", "label_en": "Retail/Staples", "value": -0.62},
+        {"label_ko": "조선", "label_en": "Shipbuilding", "value": -1.55}
+      ],
+      "note_ko": "반도체(+4.38%)가 삼성전자·SK하이닉스 급등에 힘입어 가장 크게 올랐고, 전력·에너지(+1.89%)도 전선·변압기주 강세로 뒤를 이었다. 어제 가장 강했던 조선(-1.55%)은 오늘 유일하게 1%대 넘게 내리며 차익 실현 매물을 맞았다.",
+      "note_en": "Semiconductors (+4.38%) led on Samsung Electronics and SK Hynix, while Power/Energy (+1.89%) followed on strong cable and transformer names. Shipbuilding (-1.55%), yesterday's leader, was the only sector to drop more than 1% as profit-taking hit."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Trading Value",
+      "rows": [
+        {"name_ko": "SK하이닉스", "name_en": "SK Hynix", "value": "₩8.65T", "pct": 6.42},
+        {"name_ko": "삼성전자", "name_en": "Samsung Elec.", "value": "₩4.43T", "pct": 3.37},
+        {"name_ko": "삼성전기", "name_en": "Samsung SEMCO", "value": "₩1.21T", "pct": 4.36},
+        {"name_ko": "삼성전자우", "name_en": "Samsung Elec. Pfd.", "value": "₩0.72T", "pct": 1.45},
+        {"name_ko": "SK스퀘어", "name_en": "SK Square", "value": "₩0.55T", "pct": 7.04}
+      ],
+      "share": {
+        "label_ko": "상위 2종목 거래대금 집중도 · 코스피 전체 약 27.4조원",
+        "label_en": "Top-2 share of turnover · KOSPI total about ₩27.4T",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 2종목", "label_en": "Top 2", "pct": 47.7, "color": "#3987e5"},
+          {"label_ko": "나머지 종목", "label_en": "Rest of market", "pct": 52.3, "color": "#8c8a85"}
+        ]
+      },
+      "note_ko": "거래대금 상위 5종목 중 4곳이 반도체·반도체부품주였다. SK하이닉스·삼성전자 두 종목의 거래대금만 코스피 전체의 47.7%를 차지했다.",
+      "note_en": "Four of the top five names by turnover were chip or chip-component plays. SK Hynix and Samsung Electronics alone accounted for 47.7% of all KOSPI turnover."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Data & Earnings",
+      "stats": [
+        {"label_ko": "일본은행(BOJ) 기준금리 결정", "label_en": "BOJ Policy Rate Decision", "value": "1.00% → 1.25%", "delta": "▲", "dir": "up", "sub_ko": "12:00 KST 발표 · 예상 1.25% 부합 · 9명 중 7명 찬성", "sub_en": "Announced 12:00 KST · matched 1.25% consensus · 7-2 vote", "ref_ko": "1995년 이후 일본 기준금리 최고 수준", "ref_en": "Japan's highest policy rate since 1995"},
+        {"label_ko": "일본 8월 전국 근원 CPI (신선식품 제외, 전년비)", "label_en": "Japan Aug Core CPI ex Fresh Food (YoY)", "value": "2.0%", "delta": "▲0.2%p", "dir": "up", "sub_ko": "08:30 KST 발표 · 예상 1.8% · 이전 1.8%", "sub_en": "Released 08:30 KST · Est. 1.8% · Prior 1.8%", "ref_ko": "BOJ가 가장 주시하는 근원물가 지표 · 2% 목표의 판단 기준", "ref_en": "BOJ's preferred core gauge · the benchmark for its 2% target"},
+        {"label_ko": "일본 8월 전국 CPI (총지수, 전년비)", "label_en": "Japan Aug National CPI (YoY)", "value": "1.9%", "delta": "-", "dir": "flat", "sub_ko": "08:30 KST 발표 · 이전 1.9%", "sub_en": "Released 08:30 KST · Prior 1.9%", "ref_ko": "BOJ 물가안정 목표는 이 총지수 기준 2%", "ref_en": "BOJ's 2% price-stability target is set on this headline index"},
+        {"label_ko": "일본 8월 CPI (에너지·신선식품 제외, 전년비)", "label_en": "Japan Aug CPI ex Food, Energy (YoY)", "value": "1.7%", "delta": "▼0.1%p", "dir": "down", "sub_ko": "08:30 KST 발표 · 이전 1.8%", "sub_en": "Released 08:30 KST · Prior 1.8%", "ref_ko": "변동성 큰 에너지·신선식품을 뺀 더 좁은 근원지수", "ref_en": "A narrower core measure excluding volatile energy and fresh food"}
+      ],
+      "note_ko": "BOJ 결정 직전 발표된 일본 물가지표는 엇갈렸다 — 근원(신선식품 제외) CPI는 예상을 웃돌며 가속했지만, 에너지·신선식품을 뺀 더 좁은 근원지수는 오히려 둔화됐다.",
+      "note_en": "Japan's inflation data released just before the BOJ decision was mixed — core CPI (ex fresh food) beat estimates and accelerated, while the narrower core measure (ex energy and fresh food) actually slowed."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "SK하이닉스, 인텔 오하이오 공장 활용설에 조회공시로 선 그었다", "headline_en": "SK Hynix Tempers Report of Using Intel's Ohio Fab", "body_ko": "SK하이닉스가 인텔 오하이오 공장을 임차해 미국에서 메모리를 생산한다는 보도에 조회공시로 답변했다. 회사는 확정된 사항은 없다는 기존 입장을 재확인했다.", "body_en": "SK Hynix responded to an exchange query on reports it may lease Intel's Ohio fab for US memory output, reiterating that nothing has been finalized."},
+        {"headline_ko": "전선·전력기기주 일제히 급등…AI 데이터센터 전력 수요 재부각", "headline_en": "Cable and Power-Equipment Stocks Surge on AI Data-Center Demand", "body_ko": "가온전선이 25%대 급등했고 LS에코에너지·대한전선·일진전기·LS 등 전선·전력기기주가 일제히 크게 올랐다. AI 데이터센터발 전력망 투자 기대가 이어졌다.", "body_en": "Gaon Cable surged 25%, and LS Eco Energy, Daehan Cable, Iljin Electric and LS all rallied on continued AI data-center power-grid investment expectations."},
+        {"headline_ko": "반도체 패키징 소재 해성디에스도 6%대 강세", "headline_en": "Chip-Packaging Materials Maker Haesung DS Also Gains 6%+", "body_ko": "리드프레임·패키지 기판을 만드는 해성디에스 주가가 6.80% 올랐다. 메모리 가격 상승 기대가 후공정·소재 업체로도 번지는 모습이다.", "body_en": "Haesung DS, which makes leadframes and package substrates, rose 6.80% as rising memory-price expectations spread into back-end packaging names."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "일본은행, 기준금리 1.25%로 인상…31년 만의 최고 수준", "headline_en": "BOJ Raises Rate to 1.25%, Highest in 31 Years", "body_ko": "일본은행이 기준금리를 1.00%에서 1.25%로 올렸다. 9명 중 7명 찬성, 2명은 경기 둔화 우려로 반대했다. 우에다 총재는 속도조절을 시사했다.", "body_en": "The BOJ raised its rate to 1.25% from 1.00%, 7-2, with dissenters citing slowdown risk. Governor Ueda signaled a measured pace for further hikes ahead."},
+        {"headline_ko": "BOJ 인상에도 엔화 약세…닛케이 1.38%↑, 원/달러도 7일째 상승", "headline_en": "Yen Weakens Despite BOJ Hike; Nikkei +1.38%, Won Falls for a 7th Day", "body_ko": "금리 인상에도 우에다 총재의 신중한 발언에 엔화는 약세를 보였다. 닛케이는 1.38% 올라 6만5000선을 회복했고, 원/달러도 7거래일 연속 올라 1,383원대를 기록했다.", "body_en": "Despite the hike, Ueda's cautious tone weakened the yen. The Nikkei rose 1.38%, reclaiming 65,000, and the won fell for a 7th day to near 1,383 per dollar.", "src": "Yonhap Infomax, News1"},
+        {"headline_ko": "국제유가 사흘째 하락…WTI 장중 100달러 밑으로", "headline_en": "Crude Falls for a Third Day; WTI Briefly Dips Below $100", "body_ko": "사우디가 동서송유관 복구를 서두르고 오만 우회 수출도 늘리며 유가가 사흘째 내렸다. WTI는 장중 100달러 아래로, 브렌트유도 102달러대로 밀렸다.", "body_en": "Crude fell a third day as Saudi Arabia rushed pipeline repairs and rerouted exports via Oman. WTI briefly dipped below $100, and Brent slipped to the $102 range."},
+        {"headline_ko": "외국인, 8거래일 만에 코스피 순매수 전환", "headline_en": "Foreign Investors Turn Net Buyers of KOSPI After 8 Sessions", "body_ko": "9일부터 이어지던 외국인의 코스피 순매도가 끝났다. 그 사이 14조 5,000억원 넘게 팔았지만, 반도체 랠리와 BOJ 불확실성 해소에 매수로 돌아섰다.", "body_en": "Foreigners' KOSPI selling streak since Sep 9, which totaled over ₩14.5T, ended as the chip rally and resolved BOJ uncertainty brought them back to buying."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "NEXT",
+  "schedule_sub": {"ko": "지금부터 내일 오전 8시까지, 다음 주 주요 일정 포함", "en": "From now until 8 AM tomorrow, plus next week's highlights"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준)", "프리마켓 17:00~22:30 · 애프터마켓 05:00~09:00"],
+    "lines_en": ["Regular session 10:30 PM ~ 5:00 AM KST (DST)", "Pre-market 5:00 PM~10:30 PM · After-hours 5:00 AM~9:00 AM"]
+  },
+  "schedule": [
+    {"time": "9/18 22:15", "title_ko": "美 8월 산업생산·설비가동률", "title_en": "US Aug Industrial Production & Capacity Utilization", "detail_ko": "산업생산 예상 +0.3% · 이전 +0.2%", "detail_en": "Ind. Prod. est. +0.3% · Prior +0.2%", "importance": "mid"},
+    {"time": "9/21 10:15", "title_ko": "중국인민은행(PBoC) 대출우대금리 결정", "title_en": "PBoC Loan Prime Rate Decision", "detail_ko": "1년 만기 기준 이전 3.00%", "detail_en": "Prior 1-year rate 3.00%", "importance": "mid"},
+    {"time": "9/21 19:30", "title_ko": "美 연준 굴스비 총재 발언", "title_en": "Chicago Fed President Goolsbee Speaks", "detail_ko": "2026년 투표권 없음(예비위원) · 최근 인하에 반대표", "detail_en": "Not a 2026 voter (alternate) · recently dissented against a cut", "importance": "mid"},
+    {"time": "9/22 23:00", "title_ko": "유로존 9월 소비자신뢰지수", "title_en": "Eurozone Sep Consumer Confidence", "detail_ko": "이전 −15.5 · 예상치 미집계", "detail_en": "Prior -15.5 · no consensus estimate", "importance": "mid"},
+    {"time": "9/23 16:30", "title_ko": "유로존·독일 9월 PMI 속보치", "title_en": "Eurozone & Germany Sep Flash PMIs", "detail_ko": "유로존 종합 PMI 이전 52.0 · 확장 지속 여부 주목", "detail_en": "Eurozone composite prior 52.0 · watch for continued expansion", "importance": "high"},
+    {"time": "9/23 22:45", "title_ko": "美 9월 S&P글로벌 PMI 속보치", "title_en": "US Sep S&P Global Flash PMIs", "detail_ko": "제조업 이전 53.9 · 서비스업 이전 56.5", "detail_en": "Manufacturing prior 53.9 · Services prior 56.5", "importance": "mid"},
+    {"time": "9/24~25", "title_ko": "한국 추석 연휴 시작, 코스피·코스닥 휴장", "title_en": "Korea's Chuseok Holiday Begins — KOSPI/KOSDAQ Closed", "detail_ko": "주말과 이어져 나흘 연휴 · 28일(월) 개장", "detail_en": "A four-day break with the weekend · markets reopen Mon Sep 28", "importance": "high"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산",
+  "next_brief_en": "📊 Next brief — 8 AM KST, the week in review",
+
+  "card_photos": {
+    "1": "A Seoul stock exchange trading floor bathed in warm amber light just after a strong rally close, glowing green tickers on a giant screen wall, a faint semiconductor chip motif reflected in glass, cinematic depth and contrast",
+    "3": "A dark financial data wall with a Korean stock index line chart in glowing green trending sharply upward after a dip, faint candlestick silhouettes in the background, moody blue-black palette, sense of a decisive rebound"
+  },
+
+  "caption_ko": "📊 luckyon 브리핑 · 2026.9.18(금) 저녁\n\n코스피가 2.66% 오른 6,894.23에 마감했습니다. 간밤 미국 반도체 랠리가 국내 증시로 이어졌고, 외국인은 8거래일 만에 순매수로 돌아섰습니다.\n\n일본은행은 기준금리를 1.00%에서 1.25%로 올려 1995년 이후 최고 수준을 기록했습니다. 그런데도 우에다 총재의 신중한 발언에 엔화는 오히려 약세를 보였고, 원/달러 환율도 7거래일 연속 올라 1,383원대를 기록했습니다.\n\n국제유가는 사우디 송유관 복구 기대에 사흘째 내려 WTI가 장중 100달러 밑으로 떨어졌습니다.\n\n📊 다음 브리핑은 내일 아침 8시, 한 주를 결산합니다.\n\n#코스피 #코스닥 #증시마감 #일본은행 #BOJ #금리인상 #원달러환율 #국제유가 #반도체 #SK하이닉스 #삼성전자 #전선주 #투자 #luckyon",
+  "caption_en": "📊 luckyon Briefing · Fri, Sep 18, 2026 Evening\n\nKOSPI closed up 2.66% at 6,894.23 as the overnight US chip rally carried into Korea's session, and foreign investors turned net buyers after 8 straight sessions of selling.\n\nThe Bank of Japan raised its policy rate to 1.25% from 1.00%, the highest since 1995 — yet the yen weakened on Governor Ueda's cautious tone, and the won fell for a 7th straight day to near 1,383 per dollar.\n\nCrude fell for a third day on Saudi pipeline-repair hopes, with WTI briefly dipping below $100 intraday.\n\n📊 Next brief — 8 AM KST tomorrow, the week in review.\n\n#KOSPI #KOSDAQ #StockMarket #BOJ #BankOfJapan #RateHike #USDKRW #OilPrices #Semiconductors #SKHynix #SamsungElectronics #Investing #luckyon",
+  "sources": ["Yahoo Finance", "FMP (Treasury Rates)", "CNN Fear & Greed Index", "FXStreet 경제캘린더", "DART", "연합뉴스", "연합인포맥스", "뉴스1", "MBN머니", "뉴시안", "코리아리포트", "news2day"]
+}
