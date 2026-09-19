@@ -242,7 +242,14 @@
           "id": "AUieDaY15Q9SNBGhEOkOA19xVu8vlJvuKRockCqO0JWMx0yfpOohgb7V",
           "status": "serving"
         }
-      ]
+      ],
+      "pinned_comment": {
+        "id": "UgwE-5IPBX67FVK_NSN4AaABAg",
+        "published_at": "2026-09-20T00:55:16+09:00",
+        "pinned": false,
+        "pinned_note": "유튜브 데이터 API 에는 고정(pin) 기능이 없다. commentThreads 응답에 고정 관련 필드가 없고, 공식 문서는 이 환경의 프록시가 막아 원문 확인은 못 했다. 댓글은 API 로 달았고 고정은 유튜브 스튜디오나 앱에서 사람이 한 번 눌러야 한다. 누른 뒤 이 값을 true 로 고친다.",
+        "text_source": "docs/samples/weekly-shorts/v10-ep3/발행문구.md 의 «5-1. 고정 댓글»"
+      }
     },
     "instagram": {
       "media_id": "18426722002151760",

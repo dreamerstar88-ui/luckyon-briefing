@@ -571,6 +571,54 @@ if (srtDir) {
   }
 }
 
+// ── [9] 고정 댓글 ────────────────────────────────────────────────────────────
+// 1·2회차는 유튜브에 댓글 하나 없이 나갔다. 규칙이 없어서 빠진 것이지 판단해서
+// 뺀 게 아니었다(지침서 8-1). 문구를 발행문구.md 에 두게 하고, 정답이 새는지
+// 여기서 같이 본다. 문구를 API 호출에만 적으면 다음 회차에 또 빠진다.
+if (srtDir) {
+  console.log(`\n[9] 고정 댓글`);
+  const docs = fs.readdirSync(srtDir).filter((f) => f.endsWith('.md'));
+  if (docs.length === 0) {
+    bad('발행문구 문서', `${srtDir} 안에 .md 한 개`, '문서를 못 찾았다');
+  } else {
+    const doc = fs.readFileSync(path.join(srtDir, docs[0]), 'utf8');
+    const m = doc.match(/##\s*5-1\.[^\n]*\n+```\n([\s\S]*?)\n```/);
+    if (!m) {
+      bad('고정 댓글 문구', '발행문구.md 에 «## 5-1. 고정 댓글» 절과 코드블록',
+        '없다 — 지침서 8-1 대로 댓글 문구를 문서에 적어라');
+    } else {
+      const body = m[1].trim();
+      body.length > 0
+        ? ok('고정 댓글 문구', `${body.split('\n')[0].slice(0, 40)}…`)
+        : bad('고정 댓글 문구', '내용', '비어 있다');
+      // 정답 노출 검사. 보기를 나란히 다시 제시하는 건 노출이 아니다 — 그게 질문이다.
+      // 노출은 두 가지다: ① 정답만 적고 다른 보기는 안 적는 것(한쪽만 말하면 그게 답이다)
+      // ② 다른 보기를 «아니었다» 로 지우는 것(보기가 2개면 소거법이 곧 정답이다).
+      const ans = String(M.question?.answer_value || '').trim();
+      const opts = (M.quiz?.options || []).map((x) => String(x).trim()).filter(Boolean);
+      const norm = (x) => x.replace(/[\s·.,]/g, '');
+      const nb = norm(body);
+      const shown = opts.filter((o) => nb.includes(norm(o)));
+      const elim = opts.filter((o) => new RegExp(`${norm(o)}[가-힣]{0,4}(아니|없었|아닙)`).test(nb));
+      if (elim.length > 0) {
+        bad('고정 댓글 정답 노출', '소거법도 노출이다', `«${elim[0]}» 를 지우고 있다 — 보기가 ${opts.length}개다`);
+      } else if (ans && nb.includes(norm(ans)) && shown.length < opts.length) {
+        bad('고정 댓글 정답 노출', '정답만 따로 적지 않는다',
+          `«${ans}» 는 있는데 «${opts.filter((o) => !nb.includes(norm(o))).join(', ')}» 는 없다`);
+      } else {
+        ok('고정 댓글 정답 노출', shown.length === opts.length
+          ? `보기 ${opts.length}개를 나란히 제시 — 정답만 드러내지 않음`
+          : (ans ? `«${ans}» 없음` : '정답 항목 없음 — 건너뜀'));
+      }
+      // 보기를 다시 제시했는지 (참여 유도)
+      opts.length > 0 && shown.length === opts.length
+        ? ok('고정 댓글 보기 제시', `보기 ${opts.length}개 모두 있음`)
+        : bad('고정 댓글 보기 제시', '보기를 댓글에 다시 적는다',
+            '없다 — 12초에 떠나는 시청자에게 고를 거리를 준다');
+    }
+  }
+}
+
 // ── 결과 ─────────────────────────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(60)}`);
 console.log(fails === 0 ? `✅ 전부 통과 (${passes}건)` : `❌ ${fails}건 불일치 / ${passes}건 통과 — 발행 금지`);
