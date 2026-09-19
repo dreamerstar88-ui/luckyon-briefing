@@ -70,6 +70,47 @@ try {
   process.exit(1);
 }
 
+// ── 1-1. 월물 교체(롤오버)가 구간 안에 섞였는지 ─────────────────────────────
+// 야후의 연속 심볼 `NQ=F` 는 만기가 다가오면 다음 월물로 갈아탄다. 그 순간 가격이
+// 월물 간 가격차만큼 통째로 뛰는데, 캔들만 보면 시장이 움직인 것과 구별되지 않는다.
+// 2026-09-14 11:30(동부)에 실제로 +1.295% 짜리 봉이 찍혔고, 그게 그 주 5분 변동
+// 1위였다. 같은 시각 QQQ 는 +0.286% 였다 — 시장이 아니라 데이터가 움직인 것이다.
+// 그대로 갔으면 "그 주 가장 큰 움직임"이 통째로 허구인 회차가 나갈 뻔했다.
+//
+// 막는 법: 지수 ETF(QQQ)와의 배율을 본다. 같은 지수를 따라가므로 배율은 하루에
+// 0.05% 도 안 움직인다. 한 봉에 0.3% 이상 튀면 그건 시장이 아니라 월물 교체다.
+console.log(`\n[1-1] 월물 교체 혼입 검사 (QQQ 대조)`);
+try {
+  const qurl = `https://query1.finance.yahoo.com/v8/finance/chart/QQQ?interval=${M.window.interval}&range=1mo`;
+  const qj = await (await fetch(qurl, { headers: { 'User-Agent': UA } })).json();
+  const qres = qj.chart?.result?.[0];
+  if (!qres) throw new Error('QQQ 응답에 chart.result 가 없다');
+  const QC = new Map();
+  qres.timestamp.forEach((t, i) => {
+    const c = qres.indicators.quote[0].close[i];
+    if (c != null) QC.set(new Date((t + ET_OFFSET) * 1000).toISOString().slice(0, 16).replace('T', ' '), c);
+  });
+  const pairs = BARS.filter((b) => QC.has(b.d)).map((b) => ({ d: b.d, r: b.c / QC.get(b.d) }));
+  if (pairs.length < 50) {
+    warn('월물 교체 검사', `QQQ 와 겹치는 봉이 ${pairs.length}개뿐이라 판정하지 않는다`);
+  } else {
+    let worst = { j: 0, d: '' };
+    for (let i = 1; i < pairs.length; i++) {
+      const j = Math.abs(pairs[i].r / pairs[i - 1].r - 1);
+      if (j > worst.j) worst = { j, d: pairs[i].d };
+    }
+    if (worst.j > 0.003) {
+      bad('월물 교체 혼입', '한 봉에 0.3% 미만', `${worst.d} 에 배율이 ${(worst.j * 100).toFixed(2)}% 튀었다 — 월물 교체로 보인다. 연속 심볼(NQ=F) 대신 그 주의 실제 월물(예: NQZ26.CME)로 다시 받아라`);
+    } else {
+      ok('월물 교체 혼입', `없음 (배율 최대 변동 ${(worst.j * 100).toFixed(3)}% @${worst.d})`);
+    }
+  }
+} catch (e) {
+  console.log(`  ⛔ QQQ 대조 실패 — ${e.message}`);
+  console.log('     이 검사를 못 했으면 통과가 아니라 미검증이다. 월물 교체가 섞였는지 사람이 직접 확인한다.');
+  fails++;
+}
+
 // ── 2. 봉 개수·주간 등락률·최대낙폭을 독립 재계산 ─────────────────────────────
 console.log(`\n[2] 기본 수치 재계산`);
 cmp('봉 개수', BARS.length, M.numbers.bars);
