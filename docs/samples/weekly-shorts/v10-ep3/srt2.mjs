@@ -26,7 +26,6 @@ const KWD='일월화수목금토';
 const drop=x=>String(x).replace(/\.$/,'');
 const evCue=(e,k)=>{
   const [sess,kst]=e.kst_label.split(' · ');          // «금 장중» · «한국 토 새벽 12시 45분»
-  const etDay=KWD[(new Date(e.et.replace(' ','T')+'Z').getUTCDay())];
   const kstDay=(kst||'').match(/한국 ([일월화수목금토])/);
   // 한국 요일이 미국 요일과 다르면 밤을 넘긴 것이라 헷갈린다 — 그때만 괄호로 밝힌다
   const note=(kstDay&&kstDay[1]!==sess.slice(0,1))?`(${kst})`:'';
@@ -35,11 +34,16 @@ const evCue=(e,k)=>{
 const EVKO=M.events.map(evCue);
 const EVEN=M.events.map((e,k)=>{
   const sess=e.kst_label.split(' · ')[0];
-  const en=/장중/.test(sess)?'session':'pre-market';
+  // 프리장·장중·애프터장 세 가지가 다 온다. 예전에는 «장중이 아니면 프리장» 이라
+  // 애프터장 사건(예: 화요일 API 원유재고 17:00 ET)이 오면 그대로 틀렸다.
+  const en=/장중/.test(sess)?'session':(/애프터/.test(sess)?'after hours':'pre-market');
   const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(e.et.replace(' ','T')+'Z').getUTCDay()];
   const [a,...b]=drop(e.en).split(', ');
+  // 둘째 줄은 새 문장이 아니라 «…4.060%, up from 3.890%» 한 문장을 쉼표에서 끊은
+  // 연속 줄이다. 대문자로 올리면 문장이 둘로 읽히고, 매니페스트 en 과도 글자가 달라져
+  // 검증 [8] 본문 대조가 영원히 안 맞는다. 소문자 그대로 둔다.
   const tail=b.join(', ');
-  return [`${k+1}) ${day} ${en} - ${a}`, tail?tail[0].toUpperCase()+tail.slice(1):'—'];
+  return [`${k+1}) ${day} ${en} - ${a}`, tail||drop(e.l2)];
 });
 const KO=[
  ['지난주 나스닥, 월요일 개장 ~ 금요일 마감','결과는 +2.58%. 수요일에 3년 만의 첫 금리 인상이 있었다'],

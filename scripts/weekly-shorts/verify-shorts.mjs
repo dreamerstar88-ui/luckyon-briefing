@@ -548,6 +548,27 @@ if (srtDir) {
     textOk ? ok(`${f} 본문`, `사건 ${M.events.length}개 문구가 매니페스트와 일치`)
            : bad(`${f} 본문`, '매니페스트 문구를 그대로 담아야 한다', firstBad);
   }
+
+  // 커밋된 생성기가 커밋된 자막을 그대로 만들어 내는가.
+  // 3회차에서 srt2.mjs 의 대문자화를 고치고 자막을 다시 안 뽑아, 코드와 산출물이
+  // 갈린 채 커밋됐다. 파일만 보면 멀쩡하고 검사도 통과하지만, 다음 회차에 자막을
+  // 다시 뽑는 순간 다른 글자가 나온다. 산출물이 재현되지 않으면 발행하지 않는다.
+  const gen = path.join(srtDir, 'srt2.mjs');
+  if (fs.existsSync(gen)) {
+    const before = fs.readdirSync(srtDir).filter((f) => f.endsWith('.srt'))
+      .map((f) => [f, fs.readFileSync(path.join(srtDir, f), 'utf8')]);
+    const r = spawnSync(process.execPath, [gen], { encoding: 'utf8', timeout: 60000 });
+    if (r.status !== 0) {
+      bad('자막 생성기 재현', '종료코드 0', `실패: ${(r.stderr || '').trim().slice(0, 120)}`);
+    } else {
+      const diff = before.filter(([f, b]) => fs.readFileSync(path.join(srtDir, f), 'utf8') !== b);
+      diff.length === 0
+        ? ok('자막 생성기 재현', `${before.length}개 파일 바이트 일치`)
+        : bad('자막 생성기 재현', '다시 돌리면 같은 자막이 나와야 한다', `${diff.map(([f]) => f).join(', ')} 가 달라진다 — 고친 뒤 자막을 다시 뽑아라`);
+      // 검사 때문에 파일이 바뀌면 안 된다. 원래대로 되돌린다.
+      before.forEach(([f, b]) => fs.writeFileSync(path.join(srtDir, f), b));
+    }
+  }
 }
 
 // ── 결과 ─────────────────────────────────────────────────────────────────────
