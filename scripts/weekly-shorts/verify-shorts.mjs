@@ -243,6 +243,36 @@ console.log(`\n[3-1] 확인 목록 (지침서 4-1)`);
   else if (cov.news_scan) ok('확인 목록 news_scan 항목 수', `${hit}개 시각`);
 }
 
+// ── 3-2. 요약 표가 범위를 속이지 않는가 ────────────────────────────────────
+// 요약 화면의 1~3위는 «고른 사건» 중 순위다. 그 주 5분봉 전체의 순위가 아니다.
+// 2회차는 영어 줄이 «The three biggest reactions of the week» 이었고 그 표의
+// 실제 주간 순위는 1·6·17위였다 — 틀린 채로 발행됐다. 3회차도 같은 줄이었고
+// 3위 금리 결정은 주 전체로는 53위였다. 더구나 2.1초 앞 정답 화면이 같은 사건을
+// 두고 «1,178개 중 3위» 라고 말해 두 화면이 서로 어긋났다.
+// 주간 순위가 1,2,3 이 아니면 머리말이 «그 주 최대» 라고 주장해선 안 된다.
+console.log(`\n[3-2] 요약 표 범위`);
+{
+  const S = M.summary;
+  if (!S) bad('요약 표 범위', 'summary 블록에 범위와 머리말을 적어라', '없음');
+  else {
+    const want = [...M.events].sort((a, b) => Math.abs(b.pct) - Math.abs(a.pct)).slice(0, 3);
+    const same = S.rows && S.rows.length === 3 && S.rows.every((r, k) => r.tag === want[k].tag && Math.abs(r.pct - want[k].pct) < 1e-9);
+    same ? ok('요약 표 행', S.rows.map((r) => `${r.tag} ${r.pct >= 0 ? '+' : ''}${r.pct}%`).join(' / '))
+         : bad('요약 표 행', want.map((e) => `${e.tag} ${e.pct}%`).join(' / '), (S.rows || []).map((r) => `${r.tag} ${r.pct}%`).join(' / '));
+    S.rows && S.rows.forEach((r, k) => cmp(`요약 ${k + 1}위 주간 순위`, want[k] ? want[k].rank : '없음', r.week_rank));
+    const weekTrue = S.rows && S.rows.every((r, k) => r.week_rank === k + 1);
+    const claim = /of the week|week'?s (three )?biggest|그\s*주 (전체|최대)|이번\s*주 (전체|최대)/i;
+    const heads = [S.ko || '', S.en || ''].join(' | ');
+    if (!weekTrue && claim.test(heads)) {
+      bad('요약 머리말 범위', `주간 순위가 ${S.rows.map((r) => r.week_rank).join('·')} 위다 — 머리말이 그 주 전체를 주장하면 안 된다`, heads);
+    } else if (!S.ko || !S.en) {
+      bad('요약 머리말 범위', 'ko·en 머리말을 둘 다 적어라', heads);
+    } else {
+      ok('요약 머리말 범위', `${S.ko} / ${S.en}`);
+    }
+  }
+}
+
 // 규칙 검사: 요일당 최소 1개
 console.log(`\n[4] 사건 선정 규칙`);
 const days = new Set(M.events.map((e) => e.et.slice(0, 10)));

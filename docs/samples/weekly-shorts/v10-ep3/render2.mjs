@@ -67,7 +67,7 @@ const RAW=[
   te:"housing starts",actual:"1.275M",cf:"consensus",cv:"1.31M",
   why:"★★★ 전부 넣는다"},
  {et:"2026-09-18 11:45",stars:2,when:"금 장중 · 한국 토 새벽 12시 45분",
-  l1:"연준 슈미트 위원 연설.",l2:"이번 주 마지막 연준 발언이었다.",tag:"연준발언",
+  l1:"연준 슈미트 연설.",l2:"이번 주 마지막 연준 발언이었다.",tag:"연준발언",
   en:"Fed Schmid speaks, the week’s last Fed remarks",
   te:"fed schmid speech",actual:"",cf:"",cv:"",
   why:"그날 ★★★ 없음 · 최고등급 ★★ · 장중 둘 중 등락률로"},
@@ -104,9 +104,16 @@ const COPY={
   enAnswer:`The press conference — ${sgn(top.pct)} against ${sgn(other.pct)} for the decision`,
   summ1:'금리는 예상대로였다.',
   summ2:'움직인 건 그 30분 뒤였다.',
-  enSumm:'The three biggest reactions of the week, in order',
-  rows:rank3.map((e,k)=>[`${k+1}위 · ${NAMES[e.tag]}`,sgn(e.pct),e.pct>=0?'up':'down']),
-  loopLabel:'지수를 움직인 건', loopBig:NAMES[top.tag], loopTail:`발표 5분 만에 ${sgn(top.pct)}`,
+  // 범위를 반드시 밝힌다. 이 표는 «고른 사건 7개» 중 순위이지 그 주 5분봉 1,178개
+  // 전체의 순위가 아니다. 3위 금리 결정은 주 전체로는 53위다. 2회차는 이 줄이
+  // «of the week» 이라 틀린 채로 나갔다(그때 표의 실제 주간 순위는 1·6·17위).
+  rowsScope:'이번 주 고른 사건 7개 중 · 5분봉 전체 순위는 아니다',
+  enSumm:'The three biggest moves among this week’s scheduled events',
+  // 1위(-0.283)와 2위(+0.277)가 두 자리에서는 둘 다 0.28 로 찍혀 왜 이 순서인지
+  // 화면만 보고는 알 수 없다. 이 표에서만 세 자리로 쓴다.
+  rows:rank3.map((e,k)=>[`${k+1}위 · ${NAMES[e.tag]}`,(e.pct>=0?'+':'')+e.pct.toFixed(3)+'%',e.pct>=0?'up':'down']),
+  // 기자회견은 «발표» 가 아니다. 지표든 회견이든 맞는 말로 둔다.
+  loopLabel:'지수를 움직인 건', loopBig:NAMES[top.tag], loopTail:`5분 만에 ${sgn(top.pct)}`,
 };
 console.log(`질문: ${NAMES[top.tag]} ${sgn(top.pct)} vs ${NAMES[other.tag]} ${sgn(other.pct)}`);
 

@@ -256,41 +256,6 @@ function dayAxis(ctx){
   txt(ctx,'가로축은 미국 날짜 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
   ctx.restore();
 }
-// ── 주간 시가 기준선. 이번 회차의 질문이 "시가를 되찾았나" 라서 선으로 보여 준다.
-function openLine(ctx,a=1){
-  const y=Y(BARS[0].o);
-  ctx.save();ctx.globalAlpha*=a;
-  ctx.strokeStyle='#9aa6b8';ctx.lineWidth=2.5;ctx.setLineDash([10,8]);
-  ctx.beginPath();ctx.moveTo(CX,y);ctx.lineTo(CX+CW,y);ctx.stroke();ctx.setLineDash([]);
-  // 라벨 자리는 사건 커서와 세로 라벨 상자를 둘 다 피해서 고른다.
-  // 왼쪽 끝에 두었더니 첫 사건 커서가 1.8초 내내 '시가' 두 글자를 덮었고,
-  // 사건 x 만 피했더니 이번엔 마지막 사건의 세로 라벨 상자와 겹쳤다.
-  // 그래서 상자의 실제 x 구간을 그대로 구해 놓고, 그 어느 것과도 안 겹치는 자리를 찾는다.
-  const CW_=186;
-  const blocked=[];
-  for(const ev of EVENTS){
-    const x=X(ev.i);
-    const BW2=14*2+26, right=x+16, left=x-16-BW2;
-    const bx3=(right+BW2<CX+CW-40)?right:left;
-    blocked.push([bx3-8,bx3+BW2+8]);      // 세로 라벨 상자
-    blocked.push([x-34,x+34]);            // 사건 커서 링
-  }
-  // 주가 곡선이 칩의 세로 대역을 지나가는 구간도 막는다. 이번 회차는 모든 종가가
-  // 시가 아래라 걸리지 않지만, 곡선이 시가선 위로 올라가는 주에는 칩과 겹친다.
-  for(let i=0;i<BARS.length;i++){
-    const yi=Y(BARS[i].c);
-    if(yi>=y-40&&yi<=y){const xi=X(i);blocked.push([xi-6,xi+6]);}
-  }
-  let bx2=CX+6, best=-1e9;
-  for(let c0=CX+6;c0<=CX+CW-CW_-6;c0+=10){
-    let d=1e9;
-    for(const [a0,b0] of blocked) d=Math.min(d, (c0>b0)?c0-b0 : (c0+CW_<a0)?a0-(c0+CW_) : -1);
-    if(d>best){best=d;bx2=c0;}
-  }
-  ctx.fillStyle='rgba(10,14,22,.85)';rr(ctx,bx2,y-36,CW_,32,6);ctx.fill();
-  txt(ctx,'시가 '+fmt(BARS[0].o),bx2+10,y-13,'700 24px PD','#c8d0dc');
-  ctx.restore();
-}
 function polyline(ctx,upto){
   ctx.save();ctx.strokeStyle=C.line;ctx.lineWidth=5;ctx.lineJoin='round';ctx.lineCap='round';
   ctx.beginPath();
@@ -472,7 +437,10 @@ function drawSumm(ctx,t){
   ctx.save();ctx.globalAlpha=1-fadeOut;
   txt(ctx,COPY.summ1,60,206,'900 52px PD',C.text);
   txt(ctx,COPY.summ2,60,278,'900 52px PD',C.hi);
-  enBand(ctx,COPY.enSumm,1,344,false);
+  // 표의 범위를 한국어로도 밝힌다. 안 밝히면 «1위·2위·3위» 가 그 주 5분봉 전체의
+  // 순위로 읽힌다 — 2.1초 앞 정답 화면이 «1,178개 중 3위» 라고 말하는 것과 어긋난다.
+  txt(ctx,COPY.rowsScope||'',60,344,'700 34px PD',C.muted);
+  enBand(ctx,COPY.enSumm,1,392,false);
   const rows=COPY.rows.map(r=>[r[0],r[1],C[r[2]]||C.text]);
   rows.forEach((r,k)=>{
     const a=easeOut(seg(st,.10+k*.14,.38+k*.14));if(a<=0)return;
