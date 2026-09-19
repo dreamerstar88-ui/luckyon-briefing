@@ -33,6 +33,11 @@ if (!manifestPath) {
 }
 const srtDirIdx = argv.indexOf('--srt');
 const srtDir = srtDirIdx >= 0 ? argv[srtDirIdx + 1] : null;
+// 글자 파일은 줄바꿈 문자를 맞춘 뒤에 본다.
+// 윈도우에서 받으면 깃이 줄 끝을 CRLF 로 바꿔 놓는다(core.autocrlf). 그대로 대조하면
+// 내용이 같은데도 «다르다»가 나오고, 정규식도 안 맞아 발행 관문이 헛되이 막힌다.
+const readText = (p) => fs.readFileSync(p, 'utf8').split('\r\n').join('\n');
+
 const M = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36';
@@ -305,7 +310,7 @@ try {
   // 스냅샷은 사이트가 준 원본 HTML 이지 우리가 만든 값이 아니다. 다만 실시간 재조회보다
   // 증거력이 약하므로 그 사실을 반드시 화면에 남긴다.
   if (!new RegExp(`class='\\s*${d1}'`).test(html) && M.calendar_snapshot && fs.existsSync(M.calendar_snapshot)) {
-    html = fs.readFileSync(M.calendar_snapshot, 'utf8');
+    html = readText(M.calendar_snapshot);
     console.log(`  ⚠ 사이트가 대상 주를 주지 않아 제작 시점 스냅샷으로 대조한다 — ${M.calendar_snapshot}`);
   }
   const rows = html.split(/<tr\s+data-url=/).slice(1);
@@ -486,7 +491,7 @@ if (sceneCandidates.length === 0) {
   console.log('  ⛔ scene.js 를 못 찾아 훅 정지 시간을 대조하지 못했다 (SCENE_JS 로 경로를 주면 된다)');
   fails++;
 } else {
-  const src = fs.readFileSync(sceneCandidates[0], 'utf8');
+  const src = readText(sceneCandidates[0]);
   const hh = src.match(/const\s+HOOK_HOLD\s*=\s*([\d.]+)/);
   const hk = src.match(/const\s+HOOK\s*=\s*\[\s*([\d.]+)\s*,\s*([\d.]+)\s*\]/);
   hh ? cmp('훅 정지 시간(scene.js)', +hh[1], M.video.hook_hold, 0.001)
@@ -517,7 +522,7 @@ if (srtDir) {
   else bad('사건 노출 최소', `${minShown.toFixed(2)}초`, '2.4초 이상');
   const want = [S.hook[0], S.hook[1], ...holds.slice(1), S.answer[0], S.summ[0], S.summ[1]];
   for (const f of fs.readdirSync(srtDir).filter((f) => f.endsWith('.srt'))) {
-    const body = fs.readFileSync(path.join(srtDir, f), 'utf8');
+    const body = readText(path.join(srtDir, f));
     const cues = [...body.matchAll(/(\d\d):(\d\d):(\d\d),(\d\d\d) --> (\d\d):(\d\d):(\d\d),(\d\d\d)/g)];
     if (cues.length !== want.length - 1) { bad(`${f} 자막 개수`, cues.length, want.length - 1); continue; }
     let allOk = true;
@@ -556,12 +561,12 @@ if (srtDir) {
   const gen = path.join(srtDir, 'srt2.mjs');
   if (fs.existsSync(gen)) {
     const before = fs.readdirSync(srtDir).filter((f) => f.endsWith('.srt'))
-      .map((f) => [f, fs.readFileSync(path.join(srtDir, f), 'utf8')]);
+      .map((f) => [f, readText(path.join(srtDir, f))]);
     const r = spawnSync(process.execPath, [gen], { encoding: 'utf8', timeout: 60000 });
     if (r.status !== 0) {
       bad('자막 생성기 재현', '종료코드 0', `실패: ${(r.stderr || '').trim().slice(0, 120)}`);
     } else {
-      const diff = before.filter(([f, b]) => fs.readFileSync(path.join(srtDir, f), 'utf8') !== b);
+      const diff = before.filter(([f, b]) => readText(path.join(srtDir, f)) !== b);
       diff.length === 0
         ? ok('자막 생성기 재현', `${before.length}개 파일 바이트 일치`)
         : bad('자막 생성기 재현', '다시 돌리면 같은 자막이 나와야 한다', `${diff.map(([f]) => f).join(', ')} 가 달라진다 — 고친 뒤 자막을 다시 뽑아라`);
@@ -581,7 +586,7 @@ if (srtDir) {
   if (docs.length === 0) {
     bad('발행문구 문서', `${srtDir} 안에 .md 한 개`, '문서를 못 찾았다');
   } else {
-    const doc = fs.readFileSync(path.join(srtDir, docs[0]), 'utf8');
+    const doc = readText(path.join(srtDir, docs[0]));
     const m = doc.match(/##\s*5-1\.[^\n]*\n+```\n([\s\S]*?)\n```/);
     if (!m) {
       bad('고정 댓글 문구', '발행문구.md 에 «## 5-1. 고정 댓글» 절과 코드블록',

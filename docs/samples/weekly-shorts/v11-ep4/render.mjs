@@ -18,7 +18,7 @@ const F    = path.join(R, 'assets', 'fonts');               // 폰트(woff2)
 const args = Object.fromEntries(process.argv.slice(2).map(a=>{const [k,...v]=a.replace(/^--/,'').split('=');return [k,v.join('=')||true]}));
 const SCENE = args.scene || path.join(HERE, 'scene.js');
 const OUT   = args.out   || path.join(R, 'out', 'frames');
-const DATA  = args.data  || path.join(R, 'data', 'weekly-shorts', '2026-09-14.5m.json');
+const DATA  = args.data  || path.join(R, 'data', 'weekly-shorts', '2026-09-21.5m.json');
 const W=1080,H=1920,FPS=30,DUR=35.0;
 
 // ── 데이터: 3회차 2026-09-14(월) 개장 ~ 09-18(금) 마감. 휴장 없는 5거래일.
