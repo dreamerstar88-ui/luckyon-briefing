@@ -225,8 +225,31 @@ $FF -y -i silent.mp4 -i bgm.wav -map 0:v:0 -map 1:a:0 -c:v copy \
   직선(`tri`)이나 `esin` 은 페이드 시작하자마자 8~9dB 떨어져 "끊긴다"는 인상을 준다.
 - 원곡이 자연히 잦아드는 지점과 페이드가 겹치지 않게 시작점을 잡는다. 겹치면 너무 일찍 사라진다.
 - 완성본 목표: **-14 LUFS · 트루피크 -1.5 dBTP 이하.**
-- 음원은 대표가 구글 드라이브에 올려 주신 것을 커넥터로 받는다. **11MB WAV 는 한도 초과로
-  실패하고 2.4MB mp3 는 된다.** 다음에도 mp3 로 올려 주시면 된다.
+- 음원은 대표가 구글 드라이브에 올려 주신 것을 커넥터로 받는다.
+  `콘텐츠 제작 / 음악자료` 폴더, 파일은 `lyria-build-v1.mp3`(2.4MB, 실제 길이 약 154초).
+
+> **받는 법 — 「한도 초과」 는 실패가 아니다 (2026-09-19).**
+> `download_file_content` 는 파일을 base64 로 돌려주는데, 2.4MB 면 315만 자라
+> 「exceeds maximum allowed tokens」 가 뜬다. **그런데 그때 결과가 디스크에 저장되고
+> 그 경로를 알려 준다.** 그 파일을 읽어 디코딩하면 끝이다. 대화창을 거칠 필요가 없다.
+>
+> ```python
+> import json, base64
+> d = json.load(open('<알려 준 경로>'))     # {content, id, mimeType, title}
+> open('lyria-build-v1.mp3','wb').write(base64.b64decode(d['content']))
+> ```
+>
+> 3회차에서 이 메시지를 보고 «커넥터로는 못 받는다» 고 잘못 판단해 발행을 멈췄다.
+> `drive.google.com` 과 `googleapis.com` 은 프록시가 막으므로 직접 내려받는 길은 없고,
+> **이 경로가 유일하면서 정상 동작하는 길이다.**
+
+- **곡에서 힘이 붙는 지점을 정답 공개 시각에 맞춘다.** `lyria-build-v1.mp3` 는 약 25초
+  주기로 같은 빌드를 반복하고, 첫 정점이 **29초**다. 시작점 = 29 − (정답 공개 시각).
+  2회차는 정답이 26.2초라 2.8초, 3회차는 27.9초라 1.1초에서 잘랐다.
+  정점 위치는 아래로 확인한다(구간을 좁히려면 `-t` 가 아니라 출력에서 자른다).
+  ```bash
+  $FF -i 곡.mp3 -af "astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null -
+  ```
 
 ## 8. 자막
 
