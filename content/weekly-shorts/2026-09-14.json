@@ -220,7 +220,45 @@
     "data_crosscheck": "NQZ26.CME(12월물) 를 QQQ(ETF)·^NDX(지수) 와 대조. 일별 정규장 등락률 최대 차이 0.16%p, 주간 +2.58%/+2.58%/+2.63%. 월물 교체 혼입 검사에서 배율 한 봉 최대 변동 QQQ 0.092%·^NDX 0.070% 로 깨끗. 지표 수치는 미 센서스국 원본·블룸버그·CNBC 와 대조해 소매판매 1.2%/0.8%/-0.5%, 주택착공 1.275M/1.309M, 건축허가 1.394M/1.41M, 금리 3.75%->4.00% 일치.",
     "note": "2026-09-14 주 기준. 월요일 급등을 다룬 일부 기사가 «반도체 5.9% 급락»을 전했으나 이번 주 나스닥100 은 선물·ETF·지수 세 갈래 모두 월요일 상승(+0.86~0.90%)이라 그 기사는 다른 날짜를 가리키는 것으로 보고 쓰지 않았다."
   },
-  "publish": null,
+  "publish": {
+    "published_at": "2026-09-20T00:31:39+09:00",
+    "published_at_note": "유튜브 자막 등록 완료 시각 기준. 인스타그램 릴스가 00:28, 유튜브 영상이 00:30 이었다.",
+    "youtube": {
+      "video_id": "ZfVRdo2eL08",
+      "url": "https://www.youtube.com/watch?v=ZfVRdo2eL08",
+      "published_at": "2026-09-20T00:30:32+09:00",
+      "privacy": "public",
+      "category_id": "27",
+      "duration": "PT36S",
+      "upload_route": "Zapier YouTube 커넥터(youtube_upload_video + youtube_make_api_mutating_request). 이 세션에는 지난 회차에 쓰던 유튜브 커넥터가 없어서 Zapier 경로로 올렸다. 채널은 올리기 전에 channels?mine=true 로 UCdqD5SpqpXZJUzCZILyeRAA 인지 확인했다.",
+      "captions": [
+        {
+          "language": "ko",
+          "id": "AUieDaZvanRAhWzhMShvYfIqeg-ijud5sxc_6sffo_LfHh2WYAdtvE8Pa98",
+          "status": "serving"
+        },
+        {
+          "language": "en",
+          "id": "AUieDaY15Q9SNBGhEOkOA19xVu8vlJvuKRockCqO0JWMx0yfpOohgb7V",
+          "status": "serving"
+        }
+      ]
+    },
+    "instagram": {
+      "media_id": "18426722002151760",
+      "permalink": "https://www.instagram.com/reel/DdeVQqEEcu3/",
+      "published_at": "2026-09-20T00:28:31+09:00"
+    },
+    "assets_branch": "claude/live",
+    "assets_commit": "102bb2c",
+    "assets_path": "cards/reels/nasdaq-week-2026-09-14/ko",
+    "pages_base": "https://dreamerstar88-ui.github.io/luckyon-briefing",
+    "verification": {
+      "machine_checks": 114,
+      "independent_agent": "발행 가능(치명 없음). 지적 3건은 반영 후 발행.",
+      "recomputed_by_session": true
+    }
+  },
   "summary": {
     "scope": "선정 사건",
     "scope_note": "요약 표의 1~3위는 그 주 5분봉 1,178개 전체가 아니라 «고른 사건 7개» 중 순위다. 3위 금리 결정은 주 전체로는 53위다. 범위를 안 밝히면 2.1초 앞 정답 화면의 «1,178개 중 3위» 와 어긋난다.",
