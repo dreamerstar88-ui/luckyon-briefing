@@ -7,9 +7,11 @@ const SCENE=args.scene||`${SP}/vid/scene.js`;
 const OUT=args.out||`${SP}/vid/frames2`;
 const W=1080,H=1920,FPS=30,DUR=35.0;
 
-// ── 데이터: 2회차 2026-09-08(화) 개장 ~ 09-11(금) 마감. 9/7 월요일은 노동절 휴장.
-const all=JSON.parse(fs.readFileSync(`${SP}/us5m_nqf.json`,'utf8'));
-const raw=all.filter(x=>'2026-09-08 09:30'<=x.d&&x.d<='2026-09-11 16:00');
+// ── 데이터: 3회차 2026-09-14(월) 개장 ~ 09-18(금) 마감. 휴장 없는 5거래일.
+// 심볼은 그 주 실제 월물(NQZ26.CME). 연속 심볼 NQ=F 는 09-14 11:30(동부)에
+// 12월물로 갈아타며 +1.295% 짜리 가짜 봉을 만든다 — 지침서 2-9.
+const all=JSON.parse(fs.readFileSync(`${SP}/week3_5m.json`,'utf8'));
+const raw=all.filter(x=>'2026-09-14 09:30'<=x.d&&x.d<='2026-09-18 16:00');
 const kstOf=et=>{const d=new Date(et.replace(' ','T')+'Z');d.setUTCHours(d.getUTCHours()+13);
   const w='일월화수목금토'[d.getUTCDay()];
   return `${d.getUTCMonth()+1}/${d.getUTCDate()} ${w} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
@@ -27,83 +29,86 @@ const DOW='일월화수목금토';
 const EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const dw=x=>DOW[new Date(x+'T00:00:00Z').getUTCDay()];
 const fmt0=n=>Math.round(n).toLocaleString('en-US');
-// 사건 선정 규칙 (대표 지시, 2026-09-12 개정)
-//  ① 그날 ★★★ 이 있으면 전부 넣는다. 장중이든 프리장이든 상관없다.
-//  ② ★★★ 이 하나도 없는 날만: 최고 등급 → 장중 우선 → 등락률
-//  ③ 같은 시각 여러 지표는 한 사건으로 묶는다(5분봉에서 한 봉)
-// 예전 규칙은 ★★★ 끼리도 장중 우선을 적용해 CPI·PPI 가 둘 다 빠졌었다.
+// 사건 선정 규칙은 GUIDE_WEEKLY_SHORTS.md 4장. 경제지표뿐 아니라 기업 실적·뉴스도
+// 후보이며, 훑었다는 기록을 매니페스트 coverage 에 남겨야 발행이 통과한다(4-1).
 const chgAll=[];for(let k=1;k<BARS.length;k++)chgAll.push({d:BARS[k].d,p:(BARS[k].c/BARS[k-1].c-1)*100});
 const rankOf=new Map([...chgAll].sort((a,b)=>Math.abs(b.p)-Math.abs(a.p)).map((x,k)=>[x.d,k+1]));
 const pctOfET=new Map(chgAll.map(x=>[x.d,x.p]));
 const colOf=p=>Math.abs(p)<0.05?C.hi:(p>0?C.up:C.down);
 const RAW=[
- {et:'2026-09-08 13:00',stars:1,when:'화 장중 · 한국 수 새벽 2시',
-  l1:'3년물 국채 입찰 4.474%.',l2:'직전은 4.291%였다.',tag:'국채입찰',
-  en:'3-year Treasury auction 4.474%, up from 4.291%',
-  te:'3-year note auction',actual:'4.474%',cf:'previous',cv:'4.291%',
-  why:'그날 ★★★ 없음 · 최고등급 ★ · 장중 · 등락률 1위'},
- {et:'2026-09-09 08:15',stars:2,when:'수 프리장 · 한국 밤 9시 15분',
-  l1:'ADP 주간 고용 1.2만 명.',l2:'직전은 1.0만이었다.',tag:'고용지표',
-  en:'ADP weekly employment 12K, up from 10K',
-  te:'adp employment change weekly',actual:'12K',cf:'previous',cv:'10K',
-  why:'그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로',
-  session_exception:'9월 9일 수요일은 ★★★ 이 없고 최고 등급 ★★ 세 건이 전부 장 밖이었다(모기지금리 07:00 프리장, ADP 08:15 프리장, API 원유재고 17:00 애프터장). 장중 우선을 적용할 후보가 없어 등락률로 골랐다.'},
- {et:'2026-09-10 08:30',stars:3,when:'목 프리장 · 한국 밤 9시 30분',
-  l1:'생산자물가 +0.4%.',l2:'직전은 +0.1%였다.',tag:'생산자물가',
-  en:'Producer prices +0.4% MoM, up from +0.1%',
-  te:'ppi mom',actual:'0.4%',cf:'previous',cv:'0.1%',
-  why:'★★★ 전부 넣는다'},
- {et:'2026-09-10 10:00',stars:3,when:'목 장중 · 한국 밤 11시',
-  l1:'기존주택 판매 398만 채.',l2:'예상도 398만이었다.',tag:'주택지표',
-  en:'Existing home sales 3.98M, matching forecast',
-  te:'existing home sales',actual:'3.98M',cf:'consensus',cv:'3.98M',
-  why:'★★★ 전부 넣는다'},
- {et:'2026-09-11 08:30',stars:3,when:'금 프리장 · 한국 밤 9시 30분',
-  l1:'근원 소비자물가 +0.3%.',l2:'예상은 +0.2%였다.',tag:'소비자물가',
-  en:'Core CPI +0.3% MoM, forecast +0.2%',
-  te:'core inflation rate mom',actual:'0.3%',cf:'consensus',cv:'0.2%',
-  why:'★★★ 전부 넣는다'},
- {et:'2026-09-11 10:00',stars:3,when:'금 장중 · 한국 밤 11시',
-  l1:'미시간 소비자심리 47.8.',l2:'예상은 51이었다.',tag:'소비심리',
-  en:'Michigan consumer sentiment 47.8, forecast 51',
-  te:'michigan consumer sentiment prel',actual:'47.8',cf:'consensus',cv:'51',
-  why:'★★★ 전부 넣는다'},
+ {et:"2026-09-14 11:30",stars:1,when:"월 장중 · 한국 화 새벽 12시 30분",
+  l1:"6개월물 국채 입찰 4.060%.",l2:"직전은 3.890%였다.",tag:"국채입찰",
+  en:"6-month Treasury bill auction 4.060%, up from 3.890%",
+  te:"6-month bill auction",actual:"4.060%",cf:"previous",cv:"3.890%",
+  why:"그날 ★★★ 없음 · 최고등급 ★ · 장중 · 같은 시각 둘"},
+ {et:"2026-09-15 08:30",stars:2,when:"화 프리장 · 한국 화 밤 9시 30분",
+  l1:"뉴욕 제조업 지수 7.6.",l2:"예상은 14.75였다.",tag:"제조업지수",
+  en:"NY Empire State manufacturing 7.6, forecast 14.75",
+  te:"ny empire state manufacturing index",actual:"7.60",cf:"consensus",cv:"14.75",
+  why:"그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로"},
+ {et:"2026-09-16 08:30",stars:3,when:"수 프리장 · 한국 수 밤 9시 30분",
+  l1:"소매판매 +1.2%.",l2:"예상은 +0.8%였다.",tag:"소매판매",
+  en:"Retail sales +1.2% MoM, forecast +0.8%",
+  te:"retail sales mom",actual:"1.2%",cf:"consensus",cv:"0.8%",
+  why:"★★★ 전부 넣는다"},
+ {et:"2026-09-16 14:00",stars:3,when:"수 장중 · 한국 목 새벽 3시",
+  l1:"기준금리 4.00%.",l2:"예상도 4.00%였다.",tag:"금리결정",
+  en:"Fed sets rates at 4.00%, matching forecast",
+  te:"fed interest rate decision",actual:"4%",cf:"consensus",cv:"4%",
+  why:"★★★ 전부 넣는다"},
+ {et:"2026-09-16 14:30",stars:3,when:"수 장중 · 한국 목 새벽 3시 30분",
+  l1:"연준 기자회견 시작.",l2:"금리 결정 30분 뒤였다.",tag:"기자회견",
+  en:"Fed press conference begins, 30 minutes after the decision",
+  te:"fed press conference",actual:"",cf:"",cv:"",
+  why:"★★★ 전부 넣는다"},
+ {et:"2026-09-17 08:30",stars:3,when:"목 프리장 · 한국 목 밤 9시 30분",
+  l1:"주택 착공 127.5만 채.",l2:"예상은 131만이었다.",tag:"주택착공",
+  en:"Housing starts 1.275M, forecast 1.31M",
+  te:"housing starts",actual:"1.275M",cf:"consensus",cv:"1.31M",
+  why:"★★★ 전부 넣는다"},
+ {et:"2026-09-18 11:45",stars:2,when:"금 장중 · 한국 토 새벽 12시 45분",
+  l1:"연준 슈미트 위원 연설.",l2:"이번 주 마지막 연준 발언이었다.",tag:"연준발언",
+  en:"Fed Schmid speaks, the week’s last Fed remarks",
+  te:"fed schmid speech",actual:"",cf:"",cv:"",
+  why:"그날 ★★★ 없음 · 최고등급 ★★ · 장중 둘 중 등락률로"},
 ];
 const EVENTS=RAW.map(e=>{const p=pctOfET.get(e.et);
   return {...e,i:idxOf(e.et),pct:+p.toFixed(3),rank:rankOf.get(e.et),col:colOf(p)};})
   .filter(e=>e.i>0).sort((a,b)=>a.i-b.i);
 if(EVENTS.length!==RAW.length){console.error('사건 인덱스 실패');process.exit(1);}
-// 발표 직후 5분 충격이 가장 큰 사건 = 이번 회차 정답
-const top=EVENTS.reduce((a,b)=>Math.abs(b.pct)>Math.abs(a.pct)?b:a);
+// 이번 회차 질문: 금리 결정과 기자회견 중 어느 쪽이 지수를 움직였나
+const PAIR=['금리결정','기자회견'];
+const pairEv=PAIR.map(t=>EVENTS.find(e=>e.tag===t));
+if(pairEv.some(e=>!e)){console.error('짝 사건을 못 찾았다',PAIR);process.exit(1);}
+const top=pairEv.reduce((a,b)=>Math.abs(b.pct)>Math.abs(a.pct)?b:a);
 top.rankTop=true;
 EVENTS.forEach((e,k)=>console.log(`  사건${k+1} ${e.et} ${'★'.repeat(e.stars)} ${e.pct>=0?'+':''}${e.pct}% ${e.rank}위 — ${e.l1}${e===top?'  ← 정답':''}`));
 
-// ── 이번 회차 질문: 발표 순간 지수를 가장 크게 움직인 사건은?
-const NAMES={'생산자물가':'생산자물가 PPI','소비자물가':'근원 소비자물가','소비심리':'미시간 소비자심리',
-             '주택지표':'기존주택 판매','고용지표':'ADP 주간 고용','국채입찰':'3년물 국채 입찰'};
-const OPT_TAGS=['생산자물가','소비자물가','소비심리'];
-const QUIZ={ans:OPT_TAGS.indexOf(top.tag),opts:OPT_TAGS.map(t=>NAMES[t])};
+const NAMES={'금리결정':'금리 결정','기자회견':'기자회견','국채입찰':'6개월물 국채 입찰',
+             '제조업지수':'뉴욕 제조업 지수','소매판매':'소매판매','주택착공':'주택 착공','연준발언':'연준 발언'};
+const QUIZ={ans:PAIR.indexOf(top.tag),opts:PAIR.map(t=>NAMES[t])};
 if(QUIZ.ans<0){console.error('정답 사건이 보기에 없다:',top.tag);process.exit(1);}
 const rank3=[...EVENTS].sort((a,b)=>Math.abs(b.pct)-Math.abs(a.pct)).slice(0,3);
 const sgn=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const other=pairEv.find(e=>e!==top);
 const COPY={
   kicker:`지난주 나스닥 · ${dw(d0)} 개장 ~ ${dw(d1)} 마감`,
   span:`${dw(d0)}요일 개장 → ${dw(d1)}요일 마감`,
-  q1:`그 주 지표 발표는 ${['','한','두','세','네','다섯','여섯','일곱','여덟'][EVENTS.length]||EVENTS.length} 번.`,
-  q2:'지수를 가장 크게 움직인 건?',
-  enHook:`Nasdaq 100, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]}. Which release moved it most?`,
+  q1:'수요일, 3년 만의 첫 금리 인상.',
+  q2:'지수를 움직인 건 어느 쪽?',
+  enHook:`Nasdaq 100, ${EN[new Date(d0+'T00:00:00Z').getUTCDay()]} to ${EN[new Date(d1+'T00:00:00Z').getUTCDay()]}. The decision, or the presser?`,
   ansName:NAMES[top.tag],
   ansBig:sgn(top.pct),
-  ansSub1:`${top.when.split(' · ')[1]||top.when}, 발표 5분 만에`,
+  ansSub1:`${NAMES[other.tag]}은 ${sgn(other.pct)}에 그쳤다`,
   ansSub2:`5분봉 ${chgAll.length.toLocaleString('en-US')}개 변동 중 ${top.rank}위`,
-  enAnswer:`${NAMES[top.tag]} — ${sgn(top.pct)} in the five minutes after the release`,
-  summ1:`지표 ${['','한','두','세','네','다섯','여섯'][EVENTS.length]||EVENTS.length} 번 중`,
-  summ2:'가장 세게 때린 건 이것이었다.',
+  enAnswer:`The press conference — ${sgn(top.pct)} against ${sgn(other.pct)} for the decision`,
+  summ1:'금리는 예상대로였다.',
+  summ2:'움직인 건 그 30분 뒤였다.',
   enSumm:'The three biggest reactions of the week, in order',
   rows:rank3.map((e,k)=>[`${k+1}위 · ${NAMES[e.tag]}`,sgn(e.pct),e.pct>=0?'up':'down']),
-  loopLabel:'가장 크게 움직인 사건', loopBig:NAMES[top.tag], loopTail:`발표 5분 만에 ${sgn(top.pct)}`,
+  loopLabel:'지수를 움직인 건', loopBig:NAMES[top.tag], loopTail:`발표 5분 만에 ${sgn(top.pct)}`,
 };
-console.log(`질문: 가장 크게 움직인 사건 = ${NAMES[top.tag]} ${sgn(top.pct)} (${top.rank}위)`);
+console.log(`질문: ${NAMES[top.tag]} ${sgn(top.pct)} vs ${NAMES[other.tag]} ${sgn(other.pct)}`);
 
 const b64=p=>fs.readFileSync(p).toString('base64');
 const photo='data:image/jpeg;base64,'+b64(`${R}/data/card-photos/2026-08-28-pm/card3.jpg`);
