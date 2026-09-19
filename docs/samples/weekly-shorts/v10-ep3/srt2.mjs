@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 // 타임라인 상수는 scene.js 와 같아야 한다. 사건 인덱스는 봉 데이터에서 직접 찾는다.
-const HOOK=[0,5.0], REPLAY=[5.0,26.2], ANSWER=[26.2,30.3], SUMM=[30.3,35.0];
+const HOOK=[0,5.0], REPLAY=[5.0,27.9], ANSWER=[27.9,32.0], SUMM=[32.0,35.0];
 const SP='/tmp/claude-0/-home-user-luckyon-briefing/4df77974-546d-5987-a418-39f318dc6bbd/scratchpad';
 const all=JSON.parse(fs.readFileSync(`${SP}/us5m_nqf.json`,'utf8'));
 const B=all.filter(x=>'2026-09-08 09:30'<=x.d&&x.d<='2026-09-11 16:00');

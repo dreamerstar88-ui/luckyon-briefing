@@ -2,7 +2,7 @@
 // 30초 판에서 훅이 너무 빨리 지나가 읽히지 않는다는 지적을 받아 늘렸다.
 // 늘린 5초 중 2.4초를 훅에, 2.0초를 되감기에, 나머지를 정답·요약에 나눠 줬다.
 const W=1080,H=1920,FPS=30;
-const HOOK=[0,5.0], REPLAY=[5.0,26.2], ANSWER=[26.2,30.3], SUMM=[30.3,35.0];
+const HOOK=[0,5.0], REPLAY=[5.0,27.9], ANSWER=[27.9,32.0], SUMM=[32.0,35.0];
 const DUR=35.0;
 // 훅 연출: 문구를 다 띄운 뒤 HOLD 만큼 세워 두고 다음으로 넘어간다.
 // 등장 동작은 [0, 등장창] 안에서 끝나고, 나머지는 전부 정지 시간이다.
@@ -426,15 +426,17 @@ function drawSumm(ctx,t){
   const st=t-SUMM[0];
   // 예전에는 요약과 루프 카드가 1초 넘게 동시에 반투명으로 겹쳐 글자 위에 글자가 얹혔다.
   // 요약은 앞 0.5초에 먼저 사라지고, 루프 카드는 그 뒤에 들어온다.
-  const fadeOut=seg(t,SUMM[1]-1.2,SUMM[1]-0.7);   // 요약이 빠지는 구간
-  const out=seg(t,SUMM[1]-0.7,SUMM[1]-0.1);       // 루프 카드가 들어오는 구간
+  // 요약 구간이 4.7초에서 3.0초로 줄었다(그만큼 되감기에 줬다). 안쪽 등장 시각도 같이
+  // 당기지 않으면 내용이 다 뜨자마자 사라진다 — 3.0초에서 머무는 시간이 0.20초가 된다.
+  const fadeOut=seg(t,SUMM[1]-1.0,SUMM[1]-0.62);  // 요약이 빠지는 구간
+  const out=seg(t,SUMM[1]-0.62,SUMM[1]-0.08);     // 루프 카드가 들어오는 구간
   ctx.save();ctx.globalAlpha=1-fadeOut;
   txt(ctx,COPY.summ1,60,206,'900 52px PD',C.text);
   txt(ctx,COPY.summ2,60,278,'900 52px PD',C.hi);
   enBand(ctx,COPY.enSumm,1,344,false);
   const rows=COPY.rows.map(r=>[r[0],r[1],C[r[2]]||C.text]);
   rows.forEach((r,k)=>{
-    const a=easeOut(seg(st,.15+k*.22,.5+k*.22));if(a<=0)return;
+    const a=easeOut(seg(st,.10+k*.14,.38+k*.14));if(a<=0)return;
     ctx.save();ctx.globalAlpha=(1-fadeOut)*a;ctx.translate(0,(1-a)*20);
     const y=390+k*118;
     txt(ctx,r[0],56,y+52,'700 46px PD',C.text);
@@ -443,7 +445,7 @@ function drawSumm(ctx,t){
     ctx.restore();
   });
   chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
-  const c=easeOut(seg(st,1.1,1.6));
+  const c=easeOut(seg(st,0.95,1.35));
   if(c>0){ctx.save();ctx.globalAlpha=(1-fadeOut)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
     txt(ctx,'다음 주도 다시 돌려 드립니다',60,1594,'700 44px PD','#d8d8d8');
