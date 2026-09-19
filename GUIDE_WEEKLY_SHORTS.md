@@ -375,10 +375,15 @@ node scripts/weekly-shorts/pick-question.mjs us5m_nqf.json us1h_nqf.json <주시
 
 ## 6. 시간 배분
 
-35초. `HOOK [0,5]` · `REPLAY [5,26.2]` · `ANSWER [26.2,30.3]` · `SUMM [30.3,35]`.
+35초. `HOOK [0,5]` · `REPLAY [5,27.9]` · `ANSWER [27.9,32]` · `SUMM [32,35]`.
+
+> 3회차(2026-09-19) 대표 지시로 요약·루프를 4.7초에서 3.0초로 줄이고 그 1.7초를
+> 되감기에 옮겼다. 전체 35초와 정답 4.1초는 그대로다. 이 값이 현재 기준이다.
 
 - 훅은 문구를 다 띄운 뒤 1.95초 세워 두고 **5초 정각에** 넘어간다.
-- 사건마다 멈추는 총 시간은 7.2초로 두고 사건 수로 나눈다. 나흘이면 건당 1.8초.
+- 사건마다 멈추는 총 시간은 9.0초다. 사건 수로 똑같이 나누지 말고 **물채우기로 배분한다**
+  — 앞 사건과 간격이 좁은 쪽에 더 오래 세운다(`scene.js` 참고). 바닥은 0.6초.
+  3회차는 사건 7개에 0.6/0.6/1.905/2.613/0.6/0.6/2.082 초가 돌아갔다.
 - 페이드: `loudnorm` 을 `afade` **앞에** 건다. 순서를 바꾸면 끝이 −28dBFS 에 머문다.
 - 페이드아웃 곡선은 `ipar`.
 
@@ -388,7 +393,7 @@ node scripts/weekly-shorts/pick-question.mjs us5m_nqf.json us1h_nqf.json <주시
 
 발행 전에 **두 겹**을 통과해야 한다. 하나라도 빠뜨리면 발행하지 않는다.
 
-### 7-1. 기계 검사 (55건)
+### 7-1. 기계 검사 (114건)
 
 ```bash
 node scripts/weekly-shorts/verify-shorts.mjs content/weekly-shorts/<날짜>.json \
@@ -413,7 +418,7 @@ node scripts/weekly-shorts/verify-shorts.mjs content/weekly-shorts/<날짜>.json
 
 2회차의 색 위반은 기계 검사 49건을 통과하고도 남았다. 검사에 색 항목이 아예
 없었기 때문이다. **놓친 결함을 고치고 끝내지 말고, 같은 것을 다음에 기계가 잡게
-만든다.** 지금은 55건이다.
+만든다.** 지금은 114건이다.
 
 ---
 
