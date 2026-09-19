@@ -236,6 +236,7 @@ for (const e of M.events) {
 // ── 5. 트레이딩이코노믹스 캘린더로 별표·실제값·예상값 대조 ────────────────────
 console.log(`\n[5] 트레이딩이코노믹스 캘린더 대조`);
 const d1 = M.window.from_et.slice(0, 10), d2 = M.window.to_et.slice(0, 10);
+let CAL = null;   // 캘린더 파싱 결과 (6장에서 재사용)
 try {
   const resp = await fetch(`https://tradingeconomics.com/united-states/calendar?d1=${d1}&d2=${d2}`,
     { headers: { 'User-Agent': UA } });
@@ -252,6 +253,7 @@ try {
   }
   const rows = html.split(/<tr\s+data-url=/).slice(1);
   const table = new Map();
+  CAL = table;   // 아래 6장에서 «값이 없는 사건» 을 캘린더로 확인할 때 쓴다
   const all = [];
   let outOfRange = 0;
   for (const r0 of rows) {
@@ -283,7 +285,10 @@ try {
     if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', e.te_event); continue; }
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
     cmp(`사건${e.n} 실제값`, row.actual, e.actual);
-    cmp(`사건${e.n} ${e.compare_field}`, row[e.compare_field], e.compare);
+    // 기자회견·연설은 발표값이 없어 비교 필드도 비어 있다. 6장에서 캘린더가 정말로
+    // 비어 있는지 따로 확인하므로 여기서는 건너뛴다.
+    if (e.compare_field) cmp(`사건${e.n} ${e.compare_field}`, row[e.compare_field], e.compare);
+    else ok(`사건${e.n} 비교값`, '발표값 없는 사건 — 6장에서 확인');
   }
 
   // ── 5-1. 같은 시각에 여러 지표가 걸렸을 때 대표를 제대로 골랐는지 ──────────
@@ -329,12 +334,22 @@ try {
       } else {
         const moved = top.map((r) => ({ r, d: Math.abs((num(r.actual) ?? 0) - (num(r.previous) ?? 0)) }));
         const best = moved.reduce((a, b) => (b.d > a.d ? b : a));
-        if (best.r.name !== e.te_event) {
+        // 동률이면 규칙으로 못 가른다. 0.17000000000000037 과 0.17000000000000015 의
+        // 차이로 승자를 정하면 안 된다 — 사람이 고르고 사유를 남긴 것을 인정한다.
+        const tied = moved.filter((x) => Math.abs(x.d - best.d) < 1e-9);
+        if (tied.length > 1) {
+          if (!e.tiebreak) { bad(`사건${e.n} 대표 선정`, `직전값 변동이 ${tied.length}건 동률(${best.d.toFixed(3)})이라 규칙으로 못 가른다 — tiebreak 에 사람이 고른 근거를 적어라`, '사유 없음'); continue; }
+          if (!tied.some((x) => x.r.name === e.te_event)) {
+            bad(`사건${e.n} 대표 선정`, `동률인 ${tied.map((x) => x.r.name).join(' / ')} 중에서 골라야 한다`, e.te_event); continue;
+          }
+          ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} · 직전값 변동 ${best.d.toFixed(3)} 동률 — tiebreak 사유로 확인`);
+        } else if (best.r.name !== e.te_event) {
           bad(`사건${e.n} 대표 선정`, `${why0} 이니 직전값에서 가장 많이 움직인 ${best.r.name} 를 써야 한다`,
             e.te_event);
           continue;
+        } else {
+          ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} — 직전값 변동 최대 선택`);
         }
-        ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} — 직전값 변동 최대 선택`);
       }
     }
     if (!e.tiebreak) bad(`사건${e.n} 타이브레이크 사유`, '같은 시각 최고 등급이 여럿이면 tiebreak 를 적어라', '없음');
@@ -377,6 +392,20 @@ const lineHas = (line, want) => {
   return false;
 };
 for (const e of M.events) {
+  // 기자회견·연설처럼 애초에 발표값이 없는 사건이 있다. 그런 사건은 숫자 대조를 할 수 없다.
+  // 다만 «값이 없다» 를 매니페스트가 스스로 주장하게 두면 숫자 검사를 피하는 구멍이 된다.
+  // 그래서 캘린더 원본에 정말로 실제값·예상값·직전값이 전부 비어 있는지 확인하고 넘어간다.
+  if (!e.actual && !e.compare) {
+    if (!e.no_value) { bad(`사건${e.n} 값 없음`, '실제값·비교값이 비어 있다', 'no_value 에 사유를 적어라'); continue; }
+    const row = CAL && CAL.get(e.te_event);
+    if (!row) { warn(`사건${e.n} 값 없음`, `캘린더로 확인하지 못했다 — ${e.no_value}`); continue; }
+    if (row.actual || row.consensus || row.previous) {
+      bad(`사건${e.n} 값 없음`, `캘린더에 값이 있다 (실 ${row.actual} / 예 ${row.consensus} / 직전 ${row.previous})`, '값이 있으면 화면에 적어라');
+    } else {
+      ok(`사건${e.n} 값 없음`, `캘린더도 비어 있다 — ${e.no_value}`);
+    }
+    continue;
+  }
   lineHas(e.l1, e.actual) ? ok(`사건${e.n} 첫 줄에 실제값`, `${e.l1} ← ${e.actual}`)
                           : bad(`사건${e.n} 첫 줄에 실제값`, e.l1, e.actual);
   lineHas(e.l2, e.compare) ? ok(`사건${e.n} 둘째 줄에 비교값`, `${e.l2} ← ${e.compare}`)

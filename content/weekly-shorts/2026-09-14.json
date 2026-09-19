@@ -1,0 +1,216 @@
+{
+  "stamp": "nasdaq-week-2026-09-14",
+  "episode": 3,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQZ26.CME",
+    "interval": "5m",
+    "symbol_note": "연속 심볼 NQ=F 는 만기 때 월물을 말없이 갈아타 가격이 통째로 뛴다. 그 주의 실제 월물을 쓴다. 2026-09-19 확인.",
+    "from_et": "2026-09-14 09:30",
+    "to_et": "2026-09-18 16:00",
+    "holiday_note": "휴장 없는 5거래일."
+  },
+  "video": {
+    "duration": 35.0,
+    "sections": {
+      "hook": [
+        0,
+        5.0
+      ],
+      "replay": [
+        5.0,
+        27.9
+      ],
+      "answer": [
+        27.9,
+        32.0
+      ],
+      "summ": [
+        32.0,
+        35.0
+      ]
+    },
+    "sections_note": "2회차까지는 되감기 21.2초 / 요약 4.7초였다. 대표 지시로 요약을 3.0초로 줄이고 1.7초를 되감기에 줬다(2026-09-19).",
+    "hook_hold": 1.95,
+    "hold": 1.2857,
+    "holds": [
+      0.6,
+      0.6,
+      1.905,
+      2.613,
+      0.6,
+      0.6,
+      2.082
+    ]
+  },
+  "numbers": {
+    "bars": 1179,
+    "changes": 1178,
+    "week_pct": 2.58,
+    "mdd_pct": -1.86,
+    "peak": 29604,
+    "trough": 29053,
+    "week_high": 29967,
+    "week_low": 29053,
+    "open": 29194.75,
+    "close": 29947.0,
+    "week_high_et": "2026-09-18 03:30",
+    "week_low_et": "2026-09-16 15:25",
+    "peak_et": "2026-09-14 13:55",
+    "trough_et": "2026-09-16 15:25"
+  },
+  "question": {
+    "id": "evpair",
+    "ko": "지수를 움직인 건 어느 쪽이었을까요?",
+    "en": "Which one moved the index?",
+    "answer_value": "기자회견",
+    "why": "금리 결정은 예상과 같아 +0.110% 에 그쳤고, 30분 뒤 시작한 기자회견 봉이 -0.283% 로 그 주 3위였다. 회견 시작 직전부터 저점까지는 55분 동안 -1.36% 였다.",
+    "guard": "시장이 결정 자체에 반응하는 주도 있고 회견 발언에 반응하는 주도 있다. 예상을 벗어난 결정이면 결정 쪽이 압도한다. 이번 주는 결정이 예상과 같아 회견이 컸다."
+  },
+  "quiz": {
+    "options": [
+      "금리 결정",
+      "기자회견"
+    ],
+    "answer_index": 2
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-09-14 11:30",
+      "kst_label": "월 장중 · 한국 화 새벽 12시 30분",
+      "te_event": "6-month bill auction",
+      "stars": 1,
+      "actual": "4.060%",
+      "compare_field": "previous",
+      "compare": "3.890%",
+      "l1": "6개월물 국채 입찰 4.060%.",
+      "l2": "직전은 3.890%였다.",
+      "tag": "국채입찰",
+      "en": "6-month Treasury bill auction 4.060%, up from 3.890%",
+      "why": "그날 ★★★ 없음 · 최고등급 ★ · 장중 · 같은 시각 둘",
+      "tiebreak": "같은 시각(협정세계시 15:30)에 ★ 두 건 — 3개월물·6개월물 국채 입찰. 둘 다 예상치가 없고 직전값 변동이 +0.170%p로 정확히 동률이라 규칙으로 못 갈랐다. 대표 판단으로 6개월물을 골랐다(2026-09-19): 금리가 4%를 넘어선 것이 눈에 띄고 기간이 길어 금리 기대를 더 잘 보여준다.",
+      "pct": 0.277,
+      "rank": 4,
+      "color": "up"
+    },
+    {
+      "n": 2,
+      "et": "2026-09-15 08:30",
+      "kst_label": "화 프리장 · 한국 화 밤 9시 30분",
+      "te_event": "ny empire state manufacturing index",
+      "stars": 2,
+      "actual": "7.60",
+      "compare_field": "consensus",
+      "compare": "14.75",
+      "l1": "뉴욕 제조업 지수 7.6.",
+      "l2": "예상은 14.75였다.",
+      "tag": "제조업지수",
+      "en": "NY Empire State manufacturing 7.6, forecast 14.75",
+      "why": "그날 ★★★ 없음 · 최고등급 ★★ · 장중 발표 없어 등락률로",
+      "session_exception": "9월 15일 화요일은 ★★★ 이 없고 최고 등급 ★★ 세 건이 전부 장 밖이었다(ADP 08:15 프리장, 엠파이어스테이트 08:30 프리장, API 원유재고 17:00 애프터장). 장중 우선을 적용할 후보가 없어 등락률로 골랐다.",
+      "pct": 0.02,
+      "rank": 668,
+      "color": "hi"
+    },
+    {
+      "n": 3,
+      "et": "2026-09-16 08:30",
+      "kst_label": "수 프리장 · 한국 수 밤 9시 30분",
+      "te_event": "retail sales mom",
+      "stars": 3,
+      "actual": "1.2%",
+      "compare_field": "consensus",
+      "compare": "0.8%",
+      "l1": "소매판매 +1.2%.",
+      "l2": "예상은 +0.8%였다.",
+      "tag": "소매판매",
+      "en": "Retail sales +1.2% MoM, forecast +0.8%",
+      "why": "★★★ 전부 넣는다",
+      "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
+      "pct": -0.076,
+      "rank": 121,
+      "color": "down"
+    },
+    {
+      "n": 4,
+      "et": "2026-09-16 14:00",
+      "kst_label": "수 장중 · 한국 목 새벽 3시",
+      "te_event": "fed interest rate decision",
+      "stars": 3,
+      "actual": "4%",
+      "compare_field": "consensus",
+      "compare": "4%",
+      "l1": "기준금리 4.00%.",
+      "l2": "예상도 4.00%였다.",
+      "tag": "금리결정",
+      "en": "Fed sets rates at 4.00%, matching forecast",
+      "why": "★★★ 전부 넣는다",
+      "tiebreak": "같은 시각(협정세계시 18:00)에 ★★★ 두 건 — 금리 결정과 FOMC 경제전망. 경제전망은 실제값·예상값·직전값이 모두 비어 있어 비교할 값이 없고, 금리 결정은 직전 3.75%에서 4%로 움직였다. 직전값 변동 최대로 금리 결정을 대표로 썼다. 지침서 4장 3번.",
+      "pair_with": 5,
+      "pct": 0.11,
+      "rank": 53,
+      "color": "up"
+    },
+    {
+      "n": 5,
+      "et": "2026-09-16 14:30",
+      "kst_label": "수 장중 · 한국 목 새벽 3시 30분",
+      "te_event": "fed press conference",
+      "stars": 3,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "연준 기자회견 시작.",
+      "l2": "금리 결정 30분 뒤였다.",
+      "tag": "기자회견",
+      "en": "Fed press conference begins, 30 minutes after the decision",
+      "why": "★★★ 전부 넣는다",
+      "no_value": "기자회견은 발표되는 수치가 없다. 캘린더에도 실제값·예상값·직전값이 비어 있다.",
+      "pct": -0.283,
+      "rank": 3,
+      "color": "down"
+    },
+    {
+      "n": 6,
+      "et": "2026-09-17 08:30",
+      "kst_label": "목 프리장 · 한국 목 밤 9시 30분",
+      "te_event": "housing starts",
+      "stars": 3,
+      "actual": "1.275M",
+      "compare_field": "consensus",
+      "compare": "1.31M",
+      "l1": "주택 착공 127.5만 채.",
+      "l2": "예상은 131만이었다.",
+      "tag": "주택착공",
+      "en": "Housing starts 1.275M, forecast 1.31M",
+      "why": "★★★ 전부 넣는다",
+      "tiebreak": "같은 시각(협정세계시 12:30)에 ★★★ 두 건 — 주택 착공과 건축 허가. 둘 다 예상을 벗어났고, 벗어난 정도는 주택 착공이 -2.67%(1.275 vs 1.31), 건축 허가가 -1.13%(1.394 vs 1.41)였다. 더 많이 벗어난 주택 착공을 대표로 썼다. 지침서 4장 3번.",
+      "session_exception": "★★★ 이라 규칙에 따라 장 밖이어도 넣는다.",
+      "pct": 0.081,
+      "rank": 104,
+      "color": "up"
+    },
+    {
+      "n": 7,
+      "et": "2026-09-18 11:45",
+      "kst_label": "금 장중 · 한국 토 새벽 12시 45분",
+      "te_event": "fed schmid speech",
+      "stars": 2,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "연준 슈미트 위원 연설.",
+      "l2": "이번 주 마지막 연준 발언이었다.",
+      "tag": "연준발언",
+      "en": "Fed Schmid speaks, the week’s last Fed remarks",
+      "why": "그날 ★★★ 없음 · 최고등급 ★★ · 장중 둘 중 등락률로",
+      "no_value": "연설은 발표되는 수치가 없다. 캘린더에도 실제값·예상값·직전값이 비어 있다.",
+      "pct": -0.013,
+      "rank": 845,
+      "color": "hi"
+    }
+  ],
+  "calendar_snapshot": "content/weekly-shorts/2026-09-14.calendar.html",
+  "publish": null
+}

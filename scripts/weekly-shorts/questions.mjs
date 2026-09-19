@@ -218,6 +218,16 @@ export const QUESTIONS = [
     ko: '지수를 가장 크게 움직인 발표는?', en: 'Which release moved the index most?',
     fn: (c) => c.events.reduce((a, e) => Math.abs(e.pct) > Math.abs(a.pct) ? e : a).tag,
     guard: '그 주에 어떤 지표가 걸렸는지, 그리고 시장이 그중 무엇에 반응했는지에 달려 있다. CPI 가 있는 주에도 CPI 가 1위가 아닌 경우가 흔하다 — 2회차가 그랬다(PPI 가 1위, CPI 는 3위).' },
+  { id: 'evpair', cat: '지표', unit: '', needsEvents: true, kind: 'choice',
+    ko: '지수를 움직인 건 어느 쪽이었을까요?', en: 'Which one moved the index?',
+    // 같은 날 짝을 이루는 두 사건(결정과 회견, 발표와 브리핑) 중 어느 쪽이 더 움직였나.
+    // 짝이 매니페스트에 pair_with 로 표시돼 있어야 쓸 수 있다.
+    fn: (c) => {
+      const p = c.events.filter((e) => e.pair_with || c.events.some((x) => x.pair_with === e.n));
+      if (p.length !== 2) return undefined;
+      return (Math.abs(p[0].pct) > Math.abs(p[1].pct) ? p[0] : p[1]).tag;
+    },
+    guard: '시장이 결정 자체에 반응하는 주도 있고 회견 발언에 반응하는 주도 있다. 예상대로 나온 결정은 거의 안 움직이는 반면, 예상을 벗어난 결정이면 결정 쪽이 압도한다. 3회차는 결정이 예상과 같아 회견이 1위였다(+0.110% vs -0.283%).' },
   { id: 'evmin', cat: '지표', unit: '%', needsEvents: true,
     ko: '가장 반응이 없던 지표는 몇 %였을까요?', en: 'Which release moved it least?',
     fn: (c) => c.events.reduce((a, e) => Math.abs(e.pct) < Math.abs(a) ? e.pct : a, c.events[0].pct),
