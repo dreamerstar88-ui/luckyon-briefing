@@ -528,6 +528,25 @@ if (srtDir) {
     });
     allOk ? ok(`${f} 구간`, `${cues.length}개 모두 사건 정지 시각과 일치`)
           : bad(`${f} 구간`, '어긋남', want.map((x) => x.toFixed(2)).join(' / '));
+
+    // 구간(시각)만 보면 본문이 틀려도 통과한다. 3회차에서 슈미트 직함을 화면·매니페스트·
+    // 발행문구에서 지웠는데 자막 생성기의 문자열 배열만 남아 «연준 슈미트 위원 연설» 이
+    // 자막으로 나갈 뻔했고, 검사 111건이 전부 통과했다 — 본문을 안 봤기 때문이다.
+    // 사건 자막 큐(훅 다음부터 사건 수만큼)가 매니페스트 문구를 담고 있는지 본다.
+    const blocks = body.trim().split(/\n\s*\n/).map((b) => b.split('\n').slice(2).join(' '));
+    const ko = /\.ko\./.test(f);
+    let textOk = true, firstBad = '';
+    M.events.forEach((e, k) => {
+      const cue = blocks[k + 1] || '';
+      const need = ko ? [e.l1, e.l2] : [e.en];
+      for (const w of need) {
+        // 자막은 끝의 마침표를 떼고, 영어는 쉼표로 두 줄로 나눈다 — 글자만 보고 비교한다
+        const norm = (x) => String(x).replace(/[.,·\s]/g, '');
+        if (!norm(cue).includes(norm(w))) { textOk = false; if (!firstBad) firstBad = `사건${e.n}: 자막 «${cue}» 에 «${w}» 가 없다`; }
+      }
+    });
+    textOk ? ok(`${f} 본문`, `사건 ${M.events.length}개 문구가 매니페스트와 일치`)
+           : bad(`${f} 본문`, '매니페스트 문구를 그대로 담아야 한다', firstBad);
   }
 }
 

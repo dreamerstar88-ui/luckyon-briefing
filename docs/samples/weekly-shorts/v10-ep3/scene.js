@@ -435,12 +435,12 @@ function drawSumm(ctx,t){
   const fadeOut=seg(t,SUMM[1]-1.0,SUMM[1]-0.62);  // 요약이 빠지는 구간
   const out=seg(t,SUMM[1]-0.62,SUMM[1]-0.08);     // 루프 카드가 들어오는 구간
   ctx.save();ctx.globalAlpha=1-fadeOut;
-  txt(ctx,COPY.summ1,60,206,'900 52px PD',C.text);
-  txt(ctx,COPY.summ2,60,278,'900 52px PD',C.hi);
+  txt(ctx,COPY.summ1,60,186,'900 52px PD',C.text);
+  txt(ctx,COPY.summ2,60,250,'900 52px PD',C.hi);
   // 표의 범위를 한국어로도 밝힌다. 안 밝히면 «1위·2위·3위» 가 그 주 5분봉 전체의
   // 순위로 읽힌다 — 2.1초 앞 정답 화면이 «1,178개 중 3위» 라고 말하는 것과 어긋난다.
-  txt(ctx,COPY.rowsScope||'',60,344,'700 34px PD',C.muted);
-  enBand(ctx,COPY.enSumm,1,392,false);
+  txt(ctx,COPY.rowsScope||'',60,314,'700 34px PD',C.muted);
+  enBand(ctx,COPY.enSumm,1,360,false);
   const rows=COPY.rows.map(r=>[r[0],r[1],C[r[2]]||C.text]);
   rows.forEach((r,k)=>{
     const a=easeOut(seg(st,.10+k*.14,.38+k*.14));if(a<=0)return;

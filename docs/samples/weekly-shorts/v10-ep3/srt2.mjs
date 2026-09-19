@@ -17,27 +17,39 @@ const drawT=(REPLAY[1]-REPLAY[0])-budget;
 const holds=[]; let prev=0,t=0;
 IDX.forEach((i,k)=>{ t+=(i-prev)/N*drawT; holds.push(REPLAY[0]+t); t+=HS[k]; prev=i; });
 const cuts=[HOOK[0],HOOK[1],...holds.slice(1),ANSWER[0],SUMM[0],SUMM[1]];
+// 사건 자막은 매니페스트에서 만든다. 문구를 여기에 또 적으면 render2.mjs·매니페스트와
+// 셋으로 갈라져, 한 곳만 고치는 사고가 구조적으로 계속 난다. 3회차에서 슈미트 직함을
+// 화면·매니페스트·발행문구에서 지웠는데 이 배열만 남아 «연준 슈미트 위원 연설» 이
+// 자막으로 나갈 뻔했다 — 지침서 9장 3번(화면만 고치고 자막을 두는 것)의 재발이었다.
+const NUM='①②③④⑤⑥⑦⑧';
+const KWD='일월화수목금토';
+const drop=x=>String(x).replace(/\.$/,'');
+const evCue=(e,k)=>{
+  const [sess,kst]=e.kst_label.split(' · ');          // «금 장중» · «한국 토 새벽 12시 45분»
+  const etDay=KWD[(new Date(e.et.replace(' ','T')+'Z').getUTCDay())];
+  const kstDay=(kst||'').match(/한국 ([일월화수목금토])/);
+  // 한국 요일이 미국 요일과 다르면 밤을 넘긴 것이라 헷갈린다 — 그때만 괄호로 밝힌다
+  const note=(kstDay&&kstDay[1]!==sess.slice(0,1))?`(${kst})`:'';
+  return [`${NUM[k]} ${sess}${note} · ${drop(e.l1)}`, drop(e.l2)];
+};
+const EVKO=M.events.map(evCue);
+const EVEN=M.events.map((e,k)=>{
+  const sess=e.kst_label.split(' · ')[0];
+  const en=/장중/.test(sess)?'session':'pre-market';
+  const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(e.et.replace(' ','T')+'Z').getUTCDay()];
+  const [a,...b]=drop(e.en).split(', ');
+  const tail=b.join(', ');
+  return [`${k+1}) ${day} ${en} - ${a}`, tail?tail[0].toUpperCase()+tail.slice(1):'—'];
+});
 const KO=[
  ['지난주 나스닥, 월요일 개장 ~ 금요일 마감','결과는 +2.58%. 수요일에 3년 만의 첫 금리 인상이 있었다'],
- ['① 월 장중(한국 화 새벽 12시 30분) · 6개월물 국채 입찰 4.060%','직전은 3.890%였다'],
- ['② 화 프리장 · 뉴욕 제조업 지수 7.6','예상은 14.75였다'],
- ['③ 수 프리장 · 소매판매 +1.2%','예상은 +0.8%였다'],
- ['④ 수 장중 · 기준금리 4.00%','예상도 4.00%였다'],
- ['⑤ 수 장중 · 연준 기자회견 시작','금리 결정 30분 뒤였다'],
- ['⑥ 목 프리장 · 주택 착공 127.5만 채','예상은 131만이었다'],
- ['⑦ 금 장중 · 연준 슈미트 위원 연설','이번 주 마지막 연준 발언이었다'],
+ ...EVKO,
  ['지수를 움직인 건 기자회견이었다','금리 결정은 +0.11%, 기자회견은 -0.28%'],
  ['금리는 예상대로였고, 움직인 건 그 30분 뒤였다','몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다'],
 ];
 const EN=[
  ['Nasdaq 100 futures, Monday open to Friday close','The week ended +2.58%, with the first rate hike in three years'],
- ['1) Mon session - 6-month Treasury bill auction 4.060%','Up from 3.890%'],
- ['2) Tue pre-market - NY Empire State manufacturing 7.6','The forecast was 14.75'],
- ['3) Wed pre-market - Retail sales +1.2% MoM','The forecast was +0.8%'],
- ['4) Wed session - Fed sets rates at 4.00%','Matching the forecast'],
- ['5) Wed session - Fed press conference begins','Thirty minutes after the decision'],
- ['6) Thu pre-market - Housing starts 1.275M','The forecast was 1.31M'],
- ['7) Fri session - Fed Schmid speaks','The last Fed remarks of the week'],
+ ...EVEN,
  ['The press conference moved it, not the decision','The decision +0.11%, the press conference -0.28%'],
  ['Rates came in as expected. The move came 30 minutes later','Which one did you pick? We will replay next week too'],
 ];
