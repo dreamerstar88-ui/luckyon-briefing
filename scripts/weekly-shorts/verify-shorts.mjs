@@ -216,6 +216,33 @@ for (const e of M.events) {
   cmp(`사건${e.n} 색`, want, e.color);
 }
 
+// ── 3-1. 훑었다는 기록이 있는지 (지침서 4-1 확인 목록) ─────────────────────
+// 이 검사만 «만든 것» 이 아니라 «안 만든 것» 을 본다. 나머지 검사는 매니페스트에
+// 적힌 사건을 대조할 뿐이라, 애초에 후보로 올리지 않은 것은 영원히 안 걸린다.
+// 3회차 준비에서 경제 캘린더만 보고 기업 실적과 뉴스를 확인하지 않은 채
+// «규칙대로 골랐다» 고 보고했다. 지침서 4장에서 그 두 규칙이 빠져 있었고,
+// 빠진 걸 아무도 못 봤다. 훑었다는 사실 자체를 적게 하고, 없으면 막는다.
+console.log(`\n[3-1] 확인 목록 (지침서 4-1)`);
+{
+  const need = {
+    econ_calendar: '경제 캘린더 — 스냅샷 경로와 파싱한 행 수',
+    earnings: '기업 실적 — 그 주 발표한 나스닥100 종목. 없으면 «없음» 과 확인 경로',
+    news_scan: '뉴스 — 5분 변동 상위 10개를 훑은 결과',
+    data_crosscheck: '주가 대조 — 어느 두 소스와 맞춰 봤는지',
+  };
+  const cov = M.coverage || {};
+  for (const [k, what] of Object.entries(need)) {
+    const v = cov[k];
+    if (!v || String(v).trim().length < 10) bad(`확인 목록 ${k}`, what, v ? `너무 짧다: ${v}` : '없음');
+    else ok(`확인 목록 ${k}`, String(v).slice(0, 60) + (String(v).length > 60 ? '…' : ''));
+  }
+  // 뉴스 훑기는 상위 10개를 실제로 다뤘는지까지 본다
+  const ns = String(cov.news_scan || '');
+  const hit = (ns.match(/\d{2}-\d{2} \d{2}:\d{2}/g) || []).length;
+  if (cov.news_scan && hit < 10) bad('확인 목록 news_scan 항목 수', '상위 10개 시각을 각각 적어라 (MM-DD HH:MM)', `${hit}개만 적혀 있다`);
+  else if (cov.news_scan) ok('확인 목록 news_scan 항목 수', `${hit}개 시각`);
+}
+
 // 규칙 검사: 요일당 최소 1개
 console.log(`\n[4] 사건 선정 규칙`);
 const days = new Set(M.events.map((e) => e.et.slice(0, 10)));
