@@ -1,0 +1,347 @@
+{
+  "type": "chart-notes",
+  "stamp": "2026-09-20-ep08",
+  "date": "2026-09-20",
+  "series": "투자 3분 노트",
+  "series_en": "3-Min Investing Notes",
+  "episode": "EP.08",
+  "byline": "by luckyon",
+  "term_ko": "시가총액",
+  "term_en": "Market capitalization",
+  "teaching_points": [
+    "① 시가총액 = 한 주 값 × 상장주식수 — 축이 둘인 곱셈이다",
+    "② 주가는 «한 주»의 값이라 회사 크기를 말하지 않는다",
+    "③ 주식 수는 회사마다 천 배씩 다르고, 그래서 주가 순서가 뒤집힌다",
+    "④ 시가총액도 «회사를 사는 값»은 아니다(빚) · 세는 주식 수 기준이 갈린다(상장주식 vs 유동주식)"
+  ],
+  "fact_check": {
+    "ko": "삼성전자(005930.KS) 2026-09-18(금) 종가 261,000원 — PlayMCP UsStockInfo-get_historical_stock_prices 의 마지막 봉 2026-09-17T15:00Z(시가 261,000 / 고가 262,000 / 저가 257,500 / 종가 261,000 / 거래량 17,489,615)이며 get_stock_info 의 currentPrice·dayHigh·dayLow 와 원 단위까지 일치한다. ※ KRX 일봉은 15:00Z 로 찍혀 실제 거래일이 KST +1일이다 — 1개월 봉 날짜가 일~목에만 떨어지고 금·토에는 하나도 없어(2026-08-23·08-30·09-06 이 일요일인데 봉이 있다) 오프셋을 확인했다. 9/19 는 토요일이므로 9/20(일) 기준 직전 거래일은 9/18 이 맞다. 태광산업(003240.KS) 같은 날 종가 896,000원(시가 927,000 / 고가 927,000 / 저가 896,000 / 거래량 1,337)도 같은 방식으로 대조했다. 상장주식수는 OpenDART 최대주주 현황(둘 다 2026 반기보고서, 기준일 2026-06-30)의 지분율에서 역산했다 — 삼성전자 보통주(rcept 20260814003699): 특수관계인 계 1,151,293,808주 = 19.69% → 약 5,847,099,075주. 교차검증: 삼성물산 298,818,100주 = 5.11% → 5,847,712,328주 / 삼성생명 497,660,185주 = 8.51% → 5,847,945,770주. 태광산업 보통주(rcept 20260814003951): 계 607,102주 = 54.53% → 약 1,113,336주. 교차검증: 학교법인일주세화학원 55,669주 = 5.00% → 1,113,380주 / ㈜티알엔 124,908주 = 11.22% → 1,113,262주. 지분율이 소수 둘째 자리까지라 역산 오차가 ±0.05% 이므로 카드에는 «약 58억 주»·«약 111만 주» 로 반올림해 적었다. 시가총액은 KRX 방식(종가 × 상장주식수)으로 직접 계산했다: 삼성전자 261,000 × 5,847,099,075 = 1,526,092,858,575,000원(약 1,526조원), 태광산업 896,000 × 1,113,336 = 997,549,056,000원(약 9,975억원). 비율 — 주가 896,000 ÷ 261,000 = 3.433배, 시가총액 1,526,092,858,575,000 ÷ 997,549,056,000 = 1,529.8배 → 카드는 격차를 부풀리지 않도록 «약 1,500분의 1» 로 보수적으로 적었다. p.07 경고 상자의 태광산업 수치도 같은 보고서에서 왔다: 최대주주 및 특수관계인 54.53%, 자기주식 총계 271,769주(OpenDART 자기주식 취득·처분 현황, 같은 rcept) = 상장주식수의 24.41% → 둘을 빼면 시장에 도는 몫은 약 21%(카드는 «5분의 1쯤»). ※ yfinance(get_stock_info)의 marketCap 은 삼성전자 1,713.9조 / 태광산업 7,541억으로 위 계산과 다른데, 역산하면 각각 6,566,563,796주·841,631주다. 태광산업 쪽 차이(1,113,336 − 841,631 = 271,705주)는 위 자기주식 271,769주와 사실상 같아 **자기주식을 뺀 수**임이 확인된다 — 즉 KRX 상장주식수(자기주식 포함)와 미국식 shares outstanding(자기주식 제외)은 같은 값이 아니다. 카드는 독자가 증권앱에서 보게 될 KRX 기준을 따르고, 영어판은 미국식 기준(Alpha Vantage SharesOutstanding)을 따르며, 각 언어판의 p.03 설명이 그 기준을 각각 정확히 서술하도록 고쳤다. 삼성전자는 우선주가 따로 상장돼 있어 이 시가총액에 포함되지 않으므로, p.05 의 표현도 «회사 지분 전부»에서 «상장된 보통주 전부»로 고쳤다.",
+    "en": "Apple (AAPL) 2026-09-18 close $336.13 (open 337.91 / high 338.49 / low 332.53 / volume 86,433,100) and NVR 2026-09-18 close $6,150.47 (open 6,211.21 / high 6,250.00 / low 6,142.15 / volume 123,800) — PlayMCP UsStockInfo-get_historical_stock_prices, 5d window; US bars are stamped 04:00Z and the date part is the trading day, so no offset applies. Both match get_stock_info currentPrice to the cent. Shares outstanding from Alpha Vantage COMPANY_OVERVIEW (latest quarter 2026-06-30): AAPL 14,594,180,000 and NVR 2,664,900. Cross-check by multiplication: 336.13 × 14,594,180,000 = 4,905,541,723,400 against Alpha Vantage MarketCapitalization 4,905,541,566,000 (yfinance: 4,905,541,566,464) — agreement to six significant figures; 6,150.47 × 2,664,900 = 16,390,387,503 against Alpha Vantage 16,390,142,000 (yfinance 16,471,900,160). Cards use $4.91 trillion and $16.39 billion. Ratios — share price 6,150.47 ÷ 336.13 = 18.30x; market cap 4,905,541,566,000 ÷ 16,390,142,000 = 299.3x, written on the card as «about 300 times» and «about 1/300».",
+    "concept": "정의: 시가총액은 «모든 상장주식을 시가로 평가한 총액»이며 «상장종목별로 당일 종가에 상장주식 수를 곱하여» 산출한다 — 네이버 지식백과 '시가총액'(매일경제 경제용어사전, docId=1613630 / 두산백과 계열 docId=6559 동일 문구). 한경 경제용어사전 '주식시가총액'(docId=16622)은 같은 값을 «발행주식수 × 주가» 로 적어, 한국어 사전 안에서도 «상장주식수»와 «발행주식수»로 표현이 갈린다. 영어권 표준도 같다: market cap = share price × shares outstanding, 여기서 shares outstanding 은 공개 유통분과 제한주식(restricted)을 모두 포함한다. 확정하는 것 = «시장이 지금 이 회사의 주식 전체에 매긴 값» 그것뿐. 확정하지 않는 것 = ① 회사를 인수하는 데 드는 돈(그건 기업가치 EV = 시가총액 + 순부채. 인수자는 차입금을 함께 떠안으므로 시가총액만으로는 부족하다는 서술이 공통), ② 회사가 장부에 가진 재산(book value), ③ 그 회사가 싼지 비싼지. 실무자들이 갈리는 지점: ㉮ «어떤 주식 수를 세나» — 거래소는 상장주식 전부로 세지만 MSCI·FTSE·S&P·STOXX·Dow Jones 등 주요 지수 제공자는 모두 free-float(유동주식) 방식을 표준으로 써서, 정부·창업자·전략적 지분처럼 시장에서 살 수 없는 몫을 빼고 가중한다(유동비율 20~30%면 1,000억 달러 회사가 지수에서는 200~300억 달러로 잡힌다는 예시가 공통으로 인용된다). ㉯ 우선주를 더해 회사 전체 지분가치로 볼 것인가 — 거래소 종목별 시가총액은 보통주만 센다. ㉰ 시가총액으로 볼 것인가 EV 로 볼 것인가. 흔한 오해: ① «주가가 비싼 주식이 큰 회사» — 출처들이 공통으로 부정하며, 주식을 분할하지 않아 주당 가격이 높은 회사가 주당 50달러 회사와 시가총액이 같을 수 있다고 든다. ② «액면분할하면 회사가 커진다/작아진다» — 분할은 주식 수가 늘고 주가가 그만큼 내려갈 뿐 시가총액은 그대로다(100주 × $50 = $5,000 → 2:1 분할 후 200주 × $25 = $5,000 예시가 공통). 분할은 «대체로 표면적인(cosmetic) 조치»라는 서술까지 일치한다. 카드는 어느 항목에서도 출처보다 센 말을 쓰지 않았다 — 유동주식 항목은 «더 작아질 수 있습니다», 인수 항목은 «기업가치를 같이 봅니다» 로 적었다.",
+    "sources": [
+      "네이버 지식백과 '시가총액' — terms.naver.com/entry.naver?docId=1613630 (매일경제 경제용어사전) · docId=6559 · docId=2061945",
+      "네이버 지식백과 '주식시가총액' — docId=16622 (한경 경제용어사전, «발행주식수 × 주가»)",
+      "Wikipedia 'Market capitalization' · Fidelity Learning Center 'What is market cap' · Chase 'What Is Market Capitalization' · Corporate Finance Institute 'Market Capitalization' (WebSearch 경유 — 이 컨테이너의 egress 정책이 해당 도메인 직접 조회를 막는다)",
+      "Wikipedia 'Stock split' · FINRA Investor Education 'Stock Splits' · Charles Schwab 'What are stock splits' (분할 시 시가총액 불변)",
+      "MSCI / FTSE Russell free-float 방법론 요약 · Wikipedia 'Stock market index' (유동주식 가중이 주요 지수 제공자의 표준)",
+      "OpenDART 최대주주 현황 — 삼성전자 rcept_no 20260814003699(2026 반기보고서) · 태광산업 rcept_no 20260814003951(2026 반기보고서)",
+      "Alpha Vantage COMPANY_OVERVIEW (AAPL · NVR, latest quarter 2026-06-30)",
+      "OpenDART 자기주식 취득·처분 현황 — 태광산업 rcept 20260814003951(2026 반기), 보통주 총계 271,769주"
+    ]
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "overlay": "caps",
+      "title_ko": "주가가 비싸다고<br>큰 회사는<br>아닙니다",
+      "title_en": "A $6,000 share<br>does not mean<br>a big company.",
+      "sub_ko": "EP.08 · 시가총액",
+      "sub_en": "EP.08 · Market capitalization",
+      "cta_ko": "저장하고 넘겨보세요",
+      "cta_en": "Save this and swipe",
+      "annot_ko": "한 주 값은 왼쪽이 높습니다 | 그런데 주식 수는 | 오른쪽이 열 배입니다",
+      "annot_en": "The left share costs more, | but the right company | has ten times the shares."
+    },
+    {
+      "type": "intro",
+      "sketch": "mystery-size",
+      "title_ko": "이 둘 중 어느 쪽이<br>큰 회사일까요",
+      "title_en": "Which of these two<br>is the bigger company?",
+      "body_ko": "왼쪽은 한 주가 비싸고, 오른쪽은 주식이 아주 많습니다. 세로가 한 주 값, 가로가 주식 수입니다.",
+      "body_en": "The share on the left costs more. The company on the right has far more shares. Height is the price of one share; width is how many shares there are.",
+      "caption_ko": "둘을 곱해 봐야 어느 쪽이 큰 회사인지 나옵니다.",
+      "caption_en": "You have to multiply the two before you can answer."
+    },
+    {
+      "type": "formula",
+      "title_ko": "시가총액은 곱셈 하나입니다",
+      "title_en": "Market cap is one multiplication",
+      "body_ko": "주가에 그 회사의 주식 수를 곱합니다. 시장이 오늘 이 회사 전체에 매긴 값입니다.",
+      "body_en": "Take the share price and multiply it by how many shares the company has. That is what the market says the whole company is worth today.",
+      "formula": {
+        "left_ko": "한 주 값",
+        "left_en": "Share price",
+        "right_ko": "상장주식수",
+        "right_en": "Shares outstanding",
+        "result_ko": "시가총액",
+        "result_en": "Market cap"
+      },
+      "parts": [
+        {
+          "term_ko": "한 주 값",
+          "term_en": "Share price",
+          "desc_ko": "지금 거래되는 주식 한 주의 값",
+          "desc_en": "What one share trades for right now"
+        },
+        {
+          "term_ko": "상장주식수",
+          "term_en": "Shares outstanding",
+          "desc_ko": "거래소에 올라와 있는 그 회사 보통주의 수. 회사가 사 둔 자기주식도 여기 들어갑니다.",
+          "desc_en": "Shares in investors' hands — the ones issued, minus what the company bought back."
+        },
+        {
+          "term_ko": "시가총액",
+          "term_en": "Market cap",
+          "desc_ko": "둘을 곱한 값. 주가와 달리 회사끼리 나란히 놓고 견줄 수 있습니다.",
+          "desc_en": "The two multiplied. Unlike price, it lets you line two companies up."
+        }
+      ],
+      "example": {
+        "title_ko": "2026년 9월 18일 종가로 해 보면",
+        "title_en": "Run it on the 18 Sep 2026 close",
+        "lines": [
+          {
+            "text_ko": "삼성전자 종가 261,000원",
+            "text_en": "Apple closed at $336.13"
+          },
+          {
+            "text_ko": "상장주식 약 58억 주",
+            "text_en": "14,594,180,000 shares outstanding"
+          },
+          {
+            "text_ko": "= 시가총액 약 1,526조원",
+            "text_en": "= a market cap of $4.91 trillion"
+          },
+          {
+            "text_ko": "한 주 값만 봐서는 나오지 않는 숫자입니다",
+            "text_en": "No share price alone gets you to that number"
+          }
+        ]
+      }
+    },
+    {
+      "type": "mirror",
+      "figure": "split",
+      "title_ko": "주식을 쪼개면 회사가 커질까요",
+      "title_en": "Does a split make the company bigger?",
+      "body_ko": "한 주를 열 조각으로 나누면 한 주 값은 10분의 1이 되고 주식 수는 열 배가 됩니다. 곱한 값은 그대로입니다.",
+      "body_en": "Cut one share into ten and the price per share becomes a tenth while the share count becomes ten times larger. Multiply them and nothing has moved.",
+      "left_label_ko": "쪼개기 전",
+      "left_label_en": "Before the split",
+      "left_caption_ko": "비싼 주식 1주",
+      "left_caption_en": "One expensive share",
+      "right_label_ko": "열 조각으로 쪼갠 뒤",
+      "right_label_en": "After a 10-for-1 split",
+      "right_caption_ko": "10분의 1 값 10주",
+      "right_caption_en": "Ten shares at a tenth",
+      "note_ko": "이렇게 주식을 쪼개는 것을 «액면분할»이라고 합니다. 여러 주를 한 주로 합치는 «액면병합»은 방향만 반대일 뿐 같습니다.",
+      "note_en": "A reverse split runs the other way and works the same. The price goes up; the company does not.",
+      "closing_ko": "분할한 날 주가가 뚝 떨어져 있어도 그건 하락이 아닙니다",
+      "closing_en": "A price that drops on split day is not a fall"
+    },
+    {
+      "type": "versus",
+      "title_ko": "시가총액과 주가, 뭐가 다를까요",
+      "title_en": "Market cap vs. share price",
+      "body_ko": "둘 다 «값»이라고 부르지만 세는 대상이 다릅니다.",
+      "body_en": "Both get called a price, but they count different things.",
+      "columns": [
+        {
+          "name_ko": "시가총액",
+          "name_en": "Market cap",
+          "unit_ko": "회사 전체의 값",
+          "unit_en": "the whole company"
+        },
+        {
+          "name_ko": "주가",
+          "name_en": "Share price",
+          "unit_ko": "한 주의 값",
+          "unit_en": "one share"
+        }
+      ],
+      "rows": [
+        {
+          "label_ko": "무엇에 매긴 값인가",
+          "label_en": "What it prices",
+          "left_ko": "상장된 보통주 전부",
+          "left_en": "Every share outstanding",
+          "right_ko": "주식 한 주",
+          "right_en": "A single share"
+        },
+        {
+          "label_ko": "어떻게 나오나",
+          "label_en": "How you get it",
+          "left_ko": "한 주 값 × 상장주식수",
+          "left_en": "Price × shares out",
+          "right_ko": "그 순간의 거래 가격",
+          "right_en": "The last traded price"
+        },
+        {
+          "label_ko": "주식을 열 조각으로 쪼개면",
+          "label_en": "After a 10-for-1 split",
+          "left_ko": "그대로",
+          "left_en": "Unchanged",
+          "right_ko": "10분의 1",
+          "right_en": "A tenth",
+          "highlight": true
+        },
+        {
+          "label_ko": "다른 회사와 견줄 수 있나",
+          "label_en": "Comparable across companies",
+          "left_ko": "견줄 수 있습니다",
+          "left_en": "Yes",
+          "right_ko": "견줄 수 없습니다",
+          "right_en": "No",
+          "highlight": true
+        }
+      ],
+      "closing_ko": "두 회사를 견주는 자리에는 시가총액을 놓습니다",
+      "closing_en": "Compare by market cap, not by share price"
+    },
+    {
+      "type": "bars",
+      "title_ko": "한 주 값은 3.4배 비싼데<br>회사 크기는 약 1,500분의 1입니다",
+      "title_en": "18 times the share price,<br>about 1/300 the company",
+      "body_ko": "아래 칸은 2026년 9월 18일 종가에 상장주식수를 곱한 값입니다. 위 칸과 아래 칸에서 두 회사의 자리가 뒤바뀝니다.",
+      "body_en": "Both blocks start from the 18 Sep 2026 close; the bottom one multiplies it by shares outstanding. Watch the two companies swap places.",
+      "sections": [
+        {
+          "heading_ko": "한 주 값 — 9월 18일 종가",
+          "heading_en": "Price of one share — 18 Sep 2026 close",
+          "items": [
+            {
+              "label_ko": "태광산업 (003240)",
+              "label_en": "NVR",
+              "value": 896000,
+              "display_ko": "896,000원",
+              "display_en": "$6,150.47",
+              "value_en": 6150.47
+            },
+            {
+              "label_ko": "삼성전자 (005930)",
+              "label_en": "Apple",
+              "value": 261000,
+              "value_en": 336.13,
+              "display_ko": "261,000원",
+              "display_en": "$336.13"
+            }
+          ]
+        },
+        {
+          "heading_ko": "시가총액 — 한 주 값 × 상장주식수",
+          "heading_en": "Market cap — price × shares outstanding",
+          "items": [
+            {
+              "label_ko": "삼성전자 · 약 58억 주",
+              "label_en": "Apple · 14.59bn shares",
+              "value": 15259603,
+              "display_ko": "약 1,526조원",
+              "display_en": "$4.91 trillion",
+              "value_en": 4905542
+            },
+            {
+              "label_ko": "태광산업 · 약 111만 주",
+              "label_en": "NVR · 2.66m shares",
+              "value": 9975,
+              "value_en": 16390,
+              "display_ko": "약 9,975억원",
+              "display_en": "$16.39 billion",
+              "highlight": true
+            }
+          ]
+        }
+      ],
+      "closing_ko": "한 주가 비싼 건 주식을 적게 쪼개 놨다는 뜻입니다. 크기는 시가총액 칸에서 봅니다",
+      "closing_en": "A high share price means fewer, larger pieces. Read size off the market-cap line."
+    },
+    {
+      "type": "numbered",
+      "title_ko": "초보가 자주 걸리는 세 가지",
+      "title_en": "Three things beginners get wrong",
+      "items": [
+        {
+          "title_ko": "주가가 싸 보여서 샀습니다",
+          "title_en": "I bought it because it looked cheap",
+          "desc_ko": "싼 회사가 아니라 주식을 잘게 쪼개 놓은 회사일 수 있습니다. 싼지 비싼지는 시가총액과 회사 실적을 함께 봐야 나옵니다.",
+          "desc_en": "A low price can just mean more, smaller pieces. Cheap or not only shows next to market cap and earnings."
+        },
+        {
+          "title_ko": "시가총액이 곧 회사를 사는 값",
+          "title_en": "Market cap is what it costs to buy the company",
+          "desc_ko": "회사를 통째로 사면 빚도 함께 떠안습니다. 그래서 인수 자리에서는 시가총액에 순부채를 더한 «기업가치»를 같이 봅니다.",
+          "desc_en": "Buy the company whole and you take on its debt. Enterprise value = market cap plus net debt."
+        },
+        {
+          "title_ko": "시가총액이 회사가 가진 재산",
+          "title_en": "Market cap is what the company owns",
+          "desc_ko": "장부에 적힌 재산이 아니라 시장이 오늘 매긴 값입니다. 회사가 그대로여도 내일이면 달라집니다.",
+          "desc_en": "It is what the market says today, not what the books say — nothing inside has to change."
+        }
+      ],
+      "warn_title_ko": "세는 주식 수가 한 가지가 아닙니다",
+      "warn_title_en": "There is more than one share count",
+      "warn_body_ko": "거래소는 자기주식까지 상장된 주식을 전부 셉니다. 지수는 시장에서 실제로 살 수 있는 «유동주식»만 셉니다. 태광산업은 최대주주 54.5%·자기주식 24.4%라 그게 5분의 1쯤입니다.",
+      "warn_body_en": "Exchanges count every listed share, buybacks included. Index providers count only the free float — what the public can buy — so an index weight can be smaller."
+    },
+    {
+      "type": "recap",
+      "title_ko": "3줄 정리",
+      "title_en": "Three lines",
+      "points": [
+        {
+          "text_ko": "시가총액 = 한 주 값 × 상장주식수",
+          "text_en": "Market cap = share price × shares outstanding"
+        },
+        {
+          "text_ko": "주가만으로는 회사 크기를 알 수 없습니다",
+          "text_en": "Share price alone says nothing about size"
+        },
+        {
+          "text_ko": "회사를 사는 값은 여기에 빚을 더해야 나옵니다",
+          "text_en": "Buying the company also means taking on its debt"
+        }
+      ],
+      "ctas": [
+        {
+          "text_ko": "가지고 있는 종목의 시가총액을 찾아보세요",
+          "text_en": "Go look up the market cap of a stock you own"
+        },
+        {
+          "text_ko": "#투자3분노트 #시가총액 #주식공부",
+          "text_en": "#3MinInvestingNotes #MarketCap"
+        }
+      ],
+      "next_label_ko": "다음 편",
+      "next_label_en": "Next up",
+      "next_ko": "PER (주가수익비율)",
+      "next_en": "The P/E ratio",
+      "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+      "disclaimer_en": "Educational content only. Not investment advice."
+    }
+  ],
+  "caption_ko": "주가가 비싼 주식이 큰 회사일까요? 아닙니다.\n\n시가총액 = 한 주 값 × 상장주식수. 이 곱셈 하나가 «회사 크기»입니다.\n\n2026년 9월 18일 종가로 보면 태광산업 한 주는 896,000원, 삼성전자는 261,000원입니다. 한 주 값은 태광산업이 3.4배 비쌉니다. 그런데 상장주식수를 곱하면 삼성전자는 약 1,526조원(약 58억 주), 태광산업은 약 9,975억원(약 111만 주) — 약 1,500배 차이로 순서가 뒤집힙니다.\n\n한 주가 비싼 건 주식을 적게 쪼개 놨기 때문이지 회사가 커서가 아닙니다. 그래서 주식을 열 조각으로 쪼개면 주가는 10분의 1이 되지만 시가총액은 그대로입니다 — 분할한 날 주가가 뚝 떨어져 있어도 그건 하락이 아닙니다.\n\n한 가지 더. 거래소가 세는 «상장주식수»에는 회사가 사 둔 자기주식까지 들어갑니다. 태광산업은 최대주주 쪽이 54.5%, 자기주식이 24.4%라 실제로 시장에 도는 주식은 5분의 1쯤입니다 — 지수를 만드는 곳이 그 «유동주식»만 세는 이유입니다.\n\n그리고 시가총액도 «회사를 사는 값»은 아닙니다. 통째로 사면 빚까지 떠안기 때문에, 인수 자리에서는 시가총액에 순부채를 더한 기업가치를 같이 봅니다.\n\n저장해 두고, 가지고 있는 종목의 시가총액을 한 번 찾아보세요.\n\n다음 편은 PER(주가수익비율)입니다.\n\n#투자3분노트 #시가총액 #주식공부 #주식초보 #주식용어 #재테크공부 #액면분할 #기업가치 #경제공부 #투자공부\n\n본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+  "caption_en": "Does a pricey share mean a big company? No.\n\nMarket cap = share price × shares outstanding. That one multiplication is what \"size\" means.\n\nOn the 18 Sep 2026 close, one NVR share cost $6,150.47 and one Apple share cost $336.13 — NVR's share is 18 times the price. Multiply by shares outstanding and the order flips: Apple is worth about $4.91 trillion (14,594,180,000 shares) against NVR's $16.39 billion (2,664,900 shares). Apple is roughly 300 times the company.\n\nA share costs more when the company is cut into fewer pieces, not when it is bigger. That is also why a 10-for-1 split takes the price to a tenth and leaves market cap untouched — the drop you see on split day is not a fall.\n\nOne more thing: market cap is not what it costs to buy the company. Buy it whole and you take on its debt, which is why buyers look at enterprise value — market cap plus net debt.\n\nSave this, then go look up the market cap of a stock you own.\n\nNext up: the P/E ratio.\n\n#3MinInvestingNotes #MarketCap #InvestingBasics #StockMarket #LearnToInvest #StockSplit #EnterpriseValue #InvestingForBeginners #FinanceEducation #StocksExplained\n\nEducational content only. Not investment advice.",
+  "alt_ko": [
+    "표지 카드. 크림색 모눈 노트에 «주가가 비싸다고 큰 회사는 아닙니다»라는 제목이 크게 적혀 있고 아래에 붉은 밑줄이 그어져 있다. 위쪽 그림은 두 칸으로 나뉘어 있다. 윗칸에는 캔들 두 개가 서로 다른 높이에 있는데 왼쪽 캔들이 훨씬 위쪽(비싼 가격)에 있다. 가로 구분선 아래 칸에는 감청색 작은 네모가 깔려 있는데 왼쪽은 세 개뿐이고 오른쪽은 열 개씩 세 줄, 모두 서른 개다. 붉은 지시선이 오른쪽 네모 더미를 가리키며 «한 주 값은 왼쪽이 높습니다 / 그런데 주식 수는 / 오른쪽이 열 배입니다»라고 적혀 있다. 아래에는 «EP.08 · 시가총액»과 «저장하고 넘겨보세요» 칩이 있다.",
+    "도입 카드. 제목은 «이 둘 중 어느 쪽이 큰 회사일까요». 본문은 «왼쪽은 한 주가 비싸고, 오른쪽은 주식이 아주 많습니다. 세로가 한 주 값, 가로가 주식 수입니다». 그림에는 회색 바닥선 위에 직사각형 두 개가 서 있다. 둘 다 안쪽은 연한 회청색으로 칠해지고 테두리는 감청색이다. 왼쪽은 좁고 아주 높은 기둥 모양, 오른쪽은 낮지만 가로로 아주 긴 판 모양이다. 왼쪽 기둥 옆에는 위아래를 가리키는 세로 화살표가, 오른쪽 판 아래에는 좌우를 가리키는 가로 화살표가 있어 두 축을 알려 준다. 오른쪽 여백에는 붉은 물음표 세 개가 있다. 카드 아래 캡션은 «둘을 곱해 봐야 어느 쪽이 큰 회사인지 나옵니다».",
+    "공식 카드. 제목은 «시가총액은 곱셈 하나입니다». 본문은 «주가에 그 회사의 주식 수를 곱합니다. 시장이 오늘 이 회사 전체에 매긴 값입니다». 가운데에 큰 글씨로 «한 주 값 × 상장주식수 = 시가총액»이 한 줄로 적혀 있고 곱셈 기호와 결과가 붉은색이다. 아래에는 세 항목의 설명이 있다. 한 주 값 — 지금 거래되는 주식 한 주의 값. 상장주식수 — 거래소에 올라와 있는 그 회사 보통주의 수이며 회사가 사 둔 자기주식도 여기 들어간다. 시가총액 — 둘을 곱한 값이며 주가와 달리 회사끼리 나란히 놓고 견줄 수 있다. 맨 아래 테두리 상자에는 «2026년 9월 18일 종가로 해 보면»이라는 제목 아래 «삼성전자 종가 261,000원», «상장주식 약 58억 주», «= 시가총액 약 1,526조원», «한 주 값만 봐서는 나오지 않는 숫자입니다» 네 줄이 적혀 있다.",
+    "두 칸 비교 카드. 제목은 «주식을 쪼개면 회사가 커질까요». 본문은 «한 주를 열 조각으로 나누면 한 주 값은 10분의 1이 되고 주식 수는 열 배가 됩니다. 곱한 값은 그대로입니다». 왼쪽 칸 «쪼개기 전»에는 바닥선 위에 좁고 높은 직사각형 하나가 서 있고(안쪽은 연한 회청색, 테두리는 감청색) «비싼 주식 1주»라고 적혀 있다. 오른쪽 칸 «열 조각으로 쪼갠 뒤»에는 같은 바닥선 위에 같은 색의 납작한 직사각형 열 개가 가로로 나란히 놓여 있고 «10분의 1 값 10주»라고 적혀 있다. 두 칸의 도형이 차지하는 넓이는 정확히 같다. 아래 붉은 세로줄 문단에는 «이렇게 주식을 쪼개는 것을 «액면분할»이라고 합니다. 여러 주를 한 주로 합치는 «액면병합»은 방향만 반대일 뿐 같습니다». 노란 형광펜 문구는 «분할한 날 주가가 뚝 떨어져 있어도 그건 하락이 아닙니다».",
+    "개념 비교표 카드. 제목은 «시가총액과 주가, 뭐가 다를까요». 표의 왼쪽 열은 감청색으로 칠해진 «시가총액 — 회사 전체의 값», 오른쪽 열은 회색의 «주가 — 한 주의 값»이다. 네 줄이 이어진다. 무엇에 매긴 값인가 — 상장된 보통주 전부 / 주식 한 주. 어떻게 나오나 — 한 주 값 × 상장주식수 / 그 순간의 거래 가격. 주식을 열 조각으로 쪼개면 — 그대로 / 10분의 1(오른쪽이 붉은 테두리로 강조). 다른 회사와 견줄 수 있나 — 견줄 수 있습니다 / 견줄 수 없습니다(오른쪽이 붉은 테두리로 강조). 맨 아래 노란 형광펜 문구는 «두 회사를 견주는 자리에는 시가총액을 놓습니다».",
+    "막대 비교 카드. 제목은 «한 주 값은 3.4배 비싼데 회사 크기는 약 1,500분의 1입니다». 본문은 «아래 칸은 2026년 9월 18일 종가에 상장주식수를 곱한 값입니다. 위 칸과 아래 칸에서 두 회사의 자리가 뒤바뀝니다». 위 칸 «한 주 값 — 9월 18일 종가»에는 태광산업(003240) 896,000원이 가장 긴 막대, 삼성전자(005930) 261,000원이 그 3분의 1 남짓한 막대로 그려져 있다. 아래 칸 «시가총액 — 한 주 값 × 상장주식수»에는 순서가 뒤집혀 삼성전자(약 58억 주) 약 1,526조원이 꽉 찬 막대, 태광산업(약 111만 주) 약 9,975억원이 붉은색의 아주 짧은 조각으로만 보인다. 맨 아래 테두리 상자에는 «한 주가 비싼 건 주식을 적게 쪼개 놨다는 뜻입니다. 크기는 시가총액 칸에서 봅니다».",
+    "실수 정리 카드. 제목은 «초보가 자주 걸리는 세 가지». 붉은 동그라미 번호 1·2·3이 붙은 세 항목이 점선으로 나뉘어 있다. 1 주가가 싸 보여서 샀습니다 — 싼 회사가 아니라 주식을 잘게 쪼개 놓은 회사일 수 있고, 싼지 비싼지는 시가총액과 회사 실적을 함께 봐야 나온다. 2 시가총액이 곧 회사를 사는 값 — 회사를 통째로 사면 빚도 함께 떠안으므로 인수 자리에서는 시가총액에 순부채를 더한 기업가치를 같이 본다. 3 시가총액이 회사가 가진 재산 — 장부에 적힌 재산이 아니라 시장이 오늘 매긴 값이라 회사가 그대로여도 내일이면 달라진다. 맨 아래 테두리 상자에는 붉은 제목 «세는 주식 수가 한 가지가 아닙니다»와 «거래소는 자기주식까지 상장된 주식을 전부 셉니다. 지수는 시장에서 실제로 살 수 있는 «유동주식»만 셉니다. 태광산업은 최대주주 54.5%·자기주식 24.4%라 그게 5분의 1쯤입니다».",
+    "요약 카드. 제목은 «3줄 정리». 체크박스 세 개와 함께 «시가총액 = 한 주 값 × 상장주식수», «주가만으로는 회사 크기를 알 수 없습니다», «회사를 사는 값은 여기에 빚을 더해야 나옵니다»가 적혀 있다. 그 아래 노란 형광펜 두 줄은 «가지고 있는 종목의 시가총액을 찾아보세요»와 «#투자3분노트 #시가총액 #주식공부». 맨 아래에는 «다음 편 — PER (주가수익비율)» 예고와 «본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다»라는 고지가 있다."
+  ],
+  "alt_en": [
+    "Cover card on cream grid-paper. The headline reads \"A $6,000 share does not mean a big company,\" underlined in red. The drawing above is split into two panels. In the upper panel two candlesticks sit at different heights, the left one much higher up (a more expensive share). Below a horizontal divider, small navy squares are laid out: three on the left, thirty on the right in three rows of ten. A red pointer line runs to the right pile with the note \"The left share costs more, but the right company has ten times the shares.\" Below the headline: \"EP.08 · Market capitalization\" and a \"Save this and swipe\" chip.",
+    "Opening card. Title: \"Which of these two is the bigger company?\" Body text explains that the share on the left costs more while the company on the right has far more shares, and that height is the price of one share while width is how many shares there are. The sketch shows two rectangles standing on a grey baseline, each filled pale grey-blue with a navy outline: a narrow, very tall column on the left and a low but very wide slab on the right. A vertical double arrow sits beside the tall column and a horizontal double arrow runs under the wide slab, marking the two axes. Three red question marks sit in the right margin. Caption below: \"You have to multiply the two before you can answer.\"",
+    "Formula card. Title: \"Market cap is one multiplication.\" Across the middle, in large type: \"Share price × Shares outstanding = Market cap,\" with the multiplication sign and the result in red. Three terms are explained below. Share price — what one share trades for right now. Shares outstanding — shares in investors' hands, the ones issued minus what the company bought back. Market cap — the two multiplied; unlike price, it lets you line two companies up. A bordered box at the bottom, headed \"Run it on the 18 Sep 2026 close,\" lists four lines: \"Apple closed at $336.13,\" \"14,594,180,000 shares outstanding,\" \"= a market cap of $4.91 trillion,\" \"No share price alone gets you to that number.\"",
+    "Two-panel card. Title: \"Does a split make the company bigger?\" The body explains that cutting one share into ten makes the price a tenth and the share count ten times larger, so the product does not move. The left panel, \"Before the split,\" shows a single narrow tall rectangle standing on a baseline, filled pale grey-blue with a navy outline, captioned \"One expensive share.\" The right panel, \"After a 10-for-1 split,\" shows ten flat rectangles of the same colour side by side on the same baseline, captioned \"Ten shares at a tenth.\" The two sets cover exactly the same area. A red-ruled note below reads: \"A reverse split runs the other way and works the same. The price goes up; the company does not.\" A yellow highlighted line reads: \"A price that drops on split day is not a fall.\"",
+    "Comparison table. Title: \"Market cap vs. share price.\" The left column is filled navy — \"Market cap, the whole company\" — and the right column is grey — \"Share price, one share.\" Four rows follow. What it prices — every share outstanding / a single share. How you get it — price × shares out / the last traded price. After a 10-for-1 split — unchanged / a tenth, with the right cell outlined in red. Comparable across companies — Yes / No, with the right cell outlined in red. A yellow highlighted line at the bottom reads: \"Compare by market cap, not by share price.\"",
+    "Bar comparison card. Title: \"18 times the share price, about 1/300 the company.\" The body notes that both blocks start from the 18 Sep 2026 close and the bottom one multiplies it by shares outstanding, inviting you to watch the two companies swap places. The top block, \"Price of one share — 18 Sep 2026 close,\" shows NVR at $6,150.47 as the full-length bar and Apple at $336.13 as a bar about one eighteenth as long. The bottom block, \"Market cap — price × shares outstanding,\" reverses them: Apple with 14.59 billion shares at $4.91 trillion fills the bar, while NVR with 2.66 million shares at $16.39 billion shows only as a short red sliver. A bordered box at the bottom reads: \"A high share price means fewer, larger pieces. Read size off the market-cap line.\"",
+    "Mistakes card. Title: \"Three things beginners get wrong.\" Three items numbered in red circles and separated by dashed rules. One, \"I bought it because it looked cheap\" — a low price can just mean more, smaller pieces, and cheap or not only shows next to market cap and earnings. Two, \"Market cap is what it costs to buy the company\" — buy the company whole and you take on its debt; enterprise value equals market cap plus net debt. Three, \"Market cap is what the company owns\" — it is what the market says today, not what the books say, and nothing inside has to change. A bordered box at the bottom is headed in red, \"There is more than one share count,\" and explains that exchanges count every listed share including buybacks, while index providers count only the free float, what the public can buy, so an index weight can be smaller.",
+    "Summary card. Title: \"Three lines.\" Three checkboxes read: \"Market cap = share price × shares outstanding,\" \"Share price alone says nothing about size,\" and \"Buying the company also means taking on its debt.\" Two yellow highlighted lines follow: \"Go look up the market cap of a stock you own\" and \"#3MinInvestingNotes #MarketCap.\" At the bottom, \"Next up — The P/E ratio\" and the notice \"Educational content only. Not investment advice.\""
+  ],
+  "published": {
+    "date": "2026-09-20",
+    "ko": {
+      "media_id": "18074853371711825",
+      "permalink": "https://www.instagram.com/p/DdfykWwgBCp/",
+      "at": "2026-09-20T11:35+09:00"
+    },
+    "en": {
+      "media_id": "18155832109507552",
+      "permalink": "https://www.instagram.com/p/Ddfyq9AlZVS/",
+      "at": "2026-09-20T11:35+09:00"
+    }
+  }
+}
