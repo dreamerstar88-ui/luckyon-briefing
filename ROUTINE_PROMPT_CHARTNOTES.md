@@ -492,9 +492,9 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `recap` | p.08 요약 + 다음 편 예고 | `title`, `points[]`, `ctas[]`, `next_label`, `next`, `disclaimer` |
 | `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, **`band.{upper,lower,color,opacity}`**, `closing`, **`touches[].{x,y,n}`**(닿은 자리에 번호 동그라미), **`axis`**(기본 true), **`note`**(그림 아래 붉은 세로줄 문단) |
 | `flip` | **역할 반전** — 뚫린 저항선이 지지선이 되는 것을 **선 하나**로 | `title`, `body`, `before`, `after`, `break`, `retest`, `note`, `closing` |
-| `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` |
-| `formula` | **공식** — 분수 + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}`, `parts[]`, `example` |
-| `mirror` | **두 칸 맞대기** — 같은 방법이 «방향만 반대»이거나, 같은 규칙이 «한쪽만 들어맞는» 것을 나란히 | `title`, `body`, **`figure`**(`trendline`\|`gap`\|`gap-open`), `left_label`/`left_caption`, `right_label`/`right_caption`, `note`, `closing` · `gap-open` 은 **`left_bars`/`right_bars`**`.{prev,today}.{o,h,l,c}` 와 `hi_label`·`lo_label`·`close_label`·`open_label` |
+| `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` · **`value` 도 `value_ko`/`value_en` 으로 갈라 쓴다** |
+| `formula` | **공식** — 분수(또는 곱셈) + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}` **또는 `formula.{left,right,result}`(곱셈 한 줄)**, `parts[]`, `example` |
+| `mirror` | **두 칸 맞대기** — 같은 방법이 «방향만 반대»이거나, 같은 규칙이 «한쪽만 들어맞는» 것을 나란히 | `title`, `body`, **`figure`**(`trendline`\|`gap`\|`gap-open`\|`split`), `left_label`/`left_caption`, `right_label`/`right_caption`, `note`, `closing` · `gap-open` 은 **`left_bars`/`right_bars`**`.{prev,today}.{o,h,l,c}` 와 `hi_label`·`lo_label`·`close_label`·`open_label` |
 
 모든 텍스트 필드는 `_ko` / `_en` 접미사로 두 언어를 각각 쓴다. `title` 은 `<br>` 로 줄바꿈할 수 있다.
 
@@ -505,6 +505,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `zigzag` | 회색 꺾은선 + 물음표 3개 (기본값) | 「이 그래프가 뭘 말하는지 모르겠다」는 막막함을 그리는 회차 |
 | `mystery-levels` | 꺾은선 위에 **정체불명의 붉은 가로선 두 줄** + 그 끝을 묻는 물음표 | 「이 선은 누가 왜 그었나」를 묻는 회차 (지지·저항·박스권) |
 | `mystery-slope` | 오른쪽 위로 오르는 꺾은선의 **저점들을 따라 그어진 붉은 «비스듬한» 선 한 줄** + 그 끝을 묻는 물음표 | 「이 기울어진 선은 어떻게 그은 건가」를 묻는 회차 (추세선·채널). EP.06 에서 추가했다 — `mystery-levels` 는 가로선이라 «기울어진 선»을 묻는 제목의 대상이 화면에 없다 |
+| `mystery-size` | 회색 바닥선 위에 **좁고 아주 높은 직사각형**과 **낮지만 아주 넓은 직사각형** 두 개 + 두 축을 알려 주는 세로·가로 화살표 + 물음표 | 「이 둘 중 어느 쪽이 큰 회사인가」를 묻는 회차 (시가총액·기업가치). EP.08 에서 추가했다. **넓이가 곧 답이고 눈으로는 안 보이는 것이 요점**이라, 꺾은선(`zigzag`)으로 두면 제목이 묻는 «두 회사»가 화면에 아예 없다. 글자를 넣지 않는 대신 화살표로 «세로=한 주 값·가로=주식 수»를 암시하고, 본문·캡션이 그 말을 마저 한다 |
 | `mystery-gap` | 꺾은선이 **한 자리에서 끊겼다가** 붉은 띠를 건너뛰고 위에서 다시 이어지는 그림 + 띠를 가리키는 물음표 | 「이 빈칸은 뭔가」를 묻는 회차 (갭·배당락). EP.07 에서 추가했다. **선을 둘로 끊어 그리는 것이 요점**이라 하나로 이으면 «그냥 급등»이 되어 제목이 묻는 빈칸이 화면에서 사라진다 |
 
 **제목이 묻는 것이 그림에 실제로 있어야 한다.** EP.05 제목은 «가로선»을 묻는데 그림에는 가로선이 한 줄도 없었다 — 표지의 `overlay` 와 같은 종류의 사고다. 마땅한 스케치가 없으면 **새로 하나 추가하고 이 표에 한 줄 적는다.**
@@ -552,9 +553,10 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `volume` | 캔들 **아래에 거래량 막대 칸**을 붙인 2단 그림 | 주석이 '가격 아래 칸'을 가리키는 회차 (거래량·거래대금) |
 | `levels` | 캔들 9개가 **위아래 붉은 가로선 두 개 사이**를 오가는 그림 | 주석이 '가격이 자꾸 멈춘 높이'를 가리키는 회차 (지지선·저항선·박스권) |
 | `trend` | 캔들 8개가 계단처럼 오르고 그 **저가들을 따라 붉은 비스듬한 직선 하나**가 지나는 그림 | 주석이 '저점을 이어 그은 기울어진 선'을 가리키는 회차 (추세선·채널) |
+| `caps` | 위 칸에 **두 회사의 캔들**(왼쪽이 더 높은 자리), 아래 칸에 **주식 수를 뜻하는 작은 네모 더미**(왼쪽 3개 · 오른쪽 30개)를 붙인 2단 그림 | 주석이 '주가가 아니라 **주식 수**'를 가리키는 회차 (시가총액·기업가치). EP.08 에서 추가했다. 나머지 변종은 전부 «선»·«높이»·«빈칸»을 가리키는 그림이라 주식 수를 가리킬 대상이 화면에 없다. **주석 글자는 24px** 로 다른 표지보다 작다 — 그림이 두 칸이라 가로로 넓고, 26px 로는 한 줄이 종이 밖으로 밀린다 |
 | `gap` | 캔들이 이어지다 한 자리에서 **훌쩍 떠서** 다시 이어지고 그 사이가 **붉은 빈 띠**로 남는 그림 (앞 캔들들의 고가가 띠 바닥, 뒤 캔들들의 저가가 띠 천장이라 띠 안에는 캔들이 하나도 걸치지 않는다) | 주석이 '아무도 거래하지 않은 빈칸'을 가리키는 회차 (갭 상승·갭 하락, 배당락). 나머지 변종은 전부 «선»이나 «높이»를 가리키는 그림이라 빈칸을 가리킬 대상이 화면에 없다 |
 
-`levels` 는 EP.05(지지선과 저항선)에서, `trend` 는 EP.06(추세선)에서 추가했다. `ma`·`cross` 는 비스듬한 곡선이라 **수평선을 가리킬 수 없고**, 거꾸로 `levels` 는 가로선이라 **기울어진 선을 가리킬 수 없다** — 어느 쪽이든 잘못 고르면 바로 아래 EP.03 과 같은 사고가 난다.
+`levels` 는 EP.05(지지선과 저항선)에서, `trend` 는 EP.06(추세선)에서, `caps` 는 EP.08(시가총액)에서 추가했다. `ma`·`cross` 는 비스듬한 곡선이라 **수평선을 가리킬 수 없고**, 거꾸로 `levels` 는 가로선이라 **기울어진 선을 가리킬 수 없다** — 어느 쪽이든 잘못 고르면 바로 아래 EP.03 과 같은 사고가 난다.
 
 EP.03 을 `ma` 로 두었더니 주석은 "선 두 개가 만나는 순간"인데 화면에는 선이 하나뿐이라 **가리킬 교차점이 없었다**(검증에서 적발). 주석 문구를 바꾸기 전에 `overlay` 가 맞는지 먼저 본다.
 

@@ -202,6 +202,45 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'caps' — 두 회사를 나란히. 위 칸에는 «한 주 값»(캔들), 아래 칸에는 «주식 수»(네모 더미).
+    // 왼쪽 회사는 캔들이 높은 자리에 있지만 네모가 세 개뿐이고, 오른쪽 회사는 캔들이 낮은 대신
+    // 네모가 서른 개다. 시가총액 회차의 주석은 «주가»가 아니라 «주식 수»를 가리켜야 하는데,
+    // 다른 표지 변종은 전부 선(ma·cross·trend)이나 높이(levels)·빈칸(gap)을 가리키는 그림이라
+    // 가리킬 대상이 화면에 아예 없다 — EP.03·EP.06 과 같은 «없는 것을 가리키는» 사고가 난다.
+    if (c.overlay === 'caps') {
+      const BASE = 196;                       // 가격 칸과 주식 수 칸을 가르는 선
+      const cand = (cx, s) => {
+        const col = s.c < s.o ? UP : DOWN;    // y 가 작을수록 높은 가격
+        return `<line x1="${cx}" y1="${s.h}" x2="${cx}" y2="${s.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cx - 26}" y="${Math.min(s.o, s.c)}" width="52"
+                      height="${Math.max(Math.abs(s.c - s.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      };
+      // 네모 한 개 = 주식 한 뭉치. 왼쪽 3개(한 줄), 오른쪽 30개(3줄 × 10) — 열 배다.
+      const pile = (cx, n, perRow) => {
+        const w = Math.min(n, perRow) * 20 - 5;
+        return Array.from({ length: n }, (_, i) => {
+          const r = Math.floor(i / perRow), q = i % perRow;
+          return `<rect x="${cx - w / 2 + q * 20}" y="${216 + r * 22}" width="15" height="15"
+                        fill="${C.navy}" opacity="0.8" rx="2"/>`;
+        }).join('');
+      };
+      // 그림은 왼쪽 절반(x 30~440)에만 그리고 주석은 오른쪽에 세운다. 주석 글자는 24px —
+      // 다른 표지보다 두 칸 작은데, 이 변종은 그림이 두 칸(가격·주식 수)이라 가로로 더 넓고
+      // 주석에 남는 폭이 그만큼 좁기 때문이다(26px 로는 한 줄이 종이 밖으로 19px 밀렸다).
+      return `<div class="pad">
+        <svg width="956" height="330" viewBox="0 0 956 330" style="margin-top:2px">
+          <line x1="30" y1="34" x2="30" y2="${BASE - 8}" stroke="#c9c6bc" stroke-width="3"/>
+          <line x1="30" y1="${BASE}" x2="440" y2="${BASE}" stroke="#c9c6bc" stroke-width="3"/>
+          ${cand(110, { o: 120, c: 58, h: 42, l: 136 })}
+          ${cand(300, { o: 162, c: 138, h: 130, l: 172 })}
+          ${pile(110, 3, 10)}${pile(300, 30, 10)}
+          <path d="M 500 246 L 402 252" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="506" y="${216 + i * 32}" font-family="${FONT_SANS}" font-size="24" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     // overlay:'trend' — 캔들의 «저점들이 하나의 비스듬한 선 위에 얹혀» 계단처럼 올라가는 그림.
     // 주석이 그 기울어진 선을 가리키는 회차(추세선·채널)에서 쓴다. 'levels' 는 가로선이라
     // «저점이 점점 높아진다»를 말할 수 없고, 'ma'·'cross' 의 곡선은 «두 점을 이어 그은 직선»이
@@ -410,6 +449,24 @@ const R = {
           <line x1="30" y1="240" x2="790" y2="70" stroke="${C.red}" stroke-width="5"
                 stroke-dasharray="16 11" opacity="0.9"/>
           ${q(802, 84, 54)}${q(858, 132, 36)}${q(806, 178, 40)}
+        </svg>`;
+    } else if (sketch === 'mystery-size') {
+      // 두 회사를 «세로 = 한 주 값 · 가로 = 주식 수» 직사각형으로 세워 두고 «어느 쪽이 큰가»를 묻는다.
+      // 시가총액 회차의 막막함은 «차트 모양»이 아니라 «두 회사를 어떻게 견주나»이므로,
+      // 꺾은선(zigzag)으로는 제목이 묻는 대상이 화면에 없다. 두 축을 글자 없이 알려 주려고
+      // 왼쪽에 세로 화살표, 아래에 가로 화살표를 하나씩 둔다(언어와 무관해야 하므로 라벨은 없다).
+      // 넓이는 오른쪽이 더 크지만 눈으로는 왼쪽이 커 보인다 — 그 어긋남이 이 회차의 질문이다.
+      const arrow = (d1, d2) => `<path d="${d1}" stroke="#7d7a72" stroke-width="4" fill="none"/>
+                                 <path d="${d2}" fill="#7d7a72"/>`;
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <line x1="40" y1="240" x2="790" y2="240" stroke="#c9c6bc" stroke-width="4"/>
+          <rect x="140" y="40" width="70" height="200" fill="${C.navy}" opacity="0.18"/>
+          <rect x="140" y="40" width="70" height="200" fill="none" stroke="${C.navy}" stroke-width="4"/>
+          <rect x="350" y="180" width="380" height="60" fill="${C.navy}" opacity="0.18"/>
+          <rect x="350" y="180" width="380" height="60" fill="none" stroke="${C.navy}" stroke-width="4"/>
+          ${arrow('M 108 46 L 108 234', 'M 108 38 l -7 12 l 14 0 z M 108 242 l -7 -12 l 14 0 z')}
+          ${arrow('M 356 262 L 724 262', 'M 348 262 l 12 -7 l 0 14 z M 732 262 l -12 -7 l 0 14 z')}
+          ${q(806, 120, 54)}${q(860, 166, 36)}${q(808, 210, 34)}
         </svg>`;
     } else if (sketch === 'mystery-gap') {
       // 꺾은선이 «한 자리에서 끊겼다가» 훌쩍 위에서 다시 이어진다. 물음표는 그 사이의
@@ -700,15 +757,22 @@ const R = {
     const SECTIONS = d(c, 'sections', null) || [{ items: d(c, 'items', []) }];
     const block = (sec) => {
       const items = d(sec, 'items', []);
-      const max = Math.max(...items.map(i => Math.abs(i.value) || 0), 1);
+      // 막대 길이도 `value_ko` / `value_en` 으로 갈라 쓸 수 있다. 언어판마다 다른 종목을 실으면
+      // 수치의 «비율»까지 달라지는데, 공용 `value` 하나만 읽으면 영어 카드가 한국어판 비율로
+      // 그려져 **글은 «18배»인데 막대는 3.4배**가 된다 — 그림이 본문을 배반하는 그 사고다.
+      const V = (i) => Math.abs(Number(d(i, 'value', 0))) || 0;
+      const max = Math.max(...items.map(V), 1);
       const heading = t(sec, 'heading');
       const rows = items.map(it => {
-        const w = Math.max((Math.abs(it.value) / max) * 100, 3);
+        // 하한은 «막대가 아예 사라지지 않게» 두는 자리표시일 뿐이다. 3% 는 너무 후했다 —
+        // EP.08 의 태광산업은 실제 1/1,530(0.065%)인데 화면에는 1/32 로 그려져, 제목이 말하는
+        // «약 1,500분의 1»을 그림이 배반했다. 1% 면 조각으로 남으면서도 과장이 3분의 1로 준다.
+        const w = Math.max((V(it) / max) * 100, 1);
         const hi = it.highlight;
         return `<div style="margin-bottom:22px">
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px">
             <span style="font-family:${FONT_TITLE};font-size:29px;font-weight:${hi ? 800 : 700};color:${hi ? C.red : C.ink}">${esc(t(it, 'label'))}</span>
-            <span style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${hi ? C.red : C.ink}">${esc(t(it, 'display') || it.value)}</span>
+            <span style="font-family:${FONT_TITLE};font-size:31px;font-weight:800;color:${hi ? C.red : C.ink}">${esc(t(it, 'display') || V(it))}</span>
           </div>
           <div style="height:34px;background:#eceade;border-radius:6px;overflow:hidden">
             <div style="width:${w}%;height:100%;background:${it.color || (hi ? C.red : C.navy)};opacity:${hi ? 1 : 0.72}"></div>
@@ -1155,6 +1219,27 @@ const R = {
               paint-order="stroke">${esc(t(c, 'open_label') || '시가')}</text>`;
     };
 
+    // ---- figure:'split' — «주식을 쪼개도 곱한 값은 그대로»를 넓이로 보여준다.
+    // 칸 하나 = 주식 한 주. 칸의 «높이»가 한 주 값이고 «가로로 몇 칸인가»가 주식 수이므로,
+    // 두 패널의 넓이가 곧 시가총액이다. 쪼개기 전 34×200 과 쪼갠 뒤 10칸×34×20 은
+    // **정확히 같은 6,800** 이라, 그림이 본문(「곱한 값은 그대로입니다」)을 배반할 수 없다.
+    // 표나 글로 쓰면 독자가 한 번 더 번역해서 읽어야 하는데, 넓이는 눈으로 바로 같다.
+    const SPLIT_BASE = 225, SPLIT_W = 34, SPLIT_H = 200, SPLIT_N = 10;
+    const splitBox = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}"
+            fill="${C.navy}" opacity="0.18"/><rect x="${x}" y="${y}" width="${w}" height="${h}"
+            fill="none" stroke="${C.navy}" stroke-width="3"/>`;
+    const splitFig = (after) => {
+      const base = `<line x1="20" y1="${SPLIT_BASE}" x2="${PW - 20}" y2="${SPLIT_BASE}"
+                          stroke="#c9c6bc" stroke-width="4"/>`;
+      if (!after) {
+        return base + splitBox((PW - SPLIT_W) / 2, SPLIT_BASE - SPLIT_H, SPLIT_W, SPLIT_H);
+      }
+      const h = SPLIT_H / SPLIT_N, gap = 2;
+      const total = SPLIT_N * SPLIT_W + (SPLIT_N - 1) * gap, x0 = (PW - total) / 2;
+      return base + Array.from({ length: SPLIT_N }, (_, i) =>
+        splitBox(x0 + i * (SPLIT_W + gap), SPLIT_BASE - h, SPLIT_W, h)).join('');
+    };
+
     const trendFig = (line, zig, dots) => `
           <line x1="${line[0][0]}" y1="${line[0][1]}" x2="${line[1][0]}" y2="${line[1][1]}"
                 stroke="${C.red}" stroke-width="5" stroke-dasharray="15 10" stroke-linecap="round"/>
@@ -1175,9 +1260,11 @@ const R = {
               font-size="23" fill="${C.body}">${esc(t(c, `${key}_caption`))}</text>
       </g>`;
     const leftFig = FIG === 'gap-open' ? gapOpenFig(d(c, 'left_bars', null))
-      : FIG === 'gap' ? gapFig(GAP_UP) : trendFig(UP_LINE, UP_ZIG, UP_DOTS);
+      : FIG === 'split' ? splitFig(false)
+        : FIG === 'gap' ? gapFig(GAP_UP) : trendFig(UP_LINE, UP_ZIG, UP_DOTS);
     const rightFig = FIG === 'gap-open' ? gapOpenFig(d(c, 'right_bars', null))
-      : FIG === 'gap' ? gapFig(GAP_DN) : trendFig(DN_LINE, DN_ZIG, DN_DOTS);
+      : FIG === 'split' ? splitFig(true)
+        : FIG === 'gap' ? gapFig(GAP_DN) : trendFig(DN_LINE, DN_ZIG, DN_DOTS);
 
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
@@ -1211,12 +1298,19 @@ const R = {
     return `<div class="pad">
       <div class="ttl sm">${t(c, 'title')}</div>
       ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
-      <div style="margin:38px 0 34px;display:flex;align-items:center;justify-content:center;gap:26px">
-        <div style="text-align:center">
+      <div style="margin:38px 0 34px;display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap">
+        ${/* `left`·`right` 를 주면 분수 대신 «A × B = C» 를 한 줄로 쓴다. 시가총액·거래대금처럼
+             «곱하기 하나로 끝나는» 값을 분수 꼴에 억지로 끼우면 그림이 식을 배반한다 —
+             가로선은 «나눈다»는 뜻이라 보자마자 나눗셈으로 읽힌다. */''}
+        ${t(f, 'left') ? `
+          <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink}">${esc(t(f, 'left'))}</div>
+          <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.red}">×</div>
+          <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink}">${esc(t(f, 'right'))}</div>`
+        : `<div style="text-align:center">
           <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink};padding:0 24px">${esc(t(f, 'numerator'))}</div>
           <div style="height:5px;background:${C.ink};margin:14px 0"></div>
           <div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.ink};padding:0 24px">${esc(t(f, 'denominator'))}</div>
-        </div>
+        </div>`}
         ${t(f, 'result') ? `<div style="font-family:${FONT_TITLE};font-size:38px;font-weight:800;color:${C.red};white-space:nowrap">= ${esc(t(f, 'result'))}</div>` : ''}
       </div>
       ${parts}
@@ -1256,11 +1350,11 @@ const R = {
 // 끝나서 아무도 못 봤다. direction 은 더 위험하다: 'down' 을 조금이라도 다르게 적으면
 // «하락»이라고 써 놓고 상승 그림이 그려진다. 그래서 모르는 값은 여기서 멈춘다.
 const VARIANTS = {
-  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap'] },
-  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap'] },
+  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap', 'caps'] },
+  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap', 'mystery-size'] },
   lines: { direction: ['up', 'down'] },
   pricevol: { mode: ['candle', 'line'] },
-  mirror: { figure: ['trendline', 'gap', 'gap-open'] },
+  mirror: { figure: ['trendline', 'gap', 'gap-open', 'split'] },
 };
 for (const [i, c] of data.cards.entries()) {
   for (const [field, allowed] of Object.entries(VARIANTS[c.type] || {})) {
