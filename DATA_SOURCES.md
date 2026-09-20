@@ -349,6 +349,16 @@ Yahoo(`UsStockInfo`)로 개별 조회**해 대신했다 — `fetch-krx.mjs`의 K
 환경의 허용목록에 추가되면 원래 절차(`sise_index.naver` 등)로 돌아간다. 그 전까지는 이 표의
 레거시 엔드포인트를 1순위로 쓴다.
 
+**2026-09-21 am 세션 갱신 — 위 레거시 엔드포인트마저 이제 410 Gone.** `sise_index_day.naver`·
+`entryJongmok.naver`·`investorDealTrendDay.naver`(즉 `fetch-krx-flows.mjs` 가 세션에서 직접
+호출하는 경로, `NODE_USE_ENV_PROXY=1` 를 붙여도 동일)를 전부 재확인했더니 09-10 당시의 302
+리다이렉트가 아니라 **410 Gone**(body 는 여전히 EUC-KR·구 디자인 HTML 이지만 데이터 없이 빈
+페이지)으로 바뀌어 있었다. 즉 네이버가 구 JSP 페이지 자체를 완전히 내린 것으로 보인다. 이날
+세션은 한국 투자자별 순매수(수급)를 이 경로로 구하지 못해 그 항목을 뺐다 — `data/krx-flows.json`
+(main, 워크플로가 채움)도 그날 기준일이 낡아 있었다. **다음 세션이 이 표의 레거시 엔드포인트를
+다시 시도하기 전에 먼저 `curl -sS -o /dev/null -w "%{http_code}"` 로 상태코드부터 확인할 것** —
+410 이 계속되면 이 표 전체가 막힌 것이니 바로 §7(네이버 뉴스 2곳 대조) 등 대체 경로로 내려간다.
+
 ---
 
 ## 11. FMP `index-historical-price-eod-light` — 마감 직후 값이 뒤늦게 정정된다 (2026-09-17 확인)
