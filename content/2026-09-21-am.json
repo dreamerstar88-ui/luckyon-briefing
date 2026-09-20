@@ -3,7 +3,6 @@
   "session": "am",
   "dateLabel_ko": "2026.9.21(월) 아침",
   "dateLabel_en": "Mon, Sep 21, 2026 · Morning",
-
   "headline_ko": "다우 0.18%↓·나스닥 0.39%↑ 엇갈림…젠슨 황 '칩 2배' 발언에 반도체만 웃었다",
   "headline_en": "Dow -0.18%, Nasdaq +0.39% Diverge as Jensen Huang's 'Double the Chips' Call Lifts Only Semis",
   "headline_sub_ko": "美 10년물 금리 5%대 재진입에도 필라델피아 반도체지수 +2.78%",
@@ -15,21 +14,38 @@
   "cover_facts": [
     [
       "shield",
-      {"ko": "나스닥 +0.39% · 다우 -0.18%", "en": "Nasdaq +0.39% · Dow -0.18%"},
-      {"ko": "필라델피아 반도체지수 +2.78%, 엔비디아·브로드컴·AMD 동반 상승", "en": "Philly Semis +2.78%; Nvidia, Broadcom, AMD all higher"}
+      {
+        "ko": "나스닥 +0.39% · 다우 -0.18%",
+        "en": "Nasdaq +0.39% · Dow -0.18%"
+      },
+      {
+        "ko": "필라델피아 반도체지수 +2.78%, 엔비디아·브로드컴·AMD 동반 상승",
+        "en": "Philly Semis +2.78%; Nvidia, Broadcom, AMD all higher"
+      }
     ],
     [
       "chip",
-      {"ko": "젠슨 황 \"내년 칩 판매량 2배\" 전망", "en": "Jensen Huang: chip sales to double next year"},
-      {"ko": "인텔 CEO도 메모리 공급부족 2028년까지 지속 전망", "en": "Intel CEO also sees memory shortage lasting through 2028"}
+      {
+        "ko": "젠슨 황 \"내년 칩 판매량 2배\" 전망",
+        "en": "Jensen Huang: chip sales to double next year"
+      },
+      {
+        "ko": "인텔 CEO도 메모리 공급부족 2028년까지 지속 전망",
+        "en": "Intel CEO also sees memory shortage lasting through 2028"
+      }
     ],
     [
       "bond",
-      {"ko": "美 10년물 4.94%→5.01% · WTI -5.72%", "en": "US 10Y 4.94%→5.01% · WTI -5.72%"},
-      {"ko": "유럽 국채금리 급등이 압박, 유가는 사우디 공급우려 완화로 하락", "en": "European yield spike weighed on bonds; oil eased as Saudi supply fears cooled"}
+      {
+        "ko": "美 10년물 4.94%→5.01% · WTI -5.72%",
+        "en": "US 10Y 4.94%→5.01% · WTI -5.72%"
+      },
+      {
+        "ko": "유럽 국채금리 급등이 압박, 유가는 사우디 공급우려 완화로 하락",
+        "en": "European yield spike weighed on bonds; oil eased as Saudi supply fears cooled"
+      }
     ]
   ],
-
   "summary": {
     "lines_ko": [
       "나스닥종합이 0.39%, S&P 500이 0.17% 올랐지만 다우존스는 0.18% 내리며 3대 지수가 엇갈렸다. 필라델피아 반도체지수는 2.78% 올랐다.",
@@ -44,63 +60,221 @@
       "The US 10-year yield climbed back to 5.01% from 4.94% as European bond yields spiked, while WTI crude fell for a third straight session, down 5.72%, as fears over Saudi supply disruption eased."
     ]
   },
-
   "markets": [
-    {"label": "NASDAQ", "value": "26,522.55", "delta": "▲0.39%", "dir": "up", "note_ko": "9/18 미국장 마감 종가", "note_en": "Sep 18 US close"},
-    {"label": "S&P 500", "value": "7,650.50", "delta": "▲0.17%", "dir": "up", "note_ko": "9/18 미국장 마감 종가", "note_en": "Sep 18 US close"},
-    {"label": "KOSPI", "value": "6,894.23", "delta": "▲2.66%", "dir": "up", "note_ko": "9/18 종가 · 오늘 개장 전", "note_en": "Sep 18 close · before today's open"},
-    {"label": "VIX", "value": "14.81", "delta": "▼4.08%", "dir": "down", "note_ko": "9/18 종가", "note_en": "Sep 18 close"},
-    {"label": "Fear&Greed", "value": "29", "delta": "29 → 29", "dir": "flat", "note_ko": "공포(Fear) 구간 유지", "note_en": "Holding in the Fear zone"},
-    {"label": "US 10Y", "value": "5.01%", "delta": "4.94% → 5.01%", "dir": "up", "note_ko": "유럽 국채금리 급등 여파", "note_en": "Amid a spike in European yields"},
-    {"label": "USD/KRW", "value": "1,384.61", "value_sub": "· DXY 100.2", "delta": "▲0.37%", "dir": "up", "note_ko": "달러인덱스는 9/18 종가", "note_en": "Dollar index as of Sep 18 close"},
-    {"label": "Gold", "value": "$4,424.90", "delta": "▲0.57%", "dir": "up", "note_ko": "9/18 종가", "note_en": "Sep 18 close"},
-    {"label": "WTI", "value": "$96.08", "delta": "▼5.72%", "dir": "down", "note_ko": "사흘 연속 하락", "note_en": "Third straight decline"},
-    {"label": "Bitcoin", "value": "$80,665", "delta": "▼0.70%", "dir": "down", "note_ko": "일요일 기준", "note_en": "As of Sunday"}
+    {
+      "label": "NASDAQ",
+      "value": "26,522.55",
+      "delta": "▲0.39%",
+      "dir": "up",
+      "note_ko": "9/18 미국장 마감 종가",
+      "note_en": "Sep 18 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,650.50",
+      "delta": "▲0.17%",
+      "dir": "up",
+      "note_ko": "9/18 미국장 마감 종가",
+      "note_en": "Sep 18 US close"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,894.23",
+      "delta": "▲2.66%",
+      "dir": "up",
+      "note_ko": "9/18 종가 · 오늘 개장 전",
+      "note_en": "Sep 18 close · before today's open"
+    },
+    {
+      "label": "VIX",
+      "value": "14.81",
+      "delta": "▼4.08%",
+      "dir": "down",
+      "note_ko": "9/18 종가",
+      "note_en": "Sep 18 close"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "29",
+      "delta": "29 → 29",
+      "dir": "flat",
+      "note_ko": "공포(Fear) 구간 유지",
+      "note_en": "Holding in the Fear zone"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.01%",
+      "delta": "4.94% → 5.01%",
+      "dir": "up",
+      "note_ko": "유럽 국채금리 급등 여파",
+      "note_en": "Amid a spike in European yields"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,385.32",
+      "value_sub": "· DXY 100.2",
+      "delta": "▲0.42%",
+      "dir": "up",
+      "note_ko": "달러인덱스는 9/18 종가",
+      "note_en": "Dollar index as of Sep 18 close"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,424.90",
+      "delta": "▲0.57%",
+      "dir": "up",
+      "note_ko": "9/18 종가",
+      "note_en": "Sep 18 close"
+    },
+    {
+      "label": "WTI",
+      "value": "$96.08",
+      "delta": "▼5.72%",
+      "dir": "down",
+      "note_ko": "사흘 연속 하락",
+      "note_en": "Third straight decline"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$81,149",
+      "delta": "▼0.10%",
+      "dir": "down",
+      "note_ko": "최신 호가 기준",
+      "note_en": "As of the latest quote"
+    }
   ],
   "tile_main": "NASDAQ",
-  "tile_side": ["S&P 500", "KOSPI"],
-  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
-  "market_note_ko": "※ 나스닥·S&P 500·다우는 9/18(금) 미국장 마감 종가, 코스피는 개장 전 직전 종가",
-  "market_note_en": "※ Nasdaq, S&P 500 and Dow are Sep 18 (Fri) US closing levels; KOSPI is the last close before today's open",
-
-  "chart_series_values": [26421.41, 26253.34, 26081.72, 26333.04, 26186.41, 25981.57, 25978.43, 26418.30, 26522.55],
-  "chart_series_labels": ["9.8", "9.9", "9.10", "9.11", "9.14", "9.15", "9.16", "9.17", "9.18"],
-  "chart_title": "저점 찍고 이틀 연속 반등",
-  "chart_sub": "나스닥종합 종가 · 최근 9거래일",
-  "chart_note": "9.16 저점 25,978.43 → 9.18 26,522.55, 이틀간 +2.10%",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "market_note_ko": "나스닥·S&P 500·다우는 9/18(금) 미국장 마감 종가, 코스피는 개장 전 직전 종가",
+  "market_note_en": "Nasdaq, S&P 500 and Dow are Sep 18 (Fri) US closing levels; KOSPI is the last close before today's open",
+  "chart_series_values": [
+    26421.41,
+    26253.34,
+    26081.72,
+    26333.04,
+    26186.41,
+    25981.57,
+    25978.43,
+    26418.3,
+    26522.55
+  ],
+  "chart_series_labels": [
+    "9.8",
+    "9.9",
+    "9.10",
+    "9.11",
+    "9.14",
+    "9.15",
+    "9.16",
+    "9.17",
+    "9.18"
+  ],
+  "chart_title": {
+    "ko": "저점 찍고 이틀 연속 반등",
+    "en": "Off the low, two days of gains"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9.16 저점 25,978.43 → 9.18 26,522.55, 이틀간 +2.10%",
+    "en": "Low 25,978.43 (9/16) → 26,522.55 (9/18), +2.10% in two days"
+  },
   "record_section": "미국장 기록",
   "record_kicker": "TODAY",
-
   "sector_section": "섹터별 등락",
-  "sector_title": {"ko": "반도체가 끌고 대부분은 내렸다", "en": "Chips led, most sectors fell"},
-  "sector_sub": {"ko": "S&P 500 섹터 ETF 등락률 · 9/18", "en": "S&P 500 sector ETF performance · Sep 18"},
+  "sector_title": {
+    "ko": "반도체가 끌고 대부분은 내렸다",
+    "en": "Chips led, most sectors fell"
+  },
+  "sector_sub": {
+    "ko": "S&P 500 섹터 ETF 등락률 · 9/18",
+    "en": "S&P 500 sector ETF performance · Sep 18"
+  },
   "rank_kicker": "TOP 5",
-  "rank_title": {"ko": "거래대금 상위", "en": "Top by Turnover"},
-  "rank_sub": {"ko": "美 상위 300종목 표본 · 9/18", "en": "Top-300 US sample · Sep 18"},
-  "rank_unit": {"ko": "단위 · 10억달러", "en": "Unit: $B"},
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top by Turnover"
+  },
+  "rank_sub": {
+    "ko": "美 상위 300종목 표본 · 9/18",
+    "en": "Top-300 US sample · Sep 18"
+  },
+  "rank_unit": {
+    "ko": "단위 · 10억달러",
+    "en": "Unit: $B"
+  },
   "econ_kicker": "DATA",
-  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
-  "econ_sub": {"ko": "한국 8월 수출입(한국은행 ECOS 성질별) · 미국 실적 발표는 이번 주 없음", "en": "Korea Aug trade (BOK ECOS); no major US earnings this week"},
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "한국 8월 수출입(한국은행 ECOS 성질별) · 미국 주요 실적 발표는 이번 주 없음",
+    "en": "Korea Aug trade (BOK ECOS); no major US earnings this week"
+  },
   "tech_section": "AI · 반도체 기술",
   "stories_section": "주요 소식",
-
   "sections": [
     {
       "title_ko": "미국장 기록",
       "title_en": "US Market Record",
       "stats": [
-        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,522.55", "delta": "▲0.39%", "dir": "up", "sub_ko": "필라델피아 반도체지수 +2.78%", "sub_en": "Philly Semis +2.78%"},
-        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,650.50", "delta": "▲0.17%", "dir": "up", "sub_ko": "다우존스는 0.18% 내리며 나홀로 하락", "sub_en": "Dow bucked the trend, down 0.18%"}
+        {
+          "label_ko": "나스닥종합",
+          "label_en": "Nasdaq Composite",
+          "value": "26,522.55",
+          "delta": "▲0.39%",
+          "dir": "up",
+          "sub_ko": "필라델피아 반도체지수 +2.78%",
+          "sub_en": "Philly Semis +2.78%"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,650.50",
+          "delta": "▲0.17%",
+          "dir": "up",
+          "sub_ko": "다우존스는 0.18% 내리며 나홀로 하락",
+          "sub_en": "Dow bucked the trend, down 0.18%"
+        }
       ],
       "breadth": [
-        {"label_ko": "거래대금 상위 297종목", "label_en": "Top 297 by turnover", "up": 99, "flat": 0, "down": 198}
+        {
+          "label_ko": "거래대금 상위 297종목",
+          "label_en": "Top 297 by turnover",
+          "up": 99,
+          "flat": 0,
+          "down": 198
+        }
       ],
       "flows": {
         "label_ko": "거래대금 상승 vs 하락 종목 (10억달러)",
         "label_en": "$ volume: advancers vs decliners ($B)",
         "rows": [
-          {"label_ko": "상승 종목", "label_en": "Advancers", "value": 359.35},
-          {"label_ko": "하락 종목", "label_en": "Decliners", "value": 400.65}
+          {
+            "label_ko": "상승 종목",
+            "label_en": "Advancers",
+            "value": 359.35
+          },
+          {
+            "label_ko": "하락 종목",
+            "label_en": "Decliners",
+            "value": 400.65
+          }
         ]
       },
       "note_ko": "지수는 올랐지만 거래대금은 하락 종목에 더 몰렸다 — 반도체·메모리 소수 종목이 이끈 좁은 상승",
@@ -110,18 +284,66 @@
       "title_ko": "섹터별 등락",
       "title_en": "Sector Performance",
       "bars": [
-        {"label_ko": "반도체(SMH)", "label_en": "Semis (SMH)", "value": 2.21},
-        {"label_ko": "기술(XLK)", "label_en": "Technology (XLK)", "value": 0.82},
-        {"label_ko": "산업재(XLI)", "label_en": "Industrials (XLI)", "value": 0.44},
-        {"label_ko": "금융(XLF)", "label_en": "Financials (XLF)", "value": -0.04},
-        {"label_ko": "에너지(XLE)", "label_en": "Energy (XLE)", "value": -0.26},
-        {"label_ko": "헬스케어(XLV)", "label_en": "Health Care (XLV)", "value": -0.25},
-        {"label_ko": "경기소비재(XLY)", "label_en": "Cons. Disc. (XLY)", "value": -0.32},
-        {"label_ko": "필수소비재(XLP)", "label_en": "Cons. Staples (XLP)", "value": -0.83},
-        {"label_ko": "부동산(XLRE)", "label_en": "Real Estate (XLRE)", "value": -0.96},
-        {"label_ko": "유틸리티(XLU)", "label_en": "Utilities (XLU)", "value": -1.41},
-        {"label_ko": "소재(XLB)", "label_en": "Materials (XLB)", "value": -1.42},
-        {"label_ko": "커뮤니케이션(XLC)", "label_en": "Comm. Svcs (XLC)", "value": -1.37}
+        {
+          "label_ko": "반도체(SMH)",
+          "label_en": "Semis (SMH)",
+          "value": 2.21
+        },
+        {
+          "label_ko": "기술(XLK)",
+          "label_en": "Technology (XLK)",
+          "value": 0.82
+        },
+        {
+          "label_ko": "산업재(XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 0.44
+        },
+        {
+          "label_ko": "금융(XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.04
+        },
+        {
+          "label_ko": "에너지(XLE)",
+          "label_en": "Energy (XLE)",
+          "value": -0.26
+        },
+        {
+          "label_ko": "헬스케어(XLV)",
+          "label_en": "Health Care (XLV)",
+          "value": -0.25
+        },
+        {
+          "label_ko": "경기소비재(XLY)",
+          "label_en": "Cons. Disc. (XLY)",
+          "value": -0.32
+        },
+        {
+          "label_ko": "필수소비재(XLP)",
+          "label_en": "Cons. Staples (XLP)",
+          "value": -0.83
+        },
+        {
+          "label_ko": "부동산(XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.96
+        },
+        {
+          "label_ko": "유틸리티(XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -1.41
+        },
+        {
+          "label_ko": "소재(XLB)",
+          "label_en": "Materials (XLB)",
+          "value": -1.42
+        },
+        {
+          "label_ko": "커뮤니케이션(XLC)",
+          "label_en": "Comm. Svcs (XLC)",
+          "value": -1.37
+        }
       ],
       "note_ko": "12개 업종 중 3개만 상승 — 반도체(SMH)·기술(XLK)·산업재(XLI)뿐이었다",
       "note_en": "Only 3 of 12 sectors rose — semis (SMH), tech (XLK) and industrials (XLI)"
@@ -130,18 +352,54 @@
       "title_ko": "거래대금 상위",
       "title_en": "Top by Turnover",
       "rows": [
-        {"name_ko": "스페이스X(SPCX)", "name_en": "SpaceX (SPCX)", "value": "$51.26B", "pct": -1.36},
-        {"name_ko": "엔비디아(NVDA)", "name_en": "Nvidia (NVDA)", "value": "$42.30B", "pct": 1.34},
-        {"name_ko": "마이크론(MU)", "name_en": "Micron (MU)", "value": "$36.37B", "pct": 3.92},
-        {"name_ko": "샌디스크(SNDK)", "name_en": "SanDisk (SNDK)", "value": "$31.87B", "pct": 10.99},
-        {"name_ko": "애플(AAPL)", "name_en": "Apple (AAPL)", "value": "$29.10B", "pct": -0.26}
+        {
+          "name_ko": "스페이스X(SPCX)",
+          "name_en": "SpaceX (SPCX)",
+          "value": "$51.26B",
+          "pct": -1.36
+        },
+        {
+          "name_ko": "엔비디아(NVDA)",
+          "name_en": "Nvidia (NVDA)",
+          "value": "$42.30B",
+          "pct": 1.34
+        },
+        {
+          "name_ko": "마이크론(MU)",
+          "name_en": "Micron (MU)",
+          "value": "$36.37B",
+          "pct": 3.92
+        },
+        {
+          "name_ko": "샌디스크(SNDK)",
+          "name_en": "SanDisk (SNDK)",
+          "value": "$31.87B",
+          "pct": 10.99
+        },
+        {
+          "name_ko": "애플(AAPL)",
+          "name_en": "Apple (AAPL)",
+          "value": "$29.10B",
+          "pct": -0.26
+        }
       ],
       "share": {
-        "label_ko": "상위 5종목 내 비중", "label_en": "Share within top 5",
+        "label_ko": "상위 5종목 내 비중",
+        "label_en": "Share within top 5",
         "mode": "nested",
         "segments": [
-          {"label_ko": "상위 2종목(SPCX·NVDA)", "label_en": "Top 2 (SPCX, NVDA)", "pct": 49.0, "color": "#e15759"},
-          {"label_ko": "나머지 3종목", "label_en": "Remaining 3", "pct": 51.0, "color": "#3987e5"}
+          {
+            "label_ko": "상위 2종목(SPCX·NVDA)",
+            "label_en": "Top 2 (SPCX, NVDA)",
+            "pct": 49.0,
+            "color": "#e15759"
+          },
+          {
+            "label_ko": "나머지 3종목",
+            "label_en": "Remaining 3",
+            "pct": 51.0,
+            "color": "#3987e5"
+          }
         ]
       },
       "note_ko": "메모리 공급난 수혜주 마이크론·샌디스크가 거래대금 상위 5위 안에 나란히 들었다",
@@ -151,72 +409,256 @@
       "title_ko": "실적 · 지표 발표",
       "title_en": "Earnings & Data",
       "stats": [
-        {"label_ko": "한국 8월 수출액", "label_en": "Korea Aug Exports", "value": "$98.28B", "delta": "▲68.7%", "dir": "up", "sub_ko": "전년동월비", "sub_en": "YoY", "ref_ko": "한국은행 ECOS 성질별 수출입 잠정치 · 관세청 통관 확정치는 이달 아직 미공표", "ref_en": "BOK ECOS trade-by-nature estimate; Customs' confirmed figure not yet published this month"},
-        {"label_ko": "한국 8월 무역수지", "label_en": "Korea Aug Trade Balance", "value": "+$34.79B", "delta": "", "dir": "flat", "sub_ko": "수출 호조로 큰 폭 흑자", "sub_en": "Wide surplus on strong exports", "ref_ko": "수출에서 수입을 뺀 값 · 흑자면 외화가 들어온다", "ref_en": "Exports minus imports; a surplus brings foreign currency in"},
-        {"label_ko": "한국 8월 중화학공업품 수출", "label_en": "Korea Aug Heavy & Chemical Exports", "value": "$86.32B", "delta": "▲74.0%", "dir": "up", "sub_ko": "전체 수출의 87.8% · 반도체 등 포함", "sub_en": "87.8% of total exports; incl. semiconductors", "ref_ko": "한국은행 ECOS 성질별 수출입 잠정치 기준", "ref_en": "Based on BOK ECOS trade-by-nature estimate"},
-        {"label_ko": "한국 8월 자본재 수입", "label_en": "Korea Aug Capital Goods Imports", "value": "$26.92B", "delta": "▲42.9%", "dir": "up", "sub_ko": "설비투자 관련 수입 확대", "sub_en": "Reflects rising capex-related imports", "ref_ko": "전체 수입의 42.4% · 반도체 장비 등 설비투자재 포함", "ref_en": "42.4% of total imports; includes capex items such as chip equipment"}
+        {
+          "label_ko": "한국 8월 수출액",
+          "label_en": "Korea Aug Exports",
+          "value": "$98.28B",
+          "delta": "▲68.7%",
+          "dir": "up",
+          "sub_ko": "전년동월비",
+          "sub_en": "YoY",
+          "ref_ko": "한국은행 ECOS 성질별 수출입 잠정치 · 관세청 통관 확정치는 이달 아직 미공표",
+          "ref_en": "BOK ECOS trade-by-nature estimate; Customs' confirmed figure not yet published this month"
+        },
+        {
+          "label_ko": "한국 8월 무역수지",
+          "label_en": "Korea Aug Trade Balance",
+          "value": "+$34.79B",
+          "delta": "",
+          "dir": "flat",
+          "sub_ko": "수출 호조로 큰 폭 흑자",
+          "sub_en": "Wide surplus on strong exports",
+          "ref_ko": "수출에서 수입을 뺀 값 · 흑자면 외화가 들어온다",
+          "ref_en": "Exports minus imports; a surplus brings foreign currency in"
+        },
+        {
+          "label_ko": "한국 8월 중화학공업품 수출",
+          "label_en": "Korea Aug Heavy & Chemical Exports",
+          "value": "$86.32B",
+          "delta": "▲74.0%",
+          "dir": "up",
+          "sub_ko": "전체 수출의 87.8% · 반도체 등 포함",
+          "sub_en": "87.8% of total exports; incl. semiconductors",
+          "ref_ko": "한국은행 ECOS 성질별 수출입 잠정치 기준",
+          "ref_en": "Based on BOK ECOS trade-by-nature estimate"
+        },
+        {
+          "label_ko": "한국 8월 자본재 수입",
+          "label_en": "Korea Aug Capital Goods Imports",
+          "value": "$26.92B",
+          "delta": "▲42.9%",
+          "dir": "up",
+          "sub_ko": "설비투자 관련 수입 확대",
+          "sub_en": "Reflects rising capex-related imports",
+          "ref_ko": "전체 수입의 42.4% · 반도체 장비 등 설비투자재 포함",
+          "ref_en": "42.4% of total imports; includes capex items such as chip equipment"
+        },
+        {
+          "label_ko": "美 8월 산업생산",
+          "label_en": "US Aug Industrial Production",
+          "value": "-0.5%",
+          "delta": "",
+          "dir": "down",
+          "sub_ko": "8개월 만에 첫 감소 · 설비가동률 76.3%(전월과 동일)",
+          "sub_en": "First decline in 8 months; capacity utilization 76.3% (unchanged)",
+          "ref_ko": "전월 대비(MoM) · 연준 G.17 발표",
+          "ref_en": "Month-over-month; from the Fed's G.17 release"
+        }
       ],
-      "note_ko": "출처: 한국은행 ECOS 901Y092(성질별 수출입) · 관세청 HS 품목별 통계는 이달 아직 미공표",
-      "note_en": "Source: BOK ECOS 901Y092 (trade by nature); Korea Customs' item-level data not yet published this month"
+      "note_ko": "출처: 한국은행 ECOS 901Y092(성질별 수출입), 美 연준 G.17 · 관세청 HS 품목별 통계는 이달 아직 미공표",
+      "note_en": "Source: BOK ECOS 901Y092 (trade by nature), Fed G.17; Korea Customs' item-level data not yet published this month"
     },
     {
       "title_ko": "AI · 반도체 기술",
       "title_en": "AI & Semiconductors",
       "items": [
-        {"headline_ko": "젠슨 황 \"내년 칩 판매량 2배\" 전망", "headline_en": "Jensen Huang: chip sales to double next year", "body_ko": "엔비디아 CEO 젠슨 황이 17일(현지시간) 영국 스코틀랜드에서 열린 행사에서 내년 반도체 판매량이 올해의 두 배가 될 것이라고 밝혔다. AI 인프라 투자 확대가 근거로 제시됐고, 이 발언 이후 국내외 반도체주가 일제히 올랐다.", "body_en": "Nvidia CEO Jensen Huang said Sept 17 at an event in Scotland that next year's chip sales would double from this year, citing expanding AI infrastructure investment. Chip stocks worldwide rallied on the comments.", "src": "CNBC"},
-        {"headline_ko": "인텔 CEO \"메모리 공급부족 2028년까지 지속\"", "headline_en": "Intel CEO: memory shortage could last through 2028", "body_ko": "립부 탄 인텔 CEO가 AI 인프라 서밋에서 일부 메모리 제품 가격이 과거보다 5~7배 뛰었다며 공급부족이 2028년까지 이어질 수 있다고 말했다. 마이크론(+3.92%)·샌디스크(+10.99%)가 동반 급등했다.", "body_en": "Intel CEO Lip-Bu Tan told the AI Infrastructure Summit that some memory prices have risen 5-7x and the shortage could persist through 2028. Micron (+3.92%) and SanDisk (+10.99%) surged on the remarks.", "src": "Barron's"},
-        {"headline_ko": "AI 클라우드 네비우스, GPU 임대료 최대 21% 인상", "headline_en": "AI cloud firm Nebius hikes GPU rental rates up to 21%", "body_ko": "AI 클라우드업체 네비우스가 10월 1일부터 엔비디아 H100~B300 GPU 임대료를 17~21% 올리기로 했다. AMD 에픽 제노아 CPU 임대료도 25% 인상돼 AI 인프라 수요가 여전히 견조하다는 신호로 읽힌다.", "body_en": "AI cloud provider Nebius will raise rental rates for Nvidia H100-B300 GPUs by 17-21% starting Oct 1; AMD EPYC Genoa CPU rental rates rose 25% as well, seen as a sign AI infrastructure demand remains strong.", "src": "업계"},
-        {"headline_ko": "앤트로픽·오픈AI 등 4곳, AI 속도조절 담합 소송 피소", "headline_en": "Anthropic, OpenAI and others sued over alleged AI pacing collusion", "body_ko": "AI 서비스 유료 구독자 4명이 앤트로픽·오픈AI·구글·xAI를 상대로 반독점 집단소송을 제기했다. 이들 기업이 합의해 개발 속도를 늦췄다는 주장으로, 18일(현지시간) 캘리포니아 북부 연방법원에 소장이 접수됐다.", "body_en": "Four paying AI subscribers filed an antitrust class action against Anthropic, OpenAI, Google and xAI, alleging the firms agreed to slow development pace. The suit was filed Sept 18 in the Northern District of California.", "src": "AP"},
-        {"headline_ko": "AI로 오픈AI 내부 시스템 뚫은 보안 연구", "headline_en": "Security researchers used AI to breach OpenAI systems", "body_ko": "보안 연구진이 앤트로픽 클로드 오퍼스 5를 활용해 이미지 처리 취약점을 공격 코드로 발전시키고, 오픈AI 직원의 챗GPT·코덱스 계정에 접근하는 데 성공했다고 밝혔다. AI가 해킹 문턱을 낮추고 있다는 우려가 나온다.", "body_en": "Security researchers said they used Anthropic's Claude Opus 5 to turn an image-processing flaw into working exploit code and gained access to OpenAI employees' ChatGPT and Codex accounts, raising concerns AI is lowering the bar for hacking.", "src": "보안뉴스"},
-        {"headline_ko": "필라델피아 반도체지수, 나흘 연속 상승", "headline_en": "Philadelphia Semiconductor Index rises for a fourth straight session", "body_ko": "필라델피아 반도체지수(SOX)가 18일까지 나흘 연속 올랐다. 메모리 공급부족 기대와 젠슨 황 CEO의 판매량 전망이 겹치며 반도체 업종이 지수 상승을 주도했다.", "body_en": "The Philadelphia Semiconductor Index (SOX) rose for a fourth straight session through Sept 18, driven by memory-shortage expectations and Jensen Huang's sales forecast.", "src": "그린에드"}
+        {
+          "headline_ko": "젠슨 황 \"내년 칩 판매량 2배\" 전망",
+          "headline_en": "Jensen Huang: chip sales to double next year",
+          "body_ko": "엔비디아 CEO 젠슨 황이 17일(현지시간) 영국 스코틀랜드에서 열린 행사에서 내년 반도체 판매량이 올해의 두 배가 될 것이라고 밝혔다. AI 인프라 투자 확대가 근거로 제시됐고, 이 발언 이후 국내외 반도체주가 일제히 올랐다.",
+          "body_en": "Nvidia CEO Jensen Huang said Sept 17 that next year's chip sales would double, citing AI infrastructure demand. Chip stocks worldwide rallied.",
+          "src": "CNBC"
+        },
+        {
+          "headline_ko": "인텔 CEO \"메모리 공급부족 2028년까지 지속\"",
+          "headline_en": "Intel CEO: memory shortage could last to 2028",
+          "body_ko": "립부 탄 인텔 CEO가 AI 인프라 서밋에서 일부 메모리 제품 가격이 과거보다 5~7배 뛰었다며 공급부족이 2028년까지 이어질 수 있다고 말했다. 마이크론(+3.92%)·샌디스크(+10.99%)가 동반 급등했고, 샌디스크는 델과 함께 오늘(9/21)부터 S&P100 지수에 새로 편입된다.",
+          "body_en": "Intel CEO Lip-Bu Tan says memory shortages could last through 2028 as prices rose 5-7x. Micron (+3.92%) and SanDisk (+10.99%) surged; SanDisk joins the S&P 100 today.",
+          "src": "Barron's"
+        },
+        {
+          "headline_ko": "AI 클라우드 네비우스, GPU 임대료 최대 21% 인상",
+          "headline_en": "Nebius hikes AI GPU rental rates up to 21%",
+          "body_ko": "AI 클라우드업체 네비우스가 10월 1일부터 엔비디아 H100~B300 GPU 임대료를 17~21% 올리기로 했다. AMD 에픽 제노아 CPU 임대료도 25% 인상돼 AI 인프라 수요가 여전히 견조하다는 신호로 읽힌다.",
+          "body_en": "AI cloud firm Nebius will raise Nvidia GPU rental rates 17-21% from Oct 1; AMD CPU rental rates rose 25% too — a sign AI infrastructure demand stays strong.",
+          "src": "Industry"
+        },
+        {
+          "headline_ko": "앤트로픽·오픈AI 등 4곳, AI 속도조절 담합 소송 피소",
+          "headline_en": "AI firms sued over alleged pacing collusion",
+          "body_ko": "AI 서비스 유료 구독자 4명이 앤트로픽·오픈AI·구글·스페이스X AI(구 xAI)를 상대로 반독점 집단소송을 제기했다. 이들 기업이 합의해 개발 속도를 늦췄다는 주장으로, 18일(현지시간) 캘리포니아 북부 연방법원에 소장이 접수됐다.",
+          "body_en": "Four paying subscribers sued Anthropic, OpenAI, Google and SpaceX AI (ex-xAI), alleging they colluded to slow AI development. Filed Sept 18 in Northern California.",
+          "src": "AP"
+        },
+        {
+          "headline_ko": "AI로 오픈AI 내부 시스템 뚫은 보안 연구",
+          "headline_en": "Security researchers used AI to breach OpenAI",
+          "body_ko": "보안 연구진이 앤트로픽 클로드 오퍼스 5를 활용해 이미지 처리 취약점을 공격 코드로 발전시키고, 오픈AI 직원의 챗GPT·코덱스 계정에 접근하는 데 성공했다고 밝혔다. AI가 해킹 문턱을 낮추고 있다는 우려가 나온다.",
+          "body_en": "Researchers used Claude Opus 5 to exploit an image flaw and access OpenAI staff's ChatGPT and Codex accounts, raising concerns AI lowers hacking barriers.",
+          "src": "Boannews"
+        },
+        {
+          "headline_ko": "필라델피아 반도체지수, 나흘 연속 상승",
+          "headline_en": "Philly Semiconductor Index rises 4th straight day",
+          "body_ko": "필라델피아 반도체지수(SOX)가 18일까지 나흘 연속 올랐다. 메모리 공급부족 기대와 젠슨 황 CEO의 판매량 전망이 겹치며 반도체 업종이 지수 상승을 주도했다.",
+          "body_en": "The Philadelphia Semiconductor Index (SOX) rose a fourth straight session through Sept 18, driven by memory-shortage bets and Huang's sales forecast.",
+          "src": "Greened"
+        }
       ]
     },
     {
       "title_ko": "주요 소식",
       "title_en": "Top Stories",
       "items": [
-        {"headline_ko": "국제유가 3거래일 연속 하락, WTI 96달러대", "headline_en": "Oil falls for a third day, WTI near $96", "body_ko": "WTI는 18일 5.72% 내린 배럴당 96.08달러에 마감해 사흘째 떨어졌다. 사우디아라비아의 홍해 연안 원유 공급 차질이 오래가지 않을 것이란 기대가 반영됐다.", "body_en": "WTI fell 5.72% to $96.08 a barrel on Sept 18, its third straight decline, on expectations that Saudi Red Sea supply disruptions won't last long.", "src": "로이터"},
-        {"headline_ko": "美 10년물 금리, 유럽발 충격에 다시 5%대", "headline_en": "US 10-year yield back above 5% on European bond shock", "body_ko": "미 10년물 국채금리가 17일 4.94%에서 18일 5.01%로 올라섰다. 프랑스 등 유럽 국채금리 급등과 이달 연준의 매파적 금리인상 여파가 겹쳤다.", "body_en": "The US 10-year yield climbed to 5.01% on Sept 18 from 4.94% the day before, as a spike in European yields, including France's, compounded the effect of this month's hawkish Fed rate hike.", "src": "FMP"},
-        {"headline_ko": "코스피, 추석 연휴로 이번 주 사흘만 개장", "headline_en": "KOSPI trades only three days this week for Chuseok", "body_ko": "이번 주 코스피는 월~수요일만 열리고 24~25일은 추석 연휴로 휴장한다. 24일 예정된 미·중 정상회담과 겹쳐 연휴 전후 변동성 확대 가능성이 거론된다.", "body_en": "KOSPI trades Monday through Wednesday this week and is closed Sept 24-25 for the Chuseok holiday, coinciding with the Sept 24 US-China summit — a combination some see raising volatility around the break.", "src": "한국거래소"},
-        {"headline_ko": "삼성전자·SK하이닉스 자사주 매입, 예정보다 일찍 끝난다", "headline_en": "Samsung, SK Hynix to end buybacks earlier than planned", "body_ko": "당초 11월 마감 예정이던 두 회사의 약 35조원 규모 자사주 매입이 속도가 빨라지며 삼성전자는 10월 1일, SK하이닉스는 10월 16일 조기 종료될 전망이다. 그간 코스피 수급을 지탱해온 만큼 종료 후 수급 공백 우려가 나온다.", "body_en": "Samsung Electronics and SK Hynix's roughly 35 trillion won in combined buybacks, originally set to run through November, are on pace to end early — Oct 1 for Samsung and Oct 16 for SK Hynix — raising concern about a supply-demand gap once the buying stops.", "src": "한국거래소"},
-        {"headline_ko": "SEC·CFTC, 토큰화 주식·가상자산 규제 완화", "headline_en": "SEC, CFTC ease rules on tokenized stocks and crypto", "body_ko": "미 SEC가 조건을 충족한 플랫폼의 토큰화 미국 주식 온체인 거래를 5년간 한시 허용했고, CFTC도 가상자산 앱의 파생상품 연계를 허용했다. 의회의 가상자산 입법이 늦어지자 규제당국이 자체적으로 움직인 것으로, 비트코인은 주말 한때 8만달러를 회복했다.", "body_en": "The SEC issued a 5-year conditional exemption letting qualifying platforms trade tokenized US stocks on-chain, and the CFTC allowed crypto apps to connect to derivatives, as regulators moved on their own amid stalled crypto legislation in Congress. Bitcoin briefly reclaimed $80,000 over the weekend.", "src": "SEC"},
-        {"headline_ko": "헤지펀드, S&P500 선물 순매도 포지션 확대", "headline_en": "Hedge funds widen net-short S&P 500 futures bets", "body_ko": "美 상품선물거래위원회(CFTC) 집계에 따르면 헤지펀드의 S&P500 선물 순매도 포지션이 직전 주 -76에서 -100.5(계약, 천 단위)로 늘었다. 금리 5%대 재진입 속에 방어적 포지셔닝이 강화된 것으로 풀이된다.", "body_en": "CFTC data show hedge funds' net-short S&P 500 futures position widened to -100.5 (thousand contracts) from -76 the prior week, seen as more defensive positioning as yields moved back above 5%.", "src": "CFTC"}
+        {
+          "headline_ko": "국제유가 3거래일 연속 하락, WTI 96달러대",
+          "headline_en": "Oil falls for a third day, WTI near $96",
+          "body_ko": "WTI는 18일 5.72% 내린 배럴당 96.08달러에 마감해 사흘째 떨어졌다. 사우디아라비아의 홍해 연안 원유 공급 차질이 오래가지 않을 것이란 기대가 반영됐다.",
+          "body_en": "WTI fell 5.72% to $96.08 a barrel on Sept 18, its third straight decline, on expectations that Saudi Red Sea supply disruptions won't last long.",
+          "src": "Reuters"
+        },
+        {
+          "headline_ko": "美 10년물 금리, 유럽발 충격에 다시 5%대",
+          "headline_en": "US 10-year yield back above 5% on European bond shock",
+          "body_ko": "미 10년물 국채금리가 17일 4.94%에서 18일 5.01%로 올라섰다. 프랑스 등 유럽 국채금리 급등과 이달 연준의 매파적 금리인상 여파가 겹쳤다.",
+          "body_en": "The US 10-year yield climbed to 5.01% on Sept 18 from 4.94%, as a spike in European yields, including France's, compounded this month's hawkish Fed hike.",
+          "src": "FMP"
+        },
+        {
+          "headline_ko": "코스피, 추석 연휴로 이번 주 사흘만 개장",
+          "headline_en": "KOSPI trades only three days this week for Chuseok",
+          "body_ko": "이번 주 코스피는 월~수요일만 열리고 24~25일은 추석 연휴로 휴장한다. 24일 예정된 미·중 정상회담과 겹쳐 연휴 전후 변동성 확대 가능성이 거론된다.",
+          "body_en": "KOSPI trades Mon-Wed this week, closed Sept 24-25 for Chuseok — coinciding with the Sept 24 US-China summit, which some see raising volatility.",
+          "src": "KRX"
+        },
+        {
+          "headline_ko": "삼성전자·SK하이닉스 자사주 매입, 예정보다 일찍 끝난다",
+          "headline_en": "Samsung, SK Hynix to end buybacks early",
+          "body_ko": "당초 11월 마감 예정이던 두 회사의 약 35조원 규모 자사주 매입이 속도가 빨라지며 삼성전자는 10월 1일, SK하이닉스는 10월 16일 조기 종료될 전망이다. 그간 코스피 수급을 지탱해온 만큼 종료 후 수급 공백 우려가 나온다.",
+          "body_en": "Samsung and SK Hynix's roughly 35tn won in buybacks are ending early, Oct 1 and Oct 16, well ahead of November — raising fears of a supply gap once buying stops.",
+          "src": "KRX"
+        },
+        {
+          "headline_ko": "SEC·CFTC, 토큰화 주식·가상자산 규제 완화",
+          "headline_en": "SEC, CFTC ease rules on tokenized stocks and crypto",
+          "body_ko": "미 SEC가 조건을 충족한 플랫폼의 토큰화 미국 주식 온체인 거래를 5년간 한시 허용했고, CFTC도 가상자산 앱의 파생상품 연계를 허용했다. 의회의 가상자산 입법이 늦어지자 규제당국이 자체적으로 움직인 것으로, 비트코인은 주말 한때 8만달러를 회복했다.",
+          "body_en": "The SEC issued a 5-year exemption for tokenized US stock trading, and the CFTC eased crypto-derivatives rules amid stalled crypto legislation in Congress.",
+          "src": "SEC"
+        },
+        {
+          "headline_ko": "워런 버핏, 56년 만에 버크셔 회장직 내려놓다",
+          "headline_en": "Warren Buffett steps down as Berkshire chairman",
+          "body_ko": "96세 버핏이 회장직을 아들 하워드 버핏에게 넘기고 '회장 에메리투스'로 남는다. 이사회 자리는 유지한다. 18일(현지시간) 확정된 승계 마무리 소식이 주말 내내 화제였다.",
+          "body_en": "At 96, Buffett handed the Berkshire chairman role to son Howard, becoming chairman emeritus while staying on the board — news that dominated the weekend.",
+          "src": "Reuters"
+        }
       ]
     }
   ],
-
   "schedule_kicker": "TODAY",
-  "schedule_sub": "지금 ~ 오늘 21:00",
+  "schedule_sub": {
+    "ko": "지금 ~ 오늘 21:00",
+    "en": "Now until 9 PM KST today"
+  },
   "schedule_title_ko": "주요 일정",
   "schedule_title_en": "Key Schedule",
   "market_hours": {
     "title_ko": "한국 증시 운영시간",
     "title_en": "Korea Market Hours",
-    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
-    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"]
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"
+    ]
   },
   "schedule": [
-    {"time": "10:15", "title_ko": "중국 인민은행 기준금리 발표", "title_en": "PBoC Loan Prime Rate Decision", "detail_ko": "1년 LPR, 시장 예상 3.00% 동결", "detail_en": "1Y LPR; consensus is a hold at 3.00%", "importance": "mid"},
-    {"time": "19:30", "title_ko": "굴스비 시카고 연은 총재 발언", "title_en": "Fed's Goolsbee Speaks", "detail_ko": "비둘기파 성향 · 2026년 비회전(투표권 없음)", "detail_en": "Dovish-leaning · non-voter in 2026", "importance": "mid"},
-    {"time": "9/22", "title_ko": "ECB 라가르드 총재 연설 (2회)", "title_en": "ECB's Lagarde Speaks (twice)", "detail_ko": "유럽 통화정책 방향 시사 주목", "detail_en": "Watched for policy-direction signals", "importance": "mid"},
-    {"time": "9/23", "title_ko": "유로존·독일·미국 9월 PMI 예비치", "title_en": "Eurozone, Germany, US Sep Flash PMIs", "detail_ko": "S&P 글로벌 제조업·서비스업 PMI 동시 발표", "detail_en": "S&P Global Manufacturing & Services PMIs released same day", "importance": "high"},
-    {"time": "9/24", "title_ko": "미·중 정상회담 (트럼프·시진핑)", "title_en": "US-China Summit (Trump-Xi)", "detail_ko": "AI·반도체 수출통제·관세가 핵심 의제", "detail_en": "AI, chip export controls and tariffs top the agenda", "importance": "high"},
-    {"time": "9/24~25", "title_ko": "코스피·코스닥 추석 연휴 휴장", "title_en": "KOSPI/KOSDAQ Closed for Chuseok", "detail_ko": "이번 주 거래일은 월~수 사흘뿐", "detail_en": "Only 3 trading days this week (Mon-Wed)", "importance": "high"},
-    {"time": "9/24", "title_ko": "美 9월 신규실업수당청구", "title_en": "US Initial Jobless Claims", "detail_ko": "예상 20.2만건 · 이전 19.6만건", "detail_en": "Consensus 202K · previous 196K", "importance": "mid"}
+    {
+      "time": "10:15",
+      "title_ko": "중국 인민은행 기준금리 발표",
+      "title_en": "PBoC Loan Prime Rate Decision",
+      "detail_ko": "1년 LPR, 시장 예상 3.00% 동결",
+      "detail_en": "1Y LPR; consensus is a hold at 3.00%",
+      "importance": "mid"
+    },
+    {
+      "time": "19:30",
+      "title_ko": "굴스비 시카고 연은 총재 발언",
+      "title_en": "Fed's Goolsbee Speaks",
+      "detail_ko": "비둘기파 성향 · 2026년 비회전(투표권 없음)",
+      "detail_en": "Dovish-leaning · non-voter in 2026",
+      "importance": "mid"
+    },
+    {
+      "time": "9/21",
+      "title_ko": "AI 음성합성 네오사피엔스, 코스닥 상장",
+      "title_en": "AI voice-synthesis firm Neosapiens lists on KOSDAQ",
+      "detail_ko": "공모가 1만원 · 텍스트를 목소리로 바꾸는 '타입캐스트'가 주력 사업",
+      "detail_en": "IPO priced at 10,000 won; its main product is the text-to-speech platform Typecast",
+      "importance": "mid"
+    },
+    {
+      "time": "9/22",
+      "title_ko": "ECB 라가르드 총재 연설 (2회)",
+      "title_en": "ECB's Lagarde Speaks (twice)",
+      "detail_ko": "유럽 통화정책 방향 시사 주목",
+      "detail_en": "Watched for policy-direction signals",
+      "importance": "high"
+    },
+    {
+      "time": "9/23",
+      "title_ko": "유로존·독일·미국 9월 PMI 예비치",
+      "title_en": "Eurozone, Germany, US Sep Flash PMIs",
+      "detail_ko": "S&P 글로벌 제조업·서비스업 PMI 동시 발표",
+      "detail_en": "S&P Global Manufacturing & Services PMIs released same day",
+      "importance": "high"
+    },
+    {
+      "time": "9/24",
+      "title_ko": "미·중 정상회담 (트럼프·시진핑)",
+      "title_en": "US-China Summit (Trump-Xi)",
+      "detail_ko": "AI·반도체 수출통제·관세가 핵심 의제",
+      "detail_en": "AI, chip export controls and tariffs top the agenda",
+      "importance": "high"
+    },
+    {
+      "time": "9/24~25",
+      "title_ko": "코스피·코스닥 추석 연휴 휴장",
+      "title_en": "KOSPI/KOSDAQ Closed for Chuseok",
+      "detail_ko": "이번 주 거래일은 월~수 사흘뿐",
+      "detail_en": "Only 3 trading days this week (Mon-Wed)",
+      "importance": "high"
+    }
   ],
-
   "outro_tagline_ko": "",
   "outro_tagline_en": "",
   "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
   "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
-
   "card_photos": {
     "1": "The New York Stock Exchange trading floor moments after the closing bell, traders in silhouette, warm amber light, dramatic low-angle composition, cinematic depth of field",
     "3": "A dark trading floor with a wall of glowing screens showing rising stock tickers, blue and green light reflections, semiconductor chip wafer superimposed subtly in the background, moody cinematic lighting",
     "7": "Close-up macro shot of a silicon semiconductor wafer catching amber and blue light, shallow depth of field, high-tech abstract composition, dark background"
   },
-
   "caption_ko": "🇺🇸 다우는 내리고 나스닥은 오르고 — 젠슨 황의 '칩 2배' 발언에 반도체만 웃은 하루였습니다. 美 10년물 금리는 다시 5%대, 국제유가는 사흘째 하락. 코스피는 이번 주 추석 연휴로 사흘만 열립니다. 오늘 아침 브리핑, 저장하고 하루를 시작하세요 📌\n\n#luckyon브리핑 #미국증시 #나스닥 #반도체 #젠슨황 #엔비디아 #코스피 #원달러환율 #국제유가 #미국채금리 #추석연휴 #경제브리핑 #주식투자 #오늘의증시 #투자공부\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
   "caption_en": "🇺🇸 Dow down, Nasdaq up — Jensen Huang's 'double the chips' call lifted only semis today. The US 10-year yield is back above 5%, oil fell for a third day, and KOSPI trades only 3 days this week for Chuseok. Save this morning brief and start your day 📌\n\n#luckyonbriefing #usmarkets #nasdaq #semiconductors #jensenhuang #nvidia #kospi #usdkrw #oilprices #ustreasuryyields #chuseok #economicbrief #stockmarket #dailymarkets #investing\n\n🌙 Next brief — 9 PM KST, before the US open",
-  "sources": ["FMP", "Yahoo Finance", "PlayMCP UsStockInfo", "KRX", "한국은행 ECOS", "Naver News", "CFTC", "SEC"]
+  "sources": [
+    "FMP",
+    "Yahoo Finance",
+    "PlayMCP UsStockInfo",
+    "KRX",
+    "한국은행 ECOS",
+    "Naver News",
+    "CFTC",
+    "SEC"
+  ]
 }
