@@ -1,0 +1,72 @@
+name: KRX Market Snapshot
+
+# 코스피·코스닥의 그날 기록(등락 종목수·투자자별 순매수·거래대금·업종별 등락)을
+# stock.naver.com 내부 API 에서 받아 data/krx-market.json 에 커밋해 둔다.
+#
+# 왜 필요한가 (2026-09-21 pm):
+#   세션의 egress 프록시가 stock.naver.com·polling.finance.naver.com 을 CONNECT
+#   단계에서 403 으로 막는다. 러너는 막히지 않는다 — krx-flows·econ-calendar·
+#   card-photos 와 같은 패턴이다.
+#
+#   이 파일이 생기기 전까지 «등락 종목수»와 «업종별 등락» 은 2026-09-10 이후 열흘 넘게
+#   빈 채로 나갔다. 예전 경로(sise_index.naver·sise_group.naver)가 HTTP 200 을 주면서도
+#   표가 0개라(SPA 로 이전됨) 죽은 줄 몰랐던 것이 원인이다. 자세한 경위는
+#   DATA_SOURCES.md §10 에 있다.
+#
+# 실패해도 브리핑을 멈추지 않는다 — 기존 파일을 그대로 두고 경고만 남긴다.
+
+on:
+  schedule:
+    - cron: '12 11 * * 1-5'   # 11:12 UTC = 20:12 KST — 저녁 브리핑 직전 (한국장 마감 후)
+    - cron: '22 22 * * 0-4'   # 22:22 UTC = 07:22 KST(다음날) — 아침 브리핑 직전
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: krx-market
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch
+        id: fetch
+        run: |
+          mkdir -p data
+          if node scripts/fetch-krx-market.mjs --pretty > /tmp/m.json; then
+            mv /tmp/m.json data/krx-market.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+            node -e '
+              const m=require("./data/krx-market.json");
+              for (const [k,v] of Object.entries(m.indexes)) {
+                console.log(`${k}: 상승 ${v.breadth.up} / 보합 ${v.breadth.flat} / 하락 ${v.breadth.down}`
+                  + ` · 수급 개인 ${v.flows.individual} 외국인 ${v.flows.foreign} 기관 ${v.flows.institution} (억원)`);
+              }
+              console.log(`업종 ${m.industries.length}개 · 최고 ${m.industries[0]?.name} ${m.industries[0]?.changeRate}%`);
+            '
+          else
+            echo "::warning::네이버 시장 스냅샷 조회 실패 — 기존 data/krx-market.json 을 유지합니다."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/krx-market.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: refresh KRX market snapshot [skip ci]"
+            for i in 1 2 3; do git push && exit 0; sleep $((i*3)); git pull --rebase --autostash origin main || exit 1; done
+          fi
