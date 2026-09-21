@@ -88,49 +88,66 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      | 비트코인 | 같은 도구 — `BTC-USD` |
      | 미 10년물 금리 | FMP `economics` 도구, `endpoint: "treasury-rates"`, `from_date`/`to_date` 로 해당 거래일 지정 → `year10` 값 |
      | Fear & Greed | `NODE_USE_ENV_PROXY=1 node scripts/fetch-fear-greed.mjs` — CNN 원본 API 직접 조회(2026-08-26부터, 아래 참고) |
-     | **한국 증시 하루치 기록** (본문 카드용) | `node scripts/fetch-krx.mjs <YYYY-MM-DD>` — 코스피·코스닥 종가·등락률·거래대금·거래량, 상승/하락/보합 종목 수, 등락률·거래대금 상위 종목을 JSON 으로 준다 |
+     | **한국 증시 하루치 기록** (본문 카드용) | **1순위 `data/krx-market.json`** (아래 참고 — 등락 종목수·수급·업종 79개가 여기 다 있다) · 2순위 `node scripts/fetch-krx.mjs <YYYY-MM-DD>` |
      | 한국 개별 종목 시세·52주 고저 | `https://query1.finance.yahoo.com/v8/finance/chart/<종목코드>.KS` (코스닥은 `.KQ`) — 종가는 `meta.regularMarketPrice` 를 쓴다 |
      | **미국 거래대금 상위 · 공매도 비중 · 상승/하락 거래대금** | `node scripts/fetch-us-flows.mjs <YYYY-MM-DD>` — 야후 스크리너(가격×거래량) + FINRA 일별 공매도. **키가 필요 없다.** am 의 거래대금 상위 카드가 쓴다 |
      | **한국 수출입 (품목·성질별)** | 1순위 `data/kr-trade.json`(아래 참고) · 2순위 `node scripts/fetch-kr-trade.mjs` 직접 실행 — 관세청을 먼저 두드리고 안 열리면 한국은행 ECOS 로 내려간다. 어느 쪽을 썼는지 출력 `source` 에 남으니 카드 각주에 그대로 옮긴다 |
 
-     - **`fetch-krx.mjs` 는 KRX 원천 데이터를 미러링한 CSV(`FinanceData/fdr_krx_data_cache`)를 읽는다.** 휴장일이면 exit 2 로 조용히 빠지므로, **그때는 브리핑을 멈추지 말고** 한국 항목을 빼고 진행한다.
+     - **한국 시장 내부 데이터 — 1순위는 `data/krx-market.json` 이다 (2026-09-21 pm 신설).**
+       `.github/workflows/krx-market.yml` 이 브리핑 직전(20:12 / 07:22 KST) 러너에서
+       `stock.naver.com` 내부 API 를 받아 **main 에** 커밋해 둔다. 읽는 법:
+       ```
+       git fetch origin main -q && git show origin/main:data/krx-market.json > /tmp/krx.json
+       ```
+       **반드시 `origin/main` 에서 읽고, 안의 `fetchedAt`·`flows.bizdate` 가 이번 회차 거래일과
+       맞는지 먼저 확인한다.** 들어 있는 것과 쓰이는 자리:
+
+       | 필드 | 쓰는 곳 | 내용 |
+       |---|---|---|
+       | `indexes.{KOSPI,KOSDAQ}.breadth` | **카드3 `breadth`** | 상승·보합·하락·상한·하한 **종목수** (코스피·코스닥 각각) |
+       | `indexes.{KOSPI,KOSDAQ}.flows` | **카드3 `flows`** | 개인·외국인·기관 순매수(억원). **코스닥도 나온다** |
+       | `indexes.*.tradingValueMillionKrw` · `high52w`·`low52w` 등 | 카드3 note·본문 관찰 | 거래대금(백만원)·거래량·52주 고저·시가/고가/저가 |
+       | `industries[]` (**79개**) | **카드4 `bars`** · 카드5 보조 | 업종별 등락률·상승/하락 종목수·거래대금·시총 + 업종별 상위 종목 3종(등락률/시총/거래대금) |
+
+       - **이 파일이 있으면 카드3 의 `breadth` 와 카드4 를 ETF 대용으로 때우지 않는다.** 2026-09-10~09-21
+         사이 열흘 넘게 카드3 등락 종목수가 비고 카드4 가 섹터 ETF 6개로 나간 것은 이 경로가 없어서였다
+         (경위는 `DATA_SOURCES.md` §10-1).
+       - **수급 범위 주의**: 이 API 값은 조회 시각에 따라 넥스트레이드(NXT)·시간외가 섞여 언론 보도치와
+         수백억~수천억 차이가 난다(2026-09-21 실측: API 개인 −31,850 vs 언론 다수설 −29,790). 정규장
+         종가 기준으로 맞춰야 하면 아래 네이버 뉴스 2곳 대조로 교차검증하고, **카드에는 기준을 밝힌다.**
+       - **업종 분류는 네이버 자체 분류(코스피+코스닥 합산)** 라 `fetch-krx.mjs` 의 KSIC 시총가중과
+         방법론이 다르다. 카드4 에 10~15개를 고르는 기준은 §B 와 같고, 근거를 note 에 적는다.
+       - 파일이 없거나 낡았으면 `mcp__github__actions_run_trigger` 로 `krx-market.yml` 을 직접 돌려
+         2~3분 뒤 받아 쓸 수 있다. **세션에서 스크립트를 직접 돌리는 것은 안 된다** — 프록시가
+         `stock.naver.com` 을 CONNECT 단계에서 막는다(`NODE_USE_ENV_PROXY=1` 도 소용없다).
+     - **`fetch-krx.mjs`(2순위) 는 KRX 원천 데이터를 미러링한 CSV(`FinanceData/fdr_krx_data_cache`)를 읽는다.** 휴장일이면 exit 2 로 조용히 빠지므로, **그때는 브리핑을 멈추지 말고** 한국 항목을 빼고 진행한다.
        - **이 미러 자체가 며칠씩 밀려 있을 수 있다(휴장일과는 다른 이유).** 2026-09-09 pm 세션에서
          실측 — 그날(9/9)은 물론 전날(9/8)도 "지수 데이터 없음"이 떴는데, 두 날 다 정상 개장일이었다.
          `git ls-tree`/`curl` 로 직접 확인해 보니 GitHub 미러 저장소 자체가 아직 9/7 까지만 커밋돼
          있었다 — 워크플로 실패가 아니라 **미러의 수집 주기가 그만큼 늦은 것**이었다. 이럴 때는
          `node scripts/fetch-krx.mjs <하루 전 날짜>` 로 재시도해 보는 것으로 끝내지 말고(계속 없을
-         수 있다), 아래 방법으로 그날 마감 수치를 직접 받는다 — **KRX·네이버금융이 세션에서 차단된다는
-         옛 전제는 틀렸다(위 수급 항목 참고).** 지수 종가·등락률은 이미 A절 표의 Yahoo 경로로 받고
-         있으니, 이 미러가 없을 때 추가로 필요한 것만 다음 페이지에서 직접 긁는다(전부 `curl` 200 확인,
-         `finance.naver.com` 은 EUC-KR 인코딩이라 `iconv -f EUC-KR -t UTF-8` 필수):
-         - **코스피/코스닥 당일 거래대금·등락 종목수**: `https://finance.naver.com/sise/sise_index.naver?code=KOSPI`(코스닥은 `code=KOSDAQ`) — `id="amount"`(거래대금, 백만원 단위)·`id="high_value"`/`id="low_value"`(장중 고저)와, 상승/보합/하락 종목수 목록(`상승종목수`/`보합종목수`/`하락종목수` 옆 `<span>` 숫자)을 그대로 쓴다.
-         - **업종별 등락률(카드4 대체 소스)**: `https://finance.naver.com/sise/sise_group.naver?type=upjong` — KRX WICS 세분류 79개를 등락률 내림차순으로 준다. `fetch-krx.mjs` 의 KSIC 15개 시총가중 분류와 방법론(단순평균)이 다르므로 세션 마무리 보고에 그 사실을 남긴다. 주력 업종 10~15개를 골라 쓰는 기준은 A절 §B 와 동일하다.
-         - **개별 종목 거래대금 상위(카드5 대체 소스)**: `https://finance.naver.com/sise/sise_quant.naver?sosok=0` — 기본은 거래량 정렬이라 표에서 `거래대금`(6번째 값, 백만원) 열을 직접 읽어 재정렬해야 한다. `KODEX`·`TIGER`·`KBSTAR`·`인버스`·`레버리지`·`ETN` 등 이름이 붙은 행은 ETF/ETN 이므로 제외하고 개별 종목만 남긴다. 상위 거래량(약 50위) 밖에 있는 고가·저거래량 종목은 이 방법으로 못 잡을 수 있다는 한계는 있다.
-         - 이 대체 경로로 얻은 수치는 실제로 2026-09-09 pm 세션 검증(별도 에이전트가 동일 페이지를 재조회)에서 전부 소수점까지 일치했다 — 신뢰할 수 있는 경로다.
+         수 있다), **위 1순위인 `data/krx-market.json` 을 쓴다** — 미러가 밀려도 그쪽은 그날 마감
+         수치를 준다.
+         - **아래 옛 경로들은 전부 죽었다. 다시 시도하지 않는다** (2026-09-21 러너에서 재확인):
+           `sise_index.naver`·`sise_group.naver`·`sise_quant.naver` 는 HTTP 200 을 주면서도
+           **`<table>` 이 0개**다 — SPA 로 이전돼 데이터가 서버 HTML 에 없다. `investorDealTrendDay.naver`·
+           `entryJongmok.naver`·`sise_index_day.naver` 는 **410 Gone**. 상태코드만 보고 "산다"고
+           판단했다가 열흘을 빈 카드로 보냈다 (`DATA_SOURCES.md` §10-1).
+         - 카드5(거래대금 상위)는 `krx-market.json` 의 `industries[].topByTradingValue` 로 업종별
+           상위 종목을 모아 쓰거나, A절 표의 Yahoo 경로로 개별 종목을 조회해 «종가x거래량» 추정치를
+           만든다. 추정치를 쓸 때는 **네 행 모두 같은 산식**으로 계산하고 그 사실을 note 에 적는다.
      - **Yahoo 차트 API 의 함정 2가지** (실측 확인): ① 응답의 `indicators.quote[0].close` 배열은 **당일 마지막 값이 `null`** 이다. 종가는 반드시 `meta.regularMarketPrice` 에서 읽는다. ② `meta.chartPreviousClose` 가 틀린 값을 주는 경우가 있다(2026-08-03 `^KS11` 기준 8088.34 로 나왔으나 실제 7/31 종가는 6595.45). **전일 대비는 직접 계산한다.**
-     - **한국 수급(외국인·기관·개인 순매수) — 1순위: `data/krx-flows.json`.** `.github/workflows/krx-flows.yml` 이 브리핑 직전(20:10 / 07:20 KST)에 GitHub Actions 러너에서 네이버 금융을 긁어 **main 브랜치에** 커밋해 둔다 (러너는 이 세션의 네트워크 정책 밖이라 접속된다 — 선물 캐시·econ 캘린더와 같은 패턴). 읽는 법:
-       ```
-       git fetch origin main -q && git show origin/main:data/krx-flows.json > /tmp/flows.json
-       ```
-       **반드시 `origin/main` 에서 읽는다** (작업트리 파일은 낡았을 수 있다). 파일 안의 기준일이 이번 세션의 거래일과 같은지 확인하고, 다르면 낡은 것으로 보고 쓰지 않는다.
-       - **수급은 pm ③ 카드의 정식 구성요소다.** 외국인·기관·개인이 그날 어느 쪽이었는지는 한국 독자가 가장 먼저 보는 정보이므로, 귀찮다고 건너뛰지 않는다. **1순위(이 파일)와 2순위(아래 네이버 뉴스 2곳 대조)를 모두 시도한 뒤에만** 뺀다.
-       - **2026-08-22 파서를 고쳤다 — 이제 값이 나온다.** 원인은 로그인도 페이지 구조도 아니었다.
-         조회 주소에 `sosok` 을 붙이면 표 헤더만 오고 **데이터 행이 0개**가 된다(응답 1.8KB). `bizdate` 만
-         주면 정상적으로 온다(7.8KB). 파라미터 하나가 표를 비우고 있었던 것이고, 그래서 "표를 찾지 못함" 이
-         떴다. 함께 고친 것 둘: 단위는 백만원이 아니라 **억원**이고(페이지 제목이 "단위:억원" 이라고 밝힌다),
-         **기타법인**을 빠뜨려 네 주체 합이 0 이 되지 않았다. 지금은 `otherCorp` 와 `checksum` 을 함께 낸다.
-         2026-08-21 실측: 개인 −11,652 · 외국인 −1,760 · 기관 +2,481 · 기타법인 +10,931 · **검산 0**.
-       - **이 경로는 유가증권시장(코스피)만 준다.** `sosok=1`·`market=KOSDAQ`·`code=KOSDAQ` 를 붙여도
-         전부 무시되고 같은 코스피 수치가 돌아온다. 코스닥 수급은 다른 출처가 필요하다 — 당분간 코스피만 싣는다.
-       - **그래도 파일 존재와 기준일은 먼저 확인한다.** 워크플로가 그날 실패했거나 아직 그날 마감
-         수급을 못 받았을 수 있다(2026-09-09 pm 세션에서 실제로 `data/krx-flows.json` 이 전날 자정
-         무렵 값에 멈춰 있었다). **이때 2순위(네이버 뉴스 대조)로 곧장 내려가지 말고, 먼저
-         `NODE_USE_ENV_PROXY=1 node scripts/fetch-krx-flows.mjs <YYYY-MM-DD>` 로 세션에서 직접
-         재조회한다.** `fetch-krx-flows.mjs` 헤더 주석의 "finance.naver.com 은 세션에서 차단된다"는
-         옛 결론은 틀렸다 — 원인은 Node 내장 fetch 가 프록시를 안 타는 것뿐이었고(Fear&Greed 스크립트와
-         같은 사고), 이 접두어를 붙이면 세션에서도 그날 마감 수급을 바로 받는다. 이 직접 조회까지
-         실패했을 때만 2순위(네이버 뉴스 2곳 대조)로 내려가고, 그것도 안 되면 `flows` 를 빼고 그
-         사실을 마무리 보고에 적는다 — 수급이 없다고 브리핑을 멈추지는 않는다.
+     - **한국 수급(외국인·기관·개인 순매수) — 1순위: `data/krx-market.json` 의 `indexes.*.flows`.**
+       위 항목 참고. 코스피·코스닥 **둘 다** 나온다(옛 `krx-flows.json` 은 코스피만 줬다).
+       - **수급은 pm ③ 카드의 정식 구성요소다.** 외국인·기관·개인이 그날 어느 쪽이었는지는 한국 독자가
+         가장 먼저 보는 정보이므로, 귀찮다고 건너뛰지 않는다. **1순위와 2순위(네이버 뉴스 2곳 대조)를
+         모두 시도한 뒤에만** 뺀다.
+       - **2순위(네이버 뉴스 2곳 이상 대조)는 정규장 종가 기준이 필요할 때도 쓴다.** API 값은 조회
+         시각에 따라 NXT·시간외가 섞이므로, 언론 다수설과 수백억~수천억 어긋나는 것이 정상이다.
+         어느 쪽을 싣든 **기준 시각·시장 범위를 카드에 밝힌다.**
+       - **`data/krx-flows.json`(옛 1순위)·`scripts/fetch-krx-flows.mjs` 는 더 이상 값을 못 준다.**
+         그 경로(`investorDealTrendDay.naver`)가 2026-09-21 부터 **410 Gone** 이다 — 러너에서도 같다.
+         워크플로는 탐침용으로만 남겨 두었다. 이 파일이 낡아 있는 것은 고장이 아니라 예정된 상태다.
      - **미국은 투자자별 일별 순매수를 공표하지 않는다.** 거래소도 규제기관도 내지 않는다. 그래서
        `fetch-us-flows.mjs` 는 대용 지표 둘을 쓴다 — ① 종목별 **공매도 비중**(FINRA), ② 돈이 오른 종목으로
        갔는지 내린 종목으로 갔는지(**상승/하락 거래대금**). 공매도 비중은 시장조성자 헤지가 대량 섞여 있어
