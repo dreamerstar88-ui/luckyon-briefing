@@ -1,0 +1,63 @@
+name: Probe Naver Stock Browser
+
+# stock.naver.com(코스피/코스닥 지수·업종 페이지)이 실제로 무슨 API 를 부르는지
+# 실제 브라우저로 열어 XHR 을 가로채 확인한다. 2026-09-21 pm 세션에서
+# finance.naver.com/sise/sise_index.naver · sise_group.naver 를 평문 fetch 로 받으면
+# 러너의 깨끗한 IP 에서도 200 은 오지만 표가 0개인 것을 확인했다 — 화면이 클라이언트
+# 렌더링(SPA)으로 옮겨진 것으로 보인다. 짐작한 API 경로(m.stock.naver.com/api/index/
+# KOSPI/investors 등)는 전부 404 였으므로, 브라우저가 실제로 부르는 API 를 직접
+# 관찰해야 한다(probe-krx-browser.yml 과 같은 이유).
+#
+# 세션 프록시는 stock.naver.com 자체에 대한 HTTPS CONNECT 를 막아 Chromium 이
+# 못 뜬다 — 러너에서만 가능하다.
+#
+# 탐침 전용. 실패로 끝내지 않고 브리핑에 영향도 없다.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i -D playwright@latest --no-save && npx playwright install --with-deps chromium
+      - name: Probe
+        id: probe
+        continue-on-error: true
+        run: |
+          mkdir -p data
+          if node scripts/probe-naver-browser.mjs > /tmp/n.json; then
+            mv /tmp/n.json data/probe-naver-browser.json
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::네이버 브라우저 탐침 실패"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Summary
+        if: always() && steps.probe.outputs.ok == 'true'
+        run: |
+          node -e '
+            const r=require("./data/probe-naver-browser.json");
+            for (const p of r.pages) {
+              console.log(`### ${p.id}`);
+              console.log(p.error ? `실패: ${p.error}` : `제목 "${p.title}" · 등락수문구 ${p.hasUpDownCounts} · XHR ${p.xhr.length}건`);
+              for (const x of p.xhr) console.log(`- ${x.status} \`${x.url}\``);
+            }
+          ' >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit
+        if: steps.probe.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/probe-naver-browser.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: probe stock.naver.com via browser [skip ci]"
+          for i in 1 2 3; do git push && exit 0; sleep $((i*3)); git pull --rebase --autostash origin main || exit 1; done
