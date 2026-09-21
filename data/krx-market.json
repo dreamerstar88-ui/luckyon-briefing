@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-09-21T14:32:02Z",
+  "fetchedAt": "2026-09-21T14:49:48Z",
   "source": "stock.naver.com internal API (observed via browser probe 2026-09-21)",
   "notes": {
-    "flowsScope": "유가증권시장/코스닥 각각. 장 마감 후 시점에 따라 넥스트레이드(NXT)·시간외가 섞여 언론 보도치와 수백억~수천억 차이가 날 수 있다 — 카드에는 기준 시각을 함께 적는다.",
+    "flowsScope": "«정규장(09:00~15:30) 마감» 기준으로 고정한다. 워크플로가 15:40 KST 에 먼저 받아 두고 그 뒤 조회는 flows 를 덮어쓰지 않는다. 시간외가 누적된 늦은 조회값은 flowsLate 로만 남으므로 카드에는 flows 를 쓴다.",
     "industriesScope": "코스피+코스닥 합산 업종 분류(네이버 자체 분류). fetch-krx.mjs 의 KSIC 시총가중 집계와 방법론이 다르다."
   },
   "indexes": {
@@ -28,7 +28,8 @@
         "unit": "억원",
         "individual": -31850,
         "foreign": 117,
-        "institution": 15162
+        "institution": 15162,
+        "capturedAt": "2026-09-21T14:49:48Z"
       }
     },
     "KOSDAQ": {
@@ -53,7 +54,8 @@
         "unit": "억원",
         "individual": 1416,
         "foreign": -995,
-        "institution": -285
+        "institution": -285,
+        "capturedAt": "2026-09-21T14:49:48Z"
       }
     }
   },
