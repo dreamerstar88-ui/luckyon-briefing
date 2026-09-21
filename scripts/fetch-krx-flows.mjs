@@ -191,10 +191,50 @@ async function probeIndexPage() {
   }
 }
 
+// 2026-09-21 pm 세션 추가 — sise_group.naver(업종)·sise_index.naver 의 등락 종목수(breadth)가
+// 러너에서 실제로 사는지 직접 확인한다. 세션(egress 프록시)에서는 sise_index.naver·
+// sise_group.naver 가 GET에 302로 stock.naver.com(차단 도메인)으로 리다이렉트되는데,
+// 이 워크플로 러너(다른 소스 IP)로 같은 URL을 찔러보니 sise_index.naver 는 200으로 정상
+// 응답했다 — 즉 페이지가 옮겨진 게 아니라 세션 프록시의 IP만 리다이렉트 대상이 된 것으로
+// 보인다. 같은 것이 sise_group.naver 에도 적용되는지, 그리고 등락 종목수가 sise_index.naver
+// 본문에 있는지를 여기서 확인한다.
+async function probeSectorAndBreadth() {
+  const groupUrl = 'https://finance.naver.com/sise/sise_group.naver?type=upjong';
+  console.log(`\n▶ ${groupUrl}`);
+  try {
+    const { html, bytes } = await getHtml(groupUrl);
+    console.log(`  ${bytes} bytes`);
+    const ts = tables(html);
+    console.log(`  table ${ts.length}개`);
+    ts.forEach((tb, i) => {
+      const rs = rows(tb).filter(r => r.length);
+      if (rs.length < 3) return;
+      console.log(`  --- table[${i}] rows=${rs.length} ---`);
+      rs.slice(0, 10).forEach((r, j) => console.log(`    [${j}] ${r.slice(0, 6).join(' | ')}`));
+    });
+  } catch (e) { console.log(`  실패: ${e.message}`); }
+
+  for (const code of ['KOSPI', 'KOSDAQ']) {
+    const url = `https://finance.naver.com/sise/sise_index.naver?code=${code}`;
+    console.log(`\n▶ breadth check ${url}`);
+    try {
+      const { html } = await getHtml(url);
+      const plain = strip(html);
+      const m = plain.match(/상승[^0-9]{0,10}([\d,]+)[^가-힣]{0,20}보합[^0-9]{0,10}([\d,]+)[^가-힣]{0,20}하락[^0-9]{0,10}([\d,]+)/);
+      console.log('  상승/보합/하락 정규식 매치:', m ? m.slice(1, 4) : '없음');
+      for (const id of ['amount', 'high_value', 'low_value']) {
+        const idm = html.match(new RegExp(`id=["']${id}["'][^>]*>([^<]*)<`));
+        console.log(`  #${id}:`, idm ? strip(idm[1]) : '없음');
+      }
+    } catch (e) { console.log(`  실패: ${e.message}`); }
+  }
+}
+
 async function probe() {
   console.log(`기준일 ${DATE}`);
   await krxLogin();
   await probeIndexPage();
+  await probeSectorAndBreadth();
   await probeKrx();
   await probeJson();
   for (const p of PAGES) {
