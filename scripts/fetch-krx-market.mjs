@@ -93,13 +93,49 @@ async function industries() {
   }));
 }
 
+// ── 수급 기준: «정규장(09:00~15:30) 마감» 으로 고정한다 (2026-09-21 결정) ───────────
+// 이 API 의 dealTrendInfo 는 정규장 마감 뒤에도 시간외 체결이 누적돼 조회가 늦을수록
+// 언론 보도치(정규장 기준)에서 멀어진다. 2026-09-21 실측 — 23:27 조회값은
+// 개인 −31,850·외국인 +117·기관 +15,162 였는데 같은 날 정규장 기준 언론 다수설은
+// 개인 −29,790·외국인 −1,603·기관 +14,924 였다(차이 238억~2,060억). 같은 날 한 매체가
+// 보도한 KRX+넥스트레이드 «합산» 기관치는 1조6,000억대여서, 이 차이는 NXT 통합이 아니라
+// 시간외 누적으로 보는 것이 맞다.
+//
+// 왜 정규장으로 정했나:
+//   ① 카드3 에 지수 «종가»(정규장)와 수급이 나란히 놓인다 — 수급만 시간외 포함이면
+//      같은 카드 안에서 기준이 엇갈린다.
+//   ② 독자가 뉴스·증권앱에서 보는 숫자가 정규장 기준이다.
+//   ③ 과거 회차가 전부 정규장 기준이라 지금 바꾸면 시계열이 끊긴다.
+//
+// 어떻게 지키나: 워크플로가 **15:40 KST(정규장 마감 직후)** 에 먼저 받아 두고, 그 뒤의
+// 조회(20:12·07:22)는 같은 거래일이면 flows 를 **덮어쓰지 않는다**. 늦은 조회값은
+// `flowsLate` 로만 남겨 두 값의 차이를 매일 기록한다(가설 검증용이자, 벌어지면 바로 눈에 띈다).
+const FLOW_FIELDS = ['individual', 'foreign', 'institution'];
+
+function carryOverFlows(out, prev) {
+  if (!prev?.indexes) return;
+  for (const [code, cur] of Object.entries(out.indexes)) {
+    const old = prev.indexes[code];
+    if (!old?.flows || old.flows.bizdate !== cur.flows.bizdate) continue;   // 다른 거래일이면 새로 쓴다
+    if (!old.flows.capturedAt) continue;
+    // 같은 거래일이고 이미 이른 스냅샷이 있다 → 그쪽이 정규장 기준이므로 유지한다.
+    const late = { capturedAt: cur.flows.capturedAt };
+    for (const f of FLOW_FIELDS) late[f] = cur.flows[f];
+    const drift = FLOW_FIELDS.some(f => late[f] !== old.flows[f]);
+    cur.flows = old.flows;
+    if (drift) cur.flowsLate = late;
+    else if (old.flowsLate) cur.flowsLate = old.flowsLate;
+  }
+}
+
 async function main() {
+  const capturedAt = new Date().toISOString().slice(0, 19) + 'Z';
   const out = {
-    fetchedAt: new Date().toISOString().slice(0, 19) + 'Z',
+    fetchedAt: capturedAt,
     source: 'stock.naver.com internal API (observed via browser probe 2026-09-21)',
     // 아래 두 항목은 카드에 실을 때 반드시 밝혀야 하는 범위 정보다.
     notes: {
-      flowsScope: '유가증권시장/코스닥 각각. 장 마감 후 시점에 따라 넥스트레이드(NXT)·시간외가 섞여 언론 보도치와 수백억~수천억 차이가 날 수 있다 — 카드에는 기준 시각을 함께 적는다.',
+      flowsScope: '«정규장(09:00~15:30) 마감» 기준으로 고정한다. 워크플로가 15:40 KST 에 먼저 받아 두고 그 뒤 조회는 flows 를 덮어쓰지 않는다. 시간외가 누적된 늦은 조회값은 flowsLate 로만 남으므로 카드에는 flows 를 쓴다.',
       industriesScope: '코스피+코스닥 합산 업종 분류(네이버 자체 분류). fetch-krx.mjs 의 KSIC 시총가중 집계와 방법론이 다르다.',
     },
     indexes: {},
@@ -107,7 +143,10 @@ async function main() {
   };
   const failed = [];
   for (const code of ['KOSPI', 'KOSDAQ']) {
-    try { out.indexes[code] = await index(code); }
+    try {
+      out.indexes[code] = await index(code);
+      out.indexes[code].flows.capturedAt = capturedAt;
+    }
     catch (e) { failed.push(`${code}: ${e.message}`); }
   }
   try { out.industries = await industries(); }
@@ -117,6 +156,12 @@ async function main() {
     console.error(`⏭  네이버 시장 데이터 조회 실패 (${failed.join(' / ')})`);
     process.exit(2);
   }
+
+  // 같은 거래일의 더 이른(=정규장 기준) 수급이 이미 있으면 그것을 유지한다.
+  try {
+    const { readFileSync } = await import('node:fs');
+    carryOverFlows(out, JSON.parse(readFileSync('data/krx-market.json', 'utf8')));
+  } catch { /* 파일이 없거나 깨졌으면 이번 값을 그대로 쓴다 */ }
   if (failed.length) console.error(`⚠️  일부 실패: ${failed.join(' / ')}`);
   console.log(JSON.stringify(out, null, process.argv.includes('--pretty') ? 2 : 0));
 }

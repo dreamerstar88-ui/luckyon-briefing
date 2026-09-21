@@ -17,7 +17,11 @@ name: KRX Market Snapshot
 
 on:
   schedule:
-    - cron: '12 11 * * 1-5'   # 11:12 UTC = 20:12 KST — 저녁 브리핑 직전 (한국장 마감 후)
+    # ★ 이 회차가 그날 수급의 «정식» 스냅샷이다 — 정규장(09:00~15:30) 마감 10분 뒤.
+    #    이후 조회는 flows 를 덮어쓰지 않는다(스크립트의 carryOverFlows). 자세한 이유는
+    #    fetch-krx-market.mjs 상단 주석과 DATA_SOURCES.md §10-1.
+    - cron: '40 6 * * 1-5'    # 06:40 UTC = 15:40 KST — 정규장 마감 직후 (수급 기준 시점)
+    - cron: '12 11 * * 1-5'   # 11:12 UTC = 20:12 KST — 저녁 브리핑 직전 (업종·등락수 갱신)
     - cron: '22 22 * * 0-4'   # 22:22 UTC = 07:22 KST(다음날) — 아침 브리핑 직전
   workflow_dispatch: {}
 
@@ -49,7 +53,12 @@ jobs:
               const m=require("./data/krx-market.json");
               for (const [k,v] of Object.entries(m.indexes)) {
                 console.log(`${k}: 상승 ${v.breadth.up} / 보합 ${v.breadth.flat} / 하락 ${v.breadth.down}`
-                  + ` · 수급 개인 ${v.flows.individual} 외국인 ${v.flows.foreign} 기관 ${v.flows.institution} (억원)`);
+                  + ` · 수급(정규장 ${v.flows.capturedAt}) 개인 ${v.flows.individual} 외국인 ${v.flows.foreign} 기관 ${v.flows.institution} (억원)`);
+                if (v.flowsLate) {
+                  const d = ["individual","foreign","institution"]
+                    .map(f => { const x = v.flowsLate[f] - v.flows[f]; return `${f} ${x >= 0 ? "+" : ""}${x}`; });
+                  console.log(`   ↳ 시간외 누적(${v.flowsLate.capturedAt}) 차이: ${d.join(" · ")}`);
+                }
               }
               console.log(`업종 ${m.industries.length}개 · 최고 ${m.industries[0]?.name} ${m.industries[0]?.changeRate}%`);
             '
