@@ -1,15 +1,15 @@
 {
-  "fetchedAt": "2026-09-20T14:40:33Z",
+  "fetchedAt": "2026-09-21T00:18:14Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-18T14:40:33Z",
-    "to": "2026-10-04T14:40:33Z"
+    "from": "2026-09-19T00:18:14Z",
+    "to": "2026-10-05T00:18:14Z"
   },
   "events": [
     {
-      "at": "2026-09-18T15:30:00Z",
-      "country": "US",
-      "name": "Fed's Schmid speech",
+      "at": "2026-09-20T08:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Nagel speech",
       "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
@@ -17,69 +17,9 @@
       "unit": null
     },
     {
-      "at": "2026-09-18T17:00:00Z",
+      "at": "2026-09-20T14:45:00Z",
       "country": "US",
-      "name": "Baker Hughes US Oil Rig Count",
-      "impact": "LOW",
-      "consensus": 451,
-      "previous": 450,
-      "actual": 452,
-      "unit": null
-    },
-    {
-      "at": "2026-09-18T19:30:00Z",
-      "country": "EMU",
-      "name": "CFTC EUR NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -42.6,
-      "actual": -27,
-      "unit": "€"
-    },
-    {
-      "at": "2026-09-18T19:30:00Z",
-      "country": "JP",
-      "name": "CFTC JPY NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 10.8,
-      "actual": 120.4,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-09-18T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Gold NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 232,
-      "actual": 230.3,
-      "unit": "$"
-    },
-    {
-      "at": "2026-09-18T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Oil NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 136.6,
-      "actual": 135.9,
-      "unit": null
-    },
-    {
-      "at": "2026-09-18T19:30:00Z",
-      "country": "US",
-      "name": "CFTC S&P 500 NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -76,
-      "actual": -100.5,
-      "unit": "$"
-    },
-    {
-      "at": "2026-09-20T08:30:00Z",
-      "country": "EMU",
-      "name": "ECB's Nagel speech",
+      "name": "Fed's Kashkari speech",
       "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
@@ -103,7 +43,7 @@
       "impact": "MEDIUM",
       "consensus": 3,
       "previous": 3,
-      "actual": null,
+      "actual": 3,
       "unit": "%"
     },
     {
@@ -2398,6 +2338,16 @@
     },
     {
       "at": "2026-10-03T16:00:00Z",
+      "country": "CN",
+      "name": "National Day",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-04T16:00:00Z",
       "country": "CN",
       "name": "National Day",
       "impact": "LOW",
