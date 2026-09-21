@@ -53,11 +53,14 @@ jobs:
               const m=require("./data/krx-market.json");
               for (const [k,v] of Object.entries(m.indexes)) {
                 console.log(`${k}: 상승 ${v.breadth.up} / 보합 ${v.breadth.flat} / 하락 ${v.breadth.down}`
-                  + ` · 수급(정규장 ${v.flows.capturedAt}) 개인 ${v.flows.individual} 외국인 ${v.flows.foreign} 기관 ${v.flows.institution} (억원)`);
+                  + ` · 수급[${v.flows.basis}] 개인 ${v.flows.individual} 외국인 ${v.flows.foreign} 기관 ${v.flows.institution} (억원, ${v.flows.capturedAt})`);
                 if (v.flowsLate) {
                   const d = ["individual","foreign","institution"]
                     .map(f => { const x = v.flowsLate[f] - v.flows[f]; return `${f} ${x >= 0 ? "+" : ""}${x}`; });
                   console.log(`   ↳ 시간외 누적(${v.flowsLate.capturedAt}) 차이: ${d.join(" · ")}`);
+                }
+                if (v.flows.basis !== "regular") {
+                  console.log(`   ⚠️  정규장(15:40 KST) 스냅샷이 아니다 — 카드에 쓰기 전 뉴스 2곳 대조 필요`);
                 }
               }
               console.log(`업종 ${m.industries.length}개 · 최고 ${m.industries[0]?.name} ${m.industries[0]?.changeRate}%`);

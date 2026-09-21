@@ -112,19 +112,30 @@ async function industries() {
 // `flowsLate` 로만 남겨 두 값의 차이를 매일 기록한다(가설 검증용이자, 벌어지면 바로 눈에 띈다).
 const FLOW_FIELDS = ['individual', 'foreign', 'institution'];
 
+// 이 조회가 «정규장 마감 직후» 창(15:30~16:10 KST = 06:30~07:10 UTC)에서 이뤄졌는가.
+// 창 안이면 basis:"regular"(정규장 기준, 카드에 써도 되는 값), 밖이면 basis:"late"
+// (시간외가 섞였을 수 있는 값)로 표시한다. 세션이 시각을 눈으로 재보지 않아도 되도록
+// **스크립트가 판정해서 값에 붙인다** — 판정을 읽는 쪽에 미루면 결국 안 본다.
+function flowBasisAt(iso) {
+  const d = new Date(iso);
+  const kstMin = ((d.getUTCHours() * 60 + d.getUTCMinutes()) + 9 * 60) % (24 * 60);
+  return kstMin >= 15 * 60 + 30 && kstMin <= 16 * 60 + 10 ? 'regular' : 'late';
+}
+
 function carryOverFlows(out, prev) {
-  if (!prev?.indexes) return;
-  for (const [code, cur] of Object.entries(out.indexes)) {
-    const old = prev.indexes[code];
-    if (!old?.flows || old.flows.bizdate !== cur.flows.bizdate) continue;   // 다른 거래일이면 새로 쓴다
-    if (!old.flows.capturedAt) continue;
-    // 같은 거래일이고 이미 이른 스냅샷이 있다 → 그쪽이 정규장 기준이므로 유지한다.
+  for (const cur of Object.values(out.indexes)) {
+    const old = prev?.indexes?.[cur.code]?.flows;
+    const keepOld = old
+      && old.bizdate === cur.flows.bizdate   // 같은 거래일일 때만
+      && old.basis === 'regular';            // 그리고 저장된 쪽이 «정규장 기준»일 때만 지킨다
+    if (!keepOld) continue;
+    // 이미 정규장 스냅샷이 있다 → 그것이 그날의 값이다. 이번 값은 감시용으로만 남긴다.
     const late = { capturedAt: cur.flows.capturedAt };
     for (const f of FLOW_FIELDS) late[f] = cur.flows[f];
-    const drift = FLOW_FIELDS.some(f => late[f] !== old.flows[f]);
-    cur.flows = old.flows;
+    const drift = FLOW_FIELDS.some(f => late[f] !== old[f]);
+    cur.flows = old;
     if (drift) cur.flowsLate = late;
-    else if (old.flowsLate) cur.flowsLate = old.flowsLate;
+    else if (prev.indexes[cur.code].flowsLate) cur.flowsLate = prev.indexes[cur.code].flowsLate;
   }
 }
 
@@ -145,7 +156,9 @@ async function main() {
   for (const code of ['KOSPI', 'KOSDAQ']) {
     try {
       out.indexes[code] = await index(code);
+      out.indexes[code].code = code;
       out.indexes[code].flows.capturedAt = capturedAt;
+      out.indexes[code].flows.basis = flowBasisAt(capturedAt);
     }
     catch (e) { failed.push(`${code}: ${e.message}`); }
   }
