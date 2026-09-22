@@ -488,7 +488,7 @@ function card9() {
     ${ICONS.clock(42, PAL.accent)}
     <div style="flex:1; min-width:0;">
       <div style="font-size:21px; font-weight:700; color:${PAL.text};">${esc(t(mh.title_ko, mh.title_en))}</div>
-      <div style="font-size:18px; color:${PAL.body}; line-height:1.55; margin-top:12px;">${esc((t(mh.lines_ko, mh.lines_en) || [])[0] || '')}</div>
+      <div style="font-size:18px; color:${PAL.body}; line-height:1.55; margin-top:12px;">${(t(mh.lines_ko, mh.lines_en) || []).map(esc).join('<br>')}</div>
     </div>
   </div>` : ''}
   ${footer(9)}`;
