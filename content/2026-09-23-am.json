@@ -1,0 +1,230 @@
+{
+  "date": "2026-09-23",
+  "session": "am",
+  "dateLabel_ko": "2026.9.23(수) 아침",
+  "dateLabel_en": "Wed, Sep 23, 2026 · Morning",
+
+  "headline_ko": "나스닥 이틀째 최고치…유가는 급락",
+  "headline_en": "Nasdaq's Second Straight Record as Oil Tumbles",
+  "headline_sub_ko": "미·이란 유엔 회담에 안도 랠리, 쇼피파이 7%대 급등",
+  "headline_sub_en": "US-Iran UN Talks Spark Relief Rally; Shopify Jumps 7%",
+  "cover_kicker": {"ko": "간밤 미국장 · 9/22 마감", "en": "US Overnight · Sep 22 Close"},
+  "cover_facts": [
+    ["shield", {"ko": "나스닥 +0.45% · S&P 500 -0.0%", "en": "Nasdaq +0.45% · S&P 500 -0.0%"},
+               {"ko": "27,244.28 / 7,764.64 · 나스닥 이틀 연속 사상 최고", "en": "27,244.28 / 7,764.64 pts · Nasdaq's second straight record"}],
+    ["globe", {"ko": "미·이란, 유엔서 3시간 회담", "en": "US and Iran hold 3-hour UN talks"},
+              {"ko": "WTI -1.24%, 브렌트는 2주 만에 100달러 아래로", "en": "WTI -1.24%; Brent fell below $100 for the first time in 2 weeks"}],
+    ["chip", {"ko": "쇼피파이 +7.1% · 메타 뮤즈 결제 연동", "en": "Shopify +7.1% on Meta Muse payments tie-up"},
+             {"ko": "아마존은 뮤즈의 쇼핑 접근 차단, 반도체는 소폭 추가 상승", "en": "Amazon blocked Muse's shopping access; chipmakers added modest gains"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "나스닥종합이 0.45% 올라 이틀 연속 사상 최고치를 새로 썼다. S&P 500은 사실상 보합(-0.0%)이었다.",
+      "미·이란이 유엔총회를 계기로 3시간 회담을 가졌고, 트럼프 대통령은 '매우 생산적이었다'고 밝혔다.",
+      "사우디의 송유관·수출 재개 소식까지 겹치며 WTI 10월물은 -1.24%(94.59달러), 브렌트는 이달 8일 이후 처음 100달러를 밑돌았다.",
+      "쇼피파이가 메타의 AI 에이전트 '뮤즈'와 결제를 연동한다는 소식에 7.1% 급등한 반면, 아마존은 뮤즈의 쇼핑 접근을 차단하며 1.34% 내렸다."
+    ],
+    "lines_en": [
+      "The Nasdaq Composite rose 0.45% to a second straight record close; the S&P 500 was essentially flat (-0.0%).",
+      "The US and Iran held a roughly three-hour meeting on the sidelines of the UN General Assembly, which President Trump called 'very productive.'",
+      "Crude fell as Saudi Arabia signaled it could resume pipeline flows and exports: WTI's October contract dropped 1.24% to $94.59, and Brent closed below $100 for the first time since Sep 8.",
+      "Shopify jumped 7.1% after agreeing to link payments to Meta's AI agent Muse, while Amazon fell 1.34% after cutting Muse off from its shopping site."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "27,244.28", "delta": "▲0.45%", "dir": "up", "note_ko": "9/22 미국장 마감 종가 · 이틀 연속 사상 최고치", "note_en": "Sep 22 US close · second straight record"},
+    {"label": "S&P 500", "value": "7,764.64", "delta": "-0.0%", "dir": "flat", "note_ko": "9/22 마감 · 사실상 보합", "note_en": "Sep 22 close · essentially unchanged"},
+    {"label": "KOSPI", "value": "7,017.91", "delta": "▲0.15%", "dir": "up", "note_ko": "9/22 정규장 마감 종가", "note_en": "Sep 22 regular session close"},
+    {"label": "VIX", "value": "14.21", "delta": "▼4.44%", "dir": "down", "note_ko": "9/22 마감", "note_en": "Sep 22 close"},
+    {"label": "Fear&Greed", "value": "35", "delta": "34 → 35", "dir": "up", "note_ko": "공포(Fear) 구간, 소폭 반등", "note_en": "Still in the Fear zone, ticked up slightly"},
+    {"label": "US 10Y", "value": "4.96%", "delta": "4.96% → 4.96%", "dir": "flat", "note_ko": "9/22 확정 종가 · 이틀째 보합", "note_en": "Confirmed Sep 22 close · unchanged for a second session"},
+    {"label": "USD/KRW", "value": "1,358.2", "value_sub": "· DXY 100.5", "delta": "▼1.65%", "dir": "down", "note_ko": "9/22 서울 외환시장 종가 · 이틀 연속 큰 폭 하락", "note_en": "Sep 22 Seoul FX market close · second straight sharp decline"},
+    {"label": "Gold", "value": "$4,399.8", "delta": "▲0.36%", "dir": "up", "note_ko": "아시아 시간대 · 뉴욕 정규장은 12월물 -0.2%로 마감", "note_en": "Asia hours · NY session settled -0.2% (Dec contract)"},
+    {"label": "WTI", "value": "$94.59", "delta": "▼1.24%", "dir": "down", "note_ko": "10월물 마감 · 이날 마감 후 최근월물 11월물로 교체", "note_en": "October contract close · front-month rolls to November after this session"},
+    {"label": "Bitcoin", "value": "$86,028", "delta": "▼0.66%", "dir": "down", "note_ko": "아시아 시간대 · 전일 급등분 대부분 유지", "note_en": "Asia hours · holding most of the prior day's rally"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "나스닥·S&P 500은 9/22(화) 미국장 마감 종가, 코스피는 개장 전 직전 종가",
+  "market_note_en": "Nasdaq and S&P 500 are Sep 22 (Tue) US closing levels; KOSPI is the last close before today's open",
+
+  "chart_series_values": [26081.72, 26333.04, 26186.41, 25981.57, 25978.43, 26418.30, 26522.54, 27122.09, 27244.28],
+  "chart_series_labels": ["9.10", "9.11", "9.14", "9.15", "9.16", "9.17", "9.18", "9.21", "9.22"],
+  "chart_title": {"ko": "이틀 연속 사상 최고치", "en": "A second straight record close"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9.16 저점 25,978.43 → 9.22 27,244.28, 6거래일 만에 +4.9%", "en": "From the Sep 16 low of 25,978.43 to Sep 22's record 27,244.28, up 4.9% in six sessions"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "금융은 빠지고 반도체·소재는 올랐다", "en": "Financials fell as chips and materials rose"},
+  "sector_sub": {"ko": "S&P 500 섹터 ETF 등락률 · 9/22", "en": "S&P 500 sector ETF performance · Sep 22"},
+  "rank_kicker": "TOP 5",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top by Turnover"},
+  "rank_sub": {"ko": "美 상위 300종목 표본 · 9/22", "en": "Top-300 US sample · Sep 22"},
+  "rank_unit": {"ko": "단위 · 10억달러", "en": "Unit: $B"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "美 지표 서프라이즈 · 한국 소비자심리지수", "en": "US data surprises · Korea consumer sentiment"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "27,244.28", "delta": "▲0.45%", "dir": "up", "sub_ko": "이틀 연속 사상 최고치 경신", "sub_en": "Second straight record close"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,764.64", "delta": "-0.0%", "dir": "flat", "sub_ko": "사실상 보합 마감", "sub_en": "Essentially flat close"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 161, "flat": 1, "down": 138}
+      ],
+      "flows": {
+        "label_ko": "거래대금 상승 vs 하락 종목 (10억달러)",
+        "label_en": "$ volume: advancers vs decliners ($B)",
+        "rows": [
+          {"label_ko": "상승 종목", "label_en": "Advancers", "value": 279.45},
+          {"label_ko": "하락 종목", "label_en": "Decliners", "value": 152.76}
+        ]
+      },
+      "note_ko": "상승 종목 거래대금이 하락 종목의 1.8배(64.7%) — 메모리·파운드리(마이크론·샌디스크)가 거래대금 1·2위를 이틀째 지켰다",
+      "note_en": "Advancers' dollar volume was 1.8x decliners' (64.7% share) — memory and foundry names (Micron, SanDisk) held the top two turnover spots for a second day"
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 1.92},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": 1.65},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Staples (XLP)", "value": 0.99},
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": 0.73},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": 0.52},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": 0.17},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Discretionary (XLY)", "value": 0.09},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": -0.21},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": -0.32},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -1.09},
+        {"label_ko": "통신 (XLC)", "label_en": "Comm. (XLC)", "value": -1.06},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": -1.97}
+      ],
+      "note_ko": "금융(XLF)이 -1.97%로 최대 낙폭 — AI 에이전트發 '소비자 관성 붕괴' 우려가 번졌다. 반도체(SMH)는 +1.92%로 유일하게 2%에 근접",
+      "note_en": "Financials (XLF) led losses at -1.97% on AI-agent disruption fears, while chips (SMH) topped gainers at +1.92%, the only sector near +2%"
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Turnover",
+      "rows": [
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$31.5B", "pct": 5.00},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$24.2B", "pct": 6.82},
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$21.4B", "pct": 0.66},
+        {"name_ko": "메타", "name_en": "Meta", "value": "$20.6B", "pct": -0.63},
+        {"name_ko": "AMD", "name_en": "AMD", "value": "$17.5B", "pct": 1.34}
+      ],
+      "share": {
+        "label_ko": "표본(상위 300종목) 내 비중", "label_en": "Share within top-300 sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 26.6, "color": "#e0663d"},
+          {"label_ko": "표본 내 나머지", "label_en": "Rest of sample", "pct": 73.4, "color": "#3987e5"}
+        ]
+      },
+      "note_ko": "마이크론·샌디스크가 이틀째 거래대금 1·2위 — 메모리 반도체로의 자금 쏠림이 이어졌다",
+      "note_en": "Micron and SanDisk held the top two turnover spots for a second day, as money kept flowing into memory chips"
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "美 9월 리치먼드 연은 제조업지수", "label_en": "US Richmond Fed Mfg Index (Sep)", "value": "-2", "delta": "4 → -2", "dir": "down", "sub_ko": "예상 5를 큰 폭 하회", "sub_en": "Missed the +5 estimate by a wide margin", "ref_ko": "0 위 = 확장 · 아래 = 위축", "ref_en": "Above 0 = expansion, below 0 = contraction"},
+        {"label_ko": "유로존 9월 소비자신뢰지수(예비)", "label_en": "Eurozone Consumer Confidence (Sep)", "value": "-16.5", "delta": "-15.5 → -16.5", "dir": "down", "sub_ko": "예상 -16.0보다 소폭 더 나쁨 · 3개월째 악화", "sub_en": "Slightly worse than the -16.0 estimate", "ref_ko": "0 이상 = 낙관 우세 · 마이너스 폭 클수록 비관적", "ref_en": "Above 0 = optimism; more negative = more pessimism"},
+        {"label_ko": "한국 9월 소비자심리지수(CCSI)", "label_en": "Korea Consumer Sentiment Index (Sep)", "value": "106.6", "delta": "104.5 → 106.6", "dir": "up", "sub_ko": "한 달 만에 반등", "sub_en": "Rebounded after a month", "ref_ko": "100 = 2003~2025년 장기평균 · 넘으면 낙관 우세", "ref_en": "100 = long-run average; above means optimists lead"},
+        {"label_ko": "美 ADP 민간고용 4주 평균 변화", "label_en": "US ADP Employment, 4-wk avg change", "value": "20K", "delta": "16.25K → 20K", "dir": "up", "sub_ko": "최근 4주 평균 기준", "sub_en": "On a trailing 4-week average basis", "ref_ko": "플러스면 민간고용 순증가 추세", "ref_en": "A positive reading signals a net private-hiring uptrend"},
+        {"label_ko": "美 국채 10년-2년 스프레드", "label_en": "US 10Y-2Y Treasury Spread", "value": "+0.25%p", "delta": "0.20%p → 0.25%p", "dir": "up", "sub_ko": "여전히 정상(우상향) 곡선 유지", "sub_en": "Curve remains normally upward-sloping", "ref_ko": "마이너스(장단기 역전)면 대표적 경기침체 선행지표", "ref_en": "Negative (inverted) is a classic recession signal"}
+      ],
+      "note_ko": "출처: 리치먼드 연은, 유럽집행위원회, 한국은행, ADP Research, 美 재무부",
+      "note_en": "Source: Federal Reserve Bank of Richmond, European Commission, Bank of Korea, ADP Research, US Treasury"
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "쇼피파이 +7.1% — 메타 뮤즈 결제 연동", "headline_en": "Shopify +7% on Meta Muse Payment Tie-Up",
+         "body_ko": "쇼피파이가 메타 AI 에이전트 '뮤즈'에 결제 시스템을 연동한다고 밝히며 22일 주가가 7.1% 뛰었다.",
+         "body_en": "Shopify rose 7.1% on Sep 22 after agreeing to let Meta's AI agent Muse find and check out its products."},
+        {"headline_ko": "아마존, 뮤즈 쇼핑 접근 차단 — 주가 1.3%↓", "headline_en": "Amazon Blocks Muse; Shares Fall 1.3%",
+         "body_ko": "아마존은 메타 AI 에이전트 '뮤즈'가 무단 접속했다며 20일부터 자사 쇼핑몰 구매 기능을 막았다. 주가는 1.34% 내렸다.",
+         "body_en": "Amazon cut Muse off from purchasing on its site Sep 20, citing unauthorized access. Shares fell 1.34%."},
+        {"headline_ko": "xAI '그록 봇', 출시 한 달 만에 가입 40만명", "headline_en": "xAI's Grok Bot Tops 400K Sign-Ups",
+         "body_ko": "머스크의 xAI가 내놓은 업무용 AI 에이전트 '그록 봇'이 출시 한 달 만에 가입자 40만명을 넘어섰다.",
+         "body_en": "Elon Musk's xAI said its work agent Grok Bot topped 400,000 sign-ups a month after launch."},
+        {"headline_ko": "퀄컴 '스냅드래곤 서밋' 개막", "headline_en": "Qualcomm Opens Snapdragon Summit",
+         "body_ko": "퀄컴이 22~24일 하와이 마우이에서 여는 연례 행사로, 온디바이스 AI 칩 수요에 관심이 쏠린다.",
+         "body_en": "Qualcomm's Sep 22-24 Maui event draws extra interest as Muse fuels demand for on-device AI chips."},
+        {"headline_ko": "금융주 최대 낙폭 — AI 에이전트 우려", "headline_en": "Financials Lead Losses on AI-Agent Fears",
+         "body_ko": "22일 금융(XLF)이 -1.97%로 최대 낙폭 — AI가 구매를 대신 결정하면 브랜드 충성 기반 사업이 타격받을 것이란 우려다.",
+         "body_en": "Financials (XLF) fell 1.97%, the worst S&P sector, on fears AI agents could erode brand-loyalty business models."},
+        {"headline_ko": "AI 변압기 특수, 韓 전력기기로 확산", "headline_en": "AI Transformer Boom Reaches Korean Makers",
+         "body_ko": "효성중공업·LS일렉트릭 등이 美 AI데이터센터·노후 전력망 수요에 맞춰 초고압 변압기 생산을 늘리고 있다.",
+         "body_en": "Hyosung and LS Electric are expanding transformer output for US AI data-center and grid demand."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "미·이란, 유엔서 3시간 회담", "headline_en": "US, Iran Hold 3-Hour UN Meeting",
+         "body_ko": "트럼프 대통령은 22일 미·이란이 유엔총회 계기로 3시간 회담했다며 '매우 생산적'이었다고 밝혔다. 유가는 하락 압력을 받았다.",
+         "body_en": "Trump said US and Iranian delegations met for 3 hours at the UN on Sep 22, calling it 'very productive.'"},
+        {"headline_ko": "국제유가 급락 — 브렌트 2주 만에 100弗 붕괴", "headline_en": "Oil Tumbles; Brent Falls Below $100",
+         "body_ko": "사우디 송유관·수출 재개 기대에 WTI 10월물은 -1.24%(94.59달러), 브렌트는 99.25달러로 2주 만에 100달러를 밑돌았다.",
+         "body_en": "WTI's October contract fell 1.24% to $94.59 on Saudi pipeline hopes; Brent slid to $99.25, its first sub-$100 close in 2 weeks."},
+        {"headline_ko": "코스피 이틀째 7000선 사수", "headline_en": "Kospi Holds 7,000 for a Second Day",
+         "body_ko": "22일 코스피는 0.15% 오른 7,017.91 마감. 개인 1.56조 순매도에 장중 2.2% 상승분을 대부분 반납했다.",
+         "body_en": "Kospi closed up 0.15% at 7,017.91, giving back most of a 2.2% intraday gain as individuals sold 1.56tn won."},
+        {"headline_ko": "MS, 엑스박스 268명 추가 감원", "headline_en": "Microsoft Cuts 268 More Xbox Jobs",
+         "body_ko": "마이크로소프트가 엑스박스에서 268명을 추가 감원, 2027년 목표 3,200명 중 75%를 채웠다.",
+         "body_en": "Microsoft cut 268 more Xbox jobs, reaching 75% of its 3,200-job cut target through 2027."},
+        {"headline_ko": "美 10년물 금리 4.96%, 이틀째 보합", "headline_en": "US 10-Year Yield Steady at 4.96%",
+         "body_ko": "美 10년물 국채금리는 22일도 4.96%로 마감, 유가 하락에 물가 부담이 완화되며 5% 아래서 안정됐다.",
+         "body_en": "The US 10-year yield held at 4.96% for a second session, steady below 5% as oil fell."},
+        {"headline_ko": "코스피 추석 휴장 — 美中 정상회담 주목", "headline_en": "Kospi Enters Chuseok Break",
+         "body_ko": "코스피는 24~25일 추석 휴장, 다음 거래일은 28일. 연휴 중 미중 정상회담의 반도체 규제 논의가 변수다.",
+         "body_en": "Kospi closes for Chuseok on Sep 24-25, resuming Sep 28. A US-China summit during the break is a key swing factor."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko": "지금 ~ 오늘 21:00", "en": "Now until 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30", "※ 9/24(목)~25(금) 추석 연휴 휴장 · 다음 거래일 9/28(월)"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30", "※ Closed Sep 24-25 for Chuseok · resumes Sep 28 (Mon)"]
+  },
+  "schedule": [
+    {"time": "16:00", "title_ko": "ECB 부이치치 총재 연설", "title_en": "ECB's Vujčić Speaks", "detail_ko": "유럽중앙은행 통화정책위원 발언 예정", "detail_en": "ECB Governing Council member remarks expected", "importance": "mid"},
+    {"time": "16:30", "title_ko": "독일 9월 제조업·서비스업 PMI(예비)", "title_en": "Germany Sep Manufacturing & Services PMI (Flash)", "detail_ko": "예상 제조업 54.5 · 서비스업 50.0 · 확장 기준선 50", "detail_en": "Est. Manufacturing 54.5 · Services 50.0 · 50 is the expansion line", "importance": "high"},
+    {"time": "17:00", "title_ko": "유로존 9월 PMI(예비)", "title_en": "Eurozone Sep PMI (Flash)", "detail_ko": "예상 종합 51.5 · 제조업 52.7 · 서비스업 51.7", "detail_en": "Est. Composite 51.5 · Manufacturing 52.7 · Services 51.7", "importance": "high"},
+    {"time": "20:00", "title_ko": "美 주간 MBA 모기지 신청지수", "title_en": "US MBA Mortgage Applications", "detail_ko": "전주 -4.1%", "detail_en": "Prior week -4.1%", "importance": "mid"},
+    {"time": "9/24~25", "title_ko": "한국 추석 연휴 — 코스피·코스닥 휴장", "title_en": "Korea Chuseok Holiday — Kospi/Kosdaq Closed", "detail_ko": "주말을 거쳐 다음 거래일은 9/28(월)", "detail_en": "Trading resumes Sep 28 (Mon) after the weekend", "importance": "high"},
+    {"time": "9/24", "title_ko": "美中 정상회담(트럼프·시진핑)", "title_en": "US-China Summit (Trump-Xi)", "detail_ko": "반도체 수출규제 등 통상 현안 논의 전망 — 연휴 후 국내 증시 변수", "detail_en": "Semiconductor export controls and trade issues on the agenda — a swing factor once Korea reopens", "importance": "high"},
+    {"time": "9/24", "title_ko": "퀄컴 스냅드래곤 서밋 폐막", "title_en": "Qualcomm Snapdragon Summit Closes", "detail_ko": "9/22 개막, 마우이서 온디바이스 AI 칩 공개", "detail_en": "Opened Sep 22 in Maui; on-device AI chip unveilings expected", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "The New York Stock Exchange trading floor at dusk moments after a record-setting closing bell, screens glowing amber and green, traders in soft silhouette, warm bokeh lights, cinematic low-angle wide shot, muted and dark",
+    "3": "A dark trading floor wall of monitors showing a rising Nasdaq line chart glowing green against near-black background, shallow depth of field, cinematic",
+    "4": "Abstract dark data visualization of vertical bars in green and blue rising and falling against a black gradient background, financial sector chart aesthetic, moody lighting",
+    "7": "A moody dark server room with rows of glowing blue server racks and a faint circuit-board pattern overlay suggesting AI infrastructure, cinematic lighting, shallow depth of field",
+    "8": "A dim global newsroom montage feel, a rotating globe silhouette with faint city light dots against dark blue tones, an oil rig silhouette faintly visible in the background"
+  },
+
+  "caption_ko": "🇺🇸 나스닥이 0.45% 오르며 이틀 연속 사상 최고치를 새로 썼습니다. 미·이란이 유엔에서 3시간 회담을 가지며 안도감이 번졌고, 국제유가는 WTI -1.24%로 급락했어요. 쇼피파이는 메타 AI 에이전트 '뮤즈'와 결제를 연동한다는 소식에 7%대 급등, 아마존은 반대로 뮤즈의 쇼핑 접근을 막았습니다. 코스피는 개인 매도에 상승폭을 반납했지만 이틀째 7000선을 지켰어요. 오늘부터 추석 연휴, 다음 브리핑까지 잘 쉬세요 📌\n\n#luckyon브리핑 #미국증시 #나스닥 #국제유가 #메타 #쇼피파이 #코스피 #원달러환율 #미국채금리 #비트코인 #AI에이전트 #반도체 #경제브리핑 #주식투자 #추석연휴\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "🇺🇸 The Nasdaq rose 0.45% to a second straight record close. The US and Iran held a 3-hour UN meeting that lifted risk appetite, and crude oil tumbled with WTI down 1.24%. Shopify jumped over 7% on news it's linking payments to Meta's AI agent Muse, while Amazon went the other way and blocked Muse from its shopping site. Kospi gave back most of its intraday surge on individual selling but held above 7,000 for a second day. Chuseok holiday starts today in Korea — see you at the next brief 📌\n\n#luckyonbriefing #usmarkets #nasdaq #oilprices #meta #shopify #kospi #usdkrw #ustreasuryyields #bitcoin #aiagents #semiconductors #economicbrief #stockmarket #chuseok\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": ["Yahoo Finance", "FMP", "KRX", "한국은행", "리치먼드 연은", "유럽집행위원회", "ADP Research", "美 재무부", "FINRA", "Naver News", "CNN Fear & Greed"]
+}
