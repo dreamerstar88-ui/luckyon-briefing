@@ -26,12 +26,12 @@
     [
       "globe",
       {
-        "ko": "WTI, 나흘 연속 급락 뒤 반등 시도",
-        "en": "WTI rebounds after a 4-session slide"
+        "ko": "WTI, 나흘 연속 급락 뒤 장중 반등 시도",
+        "en": "WTI attempts an intraday rebound after a 4-session slide"
       },
       {
-        "ko": "$89.38 · 미·이란 외교 기대에 나흘간 -12%대",
-        "en": "$89.38 · down about 12% over 4 sessions on Iran diplomacy hopes"
+        "ko": "$90.36 · 미·이란 외교 기대에 나흘간 -11%대",
+        "en": "$90.36 · down about 11% over 4 sessions on Iran diplomacy hopes"
       }
     ],
     [
@@ -114,11 +114,11 @@
     },
     {
       "label": "WTI",
-      "value": "$89.38",
-      "delta": "▼6.68%",
+      "value": "$90.36",
+      "delta": "▼5.66%",
       "dir": "down",
-      "note_ko": "11월물 · 나흘 연속 하락, 낙폭은 숏커버링에 축소",
-      "note_en": "November contract · fourth straight decline, though short covering narrowed the drop"
+      "note_ko": "나흘째 하락 · 장중 일부 낙폭은 반납(숏커버링 추정)",
+      "note_en": "Fourth straight decline, though it pared some of the drop intraday (possible short covering)"
     },
     {
       "label": "Bitcoin",
@@ -178,8 +178,8 @@
     "en": "KOSPI close · last 9 sessions"
   },
   "chart_note": {
-    "ko": "9.16 저점 6,627.26 → 9.22 7,017.91, 3거래일 연속 상승",
-    "en": "From a low of 6,627.26 (9/16) to 7,017.91 (9/22), up for 3 straight sessions"
+    "ko": "9.15 저점 6,627.26 → 9.22 7,017.91, 3거래일 연속 상승",
+    "en": "From a low of 6,627.26 (9/15) to 7,017.91 (9/22), up for 3 straight sessions"
   },
   "record_section": "코스피 · 코스닥 기록",
   "record_kicker": "TODAY",
@@ -527,19 +527,25 @@
         {
           "label_ko": "WTI 4거래일 누적 낙폭",
           "label_en": "WTI's 4-Session Cumulative Drop",
-          "value": "$89.38",
-          "delta": "▼12.3%(4일)",
+          "value": "$90.36",
+          "delta": {
+            "ko": "▼11.3%(4일)",
+            "en": "▼11.3% (4 sessions)"
+          },
           "dir": "down",
-          "sub_ko": "9/17 $101.91 → 9/22 $89.38",
-          "sub_en": "From $101.91 (9/17) to $89.38 (9/22)",
-          "ref_ko": "미·이란 외교 기대에 나흘 연속 하락, 오늘은 숏커버링에 낙폭이 줄었다",
-          "ref_en": "Fell for four straight sessions on Iran diplomacy hopes; today's short covering narrowed the drop"
+          "sub_ko": "9/17 $101.91 → 9/22 $90.36",
+          "sub_en": "From $101.91 (9/17) to $90.36 (9/22)",
+          "ref_ko": "미·이란 외교 기대에 나흘 연속 하락, KCM트레이드 애널리스트는 오늘 반등을 전형적 숏커버링으로 진단",
+          "ref_en": "Fell for four straight sessions on Iran diplomacy hopes; a KCM Trade analyst called today's bounce a textbook short-covering move"
         },
         {
           "label_ko": "코스피 3거래일 연속 상승",
           "label_en": "KOSPI's 3-Session Win Streak",
-          "value": "+4.51%",
-          "delta": "3일 누적",
+          "value": "+4.50%",
+          "delta": {
+            "ko": "3일 누적",
+            "en": "3-session cumulative"
+          },
           "dir": "up",
           "sub_ko": "9/17 6,715.41 → 9/22 7,017.91",
           "sub_en": "From 6,715.41 (9/17) to 7,017.91 (9/22)",
@@ -560,8 +566,11 @@
         {
           "label_ko": "KT&G 자사주 매입·소각",
           "label_en": "KT&G Buyback & Cancellation",
-          "value": "₩3,600억",
-          "delta": "발행주식 약 2%",
+          "value": "₩360B",
+          "delta": {
+            "ko": "발행주식 약 2%",
+            "en": "~2% of shares outstanding"
+          },
           "dir": "up",
           "sub_ko": "207만주 매입 후 전량 소각 결정",
           "sub_en": "Board approved buying back and cancelling 2.07M shares",
@@ -577,10 +586,10 @@
       "title_en": "AI & Semiconductor Tech",
       "items": [
         {
-          "headline_ko": "오픈AI·앤트로픽·구글·xAI 반독점 피소",
-          "headline_en": "OpenAI, Anthropic, Google, xAI sued over alleged price-fixing",
-          "body_ko": "챗GPT·클로드·제미나이·그록의 유료 구독자들이 4개사가 '안전'을 명분으로 최고 성능 모델을 유지한다는 전제로 구독료를 담합했다며 미국 법원에 소장을 제출했다.",
-          "body_en": "Paid subscribers to ChatGPT, Claude, Gemini and Grok filed a US lawsuit alleging the four companies colluded on subscription pricing under the guise of AI safety."
+          "headline_ko": "엔비디아, GPU 담보로 월가서 대출 시작 — AI 인프라 자금조달 지형 변화",
+          "headline_en": "Nvidia starts GPU-collateralized lending with Wall Street, reshaping AI infrastructure financing",
+          "body_ko": "엔비디아가 지난달 GPU를 담보로 한 대출을 시작하며 월가와 손잡고 AI 인프라 투자에 대규모 자본을 끌어들이고 있다. GPU의 감가상각·잔존가치를 둘러싼 논쟁도 함께 커지고 있다.",
+          "body_en": "Nvidia has begun GPU-collateralized lending with Wall Street banks, channeling large-scale capital into AI infrastructure investment, while debate grows over how fast GPUs actually depreciate."
         },
         {
           "headline_ko": "효성중공업, HVDC 기술로 美·유럽 전력망 공략",
@@ -625,10 +634,10 @@
           "body_en": "KOSPI jumped over 2% early on AI optimism but gave back most of the gain as oil rebounded, closing up 10.19 points (0.15%) at 7,017.91."
         },
         {
-          "headline_ko": "국제유가, 나흘 연속 급락 뒤 숏커버링에 반등",
-          "headline_en": "Oil rebounds on short covering after a 4-day slide",
-          "body_ko": "미·이란 외교 기대에 나흘간 약 12% 급락했던 WTI가 숏커버링 영향으로 장중 반등을 시도했고 브렌트유도 강세로 출발했다.",
-          "body_en": "WTI, down about 12% over four sessions on US-Iran diplomacy hopes, attempted an intraday rebound on short covering, while Brent also opened firmer."
+          "headline_ko": "국제유가, 나흘 연속 급락 뒤 장중 반등 시도",
+          "headline_en": "Oil attempts an intraday rebound after a 4-day slide",
+          "body_ko": "미·이란 외교 기대에 나흘간 약 11% 급락했던 WTI가 장중 반등을 시도했다. KCM트레이드 팀 워터러 수석시장분석가는 \"펀더멘털 변화보다 전형적인 숏커버링 반등\"이라고 진단했다.",
+          "body_en": "WTI, down about 11% over four sessions on US-Iran diplomacy hopes, attempted an intraday rebound. KCM Trade's chief market analyst Tim Waterer called it \"a textbook short-covering bounce rather than a change in fundamentals.\""
         },
         {
           "headline_ko": "원/달러 환율, 1,350원대로 추가 하락",
