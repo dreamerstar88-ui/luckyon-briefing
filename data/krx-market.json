@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T11:05:07Z",
+  "fetchedAt": "2026-09-22T12:01:16Z",
   "source": "stock.naver.com internal API (observed via browser probe 2026-09-21)",
   "notes": {
     "flowsScope": "«정규장(09:00~15:30) 마감» 기준으로 고정한다. 워크플로가 15:40 KST 에 먼저 받아 두고 그 뒤 조회는 flows 를 덮어쓰지 않는다. 시간외가 누적된 늦은 조회값은 flowsLate 로만 남으므로 카드에는 flows 를 쓴다.",
@@ -12,8 +12,8 @@
       "open": 7161.61,
       "high": 7171.44,
       "low": 6986.27,
-      "tradingVolumeThousandShares": 251647,
-      "tradingValueMillionKrw": 22178337,
+      "tradingVolumeThousandShares": 264278,
+      "tradingValueMillionKrw": 23594111,
       "high52w": 9385.59,
       "low52w": 3365.73,
       "breadth": {
@@ -29,7 +29,7 @@
         "individual": -15643,
         "foreign": 494,
         "institution": -1295,
-        "capturedAt": "2026-09-22T11:05:07Z",
+        "capturedAt": "2026-09-22T12:01:16Z",
         "basis": "late"
       },
       "code": "KOSPI"
@@ -40,8 +40,8 @@
       "open": 846.14,
       "high": 847.1,
       "low": 831.13,
-      "tradingVolumeThousandShares": 767647,
-      "tradingValueMillionKrw": 7927175,
+      "tradingVolumeThousandShares": 865705,
+      "tradingValueMillionKrw": 8500047,
       "high52w": 1229.42,
       "low52w": 630.99,
       "breadth": {
@@ -57,7 +57,7 @@
         "individual": 1548,
         "foreign": -545,
         "institution": -953,
-        "capturedAt": "2026-09-22T11:05:07Z",
+        "capturedAt": "2026-09-22T12:01:16Z",
         "basis": "late"
       },
       "code": "KOSDAQ"
@@ -203,8 +203,8 @@
       "up": 53,
       "flat": 7,
       "down": 57,
-      "marketCap": 58048392000000,
-      "tradingValue": 364174189000,
+      "marketCap": 58048500000000,
+      "tradingValue": 364293527000,
       "topByTradingValue": [
         {
           "code": "486990",
@@ -236,7 +236,7 @@
         {
           "code": "488280",
           "name": "에스투더블유",
-          "changeRate": 15.22
+          "changeRate": 15.3
         }
       ]
     },
@@ -1941,6 +1941,50 @@
       ]
     },
     {
+      "code": "317",
+      "name": "호텔,레스토랑,레저",
+      "changeRate": -0.02,
+      "up": 10,
+      "flat": 0,
+      "down": 9,
+      "marketCap": 9148696000000,
+      "tradingValue": 40955702000,
+      "topByTradingValue": [
+        {
+          "code": "025980",
+          "name": "아난티",
+          "value": 15782017000
+        },
+        {
+          "code": "499790",
+          "name": "GS피앤엘",
+          "value": 5370000000
+        },
+        {
+          "code": "020710",
+          "name": "시공테크",
+          "value": 4061100000
+        }
+      ],
+      "topByChangeRate": [
+        {
+          "code": "36328K",
+          "name": "티와이홀딩스우",
+          "changeRate": 16.79
+        },
+        {
+          "code": "025980",
+          "name": "아난티",
+          "changeRate": 5.95
+        },
+        {
+          "code": "070960",
+          "name": "모나용평",
+          "changeRate": 4.41
+        }
+      ]
+    },
+    {
       "code": "327",
       "name": "디스플레이패널",
       "changeRate": -0.02,
@@ -1981,50 +2025,6 @@
           "code": "191410",
           "name": "육일씨엔에쓰",
           "changeRate": -1.13
-        }
-      ]
-    },
-    {
-      "code": "317",
-      "name": "호텔,레스토랑,레저",
-      "changeRate": -0.03,
-      "up": 10,
-      "flat": 0,
-      "down": 9,
-      "marketCap": 9148344000000,
-      "tradingValue": 40955702000,
-      "topByTradingValue": [
-        {
-          "code": "025980",
-          "name": "아난티",
-          "value": 15782017000
-        },
-        {
-          "code": "499790",
-          "name": "GS피앤엘",
-          "value": 5370000000
-        },
-        {
-          "code": "020710",
-          "name": "시공테크",
-          "value": 4061100000
-        }
-      ],
-      "topByChangeRate": [
-        {
-          "code": "025980",
-          "name": "아난티",
-          "changeRate": 5.95
-        },
-        {
-          "code": "36328K",
-          "name": "티와이홀딩스우",
-          "changeRate": 5.84
-        },
-        {
-          "code": "070960",
-          "name": "모나용평",
-          "changeRate": 4.41
         }
       ]
     },
