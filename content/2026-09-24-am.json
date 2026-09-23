@@ -11,7 +11,7 @@
   "cover_kicker": {"ko": "간밤 미국장 · 9/23 마감", "en": "US Overnight · Sep 23 Close"},
   "cover_facts": [
     ["rate", {"ko": "나스닥 -1.13% · S&P 500 -0.75%", "en": "Nasdaq -1.13% · S&P 500 -0.75%"},
-             {"ko": "26,936.04 / 7,706.03 · 이틀 연속 최고치 후 하락 전환", "en": "26,936.04 / 7,706.03 pts · reversed after two record closes"}],
+             {"ko": "26,936.04 / 7,706.03 · 나스닥 최고치 행진, 하루 만에 꺾여", "en": "26,936.04 / 7,706.03 pts · Nasdaq's record streak snapped"}],
     ["bond", {"ko": "美 10년물 금리 5.11% · 19년래 최고", "en": "US 10Y yield 5.11% · highest since 2007"},
              {"ko": "9월 PMI 서프라이즈 + 연준 이사 매파 발언 겹쳐", "en": "Hot Sept PMI plus hawkish Fed remarks combined"}],
     ["globe", {"ko": "한미 정상회담 깜짝 성사 · 유가 급등", "en": "Surprise Korea-US summit · oil prices surge"},
@@ -22,13 +22,13 @@
     "lines_ko": [
       "美 10년물 국채금리가 5.11%로 19년 만에 최고치를 찍었다.",
       "9월 PMI가 예상을 크게 웃돈 데다 바 연준 이사(상시 투표권)가 추가 금리 인상 필요성을 언급하며 금리 상승에 힘을 보탰다.",
-      "메모리·파운드리 반도체(마이크론·엔비디아·샌디스크)가 거래대금 상위를 장악하며 나스닥(-1.13%)과 S&P 500(-0.75%)이 이틀 연속 최고치 후 하락 전환했다.",
+      "메모리·GPU 반도체(마이크론·엔비디아·샌디스크)가 거래대금 상위를 장악한 가운데, 이틀 연속 최고치를 찍었던 나스닥이 -1.13%, S&P 500은 -0.75% 내리며 동반 하락 전환했다.",
       "이란 대통령의 강경 발언에 WTI는 11월물 기준 +1.81%(92.16달러)로 급등했고, 금리에 민감한 유틸리티·부동산 섹터가 가장 부진했다."
     ],
     "lines_en": [
       "The US 10-year Treasury yield hit 5.11%, its highest level in 19 years.",
       "A blowout September PMI and hawkish comments from Fed Governor Barr, a permanent FOMC voter, added to the upward pressure on yields.",
-      "Memory and foundry chip names (Micron, Nvidia, SanDisk) dominated turnover as the Nasdaq (-1.13%) and S&P 500 (-0.75%) reversed lower after two straight record closes.",
+      "Memory and GPU chip names (Micron, Nvidia, SanDisk) dominated turnover as the Nasdaq, which had notched two straight record closes, fell 1.13% while the S&P 500 dropped 0.75%, both reversing lower.",
       "WTI's November contract jumped 1.81% to $92.16 on defiant remarks from Iran's president, while rate-sensitive utilities and real estate led sector losses."
     ]
   },
@@ -36,7 +36,7 @@
   "markets": [
     {"label": "NASDAQ", "value": "26,936.04", "delta": "▼1.13%", "dir": "down", "note_ko": "9/23 미국장 마감 종가 · 이틀 연속 최고치 후 하락 전환", "note_en": "Sep 23 US close · reversed after two straight record closes"},
     {"label": "S&P 500", "value": "7,706.03", "delta": "▼0.75%", "dir": "down", "note_ko": "9/23 마감 · 대형 기술주 중심 매도", "note_en": "Sep 23 close · led lower by mega-cap tech"},
-    {"label": "KOSPI", "value": "7,080.92", "delta": "휴장", "dir": "flat", "note_ko": "추석 연휴로 9/24~25 휴장 · 직전 거래일(9/23) ▲0.90% 마감", "note_en": "Closed Sep 24-25 for Chuseok · last session (Sep 23) closed ▲0.90%"},
+    {"label": "KOSPI", "value": "7,080.92", "delta": {"ko": "휴장", "en": "Closed"}, "dir": "flat", "note_ko": "추석 연휴로 9/24~25 휴장 · 직전 거래일(9/23) ▲0.90% 마감", "note_en": "Closed Sep 24-25 for Chuseok · last session (Sep 23) closed ▲0.90%"},
     {"label": "VIX", "value": "15.18", "delta": "▲6.83%", "dir": "up", "note_ko": "9/23 마감 · 위험회피 심리 확대", "note_en": "Sep 23 close · risk-off sentiment builds"},
     {"label": "Fear&Greed", "value": "35", "delta": "35 → 35", "dir": "flat", "note_ko": "공포(Fear) 구간 유지", "note_en": "Still in the Fear zone"},
     {"label": "US 10Y", "value": "5.11%", "delta": "4.96% → 5.11%", "dir": "up", "note_ko": "9/23 확정 종가 · 2007년 이후 최고", "note_en": "Confirmed Sep 23 close · highest since 2007"},
@@ -90,8 +90,8 @@
           {"label_ko": "하락 종목", "label_en": "Decliners", "value": 275.62}
         ]
       },
-      "note_ko": "하락 종목 거래대금이 상승 종목의 2.6배(72.1%) — 마이크론(-2.22%)·샌디스크(-3.73%)·엔비디아(-1.47%) 등 반도체 대형주가 나란히 밀렸다",
-      "note_en": "Decliners' dollar volume was 2.6x advancers' (72.1% share) — chip heavyweights Micron (-2.22%), SanDisk (-3.73%) and Nvidia (-1.47%) fell in tandem"
+      "note_ko": "하락 종목 거래대금이 상승 종목의 2.6배(72.1%) — 메모리·GPU 반도체 대형주(마이크론 -2.22%·샌디스크 -3.73%·엔비디아 -1.47%)가 나란히 밀렸다",
+      "note_en": "Decliners' dollar volume was 2.6x advancers' (72.1% share) — memory and GPU chip heavyweights (Micron -2.22%, SanDisk -3.73%, Nvidia -1.47%) fell in tandem"
     },
     {
       "title_ko": "섹터별 등락", "title_en": "Sector Performance",
@@ -129,8 +129,8 @@
           {"label_ko": "표본 내 나머지", "label_en": "Rest of sample", "pct": 76.1, "color": "#3987e5"}
         ]
       },
-      "note_ko": "메모리·파운드리 반도체(마이크론·엔비디아)가 거래대금 1·3위 — 반도체 조정이 자금 흐름의 중심이었다",
-      "note_en": "Memory and foundry chip names (Micron, Nvidia) took the No.1 and No.3 turnover spots as the chip pullback dominated dollar volume"
+      "note_ko": "메모리·GPU 반도체(마이크론·엔비디아)가 거래대금 1·3위 — 반도체 조정이 자금 흐름의 중심이었다",
+      "note_en": "Memory and GPU chip names (Micron, Nvidia) took the No.1 and No.3 turnover spots as the chip pullback dominated dollar volume"
     },
     {
       "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
