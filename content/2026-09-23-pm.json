@@ -1,0 +1,689 @@
+{
+ "date": "2026-09-23",
+ "session": "pm",
+ "dateLabel_ko": "2026.9.23(수) 저녁",
+ "dateLabel_en": "Wed, Sep 23, 2026 · Evening",
+ "headline_ko": "코스피 4거래일 연속 상승…추석 앞두고 7080선 안착",
+ "headline_en": "KOSPI Rises for a 4th Day, Settles Near 7,080 Ahead of Chuseok",
+ "headline_sub_ko": "삼성전자 3%대 강세·양자컴퓨팅株 급등, 개인은 1.4조 매도",
+ "headline_sub_en": "Samsung Electronics Jumps 3%, Quantum Stocks Surge as Individuals Sell ₩1.4T",
+ "cover_kicker": {
+  "ko": "코스피 마감 · 9/23 종가",
+  "en": "KOSPI Close · Sep 23"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 +0.90% · 코스닥 +1.21%",
+    "en": "KOSPI +0.90% · KOSDAQ +1.21%"
+   },
+   {
+    "ko": "7,080.92 · 4거래일 연속 상승, 반도체 대형주가 이끌었다",
+    "en": "7,080.92 pts · 4th straight gain, led by large-cap chipmakers"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "엔비디아發 양자컴퓨팅 열풍 국내 상륙",
+    "en": "Nvidia-sparked quantum computing wave hits Korea"
+   },
+   {
+    "ko": "양자보안株 급등, 삼성전자는 HBM4 훈풍에 3%대 강세",
+    "en": "Quantum security stocks surged; Samsung Electronics rose 3%+ on HBM4"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "WTI, 11월물로 최근월물 전환",
+    "en": "WTI front-month rolls to November"
+   },
+   {
+    "ko": "$89.97 · 美·이란 3개월 만에 첫 회담, 트럼프 '합의는 중간선거 후'",
+    "en": "$89.97 · US-Iran hold first talks in 3 months; Trump says deal likely after midterms"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피가 0.90% 오른 7,080.92로 마감하며 4거래일 연속 상승했다. 장중 한때 1.94% 급등한 7,153.99까지 올랐지만 추석 연휴를 앞둔 경계감에 상승폭을 반납했다.",
+   "삼성전자가 HBM4·차세대 메모리 공급계약 소식에 3.25% 오른 285,500원에 마감하며 지수 상승을 견인했다. SK하이닉스도 1.20% 올랐다.",
+   "개인은 1조4,400억원을 순매도했지만 기관이 3,180억원을 사들이며 지수를 방어했다. 상승 종목(311개)보다 하락 종목(548개)이 훨씬 많았던 '쏠림 장세'였다.",
+   "엔비디아가 불붙인 양자컴퓨팅 테마에 국내 양자보안 관련주가 급등했고, 미·이란이 3개월 만에 첫 회담을 가지며 브렌트유는 2주 만에 100달러 아래로 내려앉았다."
+  ],
+  "lines_en": [
+   "KOSPI closed up 0.90% at 7,080.92, its 4th straight gain. It surged as much as 1.94% intraday to 7,153.99 before paring the advance on caution ahead of the Chuseok holiday.",
+   "Samsung Electronics rose 3.25% to ₩285,500 on HBM4 and next-gen memory supply-deal news, leading the index higher. SK hynix added 1.20%.",
+   "Individuals sold a net ₩1.44T while institutions bought ₩318.0B to defend the index — a concentration-driven session where decliners (548) far outnumbered advancers (311).",
+   "Nvidia-sparked quantum computing enthusiasm sent Korean quantum-security stocks surging, while Brent crude fell below $100 for the first time in two weeks after the US and Iran held their first talks in three months."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "31,000.75",
+   "delta": "▼0.09%",
+   "dir": "flat",
+   "note_ko": "나스닥 선물(NQ=F) · 아시아 시간대",
+   "note_en": "Nasdaq futures (NQ=F) · Asia hours"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,834.25",
+   "delta": "▲0.03%",
+   "dir": "flat",
+   "note_ko": "S&P 500 선물(ES=F) · 아시아 시간대",
+   "note_en": "S&P 500 futures (ES=F) · Asia hours"
+  },
+  {
+   "label": "KOSPI",
+   "value": "7,080.92",
+   "delta": "▲0.90%",
+   "dir": "up",
+   "note_ko": "9/23 정규장 마감 종가 · 4거래일 연속 상승",
+   "note_en": "Sep 23 regular session close · up for a 4th straight session"
+  },
+  {
+   "label": "VIX",
+   "value": "14.21",
+   "delta": "0.00%",
+   "dir": "flat",
+   "note_ko": "9/22 마감 종가와 동일 · 美 정규장 개장 전이라 아직 미반영",
+   "note_en": "Unchanged from the Sep 22 close · not yet updated ahead of the US open"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "35",
+   "delta": "35 → 35",
+   "dir": "flat",
+   "note_ko": "공포(Fear) 구간, 변화 없음",
+   "note_en": "Still in the Fear zone, unchanged"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.96%",
+   "delta": "4.96% → 4.96%",
+   "dir": "flat",
+   "note_ko": "9/22 확정 종가 · 美 정규장 개장 전 변동 없음",
+   "note_en": "Confirmed Sep 22 close · unchanged ahead of the US open"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,358.4",
+   "value_sub": "· DXY 100.8",
+   "delta": "▲0.01%",
+   "dir": "flat",
+   "note_ko": "9/23 국내 외환시장 종가(15:30) · DXY는 아시아 시간대",
+   "note_en": "Sep 23 Seoul FX market close (15:30 KST) · dollar index during Asia hours"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,352.90",
+   "delta": "▼0.54%",
+   "dir": "down",
+   "note_ko": "12월물 · 아시아 시간대",
+   "note_en": "December contract · Asia hours"
+  },
+  {
+   "label": "WTI",
+   "value": "$89.97",
+   "delta": {
+    "ko": "10월물 마감 $94.59 → 11월물 ▼0.61%",
+    "en": "Oct settled $94.59 → Nov contract ▼0.61%"
+   },
+   "dir": "down",
+   "note_ko": "이날부터 최근월물이 11월물로 전환 · 수치는 11월물 자체의 전일 대비",
+   "note_en": "Front-month rolled to the November contract today; the change reflects the Nov contract's own day-over-day move"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$85,557",
+   "delta": "▼0.48%",
+   "dir": "down",
+   "note_ko": "최신 호가 기준",
+   "note_en": "As of the latest quote"
+  }
+ ],
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ",
+  "S&P 500"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "나스닥·S&P 500은 미국 정규장 개장 전 선물, 코스피는 9/23 정규장 마감 종가",
+ "market_note_en": "Nasdaq and S&P 500 are futures ahead of the US regular open; KOSPI is the Sep 23 regular session close",
+ "chart_series_values": [
+  6909.91,
+  6684.37,
+  6627.26,
+  6717.97,
+  6715.41,
+  6894.23,
+  7007.72,
+  7017.91,
+  7080.92
+ ],
+ "chart_series_labels": [
+  "9.11",
+  "9.14",
+  "9.15",
+  "9.16",
+  "9.17",
+  "9.18",
+  "9.21",
+  "9.22",
+  "9.23"
+ ],
+ "chart_title": {
+  "ko": "4거래일 연속 상승, 연휴 앞두고 7080선 안착",
+  "en": "Up for a 4th Day, Holding Near 7,080"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "9.15 저점 6,627.26 → 9.23 7,080.92, 4거래일 연속 상승(누적 +2.71%)",
+  "en": "From the Sep 15 low of 6,627.26 to 7,080.92 on Sep 23, up for 4 straight sessions (+2.71% cumulative)"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "정유·반도체가 이끌고 건설은 최대 낙폭",
+  "en": "Refiners and chips led as construction lagged"
+ },
+ "sector_sub": {
+  "ko": "코스피 주력 업종 등락률(시총가중) · 9/23",
+  "en": "KOSPI major sector performance (mkt-cap wtd) · Sep 23"
+ },
+ "rank_kicker": "TOP 5",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "코스피 개별종목 · 9/23",
+  "en": "KOSPI individual stocks · Sep 23"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit: ₩ Trillion"
+ },
+ "econ_kicker": "DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "코스피 연속 상승 기록 · 국고채 3년물 · WTI 최근월물 전환",
+  "en": "KOSPI's win streak, Korea's 3Y yield, WTI's front-month roll"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI · KOSDAQ Record",
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "7,080.92",
+     "delta": "▲0.90%",
+     "dir": "up",
+     "sub_ko": "4거래일 연속 상승 · 장중 7,153.99 고점 후 되돌림",
+     "sub_en": "Up for a 4th straight session; pared back from an intraday high of 7,153.99"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "844.48",
+     "delta": "▲1.21%",
+     "dir": "up",
+     "sub_ko": "5거래일 연속 상승 후 하루 조정 딛고 반등",
+     "sub_en": "Rebounded after one down day that snapped a 5-session win streak"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "up": 311,
+     "flat": 55,
+     "down": 548
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "up": 856,
+     "flat": 94,
+     "down": 786
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (억원)",
+    "label_en": "KOSPI net buy/sell by investor (₩100M)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Individual",
+      "value": -14400
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreign",
+      "value": -5080
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institution",
+      "value": 3180
+     }
+    ]
+   },
+   "note_ko": "상승 종목(311)보다 하락 종목(548)이 훨씬 많았는데도 지수가 오른 건 삼성전자(+3.25%)·SK하이닉스(+1.20%) 등 대형 반도체주 쏠림 때문 — 개인이 1조4,400억원 팔았지만 기관이 3,180억원 사며 방어했다",
+   "note_en": "Samsung Electronics (+3.25%) and SK hynix (+1.20%) led despite decliners (548) outnumbering advancers (311); institutions offset ₩1.44T of individual selling with ₩318.0B in buying."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Performance",
+   "bars": [
+    {
+     "label_ko": "정유",
+     "label_en": "Refiners",
+     "value": 3.13
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semiconductors",
+     "value": 2.8
+    },
+    {
+     "label_ko": "생물공학",
+     "label_en": "Biotech",
+     "value": 1.1
+    },
+    {
+     "label_ko": "전자부품",
+     "label_en": "Electronic Parts",
+     "value": 1.06
+    },
+    {
+     "label_ko": "화장품",
+     "label_en": "Cosmetics",
+     "value": 0.8
+    },
+    {
+     "label_ko": "화학",
+     "label_en": "Chemicals",
+     "value": 0.28
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Electrical Products",
+     "value": 0.02
+    },
+    {
+     "label_ko": "전기장비",
+     "label_en": "Electrical Equip.",
+     "value": -0.49
+    },
+    {
+     "label_ko": "증권",
+     "label_en": "Securities",
+     "value": -0.85
+    },
+    {
+     "label_ko": "자동차부품",
+     "label_en": "Auto Parts",
+     "value": -0.96
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": -1.13
+    },
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": -1.17
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuilding",
+     "value": -1.46
+    },
+    {
+     "label_ko": "철강",
+     "label_en": "Steel",
+     "value": -2.92
+    },
+    {
+     "label_ko": "건설",
+     "label_en": "Construction",
+     "value": -4.19
+    }
+   ],
+   "note_ko": "건설(-4.19%)이 최대 낙폭, 정유(+3.13%)는 국제유가 하락에도 SK이노베이션 등 냉각기술 기대감에 강세 — 반도체(+2.80%)가 지수를 이끌었다",
+   "note_en": "Construction (-4.19%) led losers, while refiners (+3.13%) rallied on cooling-tech buzz around names like SK Innovation despite falling oil prices — semiconductors (+2.80%) led the index higher"
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "rows": [
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩5.50T",
+     "pct": 3.25
+    },
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩5.37T",
+     "pct": 1.2
+    },
+    {
+     "name_ko": "삼성전자우",
+     "name_en": "Samsung Elec. Pfd.",
+     "value": "₩1.26T",
+     "pct": 4.02
+    },
+    {
+     "name_ko": "삼성전기",
+     "name_en": "Samsung Electro-Mech.",
+     "value": "₩0.74T",
+     "pct": 1.41
+    },
+    {
+     "name_ko": "두산에너빌리티",
+     "name_en": "Doosan Enerbility",
+     "value": "₩0.38T",
+     "pct": -5.78
+    }
+   ],
+   "share": {
+    "label_ko": "코스피 거래대금 중 비중",
+    "label_en": "Share of KOSPI turnover",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 58.6,
+      "color": "#f2b134"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Rest",
+      "pct": 41.4,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "삼성전자·SK하이닉스 두 종목만으로 코스피 거래대금(22.6조원)의 절반 가까이 차지 — 거래대금 5위 두산에너빌리티는 -5.78%로 하락했다",
+   "note_en": "Samsung Electronics and SK hynix alone accounted for nearly half of KOSPI's ₩22.6T turnover, while 5th-ranked Doosan Enerbility fell 5.78%"
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "코스피 4거래일 연속 상승",
+     "label_en": "KOSPI's 4-Session Win Streak",
+     "value": "+2.71%",
+     "delta": {
+      "ko": "4일 누적",
+      "en": "4-session cumulative"
+     },
+     "dir": "up",
+     "sub_ko": "9/18 6,894.23 → 9/23 7,080.92",
+     "sub_en": "From 6,894.23 (9/18) to 7,080.92 (9/23)",
+     "ref_ko": "",
+     "ref_en": ""
+    },
+    {
+     "label_ko": "코스닥, 하루 만에 반등",
+     "label_en": "KOSDAQ Rebounds After One Down Day",
+     "value": "844.48",
+     "delta": "▲1.21%",
+     "dir": "up",
+     "sub_ko": "5거래일 연속 상승 후 하루 조정, 다시 반등",
+     "sub_en": "Rebounded after a single pullback that snapped a 5-session rally",
+     "ref_ko": "",
+     "ref_en": ""
+    },
+    {
+     "label_ko": "WTI 최근월물 전환",
+     "label_en": "WTI's Front-Month Roll",
+     "value": "$89.97",
+     "delta": {
+      "ko": "10월물 $94.59 → 11월물",
+      "en": "Oct contract $94.59 → Nov"
+     },
+     "dir": "down",
+     "sub_ko": "이날부터 11월물이 최근월물 · 백워데이션으로 가격차 발생",
+     "sub_en": "November became the front-month contract today; the gap reflects backwardation",
+     "ref_ko": "",
+     "ref_en": ""
+    },
+    {
+     "label_ko": "달러인덱스(DXY) 3거래일 연속 상승",
+     "label_en": "Dollar Index's 3-Session Climb",
+     "value": "100.8",
+     "delta": {
+      "ko": "3일 연속 상승",
+      "en": "Up for a 3rd session"
+     },
+     "dir": "up",
+     "sub_ko": "9/21 100.4 → 9/23 100.8",
+     "sub_en": "From 100.4 (9/21) to 100.8 (9/23)",
+     "ref_ko": "",
+     "ref_en": ""
+    },
+    {
+     "label_ko": "코스피 등락 종목 격차",
+     "label_en": "KOSPI Advancers vs. Decliners Gap",
+     "value": "-237",
+     "delta": "",
+     "dir": "down",
+     "sub_ko": "상승 311 · 하락 548 — 대형주 쏠림 속 지수만 상승",
+     "sub_en": "311 advancers vs. 548 decliners — the index rose only on large-cap concentration",
+     "ref_ko": "",
+     "ref_en": ""
+    }
+   ],
+   "note_ko": "출처: KRX, 한국거래소, 연합인포맥스, Yahoo Finance",
+   "note_en": "Source: KRX, Korea Exchange, Yonhap Infomax, Yahoo Finance"
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "items": [
+    {
+     "headline_ko": "엔비디아發 양자컴퓨팅 열풍, 국내 양자보안株 급등",
+     "headline_en": "Nvidia-Sparked Quantum Computing Wave Hits Korean Stocks",
+     "body_ko": "글로벌 빅테크의 양자컴퓨터 상용화 경쟁이 부각되며 우리넷·엑스게이트 등 양자암호·양자보안 관련주가 일제히 급등했다. 양자컴퓨터가 발전할수록 기존 암호체계 위협이 커진다는 전망이 배경이다.",
+     "body_en": "Korean quantum-encryption and quantum-security stocks like Wooriwave and Xgate surged as global tech giants race to commercialize quantum computing, on expectations quantum machines will threaten today's encryption standards."
+    },
+    {
+     "headline_ko": "삼성전자 HBM4, 엔비디아 '베라루빈' 탑재…3분기도 최대 실적",
+     "headline_en": "Samsung's HBM4 for Nvidia's Vera Rubin Points to a Record Q3",
+     "body_ko": "삼성전자 메모리사업부는 엔비디아 차세대 AI 플랫폼 '베라 루빈'向 HBM4 매출이 본격 반영되며 3분기도 사상 최대 실적을 낼 것이라고 밝혔다. 장기공급계약(LTA) 확대는 가격 상승을 제한하는 변수다.",
+     "body_en": "Samsung's memory division said HBM4 sales for Nvidia's next-gen Vera Rubin platform are kicking in, pointing to another record quarter, though expanding long-term supply contracts (LTAs) may cap price gains."
+    },
+    {
+     "headline_ko": "삼성전자 범용 D램 재고 역사적 저점…HBM 우선배정에 품귀",
+     "headline_en": "Samsung's Commodity DRAM Inventory Hits a Historic Low as HBM Takes Priority",
+     "body_ko": "삼성전자가 하이퍼스케일러와의 장기공급계약 물량을 HBM에 우선 배정하면서 범용 D램 재고가 역사적 저점까지 떨어졌다. 중국 CXMT의 증설에도 공급 부족은 당분간 이어질 전망이다.",
+     "body_en": "Samsung's prioritization of HBM under hyperscaler long-term contracts has pushed commodity DRAM inventory to a historic low, with shortages expected to persist even as China's CXMT expands capacity."
+    },
+    {
+     "headline_ko": "LG전자·SK엔무브, AI데이터센터 차세대 액침냉각 공동개발",
+     "headline_en": "LG Electronics, SK enmove Team Up on AI Data Center Immersion Cooling",
+     "body_ko": "두 회사가 신규 냉매·냉동기유·액침냉각 기술을 공동 개발하기로 했다. AI데이터센터를 넘어 ESS·전기차 부품 등 고발열 전력기기 열관리로 적용 범위를 넓힐 계획이다.",
+     "body_en": "LG Electronics and SK enmove will co-develop next-gen refrigerants and immersion-cooling tech, aiming to extend it beyond AI data centers to ESS and EV-component thermal management."
+    },
+    {
+     "headline_ko": "솔브레인, AI 메모리 증설 훈풍에 공정소재 호실적",
+     "headline_en": "Solbrain Rides AI Memory Fab Expansion to Strong Results",
+     "body_ko": "삼성전자 평택 P4·SK하이닉스 M15X 가동에 이어 후속 증설이 이어지며 반도체 공정 소재 출하가 늘었다. HBM 중심 신규 팹 투자가 소재 업체 실적에도 온기를 넓히고 있다.",
+     "body_en": "Solbrain's process-material shipments rose as Samsung's Pyeongtaek P4 and SK hynix's M15X fabs came online, with HBM-focused capacity additions spreading gains to materials suppliers."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "items": [
+    {
+     "headline_ko": "코스피 4거래일 연속 상승, 반도체가 이끌며 7,080선 안착",
+     "headline_en": "KOSPI Rises for a 4th Day, Chips Lead It Near 7,080",
+     "body_ko": "코스피는 63.01포인트(0.90%) 오른 7,080.92로 마감해 4거래일 연속 상승했다. 삼성전자·SK하이닉스 등 대형 반도체주가 지수를 이끌었고, 개인은 1조4,400억원을 순매도했지만 기관이 3,180억원을 사며 방어했다.",
+     "body_en": "KOSPI rose 63.01 points (0.90%) to 7,080.92, up for a 4th straight session. Large-cap chipmakers Samsung Electronics and SK hynix led the gain; individuals sold ₩1.44T while institutions bought ₩318.0B to offset it."
+    },
+    {
+     "headline_ko": "아시아증시 엇갈림 — 대만 사상 최고, 中·홍콩은 AI주 급락에 하락",
+     "headline_en": "Asia Diverges: Taiwan Hits a Record, China/Hong Kong Fall on an AI Stock Slump",
+     "body_ko": "23일 아시아 증시에서 대만 가권지수는 반도체 훈풍에 사상 최고치를 새로 썼다. 반면 중국 상하이(-0.39%)·선전(-0.50%)과 홍콩 항셍(-1.01%)은 AI 관련주 급락에 밀렸다. 일본은 휴장했다.",
+     "body_en": "Taiwan's Taiex hit a record on chip strength, while China's Shanghai (-0.39%), Shenzhen (-0.50%) and Hong Kong (-1.01%) fell on an AI-stock slump; Japan was closed for a holiday."
+    },
+    {
+     "headline_ko": "LG디스플레이, 1,041억원 中 난징 차량용 LCD 매각 철회",
+     "headline_en": "LG Display Scraps ₩104.1B Sale of Its China Car-LCD Business",
+     "body_ko": "LG디스플레이가 난징 법인의 차량용 LCD 모듈 사업을 탑런토탈솔루션에 1,041억원에 넘기려던 영업양도 계약을 최종 합의 불발로 철회했다고 공시했다. 매각과 무관하게 양사 협력은 지속된다.",
+     "body_en": "LG Display disclosed it scrapped a ₩104.1B deal to sell its Nanjing car-LCD module business to TopRun Total Solution after failing to finalize terms, though the companies' broader partnership continues."
+    },
+    {
+     "headline_ko": "가비아, 맥쿼리 공개매수 무산 이어 고객정보 유출 겹악재",
+     "headline_en": "Gabia Hit by a Data Breach Days After a Failed Macquarie Buyout",
+     "body_ko": "가비아는 고객 2,998명의 개인정보가 유출됐다고 밝혔다. 앞서 맥쿼리자산운용이 주당 4만8,000원에 추진한 완전자회사 편입 공개매수가 문턱을 넘지 못해 무산된 데 이어 악재가 겹쳤다.",
+     "body_en": "Gabia said personal data of 2,998 customers was leaked, adding to trouble after Macquarie's ₩48,000-per-share buyout offer fell short of its threshold."
+    },
+    {
+     "headline_ko": "트럼프 \"美·이란 합의, 중간선거 직후 이뤄질 것\"",
+     "headline_en": "Trump: US-Iran Deal Likely 'Right After the Midterms'",
+     "body_ko": "미·이란이 3개월 만에 처음으로 마주 앉은 가운데 트럼프 대통령은 합의가 중간선거 직후 이뤄질 것이라고 밝혔다. 국제유가는 긴장 완화 기대감에 하락세를 이어갔다.",
+     "body_en": "Trump said a US-Iran deal is likely \"right after the midterms,\" after the two sides' first meeting in three months. Oil extended its decline on hopes for easing tensions."
+    },
+    {
+     "headline_ko": "원/달러, 막판 반등해 1,358.40원…이틀째 1,358원대",
+     "headline_en": "Won-Dollar Rate Rebounds Late to Close at 1,358.40",
+     "body_ko": "원/달러 환율은 장 후반 상승 전환해 전 거래일보다 0.2원 오른 1,358.40원에 마감했다. 이틀 연속 1,358원대에서 등락하며 지난주 급락세는 일단 진정된 모습이다.",
+     "body_en": "The won-dollar rate reversed higher late in the session to close at 1,358.40, up 0.2 won from the prior day — holding in the 1,358 range for a second day after last week's sharp swings."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "TODAY",
+ "schedule_sub": {
+  "ko": "지금 ~ 내일 08:00",
+  "en": "Now until 8 AM KST tomorrow"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30"
+  ],
+  "lines_en": [
+   "Regular session 22:30-05:00 KST (DST) · Pre-market 17:00-22:30 KST"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "22:45",
+   "title_ko": "美 9월 S&P글로벌 제조업·서비스업 PMI(예비)",
+   "title_en": "US Sep S&P Global Mfg/Services PMI (Flash)",
+   "detail_ko": "제조업 예상 53.5(전월 53.9) · 서비스업 예상 56.0(전월 56.5)",
+   "detail_en": "Mfg. consensus 53.5 (prior 53.9) · Services consensus 56.0 (prior 56.5)",
+   "importance": "high"
+  },
+  {
+   "time": "23:05",
+   "title_ko": "마이클 바 연준 이사 연설",
+   "title_en": "Fed Governor Barr Speech",
+   "detail_ko": "이사·상시 투표권 O — 최근 매파적 발언 잇단 연준 인사들과 같은 기조일지 주목",
+   "detail_en": "Governor · permanent FOMC voter — markets watch whether he echoes recent hawkish Fed remarks",
+   "importance": "mid"
+  },
+  {
+   "time": "9/24 01:00",
+   "title_ko": "치폴로네 ECB 집행위원 연설",
+   "title_en": "ECB's Cipollone Speech",
+   "detail_ko": "유럽중앙은행 집행이사회 위원 발언 예정",
+   "detail_en": "ECB Executive Board member remarks expected",
+   "importance": "mid"
+  },
+  {
+   "time": "9/24 01:30",
+   "title_ko": "레인 ECB 수석이코노미스트 연설",
+   "title_en": "ECB Chief Economist Lane Speech",
+   "detail_ko": "유로존 통화정책 방향 관련 발언 예정",
+   "detail_en": "Remarks expected on euro-area policy direction",
+   "importance": "mid"
+  },
+  {
+   "time": "9/24",
+   "title_ko": "윌리엄스 뉴욕연은 총재 연설",
+   "title_en": "NY Fed President Williams Speech",
+   "detail_ko": "중도·상시 투표권 O",
+   "detail_en": "Centrist · permanent FOMC voter",
+   "importance": "high"
+  },
+  {
+   "time": "9/24",
+   "title_ko": "해맥 클리블랜드 연은 총재 연설",
+   "title_en": "Cleveland Fed President Hammack Speech",
+   "detail_ko": "매파·2026년 투표권 O",
+   "detail_en": "Hawkish · 2026 FOMC voter",
+   "importance": "high"
+  },
+  {
+   "time": "9/24",
+   "title_ko": "코스트코 회계 4분기 실적 발표 (미리보기)",
+   "title_en": "Costco FQ4 Earnings (Preview)",
+   "detail_ko": "장 마감 후(현지시간) · EPS 예상 $6.54, 매출 예상 $948.6억",
+   "detail_en": "After the close (local time) · EPS consensus $6.54, revenue consensus $94.86B",
+   "importance": "mid"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+ "card_photos": {
+  "1": "A Seoul stock exchange trading floor bathed in warm amber light just after the closing bell, ticker boards showing a rising green KOSPI number, traders in soft silhouette, cinematic wide shot, moody and slightly blurred, dark background",
+  "3": "Abstract KOSPI index line chart climbing then pulling back near the top, glowing amber line against a dark navy gradient background, financial data visualization, dramatic side lighting",
+  "4": "Close-up of an oil refinery distillation tower at dusk beside a semiconductor cleanroom silhouette, warm amber and cool blue tones blending, industrial photography, shallow depth of field",
+  "5": "A wall of glowing stock ticker screens showing large green percentage gains for a chipmaker, blurred dark trading floor in the background, cinematic financial photography, moody",
+  "7": "A futuristic quantum computing lab with a glowing cryogenic chandelier chip suspended amid blue circuit-like light trails, dark background, shallow depth of field, cinematic",
+  "8": "A wide dusk view of an Asian financial district skyline with a faint holographic world map overlay of rising and falling arrows, moody blue and amber tones, cinematic wide shot"
+ },
+ "caption_ko": "🇰🇷 코스피가 0.90% 오른 7,080.92로 마감하며 4거래일 연속 상승했습니다. 삼성전자가 HBM4·양자컴퓨팅 훈풍에 3%대 강세를 보이며 지수를 이끌었고, 개인은 1.4조원 가까이 팔았지만 기관이 방어했어요. LG디스플레이는 1,041억원 규모 중국 LCD 매각을 철회했고, 미·이란은 3개월 만에 첫 회담을 가지며 국제유가가 다시 내렸습니다. 추석 연휴 앞두고 저녁 브리핑, 저장해두세요 📌\n\n#luckyon브리핑 #코스피 #코스닥 #삼성전자 #SK하이닉스 #양자컴퓨팅 #AI반도체 #원달러환율 #국제유가 #LG디스플레이 #가비아 #추석연휴 #미국증시 #나스닥선물 #경제브리핑 #저녁증시\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "caption_en": "🇰🇷 KOSPI closed up 0.90% at 7,080.92, its 4th straight gain. Samsung Electronics led the way, rising 3%+ on HBM4 and quantum-computing enthusiasm, as institutions bought to offset nearly ₩1.4T of individual selling. LG Display scrapped a ₩104.1B China LCD sale, and oil fell again after the US and Iran held their first talks in three months. Save tonight's brief ahead of the Chuseok holiday 📌\n\n#luckyonbriefing #KOSPI #KOSDAQ #SamsungElectronics #SKhynix #quantumcomputing #AIsemiconductors #USDKRW #oilprices #LGDisplay #Gabia #Chuseok #usmarkets #nasdaqfutures #economicbriefing #eveningbrief\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+ "sources": [
+  "KRX",
+  "한국거래소",
+  "DART",
+  "Yahoo Finance",
+  "FMP",
+  "연합인포맥스",
+  "Naver News",
+  "CNN Fear & Greed",
+  "美 재무부"
+ ]
+}
