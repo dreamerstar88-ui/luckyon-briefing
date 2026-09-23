@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-22T15:29:38Z",
+  "fetchedAt": "2026-09-23T00:38:34Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-20T15:29:38Z",
-    "to": "2026-10-06T15:29:38Z"
+    "from": "2026-09-21T00:38:34Z",
+    "to": "2026-10-07T00:38:34Z"
   },
   "events": [
     {
@@ -223,7 +223,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.204,
-      "actual": null,
+      "actual": 4.787,
       "unit": "%"
     },
     {
@@ -253,7 +253,7 @@
       "impact": "LOW",
       "consensus": -0.5,
       "previous": 7.14,
-      "actual": null,
+      "actual": 1.786,
       "unit": null
     },
     {
@@ -263,7 +263,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 104.5,
-      "actual": null,
+      "actual": 106.6,
       "unit": null
     },
     {
@@ -1001,7 +1001,7 @@
       "country": "EMU",
       "name": "Consumer Confidence",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": -16.5,
       "previous": -16.5,
       "actual": null,
       "unit": null
@@ -1132,7 +1132,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.786,
       "actual": null,
       "unit": null
     },
@@ -2675,6 +2675,56 @@
       "previous": 45.6,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-10-06T16:00:00Z",
+      "country": "CN",
+      "name": "National Day",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-06T17:00:00Z",
+      "country": "US",
+      "name": "3-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.474,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-06T20:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-06T23:30:00Z",
+      "country": "JP",
+      "name": "Labor Cash Earnings (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 4.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-06T23:50:00Z",
+      "country": "JP",
+      "name": "JP Foreign Reserves",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1207.5,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
