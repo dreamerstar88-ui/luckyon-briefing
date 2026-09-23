@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-24",
+  "session": "am",
+  "dateLabel_ko": "2026.9.24(목) 아침",
+  "dateLabel_en": "Thu, Sep 24, 2026 · Morning",
+
+  "headline_ko": "美 국채금리 19년래 최고…나스닥 하락 전환",
+  "headline_en": "US 10Y Yield Hits 19-Year High, Nasdaq Reverses Lower",
+  "headline_sub_ko": "PMI 호조·연준 매파 발언에 금리 급등, 이란발 유가도 급등",
+  "headline_sub_en": "Hot PMI and hawkish Fed talk spike yields; Iran tensions lift oil",
+  "cover_kicker": {"ko": "간밤 미국장 · 9/23 마감", "en": "US Overnight · Sep 23 Close"},
+  "cover_facts": [
+    ["rate", {"ko": "나스닥 -1.13% · S&P 500 -0.75%", "en": "Nasdaq -1.13% · S&P 500 -0.75%"},
+             {"ko": "26,936.04 / 7,706.03 · 이틀 연속 최고치 후 하락 전환", "en": "26,936.04 / 7,706.03 pts · reversed after two record closes"}],
+    ["bond", {"ko": "美 10년물 금리 5.11% · 19년래 최고", "en": "US 10Y yield 5.11% · highest since 2007"},
+             {"ko": "9월 PMI 서프라이즈 + 연준 이사 매파 발언 겹쳐", "en": "Hot Sept PMI plus hawkish Fed remarks combined"}],
+    ["globe", {"ko": "한미 정상회담 깜짝 성사 · 유가 급등", "en": "Surprise Korea-US summit · oil prices surge"},
+              {"ko": "WTI 11월물 +1.81% $92.16 · 이란 강경 발언 영향", "en": "WTI Nov +1.81% to $92.16 on Iran's defiant rhetoric"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "美 10년물 국채금리가 5.11%로 19년 만에 최고치를 찍었다.",
+      "9월 PMI가 예상을 크게 웃돈 데다 바 연준 이사(상시 투표권)가 추가 금리 인상 필요성을 언급하며 금리 상승에 힘을 보탰다.",
+      "메모리·파운드리 반도체(마이크론·엔비디아·샌디스크)가 거래대금 상위를 장악하며 나스닥(-1.13%)과 S&P 500(-0.75%)이 이틀 연속 최고치 후 하락 전환했다.",
+      "이란 대통령의 강경 발언에 WTI는 11월물 기준 +1.81%(92.16달러)로 급등했고, 금리에 민감한 유틸리티·부동산 섹터가 가장 부진했다."
+    ],
+    "lines_en": [
+      "The US 10-year Treasury yield hit 5.11%, its highest level in 19 years.",
+      "A blowout September PMI and hawkish comments from Fed Governor Barr, a permanent FOMC voter, added to the upward pressure on yields.",
+      "Memory and foundry chip names (Micron, Nvidia, SanDisk) dominated turnover as the Nasdaq (-1.13%) and S&P 500 (-0.75%) reversed lower after two straight record closes.",
+      "WTI's November contract jumped 1.81% to $92.16 on defiant remarks from Iran's president, while rate-sensitive utilities and real estate led sector losses."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,936.04", "delta": "▼1.13%", "dir": "down", "note_ko": "9/23 미국장 마감 종가 · 이틀 연속 최고치 후 하락 전환", "note_en": "Sep 23 US close · reversed after two straight record closes"},
+    {"label": "S&P 500", "value": "7,706.03", "delta": "▼0.75%", "dir": "down", "note_ko": "9/23 마감 · 대형 기술주 중심 매도", "note_en": "Sep 23 close · led lower by mega-cap tech"},
+    {"label": "KOSPI", "value": "7,080.92", "delta": "휴장", "dir": "flat", "note_ko": "추석 연휴로 9/24~25 휴장 · 직전 거래일(9/23) ▲0.90% 마감", "note_en": "Closed Sep 24-25 for Chuseok · last session (Sep 23) closed ▲0.90%"},
+    {"label": "VIX", "value": "15.18", "delta": "▲6.83%", "dir": "up", "note_ko": "9/23 마감 · 위험회피 심리 확대", "note_en": "Sep 23 close · risk-off sentiment builds"},
+    {"label": "Fear&Greed", "value": "35", "delta": "35 → 35", "dir": "flat", "note_ko": "공포(Fear) 구간 유지", "note_en": "Still in the Fear zone"},
+    {"label": "US 10Y", "value": "5.11%", "delta": "4.96% → 5.11%", "dir": "up", "note_ko": "9/23 확정 종가 · 2007년 이후 최고", "note_en": "Confirmed Sep 23 close · highest since 2007"},
+    {"label": "USD/KRW", "value": "1,366.0", "value_sub": "· DXY 101.1", "delta": "▲0.83%", "dir": "up", "note_ko": "달러 강세 · 안전자산 선호 확대", "note_en": "Dollar strength amid broader risk-off flows"},
+    {"label": "Gold", "value": "$4,322.7", "delta": "▼1.23%", "dir": "down", "note_ko": "금리 상승에 매력 약화", "note_en": "Rising yields dulled gold's appeal"},
+    {"label": "WTI", "value": "$92.16", "delta": "▲1.81%", "dir": "up", "note_ko": "11월물 · 이란 강경 발언에 급등", "note_en": "November contract · jumped on Iran's hardline rhetoric"},
+    {"label": "Bitcoin", "value": "$84,376", "delta": "▼2.09%", "dir": "down", "note_ko": "위험자산 회피 속 하락", "note_en": "Fell alongside the broader risk-off mood"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "나스닥·S&P 500은 9/23(수) 미국장 마감 종가, 코스피는 추석 연휴 휴장으로 직전 거래일 종가",
+  "market_note_en": "Nasdaq and S&P 500 are Sep 23 (Wed) US closing levels; KOSPI is the last close before the Chuseok holiday",
+
+  "chart_series_values": [26333.04, 26186.41, 25981.57, 25978.43, 26418.30, 26522.54, 27122.09, 27244.28, 26936.04],
+  "chart_series_labels": ["9.11", "9.14", "9.15", "9.16", "9.17", "9.18", "9.21", "9.22", "9.23"],
+  "chart_title": {"ko": "이틀 연속 최고치 후 하루 만에 하락 전환", "en": "Reversed lower after two straight record closes"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9.22 사상 최고 27,244.28 → 9.23 26,936.04(-1.13%)", "en": "Sep 22 record 27,244.28 → Sep 23 26,936.04 (-1.13%)"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "유틸리티·부동산이 최대 낙폭, 에너지만 홀로 올랐다", "en": "Utilities and real estate led losses; energy alone rose"},
+  "sector_sub": {"ko": "S&P 500 섹터 ETF 등락률 · 9/23", "en": "S&P 500 sector ETF performance · Sep 23"},
+  "rank_kicker": "TOP 5",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top by Turnover"},
+  "rank_sub": {"ko": "美 상위 300종목 표본 · 9/23", "en": "Top-300 US sample · Sep 23"},
+  "rank_unit": {"ko": "단위 · 10억달러", "en": "Unit: $B"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "9월 PMI 서프라이즈 · 美·獨·유로존", "en": "Sept PMI surprises · US, Germany, Eurozone"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,936.04", "delta": "▼1.13%", "dir": "down", "sub_ko": "이틀 연속 최고치 후 하락 전환", "sub_en": "Reversed after two straight record closes"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,706.03", "delta": "▼0.75%", "dir": "down", "sub_ko": "국채금리 급등 여파", "sub_en": "Pressured by the yield spike"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 74, "flat": 2, "down": 224}
+      ],
+      "flows": {
+        "label_ko": "거래대금 상승 vs 하락 종목 (10억달러)",
+        "label_en": "$ volume: advancers vs decliners ($B)",
+        "rows": [
+          {"label_ko": "상승 종목", "label_en": "Advancers", "value": 106.72},
+          {"label_ko": "하락 종목", "label_en": "Decliners", "value": 275.62}
+        ]
+      },
+      "note_ko": "하락 종목 거래대금이 상승 종목의 2.6배(72.1%) — 마이크론(-2.22%)·샌디스크(-3.73%)·엔비디아(-1.47%) 등 반도체 대형주가 나란히 밀렸다",
+      "note_en": "Decliners' dollar volume was 2.6x advancers' (72.1% share) — chip heavyweights Micron (-2.22%), SanDisk (-3.73%) and Nvidia (-1.47%) fell in tandem"
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": 0.96},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": -0.10},
+        {"label_ko": "필수소비 (XLP)", "label_en": "Staples (XLP)", "value": -0.36},
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": -0.47},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": -0.47},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": -0.50},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": -0.64},
+        {"label_ko": "통신 (XLC)", "label_en": "Comm. (XLC)", "value": -0.85},
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": -1.00},
+        {"label_ko": "소비재 (XLY)", "label_en": "Discretionary (XLY)", "value": -1.50},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": -1.55},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": -1.93}
+      ],
+      "note_ko": "금리에 민감한 유틸리티(-1.93%)·부동산(-1.55%)이 가장 부진했고, 유가 급등에 에너지(+0.96%)만 유일하게 올랐다",
+      "note_en": "Rate-sensitive Utilities (-1.93%) and Real Estate (-1.55%) led losses, while Energy (+0.96%) was the only sector to rise on the oil rally"
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Turnover",
+      "rows": [
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$22.94B", "pct": -2.22},
+        {"name_ko": "메타", "name_en": "Meta", "value": "$22.50B", "pct": 1.02},
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$19.59B", "pct": -1.47},
+        {"name_ko": "샌디스크", "name_en": "SanDisk", "value": "$13.94B", "pct": -3.73},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$12.51B", "pct": 0.32}
+      ],
+      "share": {
+        "label_ko": "표본(상위 300종목) 내 비중", "label_en": "Share within top-300 sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 23.9, "color": "#e0663d"},
+          {"label_ko": "표본 내 나머지", "label_en": "Rest of sample", "pct": 76.1, "color": "#3987e5"}
+        ]
+      },
+      "note_ko": "메모리·파운드리 반도체(마이크론·엔비디아)가 거래대금 1·3위 — 반도체 조정이 자금 흐름의 중심이었다",
+      "note_en": "Memory and foundry chip names (Micron, Nvidia) took the No.1 and No.3 turnover spots as the chip pullback dominated dollar volume"
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "美 9월 S&P글로벌 제조업 PMI", "label_en": "US S&P Global Mfg PMI (Sep)", "value": "57.0", "delta": "53.9 → 57.0", "dir": "up", "sub_ko": "예상 53.5를 큰 폭 상회", "sub_en": "Blew past the 53.5 estimate"},
+        {"label_ko": "美 9월 S&P글로벌 서비스업 PMI", "label_en": "US S&P Global Services PMI (Sep)", "value": "58.7", "delta": "56.5 → 58.7", "dir": "up", "sub_ko": "예상 56.0 상회", "sub_en": "Beat the 56.0 estimate"},
+        {"label_ko": "美 9월 S&P글로벌 합성 PMI", "label_en": "US S&P Global Composite PMI (Sep)", "value": "58.4", "delta": "56.0 → 58.4", "dir": "up", "sub_ko": "5년여 만의 최고치", "sub_en": "Highest in over five years"},
+        {"label_ko": "獨 9월 HCOB 합성 PMI(예비)", "label_en": "Germany HCOB Composite PMI (Sep, Flash)", "value": "53.8", "delta": "51.8 → 53.8", "dir": "up", "sub_ko": "서비스업이 상승 견인", "sub_en": "Led higher by services"},
+        {"label_ko": "유로존 9월 HCOB 합성 PMI(예비)", "label_en": "Eurozone HCOB Composite PMI (Sep, Flash)", "value": "53.1", "delta": "52.0 → 53.1", "dir": "up", "sub_ko": "예상 51.5 상회", "sub_en": "Beat the 51.5 estimate"},
+        {"label_ko": "美 EIA 주간 원유재고", "label_en": "US EIA Crude Oil Stocks (Weekly)", "value": "+2.97M bbl", "delta": "-0.64M → +2.97M", "dir": "up", "sub_ko": "예상은 -0.70M · 반전 증가", "sub_en": "Est. was -0.70M · surprise build", "ref_ko": "재고 증가는 통상 가격 하락 요인 — 이번엔 지정학 리스크가 상쇄", "ref_en": "A build normally pressures prices lower — geopolitical risk offset it this time"}
+      ],
+      "note_ko": "PMI 서프라이즈가 국채금리를 밀어올린 진원지였다 — 美·獨·유로존 모두 예상과 이전치를 웃돌았다",
+      "note_en": "The PMI surprises were the epicenter of the yield spike — US, German and eurozone readings all beat estimates and prior prints"
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "오픈AI, 챗GPT 모바일에 음성 에이전트 확장", "headline_en": "OpenAI Expands Voice Agent to ChatGPT Mobile",
+         "body_ko": "오픈AI가 데스크톱 앱에 있던 음성 기반 에이전트 기능(GPT-라이브)을 챗GPT 모바일 앱까지 넓혔다. 이용자는 음성으로 '워크'·'코덱스' 탭 작업을 처리할 수 있다.",
+         "body_en": "OpenAI extended its voice-based agent feature (GPT-Live), previously desktop-only, to the ChatGPT mobile app, letting users handle 'Work' and 'Codex' tab tasks by voice."},
+        {"headline_ko": "삼성·SK, 추석에도 반도체 공장 풀가동", "headline_en": "Samsung, SK Hynix Run Chip Plants Through Chuseok",
+         "body_ko": "AI發 메모리 수요 강세로 삼성전자 평택·화성, SK하이닉스 이천·청주 공장이 추석 연휴에도 정상 가동을 이어간다. HBM·서버 D램 물량 확보가 최우선 과제다.",
+         "body_en": "Samsung's Pyeongtaek/Hwaseong and SK Hynix's Icheon/Cheongju fabs keep running through the Chuseok holiday as AI-driven memory demand stays strong, with HBM and server DRAM output the top priority."},
+        {"headline_ko": "삼성·SK 3분기 합산 영업익 190조 전망", "headline_en": "Samsung, SK Hynix Q3 Profit Seen at ₩190T Combined",
+         "body_ko": "증권가는 삼성전자와 SK하이닉스의 3분기 합산 영업이익을 약 190조원으로 전망했다. HBM4 경쟁이 격화하는 가운데 삼성전자는 지난 7월 실적 콜에서 3분기 HBM4 양산을 언급했다.",
+         "body_en": "Analysts project Samsung and SK Hynix's combined Q3 operating profit at roughly ₩190 trillion as HBM4 competition intensifies; Samsung flagged Q3 HBM4 mass production on its July earnings call."},
+        {"headline_ko": "마이크론, HBM4로 삼성·SK 추격 가속", "headline_en": "Micron Accelerates HBM4 Push to Chase Rivals",
+         "body_ko": "마이크론이 HBM4를 앞세워 삼성전자·SK하이닉스와의 격차 좁히기에 나섰다. 현재까지 16건의 전략적 고객 계약(SCA)을 확보했다고 밝혔다.",
+         "body_en": "Micron is closing the gap with Samsung and SK Hynix by pushing HBM4, saying it has secured 16 strategic customer agreements (SCAs) so far."},
+        {"headline_ko": "中 CXMT, 범용 D램 추격…HBM은 아직 격차", "headline_en": "China's CXMT Closes In on Commodity DRAM",
+         "body_ko": "중국 CXMT가 범용 D램에서 저가·대량생산으로 점유율을 넓히고 있다. 다만 AI 서버용 HBM과 고용량 서버 D램에서는 삼성전자·SK하이닉스가 여전히 우위를 지키고 있다.",
+         "body_en": "China's CXMT is gaining commodity DRAM share through low-cost mass production, but Samsung and SK Hynix still hold the edge in AI-server HBM and high-capacity server DRAM."},
+        {"headline_ko": "AI 추론 확산에 서버 메모리 지도 재편", "headline_en": "AI Inference Boom Redraws Server Memory Map",
+         "body_ko": "AI 추론 서비스 확산과 데이터센터 투자 확대로 서버용 메모리 수요가 다양해지고 있다. 저전력 D램(LPDDR)의 성능·용량이 새롭게 중요해지는 추세다.",
+         "body_en": "Spreading AI inference workloads and rising data-center investment are diversifying server memory demand, putting new emphasis on the performance and capacity of low-power DRAM (LPDDR)."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "한미 정상, 유엔서 깜짝 회담…북미대화 재개 의지", "headline_en": "Korea-US Leaders Hold Surprise UN Summit",
+         "body_ko": "이재명 대통령과 트럼프 대통령이 유엔총회 계기 뉴욕에서 깜짝 정상회담을 가졌다. 두 정상은 북한과의 대화 재개 의지를 재확인했고, 조선 협력(MASGA)과 전시작전통제권 전환도 논의했다.",
+         "body_en": "President Lee Jae-myung and President Trump held a surprise summit in New York on the sidelines of the UN General Assembly, reaffirming a push to resume dialogue with North Korea and discussing shipbuilding cooperation (MASGA) and wartime operational control transfer."},
+        {"headline_ko": "트럼프·시진핑, 오늘 정상회담…관세·희토류 의제", "headline_en": "Trump, Xi to Hold Summit Today on Tariffs, Rare Earths",
+         "body_ko": "시진핑 중국 국가주석의 미국 방문에 맞춰 트럼프 대통령과의 정상회담이 열린다. 관세 유예 연장과 중국의 희토류 수출, AI 반도체 수출통제 등이 핵심 의제로 꼽힌다.",
+         "body_en": "Xi Jinping's US visit culminates in a summit with President Trump, with tariff-truce extension, China's rare-earth exports and AI chip export controls seen as the key agenda items."},
+        {"headline_ko": "이란 대통령 '항복 없다' 강경 발언에 유가 급등", "headline_en": "Iran President's Defiant Remarks Send Oil Surging",
+         "body_ko": "페제시키안 이란 대통령이 \"절대 항복하지 않을 것\"이라며 강경 발언을 이어갔다. 미국과 이란은 6월 중순 이후 처음으로 특사단을 통한 물밑 협상을 재개했지만 아직 접점을 찾지 못했다.",
+         "body_en": "Iranian President Pezeshkian doubled down on defiant rhetoric, declaring Iran will 'never surrender.' The US and Iran resumed back-channel talks via envoys for the first time since mid-June, though no breakthrough has emerged."},
+        {"headline_ko": "美 10년물 금리 5.11%, 19년래 최고", "headline_en": "US 10-Year Yield Hits 5.11%, Highest Since 2007",
+         "body_ko": "9월 PMI 호조로 인플레이션 우려가 재점화된 가운데 바 연준 이사(상시 투표권)가 추가 금리 인상 필요성을 언급하며 금리 상승에 힘을 보탰다.",
+         "body_en": "Hot September PMI data reignited inflation worries, and Fed Governor Barr — a permanent FOMC voter — added to the pressure by saying further rate hikes may be needed."},
+        {"headline_ko": "한국 증시, 추석 연휴로 이틀간 휴장", "headline_en": "Korean Markets Closed for Two Days Over Chuseok",
+         "body_ko": "코스피·코스닥은 추석 연휴로 9/24~25 이틀간 휴장한다. 미국 등 해외 증시는 정상적으로 열린다.",
+         "body_en": "KOSPI and KOSDAQ are closed Sep 24-25 for the Chuseok holiday, while US and other overseas markets trade normally."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko": "지금 ~ 오늘 21:00", "en": "Now until 9 PM KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30", "※ 9/24(목)~25(금) 추석 연휴 휴장 · 다음 거래일 9/28(월)"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30", "※ Closed Sep 24-25 for Chuseok · resumes Sep 28 (Mon)"]
+  },
+  "schedule": [
+    {"time": "09:00", "title_ko": "한국 증시 휴장(추석 연휴)", "title_en": "Korean Markets Closed (Chuseok)", "detail_ko": "코스피·코스닥 9/24~25 휴장 · 9/28(월) 재개장", "detail_en": "KOSPI/KOSDAQ closed Sep 24-25 · reopens Mon Sep 28", "importance": "high"},
+    {"time": "16:15", "title_ko": "ECB 슈나벨 이사 연설", "title_en": "ECB's Schnabel Speaks", "detail_ko": "ECB 집행이사회 위원(매파 성향)", "detail_en": "ECB Executive Board member (hawkish-leaning)", "importance": "mid"},
+    {"time": "17:00", "title_ko": "獨 9월 IFO 기업환경지수", "title_en": "Germany IFO Business Climate (Sep)", "detail_ko": "예상 89.0 · 이전 88.8", "detail_en": "Est. 89.0 · Prev. 88.8", "importance": "mid"},
+    {"time": "17:10", "title_ko": "연준 윌리엄스 총재 연설", "title_en": "Fed's Williams Speaks", "detail_ko": "뉴욕 연은 총재(상시 투표권)", "detail_en": "NY Fed President (permanent FOMC voter)", "importance": "high"},
+    {"time": "18:00", "title_ko": "ECB 레인 수석 이코노미스트 연설", "title_en": "ECB's Lane Speaks", "detail_ko": "ECB 수석 이코노미스트", "detail_en": "ECB Chief Economist", "importance": "mid"},
+    {"time": "21:30", "title_ko": "美 주간 신규 실업수당청구", "title_en": "US Initial Jobless Claims", "detail_ko": "예상 20.1만 · 이전 19.6만", "detail_en": "Est. 201K · Prev. 196K", "importance": "mid"},
+    {"time": "23:00", "title_ko": "美 8월 신규주택판매", "title_en": "US New Home Sales (Aug)", "detail_ko": "전월 -10.5%", "detail_en": "Prior month -10.5%", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "The New York Stock Exchange trading floor moments after a volatile closing bell, traders in dark suits gesturing near glowing red ticker screens, dramatic low warm lighting, cinematic depth of field, muted and dark",
+    "3": "A dark trading floor wall of monitors showing a falling Nasdaq line chart glowing red against near-black background, shallow depth of field, cinematic",
+    "4": "Abstract dark data visualization of vertical bars in red and green rising and falling against a black gradient background, financial sector chart aesthetic, moody lighting",
+    "7": "A moody dark semiconductor cleanroom with rows of wafer processing machines glowing blue, faint silhouettes of workers in white bunny suits, futuristic industrial mood",
+    "8": "A dim global newsroom montage feel, illuminated United Nations flags at night with diplomatic motorcade lights blurred in the foreground, an oil rig silhouette faintly visible in the background"
+  },
+
+  "caption_ko": "🇺🇸 美 10년물 국채금리가 5.11%로 19년 만에 최고치를 찍었습니다. 9월 PMI가 예상을 크게 웃돈 데다 연준 이사의 매파 발언까지 겹치며 나스닥(-1.13%)·S&P 500(-0.75%)이 이틀 연속 최고치 후 하락 전환했어요. 마이크론·엔비디아 등 반도체 대형주가 거래대금 상위를 장악했고, 이란 대통령의 강경 발언에 국제유가는 급등했습니다. 유엔총회 계기로 한미·미중 정상회담이 잇따라 열렸고, 국내 증시는 오늘부터 이틀간 추석 연휴 휴장이에요 📌\n\n#luckyon브리핑 #미국증시 #나스닥 #미국채금리 #국제유가 #반도체 #마이크론 #엔비디아 #한미정상회담 #미중정상회담 #코스피 #원달러환율 #비트코인 #경제브리핑 #추석연휴\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "🇺🇸 The US 10-year Treasury yield hit 5.11%, its highest level in 19 years. A blowout September PMI and hawkish comments from a Fed governor sent the Nasdaq (-1.13%) and S&P 500 (-0.75%) lower after two straight record closes. Chip heavyweights Micron and Nvidia topped turnover, while oil surged on defiant remarks from Iran's president. Surprise Korea-US and US-China summits both took place around the UN General Assembly, and Korean markets close for a two-day Chuseok holiday starting today 📌\n\n#luckyonbriefing #usmarkets #nasdaq #ustreasuryyields #oilprices #semiconductors #micron #nvidia #koreaussummit #usxisummit #kospi #usdkrw #bitcoin #economicbrief #chuseok\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": ["Yahoo Finance", "FMP", "Twelve Data", "KRX", "FINRA", "S&P Global", "HCOB", "EIA", "Naver News", "CNN Fear & Greed", "청와대"]
+}
