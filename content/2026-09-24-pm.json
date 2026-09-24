@@ -1,0 +1,203 @@
+{
+  "date": "2026-09-24",
+  "session": "pm",
+  "dateLabel_ko": "2026.9.24(목) 저녁",
+  "dateLabel_en": "Thu, Sep 24, 2026 · Evening",
+
+  "headline_ko": "트럼프·시진핑 회담, 무역휴전 두 달 연장 그쳐…中·홍콩 하락",
+  "headline_en": "Trump-Xi Summit Extends Truce Just 2 Months; China, HK Fall",
+  "headline_sub_ko": "코스피는 추석 휴장, 美 국채금리 5%대 지속·유가는 이틀째 강세",
+  "headline_sub_en": "KOSPI closed for Chuseok as US yields hold above 5% and oil extends its climb",
+  "cover_kicker": {"ko": "오늘 · 9/24 아시아 마감", "en": "Today · Sep 24 Asia Close"},
+  "cover_facts": [
+    ["globe", {"ko": "트럼프·시진핑 백악관 정상회담", "en": "Trump-Xi Meet at White House"},
+              {"ko": "무역휴전 2개월 연장·中 AI 첫 논의 · 상하이 -1.22%", "en": "Truce extended 2 months, AI discussed for first time · Shanghai -1.22%"}],
+    ["rate", {"ko": "美 5년물 국채 응찰 부진 · 10년물 5%대 지속", "en": "Weak US 5Y auction · 10Y holds above 5%"},
+             {"ko": "낙찰금리 5.033%·2006년來 최고 · 나스닥선물 -0.92%", "en": "Yield 5.033%, highest since 2006 · Nasdaq futures -0.92%"}],
+    ["clock", {"ko": "코스피 추석 연휴 휴장 · 국제유가 이틀째 강세", "en": "KOSPI closed for Chuseok · oil extends gains"},
+              {"ko": "WTI $93.14(+1.06%) · 28일(월) 재개장", "en": "WTI $93.14 (+1.06%) · reopens Mon, Sep 28"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "트럼프 대통령과 시진핑 국가주석이 백악관에서 정상회담을 가졌지만, 무역휴전은 당초 거론되던 1년이 아닌 2개월 연장에 그쳤다.",
+      "상하이종합(-1.22%)·항셍(-0.29%)은 회담 성과에 대한 회의론에 하락했고, 반도체 장비주가 강세를 보인 일본 닛케이(+0.76%)만 홀로 올랐다.",
+      "美 국채 10년물은 5.11% 확정 종가를 유지한 가운데, 700억달러 규모 5년물 입찰이 응찰률 2.21배로 부진해 낙찰금리가 2006년 이후 최고인 5.033%까지 치솟았다.",
+      "국제유가는 이란 리스크 지속에 WTI가 $93.14(+1.06%)로 이틀째 올랐고, 코스피·코스닥은 추석 연휴로 9/24~25 이틀간 휴장한다."
+    ],
+    "lines_en": [
+      "Presidents Trump and Xi held a White House summit, but the trade truce was extended just two months instead of the one year initially floated.",
+      "Shanghai (-1.22%) and Hang Seng (-0.29%) fell on skepticism over the summit's outcome, while Japan's Nikkei (+0.76%) alone rose on strength in chip-equipment names.",
+      "The US 10-year yield held its confirmed 5.11% close, while a weak $70B 5-year auction (bid-to-cover 2.21x) pushed its yield to 5.033%, the highest since 2006.",
+      "Oil extended its climb on Iran risk, with WTI up 1.06% to $93.14, while KOSPI and KOSDAQ are closed Sep 24-25 for the Chuseok holiday."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "30,482.0", "delta": "▼0.92%", "dir": "down", "note_ko": "정규장 개장 전 지수선물(NQ=F) · 국채금리·정상회담 경계", "note_en": "Index futures (NQ=F), pre-open · caution over yields and summit outcome"},
+    {"label": "S&P 500", "value": "7,732.5", "delta": "▼0.51%", "dir": "down", "note_ko": "정규장 개장 전 지수선물(ES=F)", "note_en": "Index futures (ES=F), pre-open"},
+    {"label": "KOSPI", "value": "7,080.92", "delta": {"ko": "휴장", "en": "Closed"}, "dir": "flat", "note_ko": "추석 연휴로 9/24~25 휴장 · 직전 거래일(9/23) ▲0.90% 마감 · 28일(월) 재개장", "note_en": "Closed Sep 24-25 for Chuseok · last session (Sep 23) closed ▲0.90% · reopens Sep 28"},
+    {"label": "VIX", "value": "16.40", "delta": "▲8.04%", "dir": "up", "note_ko": "9/23 종가(15.18) 대비 · 위험회피 심리 확대", "note_en": "vs Sep 23 close (15.18) · risk-off sentiment builds"},
+    {"label": "Fear&Greed", "value": "35", "delta": "35 → 35", "dir": "flat", "note_ko": "공포(Fear) 구간 유지", "note_en": "Still in the Fear zone"},
+    {"label": "US 10Y", "value": "5.11%", "delta": "5.11% → 5.11%", "dir": "flat", "note_ko": "9/23 확정 종가 유지 · 정규장 개장 전이라 최신치 없음(5년물 입찰은 5.033%)", "note_en": "Unchanged from Sep 23 confirmed close · pre-open, no newer print (5Y auction priced at 5.033%)"},
+    {"label": "USD/KRW", "value": "1,369.6", "value_sub": "· DXY 101.2", "delta": "▲0.27%", "dir": "up", "note_ko": "달러 강세 지속 · 안전자산 선호", "note_en": "Dollar strength persists amid risk-off flows"},
+    {"label": "Gold", "value": "$4,293.9", "delta": "▼0.57%", "dir": "down", "note_ko": "금리 상승에 매력 약화", "note_en": "Rising yields dull gold's appeal"},
+    {"label": "WTI", "value": "$93.14", "delta": "▲1.06%", "dir": "up", "note_ko": "11월물 · 이란 리스크 지속에 이틀째 강세", "note_en": "November contract · extends gains for a 2nd day on Iran risk"},
+    {"label": "Bitcoin", "value": "$83,552.6", "delta": "▼0.98%", "dir": "down", "note_ko": "위험자산 회피 속 하락", "note_en": "Falls alongside the broader risk-off mood"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "나스닥·S&P500은 정규장 개장 전 지수선물, 코스피는 추석 연휴 휴장으로 직전 거래일 종가",
+  "market_note_en": "Nasdaq and S&P 500 are pre-open index futures; KOSPI is the last close before the Chuseok holiday",
+
+  "chart_series_values": [29152.25, 28955.0, 28963.5, 29446.75, 29613.68, 30784.75, 31028.5, 30764.75, 30482.0],
+  "chart_series_labels": ["9.14", "9.15", "9.16", "9.17", "9.18", "9.21", "9.22", "9.23", "9.24"],
+  "chart_title": {"ko": "3거래일 랠리 후 숨 고르기", "en": "Cooling off after a 3-session rally"},
+  "chart_sub": {"ko": "나스닥 선물 종가 · 최근 9거래일", "en": "Nasdaq futures close · last 9 sessions"},
+  "chart_note": {"ko": "9.22 31,028.5 → 9.23 30,764.75(-0.85%) → 9.24 30,482.0(-0.92%, 정규장 개장 전)", "en": "Sep 22 31,028.5 → Sep 23 30,764.75 (-0.85%) → Sep 24 30,482.0 (-0.92%, pre-open)"},
+  "record_kicker": "TODAY",
+
+  "sector_section": "글로벌 지수 등락",
+  "sector_title": {"ko": "정상회담 회의론에 중화권만 하락", "en": "Only Greater China Fell on Summit Skepticism"},
+  "sector_sub": {"ko": "주요국 지수 등락률 · 9/24 (유럽은 장중)", "en": "Major index moves · Sep 24 (Europe still in session)"},
+  "rank_kicker": "TOP MOVERS",
+  "rank_title": {"ko": "아시아 반도체 상위 종목", "en": "Asia Chip Stock Movers"},
+  "rank_sub": {"ko": "일본·대만 반도체 관련주 등락률 · 9/24", "en": "Japan/Taiwan chip-related stocks · Sep 24"},
+  "rank_unit": {"ko": "등락률 기준 · 코스피 휴장으로 한국 대신 아시아 반도체주", "en": "Ranked by % change · Asia chip names shown as KOSPI is closed"},
+  "econ_kicker": "DATA",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "OECD 韓 성장률 상향 · 美 국채입찰 · 메모리 가격 전망", "en": "OECD raises Korea growth · US bond auction · memory price outlook"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥 선물", "label_en": "Nasdaq Fut.", "value": "30,482.0", "delta": "▼0.92%", "dir": "down", "sub_ko": "3거래일 랠리 후 숨 고르기 · 정규장 개장 전", "sub_en": "Cooling after a 3-session rally · pre-open"},
+        {"label_ko": "S&P 500 선물", "label_en": "S&P 500 Fut.", "value": "7,732.5", "delta": "▼0.51%", "dir": "down", "sub_ko": "국채금리 5%대 지속 여파 · 정규장 개장 전", "sub_en": "Pressured by yields above 5% · pre-open"}
+      ],
+      "note_ko": "코스피는 추석 연휴로 휴장, 미국 지수선물은 국채금리 5%대 지속과 정상회담 결과 경계에 소폭 하락 중이다",
+      "note_en": "KOSPI is closed for Chuseok; US index futures are modestly lower on persistent yields above 5% and caution ahead of the summit outcome"
+    },
+    {
+      "title_ko": "글로벌 지수 등락", "title_en": "Global Index Moves",
+      "bars": [
+        {"label_ko": "상하이종합", "label_en": "Shanghai", "value": -1.22},
+        {"label_ko": "항셍지수", "label_en": "Hang Seng", "value": -0.29},
+        {"label_ko": "대만 가권", "label_en": "Taiwan", "value": -0.28},
+        {"label_ko": "獨 DAX", "label_en": "Germany DAX", "value": -0.22},
+        {"label_ko": "英 FTSE", "label_en": "UK FTSE", "value": 0.07},
+        {"label_ko": "닛케이225", "label_en": "Nikkei 225", "value": 0.76}
+      ],
+      "note_ko": "코스피가 쉬는 사이 아시아·유럽은 엇갈렸다 — 미중 정상회담 회의론은 중화권(상하이·항셍·대만)에, 반도체 강세는 일본에 반영됐다. 유럽은 장중 보합권",
+      "note_en": "While KOSPI rests, Asia and Europe diverged — skepticism over the US-China summit weighed on Greater China (Shanghai, Hang Seng, Taiwan), while chip strength lifted Japan. Europe is little changed mid-session"
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Turnover",
+      "rows": [
+        {"name_ko": "어드밴테스트", "name_en": "Advantest", "value": "3.15", "pct": 3.15},
+        {"name_ko": "도쿄일렉트론", "name_en": "Tokyo Electron", "value": "1.53", "pct": 1.53},
+        {"name_ko": "TSMC", "name_en": "TSMC", "value": "1.00", "pct": -1.00},
+        {"name_ko": "소프트뱅크그룹", "name_en": "SoftBank Group", "value": "0.59", "pct": 0.59}
+      ],
+      "note_ko": "코스피 휴장으로 한국 대신 아시아 반도체 관련주를 담았다 — 일본 반도체 장비주(어드밴테스트 +3.15%·도쿄일렉트론 +1.53%)가 지수(닛케이 +0.76%)보다 훨씬 강했고, 대만 TSMC는 -1.00%로 하루 쉬어갔다",
+      "note_en": "With KOSPI closed, this shows Asia's chip-related movers instead — Japanese equipment makers (Advantest +3.15%, Tokyo Electron +1.53%) far outpaced the index (Nikkei +0.76%), while Taiwan's TSMC slipped 1.00%"
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "OECD 2026년 한국 성장률 전망", "label_en": "OECD 2026 Korea Growth Forecast", "value": "3.7%", "delta": "2.6% → 3.7%", "dir": "up", "sub_ko": "6개월 만에 1.1%p 상향 · G20 중 최대 폭", "sub_en": "Up 1.1%p in 6 months · largest upgrade among G20", "ref_ko": "반도체 수출·생산 호조가 핵심 배경", "ref_en": "Driven mainly by strong chip exports and output"},
+        {"label_ko": "OECD 2026년 한국 물가상승률 전망", "label_en": "OECD 2026 Korea Inflation Forecast", "value": "3.0%", "delta": "2.6% → 3.0%", "dir": "up", "sub_ko": "국제 에너지 가격 상승 전망 반영", "sub_en": "Reflects higher projected energy prices"},
+        {"label_ko": "美 5년물 국채 입찰 낙찰금리", "label_en": "US 5-Year Note Auction Yield", "value": "5.033%", "delta": "4.393% → 5.033%", "dir": "up", "sub_ko": "2006년 이후 최고 · 응찰률 2.21배(최근 6회 평균 2.33배 밑돎)", "sub_en": "Highest since 2006 · bid-to-cover 2.21x, below the 6-auction average of 2.33x"},
+        {"label_ko": "4분기 낸드플래시 계약가격 전망", "label_en": "Q4 NAND Contract Price Outlook", "value": "+15~20%", "delta": {"ko": "전분기 대비", "en": "vs prior quarter"}, "dir": "up", "sub_ko": "트렌드포스 9/24 발표 · AI 서버발 수요가 낸드까지 확산", "sub_en": "TrendForce, released Sep 24 · AI server demand spreads into NAND"},
+        {"label_ko": "4분기 기업용 SSD 가격 전망", "label_en": "Q4 Enterprise SSD Price Outlook", "value": "+23~28%", "delta": {"ko": "전분기 대비", "en": "vs prior quarter"}, "dir": "up", "sub_ko": "낸드 제품 중 가장 큰 폭 상승 전망", "sub_en": "The steepest projected rise among NAND products"}
+      ],
+      "note_ko": "코스피가 쉬는 날에도 지표는 쌓였다 — OECD가 반도체 호황을 이유로 한국 성장률 전망을 반년 만에 2%p 올렸고, 美 국채 5년물 입찰은 2006년 이후 최악의 수요를 보였다",
+      "note_en": "Even with KOSPI closed, the data kept coming — the OECD raised Korea's growth forecast 2 points in six months citing the chip boom, while a US 5-year note auction drew its weakest demand since 2006"
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "트렌드포스, 4분기 낸드 15~20%↑ 전망…SSD는 23~28%↑", "headline_en": "TrendForce: Q4 NAND Prices Seen Up 15-20%, SSD Up to 28%",
+         "body_ko": "시장조사업체 트렌드포스가 24일 발표한 4분기 메모리 가격 전망에서 낸드플래시 계약가격이 전분기보다 15~20%, 기업용 SSD는 23~28% 오를 것으로 내다봤다. AI 서버발 수요 증가가 D램을 넘어 낸드까지 번지는 모습이다.",
+         "body_en": "Market researcher TrendForce said on Sept 24 that Q4 NAND flash contract prices will rise 15-20% quarter-on-quarter, with enterprise SSDs up 23-28%, as AI server demand spreads beyond DRAM into NAND."},
+        {"headline_ko": "美 AI 인프라 투자, 2032년까지 10.3조달러…철도·고속도로 넘어서", "headline_en": "US AI Infrastructure Spend Seen at $10.3T Through 2032, Topping Rail and Highways",
+         "body_ko": "미국의 데이터센터 등 AI 인프라 투자액이 2032년까지 총 10조3000억달러에 이를 것으로 전망됐다. GDP 대비 연평균 투자 비중은 이미 1905~1925년 전력망 확충기(1.1%)를 넘어섰다는 분석이다.",
+         "body_en": "US investment in data centers and other AI infrastructure is projected to reach $10.3 trillion by 2032, with its annual GDP share already exceeding the 1905-1925 power-grid buildout (1.1%), per a new estimate."},
+        {"headline_ko": "LS전선, 북미 AI 데이터센터용 전력 인프라 투자 확대", "headline_en": "LS Cable Expands Power Infrastructure Investment for North American AI Data Centers",
+         "body_ko": "LS전선이 북미 AI 데이터센터 확대에 대응해 전력 인프라와 전선 사업을 강화하고 있다. 멕시코 생산거점 투자를 늘려 버스덕트·자동차용 전선 생산능력을 키우는 중이다.",
+         "body_en": "LS Cable is beefing up its power-infrastructure and cable business to meet growing North American AI data center demand, expanding its Mexico production base to boost busduct and automotive wiring capacity."},
+        {"headline_ko": "\"AI 속도조절론은 기우\"…증권가, 반도체 강세 지속 전망", "headline_en": "\"AI Slowdown Fears Overblown,\" Say Analysts Betting on More Chip Gains",
+         "body_ko": "국내 증권가는 빅테크의 AI 투자가 축소될 가능성이 낮다며 AI 가속기·메모리 등 공급 병목을 가진 반도체 업종의 강세가 이어질 것으로 내다봤다. 데이터센터 전력 병목의 수혜가 예상되는 전력기기 업종도 함께 주목받고 있다.",
+         "body_en": "Korean brokerages say big tech's AI investment is unlikely to slow, expecting continued strength in semiconductor names facing supply bottlenecks in accelerators and memory, alongside power-equipment makers benefiting from data-center power constraints."},
+        {"headline_ko": "노트북용 DDR5 가격 1년 만에 6배…메모리 쇼크 완제품 확산", "headline_en": "Laptop DDR5 Prices Up 6x in a Year as Memory Shock Spreads to Finished Goods",
+         "body_ko": "AI 서버 투자 확대로 메모리 업체들이 HBM·서버 D램 등 고부가 제품에 집중하면서, 노트북용 DDR5 가격이 1년여 만에 6배로 치솟았다. 메모리 쇼크가 부품을 넘어 완제품 가격까지 흔드는 모습이다.",
+         "body_en": "As memory makers prioritize high-margin HBM and server DRAM amid the AI server boom, laptop DDR5 prices have surged sixfold in just over a year, showing the memory shock spilling from components into finished-product pricing."},
+        {"headline_ko": "中 CXMT·YMTC, 월 42만장·우한 3공장으로 메모리 증설 속도전", "headline_en": "China's CXMT, YMTC Race to Expand Memory Output",
+         "body_ko": "중국 CXMT가 월 42만장, YMTC는 우한 3공장을 가동하며 범용 메모리 증설에 속도를 내고 있다. 삼성전자·SK하이닉스는 HBM·기업용 SSD 등 고부가 제품에 집중하며 정면 경쟁을 피하는 전략을 이어가고 있다.",
+         "body_en": "China's CXMT is running 420,000 wafers a month and YMTC has started a third Wuhan fab, accelerating commodity memory expansion, while Samsung and SK Hynix keep focusing on higher-margin HBM and enterprise SSDs to sidestep direct competition."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "트럼프·시진핑 백악관 정상회담…무역휴전 2개월 연장 그쳐", "headline_en": "Trump-Xi Summit Extends Trade Truce Just 2 Months",
+         "body_ko": "트럼프 대통령과 시진핑 국가주석이 24일(현지시간) 백악관에서 정상회담을 열었다. 베선트 재무장관은 미중 무역휴전을 2개월 연장하기로 합의했다고 밝혔고, 중국 측은 이번 회담에서 AI를 처음으로 의제에 올렸다고 전했다.",
+         "body_en": "Trump and Xi held a White House summit on Sept 24. The US-China trade truce was extended two months, and AI was discussed for the first time, China said."},
+        {"headline_ko": "이재명 대통령, 멕시코 국빈방문 시작…내일 새벽 셰인바움과 회담", "headline_en": "Lee Begins Mexico State Visit, Meets Sheinbaum Tomorrow",
+         "body_ko": "유엔총회 일정을 마친 이재명 대통령이 24일 오전(한국시간) 멕시코에 도착해 국빈방문 일정을 시작했다. 25일 새벽 셰인바움 대통령과 정상회담을 갖고 한·멕시코 FTA 재추진 등을 논의할 예정이다.",
+         "body_en": "President Lee arrived in Mexico on Sept 24 after his UN trip. He meets President Sheinbaum on Sept 25 to discuss restarting the Korea-Mexico FTA."},
+        {"headline_ko": "한미 정상, 전작권 전환 첫 논의…원전 8기 투자도 검토", "headline_en": "Korea-US Leaders Discuss OPCON Transfer, Weigh 8 US Reactors",
+         "body_ko": "22일(현지시간) 뉴욕에서 열린 한미 정상회담에서 양국은 정상 차원에서 처음으로 전시작전통제권 전환을 논의했다. AI 데이터센터發 전력 수요 증가에 대응해 미국 원전 8기 건설 투자도 검토 중인 것으로 전해졌다.",
+         "body_en": "At their Sept 22 summit, Korea and the US discussed OPCON transfer for the first time and are weighing eight new reactors for AI data-center power."},
+        {"headline_ko": "이란전쟁 장기화에 中 휘발유값도 전쟁 초기 수준 복귀", "headline_en": "China's Gasoline Prices Return to Early Iran-War Levels",
+         "body_ko": "미국·이란 전쟁이 길어지면서 중국 내 휘발유 가격이 전쟁 초반 수준(7월 대비 22% 상승)으로 되돌아갔다. 국제유가 상승분이 시차를 두고 중국 국내 유가에 반영된 결과로, 브렌트유는 이날 배럴당 103달러를 다시 넘어섰다.",
+         "body_en": "As the US-Iran war drags on, China's gasoline prices have climbed back to early-war levels, up 22% from July. Brent crude topped $103 a barrel again today."},
+        {"headline_ko": "10월 금리 추가인상 베팅 66%로 확대…5년물 입찰 부진 여파", "headline_en": "October Rate-Hike Bets Climb to 66% on Weak 5-Year Auction",
+         "body_ko": "23일(현지시간) 700억달러 규모 5년물 국채 입찰이 부진하자(응찰률 2.21배) 시장의 10월 추가 금리인상 베팅이 66%까지 높아졌다. 5년물 낙찰금리는 5.033%로 2006년 이후 최고치를 기록했다.",
+         "body_en": "A weak $70B 5-year Treasury auction (bid-to-cover 2.21x) pushed October rate-hike bets to 66%. The 5-year yield hit 5.033%, its highest since 2006."},
+        {"headline_ko": "추석 연휴 서학개미 채비…증권사 24시간 데스크 가동, 28일 재개장", "headline_en": "Brokerages Open 24-Hour Desks for Chuseok Overseas Trading",
+         "body_ko": "국내 증시가 추석 연휴로 24~25일 휴장하는 사이 미국·유럽 증시는 정상 개장한다. 증권사들은 해외주식 투자자를 위해 연휴 기간 24시간 데스크를 가동하며, 국내 증시는 28일(월) 정상 개장한다.",
+         "body_en": "Korean markets close Sept 24-25 for Chuseok as US and European markets trade on. Brokerages run 24-hour desks for overseas investors; KOSPI reopens Sept 28."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TONIGHT",
+  "schedule_sub": {"ko": "지금 ~ 내일 08:00", "en": "Now until 8 AM KST tomorrow"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간", "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준)", "※ 코스피·코스닥은 9/24(목)~25(금) 추석 연휴 휴장 · 28일(월) 재개장"],
+    "lines_en": ["Regular session 22:30-05:00 KST (DST)", "※ KOSPI/KOSDAQ closed Sep 24-25 for Chuseok · reopens Sep 28 (Mon)"]
+  },
+  "schedule": [
+    {"time": "21:30", "title_ko": "美 주간 신규 실업수당청구", "title_en": "US Initial Jobless Claims", "detail_ko": "예상 20.1만 · 이전 19.6만", "detail_en": "Est. 201K · Prev. 196K", "importance": "mid"},
+    {"time": "21:50", "title_ko": "해맥 클리블랜드 연은 총재 연설", "title_en": "Fed's Hammack Speaks", "detail_ko": "매파 성향·투표권 O", "detail_en": "Hawkish · FOMC voter", "importance": "mid"},
+    {"time": "23:00", "title_ko": "美 8월 신규주택판매", "title_en": "US New Home Sales (Aug)", "detail_ko": "전월 -10.5% · 반등 여부 주목", "detail_en": "Prior month -10.5% · watching for a rebound", "importance": "mid"},
+    {"time": "9/25 02:00", "title_ko": "美 7년물 국채입찰", "title_en": "US 7-Year Note Auction", "detail_ko": "이전 낙찰금리 4.512% · 5년물 부진 이어질지 주목", "detail_en": "Prior yield 4.512% · watching if weak demand continues", "importance": "mid"},
+    {"time": "9/25 09:30", "title_ko": "中·대만 증시 중추절 휴장", "title_en": "China, Taiwan Markets Closed for Mid-Autumn Festival", "detail_ko": "상하이·선전·대만 휴장(홍콩은 정상거래) · 28일 함께 재개장", "detail_en": "Shanghai, Shenzhen, Taiwan closed (Hong Kong trades normally) · both reopen Sep 28", "importance": "mid"},
+    {"time": "9/28", "title_ko": "코스피·코스닥 추석 연휴 마치고 재개장", "title_en": "KOSPI/KOSDAQ Reopen After Chuseok", "detail_ko": "24~25일 이틀 휴장 후 정상 개장(월)", "detail_en": "Reopens Monday after 2 days closed", "importance": "high"},
+    {"time": "10/7", "title_ko": "美 FOMC 의사록 공개", "title_en": "US FOMC Minutes Released", "detail_ko": "9월 인상 결정 배경·향후 경로 논의 확인", "detail_en": "Details behind the Sept hike and the path ahead", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+
+  "card_photos": {
+    "1": "A grand White House state arrival scene at dusk, two motorcades and flags of the US and China faintly visible, dramatic warm low light, cinematic depth of field, muted and dark",
+    "3": "A dark trading floor wall of monitors showing a slightly declining Nasdaq futures line chart glowing amber against near-black background, shallow depth of field, cinematic",
+    "4": "A world map rendered in glowing data points over a dark background, some regions pulsing red and others green, financial dashboard aesthetic, moody lighting",
+    "7": "A moody dark semiconductor fabrication line with silicon wafers under blue light, faint silhouettes of engineers in cleanroom suits, futuristic industrial mood",
+    "8": "A dim diplomatic reception hall at night, national flags of multiple countries softly lit, a long table set for a summit, oil derrick silhouette faintly visible through a window"
+  },
+
+  "caption_ko": "🇺🇸🇨🇳 트럼프 대통령과 시진핑 주석이 백악관에서 정상회담을 가졌지만, 무역휴전은 애초 거론되던 1년이 아닌 2개월 연장에 그쳤습니다. 회담 성과에 대한 회의론에 상하이(-1.22%)·항셍(-0.29%)은 하락했고, 반도체 장비주가 강한 일본 닛케이(+0.76%)만 홀로 올랐어요. 美 국채 10년물은 5%대를 유지한 가운데 5년물 입찰이 2006년 이후 최악의 수요를 보이며 낙찰금리가 5.033%까지 치솟았고, 이란 리스크에 국제유가도 이틀째 강세입니다. OECD는 반도체 호황을 이유로 한국 성장률 전망을 3.7%로 크게 높였어요. 국내 증시는 추석 연휴로 24~25일 휴장, 28일(월) 재개장합니다 📌\n\n#luckyon브리핑 #트럼프시진핑 #미중정상회담 #미국채금리 #국제유가 #오이시디 #한국성장률 #반도체 #추석연휴 #코스피 #나스닥 #원달러환율 #비트코인 #경제브리핑 #저녁브리핑\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "🇺🇸🇨🇳 Presidents Trump and Xi held a White House summit, but the trade truce was extended just two months instead of the one year initially floated. Shanghai (-1.22%) and Hang Seng (-0.29%) fell on skepticism over the outcome, while Japan's Nikkei (+0.76%) alone rose on chip-equipment strength. The US 10-year yield held above 5% while a weak 5-year auction — the worst demand since 2006 — pushed its yield to 5.033%, and oil extended its climb on Iran risk. The OECD sharply raised its Korea growth forecast to 3.7% citing the chip boom. Korean markets are closed Sep 24-25 for Chuseok and reopen Monday, Sep 28 📌\n\n#luckyonbriefing #trumpxi #usxisummit #ustreasuryyields #oilprices #oecd #koreagrowth #semiconductors #chuseok #kospi #nasdaq #usdkrw #bitcoin #economicbrief #eveningbrief\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+  "sources": ["Yahoo Finance", "FMP", "OECD", "美 재무부", "TrendForce", "Naver News", "CNN Fear & Greed", "청와대"]
+}
