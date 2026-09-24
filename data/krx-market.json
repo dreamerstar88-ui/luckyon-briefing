@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T00:33:29Z",
+  "fetchedAt": "2026-09-24T12:09:58Z",
   "source": "stock.naver.com internal API (observed via browser probe 2026-09-21)",
   "notes": {
     "flowsScope": "«정규장(09:00~15:30) 마감» 기준으로 고정한다. 워크플로가 15:40 KST 에 먼저 받아 두고 그 뒤 조회는 flows 를 덮어쓰지 않는다. 시간외가 누적된 늦은 조회값은 flowsLate 로만 남으므로 카드에는 flows 를 쓴다.",
@@ -29,7 +29,7 @@
         "individual": -14649,
         "foreign": -4942,
         "institution": 3189,
-        "capturedAt": "2026-09-24T00:33:29Z",
+        "capturedAt": "2026-09-24T12:09:58Z",
         "basis": "late"
       },
       "code": "KOSPI"
@@ -57,7 +57,7 @@
         "individual": 275,
         "foreign": -462,
         "institution": 76,
-        "capturedAt": "2026-09-24T00:33:29Z",
+        "capturedAt": "2026-09-24T12:09:58Z",
         "basis": "late"
       },
       "code": "KOSDAQ"
