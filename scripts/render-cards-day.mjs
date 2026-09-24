@@ -278,10 +278,11 @@ function card3() {
   <div style="position:absolute; left:${M}px; top:552px; font-size:17px; font-weight:700; color:${PAL.accent}; z-index:2;">${esc(tf(C.chart_note) || '')}</div>
   <div style="position:absolute; left:${M}px; right:${M}px; top:598px; height:1px; background:${PAL.rule}; z-index:2;"></div>
   ${bigStats}
+  ${(breadth || flows) ? `
   <div style="position:absolute; left:${M}px; right:${M}px; top:834px; z-index:2;">
     <div style="font-size:17px; font-weight:700; color:${PAL.dim}; letter-spacing:0.06em; margin-bottom:26px;">${t('등락 종목수', 'Advancers / Decliners')}</div>
     ${breadth}${flows}
-  </div>
+  </div>` : ''}
   ${noteBlock(t(s.note_ko, s.note_en), 132)}
   ${footer(3)}`;
 }

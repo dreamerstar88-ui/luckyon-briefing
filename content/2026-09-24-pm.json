@@ -108,11 +108,11 @@
     {
       "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
       "stats": [
-        {"label_ko": "OECD 2026년 한국 성장률 전망", "label_en": "OECD 2026 Korea Growth Forecast", "value": "3.7%", "delta": "2.6% → 3.7%", "dir": "up", "sub_ko": "6개월 만에 2%p 상향 · G20 중 최대 폭", "sub_en": "Up 2%p in 6 months · largest upgrade among G20", "ref_ko": "반도체 수출·생산 호조가 핵심 배경", "ref_en": "Driven mainly by strong chip exports and output"},
+        {"label_ko": "OECD 2026년 한국 성장률 전망", "label_en": "OECD 2026 Korea Growth Forecast", "value": "3.7%", "delta": "2.6% → 3.7%", "dir": "up", "sub_ko": "6개월 만에 1.1%p 상향 · G20 중 최대 폭", "sub_en": "Up 1.1%p in 6 months · largest upgrade among G20", "ref_ko": "반도체 수출·생산 호조가 핵심 배경", "ref_en": "Driven mainly by strong chip exports and output"},
         {"label_ko": "OECD 2026년 한국 물가상승률 전망", "label_en": "OECD 2026 Korea Inflation Forecast", "value": "3.0%", "delta": "2.6% → 3.0%", "dir": "up", "sub_ko": "국제 에너지 가격 상승 전망 반영", "sub_en": "Reflects higher projected energy prices"},
         {"label_ko": "美 5년물 국채 입찰 낙찰금리", "label_en": "US 5-Year Note Auction Yield", "value": "5.033%", "delta": "4.393% → 5.033%", "dir": "up", "sub_ko": "2006년 이후 최고 · 응찰률 2.21배(최근 6회 평균 2.33배 밑돎)", "sub_en": "Highest since 2006 · bid-to-cover 2.21x, below the 6-auction average of 2.33x"},
-        {"label_ko": "4분기 낸드플래시 계약가격 전망", "label_en": "Q4 NAND Contract Price Outlook", "value": "+15~20%", "delta": "전분기 대비", "dir": "up", "sub_ko": "트렌드포스 9/24 발표 · AI 서버발 수요가 낸드까지 확산", "sub_en": "TrendForce, released Sep 24 · AI server demand spreads into NAND"},
-        {"label_ko": "4분기 기업용 SSD 가격 전망", "label_en": "Q4 Enterprise SSD Price Outlook", "value": "+23~28%", "delta": "전분기 대비", "dir": "up", "sub_ko": "낸드 제품 중 가장 큰 폭 상승 전망", "sub_en": "The steepest projected rise among NAND products"}
+        {"label_ko": "4분기 낸드플래시 계약가격 전망", "label_en": "Q4 NAND Contract Price Outlook", "value": "+15~20%", "delta": {"ko": "전분기 대비", "en": "vs prior quarter"}, "dir": "up", "sub_ko": "트렌드포스 9/24 발표 · AI 서버발 수요가 낸드까지 확산", "sub_en": "TrendForce, released Sep 24 · AI server demand spreads into NAND"},
+        {"label_ko": "4분기 기업용 SSD 가격 전망", "label_en": "Q4 Enterprise SSD Price Outlook", "value": "+23~28%", "delta": {"ko": "전분기 대비", "en": "vs prior quarter"}, "dir": "up", "sub_ko": "낸드 제품 중 가장 큰 폭 상승 전망", "sub_en": "The steepest projected rise among NAND products"}
       ],
       "note_ko": "코스피가 쉬는 날에도 지표는 쌓였다 — OECD가 반도체 호황을 이유로 한국 성장률 전망을 반년 만에 2%p 올렸고, 美 국채 5년물 입찰은 2006년 이후 최악의 수요를 보였다",
       "note_en": "Even with KOSPI closed, the data kept coming — the OECD raised Korea's growth forecast 2 points in six months citing the chip boom, while a US 5-year note auction drew its weakest demand since 2006"
@@ -143,24 +143,24 @@
     {
       "title_ko": "주요 소식", "title_en": "Top Stories",
       "items": [
-        {"headline_ko": "트럼프·시진핑 백악관 정상회담…무역휴전 2개월 연장 그쳐", "headline_en": "Trump, Xi Hold White House Summit; Trade Truce Extended Just 2 Months",
+        {"headline_ko": "트럼프·시진핑 백악관 정상회담…무역휴전 2개월 연장 그쳐", "headline_en": "Trump-Xi Summit Extends Trade Truce Just 2 Months",
          "body_ko": "트럼프 대통령과 시진핑 국가주석이 24일(현지시간) 백악관에서 정상회담을 열었다. 베선트 재무장관은 미중 무역휴전을 2개월 연장하기로 합의했다고 밝혔고, 중국 측은 이번 회담에서 AI를 처음으로 의제에 올렸다고 전했다.",
-         "body_en": "Presidents Trump and Xi held a summit at the White House on Sept 24 local time. Treasury Secretary Bessent said the two sides agreed to extend the US-China trade truce by two months, while China said AI was discussed for the first time."},
-        {"headline_ko": "이재명 대통령, 멕시코 국빈방문 시작…내일 새벽 셰인바움과 회담", "headline_en": "President Lee Begins State Visit to Mexico, Summit With Sheinbaum Set for Tomorrow",
+         "body_en": "Trump and Xi held a White House summit on Sept 24. The US-China trade truce was extended two months, and AI was discussed for the first time, China said."},
+        {"headline_ko": "이재명 대통령, 멕시코 국빈방문 시작…내일 새벽 셰인바움과 회담", "headline_en": "Lee Begins Mexico State Visit, Meets Sheinbaum Tomorrow",
          "body_ko": "유엔총회 일정을 마친 이재명 대통령이 24일 오전(한국시간) 멕시코에 도착해 국빈방문 일정을 시작했다. 25일 새벽 셰인바움 대통령과 정상회담을 갖고 한·멕시코 FTA 재추진 등을 논의할 예정이다.",
-         "body_en": "After wrapping up UN General Assembly events, President Lee Jae-myung arrived in Mexico on the morning of Sept 24 (KST) to begin a state visit. He is set to hold a summit with President Sheinbaum early on Sept 25, with a Korea-Mexico FTA restart among the topics."},
-        {"headline_ko": "한미 정상, 전작권 전환 첫 논의…원전 8기 투자도 검토", "headline_en": "Korea-US Leaders Discuss OPCON Transfer for First Time, Weigh 8 New US Reactors",
+         "body_en": "President Lee arrived in Mexico on Sept 24 after his UN trip. He meets President Sheinbaum on Sept 25 to discuss restarting the Korea-Mexico FTA."},
+        {"headline_ko": "한미 정상, 전작권 전환 첫 논의…원전 8기 투자도 검토", "headline_en": "Korea-US Leaders Discuss OPCON Transfer, Weigh 8 US Reactors",
          "body_ko": "22일(현지시간) 뉴욕에서 열린 한미 정상회담에서 양국은 정상 차원에서 처음으로 전시작전통제권 전환을 논의했다. AI 데이터센터發 전력 수요 증가에 대응해 미국 원전 8기 건설 투자도 검토 중인 것으로 전해졌다.",
-         "body_en": "At their Sept 22 summit in New York, Korean and US leaders discussed wartime operational control (OPCON) transfer at the leader level for the first time. The two sides are also reportedly weighing investment in eight new US nuclear reactors to meet AI data center power demand."},
-        {"headline_ko": "이란전쟁 장기화에 中 휘발유값도 전쟁 초기 수준 복귀", "headline_en": "As Iran War Drags On, China's Gasoline Prices Return to Early-War Levels",
+         "body_en": "At their Sept 22 summit, Korea and the US discussed OPCON transfer for the first time and are weighing eight new reactors for AI data-center power."},
+        {"headline_ko": "이란전쟁 장기화에 中 휘발유값도 전쟁 초기 수준 복귀", "headline_en": "China's Gasoline Prices Return to Early Iran-War Levels",
          "body_ko": "미국·이란 전쟁이 길어지면서 중국 내 휘발유 가격이 전쟁 초반 수준(7월 대비 22% 상승)으로 되돌아갔다. 국제유가 상승분이 시차를 두고 중국 국내 유가에 반영된 결과로, 브렌트유는 이날 배럴당 103달러를 다시 넘어섰다.",
-         "body_en": "With the US-Iran war dragging on, gasoline prices in China have climbed back to early-war levels, up 22% from July, as the earlier surge in global crude filters through with a lag. Brent crude topped $103 a barrel again today."},
-        {"headline_ko": "10월 금리 추가인상 베팅 66%로 확대…5년물 입찰 부진 여파", "headline_en": "October Rate-Hike Bets Climb to 66% After Weak 5-Year Auction",
+         "body_en": "As the US-Iran war drags on, China's gasoline prices have climbed back to early-war levels, up 22% from July. Brent crude topped $103 a barrel again today."},
+        {"headline_ko": "10월 금리 추가인상 베팅 66%로 확대…5년물 입찰 부진 여파", "headline_en": "October Rate-Hike Bets Climb to 66% on Weak 5-Year Auction",
          "body_ko": "23일(현지시간) 700억달러 규모 5년물 국채 입찰이 부진하자(응찰률 2.21배) 시장의 10월 추가 금리인상 베팅이 66%까지 높아졌다. 5년물 낙찰금리는 5.033%로 2006년 이후 최고치를 기록했다.",
-         "body_en": "A weak $70 billion 5-year Treasury auction on Sept 23 (bid-to-cover 2.21x) pushed market bets on another October rate hike up to 66%. The 5-year yield hit 5.033%, its highest level since 2006."},
-        {"headline_ko": "추석 연휴 서학개미 채비…증권사 24시간 데스크 가동, 28일 재개장", "headline_en": "Brokerages Run 24-Hour Desks Over Chuseok as Korean Investors Trade Overseas; KOSPI Reopens Sep 28",
+         "body_en": "A weak $70B 5-year Treasury auction (bid-to-cover 2.21x) pushed October rate-hike bets to 66%. The 5-year yield hit 5.033%, its highest since 2006."},
+        {"headline_ko": "추석 연휴 서학개미 채비…증권사 24시간 데스크 가동, 28일 재개장", "headline_en": "Brokerages Open 24-Hour Desks for Chuseok Overseas Trading",
          "body_ko": "국내 증시가 추석 연휴로 24~25일 휴장하는 사이 미국·유럽 증시는 정상 개장한다. 증권사들은 해외주식 투자자를 위해 연휴 기간 24시간 데스크를 가동하며, 국내 증시는 28일(월) 정상 개장한다.",
-         "body_en": "While Korean markets are closed Sept 24-25 for Chuseok, US and European markets trade normally. Local brokerages are running round-the-clock desks for investors trading overseas stocks during the holiday; KOSPI reopens Monday, Sept 28."}
+         "body_en": "Korean markets close Sept 24-25 for Chuseok as US and European markets trade on. Brokerages run 24-hour desks for overseas investors; KOSPI reopens Sept 28."}
       ]
     }
   ],
