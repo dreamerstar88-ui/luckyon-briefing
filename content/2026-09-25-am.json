@@ -51,13 +51,13 @@
       "나스닥 0.01% 소폭 상승(26,939.37)·다우 0.31%↓·S&P500 0.02%↓로 3대 지수 혼조 마감",
       "美 국채 30년물 금리가 장중 5.50%까지 치솟아 2004년 6월 이후 최고, 10년물도 5.2%대 진입하며 연준 10월 추가 금리인상 가능성이 66%에서 70%대로 확대",
       "후티의 사우디 공격에 국제유가 3%대 급등(브렌트 $106.60·WTI $94.76), 美·이란 뉴욕 협상 소식에 상승폭은 일부 반납",
-      "메타는 뮤즈 AI 탑재 신형 스마트안경 공개로 4.5% 급등했지만, 필라델피아 반도체지수는 6거래일 만에 하락 전환하며 엔비디아·마이크론은 약세"
+      "메타는 뮤즈 AI 탑재 신형 스마트안경 공개로 4.5% 급등했지만, 반도체는 엔비디아 약세·AMD·인텔 강세로 종목별 온도차가 컸다(필라델피아 반도체지수 ▼0.33%)"
     ],
     "lines_en": [
       "Nasdaq edged up 0.01% to 26,939.37 while Dow fell 0.31% and S&P 500 slipped 0.02% in a mixed close",
       "The 30-year Treasury yield spiked to 5.50% intraday, the highest since June 2004, and the 10-year broke above 5.2%, pushing October Fed hike odds from 66% to over 70%",
       "Oil jumped more than 3% (Brent $106.60, WTI $94.76) after Houthi forces struck Saudi Arabia, though gains were pared on reports of US-Iran talks in New York",
-      "Meta surged 4.5% on new Muse AI-powered smart glasses, but the Philadelphia Semiconductor Index snapped a 6-day win streak as Nvidia and Micron slipped"
+      "Meta surged 4.5% on new Muse AI-powered smart glasses, while chip stocks diverged sharply — Nvidia lagged, AMD and Intel rallied, and the Philadelphia Semiconductor Index eased 0.33%"
     ]
   },
   "markets": [
@@ -161,7 +161,10 @@
     "Bitcoin"
   ],
   "tile_lead": "TODAY",
-  "main_tile_note": "9/21 사상최고 후 보합",
+  "main_tile_note": {
+    "ko": "9/21 사상최고 후 보합",
+    "en": "Flat after Sep 21 record"
+  },
   "market_note_ko": "나스닥·S&P500은 정규장 마감 종가, 코스피는 추석 연휴로 휴장 중이라 직전 거래일(9/23) 종가",
   "market_note_en": "Nasdaq/S&P 500 are regular-session closes; KOSPI shows the last close (Sep 23) as trading is closed for Chuseok",
   "chart_series_values": [
@@ -273,7 +276,7 @@
       "title_en": "Sector Performance",
       "bars": [
         {
-          "label_ko": "커뮤니케이션 (XLC)",
+          "label_ko": "통신 (XLC)",
           "label_en": "Comm. (XLC)",
           "value": 1.27
         },
@@ -333,8 +336,8 @@
           "value": -1.19
         }
       ],
-      "note_ko": "국채금리 급등 여파로 금리에 민감한 유틸리티·부동산·필수소비재가 약세였고, 메타의 신제품 공개에 힘입은 커뮤니케이션(XLC)이 유일하게 1%대 강세를 보였다",
-      "note_en": "Rate-sensitive Utilities, Real Estate and Staples lagged as yields spiked, while Communication Services (XLC) was the lone sector up more than 1%, lifted by Meta's product launch"
+      "note_ko": "국채금리 급등 여파로 금리에 민감한 유틸리티·부동산·필수소비재가 약세였고, 메타의 신제품 공개에 힘입은 통신(XLC)이 유일하게 1%대 강세를 보였다",
+      "note_en": "Rate-sensitive Utilities, Real Estate and Staples lagged as yields spiked, while Communication (XLC) was the lone sector up more than 1%, lifted by Meta's product launch"
     },
     {
       "title_ko": "거래대금 상위",
@@ -400,7 +403,7 @@
         {
           "label_ko": "美 신규 실업수당청구",
           "label_en": "US Initial Jobless Claims",
-          "value": "19.7만",
+          "value": "197K",
           "delta": {
             "ko": "예상 대비 -0.4만",
             "en": "vs est. -4K"
@@ -412,7 +415,7 @@
         {
           "label_ko": "美 8월 신규주택판매(연율)",
           "label_en": "US New Home Sales (SAAR)",
-          "value": "68.4만",
+          "value": "684K",
           "delta": {
             "ko": "예상 대비 +6.4만",
             "en": "vs est. +64K"
@@ -462,10 +465,10 @@
       "title_en": "AI & Semiconductors",
       "items": [
         {
-          "headline_ko": "필라델피아 반도체지수, 6거래일 만에 하락 전환",
-          "headline_en": "Philly Semiconductor Index snaps 6-day win streak",
-          "body_ko": "필라델피아 반도체지수(SOX)가 1.23% 밀리며 6거래일 연속 상승 행진을 마감했다. 엔비디아(-0.41%)·마이크론(-1.62%)이 약세를 보인 반면, AMD(+2.38%)·인텔(+3.91%)은 강세를 보여 종목별 온도차가 컸다.",
-          "body_en": "The Philadelphia Semiconductor Index fell 1.23%, ending a 6-session win streak. Nvidia (-0.41%) and Micron (-1.62%) slipped while AMD (+2.38%) and Intel (+3.91%) gained, showing a wide split within the chip complex."
+          "headline_ko": "필라델피아 반도체지수 소폭 하락, 종목별 온도차 뚜렷",
+          "headline_en": "Philly Semiconductor Index dips as chip stocks diverge",
+          "body_ko": "필라델피아 반도체지수(SOX)는 0.33% 내린 12,492.54로 마감했다. 엔비디아(-0.41%)는 약세, 마이크론(+0.81%)·AMD(+2.38%)·인텔(+3.91%)은 강세를 보이며 종목별 흐름이 크게 갈렸다.",
+          "body_en": "The Philadelphia Semiconductor Index (SOX) slipped 0.33% to 12,492.54. Nvidia (-0.41%) lagged while Micron (+0.81%), AMD (+2.38%) and Intel (+3.91%) rallied, highlighting a wide split within the chip complex."
         },
         {
           "headline_ko": "메타, 뮤즈 AI 탑재 신형 스마트안경·휴대기기 공개",
@@ -480,10 +483,10 @@
           "body_en": "Taiwan's DigiTimes reported TSMC plans to raise foundry wafer prices 3-6% next year, adding cost pressure for major customers including Intel, AMD, Nvidia and Qualcomm."
         },
         {
-          "headline_ko": "딥시크, 화웨이 칩으로 매개변수 8조개 모델 학습 베팅",
-          "headline_en": "DeepSeek bets on Huawei chips to train 8-trillion-parameter model",
-          "body_ko": "중국 딥시크가 엔비디아 대신 화웨이 칩으로 AI 모델을 학습시키는 것을 최우선 과제로 삼았다는 보도가 나왔다. 현재 2조개 매개변수 모델을 운영 중인 것으로 알려졌다.",
-          "body_en": "Reports say China's DeepSeek has made training AI models on Huawei chips — instead of Nvidia's — a top priority, aiming beyond its current 2-trillion-parameter model."
+          "headline_ko": "블랙록, AI 투자 대상을 전력·인프라·헬스케어로 확대",
+          "headline_en": "BlackRock broadens AI investment focus to power, infrastructure and health care",
+          "body_ko": "블랙록이 AI 투자 범위를 선도 모델·반도체 기업에서 전력·에너지, 인프라, AI 도입 기업까지 넓히고 있다고 밝혔다. AI 인프라 구축에 필요한 자금 규모가 5,000억달러 이상으로 추산되는 가운데 나온 전략 조정이다.",
+          "body_en": "BlackRock said it is widening its AI investment scope beyond leading model and chip makers to power/energy, infrastructure, and AI-adopting companies, as estimates put AI infrastructure buildout costs above $500 billion."
         },
         {
           "headline_ko": "구글, 10월 1일 우주 AI 위성 첫 궤도 시험",
@@ -504,40 +507,40 @@
       "title_en": "Top Stories",
       "items": [
         {
-          "headline_ko": "美 30년물 금리 2004년來 최고…연준 10월 인상 베팅 70%대로 확대",
-          "headline_en": "US 30Y yield hits highest since 2004, Fed Oct. hike bets rise past 70%",
-          "body_ko": "미 국채 30년물 금리가 장중 5.50%까지 치솟아 2004년 6월 이후 최고치를 기록했고 10년물도 5.2%대에 진입했다. CME 페드워치 기준 연준의 10월 추가 금리인상 가능성은 전날 66%에서 70%대로 확대됐다.",
-          "body_en": "The 30-year Treasury yield spiked to 5.50% intraday, the highest since June 2004, while the 10-year broke above 5.2%. CME FedWatch-implied odds of an October Fed rate hike rose from 66% the prior day to over 70%."
+          "headline_ko": "美 30년물 금리 2004년來 최고, 연준 10월 인상 베팅 70%대",
+          "headline_en": "US 30Y Yield Highest Since 2004, Fed Hike Bets Top 70%",
+          "body_ko": "美 국채 30년물 금리가 장중 5.50%까지 올라 2004년 6월 이후 최고치를 기록했다. 연준의 10월 추가 금리인상 가능성은 66%에서 70%대로 확대됐다.",
+          "body_en": "The 30-year Treasury yield hit 5.50% intraday, the highest since June 2004. Fed October hike odds rose from 66% to over 70%."
         },
         {
-          "headline_ko": "후티, 사우디 리야드·아람코 시설 공격…국제유가 3%대 급등",
-          "headline_en": "Houthis strike Riyadh, Aramco facility; oil jumps over 3%",
-          "body_ko": "예멘 후티 반군이 사우디 수도 리야드의 민감 시설과 얀부의 아람코 시설, 지잔 군사시설을 겨냥해 미사일·드론 공격을 감행했다고 밝혔다. 발사된 미사일은 요격돼 실제 피해는 없었지만, 공급 차질 우려에 브렌트유가 3.41%, WTI가 2.66% 급등했다.",
-          "body_en": "Yemen's Houthi rebels said they launched missile and drone strikes on sensitive sites in Riyadh, an Aramco facility in Yanbu, and military sites in Jizan. The missiles were intercepted with no reported damage, but supply-disruption fears sent Brent up 3.41% and WTI up 2.66%."
+          "headline_ko": "후티, 사우디 공격…국제유가 3%대 급등",
+          "headline_en": "Houthi Strike on Saudi Arabia Sends Oil Up 3%+",
+          "body_ko": "예멘 후티 반군이 사우디 리야드·아람코 시설을 미사일·드론으로 공격했다고 밝혔다. 미사일은 요격됐지만 공급 우려에 브렌트유 3.41%, WTI 2.66% 급등했다.",
+          "body_en": "Yemen's Houthis said they struck sites in Riyadh and an Aramco facility. Missiles were intercepted, but supply fears sent Brent up 3.4% and WTI up 2.7%."
         },
         {
-          "headline_ko": "美·이란, 뉴욕서 호르무즈 재개방·경제봉쇄 해제 단계적 합의 모색",
-          "headline_en": "US, Iran explore phased Hormuz reopening and sanctions relief deal in New York",
-          "body_ko": "블룸버그·로이터는 미국과 이란 협상단이 뉴욕 유엔총회 주변에서 카타르 중재로 호르무즈 해협 재개방과 대이란 경제봉쇄 해제를 맞교환하는 단계적 합의를 모색하고 있다고 보도했다. 다만 핵심 쟁점에서는 여전히 강경한 입장차가 있는 것으로 전해졌다.",
-          "body_en": "Bloomberg and Reuters reported US and Iranian negotiating teams, meeting near the UN General Assembly in New York with Qatari mediation, are exploring a phased deal trading Hormuz Strait reopening for US sanctions relief — though both sides reportedly remain firm on core issues."
+          "headline_ko": "美·이란, 뉴욕서 호르무즈 재개방 협상",
+          "headline_en": "US, Iran Discuss Hormuz Reopening in New York",
+          "body_ko": "블룸버그·로이터는 미국과 이란이 뉴욕에서 호르무즈 해협 재개방과 경제봉쇄 해제를 맞교환하는 단계적 합의를 모색 중이라고 보도했다.",
+          "body_en": "Bloomberg and Reuters reported US and Iranian teams are exploring a phased deal trading Hormuz Strait reopening for sanctions relief."
         },
         {
-          "headline_ko": "젤렌스키 유엔서 외교전 벌이는 동안 러시아, 키이우에 극초음속 미사일 공습",
-          "headline_en": "Russia hits Kyiv with hypersonic missile as Zelensky pursues UN diplomacy",
-          "body_ko": "젤렌스키 우크라이나 대통령이 뉴욕 유엔총회에서 트럼프 대통령 등 각국 정상과 만나 대러 제재 강화를 논의하던 가운데, 러시아가 키이우에 극초음속 미사일로 공습을 가했다.",
-          "body_en": "While Ukrainian President Zelensky met Trump and other world leaders at the UN General Assembly in New York to discuss tougher sanctions on Russia, Russia struck Kyiv with a hypersonic missile."
+          "headline_ko": "젤렌스키 유엔 외교 중 러, 키이우 미사일 공습",
+          "headline_en": "Russia Strikes Kyiv as Zelensky Pursues UN Diplomacy",
+          "body_ko": "젤렌스키 대통령이 유엔총회에서 트럼프 등과 대러 제재를 논의하던 중 러시아가 키이우에 극초음속 미사일 공습을 가했다.",
+          "body_en": "As Zelensky met world leaders at the UN to discuss sanctions on Russia, Russia struck Kyiv with a hypersonic missile."
         },
         {
-          "headline_ko": "코스트코 4분기 EPS 예상 상회, 매출은 소폭 미달",
-          "headline_en": "Costco Q4 EPS beats estimates, revenue slightly misses",
-          "body_ko": "코스트코가 발표한 2026회계연도 4분기 주당순이익(EPS)은 6.75달러로 시장 예상(6.54달러)을 웃돌았다. 매출은 938.7억달러로 예상치(949.7억달러)를 소폭 밑돌았다.",
-          "body_en": "Costco reported fiscal Q4 EPS of $6.75, beating the $6.54 estimate. Revenue came in at $93.87B, slightly below the $94.97B forecast."
+          "headline_ko": "코스트코 4분기 EPS 예상 상회, 매출 소폭 미달",
+          "headline_en": "Costco Q4 EPS Beats, Revenue Slightly Misses",
+          "body_ko": "코스트코 4분기 EPS는 6.75달러로 예상(6.54달러)을 웃돌았다. 매출은 938.7억달러로 예상(949.7억달러)에 소폭 못미쳤다.",
+          "body_en": "Costco Q4 EPS was $6.75, beating the $6.54 estimate. Revenue came in at $93.87B, slightly below the $94.97B forecast."
         },
         {
-          "headline_ko": "美 8월 신규주택판매 예상 크게 상회, 신규 실업수당청구는 예상 밑돌아",
-          "headline_en": "US Aug. new home sales beat sharply; jobless claims below estimate",
-          "body_ko": "미국의 8월 신규주택판매(연율)는 68.4만 채로 예상(62.0만 채)을 크게 웃돌았다(전월비 +6.4%). 신규 실업수당청구 건수는 19.7만 건으로 예상(20.1만 건)을 밑돌며 고용시장의 탄탄함을 확인시켰다.",
-          "body_en": "US new home sales (SAAR) came in at 684K in August, far above the 620K estimate (+6.4% MoM). Initial jobless claims were 197K, below the 201K estimate, underscoring a still-resilient labor market."
+          "headline_ko": "美 신규주택판매·실업수당청구 모두 견조",
+          "headline_en": "US Home Sales, Jobless Claims Both Point to Strength",
+          "body_ko": "美 8월 신규주택판매 68.4만 채로 예상(62.0만 채) 크게 상회, 신규 실업수당청구도 19.7만 건으로 예상 밑돌며 고용시장 탄탄함을 재확인했다.",
+          "body_en": "US new home sales hit 684K in Aug, far above the 620K estimate. Jobless claims came in at 197K, below estimate, reaffirming labor-market strength."
         }
       ]
     }
@@ -563,7 +566,7 @@
   },
   "schedule": [
     {
-      "time": "오늘(9/25)",
+      "time": "9/25",
       "title_ko": "한국 증시 휴장",
       "title_en": "Korea market closed",
       "detail_ko": "코스피·코스닥 추석 연휴로 이틀째 휴장 · 28일(월) 정상 개장",
@@ -611,7 +614,7 @@
       "importance": "high"
     },
     {
-      "time": "9/28(월)",
+      "time": "9/28",
       "title_ko": "코스피·코스닥 재개장",
       "title_en": "KOSPI/KOSDAQ reopen",
       "detail_ko": "추석 연휴 마무리 · 연휴 기간 해외 이슈 반영 예상",
