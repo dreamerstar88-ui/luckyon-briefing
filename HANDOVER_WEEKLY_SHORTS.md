@@ -52,16 +52,20 @@
 검증에서 `NQ=F` 는 09-14 11:30 에 배율이 1.005% 튀는 것이 확인됐다. 월물 글자는
 H=3월, M=6월, U=9월, Z=12월이고 만기는 해당 월 셋째 금요일이다.
 
-**주간 창** — **2026-09-26 에 바뀌었다.** 4회차(2026-09-21 주)부터는 **그 주 선물 개장
-(일요일 18:10 ET) ~ 금요일 16:00 ET** 다. 1~3회차는 월요일 09:30 ET 부터였고 **그대로 둔다**
-(대표 지시). 선물은 금요일 16:55 봉을 끝으로 끊기고 일요일 18:10 에 다시 열린다 —
-약 49시간 비어 있고, 거기가 장이 실제로 끊기는 자리다. 월요일 0시는 장 한복판이라 아니다.
+**주간 창** — **2026-09-26 에 바뀌었다.** 4회차(2026-09-21 주)부터는 **월요일 프리장 시작
+(04:00 ET, 한국 월 오후 5시) ~ 금요일 16:00 ET** 다. 대표 지시는 «주가 변화 프리장부터»,
+«이번 회차부터 포함시켜, 앞에건 놔둬» 였다. 1~3회차는 월요일 09:30 ET 부터였고 **그대로 둔다**.
+
+> **한때 이 지시를 «일요일 18:10 선물 개장부터» 로 바꿔 적고 그 기준으로 영상까지 만들었다.**
+> 대표가 한 말이 아니었고, 18:10 은 야후 5분봉의 첫 봉일 뿐 실제 선물 개장(18:00 ET)도
+> 아니었다 — 야후는 CME 종목의 일요일 첫 10분(18:00·18:05 봉)을 주지 않는다. 독립 검증과
+> 대표 지적으로 바로잡았다. **대표가 쓴 말을 내 해석으로 바꾸지 않는다.**
 
 넓힌 이유는 월요일 정규장 전에 나온 발표가 옛 기준으로는 통째로 빠지기 때문이다.
 4회차 주가 그랬다 — 월요일 ★★ 두 건이 전부 개장 전이라 쓸 사건이 ★ 하나뿐이었다.
 
 **기준이 달라졌으니 회차끼리 숫자를 그대로 비교하면 안 된다.** 같은 주(2026-09-21)를
-두 기준으로 재면 옛 기준 1,179봉 · +2.231%, 새 기준 1,363봉 · +3.170% 다.
+두 기준으로 재면 옛 기준 1,179봉 · +2.231%, 새 기준(프리장부터) 1,245봉 · +2.377% 다.
 3회차는 옛 기준으로 1,179봉이었다.
 
 끝의 16:00 봉(16:00~16:05)까지 들어가는 것은 1회차부터 이어온 관례라 그대로 둔다.
@@ -102,8 +106,9 @@ conference` 라고만 적힌 것을 보고 「파월 의장」이라고 썼다�
 
 1. **기계 검사** — `node scripts/weekly-shorts/verify-shorts.mjs <매니페스트> --srt <산출물폴더>`
    현재 117건이다. 하나라도 실패하면 발행하지 않는다.
-2. **독립 검증 에이전트** — `shorts-verifier` 를 띄운다. 이 에이전트는 원본 데이터를
-   **새로 받아 스스로 계산한다.** 만든 세션의 중간 파일을 쓰지 않는다.
+2. ~~독립 검증 에이전트~~ — **2026-09-26 대표 지시로 없앴다.** 4회차에 두 번 56분 · 94만 토큰을 썼다.
+   그 일(두 번째 출처 대조·영상 파일·발행문구·과거 1시간봉 재수집)은 기계 검사 [1-2]·[10]~[12] 로 옮겼다.
+   이제 `make-episode.mjs` 한 번이 렌더부터 검사까지 약 70초에 끝낸다(`WEEKLY_SHORTS_QUICK.md`).
 
 **지적이 나오면 전부 모아 한 번에 고치고 한 번만 다시 돌린다.** 3회차에서 하나씩
 고치고 매번 다시 돌리다가 검증이 네 바퀴 돌았다. 새로 생긴 지적이 아니라 처음부터
@@ -135,6 +140,16 @@ conference` 라고만 적힌 것을 보고 「파월 의장」이라고 썼다�
 ## 5. 발행 경로에서 조심할 것
 
 ### 유튜브
+
+> **2026-09-26 — 한국 채널 토큰은 7일마다 만료된다.** 구글 동의 화면이 «테스트 중» 이라서다.
+> 2026-09-26 에 만료(`invalid_grant`)를 확인하고 다시 받았다(발급 2026-09-26 → **10-03 만료**).
+> 다시 받는 법: `backtest-reels` 폴더에서
+> `node --env-file="C:/Users/PSJ_1/.claude/SJ PARK Project/api-keys/keys.env" scripts/authorize-youtube.mjs`
+> (기본이 한국 채널) → 뜬 주소를 **대표님이 직접** 열어 dreamerstar88@gmail.com 으로 로그인 →
+> 채널 «luckyon 넘버뷰» 선택 → 허용. 새 토큰과 발급일이 `keys.env` 에 자동 저장된다.
+> 이미 떠 있는 인증 도구가 기다리고 있으면 8917 포트가 막혀 새로 못 띄운다 — 그 도구가
+> 받으면 되므로 주소만 다시 드린다. 받은 뒤 `publish-youtube.mjs` 를 `--confirm` 없이 돌려
+> 채널이 맞는지 미리보기로 확인한다.
 
 > **2026-09-20 갱신 — 우회가 더 이상 필요 없다.**
 > 대표님 컴퓨터의 인증 파일 `C:\Users\PSJ_1\.claude\SJ PARK Project\api-keys\keys.env` 에
@@ -328,14 +343,17 @@ vidIQ 커넥터에도 `luckyon_77` 이 발행 권한까지 연결돼 있다
 **재현 검사**: 3회차를 답을 아는 시험 문제로 썼다. 새로 받은 자료로 다시 계산했더니
 **봉 1,179개 · 주간 +2.577%** 로 발행본과 같은 값이 나왔다.
 
-### 인스타그램 — 이 컴퓨터에는 토큰이 없다
+### 인스타그램 — 토큰은 `~/.secrets/luckyon-ig.env` 에 있다 (2026-09-26 정정)
 
-`IG_ACCESS_TOKEN` · `IG_USER_ID` · `PAGES_BASE_URL` 이 **환경변수에도 `.env` 에도
-`keys.env` 에도 없다.** 클라우드 환경에만 있었다. 그래서 저장소의 인스타 발행
-스크립트는 이 컴퓨터에서 못 돌린다.
+`IG_ACCESS_TOKEN` · `IG_USER_ID` · `PAGES_BASE_URL` 세 가지가 **`C:/Users/PSJ_1/.secrets/luckyon-ig.env`**
+에 다 있다. 2026-09-26 읽기 전용 호출(`graph.instagram.com/me`)로 **살아 있음을 확인했다**
+(계정 `luckyon_77`). `IG_USER_ID` 는 `/me` 가 주는 `id`(앱용 번호)이고, 그 번호로 조회해도
+`luckyon_77` 이 나온다. `user_id`(계정 번호)와 다른 것은 정상이다.
 
-**vidIQ 경로로 올리면 된다.** 계정 `luckyon_77`(`38087698064179081`)이 연결돼 있고
-`publishingAvailable: true` 이며 **발행 도구는 크레딧 0 으로도 쓸 수 있다.**
+> 예전에 여기 적혀 있던 «환경변수에도 `.env` 에도 `keys.env` 에도 없다, 이 컴퓨터에는 토큰이 없다» 는
+> **틀렸다.** `keys.env` 한 곳만 보고 쓴 것이다. 인증 파일은 두 곳이다 — `keys.env` 와 `~/.secrets/`.
+
+vidIQ 경로(계정 `luckyon_77` · `38087698064179081`)는 대안으로 남긴다.
 
 > vidIQ 크레딧은 지금 **0 이고 2026-09-30 에 150 으로 충전된다.** 분석 기능(채널 분석·
 > 영상 통계)은 1회 5크레딧이라 **4회차 제작 시점에는 못 쓴다.** 평균 시청 시간은
@@ -371,13 +389,34 @@ vidIQ 커넥터에도 `luckyon_77` 이 발행 권한까지 연결돼 있다
 > 4 를 쓰면 **아직 오지 않은 주의 예정 일정을 미리 받을 수 있다.** 실제값은 당연히 없다.
 > 발행용 스냅샷은 그 주가 끝난 뒤 `calendar-range=-2` 로 다시 받아야 한다.
 
-### 4회차 실행 순서 — 명령 그대로
+### 회차 실행 순서 — 명령 그대로 (4회차에서 실제로 돈 순서, 2026-09-26)
 
-그 주가 끝난 뒤(빠르면 09-26 토)부터. 모든 명령은 작업 폴더에서 실행한다.
+그 주가 끝난 뒤(토요일)부터. 모든 명령은 작업 폴더에서 실행한다. 아래 날짜·회차 번호만 바꾼다.
+
+**0. 새 회차 폴더** — 틀 세 개를 복사하고 파일 맨 위 «← 회차마다 바꾼다» 줄(날짜 `STAMP`, 자막 이름 `BASE`)만 고친다.
+창·사건·문구·보기·정지 시간은 전부 매니페스트(`content/weekly-shorts/<그 주 월요일>.json`)에서 읽는다.
+
+```bash
+mkdir -p docs/samples/weekly-shorts/v12-ep5 && cp scripts/weekly-shorts/render/{render.mjs,scene.js,srt2.mjs} docs/samples/weekly-shorts/v12-ep5/
+```
+
+**1. 자료** — 5분봉(그 주 월물)과 과거 분포용 1시간봉(연속 심볼 2년). 둘 다 미 동부 시각을 서머타임에 맞게 적는다.
 
 ```bash
 node scripts/weekly-shorts/render/fetch-week.mjs --symbol=NQZ26.CME --from=2026-09-21 --to=2026-09-25
 ```
+
+```bash
+node scripts/weekly-shorts/render/fetch-week.mjs --symbol=NQ=F --interval=1h --range=2y --from=2026-09-21 --to=2026-09-25 --out=data/weekly-shorts/us1h_nqf.json
+```
+
+> **야후 자료의 빈칸 (2026-09-26 확인)** — 야후는 CME 종목의 ① 일요일 첫 10분(18:00·18:05 봉)과
+> ② 매일 자정 첫 5분(00:00 봉, 1분봉에도 없음)을 주지 않는다. 창이 월요일 04:00 부터라 ①은 창 밖이지만
+> ②는 화~금 4개가 창 안에 빠진다. CNBC 5분봉과 대조해 정답·숫자가 안 바뀌는지 확인하고 매니페스트
+> `window.data_gap_note` 에 적는다. CNBC 는 이렇게 받는다(2026-09-26 실제로 받아 확인, 시각은 미 동부):
+> `https://ts-api.cnbc.com/harmony/app/bars/@ND.1/5M/20260921040000/20260925160500/unadjusted/EST5EDT.json`
+
+**2. 캘린더** — 스냅샷을 받아 ★★ 이상을 뽑는다.
 
 ```bash
 curl -sSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" -H "Cookie: calendar-range=-2" https://tradingeconomics.com/united-states/calendar -o content/weekly-shorts/2026-09-21.calendar.html
@@ -387,26 +426,48 @@ curl -sSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 node scripts/weekly-shorts/render/parse-calendar.mjs --html=content/weekly-shorts/2026-09-21.calendar.html --from=2026-09-21 --to=2026-09-25 --minstars=2
 ```
 
-사건을 고르고 문구를 써서 매니페스트를 채운 뒤, 사건 배열을 `v11-ep4/render.mjs` 에 옮긴다.
+**3. 표본 → 전체 렌더** — 렌더러가 글꼴·겹침·줄 폭·정지 시간을 먼저 재고, 어긋나면 멈춘다.
+표본 시각은 로그의 «사건 멈춤(초)» 구간 안에서, 글이 다 뜬 뒤(멈춘 뒤 0.3초 이후)로 고른다.
 
 ```bash
-node docs/samples/weekly-shorts/v11-ep4/render.mjs --out=out/ep4/sample --sample=3.5,20.0,28.0
+node docs/samples/weekly-shorts/v11-ep4/render.mjs --out=out/ep4/sample --sample=0,4,30,33.7,34.95
 ```
 
 ```bash
 node docs/samples/weekly-shorts/v11-ep4/render.mjs --out=out/ep4/frames
 ```
 
+**4. 인코딩 · 음악 · 표지** — 음악은 3회차와 같은 값이다(곡 1.1초부터, 페이드아웃 32.0초부터 3.0초 —
+3회차 완성본 소리 곡선과 대조해 확인한 값). 표지는 훅 글이 다 뜬 뒤 멈춘 4.0초 프레임이다(3회차 표지와 같은 방식).
+
+```bash
+node_modules/ffmpeg-static/ffmpeg.exe -y -framerate 30 -i out/ep4/frames/f%05d.jpg -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -movflags +faststart out/ep4/silent.mp4
+```
+
+```bash
+node_modules/ffmpeg-static/ffmpeg.exe -y -ss 1.1 -i assets/bgm/lyria-build-v1.mp3 -t 35 -af "loudnorm=I=-14:TP=-1.5:LRA=11,afade=t=in:st=0:d=3.0,afade=t=out:st=32.0:d=3.0:curve=ipar" -ar 48000 -ac 2 out/ep4/bgm.wav
+```
+
+```bash
+node_modules/ffmpeg-static/ffmpeg.exe -y -i out/ep4/silent.mp4 -i out/ep4/bgm.wav -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -ar 48000 -ac 2 -shortest -movflags +faststart docs/samples/weekly-shorts/v11-ep4/reel4_35s.mp4
+```
+
+```bash
+node_modules/ffmpeg-static/ffmpeg.exe -y -i docs/samples/weekly-shorts/v11-ep4/reel4_35s.mp4 -ss 4.0 -frames:v 1 docs/samples/weekly-shorts/v11-ep4/cover_ep4.png
+```
+
+**5. 자막 · 발행문구 · 기계 검사**
+
 ```bash
 node docs/samples/weekly-shorts/v11-ep4/srt2.mjs
 ```
 
 ```bash
-node scripts/weekly-shorts/verify-shorts.mjs content/weekly-shorts/2026-09-21.json --srt docs/samples/weekly-shorts/v11-ep4
+node scripts/weekly-shorts/verify-shorts.mjs content/weekly-shorts/2026-09-21.json --srt docs/samples/weekly-shorts/v11-ep4 --hist data/weekly-shorts/us1h_nqf.json
 ```
 
-종료코드 0 이 아니면 발행하지 않는다. 이어서 `shorts-verifier` 에이전트를 띄운다.
-그다음 §4-4 발행 순서를 따르되, 유튜브는 §5 의 직접 발행 도구를 쓴다.
+종료코드 0 이 아니면 발행하지 않는다. **위 1~5 단계는 이제 `make-episode.mjs` 명령 하나가 한다**(검증 에이전트는 없앴다).
+올리기는 `publish-episode.mjs --confirm` 하나가 한다(`WEEKLY_SHORTS_QUICK.md`).
 
 ### 클라우드 세션의 대화 기록을 가져오려면
 

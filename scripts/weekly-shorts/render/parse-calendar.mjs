@@ -5,7 +5,7 @@
 //        --from=2026-09-21 --to=2026-09-25 [--minstars=2]
 //
 // 별표(중요도)는 CSS 클래스 calendar-date-1|2|3 에 들어 있다. 1=★ 2=★★ 3=★★★.
-// 시각은 HTML 에 UTC 로 찍힌다. 미 동부(EDT)는 UTC−4, 한국은 UTC+9.
+// 시각은 HTML 에 UTC 로 찍힌다. 미 동부는 서머타임에 따라 UTC−4(EDT)·UTC−5(EST), 한국은 UTC+9.
 // 같은 시각의 세부 지표는 5분봉에서 한 봉이므로 묶어서 본다(지침서 3장).
 import fs from 'node:fs';
 
@@ -16,7 +16,11 @@ const args = Object.fromEntries(process.argv.slice(2).map(a => {
 if (!args.html) { console.error('--html=<파일> 이 필요하다'); process.exit(1); }
 const FROM = args.from || '0000-00-00', TO = args.to || '9999-99-99';
 const MIN = Number(args.minstars ?? 1);
-const ET_SHIFT = Number(args.etoffset ?? -4);
+// 미 동부는 날짜마다 서머타임을 따져 바꾼다. 예전에는 −4 고정이라 11월 첫 일요일 뒤로는
+// 모든 발표 시각이 한 시간 늦게 나왔다(2026-09-26 발견, 4회차까지는 EDT 라 영향 없음).
+const ET_FMT = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit',
+  day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+const toET = (utc) => ET_FMT.format(new Date(utc.replace(' ', 'T') + ':00Z')).replace(',', '').slice(0, 16);
 
 const html = fs.readFileSync(args.html, 'utf8');
 const rows = html.split(/<tr\s+data-url=/).slice(1);
@@ -37,7 +41,7 @@ for (const r of rows) {
   const tm = sm[2].trim().match(/(\d{2}):(\d{2})\s*(AM|PM)/); if (!tm) continue;
   let hh = +tm[1] % 12; if (tm[3] === 'PM') hh += 12;
   const utc = `${dm[1]} ${pad(hh)}:${tm[2]}`;
-  ev.push({ name: em[1].trim(), stars: +sm[1], utc, et: shift(utc, ET_SHIFT), kst: shift(utc, 9),
+  ev.push({ name: em[1].trim(), stars: +sm[1], utc, et: toET(utc), kst: shift(utc, 9),
             actual: val(r, 'actual'), consensus: val(r, 'consensus'), previous: val(r, 'previous') });
 }
 

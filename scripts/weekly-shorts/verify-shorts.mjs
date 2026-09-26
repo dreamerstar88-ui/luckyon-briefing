@@ -57,7 +57,12 @@ const cmp = (label, got, want, tol = 0) => {
 
 // ── 1. 5분봉 원본을 새로 받는다 ───────────────────────────────────────────────
 console.log(`\n[1] 5분봉 원본 재수집 — ${M.window.symbol} ${M.window.interval}`);
-const ET_OFFSET = -4 * 3600; // 미 동부 서머타임(EDT). 11월 첫 일요일 이후 회차는 -5 로 바꾼다.
+// 미 동부 시각 문자열 «YYYY-MM-DD HH:MM». 서머타임(3월 둘째 일요일 ~ 11월 첫 일요일)을 스스로 따른다.
+// 예전에는 −4시간을 고정으로 더해 겨울(EST) 봉이 전부 한 시간 늦게 적혔다. 2년치 1시간봉으로
+// 과거 분포를 세다가 겨울 주를 금요일 15:00 에서 잘랐다(2026-09-26 검증에서 발견).
+const ET_FMT = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit',
+  day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+const etStr = (sec) => ET_FMT.format(new Date(sec * 1000)).replace(',', '').slice(0, 16);
 const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(M.window.symbol)}?interval=${M.window.interval}&range=1mo`;
 let BARS;
 try {
@@ -66,7 +71,7 @@ try {
   if (!res) throw new Error('야후 응답에 chart.result 가 없다');
   const ts = res.timestamp, q = res.indicators.quote[0];
   BARS = ts.map((t, i) => ({
-    d: new Date((t + ET_OFFSET) * 1000).toISOString().slice(0, 16).replace('T', ' '),
+    d: etStr(t),
     o: q.open[i], h: q.high[i], l: q.low[i], c: q.close[i],
   })).filter((x) => x.c != null && x.d >= M.window.from_et && x.d <= M.window.to_et);
 } catch (e) {
@@ -93,7 +98,7 @@ try {
   const QC = new Map();
   qres.timestamp.forEach((t, i) => {
     const c = qres.indicators.quote[0].close[i];
-    if (c != null) QC.set(new Date((t + ET_OFFSET) * 1000).toISOString().slice(0, 16).replace('T', ' '), c);
+    if (c != null) QC.set(etStr(t), c);
   });
   const pairs = BARS.filter((b) => QC.has(b.d)).map((b) => ({ d: b.d, r: b.c / QC.get(b.d) }));
   if (pairs.length < 50) {
@@ -113,6 +118,44 @@ try {
 } catch (e) {
   console.log(`  ⛔ QQQ 대조 실패 — ${e.message}`);
   console.log('     이 검사를 못 했으면 통과가 아니라 미검증이다. 월물 교체가 섞였는지 사람이 직접 확인한다.');
+  fails++;
+}
+
+// ── 1-2. 두 번째 출처(CNBC 5분봉) 대조 ─────────────────────────────────────────
+// 4회차 독립 검증 에이전트(30분 · 50만 토큰)가 한 일의 핵심을 여기로 옮겼다 — 2026-09-26 대표 지시로
+// 검증 에이전트를 없앴다. 그 검증이 잡은 것: 야후는 일요일 첫 10분과 매일 자정 첫 5분 봉을 주지 않는다.
+// 빠진 봉이 시가나 정답을 바꾸면 발행하지 않는다. (@ND.1 은 CNBC 의 나스닥100 선물 근월물이다.)
+console.log(`\n[1-2] 두 번째 출처 대조 (CNBC 5분봉)`);
+try {
+  const tsOf = (d) => d.replace(/[- :]/g, '') + '00';
+  const end = new Date(Date.parse(M.window.to_et.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
+  const url = `https://ts-api.cnbc.com/harmony/app/bars/@ND.1/5M/${tsOf(M.window.from_et)}/${tsOf(end)}/unadjusted/EST5EDT.json`;
+  const cj = await (await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })).json();
+  const t2d = (t) => `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)} ${t.slice(8, 10)}:${t.slice(10, 12)}`;
+  const CB = (cj?.barData?.priceBars || []).map((b) => ({ d: t2d(b.tradeTime), o: +b.open, h: +b.high, l: +b.low, c: +b.close }))
+    .filter((b) => M.window.from_et <= b.d && b.d <= M.window.to_et);
+  if (!CB.length) throw new Error('창 안의 봉을 못 받았다');
+  const Y = new Map(BARS.map((b) => [b.d, b]));
+  if (CB[0].d === BARS[0].d) cmp('첫 봉 시가 (야후 = CNBC)', CB[0].o, BARS[0].o, 0.001);
+  else bad('첫 봉 시각', `CNBC ${CB[0].d}`, `야후 ${BARS[0].d}`);
+  const onlyC = CB.filter((b) => !Y.has(b.d));
+  onlyC.length ? warn('야후에 없는 봉', `${onlyC.length}개 — ${onlyC.map((b) => b.d).join(', ')}`) : ok('야후에 없는 봉', '없음');
+  const both = CB.filter((b) => Y.has(b.d));
+  const same = both.filter((b) => b.c === Y.get(b.d).c).length;
+  const maxd = Math.max(0, ...both.map((b) => Math.abs(b.c - Y.get(b.d).c)));
+  maxd <= 25 ? ok('종가 대조', `${both.length}봉 중 ${same}봉 같음 · 최대 차이 ${maxd}포인트`)
+             : bad('종가 대조', `최대 차이 ${maxd}포인트`, '25포인트 이하(넘으면 월물이 다른지 본다)');
+  if (M.question) {
+    const { QUESTIONS, buildCtx } = await import('./questions.mjs');
+    const Q = QUESTIONS.find((q) => q.id === M.question.id);
+    const gotC = Q ? Q.fn(buildCtx(CB, [], M.events)) : null;
+    if (typeof gotC === 'number') cmp('정답을 CNBC 봉으로 다시 셈', +gotC.toFixed(1), +(+M.question.answer_value).toFixed(1), 0.05);
+  }
+  const wkC = (CB.at(-1).c / CB[0].o - 1) * 100;
+  Math.abs(wkC - M.numbers.week_pct) <= 0.02 ? ok('주간 등락률 (CNBC)', `${wkC.toFixed(3)}%`)
+                                             : warn('주간 등락률 (CNBC)', `${wkC.toFixed(3)}% — 매니페스트 ${M.numbers.week_pct}%`);
+} catch (e) {
+  console.log(`  ⛔ CNBC 대조 실패 — ${e.message}. 통과가 아니라 미검증이다.`);
   fails++;
 }
 
@@ -168,16 +211,58 @@ if (M.question) {
     if (M.question.dist && histIdx >= 0) {
       const D = M.question.dist;
       const HB = JSON.parse(fs.readFileSync(argv[histIdx + 1], 'utf8'));
-      const wk = new Map();
-      for (const b0 of HB) {
-        const dd = new Date(b0.d.slice(0, 10) + 'T00:00:00Z'), dw = dd.getUTCDay();
-        if (dw === 0 || dw === 6) continue;
-        const mo = new Date(dd); mo.setUTCDate(dd.getUTCDate() - (dw - 1));
-        const k = mo.toISOString().slice(0, 10);
-        if (!wk.has(k)) wk.set(k, []); wk.get(k).push(b0);
+      let weeks;
+      if (D.week === 'session') {
+        // (옛 방식 — 4회차 첫 판에서 창을 «일요일 선물 개장 ~ 금 16:00» 으로 잘못 잡았을 때 쓴 것. 지금은 premarket 을 쓴다.)
+        // 과거 분포를 월요일 0시 기준으로 세면 이번 주 답과 다른 기준의 숫자를 나란히 놓게 된다.
+        // 그래서 주말 공백(24시간 넘게 빈 자리)으로 주를 나누고 금요일 16:00 에서 자른다.
+        // 검증하는 그 주는 «과거» 에 넣지 않는다.
+        const ms = (d) => new Date(d.replace(' ', 'T') + 'Z').getTime();
+        const segs = []; let cur = [];
+        for (let i = 0; i < HB.length; i++) {
+          if (i && ms(HB[i].d) - ms(HB[i - 1].d) > 24 * 3600e3) { segs.push(cur); cur = []; }
+          cur.push(HB[i]);
+        }
+        if (cur.length) segs.push(cur);
+        const endDay = M.window.to_et.slice(0, 10);
+        weeks = segs.map((seg) => {
+          const fri = seg.find((x) => new Date(x.d.slice(0, 10) + 'T00:00:00Z').getUTCDay() === 5);
+          return fri ? seg.filter((x) => x.d <= `${fri.d.slice(0, 10)} 16:00`) : [];
+        }).filter((v) => v.length && v.at(-1).d.slice(0, 10) < endDay);
+      } else if (D.week === 'premarket') {
+        // 4회차부터 창은 «월요일 프리장(미 동부 04:00) ~ 금요일 16:00» 이다 — 대표 지시
+        // «주가 변화 프리장부터»(2026-09-26). 한때 «일요일 선물 개장» 으로 바꿔 적었다가 지적받았다.
+        // 과거 주도 같은 창으로 자른다. 1시간봉의 d 는 서머타임을 맞춘 미 동부 시각이어야 한다
+        // (fetch-week.mjs 의 etStr). 월요일 04:00 봉이 없거나 금요일까지 닿지 않는 주는 뺀다.
+        // 검증하는 그 주는 과거에 넣지 않는다.
+        const byMon = new Map();
+        for (const b0 of HB) {
+          const dd = new Date(b0.d.slice(0, 10) + 'T00:00:00Z');
+          const mo = new Date(dd); mo.setUTCDate(dd.getUTCDate() - ((dd.getUTCDay() + 6) % 7));
+          const k = mo.toISOString().slice(0, 10);
+          if (!byMon.has(k)) byMon.set(k, []); byMon.get(k).push(b0);
+        }
+        const startDay = M.window.from_et.slice(0, 10);
+        weeks = [...byMon.entries()].filter(([k]) => k < startDay).map(([k, v]) => {
+          const fr = new Date(k + 'T00:00:00Z'); fr.setUTCDate(fr.getUTCDate() + 4);
+          const f = fr.toISOString().slice(0, 10);
+          const s = v.filter((x) => x.d >= `${k} 04:00` && x.d <= `${f} 16:00`);
+          return (s.length && s[0].d === `${k} 04:00` && s.at(-1).d.slice(0, 10) === f) ? s : [];
+        });
+      } else {
+        const wk = new Map();
+        for (const b0 of HB) {
+          const dd = new Date(b0.d.slice(0, 10) + 'T00:00:00Z'), dw = dd.getUTCDay();
+          if (dw === 0 || dw === 6) continue;
+          const mo = new Date(dd); mo.setUTCDate(dd.getUTCDate() - (dw - 1));
+          const k = mo.toISOString().slice(0, 10);
+          if (!wk.has(k)) wk.set(k, []); wk.get(k).push(b0);
+        }
+        weeks = [...wk.values()];
       }
       const RQ = QUESTIONS.find((q) => q.id === (D.ref_id || M.question.id));
-      const vs = [...wk.values()].filter((v) => v.length >= 40).map((v) => RQ.fn(buildCtx(v, []))).sort((x, y) => x - y);
+      const minBars = D.min_bars ?? 40;
+      const vs = weeks.filter((v) => v.length >= minBars).map((v) => RQ.fn(buildCtx(v, []))).sort((x, y) => x - y);
       const qq = (p) => vs[Math.floor(vs.length * p)];
       cmp('분포 표본 수', vs.length, D.n);
       cmp('분포 중앙값', +qq(0.5).toFixed(1), D.median, 0.2);
@@ -266,7 +351,8 @@ console.log(`\n[3-2] 요약 표 범위`);
          : bad('요약 표 행', want.map((e) => `${e.tag} ${e.pct}%`).join(' / '), (S.rows || []).map((r) => `${r.tag} ${r.pct}%`).join(' / '));
     S.rows && S.rows.forEach((r, k) => cmp(`요약 ${k + 1}위 주간 순위`, want[k] ? want[k].rank : '없음', r.week_rank));
     const weekTrue = S.rows && S.rows.every((r, k) => r.week_rank === k + 1);
-    const claim = /of the week|week'?s (three )?biggest|그\s*주 (전체|최대)|이번\s*주 (전체|최대)/i;
+    // «scheduled events» 는 그 주 예정 발표 전부로 읽힌다. 4회차 검증에서 이 문장이 빠져나갔다(고른 6개 중인데).
+    const claim = /of the week|week'?s (three )?biggest|scheduled events|그\s*주 (전체|최대)|이번\s*주 (전체|최대)/i;
     const heads = [S.ko || '', S.en || ''].join(' | ');
     if (!weekTrue && claim.test(heads)) {
       bad('요약 머리말 범위', `주간 순위가 ${S.rows.map((r) => r.week_rank).join('·')} 위다 — 머리말이 그 주 전체를 주장하면 안 된다`, heads);
@@ -622,6 +708,99 @@ if (srtDir) {
             '없다 — 12초에 떠나는 시청자에게 고를 거리를 준다');
     }
   }
+}
+
+// ── [10]~[12] 검증 에이전트가 하던 일 — 1분 안에 기계로 (2026-09-26 대표 지시) ──────────────
+// «똑같은 검증 결과물을 내되 시간은 1분 이내로.» 4회차 검증 에이전트는 두 번에 56분 · 94만 토큰을 썼다.
+// 그 에이전트가 본 항목(영상 파일 · 발행문구 숫자와 문구 · 과거 1시간봉 재수집)을 여기서 잰다.
+if (srtDir) {
+  const { default: FF } = await import('ffmpeg-static');
+  const files = fs.readdirSync(srtDir);
+  const video = files.find((f) => /\.mp4$/i.test(f)), cover = files.find((f) => /^cover.*\.png$/i.test(f));
+  console.log(`\n[10] 영상 파일`);
+  if (!video) bad('영상 파일', '없음', `${srtDir} 안에 .mp4`);
+  else {
+    const V = path.join(srtDir, video);
+    const run = (a) => spawnSync(FF, a, { maxBuffer: 1e9 });
+    const info = run(['-hide_banner', '-i', V]).stderr.toString();
+    const dur = (info.match(/Duration: (\d+):(\d+):([\d.]+)/) || []).slice(1).map(Number);
+    const sec = dur.length ? dur[0] * 3600 + dur[1] * 60 + dur[2] : NaN;
+    cmp('영상 길이(초)', +sec.toFixed(2), M.video.duration, 0.05);
+    /1080x1920/.test(info) && /30 fps/.test(info) ? ok('화면 크기·프레임', '1080×1920 · 30fps')
+      : bad('화면 크기·프레임', (info.match(/Video:.*$/m) || [''])[0].slice(0, 80), '1080×1920 · 30fps');
+    const lo = run(['-hide_banner', '-i', V, '-af', 'ebur128=peak=true', '-f', 'null', '-']).stderr.toString();
+    const last = (re) => { const m = lo.match(re); return m ? +m[m.length - 1].match(/-?[\d.]+/)[0] : NaN; };
+    const I = last(/I:\s+-?[\d.]+ LUFS/g), TP = last(/Peak:\s+-?[\d.]+ dBFS/g);
+    Math.abs(I + 14) <= 0.5 && TP <= -1.4 ? ok('소리 크기', `${I} LUFS · 트루피크 ${TP} dBTP`)
+      : bad('소리 크기', `${I} LUFS · ${TP} dBTP`, '−14±0.5 LUFS · −1.5 dBTP 이하');
+    const bl = run(['-hide_banner', '-i', V, '-vf', 'blackdetect=d=0.1:pix_th=0.05', '-an', '-f', 'null', '-']).stderr.toString();
+    /black_start/.test(bl) ? bad('검은 프레임', bl.match(/black_start:\S+/)[0], '없음') : ok('검은 프레임', '없음');
+    // 첫 프레임 윗부분(결과 숫자)이 다 뜬 훅(4초)과 같은가 — 2·3회차는 0번 프레임이 기본 글꼴, 3회차까지는 «+0.00%» 였다
+    const crop = (src, t) => run(['-v', 'error', '-i', src, ...(t === null ? [] : ['-ss', String(t)]), '-frames:v', '1',
+      '-vf', 'crop=1000:560:40:120', '-f', 'rawvideo', '-pix_fmt', 'gray', '-']).stdout;
+    const mad = (a, b) => { let s = 0; const n = Math.min(a.length, b.length); for (let i = 0; i < n; i++) s += Math.abs(a[i] - b[i]); return n ? s / n : 999; };
+    const d0 = mad(crop(V, 0), crop(V, 4.0));
+    d0 < 4 ? ok('첫 프레임 윗부분 = 4초 훅', `평균 차이 ${d0.toFixed(2)}(0~255)`) : bad('첫 프레임 윗부분', `평균 차이 ${d0.toFixed(2)}`, '4초 훅과 같아야 한다(결과 숫자·글꼴)');
+    if (cover) {
+      const dc = mad(crop(path.join(srtDir, cover), null), crop(V, 4.0));
+      dc < 4 ? ok('표지 = 4초 프레임', `평균 차이 ${dc.toFixed(2)}`) : bad('표지', `4초 프레임과 평균 차이 ${dc.toFixed(2)}`, '4초 프레임');
+    } else bad('표지 파일', '없음', 'cover*.png');
+  }
+
+  console.log(`\n[11] 발행문구 — 숫자 · 정답 노출 · 금지 표현`);
+  const mdf = files.find((f) => f.endsWith('.md'));
+  const doc = mdf ? readText(path.join(srtDir, mdf)) : '';
+  const block = (h) => (doc.match(new RegExp('##\\s*' + h + '[^\\n]*\\n+```\\n([\\s\\S]*?)\\n```')) || [])[1] || '';
+  const title = (doc.match(/##\s*1\.[^\n]*\n+\*\*(.+?)\*\*/) || [])[1] || '';
+  const desc = block('2\\.'), cap = block('5\\.'), cmt = block('5-1\\.');
+  [['제목', title], ['설명', desc], ['인스타 캡션', cap], ['고정 댓글', cmt]].forEach(([k, v]) => (v ? ok(`${k} 있음`, `${v.length}자`) : bad(k, '없음', '발행문구.md 에 적는다')));
+  const opts = (M.quiz?.options || []).map(String), ans = opts[(M.quiz?.answer_index || 0) - 1];
+  if (ans) {
+    title.includes(ans) ? bad('제목 정답 노출', title, `«${ans}» 가 없어야 한다`) : ok('제목 정답 노출', '없음');
+    const c0 = cap.split('\n')[0] || '';
+    c0.includes(ans) ? bad('캡션 첫 줄 정답 노출', c0, `«${ans}» 가 없어야 한다`) : ok('캡션 첫 줄 정답 노출', '없음');
+  }
+  // % 숫자와 «N개» 숫자는 매니페스트·재계산 값 가운데 하나여야 한다. 모르는 숫자가 나오면 옛 값이 남은 것이다.
+  const wk = (M.numbers.week_pct >= 0 ? '+' : '') + M.numbers.week_pct.toFixed(2) + '%';
+  const D = M.question?.dist || {};
+  const norm = (x) => x.replace('−', '-');
+  const allow = new Set([wk, wk.replace('+', ''), `${M.numbers.mdd_pct}%`, `${Math.abs(M.numbers.mdd_pct)}%`, ...opts,
+    `${D.median}%`, `${D.p10}%`, `${D.p90}%`, '100%', '0%', '10%', '90%',   // 10%·90% 는 «하위 10%» 같은 분위 이름
+    ...M.events.flatMap((e) => [`${e.pct >= 0 ? '+' : ''}${e.pct.toFixed(3)}%`, `${e.pct.toFixed(3)}%`, `${Math.abs(e.pct).toFixed(3)}%`,
+      ...([e.l1, e.l2, e.en].join(' ').match(/[+\-−]?\d+(\.\d+)?%/g) || [])])].map(norm));
+  const all = [title, desc, cap, cmt].join('\n');
+  const pcts = [...new Set((all.match(/[+\-−]?\d+(\.\d+)?%/g) || []).map(norm))];
+  const unknownP = pcts.filter((x) => !allow.has(x) && !allow.has(x.replace(/^\+/, '')));
+  unknownP.length ? bad('발행문구 % 숫자', unknownP.join(', '), '매니페스트·재계산 값만') : ok('발행문구 % 숫자', `${pcts.length}종 전부 매니페스트 값`);
+  const counts = new Set([M.numbers.bars, M.numbers.changes, D.n].filter(Boolean).map((v) => v.toLocaleString('en-US')));
+  const cnt = [...new Set(all.match(/\d{1,3}(,\d{3})+(?=\s*(개|봉|five-minute|bars))/g) || [])];
+  const unknownC = cnt.filter((x) => !counts.has(x));
+  unknownC.length ? bad('발행문구 봉 개수', unknownC.join(', '), [...counts].join('/')) : ok('발행문구 봉 개수', cnt.join(', ') || '없음');
+  const [dko, den] = desc.split('\n---\n');
+  const bars = M.numbers.bars.toLocaleString('en-US');
+  [['설명(한)', dko || ''], ['설명(영)', den || '']].forEach(([k, v]) =>
+    (v.includes(wk) && v.includes(bars) ? ok(`${k} 핵심 숫자`, `${wk} · ${bars}`) : bad(`${k} 핵심 숫자`, '빠짐', `${wk} · ${bars}`)));
+  const openS = Math.round(M.numbers.open).toLocaleString('en-US');
+  [cap, cmt].every((v) => !/시가/.test(v) || v.includes(openS)) ? ok('캡션·댓글 주간 시가', openS) : bad('캡션·댓글 주간 시가', '다름', openS);
+  const banned = /매수\s*(하세요|추천)|매도\s*(하세요|추천)|사세요|파세요|수익\s*보장|무조건\s*(오르|사|벌)|손실\s*없|buy now|sell now|guaranteed/i;
+  banned.test(all) ? bad('금지 표현', all.match(banned)[0], '없어야 한다') : ok('금지 표현', '없음');
+  /투자 권유가 아닙니다/.test(desc) && /Not investment advice/i.test(desc) ? ok('면책 문구(설명 한·영)', '있음') : bad('면책 문구', '빠짐', '한·영 둘 다');
+  /[<>]/.test(desc) ? bad('설명란 < >', '있음', '업로드가 거부된다') : ok('설명란 < >', '없음');
+  Buffer.byteLength(desc) <= 5000 ? ok('설명란 길이', `${Buffer.byteLength(desc)}바이트`) : bad('설명란 길이', `${Buffer.byteLength(desc)}바이트`, '5,000바이트 이하');
+
+  console.log(`\n[12] 과거 1시간봉 재수집 대조`);
+  const hi = argv.indexOf('--hist');
+  if (hi >= 0) {
+    try {
+      const HB = JSON.parse(fs.readFileSync(argv[hi + 1], 'utf8'));
+      const r = await (await fetch('https://query1.finance.yahoo.com/v8/finance/chart/NQ%3DF?interval=1h&range=2y', { headers: { 'User-Agent': 'Mozilla/5.0' } })).json();
+      const x = r.chart.result[0], q = x.indicators.quote[0];
+      const fresh = new Map(); x.timestamp.forEach((t, i) => { if (q.close[i] != null) fresh.set(etStr(t), q.close[i]); });
+      const both = HB.filter((b) => fresh.has(b.d)), same = both.filter((b) => fresh.get(b.d) === b.c).length;
+      same / Math.max(1, both.length) >= 0.99 ? ok('1시간봉 파일 = 새로 받은 값', `${both.length}봉 중 ${same}봉 같음(서머타임 맞춘 시각)`)
+        : bad('1시간봉 파일', `${both.length}봉 중 ${same}봉만 같음`, '99% 이상');
+    } catch (e) { console.log(`  ⛔ 1시간봉 재수집 실패 — ${e.message}`); fails++; }
+  } else warn('1시간봉 재수집', '--hist 를 주면 대조한다');
 }
 
 // ── 결과 ─────────────────────────────────────────────────────────────────────

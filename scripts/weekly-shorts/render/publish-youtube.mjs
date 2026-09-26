@@ -57,8 +57,11 @@ async function accessToken(env) {
 const need = k => { if (!args[k]) { console.error(`--${k} 가 필요하다`); process.exit(1); } return args[k]; };
 const readIf = p => (p && fs.existsSync(p)) ? fs.readFileSync(p, 'utf8') : null;
 
-const VIDEO = need('video');
-const TITLE = need('title');
+// --existing=<영상번호> 를 주면 영상은 올리지 않고 자막만 그 영상에 붙인다.
+// 4회차에서 영상은 올라갔는데 하루 사용 한도(quotaExceeded)에 걸려 자막만 실패했다(2026-09-26).
+const EXISTING = args.existing ? String(args.existing) : null;
+const VIDEO = EXISTING ? (args.video || null) : need('video');
+const TITLE = EXISTING ? String(args.title || '') : need('title');
 const DESC  = readIf(args['desc-file']) ?? (args.desc || '');
 const TAGS  = (readIf(args['tags-file']) ?? (args.tags || ''))
                 .split(/[\n,]/).map(s => s.trim()).filter(Boolean);
@@ -78,12 +81,14 @@ const chRes = await fetch('https://www.googleapis.com/youtube/v3/channels?part=s
 const chJson = await chRes.json();
 const ch = (chJson.items || [])[0];
 
-const size = fs.statSync(VIDEO).size;
+const size = VIDEO ? fs.statSync(VIDEO).size : 0;
 console.log('─────────── 올릴 내용 ───────────');
 console.log(`  채널    : ${ch ? ch.id + ' — ' + ch.snippet.title : '(조회 실패)'}`);
-console.log(`  영상    : ${VIDEO} (${(size / 1048576).toFixed(2)} MB)`);
-console.log(`  제목    : ${TITLE}`);
-console.log(`  제목 끝 : ${/\[.+ \d\d\] #Shorts$/.test(TITLE) ? '관행에 맞음' : '⚠ «[시리즈 nn] #Shorts» 형식이 아니다'}`);
+console.log(EXISTING ? `  영상    : 이미 올린 영상 ${EXISTING} — 자막만 올린다` : `  영상    : ${VIDEO} (${(size / 1048576).toFixed(2)} MB)`);
+if (!EXISTING) {
+  console.log(`  제목    : ${TITLE}`);
+  console.log(`  제목 끝 : ${/\[.+ \d\d\] #Shorts$/.test(TITLE) ? '관행에 맞음' : '⚠ «[시리즈 nn] #Shorts» 형식이 아니다'}`);
+}
 console.log(`  설명란  : ${DESC ? DESC.split('\n').length + '줄 / ' + DESC.length + '자' : '(비어 있음)'}`);
 console.log(`  태그    : ${TAGS.length}개`);
 console.log(`  카테고리: ${CATEGORY} · 언어: ${LANG} · 공개: ${PRIVACY} · 아동용: false`);
@@ -96,27 +101,34 @@ if (!CONFIRM) {
   process.exit(0);
 }
 
-// ── 영상 올리기 (재개 가능 업로드)
-const meta = {
-  snippet: { title: TITLE, description: DESC, tags: TAGS, categoryId: CATEGORY,
-             defaultLanguage: LANG, defaultAudioLanguage: LANG },
-  status: { privacyStatus: PRIVACY, selfDeclaredMadeForKids: false },
-};
-const init = await fetch(
-  'https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
-  { method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json',
-               'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': String(size) },
-    body: JSON.stringify(meta) });
-if (!init.ok) { console.error('업로드 시작 실패:', init.status, (await init.text()).slice(0, 400)); process.exit(1); }
-const loc = init.headers.get('location');
+let vj;
+if (EXISTING) {
+  vj = { id: EXISTING };
+  console.log(`
+· 영상은 이미 올라가 있다: ${EXISTING} — 자막만 올린다`);
+} else {
+  // ── 영상 올리기 (재개 가능 업로드)
+  const meta = {
+    snippet: { title: TITLE, description: DESC, tags: TAGS, categoryId: CATEGORY,
+               defaultLanguage: LANG, defaultAudioLanguage: LANG },
+    status: { privacyStatus: PRIVACY, selfDeclaredMadeForKids: false },
+  };
+  const init = await fetch(
+    'https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
+    { method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json',
+                 'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': String(size) },
+      body: JSON.stringify(meta) });
+  if (!init.ok) { console.error('업로드 시작 실패:', init.status, (await init.text()).slice(0, 400)); process.exit(1); }
+  const loc = init.headers.get('location');
 
-const put = await fetch(loc, { method: 'PUT',
-  headers: { 'Content-Type': 'video/mp4', 'Content-Length': String(size) },
-  body: fs.readFileSync(VIDEO), duplex: 'half' });
-const vj = await put.json();
-if (!put.ok || !vj.id) { console.error('업로드 실패:', put.status, JSON.stringify(vj).slice(0, 400)); process.exit(1); }
-console.log(`\n✅ 영상 올림: ${vj.id}  https://www.youtube.com/watch?v=${vj.id}`);
+  const put = await fetch(loc, { method: 'PUT',
+    headers: { 'Content-Type': 'video/mp4', 'Content-Length': String(size) },
+    body: fs.readFileSync(VIDEO), duplex: 'half' });
+  vj = await put.json();
+  if (!put.ok || !vj.id) { console.error('업로드 실패:', put.status, JSON.stringify(vj).slice(0, 400)); process.exit(1); }
+  console.log(`\n✅ 영상 올림: ${vj.id}  https://www.youtube.com/watch?v=${vj.id}`);
+}
 
 // ── 자막 올리기 (Zapier 때는 원시 multipart 를 손으로 만들어야 했다)
 for (const [lang, p] of [['ko', KO], ['en', EN]]) {

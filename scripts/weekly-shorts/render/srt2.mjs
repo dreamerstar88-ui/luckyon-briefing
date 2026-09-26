@@ -15,14 +15,15 @@ function findRoot(from){
 }
 const R    = findRoot(HERE);
 const args = Object.fromEntries(process.argv.slice(2).map(a=>{const [k,...v]=a.replace(/^--/,'').split('=');return [k,v.join('=')||true]}));
-const STAMP = args.stamp || '2026-09-14';          // ← 회차마다 바꾼다
+const STAMP = args.stamp || '2026-09-21';          // ← 회차마다 바꾼다
 const DATA  = args.data  || path.join(R,'data','weekly-shorts',STAMP+'.5m.json');
 const MANI  = args.manifest || path.join(R,'content','weekly-shorts',STAMP+'.json');
 const ODIR  = args.outdir || HERE;   // 기본값은 이 파일이 있는 폴더
-const BASE  = args.base || 'luckyon-nasdaq-week3';  // ← 회차마다 바꾼다
+const BASE  = args.base || 'luckyon-nasdaq-week4';  // ← 회차마다 바꾼다
 const all=JSON.parse(fs.readFileSync(DATA,'utf8'));
-const B=all.filter(x=>'2026-09-14 09:30'<=x.d&&x.d<='2026-09-18 16:00');
 const M=JSON.parse(fs.readFileSync(MANI,'utf8'));
+// 창은 매니페스트에서 읽는다. 3회차까지는 9/14~9/18 이 여기 박혀 있었다.
+const B=all.filter(x=>M.window.from_et<=x.d&&x.d<=M.window.to_et);
 const ET=M.events.map(e=>e.et);
 const IDX=ET.map(d=>B.findIndex(x=>x.d===d));
 if(IDX.some(i=>i<0)){console.error('사건 인덱스를 못 찾았다',IDX);process.exit(1);}
@@ -63,18 +64,25 @@ const EVEN=M.events.map((e,k)=>{
   const tail=b.join(', ');
   return [`${k+1}) ${day} ${en} - ${a}`, tail||drop(e.l2)];
 });
-const KO=[
- ['지난주 나스닥, 월요일 개장 ~ 금요일 마감','결과는 +2.58%. 수요일에 3년 만의 첫 금리 인상이 있었다'],
- ...EVKO,
- ['지수를 움직인 건 기자회견이었다','금리 결정은 +0.11%, 기자회견은 -0.28%'],
- ['금리는 예상대로였고, 움직인 건 그 30분 뒤였다','몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다'],
-];
-const EN=[
- ['Nasdaq 100 futures, Monday open to Friday close','The week ended +2.58%, with the first rate hike in three years'],
- ...EVEN,
- ['The press conference moved it, not the decision','The decision +0.11%, the press conference -0.28%'],
- ['Rates came in as expected. The move came 30 minutes later','Which one did you pick? We will replay next week too'],
-];
+// 훅·정답·요약 자막도 매니페스트 copy.srt 에서 만든다(4회차부터). 화면 문구(copy.screen)와
+// 같은 파일에 나란히 있어 한쪽만 고치는 일을 줄인다. 숫자는 봉에서 계산해 채운다 —
+// 3회차까지 여기 «결과는 +2.58%» 가 문자열로 박혀 있었다.
+const open=B[0].o;
+const below=B.filter(b=>b.c<open).length;
+const aboveV=B.filter(b=>b.c>=open).length/B.length*100;
+const weekPct=(B.at(-1).c/B[0].o-1)*100;
+const sgn=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const fmtPct=v=>(Math.abs(v-Math.round(v))<0.005?String(Math.round(v)):v.toFixed(2))+'%';
+const pctAt=d=>{const i=B.findIndex(x=>x.d===d);return +((B[i].c/B[i-1].c-1)*100).toFixed(3);};
+const top=M.events.map(e=>pctAt(e.et)).sort((a,b)=>Math.abs(b)-Math.abs(a))[0];
+const FILL={WEEK:sgn(weekPct),N:B.length.toLocaleString('en-US'),BELOW:String(below),ABOVE:fmtPct(aboveV),
+  DN:String(M.question.dist.n),DMED:M.question.dist.median+'%',EVN:String(M.events.length),
+  TOPPCT:(top>=0?'+':'')+top.toFixed(3)+'%',
+  OPEN:Math.round(open).toLocaleString('en-US')};   // 주간 시가(첫 5분봉 시가) 반올림 — render.mjs 와 같다
+const fill=s=>String(s).replace(/\{([A-Z]+)\}/g,(m,k)=>{if(!(k in FILL)){console.error('모르는 자리표시',m);process.exit(1);}return FILL[k];});
+const T=M.copy.srt;
+const KO=[T.ko.hook.map(fill),...EVKO,T.ko.answer.map(fill),T.ko.summ.map(fill)];
+const EN=[T.en.hook.map(fill),...EVEN,T.en.answer.map(fill),T.en.summ.map(fill)];
 if(KO.length!==cuts.length-1){console.error('자막 수와 구간 수가 안 맞는다',KO.length,cuts.length-1);process.exit(1);}
 const ts=s=>{const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${x.toFixed(3).padStart(6,'0').replace('.',',')}`;};

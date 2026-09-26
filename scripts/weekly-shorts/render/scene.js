@@ -145,10 +145,15 @@ function dayShade(ctx){
 // 같은 날 08:30 과 10:00 은 5분봉으로 18칸, 화면에서는 19px 밖에 안 떨어져 있어
 // 배지도 라벨 상자도 그대로 겹친다. 사건이 6개가 되면서 두 쌍이 그렇게 됐다.
 const MINX=90, LH_=31, PADX_=14, PADY_=12, BW_=PADX_*2+26;
+// 사건이 멈출 때 커서에 두르는 원. 바깥 반지름은 선 두께(4)의 절반을 더한 34px 이다.
+// 상자는 사건 세로선에서 16px 떨어져 서는데 원은 34px 까지 퍼진다. 4회차 표본에서
+// 1번 사건이 멈춘 0.6초 동안 원이 «시카고지수» 상자 왼쪽 테두리를 덮었다.
+const RING_R=32, RING_OUT=RING_R+2;
 // 라벨 상자 하나의 x 범위와 높이. side 가 -1 이면 세로선 왼쪽, +1 이면 오른쪽.
-function boxOf(ev,side){
+// off 는 사건 세로선에서 상자까지의 거리. 보통 16px, 원을 피해야 하면 원 바깥으로 물린다.
+function boxOf(ev,side,off=16){
   const x=X(ev.i), h=vtextH(ev.tag,LH_), box=h+PADY_*2;
-  const right=x+16, left=x-16-BW_;
+  const right=x+off, left=x-off-BW_;
   let bx = side<0 ? left : right;
   // 그림 영역 안에만 있으면 된다. 예전 한계(CX+CW-40)가 너무 빡빡해서, 오른쪽 끝 사건의
   // 상자가 왼쪽으로 튕기며 짝꿍 상자와 같은 자리에 겹쳤다.
@@ -157,13 +162,17 @@ function boxOf(ev,side){
   return {bx,box};
 }
 // 그 상자를 위/아래에 뒀을 때 주가 선과 얼마나 떨어지는가 (음수면 선이 상자를 지난다)
-function clearOf(ev,top,side){ return clearOfAt(ev,top,boxOf(ev,side).bx); }
 function clearOfAt(ev,top,bx){
   const box=vtextH(ev.tag,LH_)+PADY_*2;
   let hi=1e9,lo=-1e9;
   for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW_+4)continue;
     const yj=Y(BARS[j].c);if(yj<hi)hi=yj;if(yj>lo)lo=yj;}
   if(hi>lo)hi=lo=Y(BARS[ev.i].c);
+  // 사건이 멈출 때의 원도 장애물로 본다. 이 상자가 떠 있는 동안 멈추는 사건(자기 자신과
+  // 뒤의 사건)의 원 가운데, 상자의 가로 구간에 닿는 것의 위아래 끝을 넣는다.
+  for(const e of EVENTS){if(e.i<ev.i)continue;
+    const ex=X(e.i);if(ex+RING_OUT<bx-4||ex-RING_OUT>bx+BW_+4)continue;
+    const ey=Y(BARS[e.i].c);if(ey-RING_OUT<hi)hi=ey-RING_OUT;if(ey+RING_OUT>lo)lo=ey+RING_OUT;}
   return top ? hi-(CY+14+box) : (CY+CH-box-14)-lo;
 }
 // 붙어 있는 사건을 «무리» 로 묶는다. 예전에는 두 개짜리 쌍만 다뤄서, 셋이
@@ -179,41 +188,73 @@ function clusters(){
   out.push(cur); return out;
 }
 function eventSlots(){
-  const pair=[],place=[],side=[],bxs=[],bys=[];
-  for(let k=0;k<EVENTS.length;k++){pair.push(false);side.push(1);place.push(true);bxs.push(null);bys.push(0);}
-  for(const cl of clusters()){
-    if(cl.length===1){
-      const k=cl[0];
-      place[k]=clearOf(EVENTS[k],true,1)>=clearOf(EVENTS[k],false,1);
-      continue;
-    }
-    // 무리 안에서는 상자를 가로로 나란히 편다. 서로 최소 BW_+10 만큼 떨어뜨리고,
-    // 무리의 한가운데를 기준으로 좌우 대칭이 되게 둔 뒤 그림 영역 안으로 민다.
-    const STEP=BW_+10;
+  const pair=[],place=[],side=[],bxs=[],bys=[],bcx=[];
+  for(let k=0;k<EVENTS.length;k++){pair.push(false);side.push(1);place.push(true);bxs.push(null);bys.push(0);bcx.push(X(EVENTS[k].i));}
+  const H=k=>vtextH(EVENTS[k].tag,LH_)+PADY_*2;
+  const yOf=(k,top)=>top?CY+14:CY+CH-H(k)-14;
+  // 이미 놓은 상자와의 가로 틈(높이가 겹치는 것만 본다). 겹치면 음수.
+  const placed=[];
+  const boxGap=(k,bx,top)=>{let g=1e9;const y0=yOf(k,top),y1=y0+H(k);
+    for(const q of placed){const q0=yOf(q.k,q.top),q1=q0+H(q.k);if(y1<=q0||q1<=y0)continue;
+      g=Math.min(g,bx+BW_<=q.bx?q.bx-(bx+BW_):(q.bx+BW_<=bx?bx-(q.bx+BW_):-Math.min(bx+BW_-q.bx,q.bx+BW_-bx)));}
+    return g;};
+  // 남의 사건 세로선과의 가로 틈(자기 선은 뺀다)
+  const lineGap1=(bx,self)=>{let g=1e9;for(const e of EVENTS){if(e===self)continue;const x=X(e.i);
+    g=Math.min(g,x<bx?bx-x:(x>bx+BW_?x-bx-BW_:-Math.min(x-bx,bx+BW_-x)));}return g;};
+  const CL=clusters();
+  // 1) 몰린 사건부터 놓는다(자리가 더 좁다).
+  //    상자는 가로로 나란히 편다(서로 BW_+10 간격). 상자 줄을 어디에 둘지는 사건 세로선을 피해서
+  //    고른다 — ① 무리 오른쪽 끝 선 바깥 ② 왼쪽 끝 선 바깥 ③ 가운데 순으로 보고, 모든 사건
+  //    세로선과 10px 이상 떨어지는 첫 자리를 쓴다. 4회차 금요일 두 사건(18봉 · 12.7px 간격)을
+  //    가운데 두었더니 ⑤ 점선이 두 상자 사이 2~3px 틈에 끼었고 ⑥ 상자는 제 세로선 위에 얹혔다
+  //    (2026-09-26 독립 검증에서 발견).
+  for(const cl of CL.filter(c=>c.length>1)){
+    const STEP=BW_+10, BLK=cl.length*STEP-10;
     const xs=cl.map(k=>X(EVENTS[k].i));
-    const mid=(Math.min(...xs)+Math.max(...xs))/2;
-    let left=mid-(cl.length*STEP-10)/2;
-    if(left<CX+4)left=CX+4;
-    if(left+cl.length*STEP-10>CX+CW-4)left=CX+CW-4-(cl.length*STEP-10);
-    cl.forEach((k,n)=>{
-      pair[k]=true;
-      bxs[k]=left+n*STEP;
-      side[k]=bxs[k]<X(EVENTS[k].i)?-1:1;
-      // 배지는 제자리에 두되 위아래로 어긋나게 쌓아 원끼리 안 겹치게 한다
-      bys[k]=(n%2)*46;
-    });
+    const lo=Math.min(...xs), hi=Math.max(...xs), mid=(lo+hi)/2;
+    const lineGap=(l)=>{let g=1e9;for(const e of EVENTS){const x=X(e.i);for(let n=0;n<cl.length;n++){
+      const b0=l+n*STEP,b1=b0+BW_;g=Math.min(g,x<b0?b0-x:(x>b1?x-b1:-Math.min(x-b0,b1-x)));}}return g;};
+    const inside=(l)=>l>=CX+4&&l+BLK<=CX+CW-4;
+    const cands=[hi+16, lo-16-BLK, Math.min(Math.max(mid-BLK/2,CX+4),CX+CW-4-BLK)];
+    let left=cands.find(l=>inside(l)&&lineGap(l)>=10);
+    if(left===undefined)left=cands.filter(inside).sort((a,b)=>lineGap(b)-lineGap(a))[0]??cands[2];
+    // 번호 원은 위아래로 쌓지 않고 옆으로 벌린다(원 지름 34 + 8). 예전에는 둘째 원을 46px 올리고
+    // 제 세로선까지 줄을 내렸는데, 두 선이 원 반지름(17)보다 가까우면 그 줄이 첫째 원을 가로질렀다.
+    const BD=42, span=(cl.length-1)*BD;
+    const c0=Math.max(CX+18,Math.min(mid-span/2,CX+CW-18-span));
+    cl.forEach((k,n)=>{pair[k]=true;bxs[k]=left+n*STEP;side[k]=bxs[k]<X(EVENTS[k].i)?-1:1;bcx[k]=c0+n*BD;});
     // 무리는 위아래를 한 덩어리로 정한다. 따로 정하면 상자들이 엇갈려 읽기 나빠진다.
     const up=cl.reduce((a,k)=>a+clearOfAt(EVENTS[k],true,bxs[k]),0);
     const dn=cl.reduce((a,k)=>a+clearOfAt(EVENTS[k],false,bxs[k]),0);
-    cl.forEach(k=>{place[k]=up>=dn;});
+    cl.forEach(k=>{place[k]=up>=dn;placed.push({k,bx:bxs[k],top:place[k]});});
   }
-  return {pair,place,side,bxs,bys};
+  // 2) 홀로 선 사건. 세로선 오른쪽에 붙여(16px) 위·아래 중 여유가 큰 쪽에 세우는 게 기본이다.
+  //    그 자리가 «주가 선·멈출 때의 원과 8px · 다른 상자와 8px · 남의 세로선과 10px» 를 못 지키면
+  //    왼쪽에 붙여 보고, 그래도 안 되면 원 바깥(RING_OUT+12)으로 물린다. 다 안 되면 가장 덜 나쁜 자리.
+  //    4회차 1번 사건은 오른쪽에서 아래는 원에(-18px), 위는 주가 선에(-59px) 걸렸고, 몰린 사건의
+  //    상자 줄을 왼쪽으로 옮기자 4번 상자와 겹쳤다(상자끼리는 안 재고 있었다).
+  for(const cl of CL.filter(c=>c.length===1)){
+    const k=cl[0],ev=EVENTS[k];
+    let best=null,bestScore=-1e9;
+    for(const [off,sd] of [[16,1],[16,-1],[RING_OUT+12,1],[RING_OUT+12,-1]]){
+      const bx=boxOf(ev,sd,off).bx; let pick=null;
+      for(const top of [true,false]){
+        const c=clearOfAt(ev,top,bx), bg=boxGap(k,bx,top), lg=lineGap1(bx,ev);
+        const score=Math.min(c-8,bg-8,lg-10);
+        if(score>=0&&(!pick||c>pick.c))pick={c,top,bx};
+        if(score>bestScore){bestScore=score;best={c,top,bx};}
+      }
+      if(pick){best=pick;break;}
+    }
+    place[k]=best.top;bxs[k]=best.bx;side[k]=best.bx<X(ev.i)?-1:1;placed.push({k,bx:best.bx,top:best.top});
+  }
+  return {pair,place,side,bxs,bys,bcx};
 }
 function eventLines(ctx,upto,mode){
   ctx.save();
   // 바깥에서 준 투명도를 덮어쓰면 요약이 사라져도 배지·라벨만 남아 루프 카드 위에 얹힌다.
   const A=ctx.globalAlpha;
-  const {pair:PAIR,place:PLACE,side:SIDE,bxs:BXS,bys:BYS}=eventSlots();
+  const {place:PLACE,side:SIDE,bxs:BXS,bcx:BCX}=eventSlots();
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
@@ -223,14 +264,14 @@ function eventLines(ctx,upto,mode){
       ctx.beginPath();ctx.moveTo(x,CY);ctx.lineTo(x,CY+CH);ctx.stroke();ctx.setLineDash([]);
       continue;
     }
-    // 번호 배지
-    const by0=CY-20-BYS[k];
-    ctx.globalAlpha=A;ctx.fillStyle=ev.col;
-    ctx.beginPath();ctx.arc(x,by0,17,0,7);ctx.fill();
-    if(BYS[k]>0){ctx.strokeStyle=ev.col;ctx.lineWidth=2;ctx.globalAlpha=A*.5;
-      ctx.beginPath();ctx.moveTo(x,by0+17);ctx.lineTo(x,CY);ctx.stroke();ctx.globalAlpha=A;}
+    // 번호 배지. 몰린 사건은 옆으로 벌려 두고(eventSlots 의 bcx), 제 세로선 윗끝까지 짧은 줄로 잇는다.
+    const by0=CY-20, bxc=BCX[k];
+    ctx.globalAlpha=A;
+    if(Math.abs(bxc-x)>2){ctx.strokeStyle=ev.col;ctx.lineWidth=2;ctx.globalAlpha=A*.6;
+      ctx.beginPath();ctx.moveTo(bxc,by0+17);ctx.lineTo(x,CY);ctx.stroke();ctx.globalAlpha=A;}
+    ctx.fillStyle=ev.col;ctx.beginPath();ctx.arc(bxc,by0,17,0,7);ctx.fill();
     ctx.save();ctx.font='900 22px PD';ctx.fillStyle='#000';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(String(k+1),x,by0+1);ctx.restore();
+    ctx.fillText(String(k+1),bxc,by0+1);ctx.restore();
     // 세로 글씨 (주가 선 아래에 깐다 — polyline 보다 먼저 그린다)
     const LH=31, PADX=14, PADY=12, BW=PADX*2+26;
     const h=vtextH(ev.tag,LH);
@@ -241,7 +282,8 @@ function eventLines(ctx,upto,mode){
     // 자리는 전체 봉 기준으로 한 번 정한다 — 그래야 선이 다가와도 상자가 안 움직인다.
     const box=h+PADY*2;
     const by = PLACE[k] ? CY+14 : CY+CH-box-14;
-    ctx.globalAlpha=A;ctx.fillStyle='rgba(0,0,0,.86)';
+    // 바탕은 불투명하게 칠한다. .86 이었을 때 «주간 시가» 점선이 상자 5개 안으로 비쳐 보였다(4회차 검증).
+    ctx.globalAlpha=A;ctx.fillStyle='#000';
     rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
     ctx.strokeStyle=ev.col;ctx.globalAlpha=A*.45;ctx.lineWidth=2;rr(ctx,bx,by,BW,h+PADY*2,10);ctx.stroke();
     ctx.globalAlpha=A;
@@ -251,10 +293,124 @@ function eventLines(ctx,upto,mode){
 }
 function dayAxis(ctx){
   ctx.save();
-  const wSeg=CW/DAYS.length;
-  DAYS.forEach((d,i)=>numT(ctx,d.slice(5).replace('-','/')+' '+dowOf(d),CX+wSeg*(i+.5),CY+CH+62,'700 32px PD',C.muted,'center'));
-  txt(ctx,'가로축은 미국 날짜 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
+  // 요일 이름은 그 요일 칸(구분선과 구분선 사이)의 실제 가운데에 찍는다. 예전에는 폭을
+  // 요일 수로 똑같이 나눴는데, 칸마다 봉 수가 달라 이름이 구분선을 걸치기도 했다.
+  // (4회차 첫 판에서 창을 일요일 저녁부터로 잘못 잡았을 때 월요일 칸만 넓어져 더 틀어졌다. 지금 창은 월 04:00 부터다.)
+  DAYS.forEach((d,i)=>{
+    const a=i===0?0:BARS.findIndex(x=>x.d.startsWith(d));
+    const b=i<DAYS.length-1?BARS.findIndex(x=>x.d.startsWith(DAYS[i+1])):BARS.length-1;
+    const cx=(X(Math.max(0,a))+X(Math.max(0,b)))/2;
+    numT(ctx,d.slice(5).replace('-','/')+' '+dowOf(d),cx,CY+CH+62,'700 32px PD',C.muted,'center');
+  });
+  // «미국 날짜» 가 아니라 «미국 거래일» 이다. 창이 월 04:00 부터라 일요일 봉은 없다.
+  txt(ctx,'가로축은 미국 거래일 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
   ctx.restore();
+}
+// ── 주간 시가 기준선. 질문이 «시가 위에 있던 시간» 인 회차에서만 그린다(COPY.openLine).
+// 2회차 그리기 코드에 있던 것을 가져왔다(그 회차는 질문이 바뀌어 부르지 않았다).
+// 이름표 자리는 사건 커서·세로 라벨 상자·주가 선을 전부 피해서 고른다(지침 5-6).
+// 2회차 판은 세로 라벨 상자의 x 만 보고 막았는데, 3회차부터 라벨이 무리 지어 가로로
+// 펴지고 위·아래 어느 쪽에도 선다. 그래서 eventSlots() 로 실제 상자 자리(x·y)를 받아 온다.
+// 이름표는 짧게 «주간 시가» 로 쓴다. 4회차에서 «시가 29,947»(186px)을 넣었더니 세로 라벨
+// 상자 6개가 전부 선 높이에 서 있어 들어갈 빈 칸이 한 군데도 없었고, 계산이 맨 왼쪽으로
+// 떨어져 주가 선 시작과 «시카고지수» 상자에 겹쳤다. «주간» 을 붙인 건 그냥 «시가» 면
+// 그날 시가로 읽힐 수 있어서다. 폭은 글자를 재서 정한다.
+const OPEN_LABEL='주간 시가', OPEN_FONT='700 24px PD';
+function openLine(ctx,a=1){
+  const y=Y(BARS[0].o);
+  ctx.save();ctx.globalAlpha*=a;
+  ctx.strokeStyle='#9aa6b8';ctx.lineWidth=2.5;ctx.setLineDash([10,8]);
+  ctx.beginPath();ctx.moveTo(CX,y);ctx.lineTo(CX+CW,y);ctx.stroke();ctx.setLineDash([]);
+  const pick=openLabelBox(ctx);
+  ctx.fillStyle='rgba(10,14,22,.85)';rr(ctx,pick.x,pick.y0,pick.w,pick.h,6);ctx.fill();
+  txt(ctx,OPEN_LABEL,pick.x+10,pick.y0+23,OPEN_FONT,'#c8d0dc');
+  ctx.restore();
+}
+// 이름표 자리 계산만 따로 뺐다 — 렌더 전 겹침 검사(layoutHits)가 같은 자리를 재야 해서다.
+function openLabelBox(ctx){
+  const y=Y(BARS[0].o);
+  ctx.save();ctx.font=OPEN_FONT;const LW=Math.ceil(ctx.measureText(OPEN_LABEL).width)+20;ctx.restore();
+  const {place,side,bxs}=eventSlots();
+  // 선 위(선에 붙은 한 줄)와 선 아래 두 줄을 다 보고, 가장 여유가 큰 자리를 고른다.
+  const bands=[[y-36,y-4],[y+4,y+36]].filter(([t,b])=>t>=CY+2&&b<=CY+CH-2);
+  let pick=null;
+  for(const [LY0,LY1] of bands){
+    const blocked=[];
+    EVENTS.forEach((ev,k)=>{
+      const x=X(ev.i);
+      blocked.push([x-12,x+12]);                                   // 사건 세로선
+      const bx=bxs[k]!=null?bxs[k]:boxOf(ev,side[k]).bx;
+      const box=vtextH(ev.tag,LH_)+PADY_*2;
+      const by=place[k]?CY+14:CY+CH-box-14;
+      if(by<LY1&&by+box>LY0)blocked.push([bx-8,bx+BW_+8]);          // 이름표와 높이가 겹치는 라벨 상자
+      const ey=Y(BARS[ev.i].c);                                     // 사건이 멈출 때의 원
+      if(ey-RING_OUT<LY1+4&&ey+RING_OUT>LY0-4)blocked.push([x-RING_OUT-4,x+RING_OUT+4]);
+    });
+    for(let i=0;i<BARS.length;i++){                                  // 이름표 높이를 지나가는 주가 선
+      const yi=Y(BARS[i].c);
+      if(yi>=LY0-4&&yi<=LY1+4){const xi=X(i);blocked.push([xi-6,xi+6]);}
+    }
+    for(let c0=CX+6;c0<=CX+CW-LW-6;c0+=4){
+      // 겹치면 음수(겹친 폭만큼), 안 겹치면 가장 가까운 것까지의 거리
+      let d=1e9;
+      for(const [a0,b0] of blocked){
+        const gap=(c0>b0)?c0-b0:(c0+LW<a0)?a0-(c0+LW):-Math.min(b0,c0+LW)+Math.max(a0,c0);
+        d=Math.min(d,gap);
+      }
+      if(!pick||d>pick.d)pick={d,x:c0,y0:LY0,w:LW,h:32};
+    }
+  }
+  return pick;
+}
+// ── 렌더 전 겹침 검사(render.mjs 가 부른다). 사건이 멈춘 동안 그리는 원과, 그때 화면에 떠 있는
+// 라벨 상자(지나간 사건 전부)·시가 이름표 사이의 틈을 px 로 낸다. 음수면 겹친 것이다.
+// 눈으로 훑어서는 0.6초짜리 겹침을 놓친다 — 4회차 1번 사건이 그랬다.
+function layoutHits(ctx){
+  const {bxs,side,place}=eventSlots();
+  const lab=COPY.openLine?openLabelBox(ctx):null;
+  const gapTo=(cx,cy,x0,y0,x1,y1)=>{const nx=Math.max(x0,Math.min(cx,x1)),ny=Math.max(y0,Math.min(cy,y1));
+    return Math.hypot(cx-nx,cy-ny)-RING_OUT;};
+  const out=[];
+  EVENTS.forEach((ek,k)=>{
+    const cx=X(ek.i),cy=Y(BARS[ek.i].c);
+    EVENTS.forEach((ej,j)=>{if(ej.i>ek.i)return;
+      const h=vtextH(ej.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ej,side[j]).bx,by=place[j]?CY+14:CY+CH-h-14;
+      out.push({ring:k+1,what:`${j+1}번 상자`,gap:+gapTo(cx,cy,bx,by,bx+BW_,by+h).toFixed(1)});});
+    if(lab)out.push({ring:k+1,what:'시가 이름표',gap:+gapTo(cx,cy,lab.x,lab.y0,lab.x+lab.w,lab.y0+lab.h).toFixed(1)});
+  });
+  return out;
+}
+// 라벨 상자와 주가 선 사이의 틈(px). 선은 상자 위에 그려지므로 닿으면 글자를 긋는다.
+// 이웃한 두 봉을 잇는 선분이 상자의 세로 구간을 지나가는지 본다(봉 사이가 1px 도 안 돼
+// 점만 보면 가파른 선이 빠져나간다). 선 두께 5 의 절반을 뺀다. 음수면 선이 상자를 지난다.
+// 라벨 상자와 사건 세로선(모든 사건) 사이의 가로 틈, 번호 원끼리의 틈(px). 음수면 겹친 것이다.
+function lineBoxGaps(){
+  const {bxs,side,bcx}=eventSlots(), out=[];
+  EVENTS.forEach((ej,j)=>{const bx=bxs[j]!=null?bxs[j]:boxOf(ej,side[j]).bx;
+    EVENTS.forEach((e,k)=>{const x=X(e.i);const g=x<bx?bx-x:(x>bx+BW_?x-bx-BW_:-Math.min(x-bx,bx+BW_-x));
+      out.push({what:`${j+1}번 상자↔${k+1}번 세로선`,gap:+g.toFixed(1)});});});
+  for(let a=0;a<EVENTS.length;a++)for(let b=a+1;b<EVENTS.length;b++)
+    out.push({what:`${a+1}번 원↔${b+1}번 원`,gap:+(Math.abs(bcx[a]-bcx[b])-34).toFixed(1)});
+  // 상자끼리: 높이가 겹치는 짝만 가로 틈을 잰다
+  const {place:pl}=eventSlots(), Hh=k=>vtextH(EVENTS[k].tag,LH_)+PADY_*2, Yo=(k)=>pl[k]?CY+14:CY+CH-Hh(k)-14;
+  for(let a=0;a<EVENTS.length;a++)for(let b=a+1;b<EVENTS.length;b++){
+    const ya=Yo(a),yb=Yo(b); if(ya+Hh(a)<=yb||yb+Hh(b)<=ya)continue;
+    const A=bxs[a]!=null?bxs[a]:boxOf(EVENTS[a],side[a]).bx, B=bxs[b]!=null?bxs[b]:boxOf(EVENTS[b],side[b]).bx;
+    const g=A+BW_<=B?B-(A+BW_):(B+BW_<=A?A-(B+BW_):-Math.min(A+BW_-B,B+BW_-A));
+    out.push({what:`${a+1}번 상자↔${b+1}번 상자`,gap:+g.toFixed(1)});}
+  return out;
+}
+function boxCurveGaps(){
+  const {bxs,side,place}=eventSlots();
+  return EVENTS.map((ev,j)=>{
+    const h=vtextH(ev.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ev,side[j]).bx,by=place[j]?CY+14:CY+CH-h-14;
+    let gap=1e9;
+    for(let i=1;i<BARS.length;i++){const x0=X(i-1),x1=X(i);if(x1<bx||x0>bx+BW_)continue;
+      const a=Y(BARS[i-1].c),b=Y(BARS[i].c),lo=Math.min(a,b),hi=Math.max(a,b);
+      const g=(hi<by)?by-hi:(lo>by+h)?lo-(by+h):-Math.min(hi-by,by+h-lo,h);
+      gap=Math.min(gap,g-2.5);}
+    return {box:j+1,tag:ev.tag,top:place[j],gap:+gap.toFixed(1)};
+  });
 }
 function polyline(ctx,upto){
   ctx.save();ctx.strokeStyle=C.line;ctx.lineWidth=5;ctx.lineJoin='round';ctx.lineCap='round';
@@ -292,7 +448,9 @@ function enBand(ctx,line,a=1,y=1524,rule=true){
 function drawHook(ctx,t){
   ctx.drawImage(BGC,0,0);
   txt(ctx,COPY.kicker,60,200,'700 48px PD','#d8d8d8','left','.04em');
-  const p=easeOut(seg(t,hs(.10),hs(1.00)));
+  // 결과 숫자는 0초부터 최종값을 보인다. 예전에는 0부터 올라가는 연출이라 첫 프레임이 «결과는 +0.00%» 였다.
+  // 쇼츠 피드는 첫 프레임을 쓰므로 틀린 결과가 먼저 보였다(2·3회차도 같았다. 4회차 검증에서 발견).
+  const p=1;
   shadow(ctx,true);
   txt(ctx,'결과는',56,330,'700 84px PD',C.muted);
   // 색과 부호는 최종값의 방향을 따른다. 예전에는 색이 C.up 으로 박혀 있어 하락 주에도
@@ -349,7 +507,8 @@ function drawReplay(ctx,t){
   numT(ctx,bar.kst,60,400,'700 44px PD','#d8d8d8');
   txt(ctx,'고점 대비',1024,300,'700 36px PD',C.muted,'right');
   numT(ctx,dd.toFixed(2)+'%',1024,372,'900 76px PD',dd<-0.05?C.down:C.muted,'right');
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
+  chartPanel(ctx);dayShade(ctx);if(COPY.openLine)openLine(ctx);
+  eventLines(ctx,i,'lines');eventLines(ctx,i,'labels');polyline(ctx,i);
   const px=X(i),py=Y(bar.c);
   ctx.save();ctx.fillStyle=C.line;ctx.beginPath();ctx.arc(px,py,11,0,7);ctx.fill();
   ctx.strokeStyle=C.line;ctx.globalAlpha=.45;ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,24,0,7);ctx.stroke();ctx.restore();
@@ -363,7 +522,7 @@ function drawReplay(ctx,t){
     ctx.save();ctx.globalAlpha=a*dim;
     if(cur){
       ctx.strokeStyle=cur.col;ctx.lineWidth=4;
-      ctx.beginPath();ctx.arc(px,py,32,0,7);ctx.stroke();
+      ctx.beginPath();ctx.arc(px,py,RING_R,0,7);ctx.stroke();
       ctx.fillStyle=cur.col;ctx.beginPath();ctx.arc(px,py,15,0,7);ctx.fill();
     }
     const fs=cur?42:32, ts=cur?56:42;
@@ -408,7 +567,7 @@ function drawAnswer(ctx,t){
     // 회차가 바뀌어도 그대로 남고, 1회차에서 실제 29시간을 36시간으로 부풀린 적이 있다.
     txt(ctx,COPY.ansSub2,60,632,'700 42px PD',C.muted);
     ctx.restore();}
-  chartPanel(ctx);dayShade(ctx);
+  chartPanel(ctx);dayShade(ctx);if(COPY.openLine)openLine(ctx);
   // 1위 사건이 일어난 자리를 세로 띠로 짚어 준다
   // 보기 번호(QUIZ.ans)로 EVENTS 를 찾으면 안 된다. 보기 개수와 사건 개수는
   // 서로 다르다. 1위 사건은 rankTop 으로만 찾는다.
@@ -420,7 +579,9 @@ function drawAnswer(ctx,t){
       ctx.fillRect(xw-30,CY,60,CH);ctx.restore();}
   }
   eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
-  enBand(ctx,COPY.enAnswer,q,690,true);
+  // 구분선(y634)이 바로 위 줄(ansSub2, y632)의 글자 아랫부분을 지나갔다 — 4회차 표본에서 발견.
+  // 이 화면에서는 선을 빼고 글자만 둔다(두 줄 사이 약 28px).
+  enBand(ctx,COPY.enAnswer,q,690,false);
   brand(ctx);
 }
 
@@ -448,10 +609,13 @@ function drawSumm(ctx,t){
     const y=390+k*118;
     txt(ctx,r[0],56,y+52,'700 46px PD',C.text);
     numT(ctx,r[1],1024,y+56,'900 56px PD',r[2],'right');
-    ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();
+    // 마지막 줄 밑줄(y708)은 위로 올려 쌓은 사건 배지(y707~741)의 윗부분에 닿았다 — 4회차 표본.
+    // 표 맨 아래 선은 없어도 읽힌다.
+    if(k<rows.length-1){ctx.strokeStyle='#262626';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(56,y+82);ctx.lineTo(1024,y+82);ctx.stroke();}
     ctx.restore();
   });
-  chartPanel(ctx);dayShade(ctx);eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
+  chartPanel(ctx);dayShade(ctx);if(COPY.openLine)openLine(ctx);
+  eventLines(ctx,BARS.length-1,'lines');eventLines(ctx,BARS.length-1,'labels');polyline(ctx,BARS.length-1);dayAxis(ctx);
   const c=easeOut(seg(st,0.95,1.35));
   if(c>0){ctx.save();ctx.globalAlpha=(1-fadeOut)*c;
     txt(ctx,'몇 번 고르셨나요?',60,1512,'400 88px PEN',C.hi);
@@ -464,15 +628,20 @@ function drawSumm(ctx,t){
       g.fillStyle='#000';g.fillRect(0,0,W,H);g.drawImage(BGC,0,0);
       txt(g,COPY.kicker,60,206,'700 48px PD','#d8d8d8','left','.04em');
       shadow(g,true);
-      txt(g,'결과는',56,362,'700 84px PD',C.muted);
+      // 세로 간격: 4회차 표본에서 «결과는»(y362) 아랫부분과 «+3.17%»(250px, 윗선 약 y372)이,
+      // «시가 위에 있던 시간»(y690) 과 «100%»(윗선 약 y710)이 각각 10px 안팎으로 붙어 있었다.
+      // 훅 화면(«결과는» y330)과 같은 간격으로 맞추고 아래 셋을 내렸다.
+      txt(g,'결과는',56,330,'700 84px PD',C.muted);
       numT(g,pct(STATS.weekPct),44,552,'900 250px PD',STATS.weekPct>=0?C.up:C.down,'left','-.06em');
       // 이 자리는 원래 "-2.17%" 같은 숫자만 들어오던 곳이라 250px 이었다. 한글이 섞이면
       // 글리프가 숫자보다 높아 위 라벨을 뚫는다. 내용을 보고 크기를 정한다.
       const lbig=/[가-힣]/.test(COPY.loopBig)?170:250;
-      txt(g,COPY.loopLabel,56,690,'700 76px PD',C.muted);
-      numT(g,COPY.loopBig,44,890,`900 ${lbig}px PD`,C.down,'left','-.06em');
+      txt(g,COPY.loopLabel,56,700,'700 76px PD',C.muted);
+      // 색을 C.down 으로 박아 두었었다(3회차 정답이 하락이라 맞아 보였다). 정답이 상승이거나
+      // 비율인 회차에는 틀린 색이 나간다 — 지침 5-3. 렌더 쪽이 넘긴 색을 쓴다.
+      numT(g,COPY.loopBig,44,930,`900 ${lbig}px PD`,C[COPY.loopColor]||C.down,'left','-.06em');
       shadow(g,false);
-      txt(g,COPY.loopTail,60,1000,'700 56px PD',C.text);
+      txt(g,COPY.loopTail,60,1040,'700 56px PD',C.text);
       window.__loopC=lc;
     }
     ctx.save();ctx.globalAlpha=out;ctx.drawImage(window.__loopC,0,0);ctx.restore();

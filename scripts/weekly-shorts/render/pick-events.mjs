@@ -2,12 +2,12 @@
 // 사건 선정 규칙(지침서 4장)을 기계가 대신 정하지는 않는다 — 고르는 데 필요한 숫자만 낸다.
 //
 //   node scripts/weekly-shorts/render/pick-events.mjs --stamp=2026-09-21 --to=2026-09-25 \
-//        --start="2026-09-20 18:10"
+//        --start="2026-09-21 04:00"
 //
 // --start 를 주면 그 시각부터 본다. 안 주면 --from 의 09:30(정규장 개장)부터다.
-// 4회차(2026-09-21 주)부터 창을 **그 주 선물 개장(일요일 저녁)** 으로 넓혔다.
-// 선물은 금요일 16:55 봉을 끝으로 끊기고 일요일 18:10 에 다시 열린다(2026-09-26 실측,
-// 직전 주도 같음). 월요일 0시는 장 한복판이라 자를 자리가 아니다.
+// 4회차(2026-09-21 주)부터 창은 **월요일 프리장 시작(04:00 ET)** 부터다 — 대표 지시 «주가 변화 프리장부터».
+// 한때 «일요일 18:10 선물 개장» 으로 잘못 잡았다. 18:10 은 야후 자료의 첫 봉일 뿐이고(실제 개장 18:00),
+// 대표가 한 말도 아니었다.
 // 1~3회차는 옛 기준(월요일 09:30 개장)이라 주간 등락률을 그대로 비교하면 안 된다.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -102,7 +102,7 @@ for (const day of [...byDay.keys()].sort()) {
     const p = pct.get(key), rk = rank.get(key);
     const top = list.reduce((a, b) => (b.stars > a.stars ? b : a));
     const sess = (key.slice(11) >= '09:30' && key.slice(11) <= '16:00') ? '장중' : '장밖';
-    const move = p == null ? '   창 밖' : `${p >= 0 ? '+' : ''}${p.toFixed(3)}%`.padStart(8);
+    const move = p == null ? ' 봉 없음' : `${p >= 0 ? '+' : ''}${p.toFixed(3)}%`.padStart(8);
     const rkTxt = rk == null ? '' : ` ${String(rk).padStart(4)}위`;
     const same = list.length > 1 ? ` (같은 봉 ${list.length}건)` : '';
     const nums = [top.actual && `실제 ${top.actual}`, top.consensus && `예상 ${top.consensus}`, top.previous && `직전 ${top.previous}`].filter(Boolean).join(' · ');
