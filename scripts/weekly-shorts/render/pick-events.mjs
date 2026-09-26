@@ -1,10 +1,14 @@
 // 캘린더 발표에 그 시각 5분봉 등락률과 주간 순위를 붙여 후보를 뽑는다.
 // 사건 선정 규칙(지침서 4장)을 기계가 대신 정하지는 않는다 — 고르는 데 필요한 숫자만 낸다.
 //
-//   node scripts/weekly-shorts/render/pick-events.mjs --stamp=2026-09-21 --from=2026-09-21 --to=2026-09-25
+//   node scripts/weekly-shorts/render/pick-events.mjs --stamp=2026-09-21 --to=2026-09-25 \
+//        --start="2026-09-20 18:10"
 //
-// 규칙 요약: 하루에 최소 1개 · ★★★ 우선, 그날 없으면 ★★ · 같은 조건이면 장중 우선 ·
-// 움직임의 크기로 사건 여부를 판정하지 않는다(★★★이면 0에 가까워도 남긴다).
+// --start 를 주면 그 시각부터 본다. 안 주면 --from 의 09:30(정규장 개장)부터다.
+// 4회차(2026-09-21 주)부터 창을 **그 주 선물 개장(일요일 저녁)** 으로 넓혔다.
+// 선물은 금요일 16:55 봉을 끝으로 끊기고 일요일 18:10 에 다시 열린다(2026-09-26 실측,
+// 직전 주도 같음). 월요일 0시는 장 한복판이라 자를 자리가 아니다.
+// 1~3회차는 옛 기준(월요일 09:30 개장)이라 주간 등락률을 그대로 비교하면 안 된다.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -17,6 +21,8 @@ const STAMP = args.stamp || '2026-09-21';
 const FROM = args.from || STAMP;
 const TO = args.to;
 if (!TO) { console.error('--to=YYYY-MM-DD 가 필요하다'); process.exit(1); }
+const START = args.start || `${FROM} 09:30`;
+const END = args.end || `${TO} 16:00`;
 const ET_SHIFT = Number(args.etoffset ?? -4);
 const MIN = Number(args.minstars ?? 2);
 
@@ -25,13 +31,15 @@ const HTML = args.html || path.join('content', 'weekly-shorts', `${STAMP}.calend
 
 // ── 5분봉과 봉별 등락률·순위
 const all = JSON.parse(fs.readFileSync(DATA, 'utf8'));
-const bars = all.filter(x => x.d >= `${FROM} 09:30` && x.d <= `${TO} 16:00`);
-if (!bars.length) { console.error('대상 주에 봉이 없다'); process.exit(1); }
+const bars = all.filter(x => x.d >= START && x.d <= END);
+if (!bars.length) { console.error(`창(${START} ~ ${END})에 봉이 없다`); process.exit(1); }
 const chg = [];
 for (let k = 1; k < bars.length; k++) chg.push({ d: bars[k].d, p: (bars[k].c / bars[k - 1].c - 1) * 100 });
 const rank = new Map([...chg].sort((a, b) => Math.abs(b.p) - Math.abs(a.p)).map((x, i) => [x.d, i + 1]));
 const pct = new Map(chg.map(x => [x.d, x.p]));
 const weekPct = (bars.at(-1).c / bars[0].o - 1) * 100;
+let pk = -1e9, mdd = 0;
+for (const x of bars) { if (x.h > pk) pk = x.h; const dd = x.l / pk - 1; if (dd < mdd) mdd = dd; }
 
 // ── 캘린더
 const html = fs.readFileSync(HTML, 'utf8');
@@ -52,7 +60,7 @@ for (const r of rows) {
   let hh = +tm[1] % 12; if (tm[3] === 'PM') hh += 12;
   const utc = `${dm[1]} ${pad(hh)}:${tm[2]}`;
   const et = shift(utc, ET_SHIFT);
-  if (et.slice(0, 10) < FROM || et.slice(0, 10) > TO) continue;
+  if (et < START || et > END) continue;
   if (+sm[1] < MIN) continue;
   // 그 시각이 들어가는 5분봉 (분을 5의 배수로 내린다)
   const [d0, t0] = et.split(' ');
@@ -69,7 +77,8 @@ for (const e of ev) {
   groups.get(e.barKey).push(e);
 }
 
-console.log(`주간 ${weekPct >= 0 ? '+' : ''}${weekPct.toFixed(3)}% · 봉 ${bars.length}개 · 5분 변동 ${chg.length}개`);
+console.log(`창 ${START} ~ ${END} (미 동부)`);
+console.log(`주간 ${weekPct >= 0 ? '+' : ''}${weekPct.toFixed(3)}% · 최대낙폭 ${(mdd * 100).toFixed(2)}% · 봉 ${bars.length}개 · 5분 변동 ${chg.length}개`);
 console.log(`캘린더 ★${MIN} 이상 ${ev.length}건 → 같은 봉끼리 묶어 ${groups.size}개 후보\n`);
 
 const byDay = new Map();
