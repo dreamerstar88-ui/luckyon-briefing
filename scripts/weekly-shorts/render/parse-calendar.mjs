@@ -20,7 +20,9 @@ const ET_SHIFT = Number(args.etoffset ?? -4);
 
 const html = fs.readFileSync(args.html, 'utf8');
 const rows = html.split(/<tr\s+data-url=/).slice(1);
-const val = (r, id) => { const m = r.match(new RegExp(`id='${id}'[^>]*>([\s\S]*?)<`)); return m ? m[1].replace(/&nbsp;/g, '').trim() : ''; };
+// 값은 <span id='actual'>0%</span> 또는 <a id='consensus' ...>-0.4%</a> 안에 있다.
+// 여는 태그를 건너뛴 뒤 다음 '<' 까지를 값으로 본다.
+const val = (r, id) => { const m = r.match(new RegExp(`id='${id}'[^>]*>([^<]*)`)); return m ? m[1].replace(/&nbsp;/g, '').trim() : ''; };
 const pad = n => String(n).padStart(2, '0');
 const shift = (s, h) => { const d = new Date(s.replace(' ', 'T') + 'Z'); d.setUTCHours(d.getUTCHours() + h);
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`; };
