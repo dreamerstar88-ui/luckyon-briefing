@@ -1,0 +1,200 @@
+{
+  "date": "2026-09-28",
+  "session": "am",
+  "dateLabel_ko": "9월 28일 월요일 아침",
+  "dateLabel_en": "Monday, September 28",
+
+  "headline_ko": "닷새 만에 돌아오는 코스피,<br>7000 지킬까",
+  "headline_en": "Kospi returns after 5 days —<br>can it hold 7,000?",
+  "headline_sub_ko": "美 국채금리는 2007년来 최고, 3대지수는 그래도 올랐다",
+  "headline_sub_en": "US yields hit an 18-year high, but stocks still rose",
+  "cover_kicker": {"ko": "5일 만의 코스피 복귀 · 美 9/25 마감", "en": "Kospi returns after 5 days · US Sep 25 close"},
+  "cover_facts": [
+    ["shield", {"ko": "다우 +0.93% · S&P 500 +0.51%", "en": "Dow +0.93% · S&P 500 +0.51%"},
+               {"ko": "51,828.62 / 7,743.41 · 나스닥도 +0.48%", "en": "51,828.62 / 7,743.41 pts · Nasdaq added 0.48%"}],
+    ["rate", {"ko": "美 10년물 5.17% · 2007년来 최고 유지", "en": "US 10Y at 5.17%, near an 18-year high"},
+              {"ko": "클리블랜드 연은 해맥 총재 '인플레 기대심리' 경고", "en": "Cleveland Fed's Hammack warns of an 'inflationary mindset'"}],
+    ["globe", {"ko": "코스피, 닷새 만에 정규장 재개", "en": "Kospi resumes trading after 5 days"},
+               {"ko": "9/23 종가 7,080.92 · 오늘 09시 7000선 시험대", "en": "Last close 7,080.92 (Sep 23) · tests 7,000 at today's open"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "뉴욕 3대 지수가 나란히 올라 한 주를 마감했다 — 다우 +0.93%, S&P500 +0.51%, 나스닥 +0.48%.",
+      "마이크로소프트가 코파일럿을 에이전트형 AI로 전면 개편한다고 밝히며 3.66% 뛴 반면, 골드만삭스가 AI 하이퍼스케일러의 손익분기 매출 문턱(연 3천억달러)을 지적하자 메타는 3.33% 내렸다.",
+      "거래대금은 마이크론이 이틀째 1위를 지켰고, 상승 종목 거래대금이 하락 종목의 약 2배(66.2%)를 차지했다.",
+      "미 10년물 금리는 5.17%로 2007년 이후 최고 수준을 유지했고, 클리블랜드 연은 해맥 총재(매파·투표권 O)는 '인플레이션 기대 심리가 굳어질 수 있다'고 경고했다."
+    ],
+    "lines_en": [
+      "All three major US indexes closed higher for the week — Dow +0.93%, S&P 500 +0.51%, Nasdaq +0.48%.",
+      "Microsoft jumped 3.66% after unveiling an agentic overhaul of Copilot, while Meta fell 3.33% after Goldman Sachs flagged the roughly $300B/yr revenue AI hyperscalers need just to break even.",
+      "Micron held the top turnover spot for a second day, and advancers' dollar volume was about 2x decliners' (66.2% share).",
+      "The US 10-year yield held at 5.17%, its highest since 2007, as Cleveland Fed President Hammack (hawk, FOMC voter) warned an 'inflationary mindset' could take hold."
+    ]
+  },
+
+  "markets": [
+    {"label": "NASDAQ", "value": "27,068.72", "delta": "▲0.48%", "dir": "up", "note_ko": "9/25(금) 마감 종가 · 화요일 사상 최고치(27,244.28)엔 아직 못 미침", "note_en": "Sep 25 (Fri) close · still below Tuesday's record 27,244.28"},
+    {"label": "S&P 500", "value": "7,743.41", "delta": "▲0.51%", "dir": "up", "note_ko": "9/25(금) 마감 종가 · 3거래일 만에 반등", "note_en": "Sep 25 (Fri) close · rebounds after a 3-day pause"},
+    {"label": "KOSPI", "value": "7,080.92", "delta": "▲0.90%", "dir": "up", "note_ko": "추석 연휴 전 마지막 거래일(9/23) 종가 · 오늘 09시 재개장", "note_en": "Last close before Chuseok (Sep 23) · reopens today at 9am"},
+    {"label": "VIX", "value": "14.87", "delta": "▼5.11%", "dir": "down", "note_ko": "국채금리 급등에도 변동성은 진정", "note_en": "Volatility eases even as yields spike"},
+    {"label": "Fear&Greed", "value": "37", "delta": "36 → 37", "dir": "up", "note_ko": "공포(Fear) 구간 유지", "note_en": "Still in the Fear zone"},
+    {"label": "US 10Y", "value": "5.17%", "delta": "5.18% → 5.17%", "dir": "down", "note_ko": "9/25 확정 종가 · 2007년 이후 최고 수준 유지", "note_en": "Sep 25 settle · holding near its highest since 2007"},
+    {"label": "USD/KRW", "value": "1,355.3", "value_sub": "· DXY 101.0", "delta": "▼0.79%", "dir": "down", "note_ko": "달러 약세에 원화 강세 지속", "note_en": "Won extends its gain as the dollar softens"},
+    {"label": "Gold", "value": "$4,321.2", "delta": "▲0.54%", "dir": "up", "note_ko": "금리 상승에도 안전자산 수요 지속", "note_en": "Safe-haven demand holds up despite rising yields"},
+    {"label": "WTI", "value": "$92.41", "delta": "▼2.33%", "dir": "down", "note_ko": "월요일 재개장 시점까지 금요일 종가서 큰 변화 없음", "note_en": "Little changed from Friday's settle as Monday trading resumes"},
+    {"label": "Bitcoin", "value": "$84,376.3", "delta": "▲0.13%", "dir": "up", "note_ko": "주말 내내 8만4천달러대 박스권", "note_en": "Held in the $84,000s through the weekend"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "다우 +0.93%·S&P500 +0.51%·나스닥 +0.48%로 3대 지수 동반 상승, 국채금리는 5%대에서 견조",
+  "market_note_en": "Dow +0.93%, S&P 500 +0.51%, Nasdaq +0.48% — all three rose as yields held above 5%",
+
+  "chart_series_values": [25981.57, 25978.43, 26418.30, 26522.54, 27122.09, 27244.28, 26936.04, 26939.37, 27068.72],
+  "chart_series_labels": ["9/15", "9/16", "9/17", "9/18", "9/21", "9/22", "9/23", "9/24", "9/25"],
+  "chart_title": {"ko": "화요일 최고치 찍고 조정, 금요일 다시 반등", "en": "A record Tuesday, a pullback, then Friday's rebound"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9/22 사상 최고 27,244.28 → 9/23 -1.13% 조정 → 9/25 27,068.72로 반등", "en": "9/22 record 27,244.28 → 9/23 -1.13% pullback → 9/25 rebounds to 27,068.72"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "섹터별 등락", "en": "Sector Performance"},
+  "sector_sub": {"ko": "S&P 11개 섹터 ETF · 전 거래일 대비", "en": "11 S&P sector ETFs · vs prior session"},
+  "rank_kicker": {"ko": "거래대금", "en": "TURNOVER"},
+  "rank_title": {"ko": "거래대금 상위", "en": "Top by Turnover"},
+  "rank_sub": {"ko": "미국장 · 표본 300종목", "en": "US market · top-300 sample"},
+  "rank_unit": {"ko": "단위 · 10억달러", "en": "Unit: $ billions"},
+  "econ_kicker": {"ko": "지표", "en": "DATA"},
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "코스트코 실적 · 美 국채 스프레드", "en": "Costco earnings · US Treasury spread"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "27,068.72", "delta": "▲0.48%", "dir": "up", "sub_ko": "화요일 사상 최고치엔 아직 -0.64%", "sub_en": "Still 0.64% below Tuesday's record"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,743.41", "delta": "▲0.51%", "dir": "up", "sub_ko": "3거래일 만에 반등 마감", "sub_en": "Rebounds after a 3-day pause"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 162, "flat": 7, "down": 131}
+      ],
+      "flows": {
+        "label_ko": "거래대금 상승 vs 하락 종목 (10억달러)", "label_en": "$ volume: advancers vs decliners ($B)",
+        "rows": [
+          {"label_ko": "상승 종목", "label_en": "Advancers", "value": 233.41},
+          {"label_ko": "하락 종목", "label_en": "Decliners", "value": 119.33}
+        ]
+      },
+      "note_ko": "상승 종목 거래대금이 하락 종목의 약 2배(66.2%) — 마이크로소프트가 코파일럿 전면개편 발표로 3위까지 오른 반면, 메타는 골드만의 AI 손익분기 경고에 밀렸다",
+      "note_en": "Advancers' dollar volume was about 2x decliners' (66.2% share) — Microsoft rose to 3rd turnover on its Copilot overhaul, while Meta slid on Goldman's AI break-even warning"
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 1.01},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": 0.95},
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": 0.80},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": 0.57},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": 0.49},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Staples (XLP)", "value": 0.44},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": 0.38},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": 0.24},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Discretionary (XLY)", "value": 0.22},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": -0.22},
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": -0.89},
+        {"label_ko": "통신 (XLC)", "label_en": "Comm. (XLC)", "value": -0.90}
+      ],
+      "note_ko": "반도체(SMH)·산업재(XLI)가 1%안팎 상승을 주도, 금융(XLF)도 국채금리 상승에 동반 강세. 통신(XLC)은 메타 3.33% 하락에 유일하게 1%가까이 밀렸다",
+      "note_en": "Semis (SMH) and industrials (XLI) led with near-1% gains and financials (XLF) rode yields higher, while communications (XLC) lagged near -1% on Meta's 3.33% drop"
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Turnover",
+      "rows": [
+        {"name_ko": "마이크론", "name_en": "Micron", "value": "$22.67B", "pct": 0.16},
+        {"name_ko": "엔비디아", "name_en": "Nvidia", "value": "$20.24B", "pct": 0.22},
+        {"name_ko": "마이크로소프트", "name_en": "Microsoft", "value": "$19.71B", "pct": 3.66},
+        {"name_ko": "메타", "name_en": "Meta", "value": "$19.41B", "pct": -3.33},
+        {"name_ko": "테슬라", "name_en": "Tesla", "value": "$17.12B", "pct": -1.54}
+      ],
+      "share": {
+        "label_ko": "표본(상위 300종목) 내 비중", "label_en": "Share within top-300 sample",
+        "mode": "nested",
+        "segments": [
+          {"label_ko": "상위 5종목", "label_en": "Top 5", "pct": 28.1, "color": "#e0663d"},
+          {"label_ko": "표본 내 나머지", "label_en": "Rest of sample", "pct": 71.9, "color": "#3987e5"}
+        ]
+      },
+      "note_ko": "마이크론이 이틀째 거래대금 1위. 마이크로소프트는 코파일럿 전면개편 발표로 급등해 3위로 올라섰고, 메타는 골드만의 AI 손익분기 경고로 4위로 밀렸다",
+      "note_en": "Micron held the top turnover spot for a 2nd day. Microsoft jumped to 3rd on its Copilot overhaul, while Meta slid to 4th after Goldman's AI break-even warning"
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "코스트코 FY26 4분기 실적(EPS)", "label_en": "Costco FY26 Q4 EPS", "value": "$6.75", "delta": {"ko": "예상 $6.54 상회", "en": "Beat est. $6.54"}, "dir": "up", "sub_ko": "매출은 938.7억달러로 예상(949.7억) 소폭 하회", "sub_en": "Revenue $93.87B missed the $94.97B estimate"},
+        {"label_ko": "美 국채 10년-2년 스프레드", "label_en": "US 10Y-2Y Treasury Spread", "value": "+0.36%p", "delta": "0.31%p → 0.36%p", "dir": "up", "sub_ko": "정상(우상향) 곡선 유지 속 완만한 스티프닝", "sub_en": "Curve stays upward-sloping, steepening modestly", "ref_ko": "마이너스(장단기 역전)면 대표적 경기침체 선행지표", "ref_en": "Negative (inverted) is a classic recession signal"},
+        {"label_ko": "美 원유 시추공수(Baker Hughes)", "label_en": "US Oil Rig Count (Baker Hughes)", "value": "455기", "delta": "452 → 455", "dir": "up", "sub_ko": "국채금리 상승 속 공급 측 완만한 증가", "sub_en": "A modest supply-side uptick as yields rise"}
+      ],
+      "note_ko": "출처: 코스트코, 美 재무부, Baker Hughes",
+      "note_en": "Source: Costco, US Treasury, Baker Hughes"
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "MS, 코파일럿을 에이전트형 AI로 전면 개편", "headline_en": "Microsoft overhauls Copilot into an agentic AI", "body_ko": "마이크로소프트가 9/25 코파일럿에 'Home·Code·Autopilot' 기능을 새로 도입했다. Home은 챗과 협업 기능을 워드·엑셀·PPT와 통합했고, Code는 자연어 프롬프트만으로 앱·대시보드·업무 자동화를 만들 수 있다. 발표 직후 주가는 3.66% 뛰었다.", "body_en": "On Sep 25, Microsoft unveiled a redesigned Copilot with new Home, Code and Autopilot features — Home merges chat and collaboration into Word, Excel and PowerPoint, while Code lets users build apps and workflows from natural-language prompts. Shares jumped 3.66% on the news."},
+        {"headline_ko": "골드만삭스, AI 하이퍼스케일러 손익분기 경고", "headline_en": "Goldman warns AI hyperscalers need $300B/yr just to break even", "body_ko": "골드만삭스가 메타 등 AI 하이퍼스케일러가 대규모 설비투자를 회수하려면 연 3천억달러의 AI 서비스 매출이 필요하고, 의미있는 이익을 내려면 연 1조달러가 필요하다고 지적했다. 이달 'Muse' AI 에이전트로 36% 급등했던 메타는 9/25 하루 3.33% 내렸다.", "body_en": "Goldman Sachs said AI hyperscalers need roughly $300B a year in AI services revenue just to break even on capex, and $1T a year for meaningful profit. Meta, up 36% this month on its Muse AI agent, fell 3.33% on Sep 25 after the note."},
+        {"headline_ko": "오라클, 데이터센터 프로젝트에 '불가항력' 통보", "headline_en": "Oracle issues force majeure notice on a data center project", "body_ko": "오라클이 9/24 한 데이터센터 프로젝트와 관련해 '불가항력'을 통보했다는 소식에 주가가 3% 내렸다. 부채로 조달한 AI 데이터센터 확장(2026회계연도 560억달러 설비투자, 430억달러 차입)에 대한 투자자 우려가 다시 불거졌다.", "body_en": "Oracle shares fell 3% after a Sep 24 report that it issued a force majeure notice on a data center project, reviving investor concern over its debt-funded AI buildout ($56B of FY26 capex funded partly by $43B in new debt)."},
+        {"headline_ko": "SK하이닉스·삼성전자, 엔비디아 루빈용 HBM4 양산 임박(보도)", "headline_en": "SK Hynix, Samsung reportedly nearing HBM4 mass production for Nvidia Rubin", "body_ko": "SK하이닉스가 엔비디아 차세대 '베라 루빈'向 48GB 16단 HBM4의 3분기 중 양산 출하를 시작했다는 보도가 나왔다. 아직 공식 확인은 아니며, SK하이닉스 약 70%·삼성전자 약 30% 공급 비중이 거론된다.", "body_en": "Reports say SK Hynix has begun Q3 mass shipments of 48GB, 16-layer HBM4 for Nvidia's next-gen Vera Rubin platform, unconfirmed officially; SK Hynix is said to hold roughly 70% of the supply share versus Samsung's 30%."},
+        {"headline_ko": "AI 데이터센터발 전력기기 수주 슈퍼사이클", "headline_en": "AI data centers fuel a power-equipment order supercycle", "body_ko": "효성중공업 등 전력기기 업체들이 변압기·ESS·정지형 무효전력 보상장치(STATCOM)를 묶은 통합 솔루션으로 사업을 확장하고 있다. 데이터센터 전력 수요 급증이 배경으로, 최근 미국 빅테크 2곳과 3865억원 규모 초고압변압기 공급계약도 나왔다.", "body_en": "Power-equipment makers such as Hyosung Heavy Industries are bundling transformers, ESS and STATCOM stabilizers into integrated data-center power packages, driven by surging AI data center demand; one recent deal with two US Big Tech firms was worth about ₩386.5B."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "클리블랜드 연은 해맥 총재, '인플레 기대심리' 경고", "headline_en": "Cleveland Fed's Hammack warns of an 'inflationary mindset'", "body_ko": "해맥 총재(매파·2026년 투표권 O)는 9/25 콘퍼런스에서 장기 국채금리 상승이 견조한 성장 전망·재정적자 우려·추가 인상 기대를 반영한다고 말하고, '인플레이션 기대 심리'가 굳어질 수 있다고 경고했다. 그는 4월·7월 FOMC에서 인상 소수의견을 낸 바 있다.", "body_en": "Fed Cleveland President Hammack (hawk, 2026 FOMC voter) said Sep 25 that rising long-term yields reflect a stronger growth outlook, deficit concerns and rate-hike expectations, warning an 'inflationary mindset' could take hold. She dissented for a hike at the April and July FOMC meetings."},
+        {"headline_ko": "국채금리 5%대 안착, 코스피 영향 두고 증권가 시각 엇갈려", "headline_en": "Views split on how a 5%+ US yield hits Kospi", "body_ko": "미 10년물이 심리적 저항선인 5%를 넘어선 것을 두고, 추세적으로 굳어지면 AI 밸류에이션 부담과 위험자산 이탈로 이어질 수 있다는 경고와, 아직 위험 단계는 아니며 한국 기업 실적·수출 펀더멘털은 견조하다는 반론이 함께 나온다.", "body_en": "With the US 10-year above the psychological 5% line, some warn a sustained move risks pressuring AI valuations and risk assets, while others counter it isn't yet a danger zone given solid Korean earnings and export fundamentals."},
+        {"headline_ko": "추석 이후 첫 거래일 코스피, 최근 10년 8승 2패", "headline_en": "Kospi's first post-Chuseok session: 8 wins, 2 losses over 10 years", "body_ko": "국내 증권가 집계에 따르면 최근 10년간 추석 연휴 직후 첫 거래일 코스피는 8차례 상승·2차례 하락했고, 상승한 해는 대체로 1%안팎 올랐다. 2022년엔 2.74%로 최근 10년 중 최대 상승폭을 기록했다.", "body_en": "Local brokerages find Kospi has risen on the first trading day after Chuseok in 8 of the last 10 years, typically by around 1%; 2022 saw the decade's biggest gain at 2.74%."},
+        {"headline_ko": "WTI, 트럼프의 호르무즈 거부에도 월요일 재개장 초반 보합", "headline_en": "WTI little changed at Monday's reopen despite Trump's Hormuz rejection", "body_ko": "트럼프 대통령이 토요일 이란의 '7일 내 호르무즈 재개방' 로드맵을 거부했지만, 월요일 아침 재개장한 WTI 선물은 금요일 종가(92.41달러) 수준에서 큰 변화 없이 출발했다. 지난주 재개방 기대로 급락했던 낙폭이 아직 되돌려지지 않은 셈이다.", "body_en": "Even after President Trump rejected Iran's roadmap to reopen the Strait of Hormuz within seven days on Saturday, WTI futures reopened Monday morning little changed from Friday's $92.41 settle — last week's reopening-hope selloff hasn't reversed yet."},
+        {"headline_ko": "미·중 관세 완화 합의, 오늘 코스피 개장에서 첫 반응 테스트", "headline_en": "US-China tariff relief faces its first Kospi test today", "body_ko": "백악관이 토요일 발표한 300억달러 규모 상호 관세 인하 권고와 무역위원회·AI 대화 채널 신설 합의는, 코스피가 연휴 휴장으로 아직 반영하지 못한 재료다. 오늘 개장에서 반도체·수출주 중심으로 첫 반응이 나올지 주목된다.", "body_en": "The White House's Saturday announcement of recommended $30B mutual tariff cuts plus a new trade council and AI dialogue channel hasn't yet been priced into Kospi, which was closed for the holiday — today's open is the first test, especially for chips and exporters."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": {"ko": "예정", "en": "AHEAD"},
+  "schedule_sub": {"ko": "오늘 09:00 ~ 21:00 KST", "en": "Today, 09:00-21:00 KST"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00-15:30 KST · Call auction 08:30-09:00 / 15:20-15:30"]
+  },
+  "schedule": [
+    {"time": "09:00", "title_ko": "코스피·코스닥 개장", "title_en": "Kospi/Kosdaq Open", "detail_ko": "추석 연휴 후 첫 거래일 · 7000선 안착 시험대", "detail_en": "First session after Chuseok · tests holding 7,000", "importance": "high"},
+    {"time": "08:50", "title_ko": "일본은행 통화정책회의 의사록 공개", "title_en": "BOJ Policy Meeting Minutes", "detail_ko": "10월 추가 인상 여부 힌트 주목", "detail_en": "Watched for hints on an October hike", "importance": "mid"},
+    {"time": "9/29 23:00", "title_ko": "美 8월 JOLTS 구인건수 · 9월 소비자신뢰지수", "title_en": "US Jul JOLTS Job Openings & Sep Consumer Confidence", "detail_ko": "JOLTS 직전 727.1만건 · 고용시장 체감 지표", "detail_en": "JOLTS prior 7.271M · a read on labor-market sentiment", "importance": "mid"},
+    {"time": "9/30 21:30", "title_ko": "美 8월 근원 PCE 물가(전년비)", "title_en": "US Aug Core PCE (YoY)", "detail_ko": "컨센서스 3.3%(직전과 동일) · 연준 최선호 물가지표", "detail_en": "Consensus 3.3% (unchanged) · the Fed's preferred inflation gauge", "importance": "high"},
+    {"time": "9/30 05:00", "title_ko": "마이크론 실적 발표", "title_en": "Micron Earnings", "detail_ko": "장 마감 후 · AI 메모리 가이던스 주목", "detail_en": "After close · AI memory guidance in focus", "importance": "mid"},
+    {"time": "10/1 23:00", "title_ko": "美 9월 ISM 제조업 PMI", "title_en": "US Sep ISM Manufacturing PMI", "detail_ko": "컨센서스 54.8", "detail_en": "Consensus 54.8", "importance": "high"},
+    {"time": "10/2 21:30", "title_ko": "美 9월 비농업고용·실업률", "title_en": "US Sep Nonfarm Payrolls & Unemployment", "detail_ko": "컨센서스 10만명 · 4.2%", "detail_en": "Consensus 100K · 4.2%", "importance": "high"}
+  ],
+
+  "outro_tagline_ko": "", "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST tonight, before the US open",
+
+  "card_photos": {
+    "1": "A quiet Seoul financial district at early morning dusk, the Yeouido skyline in silhouette with a faint glow of dawn, cinematic wide shot, muted blue and amber tones, moody and dark",
+    "3": "A dark trading floor wall of monitors showing a rising Nasdaq line chart glowing green against near-black background, shallow depth of field, cinematic",
+    "4": "Abstract dark data visualization of vertical bars in green and blue rising and falling against a black gradient background, financial sector chart aesthetic, moody lighting",
+    "7": "A moody dark server room with rows of glowing blue server racks and a faint circuit-board pattern overlay suggesting AI infrastructure, cinematic lighting, shallow depth of field",
+    "8": "A dim global newsroom montage feel, a rotating globe silhouette with faint city light dots against dark blue tones, an oil rig silhouette faintly visible in the background"
+  },
+
+  "caption_ko": "닷새 만에 돌아오는 코스피, 7000선을 지킬 수 있을까요? 뉴욕 3대 지수는 나란히 올랐지만 미 국채금리는 2007년来 최고 수준입니다. MS 코파일럿 개편, 골드만의 AI 경고, 오늘 개장까지 — luckyon 브리핑에서 확인하세요. 저장하고 팔로우하면 매일 아침·저녁 놓치지 않아요.\n\n#luckyon브리핑 #코스피 #나스닥 #국채금리 #미국증시 #추석연휴 #AI #마이크로소프트 #골드만삭스 #반도체 #경제뉴스 #주식 #투자 #모닝브리핑 #증시전망\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "Kospi returns after 5 days off — can it hold 7,000? US stocks rose Friday even as yields hit an 18-year high. Microsoft's Copilot overhaul, Goldman's AI warning, and today's reopen — get it all in the luckyon brief. Save and follow so you don't miss a morning or evening.\n\n#luckyonbriefing #kospi #nasdaq #treasuryyields #usstocks #chuseok #AI #microsoft #goldmansachs #semiconductors #economy #stockmarket #investing #morningbrief #markets\n\n🌙 Next brief — 9 PM KST tonight, before the US open",
+  "sources": ["Yahoo Finance", "FMP", "CNN Fear & Greed", "US Treasury", "Baker Hughes", "Costco", "Bloomberg", "CNBC", "Newspim", "newsis"]
+}
