@@ -11,22 +11,22 @@
   "hero": {
    "label_ko": "美 8월 근원 PCE(전년비) 컨센서스",
    "label_en": "US Aug core PCE (YoY) consensus",
-   "value": "3.4%",
+   "value": "3.3%",
    "sub_ko": "직전 3.3% · 9/30(수) 21:30 KST 발표 — 연준이 가장 참고하는 물가 지표",
    "sub_en": "Prior 3.3% · due Wed Sep 30, 21:30 KST — the Fed's preferred inflation gauge"
   },
   "points": [
    {
-    "title_ko": "물가는 다시 뜨거워지나",
-    "title_en": "Are prices heating up again?",
-    "body_ko": "8월 근원 PCE 컨센서스가 직전 3.3%에서 3.4%로 오히려 높아졌다. 지난주 금리 급등의 방아쇠였던 서비스 PMI 이후 첫 물가 확인이라 10월 인상 베팅에 다시 불을 붙일 수 있다.",
-    "body_en": "The Aug core PCE consensus actually rose to 3.4% from 3.3%. It's the first price read since the services PMI that triggered last week's yield spike, and could reignite October hike bets."
+    "title_ko": "물가는 옆걸음, 꺾이진 않았다",
+    "title_en": "Prices are flat, not falling",
+    "body_ko": "8월 근원 PCE 컨센서스는 직전과 같은 3.3%다. 지난주 금리 급등의 방아쇠였던 서비스 PMI 이후 첫 물가 확인이라, 내려가지 않는 것만으로도 10월 인상 베팅을 지지하는 재료가 될 수 있다.",
+    "body_en": "The Aug core PCE consensus holds at 3.3%, unchanged from July. It's the first price read since the services PMI that triggered last week's yield spike, so even a flat print can keep October hike bets alive."
    },
    {
     "title_ko": "금요일은 고용",
     "title_en": "Friday brings payrolls",
-    "body_ko": "9월 비농업고용 컨센서스는 10만명으로 직전 16.2만명보다 크게 낮다. 물가는 오르는데 고용은 식는 신호가 겹치면 연준 셈법이 더 복잡해진다.",
-    "body_en": "September payrolls are seen at 100K, well below the prior 162K. Hotter prices and cooler jobs at once would complicate the Fed's math."
+    "body_ko": "9월 비농업고용 컨센서스는 10만명으로 직전 16.2만명보다 크게 낮다. 물가는 주춤하지 않는데 고용은 식는 신호가 겹치면 연준 셈법이 더 복잡해진다.",
+    "body_en": "September payrolls are seen at 100K, well below the prior 162K. Sticky prices alongside cooling jobs would complicate the Fed's math."
    },
    {
     "title_ko": "호르무즈, 다시 막혔다",
@@ -169,8 +169,8 @@
       "time": "21:30",
       "name_ko": "美 8월 근원 PCE 물가 (전년비)",
       "name_en": "US Aug core PCE (YoY)",
-      "tag_ko": "컨센서스 3.4%",
-      "tag_en": "Consensus 3.4%",
+      "tag_ko": "컨센서스 3.3%(직전과 동일)",
+      "tag_en": "Consensus 3.3% (unchanged)",
       "importance": "high"
      },
      {
@@ -264,6 +264,14 @@
       "tag_ko": "직전 3.1%",
       "tag_en": "Prior 3.1%",
       "importance": "mid"
+     },
+     {
+      "time": "18:00",
+      "name_ko": "유로존 9월 근원 HICP (전년비, 잠정)",
+      "name_en": "Eurozone Sep core HICP (YoY, flash)",
+      "tag_ko": "직전 2.4%",
+      "tag_en": "Prior 2.4%",
+      "importance": "mid"
      }
     ]
    }
@@ -282,15 +290,15 @@
     "name_en": "US Aug core PCE (YoY)",
     "when": "9/30 21:30 KST",
     "prev": "3.3%",
-    "est": "3.4%",
-    "dir": 1
+    "est": "3.3%",
+    "dir": 0
    },
    {
     "name_ko": "美 9월 ADP 민간고용",
     "name_en": "US Sep ADP employment",
     "when": "9/30 21:15 KST",
-    "prev": "3.8만명",
-    "est": "7.0만명",
+    "prev": "38K",
+    "est": "70K",
     "dir": 1
    },
    {
@@ -305,8 +313,8 @@
     "name_ko": "美 9월 비농업고용",
     "name_en": "US Sep nonfarm payrolls",
     "when": "10/2 21:30 KST",
-    "prev": "16.2만명",
-    "est": "10.0만명",
+    "prev": "162K",
+    "est": "100K",
     "dir": -1
    },
    {
@@ -425,7 +433,7 @@
     "emoji": "🇰🇷",
     "headline_ko": "9월 소비자물가 — 금요일 발표",
     "headline_en": "September CPI — out Friday",
-    "body_ko": "직전(8월) 3.1%에서 어느 쪽으로 움직이는지가 관건이다. 반도체 수출 호조가 이어지는 가운데 물가 흐름까지 겹쳐 나온다.",
+    "body_ko": "직전(8월) 3.1%에서 어느 쪽으로 움직이는지가 관건이다. 반도체 수출 호조가 이어지는 가운데 같은 주에 물가까지 확인하는 셈이다.",
     "body_en": "The question is which way it moves from August's 3.1%. It lands alongside the ongoing chip-export boom.",
     "src": "10/2"
    },
@@ -504,6 +512,14 @@
     "body_ko": "무살렘·굴스비·윌리엄스·캐시카리 등이 화요일부터 금요일까지 연달아 발언한다. 수요일 물가·금요일 고용 발표 직후 반응이 특히 주목된다.",
     "body_en": "Musalem, Goolsbee, Williams and Kashkari speak on a near-daily basis from Tuesday through Friday. Their reactions right after Wednesday's inflation print and Friday's jobs report are the ones to watch.",
     "src": "9/29~10/2"
+   },
+   {
+    "emoji": "🇯🇵",
+    "headline_ko": "일본은행 단칸 — 목요일 대기업 제조업 체감경기",
+    "headline_en": "BOJ Tankan — Thursday's big-manufacturer sentiment survey",
+    "body_ko": "일본은행의 대표 분기 서베이가 목요일 오전 나온다. 대기업 제조업 지수 개선이 확인되면 엔화·닛케이 변동성이 커질 수 있다.",
+    "body_en": "The BOJ's flagship quarterly survey lands Thursday morning. A stronger large-manufacturer reading could add volatility to the yen and Nikkei.",
+    "src": "10/1"
    }
   ]
  },
