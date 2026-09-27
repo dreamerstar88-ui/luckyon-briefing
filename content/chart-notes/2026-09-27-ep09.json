@@ -1,0 +1,374 @@
+{
+  "type": "chart-notes",
+  "stamp": "2026-09-27-ep09",
+  "date": "2026-09-27",
+  "series": "투자 3분 노트",
+  "series_en": "3-Min Investing Notes",
+  "episode": "EP.09",
+  "byline": "by luckyon",
+  "term_ko": "PER (주가수익비율)",
+  "term_en": "The P/E ratio",
+  "teaching_points": [
+    "① PER = 주가 ÷ 1주당 1년 이익. 단위는 «배» — p.01·p.03·p.05·p.08",
+    "② 나누는 값이 둘이라 오르는 길도 둘이다 (가격이 올라서 / 이익이 줄어서) — p.04·p.07",
+    "③ «몇 년 치 이익»으로 읽되 이익이 그대로일 때만 성립한다 — p.02·p.06·p.08",
+    "④ 높다·낮다는 혼자 못 말한다: 같은 업종끼리 견줘야 한다 (낮은 PER = 가치함정 가능) — p.05·p.07·p.08",
+    "⑤ 어느 이익으로 나누느냐로 같은 날 PER이 달라진다 — p.03(기준 명시)·p.07"
+  ],
+  "fact_check": {
+    "ko": "KB금융(105560.KS)·셀트리온(068270.KS) 2026-09-23 종가 = 173,200원 / 177,400원. UsStockInfo-get_historical_stock_prices 로 대조(원시 봉 2026-09-22T15:00Z = KST 9/23 — 원시 날짜가 일~목에만 있고 금·토가 비어 있어 +1일 오프셋 확인. 9/24·25 결측은 추석 연휴). 두 종목 currentPrice 와 마지막 봉 Close 일치. 2025년 주당순이익: KB금융 5,630,770,322,989원(지배주주 보통주 귀속) ÷ 358,587,722주(가중평균 유통) = 15,702.63 → 15,703원, PER 173,200÷15,702.63 = 11.03배. 셀트리온 1,029,613,370,420원 ÷ 231,596,838주 = 4,445.71 → 4,446원, PER 177,400÷4,445.71 = 39.90배. 순이익은 DART 사업보고서(접수번호 20260619000667)로 교차검증 — KB금융 연결 당기순이익 5,840,715,000,000원, 지배주주분 5,833,162,000,000원 일치. 셀트리온 예상이익 기준 PER 23.24(제공자 집계 consensus, forwardPE). 추가 — 현대차(005380.KS) 2026-09-23 종가 353,500원(마지막 봉 2026-09-22T15:00Z Close 353,500 = currentPrice 일치), 2025년 기본주당순이익 36,088원(지배주주 보통주 귀속 순이익 9,445,987,000,000원과 정합), PER 353,500÷36,088 = 9.80배.",
+    "en": "JPMorgan(JPM)·Broadcom(AVGO) 2026-09-25 close = $343.06 / $352.81. UsStockInfo-get_historical_stock_prices 로 대조(미국 봉은 04:00Z = 00:00 ET 라 날짜 오프셋 없음). trailingEps JPM 23.33 / AVGO 7.74, trailingPE 14.704672 / 45.582687 — 343.06÷23.33 = 14.705, 352.81÷7.74 = 45.58 로 자체 정합. AVGO forwardPE 18.20(제공자 집계 consensus). 회수 햇수는 PER 값 그대로(14.7년·45.6년). 추가 — Verizon(VZ) 2026-09-25 종가 $47.08, trailingEps 3.84, trailingPE 12.260417 — 47.08÷3.84 = 12.26 자체 정합.",
+    "concept": "PER 정의: 주가 ÷ 주당순이익(EPS), 단위 «배». 등가식 시가총액 ÷ 당기순이익. 출처 — 한국은행 '이주의 경제용어'(bok.or.kr), 기획재정부 시사경제용어사전, 한국경제 경제용어사전(dic.hankyung.com seq=2075), KB 경제용어사전 / 영어권: Corporate Finance Institute, Charles Schwab, Saxo. 표준 해석문구 '주가 50,000원·EPS 5,000원 → 10배 = 1년 이익의 10배를 지불' 로 복수 출처 일치. 확정하는 것 = «시장이 1원의 이익에 몇 배를 매겼나». 확정하지 «않는» 것 = «싸다/비싸다»(가치함정: 낮은 PER은 시장이 앞날을 낮게 본 값일 수 있다 — 아주경제 2026-07-08, 신한금융그룹 인사이트), «오를지», 업종 건너뛴 비교. 이익이 0·마이너스면 PER은 정의되지 않아 N/A(복수 영어권 출처 'negative or undefined, not meaningful'). «몇 년 치 이익» 읽기는 'assumes earnings remain constant indefinitely and ignores growth, interest rates and risk' 라는 조건이 붙는다 — 그래서 카드는 조건을 같은 카드에 붙였다. 분모 선택이 갈리는 지점(Current/Trailing/Forward, 일회성 손익 조정, 지배주주 순이익·가중평균 유통주식수, 연환산) — 아이투자 'IFRS 시대 PER 계산: 어느 순이익이 진짜?'. 업종 평균 PER 수치는 집계 기관·시점 불명이라 카드에 넣지 않고 실제 종목 두 개로 대체(절차서 7단계 5번). 누적 노트: content/chart-notes/_knowledge/PER.md"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "overlay": "earnings",
+      "title_ko": "주가가 같아도<br>한쪽은 비싼 주식입니다",
+      "title_en": "Same price tag,<br>not the same price",
+      "sub_ko": "PER — 값을 이익으로 나눠 봅니다",
+      "sub_en": "P/E — what you pay per dollar of profit",
+      "cta_ko": "저장하고 넘겨보세요",
+      "cta_en": "Save this and swipe",
+      "annot_ko": "같은 값을 내도 | 딸려 오는 이익이 다릅니다",
+      "annot_en": "Same price to buy, | different profit behind it"
+    },
+    {
+      "type": "intro",
+      "sketch": "mystery-slices",
+      "title_ko": "PER이 «몇 배»라는 말,<br>무슨 뜻일까요",
+      "title_en": "A P/E of 45.6 —<br>forty-five of what?",
+      "body_ko": "PER 11배, PER 40배 — 주식 이야기에 이 «배»가 자꾸 나옵니다. 주가를 «1년 이익»으로 썰었을 때 몇 조각이 나오는지를 세는 숫자입니다.",
+      "body_en": "The number turns up everywhere, always with an x after it. It counts the slices you get when you cut the share price into one-year pieces of profit.",
+      "caption_ko": "두 기둥은 높이가 같습니다. 조각 수만 다릅니다",
+      "caption_en": "Same height, a different number of slices"
+    },
+    {
+      "type": "formula",
+      "title_ko": "PER은 나눗셈 하나입니다",
+      "title_en": "The P/E is one division",
+      "body_ko": "주가를 «1주가 1년에 번 돈»으로 나눕니다. 지난 편의 시가총액을 1년 순이익으로 나눠도 같은 답이 나옵니다.",
+      "body_en": "Divide the share price by what one share earned in a year. Market cap divided by a year of profit gives the same answer.",
+      "formula": {
+        "numerator_ko": "주가",
+        "numerator_en": "Share price",
+        "denominator_ko": "주당순이익 (1년)",
+        "denominator_en": "Earnings per share",
+        "result_ko": "PER",
+        "result_en": "P/E"
+      },
+      "parts": [
+        {
+          "term_ko": "주가",
+          "term_en": "Share price",
+          "desc_ko": "1주를 사는 데 드는 값. 매일 바뀝니다",
+          "desc_en": "What one share costs. It moves every day"
+        },
+        {
+          "term_ko": "주당순이익",
+          "term_en": "EPS",
+          "desc_ko": "1년 순이익을 주식 수로 나눈 값. EPS 라고 씁니다",
+          "desc_en": "A year of profit, divided by the share count"
+        },
+        {
+          "term_ko": "단위는 «배»",
+          "term_en": "Read it as x",
+          "desc_ko": "1주 값이 1년 이익의 몇 배인가를 뜻합니다",
+          "desc_en": "How many times a year of profit one share costs"
+        }
+      ],
+      "example": {
+        "title_ko": "셀트리온 · 2026년 9월 23일 종가",
+        "title_en": "Broadcom · close on Sept 25, 2026",
+        "lines": [
+          {
+            "text_ko": "주가 177,400원",
+            "text_en": "Share price $352.81"
+          },
+          {
+            "text_ko": "2025년 주당순이익 4,446원",
+            "text_en": "Earnings per share $7.74"
+          },
+          {
+            "text_ko": "177,400 ÷ 4,446 = 39.9배",
+            "text_en": "352.81 ÷ 7.74 = 45.6"
+          }
+        ]
+      }
+    },
+    {
+      "type": "lines",
+      "axis": false,
+      "title_ko": "«PER이 올랐다»는 말로는<br>무슨 일이 있었는지 모릅니다",
+      "title_en": "\"The P/E went up\"<br>doesn't say what happened",
+      "body_ko": "나누는 값이 둘이니, 오르는 길도 둘입니다.",
+      "body_en": "Two numbers make the ratio, so there are two ways up.",
+      "series": [
+        {
+          "label_ko": "가격이 올라서",
+          "label_en": "The price went up",
+          "color": "#3d4a68",
+          "points": [
+            [
+              4,
+              28
+            ],
+            [
+              28,
+              44
+            ],
+            [
+              52,
+              56
+            ],
+            [
+              76,
+              66
+            ],
+            [
+              94,
+              72
+            ]
+          ]
+        },
+        {
+          "label_ko": "이익이 줄어서",
+          "label_en": "Earnings fell",
+          "color": "#c0523c",
+          "dashed": true,
+          "points": [
+            [
+              4,
+              28
+            ],
+            [
+              28,
+              33
+            ],
+            [
+              52,
+              44
+            ],
+            [
+              76,
+              60
+            ],
+            [
+              94,
+              72
+            ]
+          ]
+        }
+      ],
+      "marker": {
+        "x": 94,
+        "y": 72,
+        "label_ko": "같은 PER",
+        "label_en": "Same P/E"
+      },
+      "note_ko": "그래서 PER이 올랐다는 말만으로는 좋은 일인지 나쁜 일인지 알 수 없습니다. 위(주가)가 올랐는지 아래(이익)가 줄었는지를 갈라 봐야 합니다.",
+      "note_en": "So a rising P/E is not by itself good news or bad news. Check which half moved: the price on top, or the earnings underneath.",
+      "closing_ko": "이익이 줄어서 오른 PER은 «벌이가 줄었다»는 뜻입니다",
+      "closing_en": "A P/E that rose because earnings fell means the business earned less"
+    },
+    {
+      "type": "versus",
+      "title_ko": "주가는 거의 같은데<br>PER은 3.6배 차이 납니다",
+      "title_en": "Nearly the same price,<br>three times the P/E",
+      "body_ko": "값이 비슷한 두 종목을 골랐습니다. 이익이 다르니 PER이 갈립니다.",
+      "body_en": "Two stocks that cost about the same. Their earnings differ, so their P/E splits.",
+      "columns_ko": [
+        {
+          "name": "KB금융",
+          "unit": "은행"
+        },
+        {
+          "name": "셀트리온",
+          "unit": "바이오"
+        }
+      ],
+      "columns_en": [
+        {
+          "name": "JPMorgan",
+          "unit": "Bank"
+        },
+        {
+          "name": "Broadcom",
+          "unit": "Semiconductors"
+        }
+      ],
+      "rows_ko": [
+        {
+          "label": "2026년 9월 23일 종가",
+          "left": "173,200원",
+          "right": "177,400원"
+        },
+        {
+          "label": "2025년 주당순이익",
+          "left": "15,703원",
+          "right": "4,446원",
+          "highlight": true
+        },
+        {
+          "label": "PER (종가 ÷ 주당순이익)",
+          "left": "11.0배",
+          "right": "39.9배",
+          "highlight": true
+        }
+      ],
+      "rows_en": [
+        {
+          "label": "Close, Sept 25, 2026",
+          "left": "$343.06",
+          "right": "$352.81"
+        },
+        {
+          "label": "Earnings per share",
+          "left": "$23.33",
+          "right": "$7.74",
+          "highlight": true
+        },
+        {
+          "label": "P/E (price ÷ EPS)",
+          "left": "14.7",
+          "right": "45.6",
+          "highlight": true
+        }
+      ],
+      "closing_ko": "같은 1원의 이익에 한쪽은 11배, 다른 쪽은 40배를 냈습니다",
+      "closing_en": "One dollar of profit costs 14.7 here, 45.6 there"
+    },
+    {
+      "type": "bars",
+      "title_ko": "11배는 «11년 치 이익»이라는 뜻입니다",
+      "title_en": "14.7 means 14.7 years of profit",
+      "body_ko": "PER을 햇수로 바꿔 읽으면 감이 잡힙니다. 이익이 그대로일 때, 지금 값을 1년 이익으로 메우는 데 걸리는 시간입니다. 업종이 다르면 이 햇수도 달라집니다.",
+      "body_en": "Turning the P/E into years makes it concrete: if earnings stayed flat, that is how long the yearly profits take to add up to the price. Industries sit at different lengths.",
+      "items_ko": [
+        {
+          "label": "현대차 · 자동차 (9.8배)",
+          "value": 9.8,
+          "display": "9.8년"
+        },
+        {
+          "label": "KB금융 · 은행 (11.0배)",
+          "value": 11,
+          "display": "11.0년"
+        },
+        {
+          "label": "셀트리온 · 바이오 (39.9배)",
+          "value": 39.9,
+          "display": "39.9년",
+          "highlight": true
+        }
+      ],
+      "items_en": [
+        {
+          "label": "Verizon · Telecom (12.3)",
+          "value": 12.3,
+          "display": "12.3 years"
+        },
+        {
+          "label": "JPMorgan · Bank (14.7)",
+          "value": 14.7,
+          "display": "14.7 years"
+        },
+        {
+          "label": "Broadcom · Semiconductors (45.6)",
+          "value": 45.6,
+          "display": "45.6 years",
+          "highlight": true
+        }
+      ],
+      "closing_ko": "그래서 40배는 «이익이 앞으로 늘어난다»에 값을 치른 셈입니다",
+      "closing_en": "So paying 45.6 assumes the profits grow from here"
+    },
+    {
+      "type": "numbered",
+      "title_ko": "초보가 자주 걸리는 세 가지",
+      "title_en": "Three things beginners get wrong",
+      "items": [
+        {
+          "title_ko": "PER이 낮으니 싼 주식이다",
+          "title_en": "A low P/E means it is cheap",
+          "desc_ko": "시장이 그 회사의 앞날을 낮게 본 값일 수도 있습니다. 낮은 이유부터 보고, 같은 업종끼리 견줍니다.",
+          "desc_en": "It can mean the market expects little. Ask why it is low, and compare inside the same industry."
+        },
+        {
+          "title_ko": "이익이 마이너스라 PER이 낮다",
+          "title_en": "Earnings are negative, so the P/E is low",
+          "desc_ko": "그때는 PER이 낮은 게 아니라 아예 없습니다. 나눌 이익이 없어 «N/A» 로 비워 둡니다.",
+          "desc_en": "Then there is no P/E at all. With no profit to divide by, it is left as N/A."
+        },
+        {
+          "title_ko": "PER은 회사마다 하나로 정해져 있다",
+          "title_en": "A company has one P/E",
+          "desc_ko": "어느 이익으로 나누는지에 따라 달라집니다. 셀트리온은 2025년 실적으로 39.9배, 예상 이익으로는 23.2배입니다.",
+          "desc_en": "It depends on which earnings you divide by. Broadcom is 45.6 on the last year of profit, 18.2 on next year's estimate."
+        }
+      ],
+      "warn_title_ko": "PER은 «싸다»를 말하지 않습니다",
+      "warn_title_en": "A P/E does not say \"cheap\"",
+      "warn_body_ko": "시장이 이 회사의 1원의 이익에 몇 배를 매겼는지를 말합니다. 싼지 비싼지는 그 배수가 왜 그런지를 보고 사람이 판단합니다.",
+      "warn_body_en": "It says what the market pays for one dollar of profit. Whether that is cheap is a judgement you make after asking why."
+    },
+    {
+      "type": "recap",
+      "title_ko": "3줄 정리",
+      "title_en": "Three lines",
+      "points": [
+        {
+          "text_ko": "PER = 주가 ÷ 1주당 1년 이익 (단위: 배)",
+          "text_en": "P/E = share price ÷ a year of earnings per share"
+        },
+        {
+          "text_ko": "«몇 년 치 이익»으로 읽되, 이익이 그대로일 때만입니다",
+          "text_en": "Read it as years, but only if earnings stay flat"
+        },
+        {
+          "text_ko": "높다·낮다는 같은 업종끼리 견줘야 알 수 있습니다",
+          "text_en": "High or low only means something inside one industry"
+        }
+      ],
+      "ctas": [
+        {
+          "text_ko": "가진 종목의 PER을 같은 업종 이웃과 나란히 놓아 보세요",
+          "text_en": "Put a stock's P/E next to its industry peers"
+        },
+        {
+          "text_ko": "#투자3분노트 #PER #주식공부",
+          "text_en": "#3MinInvestingNotes #PERatio"
+        }
+      ],
+      "next_label_ko": "다음 편",
+      "next_label_en": "Next up",
+      "next_ko": "PBR (주가순자산비율)",
+      "next_en": "The P/B ratio",
+      "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+      "disclaimer_en": "Educational content only. Not investment advice."
+    }
+  ],
+  "published": {},
+  "alt_ko": [
+    "크림색 모눈 노트 카드. 위 칸에 똑같은 높이의 붉은 캔들 두 개가 나란히 서 있고, 아래 칸에는 감청색 네모 기둥 두 개가 붙어 있는데 왼쪽은 길고 오른쪽은 짧다. 붉은 주석 «같은 값을 내도 딸려 오는 이익이 다릅니다»가 짧은 기둥을 가리킨다. 큰 제목은 «주가가 같아도 한쪽은 비싼 주식입니다», 부제는 «PER — 값을 이익으로 나눠 봅니다».",
+    "제목 «PER이 몇 배라는 말, 무슨 뜻일까요». 그림에는 높이가 똑같은 직사각형 기둥 두 개가 서 있고, 왼쪽 기둥은 가로선으로 네 조각, 오른쪽 기둥은 열두 조각으로 나뉘어 있다. 오른쪽에 붉은 물음표 세 개. 캡션은 «두 기둥은 높이가 같습니다. 조각 수만 다릅니다».",
+    "제목 «PER은 나눗셈 하나입니다». 가운데에 분수 꼴로 «주가»를 «주당순이익(1년)»으로 나눈 식과 «= PER». 아래에 주가, 주당순이익, 단위는 배 세 항목의 설명이 붙어 있다. 맨 아래 붉은 테두리 상자에 셀트리온 2026년 9월 23일 종가 기준 계산: 주가 177,400원, 2025년 주당순이익 4,446원, 177,400 ÷ 4,446 = 39.9배.",
+    "제목 «PER이 올랐다는 말로는 무슨 일이 있었는지 모릅니다». 왼쪽 아래 같은 지점에서 출발한 선 두 개가 오른쪽 위 같은 지점에서 만난다. 감청색 실선은 «가격이 올라서», 붉은 점선은 «이익이 줄어서». 만나는 자리에 붉은 동그라미와 «같은 PER» 표시. 아래 문단은 위(주가)가 올랐는지 아래(이익)가 줄었는지를 갈라 보라고 적고, 노란 형광펜 줄은 «이익이 줄어서 오른 PER은 벌이가 줄었다는 뜻입니다».",
+    "제목 «주가는 거의 같은데 PER은 3.6배 차이 납니다». 두 칸 비교표로, 왼쪽은 감청색 KB금융(은행), 오른쪽은 셀트리온(바이오). 2026년 9월 23일 종가는 173,200원과 177,400원, 2025년 주당순이익은 15,703원과 붉게 강조된 4,446원, PER은 11.0배와 붉게 강조된 39.9배. 마무리 형광펜 줄은 «같은 1원의 이익에 한쪽은 11배, 다른 쪽은 40배를 냈습니다».",
+    "제목 «11배는 11년 치 이익이라는 뜻입니다». 가로 막대 세 개가 위에서부터 현대차·자동차 9.8년, KB금융·은행 11.0년, 붉게 강조된 셀트리온·바이오 39.9년. 셀트리온 막대가 위 두 막대보다 세 배 넘게 길다. 아래 상자에는 «그래서 40배는 이익이 앞으로 늘어난다에 값을 치른 셈입니다».",
+    "제목 «초보가 자주 걸리는 세 가지». 번호가 붙은 세 항목 — 1 PER이 낮으니 싼 주식이다, 2 이익이 마이너스라 PER이 낮다, 3 PER은 회사마다 하나로 정해져 있다 — 과 각각의 교정 설명. 맨 아래 붉은 테두리 상자의 제목은 «PER은 싸다를 말하지 않습니다»이고, 시장이 1원의 이익에 몇 배를 매겼는지를 말할 뿐이라고 적혀 있다.",
+    "제목 «3줄 정리». 체크 표시가 붙은 세 줄 — PER은 주가를 1주당 1년 이익으로 나눈 값이고 단위는 배, 몇 년 치 이익으로 읽되 이익이 그대로일 때만, 높다·낮다는 같은 업종끼리 견줘야 알 수 있다. 그 아래 노란 형광펜 두 줄과 «다음 편 ▶ PBR(주가순자산비율)», 맨 아래에 교육 목적이며 투자 권유가 아니라는 고지."
+  ],
+  "alt_en": [
+    "Cream grid-paper note card. In the upper panel two identical green candlesticks stand side by side at the same height; in the lower panel two navy blocks sit beneath them, the left one tall and the right one short. A red annotation reading \"Same price to buy, different profit behind it\" points at the short block. The headline is \"Same price tag, not the same price\" with the subtitle \"P/E - what you pay per dollar of profit\".",
+    "Title: \"A P/E of 45.6 - forty-five of what?\". The drawing shows two rectangular columns of exactly the same height; the left column is divided by horizontal lines into four slices, the right into twelve thinner slices. Three red question marks sit to the right. The caption reads \"Same height, a different number of slices\".",
+    "Title: \"The P/E is one division\". In the middle, share price over earnings per share as a fraction, with \"= P/E\" beside it. Below, three labelled notes on share price, EPS, and reading the result as x. A red-bordered box at the bottom works through Broadcom at the close on Sept 25, 2026: share price $352.81, earnings per share $7.74, and 352.81 divided by 7.74 equals 45.6.",
+    "Title: \"The P/E went up doesn’t say what happened\". Two lines leave the same point at the lower left and meet at the same point at the upper right. The navy solid line is labelled \"The price went up\" and the red dashed line \"Earnings fell\". A red circle marks where they meet, labelled \"Same P/E\". The paragraph below says to check which half moved, and a yellow highlighted line reads \"A P/E that rose because earnings fell means the business earned less\".",
+    "Title: \"Nearly the same price, three times the P/E\". A two-column table with navy JPMorgan, a bank, on the left and Broadcom, semiconductors, on the right. The close on Sept 25, 2026 is $343.06 against $352.81; earnings per share $23.33 against $7.74 highlighted in red; and P/E 14.7 against 45.6 highlighted in red. The closing line reads \"One dollar of profit costs 14.7 here, 45.6 there\".",
+    "Title: \"14.7 means 14.7 years of profit\". Three horizontal bars, from the top: Verizon, telecom, 12.3 years; JPMorgan, bank, 14.7 years; and Broadcom, semiconductors, 45.6 years highlighted in red. The Broadcom bar is about three times the length of the two above it. A box below reads \"So paying 45.6 assumes the profits grow from here\".",
+    "Title: \"Three things beginners get wrong\". Three numbered items - a low P/E means it is cheap; earnings are negative so the P/E is low; a company has one P/E - each with a correction underneath. A red-bordered box at the bottom is headed \"A P/E does not say cheap\" and explains that it only says what the market pays for one dollar of profit.",
+    "Title: \"Three lines\". Three check-marked lines: P/E equals share price divided by a year of earnings per share; read it as years, but only if earnings stay flat; high or low only means something inside one industry. Below are two yellow highlighted lines, then \"Next up: The P/B ratio\", and a footer noting the content is educational only and not investment advice."
+  ],
+  "caption_ko": "주가가 같아도 한쪽은 비싼 주식입니다 — PER 편\n\n2026년 9월 23일 종가로 KB금융은 173,200원, 셀트리온은 177,400원이었습니다. 값은 2%대밖에 안 다른데 PER은 11.0배와 39.9배로 3.6배 차이가 납니다. 값이 아니라 «그 값에 딸려 오는 이익»이 다르기 때문입니다.\n\nPER = 주가 ÷ 1주당 1년 이익. 단위는 «배»이고, 이익이 그대로일 때 지금 값을 이익으로 메우는 데 걸리는 햇수로도 읽을 수 있습니다. 다만 그 조건이 빠지면 틀린 말이 됩니다.\n\n그리고 «PER이 올랐다»는 말만으로는 무슨 일이 있었는지 알 수 없습니다 — 가격이 올랐을 수도, 이익이 줄었을 수도 있으니까요.\n\n저장해 두고, 가진 종목의 PER을 같은 업종 이웃과 나란히 놓아 보세요.\n\n다음 편은 PBR(주가순자산비율)입니다.\n\n본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다. 수치는 2026년 9월 23일 종가와 2025년 연간 실적 기준입니다.\n\n#투자3분노트 #PER #주가수익비율 #주식공부 #주식초보 #기업분석 #투자공부 #경제공부 #재테크 #luckyon",
+  "caption_en": "Same price tag, not the same price - the P/E ratio\n\nAt the close on Sept 25, 2026 JPMorgan was $343.06 and Broadcom $352.81. The prices differ by under 3%, but their P/E ratios are 14.7 and 45.6 - three times apart. What differs is not the price but the profit that comes with it.\n\nP/E = share price divided by a year of earnings per share. You can read it as the years of profit it would take to cover the price, but only if earnings stay flat. Drop that condition and the sentence stops being true.\n\nAnd a rising P/E on its own tells you nothing: the price may have gone up, or the earnings may have fallen.\n\nSave this, then put a stock you own next to its industry peers.\n\nNext up: the P/B ratio.\n\nEducational content only. Not investment advice. Figures are the Sept 25, 2026 close and the last reported year of earnings.\n\n#3MinInvestingNotes #PERatio #PriceToEarnings #StockMarketBasics #InvestingForBeginners #Valuation #StockAnalysis #FinanceEducation #LearnToInvest #luckyon"
+}
