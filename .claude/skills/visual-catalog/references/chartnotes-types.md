@@ -25,6 +25,7 @@
 | EP.06 | 추세선 | `lines` → `versus` → `lines` → `pricevol` | `trend2` |
 | EP.07 | 갭 상승·갭 하락 | `mirror:gap` → `mirror:gap-open` → `lines` → `pricevol` | `gap` |
 | EP.08 | 시가총액 | `formula`(곱셈) → `mirror:split` → `versus` → `bars`(sections 2개) | `caps` |
+| EP.09 | PER (주가수익비율) | `formula`(분수) → `lines`(두 경로·같은 끝점) → `versus` → `bars`(배수를 «년»으로) | `earnings` |
 
 **모든 회차가 공유하는 뼈대**: `cover` → (도입) → … → `numbered` → `recap`.
 `intro` 는 도입 카드, `numbered` 는 «초보가 흔히 하는 실수 3가지», `recap` 은 3줄 요약이다.
@@ -48,6 +49,9 @@
 | **곱셈 하나로 끝나는 값** (시가총액·거래대금) | **`formula` 의 `{left,right,result}` 모드** | — |
 | **회사 «크기»를 견주는 회차** (시가총액·기업가치) | **`bars` 의 `sections` 두 칸** — 위 칸에 주가, 아래 칸에 시총을 놓으면 막대 순서가 눈앞에서 뒤집힌다 | **`caps`** |
 | **주식 수가 바뀌어도 값이 그대로인 것** (액면분할·병합) | **`mirror:split`** — 넓이가 정확히 보존되게 그려져 있어 그림이 본문을 배반할 수 없다 | — |
+| **배수를 두 종목으로 맞대는 회차** (PER·PBR·배당수익률) | **`versus`** — 행에 «주가 / 1주당 이익 / 배수»를 쌓으면 «값은 같은데 배수가 갈린다»가 한눈에 보인다. 도입은 **`sketch: mystery-slices`** | **`earnings`** |
+| **배수를 «몇 년»으로 바꿔 읽기** | **`bars`** — `value` 에 배수를 그대로 넣고 `display` 만 «N년»으로. 업종이 다른 종목 3개를 쌓으면 «업종마다 배수가 다르다»까지 같이 보인다 | — |
+| **비율이 오르는 «두 가지 경로»** (분자가 올라서 / 분모가 줄어서) | **`lines`** — 두 선을 같은 점에서 출발시켜 같은 끝점에서 만나게 하고 `marker` 로 «같은 값»을 찍는다 | — |
 | 개념 A 대 개념 B (세는 단위가 다른 둘) | `versus` | — |
 | 상승 캔들 vs 하락 캔들 | `compare` | — |
 | 용어 여러 개 나열 | `checklist` (+ `figure`) | — |

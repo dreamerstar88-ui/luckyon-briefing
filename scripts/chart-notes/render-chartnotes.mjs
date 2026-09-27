@@ -241,6 +241,37 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'earnings' — 두 회사를 나란히. 위 칸에는 «한 주 값»(캔들) — 두 캔들이 «똑같은 높이»에
+    // 있다 — 아래 칸에는 그 1주가 1년에 번 «이익»(네모 기둥)을 붙인다. 왼쪽은 이익 기둥이 길고
+    // 오른쪽은 짧다. PER 회차의 주석은 «주가»가 아니라 «그 주가에 딸려 오는 이익»을 가리켜야 하는데,
+    // 다른 변종은 전부 선(ma·cross·trend)·높이(levels)·빈칸(gap)·주식 수(caps)를 가리키는 그림이라
+    // 가리킬 대상이 화면에 아예 없다. **두 캔들의 o·c·h·l 을 같은 값으로 두는 것이 이 그림의 요점**이다 —
+    // 높이를 다르게 그리면 제목이 말하는 «주가가 같아도»가 화면에서 거짓이 된다.
+    if (c.overlay === 'earnings') {
+      const BASE = 186;                       // 가격 칸과 이익 칸을 가르는 선
+      const S = { o: 128, c: 66, h: 50, l: 144 };   // 두 회사가 «같은» 캔들을 쓴다
+      const cand = (cx) => {
+        const col = S.c < S.o ? UP : DOWN;    // y 가 작을수록 높은 가격
+        return `<line x1="${cx}" y1="${S.h}" x2="${cx}" y2="${S.l}" stroke="${col}" stroke-width="3"/>
+                <rect x="${cx - 26}" y="${Math.min(S.o, S.c)}" width="52"
+                      height="${Math.max(Math.abs(S.c - S.o), 4)}" fill="${col}" opacity="0.85"/>`;
+      };
+      // 이익 기둥 — 같은 폭(52)으로 캔들 바로 아래에 세워, 두 칸이 같은 회사의 것임을 잇는다.
+      const earn = (cx, h) => `<rect x="${cx - 26}" y="${BASE + 12}" width="52" height="${h}"
+                                     fill="${C.navy}" opacity="0.8" rx="3"/>`;
+      return `<div class="pad">
+        <svg width="956" height="330" viewBox="0 0 956 330" style="margin-top:2px">
+          <line x1="30" y1="34" x2="30" y2="${BASE - 8}" stroke="#c9c6bc" stroke-width="3"/>
+          <line x1="30" y1="${BASE}" x2="440" y2="${BASE}" stroke="#c9c6bc" stroke-width="3"/>
+          ${cand(130)}${cand(320)}
+          ${earn(130, 118)}${earn(320, 34)}
+          <path d="M 500 246 L 358 236" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="506" y="${216 + i * 32}" font-family="${FONT_SANS}" font-size="24" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     // overlay:'trend' — 캔들의 «저점들이 하나의 비스듬한 선 위에 얹혀» 계단처럼 올라가는 그림.
     // 주석이 그 기울어진 선을 가리키는 회차(추세선·채널)에서 쓴다. 'levels' 는 가로선이라
     // «저점이 점점 높아진다»를 말할 수 없고, 'ma'·'cross' 의 곡선은 «두 점을 이어 그은 직선»이
@@ -449,6 +480,27 @@ const R = {
           <line x1="30" y1="240" x2="790" y2="70" stroke="${C.red}" stroke-width="5"
                 stroke-dasharray="16 11" opacity="0.9"/>
           ${q(802, 84, 54)}${q(858, 132, 36)}${q(806, 178, 40)}
+        </svg>`;
+    } else if (sketch === 'mystery-slices') {
+      // 같은 «높이»(= 한 주 값)의 기둥 둘을 세우고, 한쪽은 굵게 넷으로, 다른 쪽은 얇게 열둘로 썰어
+      // 놓는다. 조각 하나가 «1년 이익»이라 조각 수가 곧 PER 이다 — 그래서 값이 같아도 조각 수는
+      // 다를 수 있다는 것이 이 회차의 질문이고, 그림이 글자 없이 그 질문을 던진다.
+      // 꺾은선(zigzag)으로 두면 제목이 묻는 «몇 배»의 대상이 화면에 아예 없다.
+      const TOP = 40, BOT = 240, BW = 96;
+      const col = (x, n) => {
+        const h = (BOT - TOP) / n;
+        const cuts = Array.from({ length: n - 1 }, (_, i) =>
+          `<line x1="${x}" y1="${TOP + h * (i + 1)}" x2="${x + BW}" y2="${TOP + h * (i + 1)}"
+                 stroke="${C.paper}" stroke-width="4"/>`).join('');
+        return `<rect x="${x}" y="${TOP}" width="${BW}" height="${BOT - TOP}" fill="${C.navy}" opacity="0.2"/>
+                <rect x="${x}" y="${TOP}" width="${BW}" height="${BOT - TOP}" fill="none"
+                      stroke="${C.navy}" stroke-width="4"/>${cuts}`;
+      };
+      // 두 기둥의 TOP·BOT 이 같아야 «값은 같다»가 참이 된다. 높이를 손대지 않는다.
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <line x1="40" y1="${BOT}" x2="790" y2="${BOT}" stroke="#c9c6bc" stroke-width="4"/>
+          ${col(180, 4)}${col(470, 12)}
+          ${q(806, 110, 54)}${q(860, 158, 36)}${q(808, 202, 34)}
         </svg>`;
     } else if (sketch === 'mystery-size') {
       // 두 회사를 «세로 = 한 주 값 · 가로 = 주식 수» 직사각형으로 세워 두고 «어느 쪽이 큰가»를 묻는다.
@@ -1350,8 +1402,8 @@ const R = {
 // 끝나서 아무도 못 봤다. direction 은 더 위험하다: 'down' 을 조금이라도 다르게 적으면
 // «하락»이라고 써 놓고 상승 그림이 그려진다. 그래서 모르는 값은 여기서 멈춘다.
 const VARIANTS = {
-  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap', 'caps'] },
-  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap', 'mystery-size'] },
+  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap', 'caps', 'earnings'] },
+  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap', 'mystery-size', 'mystery-slices'] },
   lines: { direction: ['up', 'down'] },
   pricevol: { mode: ['candle', 'line'] },
   mirror: { figure: ['trendline', 'gap', 'gap-open', 'split'] },
