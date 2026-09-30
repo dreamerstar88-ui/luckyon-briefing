@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-01",
+  "session": "am",
+  "dateLabel_ko": "2026년 10월 1일 (목)",
+  "dateLabel_en": "Thursday, October 1, 2026",
+
+  "headline_ko": "금리는 20년만 최고, 다우 하락·나스닥 상승",
+  "headline_en": "Yields Hit 20-Year High as Dow Falls, Nasdaq Rises",
+  "headline_sub_ko": "다우 -0.86% · S&P500 -0.25% · 나스닥 +0.24%, 30년물 국채금리 5.64% 마감",
+  "headline_sub_en": "Dow -0.86% · S&P 500 -0.25% · Nasdaq +0.24%; 30Y Treasury yield closed at 5.64%",
+  "cover_kicker": {"ko":"간밤 미국장 · 9/30 마감","en":"US Overnight · Sep 30 Close"},
+  "cover_facts": [
+    ["rate", {"ko":"30년물 국채금리 5.64% 마감 · 20여년 만에 최고 수준","en":"30Y Treasury yield closed at 5.64%, highest in ~20 years"},
+             {"ko":"이란 리스크발 고유가·빅테크 회사채 발행 겹쳐","en":"Driven by Iran-risk oil gains and heavy Big Tech bond issuance"}],
+    ["chip", {"ko":"다우 -0.86%·S&P500 -0.25% 하락, 나스닥은 +0.24% 상승","en":"Dow -0.86%, S&P 500 -0.25% fell; Nasdaq rose +0.24%"},
+             {"ko":"엔비디아 +0.52%·마이크론은 사상 최대 실적에도 보합","en":"Nvidia +0.52%; Micron flat despite record quarterly revenue"}],
+    ["globe", {"ko":"코스피 전일 6,838.04(-0.48%) · 앤트로픽 AI투자 계획에 반도체주 요동","en":"KOSPI prev. close 6,838.04(-0.48%) · Anthropic AI-spend plan roils chip stocks"},
+              {"ko":"삼성전자 -1.47%·SK하이닉스 +0.62%로 엇갈려","en":"Samsung -1.47% vs SK Hynix +0.62%, diverging"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "미국 3대 지수가 엇갈린 가운데 다우는 국채금리 급등 부담에 0.86% 내렸고 S&P500도 0.25% 하락했지만, 나스닥은 기술·반도체 강세에 힘입어 0.24% 상승했다.",
+      "30년물 국채금리가 5.64%로 마감해 20여년 만에 가장 높은 수준을 기록했는데, 이란 관련 지정학 리스크로 유가가 오른 데다 빅테크의 대규모 회사채 발행이 채권시장 수급 부담을 키웠다.",
+      "거래대금 1위는 마이크론(304억달러)이었지만 주가는 사상 최대 분기 실적(매출 542억달러)에도 보합에 그쳤고, 엔비디아는 0.52% 올랐다.",
+      "코스피는 전날 앤트로픽의 10년간 700조원 규모 AI 인프라 투자 계획에 삼성전자·SK하이닉스가 파트너로 거론되며 장중 반등했으나 상승분을 반납해 0.48% 내린 채 마감했다."
+    ],
+    "lines_en": [
+      "US indexes diverged: the Dow fell 0.86% and the S&P 500 0.25% under pressure from surging Treasury yields, while the Nasdaq rose 0.24% on tech and chip strength.",
+      "The 30-year Treasury yield closed at 5.64%, its highest level in roughly two decades, as Iran-related geopolitical risk lifted oil prices and heavy corporate bond issuance from Big Tech added to bond-market supply pressure.",
+      "Micron topped the day's dollar-volume list at $30.4B, yet its shares closed essentially flat despite reporting record quarterly revenue of $54.2B; Nvidia gained 0.52%.",
+      "KOSPI rebounded intraday after Anthropic's 10-year, ₩700 trillion AI-infrastructure spending plan named Samsung Electronics and SK Hynix as partners, but gave back the gains to close down 0.48%."
+    ]
+  },
+
+  "markets": [
+    {"label":"NASDAQ","value":"26,861.06","delta":"▲0.24%","dir":"up","note_ko":"美 증시 마감 종가 · 반도체·기술주 강세가 지수를 지켰다","note_en":"US market close · chip and tech strength held the index up"},
+    {"label":"S&P 500","value":"7,651.54","delta":"▼0.25%","dir":"down","note_ko":"국채금리 급등 부담에 하락 마감","note_en":"Closed lower as surging bond yields weighed"},
+    {"label":"KOSPI","value":"6,838.04","delta":"▼0.48%","dir":"down","note_ko":"전 거래일 종가 · 코스피는 아직 개장 전","note_en":"Previous close · KOSPI has yet to open today"},
+    {"label":"VIX","value":"16.34","delta":"▲1.87%","dir":"up","note_ko":"16.04 → 16.34, 여전히 낮은 변동성 구간","note_en":"16.04 to 16.34, still a low-volatility range"},
+    {"label":"Fear&Greed","value":"31","delta":"32 → 31","dir":"down","note_ko":"공포(Fear) 구간 유지","note_en":"Stays in the Fear zone"},
+    {"label":"US 10Y","value":"5.29%","delta":"5.26% → 5.29%","dir":"up","note_ko":"30년물은 5.64%로 20여년만에 최고 수준","note_en":"30Y closed at 5.64%, highest in about two decades"},
+    {"label":"USD/KRW","value":"1,357","value_sub":"· DXY 101.5","delta":"▲0.45%","dir":"up","note_ko":"달러 강세에 원화 소폭 약세","note_en":"Won eased slightly as the dollar firmed"},
+    {"label":"Gold","value":"$4,189.8","delta":"▲0.24%","dir":"up","note_ko":"장기금리 상승 속에서도 소폭 올랐다","note_en":"Edged higher even as long-term yields rose"},
+    {"label":"WTI","value":"$90.37","delta":"▲1.11%","dir":"up","note_ko":"이란 관련 지정학 리스크에 상승 · 브렌트유는 반대로 하락","note_en":"Rose on Iran-related geopolitical risk, even as Brent fell"},
+    {"label":"Bitcoin","value":"$83,625","delta":"▲0.01%","dir":"flat","note_ko":"8만3천달러대에서 보합권 유지","note_en":"Holding steady in the $83,000s"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500","KOSPI"],
+  "tile_rest": ["VIX","Fear&Greed","US 10Y","USD/KRW","Gold","WTI","Bitcoin"],
+  "market_note_ko": "※ 코스피는 전 거래일(9/30) 종가, 원/달러는 서울외환시장 기준",
+  "market_note_en": "※ KOSPI shown as previous (9/30) close; USD/KRW per Seoul FX market",
+
+  "chart_series_values": [26522.5390625, 27122.08984375, 27244.279296875, 26936.0390625, 26939.369140625, 27068.720703125, 26820.380859375, 26797.5390625, 26861.064453125],
+  "chart_series_labels": ["9.18","9.21","9.22","9.23","9.24","9.25","9.28","9.29","9.30"],
+  "chart_title": {"ko":"고점 찍고 되밀렸다","en":"Hit a high, then pulled back"},
+  "chart_sub": {"ko":"나스닥종합 종가 · 최근 9거래일","en":"Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko":"9.22 고점 27,244.28 → 9.30 26,861.06(-1.41%) · 9.16 저점(25,978.43) 대비는 +3.40%","en":"9.22 high 27,244.28 → 9.30 close 26,861.06 (-1.41%) · still +3.40% above the 9.16 low (25,978.43)"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko":"기술·반도체만 오르고 나머지는 하락","en":"Only tech and semis rose; the rest fell"},
+  "sector_sub": {"ko":"S&P 섹터 ETF 1일 등락률","en":"S&P sector ETFs, 1-day change"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko":"거래대금 상위","en":"Top by Dollar Volume"},
+  "rank_sub": {"ko":"마이크론이 실적 서프라이즈에도 주가는 보합","en":"Micron tops the list despite a flat close on an earnings beat"},
+  "rank_unit": {"ko":"단위 · 십억달러","en":"Unit · $ Billion"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko":"실적 · 지표 발표","en":"Earnings & Data"},
+  "econ_sub": {"ko":"9월 말 미국 핵심 지표 무더기 발표","en":"A cluster of key US data at month-end"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko":"나스닥종합","label_en":"Nasdaq Composite","value":"26,861.06","delta":"▲0.24%","dir":"up","sub_ko":"반도체·기술주 강세에 힘입어 소폭 상승","sub_en":"Edged up on chip and tech-stock strength"},
+        {"label_ko":"S&P 500","label_en":"S&P 500","value":"7,651.54","delta":"▼0.25%","dir":"down","sub_ko":"국채금리 급등 부담에 하락","sub_en":"Fell as surging bond yields weighed"}
+      ],
+      "breadth": [
+        {"label_ko":"거래대금 상위 300종목","label_en":"Top 300 by turnover","up":113,"flat":5,"down":182}
+      ],
+      "note_ko": "거래대금 상위 300종목 기준으로는 하락종목(182개)이 상승종목(113개)보다 많았지만, 오른 종목에 몰린 돈(2,253억달러)이 내린 종목(1,490억달러)보다 많아 자금은 상승 쪽에 쏠렸다.",
+      "note_en": "Among the 300 most-traded names, decliners (182) outnumbered advancers (113), but more dollars flowed into risers ($225.3B) than fallers ($149.0B) — money leaned bullish even as breadth didn't."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "bars": [
+        {"label_ko":"기술(XLK)","label_en":"Tech (XLK)","value":0.64},
+        {"label_ko":"반도체(SMH)","label_en":"Semis (SMH)","value":0.35},
+        {"label_ko":"에너지(XLE)","label_en":"Energy (XLE)","value":-0.07},
+        {"label_ko":"경기소비재(XLY)","label_en":"Cons. Disc (XLY)","value":-0.28},
+        {"label_ko":"커뮤니케이션(XLC)","label_en":"Comm (XLC)","value":-0.45},
+        {"label_ko":"유틸리티(XLU)","label_en":"Utilities (XLU)","value":-0.68},
+        {"label_ko":"소재(XLB)","label_en":"Materials (XLB)","value":-0.82},
+        {"label_ko":"부동산(XLRE)","label_en":"Real Estate (XLRE)","value":-1.04},
+        {"label_ko":"금융(XLF)","label_en":"Financials (XLF)","value":-1.13},
+        {"label_ko":"산업재(XLI)","label_en":"Industrials (XLI)","value":-1.27},
+        {"label_ko":"헬스케어(XLV)","label_en":"Health Care (XLV)","value":-1.35},
+        {"label_ko":"필수소비재(XLP)","label_en":"Cons. Staples (XLP)","value":-1.53}
+      ],
+      "note_ko": "11개 GICS 섹터 중 기술·반도체 2개만 올랐고 나머지 10개는 모두 내렸다 — 필수소비재·헬스케어가 최하위권.",
+      "note_en": "Only tech and semis rose among the 11 GICS sectors; the other 10 all fell, with staples and health care at the bottom."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "rows": [
+        {"name_ko":"마이크론","name_en":"Micron","value":"$30.4B","pct":0.0},
+        {"name_ko":"엔비디아","name_en":"Nvidia","value":"$27.1B","pct":0.52},
+        {"name_ko":"애플","name_en":"Apple","value":"$16.6B","pct":1.1},
+        {"name_ko":"메타","name_en":"Meta","value":"$13.9B","pct":-1.84},
+        {"name_ko":"마이크로소프트","name_en":"Microsoft","value":"$13.9B","pct":0.77}
+      ],
+      "note_ko": "마이크론은 사상 최대 분기 매출(542억달러) 발표에도 주가는 보합에 그쳤다.",
+      "note_en": "Micron posted record quarterly revenue ($54.2B) yet its stock closed essentially flat."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "stats": [
+        {"label_ko":"근원 PCE 물가지수(전년비)","label_en":"Core PCE Price Index (YoY)","value":"3.0%","delta":{"ko":"예상 3.3% 하회","en":"Below est. 3.3%"},"dir":"down","sub_ko":"21:30 발표 · 전월 3.3%","sub_en":"Released 21:30 KST · prior 3.3%"},
+        {"label_ko":"ADP 민간고용","label_en":"ADP Employment Change","value":"+90K","delta":{"ko":"예상 +7.0만 상회","en":"Beat est. +70K"},"dir":"up","sub_ko":"21:15 발표 · 전월 +3.8만","sub_en":"Released 21:15 KST · prior +38K"},
+        {"label_ko":"GDP 성장률 확정치(2분기,연율)","label_en":"GDP Growth, Final (Q2, Ann.)","value":"2.2%","delta":{"ko":"예상 1.5% 큰폭 상회","en":"Well above est. 1.5%"},"dir":"up","sub_ko":"21:30 발표 · 잠정치 1.5%","sub_en":"Released 21:30 KST · prior estimate 1.5%"},
+        {"label_ko":"시카고 PMI","label_en":"Chicago PMI","value":"58.8","delta":{"ko":"예상 51.2 큰폭 상회","en":"Well above est. 51.2"},"dir":"up","sub_ko":"22:45 발표 · 전월 47.1(위축)","sub_en":"Released 22:45 KST · prior 47.1 (contraction)"},
+        {"label_ko":"개인소비지출(전월비)","label_en":"Personal Spending (MoM)","value":"0.9%","delta":{"ko":"예상 0.8% 상회","en":"Beat est. 0.8%"},"dir":"up","sub_ko":"21:30 발표 · 전월 0.2%","sub_en":"Released 21:30 KST · prior 0.2%"},
+        {"label_ko":"개인소득(전월비)","label_en":"Personal Income (MoM)","value":"0.2%","delta":{"ko":"예상 0.4% 하회","en":"Below est. 0.4%"},"dir":"down","sub_ko":"21:30 발표 · 전월 0.4%","sub_en":"Released 21:30 KST · prior 0.4%"}
+      ],
+      "note_ko": "9월 말 발표된 물가·고용·성장 지표가 대부분 예상을 웃돌아 경기가 견조함을 시사했지만, 같은 시간 국채금리는 오히려 급등해 평소와 다른 반응이 나타났다.",
+      "note_en": "Most month-end inflation, jobs and growth data beat expectations, signaling resilience — yet Treasury yields spiked anyway, breaking from the usual pattern."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "items": [
+        {"headline_ko":"마이크론, 사상 최대 분기 매출에도 주가는 보합","headline_en":"Micron posts record revenue, but shares close flat",
+         "body_ko":"마이크론이 회계연도 4분기 매출 542억달러로 시장 예상(510.7억달러)을 웃도는 사상 최대 실적을 발표했다. AI 서버용 HBM 수요가 실적을 이끌었지만, 이날 거래대금 1위(304억달러)를 기록하고도 주가는 보합에 그쳤다.",
+         "body_en":"Micron reported record fiscal Q4 revenue of $54.2B, beating the $51.07B Wall Street estimate on strong AI-server HBM demand. Despite topping the day's dollar-volume list at $30.4B, its shares closed essentially flat.",
+         "src":"Micron"},
+        {"headline_ko":"앤트로픽, 10년간 700조원 AI 인프라 투자 계획에 삼성·SK하이닉스 거론","headline_en":"Anthropic's $518B AI-infrastructure plan names Samsung, SK Hynix",
+         "body_ko":"앤트로픽이 IPO 투자설명서에서 향후 10년간 최소 5,180억달러(약 700조원) 규모의 AI 컴퓨팅·인프라 지출 계획을 공개했고, 삼성전자·SK하이닉스를 핵심 반도체 공급망 파트너로 명시했다. 이 소식에 국내 반도체·소부장주가 장중 급등했다.",
+         "body_en":"Anthropic's IPO filing disclosed plans to spend at least $518B on AI computing and infrastructure over the next decade, naming Samsung Electronics and SK Hynix as key semiconductor supply-chain partners — sparking an intraday rally in Korean chip and equipment stocks.",
+         "src":"Anthropic S-1"},
+        {"headline_ko":"AMD, 페이페이 리의 '월드랩스' 82억달러에 인수","headline_en":"AMD to acquire Fei-Fei Li's World Labs for $8.2B",
+         "body_ko":"AMD가 스탠퍼드대 페이페이 리 교수가 세운 공간지능(월드모델) 스타트업 '월드랩스'를 전액 주식교환 방식 82억달러에 인수하기로 합의했다. 리 교수는 최고과학자로 합류하며 연말 거래 완료를 목표로 한다.",
+         "body_en":"AMD agreed to acquire spatial-intelligence startup World Labs, founded by Stanford's Fei-Fei Li, for $8.2B in an all-stock deal. Li will join as chief scientist, with the deal targeted to close by year-end.",
+         "src":"AMD"},
+        {"headline_ko":"오픈AI, 상시 AI 에이전트 '닷츠' 공개 · 소라는 6개월만에 서비스 종료","headline_en":"OpenAI unveils always-on agent 'Dots,' shutters Sora after 6 months",
+         "body_ko":"오픈AI가 데브데이 2026에서 4천여개 앱과 연동되는 상시가동 에이전트 '닷츠'와 저가형 신모델 'GPT-6.1 솔' 등을 공개했다. 반면 동영상 생성 앱 '소라'는 출시 6개월 만에 서비스 종료를 결정했다.",
+         "body_en":"At DevDay 2026, OpenAI unveiled the always-on agent 'Dots,' which connects to roughly 4,000 apps, along with the cheaper 'GPT-6.1 Sol' model. It also announced Sora's shutdown just six months after launch.",
+         "src":"OpenAI"},
+        {"headline_ko":"트럼프, 빅테크와 오찬 후 AI 규제 법제화에 선긋기","headline_en":"Trump rules out new AI legislation after Big Tech lunch",
+         "body_ko":"트럼프 대통령이 백악관에서 빅테크 경영진들과 오찬한 뒤 새 AI 규제법 제정에 부정적 입장을 재확인했다. 경영진 약 20명은 강제성 없는 자율 안전관리 서약에 합의했다.",
+         "body_en":"After lunching with Big Tech executives at the White House, President Trump reaffirmed his opposition to new AI legislation. About 20 executives agreed to a voluntary, non-binding safety pledge.",
+         "src":"White House"},
+        {"headline_ko":"AI 데이터센터 병목, GPU에서 전력으로 이동","headline_en":"AI data-center bottleneck shifts from GPUs to power",
+         "body_ko":"AI 데이터센터 투자의 무게중심이 GPU에서 전력 인프라로 옮겨가면서, 국내 주강업체 한국주강이 두산에너빌리티향 가스터빈용 대형 주강품 공급을 늘려 연 최대 10기분 전용 생산체제를 구축했다.",
+         "body_en":"As AI data-center investment shifts its focus from GPUs to power infrastructure, Korean steel-casting maker Hangug Jukang has expanded gas-turbine component supply to Doosan Enerbility, building dedicated capacity for up to 10 turbine sets a year.",
+         "src":"Financial News"}
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "items": [
+        {"headline_ko":"트럼프·러트닉, 한미 대미투자 첫 프로젝트 공개","headline_en":"Trump, Lutnick unveil first projects under Korea's US investment pledge",
+         "body_ko":"트럼프 대통령과 러트닉 상무장관이 한미 관세협상(25%→15%, 3,500억달러 대미투자) 이행의 첫 프로젝트로 알래스카 LNG 개발, 대형 원전 8기, 텍사스 가스발전소 건설 계획을 공개했다.",
+         "body_en":"President Trump and Commerce Secretary Lutnick unveiled the first projects under Korea's $350B US investment pledge (tied to a tariff cut to 15% from 25%): Alaska LNG development, eight large nuclear plants, and a Texas gas plant.",
+         "src":"White House"},
+        {"headline_ko":"30년물 국채금리 5.64% 마감, 20여년 만에 최고","headline_en":"30-year Treasury yield closes at 5.64%, highest in ~20 years",
+         "body_ko":"미국 30년물 국채금리가 5.64%로 마감해 20여년 만에 가장 높은 수준을 기록했다. 이란 관련 지정학 리스크로 유가가 오른 데다, 빅테크들의 대규모 회사채 발행이 겹치며 채권시장 수급 부담을 키웠다.",
+         "body_en":"The US 30-year Treasury yield closed at 5.64%, its highest level in roughly two decades, as Iran-related geopolitical risk pushed oil higher and heavy corporate bond issuance from Big Tech added to bond-market supply pressure.",
+         "src":"US Treasury"},
+        {"headline_ko":"국제유가 엇갈려 마감 — WTI는 상승, 브렌트는 하락","headline_en":"Oil closes mixed — WTI rises while Brent falls",
+         "body_ko":"WTI는 배럴당 90.37달러로 1.11% 올랐지만 브렌트유는 97.75달러로 4.72% 내려 두 유종이 반대로 움직였다. 미·이란 협상 교착이 재부각된 가운데 시장별 수급 요인이 엇갈린 것으로 풀이된다.",
+         "body_en":"WTI rose 1.11% to $90.37 a barrel while Brent fell 4.72% to $97.75, moving in opposite directions amid renewed concern over stalled US-Iran talks and diverging market-specific supply factors.",
+         "src":"CME/ICE"},
+        {"headline_ko":"연준 인사들 매파·비둘기 발언 엇갈려","headline_en":"Fed officials split between hawkish and dovish tones",
+         "body_ko":"마이클 바 연준 이사(상시 투표권, 매파)와 오스탄 굴스비 시카고 연은 총재(매파)는 인플레이션이 5년 넘게 목표를 웃도는 상황을 우려하며 추가 긴축 필요성을 시사했다. 반면 존 윌리엄스 뉴욕 연은 총재(상시 투표권, 중도)는 서두를 필요가 없다는 완화적 톤을 보였다.",
+         "body_en":"Fed Governor Michael Barr (permanent voter, hawkish) and Chicago Fed President Austan Goolsbee (hawkish) flagged concern over inflation running above target for more than five years, suggesting a need for further tightening. New York Fed President John Williams (permanent voter, centrist), by contrast, struck a more dovish tone, saying there's no urgency to act.",
+         "src":"Federal Reserve"},
+        {"headline_ko":"코스피, 장중 반등에도 상승분 반납 · 6,838.04 마감","headline_en":"KOSPI gives back an intraday rebound, closes at 6,838.04",
+         "body_ko":"코스피는 전날 앤트로픽의 AI 인프라 투자 소식에 반도체주가 강세를 보이며 장중 1%대 상승 출발했으나, 장기금리·유가 부담에 상승분을 반납하고 전장 대비 0.48%(32.77p) 내린 6,838.04로 마감했다.",
+         "body_en":"KOSPI opened more than 1% higher on chip-sector strength tied to Anthropic's AI-infrastructure news, but gave back the gains under pressure from high yields and oil, closing down 0.48% (32.77 points) at 6,838.04.",
+         "src":"KRX"},
+        {"headline_ko":"한화솔루션·한화생명 계열 유상증자 등 주요 공시","headline_en":"Hanwha Solutions, Hanwha Life affiliates announce rights offerings",
+         "body_ko":"한화솔루션·한화생명의 종속회사가 유상증자를 결정했고, 부국증권 지분에 대한 대량보유(5%룰) 보고가 나왔다. 창해에탄올은 최대주주가 변경됐다.",
+         "body_en":"Subsidiaries of Hanwha Solutions and Hanwha Life decided on rights offerings, while a 5%-rule large-shareholding report was filed for Bukook Securities. Changhae Ethanol saw a change of its largest shareholder.",
+         "src":"DART"}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TODAY",
+  "schedule_sub": {"ko":"오늘 21시까지","en":"Through 21:00 KST today"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 09:00–15:30 KST · Call auction 08:30–09:00 / 15:20–15:30"]
+  },
+  "schedule": [
+    {"time":"08:50","title_ko":"일본 9월 탄칸 대기업 제조업 업황지수","title_en":"Japan Tankan Large Manufacturing Index","detail_ko":"컨센서스 25, 전월 22 · BOJ 12월 추가 인상 판단에 참고되는 분기 서베이","detail_en":"Consensus 25 vs prior 22; a key quarterly gauge for the BOJ's policy outlook","importance":"high"},
+    {"time":"09:00","title_ko":"한국 9월 무역수지","title_en":"Korea Trade Balance","detail_ko":"전월 흑자 34.79억달러 · 수출 경기와 코스피 방향성의 참고 지표","detail_en":"Prior surplus $3.479B; a gauge for the export cycle and KOSPI direction","importance":"mid"},
+    {"time":"09:30","title_ko":"한국 9월 S&P Global 제조업 PMI","title_en":"Korea S&P Global Manufacturing PMI","detail_ko":"전월 52.3 · 확장세 지속 여부 확인","detail_en":"Prior 52.3; checks whether expansion continues","importance":"mid"},
+    {"time":"(종일)","title_ko":"중국 국경절 연휴 시작(10/1~10/8)","title_en":"China National Day holiday begins (Oct 1–8)","detail_ko":"상하이·선전 증시 휴장 · 중국발 유동성·수급 공백 구간 진입","detail_en":"Shanghai and Shenzhen markets closed; a liquidity and data vacuum from China begins","importance":"mid"},
+    {"time":"16:55","title_ko":"독일·유로존 9월 HCOB 제조업 PMI 확정치","title_en":"Germany & Eurozone HCOB Manufacturing PMI (Final)","detail_ko":"독일 컨센서스 53.8, 유로존 52.7 · 유럽 장 초반 체감경기 확인","detail_en":"DE consensus 53.8, EMU 52.7; an early European-session sentiment check","importance":"mid"},
+    {"time":"19:35","title_ko":"ECB 나겔(독일)·빌루아(프랑스) 연설","title_en":"ECB's Nagel (Germany) & Villeroy (France) speeches","detail_ko":"나겔(매파 성향)·빌루아(중도 성향), 둘 다 대형 5개국 순환투표조 소속 · 매파·중도 톤을 함께 확인","detail_en":"Nagel (hawkish-leaning) and Villeroy (centrist), both in the ECB's rotating big-5 voting group; a chance to compare hawkish vs. centrist tone","importance":"mid"},
+    {"time":"10/2 21:30","title_ko":"[미리보기] 미국 9월 비농업고용지표","title_en":"[Preview] US September Nonfarm Payrolls","detail_ko":"컨센서스 +9.0만(전월 +16.2만) · 연준의 10월 인하 폭 논의에 직결","detail_en":"Consensus +90K vs prior +162K; directly feeds the Fed's October rate-cut debate","importance":"high"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "A dim, empty NYSE trading floor moments after the closing bell, warm amber light, long shadows, a single ticker screen glowing in the background, cinematic and moody",
+    "3": "A dark room with a wall of glowing stock ticker screens showing a line chart trending upward then pulling back slightly, cool blue tones, shallow depth of field",
+    "7": "A vast server room lit by rows of blue and amber LED lights, cables and racks stretching into darkness, evoking AI infrastructure scale"
+  },
+
+  "caption_ko": "간밤 미국장은 국채금리 20년만 최고치 속에 다우·S&P는 내리고 나스닥은 소폭 올랐어요. 마이크론은 사상 최대 실적에도 주가는 보합, 앤트로픽의 700조원 AI 인프라 계획엔 삼성전자·SK하이닉스가 파트너로 거론되며 국내 반도체주가 들썩였습니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #미국증시 #나스닥 #코스피 #국채금리 #AI반도체 #마이크론 #앤트로픽 #삼성전자 #SK하이닉스 #투자정보 #주식 #경제뉴스 #재테크\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "Overnight, US Treasury yields hit a 20-year high — the Dow and S&P fell while the Nasdaq edged up. Micron posted record earnings but closed flat, and Anthropic's $518B AI-infrastructure plan named Samsung and SK Hynix as partners, rattling Korean chip stocks. Swipe through for the full picture 📊\n\nFollow + save so you don't miss our morning and evening briefs!\n\n#luckyonbriefing #morningbrief #wallstreet #nasdaq #kospi #treasuryyields #aichips #micron #anthropic #samsung #skhynix #investing #stockmarket #econnews\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": ["Yahoo Finance","FMP","FXStreet econ-calendar","KRX","DART","Micron","Anthropic S-1","AMD","OpenAI","White House","Federal Reserve"]
+}
