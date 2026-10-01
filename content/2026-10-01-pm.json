@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-01",
+  "session": "pm",
+  "dateLabel_ko": "2026년 10월 1일 (목)",
+  "dateLabel_en": "Thursday, October 1, 2026",
+
+  "headline_ko": "코스피 7000 턱밑, 코스닥 4.48% 급등 — 반도체가 이끌었다",
+  "headline_en": "KOSPI Nears 7,000, KOSDAQ Rockets 4.48% on Chip Strength",
+  "headline_sub_ko": "코스피 +1.95% 6,971.35 · 코스닥 +4.48% 894.29, 둘 다 장중 고점 마감",
+  "headline_sub_en": "KOSPI +1.95% to 6,971.35, KOSDAQ +4.48% to 894.29 — both closed at session highs",
+  "cover_kicker": {"ko":"코스피 마감 · 10/1","en":"KOSPI Close · Oct 1"},
+  "cover_facts": [
+    ["chip", {"ko":"코스피 +1.95% 6,971.35 · 코스닥 +4.48% 894.29","en":"KOSPI +1.95% to 6,971.35 · KOSDAQ +4.48% to 894.29"},
+             {"ko":"둘 다 장중 고점에서 마감, 반도체·바이오가 주도","en":"Both closed at the day's high, led by semiconductors and biotech"}],
+    ["globe", {"ko":"반도체 수출 호조·마이크론 실적 여진에 수급은 엇갈려","en":"Chip-export strength and Micron spillover drove gains as flows diverged"},
+              {"ko":"코스피는 기관 순매수·개인 매도, 코스닥은 외국인·기관 동반 매수","en":"KOSPI: institutions bought, retail sold; KOSDAQ: foreign and institutions bought together"}],
+    ["shield", {"ko":"나스닥·S&P500 선물은 美 정규장 개장 전 소폭 상승","en":"Nasdaq and S&P 500 futures edge higher ahead of tonight's US open"},
+               {"ko":"美 30년물 금리는 20여년 만 최고치(5.64%) 유지","en":"US 30Y yield holds at a ~20-year high of 5.64%"}]
+  ],
+
+  "summary": {
+    "lines_ko": [
+      "코스피는 1.95% 오른 6,971.35, 코스닥은 4.48% 급등한 894.29로 마감하며 둘 다 장중 최고가에서 거래를 마쳤다.",
+      "이날 발표된 9월 반도체 수출 사상 최대 실적과 전날 마이크론의 호실적 여진이 겹치며 반도체·전자장비 업종이 지수를 끌어올렸고, 바이오·제약주도 큰 폭으로 올랐다.",
+      "코스피는 기관이 3,345억원 순매수한 반면 개인(-1조4,306억원)과 외국인(-5,485억원)은 차익실현에 나섰고, 코스닥은 외국인(+2,278억원)과 기관(+5,682억원)이 동반 매수하며 개인(-7,761억원) 매도를 상쇄했다.",
+      "같은 날 최대주주가 아람코 계열사 간에 단순 이전된 S-Oil은 지분율 변동이 없었음에도 주가가 7%대 급락해 눈길을 끌었다."
+    ],
+    "lines_en": [
+      "KOSPI rose 1.95% to close at 6,971.35 and KOSDAQ surged 4.48% to 894.29 — both finishing at the day's session high.",
+      "Korea's record September chip-export data, released today, combined with spillover from Micron's strong earnings (reported yesterday) to lift semiconductor and electronics-equipment shares, while biotech and pharma names also rallied hard.",
+      "On KOSPI, institutions bought a net ₩334.5B while retail (-₩1.43T) and foreign investors (-₩548.5B) booked profits; on KOSDAQ, foreign (+₩227.8B) and institutional (+₩568.2B) buying offset retail selling (-₩776.1B).",
+      "Separately, S-Oil shares tumbled more than 7% even though its largest-shareholder change was a pure internal transfer between Aramco affiliates with no change in ownership stake."
+    ]
+  },
+
+  "markets": [
+    {"label":"NASDAQ","value":"30,941.50","delta":"▲0.79%","dir":"up","note_ko":"美 정규장 개장 전 선물 · 반도체 강세 지속","note_en":"Futures ahead of the US open · chip strength persists"},
+    {"label":"S&P 500","value":"7,744.25","delta":"▲0.37%","dir":"up","note_ko":"美 정규장 개장 전 선물","note_en":"Futures ahead of the US open"},
+    {"label":"KOSPI","value":"6,971.35","delta":"▲1.95%","dir":"up","note_ko":"종가 기준 · 코스닥 동반 급등","note_en":"Closing level · KOSDAQ rallied in tandem"},
+    {"label":"VIX","value":"16.25","delta":"▼0.55%","dir":"down","note_ko":"낮은 변동성 구간 유지","note_en":"Holding in a low-volatility range"},
+    {"label":"Fear&Greed","value":"31","delta":"31 → 31","dir":"flat","note_ko":"공포(Fear) 구간 유지","note_en":"Stays in the Fear zone"},
+    {"label":"US 10Y","value":"5.29%","delta":"5.26% → 5.29%","dir":"up","note_ko":"30년물 5.64%로 최고치 유지 · 채권시장 개장 전","note_en":"30Y holds at its high of 5.64% · bond market has yet to reopen"},
+    {"label":"USD/KRW","value":"1,363","value_sub":"· DXY 101.8","delta":"▲0.91%","dir":"up","note_ko":"달러 강세 지속에 원화 추가 약세","note_en":"Won eased further as the dollar firmed"},
+    {"label":"Gold","value":"$4,205.80","delta":"▲0.46%","dir":"up","note_ko":"금리 상승 속에서도 강세 지속","note_en":"Extended gains even as yields rose"},
+    {"label":"WTI","value":"$91.37","delta":"▲1.05%","dir":"up","note_ko":"이란 리스크 지속에 추가 상승","note_en":"Extended gains on lingering Iran risk"},
+    {"label":"Bitcoin","value":"$83,847","delta":"▲0.35%","dir":"up","note_ko":"8만3천달러대에서 소폭 상승","note_en":"Edged up, holding in the $83,000s"}
+  ],
+  "tile_main": "KOSPI",
+  "tile_side": ["NASDAQ","S&P 500"],
+  "tile_rest": ["VIX","Fear&Greed","US 10Y","USD/KRW","Gold","WTI","Bitcoin"],
+  "market_note_ko": "나스닥·S&P500은 선물 기준(美 정규장 개장 전), 원/달러는 서울외환시장 기준",
+  "market_note_en": "Nasdaq/S&P 500 shown as futures (ahead of the US open); USD/KRW per Seoul FX market",
+
+  "chart_series_values": [6715.41, 6894.23, 7007.72, 7017.91, 7080.92, 6889.74, 6870.81, 6838.04, 6971.35],
+  "chart_series_labels": ["9.17","9.18","9.21","9.22","9.23","9.28","9.29","9.30","10.1"],
+  "chart_title": {"ko":"눌림목 딛고 다시 연고점 부근","en":"Pulled back, then retested the yearly high"},
+  "chart_sub": {"ko":"코스피 종가 · 최근 9거래일","en":"KOSPI close · last 9 sessions"},
+  "chart_note": {"ko":"9.23 고점 7,080.92 → 9.30 저점 6,838.04(-3.43%) → 10.1 6,971.35로 반등","en":"9.23 high 7,080.92 → 9.30 low 6,838.04 (-3.43%) → rebounded to 6,971.35 on 10.1"},
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko":"업종 79개 중 58개 상승, 반도체·바이오 최상위권","en":"Biotech and semis lead a broad sector rally"},
+  "sector_sub": {"ko":"코스피 주력 업종 1일 등락률(시총 가중)","en":"KOSPI major industry groups, 1-day change (cap-weighted)"},
+  "rank_kicker": "TODAY",
+  "rank_title": {"ko":"거래대금 상위","en":"Top by Trading Value"},
+  "rank_sub": {"ko":"대덕전자, AI서버 기판 기대감에 12%대 급등","en":"Daeduck Electronics jumped 12%+ on AI-server substrate hopes"},
+  "rank_unit": {"ko":"단위 · 조원","en":"Unit · ₩ Trillion"},
+  "econ_kicker": "TODAY",
+  "econ_title": {"ko":"실적 · 지표 발표","en":"Earnings & Data"},
+  "econ_sub": {"ko":"한국 9월 수출입·PMI 호조, 아시아·유럽 제조업 지표 무더기","en":"Korea's Sept trade and PMI beat, plus a batch of Asia/Europe factory data"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록", "title_en": "KOSPI & KOSDAQ Record",
+      "stats": [
+        {"label_ko":"코스피","label_en":"KOSPI","value":"6,971.35","delta":"▲1.95%","dir":"up","sub_ko":"반도체·바이오 강세에 장중 고점 마감","sub_en":"Closed at the day's high on chip and biotech strength"},
+        {"label_ko":"코스닥","label_en":"KOSDAQ","value":"894.29","delta":"▲4.48%","dir":"up","sub_ko":"외국인·기관 동반 매수에 급등","sub_en":"Surged on combined foreign and institutional buying"}
+      ],
+      "breadth": [
+        {"label_ko":"코스피","label_en":"KOSPI","up":542,"flat":42,"down":332},
+        {"label_ko":"코스닥","label_en":"KOSDAQ","up":1230,"flat":89,"down":423}
+      ],
+      "flows": {
+        "label_ko":"코스피 투자자별 순매수 (억원)","label_en":"KOSPI net buy/sell by investor (₩100M)",
+        "rows":[
+          {"label_ko":"개인","label_en":"Retail","value":-14306},
+          {"label_ko":"외국인","label_en":"Foreign","value":-5485},
+          {"label_ko":"기관","label_en":"Institutions","value":3345}
+        ]
+      },
+      "note_ko": "코스닥은 외국인(+2,278억원)·기관(+5,682억원)이 동반 매수하며 개인(-7,761억원) 매도를 상쇄했다 — 코스피와 반대로 외국인·기관이 쌍끌이했다.",
+      "note_en": "KOSDAQ saw foreign (+₩227.8B) and institutional (+₩568.2B) buying offset retail selling (-₩776.1B) — the opposite pattern from KOSPI, where foreign and institutional flows diverged."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "bars": [
+        {"label_ko":"생물공학","label_en":"Biotech","value":5.67},
+        {"label_ko":"반도체","label_en":"Semis","value":2.16},
+        {"label_ko":"제약","label_en":"Pharma","value":3.38},
+        {"label_ko":"전자장비","label_en":"Elec. Equip","value":3.08},
+        {"label_ko":"우주항공·국방","label_en":"Aero·Defense","value":2.87},
+        {"label_ko":"자동차부품","label_en":"Auto Parts","value":2.54},
+        {"label_ko":"기계","label_en":"Machinery","value":1.42},
+        {"label_ko":"화학","label_en":"Chemicals","value":1.90},
+        {"label_ko":"증권","label_en":"Securities","value":1.27},
+        {"label_ko":"전기제품","label_en":"Elec. Products","value":1.03},
+        {"label_ko":"자동차","label_en":"Autos","value":0.60},
+        {"label_ko":"전기장비","label_en":"Elec. Machinery","value":0.45},
+        {"label_ko":"은행","label_en":"Banks","value":-1.55},
+        {"label_ko":"조선","label_en":"Shipbuilding","value":-0.49},
+        {"label_ko":"석유·가스","label_en":"Oil & Gas","value":-3.37}
+      ],
+      "note_ko": "코스피 79개 업종 중 58개가 오르고 19개만 내렸다 — 생물공학(바이오)·반도체·제약이 최상위권, 석유·가스·은행이 최하위권.",
+      "note_en": "58 of KOSPI's 79 industry groups rose and only 19 fell — biotech, semis and pharma led, while oil & gas and banks lagged."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "rows": [
+        {"name_ko":"SK하이닉스","name_en":"SK Hynix","value":"₩3.92T","pct":3.21},
+        {"name_ko":"삼성전자","name_en":"Samsung Electronics","value":"₩3.67T","pct":2.79},
+        {"name_ko":"삼성전기","name_en":"Samsung Electro-Mechanics","value":"₩0.96T","pct":3.17},
+        {"name_ko":"삼성전자우","name_en":"Samsung Elec. (Pfd)","value":"₩0.55T","pct":4.76},
+        {"name_ko":"대덕전자","name_en":"Daeduck Electronics","value":"₩0.26T","pct":12.75}
+      ],
+      "share": {"label_ko":"상위 2종목 비중","label_en":"Top 2 names' share","mode":"nested",
+                "segments":[{"label_ko":"SK하이닉스+삼성전자","label_en":"SK Hynix + Samsung Elec.","pct":41.7,"color":"#e8594f"},
+                            {"label_ko":"나머지","label_en":"Rest","pct":58.3,"color":"#3987e5"}]},
+      "note_ko": "SK하이닉스·삼성전자 두 종목 거래대금이 코스피 전체의 42%를 차지했다 — 상위 5개 전부 반도체·전자부품주다.",
+      "note_en": "SK Hynix and Samsung Electronics alone made up 42% of KOSPI's entire trading value — every name in the top 5 is a chip or electronics-component stock."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "stats": [
+        {"label_ko":"한국 9월 무역수지","label_en":"Korea Trade Balance (Sep)","value":"$49.85B","delta":{"ko":"전월 $34.79B 대비 확대","en":"Up from $34.79B prior"},"dir":"up","sub_ko":"09:00 발표 · 흑자 폭 확대","sub_en":"Released 09:00 KST · surplus widened"},
+        {"label_ko":"한국 9월 S&P Global 제조업 PMI","label_en":"Korea Manufacturing PMI (Sep)","value":"53.9","delta":{"ko":"전월 52.3 대비 상승","en":"Up from 52.3 prior"},"dir":"up","sub_ko":"09:30 발표 · 신규주문 호조","sub_en":"Released 09:30 KST · new orders strengthened"},
+        {"label_ko":"일본 9월 단칸 대기업 제조업 DI","label_en":"Japan Tankan Large Mfg. Index (Sep)","value":"24","delta":{"ko":"예상 25 소폭 하회 · 전분기 22","en":"Just below est. 25 · prior quarter 22"},"dir":"up","sub_ko":"08:50 발표(BOJ) · 체감경기 6분기 연속 개선","sub_en":"Released 08:50 KST (BOJ) · improved for a 6th straight quarter"},
+        {"label_ko":"독일 9월 HCOB 제조업 PMI(확정치)","label_en":"Germany Manufacturing PMI, Final (Sep)","value":"53.8","delta":{"ko":"50 상회 유지","en":"Stayed above the 50 mark"},"dir":"up","sub_ko":"16:55 발표 · 확정치","sub_en":"Released 16:55 KST · final reading"},
+        {"label_ko":"유로존 9월 HCOB 제조업 PMI(확정치)","label_en":"Eurozone Manufacturing PMI, Final (Sep)","value":"52.7","delta":{"ko":"예상치 부합","en":"In line with estimate"},"dir":"flat","sub_ko":"17:00 발표 · 확정치, 2022년 이후 최고권","sub_en":"Released 17:00 KST · final reading, near its best since 2022"},
+        {"label_ko":"중국 9월 차이신 제조업 PMI","label_en":"China Caixin Manufacturing PMI (Sep)","value":"50.1","delta":{"ko":"블룸버그 전망치 50.1과 부합 · 2개월 만에 확장 전환","en":"In line with Bloomberg consensus · back above 50 after two months"},"dir":"up","sub_ko":"9/30 발표 · 국경절 연휴 전날","sub_en":"Released 9/30, ahead of the National Day holiday"}
+      ],
+      "note_ko": "한국 수출입·PMI가 나란히 호조를 보였고, 독일·유로존·중국 제조업 지표도 대부분 확장 국면을 유지했다.",
+      "note_en": "Korea's trade and PMI data both beat, and German, Eurozone and Chinese manufacturing gauges mostly held in expansion."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "items": [
+        {"headline_ko":"LS ELECTRIC, 북미 AI 데이터센터에 1,812억원 초고압 변압기 공급","headline_en":"LS ELECTRIC wins $133M transformer deal for North American AI data centers",
+         "body_ko":"LS ELECTRIC이 북미 AI 데이터센터 9개 변전소에 345kV급 초고압 변압기를 2030년까지 순차 공급하는 계약을 체결했다. 계약 규모는 1억3,341만달러(약1,812억원)로, AI 데이터센터발 전력기기 수요 확대를 보여주는 사례다.",
+         "body_en":"LS ELECTRIC signed a $133.41M (about ₩181.2B) deal to supply 345kV ultra-high-voltage transformers to nine substations serving North American AI data centers through 2030, underscoring surging power-equipment demand from the AI buildout.",
+         "src":"LS ELECTRIC"},
+        {"headline_ko":"대덕전자, AI서버 기판 수요 기대에 12%대 급등","headline_en":"Daeduck Electronics jumps 12%+ on AI-server substrate demand hopes",
+         "body_ko":"AI 서버용 FC-BGA 등 반도체 패키지 기판을 만드는 대덕전자 주가가 오늘 12.75% 급등해 코스피 거래대금 상위권에 올랐다. 반도체 업황 개선 기대감이 기판 공급망 전반으로 번지는 모습이다.",
+         "body_en":"Daeduck Electronics, which makes FC-BGA and other semiconductor packaging substrates for AI servers, jumped 12.75% today and landed among KOSPI's most-traded names, as optimism about the chip upcycle spread across the substrate supply chain.",
+         "src":"KRX"},
+        {"headline_ko":"구글, '제미나이 4 아르곤' 공개 — 코딩·보안 벤치마크 1위","headline_en":"Google unveils 'Gemini 4 Argon,' topping coding and security benchmarks",
+         "body_ko":"구글이 신형 AI 모델 '제미나이 4 아르곤'을 공개했다. 실제 소프트웨어 엔지니어링 벤치마크에서 기존 최고 기록을 넘어섰고 사이버보안 평가에서도 공동 1위를 차지했다. 출력 토큰 한도를 기존 6만4,000에서 100만으로 늘려 장시간 추론·코드 생성이 가능하지만, 당장은 '페어윈드' 프로그램 참여 보안 파트너 등 일부에게만 우선 제공된다.",
+         "body_en":"Google unveiled its new 'Gemini 4 Argon' AI model, which topped real-world software-engineering benchmarks and tied for first in cybersecurity evaluations. Its output token limit expanded from 64,000 to 1 million, enabling long-running reasoning and code generation, though it is initially available only to select partners such as those in its 'Fairwind' security program.",
+         "src":"Google"}
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "items": [
+        {"headline_ko":"반도체 수출 사상 최대·마이크론 여진에 코스피·코스닥 동반 급등","headline_en":"Record chip exports, Micron spillover lift KOSPI and KOSDAQ",
+         "body_ko":"한국 9월 무역흑자가 498.5억달러로 확대됐고 마이크론 실적 여진까지 겹쳐 코스피 반도체주가 올랐다. SK하이닉스·삼성전자가 거래대금 1·2위, 코스닥은 4.48% 급등했다.",
+         "body_en":"Korea's Sept. trade surplus widened to $49.85B as Micron spillover lifted KOSPI chips. SK Hynix and Samsung topped trading value; KOSDAQ surged 4.48%.",
+         "src":"KRX/MOTIE"},
+        {"headline_ko":"S-Oil, 아람코 계열사간 최대주주 이전에도 주가 7%대 급락","headline_en":"S-Oil shares slide 7%+ despite internal Aramco ownership transfer",
+         "body_ko":"S-Oil의 최대주주가 아람코 계열사간(AOCBV→ADA)에 바뀌었다. 지분율 63.43%는 그대로인 내부 재편인데도 주가는 7%대 급락했다.",
+         "body_en":"S-Oil's top shareholder shifted between Aramco units (AOCBV to ADA) with the 63.43% stake unchanged — yet shares tumbled 7%+ on the news.",
+         "src":"DART"},
+        {"headline_ko":"기아, 3분기 역대 최다 84만6,764대 판매","headline_en":"Kia posts record Q3 global sales of 846,764 units",
+         "body_ko":"기아가 3분기 84만6,764대를 판매해 1962년 판매 개시 이래 최다를 기록했다. 해외 판매가 7.5% 늘며 내수 부진(-6.7%)을 상쇄했다.",
+         "body_en":"Kia sold a record 846,764 vehicles in Q3, its best since 1962, as a 7.5% overseas gain offset a 6.7% domestic decline.",
+         "src":"Kia"},
+        {"headline_ko":"닛케이225, 장중 2.4% 급등 6만8,355엔 — 반도체·AI주 강세","headline_en":"Nikkei 225 jumps 2.4% intraday to 68,355 on chip, AI strength",
+         "body_ko":"닛케이225가 반도체·AI주 강세에 장중 2.4% 오른 6만8,355엔까지 올랐다. 중국·홍콩 증시는 국경절 연휴로 휴장했다.",
+         "body_en":"Japan's Nikkei 225 rose as much as 2.4% intraday to 68,355, led by chips and AI names. China and Hong Kong were closed for the holiday.",
+         "src":"Nikkei"},
+        {"headline_ko":"이란·미국 간접협상 교착 지속, 이란 리알화 사상 최저","headline_en":"Iran-US talks stay stalled as Iranian rial hits record low",
+         "body_ko":"이란이 7일 휴전과 호르무즈 해협 재개방안을 제시했지만 미국 답변은 아직 없다. 이란 리알화는 달러당 250만리알을 돌파해 사상 최저를 기록했고, 미국은 10개 기관을 추가 제재했다.",
+         "body_en":"Iran proposed a 7-day ceasefire and reopening the Strait of Hormuz; Washington hasn't responded. The rial hit a record low as the US added more sanctions.",
+         "src":"Reuters/iMBC"},
+        {"headline_ko":"카시카리 총재(2026 투표권), \"인플레 여전히 높아 추가 인상 필요\"","headline_en":"Fed's Kashkari (2026 voter): inflation still too high",
+         "body_ko":"닐 카시카리 미니애폴리스 연은 총재(2026 투표권, 매파)가 인플레가 여전히 높다며 연내 추가 인상 가능성을 시사했다.",
+         "body_en":"Minneapolis Fed's Kashkari (2026 voter, hawkish) said inflation remains too high and signaled he could back one more hike this year.",
+         "src":"Fed"}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "TONIGHT",
+  "schedule_sub": {"ko":"내일 아침 8시까지","en":"Through 08:00 KST tomorrow"},
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US Market Hours",
+    "lines_ko": ["정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30"],
+    "lines_en": ["Regular session 22:30–05:00 KST next day (DST) · Pre-market from 17:00 KST"]
+  },
+  "schedule": [
+    {"time":"21:30","title_ko":"美 9월 마지막주 신규실업수당청구","title_en":"US Weekly Initial Jobless Claims","detail_ko":"컨센서스 20.0만 · 전주 19.7만 · 매주 목요일 발표","detail_en":"Consensus 200K vs prior 197K; weekly Thursday release","importance":"mid"},
+    {"time":"22:45","title_ko":"美 9월 S&P Global 제조업 PMI 확정치","title_en":"US S&P Global Manufacturing PMI (Final)","detail_ko":"전월 57.0 · 예비치 대비 확정치 확인","detail_en":"Prior 57.0; final vs flash reading","importance":"mid"},
+    {"time":"23:00","title_ko":"美 9월 ISM 제조업 PMI","title_en":"US ISM Manufacturing PMI","detail_ko":"컨센서스 55.0 · 전월 54.6 · 월 첫 영업일 핵심 지표","detail_en":"Consensus 55.0 vs prior 54.6; the month's first key data point","importance":"high"},
+    {"time":"23:00","title_ko":"Fed 월러 이사 연설(상시 투표권·비둘기 성향)","title_en":"Fed Governor Waller speech (permanent voter, dovish-leaning)","detail_ko":"ISM 발표와 같은 시각 · 금리 경로 코멘트 주목","detail_en":"Coincides with the ISM release; watch for rate-path comments","importance":"mid"},
+    {"time":"10/2 02:30","title_ko":"Fed 제퍼슨 부의장 연설(상시 투표권·중도 성향)","title_en":"Fed Vice Chair Jefferson speech (permanent voter, centrist)","detail_ko":"FOMC 부의장 · 통화정책 전반에 대한 코멘트 예상","detail_en":"Vice Chair of the FOMC; broad policy commentary expected","importance":"mid"},
+    {"time":"10/2 04:30","title_ko":"Fed 윌리엄스 뉴욕연은 총재 연설(상시 투표권·중도 성향)","title_en":"NY Fed President Williams speech (permanent voter, centrist)","detail_ko":"이번 주 초 간담회에서는 서두를 필요 없다는 완화적 톤","detail_en":"Struck a dovish, no-urgency tone at his briefing earlier this week","importance":"mid"},
+    {"time":"10/2 08:00","title_ko":"한국 9월 소비자물가(CPI)","title_en":"Korea September CPI","detail_ko":"컨센서스 전년비 2.9% · 전월 3.1% · 국가데이터처 발표","detail_en":"Consensus YoY 2.9% vs prior 3.1%; released by Statistics Korea","importance":"high"}
+  ],
+
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+
+  "card_photos": {
+    "1": "A dynamic Korean stock exchange digital ticker board at dusk, index numbers glowing green, upward-trending candlestick patterns reflected in glass, energetic bullish atmosphere, Seoul skyline silhouette in the background",
+    "3": "A glowing trading-floor screen wall showing a sharp upward-trending line chart breaking through a resistance level, cool blue and green tones, dynamic motion blur, cinematic",
+    "7": "Close-up of a semiconductor wafer beside server rack cables under warm amber and blue data-center lighting, shallow depth of field, evoking AI infrastructure buildout"
+  },
+
+  "caption_ko": "코스피가 1.95% 오른 6,971.35, 코스닥은 4.48% 급등한 894.29로 마감하며 둘 다 장중 최고가를 찍었어요. 반도체 수출 사상 최대 실적과 마이크론 실적 여진이 겹치며 반도체·바이오주가 랠리를 이끌었고, S-Oil은 최대주주의 단순 내부 이전에도 7%대 급락했습니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #코스피 #코스닥 #반도체 #SK하이닉스 #삼성전자 #대덕전자 #S_Oil #투자정보 #주식 #경제뉴스 #재테크 #증시마감 #AI반도체\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "KOSPI closed up 1.95% at 6,971.35 and KOSDAQ surged 4.48% to 894.29 — both finishing at the day's session high. Record chip-export data and spillover from Micron's earnings drove a semiconductor and biotech rally, while S-Oil tumbled 7%+ despite a purely internal ownership transfer. Swipe through for the full picture 📊\n\nFollow + save so you don't miss our morning and evening briefs!\n\n#luckyonbriefing #eveningbrief #kospi #kosdaq #semiconductors #skhynix #samsung #daeduckelectronics #soil #investing #stockmarket #econnews #aichips\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+  "sources": ["Yahoo Finance","FMP","KRX","Naver Finance","DART","FXStreet econ-calendar","S&P Global","BOJ","Kia","LS ELECTRIC","Reuters/IMBC","Federal Reserve"]
+}
