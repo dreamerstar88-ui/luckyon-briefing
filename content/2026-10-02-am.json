@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-02",
+  "session": "am",
+  "dateLabel_ko": "2026년 10월 2일 금요일 아침",
+  "dateLabel_en": "Friday, October 2, 2026 · Morning",
+
+  "headline_ko": "마이크론 실적 서프라이즈에 반도체 강세, 지수는 숨고르기",
+  "headline_en": "Micron's Earnings Beat Lifts Chips as Indexes Take a Breather",
+  "headline_sub_ko": "美 국채금리는 급등세가 진정, 국제유가는 이란 리스크에 이틀째 상승",
+  "headline_sub_en": "Treasury yields cooled from their recent surge; oil rose for a second day on Iran risk",
+  "cover_kicker": {"ko": "간밤 미국장 · 10/1 마감", "en": "US Overnight · Oct 1 Close"},
+  "cover_facts": [
+    ["chip", {"ko": "나스닥 +0.04% · S&P 500 +0.19%", "en": "Nasdaq +0.04% · S&P 500 +0.19%"},
+             {"ko": "26,871.60 / 7,666.45 · 마이크론 호실적에 반도체가 지수를 떠받쳤다", "en": "26,871.60 / 7,666.45 pts · Chips held up the index on Micron's earnings beat"}],
+    ["bond", {"ko": "美 10년물 5.24%", "en": "US 10Y at 5.24%"},
+             {"ko": "5.29% → 5.24%, 최근 급등세가 한풀 꺾였다", "en": "Eased to 5.24% from 5.29%, cooling from its recent surge"}],
+    ["target", {"ko": "WTI $93.13 ▲3.00%", "en": "WTI $93.13 ▲3.00%"},
+             {"ko": "美·이란 협상 교착 지속에 급등", "en": "Surged as US-Iran talks stayed stalled"}]
+  ],
+
+  "markets": [
+    {"label": "NASDAQ", "value": "26,871.60", "delta": "▲0.04%", "dir": "up", "note_ko": "美 증시 마감 종가 · 마이크론 실적 서프라이즈에 반도체 강세", "note_en": "US market close · Chips rallied on Micron's earnings beat"},
+    {"label": "S&P 500", "value": "7,666.45", "delta": "▲0.19%", "dir": "up", "note_ko": "국채금리 안정 속 소폭 상승 마감", "note_en": "Closed slightly higher as bond yields steadied"},
+    {"label": "KOSPI", "value": "6,971.35", "delta": "▲1.95%", "dir": "up", "note_ko": "전 거래일 종가 · 코스피는 아직 개장 전", "note_en": "Previous close · KOSPI has yet to open today"},
+    {"label": "VIX", "value": "16.39", "delta": "▲0.31%", "dir": "up", "note_ko": "여전히 낮은 변동성 구간 유지", "note_en": "Still holding in a low-volatility range"},
+    {"label": "Fear&Greed", "value": "28", "delta": "31 → 28", "dir": "down", "note_ko": "공포(Fear) 구간이 더 깊어졌다", "note_en": "Sank deeper into the Fear zone"},
+    {"label": "US 10Y", "value": "5.24%", "delta": "5.29% → 5.24%", "dir": "down", "note_ko": "장기금리 급등세가 진정되는 모습", "note_en": "The recent run-up in long yields is cooling"},
+    {"label": "USD/KRW", "value": "1,359", "value_sub": "· DXY 102.0", "delta": "▲0.19%", "dir": "up", "note_ko": "달러인덱스 반등에 원화 소폭 약세", "note_en": "Won eased slightly as the dollar index firmed"},
+    {"label": "Bitcoin", "value": "$84,746", "delta": "▲1.43%", "dir": "up", "note_ko": "8만4천달러대로 상승", "note_en": "Climbed into the $84,000s"},
+    {"label": "Gold", "value": "$4,202.10", "delta": "▲0.37%", "dir": "up", "note_ko": "금리 안정 속 상승", "note_en": "Rose as yields steadied"},
+    {"label": "WTI", "value": "$93.13", "delta": "▲3.00%", "dir": "up", "note_ko": "美·이란 협상 교착에 급등", "note_en": "Surged on the US-Iran stalemate"}
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Bitcoin", "Gold", "WTI"],
+  "market_note_ko": "마이크론의 실적 서프라이즈에 반도체주가 강세를 보였고, 국채금리는 최근 급등세가 진정됐다. 국제유가는 美·이란 협상 교착으로 급등했다. 코스닥은 전 거래일 기준 ▲4.48%로 반도체·AI주 강세가 두드러졌다.",
+  "market_note_en": "Chips rallied on Micron's earnings beat while Treasury yields eased from their recent surge. Oil surged on the stalled US-Iran talks. KOSDAQ was up 4.48% in its previous session on chip and AI-stock strength.",
+
+  "chart_series_values": [27122.08984375, 27244.279296875, 26936.0390625, 26939.369140625, 27068.720703125, 26820.380859375, 26797.5390625, 26861.060546875, 26871.595703125],
+  "chart_series_labels": ["9.21", "9.22", "9.23", "9.24", "9.25", "9.28", "9.29", "9.30", "10.1"],
+  "chart_title": {"ko": "박스권 속 숨고르기, 저점은 지켰다", "en": "A range-bound pause that held its low"},
+  "chart_sub": {"ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions"},
+  "chart_note": {"ko": "9.22 고점 27,244.28 → 9.29 저점 26,797.54 → 10.1 26,871.60", "en": "9/22 high 27,244.28 → 9/29 low 26,797.54 → 10/1 26,871.60"},
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+
+  "sector_section": "섹터별 등락",
+  "sector_title": {"ko": "에너지·반도체가 이끌고 헬스케어가 끌어내렸다", "en": "Energy and chips led, healthcare lagged"},
+  "sector_sub": {"ko": "S&P 500 섹터 ETF 기준 · 전일 종가 대비", "en": "S&P 500 sector ETFs · vs prior close"},
+  "rank_kicker": "VOLUME LEADERS",
+  "rank_title": {"ko": "거래대금 상위", "en": "Top by Trading Value"},
+  "rank_sub": {"ko": "미국 거래대금 상위 300종목 기준", "en": "Among the top 300 US names by turnover"},
+  "rank_unit": {"ko": "단위 · 달러", "en": "Unit · USD"},
+  "econ_kicker": "DATA & EARNINGS",
+  "econ_title": {"ko": "실적 · 지표 발표", "en": "Earnings & Data"},
+  "econ_sub": {"ko": "간밤 발표된 주요 지표·실적", "en": "Key overnight data and earnings"},
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+
+  "sections": [
+    {
+      "title_ko": "미국장 기록", "title_en": "US Market Record",
+      "stats": [
+        {"label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "26,871.60", "delta": "▲0.04%", "dir": "up", "sub_ko": "마이크론 실적 서프라이즈에 반도체가 지수를 떠받쳤다", "sub_en": "Chips held the index up on Micron's earnings beat"},
+        {"label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,666.45", "delta": "▲0.19%", "dir": "up", "sub_ko": "국채금리가 진정되며 소폭 상승", "sub_en": "Edged up as Treasury yields eased"}
+      ],
+      "breadth": [
+        {"label_ko": "거래대금 상위 300종목", "label_en": "Top 300 by turnover", "up": 155, "flat": 3, "down": 142}
+      ],
+      "note_ko": "거래대금 상위 300종목 기준 상승(155개)과 하락(142개)이 엇비슷했지만, 오른 종목에 몰린 거래대금(2,373억달러)이 내린 종목(1,584억달러)보다 많아 자금은 상승 쪽에 쏠렸다. 이날 거래대금 1위 마이크론(491억달러)은 실적 서프라이즈에 급등했다.",
+      "note_en": "Among the top 300 names by turnover, advancers (155) and decliners (142) were close in number, but more dollars flowed into risers ($237.3B) than fallers ($158.4B) — money leaned bullish. Top-traded Micron ($49.1B) surged on its earnings beat."
+    },
+    {
+      "title_ko": "섹터별 등락", "title_en": "Sector Performance",
+      "bars": [
+        {"label_ko": "에너지 (XLE)", "label_en": "Energy (XLE)", "value": 1.95},
+        {"label_ko": "반도체 (SMH)", "label_en": "Semis (SMH)", "value": 1.45},
+        {"label_ko": "기술 (XLK)", "label_en": "Technology (XLK)", "value": 1.05},
+        {"label_ko": "산업재 (XLI)", "label_en": "Industrials (XLI)", "value": 0.99},
+        {"label_ko": "유틸리티 (XLU)", "label_en": "Utilities (XLU)", "value": 0.61},
+        {"label_ko": "금융 (XLF)", "label_en": "Financials (XLF)", "value": 0.11},
+        {"label_ko": "경기소비재 (XLY)", "label_en": "Cons. Disc. (XLY)", "value": -0.03},
+        {"label_ko": "소재 (XLB)", "label_en": "Materials (XLB)", "value": -0.33},
+        {"label_ko": "필수소비재 (XLP)", "label_en": "Cons. Staples (XLP)", "value": -0.34},
+        {"label_ko": "부동산 (XLRE)", "label_en": "Real Estate (XLRE)", "value": -0.56},
+        {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm. Svcs (XLC)", "value": -0.93},
+        {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": -1.32}
+      ],
+      "note_ko": "국제유가 급등에 에너지가 1위, 마이크론 훈풍에 반도체·기술이 뒤를 이었다. 헬스케어는 업종 내 대형주 약세로 가장 부진했다.",
+      "note_en": "Energy led on surging oil prices, with semis and tech close behind on Micron's tailwind. Health care lagged most on weakness among its large-cap names."
+    },
+    {
+      "title_ko": "거래대금 상위", "title_en": "Top by Trading Value",
+      "rows": [
+        {"name_ko": "마이크론 (MU)", "name_en": "Micron (MU)", "value": "$49.1B", "pct": 3.03},
+        {"name_ko": "엔비디아 (NVDA)", "name_en": "Nvidia (NVDA)", "value": "$22.5B", "pct": 1.09},
+        {"name_ko": "샌디스크 (SNDK)", "name_en": "SanDisk (SNDK)", "value": "$16.4B", "pct": 2.75},
+        {"name_ko": "인텔 (INTC)", "name_en": "Intel (INTC)", "value": "$12.3B", "pct": -0.19},
+        {"name_ko": "애플 (AAPL)", "name_en": "Apple (AAPL)", "value": "$11.6B", "pct": -0.81}
+      ],
+      "note_ko": "거래대금 1위 마이크론(491억달러)이 상위 5종목 합계의 약 44%를 차지했다. 마이크론은 실적·가이던스 서프라이즈에 이날 미국 증시 전체 거래대금 1위에 올랐다.",
+      "note_en": "Micron ($49.1B) alone made up about 44% of the top five names' combined turnover, topping the entire US market's trading value for the day after its earnings and guidance beat."
+    },
+    {
+      "title_ko": "실적 · 지표 발표", "title_en": "Earnings & Data",
+      "stats": [
+        {"label_ko": "美 9월 ISM 제조업 PMI", "label_en": "US Sep ISM Manufacturing PMI", "value": "54.5", "delta": "54.6 → 54.5 ▼", "dir": "down", "sub_ko": "23:00 · 예상 55.0 · 이전 54.6", "sub_en": "11:00 PM KST · Est. 55.0 · Prior 54.6"},
+        {"label_ko": "美 9월 ISM 제조업 물가지불지수", "label_en": "US Sep ISM Mfg Prices Paid", "value": "77.9", "delta": "71.1 → 77.9 ▲", "dir": "up", "sub_ko": "23:00 · 예상 72.3 · 이전 71.1", "sub_en": "11:00 PM KST · Est. 72.3 · Prior 71.1", "ref_ko": "50 위 = 원자재 가격 상승을 보고한 기업이 더 많다는 뜻", "ref_en": "Above 50 = more manufacturers reporting higher input costs"},
+        {"label_ko": "美 9월 S&P 글로벌 PMI (제조업, 확정치)", "label_en": "US Sep S&P Global PMI (Mfg, Final)", "value": "55.9", "delta": "57.0 → 55.9 ▼", "dir": "down", "sub_ko": "22:45 · 전월 57.0", "sub_en": "10:45 PM KST · Down from 57.0 prior"},
+        {"label_ko": "美 9/26주 신규 실업수당청구", "label_en": "US Initial Jobless Claims (wk)", "value": "197K", "delta": "197K → 197K -", "dir": "flat", "sub_ko": "21:30 · 예상 20.0만 · 이전 19.7만", "sub_en": "9:30 PM KST · Est. 200K · Prior 197K"},
+        {"label_ko": "美 8월 건설지출 (전월비)", "label_en": "US Aug Construction Spending (MoM)", "value": "+0.9%", "delta": "-0.5% → +0.9% ▲", "dir": "up", "sub_ko": "23:00 · 예상 0.0% · 이전 -0.5%", "sub_en": "11:00 PM KST · Est. 0.0% · Prior -0.5%"},
+        {"label_ko": "나이키 FY27 1분기 EPS", "label_en": "Nike FY27 Q1 EPS", "value": "$0.48", "delta": {"ko": "예상 $0.44 상회", "en": "Beat est. $0.44"}, "dir": "up", "sub_ko": "매출 $112.1억(전년比 -4%) · 차기 분기 EPS 가이던스 $1.15~1.35로 예상 $1.65 큰 폭 하회 · 시간외 주가 하락", "sub_en": "Revenue $11.21B (-4% YoY); next-quarter EPS guidance of $1.15-$1.35 badly missed the $1.65 estimate; shares fell after hours"}
+      ],
+      "note_ko": "ISM 제조업 PMI는 예상을 밑돌았지만 50 위 확장 국면은 유지했다. 물가지불지수가 크게 튀어 원자재 비용 부담이 다시 커졌다.",
+      "note_en": "ISM Manufacturing missed estimates but stayed above the 50 expansion line. Prices Paid jumped sharply, signaling renewed input-cost pressure."
+    },
+    {
+      "title_ko": "AI · 반도체 기술", "title_en": "AI & Semiconductors",
+      "items": [
+        {"headline_ko": "마이크론, 매출·가이던스 모두 서프라이즈 — HBM 2027년까지 완판", "headline_en": "Micron Beats on Revenue and Guidance as HBM Sells Out Through 2027",
+         "body_ko": "마이크론의 지난 분기 매출이 542억3,000만달러로 예상(510억7,000만달러)을 웃돌았고, 다음 분기 매출 가이던스(615억달러)도 시장 예상(570억달러)을 크게 상회했다. HBM3E·HBM4는 이미 2027년까지 공급이 꽉 찼고, 엔비디아와 업계 최초의 맞춤형 HBM도 개발 중이라고 밝혔다.",
+         "body_en": "Micron's latest-quarter revenue of $54.23B beat the $51.07B estimate, and its guidance for next quarter ($61.5B) topped consensus ($57B) by a wide margin. HBM3E and HBM4 are already sold out through 2027, and the company said it's developing the industry's first custom HBM with Nvidia."},
+        {"headline_ko": "BofA, AI 데이터센터 시장 전망 2030년 2.2조달러로 상향", "headline_en": "BofA Raises 2030 AI Data Center Market Forecast to $2.2 Trillion",
+         "body_ko": "뱅크오브아메리카가 AI 데이터센터 시장 규모를 2030년 기준 기존 1.8조달러에서 2.2조달러로 상향했다(연 40% 성장 가정). 4분기 반도체 최선호주로 엔비디아·인텔·마이크론·마벨·램리서치를 꼽았다.",
+         "body_en": "Bank of America raised its 2030 AI data center market forecast to $2.2 trillion from $1.8 trillion, implying 40% annual growth, and named Nvidia, Intel, Micron, Marvell and Lam Research as its top Q4 semiconductor picks."},
+        {"headline_ko": "AI 데이터센터발 전력망 병목 심화, 변압기 대기 160주 넘어", "headline_en": "AI Power Bottleneck Deepens as Transformer Lead Times Pass 160 Weeks",
+         "body_ko": "AI 데이터센터 전력 수요 급증으로 미국 변전소용 초고압 변압기 납기가 2023년 약 140주에서 올해 160주 이상으로 늘었다. 연간 수요는 현재 약 1,500대에서 2030년 9,000대 이상으로 늘어날 전망이어서 전력기기 공급망 전반이 병목 상태다.",
+         "body_en": "Substation transformer lead times have stretched from about 140 weeks in 2023 to more than 160 weeks this year as AI data centers drive power demand. Annual demand is projected to rise from roughly 1,500 units now to over 9,000 by 2030, straining the power-equipment supply chain."}
+      ]
+    },
+    {
+      "title_ko": "주요 소식", "title_en": "Top Stories",
+      "items": [
+        {"headline_ko": "국제유가 급등, 美·이란 협상 교착 지속", "headline_en": "Oil Surges as US-Iran Talks Remain Stalled",
+         "body_ko": "미국과 이란의 협상이 돌파구를 찾지 못하면서 WTI가 3%대 급등했다. 대이란 제재 완화에 대한 기대가 약해지며 공급 증가 기대도 함께 꺾였다.",
+         "body_en": "WTI jumped more than 3% as talks between the US and Iran failed to find a breakthrough. Fading hopes for eased Iran sanctions also dimmed expectations of increased supply."},
+        {"headline_ko": "연준 인사들 엇갈린 발언, 10월 추가 인상 확률 50%대로", "headline_en": "Mixed Fed Signals Push October Hike Odds to Around 50%",
+         "body_ko": "간밤 연준 인사들의 발언이 쏟아졌다. 윌리엄스 뉴욕 연은 총재는 연내 한 차례 추가 인상 필요성은 인정하면서도 10월 회의에서는 \"서두를 필요 없다\"고 선을 그었고, 다른 인사들은 에너지 가격과 AI 투자발 인플레이션 우려를 더 강조했다. 시장이 보는 10월 추가 인상 확률은 약 50%로 낮아졌다.",
+         "body_en": "A wave of Fed speakers spoke overnight. New York Fed President Williams said one more hike may be needed by year-end but there's \"no rush\" at the October meeting, while other officials stressed inflation risks from energy prices and AI-driven investment. Market-implied odds of an October hike eased to around 50%."},
+        {"headline_ko": "닛케이 3.3% 급등, 마이크론 훈풍에 반도체주 강세 — 중국은 국경절 휴장", "headline_en": "Nikkei Jumps 3.3% on Micron Tailwind as Chip Stocks Rally — China Shut for Golden Week",
+         "body_ko": "일본 닛케이225가 마이크론 실적 훈풍을 타고 3.3% 급등한 6만8,956.72엔에 마감했다. 키옥시아홀딩스·도쿄일렉트론이 각각 3%대 올랐다. 중국·홍콩 증시는 국경절 연휴(10/1~10/7)로 이번 주 내내 휴장한다.",
+         "body_en": "Japan's Nikkei 225 jumped 3.3% to close at 68,956.72, riding Micron's earnings tailwind. Kioxia Holdings and Tokyo Electron each rose more than 3%. China and Hong Kong markets are shut all week for the National Day holiday (Oct 1-7)."},
+        {"headline_ko": "파라마운트-워너브러더스디스커버리 합병, 법원 승인으로 10/6 마무리 전망", "headline_en": "Paramount-Warner Bros. Discovery Merger Set to Close Oct 6 After Court Approval",
+         "body_ko": "연방 판사가 파라마운트와 12개 주 간 합의를 승인하면서 파라마운트의 워너브러더스디스커버리 인수 절차가 마무리 단계에 들어섰다. 거래는 10월 6일 종료될 전망으로, 할리우드 대형 스튜디오 간 재편이 임박했다.",
+         "body_en": "A federal judge approved Paramount's settlement with 12 states, clearing the way for its acquisition of Warner Bros. Discovery to close. The deal is expected to close on October 6, marking a major reshuffling among Hollywood's legacy studios."}
+      ]
+    }
+  ],
+
+  "schedule_kicker": "AHEAD",
+  "schedule_sub": {"ko": "지금부터 오늘 밤 9시까지", "en": "From now through 9 PM KST tonight"},
+  "schedule_title_ko": "주요 일정", "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간", "title_en": "Korea Market Hours",
+    "lines_ko": ["정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"],
+    "lines_en": ["Regular session 9:00 AM - 3:30 PM · Call auctions 8:30-9:00 AM / 3:20-3:30 PM"]
+  },
+  "schedule": [
+    {"time": "08:00", "title_ko": "한국 9월 소비자물가(CPI)", "title_en": "Korea Sep CPI", "detail_ko": "예상 전년비 +2.9% · 이전 +3.1%", "detail_en": "Est. YoY +2.9% · Prior +3.1%", "importance": "high"},
+    {"time": "08:30", "title_ko": "일본 9월 도쿄 CPI · 실업률", "title_en": "Japan Sep Tokyo CPI & Jobless Rate", "detail_ko": "근원CPI(신선식품제외) 예상 +2.4% · 이전 +1.8%", "detail_en": "Core CPI (ex fresh food) est. +2.4% · prior +1.8%", "importance": "mid"},
+    {"time": "16:30", "title_ko": "ECB 치폴로네 이사 연설", "title_en": "ECB's Cipollone Speech", "detail_ko": "ECB 집행이사회 연설", "detail_en": "ECB Executive Board speech", "importance": "mid"},
+    {"time": "18:00", "title_ko": "유로존 9월 HICP (확정치)", "title_en": "Eurozone Sep HICP (Final)", "detail_ko": "예상 전년비 +3.6%·근원 +2.5% · 이전 +3.2%/+2.4%", "detail_en": "Est. YoY +3.6%, core +2.5% · prior +3.2%/+2.4%", "importance": "high"},
+    {"time": "20:30", "title_ko": "ECB 부이치치 총재 연설", "title_en": "ECB's Vujčić Speech", "detail_ko": "ECB 통화정책위원 연설", "detail_en": "ECB Governing Council member speech", "importance": "mid"},
+    {"time": "21:30", "title_ko": "美 9월 비농업고용 · 실업률", "title_en": "US Sep Nonfarm Payrolls & Unemployment", "detail_ko": "예상 신규고용 +9.0만 · 이전 +16.2만 · 실업률 예상 4.1%", "detail_en": "Est. +90K jobs · prior +162K · unemployment rate est. 4.1%", "importance": "high"},
+    {"time": "10/27", "title_ko": "FOMC 회의 (10/27~28, 현지시간)", "title_en": "FOMC Meeting (Oct 27-28)", "detail_ko": "추가 금리인상 여부 주목 · 연준 인사 발언 엇갈림", "detail_en": "Markets watch for another possible hike amid mixed Fed signals", "importance": "mid"}
+  ],
+
+  "outro_tagline_ko": "", "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전", "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+
+  "card_photos": {
+    "1": "A dim trading floor moments after the closing bell, semiconductor stock tickers glowing green on a wall of screens, traders in silhouette, cinematic low-key lighting, blue and amber tones",
+    "3": "A dark Wall Street trading floor, index charts streaming across large monitors, warm amber highlights on glass and steel, shallow depth of field",
+    "7": "A server room with rows of glowing memory chip racks, cool blue data-center lighting, dramatic shadows, high-tech atmosphere"
+  },
+
+  "caption_ko": "마이크론의 실적 서프라이즈가 반도체를 끌어올렸고, 국채금리는 급등세가 한풀 꺾였어요. 국제유가는 미·이란 협상 교착 속 이틀째 상승. 오늘 밤엔 미국 9월 비농업고용도 기다리고 있어요 📊\n\n매일 아침·저녁 luckyon 브리핑으로 시장을 확인하세요. 저장하고 팔로우하면 다음 브리핑도 놓치지 않아요!\n🌙 다음 브리핑 — 오늘 밤 9시\n\n#주식 #경제 #미국주식 #나스닥 #코스피 #마이크론 #반도체 #AI #증시 #투자 #재테크 #경제뉴스 #증권 #아침브리핑 #luckyon브리핑",
+  "caption_en": "Micron's earnings beat lifted chip stocks, and Treasury yields cooled from their recent surge. Oil rose for a second day amid the US-Iran stalemate. Tonight brings the US September jobs report 📊\n\nFollow luckyon briefing for twice-daily market updates. Save & follow so you never miss one!\n🌙 Next brief — 9 PM KST\n\n#stocks #markets #nasdaq #kospi #micron #semiconductors #AI #investing #economy #finance #morningbrief #luckyonbriefing",
+  "sources": ["Yahoo Finance", "FMP", "CNN Fear & Greed Index", "FXStreet Economic Calendar", "Bank of America"]
+}
