@@ -14,8 +14,8 @@
              {"ko": "26,871.60 / 7,666.45 · 마이크론 호실적에 반도체가 지수를 떠받쳤다", "en": "26,871.60 / 7,666.45 pts · Chips held up the index on Micron's earnings beat"}],
     ["bond", {"ko": "美 10년물 5.24%", "en": "US 10Y at 5.24%"},
              {"ko": "5.29% → 5.24%, 최근 급등세가 한풀 꺾였다", "en": "Eased to 5.24% from 5.29%, cooling from its recent surge"}],
-    ["target", {"ko": "WTI $93.17 ▲0.32%", "en": "WTI $93.17 ▲0.32%"},
-             {"ko": "美·이란 협상 교착 지속에 이틀째 상승", "en": "Rose for a second day as US-Iran talks stayed stalled"}]
+    ["target", {"ko": "WTI $93.13 ▲3.00%", "en": "WTI $93.13 ▲3.00%"},
+             {"ko": "美·이란 협상 교착 지속에 급등", "en": "Surged as US-Iran talks stayed stalled"}]
   ],
 
   "markets": [
@@ -25,16 +25,16 @@
     {"label": "VIX", "value": "16.39", "delta": "▲0.31%", "dir": "up", "note_ko": "여전히 낮은 변동성 구간 유지", "note_en": "Still holding in a low-volatility range"},
     {"label": "Fear&Greed", "value": "28", "delta": "31 → 28", "dir": "down", "note_ko": "공포(Fear) 구간이 더 깊어졌다", "note_en": "Sank deeper into the Fear zone"},
     {"label": "US 10Y", "value": "5.24%", "delta": "5.29% → 5.24%", "dir": "down", "note_ko": "장기금리 급등세가 진정되는 모습", "note_en": "The recent run-up in long yields is cooling"},
-    {"label": "USD/KRW", "value": "1,359", "value_sub": "· DXY 102.0", "delta": "▲0.22%", "dir": "up", "note_ko": "달러인덱스 반등에 원화 소폭 약세", "note_en": "Won eased slightly as the dollar index firmed"},
-    {"label": "KOSDAQ", "value": "894.29", "delta": "▲4.48%", "dir": "up", "note_ko": "전 거래일 종가 · 반도체·AI주 강세에 4%대 급등", "note_en": "Previous close · Jumped over 4% on chip and AI-stock strength"},
-    {"label": "Gold", "value": "$4,206.10", "delta": "▲0.09%", "dir": "up", "note_ko": "금리 안정 속 완만하게 상승", "note_en": "Edged higher as yields steadied"},
-    {"label": "WTI", "value": "$93.17", "delta": "▲0.32%", "dir": "up", "note_ko": "美·이란 협상 교착에 이틀째 상승", "note_en": "Rose for a second day on the US-Iran stalemate"}
+    {"label": "USD/KRW", "value": "1,359", "value_sub": "· DXY 102.0", "delta": "▲0.19%", "dir": "up", "note_ko": "달러인덱스 반등에 원화 소폭 약세", "note_en": "Won eased slightly as the dollar index firmed"},
+    {"label": "Bitcoin", "value": "$84,746", "delta": "▲1.43%", "dir": "up", "note_ko": "8만4천달러대로 상승", "note_en": "Climbed into the $84,000s"},
+    {"label": "Gold", "value": "$4,202.10", "delta": "▲0.37%", "dir": "up", "note_ko": "금리 안정 속 상승", "note_en": "Rose as yields steadied"},
+    {"label": "WTI", "value": "$93.13", "delta": "▲3.00%", "dir": "up", "note_ko": "美·이란 협상 교착에 급등", "note_en": "Surged on the US-Iran stalemate"}
   ],
   "tile_main": "NASDAQ",
   "tile_side": ["S&P 500", "KOSPI"],
-  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "KOSDAQ", "Gold", "WTI"],
-  "market_note_ko": "※ 마이크론의 실적 서프라이즈에 반도체주가 강세를 보였고, 국채금리는 최근 급등세가 진정됐다. 국제유가는 美·이란 협상 교착으로 이틀째 올랐다.",
-  "market_note_en": "※ Chips rallied on Micron's earnings beat while Treasury yields eased from their recent surge. Oil rose for a second day on the stalled US-Iran talks.",
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Bitcoin", "Gold", "WTI"],
+  "market_note_ko": "마이크론의 실적 서프라이즈에 반도체주가 강세를 보였고, 국채금리는 최근 급등세가 진정됐다. 국제유가는 美·이란 협상 교착으로 급등했다. 코스닥은 전 거래일 기준 ▲4.48%로 반도체·AI주 강세가 두드러졌다.",
+  "market_note_en": "Chips rallied on Micron's earnings beat while Treasury yields eased from their recent surge. Oil surged on the stalled US-Iran talks. KOSDAQ was up 4.48% in its previous session on chip and AI-stock strength.",
 
   "chart_series_values": [27122.08984375, 27244.279296875, 26936.0390625, 26939.369140625, 27068.720703125, 26820.380859375, 26797.5390625, 26861.060546875, 26871.595703125],
   "chart_series_labels": ["9.21", "9.22", "9.23", "9.24", "9.25", "9.28", "9.29", "9.30", "10.1"],
@@ -86,8 +86,8 @@
         {"label_ko": "커뮤니케이션 (XLC)", "label_en": "Comm. Svcs (XLC)", "value": -0.93},
         {"label_ko": "헬스케어 (XLV)", "label_en": "Health Care (XLV)", "value": -1.32}
       ],
-      "note_ko": "국제유가 상승에 에너지가 1위, 마이크론 훈풍에 반도체·기술이 뒤를 이었다. 헬스케어는 업종 내 대형주 약세로 가장 부진했다.",
-      "note_en": "Energy led on rising oil prices, with semis and tech close behind on Micron's tailwind. Health care lagged most on weakness among its large-cap names."
+      "note_ko": "국제유가 급등에 에너지가 1위, 마이크론 훈풍에 반도체·기술이 뒤를 이었다. 헬스케어는 업종 내 대형주 약세로 가장 부진했다.",
+      "note_en": "Energy led on surging oil prices, with semis and tech close behind on Micron's tailwind. Health care lagged most on weakness among its large-cap names."
     },
     {
       "title_ko": "거래대금 상위", "title_en": "Top by Trading Value",
@@ -107,9 +107,9 @@
         {"label_ko": "美 9월 ISM 제조업 PMI", "label_en": "US Sep ISM Manufacturing PMI", "value": "54.5", "delta": "54.6 → 54.5 ▼", "dir": "down", "sub_ko": "23:00 · 예상 55.0 · 이전 54.6", "sub_en": "11:00 PM KST · Est. 55.0 · Prior 54.6"},
         {"label_ko": "美 9월 ISM 제조업 물가지불지수", "label_en": "US Sep ISM Mfg Prices Paid", "value": "77.9", "delta": "71.1 → 77.9 ▲", "dir": "up", "sub_ko": "23:00 · 예상 72.3 · 이전 71.1", "sub_en": "11:00 PM KST · Est. 72.3 · Prior 71.1", "ref_ko": "50 위 = 원자재 가격 상승을 보고한 기업이 더 많다는 뜻", "ref_en": "Above 50 = more manufacturers reporting higher input costs"},
         {"label_ko": "美 9월 S&P 글로벌 PMI (제조업, 확정치)", "label_en": "US Sep S&P Global PMI (Mfg, Final)", "value": "55.9", "delta": "57.0 → 55.9 ▼", "dir": "down", "sub_ko": "22:45 · 전월 57.0", "sub_en": "10:45 PM KST · Down from 57.0 prior"},
-        {"label_ko": "美 9/26주 신규 실업수당청구", "label_en": "US Initial Jobless Claims (wk)", "value": "19.7만건", "delta": "19.7만 → 19.7만 -", "dir": "flat", "sub_ko": "21:30 · 예상 20.0만 · 이전 19.7만", "sub_en": "9:30 PM KST · Est. 200K · Prior 197K"},
+        {"label_ko": "美 9/26주 신규 실업수당청구", "label_en": "US Initial Jobless Claims (wk)", "value": "197K", "delta": "197K → 197K -", "dir": "flat", "sub_ko": "21:30 · 예상 20.0만 · 이전 19.7만", "sub_en": "9:30 PM KST · Est. 200K · Prior 197K"},
         {"label_ko": "美 8월 건설지출 (전월비)", "label_en": "US Aug Construction Spending (MoM)", "value": "+0.9%", "delta": "-0.5% → +0.9% ▲", "dir": "up", "sub_ko": "23:00 · 예상 0.0% · 이전 -0.5%", "sub_en": "11:00 PM KST · Est. 0.0% · Prior -0.5%"},
-        {"label_ko": "나이키 FY27 1분기 EPS", "label_en": "Nike FY27 Q1 EPS", "value": "$0.48", "delta": {"ko": "예상 $0.44 상회", "en": "Beat est. $0.44"}, "dir": "up", "sub_ko": "매출 $112.1억(전년比 -4%) · 예상 $113.2억 소폭 하회 · 시간외 주가 하락", "sub_en": "Revenue $11.21B (-4% YoY), just below est. $11.32B; shares fell after hours"}
+        {"label_ko": "나이키 FY27 1분기 EPS", "label_en": "Nike FY27 Q1 EPS", "value": "$0.48", "delta": {"ko": "예상 $0.44 상회", "en": "Beat est. $0.44"}, "dir": "up", "sub_ko": "매출 $112.1억(전년比 -4%) · 차기 분기 EPS 가이던스 $1.15~1.35로 예상 $1.65 큰 폭 하회 · 시간외 주가 하락", "sub_en": "Revenue $11.21B (-4% YoY); next-quarter EPS guidance of $1.15-$1.35 badly missed the $1.65 estimate; shares fell after hours"}
       ],
       "note_ko": "ISM 제조업 PMI는 예상을 밑돌았지만 50 위 확장 국면은 유지했다. 물가지불지수가 크게 튀어 원자재 비용 부담이 다시 커졌다.",
       "note_en": "ISM Manufacturing missed estimates but stayed above the 50 expansion line. Prices Paid jumped sharply, signaling renewed input-cost pressure."
@@ -125,18 +125,15 @@
          "body_en": "Bank of America raised its 2030 AI data center market forecast to $2.2 trillion from $1.8 trillion, implying 40% annual growth, and named Nvidia, Intel, Micron, Marvell and Lam Research as its top Q4 semiconductor picks."},
         {"headline_ko": "AI 데이터센터발 전력망 병목 심화, 변압기 대기 160주 넘어", "headline_en": "AI Power Bottleneck Deepens as Transformer Lead Times Pass 160 Weeks",
          "body_ko": "AI 데이터센터 전력 수요 급증으로 미국 변전소용 초고압 변압기 납기가 2023년 약 140주에서 올해 160주 이상으로 늘었다. 연간 수요는 현재 약 1,500대에서 2030년 9,000대 이상으로 늘어날 전망이어서 전력기기 공급망 전반이 병목 상태다.",
-         "body_en": "Substation transformer lead times have stretched from about 140 weeks in 2023 to more than 160 weeks this year as AI data centers drive power demand. Annual demand is projected to rise from roughly 1,500 units now to over 9,000 by 2030, straining the power-equipment supply chain."},
-        {"headline_ko": "로보티즈, 국산 휴머노이드 'AI 사피엔스' 공개", "headline_en": "Robotis Unveils Korean Humanoid 'AI Sapiens'",
-         "body_ko": "로보티즈가 자체 개발한 휴머노이드 로봇 'AI 사피엔스'를 산업통상자원부 주관 AI 로봇 얼라이언스 출범 1주년 행사에서 공개했다. 생성형 모션 기술로 텍스트 입력을 동작으로 바꿔 자연스러운 보행·점프·외발서기 등을 구현했다.",
-         "body_en": "Robotis unveiled its self-developed humanoid robot 'AI Sapiens' at an event marking the first anniversary of a Korean government-led AI robotics alliance. Using generative motion technology, it converts text input into movement, demonstrating natural walking, jumping and one-leg balancing."}
+         "body_en": "Substation transformer lead times have stretched from about 140 weeks in 2023 to more than 160 weeks this year as AI data centers drive power demand. Annual demand is projected to rise from roughly 1,500 units now to over 9,000 by 2030, straining the power-equipment supply chain."}
       ]
     },
     {
       "title_ko": "주요 소식", "title_en": "Top Stories",
       "items": [
-        {"headline_ko": "국제유가 이틀째 상승, 美·이란 협상 교착 지속", "headline_en": "Oil Rises for a Second Day as US-Iran Talks Remain Stalled",
-         "body_ko": "미국과 이란의 협상이 돌파구를 찾지 못하면서 국제유가가 이틀째 올랐다. 대이란 제재 완화에 대한 기대가 약해지며 공급 증가 기대도 함께 꺾였다.",
-         "body_en": "Oil prices rose for a second day as talks between the US and Iran failed to find a breakthrough. Fading hopes for eased Iran sanctions also dimmed expectations of increased supply."},
+        {"headline_ko": "국제유가 급등, 美·이란 협상 교착 지속", "headline_en": "Oil Surges as US-Iran Talks Remain Stalled",
+         "body_ko": "미국과 이란의 협상이 돌파구를 찾지 못하면서 WTI가 3%대 급등했다. 대이란 제재 완화에 대한 기대가 약해지며 공급 증가 기대도 함께 꺾였다.",
+         "body_en": "WTI jumped more than 3% as talks between the US and Iran failed to find a breakthrough. Fading hopes for eased Iran sanctions also dimmed expectations of increased supply."},
         {"headline_ko": "연준 인사들 엇갈린 발언, 10월 추가 인상 확률 50%대로", "headline_en": "Mixed Fed Signals Push October Hike Odds to Around 50%",
          "body_ko": "간밤 연준 인사들의 발언이 쏟아졌다. 윌리엄스 뉴욕 연은 총재는 연내 한 차례 추가 인상 필요성은 인정하면서도 10월 회의에서는 \"서두를 필요 없다\"고 선을 그었고, 다른 인사들은 에너지 가격과 AI 투자발 인플레이션 우려를 더 강조했다. 시장이 보는 10월 추가 인상 확률은 약 50%로 낮아졌다.",
          "body_en": "A wave of Fed speakers spoke overnight. New York Fed President Williams said one more hike may be needed by year-end but there's \"no rush\" at the October meeting, while other officials stressed inflation risks from energy prices and AI-driven investment. Market-implied odds of an October hike eased to around 50%."},
@@ -165,7 +162,7 @@
     {"time": "18:00", "title_ko": "유로존 9월 HICP (확정치)", "title_en": "Eurozone Sep HICP (Final)", "detail_ko": "예상 전년비 +3.6%·근원 +2.5% · 이전 +3.2%/+2.4%", "detail_en": "Est. YoY +3.6%, core +2.5% · prior +3.2%/+2.4%", "importance": "high"},
     {"time": "20:30", "title_ko": "ECB 부이치치 총재 연설", "title_en": "ECB's Vujčić Speech", "detail_ko": "ECB 통화정책위원 연설", "detail_en": "ECB Governing Council member speech", "importance": "mid"},
     {"time": "21:30", "title_ko": "美 9월 비농업고용 · 실업률", "title_en": "US Sep Nonfarm Payrolls & Unemployment", "detail_ko": "예상 신규고용 +9.0만 · 이전 +16.2만 · 실업률 예상 4.1%", "detail_en": "Est. +90K jobs · prior +162K · unemployment rate est. 4.1%", "importance": "high"},
-    {"time": "다음주", "title_ko": "FOMC 회의 (10/27~28, 현지시간)", "title_en": "FOMC Meeting (Oct 27-28)", "detail_ko": "추가 금리인상 여부 주목 · 연준 인사 발언 엇갈림", "detail_en": "Markets watch for another possible hike amid mixed Fed signals", "importance": "mid"}
+    {"time": "10/27", "title_ko": "FOMC 회의 (10/27~28, 현지시간)", "title_en": "FOMC Meeting (Oct 27-28)", "detail_ko": "추가 금리인상 여부 주목 · 연준 인사 발언 엇갈림", "detail_en": "Markets watch for another possible hike amid mixed Fed signals", "importance": "mid"}
   ],
 
   "outro_tagline_ko": "", "outro_tagline_en": "",
@@ -179,5 +176,5 @@
 
   "caption_ko": "마이크론의 실적 서프라이즈가 반도체를 끌어올렸고, 국채금리는 급등세가 한풀 꺾였어요. 국제유가는 미·이란 협상 교착 속 이틀째 상승. 오늘 밤엔 미국 9월 비농업고용도 기다리고 있어요 📊\n\n매일 아침·저녁 luckyon 브리핑으로 시장을 확인하세요. 저장하고 팔로우하면 다음 브리핑도 놓치지 않아요!\n🌙 다음 브리핑 — 오늘 밤 9시\n\n#주식 #경제 #미국주식 #나스닥 #코스피 #마이크론 #반도체 #AI #증시 #투자 #재테크 #경제뉴스 #증권 #아침브리핑 #luckyon브리핑",
   "caption_en": "Micron's earnings beat lifted chip stocks, and Treasury yields cooled from their recent surge. Oil rose for a second day amid the US-Iran stalemate. Tonight brings the US September jobs report 📊\n\nFollow luckyon briefing for twice-daily market updates. Save & follow so you never miss one!\n🌙 Next brief — 9 PM KST\n\n#stocks #markets #nasdaq #kospi #micron #semiconductors #AI #investing #economy #finance #morningbrief #luckyonbriefing",
-  "sources": ["Yahoo Finance", "FMP", "CNN Fear & Greed Index", "FXStreet Economic Calendar", "Bank of America", "Robotis"]
+  "sources": ["Yahoo Finance", "FMP", "CNN Fear & Greed Index", "FXStreet Economic Calendar", "Bank of America"]
 }
