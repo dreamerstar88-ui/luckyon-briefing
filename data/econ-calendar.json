@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-09-30T22:17:05Z",
+  "fetchedAt": "2026-10-01T01:19:03Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-09-28T22:17:05Z",
-    "to": "2026-10-14T22:17:05Z"
+    "from": "2026-09-29T01:19:03Z",
+    "to": "2026-10-15T01:19:03Z"
   },
   "events": [
     {
@@ -953,7 +953,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1082.9,
-      "actual": null,
+      "actual": 1904.9,
       "unit": "¥"
     },
     {
@@ -963,7 +963,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -1522.8,
-      "actual": null,
+      "actual": -4942.5,
       "unit": "¥"
     },
     {
@@ -973,7 +973,7 @@
       "impact": "MEDIUM",
       "consensus": 12.3,
       "previous": 11.5,
-      "actual": null,
+      "actual": 11.3,
       "unit": "%"
     },
     {
@@ -983,7 +983,7 @@
       "impact": "HIGH",
       "consensus": 25,
       "previous": 22,
-      "actual": null,
+      "actual": 24,
       "unit": null
     },
     {
@@ -993,7 +993,7 @@
       "impact": "MEDIUM",
       "consensus": 22,
       "previous": 17,
-      "actual": null,
+      "actual": 21,
       "unit": null
     },
     {
@@ -1003,7 +1003,7 @@
       "impact": "LOW",
       "consensus": 36,
       "previous": 37,
-      "actual": null,
+      "actual": 35,
       "unit": null
     },
     {
@@ -1013,7 +1013,7 @@
       "impact": "LOW",
       "consensus": 30,
       "previous": 28,
-      "actual": null,
+      "actual": 30,
       "unit": null
     },
     {
@@ -1022,8 +1022,8 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
-      "actual": null,
+      "previous": 1904.9,
+      "actual": -684.5,
       "unit": "¥"
     },
     {
@@ -1032,8 +1032,8 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
-      "actual": null,
+      "previous": -4942.5,
+      "actual": -362,
       "unit": "¥"
     },
     {
@@ -1043,7 +1043,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 34.79,
-      "actual": null,
+      "actual": 49.85,
       "unit": "$"
     },
     {
@@ -1053,7 +1053,7 @@
       "impact": "LOW",
       "consensus": 54.1,
       "previous": 54.1,
-      "actual": null,
+      "actual": 54.1,
       "unit": null
     },
     {
@@ -1063,7 +1063,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 52.3,
-      "actual": null,
+      "actual": 53.9,
       "unit": null
     },
     {
@@ -2192,7 +2192,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -684.5,
       "actual": null,
       "unit": "¥"
     },
@@ -2202,7 +2202,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -362,
       "actual": null,
       "unit": "¥"
     },
@@ -2971,6 +2971,46 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-14T23:50:00Z",
+      "country": "JP",
+      "name": "Machinery Orders (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -3.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-14T23:50:00Z",
+      "country": "JP",
+      "name": "Machinery Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 11.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-14T23:55:00Z",
+      "country": "KR",
+      "name": "Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 49.85,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-10-15T00:00:00Z",
+      "country": "US",
+      "name": "IMF Meeting",
+      "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
       "actual": null,
