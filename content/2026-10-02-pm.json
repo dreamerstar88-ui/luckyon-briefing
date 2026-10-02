@@ -41,8 +41,8 @@
         "en": "US September jobs report at 21:30 KST; payrolls consensus +90K"
       },
       {
-        "ko": "10월 금리 인상 확률 20%대로 하락 · 美 10년물 5.24%",
-        "en": "October hike odds fell to the 20s % · US 10Y at 5.24%"
+        "ko": "10월 금리 인상 확률 20%대 중반 · 美 10년물 5.24%",
+        "en": "October hike odds roughly 23–28% · US 10Y at 5.24%"
       }
     ]
   ],
@@ -51,13 +51,13 @@
       "코스피는 0.46% 오른 7,003.74로 마감해 5거래일 만에 7,000선을 되찾았고, 코스닥은 전날 4%대 급등 뒤 0.11% 내린 893.29로 숨을 골랐다.",
       "장 막판 기관이 3,814억원을 순매수해 지수를 끌어올린 반면 개인(-1조7,206억원)과 외국인(-1,438억원)은 순매도했다.",
       "업종 79개 중 55개가 올랐다 — 통신장비·석유와가스·우주항공과국방이 상위, 생물공학·제약은 하락했고, SK이노베이션(+10.3%)·S-Oil(+11.7%)이 정유주 강세를 이끌었다.",
-      "오늘 밤 美 9월 고용보고서(비농업 컨센서스 +9만명, 이전 +16.2만명)를 앞두고 연준 인사들의 신중론이 이어지며 10월 인상 확률은 20%대로 내려와 있다."
+      "오늘 밤 美 9월 고용보고서(비농업 컨센서스 +9만명, 이전 +16.2만명)를 앞두고, 지난 며칠간 연준 인사들의 신중 발언이 이어지며 10월 금리 인상 확률은 20%대 중반으로 내려와 있다."
     ],
     "lines_en": [
       "KOSPI rose 0.46% to close at 7,003.74, back above 7,000 for the first time in five sessions, while KOSDAQ slipped 0.11% to 893.29 after yesterday's 4%+ surge.",
       "Institutions net bought ₩381.4B late in the session to lift the index, while retail (-₩1.72T) and foreign investors (-₩143.8B) were net sellers.",
       "55 of 79 industry groups rose — telecom equipment, oil & gas and aerospace & defense led, biotech and pharma fell, and SK Innovation (+10.3%) and S-Oil (+11.7%) headlined a refiner rally.",
-      "Ahead of tonight's US September jobs report (payrolls consensus +90K vs prior +162K), cautious Fed comments have pulled October hike odds down to the 20s %."
+      "Ahead of tonight's US September jobs report (payrolls consensus +90K vs prior +162K), cautious comments from Fed officials over recent days have pulled October hike odds down to roughly 23–28%."
     ]
   },
   "markets": [
@@ -66,8 +66,8 @@
       "value": "30,987.50",
       "delta": "▲0.74%",
       "dir": "up",
-      "note_ko": "美 정규장 개장 전 선물 · 고용보고서 대기",
-      "note_en": "Futures ahead of the US open · awaiting jobs data"
+      "note_ko": "美 정규장 개장 전 선물",
+      "note_en": "Futures ahead of the US open"
     },
     {
       "label": "S&P 500",
@@ -112,19 +112,19 @@
     {
       "label": "USD/KRW",
       "value": "1,348",
-      "value_sub": "· DXY 102.0",
-      "delta": "▼0.65%",
+      "value_sub": "· DXY 102.1",
+      "delta": "▼0.68%",
       "dir": "down",
-      "note_ko": "서울 외환시장 마감 1,350.6원 · 원화 강세",
-      "note_en": "Seoul FX close 1,350.6 · won firmed"
+      "note_en": "Won firmed · dollar index slightly lower",
+      "note_ko": "원화 강세 · 달러지수 소폭 하락"
     },
     {
       "label": "Gold",
-      "value": "$4,206.20",
-      "delta": "▲0.09%",
+      "value": "$4,217.30",
+      "delta": "▲0.36%",
       "dir": "up",
-      "note_ko": "4,200달러 선 유지",
-      "note_en": "Holding around the $4,200 mark"
+      "note_ko": "4,200달러 선 위 유지",
+      "note_en": "Holding above the $4,200 mark"
     },
     {
       "label": "WTI",
@@ -157,7 +157,7 @@
     "WTI",
     "Bitcoin"
   ],
-  "market_note_ko": "나스닥·S&P500은 선물 기준(美 정규장 개장 전), 美 10년물은 10/1 종가, 원/달러는 야후 시세 기준",
+  "market_note_ko": "나스닥·S&P500은 선물 기준(美 정규장 개장 전), 美 10년물은 10/1 종가, 원/달러·달러지수는 야후 시세 기준",
   "market_note_en": "Nasdaq/S&P 500 shown as futures (ahead of the US open); US 10Y is the Oct 1 close; USD/KRW per Yahoo quotes",
   "chart_series_values": [
     6894.23,
@@ -198,7 +198,7 @@
   "sector_section": "섹터별 등락",
   "sector_title": {
     "ko": "업종 79개 중 55개 상승, 통신장비·정유·방산 앞장",
-    "en": "55 of 79 groups rose, led by telecom gear, refiners, defense"
+    "en": "55 of 79 groups rose, telecom and refiners led"
   },
   "sector_sub": {
     "ko": "코스피·코스닥 합산 업종 등락률(네이버 분류)",
@@ -289,8 +289,8 @@
           }
         ]
       },
-      "note_ko": "코스닥은 외국인(-1,731억원)이 팔고 개인(+815억원)·기관(+938억원)이 받아냈다 — 코스피와 달리 개인이 매수 주체였다.",
-      "note_en": "On KOSDAQ, foreign investors sold ₩173.1B while retail (+₩81.5B) and institutions (+₩93.8B) bought — retail was a buyer there, unlike on KOSPI."
+      "note_ko": "코스닥은 외국인(-1,731억원)이 팔고 개인(+815억원)·기관(+938억원)이 받아냈다.",
+      "note_en": "KOSDAQ: foreign investors sold ₩173.1B; retail (+₩81.5B) and institutions (+₩93.8B) bought."
     },
     {
       "title_ko": "섹터별 등락",
@@ -411,13 +411,13 @@
           {
             "label_ko": "SK하이닉스+삼성전자",
             "label_en": "SK Hynix + Samsung Elec.",
-            "pct": 28.2,
+            "pct": 28.1,
             "color": "#e8594f"
           },
           {
             "label_ko": "나머지",
             "label_en": "Rest",
-            "pct": 71.8,
+            "pct": 71.9,
             "color": "#3987e5"
           }
         ]
@@ -434,22 +434,19 @@
           "value": "2.9%",
           "delta": "3.1% → 2.9%",
           "dir": "down",
-          "sub_ko": "08:00 발표 · 두 달 만에 2%대",
-          "sub_en": "Released 08:00 KST · back to the 2% range"
+          "sub_ko": "08:00 발표 · 다시 2%대로 복귀",
+          "sub_en": "Released 08:00 KST · back in the 2% range"
         },
         {
           "label_ko": "한국 9월 근원물가 (전년비)",
           "label_en": "Korea Core CPI YoY (Sep)",
           "value": "2.8%",
-          "delta": {
-            "ko": "올해 최고 수준",
-            "en": "Highest this year"
-          },
-          "dir": "up",
-          "sub_ko": "08:00 발표 · 국가데이터처",
-          "sub_en": "Released 08:00 KST · Statistics Korea",
-          "ref_ko": "농산물·석유류를 뺀 물가 · 기조 판단용",
-          "ref_en": "Excludes farm goods and oil · gauges underlying trend"
+          "delta": "3.4% → 2.8%",
+          "dir": "down",
+          "sub_ko": "08:00 발표 · 전월 대비 크게 둔화",
+          "sub_en": "Released 08:00 KST · slowed sharply from August",
+          "ref_ko": "식료품·에너지 제외(OECD 기준)",
+          "ref_en": "Excludes food & energy (OECD basis)"
         },
         {
           "label_ko": "한국 9월 석유류 물가 (전년비)",
@@ -460,8 +457,8 @@
             "en": "Diesel +20.0% · gasoline +11.8%"
           },
           "dir": "up",
-          "sub_ko": "08:00 발표 · 물가를 끌어올린 주범",
-          "sub_en": "Released 08:00 KST · main upward driver",
+          "sub_ko": "08:00 발표 · 물가 기여도 0.56%p",
+          "sub_en": "Released 08:00 KST · adds 0.56 ppt to CPI",
           "ref_ko": "휘발유·경유 등 석유제품 가격 변화",
           "ref_en": "Price change of gasoline, diesel and other fuels"
         },
@@ -470,8 +467,8 @@
           "label_en": "Euro-zone HICP YoY (Sep, flash)",
           "value": "3.8%",
           "delta": {
-            "ko": "예상 3.6% 상회 · 전월 3.2%",
-            "en": "Above est. 3.6% · prior 3.2%"
+            "ko": "예상 3.6% · 전월 3.2%",
+            "en": "Est. 3.6% · prior 3.2%"
           },
           "dir": "up",
           "sub_ko": "3년 만의 최고 · 에너지 +18.8%",
@@ -480,26 +477,26 @@
           "ref_en": "The ECB targets 2% inflation"
         },
         {
-          "label_ko": "유로존 8월 실업률",
-          "label_en": "Euro-zone Unemployment (Aug)",
-          "value": "6.4%",
+          "label_ko": "유로존 9월 근원 소비자물가 (속보치, 전년비)",
+          "label_en": "Euro-zone Core HICP YoY (Sep, flash)",
+          "value": "2.5%",
           "delta": {
-            "ko": "전월과 동일",
-            "en": "Unchanged from July"
+            "ko": "예상 2.5% · 전월 2.4%",
+            "en": "Est. 2.5% · prior 2.4%"
           },
-          "dir": "flat",
-          "sub_ko": "유로스타트 · 실업자 1,136만명",
-          "sub_en": "Eurostat · 11.36M unemployed",
-          "ref_ko": "유로스타트 집계 · 유로존 전체 실업률",
-          "ref_en": "Eurostat measure for the whole euro area"
+          "dir": "up",
+          "sub_ko": "18:00 발표 · 속보치",
+          "sub_en": "Released 18:00 KST · flash estimate",
+          "ref_ko": "에너지·식품·주류·담배를 뺀 물가",
+          "ref_en": "Excludes energy, food, alcohol and tobacco"
         },
         {
           "label_ko": "일본 8월 실업률",
           "label_en": "Japan Unemployment (Aug)",
           "value": "2.5%",
           "delta": {
-            "ko": "예상 2.4% 상회 · 전월 2.4%",
-            "en": "Above est. 2.4% · prior 2.4%"
+            "ko": "예상 2.4% · 전월 2.4%",
+            "en": "Est. 2.4% · prior 2.4%"
           },
           "dir": "up",
           "sub_ko": "08:30 발표",
@@ -508,17 +505,17 @@
           "ref_en": "Japan MIC data · 2%-range is low"
         }
       ],
-      "note_ko": "한국 물가는 기름값이 끌어올렸고(석유류 +14.8%), 유로존은 에너지발 인플레가 3년 만의 최고로 치솟았다.",
-      "note_en": "Korean inflation was pushed up by fuel (petroleum +14.8%), while euro-zone energy-driven inflation hit a 3-year high."
+      "note_ko": "한국 물가에서는 석유류(+14.8%)가 가장 두드러졌고, 유로존은 에너지발 인플레로 헤드라인 물가가 3년 만의 최고로 올랐다.",
+      "note_en": "In Korea, petroleum (+14.8%) stood out in CPI, while euro-zone headline inflation hit a 3-year high on energy."
     },
     {
       "title_ko": "AI · 반도체 기술",
       "items": [
         {
-          "headline_ko": "광통신주 일제히 강세 — 통신장비 업종 +4.17%",
-          "headline_en": "Optical-comms stocks rally — telecom equipment +4.17%",
-          "body_ko": "AI 데이터센터 투자 확대 기대에 광통신·통신장비주가 올랐다. 보도에 따르면 미국에서 마이크론의 설비투자 확대 소식에 코히런트·루멘텀 등 광통신주가 뛴 영향이 이어졌다. 대한광통신은 +4.7%에 거래대금 2,693억원으로 코스닥 상위권에 들었다.",
-          "body_en": "Optical-networking and telecom-equipment names rose on hopes for more AI data-center spending; press reports tied the move to Micron's capex hike lifting US optical names such as Coherent and Lumentum. Taihan Fiber Optics gained 4.7% on ₩269B of turnover.",
+          "headline_ko": "광통신주 일제히 강세 — 통신장비 업종 +4.17%, 머큐리 상한가",
+          "headline_en": "Optical-comms stocks rally — telecom gear +4.17%, Mercury hits limit-up",
+          "body_ko": "보도에 따르면 AI 데이터센터 투자 확대 기대와 美 의회의 중국산 광트랜시버 정부 시스템 사용 금지 법안 소식에 간밤 코히런트·루멘텀 등 美 광통신주가 뛴 영향이 이어졌다. 머큐리 +29.8%(상한가), 다산네트웍스 +16.0%, 우리로 +12.6%, 대한광통신 +4.7%.",
+          "body_en": "Press reports tied the move to AI data-center spending hopes and a US bill to bar Chinese optical transceivers from government systems, which lifted US optical names like Coherent and Lumentum overnight. Mercury +29.8% (limit-up), Dasan Networks +16.0%, Wooriro +12.6%, Taihan Fiber Optics +4.7%.",
           "src": "KRX"
         },
         {
@@ -533,6 +530,13 @@
           "headline_en": "Robot-module maker BRILS +11.7% on day two — 5th by turnover",
           "body_ko": "전날 코스닥에 상장한 로봇 모듈화 플랫폼 기업 브릴스가 3만4,000원으로 마감해 이틀째 올랐다. 거래대금은 약 4,500억원으로 양 시장 5위(ETF 제외)였다.",
           "body_en": "BRILS, a robot-modularization platform company that listed on KOSDAQ yesterday, closed at ₩34,000 for a second straight gain. Its roughly ₩450B in turnover ranked 5th across both markets, excluding ETFs.",
+          "src": "KRX"
+        },
+        {
+          "headline_ko": "전력기기주도 동반 상승 — 산일전기 +6.3%, 대한전선 +4.5%",
+          "headline_en": "Power-equipment names also gain — Sanil Electric +6.3%, Taihan Cable +4.5%",
+          "body_ko": "전기장비 업종은 +1.44%로 마감했다. 산일전기가 6.32%, 대한전선이 4.48% 올랐다.",
+          "body_en": "The electrical-equipment group closed up 1.44%, with Sanil Electric rising 6.32% and Taihan Cable 4.48%.",
           "src": "KRX"
         }
       ]
@@ -555,21 +559,21 @@
           "src": "KRX"
         },
         {
-          "headline_ko": "연준 인사들 신중론 — 10월 인상 확률 20%대로",
-          "headline_en": "Fed officials urge patience — October hike odds in the 20s %",
-          "body_ko": "제퍼슨 부의장(상시 투표권·중도 성향)이 금리를 다시 올리기 전에 더 많은 시간이 필요하다는 신호를 보냈고, 윌리엄스 뉴욕연은 총재(상시 투표권·중도 성향)도 \"서두를 필요 없다\"고 했다. 10월 인상 확률은 26~28%로 내려왔다.",
-          "body_en": "Vice Chair Jefferson (permanent voter, centrist) signaled the Fed needs more time before raising rates again, and NY Fed's Williams (permanent voter, centrist) said there's \"no need to rush.\" October hike odds fell to 26–28%.",
-          "src": "Fed/CME"
+          "headline_ko": "우주항공·방산 강세 — 한화에어로스페이스 +3.7%",
+          "headline_en": "Aerospace & defense firm — Hanwha Aerospace +3.7%",
+          "body_ko": "우주항공과국방 업종이 +3.87%로 상위권이었다. 한화에어로스페이스는 107만2,000원(+3.68%)에 마감했다.",
+          "body_en": "The aerospace & defense group ranked among the top gainers at +3.87%. Hanwha Aerospace closed at ₩1,072,000 (+3.68%).",
+          "src": "KRX"
         },
         {
           "headline_ko": "닛케이225 -0.94%, 항셍 -2.60% — 아시아 증시 약세",
           "headline_en": "Nikkei 225 -0.94%, Hang Seng -2.60% as Asia slips",
-          "body_ko": "닛케이225는 6만8,309.46으로 0.94% 내렸고, 연휴 뒤 거래를 재개한 홍콩 항셍지수는 2.60% 하락한 2만3,972.29로 마감했다. 美 고용보고서를 앞둔 채권·환율 변동성이 부담으로 거론됐다.",
-          "body_en": "The Nikkei 225 fell 0.94% to 68,309.46, and Hong Kong's Hang Seng, back from its holiday, dropped 2.60% to 23,972.29. Bond and currency volatility ahead of the US jobs report was cited as a drag.",
+          "body_ko": "닛케이225는 6만8,309.46으로 0.94% 내렸고, 소프트뱅크그룹이 6%대 하락하며 하락을 주도했다는 보도가 나왔다. 연휴 뒤 거래를 재개한 홍콩 항셍지수는 2.60% 하락한 2만3,972.29로 마감했다.",
+          "body_en": "The Nikkei 225 fell 0.94% to 68,309.46, with reports saying SoftBank Group, down more than 6%, led the decline. Hong Kong's Hang Seng, trading again after its holiday, dropped 2.60% to 23,972.29.",
           "src": "Yahoo Finance"
         },
         {
-          "headline_ko": "삼성바이오로직스, 934억원 규모 유럽 제약사 위탁생산 계약",
+          "headline_ko": "삼성바이오로직스, 935억원 규모 유럽 제약사 위탁생산 계약",
           "headline_en": "Samsung Biologics signs ₩93.5B CDMO deal with European drugmaker",
           "body_ko": "삼성바이오로직스가 유럽 소재 제약사와 934억7,862만원(USD 6,875만 달러) 규모 의약품 위탁생산 계약을 체결했다. 최근 매출액 대비 2.05%이고 계약기간은 2031년 12월 31일까지다.",
           "body_en": "Samsung Biologics signed a ₩93.48B (USD 68.75M) contract manufacturing deal with a European drugmaker — 2.05% of recent revenue — running through Dec. 31, 2031.",
@@ -623,8 +627,8 @@
       "time": "21:30",
       "title_ko": "美 9월 평균시간당임금 (전년비)",
       "title_en": "US Avg. Hourly Earnings YoY (Sep)",
-      "detail_ko": "컨센서스 3.2% · 이전 3.1% · 임금발 인플레 점검",
-      "detail_en": "Consensus 3.2% vs prior 3.1%; a read on wage inflation",
+      "detail_ko": "컨센서스 3.2% · 이전 3.1% (전월비 +0.3% · 이전 +0.3%)",
+      "detail_en": "Consensus 3.2% vs prior 3.1% (MoM +0.3% vs prior +0.3%)",
       "importance": "mid"
     },
     {
@@ -652,7 +656,7 @@
       "importance": "mid"
     },
     {
-      "time": "10/5 (월)",
+      "time": "10/5 (Mon)",
       "title_ko": "개천절 대체공휴일 — 국내 증시 휴장",
       "title_en": "National Foundation Day holiday — Korean markets closed",
       "detail_ko": "코스피·코스닥 10/5 휴장 · 10/9(금) 한글날도 휴장",
@@ -679,8 +683,8 @@
     "DART",
     "FXStreet econ-calendar",
     "Eurostat",
-    "Statistics Korea",
     "Federal Reserve",
-    "CNN Fear & Greed"
+    "CNN Fear & Greed",
+    "Korea national data agency"
   ]
 }
