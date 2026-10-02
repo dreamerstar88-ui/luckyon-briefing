@@ -233,6 +233,8 @@ PushNotification·카카오톡으로 알리고 사용자 승인을 기다린다.
 node scripts/check-ig-token.mjs          # 읽기 전용 — 발행 축이면 회차당 한 번
 ```
 
+- **§4 체크아웃(`claude/live`) 전에 돌린다.** 이 스크립트는 `main` 에만 있고 `claude/live` 에는 없어서, §4 뒤에 돌리면 `MODULE_NOT_FOUND` 로 죽는다(2026-10-03 sat 실측). 이미 체크아웃했다면 `git show origin/main:scripts/check-ig-token.mjs > scripts/check-ig-token.mjs` 로 꺼내 돌리고 지운다(커밋하지 않는다). 리서치 시작 때 한 번 돌려 두면 토큰 만료를 발행 직전이 아니라 미리 알 수 있다.
+
 이 스크립트가 ① 토큰이 **지금 실제로 먹히는지**(`/me` 조회)와 ② 사람이 적어 둔 `IG_TOKEN_EXPIRES_AT` 이 그 사실과 맞는지를 함께 본다. 처리는 출력에 따라 갈린다:
 
 - **토큰 거부(code 190)** → 발행이 불가능하다. 즉시 알리고 멈춘다.
