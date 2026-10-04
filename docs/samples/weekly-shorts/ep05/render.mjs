@@ -19,7 +19,7 @@ const args = Object.fromEntries(process.argv.slice(2).map(a=>{const [k,...v]=a.r
 const SCENE = args.scene || path.join(HERE, 'scene.js');
 const OUT   = args.out   || path.join(R, 'out', 'frames');
 // 회차 날짜(그 주 월요일)는 여기 한 곳만 바꾼다. 창·사건·문구는 전부 매니페스트에서 읽는다.
-const STAMP = args.stamp || '2026-09-21';          // ← 회차마다 바꾼다
+const STAMP = args.stamp || '2026-09-28';          // ← 회차마다 바꾼다
 const DATA  = args.data  || path.join(R, 'data', 'weekly-shorts', STAMP+'.5m.json');
 const MANI  = args.manifest || path.join(R, 'content', 'weekly-shorts', STAMP+'.json');
 const W=1080,H=1920,FPS=30,DUR=35.0;

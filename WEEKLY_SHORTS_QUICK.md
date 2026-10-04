@@ -32,6 +32,10 @@ node scripts/weekly-shorts/render/parse-calendar.mjs --html=content/weekly-short
 **2. 매니페스트와 발행문구** — 앞 회차 것을 복사해 고친다.
 `content/weekly-shorts/<월요일>.json` · `docs/samples/weekly-shorts/ep<NN>/발행문구.md`
 
+- 질문이 바뀌어도 렌더러·자막이 질문 은행으로 답을 다시 잰다. 문구 자리표시 `{ANS}`(단위 붙은 답) · `{ANSN}`(숫자만) · `{DAYS}`(정규장 날 수)를 쓴다(5회차부터).
+- 뉴스 사건은 `"kind": "news"` 와 `news.first_report_et` · `news.sources`(이름·utc·url, 두 곳 이상)를 적는다. 검사가 최초 보도 시각이 그 5분봉 안인지, 15분 안에 받쳐 주는 다른 보도가 있는지 본다. 5회차 예시 참고.
+- 보도 시각은 bigdata.com 뉴스 검색(시각 필터)과 Newsquawk 속보 기록으로 잡고, 야후 1분봉으로 몇 분에 움직였는지 맞춘다.
+
 **3. 만들기 (약 70초)** — 렌더 → 영상·음악·표지 → 자막 → 기계 검사 → 장면표본 한 장 → 올릴 파일 모으기
 
 ```bash

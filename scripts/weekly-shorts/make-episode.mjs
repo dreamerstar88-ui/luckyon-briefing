@@ -73,7 +73,9 @@ run('기계 검사', node, ['scripts/weekly-shorts/verify-shorts.mjs', MANI, '--
 // 장면표본 한 장: 0초 + 자막 구간마다 끝나기 0.6초 전(그 장면 글이 다 뜬 뒤). 사람은 이 한 장만 본다.
 const srt = fs.readFileSync(at(fs.readdirSync(at(DIR)).filter((f) => f.endsWith('.ko.srt')).map((f) => path.join(DIR, f))[0]), 'utf8');
 const ends = [...srt.matchAll(/--> (\d\d):(\d\d):(\d\d),(\d\d\d)/g)].map((m) => +m[1] * 3600 + +m[2] * 60 + +m[3] + +m[4] / 1000);
-const times = [0, ...ends.map((e) => Math.min(e - 0.6, DUR - 0.05))];
+// 마지막 자막(요약) 구간은 끝 0.6초 전이면 루프 카드로 넘어가는 중이라 요약 글이 안 보인다(5회차에서 발견).
+// 그 자리는 요약 글이 다 뜬 시각(요약 시작 + 1.2초)으로 바꾸고, 루프 카드(끝 0.05초 전)를 한 장 더 넣는다.
+const times = [0, ...ends.map((e, i) => (i === ends.length - 1 ? S.summ[0] + 1.2 : Math.min(e - 0.6, DUR - 0.05))), DUR - 0.05];
 const sel = times.map((t) => `eq(n\\,${Math.round(t * 30)})`).join('+');
 const cols = 6, rows = Math.ceil(times.length / cols);
 const SHEET = `${OUT}/장면표본.png`;

@@ -1,0 +1,350 @@
+{
+  "stamp": "2026-09-28",
+  "episode": 5,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQZ26.CME",
+    "interval": "5m",
+    "symbol_note": "12월물이 정상 월물이다(9월물은 2026-09-18 만기). 연속 심볼 NQ=F 는 쓰지 않는다 — 만기 때 말없이 갈아타 가짜 봉을 만든다(지침 2장).",
+    "from_et": "2026-09-28 04:00",
+    "to_et": "2026-10-02 16:00",
+    "window_change_note": "4회차부터의 창을 그대로 쓴다 — 월요일 프리장 시작(미 동부 04:00, 한국 월 17:00) ~ 금요일 16:00. 대표 지시 «주가 변화 프리장부터»(2026-09-26).",
+    "holiday_note": "미국 휴장 없는 5거래일.",
+    "end_bar_note": "to_et 16:00 은 «16:00 에 시작하는 봉»까지 포함한다. 1~4회차와 같은 관례다.",
+    "data_gap_note": "야후 5분봉에는 화~금 00:00(미 동부) 봉 4개가 없다(4회차와 같은 자리). 요일별 봉 수: 월 228 · 화 275 · 수 275 · 목 275 · 금 192. 영상은 야후 1,245봉을 되감는다. 빠진 봉은 정규장(09:30~16:00) 밖이라 이번 질문(정규장에서 오른 날)의 답에 들어가지 않는다. CNBC 대조 결과는 검사 [1-2] 가 매번 다시 낸다."
+  },
+  "video": {
+    "duration": 35,
+    "sections": {
+      "hook": [
+        0,
+        5
+      ],
+      "replay": [
+        5,
+        27.9
+      ],
+      "answer": [
+        27.9,
+        32
+      ],
+      "summ": [
+        32,
+        35
+      ]
+    },
+    "sections_note": "4회차와 같다.",
+    "hook_hold": 1.95,
+    "hold": 1.5,
+    "holds": [
+      3.273,
+      0.983,
+      0.759,
+      0.6,
+      0.759,
+      2.625
+    ],
+    "holds_note": "scene.js buildSchedule 과 같은 물채우기로 계산(예산 9.0초, 바닥 0.6초). 사건 노출 최소 3.63초. 렌더러가 브라우저에서 계산한 값과 다르면 멈춘다."
+  },
+  "numbers": {
+    "bars": 1245,
+    "changes": 1244,
+    "week_pct": 1.52,
+    "mdd_pct": -2,
+    "peak": 31151.5,
+    "trough": 30529.25,
+    "week_high": 31282.5,
+    "week_low": 30356.75,
+    "open": 30610.5,
+    "close": 31076.75,
+    "week_high_et": "2026-10-02 10:25",
+    "week_low_et": "2026-09-28 10:45",
+    "peak_et": "2026-10-01 02:10",
+    "trough_et": "2026-10-01 11:10",
+    "_주": "창(월 04:00 ~ 금 16:00, 미 동부) 기준. 주간 등락률 +1.523%(표시 +1.52%)."
+  },
+  "question": {
+    "id": "updays",
+    "ko": "정규장에서 오른 날은 며칠이었을까요?",
+    "en": "How many days closed higher in the regular session?",
+    "answer_value": 0,
+    "unit": "일",
+    "why": "한 주는 +1.52% 올랐는데 정규장(09:30 시가 → 16:00 마감)만 보면 닷새 모두 내렸다 — 월 -0.492% · 화 -0.298% · 수 -0.019% · 목 -0.075% · 금 -0.250%. 오른 몫은 전부 정규장 밖(장 전·야간, +2.682%)에서 나왔다. 4회차부터 창을 프리장부터로 넓힌 것과 바로 이어지는 이야기이고, 화면의 밝은 구간(정규장)을 칠하면 답이 그대로 보인다(지침 3-3 4번). 2026-10-04 대표 결정 «질문 1번으로». 지난 네 회차(mdd · evmaxwhich · evpair · aboveopen)와 겹치지 않는다.",
+    "guard": "주간 등락률과 안 맞는 주가 흔하다. 같은 +1%대 주라도 정규장에서 사흘 오른 주와 하루도 못 오른 주가 있다. 과거 84주(월 04:00 봉으로 시작해 금요일까지 자료가 있는 주, 1시간봉)의 중앙값은 3일, 하위 10%는 1일, 상위 10%는 4일이었고 0일인 주는 한 번도 없었다.",
+    "dist": {
+      "week": "premarket",
+      "min_bars": 80,
+      "n": 84,
+      "median": 3,
+      "p10": 1,
+      "p90": 4,
+      "zero_weeks": 0,
+      "_주": "과거 1시간봉은 data/weekly-shorts/us1h_nqf.json (야후 NQ=F 2년, 2026-10-04 다시 수집 · 서머타임 맞춘 미 동부 시각). 넣는 주: 월 04:00 봉으로 시작하고 금요일 자료가 있으며 80봉 이상(verify-shorts 의 premarket 규칙). 1시간봉이라 정규장을 10:00 봉 시가 → 15:00 봉 종가(=16:00)로 잰다 — 5분봉(09:30 시가 → 15:55 봉 종가)보다 첫 30분이 빠진다. 휴장이 낀 주는 정규장 날이 4일 이하라 그 주의 최댓값도 4일 이하다. 연속 심볼이라 월물 교체 주가 섞여 있다."
+    }
+  },
+  "quiz": {
+    "options": [
+      "0일",
+      "1일",
+      "3일"
+    ],
+    "answer_index": 1,
+    "_주": "① 정답 ② 과거 84주 하위 10% ③ 과거 84주 중앙값. 숫자 순서대로 놓았다."
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-09-28 10:30",
+      "kst_label": "월 장중 · 한국 월 밤 11시 30분",
+      "te_event": "dallas fed manufacturing index",
+      "stars": 2,
+      "actual": "9.8",
+      "compare_field": "previous",
+      "compare": "11.6",
+      "l1": "댈러스 연준 제조업지수 9.8.",
+      "l2": "직전은 11.6이었다.",
+      "tag": "댈러스",
+      "en": "Dallas Fed manufacturing index 9.8, down from 11.6",
+      "why": "그날 ★★★ 없음 · ★★ 후보 둘(10:30 이것 · 13:30 바킨 연설) 중 바킨은 2026 FOMC 대체 위원이라 뺐다(지침 4장 8번 · 연준 공식 페이지 2026-09-16 갱신본, 2026-10-04 다시 받아 확인 — Thomas I. Barkin, Richmond 는 Alternate Members). 남은 ★★ 는 이것 하나다.",
+      "pct": -0.002,
+      "rank": 1183,
+      "color": "hi"
+    },
+    {
+      "n": 2,
+      "kind": "news",
+      "et": "2026-09-28 13:10",
+      "kst_label": "월 장중 · 한국 화 새벽 2시 13분",
+      "stars": 0,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "이란 ‘농축 중단 합의’ 보도.",
+      "l2": "사우디 방송, 익명 소식통 인용.",
+      "tag": "이란 보도",
+      "en": "Saudi TV: Iran agreed to halt enrichment, citing unnamed sources",
+      "why": "뉴스도 사건 후보다(지침 4장 5번). 그 주 5분 변동 3위이고 최초 보도 시각을 출처 셋으로 확정했다. 4회차 미시간 소비자심리(그 주 3위)를 대표 지시로 더한 것과 같은 자리 — 월요일은 규칙 2번의 ★★(댈러스)도 그대로 둔다.",
+      "news": {
+        "headline": "Iran has agreed to halt enrichment in exchange for easing US sanctions, report Al Hadath",
+        "first_report_et": "2026-09-28 13:13",
+        "sources": [
+          {
+            "name": "Newsquawk",
+            "utc": "2026-09-28T17:13:02Z",
+            "url": "https://www.newsquawk.com/headlines/iran-has-agreed-to-halt-enrichment-in-exchange-for-easing-us-sanctions-report-al-hadath"
+          },
+          {
+            "name": "InfoQuanta(차이롄서 속보)",
+            "utc": "2026-09-28T17:15:10Z",
+            "url": "https://app.bigdata.com/documents/2736B6856C1F6488B499237C8A506477"
+          },
+          {
+            "name": "Benzinga",
+            "utc": "2026-09-28T17:15:25Z",
+            "url": "https://app.bigdata.com/documents/F5BD454529FC0A8CEE18AE317D2198F4"
+          }
+        ],
+        "minute_1m": "야후 1분봉 13:11(미 동부) 한 분에 나스닥 선물 +0.351% · S&P 선물 +0.297% · 원유 -1.855% · 금 +0.433% · 10년물 국채 선물 +0.105%. 12:59~13:10 에는 이만한 움직임이 없다.",
+        "origin_note": "알하다스(사우디 국영 아랍어 방송) 자체 게시 시각은 찾지 못했다. 시각이 찍힌 가장 이른 기록이 Newsquawk 17:13 UTC(13:13 ET)이고, 가격은 13:11 에 움직였다 — 둘 다 13:10 봉 안이다. 같은 날 앞서 나온 «트럼프, 핵 진전 대가로 제재 완화 용의»(미국 관리 → CNN 12:59 ET 이전 · Axios 13:05 ET) 때는 1분봉이 움직이지 않았다. 차이롄서·월스트리트CN 은 이 13:10 봉의 원유 급락을 알하다스 보도로 설명했다.",
+        "after": "13:18 ET Newsquawk «합의 가능성은 극히 낮다 — 협상에 관여한 미국 측 소식통(알아라비야)» → 13:15 봉 -0.265%(9위). 뒤에 이란 프레스TV 가 알하다스 보도를 부인했다는 기사(FXStreet 20:19 UTC)가 있으나 한 곳뿐이라 화면에 쓰지 않는다."
+      },
+      "pct": 0.401,
+      "rank": 3,
+      "color": "up"
+    },
+    {
+      "n": 3,
+      "et": "2026-09-29 10:00",
+      "kst_label": "화 장중 · 한국 화 밤 11시",
+      "te_event": "jolts job openings",
+      "stars": 3,
+      "actual": "7.079M",
+      "compare_field": "consensus",
+      "compare": "7.23M",
+      "l1": "구인 건수 707.9만 건.",
+      "l2": "예상은 723만 건이었다.",
+      "tag": "구인",
+      "en": "JOLTS job openings 7.079M, vs 7.23M expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 소비자신뢰지수는 ★★ 라 묶어서 이것을 대표로(4장 3번).",
+      "pct": 0.069,
+      "rank": 279,
+      "color": "up"
+    },
+    {
+      "n": 4,
+      "et": "2026-09-30 08:30",
+      "kst_label": "수 개장 전 · 한국 수 밤 9시 30분",
+      "te_event": "gdp growth rate qoq final",
+      "stars": 3,
+      "actual": "2.2%",
+      "compare_field": "consensus",
+      "compare": "1.5%",
+      "l1": "2분기 성장률 확정치 2.2%.",
+      "l2": "예상은 1.5%였다.",
+      "tag": "성장률",
+      "en": "Q2 GDP growth final 2.2%, vs 1.5% expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 ★★★ 4건을 한 사건으로 묶었다(4장 3번).",
+      "tiebreak": "같은 시각(동부 08:30) ★★★ 4건이 모두 예상을 벗어났다 — 2분기 성장률 확정치 2.2% 대 1.5%(0.7%p) · 근원 PCE 전월비 0.2% 대 0.3%(0.1%p) · 개인소득 0.2% 대 0.4%(0.2%p) · 개인지출 0.9% 대 0.8%(0.1%p). 규칙(4장 3번 «가장 많이 벗어난 것»)대로 성장률을 대표로 썼다. 성장률은 분기 연율, 나머지는 전월비라 성격이 다르다는 점은 대표께 보고했다(2026-10-04). 값 대조: 얼라이언스뉴스(FXStreet 집계 1.5%) · 연합인포맥스 · 즈퉁차이징.",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": 0.386,
+      "rank": 4,
+      "color": "up"
+    },
+    {
+      "n": 5,
+      "et": "2026-10-01 10:00",
+      "kst_label": "목 장중 · 한국 목 밤 11시",
+      "te_event": "ism manufacturing pmi",
+      "stars": 3,
+      "actual": "54.5",
+      "compare_field": "consensus",
+      "compare": "55",
+      "l1": "ISM 제조업지수 54.5.",
+      "l2": "예상은 55였다.",
+      "tag": "ISM",
+      "en": "ISM manufacturing PMI 54.5, vs 55 expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 ISM 고용지수는 ★★ 라 묶어서 이것을 대표로.",
+      "pct": -0.404,
+      "rank": 2,
+      "color": "down"
+    },
+    {
+      "n": 6,
+      "et": "2026-10-02 08:30",
+      "kst_label": "금 개장 전 · 한국 금 밤 9시 30분",
+      "te_event": "non farm payrolls",
+      "stars": 3,
+      "actual": "29K",
+      "compare_field": "consensus",
+      "compare": "90K",
+      "l1": "비농업 고용 2.9만 명.",
+      "l2": "예상은 9만 명이었다.",
+      "tag": "고용",
+      "en": "Nonfarm payrolls 29K, vs 90K expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 ★★★ 2건(비농업 고용·실업률)을 한 사건으로 묶었다.",
+      "tiebreak": "같은 시각 ★★★ 2건이 모두 예상을 벗어났다 — 비농업 고용 2.9만 명 대 예상 9만 명, 실업률 4.2% 대 4.1%. 단위가 달라(명 대 %) 벗어난 정도를 비교할 수 없어 사람이 골랐다(4장 3번) — 예상의 3분의 1에 그친 비농업 고용. 값 대조: MT Newswires(블룸버그 집계) · 폭스비즈니스(LSEG 집계).",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": 0.414,
+      "rank": 1,
+      "color": "up"
+    }
+  ],
+  "calendar_snapshot": "content/weekly-shorts/2026-09-28.calendar.html",
+  "coverage": {
+    "econ_calendar": "트레이딩이코노믹스 스냅샷 content/weekly-shorts/2026-09-28.calendar.html · 99행, 시각 있는 발표 98건 · ★★ 이상 42건 · ★★★ 8건. calendar-range=-2 쿠키로 2026-10-04 수집.",
+    "earnings": "그 주 발표한 나스닥100 구성 종목은 마이크론(MU) 하나 — 수 09-30 장 마감 뒤. 발표 시각 16:02 ET 전후(The Fly 20:02:04 UTC · Quartr 20:04:57 UTC, bigdata.com 시각). 그 봉(수 16:00) 반응 -0.061%(337위)라 사건 후보가 될 크기가 아니다. 구성 종목 목록은 실적일정.json 의 나스닥100 구성종목으로 확인.",
+    "news_scan": "1위 10-02 08:30 +0.414% — 비농업 고용 (캘린더) — 사건⑥\n2위 10-01 10:00 -0.404% — ISM 제조업 (캘린더) — 사건⑤\n3위 09-28 13:10 +0.401% — 뉴스: 알하다스 «이란, 제재 완화 대가로 농축 중단 합의» 보도. 시각 기록 Newsquawk 13:13 ET · 차이롄서 13:15 · 벤징가 13:15. 1분봉 13:11 에 나스닥·원유·금·국채가 한꺼번에 움직였다 — 사건②\n4위 09-30 08:30 +0.386% — 2분기 성장률 확정치·근원 PCE 등 (캘린더) — 사건④\n5위 09-29 09:30 -0.321% — 정규장 개장 첫 봉. 지침상 사건 아님\n6위 09-30 15:50 -0.320% — 마감 직전. 1분봉으로 15:50·15:54·15:59 에 나스닥 선물만 내리고 원유·금·국채는 그대로였다 — 거래 자체(지침 4장 5번). 사건 아님\n7위 10-01 03:25 -0.288% — 원인 못 밝힘. 03:12~03:28 에 걸쳐 서서히 내렸고(한 분에 몰리지 않음) 같은 시간 원유는 올랐다. 그날 «화요일 호르무즈에서 유조선 3척 피격»(해상 위험 업체 발표) 보도가 있으나 발표 시각을 확정하지 못했다\n8위 10-01 10:05 +0.271% — ISM 발표(10:00) 직후 되돌림\n9위 09-28 13:15 -0.265% — 3위 직후 되돌림. Newsquawk 13:18 ET «합의 가능성 극히 낮다 — 미국 측 소식통(알아라비야)», FXStreet 도 같은 순서로 적었다. 3위 사건 하나로 묶었다\n10위 10-01 13:20 +0.258% — 원인 못 밝힘. 13:20~13:24 에 걸쳐 서서히 올랐고 그 시간 보도를 찾지 못했다\n결론: 상위 10개 중 캘린더 3개, 뉴스 1개(+직후 되돌림 1개), 캘린더 직후 되돌림 1개, 개장 첫 봉 1개, 마감 직전 1개, 원인 못 밝힘 2개. 훑은 곳 — bigdata.com 뉴스 검색(시각 필터: 09-28 16:45~18:30 · 09-30 19:30~21:30 · 10-01 06:50~07:45 · 10-01 17:05~17:45 UTC), Newsquawk 속보 기록, 야후 1분봉(나스닥·S&P·원유·금·10년물), 웹 검색, TheStreet 실시간 기사(13:10 항목 없음). CNBC 는 접속이 막혔다.",
+    "data_crosscheck": "주가: NQZ26.CME 를 QQQ(ETF)·^NDX(지수)와 대조(검사 [1-1]), CNBC 5분봉과 대조(검사 [1-2]) — 결과는 검사 출력. 지표 값: 댈러스 9.8·직전 11.6 은 바차트(나스닥닷컴 게재 «-1.8 to 9.8»), 구인 7.079M·예상 7.23M·직전 7.335M 은 벤징가·FXStreet, 성장률 2.2%·예상 1.5% 와 근원 PCE 0.2%·예상 0.3% 는 얼라이언스뉴스·ABC 부르스, ISM 54.5·예상 55·직전 54.6 은 로이터·Finwire(블룸버그 집계), 비농업 고용 2.9만·예상 9만·실업률 4.2%·예상 4.1% 는 MT Newswires(블룸버그 집계)·폭스비즈니스(LSEG 집계)와 일치. 예상값은 집계처마다 조금 달라(구인 블룸버그 7.228M · 로이터 7.225M) 트레이딩이코노믹스 값과 같은 출처(벤징가 7.230M)를 함께 적었다."
+  },
+  "summary": {
+    "scope": "선정 사건",
+    "scope_note": "요약 표의 1~3위는 «고른 사건 6개» 중 순위다. 이번 주는 그 셋이 5분봉 변동 전체에서도 1~3위다.",
+    "ko": "이번 주 고른 사건 6개 중 · 5분봉 전체 순위는 아니다",
+    "en": "The three biggest moves among the six events picked this week",
+    "rows": [
+      {
+        "tag": "고용",
+        "pct": 0.414,
+        "week_rank": 1
+      },
+      {
+        "tag": "ISM",
+        "pct": -0.404,
+        "week_rank": 2
+      },
+      {
+        "tag": "이란 보도",
+        "pct": 0.401,
+        "week_rank": 3
+      }
+    ]
+  },
+  "publish": {
+    "live": {
+      "commit": "2d7d3bf557e2604fd6ef7d91b8af2d19e892fb25",
+      "at": "2026-10-04T07:25:36.746Z"
+    },
+    "youtube": {
+      "video_id": "qgLzg473UYE",
+      "url": "https://www.youtube.com/watch?v=qgLzg473UYE",
+      "at": "2026-10-04T07:25:43.050Z",
+      "captions": {
+        "ko": "ok",
+        "en": "ok"
+      },
+      "pinned_comment": {
+        "id": "UgwNpJ2XuEz-0g10bUF4AaABAg",
+        "pinned": false
+      }
+    },
+    "instagram": {
+      "media_id": "18106003324967043",
+      "permalink": "https://www.instagram.com/reel/DeEGx9jj5FU/",
+      "at": "2026-10-04T07:33:13.121Z"
+    },
+    "published_at": "2026-10-04T16:33:14+09:00"
+  },
+  "copy": {
+    "_주": "화면(screen)과 자막(srt) 문구를 한곳에 둔다 — 지침 2-3. {WEEK}{N}{DN}{DMED}{EVN}{TOPPCT}{OPEN}{ANS}{ANSN}{DAYS} 는 렌더러·자막 생성기가 봉과 매니페스트에서 계산해 채운다. {ANS}·{ANSN} 은 질문 은행(updays)으로 다시 잰 답이다(5회차부터). 훅은 4회차 B안 구조 — 윗줄 사실 한 줄, 아랫줄 질문. 정답 화면은 정규장 칸을 그날 등락 색으로 칠한다(answerMark: regdays).",
+    "names": {
+      "댈러스": "댈러스 연준 제조업",
+      "이란 보도": "이란 농축 중단 보도",
+      "구인": "구인 건수",
+      "성장률": "2분기 성장률",
+      "ISM": "ISM 제조업",
+      "고용": "비농업 고용"
+    },
+    "screen": {
+      "q1": "정규장은 한국 밤 10:30~새벽 5:00.",
+      "q2": "정규장에서 오른 날은 며칠?",
+      "enHook": "Nasdaq 100 futures, Mon pre-market to Fri. Up days in regular hours?",
+      "ansName": "정규장에서 오른 날",
+      "ansBig": "{ANS}",
+      "ansColor": "down",
+      "ansSub1": "{DAYS}일 모두 정규장 시가보다 낮게 마감",
+      "ansSub2": "지난 2년 {DN}주 중 {ANS}인 주는 없었다",
+      "enAnswer": "{ANSN} of {DAYS} regular sessions closed higher",
+      "answerMark": "regdays",
+      "summ1": "오른 몫은 전부 정규장 밖에서 나왔다.",
+      "summ2": "사건 중엔 비농업 고용이 가장 컸다.",
+      "rowsScope": "이번 주 고른 사건 {EVN}개 중 · 5분봉 전체 순위는 아니다",
+      "enSumm": "The three biggest moves among the six events picked this week",
+      "loopLabel": "정규장에서 오른 날",
+      "loopBig": "{ANS}",
+      "loopTail": "그래도 한 주는 {WEEK}",
+      "loopColor": "down",
+      "kicker": "지난주 나스닥 · 월 프리장 ~ 금 마감",
+      "span": "월요일 프리장 → 금요일 마감"
+    },
+    "srt": {
+      "ko": {
+        "hook": [
+          "지난주 나스닥, 월요일 프리장 ~ 금요일 마감 · 결과는 {WEEK}",
+          "정규장(한국 밤 10시 30분~새벽 5시)에서 오른 날은 며칠이었을까요?"
+        ],
+        "answer": [
+          "정규장에서 오른 날은 {ANS}이었다",
+          "{DAYS}일 모두 정규장 시가보다 낮게 마감 · 지난 2년 {DN}주 중 {ANS}인 주는 없었다"
+        ],
+        "summ": [
+          "오른 몫은 전부 정규장 밖에서 나왔다 · 고른 사건 중엔 비농업 고용이 가장 컸다({TOPPCT})",
+          "몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다"
+        ]
+      },
+      "en": {
+        "hook": [
+          "Nasdaq 100 futures, Monday pre-market to Friday close · the week ended {WEEK}",
+          "How many days closed higher in the regular session?"
+        ],
+        "answer": [
+          "{ANSN} of {DAYS} regular sessions closed higher",
+          "No week in the past {DN} had {ANSN} up days in regular hours"
+        ],
+        "summ": [
+          "The whole gain came outside regular hours · payrolls moved it most ({TOPPCT})",
+          "Which one did you pick? We will replay next week too"
+        ]
+      }
+    }
+  }
+}

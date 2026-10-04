@@ -380,6 +380,25 @@ for (const e of M.events) {
   if (e.session_exception) ok(`사건${e.n} 장 밖 발표(사유 있음)`, `${hhmm} — ${e.session_exception}`);
   else bad(`사건${e.n} 장 밖 발표`, `${hhmm} · 사유 없음`, 'session_exception 에 그날 후보가 하나뿐인 이유를 적어라');
 }
+// 뉴스 사건(지침 4장 5번 · 2-8-1). 최초 보도 시각이 그 5분봉 안에 있어야 하고, 시각이 찍힌 출처가
+// 둘 이상이어야 한다. 5회차에서 처음 넣었다 — 그전에는 뉴스 사건이 없어 검사도 없었다.
+const etOfUtc = (u) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', hourCycle: 'h23',
+  year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).format(new Date(u)).replace(',', '');
+for (const e of M.events.filter((x) => x.kind === 'news')) {
+  const N = e.news || {};
+  const src = (N.sources || []).filter((s) => s.name && s.utc && s.url);
+  const names = new Set(src.map((s) => s.name));
+  if (names.size >= 2) ok(`사건${e.n} 뉴스 출처 수`, [...names].join(' · '));
+  else { bad(`사건${e.n} 뉴스 출처 수`, `${names.size}곳`, '시각이 찍힌 출처 둘 이상(이름·utc·url)'); continue; }
+  const first = src.map((s) => s.utc).sort()[0];
+  cmp(`사건${e.n} 최초 보도 시각(미 동부)`, etOfUtc(first), N.first_report_et);
+  const barEnd = new Date(Date.parse(e.et.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
+  if (N.first_report_et >= e.et && N.first_report_et < barEnd) ok(`사건${e.n} 보도가 그 봉 안`, `${N.first_report_et} ∈ [${e.et}, ${barEnd})`);
+  else bad(`사건${e.n} 보도가 그 봉 안`, N.first_report_et, `[${e.et}, ${barEnd})`);
+  const later = src.filter((s) => s.utc !== first && Date.parse(s.utc) - Date.parse(first) <= 15 * 60e3);
+  if (later.length) ok(`사건${e.n} 시각을 받쳐 주는 별도 보도`, later.map((s) => `${s.name} ${etOfUtc(s.utc).slice(11)}`).join(' · '));
+  else bad(`사건${e.n} 시각을 받쳐 주는 별도 보도`, '없음', '최초 보도 15분 안의 다른 출처');
+}
 
 // ── 5. 트레이딩이코노믹스 캘린더로 별표·실제값·예상값 대조 ────────────────────
 console.log(`\n[5] 트레이딩이코노믹스 캘린더 대조`);
@@ -429,6 +448,7 @@ try {
   }
   console.log(`  · 캘린더 ${table.size}건 파싱`);
   for (const e of M.events) {
+    if (e.kind === 'news') { ok(`사건${e.n} 캘린더 항목`, '뉴스 사건 — 캘린더 대신 [4] 에서 출처·시각 확인'); continue; }
     const row = table.get(e.te_event);
     if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', e.te_event); continue; }
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
@@ -446,6 +466,7 @@ try {
   // 판단으로 골랐다 — 다음 회차에서 달라지지 않도록 기계가 본다.
   const num = (v) => { const m = String(v).match(/-?[\d.]+/); return m ? parseFloat(m[0]) : null; };
   for (const e of M.events) {
+    if (e.kind === 'news') continue;
     const row = table.get(e.te_event);
     if (!row || !row.at) continue;
     const group = all.filter((r) => r.at === row.at);
@@ -543,6 +564,7 @@ for (const e of M.events) {
   // 기자회견·연설처럼 애초에 발표값이 없는 사건이 있다. 그런 사건은 숫자 대조를 할 수 없다.
   // 다만 «값이 없다» 를 매니페스트가 스스로 주장하게 두면 숫자 검사를 피하는 구멍이 된다.
   // 그래서 캘린더 원본에 정말로 실제값·예상값·직전값이 전부 비어 있는지 확인하고 넘어간다.
+  if (e.kind === 'news') { ok(`사건${e.n} 값 없음`, '뉴스 사건 — 발표값이 없다. 출처·시각은 [4]'); continue; }
   if (!e.actual && !e.compare) {
     if (!e.no_value) { bad(`사건${e.n} 값 없음`, '실제값·비교값이 비어 있다', 'no_value 에 사유를 적어라'); continue; }
     const row = CAL && CAL.get(e.te_event);
@@ -768,6 +790,14 @@ if (srtDir) {
     `${D.median}%`, `${D.p10}%`, `${D.p90}%`, '100%', '0%', '10%', '90%',   // 10%·90% 는 «하위 10%» 같은 분위 이름
     ...M.events.flatMap((e) => [`${e.pct >= 0 ? '+' : ''}${e.pct.toFixed(3)}%`, `${e.pct.toFixed(3)}%`, `${Math.abs(e.pct).toFixed(3)}%`,
       ...([e.l1, e.l2, e.en].join(' ').match(/[+\-−]?\d+(\.\d+)?%/g) || [])])].map(norm));
+  // 질문이 날마다의 정규장 등락을 다루면(5회차 updays) 설명에 그 값을 적는다. 봉에서 다시 잰 값만 허용한다.
+  {
+    const { QUESTIONS: QQ, buildCtx: BC } = await import('./questions.mjs');
+    const cx = BC(BARS, []);
+    const ns = QQ.find((q) => q.id === 'nightshare');
+    const extra = [...cx.dayReg.map((x) => x.p), ...(ns ? [ns.fn(cx)] : [])];
+    for (const v of extra) for (const d of [2, 3]) { const s = v.toFixed(d) + '%'; allow.add(s); allow.add((v >= 0 ? '+' : '') + s); allow.add(Math.abs(v).toFixed(d) + '%'); }
+  }
   const all = [title, desc, cap, cmt].join('\n');
   const pcts = [...new Set((all.match(/[+\-−]?\d+(\.\d+)?%/g) || []).map(norm))];
   const unknownP = pcts.filter((x) => !allow.has(x) && !allow.has(x.replace(/^\+/, '')));
