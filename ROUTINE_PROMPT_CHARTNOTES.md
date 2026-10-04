@@ -493,6 +493,7 @@ node scripts/chart-notes/render-chartnotes.mjs <STAMP> en
 | `lines` | **선 그래프** — 선 여러 개·교차점·수평선·밴드 | `title`, `body`, `series[].points`, `marker`, `levels[]`, **`band.{upper,lower,color,opacity}`**, `closing`, **`touches[].{x,y,n}`**(닿은 자리에 번호 동그라미), **`axis`**(기본 true), **`note`**(그림 아래 붉은 세로줄 문단) |
 | `flip` | **역할 반전** — 뚫린 저항선이 지지선이 되는 것을 **선 하나**로 | `title`, `body`, `before`, `after`, `break`, `retest`, `note`, `closing` |
 | `bars` | **막대 비교** — 시총·지표 수치, 종목 간 순위 | `title`, `body`, `items[].label/value/display/highlight` 또는 `sections[].{heading,items}`, `closing` · **`value` 도 `value_ko`/`value_en` 으로 갈라 쓴다** |
+| `paths` | **두 갈래** — 분수 하나가 «서로 다른 원인으로» 같은 결과에 닿는 것을. 위에 출발 분수, 화살표 두 갈래, 아래에 «한 칸만 붉게 바뀐» 분수 둘 (EP.09 p.04: 가격↑ / 이익↓ → 같은 20배). **나눗셈 지표가 «왜 움직였나»는 이것으로 그린다 — 결과값의 선(`lines`)으로 그리면 원인이 화면에 없다**(2026-10-04 사용자 지적) | `title`, `body`, `start.{label,num,den,result}`, `left`·`right`.{label,num,den,result,**changed**:`num`\|`den`}, `join`, `note`, `closing` |
 | `formula` | **공식** — 분수(또는 곱셈) + 항 설명 + 계산 예시 | `title`, `body`, `formula.{numerator,denominator,result}` **또는 `formula.{left,right,result}`(곱셈 한 줄)**, `parts[]`, `example` |
 | `mirror` | **두 칸 맞대기** — 같은 방법이 «방향만 반대»이거나, 같은 규칙이 «한쪽만 들어맞는» 것을 나란히 | `title`, `body`, **`figure`**(`trendline`\|`gap`\|`gap-open`\|`split`), `left_label`/`left_caption`, `right_label`/`right_caption`, `note`, `closing` · `gap-open` 은 **`left_bars`/`right_bars`**`.{prev,today}.{o,h,l,c}` 와 `hi_label`·`lo_label`·`close_label`·`open_label` |
 

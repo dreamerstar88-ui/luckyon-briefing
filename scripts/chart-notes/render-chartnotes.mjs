@@ -116,7 +116,9 @@ function page(inner, pageno) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:1080px;height:1350px}
-  body{background:${C.bg};font-family:${FONT_SANS};position:relative;overflow:hidden}
+  ${/* 한국어는 어절 단위로만 줄을 바꾼다. 기본값(normal)은 음절 사이에서도 끊어 «나옵니/다»·«견줍/니다»처럼
+        단어가 두 줄로 갈렸고, EP.09 검증에서 전 카드에 걸쳐 적발됐다(2026-10-04). */''}
+  body{background:${C.bg};font-family:${FONT_SANS};position:relative;overflow:hidden;word-break:keep-all;overflow-wrap:break-word}
   .paper{position:absolute;left:56px;right:56px;top:118px;bottom:74px;background:${C.paper};
          border-radius:3px;box-shadow:0 18px 42px rgba(0,0,0,0.22);overflow:hidden;
          background-image:linear-gradient(${C.grid} 1px,transparent 1px),linear-gradient(90deg,${C.grid} 1px,transparent 1px);
@@ -794,6 +796,70 @@ const R = {
       </div>
       ${legend ? `<div style="margin-bottom:14px">${legend}</div>` : ''}
       ${NOTE ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin-bottom:18px;
+             font-family:${FONT_TITLE};font-size:26px;font-weight:700;line-height:1.5;color:${C.body}">${esc(NOTE)}</div>` : ''}
+      ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
+    </div>`;
+  },
+
+  // 두 갈래: 분수 하나가 «서로 다른 이유로» 같은 결과에 닿는 것을 보여준다.
+  //
+  // EP.09 p.04 초안은 이 내용을 `lines` 로 그렸다 — 같은 점에서 출발해 같은 점에서 만나는 PER 선 두 개.
+  // 그런데 두 선이 다른 것은 «휜 모양»뿐이라, 본문이 말하는 «가격이 올라서 / 이익이 줄어서»가
+  // 그림 어디에도 없었다(사용자: 「그림하고 설명이 전혀 매치가 안 된다」). 원인은 분자·분모에
+  // 있는데 그림은 결과(PER)만 그렸기 때문이다. 그래서 «원인이 보이는» 분수 자체를 그린다:
+  // 위에 출발 분수 하나, 화살표 두 갈래, 아래에 «한 칸만 바뀐» 분수 두 개 — 바뀐 칸은 붉게.
+  //
+  //   start: { label, num, den, result }               ← 각 텍스트 필드 _ko/_en
+  //   left / right: { label, num, den, result, changed: 'num'|'den' }
+  //   join: 아래 두 분수의 결과가 같다는 표시 문구 (예: «같은 20배»)
+  //   note / closing: `lines` 와 같은 붉은 세로줄 문단 · 형광펜 마무리
+  paths(c) {
+    const W = 900, H = 640;
+    const frac = (cx, y, f, changed) => {
+      const hot = (k) => changed === k;
+      const cell = (k, yy) => `<text x="${cx}" y="${yy}" text-anchor="middle" font-family="${FONT_TITLE}"
+            font-size="32" font-weight="800" fill="${hot(k) ? C.red : C.ink}">${esc(t(f, k))}${hot(k)
+              ? (k === 'num' ? ' ▲' : ' ▼') : ''}</text>`;
+      return `<rect x="${cx - 190}" y="${y}" width="380" height="186" rx="16" fill="${C.paper}"
+                    stroke="${changed ? C.red : C.navy}" stroke-width="4"/>
+        <text x="${cx}" y="${y - 16}" text-anchor="middle" font-family="${FONT_TITLE}" font-size="27"
+              font-weight="800" fill="${changed ? C.red : C.navy}">${esc(t(f, 'label'))}</text>
+        ${cell('num', y + 56)}
+        <line x1="${cx - 150}" y1="${y + 76}" x2="${cx + 150}" y2="${y + 76}" stroke="${C.ink}" stroke-width="4"/>
+        ${cell('den', y + 116)}
+        <text x="${cx}" y="${y + 166}" text-anchor="middle" font-family="${FONT_TITLE}" font-size="34"
+              font-weight="800" fill="${C.red}">= ${esc(t(f, 'result'))}</text>`;
+    };
+    const arrow = (x1, y1, x2, y2) => {
+      const a = Math.atan2(y2 - y1, x2 - x1), L = 18;
+      const h = (s) => `${x2 - L * Math.cos(a + s)},${y2 - L * Math.sin(a + s)}`;
+      return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#7d7a72" stroke-width="5" stroke-linecap="round"/>
+              <polyline points="${h(0.45)} ${x2},${y2} ${h(-0.45)}" stroke="#7d7a72" stroke-width="5" fill="none"
+                        stroke-linejoin="round" stroke-linecap="round"/>`;
+    };
+    const L = d(c, 'left', {}), Rt = d(c, 'right', {}), S = d(c, 'start', {});
+    const JOIN = t(c, 'join');
+    const NOTE = t(c, 'note');
+    return `<div class="pad">
+      <div class="ttl sm">${t(c, 'title')}</div>
+      ${t(c, 'body') ? `<div class="body">${t(c, 'body')}</div>` : ''}
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;margin-top:22px">
+        <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="max-width:100%;max-height:100%">
+          ${frac(450, 40, S, null)}
+          ${/* 화살표는 아래 분수의 라벨(상자 위 16px)보다 위에서 끝낸다 — 라벨을 뚫고 지나가면
+                «가격이 올라서»가 «가격이 올‑라서»처럼 갈려 읽힌다(첫 렌더에서 실제로 그랬다). */''}
+          ${arrow(340, 238, 262, 300)}${arrow(560, 238, 638, 300)}
+          ${frac(220, 360, L, L.changed)}
+          ${frac(680, 360, Rt, Rt.changed)}
+          ${/* «결과가 같다»는 이 그림의 결론이라 점선 곡선처럼 흐리게 두지 않는다. 두 상자 밑에서
+                내려오는 꺾쇠 하나로 묶고, 그 아래에 라벨을 단다. */''}
+          ${JOIN ? `<path d="M 220 556 L 220 580 L 680 580 L 680 556 M 450 580 L 450 592" stroke="${C.red}"
+                stroke-width="4" fill="none" stroke-linejoin="round"/>
+          <text x="450" y="626" text-anchor="middle" font-family="${FONT_TITLE}" font-size="30" font-weight="800"
+                fill="${C.red}">${esc(JOIN)}</text>` : ''}
+        </svg>
+      </div>
+      ${NOTE ? `<div style="border-left:6px solid ${C.red};padding:6px 0 6px 20px;margin:14px 0 18px;
              font-family:${FONT_TITLE};font-size:26px;font-weight:700;line-height:1.5;color:${C.body}">${esc(NOTE)}</div>` : ''}
       ${t(c, 'closing') ? `<div style="margin-bottom:20px"><span style="background:${C.yellow};padding:9px 18px;font-family:${FONT_TITLE};font-size:29px;font-weight:800;color:${C.ink}">${esc(t(c, 'closing'))}</span></div>` : ''}
     </div>`;
