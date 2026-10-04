@@ -164,7 +164,7 @@ function sunAltTexts(content, lang) {
 
   const list = [
     `${brief} ${dateLabel}: ${stripTags(t(cov.headline_ko, cov.headline_en))}`
-      + (hero.label_ko || hero.label_en ? ` — ${t(hero.label_ko, hero.label_en)} ${hero.value || ''}` : ''),
+      + (hero.label_ko || hero.label_en ? ` — ${t(hero.label_ko, hero.label_en)} ${t(hero.value_ko, hero.value_en) ?? hero.value ?? ''}` : ''),
     newsBlock(content.weekend, '주말 사이 소식', 'Over the weekend'),
     t('다음 주 캘린더: ', 'Next week calendar: ') + (content.week?.days || [])
       .map(d => `${t(d.day_ko, d.day_en)} — ` + (d.rows || []).map(r => t(r.name_ko, r.name_en)).join(', ')).join(' / '),

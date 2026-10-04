@@ -320,6 +320,7 @@ UI 색으로 겸용하면 등락 신호가 흐려진다. 색은 브랜드 팔레
   "cover": {
     "headline_ko","headline_en",              // <br> 로 두 줄. 48px 라 한 줄 20자 안쪽
     "hero": {"label_ko","label_en","value","sub_ko","sub_en"},  // value 는 문자열 그대로 출력
+                                              // value_ko/value_en 이 있으면 그쪽이 이긴다 (2026-10-04 신설 — "110조원"처럼 단위가 한글인 값)
     "points":[{"title_ko","title_en","body_ko","body_en"} x3],
     "tiles_title_ko","tiles_title_en",
     "tiles":[{"label_ko","label_en","value"} x3]                // value 는 숫자(%), 부호로 색이 갈린다
@@ -425,7 +426,7 @@ calendar[].rows[].est / .act      news.items[].src     ai.items[].src
 movers.*.items[].color            movers.*.items[].seq
 
 # sun (§2-B)
-cover.hero.value                  cover.tiles[].value  (숫자)
+cover.hero.value (value_ko/value_en 쌍을 받는다)   cover.tiles[].value  (숫자)
 week.days[].rows[].time
 econ.rows[].when   econ.rows[].prev   econ.rows[].est
 earnings.items[].when   earnings.items[].eps   earnings.items[].epsPrev

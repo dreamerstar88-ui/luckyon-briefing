@@ -184,7 +184,7 @@ function cardCover() {
     <div class="blk" style="flex:1;min-height:0;padding:34px 36px 30px;display:flex;flex-direction:column;justify-content:space-between">
       <div>
         <div style="font-size:27px;font-weight:800;color:${P.mute}">${t(c.hero.label_ko, c.hero.label_en)}</div>
-        <div class="num" style="font-size:176px;font-weight:800;letter-spacing:-.055em;line-height:1.04;color:${P.accent}">${c.hero.value}</div>
+        <div class="num" style="font-size:176px;font-weight:800;letter-spacing:-.055em;line-height:1.04;color:${P.accent}">${t(c.hero.value_ko, c.hero.value_en) ?? c.hero.value}</div>
         <div style="font-size:28px;color:${P.mute};margin-top:6px">${t(c.hero.sub_ko, c.hero.sub_en)}</div>
       </div>
       <div style="display:flex;flex-direction:column;gap:18px">
