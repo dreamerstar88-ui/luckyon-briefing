@@ -1,0 +1,628 @@
+{
+ "date": "2026-10-05",
+ "session": "pm",
+ "dateLabel_ko": "2026년 10월 5일 (월)",
+ "dateLabel_en": "Monday, October 5, 2026",
+ "headline_ko": "코스피 휴장 속 닛케이 장중 7만선·대만 가권 사상 최고 — 반도체가 끌었다",
+ "headline_en": "Nikkei Tops 70,000 Intraday, Taiwan Hits Record as Chips Lead; KOSPI Shut",
+ "headline_sub_ko": "개천절 대체공휴일로 코스피·코스닥 휴장 · 오늘 밤 美 ISM 서비스업 PMI",
+ "headline_sub_en": "KOSPI and KOSDAQ closed for the substitute holiday · US ISM services PMI tonight",
+ "cover_kicker": {
+  "ko": "오늘 · 10/5 아시아 마감",
+  "en": "Today · Oct 5 Asia Close"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "닛케이 +2.40% · 대만 +2.55%",
+    "en": "Nikkei +2.40% · Taiwan +2.55%"
+   },
+   {
+    "ko": "69,946.86 / 49,712.04 · 도쿄일렉트론 +5.50%·TSMC +3.00%",
+    "en": "69,946.86 / 49,712.04 · Tokyo Electron +5.50%, TSMC +3.00%"
+   }
+  ],
+  [
+   "rate",
+   {
+    "ko": "美 9월 고용 +2.9만명(예상 +9.0만) · 실업률 4.2%",
+    "en": "US Sept payrolls +29K (est. +90K) · unemployment 4.2%"
+   },
+   {
+    "ko": "10월 인상 확률 일주일 전 64% → 20%대 초반(CME 페드워치)",
+    "en": "October hike odds fell from about 64% a week ago to the low 20s (CME FedWatch)"
+   }
+  ],
+  [
+   "clock",
+   {
+    "ko": "코스피·코스닥 개천절 대체공휴일 휴장",
+    "en": "KOSPI and KOSDAQ closed for the substitute holiday"
+   },
+   {
+    "ko": "10/6(화) 재개장 · 10/9(금) 한글날도 휴장",
+    "en": "Reopen Tue, Oct 6 · closed again Fri, Oct 9 (Hangul Day)"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피·코스닥은 개천절 대체공휴일로 하루 쉬었다. 직전 거래일(10/2) 코스피는 0.46% 오른 7,003.74로 마감했다.",
+   "한국이 쉬는 사이 일본 닛케이225는 2.40% 오른 69,946.86, 대만 가권은 2.55% 오른 49,712.04로 마감했고, 도쿄일렉트론(+5.50%)·어드밴테스트(+4.32%)·TSMC(+3.00%) 같은 반도체주가 앞장섰다.",
+   "지난 금요일 밤 발표된 美 9월 고용(+2.9만명, 예상 +9.0만)이 부진해 CME 페드워치의 10월 금리 인상 확률이 일주일 전 64%에서 20%대 초반으로 내려앉았다.",
+   "오늘 밤 美 ISM 서비스업 PMI(예상 55.7)가 나오고, 국내 증시는 10/6(화) 재개장한다. 삼성전자 3분기 잠정실적(10/8 예정)이 다음 변수다."
+  ],
+  "lines_en": [
+   "KOSPI and KOSDAQ were closed today for the National Foundation Day substitute holiday; KOSPI's last close (Oct 2) was 7,003.74, up 0.46%.",
+   "With Korea shut, Japan's Nikkei 225 rose 2.40% to 69,946.86 and Taiwan's Taiex 2.55% to 49,712.04, led by chip names such as Tokyo Electron (+5.50%), Advantest (+4.32%) and TSMC (+3.00%).",
+   "A weak US September jobs report released Friday night (+29K vs +90K expected) cut CME FedWatch odds of an October Fed hike to the low 20s from about 64% a week earlier.",
+   "Tonight brings the US ISM services PMI (est. 55.7); Korea reopens Tue, Oct 6, and Samsung Electronics' Q3 preliminary earnings (due Oct 8) are the next catalyst."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "31,014.25",
+   "delta": "▼0.15%",
+   "dir": "down",
+   "note_ko": "美 정규장 개장 전 선물 · 금요일 선물 종가 대비",
+   "note_en": "Futures ahead of the US open · vs Friday's close"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,766.25",
+   "delta": "▼0.14%",
+   "dir": "down",
+   "note_ko": "美 정규장 개장 전 선물 · 금요일 선물 종가 대비",
+   "note_en": "Futures ahead of the US open · vs Friday's close"
+  },
+  {
+   "label": "KOSPI",
+   "value": "7,003.74",
+   "delta": {
+    "ko": "휴장",
+    "en": "Closed"
+   },
+   "dir": "flat",
+   "note_ko": "대체공휴일 휴장 · 10/2 종가 ▲0.46%",
+   "note_en": "Holiday closure · Oct 2 close ▲0.46%"
+  },
+  {
+   "label": "VIX",
+   "value": "16.32",
+   "delta": "▲6.60%",
+   "dir": "up",
+   "note_ko": "10/2 종가(15.31) 대비 · 장중 기준",
+   "note_en": "vs Oct 2 close (15.31) · intraday"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "38",
+   "delta": "31 → 38",
+   "dir": "up",
+   "note_ko": "공포(Fear) 구간 · 전 거래일 31, 일주일 전 34",
+   "note_en": "Still in Fear territory · prior close 31, a week ago 34"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.28%",
+   "delta": "5.24% → 5.28%",
+   "dir": "up",
+   "note_ko": "10/2 종가 기준 · 30년물 5.63%",
+   "note_en": "Oct 2 close · 30Y at 5.63%"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,344",
+   "value_sub": "· DXY 102.2",
+   "delta": "▲0.08%",
+   "dir": "up",
+   "note_ko": "금요일 마감 대비 · 달러지수 소폭 상승",
+   "note_en": "vs Friday's close · dollar index slightly higher"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,189.80",
+   "delta": "▲0.66%",
+   "dir": "up",
+   "note_ko": "4,200달러 선 바로 아래",
+   "note_en": "Just below the $4,200 mark"
+  },
+  {
+   "label": "WTI",
+   "value": "$90.36",
+   "delta": "▼0.82%",
+   "dir": "down",
+   "note_ko": "90달러대 초반에서 소폭 하락",
+   "note_en": "Edging lower in the low $90s"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$85,926",
+   "delta": "▼0.64%",
+   "dir": "down",
+   "note_ko": "전일 대비 · 8만5천달러대",
+   "note_en": "vs yesterday · in the $85,000s"
+  }
+ ],
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "나스닥(나스닥100)·S&P500은 정규장 개장 전 선물(금요일 선물 종가 대비), 코스피는 대체공휴일 휴장으로 10/2 종가, 美 10년물은 10/2 종가",
+ "market_note_en": "Nasdaq and S&P 500 are pre-open futures (vs Friday's close); KOSPI is the Oct 2 close due to the holiday; US 10Y is the Oct 2 close",
+ "chart_series_values": [
+  30764.75,
+  30766.75,
+  30889.25,
+  30566.25,
+  30613.25,
+  30698.75,
+  30760.5,
+  31061.75,
+  31014.25
+ ],
+ "chart_series_labels": [
+  "9.23",
+  "9.24",
+  "9.25",
+  "9.28",
+  "9.29",
+  "9.30",
+  "10.1",
+  "10.2",
+  "10.5"
+ ],
+ "chart_title": {
+  "ko": "고용 쇼크 후 선물은 보합권",
+  "en": "Futures flat after the jobs shock"
+ },
+ "chart_sub": {
+  "ko": "나스닥 선물 종가 · 최근 9거래일",
+  "en": "Nasdaq futures close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "9.28 30,566.25 → 10.2 31,061.75(+1.62%) → 10.5 31,014.25(-0.15%, 개장 전)",
+  "en": "9.28 30,566.25 → 10.2 31,061.75 (+1.62%) → 10.5 31,014.25 (-0.15%, pre-open)"
+ },
+ "record_kicker": "TODAY",
+ "sector_section": "글로벌 지수 등락",
+ "sector_title": {
+  "ko": "대만·일본이 앞장, 선물은 소폭 약세",
+  "en": "Taiwan and Japan lead; US futures slightly lower"
+ },
+ "sector_sub": {
+  "ko": "주요 지수 등락률 · 10/5 (유럽은 장중, 중국 본토는 국경절 휴장)",
+  "en": "Major index moves · Oct 5 (Europe intraday; mainland China closed for Golden Week)"
+ },
+ "rank_kicker": "TOP MOVERS",
+ "rank_title": {
+  "ko": "아시아 반도체 상위 종목",
+  "en": "Asia Chip Stock Movers"
+ },
+ "rank_sub": {
+  "ko": "일본·대만 반도체 관련주 등락률 · 10/5",
+  "en": "Japan/Taiwan chip-related stocks · Oct 5"
+ },
+ "rank_unit": {
+  "ko": "등락률 기준 · 코스피 휴장으로 한국 대신 아시아 반도체주",
+  "en": "Ranked by % change · Asia chip names shown as KOSPI is closed"
+ },
+ "econ_kicker": "DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "美 고용 쇼크 · 일본·유로존 서비스업 PMI · 센틱스",
+  "en": "US jobs miss · Japan and euro-zone services PMI · Sentix"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Record",
+   "stats": [
+    {
+     "label_ko": "나스닥 선물",
+     "label_en": "Nasdaq Fut.",
+     "value": "31,014.25",
+     "delta": "▼0.15%",
+     "dir": "down",
+     "sub_ko": "금요일 정규장은 +1.19% 마감 · 개장 전",
+     "sub_en": "Cash index closed +1.19% Friday · pre-open"
+    },
+    {
+     "label_ko": "S&P 500 선물",
+     "label_en": "S&P 500 Fut.",
+     "value": "7,766.25",
+     "delta": "▼0.14%",
+     "dir": "down",
+     "sub_ko": "금요일 정규장은 +0.73% 마감 · 개장 전",
+     "sub_en": "Cash index closed +0.73% Friday · pre-open"
+    }
+   ],
+   "note_ko": "코스피는 휴장 — 10/2 美 정규장은 나스닥 27,190.86(+1.19%)·S&P 500 7,722.72(+0.73%)로 마감했고, 선물은 오늘 소폭 내림세다",
+   "note_en": "KOSPI is closed. On Oct 2 the Nasdaq closed at 27,190.86 (+1.19%) and the S&P 500 at 7,722.72 (+0.73%); futures are slightly lower today"
+  },
+  {
+   "title_ko": "글로벌 지수 등락",
+   "title_en": "Global Index Moves",
+   "bars": [
+    {
+     "label_ko": "대만 가권",
+     "label_en": "Taiwan",
+     "value": 2.55
+    },
+    {
+     "label_ko": "닛케이225",
+     "label_en": "Nikkei 225",
+     "value": 2.4
+    },
+    {
+     "label_ko": "항셍지수",
+     "label_en": "Hang Seng",
+     "value": 0.28
+    },
+    {
+     "label_ko": "英 FTSE",
+     "label_en": "UK FTSE",
+     "value": 0.27
+    },
+    {
+     "label_ko": "獨 DAX",
+     "label_en": "Germany DAX",
+     "value": 0.07
+    },
+    {
+     "label_ko": "S&P 선물",
+     "label_en": "S&P Futures",
+     "value": -0.14
+    },
+    {
+     "label_ko": "나스닥 선물",
+     "label_en": "Nasdaq Futures",
+     "value": -0.15
+    }
+   ],
+   "note_ko": "코스피가 쉬는 사이 대만·일본이 2%대로 뛰었다 — 美 고용 부진에 따른 금리 부담 완화와 반도체 강세가 겹쳤다. 홍콩·유럽은 보합권, 상하이는 휴장이다",
+   "note_en": "With KOSPI closed, Taiwan and Japan jumped more than 2% on easing rate pressure after the weak US jobs data and chip strength. Hong Kong and Europe were near flat; Shanghai is shut"
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "rows": [
+    {
+     "name_ko": "델타일렉트로닉스",
+     "name_en": "Delta Electronics",
+     "value": "6.37",
+     "pct": 6.37
+    },
+    {
+     "name_ko": "도쿄일렉트론",
+     "name_en": "Tokyo Electron",
+     "value": "5.50",
+     "pct": 5.5
+    },
+    {
+     "name_ko": "미디어텍",
+     "name_en": "MediaTek",
+     "value": "4.34",
+     "pct": 4.34
+    },
+    {
+     "name_ko": "어드밴테스트",
+     "name_en": "Advantest",
+     "value": "4.32",
+     "pct": 4.32
+    },
+    {
+     "name_ko": "TSMC",
+     "name_en": "TSMC",
+     "value": "3.00",
+     "pct": 3.0
+    },
+    {
+     "name_ko": "소프트뱅크그룹",
+     "name_en": "SoftBank Group",
+     "value": "2.96",
+     "pct": 2.96
+    }
+   ],
+   "note_ko": "코스피 휴장으로 한국 대신 아시아 반도체·AI 관련주를 담았다 — 일본 반도체 장비주가 닛케이(+2.40%)보다 훨씬 강했고, 대만 TSMC는 +3.00%였다",
+   "note_en": "With KOSPI closed, this shows Asia's chip and AI-related movers instead — Japanese equipment makers far outpaced the Nikkei (+2.40%), and Taiwan's TSMC rose 3.00%"
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "美 9월 비농업 고용 (전월비)",
+     "label_en": "US Nonfarm Payrolls (Sep)",
+     "value": "+29K",
+     "delta": {
+      "ko": "예상 +9.0만",
+      "en": "Est. +90K"
+     },
+     "dir": "down",
+     "sub_ko": "10/2 21:30 발표 · 2.9만명 · 7·8월분 합산 6만 하향",
+     "sub_en": "Released Oct 2 · July-Aug revised down by 60K"
+    },
+    {
+     "label_ko": "美 9월 실업률",
+     "label_en": "US Unemployment Rate (Sep)",
+     "value": "4.2%",
+     "delta": {
+      "ko": "예상 4.1% · 이전 4.1%",
+      "en": "Est. 4.1% · prior 4.1%"
+     },
+     "dir": "up",
+     "sub_ko": "10/2 21:30 발표 · 경제활동인구 증가 일부 반영",
+     "sub_en": "Released Oct 2 · partly reflects a larger labor force"
+    },
+    {
+     "label_ko": "美 9월 평균시간당임금 (전년비)",
+     "label_en": "US Avg. Hourly Earnings YoY (Sep)",
+     "value": "3.0%",
+     "delta": {
+      "ko": "예상 3.2%",
+      "en": "Est. 3.2%"
+     },
+     "dir": "down",
+     "sub_ko": "10/2 발표 · 전월비 +0.1%(예상 +0.3%)",
+     "sub_en": "Released Oct 2 · MoM +0.1% (est. +0.3%)"
+    },
+    {
+     "label_ko": "일본 9월 서비스업 PMI",
+     "label_en": "Japan Services PMI (Sep)",
+     "value": "51.3",
+     "delta": {
+      "ko": "예상 51.6 · 이전 52.5",
+      "en": "Est. 51.6 · prior 52.5"
+     },
+     "dir": "down",
+     "sub_ko": "09:30 발표 · 확장 국면 유지",
+     "sub_en": "Released 09:30 KST · still expanding"
+    },
+    {
+     "label_ko": "유로존 9월 서비스업 PMI (확정)",
+     "label_en": "Euro-zone Services PMI (Sep, final)",
+     "value": "53.0",
+     "delta": {
+      "ko": "예상 53.0 · 이전 51.6",
+      "en": "Est. 53.0 · prior 51.6"
+     },
+     "dir": "up",
+     "sub_ko": "17:00 발표 · 10개월 만의 최고",
+     "sub_en": "Released 17:00 KST · 10-month high"
+    },
+    {
+     "label_ko": "유로존 10월 센틱스 투자심리",
+     "label_en": "Euro-zone Sentix (Oct)",
+     "value": "2.7",
+     "delta": {
+      "ko": "예상 5.0 · 이전 5.1",
+      "en": "Est. 5.0 · prior 5.1"
+     },
+     "dir": "down",
+     "sub_ko": "17:30 발표 · 기대지수 13.8 → 8.8",
+     "sub_en": "Released 17:30 KST · expectations 13.8 → 8.8"
+    }
+   ],
+   "note_ko": "美 고용 부진이 금리 인상 부담을 덜어낸 반면, 유로존 투자심리는 5개월 만에 꺾였다 — 인플레이션(3.8%)과 프랑스 재정 우려가 부담이었다",
+   "note_en": "The weak US jobs data eased rate-hike pressure, while euro-zone investor sentiment turned down for the first time in five months on 3.8% inflation and French fiscal worries"
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "items": [
+    {
+     "headline_ko": "대만 AI 부품주 급등 — 델타일렉트로닉스 +6.4%, 미디어텍 +4.3%",
+     "headline_en": "Taiwan AI Supply Chain Jumps — Delta +6.4%, MediaTek +4.3%",
+     "body_ko": "대만 가권이 사상 최고로 마감한 날 AI 서버 전력부품의 델타일렉트로닉스는 6.37%, 팹리스 미디어텍은 4.34% 올랐다. TSMC는 3.00% 올라 2,575대만달러로 마감했다.",
+     "body_en": "On the day Taiwan's Taiex closed at a record, power-supply maker Delta Electronics rose 6.37% and chip designer MediaTek 4.34%; TSMC gained 3.00% to close at NT$2,575.",
+     "src": "Yahoo Finance"
+    },
+    {
+     "headline_ko": "트렌드포스, TSMC 실적 프리뷰 — 3분기 가이던스 446억~458억달러",
+     "headline_en": "TrendForce Previews TSMC Earnings — Q3 Guidance $44.6B–$45.8B",
+     "body_ko": "트렌드포스가 5일 낸 TSMC 실적 프리뷰는 3분기 매출 가이던스(446억~458억달러)와 총마진 65~67%를 짚으며, 2027년 웨이퍼 가격 인상과 A14 공정도 주요 주제로 꼽았다.",
+     "body_en": "TrendForce's TSMC earnings preview cites Q3 revenue guidance of $44.6B–$45.8B and a 65–67% gross margin, and flags 2027 wafer price hikes and the A14 node as key themes.",
+     "src": "TrendForce"
+    },
+    {
+     "headline_ko": "삼성전자, 대만 윈본드 DRAM을 TV에 쓰는 방안 검토 — 디지타임스",
+     "headline_en": "Samsung Weighs Winbond DRAM for TVs, DigiTimes Reports",
+     "body_ko": "디지타임스는 삼성전자가 2027년부터 윈본드 DRAM을 사들여 자사 TV 약 절반에 쓰는 방안을 검토 중이라고 보도했다. 주요 메모리사가 LPDDR4 계열을 단계적으로 접는 데 따른 조치로 전했다.",
+     "body_en": "DigiTimes reports Samsung is considering buying Winbond DRAM from 2027 for about half its TVs, as major memory makers phase out LPDDR4-class parts.",
+     "src": "DIGITIMES"
+    },
+    {
+     "headline_ko": "뉴욕시의회 AI 위험 청문회에 앤트로픽·오픈AI·구글·메타 임원 출석",
+     "headline_en": "Anthropic, OpenAI, Google, Meta Execs to Testify at NYC AI Hearing",
+     "body_ko": "CNBC에 따르면 네 회사 임원이 뉴욕시의회 AI 위험 청문회에서 선서하고 증언할 예정이다. 앤트로픽·오픈AI·구글은 의회가 소환장을 거론한 뒤 출석에 동의했다고 전했다.",
+     "body_en": "CNBC reports executives from the four firms will testify under oath at a New York City Council AI-risk hearing; Anthropic, OpenAI and Google agreed after subpoena threats.",
+     "src": "CNBC"
+    },
+    {
+     "headline_ko": "리사 수 AMD CEO 방한 — 7일 팬 행사, 8일 국내 NPU 기업 회동 예정",
+     "headline_en": "AMD CEO Lisa Su Visits Korea — Gamer Event Oct 7, NPU Makers Oct 8",
+     "body_ko": "보도에 따르면 리사 수 CEO가 7일 서울 용산에서 열리는 AMD 게이머 행사에 참석하고, 8일 오전 리벨리온·딥엑스·모빌린트 등 국내 NPU 기업 관계자와 만날 예정이다.",
+     "body_en": "Press reports say Lisa Su will attend an AMD gamer event in Seoul on Oct 7 and meet Korean NPU makers such as Rebellions, DEEPX and MOBILINT on Oct 8.",
+     "src": "Naver News"
+    },
+    {
+     "headline_ko": "구글, 워크스페이스에 재사용 프롬프트 \"스킬\" 롤아웃 시작",
+     "headline_en": "Google Starts Rolling Out Reusable-Prompt \"Skills\" in Workspace",
+     "body_ko": "구글은 제미나이를 안내하는 재사용 프롬프트 '스킬'을 5일부터 워크스페이스에 순차 적용한다. 제미나이 앱에는 13일부터 적용되며 모두 11월 중순 완료 예정이고, 향후 젬스를 대체한다.",
+     "body_en": "Google began rolling out Skills, reusable prompts that guide Gemini, in Workspace on Oct 5 and in the Gemini app on Oct 13, with completion by mid-November; they will replace Gems.",
+     "src": "Google"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "items": [
+    {
+     "headline_ko": "닛케이225 +2.40% 마감, 장중 3개월 만에 7만선 회복",
+     "headline_en": "Nikkei 225 Closes +2.40%, Briefly Tops 70,000 for First Time in 3 Months",
+     "body_ko": "닛케이225는 69,946.86으로 마감했다. 장중 70,072.13까지 올라 7만선을 회복했고, 보도에 따르면 美 금리 인상 전망 후퇴와 AI·반도체주 강세가 원인이었다.",
+     "body_en": "The Nikkei 225 closed at 69,946.86 after touching 70,072.13 intraday. Press reports cited fading US rate-hike expectations and strength in AI and chip stocks.",
+     "src": "Yahoo Finance"
+    },
+    {
+     "headline_ko": "대만 가권 +2.55% 49,712 마감 — 종가 기준 사상 최고",
+     "headline_en": "Taiwan's Taiex Rises 2.55% to 49,712, a Record Close",
+     "body_ko": "대만 가권지수는 49,712.04로 마감해 2.55% 올랐다. 대만 매체 보도에 따르면 종가 기준 사상 최고치이며, 장중 고점은 49,770.66이었다.",
+     "body_en": "Taiwan's Taiex closed at 49,712.04, up 2.55%. Taiwanese media report it as a record close; the intraday high was 49,770.66.",
+     "src": "Yahoo Finance"
+    },
+    {
+     "headline_ko": "갈리바프 \"7개 조건 충족 전엔 호르무즈 재개방 없다\" — 이란 측 주장",
+     "headline_en": "Iran's Ghalibaf: No Hormuz Reopening Until Seven Conditions Met",
+     "body_ko": "이란 의회의장 갈리바프가 미국의 해상봉쇄 해제·동결자금 반환 등 7개 조건이 충족돼야 호르무즈를 다시 열겠다고 밝혔다는 보도가 나왔다. 오늘 브렌트유는 100달러 웃도는 선에서 움직였고 WTI는 $90.36(-0.82%)이다.",
+     "body_en": "Reports say Iran's parliament speaker Ghalibaf said Hormuz will reopen only after seven conditions, including lifting the US naval blockade and returning frozen funds. Brent traded above $100; WTI is $90.36 (-0.82%).",
+     "src": "Daum News"
+    },
+    {
+     "headline_ko": "유로화 약세 — 프랑스 재정 우려 속 센틱스 투자심리 2.7로 하락",
+     "headline_en": "Euro Slides on French Fiscal Worries as Sentix Falls to 2.7",
+     "body_ko": "FXStreet는 프랑스 재정 우려 속에 유로화 매도가 이어졌다고 전했다. 유로존 센틱스 투자심리는 10월 2.7로 예상(5.0)을 밑돌았고, 기대지수는 13.8에서 8.8로 떨어졌다.",
+     "body_en": "FXStreet reports the euro sold off amid French fiscal worries. Euro-zone Sentix investor confidence fell to 2.7 in October vs 5.0 expected, with expectations dropping to 8.8 from 13.8.",
+     "src": "FXStreet"
+    },
+    {
+     "headline_ko": "홍콩 항셍 +0.28% 마감 — 중국 본토는 국경절 연휴로 휴장",
+     "headline_en": "Hang Seng Closes +0.28% as Mainland China Stays Shut for Golden Week",
+     "body_ko": "홍콩 항셍지수는 24,040.34로 0.28% 올라 마감했다. 상하이·선전 증시는 10/1~7 국경절 연휴로 쉬고 8일 재개장한다.",
+     "body_en": "Hong Kong's Hang Seng closed up 0.28% at 24,040.34. Shanghai and Shenzhen are closed for the Oct 1–7 Golden Week holiday and reopen Oct 8.",
+     "src": "Yahoo Finance"
+    },
+    {
+     "headline_ko": "서울 아파트 거래 약 79%가 15억원 이하 — 세제개편 후 계약분",
+     "headline_en": "About 79% of Seoul Apartment Deals Since August Were at ₩1.5B or Below",
+     "body_ko": "보도에 따르면 8월 이후 계약된 서울 아파트의 약 79%가 15억원 이하였다. 10·15대책 전 10개월 평균 73.3%보다 높고, 가격대가 낮을수록 대출 한도가 커(15억원 이하 최대 6억원) 수요가 몰렸다는 분석이다.",
+     "body_en": "Reports say about 79% of Seoul apartments contracted since August were at ₩1.5B or below, above the 73.3% average before last year's Oct 15 measures, as lower price tiers carry larger loan caps (up to ₩600M).",
+     "src": "Naver News"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "TONIGHT",
+ "schedule_sub": {
+  "ko": "지금 ~ 내일 08:00 · 이후 미리 보기",
+  "en": "Now until 8 AM KST tomorrow, plus a look ahead"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30",
+   "※ 오늘(10/5)은 개천절 대체공휴일로 코스피·코스닥 하루 휴장 · 10/6(화) 재개장"
+  ],
+  "lines_en": [
+   "Regular session 22:30–05:00 KST next day (DST) · Pre-market from 17:00 KST",
+   "※ KOSPI and KOSDAQ closed today (Oct 5) for the substitute holiday · reopen Tue, Oct 6"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "22:45",
+   "title_ko": "美 9월 서비스업 PMI(확정)",
+   "title_en": "US Services PMI (Sep, final)",
+   "detail_ko": "S&P 글로벌 집계 · 예상 58.7 · 이전 56.5",
+   "detail_en": "S&P Global survey · Est. 58.7 · prior 56.5",
+   "importance": "mid"
+  },
+  {
+   "time": "23:00",
+   "title_ko": "美 9월 ISM 서비스업 PMI",
+   "title_en": "US ISM Services PMI (Sep)",
+   "detail_ko": "예상 55.7 · 이전 55.4 · 고용 47.8·물가지불 72.6(이전)",
+   "detail_en": "Est. 55.7 · prior 55.4 · employment 47.8, prices paid 72.6 (prior)",
+   "importance": "high"
+  },
+  {
+   "time": "10/6 (Tue)",
+   "title_ko": "코스피·코스닥 대체공휴일 뒤 재개장",
+   "title_en": "KOSPI/KOSDAQ reopen after the holiday",
+   "detail_ko": "10/5 하루 휴장 후 정상 개장",
+   "detail_en": "Normal trading resumes after one day closed",
+   "importance": "high"
+  },
+  {
+   "time": "10/6 22:05",
+   "title_ko": "윌리엄스 뉴욕연은 총재 연설",
+   "title_en": "Fed's Williams speaks",
+   "detail_ko": "중립 성향·투표권 O · 고용 부진 뒤 첫 연설 주목",
+   "detail_en": "Centrist · FOMC voter · first remarks since the jobs miss",
+   "importance": "mid"
+  },
+  {
+   "time": "10/8 03:00",
+   "title_ko": "美 FOMC 의사록 공개",
+   "title_en": "US FOMC Minutes",
+   "detail_ko": "9월 회의 논의와 향후 금리 경로 확인",
+   "detail_en": "Details of the September meeting and the rate path",
+   "importance": "high"
+  },
+  {
+   "time": "10/8",
+   "title_ko": "삼성전자 3분기 잠정실적",
+   "title_en": "Samsung Electronics Q3 preliminary earnings",
+   "detail_ko": "컨센서스 영업이익 108.1조원(에프앤가이드)",
+   "detail_en": "Consensus operating profit ₩108.1T (FnGuide)",
+   "importance": "high"
+  },
+  {
+   "time": "10/9 (Fri)",
+   "title_ko": "한글날 — 국내 증시 휴장",
+   "title_en": "Hangul Day — Korean markets closed",
+   "detail_ko": "코스피·코스닥 10/9 휴장",
+   "detail_en": "KOSPI and KOSDAQ shut Oct 9",
+   "importance": "mid"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+ "card_photos": {
+  "1": "A quiet Seoul stock exchange building at dusk on a holiday, empty plaza, while a glowing Tokyo skyline and rising line chart reflect in a window, deep navy and amber tones, cinematic, calm mood",
+  "3": "A dark trading-floor wall of screens showing a nearly flat Nasdaq futures line chart in cool blue, shallow depth of field, cinematic",
+  "4": "A world map of glowing data points with Asia pulsing bright green and the rest muted, financial dashboard aesthetic, moody lighting",
+  "7": "Close-up of semiconductor manufacturing equipment and wafers under blue and amber light in a cleanroom, shallow depth of field, futuristic mood",
+  "8": "A dim newsroom desk at night with a world map and oil derrick silhouette visible through a window, cool tones, moody and cinematic"
+ },
+ "caption_ko": "코스피·코스닥은 개천절 대체공휴일로 하루 쉬었어요. 그 사이 닛케이225는 2.40% 오른 69,946.86, 대만 가권은 2.55% 오른 49,712.04로 마감했고 도쿄일렉트론·어드밴테스트·TSMC 같은 반도체주가 앞장섰습니다. 美 9월 고용이 +2.9만명(예상 +9.0만)에 그치며 CME 페드워치의 10월 금리 인상 확률이 일주일 전 64%에서 20%대 초반으로 내려앉았어요. 오늘 밤 美 ISM 서비스업 PMI, 10/6(화) 국내 증시 재개장, 10/8 삼성전자 3분기 잠정실적이 이어집니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #저녁브리핑 #닛케이 #대만증시 #반도체 #TSMC #고용보고서 #금리인상 #개천절 #코스피 #나스닥 #삼성전자 #투자정보 #주식\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "caption_en": "KOSPI and KOSDAQ took a day off for the National Foundation Day substitute holiday. Meanwhile Japan's Nikkei 225 rose 2.40% to 69,946.86 and Taiwan's Taiex 2.55% to 49,712.04, led by chip names such as Tokyo Electron, Advantest and TSMC. A weak US September jobs report (+29K vs +90K expected) cut CME FedWatch odds of an October Fed hike to the low 20s from about 64% a week earlier. Next: tonight's US ISM services PMI, Korea's reopening on Oct 6, and Samsung's Q3 preliminary earnings on Oct 8. Swipe through for the full picture 📊\n\nFollow + save so you don't miss our morning and evening briefs!\n\n#luckyonbriefing #eveningbrief #nikkei #taiwanstocks #semiconductors #tsmc #jobsreport #fed #kospi #nasdaq #samsung #investing #stockmarket #econnews\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "BLS",
+  "FnGuide",
+  "TrendForce",
+  "DIGITIMES",
+  "CNBC",
+  "Google",
+  "FXStreet",
+  "Naver News",
+  "Daum News",
+  "CNN Fear & Greed"
+ ]
+}
