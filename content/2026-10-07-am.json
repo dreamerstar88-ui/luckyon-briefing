@@ -1,0 +1,698 @@
+{
+  "date": "2026-10-07",
+  "session": "am",
+  "dateLabel_ko": "10월 7일 수요일 · 아침 브리핑",
+  "dateLabel_en": "Wednesday, October 7 · Morning Brief",
+  "headline_ko": "S&P 500·나스닥 동반 사상 최고, 금리는 내렸다",
+  "headline_en": "S&P 500 and Nasdaq Hit Records as Yields Ease",
+  "headline_sub_ko": "S&P는 8/13 이후 첫 신고가 · 마벨 +5.81%, 메모리와 인텔은 내렸다",
+  "headline_sub_en": "S&P's first record since Aug 13 · Marvell +5.81% while memory and Intel fell",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 10/6 마감",
+    "en": "US Overnight · Oct 6 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "S&P 500 +0.58% · 나스닥 +0.45%",
+        "en": "S&P 500 +0.58% · Nasdaq +0.45%"
+      },
+      {
+        "ko": "7,818.93 / 27,599.79 · 두 지수 모두 사상 최고",
+        "en": "7,818.93 / 27,599.79 · both at record highs"
+      }
+    ],
+    [
+      "bond",
+      {
+        "ko": "美 10년물 5.31% → 5.27%",
+        "en": "US 10Y 5.31% → 5.27%"
+      },
+      {
+        "ko": "WTI $89.44 보합 · 금 $4,187 +0.73%",
+        "en": "WTI $89.44 flat · Gold $4,187 +0.73%"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "엔비디아 최고 종가 · 마벨 +5.81%",
+        "en": "Nvidia record close · Marvell +5.81%"
+      },
+      {
+        "ko": "마이크론 −1.73% · 인텔 −3.18% · 반도체끼리 엇갈렸다",
+        "en": "Micron -1.73% · Intel -3.18% · chips split"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "S&P 500이 44.98포인트(0.58%) 오른 7,818.93으로 8/13 이후 처음 사상 최고치를 경신했고, 나스닥은 122.48포인트(0.45%) 오른 27,599.79로 이틀 연속 신고가를 기록했다. 다우는 253.38포인트(0.49%) 오른 51,521.28이었다.",
+      "美 10년물 금리는 5.31%에서 5.27%로 내렸고 WTI는 89.44달러로 보합이었다. 언론은 금리 하락과 3분기 실적 시즌 기대를 상승 배경으로 꼽았다.",
+      "AI 칩은 갈렸다. 마벨 +5.81%, 브로드컴 +3.67%, AMD +2.80%가 올랐고 마이크론 −1.73%, 샌디스크 −2.56%, 인텔 −3.18%는 내렸다.",
+      "거래대금 상위 300종목 중 185개가 올랐고 상승 종목에 거래대금의 67.2%가 몰렸다. 다만 미국에 상장된 MSCI 한국 ETF(EWY)는 2.64% 내렸다."
+    ],
+    "lines_en": [
+      "The S&P 500 rose 44.98 points (0.58%) to 7,818.93, its first record close since Aug 13. The Nasdaq gained 122.48 points (0.45%) to 27,599.79, a second straight record. The Dow added 253.38 points (0.49%) to 51,521.28.",
+      "The US 10-year yield eased from 5.31% to 5.27% and WTI finished flat at $89.44. Reports pointed to lower yields and hopes for Q3 earnings season.",
+      "AI chips split: Marvell +5.81%, Broadcom +3.67% and AMD +2.80% rose, while Micron -1.73%, SanDisk -2.56% and Intel -3.18% fell.",
+      "Of the 300 most-traded names, 185 rose and gainers took 67.2% of turnover. Yet the US-listed MSCI Korea ETF (EWY) fell 2.64%."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "27,599.79",
+      "delta": "▲0.45%",
+      "dir": "up",
+      "note_ko": "122.48p 상승 · 10/6 종가, 이틀 연속 신고가",
+      "note_en": "+122.48 pts · Oct 6 close, 2nd straight record"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,818.93",
+      "delta": "▲0.58%",
+      "dir": "up",
+      "note_ko": "44.98p 상승 · 8/13 이후 첫 신고가",
+      "note_en": "+44.98 pts · first record since Aug 13"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,941.39",
+      "delta": "▼0.89%",
+      "dir": "down",
+      "note_ko": "10/6 한국장 종가 · 개장 전",
+      "note_en": "Oct 6 Korea close · before the open"
+    },
+    {
+      "label": "VIX",
+      "value": "15.01",
+      "delta": "▼3.29%",
+      "dir": "down",
+      "note_ko": "0.51p 하락 · 낮은 변동성 구간",
+      "note_en": "-0.51 pts · low-volatility range"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "47",
+      "delta": "43 → 47 ▲",
+      "dir": "up",
+      "note_ko": "공포(43)에서 중립 구간으로",
+      "note_en": "From Fear (43) back to Neutral"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.27%",
+      "delta": "5.31% → 5.27% ▼",
+      "dir": "down",
+      "note_ko": "10/6 종가 · 재무부 집계",
+      "note_en": "Oct 6 close · Treasury data"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,337",
+      "delta": "▼0.38%",
+      "dir": "down",
+      "note_ko": "NY 시간, 전일 NY 종가 대비 · 서울 15:30 기준가 1,343.6원",
+      "note_en": "NY hours vs prior NY close · Seoul 3:30 PM fix 1,343.6",
+      "value_sub": "· DXY 101.85"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,187.10",
+      "delta": "▲0.73%",
+      "dir": "up",
+      "note_ko": "COMEX 12월물 · 10/6 정산",
+      "note_en": "COMEX Dec futures · Oct 6 settle"
+    },
+    {
+      "label": "WTI",
+      "value": "$89.44",
+      "delta": "▲0.01%",
+      "dir": "flat",
+      "note_ko": "11월물 · 중동 수출 회복 vs 호르무즈 우려",
+      "note_en": "Nov futures · Mideast exports vs Hormuz risk"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$85,526",
+      "delta": "▼0.30%",
+      "dir": "down",
+      "note_ko": "UTC 일봉(진행 중) 기준",
+      "note_en": "UTC daily bar (in progress)"
+    }
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "market_note_ko": "나스닥·S&P 500·VIX·금리는 10/6 미국장 종가, 코스피는 10/6 한국장 종가다. 금·WTI는 정산가, 비트코인은 UTC 일봉(진행 중)이며 Fear&Greed는 CNN 기준이다.",
+  "market_note_en": "Nasdaq, S&P 500, VIX and yields are Oct 6 US closes; KOSPI is the Oct 6 Korea close. Gold and WTI are settlement prices, Bitcoin is the in-progress UTC bar, and Fear&Greed is CNN's score.",
+  "chart_series_values": [
+    26939.37,
+    27068.72,
+    26820.38,
+    26797.54,
+    26861.06,
+    26871.6,
+    27190.86,
+    27477.31,
+    27599.79
+  ],
+  "chart_series_labels": [
+    "9.24",
+    "9.25",
+    "9.28",
+    "9.29",
+    "9.30",
+    "10.1",
+    "10.2",
+    "10.5",
+    "10.6"
+  ],
+  "chart_title": {
+    "ko": "나스닥, 이틀 연속 사상 최고",
+    "en": "Nasdaq Posts a Second Straight Record"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "9.29 저점 26,797.54  →  10.5 27,477.31  →  10.6 27,599.79",
+    "en": "9/29 low 26,797.54  →  10/5 27,477.31  →  10/6 27,599.79"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_section": "섹터별 등락",
+  "sector_title": {
+    "ko": "유틸리티가 이끌었다, 원전 계약 효과",
+    "en": "Utilities Led on a Nuclear Power Deal"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF · 10/6 종가 기준 · 11개 중 10개 상승",
+    "en": "S&P 500 sector ETFs · Oct 6 close · 10 of 11 rose"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "10/6 미국장 · 종가×거래량 추정 · 막대 옆은 등락률",
+    "en": "Oct 6 US session · close × volume estimate · % = daily change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $ billions"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "10/6 발표분 · 실측 · 예상 · 이전",
+    "en": "Oct 6 releases · actual · est. · prior"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,818.93",
+          "delta": "▲0.58%",
+          "dir": "up",
+          "sub_ko": "44.98포인트 상승 · 8/13 이후 첫 사상 최고",
+          "sub_en": "Up 44.98 pts · first record since Aug 13"
+        },
+        {
+          "label_ko": "다우존스",
+          "label_en": "Dow Jones",
+          "value": "51,521.28",
+          "delta": "▲0.49%",
+          "dir": "up",
+          "sub_ko": "253.38포인트 상승 · 4거래일 연속 상승",
+          "sub_en": "Up 253.38 pts · 4th straight gain"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 10,
+          "flat": 0,
+          "down": 1
+        },
+        {
+          "label_ko": "거래대금 상위 300종목",
+          "label_en": "300 most-traded",
+          "up": 185,
+          "flat": 7,
+          "down": 108
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+        "label_en": "Turnover: gainers vs decliners ($B)",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 255.0
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -124.4
+          }
+        ]
+      },
+      "note_ko": "11개 업종 중 10개가 올랐고 거래대금의 67.2%가 오른 종목으로 갔다. 지수 신고가가 시장 내부의 폭과 함께 나왔다.",
+      "note_en": "Ten of eleven sectors rose and 67.2% of turnover went into gainers: the record came with broad internals."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": 2.98
+        },
+        {
+          "label_ko": "임의소비 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": 1.18
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": 1.06
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 0.94
+        },
+        {
+          "label_ko": "산업 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 0.87
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": 0.53
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 0.47
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 0.46
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": 0.24
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": 0.04
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": -0.17
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -0.22
+        }
+      ],
+      "note_ko": "유틸리티(+2.98%)가 앞섰다. 구글과 컨스텔레이션의 원전 전력 계약에 컨스텔레이션이 12.2% 올랐고, 10년물이 5.31%에서 5.27%로 내린 날이기도 했다. 반도체 ETF만 0.22% 내렸다.",
+      "note_en": "Utilities (+2.98%) led after a Google-Constellation nuclear power deal sent Constellation up 12.2%; the 10-year also eased from 5.31% to 5.27%. Only the semis ETF slipped, by 0.22%."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$24.09B",
+          "pct": 0.14
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$21.79B",
+          "pct": -1.73
+        },
+        {
+          "name_ko": "스페이스X",
+          "name_en": "SpaceX",
+          "value": "$18.01B",
+          "pct": 0.49
+        },
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "value": "$15.68B",
+          "pct": 2.8
+        },
+        {
+          "name_ko": "마벨",
+          "name_en": "Marvell",
+          "value": "$14.64B",
+          "pct": 5.81
+        }
+      ],
+      "share": {
+        "label_ko": "표본 상승·하락 종목 거래대금 중 상위 5종목 비중 24.8%",
+        "label_en": "Top-5 share of sample turnover: 24.8%",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5",
+            "pct": 24.8,
+            "color": "#e5a23a"
+          }
+        ]
+      },
+      "note_ko": "상위 5종목 중 넷이 반도체였고 방향은 갈렸다. 마벨은 5.81%, AMD는 2.80% 올랐고 마이크론은 1.73% 내렸다. 야후 스크리너 상위 300종목의 종가×거래량 추정이며 공매도 비중은 집계되지 않았다.",
+      "note_en": "Four of the top five were chips, moving in different directions: Marvell +5.81%, AMD +2.80%, Micron -1.73%. Close × volume across a 300-stock screen; short data unavailable."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "美 8월 무역수지",
+          "label_en": "US Aug Trade Balance",
+          "value": "−$105.6B",
+          "delta": {
+            "ko": "예상 −$102.0B · 적자 확대",
+            "en": "Est. −$102.0B · wider deficit"
+          },
+          "dir": "down",
+          "sub_ko": "전월비 적자 13.7% 증가 · 2025년 3월 이후 최대",
+          "sub_en": "Deficit up 13.7% m/m · widest since Mar 2025"
+        },
+        {
+          "label_ko": "美 8월 수입",
+          "label_en": "US Aug Imports",
+          "value": "$420.8B",
+          "delta": "▲4.3%",
+          "dir": "up",
+          "sub_ko": "전월비 · 사상 최대",
+          "sub_en": "m/m · record high",
+          "ref_ko": "상품·서비스 수입액 · 상무부 월간 집계",
+          "ref_en": "Goods and services imports · Commerce Dept monthly"
+        },
+        {
+          "label_ko": "美 8월 수출",
+          "label_en": "US Aug Exports",
+          "value": "$315.2B",
+          "delta": "▲1.4%",
+          "dir": "up",
+          "sub_ko": "전월비 · 수입 증가율의 3분의 1",
+          "sub_en": "m/m · a third of import growth",
+          "ref_ko": "상품·서비스 수출액 · 상무부 월간 집계",
+          "ref_en": "Goods and services exports · Commerce Dept monthly"
+        },
+        {
+          "label_ko": "美 8월 자본재 수입",
+          "label_en": "US Aug Capital Goods Imports",
+          "value": "$146.4B",
+          "delta": "▲$6.2B",
+          "dir": "up",
+          "sub_ko": "사상 최대 · 반도체·산업기계 수입 증가",
+          "sub_en": "Record · chips and industrial machinery",
+          "ref_ko": "기업이 설비·생산에 쓰는 기계·반도체 등의 수입액",
+          "ref_en": "Imports of machinery and chips used in production"
+        },
+        {
+          "label_ko": "美 10월 경제낙관지수",
+          "label_en": "US Oct Economic Optimism",
+          "value": "46.8",
+          "delta": {
+            "ko": "예상 44.5 · 이전 45.6",
+            "en": "Est. 44.5 · prior 45.6"
+          },
+          "dir": "up",
+          "sub_ko": "이전 45.6에서 1.2포인트 상승",
+          "sub_en": "Up 1.2 pts from the prior 45.6",
+          "ref_ko": "0~100 지수 · 50 위면 낙관, 아래면 비관",
+          "ref_en": "0-100 index · above 50 optimistic, below pessimistic"
+        },
+        {
+          "label_ko": "美 ADP 주간 고용 (4주 평균)",
+          "label_en": "US ADP Weekly Jobs (4-wk avg)",
+          "value": "+23.75K",
+          "delta": "▲3.75K",
+          "dir": "up",
+          "sub_ko": "이전 +20K · 9/19 마감 4주 평균",
+          "sub_en": "Prior +20K · 4 weeks to Sep 19"
+        }
+      ],
+      "note_ko": "무역적자는 수입이 사상 최대를 찍으며 예상보다 커졌다. 자본재 수입이 늘었고 원자재 수입도 증가에 보탬이 됐다. 심리·고용 지표는 예상이나 직전보다 나았다.",
+      "note_en": "The deficit widened beyond estimates as imports hit a record, led by capital goods and industrial supplies. Sentiment and jobs readings beat estimates or the prior print."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "마벨 +5.81%, 2030년 접근 가능 시장 4,000억달러",
+          "headline_en": "Marvell +5.81% on $400B 2030 Market Outlook",
+          "body_ko": "마벨은 6일 투자자의 날에서 접근 가능 시장(TAM)이 2030년 4,000억달러에 이를 것이라 밝혔다. 2031 회계연도 매출 목표는 700억~900억달러다.",
+          "body_en": "At its Oct 6 investor day Marvell put its addressable market at $400B by 2030 and set a fiscal-2031 revenue target of $70B-$90B.",
+          "src": "Marvell",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "엔비디아, 사상 최고 종가 경신",
+          "headline_en": "Nvidia Extends Its Record Close",
+          "body_ko": "엔비디아는 0.14% 올라 239.24달러로 마감해 전날 종가(238.90달러)를 넘어섰다. 장중 고점은 243.37달러였고 거래대금 241억달러로 미국 1위였다.",
+          "body_en": "Nvidia rose 0.14% to $239.24, topping the prior close of $238.90. The intraday high was $243.37 and its ~$24.1B turnover was No. 1 in the US.",
+          "src": "Yahoo Finance",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "반도체끼리 엇갈렸다: AMD·브로드컴 상승, 메모리·인텔 하락",
+          "headline_en": "Chips Split: AMD, Broadcom Up; Memory, Intel Down",
+          "body_ko": "AMD +2.80%, 브로드컴 +3.67%는 올랐고 마이크론 −1.73%, 샌디스크 −2.56%, 인텔 −3.18%는 내렸다. 반도체 ETF는 0.22% 내렸다.",
+          "body_en": "AMD (+2.80%) and Broadcom (+3.67%) rose; Micron (-1.73%), SanDisk (-2.56%) and Intel (-3.18%) fell. The semis ETF slipped 0.22%.",
+          "src": "Yahoo Finance",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "美 8월 수입 사상 최대, 자본재·원자재가 늘었다",
+          "headline_en": "US Imports Hit a Record on Capital Goods, Supplies",
+          "body_ko": "상무부에 따르면 8월 수입은 4,208억달러로 4.3% 늘어 사상 최대였다. 증가분 172억달러 중 산업용 원자재가 91억, 자본재가 62억(반도체 24억)이었다.",
+          "body_en": "Commerce Dept data: August imports rose 4.3% to a record $420.8B. Of the $17.2B increase, industrial supplies added $9.1B and capital goods $6.2B (chips $2.4B).",
+          "src": "Commerce Dept",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "구글, 컨스텔레이션과 20년 원전 전력 계약",
+          "headline_en": "Google Signs 20-Year Nuclear Power Deal With Constellation",
+          "body_ko": "구글은 6일 컨스텔레이션과 총 3.59GW 규모의 원전 전력구매계약을 발표했다. 컨스텔레이션이 12.2%, 비스트라가 10.8%, 탈렌이 12.4% 올랐다.",
+          "body_en": "Google announced a 3.59GW nuclear power deal with Constellation on Oct 6. Constellation rose 12.2%, Vistra 10.8% and Talen 12.4%.",
+          "src": "Google",
+          "time": "10/6"
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "S&P 500 신고가, 8월 13일 이후 처음",
+          "headline_en": "S&P 500 Hits a Record, First Since Aug 13",
+          "body_ko": "S&P 500은 0.58% 오른 7,818.93, 나스닥은 0.45% 오른 27,599.79로 마감했다. 언론은 국채금리 하락과 3분기 실적 시즌 기대를 배경으로 꼽았다. 다우는 0.49% 올랐다.",
+          "body_en": "The S&P 500 closed 0.58% higher at 7,818.93 and the Nasdaq 0.45% higher at 27,599.79. Reports cited lower Treasury yields and Q3 earnings hopes. The Dow gained 0.49%.",
+          "src": "Yahoo Finance",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "美 10년물 5.27%, 24년 만의 고점권에서 한 걸음 후퇴",
+          "headline_en": "US 10Y at 5.27%, Easing From a 24-Year High",
+          "body_ko": "10년물은 10/5 5.31%에서 5.27%로 내렸다(재무부 집계). 9/30에는 장중 5.304%까지 올라 24년 만의 최고를 기록했다.",
+          "body_en": "The 10-year fell from 5.31% on Oct 5 to 5.27% (Treasury data). On Sep 30 it hit 5.304% intraday, the highest in 24 years.",
+          "src": "US Treasury",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "유가 보합, 중동 수출 회복과 호르무즈 우려가 맞섰다",
+          "headline_en": "Oil Flat as Mideast Exports Meet Hormuz Risk",
+          "body_ko": "WTI 11월물은 1센트 오른 89.44달러, 브렌트 12월물은 0.3% 오른 100.58달러였다. 비톨 CEO는 최근 7~10일간 중동 원유 수출이 하루 약 1,200만 배럴이라 밝혔다.",
+          "body_en": "WTI Nov rose 1 cent to $89.44; Brent Dec gained 0.3% to $100.58. Vitol's CEO said Mideast crude exports ran about 12M barrels a day over the past 7-10 days.",
+          "src": "NYMEX",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "금 +0.73%, 4,187달러 · 달러인덱스 0.32% 하락",
+          "headline_en": "Gold +0.73% to $4,187 as Dollar Index Slips 0.32%",
+          "body_ko": "COMEX 12월물 금은 4,187.10달러로 0.73% 올랐다. 달러인덱스는 101.85로 0.32% 내렸고 원/달러는 NY 시간 기준 1,337원이었다.",
+          "body_en": "COMEX Dec gold rose 0.73% to $4,187.10. The dollar index fell 0.32% to 101.85, and USD/KRW stood at 1,337 in NY hours.",
+          "src": "COMEX",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "미국 상장 MSCI 한국 ETF −2.64%, 코스피 개장 앞둔 변수",
+          "headline_en": "US-Listed MSCI Korea ETF -2.64% Ahead of Seoul Open",
+          "body_ko": "EWY는 191.46달러에서 186.40달러로 2.64% 내렸다. 미국 3대 지수는 모두 올랐다. 삼성전자 3분기 잠정실적은 8일 나올 예정이다.",
+          "body_en": "EWY fell 2.64% from $191.46 to $186.40 as all three US indexes rose. Samsung Electronics reports Q3 preliminary results on Oct 8.",
+          "src": "Yahoo Finance",
+          "time": "10/6"
+        },
+        {
+          "headline_ko": "데일리 샌프란시스코 연은 총재, 추가 인상은 물가에 달렸다",
+          "headline_en": "Fed's Daly: More Hikes Hinge on Price Shocks",
+          "body_ko": "데일리 총재는 6일 악시오스 인터뷰에서 9월 인상을 지지했다고 밝혔다. 추가 인상 여부는 물가 충격이 얼마나 지속되는지에 달렸다고 말했다.",
+          "body_en": "In an Oct 6 Axios interview, SF Fed President Daly backed September's hike and said further hikes depend on how persistent the price shock proves.",
+          "src": "Axios",
+          "time": "10/6"
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 지금부터 오늘 밤까지, 이번 주 굵직한 일정 포함",
+    "en": "KST · from now to tonight, plus key dates this week"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30",
+      "※ 10/9(금) 한글날로 코스피·코스닥 휴장"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM",
+      "※ KOSPI and KOSDAQ closed Fri Oct 9 (Hangul Day)"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "08:30",
+      "title_ko": "日 8월 현금급여총액 (전년비)",
+      "title_en": "Japan Aug Labor Cash Earnings (YoY)",
+      "detail_ko": "일본 임금 상승률 지표",
+      "detail_en": "Japan wage growth data",
+      "importance": "mid"
+    },
+    {
+      "time": "10/8",
+      "title_ko": "삼성전자 3분기 잠정실적",
+      "title_en": "Samsung Electronics Q3 preliminary results",
+      "detail_ko": "컨센서스 영업이익 108.1조원(와이즈리포트) · 다수 매체 8일 발표 예상",
+      "detail_en": "Op. profit consensus ₩108.1T (WiseReport) · most outlets expect Oct 8",
+      "importance": "high"
+    },
+    {
+      "time": "15:00",
+      "title_ko": "獨 8월 산업생산 (전월비)",
+      "title_en": "Germany Aug Industrial Production (MoM)",
+      "detail_ko": "독일 산업 생산 지표",
+      "detail_en": "German industrial output data",
+      "importance": "mid"
+    },
+    {
+      "time": "23:30",
+      "title_ko": "美 EIA 원유재고",
+      "title_en": "US EIA Crude Oil Inventories",
+      "detail_ko": "유가 보합 국면의 단서",
+      "detail_en": "A clue while oil is flat",
+      "importance": "mid"
+    },
+    {
+      "time": "10/8 03:00",
+      "title_ko": "美 FOMC 9월 의사록 공개",
+      "title_en": "US FOMC Minutes (Sept)",
+      "detail_ko": "10월 금리 인상 여부를 가늠할 단서",
+      "detail_en": "Clues on whether a hike comes in October",
+      "importance": "high"
+    },
+    {
+      "time": "10/8 21:30",
+      "title_ko": "美 신규 실업수당 청구",
+      "title_en": "US Initial Jobless Claims",
+      "detail_ko": "주간 노동시장 점검",
+      "detail_en": "Weekly labor-market check",
+      "importance": "mid"
+    },
+    {
+      "time": "10/9",
+      "title_ko": "한글날 코스피·코스닥 휴장",
+      "title_en": "KOSPI/KOSDAQ closed for Hangul Day",
+      "detail_ko": "10/8(목) 마감 후 10/12(월) 재개장",
+      "detail_en": "Closed after Thu Oct 8; reopens Mon Oct 12",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "card_photos": {
+    "1": "The New York Stock Exchange facade at dawn with a large American flag, warm amber light raking across the columns, subtle glowing index tickers, cinematic low-key lighting, navy and amber tones",
+    "3": "A dark trading floor wall of screens with a steadily rising green line chart reaching new highs, shallow depth of field, cool blue and warm amber light",
+    "4": "A neon-lit dashboard of industry sectors as glowing vertical bars, most rising green, one falling blue, moody financial lighting",
+    "7": "Close-up of a glowing AI accelerator chip on a circuit board with blue and amber light reflections, shallow depth of field"
+  },
+  "caption_ko": "S&P 500이 7,818.93(+0.58%)으로 8/13 이후 처음 사상 최고치를 경신했고, 나스닥도 27,599.79(+0.45%)로 이틀 연속 신고가를 기록했어요. 美 10년물은 5.31%에서 5.27%로 내렸고, 마벨은 투자자의 날에 2030년 목표 시장 4,000억달러를 제시하며 5.81% 올랐습니다. 반면 마이크론(−1.73%)과 인텔(−3.18%)은 내렸고, 미국에 상장된 MSCI 한국 ETF(EWY)는 2.64% 내렸어요. 이번 주 삼성전자 3분기 잠정실적(8일 예상)과 내일 새벽 FOMC 의사록을 지켜보세요. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #아침브리핑 #미국증시 #나스닥 #S&P500 #마벨 #엔비디아 #마이크론 #인텔 #삼성전자 #FOMC #국채금리 #투자정보 #주식\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "The S&P 500 closed at a record 7,818.93 (+0.58%), its first since Aug 13, and the Nasdaq added 0.45% to 27,599.79 for a second straight record. The 10-year Treasury yield eased from 5.31% to 5.27%, and Marvell jumped 5.81% after laying out a $400B 2030 market target. Micron (-1.73%) and Intel (-3.18%) fell, and the US-listed MSCI Korea ETF (EWY) lost 2.64%. Watch Samsung's Q3 preliminary results (expected Oct 8) and the FOMC minutes early Thursday. Swipe for details 📊\n\nFollow + save for the brief every morning and evening!\n\n#luckyonbrief #marketbrief #morningbrief #USstocks #Nasdaq #SP500 #Marvell #Nvidia #Micron #Intel #Samsung #FOMC #Treasuryyields #investing #stocks\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "US Treasury",
+    "CNN Fear & Greed",
+    "Commerce Dept",
+    "FXStreet 경제캘린더",
+    "NYMEX/COMEX",
+    "KRX",
+    "News reports"
+  ]
+}
