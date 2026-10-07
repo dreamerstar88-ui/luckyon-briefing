@@ -1,0 +1,628 @@
+{
+ "date": "2026-10-08",
+ "session": "am",
+ "dateLabel_ko": "10월 8일 목요일 · 아침 브리핑",
+ "dateLabel_en": "Thursday, October 8 · Morning Brief",
+ "headline_ko": "美 증시 최고치서 반락, 10년물 입찰 5.30%",
+ "headline_en": "US Stocks Pull Back From Records as 10Y Auction Hits 5.30%",
+ "headline_sub_ko": "FOMC 의사록은 연내 추가 인상을 시사했지만 시점은 밝히지 않았다",
+ "headline_sub_en": "FOMC minutes point to another hike this year, with no timing given",
+ "cover_kicker": {
+  "ko": "간밤 미국장 · 10/7 마감",
+  "en": "US Overnight · Oct 7 Close"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "나스닥·S&P 500 각 ▼0.22%",
+    "en": "Nasdaq, S&P 500 each ▼0.22%"
+   },
+   {
+    "ko": "27,538.69 / 7,801.77 · 다우 ▼0.66%",
+    "en": "27,538.69 / 7,801.77 · Dow ▼0.66%"
+   }
+  ],
+  [
+   "bond",
+   {
+    "ko": "美 10년물 입찰 낙찰금리 5.300%",
+    "en": "US 10Y auction clears at 5.300%"
+   },
+   {
+    "ko": "2000년 11월 이후 최고 · 응찰률 2.77배",
+    "en": "Highest since Nov 2000 · bid-to-cover 2.77"
+   }
+  ],
+  [
+   "rate",
+   {
+    "ko": "FOMC 9월 의사록 공개",
+    "en": "FOMC September minutes out"
+   },
+   {
+    "ko": "대부분 참석자 '연내 한 차례 더 인상'",
+    "en": "Most participants see another hike by year-end"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "나스닥은 -0.22%(27,538.69), S&P 500은 -0.22%(7,801.77)로 마감했다. 전날 두 지수가 사상 최고치로 마감한 직후의 반락이다. 다우는 -0.66%였다.",
+   "390억달러 규모 10년물 국채 입찰은 낙찰금리 5.300%로 2000년 11월 이후 가장 높았고, 응찰률은 2.77배였다. 입찰 뒤 10년물 금리는 5.28%로 마감했다.",
+   "FOMC 9월 의사록에서 대부분의 참석자는 연말까지 한 차례 더 올리는 게 적절하다고 봤다. 시점은 밝히지 않았다.",
+   "11개 섹터 중 헬스케어(+1.03%)만 올랐고 산업재는 -2.18%였다. 반도체 ETF(SMH)는 -1.18%였지만 마이크론은 +4.06%로 거래대금 1위였다."
+  ],
+  "lines_en": [
+   "The Nasdaq fell 0.22% to 27,538.69 and the S&P 500 fell 0.22% to 7,801.77, a pullback a day after both closed at record highs. The Dow lost 0.66%.",
+   "The $39B 10-year note auction cleared at 5.300%, the highest since November 2000, with a bid-to-cover of 2.77. The 10-year yield closed at 5.28% afterward.",
+   "In the September FOMC minutes, most participants judged another hike by year-end would likely be appropriate. No timing was given.",
+   "Only health care (+1.03%) rose among the 11 sectors; industrials fell 2.18%. The semiconductor ETF (SMH) lost 1.18%, yet Micron rose 4.06% and led turnover."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "27,538.69",
+   "delta": "▼0.22%",
+   "dir": "down",
+   "note_ko": "10/7 미국장 마감 종가 · 사상 최고치(10/6) 다음 날",
+   "note_en": "Oct 7 US close · day after the Oct 6 record"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,801.77",
+   "delta": "▼0.22%",
+   "dir": "down",
+   "note_ko": "10/7 미국장 마감 종가 · 7,800선 위 이틀째 마감",
+   "note_en": "Oct 7 US close · second close above 7,800"
+  },
+  {
+   "label": "KOSPI",
+   "value": "6,803.90",
+   "delta": "▼1.98%",
+   "dir": "down",
+   "note_ko": "10/7 정규장 종가 · 코스닥 898.43(▼2.34%)",
+   "note_en": "Oct 7 regular-session close · KOSDAQ 898.43 (▼2.34%)"
+  },
+  {
+   "label": "VIX",
+   "value": "15.08",
+   "delta": "▲0.47%",
+   "dir": "up",
+   "note_ko": "10/7 종가 · 전일 15.01 대비",
+   "note_en": "Oct 7 close · vs prior 15.01"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "45",
+   "delta": "47 → 45 ▼",
+   "dir": "down",
+   "note_ko": "CNN 10/7 종가 · 공포 구간",
+   "note_en": "CNN Oct 7 close · fear zone"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.28%",
+   "delta": "5.27% → 5.28% ▲",
+   "dir": "up",
+   "note_ko": "10/7 재무부 집계 · 입찰 직후 마감",
+   "note_en": "Oct 7 Treasury data · after the auction"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,339",
+   "delta": "▼0.32%",
+   "dir": "down",
+   "note_ko": "일봉 기준 · 서울 종가와 다를 수 있음",
+   "note_en": "Daily bar · may differ from Seoul close",
+   "value_sub": "· DXY 102.3"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,140.70",
+   "delta": "▼1.11%",
+   "dir": "down",
+   "note_ko": "COMEX 12월물 결제가 · 전일 4,187.10달러 대비",
+   "note_en": "COMEX Dec settle · vs prior $4,187.10"
+  },
+  {
+   "label": "WTI",
+   "value": "$88.28",
+   "delta": "▼1.30%",
+   "dir": "down",
+   "note_ko": "NYMEX 11월물 결제가 · 전일 89.44달러 대비",
+   "note_en": "NYMEX Nov settle · vs prior $89.44"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$83,288",
+   "delta": "▼2.65%",
+   "dir": "down",
+   "note_ko": "UTC 일봉(진행 중) 기준",
+   "note_en": "UTC daily bar (in progress)"
+  }
+ ],
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "나스닥·S&P 500은 10/7 미국장 마감 종가이고, 코스피는 10/7 정규장 종가(10/8은 장 열리기 전)다. 10년물은 재무부 집계 종가, Fear&Greed는 CNN 10/7 종가 기준이다. 비트코인은 UTC 일봉(진행 중)이다.",
+ "market_note_en": "Nasdaq and S&P 500 are Oct 7 US closes; KOSPI is the Oct 7 regular-session close (Oct 8 has not opened). The 10Y yield is the Treasury close and Fear&Greed is CNN's Oct 7 close. Bitcoin is the in-progress UTC daily bar.",
+ "chart_series_values": [
+  27068.72,
+  26820.38,
+  26797.54,
+  26861.06,
+  26871.6,
+  27190.86,
+  27477.31,
+  27599.79,
+  27538.69
+ ],
+ "chart_series_labels": [
+  "9.25",
+  "9.28",
+  "9.29",
+  "9.30",
+  "10.1",
+  "10.2",
+  "10.5",
+  "10.6",
+  "10.7"
+ ],
+ "chart_title": {
+  "ko": "사상 최고치 다음 날, 나스닥은 0.22% 반락",
+  "en": "Nasdaq slips 0.22% a day after its record"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "9.28 26,820.38 → 10.6 고점 27,599.79 → 10.7 27,538.69",
+  "en": "9/28 26,820.38 → 10/6 high 27,599.79 → 10/7 27,538.69"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "OVERNIGHT",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "11개 섹터 중 오른 곳은 헬스케어뿐",
+  "en": "Only health care rose among 11 sectors"
+ },
+ "sector_sub": {
+  "ko": "GICS 11개 섹터 ETF + 반도체(SMH) · 10/7 종가 기준",
+  "en": "GICS 11 sector ETFs + semis (SMH) · Oct 7 close"
+ },
+ "rank_kicker": "TURNOVER LEADERS",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Trading Value"
+ },
+ "rank_sub": {
+  "ko": "미국 거래대금 상위 종목 · 가격×거래량 추정",
+  "en": "US turnover leaders · price × volume estimate"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $ billion"
+ },
+ "econ_kicker": "DATA & EARNINGS",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "간밤 발표·집계된 주요 지표",
+  "en": "Key data released or tallied overnight"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Record",
+   "stats": [
+    {
+     "label_ko": "나스닥종합",
+     "label_en": "Nasdaq Composite",
+     "value": "27,538.69",
+     "delta": "▼0.22%",
+     "dir": "down",
+     "sub_ko": "전일 27,599.79 · 10/2 종가 대비 +1.28%",
+     "sub_en": "Prev 27,599.79 · +1.28% vs Oct 2 close"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,801.77",
+     "delta": "▼0.22%",
+     "dir": "down",
+     "sub_ko": "전일 7,818.93 · 7,800선 위 이틀째",
+     "sub_en": "Prev 7,818.93 · 2nd close above 7,800"
+    }
+   ],
+   "note_ko": "다우 -0.66%(51,179.87), 러셀2000 -1.31%(2,793.36)로 중소형주 낙폭이 더 컸다. 하락 종목이 3분의 2를 넘었다.",
+   "note_en": "The Dow fell 0.66% to 51,179.87 and the Russell 2000 fell 1.31% to 2,793.36. Decliners made up over two-thirds of issues."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "bars": [
+    {
+     "label_ko": "헬스케어",
+     "label_en": "Health Care",
+     "value": 1.03
+    },
+    {
+     "label_ko": "유틸리티",
+     "label_en": "Utilities",
+     "value": -0.02
+    },
+    {
+     "label_ko": "필수소비재",
+     "label_en": "Staples",
+     "value": -0.12
+    },
+    {
+     "label_ko": "기술",
+     "label_en": "Technology",
+     "value": -0.3
+    },
+    {
+     "label_ko": "경기소비재",
+     "label_en": "Discretionary",
+     "value": -0.32
+    },
+    {
+     "label_ko": "통신",
+     "label_en": "Comm.",
+     "value": -0.35
+    },
+    {
+     "label_ko": "금융",
+     "label_en": "Financials",
+     "value": -0.48
+    },
+    {
+     "label_ko": "에너지",
+     "label_en": "Energy",
+     "value": -0.61
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": -1.18
+    },
+    {
+     "label_ko": "부동산",
+     "label_en": "Real Estate",
+     "value": -1.29
+    },
+    {
+     "label_ko": "소재",
+     "label_en": "Materials",
+     "value": -1.51
+    },
+    {
+     "label_ko": "산업재",
+     "label_en": "Industrials",
+     "value": -2.18
+    }
+   ],
+   "note_ko": "섹터 ETF(XLV·XLU·XLP·XLK·XLY·XLC·XLF·XLE·XLRE·XLB·XLI)와 반도체 ETF(SMH)의 10/6 대비 종가 등락률이다.",
+   "note_en": "Close-to-close changes vs Oct 6 for the sector ETFs (XLV, XLU, XLP, XLK, XLY, XLC, XLF, XLE, XLRE, XLB, XLI) and the semiconductor ETF (SMH)."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "rows": [
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$32.9B",
+     "pct": 4.06
+    },
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$19.2B",
+     "pct": -0.74
+    },
+    {
+     "name_ko": "샌디스크",
+     "name_en": "Sandisk",
+     "value": "$15.4B",
+     "pct": 1.92
+    },
+    {
+     "name_ko": "스페이스X",
+     "name_en": "SpaceX",
+     "value": "$12.9B",
+     "pct": -2.51
+    },
+    {
+     "name_ko": "AMD",
+     "name_en": "AMD",
+     "value": "$11.9B",
+     "pct": -0.55
+    }
+   ],
+   "share": {
+    "label_ko": "표본 300종목 거래대금 중 상승·하락 종목 비중",
+    "label_en": "Up vs down share of sample turnover (300 stocks)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상승 종목",
+      "label_en": "Advancers",
+      "pct": 42.9,
+      "color": "#e5484d"
+     },
+     {
+      "label_ko": "하락 종목",
+      "label_en": "Decliners",
+      "pct": 57.1,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "야후 스크리너 거래대금 상위 300종목 기준(가격×거래량 추정, 다섯 행 같은 산식). 상승 76개·하락 218개·보합 6개로 하락 종목에 쓰인 돈이 더 많았다.",
+   "note_en": "Yahoo screener top 300 by turnover (price × volume estimate, same formula for all rows). 76 advanced, 218 declined and 6 were flat; more money went into decliners."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "美 10년물 국채 입찰 (낙찰금리)",
+     "label_en": "US 10-Year Note Auction (Yield)",
+     "value": "5.300%",
+     "delta": "4.834% → 5.300% ▲",
+     "dir": "up",
+     "sub_ko": "390억달러 · 응찰률 2.77배",
+     "sub_en": "$39B · bid-to-cover 2.77",
+     "ref_ko": "신규 발행 국채에 적용되는 낙찰금리 · 직전 입찰 4.834%",
+     "ref_en": "Yield on newly issued notes; prior auction 4.834%"
+    },
+    {
+     "label_ko": "美 10년물 국채금리 (재무부)",
+     "label_en": "US 10-Year Treasury Yield",
+     "value": "5.28%",
+     "delta": "5.27% → 5.28% ▲",
+     "dir": "up",
+     "sub_ko": "10/6 → 10/7 종가",
+     "sub_en": "Oct 6 → Oct 7 close"
+    },
+    {
+     "label_ko": "Fear & Greed 지수 (CNN)",
+     "label_en": "Fear & Greed Index (CNN)",
+     "value": "45",
+     "delta": "47 → 45 ▼",
+     "dir": "down",
+     "sub_ko": "10/7 종가 · 공포 구간",
+     "sub_en": "Oct 7 close · fear zone"
+    },
+    {
+     "label_ko": "美 하락 종목 수 (거래대금 상위 300)",
+     "label_en": "US Decliners (Top 300 by Turnover)",
+     "value": "218",
+     "delta": {
+      "ko": "상승 76 · 하락 218",
+      "en": "Up 76 · Down 218"
+     },
+     "dir": "down",
+     "sub_ko": "보합 6 · 표본 300종목",
+     "sub_en": "6 unchanged · 300-stock sample",
+     "ref_ko": "표본 300종목 중 하락 종목 수 · 상승 종목의 거래대금 비중은 42.9%",
+     "ref_en": "Decliners among the 300 sampled stocks; advancers took 42.9% of turnover"
+    }
+   ],
+   "cols": 2,
+   "note_ko": "10년물 입찰은 직전 입찰 낙찰금리 대비, 국채금리·Fear&Greed는 직전 거래일 대비다.",
+   "note_en": "The auction is compared with the prior auction; the yield and Fear&Greed with the previous session."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductor Tech",
+   "items": [
+    {
+     "headline_ko": "마이크론 +4.06%, 美 거래대금 1위",
+     "headline_en": "Micron +4.06%, No.1 in US turnover",
+     "body_ko": "마이크론이 4.06% 올라 거래대금 약 329억달러로 1위였다. D.A. 데이비슨은 목표주가를 2,100달러에서 3,000달러로 올렸다.",
+     "body_en": "Micron rose 4.06% and led turnover at about $32.9B. D.A. Davidson raised its price target from $2,100 to $3,000.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    },
+    {
+     "headline_ko": "반도체 ETF(SMH) -1.18%, 기술 섹터 -0.30%",
+     "headline_en": "Semis ETF (SMH) -1.18%, tech sector -0.30%",
+     "body_ko": "SMH는 632.50달러에서 625.03달러로, 기술 섹터 ETF(XLK)는 202.00달러에서 201.39달러로 내렸다. 기술주보다 반도체 낙폭이 컸다.",
+     "body_en": "SMH slid from $632.50 to $625.03 and the tech ETF (XLK) from $202.00 to $201.39. Semiconductors fell more than the broader tech group.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    },
+    {
+     "headline_ko": "삼성전자 3분기 잠정실적, 오늘 발표 예정",
+     "headline_en": "Samsung Q3 preliminary results due today",
+     "body_ko": "삼성전자가 8일 3분기 잠정실적을 공시할 예정이라고 언론이 전했다. 에프앤가이드 집계 영업이익 컨센서스는 약 106.6조원이다.",
+     "body_en": "Samsung is reported to publish Q3 preliminary results on Oct 8. FnGuide's operating profit consensus is about ₩106.6T.",
+     "src": "FnGuide",
+     "time": "10/8"
+    },
+    {
+     "headline_ko": "AI 반도체 대형주는 엇갈렸다",
+     "headline_en": "AI chip megacaps diverged",
+     "body_ko": "엔비디아는 -0.74%에 거래대금 192억달러(2위), AMD는 -0.55%에 119억달러였다. 인텔은 +0.55%에 93억달러였다.",
+     "body_en": "Nvidia fell 0.74% on $19.2B of turnover (No.2) and AMD fell 0.55% on $11.9B. Intel rose 0.55% on $9.3B.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Key News",
+   "items": [
+    {
+     "headline_ko": "FOMC 의사록: 연내 추가 인상 우세, 시점은 없어",
+     "headline_en": "FOMC minutes: another hike likely, no timing",
+     "body_ko": "9월 의사록에서 대부분의 참석자는 연말까지 한 차례 더 올리는 게 적절하다고 봤다. 이후 결정은 들어오는 지표에 달렸다고 했다.",
+     "body_en": "In the September minutes, most participants judged another hike by year-end would likely be appropriate. Later decisions depend on incoming data.",
+     "src": "Fed",
+     "time": "10/8 03:00 KST"
+    },
+    {
+     "headline_ko": "10년물 입찰 5.300%, 2000년 11월 이후 최고",
+     "headline_en": "10Y auction at 5.300%, highest since Nov 2000",
+     "body_ko": "응찰률은 2.77배, 간접입찰 80.3%였다. 입찰 직전 5.31%에서 5.27%까지 내렸다가 5.28%로 마감했고 장중엔 5.36%까지 올랐다.",
+     "body_en": "Bid-to-cover was 2.77 with indirect bidders at 80.3%. The yield fell from 5.31% to 5.27% after the sale, closed at 5.28%, and had touched 5.36% intraday.",
+     "src": "U.S. Treasury",
+     "time": "10/7"
+    },
+    {
+     "headline_ko": "다우 -0.66%, 러셀2000 -1.31%",
+     "headline_en": "Dow -0.66%, Russell 2000 -1.31%",
+     "body_ko": "은행주 ETF(KBE -1.60%·KRE -1.68%)가 약했고 하락 종목이 3분의 2를 넘었다. 다우는 51,179.87에 마감했다.",
+     "body_en": "Bank ETFs (KBE -1.60%, KRE -1.68%) were weak and decliners topped two-thirds. The Dow closed at 51,179.87.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    },
+    {
+     "headline_ko": "금 -1.11%, WTI -1.30%, 비트코인 -2.65%",
+     "headline_en": "Gold -1.11%, WTI -1.30%, Bitcoin -2.65%",
+     "body_ko": "WTI 11월물은 88.28달러, 금 12월물은 4,140.70달러(약 2개월 최저 수준)에 결제됐다. 비트코인은 UTC 일봉 83,288달러다.",
+     "body_en": "WTI Nov settled at $88.28 and gold Dec at $4,140.70, near a two-month low. Bitcoin is at $83,288 on the UTC daily bar.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    },
+    {
+     "headline_ko": "오늘 옵션 만기·반도체 ETF 비중 조정 매매",
+     "headline_en": "Options expiry and semis-ETF rebalancing trades today",
+     "body_ko": "24개 ETF(운용자산 23.2조원)가 정기변경을 앞두고 비중 조정 매매에 나선다. 삼성증권 추산 삼성전자 약 2,000억원 매도, SK하이닉스 약 900억원 매수 요인.",
+     "body_en": "24 ETFs (₩23.2T AUM) trade to adjust weights ahead of index changes. Samsung Securities sees ~₩200B Samsung selling, ~₩90B SK hynix buying.",
+     "src": "Hankyung",
+     "time": "10/8"
+    },
+    {
+     "headline_ko": "원/달러 1,339원(-0.32%), 달러인덱스 102.27",
+     "headline_en": "USD/KRW 1,339 (-0.32%), dollar index 102.27",
+     "body_ko": "원/달러는 일봉 기준 1,339.48원으로 1,343.75원에서 내렸다. 달러인덱스는 101.83에서 102.27로 0.43% 올랐다.",
+     "body_en": "USD/KRW slid from 1,343.75 to 1,339.48 on the daily bar. The dollar index rose 0.43% from 101.83 to 102.27.",
+     "src": "Yahoo Finance",
+     "time": "10/7"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "AHEAD",
+ "schedule_sub": {
+  "ko": "지금부터 오늘 밤 9시까지, 삼성전자 실적 포함",
+  "en": "From now until 9 PM KST, incl. Samsung results"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30",
+   "※ 10/9(금) 한글날로 코스피·코스닥 휴장"
+  ],
+  "lines_en": [
+   "Regular session 09:00–15:30 KST · auctions 08:30–09:00 / 15:20–15:30",
+   "※ KOSPI and KOSDAQ closed Fri Oct 9 (Hangul Day)"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "10/8 AM",
+   "title_ko": "삼성전자 3분기 잠정실적 공시",
+   "title_en": "Samsung Electronics Q3 preliminary results",
+   "detail_ko": "에프앤가이드 영업이익 컨센서스 약 106.6조원",
+   "detail_en": "FnGuide operating profit consensus ~₩106.6T",
+   "importance": "high"
+  },
+  {
+   "time": "08:50",
+   "title_ko": "日 8월 경상수지 (십억엔)",
+   "title_en": "Japan Current Account (Aug, ¥bn)",
+   "detail_ko": "예상 3,194.6 · 이전 2,988",
+   "detail_en": "Est. 3,194.6 · Prior 2,988",
+   "importance": "mid"
+  },
+  {
+   "time": "15:00",
+   "title_ko": "獨 8월 무역수지 (십억유로)",
+   "title_en": "Germany Trade Balance (Aug, €bn)",
+   "detail_ko": "예상 19 · 이전 21.3",
+   "detail_en": "Est. 19 · Prior 21.3",
+   "importance": "mid"
+  },
+  {
+   "time": "17:30",
+   "title_ko": "월러 연준 이사 연설 (투표권 O)",
+   "title_en": "Fed Governor Waller speaks (voter)",
+   "detail_ko": "의사록 공개 다음 날 발언",
+   "detail_en": "Speaks a day after the minutes",
+   "importance": "mid"
+  },
+  {
+   "time": "10/8 BMO",
+   "title_ko": "펩시코 실적 발표",
+   "title_en": "PepsiCo earnings",
+   "detail_ko": "EPS 예상 2.29달러 · 매출 예상 249.5억달러",
+   "detail_en": "Est. EPS $2.29 · revenue $24.95B",
+   "importance": "mid"
+  },
+  {
+   "time": "20:30",
+   "title_ko": "ECB 통화정책회의 의사록",
+   "title_en": "ECB Monetary Policy Meeting Accounts",
+   "detail_ko": "유로존 금리 경로 단서",
+   "detail_en": "Clues on the euro-zone rate path",
+   "importance": "high"
+  },
+  {
+   "time": "10/9",
+   "title_ko": "한글날 코스피·코스닥 휴장",
+   "title_en": "KOSPI/KOSDAQ closed for Hangul Day",
+   "detail_ko": "오늘 마감 후 10/12(월) 재개장",
+   "detail_en": "Closed after today; reopens Mon Oct 12",
+   "importance": "high"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "card_photos": {
+  "1": "Wall Street at dawn after a pullback from record highs, glowing bond yield ticker boards over lower Manhattan, moody navy and amber tones, cinematic low-key lighting",
+  "3": "A dark trading floor wall of screens showing a line chart near record highs with a small dip, cool blue and warm amber light, shallow depth of field",
+  "4": "A neon-lit dashboard of eleven sector bars, most dipping slightly blue and one rising red, financial display, moody lighting",
+  "7": "Close-up of a memory chip and wafer under blue and amber light, shallow depth of field, dark background"
+ },
+ "caption_ko": "간밤 나스닥은 -0.22%(27,538.69), S&P 500은 -0.22%(7,801.77)로 사상 최고치 다음 날 반락했습니다. 390억달러 규모 10년물 국채 입찰은 낙찰금리 5.300%로 2000년 11월 이후 최고였고, FOMC 9월 의사록에서는 대부분의 참석자가 연내 한 차례 더 올리는 게 적절하다고 봤습니다. 마이크론은 +4.06%로 거래대금 1위였고, 삼성전자 3분기 잠정실적은 오늘 발표 예정이며 내일(9일)은 한글날로 증시가 쉽니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #아침브리핑 #미국증시 #나스닥 #SP500 #FOMC #국채금리 #마이크론 #삼성전자 #반도체 #코스피 #환율 #투자정보 #주식\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "The Nasdaq fell 0.22% to 27,538.69 and the S&P 500 fell 0.22% to 7,801.77, a pullback a day after record closes. The $39B 10-year note auction cleared at 5.300%, the highest since November 2000, and the September FOMC minutes showed most participants see another hike by year-end as likely appropriate. Micron rose 4.06% to lead turnover; Samsung reports Q3 preliminary results today and Korean markets are shut tomorrow for Hangul Day. Swipe for details 📊\n\nFollow + save for the brief every morning and evening!\n\n#luckyonbrief #marketbrief #morningbrief #WallStreet #Nasdaq #SP500 #FOMC #Treasuryyields #Micron #Samsung #semiconductors #KOSPI #investing #stocks\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "U.S. Treasury",
+  "Fed",
+  "CNN Fear & Greed",
+  "FXStreet",
+  "Naver Finance",
+  "FnGuide",
+  "News reports"
+ ]
+}
