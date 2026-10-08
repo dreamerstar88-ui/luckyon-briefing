@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-09",
+  "session": "am",
+  "dateLabel_ko": "10월 9일 금요일 · 아침 브리핑",
+  "dateLabel_en": "Friday, October 9 · Morning Brief",
+  "headline_ko": "나스닥 1.25% 급락, OpenAI 매출 보도 속 AI·반도체 약세",
+  "headline_en": "Nasdaq Falls 1.25% as AI Chips Slide on OpenAI Report",
+  "headline_sub_ko": "유가 급등에 장기금리 부담까지 겹쳤다 · 코스피는 오늘 한글날 휴장",
+  "headline_sub_en": "Surging oil and high long-term yields weighed · Korea is closed today for Hangul Day",
+  "cover_kicker": { "ko": "간밤 미국장 · 10/8 마감", "en": "US Overnight · Oct 8 Close" },
+  "cover_facts": [
+    ["chip",
+      { "ko": "나스닥 ▼1.25% · S&P 500 ▼0.47%", "en": "Nasdaq ▼1.25% · S&P 500 ▼0.47%" },
+      { "ko": "27,193.34 / 7,765.36 · 다우 ▲0.10%", "en": "27,193.34 / 7,765.36 · Dow ▲0.10%" }],
+    ["ai",
+      { "ko": "OpenAI 연환산 매출 약 500억달러", "en": "OpenAI run rate about $50B" },
+      { "ko": "680억달러 추정은 파트너 총매출 포함 · 엔비디아 ▼2.94%", "en": "$68B estimate included partners · Nvidia ▼2.94%" }],
+    ["globe",
+      { "ko": "중동 긴장 속 브렌트 $104.28", "en": "Brent $104.28 amid Mideast tension" },
+      { "ko": "▲4% · WTI $91.49(▲3.6%) · 코스피 ▼2.62%", "en": "▲4% · WTI $91.49 (▲3.6%) · KOSPI ▼2.62%" }]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥은 -1.25%(27,193.34), S&P 500은 -0.47%(7,765.36)로 마감했다. 나스닥은 10/6 사상 최고치 이후 이틀 연속 내렸고, 다우는 +0.10%(51,231.64)였다.",
+      "CNBC는 OpenAI가 투자자에게 9월 말 연환산 매출을 약 500억달러로 밝혔다고 전했다. 680억달러 추정은 파트너 총매출을 포함한 기준이었다. 반도체 ETF(SMH)는 -2.84%, 인텔 -5.34%, 마이크론 -4.79%, 엔비디아 -2.94%였다.",
+      "걸프 해역 유조선 공격과 멕시코만 허리케인 생산 차질 우려에 브렌트유는 104.28달러(+4%)로 마감했고 WTI는 91.49달러(+3.6%)였다. 에너지(XLE)는 +2.97%, 필수소비재(XLP)는 +2.11%로 올랐다.",
+      "30년물 국채 입찰 낙찰금리는 5.618%로 직전 5.308%보다 높았지만 응찰률 2.54배로 수요는 양호했고, 10년물 금리는 5.22%로 마감했다. 코스피는 6,625.93(-2.62%)으로 마쳤고 오늘 10/9은 한글날로 휴장이다."
+    ],
+    "lines_en": [
+      "The Nasdaq fell 1.25% to 27,193.34 and the S&P 500 fell 0.47% to 7,765.36. The Nasdaq has now fallen two days in a row since its Oct 6 record; the Dow rose 0.10% to 51,231.64.",
+      "CNBC reported OpenAI told investors its annualized revenue was about $50B at end-September; the earlier $68B estimate included partners' gross revenue. The semiconductor ETF (SMH) fell 2.84%; Intel lost 5.34%, Micron 4.79%, Nvidia 2.94%.",
+      "After tanker attacks in Gulf waters and hurricane threats to US Gulf output, Brent closed at $104.28 (+4%) and WTI at $91.49 (+3.6%). Energy (XLE) rose 2.97% and staples (XLP) 2.11%.",
+      "The 30-year auction cleared at 5.618% versus 5.308% at the prior sale, with solid demand (bid-to-cover 2.54); the 10-year yield closed at 5.22%. The KOSPI fell 2.62% to 6,625.93 and is closed today for Hangul Day."
+    ]
+  },
+  "markets": [
+    { "label": "NASDAQ", "value": "27,193.34", "delta": "▼1.25%", "dir": "down", "note_ko": "10/8 미국장 마감 종가 · 사상 최고치(10/6) 이후 이틀 연속 하락", "note_en": "Oct 8 US close · second straight drop since the Oct 6 record" },
+    { "label": "S&P 500", "value": "7,765.36", "delta": "▼0.47%", "dir": "down", "note_ko": "10/8 미국장 마감 종가 · 7,800선 아래로 내려옴", "note_en": "Oct 8 US close · back below 7,800" },
+    { "label": "KOSPI", "value": "6,625.93", "delta": "▼2.62%", "dir": "down", "note_ko": "10/8 정규장 종가 · 오늘 휴장", "note_en": "Oct 8 regular close · closed today" },
+    { "label": "VIX", "value": "15.41", "delta": "▲2.19%", "dir": "up", "note_ko": "10/8 종가 · 전일 15.08 대비", "note_en": "Oct 8 close · vs prior 15.08" },
+    { "label": "Fear&Greed", "value": "38", "delta": "45 → 38 ▼", "dir": "down", "note_ko": "CNN 10/8 종가 · 공포 구간", "note_en": "CNN Oct 8 close · fear zone" },
+    { "label": "US 10Y", "value": "5.22%", "delta": "5.28% → 5.22% ▼", "dir": "down", "note_ko": "10/8 재무부 집계 · 30년물 입찰일", "note_en": "Oct 8 Treasury data · 30-year auction day" },
+    { "label": "USD/KRW", "value": "1,338.5", "delta": "▼0.14%", "dir": "down", "note_ko": "10/8 서울 주간거래 종가(15:30) 기준", "note_en": "Oct 8 Seoul daytime close (15:30)", "value_sub": "· DXY 102.1" },
+    { "label": "Gold", "value": "$4,157.30", "delta": "▲0.40%", "dir": "up", "note_ko": "COMEX 선물 마지막 체결가 · 전일 4,140.70달러 대비", "note_en": "COMEX futures last trade · vs prior $4,140.70" },
+    { "label": "WTI", "value": "$91.49", "delta": "▲3.6%", "dir": "up", "note_ko": "NYMEX 정산가(CNBC) · 전일 88.28달러 대비 · 브렌트 104.28달러", "note_en": "NYMEX settle (CNBC) · vs prior $88.28 · Brent $104.28" },
+    { "label": "Bitcoin", "value": "$81,673", "delta": "▼1.92%", "dir": "down", "note_ko": "UTC 일봉(진행 중) 기준", "note_en": "UTC daily bar (in progress)" }
+  ],
+  "tile_main": "NASDAQ",
+  "tile_side": ["S&P 500", "KOSPI"],
+  "tile_rest": ["VIX", "Fear&Greed", "US 10Y", "USD/KRW", "Gold", "WTI", "Bitcoin"],
+  "market_note_ko": "나스닥·S&P 500은 10/8 미국장 마감 종가이고, 코스피는 10/8 정규장 종가(10/9은 한글날 휴장)다. 10년물은 재무부 집계 종가, Fear&Greed는 CNN 10/8 종가 기준이다. 비트코인은 UTC 일봉(진행 중)이다.",
+  "market_note_en": "Nasdaq and S&P 500 are Oct 8 US closes; KOSPI is the Oct 8 regular-session close (Oct 9 is a Hangul Day holiday). The 10Y yield is the Treasury close and Fear&Greed is CNN's Oct 8 close. Bitcoin is the in-progress UTC daily bar.",
+  "chart_series_values": [26820.38, 26797.54, 26861.06, 26871.6, 27190.86, 27477.31, 27599.79, 27538.69, 27193.34],
+  "chart_series_labels": ["9.28", "9.29", "9.30", "10.1", "10.2", "10.5", "10.6", "10.7", "10.8"],
+  "chart_title": { "ko": "사상 최고치 이틀 뒤, 나스닥 1.25% 급락", "en": "Nasdaq drops 1.25% two days after its record" },
+  "chart_sub": { "ko": "나스닥종합 종가 · 최근 9거래일", "en": "Nasdaq Composite close · last 9 sessions" },
+  "chart_note": { "ko": "10.6 고점 27,599.79 → 10.7 27,538.69 → 10.8 27,193.34", "en": "10/6 high 27,599.79 → 10/7 27,538.69 → 10/8 27,193.34" },
+  "record_section": "미국장 기록",
+  "record_kicker": "OVERNIGHT",
+  "sector_section": "섹터별 등락",
+  "sector_title": { "ko": "에너지·필수소비재 강세, 기술·반도체 약세", "en": "Energy and staples up; tech and chips down" },
+  "sector_sub": { "ko": "GICS 11개 섹터 ETF + 반도체(SMH) · 10/8 종가 기준", "en": "GICS 11 sector ETFs + semis (SMH) · Oct 8 close" },
+  "rank_kicker": "TURNOVER LEADERS",
+  "rank_title": { "ko": "거래대금 상위", "en": "Top by Trading Value" },
+  "rank_sub": { "ko": "미국 거래대금 상위 종목 · 가격×거래량 추정", "en": "US turnover leaders · price × volume estimate" },
+  "rank_unit": { "ko": "단위 · 십억달러", "en": "Unit · $ billion" },
+  "econ_kicker": "DATA & EARNINGS",
+  "econ_title": { "ko": "실적 · 지표 발표", "en": "Earnings & Data" },
+  "econ_sub": { "ko": "간밤 발표·집계된 주요 지표", "en": "Key data released or tallied overnight" },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Market Record",
+      "stats": [
+        { "label_ko": "나스닥종합", "label_en": "Nasdaq Composite", "value": "27,193.34", "delta": "▼1.25%", "dir": "down", "sub_ko": "전일 27,538.69 · 10/6 고점 27,599.79", "sub_en": "Prev 27,538.69 · Oct 6 high 27,599.79" },
+        { "label_ko": "S&P 500", "label_en": "S&P 500", "value": "7,765.36", "delta": "▼0.47%", "dir": "down", "sub_ko": "전일 7,801.77 · 10/6 7,818.93", "sub_en": "Prev 7,801.77 · Oct 6 7,818.93" }
+      ],
+      "note_ko": "다우는 +0.10%(51,231.64)로 3대 지수 중 유일하게 올랐다. 반도체 ETF(SMH)는 -2.84%, 기술 섹터 ETF(XLK)는 -1.79%였다.",
+      "note_en": "The Dow rose 0.10% to 51,231.64, the only gainer among the big three. The semiconductor ETF (SMH) fell 2.84% and the tech ETF (XLK) 1.79%."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Moves",
+      "bars": [
+        { "label_ko": "에너지", "label_en": "Energy", "value": 2.97 },
+        { "label_ko": "필수소비재", "label_en": "Staples", "value": 2.11 },
+        { "label_ko": "금융", "label_en": "Financials", "value": 0.89 },
+        { "label_ko": "통신", "label_en": "Comm.", "value": 0.73 },
+        { "label_ko": "부동산", "label_en": "Real Estate", "value": 0.69 },
+        { "label_ko": "소재", "label_en": "Materials", "value": 0.59 },
+        { "label_ko": "산업재", "label_en": "Industrials", "value": 0.33 },
+        { "label_ko": "경기소비재", "label_en": "Discretionary", "value": 0.31 },
+        { "label_ko": "유틸리티", "label_en": "Utilities", "value": -0.19 },
+        { "label_ko": "헬스케어", "label_en": "Health Care", "value": -0.39 },
+        { "label_ko": "기술", "label_en": "Technology", "value": -1.79 },
+        { "label_ko": "반도체", "label_en": "Semis", "value": -2.84 }
+      ],
+      "note_ko": "섹터 ETF(XLE·XLP·XLF·XLC·XLRE·XLB·XLI·XLY·XLU·XLV·XLK)와 반도체 ETF(SMH)의 10/7 대비 종가 등락률이다. 11개 섹터 중 기술·헬스케어·유틸리티만 내렸다.",
+      "note_en": "Close-to-close changes vs Oct 7 for the sector ETFs (XLE, XLP, XLF, XLC, XLRE, XLB, XLI, XLY, XLU, XLV, XLK) and the semiconductor ETF (SMH). Only tech, health care and utilities fell among the 11 sectors."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top by Turnover",
+      "rows": [
+        { "name_ko": "마이크론", "name_en": "Micron", "value": "$30.5B", "pct": -4.79 },
+        { "name_ko": "엔비디아", "name_en": "Nvidia", "value": "$27.1B", "pct": -2.94 },
+        { "name_ko": "샌디스크", "name_en": "Sandisk", "value": "$14.8B", "pct": -4.9 },
+        { "name_ko": "AMD", "name_en": "AMD", "value": "$14.5B", "pct": -3.9 },
+        { "name_ko": "인텔", "name_en": "Intel", "value": "$12.7B", "pct": -5.34 }
+      ],
+      "share": {
+        "label_ko": "표본 300종목 거래대금 중 상승·하락 종목 비중",
+        "label_en": "Up vs down share of sample turnover (300 stocks)",
+        "mode": "nested",
+        "segments": [
+          { "label_ko": "상승 종목", "label_en": "Advancers", "pct": 29.4, "color": "#e5484d" },
+          { "label_ko": "하락 종목", "label_en": "Decliners", "pct": 70.6, "color": "#3987e5" }
+        ]
+      },
+      "note_ko": "야후 스크리너 거래대금 상위 300종목 기준(가격×거래량 추정, 다섯 행 같은 산식). 상승 157개·하락 136개로 종목 수는 비슷했지만 하락 종목에 쓰인 돈이 상승 종목의 2.4배였다.",
+      "note_en": "Yahoo screener top 300 by turnover (price × volume estimate, same formula for all five rows). Advancers (157) and decliners (136) were close in number, but decliners drew 2.4x the money."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "stats": [
+        { "label_ko": "삼성전자 3분기 잠정 영업이익", "label_en": "Samsung Q3 Operating Profit (Prelim.)", "value": "₩107.4T", "delta": { "ko": "전분기비 +20.0%", "en": "+20.0% QoQ" }, "dir": "up", "sub_ko": "매출 195조원 · 전년 동기비 +782.5%", "sub_en": "Revenue ₩195T · +782.5% YoY", "ref_ko": "국내 기업 최초의 분기 영업이익 100조원 돌파", "ref_en": "First Korean firm above ₩100T in quarterly operating profit" },
+        { "label_ko": "美 30년물 국채 입찰 (낙찰금리)", "label_en": "US 30-Year Bond Auction (Yield)", "value": "5.618%", "delta": "5.308% → 5.618% ▲", "dir": "up", "sub_ko": "220억달러 · 응찰률 2.54배(6회 평균 2.41배)", "sub_en": "$22B · bid-to-cover 2.54 (6-sale avg 2.41)" },
+        { "label_ko": "美 10년물 국채금리 (재무부)", "label_en": "US 10-Year Treasury Yield", "value": "5.22%", "delta": "5.28% → 5.22% ▼", "dir": "down", "sub_ko": "10/7 → 10/8 종가", "sub_en": "Oct 7 → Oct 8 close" },
+        { "label_ko": "美 신규 실업수당청구", "label_en": "US Initial Jobless Claims", "value": "197K", "delta": { "ko": "▼ 예상 200K · 이전 199K(수정)", "en": "▼ Est. 200K · Prior 199K (rev.)" }, "dir": "down", "sub_ko": "21:30 KST 발표", "sub_en": "Released 21:30 KST" },
+        { "label_ko": "펩시코 분기 EPS", "label_en": "PepsiCo Quarterly EPS", "value": "$2.34", "delta": { "ko": "▲ 예상 $2.29", "en": "▲ Est. $2.29" }, "dir": "up", "sub_ko": "매출 252.7억달러 · 연간 EPS 가이던스는 하향", "sub_en": "Revenue $25.27B · full-year EPS guidance cut" },
+        { "label_ko": "Fear & Greed 지수 (CNN)", "label_en": "Fear & Greed Index (CNN)", "value": "38", "delta": "45 → 38 ▼", "dir": "down", "sub_ko": "10/8 종가 · 공포 구간", "sub_en": "Oct 8 close · fear zone" }
+      ],
+      "cols": 2,
+      "note_ko": "국채 입찰은 직전 입찰 대비, 국채금리·Fear&Greed는 직전 거래일 대비다. 삼성전자 증감률은 회사 잠정실적 기준이다.",
+      "note_en": "The auction is compared with the prior auction; the yield and Fear&Greed with the previous session. Samsung's changes are from its preliminary results."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductor Tech",
+      "items": [
+        { "headline_ko": "OpenAI, ChatGPT에 GPT-6 순차 배포", "headline_en": "OpenAI begins GPT-6 rollout in ChatGPT", "body_ko": "유료는 10/7 GPT-6 Sol, 무료·Go는 10/8 GPT-6 Luna로 순차 배포한다. 버튼·차트·폼이 답변에 들어가는 Intelligent UI도 함께 나왔다.", "body_en": "Paid tiers got GPT-6 Sol on Oct 7; Free/Go get GPT-6 Luna on Oct 8. Intelligent UI adds buttons, charts and forms to replies.", "src": "OpenAI", "time": "10/7~8" },
+        { "headline_ko": "앤트로픽, Claude Haiku 5.5 공개", "headline_en": "Anthropic unveils Claude Haiku 5.5", "body_ko": "100K 토큰 이하 기준 입력 100만 토큰당 0.10달러, 출력 0.50달러다. 앤트로픽은 평균 운영비가 약 75% 줄 것으로 추정했다.", "body_en": "Priced at $0.10 per million input and $0.50 per million output tokens for prompts up to 100K. Anthropic estimates average running costs fall about 75%.", "src": "Anthropic", "time": "10/7" },
+        { "headline_ko": "OpenAI 연환산 매출 500억달러, AI주 급락", "headline_en": "OpenAI run rate ~$50B; AI stocks slide", "body_ko": "FT가 처음 보도하고 CNBC가 전했다. 680억달러는 파트너 총매출을 포함한 기준이었다. 엔비디아는 -2.94%였다.", "body_en": "First reported by the FT, confirmed by CNBC. The earlier $68B figure included partners' gross revenue. Nvidia fell 2.94%.", "src": "CNBC", "time": "10/8" },
+        { "headline_ko": "오라클 -5.48%·코어위브 -7.77%, AI 인프라주 급락", "headline_en": "Oracle -5.48%, CoreWeave -7.77% on AI worries", "body_ko": "OpenAI 매출 보도 속에 AI 인프라 관련주가 크게 내렸다. 오라클은 135.69달러, 코어위브는 81.58달러로 마감했다.", "body_en": "AI infrastructure names slid on the OpenAI report. Oracle closed at $135.69 and CoreWeave at $81.58.", "src": "Yahoo Finance", "time": "10/8" },
+        { "headline_ko": "MS·엔비디아, RTX Spark 서피스 노트북 공개", "headline_en": "Microsoft, Nvidia debut RTX Spark Surface laptop", "body_ko": "2,599달러부터(24GB)이며 10/16 출시다. 128GB 상위 구성은 대형 모델을 로컬로 돌린다는 게 MS 설명이다.", "body_en": "Starts at $2,599 (24GB) and ships Oct 16. Microsoft says top 128GB configs can run large models locally.", "src": "Microsoft", "time": "10/7" },
+        { "headline_ko": "반도체주 동반 하락, 인텔 -5.34%·마이크론 -4.79%", "headline_en": "Chip stocks slide: Intel -5.34%, Micron -4.79%", "body_ko": "샌디스크 -4.90%, AMD -3.90%, 엔비디아 -2.94%였다. 반도체 ETF(SMH)는 -2.84%로 마감했다.", "body_en": "Sandisk fell 4.90%, AMD 3.90% and Nvidia 2.94%. The semiconductor ETF (SMH) closed down 2.84%.", "src": "Yahoo Finance", "time": "10/8" }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "items": [
+        { "headline_ko": "코스피 2.62% 급락 6,625.93, 외인·기관 3.66조 순매도", "headline_en": "KOSPI falls 2.62% to 6,625.93 on 3.66T net selling", "body_ko": "외국인 1조9885억원, 기관 1조6714억원을 순매도했고 개인은 2조9061억원 순매수했다. 코스닥은 892.27(-0.69%)로 마쳤다.", "body_en": "Foreigners sold a net ₩1.99T and institutions ₩1.67T while individuals bought ₩2.91T. The KOSDAQ closed at 892.27 (-0.69%).", "src": "KRX", "time": "10/8" },
+        { "headline_ko": "삼성전자 3분기 영업이익 107.4조, 국내 첫 100조 돌파", "headline_en": "Samsung Q3 profit ₩107.4T, first above ₩100T", "body_ko": "매출은 195조원이다. 주가는 2.42% 내린 26만2,000원에 마감했다. 사업부별 실적은 공개되지 않았다.", "body_en": "Revenue was ₩195T. The shares fell 2.42% to ₩262,000. Segment results were not disclosed.", "src": "Samsung", "time": "10/8" },
+        { "headline_ko": "트럼프 \"선거 전 이란 공격 없다\", 유가 장중 고점 후퇴", "headline_en": "Trump: no Iran strike before midterms; oil off highs", "body_ko": "트럼프는 11월 3일 중간선거 전 이란을 공격하지 않겠다고 트루스소셜에 올렸다. 유가는 장중 고점에서 밀렸지만 브렌트유는 104.28달러(+4%)로 마감했다.", "body_en": "Trump posted that the US will not attack Iran before the Nov 3 midterms. Oil came off its highs, but Brent still closed at $104.28 (+4%).", "src": "CNBC", "time": "10/8" },
+        { "headline_ko": "카타르 북쪽 해상서 유조선 피격, 사상자 보고", "headline_en": "Tanker hit off northern Qatar, casualties reported", "body_ko": "영국 UKMTO는 카타르 북쪽 약 51해리에서 유조선이 다수의 발사체에 피격됐고 사상자가 보고됐다고 밝혔다. 세부 정황은 제한적이다.", "body_en": "UKMTO said a tanker about 51 nautical miles off northern Qatar was hit by multiple projectiles, with casualties reported.", "src": "UKMTO", "time": "10/8" },
+        { "headline_ko": "월러 \"추가 인상 필요, 속도엔 유연\"", "headline_en": "Fed's Waller: more hikes needed, pace flexible", "body_ko": "월러 이사는 인상이 연속 회의에서 이뤄질 필요는 없다고 했다. 무살렘 총재도 추가 긴축이 필요하다고 말했다.", "body_en": "Governor Waller said hikes need not come at consecutive meetings. Musalem also said more tightening is required.", "src": "Fed", "time": "10/8" },
+        { "headline_ko": "닛케이 -1.42%·항셍 -1.43%, 아시아 동반 약세", "headline_en": "Nikkei -1.42%, Hang Seng -1.43%: Asia slides", "body_ko": "닛케이225는 69,042.11, 항셍지수는 23,785.79로 마쳤다. 항셍테크는 -2.89%였고 상하이종합은 골든위크 뒤 -0.79%로 재개장했다.", "body_en": "The Nikkei 225 closed at 69,042.11 and the Hang Seng at 23,785.79. Hang Seng Tech fell 2.89%; Shanghai reopened after Golden Week down 0.79%.", "src": "Exchange data", "time": "10/8" }
+      ]
+    }
+  ],
+  "schedule_kicker": "AHEAD",
+  "schedule_sub": { "ko": "지금부터 오늘 밤까지, 미국 소비자심리 포함", "en": "From now into tonight, incl. US consumer sentiment" },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": ["※ 오늘(10/9)은 한글날로 코스피·코스닥 하루 휴장", "다음 거래일 10/12(월) · 정규장 09:00 ~ 15:30"],
+    "lines_en": ["※ KOSPI and KOSDAQ are closed today (Oct 9) for Hangul Day", "Next session Mon Oct 12 · regular hours 09:00–15:30 KST"]
+  },
+  "schedule": [
+    { "time": "10/9", "title_ko": "한글날 · 코스피·코스닥 휴장", "title_en": "Hangul Day · KOSPI, KOSDAQ closed", "detail_ko": "다음 거래일은 10/12(월)", "detail_en": "Next session is Mon Oct 12", "importance": "high" },
+    { "time": "08:30", "title_ko": "日 8월 가계지출 (전년비)", "title_en": "Japan Household Spending (Aug, YoY)", "detail_ko": "이전 -3.6%", "detail_en": "Prior -3.6%", "importance": "mid" },
+    { "time": "17:00", "title_ko": "EU 재무장관회의 (EcoFin)", "title_en": "EU EcoFin Council", "detail_ko": "EU 27개국 재무장관 이사회", "detail_en": "Finance ministers of the 27 EU states", "importance": "mid" },
+    { "time": "19:15", "title_ko": "ECB 치폴로네 이사 패널 참석", "title_en": "ECB's Cipollone on a panel", "detail_ko": "ECB 집행이사 · 디지털자산 관련 패널", "detail_en": "ECB Executive Board · digital-asset panel", "importance": "mid" },
+    { "time": "22:30", "title_ko": "ECB 슈나벨 이사 패널 참석", "title_en": "ECB's Schnabel on a panel", "detail_ko": "ECB 집행이사 · 심포지엄 패널(통화정책 발언 아님)", "detail_en": "ECB Executive Board · symposium panel (not a policy speech)", "importance": "mid" },
+    { "time": "23:00", "title_ko": "美 미시간대 소비자심리지수", "title_en": "US Michigan Consumer Sentiment", "detail_ko": "예상 47.6 · 이전 48.1 · 1년 기대인플레 이전 4.6%", "detail_en": "Est. 47.6 · Prior 48.1 · 1-yr inflation exp. prior 4.6%", "importance": "high" },
+    { "time": "10/9 US", "title_ko": "델타항공 실적 (미국 장 전)", "title_en": "Delta Air Lines earnings (pre-market)", "detail_ko": "EPS 예상 1.76~1.92달러(매체별 상이)", "detail_en": "EPS est. $1.76-1.92 (varies by source)", "importance": "mid" }
+  ],
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "card_photos": {
+    "1": "Dark moody wide shot of a semiconductor chip wafer under cold blue light with a falling red-tinted data glow in the background, heavy shadows, cinematic, no text",
+    "3": "A dim trading floor at dusk, rows of dark monitors with faint red downward graph lines reflected on glass, deep shadows, muted blue and red tones, no text"
+  },
+  "caption_ko": "간밤 나스닥은 -1.25%(27,193.34), S&P 500은 -0.47%(7,765.36)로 마감했습니다. OpenAI 연환산 매출이 약 500억달러로 기존 보도 680억달러보다 낮다는 CNBC 보도에 반도체 ETF(SMH)가 -2.84% 내렸고, 호르무즈 긴장 속에 브렌트유는 104.28달러(+4%)로 마감했습니다. 30년물 국채 입찰 낙찰금리는 5.618%였고, 코스피는 6,625.93(-2.62%)으로 마쳤습니다. 오늘(10/9)은 한글날로 국내 증시가 쉽니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #아침브리핑 #미국증시 #나스닥 #SP500 #OpenAI #반도체 #엔비디아 #국제유가 #국채금리 #삼성전자 #코스피 #환율 #투자정보 #주식\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "The Nasdaq fell 1.25% to 27,193.34 and the S&P 500 fell 0.47% to 7,765.36. CNBC reported OpenAI's annualized revenue was about $50B, below the $68B reported earlier, and the semiconductor ETF (SMH) lost 2.84%. Brent closed at $104.28 (+4%) amid Hormuz tensions, and the 30-year auction cleared at 5.618%. The KOSPI fell 2.62% to 6,625.93 and Korean markets are closed today for Hangul Day. Swipe through the cards for details 📊\n\nFollow + save so you never miss a morning or evening brief!\n\n#luckyonbriefing #marketbrief #morningbrief #USstocks #Nasdaq #SP500 #OpenAI #semiconductors #Nvidia #oilprices #Treasuryyields #Samsung #KOSPI #KRW #investing #stocks\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": ["Yahoo Finance", "FMP", "U.S. Treasury", "CNN Fear & Greed", "FXStreet", "KRX", "Samsung Electronics", "CNBC", "Reuters", "OpenAI", "Anthropic", "Constellation Energy", "News reports"]
+}
