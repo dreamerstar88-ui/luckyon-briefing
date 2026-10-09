@@ -1,51 +1,11 @@
 {
-  "fetchedAt": "2026-10-08T17:51:01Z",
+  "fetchedAt": "2026-10-09T02:14:12Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-06T17:51:01Z",
-    "to": "2026-10-22T17:51:01Z"
+    "from": "2026-10-07T02:14:12Z",
+    "to": "2026-10-23T02:14:12Z"
   },
   "events": [
-    {
-      "at": "2026-10-06T20:30:00Z",
-      "country": "US",
-      "name": "API Weekly Crude Oil Stock",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1.019,
-      "actual": -2.1,
-      "unit": null
-    },
-    {
-      "at": "2026-10-06T23:30:00Z",
-      "country": "JP",
-      "name": "BoJ's Sato speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-06T23:30:00Z",
-      "country": "JP",
-      "name": "Labor Cash Earnings (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 3.7,
-      "previous": 4.7,
-      "actual": 3.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-06T23:50:00Z",
-      "country": "JP",
-      "name": "JP Foreign Reserves",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1207.5,
-      "actual": 1178.4,
-      "unit": "$"
-    },
     {
       "at": "2026-10-07T03:00:00Z",
       "country": "CN",
@@ -473,7 +433,7 @@
       "impact": "LOW",
       "consensus": -3.6,
       "previous": -3.6,
-      "actual": null,
+      "actual": -3.1,
       "unit": "%"
     },
     {
@@ -2235,6 +2195,56 @@
       "previous": 1.955,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-10-22T23:30:00Z",
+      "country": "JP",
+      "name": "National Consumer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-22T23:30:00Z",
+      "country": "JP",
+      "name": "National CPI ex Food, Energy (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-22T23:30:00Z",
+      "country": "JP",
+      "name": "National CPI ex Fresh Food (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-23T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 54.1,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-23T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Services PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 51.3,
+      "actual": null,
+      "unit": null
     }
   ]
 }
