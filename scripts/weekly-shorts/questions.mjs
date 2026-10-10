@@ -194,6 +194,13 @@ export const QUESTIONS = [
     ko: '정규장에서 오른 날은 며칠이었을까요?', en: 'How many days closed higher in the regular session?',
     fn: (c) => c.dayReg.filter((x) => x.p > 0).length, kind: 'count',
     guard: '주간 등락률과 안 맞는 주가 흔하다. 사흘 오르고 하루에 다 반납하기도 한다.' },
+  // 6회차(2026-10-05 주)에 대표가 고른 질문. 기준(창 이전 사상 최고가)은 hist 로 받는다 —
+  // 매니페스트 question.prior_high 를 렌더러·자막·검사가 hist 한 봉으로 넘긴다. 없으면 셀 수 없으니 멈춘다.
+  { id: 'athbars', cat: '수준', unit: '개',
+    ko: '사상 최고가를 새로 쓴 5분봉은 몇 개였을까요?', en: 'How many 5-minute bars set a new all-time high?',
+    fn: (c) => { if (!c.hist.length) throw new Error('athbars: 창 이전 최고가(hist)가 없다');
+      let m = Math.max(...c.hist.map((b) => b.h)), n = 0; for (const b of c.bars) if (b.h > m) { n++; m = b.h; } return n; }, kind: 'count',
+    guard: '최고가 근처에서 끝난 주라도 0개일 수 있고, 한 번 뚫으면 수십 개가 쌓이기도 한다. 최근 104주 중 73주는 신고가 날이 하루도 없었다.' },
   { id: 'gapsum', cat: '연속', unit: '%',
     ko: '날마다 생긴 시가 갭을 다 더하면 몇 %였을까요?', en: 'How much did the daily opening gaps add up to?',
     fn: (c) => { let s = 0; for (let i = 1; i < c.days.length; i++) {

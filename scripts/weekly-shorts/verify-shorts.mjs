@@ -148,7 +148,9 @@ try {
   if (M.question) {
     const { QUESTIONS, buildCtx } = await import('./questions.mjs');
     const Q = QUESTIONS.find((q) => q.id === M.question.id);
-    const gotC = Q ? Q.fn(buildCtx(CB, [], M.events)) : null;
+    // 사상 최고가 질문은 창 이전 최고가를 hist 로 받아야 셀 수 있다(아래 [2] 와 같은 값).
+    const PH0 = M.question.prior_high, QH0 = PH0 ? [{ d: PH0.et, o: PH0.value, h: PH0.value, l: PH0.value, c: PH0.value }] : [];
+    const gotC = Q ? Q.fn(buildCtx(CB, QH0, M.events)) : null;
     if (typeof gotC === 'number') cmp('정답을 CNBC 봉으로 다시 셈', +gotC.toFixed(1), +(+M.question.answer_value).toFixed(1), 0.05);
   }
   const wkC = (CB.at(-1).c / CB[0].o - 1) * 100;
@@ -187,7 +189,9 @@ if (M.question) {
   const Q = QUESTIONS.find((q) => q.id === M.question.id);
   if (!Q) bad('질문 은행', M.question.id, '은행에 없는 id');
   else {
-    let got; try { got = Q.fn(buildCtx(BARS, [], M.events)); } catch (e) { got = null; }
+    // 사상 최고가 질문(athbars)은 창 이전 최고가를 hist 한 봉으로 받는다(6회차부터). 아래 [2-1] 이 그 값을 다시 확인한다.
+    const PH = M.question.prior_high, QH = PH ? [{ d: PH.et, o: PH.value, h: PH.value, l: PH.value, c: PH.value }] : [];
+    let got; try { got = Q.fn(buildCtx(BARS, QH, M.events)); } catch (e) { got = null; }
     if (got === null) bad('질문 재계산', '계산 실패', M.question.id);
     else {
       cmp('질문 답 재계산', typeof got === 'number' ? +got.toFixed(2) : got,
@@ -275,6 +279,39 @@ if (M.question) {
   }
 } else if (Math.abs(answerNum - M.numbers.mdd_pct) <= 0.1) ok('퀴즈 정답 보기', `${answer} ≈ ${M.numbers.mdd_pct}%`);
 else bad('퀴즈 정답 보기', `${answer}`, `${M.numbers.mdd_pct}% 에 가장 가까운 보기`);
+
+// ── 2-1. 사상 최고가 기준 재확인 (6회차부터) ─────────────────────────────────
+// 질문이 «사상 최고가를 새로 쓴 봉» 이면 기준값(창 이전 최고가)이 틀리는 순간 답이 통째로 틀린다.
+// 야후 연속물 일봉 10년으로 다시 재고, 나스닥100 지수(^NDX)가 같은 날 신고가를 썼는지 두 번째 출처로 본다.
+if (M.question?.prior_high) {
+  console.log(`
+[2-1] 사상 최고가 기준 재확인 (야후 일봉 10년)`);
+  try {
+    const daily = async (s) => { const r = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(s)}?interval=1d&range=10y`, { headers: { 'User-Agent': UA } })).json();
+      const x = r.chart.result[0], q = x.indicators.quote[0]; return x.timestamp.map((t, i) => ({ d: new Date(t * 1000).toISOString().slice(0, 10), h: q.high[i] })).filter((b) => b.h != null); };
+    const start = M.window.from_et.slice(0, 10), end = M.window.to_et.slice(0, 10);
+    const nq = await daily('NQ=F'), before = nq.filter((b) => b.d < start), mx = before.reduce((a, b) => (b.h > a.h ? b : a));
+    cmp('창 이전 최고가(NQ=F 일봉)', mx.h, M.question.prior_high.value, 0.01);
+    cmp('창 이전 최고가 날짜', mx.d, M.question.prior_high.et.slice(0, 10));
+    const ndx = await daily('^NDX'); let m2 = Math.max(...ndx.filter((b) => b.d < start).map((b) => b.h)); const rec = [];
+    for (const b of ndx.filter((b) => b.d >= start && b.d <= end)) if (b.h > m2) { rec.push(b.d); m2 = b.h; }
+    cmp('나스닥100 지수도 신고가를 쓴 날', rec.join(','), (M.question.prior_high.ndx_record_days || []).join(','));
+    // 화면·설명에 적은 날별 개수와 «최근 104주 중 신고가를 쓴 주» 도 다시 센다(손으로 적은 숫자라서).
+    const PHv = M.question.prior_high;
+    if (PHv.by_day) {
+      let m = PHv.value; const got = {};
+      for (const b of BARS) if (b.h > m) { m = b.h; got[b.d.slice(0, 10)] = (got[b.d.slice(0, 10)] || 0) + 1; }
+      cmp('날별 신고가 5분봉', JSON.stringify(got), JSON.stringify(PHv.by_day));
+    }
+    if (PHv.record_weeks) {
+      const mon = (d) => { const x = new Date(d + 'T00:00:00Z'); x.setUTCDate(x.getUTCDate() - ((x.getUTCDay() + 6) % 7)); return x.toISOString().slice(0, 10); };
+      let mm = 0; const wk = new Map();
+      for (const b of nq) { const k = mon(b.d); if (!wk.has(k)) wk.set(k, 0); if (b.h > mm) { mm = b.h; wk.set(k, wk.get(k) + 1); } }
+      const keys = [...wk.keys()].filter((k) => k < start).slice(-PHv.record_weeks.n);
+      cmp(`최근 ${PHv.record_weeks.n}주 중 신고가를 쓴 주`, keys.filter((k) => wk.get(k) > 0).length, PHv.record_weeks.weeks);
+    }
+  } catch (e) { bad('사상 최고가 재확인', `실패 — ${e.message}`, '야후 일봉'); }
+}
 
 // 영어 줄은 26px 까지 줄여도 가로 968px 안에 들어와야 한다. 넘치면 말없이 잘린다.
 // 2회차에서 88자짜리 훅이 "…above the ope…" 로 잘린 채 표지에까지 들어갔다.
@@ -796,6 +833,9 @@ if (srtDir) {
     const cx = BC(BARS, []);
     const ns = QQ.find((q) => q.id === 'nightshare');
     const extra = [...cx.dayReg.map((x) => x.p), ...(ns ? [ns.fn(cx)] : [])];
+    // 그 주 5분 변동 상위 10개 봉도 설명에 적을 수 있다(6회차: 뉴스 다음 봉이 1위). 봉에서 다시 잰 값이다.
+    const top10 = []; for (let i = 1; i < BARS.length; i++) top10.push((BARS[i].c / BARS[i - 1].c - 1) * 100);
+    top10.sort((a, b) => Math.abs(b) - Math.abs(a)); extra.push(...top10.slice(0, 10));
     for (const v of extra) for (const d of [2, 3]) { const s = v.toFixed(d) + '%'; allow.add(s); allow.add((v >= 0 ? '+' : '') + s); allow.add(Math.abs(v).toFixed(d) + '%'); }
   }
   const all = [title, desc, cap, cmt].join('\n');

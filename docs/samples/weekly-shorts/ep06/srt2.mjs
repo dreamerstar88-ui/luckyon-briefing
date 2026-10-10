@@ -15,11 +15,11 @@ function findRoot(from){
 }
 const R    = findRoot(HERE);
 const args = Object.fromEntries(process.argv.slice(2).map(a=>{const [k,...v]=a.replace(/^--/,'').split('=');return [k,v.join('=')||true]}));
-const STAMP = args.stamp || '2026-09-21';          // ← 회차마다 바꾼다
+const STAMP = args.stamp || '2026-10-05';          // ← 회차마다 바꾼다
 const DATA  = args.data  || path.join(R,'data','weekly-shorts',STAMP+'.5m.json');
 const MANI  = args.manifest || path.join(R,'content','weekly-shorts',STAMP+'.json');
 const ODIR  = args.outdir || HERE;   // 기본값은 이 파일이 있는 폴더
-const BASE  = args.base || 'luckyon-nasdaq-week4';  // ← 회차마다 바꾼다
+const BASE  = args.base || 'luckyon-nasdaq-week6';  // ← 회차마다 바꾼다
 const all=JSON.parse(fs.readFileSync(DATA,'utf8'));
 const M=JSON.parse(fs.readFileSync(MANI,'utf8'));
 // 창은 매니페스트에서 읽는다. 3회차까지는 9/14~9/18 이 여기 박혀 있었다.
