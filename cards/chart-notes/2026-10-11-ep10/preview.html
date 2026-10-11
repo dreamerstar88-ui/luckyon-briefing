@@ -1,0 +1,148 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>검토 · EP.10 PBR (주가순자산비율)</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px 14px 60px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
+       background:#14140f;color:#f0efe6;line-height:1.6;max-width:760px;margin-inline:auto}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:18px;border-top:1px solid #35342c}
+  h3{font-size:16px;margin:20px 0 8px;color:#b9b6a8}
+  .meta{font-size:14px;color:#9b9889;margin-bottom:18px}
+  .chk{background:#1e1e18;border-left:4px solid #ddc158;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .chk b{color:#ddc158}
+  .chk li{margin:5px 0}
+  .fact{background:#16211a;border-left:4px solid #3f8f6d;border-radius:10px;padding:14px 16px;margin:18px 0;font-size:14px}
+  .fact b{color:#6fc79c}
+  .cards{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+  figure{margin:0}
+  img{width:100%;height:auto;border-radius:8px;display:block;background:#000}
+  figcaption{font-size:13px;color:#9b9889;margin-top:7px}
+  figcaption b{color:#e0dfd4}
+  .cap{white-space:normal;background:#1e1e18;border-radius:10px;padding:14px 16px;font-size:14px;color:#d9d7cb}
+  .warn{background:#2a1a16;border-left:4px solid #c0523c;border-radius:10px;padding:14px 16px}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid #35342c;font-size:13px;color:#7d7a6d}
+  code{background:#26261e;padding:2px 7px;border-radius:5px;font-size:13px}
+  .act{display:flex;gap:12px;margin:22px 0 10px}
+  .btn{flex:1;display:block;text-align:center;padding:18px 10px;border-radius:12px;
+       font-size:17px;font-weight:800;text-decoration:none}
+  .btn.ok{background:#2f7d5b;color:#fff}
+  .btn.fix{background:#8a4436;color:#fff}
+  .hint{font-size:13px;color:#9b9889;margin:0 0 6px}
+</style></head><body>
+
+<h1>EP.10 · PBR (주가순자산비율)</h1>
+<div class="meta">투자 3분 노트 · 발행 예정 2026-10-11 · stamp <code>2026-10-11-ep10</code></div>
+
+<div class="chk"><b>검토 체크리스트</b>
+<ul>
+  <li>개념 설명이 <b>사실로 맞는가</b> (정의·인과·용어)</li>
+  <li>p.06 실제 시세의 <b>숫자와 날짜</b>가 맞는가</li>
+  <li>카드 밖으로 <b>넘치거나 겹친 글자</b>가 없는가 (특히 영어)</li>
+  <li><b>투자 권유</b>로 읽힐 문장이 없는가</li>
+  <li>한국어 <b>맞춤법·띄어쓰기</b>, 영어판에 한글 잔존 없는가</li>
+  <li>마지막 장의 <b>다음 편 예고</b>가 로드맵과 맞는가</li>
+</ul></div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-10-11-ep10&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-10-11-ep10%0AEP.10%20PBR%20(%EC%A3%BC%EA%B0%80%EC%88%9C%EC%9E%90%EC%82%B0%EB%B9%84%EC%9C%A8)" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-10-11-ep10&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-10-11-ep10%0AEP.10%20PBR%20(%EC%A3%BC%EA%B0%80%EC%88%9C%EC%9E%90%EC%82%B0%EB%B9%84%EC%9C%A8)" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<div class="fact"><b>시세 검증 기록</b>
+<div>KO — 포스코홀딩스(005490.KS) 2026-10-08 종가 306,500원 · HD현대일렉트릭(267260.KS) 606,000원 — UsStockInfo-get_historical_stock_prices 로 대조. 원시 봉 2026-10-07T15:00Z = KST 10/8(목). 오프셋 확인: 원시 날짜 9/30·10/1·10/5·10/6·10/7 → KST 10/1(목)·10/2(금)·10/6(화)·10/7(수)·10/8(목). 10/5(월)은 개천절(10/3 토) 대체공휴일, 10/9(금)은 한글날이라 비어 있어 +1일 해석이 맞다. 두 종목 currentPrice 와 마지막 봉 Close 일치. 순자산(2026-06-30, 연결, 지배기업 소유주지분 = 제공자 Stockholders Equity): 포스코홀딩스 57,465,537백만 원(자본총계 64,163,144백만 = 자산 109,712,644 − 부채 45,549,500, 그중 비지배지분 6,697,607 제외), 주식 수 75,620,779주(제공자 6월 말 Share Issued = Ordinary Shares Number; 제공자 자료엔 Treasury Stock 8,018억 원이 남아 있으나 주식 수는 유통주식 기준으로 동일) → BPS 759,917원, PBR 306,500÷759,917.28 = 0.403. HD현대일렉트릭 2,254,984백만 원, 35,992,704주 → BPS 62,651원, PBR 606,000÷62,651.15 = 9.673. 시가총액 = 종가×주식수: 23.18조 / 21.81조(제공자 marketCap 23,177,767,944,192 / 21,811,578,273,792 와 일치). 순자산 비율 57.4655÷2.2550 = 25.5배(«25배»). 1년 순이익(지배주주 귀속, 2025Q3~2026Q2 합): 포스코홀딩스 420,845 + (−192,320) + 467,206 + 684,754 = 1,380,485백만 원 → ROE 1.3805÷57.4655 = 2.40%. HD현대일렉트릭 191,087 + 245,021 + 208,070 + 206,607 = 850,784백만 원 → ROE 37.73%. 37.73÷2.40 = 15.7(«약 16배»). 분기 순이익은 제공자(UsStockInfo) 분기 손익계산서 값 — 2026년 2분기 연결 순이익을 언론 보도로 교차검증: 포스코홀딩스 7,610억(디지털데일리 2026-07-30, 제공자 비지배 포함 7,613억), HD현대일렉트릭 2,061억(아시아경제 2026-07-28 잠정, 제공자 비지배 포함 2,061억). opendart 도구는 이번 세션에서 응답 오류(JSON 파싱 실패)로 쓰지 못했다. 자본총계 기준 PBR(p.03 넷째 줄): 시가총액 23,177,767,944,192 ÷ 64,163,144백만 = 0.361 → 0.36배. ROE 는 6월 말(기말) 순자산 기준이라 카드 행 이름에 명시했다(평균 순자산 기준이면 HD현대일렉트릭 41.8%·포스코홀딩스 2.45%, 결론 동일 — 검증 에이전트 재계산).</div><div>EN — Kraft Heinz (KHC) Oct 9, 2026 close $22.27, Hershey (HSY) $162.74 — UsStockInfo historical prices (US bars at 04:00Z = 00:00 ET, no date offset); currentPrice matches the last bar. Book value = stockholders' equity at the quarter ended June 2026 (KHC fiscal quarter ended June 27, 2026): KHC $36,006M ÷ 1,186M shares → BPS $30.36, P/B 22.27÷30.36 = 0.734. HSY $4,562.69M ÷ 200,915,508 shares (both share classes, consistent with provider market cap) → BPS $22.71, P/B 162.74÷22.71 = 7.166. Market cap = close × shares: $26.41B / $32.70B (provider marketCap 26,408,294,400 / 32,698,644,480). Book ratio 36.006÷4.5627 = 7.89 («eight times»). Net income, last four quarters: KHC 615 + 651 + 798 − 5,460 = −$3,396M → −9.43% of book; HSY 276.320 + 320.017 + 435.105 + 457.665 = $1,489.1M → 32.64% of book. KHC Q2 2026: $7.4B non-cash impairment losses (goodwill about $1.7B, the rest mainly intangible assets), net loss about $5.5B, diluted EPS −$4.60 — Kraft Heinz Q2 2026 results release (Business Wire, 2026-08-05) and Form 10-Q (khc-20260627). Book value fell from $41.92B (Mar) to $36.01B (Jun). One-offs left out (p.06 row 2): provider «Normalized Income», four quarters to June 2026 — KHC 676.56 + 658.22 + 817.78 + 871.83 = $3,024.4M ÷ $36,006M = 8.40%; HSY 277.96 + 342.74 + 439.51 + 457.75 = $1,518.0M ÷ $4,562.7M = 33.27% (card: about $33.27). P/B on March-end book (p.03 line 3): book $41,923M ÷ 1,186M = $35.35 → 22.27 ÷ 35.35 = 0.630. KHC goodwill+intangibles $52.09B of $73.07B assets (tangible book −$16.08B) — the brands on its books were acquired, which is why p.07 ③ says «brands it bought do» show up.</div></div>
+
+
+    <h2>🇰🇷 한국어 — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="ko/card1.png" alt="크림색 모눈 노트 카드. 왼쪽에 감청색 테두리의 연한 기둥이 서 있고, 그 꼭대기에서 오른쪽으로 붉은 점선이 가로로 그어져 있다. 오른쪽의 붉은 캔들 하나는 그 점선보다 한참 아래에 있고, 점선과 캔들 꼭대기 사이에 붉은 양방향 화살표가 서 있다. 붉은 주석 «기둥은 1주당 순자산, 주가는 그 높이에 못 미칩니다». 큰 제목은 «PBR 1배 아래, 정말 싼 걸까요», 부제는 «PBR — 주가를 회사 재산과 견줘 봅니다»." loading="lazy">
+      <figcaption><b>p.01</b> 크림색 모눈 노트 카드. 왼쪽에 감청색 테두리의 연한 기둥이 서 있고, 그 꼭대기에서 오른쪽으로 붉은 점선이 가로로 그어져 있다. 오른쪽의 붉은 캔들 하나는 그 점선보다 한참 아래에 있고, 점선과 캔들 꼭대기 사이에 붉은 양방향 화살표가 서 있다. 붉은 주석 «기둥은 1주당 순자산, 주가는 그 높이에 못 미칩니다». 큰 제목은 «PBR 1배 아래, 정말 싼 걸까요», 부제는 «PBR — 주가를 회사 재산과 견줘 봅니다».</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card2.png" alt="제목 «1배 아래면 싸다는데 무엇보다 싸다는 걸까요». 본문은 PBR 1배 아래면 싸다는 말의 기준이 회사가 가진 재산에서 빚을 뺀 순자산이고, 1배 아래란 시장이 매긴 값이 그 순자산보다 낮다는 뜻이라고 설명한다. 그림 왼쪽에는 기둥 하나가 위쪽 회색 빗금 칸과 아래쪽 감청색 칸으로 나뉘어 있고, 감청색 칸 꼭대기에서 붉은 점선이 오른쪽으로 뻗는다. 오른쪽의 낮은 붉은 상자는 그 점선에 못 미치고, 위에 물음표가 있다. 캡션은 «왼쪽은 회사 장부(위는 빚, 아래가 순자산), 오른쪽은 시장이 매긴 값»." loading="lazy">
+      <figcaption><b>p.02</b> 제목 «1배 아래면 싸다는데 무엇보다 싸다는 걸까요». 본문은 PBR 1배 아래면 싸다는 말의 기준이 회사가 가진 재산에서 빚을 뺀 순자산이고, 1배 아래란 시장이 매긴 값이 그 순자산보다 낮다는 뜻이라고 설명한다. 그림 왼쪽에는 기둥 하나가 위쪽 회색 빗금 칸과 아래쪽 감청색 칸으로 나뉘어 있고, 감청색 칸 꼭대기에서 붉은 점선이 오른쪽으로 뻗는다. 오른쪽의 낮은 붉은 상자는 그 점선에 못 미치고, 위에 물음표가 있다. 캡션은 «왼쪽은 회사 장부(위는 빚, 아래가 순자산), 오른쪽은 시장이 매긴 값».</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card3.png" alt="제목 «PBR도 나눗셈 하나입니다». 가운데에 분수 꼴로 «주가»를 «1주당 순자산»으로 나눈 식과 «= PBR». 아래에 주가, 순자산(자산에서 부채를 빼고 남은 것 중 주주 몫, 분기마다 새로 나옴), 1배(주가가 1주당 순자산과 같다는 뜻) 세 항목. 맨 아래 붉은 테두리 상자에 포스코홀딩스 2026년 10월 8일 종가 기준 네 줄: 주가 306,500원 ÷ 6월 말 1주당 순자산 759,917원, = 0.40배로 장부 순자산의 40% 값에 거래된다, 자본총계(자회사 다른 주주 몫 포함)로 나누면 0.36배, 그래서 몇 월 말·누구 몫 순자산인지부터 본다." loading="lazy">
+      <figcaption><b>p.03</b> 제목 «PBR도 나눗셈 하나입니다». 가운데에 분수 꼴로 «주가»를 «1주당 순자산»으로 나눈 식과 «= PBR». 아래에 주가, 순자산(자산에서 부채를 빼고 남은 것 중 주주 몫, 분기마다 새로 나옴), 1배(주가가 1주당 순자산과 같다는 뜻) 세 항목. 맨 아래 붉은 테두리 상자에 포스코홀딩스 2026년 10월 8일 종가 기준 네 줄: 주가 306,500원 ÷ 6월 말 1주당 순자산 759,917원, = 0.40배로 장부 순자산의 40% 값에 거래된다, 자본총계(자회사 다른 주주 몫 포함)로 나누면 0.36배, 그래서 몇 월 말·누구 몫 순자산인지부터 본다.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card4.png" alt="제목 «PER은 주가를 버는 돈에, PBR은 가진 재산에 견줍니다». 두 칸 비교표로 왼쪽은 감청색 PBR(주가 ÷ 1주당 순자산), 오른쪽은 PER(주가 ÷ 1주당 이익). 나누는 값은 회사가 가진 재산(순자산)과 회사가 1년에 번 돈, 보여주는 것은 재산 1원에 매긴 값과 이익 1원에 매긴 값, 적자인 해에는 PBR은 그대로 계산되지만 PER은 붉게 강조된 «몇 배로 못 읽습니다». 마무리 형광펜 줄은 «적자라 PER이 없는 회사도 PBR로는 견줄 수 있습니다»." loading="lazy">
+      <figcaption><b>p.04</b> 제목 «PER은 주가를 버는 돈에, PBR은 가진 재산에 견줍니다». 두 칸 비교표로 왼쪽은 감청색 PBR(주가 ÷ 1주당 순자산), 오른쪽은 PER(주가 ÷ 1주당 이익). 나누는 값은 회사가 가진 재산(순자산)과 회사가 1년에 번 돈, 보여주는 것은 재산 1원에 매긴 값과 이익 1원에 매긴 값, 적자인 해에는 PBR은 그대로 계산되지만 PER은 붉게 강조된 «몇 배로 못 읽습니다». 마무리 형광펜 줄은 «적자라 PER이 없는 회사도 PBR로는 견줄 수 있습니다».</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card5.png" alt="제목 «시가총액은 비슷한데 장부 재산은 25배 차이 납니다». 본문은 업종이 달라 어느 쪽이 싼지 보려는 게 아니라 무엇이 PBR을 가르는지 보려고 양 끝의 두 회사를 골랐다고 밝힌다. 가로 막대가 두 칸으로 나뉘어 있고 두 칸이 같은 자를 쓴다. 위 칸 «장부 재산 — 2026년 6월 말 순자산»에서 포스코홀딩스(철강) 57.5조 원은 막대가 끝까지 차 있고, 붉게 강조된 HD현대일렉트릭(전력기기) 2.3조 원은 아주 짧다. 아래 칸 «시장이 매긴 값 — 2026년 10월 8일 시가총액»에서 포스코홀딩스(PBR 0.40배) 23.2조 원과 붉게 강조된 HD현대일렉트릭(PBR 9.67배) 21.8조 원은 둘 다 40% 안팎 길이로 비슷하다. 아래 상자에 «시장은 장부 재산을 그대로 값으로 쳐주지 않습니다»." loading="lazy">
+      <figcaption><b>p.05</b> 제목 «시가총액은 비슷한데 장부 재산은 25배 차이 납니다». 본문은 업종이 달라 어느 쪽이 싼지 보려는 게 아니라 무엇이 PBR을 가르는지 보려고 양 끝의 두 회사를 골랐다고 밝힌다. 가로 막대가 두 칸으로 나뉘어 있고 두 칸이 같은 자를 쓴다. 위 칸 «장부 재산 — 2026년 6월 말 순자산»에서 포스코홀딩스(철강) 57.5조 원은 막대가 끝까지 차 있고, 붉게 강조된 HD현대일렉트릭(전력기기) 2.3조 원은 아주 짧다. 아래 칸 «시장이 매긴 값 — 2026년 10월 8일 시가총액»에서 포스코홀딩스(PBR 0.40배) 23.2조 원과 붉게 강조된 HD현대일렉트릭(PBR 9.67배) 21.8조 원은 둘 다 40% 안팎 길이로 비슷하다. 아래 상자에 «시장은 장부 재산을 그대로 값으로 쳐주지 않습니다».</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card6.png" alt="제목 «순자산 100원으로 번 돈이 약 16배 차이 납니다». 본문은 1년 순이익은 포스코홀딩스가 더 많지만 재산이 25배나 많아 순자산 100원으로 번 돈(ROE)은 훨씬 적고, 시장이 재산에 매기는 값은 이 힘의 영향을 크게 받는다고 설명한다. 두 칸 비교표로 왼쪽 감청색 포스코홀딩스(철강), 오른쪽 HD현대일렉트릭(전력기기). 2025년 7월~2026년 6월 1년 순이익은 약 1조 3,800억 원과 약 8,500억 원, 6월 말 순자산 기준으로 100원당 1년에 번 돈은 약 2.4원과 붉게 강조된 약 37.7원, 2026년 10월 8일 종가 기준 PBR은 0.40배와 붉게 강조된 9.67배. 마무리 형광펜 줄은 «PBR이 낮으면 그 재산으로 얼마나 버는지부터 봅니다»." loading="lazy">
+      <figcaption><b>p.06</b> 제목 «순자산 100원으로 번 돈이 약 16배 차이 납니다». 본문은 1년 순이익은 포스코홀딩스가 더 많지만 재산이 25배나 많아 순자산 100원으로 번 돈(ROE)은 훨씬 적고, 시장이 재산에 매기는 값은 이 힘의 영향을 크게 받는다고 설명한다. 두 칸 비교표로 왼쪽 감청색 포스코홀딩스(철강), 오른쪽 HD현대일렉트릭(전력기기). 2025년 7월~2026년 6월 1년 순이익은 약 1조 3,800억 원과 약 8,500억 원, 6월 말 순자산 기준으로 100원당 1년에 번 돈은 약 2.4원과 붉게 강조된 약 37.7원, 2026년 10월 8일 종가 기준 PBR은 0.40배와 붉게 강조된 9.67배. 마무리 형광펜 줄은 «PBR이 낮으면 그 재산으로 얼마나 버는지부터 봅니다».</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card7.png" alt="제목 «초보가 자주 걸리는 세 가지». 번호가 붙은 세 항목 — 1 PBR 1배 아래면 싼 주식이다(재산으로 버는 돈이 적거나 앞날이 어두우면 시장은 재산보다 낮게 매기고, 싸 보여 샀는데 계속 싼 채로 머무는 경우를 가치함정이라 한다), 2 순자산은 지금 팔면 받는 돈이다(장부 값은 회계 기준으로 적은 값이라 그만큼 받는다는 보장이 없고 회사가 자산 가치가 떨어졌다고 보면 한 번에 깎아 낸다 — 손상차손), 3 업종이 달라도 PBR로 견줄 수 있다(스스로 키운 기술·브랜드는 장부에 거의 안 잡혀 그런 것으로 버는 회사는 PBR이 높게 나오므로 같은 업종끼리 견준다). 맨 아래 붉은 테두리 상자의 제목은 «PBR 1배는 바닥이 아닙니다», 본문은 1배 아래에 머무는 회사도 많으니 왜 낮은지를 보고 판단한다는 내용." loading="lazy">
+      <figcaption><b>p.07</b> 제목 «초보가 자주 걸리는 세 가지». 번호가 붙은 세 항목 — 1 PBR 1배 아래면 싼 주식이다(재산으로 버는 돈이 적거나 앞날이 어두우면 시장은 재산보다 낮게 매기고, 싸 보여 샀는데 계속 싼 채로 머무는 경우를 가치함정이라 한다), 2 순자산은 지금 팔면 받는 돈이다(장부 값은 회계 기준으로 적은 값이라 그만큼 받는다는 보장이 없고 회사가 자산 가치가 떨어졌다고 보면 한 번에 깎아 낸다 — 손상차손), 3 업종이 달라도 PBR로 견줄 수 있다(스스로 키운 기술·브랜드는 장부에 거의 안 잡혀 그런 것으로 버는 회사는 PBR이 높게 나오므로 같은 업종끼리 견준다). 맨 아래 붉은 테두리 상자의 제목은 «PBR 1배는 바닥이 아닙니다», 본문은 1배 아래에 머무는 회사도 많으니 왜 낮은지를 보고 판단한다는 내용.</figcaption>
+    </figure>
+    <figure>
+      <img src="ko/card8.png" alt="제목 «3줄 정리». 체크 표시가 붙은 세 줄 — PBR은 주가를 1주당 순자산으로 나눈 값이고 단위는 배, 1배 아래는 재산보다 낮은 값이지 싸다는 뜻이 아니다, PBR이 낮으면 재산으로 얼마나 버는지(ROE)부터 본다. 그 아래 노란 형광펜 두 줄과 «다음 편 ▶ EPS와 어닝서프라이즈», 맨 아래에 교육 목적이며 투자 권유가 아니라는 고지." loading="lazy">
+      <figcaption><b>p.08</b> 제목 «3줄 정리». 체크 표시가 붙은 세 줄 — PBR은 주가를 1주당 순자산으로 나눈 값이고 단위는 배, 1배 아래는 재산보다 낮은 값이지 싸다는 뜻이 아니다, PBR이 낮으면 재산으로 얼마나 버는지(ROE)부터 본다. 그 아래 노란 형광펜 두 줄과 «다음 편 ▶ EPS와 어닝서프라이즈», 맨 아래에 교육 목적이며 투자 권유가 아니라는 고지.</figcaption>
+    </figure></div>
+    <h3>캡션 (755자)</h3>
+    <div class="cap">PBR 1배 아래, 정말 싼 걸까요 — PBR 편<br><br>PBR은 주가를 1주당 순자산(자산에서 부채를 빼고 남은 것 중 주주 몫)으로 나눈 값입니다. 어느 날짜, 누구 몫의 순자산으로 나누느냐에 따라 같은 날에도 숫자가 달라집니다 — 포스코홀딩스는 주주 몫으로 0.40배, 자본총계로 0.36배입니다. 1배면 주가가 1주당 순자산과 같고, 1배 아래면 시장이 장부 재산보다 낮게 값을 매겼다는 뜻입니다.<br><br>2026년 10월 8일 종가로 포스코홀딩스와 HD현대일렉트릭의 시가총액은 23.2조 원과 21.8조 원으로 비슷합니다. 그런데 6월 말 장부의 순자산은 57.5조 원과 2.3조 원, 25배 차이가 납니다. PBR은 0.40배와 9.67배입니다. 업종이 다른 두 회사를 일부러 골랐습니다 — 무엇이 PBR을 가르는지 보려고요.<br><br>두 회사가 크게 다른 점은 «재산으로 버는 힘»입니다. 2025년 7월~2026년 6월에 순자산 100원으로 번 돈(ROE)은 약 2.4원과 약 37.7원이었습니다. 1배 아래는 «재산보다 낮은 값»이지, «싸다»는 뜻이 아닙니다.<br><br>저장해 두고, 가진 종목의 PBR을 같은 업종 종목과 나란히 놓아 보세요.<br><br>다음 편은 EPS와 어닝서프라이즈입니다.<br><br>본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다. 주가는 2026년 10월 8일 종가, 순자산은 2026년 6월 말 연결 기준(지배주주 몫)입니다.<br><br>#투자3분노트 #PBR #주가순자산비율 #주식공부 #주식초보 #기업분석 #투자공부 #경제공부 #재테크 #luckyon</div>
+
+    <h2>🇺🇸 English — 8장</h2>
+    <div class="cards">
+    <figure>
+      <img src="en/card1.png" alt="Cream grid-paper note card. On the left stands a pale column with a navy outline; a red dashed line runs right from its top. A green candlestick on the right sits well below that line, and a red double-headed arrow spans the gap between the line and the top of the candle. A red annotation reads "Column: book value per share. The price sits below that line". The headline is "Below book value - really a bargain?" with the subtitle "P/B - the price against what the company owns"." loading="lazy">
+      <figcaption><b>p.01</b> Cream grid-paper note card. On the left stands a pale column with a navy outline; a red dashed line runs right from its top. A green candlestick on the right sits well below that line, and a red double-headed arrow spans the gap between the line and the top of the candle. A red annotation reads "Column: book value per share. The price sits below that line". The headline is "Below book value - really a bargain?" with the subtitle "P/B - the price against what the company owns".</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card2.png" alt="Title: "Under 1x is cheap - cheap next to what?". The body says the yardstick is what a company owns minus what it owes, its book value, and under 1 the market values the company below that. On the left, one column is split into a grey hatched top part and a navy bottom part; a red dashed line runs right from the top of the navy part. On the right, a short red box falls short of that line, with a question mark above it. The caption reads "Left: the books (top is debt, bottom is book value). Right: market value"." loading="lazy">
+      <figcaption><b>p.02</b> Title: "Under 1x is cheap - cheap next to what?". The body says the yardstick is what a company owns minus what it owes, its book value, and under 1 the market values the company below that. On the left, one column is split into a grey hatched top part and a navy bottom part; a red dashed line runs right from the top of the navy part. On the right, a short red box falls short of that line, with a question mark above it. The caption reads "Left: the books (top is debt, bottom is book value). Right: market value".</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card3.png" alt="Title: "The P/B is one division, too". In the middle, share price over book value per share as a fraction, with "= P/B". Below, three notes: share price, book value (assets minus debts, the shareholders' part, updated each quarter), and 1x (the price equals book value per share). A red-bordered box works through Kraft Heinz at the close on Oct 9, 2026 in four lines: $22.27 divided by book value per share at end of June, $30.36; equals 0.73, so the stock trades at 73% of book; on March-end book value the same price gives 0.63; so first check which date's book value is used." loading="lazy">
+      <figcaption><b>p.03</b> Title: "The P/B is one division, too". In the middle, share price over book value per share as a fraction, with "= P/B". Below, three notes: share price, book value (assets minus debts, the shareholders' part, updated each quarter), and 1x (the price equals book value per share). A red-bordered box works through Kraft Heinz at the close on Oct 9, 2026 in four lines: $22.27 divided by book value per share at end of June, $30.36; equals 0.73, so the stock trades at 73% of book; on March-end book value the same price gives 0.63; so first check which date's book value is used.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card4.png" alt="Title: "P/E weighs earnings, P/B weighs what's owned". A two-column table with navy P/B (price divided by book value per share) on the left and P/E (price divided by earnings per share) on the right. Divided by: net assets (book) against a year's earnings. What it shows: price per $1 of book against price per $1 of profit. In a loss year: the P/B still works, while the P/E, highlighted in red, is not a usable multiple. The closing line reads "No P/E in a loss year? The P/B still works"." loading="lazy">
+      <figcaption><b>p.04</b> Title: "P/E weighs earnings, P/B weighs what's owned". A two-column table with navy P/B (price divided by book value per share) on the left and P/E (price divided by earnings per share) on the right. Divided by: net assets (book) against a year's earnings. What it shows: price per $1 of book against price per $1 of profit. In a loss year: the P/B still works, while the P/E, highlighted in red, is not a usable multiple. The closing line reads "No P/E in a loss year? The P/B still works".</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card5.png" alt="Title: "Eight times the book value, yet a smaller market value". The body says the two are in different industries on purpose: the point is what drives the gap, not which is cheaper. Horizontal bars in two blocks drawn to one shared scale. Top block, book value at the end of June 2026: Kraft Heinz, packaged food, $36.0 billion, a full-length bar; Hershey, confectionery, highlighted in red, $4.6 billion, a short bar. Bottom block, market cap at the Oct 9, 2026 close: Kraft Heinz (P/B 0.73) $26.4 billion and Hershey (P/B 7.17) $32.7 billion in red, with Hershey's bar the longer of the two. A box below reads "The market does not simply pay what the books say"." loading="lazy">
+      <figcaption><b>p.05</b> Title: "Eight times the book value, yet a smaller market value". The body says the two are in different industries on purpose: the point is what drives the gap, not which is cheaper. Horizontal bars in two blocks drawn to one shared scale. Top block, book value at the end of June 2026: Kraft Heinz, packaged food, $36.0 billion, a full-length bar; Hershey, confectionery, highlighted in red, $4.6 billion, a short bar. Bottom block, market cap at the Oct 9, 2026 close: Kraft Heinz (P/B 0.73) $26.4 billion and Hershey (P/B 7.17) $32.7 billion in red, with Hershey's bar the longer of the two. A box below reads "The market does not simply pay what the books say".</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card6.png" alt="Title: "Profit on $100 of book, one-offs aside: $8 vs $33". The body says Kraft Heinz's reported loss came from a $7.4 billion non-cash write-down of brands and goodwill; leaving one-off items out, its books earned about $8 per $100 and Hershey's about $33, the idea behind ROE. A two-column table with navy Kraft Heinz (packaged food) on the left and Hershey (confectionery) on the right. Net income as reported for the four quarters to June 2026: a $3.4 billion loss against $1.49 billion. Earned per $100 of book with one-off items left out: about $8.40 against about $33.27 in red. P/B at the Oct 9, 2026 close: 0.73 against 7.17 in red. The closing line reads "Low P/B? First ask what the books earn"." loading="lazy">
+      <figcaption><b>p.06</b> Title: "Profit on $100 of book, one-offs aside: $8 vs $33". The body says Kraft Heinz's reported loss came from a $7.4 billion non-cash write-down of brands and goodwill; leaving one-off items out, its books earned about $8 per $100 and Hershey's about $33, the idea behind ROE. A two-column table with navy Kraft Heinz (packaged food) on the left and Hershey (confectionery) on the right. Net income as reported for the four quarters to June 2026: a $3.4 billion loss against $1.49 billion. Earned per $100 of book with one-off items left out: about $8.40 against about $33.27 in red. P/B at the Oct 9, 2026 close: 0.73 against 7.17 in red. The closing line reads "Low P/B? First ask what the books earn".</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card7.png" alt="Title: "Three things beginners get wrong". Three numbered items - under 1x book means cheap (if the books earn little or the outlook is dim, the market prices a company below book; a low P/B can be a value trap); book value is sale value (it is an accounting figure and can be cut: Kraft Heinz wrote off $7.4 billion of brands and goodwill in one quarter); any two P/Bs can be compared (brands a company built itself barely show up on the books while brands it bought do, so P/Bs differ by history; compare within an industry). A red-bordered box is headed "1x book is not a floor": plenty of stocks trade below book, so ask why it is low before you decide." loading="lazy">
+      <figcaption><b>p.07</b> Title: "Three things beginners get wrong". Three numbered items - under 1x book means cheap (if the books earn little or the outlook is dim, the market prices a company below book; a low P/B can be a value trap); book value is sale value (it is an accounting figure and can be cut: Kraft Heinz wrote off $7.4 billion of brands and goodwill in one quarter); any two P/Bs can be compared (brands a company built itself barely show up on the books while brands it bought do, so P/Bs differ by history; compare within an industry). A red-bordered box is headed "1x book is not a floor": plenty of stocks trade below book, so ask why it is low before you decide.</figcaption>
+    </figure>
+    <figure>
+      <img src="en/card8.png" alt="Title: "Three lines". Three check-marked lines: P/B equals share price divided by book value per share; under 1x means priced below book, not cheap; with a low P/B, first check what the books earn (ROE). Below are two yellow highlighted lines, then "Next up: EPS &amp; earnings surprises", and a footer noting the content is educational only and not investment advice." loading="lazy">
+      <figcaption><b>p.08</b> Title: "Three lines". Three check-marked lines: P/B equals share price divided by book value per share; under 1x means priced below book, not cheap; with a low P/B, first check what the books earn (ROE). Below are two yellow highlighted lines, then "Next up: EPS &amp; earnings surprises", and a footer noting the content is educational only and not investment advice.</figcaption>
+    </figure></div>
+    <h3>캡션 (1355자)</h3>
+    <div class="cap">Below book value — really a bargain? The P/B ratio<br><br>The P/B divides the share price by book value per share: what the company owns minus what it owes, per share. At 1x the price equals book value; below 1x the market values the company under its books.<br><br>At the end of June, Kraft Heinz's book value was eight times Hershey's ($36.0 billion against $4.6 billion); at the Oct 9, 2026 close, its market value was smaller ($26.4 billion against $32.7 billion). Their P/Bs: 0.73 and 7.17. The two are in different industries on purpose, to show what drives the gap.<br><br>The big difference is what the books earn. Over the four quarters to June 2026, Kraft Heinz posted a loss after a $7.4 billion non-cash write-down of brands and goodwill; leaving one-off items out, its books earned about $8 per $100, against about $33 for Hershey. That write-down is also a reminder that book value is an accounting figure and can be cut. Under 1x means priced below book, not cheap.<br><br>Save this, then line up a stock's P/B against its industry peers.<br><br>Next up: EPS and earnings surprises.<br><br>Educational content only. Not investment advice. Prices are the Oct 9, 2026 close; book values are as of the quarter ended June 2026.<br><br>#3MinInvestingNotes #PriceToBook #PBRatio #StockMarketBasics #InvestingForBeginners #Valuation #StockAnalysis #FinanceEducation #LearnToInvest #luckyon</div>
+
+
+<div class="act">
+  <a class="btn ok" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EB%B0%9C%ED%96%89%5D%202026-10-11-ep10&body=%EC%9D%B4%20%ED%9A%8C%EC%B0%A8%EB%A5%BC%20%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%97%90%20%EB%B0%9C%ED%96%89%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%0A%0A(%EC%B6%94%EA%B0%80%EB%A1%9C%20%EB%82%A8%EA%B8%B8%20%EB%A7%90%EC%9D%B4%20%EC%9E%88%EC%9C%BC%EB%A9%B4%20%EC%97%AC%EA%B8%B0%EC%97%90%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%97%86%EC%9C%BC%EB%A9%B4%20%EA%B7%B8%EB%8C%80%EB%A1%9C%20%EC%A0%9C%EC%B6%9C%ED%95%98%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.)%0A%0A---%0Astamp%3A%202026-10-11-ep10%0AEP.10%20PBR%20(%EC%A3%BC%EA%B0%80%EC%88%9C%EC%9E%90%EC%82%B0%EB%B9%84%EC%9C%A8)" target="_blank" rel="noopener">✅ 발행 승인</a>
+  <a class="btn fix" href="https://github.com/dreamerstar88-ui/luckyon-briefing/issues/new?labels=chartnotes&title=%5B%EC%88%98%EC%A0%95%5D%202026-10-11-ep10&body=%EC%95%84%EB%9E%98%EC%97%90%20%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%EC%9D%84%20%EC%A0%81%EC%96%B4%EC%A3%BC%EC%84%B8%EC%9A%94.%20%EC%96%B4%EB%8A%90%20%EC%B9%B4%EB%93%9C(p.01~p.08)%EC%9D%98%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%8B%9C%EB%A9%B4%20%EB%90%A9%EB%8B%88%EB%8B%A4.%0A%0A%EC%98%88)%0A-%20p.06%20%ED%95%9C%EA%B5%AD%EC%96%B4%20%EC%A2%85%EA%B0%80%20%EC%88%AB%EC%9E%90%EA%B0%80%20%ED%8B%80%EB%A0%B8%EC%96%B4%EC%9A%94%0A-%20p.03%20%EC%98%81%EC%96%B4%20%EC%B9%B4%EB%93%9C%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%A4%84%EC%9D%B4%20%EB%84%98%EC%B3%90%EC%9A%94%0A-%20p.05%20%EC%84%A4%EB%AA%85%EC%9D%B4%20%EC%96%B4%EB%A0%A4%EC%9B%8C%EC%9A%94%2C%20%EB%8D%94%20%EC%89%BD%EA%B2%8C%0A%0A%EA%B3%A0%EC%B9%A0%20%EA%B3%B3%3A%0A-%20%0A%0A---%0Astamp%3A%202026-10-11-ep10%0AEP.10%20PBR%20(%EC%A3%BC%EA%B0%80%EC%88%9C%EC%9E%90%EC%82%B0%EB%B9%84%EC%9C%A8)" target="_blank" rel="noopener">✏️ 수정 요청</a>
+</div>
+<p class="hint">버튼을 누르면 GitHub 이슈 작성 화면이 열립니다. 내용은 미리 채워져 있으니 <b>제출(Submit)</b>만 누르시면 됩니다.<br>
+제출하면 다음 확인 루틴이 읽고 처리한 뒤, 결과를 카카오톡으로 알려드립니다.</p>
+
+<footer>
+버튼 대신 Claude 에게 직접 <code>차트노트 2026-10-11-ep10 발행해</code> 라고 해도 됩니다.<br>
+※ 이 페이지는 검토용이며 인스타그램에는 올라가지 않습니다.
+</footer>
+</body></html>

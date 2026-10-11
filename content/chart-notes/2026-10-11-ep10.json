@@ -1,0 +1,380 @@
+{
+  "type": "chart-notes",
+  "stamp": "2026-10-11-ep10",
+  "date": "2026-10-11",
+  "series": "투자 3분 노트",
+  "series_en": "3-Min Investing Notes",
+  "episode": "EP.10",
+  "byline": "by luckyon",
+  "term_ko": "PBR (주가순자산비율)",
+  "term_en": "The P/B ratio",
+  "teaching_points": [
+    "① PBR = 주가 ÷ 1주당 순자산(= 시가총액 ÷ 순자산). 순자산 = 자산 − 부채 중 주주 몫. 1배 = 주가가 1주당 순자산과 같다 — p.01·p.02·p.03·p.05·p.08",
+    "② 1배 아래는 «재산보다 낮은 값»이지 «싸다»가 아니다 — p.01(질문)·p.05 마무리·p.07 ①②·경고·p.08",
+    "③ PBR을 가르는 큰 축은 «순자산으로 버는 힘(ROE)» — p.06·p.07 ①·경고·p.08",
+    "④ PER은 이익, PBR은 재산과 견준다 — 적자여도 PBR은 계산된다 / 장부에 안 잡히는 재산 때문에 업종끼리 견준다 — p.04·p.07 ③·p.08 CTA"
+  ],
+  "fact_check": {
+    "ko": "포스코홀딩스(005490.KS) 2026-10-08 종가 306,500원 · HD현대일렉트릭(267260.KS) 606,000원 — UsStockInfo-get_historical_stock_prices 로 대조. 원시 봉 2026-10-07T15:00Z = KST 10/8(목). 오프셋 확인: 원시 날짜 9/30·10/1·10/5·10/6·10/7 → KST 10/1(목)·10/2(금)·10/6(화)·10/7(수)·10/8(목). 10/5(월)은 개천절(10/3 토) 대체공휴일, 10/9(금)은 한글날이라 비어 있어 +1일 해석이 맞다. 두 종목 currentPrice 와 마지막 봉 Close 일치. 순자산(2026-06-30, 연결, 지배기업 소유주지분 = 제공자 Stockholders Equity): 포스코홀딩스 57,465,537백만 원(자본총계 64,163,144백만 = 자산 109,712,644 − 부채 45,549,500, 그중 비지배지분 6,697,607 제외), 주식 수 75,620,779주(제공자 6월 말 Share Issued = Ordinary Shares Number; 제공자 자료엔 Treasury Stock 8,018억 원이 남아 있으나 주식 수는 유통주식 기준으로 동일) → BPS 759,917원, PBR 306,500÷759,917.28 = 0.403. HD현대일렉트릭 2,254,984백만 원, 35,992,704주 → BPS 62,651원, PBR 606,000÷62,651.15 = 9.673. 시가총액 = 종가×주식수: 23.18조 / 21.81조(제공자 marketCap 23,177,767,944,192 / 21,811,578,273,792 와 일치). 순자산 비율 57.4655÷2.2550 = 25.5배(«25배»). 1년 순이익(지배주주 귀속, 2025Q3~2026Q2 합): 포스코홀딩스 420,845 + (−192,320) + 467,206 + 684,754 = 1,380,485백만 원 → ROE 1.3805÷57.4655 = 2.40%. HD현대일렉트릭 191,087 + 245,021 + 208,070 + 206,607 = 850,784백만 원 → ROE 37.73%. 37.73÷2.40 = 15.7(«약 16배»). 분기 순이익은 제공자(UsStockInfo) 분기 손익계산서 값 — 2026년 2분기 연결 순이익을 언론 보도로 교차검증: 포스코홀딩스 7,610억(디지털데일리 2026-07-30, 제공자 비지배 포함 7,613억), HD현대일렉트릭 2,061억(아시아경제 2026-07-28 잠정, 제공자 비지배 포함 2,061억). opendart 도구는 이번 세션에서 응답 오류(JSON 파싱 실패)로 쓰지 못했다. 자본총계 기준 PBR(p.03 넷째 줄): 시가총액 23,177,767,944,192 ÷ 64,163,144백만 = 0.361 → 0.36배. ROE 는 6월 말(기말) 순자산 기준이라 카드 행 이름에 명시했다(평균 순자산 기준이면 HD현대일렉트릭 41.8%·포스코홀딩스 2.45%, 결론 동일 — 검증 에이전트 재계산).",
+    "en": "Kraft Heinz (KHC) Oct 9, 2026 close $22.27, Hershey (HSY) $162.74 — UsStockInfo historical prices (US bars at 04:00Z = 00:00 ET, no date offset); currentPrice matches the last bar. Book value = stockholders' equity at the quarter ended June 2026 (KHC fiscal quarter ended June 27, 2026): KHC $36,006M ÷ 1,186M shares → BPS $30.36, P/B 22.27÷30.36 = 0.734. HSY $4,562.69M ÷ 200,915,508 shares (both share classes, consistent with provider market cap) → BPS $22.71, P/B 162.74÷22.71 = 7.166. Market cap = close × shares: $26.41B / $32.70B (provider marketCap 26,408,294,400 / 32,698,644,480). Book ratio 36.006÷4.5627 = 7.89 («eight times»). Net income, last four quarters: KHC 615 + 651 + 798 − 5,460 = −$3,396M → −9.43% of book; HSY 276.320 + 320.017 + 435.105 + 457.665 = $1,489.1M → 32.64% of book. KHC Q2 2026: $7.4B non-cash impairment losses (goodwill about $1.7B, the rest mainly intangible assets), net loss about $5.5B, diluted EPS −$4.60 — Kraft Heinz Q2 2026 results release (Business Wire, 2026-08-05) and Form 10-Q (khc-20260627). Book value fell from $41.92B (Mar) to $36.01B (Jun). One-offs left out (p.06 row 2): provider «Normalized Income», four quarters to June 2026 — KHC 676.56 + 658.22 + 817.78 + 871.83 = $3,024.4M ÷ $36,006M = 8.40%; HSY 277.96 + 342.74 + 439.51 + 457.75 = $1,518.0M ÷ $4,562.7M = 33.27% (card: about $33.27). P/B on March-end book (p.03 line 3): book $41,923M ÷ 1,186M = $35.35 → 22.27 ÷ 35.35 = 0.630. KHC goodwill+intangibles $52.09B of $73.07B assets (tangible book −$16.08B) — the brands on its books were acquired, which is why p.07 ③ says «brands it bought do» show up.",
+    "concept": "PBR 정의: 주가 ÷ 주당순자산(BPS), 단위 «배». 등가식 시가총액 ÷ 순자산. 순자산 = 자산 − 부채(자본총계). 출처 — 뉴시스 「저 PBR주를 찾으라고?…어떤 지표인가요[금알못]」(2024-02-04), 토스뱅크 「PBR, PER, ROE가 무엇인가요?」, 알파스퀘어 「PBR - 뜻, 계산방법」, KB 경제·금융 용어사전 / 영어권: P/B = market price ÷ book value per share, book value = total assets − total liabilities (capmint·Ryan O'Connell Finance·Interactive Brokers Campus 일치). 1배 = 주가가 1주당 장부 순자산과 같다. 1배 미만을 «청산가치보다 낮다»로 읽는 것은 «이론상»이라는 단서가 출처에 함께 붙는다(뉴시스: 1배 미만 상장사 1,100곳 이상). 확정하는 것 = «시장이 장부 순자산 1원에 몇 원을 매겼나». 확정하지 «않는» 것 = «싸다»(낮은 PBR은 회사가 돈을 못 벌거나 앞날이 어두워 시장이 낮게 매긴 결과일 수 있다 — 뉴시스·Motley Fool «a very low P/B ratio can also be a sign of trouble»), 장부 값 = 매각 가치(장부는 회계 수치이고 손상차손으로 한 번에 깎인다 — capmint «one-time write-downs or revaluations can change book value quickly», 2008년 은행 PBR 사례), 업종 건너뛴 비교(무형자산·브랜드는 장부에 충분히 잡히지 않아 그런 회사의 PBR이 높게 나온다 — capmint/ryanoconnell, Alpha Architect). PBR과 ROE: PBR = PER × ROE 항등식(토스뱅크, 삼일PwC 밸류업 자료 «낮은 ROE와 주주환원율이 낮은 PBR의 원인»), 이론상 정당 PBR은 ROE가 자기자본비용보다 높으면 1 초과·낮으면 1 미만(CFA 2급 residual income — AnalystPrep, Acadifi). 그래서 카드는 «PBR을 가른 건 ROE»로 단정하지 않고 «영향을 크게 받는다»로 썼다(성장 기대·금리 등 다른 요인도 있다). 실무자가 갈리는 지점: (1) 어느 순자산 — 지배주주 몫 vs 자본총계(포스코홀딩스 0.40배 vs 0.36배), 최근 분기말 vs 12개월 선행 BPS(한국경제 2026-02-25: 업종 PBR은 12개월 선행 기준으로 주로 본다); (2) PBR이 잘 맞는 업종 — 이익 변동이 크고 자산이 장부에 잘 잡히는 은행·금융에서 주로 쓴다(Motley Fool, kalkine). 적자여도 PBR은 계산된다(분모가 순자산) — 순자산이 마이너스(자본잠식)면 의미 없음. «1배 아래에 머무는 회사가 많다»: 헤럴드경제 2026-05-05(코스피 상장사 56%가 1배 미만), 아시아경제 2026-04-23. 누적 노트: content/chart-notes/_knowledge/PBR.md 검증 에이전트 지적 반영(2026-10-11): ① p.07 ③ «업종이 다르면 견주지 말라»와 p.05·p.06 의 업종 간 비교가 자기모순 → p.05 본문(ko·en)과 캡션에 «무엇이 PBR을 가르는지 보려고 양 끝 두 회사를 일부러 골랐다» 명시. ② en p.07 ③ «brands barely show up» 은 인수 브랜드가 장부 대부분인 KHC 앞에서 틀림 → «스스로 키운 브랜드는 안 잡히고 산 브랜드는 잡힌다»로(ko ③ 도 «스스로 키운 기술·브랜드»로). ③ en p.06 은 손상차손 손실을 «버는 힘»의 증거로 썼음 → 일회성 항목 제외 수익률(KHC 약 $8.40 vs HSY 약 $33.27)로 바꾸고 보고 순손실은 첫 행에 그대로. ④ «실무자의 선택»(3-0-1) 누락 → p.03 예시에 «자본총계로 나누면 0.36배 / 3월 말 장부로는 0.63» + «몇 월 말·누구 몫 순자산인지부터 본다». ⑤ «가치함정»을 «낮은 이유»에 붙인 오용 → 정의 문장으로. ⑥ «손상차손» 용어 명시."
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "overlay": "book",
+      "title_ko": "PBR 1배 아래,<br>정말 싼 걸까요",
+      "title_en": "Below book value —<br>really a bargain?",
+      "sub_ko": "PBR — 주가를 회사 재산과 견줘 봅니다",
+      "sub_en": "P/B — the price against what the company owns",
+      "cta_ko": "저장하고 넘겨보세요",
+      "cta_en": "Save this and swipe",
+      "annot_ko": "기둥은 1주당 순자산 | 주가는 그 높이에 | 못 미칩니다",
+      "annot_en": "Column: book value per share. | The price sits | below that line"
+    },
+    {
+      "type": "intro",
+      "sketch": "mystery-book",
+      "title_ko": "1배 아래면 싸다는데<br>무엇보다 싸다는 걸까요",
+      "title_en": "\"Under 1x is cheap\" —<br>cheap next to what?",
+      "body_ko": "「PBR 1배 아래면 싸다」는 말을 자주 듣습니다. 여기서 기준은 회사가 가진 재산에서 빚을 뺀 것, 곧 «순자산»입니다. 1배 아래란 시장이 매긴 값이 그 순자산보다 낮다는 뜻입니다.",
+      "body_en": "You hear it a lot: a P/B under 1 means cheap. The yardstick is what a company owns minus what it owes — its book value. Under 1, the market values the company below that.",
+      "caption_ko": "왼쪽은 회사 장부(위는 빚, 아래가 순자산), 오른쪽은 시장이 매긴 값",
+      "caption_en": "Left: the books (top is debt, bottom is book value). Right: market value"
+    },
+    {
+      "type": "formula",
+      "title_ko": "PBR도 나눗셈 하나입니다",
+      "title_en": "The P/B is one division, too",
+      "body_ko": "주가를 «1주당 순자산»으로 나눕니다. 회사 전체로 보면 시가총액을 순자산으로 나눈 것과 같습니다.",
+      "body_en": "Divide the share price by book value per share. For the whole company, it is market cap divided by book value.",
+      "formula": {
+        "numerator_ko": "주가",
+        "numerator_en": "Share price",
+        "denominator_ko": "1주당 순자산",
+        "denominator_en": "Book value per share",
+        "result_ko": "PBR",
+        "result_en": "P/B"
+      },
+      "parts": [
+        {
+          "term_ko": "주가",
+          "term_en": "Share price",
+          "desc_ko": "1주를 사는 데 드는 값. 매일 바뀝니다",
+          "desc_en": "What one share costs. It moves every day"
+        },
+        {
+          "term_ko": "순자산",
+          "term_en": "Book value",
+          "desc_ko": "자산에서 부채를 빼고 남은 것 중 주주 몫. 분기마다 새로 나옵니다",
+          "desc_en": "Assets minus debts, the shareholders' part. Updated each quarter"
+        },
+        {
+          "term_ko": "1배",
+          "term_en": "1x",
+          "desc_ko": "주가가 1주당 순자산과 같다는 뜻입니다",
+          "desc_en": "The price equals book value per share"
+        }
+      ],
+      "example": {
+        "title_ko": "포스코홀딩스 · 2026년 10월 8일 종가",
+        "title_en": "Kraft Heinz · close on Oct 9, 2026",
+        "lines": [
+          {
+            "text_ko": "주가 306,500원 ÷ 6월 말 1주당 순자산 759,917원",
+            "text_en": "$22.27 ÷ book value per share at end of June $30.36"
+          },
+          {
+            "text_ko": "= 0.40배 — 장부 순자산의 40% 값에 거래됩니다",
+            "text_en": "= 0.73: the stock trades at 73% of book"
+          },
+          {
+            "text_ko": "자본총계(자회사 다른 주주 몫 포함)로 나누면 0.36배",
+            "text_en": "On March-end book value, the same price gives 0.63"
+          },
+          {
+            "text_ko": "그래서 «몇 월 말, 누구 몫» 순자산인지부터 봅니다",
+            "text_en": "So first check which date's book value is used"
+          }
+        ]
+      }
+    },
+    {
+      "type": "versus",
+      "title_ko": "PER은 주가를 «버는 돈»에,<br>PBR은 «가진 재산»에 견줍니다",
+      "title_en": "P/E weighs earnings,<br>P/B weighs what's owned",
+      "body_ko": "PBR은 지난 편의 PER과 나누는 값이 다릅니다. 그래서 두 숫자가 보여주는 것도 다릅니다.",
+      "body_en": "Last episode's P/E divides by something else, so the two numbers look at different things.",
+      "columns_ko": [
+        {
+          "name": "PBR",
+          "unit": "주가 ÷ 1주당 순자산"
+        },
+        {
+          "name": "PER",
+          "unit": "주가 ÷ 1주당 이익"
+        }
+      ],
+      "columns_en": [
+        {
+          "name": "P/B",
+          "unit": "price ÷ book value per share"
+        },
+        {
+          "name": "P/E",
+          "unit": "price ÷ earnings per share"
+        }
+      ],
+      "rows_ko": [
+        {
+          "label": "나누는 값",
+          "left": "회사가 가진 재산(순자산)",
+          "right": "회사가 1년에 번 돈"
+        },
+        {
+          "label": "보여주는 것",
+          "left": "재산 1원에 매긴 값",
+          "right": "이익 1원에 매긴 값"
+        },
+        {
+          "label": "적자인 해",
+          "left": "그대로 계산됩니다",
+          "right": "«몇 배»로 못 읽습니다",
+          "highlight": true
+        }
+      ],
+      "rows_en": [
+        {
+          "label": "Divided by",
+          "left": "Net assets (book)",
+          "right": "A year's earnings"
+        },
+        {
+          "label": "What it shows",
+          "left": "Price per $1 of book",
+          "right": "Price per $1 of profit"
+        },
+        {
+          "label": "In a loss year",
+          "left": "Still works",
+          "right": "Not a usable multiple",
+          "highlight": true
+        }
+      ],
+      "closing_ko": "적자라 PER이 없는 회사도 PBR로는 견줄 수 있습니다",
+      "closing_en": "No P/E in a loss year? The P/B still works"
+    },
+    {
+      "type": "bars",
+      "scale": "shared",
+      "title_ko": "시가총액은 비슷한데<br>장부 재산은 25배 차이 납니다",
+      "title_en": "Eight times the book value,<br>yet a smaller market value",
+      "body_ko": "위 칸은 6월 말 순자산, 아래 칸은 2026년 10월 8일 종가 시가총액입니다. 업종이 달라 어느 쪽이 싼지 보려는 게 아니라, 무엇이 PBR을 가르는지 보려고 양 끝의 두 회사를 골랐습니다.",
+      "body_en": "Top: book value at end of June. Bottom: market value at the Oct 9, 2026 close. Different industries on purpose: the point is what drives the gap, not which is cheaper.",
+      "sections": [
+        {
+          "heading_ko": "장부 재산 — 2026년 6월 말 순자산",
+          "heading_en": "On the books — book value, end of June 2026",
+          "items": [
+            {
+              "label_ko": "포스코홀딩스 · 철강",
+              "label_en": "Kraft Heinz · packaged food",
+              "value_ko": 57.47,
+              "value_en": 36.01,
+              "display_ko": "57.5조 원",
+              "display_en": "$36.0 billion"
+            },
+            {
+              "label_ko": "HD현대일렉트릭 · 전력기기",
+              "label_en": "Hershey · confectionery",
+              "value_ko": 2.25,
+              "value_en": 4.56,
+              "display_ko": "2.3조 원",
+              "display_en": "$4.6 billion",
+              "highlight": true
+            }
+          ]
+        },
+        {
+          "heading_ko": "시장이 매긴 값 — 2026년 10월 8일 시가총액",
+          "heading_en": "In the market — market cap, Oct 9, 2026 close",
+          "items": [
+            {
+              "label_ko": "포스코홀딩스 (PBR 0.40배)",
+              "label_en": "Kraft Heinz (P/B 0.73)",
+              "value_ko": 23.18,
+              "value_en": 26.41,
+              "display_ko": "23.2조 원",
+              "display_en": "$26.4 billion"
+            },
+            {
+              "label_ko": "HD현대일렉트릭 (PBR 9.67배)",
+              "label_en": "Hershey (P/B 7.17)",
+              "value_ko": 21.81,
+              "value_en": 32.7,
+              "display_ko": "21.8조 원",
+              "display_en": "$32.7 billion",
+              "highlight": true
+            }
+          ]
+        }
+      ],
+      "closing_ko": "시장은 장부 재산을 그대로 값으로 쳐주지 않습니다",
+      "closing_en": "The market does not simply pay what the books say"
+    },
+    {
+      "type": "versus",
+      "title_ko": "순자산 100원으로 번 돈이<br>약 16배 차이 납니다",
+      "title_en": "Profit on $100 of book,<br>one-offs aside: $8 vs $33",
+      "body_ko": "1년 순이익은 포스코홀딩스가 더 많습니다. 그런데 재산이 25배나 많아 순자산 100원으로 번 돈(ROE)은 훨씬 적습니다. 시장이 재산에 매기는 값은 이 힘의 영향을 크게 받습니다.",
+      "body_en": "Kraft Heinz's reported loss came from a $7.4 billion non-cash write-down of brands and goodwill. Leave one-off items out and its books earned about $8 per $100; Hershey's about $33. That rate is the idea behind ROE.",
+      "columns_ko": [
+        {
+          "name": "포스코홀딩스",
+          "unit": "철강"
+        },
+        {
+          "name": "HD현대일렉트릭",
+          "unit": "전력기기"
+        }
+      ],
+      "columns_en": [
+        {
+          "name": "Kraft Heinz",
+          "unit": "Packaged food"
+        },
+        {
+          "name": "Hershey",
+          "unit": "Confectionery"
+        }
+      ],
+      "rows_ko": [
+        {
+          "label": "1년 순이익 (2025년 7월~2026년 6월)",
+          "left": "약 1조 3,800억 원",
+          "right": "약 8,500억 원"
+        },
+        {
+          "label": "순자산 100원으로 1년에 번 돈 (6월 말 기준)",
+          "left": "약 2.4원",
+          "right": "약 37.7원",
+          "highlight": true
+        },
+        {
+          "label": "PBR (2026년 10월 8일 종가)",
+          "left": "0.40배",
+          "right": "9.67배",
+          "highlight": true
+        }
+      ],
+      "rows_en": [
+        {
+          "label": "Net income as reported, four quarters to June 2026",
+          "left": "$3.4 billion loss",
+          "right": "$1.49 billion"
+        },
+        {
+          "label": "Earned per $100 of book, one-off items left out",
+          "left": "about $8.40",
+          "right": "about $33.27",
+          "highlight": true
+        },
+        {
+          "label": "P/B (Oct 9, 2026 close)",
+          "left": "0.73",
+          "right": "7.17",
+          "highlight": true
+        }
+      ],
+      "closing_ko": "PBR이 낮으면 그 재산으로 얼마나 버는지부터 봅니다",
+      "closing_en": "Low P/B? First ask what the books earn"
+    },
+    {
+      "type": "numbered",
+      "title_ko": "초보가 자주 걸리는 세 가지",
+      "title_en": "Three things beginners get wrong",
+      "items": [
+        {
+          "title_ko": "PBR 1배 아래면 싼 주식이다",
+          "title_en": "Under 1x book means cheap",
+          "desc_ko": "재산으로 버는 돈이 적거나 앞날이 어두우면 시장은 재산보다 낮게 매깁니다. 싸 보여 샀는데 계속 싼 채로 머무는 경우를 «가치함정»이라고 합니다.",
+          "desc_en": "If the books earn little or the outlook is dim, the market prices a company below book. A low P/B can be a value trap."
+        },
+        {
+          "title_ko": "순자산은 지금 팔면 받는 돈이다",
+          "title_en": "Book value is sale value",
+          "desc_ko": "장부 값은 회계 기준으로 적은 값이라 그만큼 받는다는 보장이 없습니다. 회사가 자산 가치가 떨어졌다고 보면 장부에서 한 번에 깎아 냅니다(손상차손).",
+          "desc_en": "It is an accounting figure and can be cut: Kraft Heinz wrote off $7.4 billion of brands and goodwill in one quarter."
+        },
+        {
+          "title_ko": "업종이 달라도 PBR로 견줄 수 있다",
+          "title_en": "Any two P/Bs can be compared",
+          "desc_ko": "스스로 키운 기술·브랜드는 장부에 거의 안 잡혀, 그런 것으로 버는 회사는 PBR이 높게 나옵니다. 같은 업종끼리 견줍니다.",
+          "desc_en": "Brands a company built itself barely show up on the books; brands it bought do. So P/Bs differ by history, not just quality. Compare within an industry."
+        }
+      ],
+      "warn_title_ko": "PBR 1배는 바닥이 아닙니다",
+      "warn_title_en": "1x book is not a floor",
+      "warn_body_ko": "1배 아래에 머무는 회사도 많습니다. 버는 힘이 약해서인지, 장부를 믿기 어려워서인지 — 왜 낮은지를 보고 판단합니다.",
+      "warn_body_en": "Plenty of stocks trade below book. Ask why it is low before you decide."
+    },
+    {
+      "type": "recap",
+      "title_ko": "3줄 정리",
+      "title_en": "Three lines",
+      "points": [
+        {
+          "text_ko": "PBR = 주가 ÷ 1주당 순자산 (단위: 배)",
+          "text_en": "P/B = share price ÷ book value per share"
+        },
+        {
+          "text_ko": "1배 아래는 «재산보다 낮은 값»이지, «싸다»는 뜻이 아닙니다",
+          "text_en": "Under 1x means priced below book, not cheap"
+        },
+        {
+          "text_ko": "PBR이 낮으면 재산으로 얼마나 버는지(ROE)부터 봅니다",
+          "text_en": "A low P/B: first check what the books earn (ROE)"
+        }
+      ],
+      "ctas": [
+        {
+          "text_ko": "같은 업종 종목끼리 PBR을 나란히 놓아 보세요",
+          "text_en": "Line up P/Bs within one industry"
+        },
+        {
+          "text_ko": "#투자3분노트 #PBR #주식공부",
+          "text_en": "#3MinInvestingNotes #PriceToBook"
+        }
+      ],
+      "next_label_ko": "다음 편",
+      "next_label_en": "Next up",
+      "next_ko": "EPS와 어닝서프라이즈",
+      "next_en": "EPS & earnings surprises",
+      "disclaimer_ko": "본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다.",
+      "disclaimer_en": "Educational content only. Not investment advice."
+    }
+  ],
+  "caption_ko": "PBR 1배 아래, 정말 싼 걸까요 — PBR 편\n\nPBR은 주가를 1주당 순자산(자산에서 부채를 빼고 남은 것 중 주주 몫)으로 나눈 값입니다. 어느 날짜, 누구 몫의 순자산으로 나누느냐에 따라 같은 날에도 숫자가 달라집니다 — 포스코홀딩스는 주주 몫으로 0.40배, 자본총계로 0.36배입니다. 1배면 주가가 1주당 순자산과 같고, 1배 아래면 시장이 장부 재산보다 낮게 값을 매겼다는 뜻입니다.\n\n2026년 10월 8일 종가로 포스코홀딩스와 HD현대일렉트릭의 시가총액은 23.2조 원과 21.8조 원으로 비슷합니다. 그런데 6월 말 장부의 순자산은 57.5조 원과 2.3조 원, 25배 차이가 납니다. PBR은 0.40배와 9.67배입니다. 업종이 다른 두 회사를 일부러 골랐습니다 — 무엇이 PBR을 가르는지 보려고요.\n\n두 회사가 크게 다른 점은 «재산으로 버는 힘»입니다. 2025년 7월~2026년 6월에 순자산 100원으로 번 돈(ROE)은 약 2.4원과 약 37.7원이었습니다. 1배 아래는 «재산보다 낮은 값»이지, «싸다»는 뜻이 아닙니다.\n\n저장해 두고, 가진 종목의 PBR을 같은 업종 종목과 나란히 놓아 보세요.\n\n다음 편은 EPS와 어닝서프라이즈입니다.\n\n본 콘텐츠는 교육 목적이며 투자 권유가 아닙니다. 주가는 2026년 10월 8일 종가, 순자산은 2026년 6월 말 연결 기준(지배주주 몫)입니다.\n\n#투자3분노트 #PBR #주가순자산비율 #주식공부 #주식초보 #기업분석 #투자공부 #경제공부 #재테크 #luckyon",
+  "caption_en": "Below book value — really a bargain? The P/B ratio\n\nThe P/B divides the share price by book value per share: what the company owns minus what it owes, per share. At 1x the price equals book value; below 1x the market values the company under its books.\n\nAt the end of June, Kraft Heinz's book value was eight times Hershey's ($36.0 billion against $4.6 billion); at the Oct 9, 2026 close, its market value was smaller ($26.4 billion against $32.7 billion). Their P/Bs: 0.73 and 7.17. The two are in different industries on purpose, to show what drives the gap.\n\nThe big difference is what the books earn. Over the four quarters to June 2026, Kraft Heinz posted a loss after a $7.4 billion non-cash write-down of brands and goodwill; leaving one-off items out, its books earned about $8 per $100, against about $33 for Hershey. That write-down is also a reminder that book value is an accounting figure and can be cut. Under 1x means priced below book, not cheap.\n\nSave this, then line up a stock's P/B against its industry peers.\n\nNext up: EPS and earnings surprises.\n\nEducational content only. Not investment advice. Prices are the Oct 9, 2026 close; book values are as of the quarter ended June 2026.\n\n#3MinInvestingNotes #PriceToBook #PBRatio #StockMarketBasics #InvestingForBeginners #Valuation #StockAnalysis #FinanceEducation #LearnToInvest #luckyon",
+  "alt_ko": [
+    "크림색 모눈 노트 카드. 왼쪽에 감청색 테두리의 연한 기둥이 서 있고, 그 꼭대기에서 오른쪽으로 붉은 점선이 가로로 그어져 있다. 오른쪽의 붉은 캔들 하나는 그 점선보다 한참 아래에 있고, 점선과 캔들 꼭대기 사이에 붉은 양방향 화살표가 서 있다. 붉은 주석 «기둥은 1주당 순자산, 주가는 그 높이에 못 미칩니다». 큰 제목은 «PBR 1배 아래, 정말 싼 걸까요», 부제는 «PBR — 주가를 회사 재산과 견줘 봅니다».",
+    "제목 «1배 아래면 싸다는데 무엇보다 싸다는 걸까요». 본문은 PBR 1배 아래면 싸다는 말의 기준이 회사가 가진 재산에서 빚을 뺀 순자산이고, 1배 아래란 시장이 매긴 값이 그 순자산보다 낮다는 뜻이라고 설명한다. 그림 왼쪽에는 기둥 하나가 위쪽 회색 빗금 칸과 아래쪽 감청색 칸으로 나뉘어 있고, 감청색 칸 꼭대기에서 붉은 점선이 오른쪽으로 뻗는다. 오른쪽의 낮은 붉은 상자는 그 점선에 못 미치고, 위에 물음표가 있다. 캡션은 «왼쪽은 회사 장부(위는 빚, 아래가 순자산), 오른쪽은 시장이 매긴 값».",
+    "제목 «PBR도 나눗셈 하나입니다». 가운데에 분수 꼴로 «주가»를 «1주당 순자산»으로 나눈 식과 «= PBR». 아래에 주가, 순자산(자산에서 부채를 빼고 남은 것 중 주주 몫, 분기마다 새로 나옴), 1배(주가가 1주당 순자산과 같다는 뜻) 세 항목. 맨 아래 붉은 테두리 상자에 포스코홀딩스 2026년 10월 8일 종가 기준 네 줄: 주가 306,500원 ÷ 6월 말 1주당 순자산 759,917원, = 0.40배로 장부 순자산의 40% 값에 거래된다, 자본총계(자회사 다른 주주 몫 포함)로 나누면 0.36배, 그래서 몇 월 말·누구 몫 순자산인지부터 본다.",
+    "제목 «PER은 주가를 버는 돈에, PBR은 가진 재산에 견줍니다». 두 칸 비교표로 왼쪽은 감청색 PBR(주가 ÷ 1주당 순자산), 오른쪽은 PER(주가 ÷ 1주당 이익). 나누는 값은 회사가 가진 재산(순자산)과 회사가 1년에 번 돈, 보여주는 것은 재산 1원에 매긴 값과 이익 1원에 매긴 값, 적자인 해에는 PBR은 그대로 계산되지만 PER은 붉게 강조된 «몇 배로 못 읽습니다». 마무리 형광펜 줄은 «적자라 PER이 없는 회사도 PBR로는 견줄 수 있습니다».",
+    "제목 «시가총액은 비슷한데 장부 재산은 25배 차이 납니다». 본문은 업종이 달라 어느 쪽이 싼지 보려는 게 아니라 무엇이 PBR을 가르는지 보려고 양 끝의 두 회사를 골랐다고 밝힌다. 가로 막대가 두 칸으로 나뉘어 있고 두 칸이 같은 자를 쓴다. 위 칸 «장부 재산 — 2026년 6월 말 순자산»에서 포스코홀딩스(철강) 57.5조 원은 막대가 끝까지 차 있고, 붉게 강조된 HD현대일렉트릭(전력기기) 2.3조 원은 아주 짧다. 아래 칸 «시장이 매긴 값 — 2026년 10월 8일 시가총액»에서 포스코홀딩스(PBR 0.40배) 23.2조 원과 붉게 강조된 HD현대일렉트릭(PBR 9.67배) 21.8조 원은 둘 다 40% 안팎 길이로 비슷하다. 아래 상자에 «시장은 장부 재산을 그대로 값으로 쳐주지 않습니다».",
+    "제목 «순자산 100원으로 번 돈이 약 16배 차이 납니다». 본문은 1년 순이익은 포스코홀딩스가 더 많지만 재산이 25배나 많아 순자산 100원으로 번 돈(ROE)은 훨씬 적고, 시장이 재산에 매기는 값은 이 힘의 영향을 크게 받는다고 설명한다. 두 칸 비교표로 왼쪽 감청색 포스코홀딩스(철강), 오른쪽 HD현대일렉트릭(전력기기). 2025년 7월~2026년 6월 1년 순이익은 약 1조 3,800억 원과 약 8,500억 원, 6월 말 순자산 기준으로 100원당 1년에 번 돈은 약 2.4원과 붉게 강조된 약 37.7원, 2026년 10월 8일 종가 기준 PBR은 0.40배와 붉게 강조된 9.67배. 마무리 형광펜 줄은 «PBR이 낮으면 그 재산으로 얼마나 버는지부터 봅니다».",
+    "제목 «초보가 자주 걸리는 세 가지». 번호가 붙은 세 항목 — 1 PBR 1배 아래면 싼 주식이다(재산으로 버는 돈이 적거나 앞날이 어두우면 시장은 재산보다 낮게 매기고, 싸 보여 샀는데 계속 싼 채로 머무는 경우를 가치함정이라 한다), 2 순자산은 지금 팔면 받는 돈이다(장부 값은 회계 기준으로 적은 값이라 그만큼 받는다는 보장이 없고 회사가 자산 가치가 떨어졌다고 보면 한 번에 깎아 낸다 — 손상차손), 3 업종이 달라도 PBR로 견줄 수 있다(스스로 키운 기술·브랜드는 장부에 거의 안 잡혀 그런 것으로 버는 회사는 PBR이 높게 나오므로 같은 업종끼리 견준다). 맨 아래 붉은 테두리 상자의 제목은 «PBR 1배는 바닥이 아닙니다», 본문은 1배 아래에 머무는 회사도 많으니 왜 낮은지를 보고 판단한다는 내용.",
+    "제목 «3줄 정리». 체크 표시가 붙은 세 줄 — PBR은 주가를 1주당 순자산으로 나눈 값이고 단위는 배, 1배 아래는 재산보다 낮은 값이지 싸다는 뜻이 아니다, PBR이 낮으면 재산으로 얼마나 버는지(ROE)부터 본다. 그 아래 노란 형광펜 두 줄과 «다음 편 ▶ EPS와 어닝서프라이즈», 맨 아래에 교육 목적이며 투자 권유가 아니라는 고지."
+  ],
+  "alt_en": [
+    "Cream grid-paper note card. On the left stands a pale column with a navy outline; a red dashed line runs right from its top. A green candlestick on the right sits well below that line, and a red double-headed arrow spans the gap between the line and the top of the candle. A red annotation reads \"Column: book value per share. The price sits below that line\". The headline is \"Below book value - really a bargain?\" with the subtitle \"P/B - the price against what the company owns\".",
+    "Title: \"Under 1x is cheap - cheap next to what?\". The body says the yardstick is what a company owns minus what it owes, its book value, and under 1 the market values the company below that. On the left, one column is split into a grey hatched top part and a navy bottom part; a red dashed line runs right from the top of the navy part. On the right, a short red box falls short of that line, with a question mark above it. The caption reads \"Left: the books (top is debt, bottom is book value). Right: market value\".",
+    "Title: \"The P/B is one division, too\". In the middle, share price over book value per share as a fraction, with \"= P/B\". Below, three notes: share price, book value (assets minus debts, the shareholders' part, updated each quarter), and 1x (the price equals book value per share). A red-bordered box works through Kraft Heinz at the close on Oct 9, 2026 in four lines: $22.27 divided by book value per share at end of June, $30.36; equals 0.73, so the stock trades at 73% of book; on March-end book value the same price gives 0.63; so first check which date's book value is used.",
+    "Title: \"P/E weighs earnings, P/B weighs what's owned\". A two-column table with navy P/B (price divided by book value per share) on the left and P/E (price divided by earnings per share) on the right. Divided by: net assets (book) against a year's earnings. What it shows: price per $1 of book against price per $1 of profit. In a loss year: the P/B still works, while the P/E, highlighted in red, is not a usable multiple. The closing line reads \"No P/E in a loss year? The P/B still works\".",
+    "Title: \"Eight times the book value, yet a smaller market value\". The body says the two are in different industries on purpose: the point is what drives the gap, not which is cheaper. Horizontal bars in two blocks drawn to one shared scale. Top block, book value at the end of June 2026: Kraft Heinz, packaged food, $36.0 billion, a full-length bar; Hershey, confectionery, highlighted in red, $4.6 billion, a short bar. Bottom block, market cap at the Oct 9, 2026 close: Kraft Heinz (P/B 0.73) $26.4 billion and Hershey (P/B 7.17) $32.7 billion in red, with Hershey's bar the longer of the two. A box below reads \"The market does not simply pay what the books say\".",
+    "Title: \"Profit on $100 of book, one-offs aside: $8 vs $33\". The body says Kraft Heinz's reported loss came from a $7.4 billion non-cash write-down of brands and goodwill; leaving one-off items out, its books earned about $8 per $100 and Hershey's about $33, the idea behind ROE. A two-column table with navy Kraft Heinz (packaged food) on the left and Hershey (confectionery) on the right. Net income as reported for the four quarters to June 2026: a $3.4 billion loss against $1.49 billion. Earned per $100 of book with one-off items left out: about $8.40 against about $33.27 in red. P/B at the Oct 9, 2026 close: 0.73 against 7.17 in red. The closing line reads \"Low P/B? First ask what the books earn\".",
+    "Title: \"Three things beginners get wrong\". Three numbered items - under 1x book means cheap (if the books earn little or the outlook is dim, the market prices a company below book; a low P/B can be a value trap); book value is sale value (it is an accounting figure and can be cut: Kraft Heinz wrote off $7.4 billion of brands and goodwill in one quarter); any two P/Bs can be compared (brands a company built itself barely show up on the books while brands it bought do, so P/Bs differ by history; compare within an industry). A red-bordered box is headed \"1x book is not a floor\": plenty of stocks trade below book, so ask why it is low before you decide.",
+    "Title: \"Three lines\". Three check-marked lines: P/B equals share price divided by book value per share; under 1x means priced below book, not cheap; with a low P/B, first check what the books earn (ROE). Below are two yellow highlighted lines, then \"Next up: EPS & earnings surprises\", and a footer noting the content is educational only and not investment advice."
+  ],
+  "published": {}
+}
