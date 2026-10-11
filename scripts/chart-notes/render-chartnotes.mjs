@@ -274,6 +274,35 @@ const R = {
         ${R._coverText(c)}
       </div>`;
     }
+    // overlay:'book' — 왼쪽에 «1주당 순자산»을 뜻하는 감청색 기둥, 그 꼭대기에서 오른쪽으로 붉은 점선
+    // (= PBR 1배 높이)을 긋고, 캔들은 그 점선보다 «아래»에 둔다. 점선과 캔들 꼭대기 사이의 빈칸에
+    // 붉은 양방향 화살표를 세워 «못 미치는 만큼»을 짚는다. PBR 회차의 주석은 «주가가 1주당 순자산
+    // 높이에 못 미친다»를 가리켜야 하는데, 'earnings' 는 아래 칸이 «이익»이고 나머지 변종은
+    // 선·높이·빈칸·주식 수를 가리키는 그림이라 «장부 재산과 주가의 높이 비교»가 화면에 없다.
+    // **캔들의 고가(h)가 점선(LINE)보다 반드시 아래**여야 한다 — 위로 걸치면 제목이 묻는
+    // «1배 아래»가 화면에서 거짓이 된다.
+    if (c.overlay === 'book') {
+      const BASE = 290, LINE = 62;            // 바닥선 · 1주당 순자산 높이(= 1배 선)
+      const S = { o: 238, c: 168, h: 150, l: 262 };   // 고가 150 > LINE 62 (y 가 클수록 낮은 가격)
+      const col = S.c < S.o ? UP : DOWN;
+      return `<div class="pad">
+        <svg width="956" height="330" viewBox="0 0 956 330" style="margin-top:2px">
+          <line x1="30" y1="${BASE}" x2="470" y2="${BASE}" stroke="#c9c6bc" stroke-width="3"/>
+          <rect x="70" y="${LINE}" width="96" height="${BASE - LINE}" fill="${C.navy}" opacity="0.2"/>
+          <rect x="70" y="${LINE}" width="96" height="${BASE - LINE}" fill="none" stroke="${C.navy}" stroke-width="4"/>
+          <line x1="50" y1="${LINE}" x2="470" y2="${LINE}" stroke="${C.red}" stroke-width="4" stroke-dasharray="14 10"/>
+          <line x1="320" y1="${S.h}" x2="320" y2="${S.l}" stroke="${col}" stroke-width="3"/>
+          <rect x="294" y="${Math.min(S.o, S.c)}" width="52" height="${Math.abs(S.c - S.o)}" fill="${col}" opacity="0.85"/>
+          <line x1="392" y1="${LINE + 10}" x2="392" y2="${S.h - 10}" stroke="${C.red}" stroke-width="4"/>
+          <path d="M 383 ${LINE + 22} L 392 ${LINE + 8} L 401 ${LINE + 22} M 383 ${S.h - 22} L 392 ${S.h - 8} L 401 ${S.h - 22}"
+                stroke="${C.red}" stroke-width="4" fill="none" stroke-linejoin="round"/>
+          <path d="M 500 210 L 404 ${(LINE + S.h) / 2}" stroke="${C.red}" stroke-width="3" fill="none"/>
+          ${String(t(c, 'annot')).split('|').map((ln, i) =>
+        `<text x="506" y="${216 + i * 32}" font-family="${FONT_SANS}" font-size="24" fill="${C.red}">${esc(ln.trim())}</text>`).join('')}
+        </svg>
+        ${R._coverText(c)}
+      </div>`;
+    }
     // overlay:'trend' — 캔들의 «저점들이 하나의 비스듬한 선 위에 얹혀» 계단처럼 올라가는 그림.
     // 주석이 그 기울어진 선을 가리키는 회차(추세선·채널)에서 쓴다. 'levels' 는 가로선이라
     // «저점이 점점 높아진다»를 말할 수 없고, 'ma'·'cross' 의 곡선은 «두 점을 이어 그은 직선»이
@@ -503,6 +532,29 @@ const R = {
           <line x1="40" y1="${BOT}" x2="790" y2="${BOT}" stroke="#c9c6bc" stroke-width="4"/>
           ${col(180, 4)}${col(470, 12)}
           ${q(806, 110, 54)}${q(860, 158, 36)}${q(808, 202, 34)}
+        </svg>`;
+    } else if (sketch === 'mystery-book') {
+      // 왼쪽은 회사 «장부» — 기둥 하나를 위(회색 빗금 = 빚)와 아래(감청색 = 순자산)로 가른다.
+      // 오른쪽은 «시장이 매긴 값» 기둥 하나. 순자산 꼭대기에서 붉은 점선을 오른쪽으로 끌어와
+      // 시장 값 기둥이 그 높이에 «못 미치는» 빈칸을 물음표로 묻는다 — PBR 1배 아래가 무엇보다
+      // 낮다는 건지를 묻는 회차의 질문이다. 글자는 넣지 않는다(언어 무관). 위·아래가 무엇인지는
+      // 캡션이 말한다. **시장 값 기둥의 꼭대기(MKT)는 순자산 꼭대기(EQ)보다 반드시 아래**다.
+      const TOP = 30, EQ = 130, MKT = 182, BOT = 240;
+      const hatch = Array.from({ length: 9 }, (_, i) =>
+        `<line x1="${150 + i * 14}" y1="${TOP}" x2="${150 + i * 14 - 40}" y2="${EQ}" stroke="#b9b6ad" stroke-width="3"/>`).join('');
+      fig = `<svg width="900" height="270" viewBox="0 0 900 270">
+          <defs><clipPath id="debt"><rect x="150" y="${TOP}" width="110" height="${EQ - TOP}"/></clipPath></defs>
+          <line x1="40" y1="${BOT}" x2="790" y2="${BOT}" stroke="#c9c6bc" stroke-width="4"/>
+          <rect x="150" y="${TOP}" width="110" height="${EQ - TOP}" fill="#eceade"/>
+          <g clip-path="url(#debt)">${hatch}</g>
+          <rect x="150" y="${EQ}" width="110" height="${BOT - EQ}" fill="${C.navy}" opacity="0.75"/>
+          <rect x="150" y="${TOP}" width="110" height="${BOT - TOP}" fill="none" stroke="${C.navy}" stroke-width="4"/>
+          <line x1="150" y1="${EQ}" x2="260" y2="${EQ}" stroke="${C.navy}" stroke-width="4"/>
+          <line x1="268" y1="${EQ}" x2="660" y2="${EQ}" stroke="${C.red}" stroke-width="5" stroke-dasharray="16 11"/>
+          <rect x="500" y="${MKT}" width="110" height="${BOT - MKT}" fill="${C.red}" opacity="0.18"/>
+          <rect x="500" y="${MKT}" width="110" height="${BOT - MKT}" fill="none" stroke="${C.red}" stroke-width="4"/>
+          ${q(538, MKT - 10, 46)}
+          ${q(712, 120, 54)}${q(768, 168, 36)}${q(716, 212, 34)}
         </svg>`;
     } else if (sketch === 'mystery-size') {
       // 두 회사를 «세로 = 한 주 값 · 가로 = 주식 수» 직사각형으로 세워 두고 «어느 쪽이 큰가»를 묻는다.
@@ -873,13 +925,19 @@ const R = {
   // `items` 만 주면 예전처럼 이름 없는 섹션 하나로 동작한다(기존 회차 그대로).
   bars(c) {
     const SECTIONS = d(c, 'sections', null) || [{ items: d(c, 'items', []) }];
+    // 막대 길이도 `value_ko` / `value_en` 으로 갈라 쓸 수 있다. 언어판마다 다른 종목을 실으면
+    // 수치의 «비율»까지 달라지는데, 공용 `value` 하나만 읽으면 영어 카드가 한국어판 비율로
+    // 그려져 **글은 «18배»인데 막대는 3.4배**가 된다 — 그림이 본문을 배반하는 그 사고다.
+    const V = (i) => Math.abs(Number(d(i, 'value', 0))) || 0;
+    // `scale` — 기본('section')은 칸마다 따로 최댓값을 잡는다(EP.08 처럼 위아래 칸의 «단위가
+    // 다를» 때 맞다: 주가 칸과 시가총액 칸). 'shared' 는 모든 칸이 한 자를 쓴다 — 위아래 칸이
+    // «같은 단위»(EP.10: 순자산 칸·시가총액 칸 모두 조 원)인데 칸마다 따로 재면, 57.5조 막대와
+    // 23.2조 막대가 둘 다 «꽉 찬» 같은 길이로 그려져 그림이 본문을 배반한다.
+    const SHARED = d(c, 'scale', 'section') === 'shared'
+      ? Math.max(...SECTIONS.flatMap(s => d(s, 'items', []).map(V)), 1) : null;
     const block = (sec) => {
       const items = d(sec, 'items', []);
-      // 막대 길이도 `value_ko` / `value_en` 으로 갈라 쓸 수 있다. 언어판마다 다른 종목을 실으면
-      // 수치의 «비율»까지 달라지는데, 공용 `value` 하나만 읽으면 영어 카드가 한국어판 비율로
-      // 그려져 **글은 «18배»인데 막대는 3.4배**가 된다 — 그림이 본문을 배반하는 그 사고다.
-      const V = (i) => Math.abs(Number(d(i, 'value', 0))) || 0;
-      const max = Math.max(...items.map(V), 1);
+      const max = SHARED || Math.max(...items.map(V), 1);
       const heading = t(sec, 'heading');
       const rows = items.map(it => {
         // 하한은 «막대가 아예 사라지지 않게» 두는 자리표시일 뿐이다. 3% 는 너무 후했다 —
@@ -1468,8 +1526,9 @@ const R = {
 // 끝나서 아무도 못 봤다. direction 은 더 위험하다: 'down' 을 조금이라도 다르게 적으면
 // «하락»이라고 써 놓고 상승 그림이 그려진다. 그래서 모르는 값은 여기서 멈춘다.
 const VARIANTS = {
-  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap', 'caps', 'earnings'] },
-  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap', 'mystery-size', 'mystery-slices'] },
+  cover: { overlay: ['volume', 'trend', 'trend2', 'levels', 'ma', 'cross', 'gap', 'caps', 'earnings', 'book'] },
+  intro: { sketch: ['zigzag', 'mystery-slope', 'mystery-levels', 'mystery-gap', 'mystery-size', 'mystery-slices', 'mystery-book'] },
+  bars: { scale: ['section', 'shared'] },
   lines: { direction: ['up', 'down'] },
   pricevol: { mode: ['candle', 'line'] },
   mirror: { figure: ['trendline', 'gap', 'gap-open', 'split'] },
