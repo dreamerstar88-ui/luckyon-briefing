@@ -1,0 +1,655 @@
+{
+ "date": "2026-10-12",
+ "session": "pm",
+ "dateLabel_ko": "10월 12일 월요일 · 저녁 브리핑",
+ "dateLabel_en": "Monday, October 12 · Evening Brief",
+ "headline_ko": "코스피 3.65% 급락한 6,384, 외국인 2조 순매도",
+ "headline_en": "KOSPI Plunges 3.65% to 6,384 as Foreigners Sell ₩2T",
+ "headline_sub_ko": "코스닥은 4.83% 하락 · 13일 美 대형은행 실적 시작, 14일 CPI",
+ "headline_sub_en": "KOSDAQ falls 4.83% · US big-bank earnings start Oct 13, CPI Oct 14",
+ "cover_kicker": {
+  "ko": "한글날 휴장 뒤 첫 거래일 · 10/12 마감",
+  "en": "First Session After Holiday · Oct 12 Close"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 ▼3.65% · 코스닥 ▼4.83%",
+    "en": "KOSPI ▼3.65% · KOSDAQ ▼4.83%"
+   },
+   {
+    "ko": "6,384.24 / 849.19 · 외국인 코스피 2.0조 순매도",
+    "en": "6,384.24 / 849.19 · foreigners sold ₩2.0T of KOSPI"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "삼성전자 ▼4.39% · SK하이닉스 ▼4.52%",
+    "en": "Samsung ▼4.39% · SK hynix ▼4.52%"
+   },
+   {
+    "ko": "250,500원 / 1,605,000원 · 반도체 업종 ▼4.48%",
+    "en": "₩250,500 / ₩1,605,000 · semis group ▼4.48%"
+   }
+  ],
+  [
+   "target",
+   {
+    "ko": "나스닥 선물 ▼0.19% · S&P 500 선물 ▲0.06%",
+    "en": "Nasdaq fut ▼0.19% · S&P 500 fut ▲0.06%"
+   },
+   {
+    "ko": "31,049.25 / 7,864.25 · VIX 15.49",
+    "en": "31,049.25 / 7,864.25 · VIX 15.49"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "한글날 휴장 뒤 첫 거래일, 코스피는 3.65% 급락한 6,384.24에, 코스닥은 4.83% 내린 849.19에 마감했다.",
+   "코스피에서 외국인이 약 2.0조원을 순매도했고 개인이 약 1.5조원을 순매수했다. 하락 종목은 720개로 상승 166개의 4배를 넘었다.",
+   "삼성전자는 4.39%(250,500원), SK하이닉스는 4.52%(1,605,000원) 내렸다. 두 종목이 코스피 거래대금의 41.6%를 차지했다.",
+   "나스닥 선물은 0.19% 내렸고 S&P 500 선물은 0.06% 올랐다. 13일 JP모건 등 대형은행 실적이, 14일 밤에는 美 9월 CPI가 나온다."
+  ],
+  "lines_en": [
+   "On the first session after the Hangul Day holiday, KOSPI plunged 3.65% to 6,384.24 and KOSDAQ fell 4.83% to 849.19.",
+   "Foreigners net sold about ₩2.0T of KOSPI shares while individuals bought about ₩1.5T. Decliners (720) outnumbered advancers (166) by more than 4 to 1.",
+   "Samsung Electronics fell 4.39% to ₩250,500 and SK hynix 4.52% to ₩1,605,000. The two made up 41.6% of KOSPI turnover.",
+   "Nasdaq futures are down 0.19% and S&P 500 futures up 0.06%. JPMorgan and other big banks report Oct 13; US September CPI is due late Oct 14 KST."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "31,049.25",
+   "delta": "▼0.19%",
+   "dir": "down",
+   "note_ko": "나스닥 선물 · 전일 31,108.75 대비",
+   "note_en": "Nasdaq futures · vs prior 31,108.75"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,864.25",
+   "delta": "▲0.06%",
+   "dir": "up",
+   "note_ko": "S&P 500 선물 · 전일 7,859.75 대비",
+   "note_en": "S&P 500 futures · vs prior 7,859.75"
+  },
+  {
+   "label": "KOSPI",
+   "value": "6,384.24",
+   "delta": "▼3.65%",
+   "dir": "down",
+   "note_ko": "10/12 종가 · 전일(10/8) 6,625.93",
+   "note_en": "Oct 12 close · prior (Oct 8) 6,625.93"
+  },
+  {
+   "label": "VIX",
+   "value": "15.49",
+   "delta": "▲4.38%",
+   "dir": "up",
+   "note_ko": "미 정규장 개장 전 · 전일 14.84 대비",
+   "note_en": "Pre-US-open · vs prior 14.84"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "45",
+   "delta": "45 → 45 -",
+   "dir": "flat",
+   "note_ko": "공포 구간 · 전 거래일 종가와 같은 점수",
+   "note_en": "Fear zone · same as prior close"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.24%",
+   "delta": "5.22% → 5.24% ▲",
+   "dir": "up",
+   "note_ko": "10/9 종가 기준 · 12일 美 채권시장 휴장",
+   "note_en": "Oct 9 close · US bond market shut Oct 12"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,332",
+   "delta": "▼0.78%",
+   "dir": "down",
+   "value_sub": "· DXY 102.4",
+   "note_ko": "일봉(진행 중) 기준 · 서울 종가와 다를 수 있음",
+   "note_en": "In-progress daily bar · may differ from Seoul close"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,202.20",
+   "delta": "▼0.33%",
+   "dir": "down",
+   "note_ko": "선물 · 전일 4,216.30달러 대비",
+   "note_en": "Futures · vs prior $4,216.30"
+  },
+  {
+   "label": "WTI",
+   "value": "$92.91",
+   "delta": "▲1.15%",
+   "dir": "up",
+   "note_ko": "선물 · 전일 91.85달러 대비",
+   "note_en": "Futures · vs prior $91.85"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$83,332",
+   "delta": "▼0.41%",
+   "dir": "down",
+   "note_ko": "UTC 일봉(진행 중) 기준",
+   "note_en": "UTC daily bar (in progress)"
+  }
+ ],
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ",
+  "S&P 500"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "코스피는 10/12 종가이며 직전 거래일은 10/8이다. 나스닥·S&P 500은 선물 기준, Fear&Greed는 CNN 실시간, 美 10년물은 10/9 종가다. 환율·비트코인은 진행 중인 일봉이다.",
+ "market_note_en": "KOSPI is the Oct 12 close; the prior session was Oct 8. Nasdaq and S&P 500 are futures, Fear&Greed is CNN's live score and the US 10Y is the Oct 9 close. FX and Bitcoin are in-progress daily bars.",
+ "chart_series_values": [
+  6889.74,
+  6870.81,
+  6838.04,
+  6971.35,
+  7003.74,
+  6941.39,
+  6803.9,
+  6625.93,
+  6384.24
+ ],
+ "chart_series_labels": [
+  "9.28",
+  "9.29",
+  "9.30",
+  "10.1",
+  "10.2",
+  "10.6",
+  "10.7",
+  "10.8",
+  "10.12"
+ ],
+ "chart_title": {
+  "ko": "코스피 4거래일 연속 하락, 최근 한 달 종가 중 최저",
+  "en": "KOSPI: 4 straight losses, lowest close in a month"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.2 7,003.74 → 10.8 6,625.93 → 10.12 6,384.24",
+  "en": "10/2 7,003.74 → 10/8 6,625.93 → 10/12 6,384.24"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "시총 상위 15개 업종 전부 하락",
+  "en": "All 15 featured groups fell"
+ },
+ "sector_sub": {
+  "ko": "10/12 · 네이버 업종 분류(코스피+코스닥) · 시총 상위 15개",
+  "en": "Oct 12 · Naver industry groups (KOSPI+KOSDAQ) · top 15 by cap"
+ },
+ "rank_kicker": "VOLUME LEADERS",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Trading Value"
+ },
+ "rank_sub": {
+  "ko": "10/12 · 코스피 개별 종목 기준(ETF 제외)",
+  "en": "Oct 12 · Individual KOSPI stocks (ETFs excluded)"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit · ₩ trillion"
+ },
+ "econ_kicker": "DATA & EARNINGS",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "오늘 발표된 공시·지표",
+  "en": "Filings and data released today"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI · KOSDAQ Record",
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "6,384.24",
+     "delta": "▼3.65%",
+     "dir": "down",
+     "sub_ko": "10/12 · 전일 6,625.93 · 하락 720 > 상승 166",
+     "sub_en": "Oct 12 · Prev 6,625.93 · decliners 720 > advancers 166"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "849.19",
+     "delta": "▼4.83%",
+     "dir": "down",
+     "sub_ko": "10/12 · 전일 892.27 · 하락 1,465 > 상승 223",
+     "sub_en": "Oct 12 · Prev 892.27 · decliners 1,465 > advancers 223"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "up": 166,
+     "flat": 32,
+     "down": 720
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "up": 223,
+     "flat": 45,
+     "down": 1465
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (조원)",
+    "label_en": "KOSPI net buy/sell by investor (₩ trillion)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Individuals",
+      "value": 1.47
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreigners",
+      "value": -2.02
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institutions",
+      "value": -0.11
+     }
+    ]
+   },
+   "note_ko": "코스피 4거래일 연속 하락, 10/2(7,003.74) 대비 -8.85%. 수급은 15:30 정규장 기준 언론 집계다.",
+   "note_en": "KOSPI down 4 straight sessions, -8.85% from Oct 2 (7,003.74). Flows: regular session (3:30 PM), per media."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "bars": [
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": -0.07
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": -1.02
+    },
+    {
+     "label_ko": "증권",
+     "label_en": "Brokerages",
+     "value": -2.24
+    },
+    {
+     "label_ko": "제약",
+     "label_en": "Pharma",
+     "value": -2.38
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Electrical Products",
+     "value": -2.52
+    },
+    {
+     "label_ko": "자동차부품",
+     "label_en": "Auto Parts",
+     "value": -2.94
+    },
+    {
+     "label_ko": "복합기업",
+     "label_en": "Conglomerates",
+     "value": -3.3
+    },
+    {
+     "label_ko": "우주항공·방산",
+     "label_en": "Aero & Defense",
+     "value": -4.23
+    },
+    {
+     "label_ko": "석유·가스",
+     "label_en": "Oil & Gas",
+     "value": -4.23
+    },
+    {
+     "label_ko": "반도체·장비",
+     "label_en": "Semis",
+     "value": -4.48
+    },
+    {
+     "label_ko": "전자장비·기기",
+     "label_en": "Electronic Equip.",
+     "value": -4.91
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuilding",
+     "value": -5.43
+    },
+    {
+     "label_ko": "화학",
+     "label_en": "Chemicals",
+     "value": -5.99
+    },
+    {
+     "label_ko": "전기장비",
+     "label_en": "Electrical Equip.",
+     "value": -7.35
+    },
+    {
+     "label_ko": "기계",
+     "label_en": "Machinery",
+     "value": -7.47
+    }
+   ],
+   "note_ko": "10/12 기준 네이버 업종 분류(코스피+코스닥 합산). 시총 상위 15개를 골랐고, 79개 전체로는 10개만 올랐다.",
+   "note_en": "Oct 12, Naver industry groups (KOSPI+KOSDAQ). Top 15 by market cap; across all 79 groups, only 10 rose."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "rows": [
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩4.97T",
+     "pct": -4.52
+    },
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩4.54T",
+     "pct": -4.39
+    },
+    {
+     "name_ko": "삼성전기",
+     "name_en": "Samsung Electro-Mech.",
+     "value": "₩0.93T",
+     "pct": -3.82
+    },
+    {
+     "name_ko": "SK스퀘어",
+     "name_en": "SK Square",
+     "value": "₩0.87T",
+     "pct": -6.29
+    },
+    {
+     "name_ko": "삼성SDI",
+     "name_en": "Samsung SDI",
+     "value": "₩0.33T",
+     "pct": -1.41
+    }
+   ],
+   "share": {
+    "label_ko": "코스피 거래대금 중 상위 2종목 비중",
+    "label_en": "Top-2 share of KOSPI turnover",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "SK하이닉스",
+      "label_en": "SK hynix",
+      "pct": 21.7,
+      "color": "#e5a23a"
+     },
+     {
+      "label_ko": "SK하이닉스+삼성전자",
+      "label_en": "SK hynix + Samsung",
+      "pct": 41.6,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "코스피 거래대금 22.87조원(네이버 집계) 중 SK하이닉스와 삼성전자가 41.6%를 차지했다. 상위 5종목 전부 내렸다.",
+   "note_en": "SK hynix and Samsung Elec. took 41.6% of KOSPI turnover of ₩22.87T (Naver tally). All top-5 stocks fell."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "삼성전자 자사주 취득 완료",
+     "label_en": "Samsung Elec. Buyback Completed",
+     "value": "₩15.0T",
+     "delta": {
+      "ko": "평균 26만3,823원",
+      "en": "Avg ₩263,823"
+     },
+     "dir": "flat",
+     "sub_ko": "5,685만주 · 8/24~10/6 · 10/12 결과보고",
+     "sub_en": "56.86M shares · Aug 24-Oct 6 · filed Oct 12"
+    },
+    {
+     "label_ko": "원/달러 서울 종가 (주간)",
+     "label_en": "USD/KRW Seoul Close (day session)",
+     "value": "1,335.1",
+     "delta": {
+      "ko": "전일比 -7.7원",
+      "en": "-7.7 won vs prior"
+     },
+     "dir": "down",
+     "sub_ko": "10/12 15:30 기준",
+     "sub_en": "As of 3:30 PM, Oct 12"
+    },
+    {
+     "label_ko": "美 10년물 국채금리 (재무부)",
+     "label_en": "US 10-Year Treasury Yield",
+     "value": "5.24%",
+     "delta": "5.22% → 5.24% ▲",
+     "dir": "up",
+     "sub_ko": "10/9 종가 · 12일 채권시장 휴장",
+     "sub_en": "Oct 9 close · bond market shut Oct 12"
+    },
+    {
+     "label_ko": "Fear & Greed 지수 (CNN)",
+     "label_en": "Fear & Greed Index (CNN)",
+     "value": "45",
+     "delta": "45 → 45 -",
+     "dir": "flat",
+     "sub_ko": "공포 구간 · 1주 전 43.7",
+     "sub_en": "Fear zone · 1 week ago 43.7"
+    }
+   ],
+   "cols": 2,
+   "note_ko": "삼성전자 종가(250,500원)는 자사주 평균 취득가(26만3,823원)보다 5.05% 낮다. 환율은 언론(머니투데이) 집계다.",
+   "note_en": "Samsung's close (₩250,500) is 5.05% below its buyback average (₩263,823). FX per Money Today."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductor Tech",
+   "items": [
+    {
+     "headline_ko": "SK하이닉스, SSD용 프로그래머블 프로세서 H-TPU 공개",
+     "headline_en": "SK hynix unveils H-TPU programmable processor for SSDs",
+     "body_ko": "구인재 부사장이 ISOCC 2026 기조연설에서 공개했다. AI 연산용 가속기가 아니라 SSD 안의 데이터 흐름을 제어하는 프로세서다.",
+     "body_en": "VP Koo In-jae unveiled it in an ISOCC 2026 keynote. It manages data flow inside SSDs rather than serving as an AI compute accelerator.",
+     "src": "ZDNet Korea",
+     "time": "10/12"
+    },
+    {
+     "headline_ko": "FT \"오픈AI 연환산 매출 500억달러\", 블룸버그는 연말 700억 전망 전해",
+     "headline_en": "FT: OpenAI at $50B run-rate; Bloomberg: it expects $70B",
+     "body_ko": "FT는 9월 말 연환산 매출을 약 500억달러로 보도했다. 블룸버그는 오픈AI가 연말 700억달러 이상을 예상한다고 전했다.",
+     "body_en": "The FT put September-end annualized revenue near $50B. Bloomberg reported OpenAI expects $70B or more by year-end.",
+     "src": "FT, Bloomberg",
+     "time": "10/8-9"
+    },
+    {
+     "headline_ko": "챗GPT, GPT-6 시리즈로 전환",
+     "headline_en": "ChatGPT moves to the GPT-6 series",
+     "body_ko": "오픈AI 릴리스 노트에 따르면 10/7 Plus·Pro가 Sol로 바뀌었고, 무료·Go는 10/8부터 Luna로 확대됐다.",
+     "body_en": "Per OpenAI release notes, Plus and Pro moved to GPT-6 Sol on Oct 7, and Free and Go to Luna from Oct 8.",
+     "src": "OpenAI",
+     "time": "10/7-8"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Key News",
+   "items": [
+    {
+     "headline_ko": "코스피 3.65% 급락, 외국인 2.0조 순매도",
+     "headline_en": "KOSPI -3.65%; foreigners sell ₩2.0T",
+     "body_ko": "코스피는 6,384.24에 마감했다. 외국인이 약 2.0조원을 순매도하고 개인이 약 1.5조원을 순매수했다.",
+     "body_en": "KOSPI closed at 6,384.24. Foreigners net sold about ₩2.0T while individuals bought about ₩1.5T (media tallies).",
+     "src": "Newspim, Asiae",
+     "time": "10/12"
+    },
+    {
+     "headline_ko": "코스닥 4.83% 하락한 849.19",
+     "headline_en": "KOSDAQ -4.83% at 849.19",
+     "body_ko": "하락 1,465개, 상승 223개였다. 직전 거래일(10/8) 892.27보다 43.08포인트 내렸다.",
+     "body_en": "Decliners numbered 1,465 against 223 advancers. The index lost 43.08 points from the prior close of 892.27.",
+     "src": "KRX, Naver",
+     "time": "10/12"
+    },
+    {
+     "headline_ko": "SK텔레콤 -5.23%, KT -4.22%, 스페이스X 파장",
+     "headline_en": "SK Telecom -5.23%, KT -4.22% on SpaceX spectrum deal",
+     "body_ko": "SKT 79,700원, KT 49,900원에 마감했다. 10/8 스페이스X의 美 800MHz 인수 소식에 10/9 美 통신주가 급락했고, 휴장 뒤 첫 거래일인 이날 반영된 것으로 풀이된다.",
+     "body_en": "SKT closed at ₩79,700 and KT at ₩49,900. US telecoms fell on Oct 9 after SpaceX's spectrum deal news; Korea reflected it on its first session back.",
+     "src": "Yahoo Finance, DDaily",
+     "time": "10/12"
+    },
+    {
+     "headline_ko": "삼성전자 15조 자사주 매입 마무리",
+     "headline_en": "Samsung wraps up ₩15T share buyback",
+     "body_ko": "임직원 주식보상용으로 장내에서 사들였고 예정보다 46일 앞당겨 끝냈다. 자기주식은 보통주 지분율 2.34%다.",
+     "body_en": "The employee-compensation buyback finished 46 days ahead of schedule. Treasury shares now equal 2.34% of common stock.",
+     "src": "DART",
+     "time": "10/12"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "AHEAD",
+ "schedule_sub": {
+  "ko": "지금부터 내일 아침 8시까지, 이후 핵심 일정 미리 보기 포함",
+  "en": "From now to 8 AM tomorrow, plus key events after"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 22:30 ~ 익일 05:00 (서머타임 기준) · 프리마켓 17:00~22:30",
+   "※ 오늘(10/12) 日 증시·美 채권시장은 휴장, 美 주식시장은 정상 개장"
+  ],
+  "lines_en": [
+   "Regular session 22:30–05:00 KST next day (DST) · Pre-market from 17:00 KST",
+   "※ Japan stocks and the US bond market are closed today; US equities open as normal"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "10/13 01:50",
+   "title_ko": "美 해맥 클리블랜드 연은 총재 연설",
+   "title_en": "Cleveland Fed's Hammack speaks",
+   "detail_ko": "해맥 총재(매파·투표권 O)",
+   "detail_en": "Hammack (hawk, voter)",
+   "importance": "high"
+  },
+  {
+   "time": "10/13 15:00",
+   "title_ko": "독일 9월 조화소비자물가(HICP)",
+   "title_en": "Germany HICP (Sep)",
+   "detail_ko": "전년비 예상 3.3% · 이전 3.3%",
+   "detail_en": "YoY est. 3.3% · Prior 3.3%",
+   "importance": "mid"
+  },
+  {
+   "time": "10/13 BMO",
+   "title_ko": "美 JP모건·골드만삭스 실적 (장 전)",
+   "title_en": "JPMorgan, Goldman Q3 results (pre-market)",
+   "detail_ko": "EPS 예상 JPM 5.93달러 · GS 12.86달러",
+   "detail_en": "EPS est. JPM $5.93 · GS $12.86",
+   "importance": "high"
+  },
+  {
+   "time": "10/13 BMO",
+   "title_ko": "美 씨티·웰스파고 실적 (장 전)",
+   "title_en": "Citigroup, Wells Fargo results (pre-market)",
+   "detail_ko": "EPS 예상 씨티 2.65달러 · 웰스파고 1.85달러",
+   "detail_en": "EPS est. Citi $2.65 · WFC $1.85",
+   "importance": "mid"
+  },
+  {
+   "time": "10/13 BMO",
+   "title_ko": "美 존슨앤드존슨·유나이티드헬스 실적",
+   "title_en": "J&J, UnitedHealth results",
+   "detail_ko": "EPS 예상 J&J 2.50달러 · UNH 4.14달러",
+   "detail_en": "EPS est. J&J $2.50 · UNH $4.14",
+   "importance": "mid"
+  },
+  {
+   "time": "10/14 10:30",
+   "title_ko": "中 9월 소비자물가(CPI)",
+   "title_en": "China CPI (Sep)",
+   "detail_ko": "전년비 예상 1.0% · 이전 0.8%",
+   "detail_en": "YoY est. 1.0% · Prior 0.8%",
+   "importance": "mid"
+  },
+  {
+   "time": "10/14 21:30",
+   "title_ko": "美 9월 소비자물가지수(CPI)",
+   "title_en": "US CPI (Sep)",
+   "detail_ko": "전월비 예상 0.6% · 이전 0.4% / 전년비 예상 3.7% · 이전 3.4%",
+   "detail_en": "MoM est. 0.6% · Prior 0.4% / YoY est. 3.7% · Prior 3.4%",
+   "importance": "high"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+ "card_photos": {
+  "1": "Trading floor screens glowing red and blue after a sharp selloff, traders in silhouette, dark navy with amber highlights, cinematic low-key lighting",
+  "3": "A dark wall of screens showing a steeply falling line chart in blue, shallow depth of field, cool blue and warm amber light",
+  "4": "A neon-lit map of industrial sectors as glowing bars, almost all falling blue, financial dashboard, moody lighting",
+  "7": "Close-up of a semiconductor wafer under blue and amber light, shallow depth of field"
+ },
+ "caption_ko": "한글날 휴장 뒤 첫 거래일, 코스피는 3.65% 급락한 6,384.24에, 코스닥은 4.83% 내린 849.19에 마감했습니다. 외국인이 코스피에서 약 2.0조원을 순매도했고, 삼성전자는 -4.39%, SK하이닉스는 -4.52%였습니다. 나스닥 선물은 -0.19%, S&P 500 선물은 +0.06%입니다. 13일에는 JP모건 등 대형은행 실적이, 14일 밤에는 美 9월 CPI가 나옵니다. 자세한 내용은 카드를 넘겨서 확인하세요 📊\n\n매일 아침·저녁 놓치지 말고 팔로우 + 저장해두세요!\n\n#루키온브리핑 #경제브리핑 #저녁브리핑 #코스피 #코스닥 #삼성전자 #SK하이닉스 #반도체 #외국인순매도 #나스닥선물 #환율 #CPI #JP모건 #투자정보 #주식\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "caption_en": "On the first session after the Hangul Day holiday, KOSPI plunged 3.65% to 6,384.24 and KOSDAQ fell 4.83% to 849.19. Foreigners net sold about ₩2.0T of KOSPI shares; Samsung Electronics fell 4.39% and SK hynix 4.52%. Nasdaq futures are down 0.19% and S&P 500 futures up 0.06%. JPMorgan and other big banks report Oct 13, and US September CPI follows late Oct 14 KST. Swipe for details 📊\n\nFollow + save for the brief every morning and evening!\n\n#luckyonbrief #marketbrief #eveningbrief #KOSPI #KOSDAQ #SamsungElectronics #SKhynix #semiconductors #foreignselling #NasdaqFutures #USDKRW #CPI #JPMorgan #investing #stocks\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "KRX",
+  "Naver Finance",
+  "DART",
+  "FXStreet",
+  "CNN Fear & Greed",
+  "OpenAI",
+  "News reports"
+ ]
+}
