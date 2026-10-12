@@ -1,71 +1,11 @@
 {
-  "fetchedAt": "2026-10-11T16:37:40Z",
+  "fetchedAt": "2026-10-12T01:22:33Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-09T16:37:40Z",
-    "to": "2026-10-25T16:37:40Z"
+    "from": "2026-10-10T01:22:33Z",
+    "to": "2026-10-26T01:22:33Z"
   },
   "events": [
-    {
-      "at": "2026-10-09T17:00:00Z",
-      "country": "US",
-      "name": "Baker Hughes US Oil Rig Count",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 456,
-      "actual": 462,
-      "unit": null
-    },
-    {
-      "at": "2026-10-09T19:30:00Z",
-      "country": "EMU",
-      "name": "CFTC EUR NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -63.3,
-      "actual": -99.3,
-      "unit": "€"
-    },
-    {
-      "at": "2026-10-09T19:30:00Z",
-      "country": "JP",
-      "name": "CFTC JPY NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 55.4,
-      "actual": 62.3,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-10-09T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Gold NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 218.6,
-      "actual": 210.3,
-      "unit": "$"
-    },
-    {
-      "at": "2026-10-09T19:30:00Z",
-      "country": "US",
-      "name": "CFTC Oil NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 109.5,
-      "actual": 99.1,
-      "unit": null
-    },
-    {
-      "at": "2026-10-09T19:30:00Z",
-      "country": "US",
-      "name": "CFTC S&P 500 NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -142.5,
-      "actual": -154.1,
-      "unit": "$"
-    },
     {
       "at": "2026-10-11T15:00:00Z",
       "country": "JP",
@@ -131,7 +71,7 @@
       "country": "JP",
       "name": "Producer Price Index (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": -0.2,
       "actual": null,
       "unit": "%"
@@ -311,7 +251,7 @@
       "country": "US",
       "name": "Existing Home Sales (MoM)",
       "impact": "LOW",
-      "consensus": 3.97,
+      "consensus": 3.96,
       "previous": 3.98,
       "actual": null,
       "unit": null
@@ -351,7 +291,7 @@
       "country": "US",
       "name": "Monthly Budget Statement",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": -28,
       "previous": -166.8,
       "actual": null,
       "unit": "$"
@@ -391,7 +331,7 @@
       "country": "CN",
       "name": "Consumer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 0.4,
       "actual": null,
       "unit": "%"
@@ -401,7 +341,7 @@
       "country": "CN",
       "name": "Consumer Price Index (YoY)",
       "impact": "HIGH",
-      "consensus": 1.1,
+      "consensus": 1,
       "previous": 0.8,
       "actual": null,
       "unit": "%"
@@ -411,7 +351,7 @@
       "country": "CN",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": 4.4,
+      "consensus": 4.5,
       "previous": 3.8,
       "actual": null,
       "unit": "%"
@@ -571,7 +511,7 @@
       "country": "US",
       "name": "Consumer Price Index (YoY)",
       "impact": "HIGH",
-      "consensus": 3.6,
+      "consensus": 3.7,
       "previous": 3.4,
       "actual": null,
       "unit": "%"
@@ -611,7 +551,7 @@
       "country": "US",
       "name": "Consumer Price Index n.s.a (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 336.67,
       "previous": 334.98,
       "actual": null,
       "unit": null
@@ -721,7 +661,7 @@
       "country": "EMU",
       "name": "Industrial Production s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.1,
+      "consensus": 0,
       "previous": -0.1,
       "actual": null,
       "unit": "%"
@@ -731,7 +671,7 @@
       "country": "EMU",
       "name": "Industrial Production w.d.a. (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -0.1,
       "previous": 0,
       "actual": null,
       "unit": "%"
@@ -761,7 +701,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 197,
+      "consensus": 200,
       "previous": 197,
       "actual": null,
       "unit": null
@@ -781,7 +721,7 @@
       "country": "US",
       "name": "NY Empire State Manufacturing Index",
       "impact": "MEDIUM",
-      "consensus": 3.2,
+      "consensus": 12,
       "previous": 7.6,
       "actual": null,
       "unit": null
@@ -791,7 +731,7 @@
       "country": "US",
       "name": "Philadelphia Fed Manufacturing Survey",
       "impact": "MEDIUM",
-      "consensus": 26.5,
+      "consensus": 27.8,
       "previous": 37.8,
       "actual": null,
       "unit": null
@@ -811,7 +751,7 @@
       "country": "US",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 5.4,
       "previous": 5.4,
       "actual": null,
       "unit": "%"
@@ -831,7 +771,7 @@
       "country": "US",
       "name": "Producer Price Index ex Food & Energy (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 4.4,
       "previous": 4.6,
       "actual": null,
       "unit": "%"
@@ -1131,7 +1071,7 @@
       "country": "US",
       "name": "Export Price Index (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1,
       "previous": 0.6,
       "actual": null,
       "unit": "%"
@@ -1151,7 +1091,7 @@
       "country": "US",
       "name": "Import Price Index (MoM)",
       "impact": "LOW",
-      "consensus": 0.6,
+      "consensus": 0.7,
       "previous": 0.7,
       "actual": null,
       "unit": "%"
@@ -1181,7 +1121,7 @@
       "country": "US",
       "name": "Industrial Production (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.3,
+      "consensus": 0.4,
       "previous": 0,
       "actual": null,
       "unit": "%"
@@ -2075,6 +2015,16 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-10-25T23:50:00Z",
+      "country": "JP",
+      "name": "Corporate Service Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.7,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
