@@ -37,8 +37,8 @@
   [
    "clock",
    {
-    "ko": "WTI 94.79달러(▲1.12%) · 에너지 ▲1.80%",
-    "en": "WTI $94.79 (▲1.12%) · Energy ▲1.80%"
+    "ko": "WTI 94.13달러(▲0.42%) · 에너지 ▲1.80%",
+    "en": "WTI $94.13 (▲0.42%) · Energy ▲1.80%"
    },
    {
     "ko": "오늘 밤 21:30 美 9월 CPI 발표",
@@ -50,13 +50,13 @@
   "lines_ko": [
    "나스닥은 0.15%(27,204.38), S&P 500은 0.02%(7,805.45), 다우는 0.35%(51,670.10) 내려 3대 지수가 모두 하락했다. 나스닥은 10/6 최고 종가(27,599.79)보다 1.43% 낮다.",
    "11개 섹터 중 5개가 올랐다. 에너지(XLE)가 +1.80%로 가장 많이 올랐고 헬스케어(XLV)는 -1.35%였다. 거래대금 1위 마이크론은 3.62% 내렸다.",
-   "골드만삭스 3분기 EPS는 17.01달러로 예상 12.86달러보다 높았고, 씨티(2.85 vs 2.65)와 웰스파고(1.87 vs 1.85)도 예상을 넘었다(FMP 집계).",
+   "골드만삭스 EPS는 17.01달러로 예상 12.86달러를 넘었지만, 주가는 씨티 -5.60%, 웰스파고 -3.10%, 골드만 -0.23%로 모두 내렸다(실적은 FMP, 주가는 Yahoo).",
    "코스피는 어제 5.46% 급락한 6,035.35에 마감해 5거래일 연속 내렸고 누적 낙폭은 13.83%다. 삼성전자는 7.39%, SK하이닉스는 10.09% 내렸고 외국인은 약 4.5조원을 순매도했다."
   ],
   "lines_en": [
    "The Nasdaq fell 0.15% to 27,204.38, the S&P 500 fell 0.02% to 7,805.45 and the Dow fell 0.35% to 51,670.10, so all three indexes ended lower. The Nasdaq closed 1.43% below its Oct 6 record close (27,599.79).",
    "Five of the 11 sectors rose. Energy (XLE) gained the most at +1.80%, while health care (XLV) fell 1.35%. Micron, first by turnover, fell 3.62%.",
-   "Goldman Sachs earned $17.01 per share in Q3 against an estimate of $12.86, and Citi ($2.85 vs $2.65) and Wells Fargo ($1.87 vs $1.85) also topped estimates (FMP).",
+   "Goldman Sachs earned $17.01 per share against an estimate of $12.86, yet Citi fell 5.60%, Wells Fargo 3.10% and Goldman 0.23% (results per FMP, prices per Yahoo).",
    "KOSPI plunged 5.46% to 6,035.35 yesterday, its fifth straight loss and a 13.83% slide over the span. Samsung Electronics fell 7.39%, SK hynix fell 10.09% and foreigners net sold about ₩4.5T."
   ]
  },
@@ -128,11 +128,11 @@
   },
   {
    "label": "WTI",
-   "value": "$94.79",
-   "delta": "▲1.12%",
+   "value": "$94.13",
+   "delta": "▲0.42%",
    "dir": "up",
-   "note_ko": "선물 · 10/13 일봉 · 전일 93.74",
-   "note_en": "Futures · Oct 13 daily bar · prior 93.74"
+   "note_ko": "선물 · 10/13 14:30 ET 시점 · 정산가와 다를 수 있음",
+   "note_en": "Futures · as of 2:30 PM ET Oct 13 · may differ from settlement"
   },
   {
    "label": "Bitcoin",
@@ -157,8 +157,8 @@
   "WTI",
   "Bitcoin"
  ],
- "market_note_ko": "나스닥·S&P 500·VIX는 10/13 미국장 마감 종가이고, 코스피는 10/13 정규장 종가(오늘 개장 전)다. 10년물은 10/13 재무부 종가, Fear&Greed는 CNN 기준이다. 환율·비트코인은 일봉(진행 중), 금·WTI는 선물 일봉이다.",
- "market_note_en": "Nasdaq, S&P 500 and VIX are Oct 13 US closes; KOSPI is the Oct 13 regular-session close (before today's open). The 10Y yield is the Oct 13 Treasury close and Fear&Greed is CNN's. FX and Bitcoin are daily bars (in progress); gold and WTI are futures daily bars.",
+ "market_note_ko": "나스닥·S&P 500·VIX는 10/13 미국장 마감 종가이고, 코스피는 10/13 정규장 종가(오늘 개장 전)다. 10년물은 10/13 재무부 종가, Fear&Greed는 CNN 기준이다. 환율·비트코인은 일봉(진행 중), 금은 선물 일봉, WTI는 선물 10/13 14:30 ET 시점 값이다.",
+ "market_note_en": "Nasdaq, S&P 500 and VIX are Oct 13 US closes; KOSPI is the Oct 13 regular-session close (before today's open). The 10Y yield is the Oct 13 Treasury close and Fear&Greed is CNN's. FX and Bitcoin are daily bars (in progress); gold is a futures daily bar and WTI is the futures price as of 2:30 PM ET on Oct 13.",
  "chart_series_values": [
   26871.6,
   27190.86,
@@ -377,8 +377,8 @@
      }
     ]
    },
-   "note_ko": "야후 스크리너 거래대금 상위 300종목 중 등락이 집계된 298종목 기준(가격×거래량 추정, 다섯 행 같은 산식). 상승 131개·하락 167개였고 돈은 상승·하락 종목에 거의 반반 갈렸다. 1위 마이크론만 내렸다.",
-   "note_en": "Yahoo screener top 300 by turnover, 298 with a price change (price × volume estimate, same formula for all rows). 131 advanced and 167 declined, with money split almost evenly. Only first-ranked Micron fell."
+   "note_ko": "야후 스크리너 거래대금 상위 300종목 중 등락이 집계된 298종목 기준(가격×거래량 추정, 다섯 행 같은 산식). 상승 131개·하락 167개였고 돈은 상승·하락 종목에 거의 반반 갈렸다. 상위 5개 중 마이크론만 내렸다.",
+   "note_en": "Yahoo screener top 300 by turnover, 298 with a price change (price × volume estimate, same formula for all rows). 131 advanced and 167 declined, with money split almost evenly. Among the top five, only Micron fell."
   },
   {
    "title_ko": "실적 · 지표 발표",
@@ -397,16 +397,16 @@
      "sub_en": "Revenue $18.68B · est. $16.83B"
     },
     {
-     "label_ko": "유나이티드헬스 3분기 EPS",
-     "label_en": "UnitedHealth Q3 EPS",
-     "value": "$4.69",
+     "label_ko": "JP모건 3분기 조정 EPS",
+     "label_en": "JPMorgan Q3 Adj. EPS",
+     "value": "$5.75",
      "delta": {
-      "ko": "예상 4.14 대비 +0.55",
-      "en": "+0.55 vs est. 4.14"
+      "ko": "예상 5.93 대비 -0.18",
+      "en": "-0.18 vs est. 5.93"
      },
-     "dir": "up",
-     "sub_ko": "매출 1,127억달러 · 예상 1,113억달러",
-     "sub_en": "Revenue $112.7B · est. $111.3B"
+     "dir": "down",
+     "sub_ko": "보고 EPS 5.57 · 매출 501.7억달러(예상 512.3억)",
+     "sub_en": "Reported EPS 5.57 · rev. $50.17B (est. $51.23B)"
     },
     {
      "label_ko": "씨티그룹 3분기 EPS",
@@ -417,20 +417,8 @@
       "en": "+0.20 vs est. 2.65"
      },
      "dir": "up",
-     "sub_ko": "매출 238.5억달러 · 예상 237.2억달러",
-     "sub_en": "Revenue $23.85B · est. $23.72B"
-    },
-    {
-     "label_ko": "웰스파고 3분기 EPS",
-     "label_en": "Wells Fargo Q3 EPS",
-     "value": "$1.87",
-     "delta": {
-      "ko": "예상 1.85 대비 +0.02",
-      "en": "+0.02 vs est. 1.85"
-     },
-     "dir": "up",
-     "sub_ko": "매출 218.7억달러 · 예상 223.1억달러",
-     "sub_en": "Revenue $21.87B · est. $22.31B"
+     "sub_ko": "매출 238.5억달러 · 주가 -5.60%",
+     "sub_en": "Revenue $23.85B · shares -5.60%"
     },
     {
      "label_ko": "美 10년물 국채금리 (재무부)",
@@ -447,8 +435,8 @@
      "value": "45",
      "delta": "46 → 45 ▼",
      "dir": "down",
-     "sub_ko": "공포 구간 · 1주 전 46.8",
-     "sub_en": "Fear zone · 1 week ago 46.8"
+     "sub_ko": "공포 구간 · raw 44.7 · 1주 전 46.8",
+     "sub_en": "Fear zone · raw 44.7 · 1 week ago 46.8"
     },
     {
      "label_ko": "삼성전자 종가 vs 자사주 평균가",
@@ -459,38 +447,26 @@
       "en": "Close ₩232,000"
      },
      "dir": "down",
-     "sub_ko": "자사주 평균 취득가 263,823원 · 10/13",
-     "sub_en": "Buyback average ₩263,823 · Oct 13"
-    },
-    {
-     "label_ko": "코스피 거래대금",
-     "label_en": "KOSPI Turnover",
-     "value": "₩28.45T",
-     "delta": {
-      "ko": "상위 2종목 48.9%",
-      "en": "Top-2 stocks 48.9%"
-     },
-     "dir": "flat",
-     "sub_ko": "10/13 · 네이버 집계 · 전일 ₩22.87T",
-     "sub_en": "Oct 13 · Naver tally · prior ₩22.87T",
-     "ref_ko": "코스피 거래대금 중 SK하이닉스·삼성전자가 차지한 비중",
-     "ref_en": "Share of KOSPI turnover taken by SK hynix and Samsung Elec."
+     "sub_ko": "평균 취득가 263,823원(수수료 제외) · 종가 기준",
+     "sub_en": "Avg cost ₩263,823 (fees excl.) · vs close",
+     "ref_ko": "공시 평균 취득단가(수수료 제외) 대비 종가",
+     "ref_en": "Close vs the filed average cost (fees excluded)"
     }
    ],
    "cols": 2,
-   "note_ko": "EPS·매출은 FMP 집계(10/13 발표분)이며 차이는 실제−예상이다. 국채금리·Fear&Greed는 직전 값 대비다. 삼성전자 평균 취득가는 10/12 자사주 결과보고 기준이다.",
-   "note_en": "EPS and revenue are FMP figures for results released Oct 13; differences are actual minus estimate. Yield and Fear&Greed are vs the previous reading. Samsung's average price is from its Oct 12 buyback report."
+   "note_ko": "EPS·매출은 FMP 집계(10/13 발표분)이며 차이는 실제−예상이다. JP모건은 FMP 조정 EPS 기준이고 주가는 Yahoo다. 국채금리·Fear&Greed는 직전 값 대비다.",
+   "note_en": "EPS and revenue are FMP figures for results released Oct 13; differences are actual minus estimate. JPMorgan uses FMP's adjusted EPS; share prices are from Yahoo. Yield and Fear&Greed are vs the previous reading."
   },
   {
    "title_ko": "AI · 반도체 기술",
    "title_en": "AI & Semiconductor Tech",
    "items": [
     {
-     "headline_ko": "中 CXMT '서버용 DDR5 연말 출시' 보도에 메모리주 급락",
-     "headline_en": "Memory stocks drop on China's CXMT DDR5 server plan",
-     "body_ko": "뉴스핌 등은 CXMT가 4F² 셀 구조의 서버용 DDR5 RDIMM을 연말까지 내놓겠다고 밝혔다고 보도했다. 양산·고객 인증은 확인되지 않았고, 10/13 SK하이닉스는 10.09%, 삼성전자는 7.39% 내렸다.",
-     "body_en": "Newspim and others reported CXMT plans to launch a 4F²-cell server DDR5 RDIMM by year-end. Volume production and customer qualification are unconfirmed; on Oct 13 SK hynix fell 10.09% and Samsung Electronics fell 7.39%.",
-     "src": "Newspim, Fnnews",
+     "headline_ko": "브로드컴 혹 탄 \"AI 투자자는 카지노에 있는 것과 같다\"",
+     "headline_en": "Broadcom's Hock Tan: AI investors are 'in a casino'",
+     "body_ko": "아주경제 등은 혹 탄 CEO가 싱가포르 DBS 콘퍼런스(10/12)에서 가장 큰 제약은 자본이라고 말했다고 보도했다. 브로드컴은 3분기 AI 반도체 매출 167억달러, 4분기 217억달러를 전망한 바 있다.",
+     "body_en": "Ajunews and others reported CEO Hock Tan told a DBS conference in Singapore on Oct 12 that capital is the biggest constraint. Broadcom has guided to AI chip revenue of $16.7B in Q3 and $21.7B in Q4.",
+     "src": "Ajunews",
      "time": "10/12-13"
     },
     {
@@ -502,19 +478,19 @@
      "time": "10/13"
     },
     {
-     "headline_ko": "미국 반도체 엇갈림, 마이크론만 -3.62%",
-     "headline_en": "US chips mixed; only Micron falls, -3.62%",
-     "body_ko": "10/13 마이크론은 3.62% 내렸고 샌디스크는 0.34% 내렸다. 반면 엔비디아 +0.97%, AMD +1.90%, 인텔 +1.44%였고 반도체 ETF(SMH)는 0.49% 내렸다.",
-     "body_en": "On Oct 13 Micron fell 3.62% and SanDisk fell 0.34%, while Nvidia rose 0.97%, AMD 1.90% and Intel 1.44%. The semiconductor ETF (SMH) fell 0.49%.",
-     "src": "Yahoo Finance",
+     "headline_ko": "CNBC, 무명 中 메모리 업체가 세계 증시 급락 부른 배경 분석",
+     "headline_en": "CNBC: how a little-known Chinese chipmaker rattled global stocks",
+     "body_ko": "CNBC는 CXMT가 7월 상하이 상장에서 약 86억달러를 조달했고 상장 첫날 466% 올랐다고 정리했다. CXMT는 HBM이 아닌 범용 DDR5를 만들며 2분기 D램 점유율은 약 10%로 보도됐다.",
+     "body_en": "CNBC recapped that CXMT raised about $8.6B in its July Shanghai IPO and jumped 466% on day one. It makes standard DDR5 rather than HBM and was reported to hold about 10% of Q2 DRAM share.",
+     "src": "CNBC",
      "time": "10/13"
     },
     {
-     "headline_ko": "LS일렉트릭, 美 AI 데이터센터 전력설비 1,852억원 수주",
-     "headline_en": "LS Electric wins ₩185.2B US AI data-center power order",
-     "body_ko": "블룸에너지를 통해 펜실베이니아 빅테크 데이터센터용 수배전반·변압기 패키지를 수주했다. 공급은 2027년 4~7월이며 블룸에너지 관련 누적 수주는 5억달러를 넘었다.",
-     "body_en": "Through Bloom Energy, it won a switchgear-and-transformer package for a big-tech data center in Pennsylvania. Supply runs April-July 2027, and cumulative Bloom Energy-related orders now exceed $500M.",
-     "src": "Newdaily, Joongang Economy",
+     "headline_ko": "엔비디아, 프랑스 스타트업 4곳 투자 · 유럽 20억달러 예고",
+     "headline_en": "Nvidia backs four French startups; $2B Europe plan flagged",
+     "body_ko": "엔비디아가 파리에서 Doctolib·Genesis AI·Pigment·Entalpic 등에 투자하고 마크롱 대통령을 만났다고 보도됐다. 젠슨 황은 일주일 내 20억달러 규모 유럽 투자를 발표할 계획이다.",
+     "body_en": "Nvidia was reported to be investing in Doctolib, Genesis AI, Pigment and Entalpic in Paris and meeting President Macron. Jensen Huang plans to announce $2B of European investment within a week.",
+     "src": "The Next Web, Bloomberg",
      "time": "10/13"
     },
     {
@@ -524,14 +500,6 @@
      "body_en": "Euronews reported that Anthropic warned small AI models could be months away from copying themselves onto internet-connected household devices, which would make them hard to shut down.",
      "src": "Euronews",
      "time": "10/13"
-    },
-    {
-     "headline_ko": "엔비디아 황 CEO, 일주일 내 유럽 20억달러 투자 발표 예정",
-     "headline_en": "Nvidia's Huang to announce $2B in European deals within a week",
-     "body_ko": "더넥스트웹은 젠슨 황이 일주일 안에 20억달러 규모 유럽 투자를 발표할 계획이라고 전했다. 지난 1년간 유럽 투자는 80억달러였다고 보도됐다.",
-     "body_en": "The Next Web reported Jensen Huang plans to announce $2B of European investment within a week, on top of $8B over the past year.",
-     "src": "The Next Web",
-     "time": "10/13"
     }
    ]
   },
@@ -540,43 +508,43 @@
    "title_en": "Key News",
    "items": [
     {
-     "headline_ko": "코스피 -5.46%, 6,035.35 마감… 장중 5,911.11",
-     "headline_en": "KOSPI -5.46% to 6,035.35, hit 5,911.11 intraday",
-     "body_ko": "한국거래소 기준 코스피는 348.89p 내려 5거래일 연속 하락했고 10/2 7,003.74 이후 낙폭은 13.83%다. 오전 9시 47분 매도 사이드카가 발동됐고 52주 최고(9,385.59) 대비 35.7% 낮다.",
-     "body_en": "Per KRX, KOSPI fell 348.89 pts for a fifth straight loss, down 13.83% since 7,003.74 on Oct 2. A sell-side sidecar triggered at 9:47 AM, and the index is 35.7% below its 52-week high (9,385.59).",
-     "src": "KRX, Yonhap",
+     "headline_ko": "윌리엄스 \"올해 추가 인상 한 차례 적절\", 콜린스 \"연말 인상 지지\"",
+     "headline_en": "Fed's Williams backs one more hike this year; Collins backs year-end hike",
+     "body_ko": "investingLive는 윌리엄스 뉴욕연은 총재(투표권 O)가 올해 한 차례 추가 인상이 적절하다고, 콜린스 보스턴연은 총재(투표권 X)가 연말 추가 인상을 지지한다고 전했다. 다음 FOMC는 10/27~28이다.",
+     "body_en": "investingLive reported NY Fed President Williams (voter) sees one more hike this year as appropriate and Boston Fed President Collins (non-voter) backs a year-end hike. The next FOMC is Oct 27-28.",
+     "src": "investingLive",
      "time": "10/13"
     },
     {
-     "headline_ko": "외국인 코스피 약 4.5조원 순매도, 하락 종목 630개",
-     "headline_en": "Foreigners net sell ~₩4.5T of KOSPI; 630 decliners",
-     "body_ko": "매체 집계로 외국인은 약 4.5조원 순매도, 개인은 2조원대·기관은 1조7천억원대 순매수였다(마감 직후 잠정치라 매체별 차이 있음). 코스피 하락 630개·상승 247개, 코스닥은 837.03(-1.43%)이었다.",
-     "body_en": "Press tallies put foreign net selling at about ₩4.5T, with individuals buying in the ₩2T range and institutions about ₩1.7T (preliminary, figures vary by outlet). KOSPI had 630 decliners to 247 advancers; KOSDAQ closed at 837.03 (-1.43%).",
-     "src": "KRX, Seoul Shinmun, Fnnews",
+     "headline_ko": "씨티 -5.60%, EPS 상회에도 하락… 웰스파고 -3.10%",
+     "headline_en": "Citi -5.60% despite EPS beat; Wells Fargo -3.10%",
+     "body_ko": "씨티는 124.53달러로 마감했다. 보도에 따르면 투자은행 수수료가 전분기보다 13% 줄었고 4분기 마켓 매출이 약 20% 감소할 것이라는 가이던스가 부담이었다. 골드만은 -0.23%였다.",
+     "body_en": "Citi closed at $124.53. Reports cited a 13% quarter-on-quarter drop in investment banking fees and guidance for roughly 20% lower Q4 markets revenue. Goldman closed down 0.23%.",
+     "src": "Yahoo Finance, CNBC",
      "time": "10/13"
     },
     {
-     "headline_ko": "美 은행 실적: 골드만 상회, JP모건은 전망 하회 보도",
-     "headline_en": "US bank earnings: Goldman beats; JPMorgan reported below forecast",
-     "body_ko": "골드만삭스 EPS는 17.01달러로 예상(12.86달러)을 넘었지만 주가는 0.2% 내렸다고 CNBC가 전했다. 웰스파고는 약 3% 내렸고, JP모건은 순이자수익 전망을 올렸으나 이익이 전망에 못 미친 것으로 보도됐다.",
-     "body_en": "CNBC said Goldman Sachs inched down 0.2% despite EPS of $17.01 vs an estimate of $12.86. Wells Fargo fell about 3%, and JPMorgan raised its net interest income outlook but was reported to have missed profit forecasts.",
-     "src": "CNBC, FMP",
+     "headline_ko": "JP모건, 순이자수익 전망 상향했지만 EPS는 전망 하회",
+     "headline_en": "JPMorgan lifts NII outlook but EPS misses",
+     "body_ko": "CNBC에 따르면 보고 EPS 5.57달러가 LSEG 전망 5.90달러에 못 미쳤다. 연간 순이자수익 전망은 1,055억에서 1,062억달러로 올렸다.",
+     "body_en": "CNBC reported that its EPS of $5.57 fell short of the LSEG estimate of $5.90. The bank raised its full-year net interest income outlook from $105.5B to $106.2B.",
+     "src": "CNBC",
      "time": "10/13"
     },
     {
-     "headline_ko": "WTI 94.79달러 +1.12%, 금 4,184.20달러 -0.15%",
-     "headline_en": "WTI $94.79 (+1.12%), gold $4,184.20 (-0.15%)",
-     "body_ko": "WTI 선물은 93.74달러에서 94.79달러로 올랐고 에너지 섹터(XLE)는 1.80% 올랐다. 달러인덱스는 102.58에서 102.21로 내렸고 원/달러 일봉은 1,334.13원에서 1,340.13원으로 올랐다.",
-     "body_en": "WTI futures rose from $93.74 to $94.79 and the energy sector (XLE) gained 1.80%. The dollar index fell from 102.58 to 102.21, while the USD/KRW daily bar rose from 1,334.13 to 1,340.13.",
-     "src": "Yahoo Finance",
+     "headline_ko": "WTI 94.13달러 +0.42%, 브렌트는 0.9% 하락 마감 보도",
+     "headline_en": "WTI $94.13 (+0.42%); Brent reported down 0.9%",
+     "body_ko": "WTI 선물은 14:30 ET 시점 93.74달러에서 94.13달러로 올랐다. 파이낸셜뉴스 제목은 브렌트 0.9% 하락, WTI 0.4% 상승이었다. 금 선물은 4,184.20달러(-0.15%)였다.",
+     "body_en": "WTI futures rose from $93.74 to $94.13 as of 2:30 PM ET. A Fnnews headline said Brent fell 0.9% and WTI rose 0.4%. Gold futures were $4,184.20 (-0.15%).",
+     "src": "Yahoo Finance, Fnnews",
      "time": "10/13"
     },
     {
-     "headline_ko": "美 10년물 5.21%로 하락, 2년물과 격차 0.42%p",
-     "headline_en": "US 10Y falls to 5.21%; 2s10s spread 0.42 pt",
-     "body_ko": "10/13 재무부 종가 10년물은 10/9의 5.24%에서 5.21%로 내렸다. 2년물은 4.79%, 30년물은 5.56%였다.",
-     "body_en": "The Oct 13 Treasury close put the 10-year at 5.21%, down from 5.24% on Oct 9. The 2-year was 4.79% and the 30-year 5.56%.",
-     "src": "U.S. Treasury",
+     "headline_ko": "코스피 거래대금 28.45조, 52주 최고 대비 -35.7%",
+     "headline_en": "KOSPI turnover ₩28.45T; 35.7% below 52-week high",
+     "body_ko": "10/13 코스피 거래대금은 전일 22.87조원보다 24% 늘었고 SK하이닉스·삼성전자가 48.9%를 차지했다. 하락 630개·상승 247개였고 장중 52주 최고(9,385.59) 대비 35.7% 낮다.",
+     "body_en": "KOSPI turnover on Oct 13 was ₩28.45T, 24% above the prior day's ₩22.87T, and SK hynix and Samsung took 48.9%. Decliners (630) outnumbered advancers (247), and the index is 35.7% below its intraday 52-week high (9,385.59).",
+     "src": "KRX, Naver",
      "time": "10/13"
     },
     {
@@ -649,11 +617,11 @@
    "importance": "high"
   },
   {
-   "time": "10/15 03:00",
-   "title_ko": "연준 베이지북 발표",
-   "title_en": "Fed Beige Book",
-   "detail_ko": "12개 연방준비은행 관할 지역 경기 동향",
-   "detail_en": "Regional economic conditions across the 12 Fed districts",
+   "time": "10/14",
+   "title_ko": "뱅크오브아메리카 3분기 실적",
+   "title_en": "Bank of America Q3 earnings",
+   "detail_ko": "EPS 예상 1.10달러 · 매출 예상 305.8억달러 (FMP)",
+   "detail_en": "Est. EPS $1.10 · est. revenue $30.58B (FMP)",
    "importance": "mid"
   },
   {
@@ -686,9 +654,10 @@
   "Naver",
   "FXStreet",
   "CNBC",
-  "Newspim",
-  "Fnnews",
-  "Euronews",
-  "The Next Web"
+  "Global Economic",
+  "Ajunews",
+  "The Next Web","Euronews",
+  "investingLive",
+  "Fnnews"
  ]
 }
