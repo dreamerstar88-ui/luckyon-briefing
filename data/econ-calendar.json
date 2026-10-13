@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-12T01:22:33Z",
+  "fetchedAt": "2026-10-13T03:04:03Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-10T01:22:33Z",
-    "to": "2026-10-26T01:22:33Z"
+    "from": "2026-10-11T03:04:03Z",
+    "to": "2026-10-27T03:04:03Z"
   },
   "events": [
     {
@@ -63,7 +63,7 @@
       "impact": "LOW",
       "consensus": 5.5,
       "previous": 5.4,
-      "actual": null,
+      "actual": 5.3,
       "unit": "%"
     },
     {
@@ -73,7 +73,7 @@
       "impact": "LOW",
       "consensus": 0.5,
       "previous": -0.2,
-      "actual": null,
+      "actual": -0.3,
       "unit": "%"
     },
     {
@@ -83,7 +83,7 @@
       "impact": "LOW",
       "consensus": 7.6,
       "previous": 7.6,
-      "actual": null,
+      "actual": 6.8,
       "unit": "%"
     },
     {
@@ -467,6 +467,16 @@
       "unit": null
     },
     {
+      "at": "2026-10-14T09:20:00Z",
+      "country": "EMU",
+      "name": "ECB's Escrivá speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-10-14T09:30:00Z",
       "country": "DE",
       "name": "30-y Bond Auction",
@@ -601,7 +611,7 @@
       "country": "JP",
       "name": "Machinery Orders (MoM)",
       "impact": "LOW",
-      "consensus": 2.5,
+      "consensus": 3,
       "previous": -3.7,
       "actual": null,
       "unit": "%"
@@ -611,7 +621,7 @@
       "country": "JP",
       "name": "Machinery Orders (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 15.7,
       "previous": 11.2,
       "actual": null,
       "unit": "%"
@@ -653,6 +663,36 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-15T04:30:00Z",
+      "country": "JP",
+      "name": "Capacity Utilization",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-15T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (MoM)",
+      "impact": "LOW",
+      "consensus": -1.7,
+      "previous": -1.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-15T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.4,
       "actual": null,
       "unit": "%"
     },
@@ -847,16 +887,6 @@
       "unit": "%"
     },
     {
-      "at": "2026-10-15T15:30:00Z",
-      "country": "US",
-      "name": "Fed's Chair Warsh speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
       "at": "2026-10-15T16:00:00Z",
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
@@ -977,34 +1007,14 @@
       "unit": null
     },
     {
-      "at": "2026-10-16T04:30:00Z",
-      "country": "JP",
-      "name": "Capacity Utilization",
-      "impact": "LOW",
+      "at": "2026-10-16T03:30:00Z",
+      "country": "US",
+      "name": "Fed's Chair Warsh speech",
+      "impact": "HIGH",
       "consensus": null,
-      "previous": 0.5,
+      "previous": null,
       "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-16T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (MoM)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -1.7,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-16T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3.4,
-      "actual": null,
-      "unit": "%"
+      "unit": null
     },
     {
       "at": "2026-10-16T09:00:00Z",
@@ -2017,7 +2027,127 @@
       "unit": null
     },
     {
-      "at": "2026-10-25T23:50:00Z",
+      "at": "2026-10-26T05:00:00Z",
+      "country": "JP",
+      "name": "Coincident Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 118.7,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T05:00:00Z",
+      "country": "JP",
+      "name": "Leading Economic Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 118,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T09:00:00Z",
+      "country": "DE",
+      "name": "IFO – Business Climate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 89.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T09:00:00Z",
+      "country": "DE",
+      "name": "IFO – Current Assessment",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 89.5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T09:00:00Z",
+      "country": "DE",
+      "name": "IFO – Expectations",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 90.4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T12:30:00Z",
+      "country": "US",
+      "name": "Chicago Fed National Activity Index ",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.04,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T15:30:00Z",
+      "country": "US",
+      "name": "3-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-26T15:30:00Z",
+      "country": "US",
+      "name": "6-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-26T17:00:00Z",
+      "country": "US",
+      "name": "2-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.787,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-26T21:00:00Z",
+      "country": "KR",
+      "name": "Consumer Sentiment Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 106.6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T23:00:00Z",
+      "country": "KR",
+      "name": "Gross Domestic Product Growth (QoQ) ",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-26T23:00:00Z",
+      "country": "KR",
+      "name": "Gross Domestic Product Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-26T23:50:00Z",
       "country": "JP",
       "name": "Corporate Service Price Index (YoY)",
       "impact": "LOW",
