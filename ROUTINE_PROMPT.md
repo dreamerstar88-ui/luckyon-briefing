@@ -104,6 +104,8 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
 
        | 필드 | 쓰는 곳 | 내용 |
        |---|---|---|
+       > **⚠️ `lastClose` 는 «전일 종가»다 (2026-10-15 am 실측).** 10/14 장중·마감 스냅샷 모두 `lastClose` 가 10/13 종가(6,035.35)로
+       > 같았고, 10/14 종가(6,008.81)는 야후 `^KS11` 일봉에서만 나왔다. 한국 지수 «당일 종가»는 야후로 직접 확인한다.
        | `indexes.{KOSPI,KOSDAQ}.breadth` | **카드3 `breadth`** | 상승·보합·하락·상한·하한 **종목수** (코스피·코스닥 각각) |
        | `indexes.{KOSPI,KOSDAQ}.flows` | **카드3 `flows`** | 개인·외국인·기관 순매수(억원). **코스닥도 나온다** |
        | `indexes.*.tradingValueMillionKrw` · `high52w`·`low52w` 등 | 카드3 note·본문 관찰 | 거래대금(백만원)·거래량·52주 고저·시가/고가/저가 |
