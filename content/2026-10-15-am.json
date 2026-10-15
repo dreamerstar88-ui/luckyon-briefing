@@ -1,0 +1,639 @@
+{
+  "date": "2026-10-15",
+  "session": "am",
+  "dateLabel_ko": "2026.10.15(목) 아침",
+  "dateLabel_en": "Thu, Oct 15, 2026 · AM",
+  "headline_ko": "9월 CPI 3.7% 발표일, 나스닥 1.88% 급락…7월 23일 이후 최대 낙폭",
+  "headline_sub_ko": "11개 업종 중 8개 하락 · 반도체 ETF −3.98% · 거래대금 79.7%가 하락 종목에 집중",
+  "headline_en": "Nasdaq Falls 1.88% on Hot-CPI Day, Biggest Drop Since July 23",
+  "headline_sub_en": "8 of 11 sectors fell, the chip ETF lost 3.98%, and 79.7% of turnover sat in decliners",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 10/14 마감",
+    "en": "US Overnight · Oct 14 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 −1.88% · S&P 500 −1.11%",
+        "en": "Nasdaq -1.88% · S&P 500 -1.11%"
+      },
+      {
+        "ko": "26,692.87 / 7,718.94 · 다우는 −0.09%",
+        "en": "26,692.87 / 7,718.94 · Dow -0.09%"
+      }
+    ],
+    [
+      "rate",
+      {
+        "ko": "9월 CPI 전년비 3.7% · 예상 3.6%",
+        "en": "Sep CPI 3.7% YoY · est. 3.6%"
+      },
+      {
+        "ko": "이전 3.4% · 근원 CPI도 2.6%로 예상 2.5% 상회",
+        "en": "Prior 3.4% · core CPI 2.6% vs est. 2.5%"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "반도체 ETF(SMH) −3.98%",
+        "en": "Chip ETF (SMH) -3.98%"
+      },
+      {
+        "ko": "10/5 종가 대비 −10.9% · 엔비디아 −3.16%",
+        "en": "-10.9% from Oct 5 close · Nvidia -3.16%"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥종합이 1.88%(511.51p) 내린 26,692.87, S&P 500이 1.11% 내린 7,718.94로 마감했다. 나스닥 낙폭은 7월 23일(−2.15%) 이후 가장 컸고, 다우는 0.09% 내린 51,621.48에 그쳤다.",
+      "9월 CPI가 전년비 3.7%로 예상(3.6%)과 이전(3.4%)을 웃돌았다. 식품·에너지를 뺀 근원 CPI도 전년비 2.6%로 예상 2.5%를 넘었다.",
+      "S&P 500 업종 ETF 11개 중 8개가 내렸다. 반도체 ETF(SMH)가 3.98%, 기술 ETF(XLK)가 2.98% 빠진 반면 헬스케어(+2.53%)와 필수소비(+2.22%)는 올랐다.",
+      "거래대금 상위 298종목 가운데 오른 종목은 79개뿐이었고 거래대금의 79.7%가 내린 종목에 몰렸다. VIX는 10.48% 올라 16.87이다."
+    ],
+    "lines_en": [
+      "The Nasdaq Composite fell 1.88% (511.51 pts) to 26,692.87 and the S&P 500 lost 1.11% to 7,718.94. It was the Nasdaq's biggest drop since July 23 (-2.15%); the Dow slipped just 0.09% to 51,621.48.",
+      "September CPI rose 3.7% from a year earlier, above the 3.6% estimate and the prior 3.4%. Core CPI (ex food and energy) rose 2.6% YoY versus an estimate of 2.5%.",
+      "Eight of the eleven S&P 500 sector ETFs fell. The semiconductor ETF (SMH) dropped 3.98% and tech (XLK) 2.98%, while health care (+2.53%) and staples (+2.22%) rose.",
+      "Of the 298 most-traded US names, only 79 rose, and 79.7% of turnover sat in decliners. The VIX rose 10.48% to 16.87."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,692.87",
+      "delta": "▼1.88%",
+      "dir": "down",
+      "note_ko": "511.51p 하락 · 7/23 이후 최대 낙폭",
+      "note_en": "-511.51 pts · biggest drop since Jul 23"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,718.94",
+      "delta": "▼1.11%",
+      "dir": "down",
+      "note_ko": "86.51p 하락 · 7/29 이후 최대 낙폭",
+      "note_en": "-86.51 pts · biggest drop since Jul 29"
+    },
+    {
+      "label": "KOSPI",
+      "value": "6,008.81",
+      "delta": "▼0.44%",
+      "dir": "down",
+      "note_ko": "10/14 한국장 종가 · 15일 개장 후 5%대 급락, 사이드카",
+      "note_en": "Oct 14 close · fell 5%+ at Oct 15 open, sidecar"
+    },
+    {
+      "label": "VIX",
+      "value": "16.87",
+      "delta": "▲10.48%",
+      "dir": "up",
+      "note_ko": "1.60p 상승 · CPI 발표일에 뛰었다",
+      "note_en": "+1.60 pts · jumped on CPI day"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "45 → 32",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "CNN 지수 · 공포 구간으로 내려왔다",
+      "note_en": "CNN index · slid into Fear"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.21 → 5.19%",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "10/13 → 10/14 재무부 고시 종가",
+      "note_en": "Treasury par yield, Oct 13 → Oct 14"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,341.7",
+      "delta": {
+        "ko": "▲1.7원",
+        "en": "▲1.7 KRW"
+      },
+      "dir": "up",
+      "value_sub": "· DXY 102.54",
+      "note_ko": "뉴욕 마감 무렵, 전일 같은 시각 대비",
+      "note_en": "At the US close vs same time prior day"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,122.80",
+      "delta": "▼1.52%",
+      "dir": "down",
+      "note_ko": "전일 같은 시각 대비 선물 기준",
+      "note_en": "Futures vs same time prior day"
+    },
+    {
+      "label": "WTI",
+      "value": "$95.15",
+      "delta": "▲0.48%",
+      "dir": "up",
+      "note_ko": "전일 같은 시각 대비 선물 · 정산가 기준은 상승폭이 더 크다",
+      "note_en": "Futures vs same time prior day · settlement basis shows a bigger gain"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$81,736",
+      "delta": "▼1.77%",
+      "dir": "down",
+      "note_ko": "전일 같은 시각 대비",
+      "note_en": "Vs same time prior day"
+    }
+  ],
+  "market_note_ko": "미국 지수·코스피는 10/14 종가 · 금·WTI·환율·비트코인은 미국 정규장 마감 무렵(전일 같은 시각 대비)",
+  "market_note_en": "US indexes and KOSPI: Oct 14 close · gold, WTI, FX and Bitcoin at the US cash close vs the same time a day earlier",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "chart_series": "us",
+  "main_tile_note": {
+    "ko": "511.51p 하락 · 최근 9거래일",
+    "en": "-511.51 pts · last 9 sessions"
+  },
+  "chart_title": {
+    "ko": "고점에서 3.3% 내렸다",
+    "en": "Down 3.3% From the Peak"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "10.06 고점 27,599.79  →  10.13 27,204.38  →  10.14 26,692.87",
+    "en": "Oct 6 peak 27,599.79  →  Oct 13 27,204.38  →  Oct 14 26,692.87"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "chart_series_values": [
+    27190.86,
+    27477.31,
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87
+  ],
+  "chart_series_labels": [
+    "10.02",
+    "10.05",
+    "10.06",
+    "10.07",
+    "10.08",
+    "10.09",
+    "10.12",
+    "10.13",
+    "10.14"
+  ],
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "다우존스",
+          "label_en": "Dow Jones",
+          "value": "51,621.48",
+          "delta": "▼0.09%",
+          "dir": "down",
+          "sub_ko": "48.62포인트 하락 · 3대 지수 중 가장 작은 낙폭",
+          "sub_en": "Down 48.62 pts · smallest drop of the three"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,718.94",
+          "delta": "▼1.11%",
+          "dir": "down",
+          "sub_ko": "86.51포인트 하락 · 7/29 이후 최대 낙폭",
+          "sub_en": "Down 86.51 pts · biggest drop since Jul 29"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 3,
+          "flat": 0,
+          "down": 8
+        },
+        {
+          "label_ko": "거래대금 상위 298종목",
+          "label_en": "298 most-traded",
+          "up": 79,
+          "flat": 0,
+          "down": 219
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+        "label_en": "Turnover: gainers vs decliners ($B)",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 86.5
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -338.5
+          }
+        ]
+      },
+      "note_ko": "업종 3개만 올랐고 거래대금의 79.7%가 내린 종목에 몰렸다. 다우는 −0.09%에 그친 반면 나스닥은 −1.88%로 밀려, 낙폭이 기술주에 몰렸다.",
+      "note_en": "Only three sectors rose and 79.7% of turnover sat in decliners. The Dow barely moved (-0.09%) while the Nasdaq fell 1.88% — the damage was concentrated in tech."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": 2.53
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 2.22
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 0.64
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": -0.1
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -0.36
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.55
+        },
+        {
+          "label_ko": "임의소비 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": -0.77
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Estate (XLRE)",
+          "value": -0.81
+        },
+        {
+          "label_ko": "산업 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": -0.97
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": -1.3
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": -2.98
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -3.98
+        }
+      ],
+      "note_ko": "물가지표가 예상을 웃돈 날 헬스케어·필수소비와 에너지만 올랐다. 반도체(−3.98%)와 기술(−2.98%)이 낙폭 1·2위였다.",
+      "note_en": "On the day CPI beat estimates only health care, staples and energy rose. Semiconductors (-3.98%) and tech (-2.98%) were the two worst sectors."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$26.06B",
+          "pct": -3.16
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$24.95B",
+          "pct": -4.08
+        },
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$17.11B",
+          "pct": 0.5
+        },
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "value": "$12.63B",
+          "pct": -5.73
+        },
+        {
+          "name_ko": "메타",
+          "name_en": "Meta",
+          "value": "$11.91B",
+          "pct": -3.27
+        }
+      ],
+      "share": {
+        "label_ko": "상위 298종목 거래대금 · 오른 종목 대 내린 종목",
+        "label_en": "Top-298 turnover · gainers vs decliners",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "pct": 20.3,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "pct": 79.7,
+            "color": "#3987e5"
+          }
+        ]
+      },
+      "note_ko": "거래대금 1~5위 가운데 애플만 올랐고(+0.50%) 나머지 네 종목은 3~6% 빠졌다. 엔비디아·마이크론·AMD 세 종목의 거래대금이 $63.6B로, 거래도 반도체에 몰리며 함께 내렸다.",
+      "note_en": "Of the five biggest by turnover only Apple rose (+0.50%); the other four fell 3–6%. Nvidia, Micron and AMD alone traded $63.6B — chips led the volume on the way down."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "美 9월 CPI (전년비)",
+          "label_en": "US Sep CPI (YoY)",
+          "value": "3.7%",
+          "delta": "▲0.1%p",
+          "dir": "up",
+          "sub_ko": "10/14 21:30 · 예상 3.6% · 이전 3.4%",
+          "sub_en": "Oct 14 21:30 KST · est. 3.6% · prior 3.4%"
+        },
+        {
+          "label_ko": "美 9월 CPI (전월비)",
+          "label_en": "US Sep CPI (MoM)",
+          "value": "0.6%",
+          "delta": "—",
+          "dir": "flat",
+          "sub_ko": "예상 0.6% · 이전 0.4%",
+          "sub_en": "Est. 0.6% · prior 0.4%"
+        },
+        {
+          "label_ko": "美 9월 근원 CPI (전년비)",
+          "label_en": "US Sep Core CPI (YoY)",
+          "value": "2.6%",
+          "delta": "▲0.1%p",
+          "dir": "up",
+          "sub_ko": "식품·에너지 제외 · 예상 2.5% · 이전 2.4%",
+          "sub_en": "Ex food & energy · est. 2.5% · prior 2.4%"
+        },
+        {
+          "label_ko": "美 9월 근원 CPI (전월비)",
+          "label_en": "US Sep Core CPI (MoM)",
+          "value": "0.3%",
+          "delta": "▲0.1%p",
+          "dir": "up",
+          "sub_ko": "식품·에너지 제외 · 예상 0.2% · 이전 0.3%",
+          "sub_en": "Ex food & energy · est. 0.2% · prior 0.3%"
+        }
+      ],
+      "note_ko": "헤드라인·근원 CPI가 전년비로 모두 예상을 웃돌았다(월간 헤드라인은 예상과 같은 0.6%). 표의 변화 표시는 실제 − 예상이다.",
+      "note_en": "Headline and core CPI both beat estimates on a YoY basis (monthly headline matched the 0.6% estimate). Deltas show actual minus estimate."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "반도체 ETF 3.98% 급락, 10/5 종가 대비 −10.9%",
+          "headline_en": "Chip ETF Drops 3.98%, 10.9% Below Its Oct 5 Close",
+          "body_ko": "SMH는 564.74로 마감해 10월 5일 종가(633.90)보다 10.9% 낮다. 필라델피아 반도체지수는 4.30% 내렸다.",
+          "body_en": "SMH closed at 564.74, 10.9% below its Oct 5 close of 633.90. The Philadelphia Semiconductor Index fell 4.30%."
+        },
+        {
+          "headline_ko": "샌디스크 −5.33%, 인텔 −4.56% 동반 하락",
+          "headline_en": "SanDisk -5.33%, Intel -4.56% Fall Alongside",
+          "body_ko": "샌디스크($10.31B)와 인텔($10.18B)도 거래대금 상위 10위에 들며 함께 내렸다.",
+          "body_en": "SanDisk ($10.31B) and Intel ($10.18B) also made the top ten by turnover and fell with the group."
+        },
+        {
+          "headline_ko": "TSMC, 15일 15:00 3분기 실적·4분기 전망 발표",
+          "headline_en": "TSMC Reports Q3 Results at 15:00 KST Today",
+          "body_ko": "TSMC는 7월 실적 설명회에서 3분기 매출 가이던스를 446억~458억 달러로 제시했다. AI 반도체 수요가 하반기에도 이어지는지가 이번 발표의 관전 포인트다.",
+          "body_en": "At its July call TSMC guided Q3 revenue to $44.6B–$45.8B. Whether AI chip demand carries through the second half is the thing to watch."
+        },
+        {
+          "headline_ko": "코어위브 −15.46%, 네비우스 −10.08%, 오라클 −8.83%",
+          "headline_en": "CoreWeave -15.46%, Nebius -10.08%, Oracle -8.83%",
+          "body_ko": "AI 인프라 업체들이 크게 밀렸다. 코어위브는 65.78달러로 마감했다. 뉴스핌은 AI 인프라 기업의 신용 우려가 부각됐다고 전했다.",
+          "body_en": "AI-infrastructure names sold off hard; CoreWeave closed at $65.78. Newspim reported that credit worries over AI-infrastructure firms came to the fore."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "9월 CPI 3.7%, 휘발유값 9.1% 급등",
+          "headline_en": "Sep CPI at 3.7% as Gasoline Jumps 9.1%",
+          "body_ko": "9월 CPI는 전년비 3.7%로 예상 3.6%를 웃돌았다. 서울경제TV·뉴스웨이는 휘발유 가격이 전월보다 9.1% 오른 것으로 전했다.",
+          "body_en": "September CPI rose 3.7% YoY versus the 3.6% estimate. Seoul Economy TV and Newsway reported gasoline up 9.1% on the month."
+        },
+        {
+          "headline_ko": "금리 인상 확률 한때 51.5%, 오후엔 30%대",
+          "headline_en": "Hike Odds Hit 51.5%, Then Eased to the 30s",
+          "body_ko": "서울경제TV는 CME 페드워치 기준 10월 금리 인상 확률이 CPI 직후 51.5%까지 올랐다가 미국 오후 30%대로 내려왔다고 전했다.",
+          "body_en": "Seoul Economy TV reported CME FedWatch odds of an October hike hit 51.5% after CPI, then eased to the 30s. The 10-year yield slipped from 5.21% to 5.19%."
+        },
+        {
+          "headline_ko": "뉴스핌 \"CPI에 AI 인프라 신용 우려 겹쳤다\"",
+          "headline_en": "Newspim: AI Credit Worries Add to CPI-Day Selling",
+          "body_ko": "뉴스핌은 CPI 발표에 AI 인프라 기업의 신용 우려가 겹치며 기술주 중심으로 매물이 나왔다고 전했다. 나스닥 낙폭은 7월 23일 이후 가장 컸다.",
+          "body_en": "Newspim reported that AI-infrastructure credit worries compounded the CPI reaction and drove tech selling. The Nasdaq's drop was its largest since July 23."
+        },
+        {
+          "headline_ko": "코스피 15일 5.59% 낮게 개장, 매도 사이드카 발동",
+          "headline_en": "KOSPI Opens 5.59% Lower; Sell Sidecar Triggered",
+          "body_ko": "코스피는 14일 종가(6,008.81) 대비 5.59% 낮은 5,673.01에, 코스닥은 784.45(−4.79%)에 개장했다. 뉴스핌·아주경제는 장 초반 매도 사이드카 발동을 전했다.",
+          "body_en": "KOSPI opened at 5,673.01 (-5.59%) vs its Oct 14 close of 6,008.81; KOSDAQ opened at 784.45 (-4.79%). Newspim and Ajunews reported a sell sidecar early on."
+        },
+        {
+          "headline_ko": "금 −1.52%, 비트코인 −1.77% 동반 하락",
+          "headline_en": "Gold -1.52% and Bitcoin -1.77% Fall Together",
+          "body_ko": "금 선물은 $4,122.80으로 1.52% 내렸고 비트코인은 $81,736으로 1.77% 내렸다. 위험자산과 안전자산이 같은 날 함께 약했고 달러인덱스는 102.54로 0.31% 올랐다.",
+          "body_en": "Gold futures fell 1.52% to $4,122.80 and Bitcoin fell 1.77% to $81,736. Risk and haven assets weakened together while the dollar index rose 0.31% to 102.54."
+        }
+      ]
+    }
+  ],
+  "sector_title": {
+    "ko": "3개 업종만 올랐다",
+    "en": "Only 3 of 11 Sectors Rose"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF · 10/14 종가 기준 · 11개 중 3개 상승",
+    "en": "S&P 500 sector ETFs · Oct 14 close · 3 of 11 rose"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "10/14 미국장 · 막대 옆은 등락률",
+    "en": "Oct 14 US session · change shown beside each bar"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $ billions"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "10/14 발표분 · 실측 · 예상 · 이전",
+    "en": "Released Oct 14 · actual · estimate · prior"
+  },
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "KST · yellow dot = key event"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "10/15 10:30",
+      "title_ko": "日銀 고에다 위원 연설",
+      "title_en": "BoJ's Koeda Speech",
+      "detail_ko": "일본은행 심의위원 연설 · 예상치 없음",
+      "detail_en": "BoJ board member speech · no consensus",
+      "importance": "mid"
+    },
+    {
+      "time": "10/15 15:00",
+      "title_ko": "TSMC 3분기 실적 발표",
+      "title_en": "TSMC Q3 Earnings",
+      "detail_ko": "AI 반도체 수요와 4분기 전망이 관전 포인트",
+      "detail_en": "AI chip demand and the Q4 outlook in focus",
+      "importance": "high"
+    },
+    {
+      "time": "10/15 18:00",
+      "title_ko": "유로존 8월 산업생산 (전월비)",
+      "title_en": "Eurozone Aug Industrial Output (MoM)",
+      "detail_ko": "예상 0.0% · 이전 −0.1%",
+      "detail_en": "Est. 0.0% · prior -0.1%",
+      "importance": "mid"
+    },
+    {
+      "time": "10/15 21:30",
+      "title_ko": "美 9월 소매판매 (전월비)",
+      "title_en": "US Sep Retail Sales (MoM)",
+      "detail_ko": "예상 +0.3% · 이전 +1.2% · 컨트롤그룹 이전 +1.4%",
+      "detail_en": "Est. +0.3% · prior +1.2% · control group prior +1.4%",
+      "importance": "high"
+    },
+    {
+      "time": "10/15 21:30",
+      "title_ko": "美 9월 근원 PPI (전년비)",
+      "title_en": "US Sep Core PPI (YoY)",
+      "detail_ko": "예상 4.4% · 이전 4.6%",
+      "detail_en": "Est. 4.4% · prior 4.6%",
+      "importance": "mid"
+    },
+    {
+      "time": "10/15 21:30",
+      "title_ko": "美 엠파이어스테이트 제조업지수",
+      "title_en": "US Empire State Manufacturing Index",
+      "detail_ko": "예상 10.3 · 이전 7.6",
+      "detail_en": "Est. 10.3 · prior 7.6",
+      "importance": "mid"
+    },
+    {
+      "time": "10/15 21:30",
+      "title_ko": "美 신규 실업수당 · 필라델피아 연은 지수",
+      "title_en": "US Jobless Claims · Philly Fed Index",
+      "detail_ko": "청구 예상 20.0만 · 필라델피아 예상 28.4 (이전 37.8)",
+      "detail_en": "Claims est. 200K · Philly Fed est. 28.4 (prior 37.8)",
+      "importance": "mid"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.10.15(목) 아침\n\n9월 CPI가 전년비 3.7%로 예상(3.6%)을 웃돈 날, 나스닥이 1.88% 내려 7월 23일 이후 가장 크게 빠졌습니다. S&P 500은 1.11% 내렸고 다우는 0.09% 내리는 데 그쳤습니다.\n\n11개 업종 중 8개가 내렸고 반도체 ETF는 3.98%, 기술 ETF는 2.98% 빠졌습니다. 헬스케어·필수소비·에너지만 올랐습니다. 거래대금의 79.7%가 내린 종목에 몰렸습니다.\n\n코스피는 14일 6,008.81로 마감했고, 15일 5,673.01(−5.59%)에 개장해 매도 사이드카가 발동됐습니다.\n\n오늘 TSMC 실적, 밤 9시 30분 미국 소매판매와 PPI가 이어집니다.\n\n저장해 두고 필요할 때 다시 보세요.\n\n#미국증시 #나스닥 #CPI #물가 #반도체 #엔비디아 #마이크론 #코스피 #TSMC #소매판매 #PPI #경제뉴스 #주식 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "📊 luckyon Briefing · Thu, Oct 15, 2026 · AM\n\nOn the day September CPI came in at 3.7% YoY versus a 3.6% estimate, the Nasdaq fell 1.88% — its biggest drop since July 23. The S&P 500 lost 1.11%; the Dow slipped just 0.09%.\n\nEight of eleven sectors fell, with the chip ETF down 3.98% and tech down 2.98%. Only health care, staples and energy rose, and 79.7% of turnover sat in decliners.\n\nKOSPI closed Oct 14 at 6,008.81, then opened Oct 15 at 5,673.01 (-5.59%) with a sell-side sidecar triggered.\n\nToday: TSMC earnings, then US retail sales and PPI at 9:30 PM KST.\n\n#Stocks #Nasdaq #CPI #Inflation #Semiconductors #Nvidia #Micron #KOSPI #TSMC #RetailSales #PPI #Markets #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": [
+    "Yahoo Finance",
+    "FMP (미 재무부 국채금리)",
+    "FXStreet 경제캘린더",
+    "CNN Fear & Greed",
+    "KRX (네이버 증권 집계)",
+    "서울경제TV",
+    "뉴스웨이",
+    "뉴스핌",
+    "아주경제",
+    "TSMC IR"
+  ],
+  "card_photos": {
+    "1": "The New York Stock Exchange facade at dusk with traders leaving, cool blue light, a red downward glow reflected on the glass, moody and quiet."
+  }
+}
