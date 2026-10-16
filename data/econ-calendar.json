@@ -1,61 +1,11 @@
 {
-  "fetchedAt": "2026-10-15T15:34:10Z",
+  "fetchedAt": "2026-10-16T00:27:11Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-13T15:34:10Z",
-    "to": "2026-10-29T15:34:10Z"
+    "from": "2026-10-14T00:27:11Z",
+    "to": "2026-10-30T00:27:11Z"
   },
   "events": [
-    {
-      "at": "2026-10-13T18:00:00Z",
-      "country": "US",
-      "name": "Fed's Williams speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-13T18:30:00Z",
-      "country": "EMU",
-      "name": "ECB's Lane speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-13T20:00:00Z",
-      "country": "US",
-      "name": "Fed's Collins speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-13T23:50:00Z",
-      "country": "JP",
-      "name": "Money Supply M2+CD (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2,
-      "actual": 2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-14T00:00:00Z",
-      "country": "US",
-      "name": "IMF Meeting",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-10-14T01:30:00Z",
       "country": "CN",
@@ -673,7 +623,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.98,
-      "actual": null,
+      "actual": 4,
       "unit": "%"
     },
     {
@@ -683,7 +633,7 @@
       "impact": "LOW",
       "consensus": -0.3,
       "previous": -3.186,
-      "actual": null,
+      "actual": -8.557,
       "unit": null
     },
     {
@@ -693,7 +643,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.042,
-      "actual": null,
+      "actual": -2.527,
       "unit": null
     },
     {
@@ -703,7 +653,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.382,
-      "actual": null,
+      "actual": 3.518,
       "unit": null
     },
     {
@@ -713,18 +663,8 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.668,
-      "actual": null,
+      "actual": -0.448,
       "unit": null
-    },
-    {
-      "at": "2026-10-15T18:00:00Z",
-      "country": "US",
-      "name": "Monthly Budget Statement",
-      "impact": "MEDIUM",
-      "consensus": -29,
-      "previous": -166.8,
-      "actual": null,
-      "unit": "$"
     },
     {
       "at": "2026-10-15T20:30:00Z",
@@ -743,7 +683,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 42.4,
-      "actual": null,
+      "actual": 40.9,
       "unit": "%"
     },
     {
@@ -753,7 +693,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 15.6,
-      "actual": null,
+      "actual": 17.6,
       "unit": "%"
     },
     {
@@ -763,8 +703,18 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.7,
-      "actual": null,
+      "actual": 2.6,
       "unit": "%"
+    },
+    {
+      "at": "2026-10-15T23:00:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-10-15T23:50:00Z",
@@ -773,7 +723,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -347.6,
-      "actual": null,
+      "actual": -339.7,
       "unit": "¥"
     },
     {
@@ -783,7 +733,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2191.9,
-      "actual": null,
+      "actual": 3521.5,
       "unit": "¥"
     },
     {
@@ -945,6 +895,16 @@
       "previous": 462,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-10-16T18:00:00Z",
+      "country": "US",
+      "name": "Monthly Budget Statement",
+      "impact": "MEDIUM",
+      "consensus": -29,
+      "previous": -166.8,
+      "actual": null,
+      "unit": "$"
     },
     {
       "at": "2026-10-16T19:30:00Z",
@@ -1422,7 +1382,7 @@
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -8.557,
       "actual": null,
       "unit": null
     },
@@ -1432,7 +1392,7 @@
       "name": "EIA Distillate Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -2.527,
       "actual": null,
       "unit": null
     },
@@ -1442,7 +1402,7 @@
       "name": "EIA Gasoline Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.518,
       "actual": null,
       "unit": null
     },
@@ -1452,7 +1412,7 @@
       "name": "EIA Heating Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -0.448,
       "actual": null,
       "unit": null
     },
@@ -1472,7 +1432,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -339.7,
       "actual": null,
       "unit": "¥"
     },
@@ -1482,7 +1442,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3521.5,
       "actual": null,
       "unit": "¥"
     },
@@ -1562,7 +1522,7 @@
       "name": "4-Week Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4,
       "actual": null,
       "unit": "%"
     },
@@ -2553,6 +2513,146 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T17:00:00Z",
+      "country": "US",
+      "name": "7-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5.085,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -2.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output Growth",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -4.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:00:00Z",
+      "country": "KR",
+      "name": "Service Sector Output",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:30:00Z",
+      "country": "JP",
+      "name": "Jobs / Applicants Ratio",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.18,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-10-29T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Food, Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Fresh Food (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:30:00Z",
+      "country": "JP",
+      "name": "Unemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:50:00Z",
+      "country": "JP",
+      "name": "Industrial Production (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -2.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:50:00Z",
+      "country": "JP",
+      "name": "Industrial Production (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:50:00Z",
+      "country": "JP",
+      "name": "Large Retailer Sales",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:50:00Z",
+      "country": "JP",
+      "name": "Retail Trade (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-10-29T23:50:00Z",
+      "country": "JP",
+      "name": "Retail Trade s.a (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -1.2,
       "actual": null,
       "unit": "%"
     }
