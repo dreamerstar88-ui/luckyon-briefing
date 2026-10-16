@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-16T11:05:16Z",
+  "fetchedAt": "2026-10-16T11:52:36Z",
   "source": "stock.naver.com internal API (observed via browser probe 2026-09-21)",
   "notes": {
     "flowsScope": "«정규장(09:00~15:30) 마감» 기준으로 고정한다. 워크플로가 15:40 KST 에 먼저 받아 두고 그 뒤 조회는 flows 를 덮어쓰지 않는다. 시간외가 누적된 늦은 조회값은 flowsLate 로만 남으므로 카드에는 flows 를 쓴다.",
@@ -12,8 +12,8 @@
       "open": 5653.99,
       "high": 5809.94,
       "low": 5590.33,
-      "tradingVolumeThousandShares": 286453,
-      "tradingValueMillionKrw": 20021281,
+      "tradingVolumeThousandShares": 298850,
+      "tradingValueMillionKrw": 20945426,
       "high52w": 9385.59,
       "low52w": 3722.07,
       "breadth": {
@@ -29,7 +29,7 @@
         "individual": -5126,
         "foreign": 3637,
         "institution": -6815,
-        "capturedAt": "2026-10-16T11:05:16Z",
+        "capturedAt": "2026-10-16T11:52:36Z",
         "basis": "late"
       },
       "code": "KOSPI"
@@ -40,8 +40,8 @@
       "open": 772.17,
       "high": 807.54,
       "low": 764.97,
-      "tradingVolumeThousandShares": 442574,
-      "tradingValueMillionKrw": 5739864,
+      "tradingVolumeThousandShares": 466392,
+      "tradingValueMillionKrw": 6025907,
       "high52w": 1229.42,
       "low52w": 630.99,
       "breadth": {
@@ -57,7 +57,7 @@
         "individual": -908,
         "foreign": -945,
         "institution": 1689,
-        "capturedAt": "2026-10-16T11:05:16Z",
+        "capturedAt": "2026-10-16T11:52:36Z",
         "basis": "late"
       },
       "code": "KOSDAQ"
