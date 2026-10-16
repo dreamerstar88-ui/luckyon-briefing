@@ -68,6 +68,9 @@
 
 - **`curl` 한 방으로 판단하지 않는다.** Yahoo 는 첫 요청에 429 를 주고 재시도·백오프로 뚫린다.
   `curl` 로 429/000 을 보고 "막혔다"고 결론 내면 실제로 되는 경로를 버린다.
+- **429 가 재시도로도 안 풀리면 User-Agent 를 의심한다** (2026-10-17 sat 실측). 같은 URL 이 Chrome 풀 UA
+  (`Mozilla/5.0 (X11; Linux x86_64) ... Chrome/124.0 ...`)로는 매번 429, `Mozilla/5.0` 한 단어로는 200 이었다.
+  `fetch-sat-indexes.mjs` 는 그래서 짧은 UA 를 기본으로 쓴다(`YF_UA` 로 바꿀 수 있다).
 - 러너에서만 되는 것은 워크플로로 받아 `data/` 에 커밋하고 세션은 그 파일을 읽는다
   (`econ-calendar` · `logos-cache` · `index-valuation` 이 그 패턴).
 

@@ -30,7 +30,9 @@
 
 const KRX_BASE = 'https://raw.githubusercontent.com/FinanceData/fdr_krx_data_cache/refs/heads/master/data';
 const YF = 'https://query1.finance.yahoo.com/v8/finance/chart';
-const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
+// 짧은 UA 를 쓴다. 2026-10-17 sat 실측: 세션에서 Chrome 풀 UA 로는 Yahoo 차트 API 가 매번 429 를 줘
+// 미국 3개 지수가 통째로 빠졌고, 같은 URL 에 'Mozilla/5.0' 만 보내면 200 이었다.
+const UA = process.env.YF_UA || 'Mozilla/5.0';
 
 const BARS = Number(process.env.BARS || 70);   // 카드에 실을 봉 개수
 const argDate = process.argv[2];
