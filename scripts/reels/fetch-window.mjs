@@ -19,7 +19,7 @@ const SYMBOLS = [
   { key: 'sp500', yahoo: 'ES=F', label_ko: 'S&P 500 선물', label_en: 'S&P 500 Futures' },
 ];
 
-const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36';
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.1 Safari/537.36';  // Mac UA 는 세션 IP 에서 429 (2026-10-16)
 
 // ---------- 인자 ----------
 const argv = process.argv.slice(2);
@@ -64,7 +64,13 @@ function phaseOf(min) {
 async function fetchBars(sym) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}`
     + `?interval=1m&range=5d&includePrePost=true`;
-  const res = await fetch(url, { headers: { 'User-Agent': UA } });
+  // Yahoo 는 간헐적으로 429 를 준다 — 심볼별로 백오프 재시도한다(2026-10-16).
+  let res;
+  for (let attempt = 0; attempt < 8; attempt++) {
+    res = await fetch(url, { headers: { 'User-Agent': UA } });
+    if (res.status !== 429) break;
+    await new Promise((r) => setTimeout(r, 4000 + attempt * 3000));
+  }
   if (!res.ok) throw new Error(`${sym}: HTTP ${res.status}`);
   const j = await res.json();
   if (j?.chart?.error) throw new Error(`${sym}: ${JSON.stringify(j.chart.error)}`);
