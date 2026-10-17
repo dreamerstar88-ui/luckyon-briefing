@@ -82,8 +82,14 @@ const SHEET = `${OUT}/장면표본.png`;
 run('장면표본 한 장', FF, ['-v', 'error', '-y', '-i', VID, '-vf', `select='${sel}',scale=360:640,tile=${cols}x${rows}`, '-frames:v', '1', '-vsync', 'vfr', SHEET]);
 
 // 올릴 파일 모으기 (공개 주소용 브랜치에 들어갈 다섯 개 + 유튜브 문구)
-const doc = fs.readFileSync(at(path.join(DIR, '발행문구.md')), 'utf8');
+// 줄바꿈을 LF 로 맞춰 읽는다. 7회차에 발행문구.md 가 CRLF 로 저장돼 아래 정규식이 하나도 안 걸렸고,
+// 빈 제목·빈 캡션이 그대로 모여 인스타가 캡션 없이 올라가고 유튜브는 제목이 없어 안 올라갔다(2026-10-17).
+// 검사(verify)는 줄바꿈을 정리해 읽어 통과시켰다 — 그래서 여기서 빈 칸이면 멈춘다.
+const doc = fs.readFileSync(at(path.join(DIR, '발행문구.md')), 'utf8').replace(/\r\n/g, '\n');
 const block = (h) => (doc.match(new RegExp('##\\s*' + h + '[^\\n]*\\n+```\\n([\\s\\S]*?)\\n```')) || [])[1] || '';
+const TITLE = (doc.match(/##\s*1\.[^\n]*\n+\*\*(.+?)\*\*/) || [])[1] || '';
+for (const [k, v] of [['제목(1절)', TITLE], ['설명(2절)', block('2\\.')], ['태그(3절)', block('3\\.')], ['인스타 캡션(5절)', block('5\\.')], ['고정 댓글(5-1절)', block('5-1\\.')]])
+  if (!v.trim()) die(`발행문구.md 에서 ${k} 를 못 읽었다 — 올릴 파일을 만들지 않고 멈춘다`);
 const LIVE = `${OUT}/live/cards/reels/nasdaq-week-${STAMP}/ko`;
 fs.mkdirSync(at(LIVE), { recursive: true });
 const ko = fs.readdirSync(at(DIR)).find((f) => f.endsWith('.ko.srt')), en = fs.readdirSync(at(DIR)).find((f) => f.endsWith('.en.srt'));
@@ -92,7 +98,7 @@ fs.copyFileSync(at(COVER), at(`${LIVE}/cover.png`));
 fs.copyFileSync(at(path.join(DIR, ko)), at(`${LIVE}/subtitles.ko.srt`));
 fs.copyFileSync(at(path.join(DIR, en)), at(`${LIVE}/subtitles.en.srt`));
 fs.writeFileSync(at(`${LIVE}/caption.txt`), block('5\\.') + '\n');
-fs.writeFileSync(at(`${OUT}/제목.txt`), (doc.match(/##\s*1\.[^\n]*\n+\*\*(.+?)\*\*/) || [])[1] || '');
+fs.writeFileSync(at(`${OUT}/제목.txt`), TITLE);
 fs.writeFileSync(at(`${OUT}/설명란.txt`), block('2\\.') + '\n');
 fs.writeFileSync(at(`${OUT}/태그.txt`), block('3\\.').replace(/\n/g, ' ').split(',').map((t) => t.trim()).filter(Boolean).join(', ') + '\n');
 fs.writeFileSync(at(`${OUT}/고정댓글.txt`), block('5-1\\.') + '\n');

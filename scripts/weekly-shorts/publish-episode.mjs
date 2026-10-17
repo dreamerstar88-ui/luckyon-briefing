@@ -35,6 +35,9 @@ const rec = fs.existsSync(LOG) ? JSON.parse(fs.readFileSync(LOG, 'utf8')) : {};
 const save = () => fs.writeFileSync(LOG, JSON.stringify(rec, null, 2));
 const FILES = ['reel.mp4', 'cover.png', 'caption.txt', 'subtitles.ko.srt', 'subtitles.en.srt'];
 for (const f of FILES) if (!fs.existsSync(at(`${LIVE}/${f}`))) die(`${LIVE}/${f} 가 없다 — make-episode.mjs 를 먼저 돌린다`);
+// 빈 문구로는 올리지 않는다. 7회차에 캡션 파일이 비어 인스타가 캡션 없이 나갔고, 제목이 비어 유튜브는 안 올라갔다(2026-10-17).
+const need = [[`${LIVE}/caption.txt`, '인스타 캡션'], [`${OUT}/제목.txt`, '유튜브 제목'], [`${OUT}/설명란.txt`, '유튜브 설명'], [`${OUT}/고정댓글.txt`, '고정 댓글']];
+for (const [f, k] of need) if (fs.existsSync(at(f)) && !fs.readFileSync(at(f), 'utf8').trim()) die(`${k} 파일이 비어 있다(${f}) — make-episode.mjs 를 다시 돌린다`);
 const PAGES = (fs.readFileSync(IGENV, 'utf8').match(/^PAGES_BASE_URL=(.*)$/m) || [])[1]?.trim().replace(/^['"]|['"]$/g, '').replace(/\/$/, '');
 const url = (f) => `${PAGES}/cards/reels/${SLUG}/ko/${f}`;
 console.log(`${GO ? '▶ 올린다' : '미리보기(아무것도 안 올림)'} — ${EP}회차 ${STAMP} · 단계 ${[...ONLY].join(', ')}`);
@@ -78,6 +81,8 @@ if (ONLY.has('youtube') || ONLY.has('captions')) {
     if (new RegExp(`❌ ${lang} 자막`).test(out)) (rec.youtube ||= {}).captions = { ...(rec.youtube?.captions || {}), [lang]: /quota/.test(out) ? '한도 초과 — 오후 4시 뒤 --only=captions' : '실패' };
   }
   if (GO) save();
+  // 영상을 올리라고 했는데 번호가 안 나왔으면 여기서 멈춘다 — 인스타만 먼저 나가는 일을 막는다(7회차).
+  if (GO && ONLY.has('youtube') && !VID && !id) die('유튜브 영상이 올라가지 않았다 — 인스타·댓글로 넘어가지 않고 멈춘다\n' + out.split('\n').slice(-15).join('\n'));
 }
 
 // 3) 인스타그램: 공개 주소가 열릴 때까지 기다린 뒤 올린다(4회차에서 4분 기다림으로는 모자랐다)

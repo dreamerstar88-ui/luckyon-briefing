@@ -79,7 +79,7 @@ const aboveV=BARS.filter(b=>b.c>=open).length/BARS.length*100;
 // 질문 답은 질문 은행으로 다시 잰다(5회차부터). 4회차까지는 «시가 위 시간» 만 재서 다른 질문이면 멈췄다.
 const {QUESTIONS,buildCtx}=await import(pathToFileURL(path.join(R,'scripts','weekly-shorts','questions.mjs')).href);
 const QB=QUESTIONS.find(q=>q.id===M.question.id);if(!QB)die('질문 은행에 없는 id',M.question.id);
-const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:[];
+const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.rank_basis?M.question.rank_basis.weeks:[]);
 const ansV=QB.fn(buildCtx(BARS,QHIST));
 if(typeof ansV==='number'?Math.abs(ansV-M.question.answer_value)>0.01:ansV!==M.question.answer_value)die('질문 답이 매니페스트와 다르다',ansV,M.question.answer_value);
 const UNIT=M.question.unit||'%';

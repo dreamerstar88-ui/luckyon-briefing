@@ -149,7 +149,7 @@ try {
     const { QUESTIONS, buildCtx } = await import('./questions.mjs');
     const Q = QUESTIONS.find((q) => q.id === M.question.id);
     // 사상 최고가 질문은 창 이전 최고가를 hist 로 받아야 셀 수 있다(아래 [2] 와 같은 값).
-    const PH0 = M.question.prior_high, QH0 = PH0 ? [{ d: PH0.et, o: PH0.value, h: PH0.value, l: PH0.value, c: PH0.value }] : [];
+    const PH0 = M.question.prior_high, QH0 = PH0 ? [{ d: PH0.et, o: PH0.value, h: PH0.value, l: PH0.value, c: PH0.value }] : (M.question.rank_basis ? M.question.rank_basis.weeks : []);
     const gotC = Q ? Q.fn(buildCtx(CB, QH0, M.events)) : null;
     if (typeof gotC === 'number') cmp('정답을 CNBC 봉으로 다시 셈', +gotC.toFixed(1), +(+M.question.answer_value).toFixed(1), 0.05);
   }
@@ -190,7 +190,7 @@ if (M.question) {
   if (!Q) bad('질문 은행', M.question.id, '은행에 없는 id');
   else {
     // 사상 최고가 질문(athbars)은 창 이전 최고가를 hist 한 봉으로 받는다(6회차부터). 아래 [2-1] 이 그 값을 다시 확인한다.
-    const PH = M.question.prior_high, QH = PH ? [{ d: PH.et, o: PH.value, h: PH.value, l: PH.value, c: PH.value }] : [];
+    const PH = M.question.prior_high, QH = PH ? [{ d: PH.et, o: PH.value, h: PH.value, l: PH.value, c: PH.value }] : (M.question.rank_basis ? M.question.rank_basis.weeks : []);
     let got; try { got = Q.fn(buildCtx(BARS, QH, M.events)); } catch (e) { got = null; }
     if (got === null) bad('질문 재계산', '계산 실패', M.question.id);
     else {
@@ -311,6 +311,45 @@ if (M.question?.prior_high) {
       cmp(`최근 ${PHv.record_weeks.n}주 중 신고가를 쓴 주`, keys.filter((k) => wk.get(k) > 0).length, PHv.record_weeks.weeks);
     }
   } catch (e) { bad('사상 최고가 재확인', `실패 — ${e.message}`, '야후 일봉'); }
+}
+
+// ── 2-1b. 주간 하락폭 순위의 바탕 다시 만들기 (7회차부터) ─────────────────────
+// 매니페스트에 적은 과거 주간 등락률 목록을 1시간봉 파일로 다시 만들어 대조하고(같은 창 규칙),
+// 나스닥100 지수(^NDX) 주간 종가로도 순위를 다시 센다(두 번째 출처).
+if (M.question?.rank_basis) {
+  console.log('\n[2-1b] 주간 하락폭 순위 바탕 재확인');
+  const RB = M.question.rank_basis, hi2 = argv.indexOf('--hist');
+  if (hi2 < 0) bad('순위 바탕', '--hist 가 없다', '1시간봉 파일');
+  else {
+    const HB2 = JSON.parse(fs.readFileSync(argv[hi2 + 1], 'utf8')), start = M.window.from_et.slice(0, 10), bm = new Map();
+    for (const b0 of HB2) { const dd = new Date(b0.d.slice(0, 10) + 'T00:00:00Z'); const mo = new Date(dd); mo.setUTCDate(dd.getUTCDate() - ((dd.getUTCDay() + 6) % 7)); const k = mo.toISOString().slice(0, 10); if (!bm.has(k)) bm.set(k, []); bm.get(k).push(b0); }
+    // rank_basis.from 이 있으면(예: «올해 중», 7회차) 그날 이후 주만 비교한다.
+    const from = RB.from || '0000-00-00';
+    const re = [...bm.entries()].filter(([k]) => k < start && k >= from).map(([k, v]) => { const f = new Date(k + 'T00:00:00Z'); f.setUTCDate(f.getUTCDate() + 4); const F = f.toISOString().slice(0, 10);
+      const s = v.filter((x) => x.d >= `${k} 04:00` && x.d <= `${F} 16:00`); return (s.length >= 80 && s[0].d === `${k} 04:00` && s.at(-1).d.slice(0, 10) === F) ? { k, wp: (s.at(-1).c / s[0].o - 1) * 100 } : null; }).filter(Boolean);
+    cmp('순위 바탕 주 수', re.length, RB.weeks.length);
+    if (RB.down_days !== undefined) {
+      // 그날 마지막 16:00 전 봉 종가(=16:00 가격)가 전날보다 낮은 날. 월요일은 직전 금요일과 비교한다.
+      const c16 = (d) => { const S = HB2.filter((b) => b.d.startsWith(d) && b.d.slice(11) < '16:00'); return S.length ? S.at(-1).c : null; };
+      const ds = [-3, 0, 1, 2, 3, 4].map((i) => { const x = new Date(start + 'T00:00:00Z'); x.setUTCDate(x.getUTCDate() + i); return x.toISOString().slice(0, 10); });
+      const cs = ds.map(c16); let n = 0; for (let i = 1; i < cs.length; i++) if (cs[i] != null && cs[i - 1] != null && cs[i] < cs[i - 1]) n++;
+      cmp('전날보다 낮게 끝난 날(1시간봉)', n, RB.down_days);
+    }
+    const want = new Map(RB.weeks.map((w) => [w.k, w.wp]));
+    const diff = Math.max(...re.map((w) => Math.abs(w.wp - (want.get(w.k) ?? 999))));
+    diff <= 0.01 ? ok('순위 바탕 주간 등락률', `${re.length}주 모두 0.01%p 안 (최대 ${diff.toFixed(4)})`) : bad('순위 바탕 주간 등락률', `최대 차이 ${diff.toFixed(3)}%p`, '0.01%p 이하');
+    if (RB.ndx) {
+      try {
+        const r = await (await fetch('https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?interval=1d&range=5y', { headers: { 'User-Agent': UA } })).json();
+        const x = r.chart.result[0], q = x.indicators.quote[0], wk = new Map();
+        x.timestamp.forEach((t, i) => { if (q.close[i] == null) return; const d = new Date(t * 1000); const mo = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate())); mo.setUTCDate(mo.getUTCDate() - ((mo.getUTCDay() + 6) % 7)); wk.set(mo.toISOString().slice(0, 10), q.close[i]); });
+        const ks = [...wk.keys()].sort(), ch = ks.slice(1).map((k, i) => ({ k, p: (wk.get(k) / wk.get(ks[i]) - 1) * 100 }));
+        const me = ch.find((w) => w.k === start), past = ch.filter((w) => w.k < start && w.k >= from).slice(-RB.ndx.weeks);
+        if (RB.from) cmp(`나스닥100 지수 비교 주 수(${RB.from} 부터)`, past.length, RB.ndx.weeks);
+        cmp(`나스닥100 지수 순위(${RB.from ? RB.from + ' 부터 ' : '지난 '}${RB.ndx.weeks}주 중)`, 1 + past.filter((w) => w.p < me.p).length, RB.ndx.rank);
+      } catch (e) { bad('나스닥100 지수 순위', `실패 — ${e.message}`, '야후 일봉'); }
+    }
+  }
 }
 
 // 영어 줄은 26px 까지 줄여도 가로 968px 안에 들어와야 한다. 넘치면 말없이 잘린다.
@@ -836,6 +875,8 @@ if (srtDir) {
     // 그 주 5분 변동 상위 10개 봉도 설명에 적을 수 있다(6회차: 뉴스 다음 봉이 1위). 봉에서 다시 잰 값이다.
     const top10 = []; for (let i = 1; i < BARS.length; i++) top10.push((BARS[i].c / BARS[i - 1].c - 1) * 100);
     top10.sort((a, b) => Math.abs(b) - Math.abs(a)); extra.push(...top10.slice(0, 10));
+    // 순위 질문(7회차)은 비교한 과거 주의 등락률을 설명에 적는다 — 검사 [2-1b] 가 다시 만든 목록의 값만 허용한다.
+    if (M.question?.rank_basis) extra.push(...M.question.rank_basis.weeks.map((w) => w.wp));
     for (const v of extra) for (const d of [2, 3]) { const s = v.toFixed(d) + '%'; allow.add(s); allow.add((v >= 0 ? '+' : '') + s); allow.add(Math.abs(v).toFixed(d) + '%'); }
   }
   const all = [title, desc, cap, cmt].join('\n');

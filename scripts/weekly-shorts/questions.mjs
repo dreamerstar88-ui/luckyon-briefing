@@ -201,6 +201,13 @@ export const QUESTIONS = [
     fn: (c) => { if (!c.hist.length) throw new Error('athbars: 창 이전 최고가(hist)가 없다');
       let m = Math.max(...c.hist.map((b) => b.h)), n = 0; for (const b of c.bars) if (b.h > m) { n++; m = b.h; } return n; }, kind: 'count',
     guard: '최고가 근처에서 끝난 주라도 0개일 수 있고, 한 번 뚫으면 수십 개가 쌓이기도 한다. 최근 104주 중 73주는 신고가 날이 하루도 없었다.' },
+  // 7회차(2026-10-12 주)에 대표가 고른 질문. 과거 주간 등락률 목록은 hist 로 받는다 — 매니페스트
+  // question.rank_basis.weeks([{k, wp}])를 렌더러·자막·검사가 넘기고, 검사가 1시간봉으로 그 목록을 다시 만든다.
+  { id: 'weekrank', cat: '수준', unit: '위',
+    ko: '이번 주 하락폭은 지난 주들 중 몇 번째로 컸을까요?', en: "How does this week's drop rank among past weeks?",
+    fn: (c) => { if (!c.hist.length || c.hist[0].wp === undefined) throw new Error('weekrank: 과거 주간 등락률(hist[].wp)이 없다');
+      return 1 + c.hist.filter((w) => w.wp < c.weekPct).length; }, kind: 'count',
+    guard: '크게 빠진 주는 드물어 순위가 주마다 크게 다르다. 같은 -5% 대라도 그 사이에 더 큰 하락이 몇 번 있었는지에 따라 1위도 10위도 된다.' },
   { id: 'gapsum', cat: '연속', unit: '%',
     ko: '날마다 생긴 시가 갭을 다 더하면 몇 %였을까요?', en: 'How much did the daily opening gaps add up to?',
     fn: (c) => { let s = 0; for (let i = 1; i < c.days.length; i++) {

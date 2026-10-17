@@ -55,7 +55,7 @@ const EVEN=M.events.map((e,k)=>{
   const sess=e.kst_label.split(' · ')[0];
   // 프리장·장중·애프터장 세 가지가 다 온다. 예전에는 «장중이 아니면 프리장» 이라
   // 애프터장 사건(예: 화요일 API 원유재고 17:00 ET)이 오면 그대로 틀렸다.
-  const en=/장중/.test(sess)?'session':(/애프터/.test(sess)?'after hours':'pre-market');
+  const en=/장중/.test(sess)?'session':(/애프터/.test(sess)?'after hours':(/야간/.test(sess)?'overnight':'pre-market'));
   const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(e.et.replace(' ','T')+'Z').getUTCDay()];
   const [a,...b]=drop(e.en).split(', ');
   // 둘째 줄은 새 문장이 아니라 «…4.060%, up from 3.890%» 한 문장을 쉼표에서 끊은
@@ -75,7 +75,7 @@ const sgn=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
 const fmtPct=v=>(Math.abs(v-Math.round(v))<0.005?String(Math.round(v)):v.toFixed(2))+'%';
 // 질문 답은 질문 은행으로 잰다(5회차부터) — render.mjs 와 같다.
 const {QUESTIONS,buildCtx}=await import(pathToFileURL(path.join(R,'scripts','weekly-shorts','questions.mjs')).href);
-const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:[];
+const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.rank_basis?M.question.rank_basis.weeks:[]);
 const ansV=QUESTIONS.find(q=>q.id===M.question.id).fn(buildCtx(B,QHIST));
 const UNIT=M.question.unit||'%';
 const fmtAns=v=>typeof v!=='number'?String(v):UNIT==='%'?fmtPct(v):(Number.isInteger(v)?String(v):v.toFixed(2))+UNIT;
