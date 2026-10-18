@@ -1,0 +1,678 @@
+{
+  "date": "2026-10-19",
+  "session": "am",
+  "dateLabel_ko": "2026.10.19(월) 아침",
+  "dateLabel_en": "Mon, Oct 19, 2026 · AM",
+  "headline_ko": "나스닥 2.15% 급락…반도체지수 8거래일 연속 하락",
+  "headline_sub_ko": "코어위브 -11.9% · 11개 업종 중 5개 하락 · VIX 19.99 · WTI 101달러대",
+  "headline_en": "Nasdaq Drops 2.15% as Chip Index Falls an 8th Straight Day",
+  "headline_sub_en": "CoreWeave -11.9%, 5 of 11 sectors fell, VIX at 19.99 and WTI above $101",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 10/16 마감",
+    "en": "US Overnight · Oct 16 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 -2.15% · S&P -1.09%",
+        "en": "Nasdaq -2.15% · S&P 500 -1.09%"
+      },
+      {
+        "ko": "26,140.03 / 7,659.44 · 다우 -0.34%",
+        "en": "26,140.03 / 7,659.44 · Dow -0.34%"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "필라델피아 반도체지수 -3.83%",
+        "en": "Philly Semi Index -3.83%"
+      },
+      {
+        "ko": "8거래일 연속 하락 · 마이크론 -5.63%",
+        "en": "8th straight drop · Micron -5.63%"
+      }
+    ],
+    [
+      "rate",
+      {
+        "ko": "WTI 101.41달러 · VIX 19.99",
+        "en": "WTI $101.41 · VIX 19.99"
+      },
+      {
+        "ko": "10년물 5.10%→5.09% · 공포·탐욕 18",
+        "en": "10-year 5.10% to 5.09% · Fear & Greed 18"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥종합이 573.00p(2.15%) 내린 26,140.03으로 마감해 7월 23일 이후 가장 크게 하락했다. S&P 500은 1.09% 내린 7,659.44, 다우존스는 0.34% 내린 52,002.41이다.",
+      "나스닥은 한 주 동안 4.48% 내렸고, 10/6 고점(27,599.79)보다 5.29% 낮다. 필라델피아 반도체지수는 3.83% 내려 8거래일 연속 하락했다.",
+      "코어위브는 10/16 11.91% 내린 61.4달러로 마감했다. 이번 주 초 5년물 CDS가 사상 최고로 올라 AI 인프라 부채 우려가 커졌다. 네비우스 -12.18%, 아이렌 -11.19%다.",
+      "거래대금 상위 298종목 중 198개가 내렸고 거래대금의 80.0%가 내린 종목에 몰렸다. VIX는 21.45% 오른 19.99다. 코스피는 16일 2.05% 반등한 5,668.05로 마쳤다."
+    ],
+    "lines_en": [
+      "The Nasdaq Composite fell 573.00 points (2.15%) to 26,140.03, its biggest drop since Jul 23. The S&P 500 lost 1.09% to 7,659.44 and the Dow 0.34% to 52,002.41.",
+      "The Nasdaq lost 4.48% on the week and sits 5.29% below its Oct 6 peak of 27,599.79. The Philadelphia Semiconductor Index fell 3.83%, an eighth straight decline.",
+      "CoreWeave closed Oct 16 down 11.91% at $61.4. Earlier this week its 5-year CDS hit a record, stoking AI-infrastructure debt worries. Nebius fell 12.18% and IREN 11.19%.",
+      "Of the 298 most-traded US names, 198 fell and decliners took 80.0% of turnover. The VIX jumped 21.45% to 19.99. KOSPI rebounded 2.05% to 5,668.05 on Oct 16."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "26,140.03",
+      "delta": "▼2.15%",
+      "dir": "down",
+      "note_ko": "573.00p 하락 · 7/23 이후 최대 낙폭",
+      "note_en": "-573.00 pts · biggest drop since Jul 23"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,659.44",
+      "delta": "▼1.09%",
+      "dir": "down",
+      "note_ko": "84.62p 하락 · 3대 지수 모두 하락",
+      "note_en": "-84.62 pts · all three indexes fell"
+    },
+    {
+      "label": "KOSPI",
+      "value": "5,668.05",
+      "delta": "▲2.05%",
+      "dir": "up",
+      "note_ko": "10/16 한국장 종가 · 코스닥 +4.46%",
+      "note_en": "Oct 16 close · KOSDAQ +4.46%"
+    },
+    {
+      "label": "VIX",
+      "value": "19.99",
+      "delta": "▲21.45%",
+      "dir": "up",
+      "note_ko": "3.53p 상승 · 15일 16.46에서 올랐다",
+      "note_en": "+3.53 pts · up from 16.46"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "32 → 18",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "CNN 지수 · 극단적 공포 구간",
+      "note_en": "CNN index · Extreme Fear zone"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.10 → 5.09%",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "10/15 → 10/16 재무부 고시 종가",
+      "note_en": "Treasury par yield, Oct 15 → Oct 16"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,334.7",
+      "delta": {
+        "ko": "▲0.5원",
+        "en": "▲0.5 KRW"
+      },
+      "dir": "up",
+      "value_sub": "· DXY 101.85",
+      "note_ko": "10/19 07시 기준 · 10/16 뉴욕 마감 대비",
+      "note_en": "As of 7 AM KST Oct 19 vs Oct 16 NY close"
+    },
+    {
+      "label": "Gold",
+      "value": "$4,181.10",
+      "delta": "▲0.26%",
+      "dir": "up",
+      "note_ko": "10/16 선물 종가 · 전일 종가 대비",
+      "note_en": "Futures close Oct 16 vs prior close"
+    },
+    {
+      "label": "WTI",
+      "value": "$101.41",
+      "delta": "▲3.51%",
+      "dir": "up",
+      "note_ko": "11월물 10/16 정산가 · 전일 종가 대비",
+      "note_en": "Nov contract settle Oct 16 vs prior close"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "$81,608",
+      "delta": "▲0.28%",
+      "dir": "up",
+      "note_ko": "10/19 07시 기준 · 전일 종가 대비",
+      "note_en": "As of 7 AM KST Oct 19 vs prior close"
+    }
+  ],
+  "market_note_ko": "미국 지수·코스피는 10/16 종가 · 금·WTI는 10/16 선물 종가 · 환율·비트코인은 10/19 07시 KST 기준 · 10년물은 재무부 고시 종가",
+  "market_note_en": "US indexes and KOSPI: Oct 16 close · gold and WTI: Oct 16 futures close · FX and Bitcoin as of 7 AM KST Oct 19 · 10-year: Treasury par yield",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "chart_series": "us",
+  "main_tile_note": {
+    "ko": "573.00p 하락 · 최근 9거래일",
+    "en": "-573.00 pts · last 9 sessions"
+  },
+  "chart_title": {
+    "ko": "고점에서 5.3% 아래",
+    "en": "5.3% Below the Peak"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "10.06 고점 27,599.79  →  10.15 26,713.03  →  10.16 26,140.03",
+    "en": "Oct 6 peak 27,599.79  →  Oct 15 26,713.03  →  Oct 16 26,140.03"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "chart_series_values": [
+    27599.79,
+    27538.69,
+    27193.34,
+    27366.17,
+    27245.9,
+    27204.38,
+    26692.87,
+    26713.03,
+    26140.03
+  ],
+  "chart_series_labels": [
+    "10.06",
+    "10.07",
+    "10.08",
+    "10.09",
+    "10.12",
+    "10.13",
+    "10.14",
+    "10.15",
+    "10.16"
+  ],
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,659.44",
+          "delta": "▼1.09%",
+          "dir": "down",
+          "sub_ko": "84.62포인트 하락 · 10/9 이후 5거래일 중 4일 하락",
+          "sub_en": "Down 84.62 pts · 4 of the last 5 sessions fell"
+        },
+        {
+          "label_ko": "다우존스",
+          "label_en": "Dow Jones",
+          "value": "52,002.41",
+          "delta": "▼0.34%",
+          "dir": "down",
+          "sub_ko": "175.28포인트 하락 · 3대 지수 중 가장 작은 낙폭",
+          "sub_en": "Down 175.28 pts · smallest drop of the three"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 6,
+          "flat": 0,
+          "down": 5
+        },
+        {
+          "label_ko": "거래대금 상위 298종목",
+          "label_en": "298 most-traded",
+          "up": 100,
+          "flat": 0,
+          "down": 198
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+        "label_en": "Turnover: gainers vs decliners ($B)",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 88.3
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -353.7
+          }
+        ]
+      },
+      "note_ko": "내린 종목이 198개로 오른 100개의 두 배 가까이였고 거래대금 비중은 내린 종목이 80.0%였다. 업종 ETF는 6개가 올랐지만 기술(XLK)이 3.02% 내려 지수를 눌렀다.",
+      "note_en": "Decliners outnumbered gainers 198 to 100 and took 80.0% of turnover. Six sector ETFs rose, but tech (XLK) fell 3.02% and pulled the indexes down."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 2.52
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": 1.34
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 1.08
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 0.71
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Fin. (XLF)",
+          "value": 0.45
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Est. (XLRE)",
+          "value": 0.4
+        },
+        {
+          "label_ko": "산업 (XLI)",
+          "label_en": "Indu. (XLI)",
+          "value": -0.08
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": -0.27
+        },
+        {
+          "label_ko": "임의소비 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": -0.84
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": -1.89
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": -3.02
+        },
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": -3.41
+        }
+      ],
+      "note_ko": "11개 중 6개가 올랐다(SMH는 참고용). 에너지(XLE)는 WTI가 3.51% 오른 가운데 2.52% 올라 1위였고, 기술(−3.02%)과 통신(−1.89%)이 가장 크게 내렸다.",
+      "note_en": "Six of eleven sectors rose (SMH shown for reference). Energy (XLE) led at +2.52% as WTI gained 3.51%; tech (-3.02%) and communications (-1.89%) fell the most."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$26.82B",
+          "pct": -5.63
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$25.96B",
+          "pct": -1.43
+        },
+        {
+          "name_ko": "테슬라",
+          "name_en": "Tesla",
+          "value": "$21.89B",
+          "pct": -2.13
+        },
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$20.59B",
+          "pct": 0.43
+        },
+        {
+          "name_ko": "메타",
+          "name_en": "Meta",
+          "value": "$14.64B",
+          "pct": -3.72
+        }
+      ],
+      "share": {
+        "label_ko": "상위 298종목 거래대금 · 오른 종목 대 내린 종목",
+        "label_en": "Top-298 turnover · gainers vs decliners",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "pct": 20.0,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "pct": 80.0,
+            "color": "#3987e5"
+          }
+        ]
+      },
+      "note_ko": "거래대금 1~5위 가운데 애플만 올랐다(+0.43%). 1위 마이크론($26.82B)은 5.63% 내렸고, 메타는 3.72% 내렸다.",
+      "note_en": "Of the five biggest by turnover only Apple rose (+0.43%). No. 1 Micron ($26.82B) fell 5.63% and Meta lost 3.72%."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "美 9월 산업생산 (전월비)",
+          "label_en": "US Sep Industrial Production (MoM)",
+          "value": "0.7%",
+          "delta": "▲0.3%p",
+          "dir": "up",
+          "sub_ko": "10/16 22:15 · 예상 0.4%",
+          "sub_en": "Oct 16 22:15 KST · est. 0.4%"
+        },
+        {
+          "label_ko": "美 9월 설비가동률",
+          "label_en": "US Sep Capacity Utilization",
+          "value": "76.9%",
+          "delta": "▲0.4%p",
+          "dir": "up",
+          "sub_ko": "예상 76.5% · 이전 76.4%",
+          "sub_en": "Est. 76.5% · prior 76.4%"
+        },
+        {
+          "label_ko": "美 9월 제조업 생산 (전월비)",
+          "label_en": "US Sep Manufacturing Output (MoM)",
+          "value": "0.3%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "자동차 -3.0% · 자동차 제외 +0.6%",
+          "sub_en": "Autos -3.0% · ex-autos +0.6%",
+          "ref_ko": "연준 G.17 산업생산 · 전월비 변화율",
+          "ref_en": "Fed G.17 industrial production · MoM"
+        },
+        {
+          "label_ko": "美 9월 반도체 생산 (전월비)",
+          "label_en": "US Sep Semiconductor Output (MoM)",
+          "value": "2.1%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "전년비 +19.9% · 첨단장비 전년비 +17.6%",
+          "sub_en": "+19.9% YoY · high-tech equipment +17.6% YoY",
+          "ref_ko": "연준 G.17 산업생산 · 전월비 변화율",
+          "ref_en": "Fed G.17 industrial production · MoM"
+        },
+        {
+          "label_ko": "美 9월 월간 재정수지",
+          "label_en": "US Sep Monthly Budget Balance",
+          "value": "-$27B",
+          "delta": "▲$2B",
+          "dir": "up",
+          "sub_ko": "10/17 03:00 · 예상 -$29B · 이전 -$166.8B",
+          "sub_en": "Oct 17 03:00 KST · est. -$29B · prior -$166.8B"
+        },
+        {
+          "label_ko": "美 8월 순장기 해외자본 유입",
+          "label_en": "US Aug Net Long-Term TIC Flows",
+          "value": "+$279.2B",
+          "delta": "▲$204.0B",
+          "dir": "up",
+          "sub_ko": "10/17 05:00 · 예상 +$75.2B · 이전 -$27.9B",
+          "sub_en": "Oct 17 05:00 KST · est. +$75.2B · prior -$27.9B"
+        }
+      ],
+      "note_ko": "변화 표시는 실제 − 예상이다. 제조업·반도체 생산은 예상치가 없어 방향만 표시했다(연준 G.17, 전월비).",
+      "note_en": "Deltas show actual minus estimate. Manufacturing and semiconductor output have no estimate, so only direction is shown (Fed G.17, MoM)."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "코어위브 -11.91%, 주간 낙폭 26% 넘어",
+          "headline_en": "CoreWeave -11.91%, Down Over 26% on the Week",
+          "body_ko": "61.4달러로 마감했다. 이번 주 초 블룸버그 인용 보도에서 5년물 CDS는 장중 1194.5bp로 사상 최고였다. 네비우스 -12.18%.",
+          "body_en": "It closed at $61.4. Earlier this week Bloomberg-cited reports put its 5-year CDS at a record 1,194.5bp. Nebius fell 12.18%."
+        },
+        {
+          "headline_ko": "반도체지수 -3.83%, 8거래일 연속 하락",
+          "headline_en": "Semi Index -3.83%, an 8th Straight Drop",
+          "body_ko": "필라델피아 반도체지수는 10/7부터 8거래일 내리 하락했다. 반도체 ETF SMH는 3.41% 내린 539.79달러로 마감했다.",
+          "body_en": "The Philadelphia Semiconductor Index has fallen eight sessions in a row since Oct 7. The SMH ETF closed at $539.79, down 3.41%."
+        },
+        {
+          "headline_ko": "마이크론 -5.63%, 브로드컴 -4.52%",
+          "headline_en": "Micron -5.63%, Broadcom -4.52%",
+          "body_ko": "마이크론은 878.84달러로 마감했다. AMD -5.95%, 인텔 -5.79%, SK하이닉스 ADR -6.58%이고, 엔비디아는 -1.43%(214.13달러)다.",
+          "body_en": "Micron closed at $878.84. AMD fell 5.95%, Intel 5.79% to $89.85 and SK Hynix's ADR 6.58%; Nvidia lost 1.43% to $214.13."
+        },
+        {
+          "headline_ko": "TSMC ADR -2.28%, 10/6보다 14.5% 낮아",
+          "headline_en": "TSMC ADR -2.28%, 14.5% Below Oct 6",
+          "body_ko": "TSMC ADR은 412.61달러로 마감했다. 10/6 종가(482.30달러)와 견주면 14.5% 낮고 10/13 이후 3거래일 연속 내렸다.",
+          "body_en": "TSMC's ADR closed at $412.61, 14.5% below its Oct 6 close of $482.30 and down three sessions in a row since Oct 13."
+        },
+        {
+          "headline_ko": "美 9월 반도체 생산 전월비 2.1% 증가",
+          "headline_en": "US Sep Chip Output Up 2.1% MoM",
+          "body_ko": "연준 자료상 전년비 +19.9%다. FT포트폴리오스는 첨단장비 생산 증가의 배경으로 데이터센터 건설과 반도체 국내 생산을 꼽았다.",
+          "body_en": "Fed data show chip output up 19.9% YoY. FT Portfolios cited data-center construction and onshoring of chip production for the high-tech gain."
+        },
+        {
+          "headline_ko": "메타·테슬라 21일 장 마감 후 실적",
+          "headline_en": "Meta, Tesla Report After the Close Oct 21",
+          "body_ko": "21일 엔비디아 GTC 유럽 기조연설과 램리서치·IBM 실적도 같은 날이다. 반도체 8일 하락 뒤 AI 투자 심리를 가를 주간이다.",
+          "body_en": "Nvidia's GTC Europe keynote and Lam Research and IBM earnings fall the same day. A key week for AI-investment sentiment after eight down days."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "WTI 11월물 101.41달러, 브렌트 109.86달러",
+          "headline_en": "WTI Nov $101.41, Brent $109.86",
+          "body_ko": "WTI는 3.51%, 브렌트(ICE)는 3.7% 올라 브렌트는 5월 이후 최고 수준이다. 에너지 ETF(XLE)는 2.52% 올라 업종 1위였다.",
+          "body_en": "WTI rose 3.51% and ICE Brent 3.7%, Brent's highest since May. The energy ETF (XLE) gained 2.52%, the best sector."
+        },
+        {
+          "headline_ko": "나스닥 주간 4.48% 하락, 일간 낙폭은 7/23 이후 최대",
+          "headline_en": "Nasdaq Falls 4.48% on the Week, Worst Day Since Jul 23",
+          "body_ko": "10/9 종가 27,366.17에서 26,140.03으로 내렸다. VIX는 19.99로 15일(16.46)보다 21.45% 올랐다. 공포·탐욕 지수는 18이다.",
+          "body_en": "The Composite went from 27,366.17 on Oct 9 to 26,140.03. The VIX rose 21.45% to 19.99 from 16.46, and Fear & Greed is 18."
+        },
+        {
+          "headline_ko": "연준 발언 블랙아웃, 17~29일",
+          "headline_en": "Fed Blackout Runs Oct 17-29",
+          "body_ko": "워시 의장은 16일 IMF 대담에서 다음 결정을 미리 예단하지 않겠다고 했다. 10/27~28 FOMC까지 위원 공개 발언이 없다.",
+          "body_en": "At the IMF on Oct 16 Warsh said he won't prejudge the next decision. No Fed officials speak publicly until the Oct 27-28 FOMC."
+        },
+        {
+          "headline_ko": "코스피 5,668.05, 10/8보다 14.5% 낮아",
+          "headline_en": "KOSPI 5,668.05, 14.5% Below Oct 8",
+          "body_ko": "16일 코스피 +2.05%, 코스닥 +4.46% 반등했지만 코스피는 10/8 종가(6,625.93)보다 낮다. EWY는 3.70% 내린 150.44달러.",
+          "body_en": "KOSPI rose 2.05% and KOSDAQ 4.46% on Oct 16, yet KOSPI is below its Oct 8 close of 6,625.93. EWY fell 3.70% to $150.44."
+        },
+        {
+          "headline_ko": "10년물 5.10%→5.09%, 2년물 4.77%→4.74%",
+          "headline_en": "10-Year 5.10% to 5.09%, 2-Year 4.77% to 4.74%",
+          "body_ko": "30년물은 5.43%로 그대로였다. 주가가 급락한 날에도 장기금리는 거의 움직이지 않았다. 미 재무부 고시 종가 기준이다.",
+          "body_en": "The 30-year stayed at 5.43%. Long yields barely moved on a sharp equity selloff, based on Treasury par yields."
+        },
+        {
+          "headline_ko": "이란 외무 \"봉쇄·제재 해제 땐 호르무즈 재개\"",
+          "headline_en": "Iran: Hormuz Reopening Tied to Lifting Blockade",
+          "body_ko": "아락치 외무장관은 18일 봉쇄·원유 제재 해제와 적대행위 중단을 조건으로 밝혔다. 트럼프 대통령이 거부했다는 보도도 있어 합의는 없다.",
+          "body_en": "On Oct 18 FM Araghchi cited lifting the blockade and oil sanctions and ending hostilities. Reports say Trump rejected it; no deal yet."
+        }
+      ]
+    }
+  ],
+  "sector_title": {
+    "ko": "11개 중 6개 업종 상승",
+    "en": "6 of 11 Sectors Rose"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF · 10/16 종가 기준 · 11개 중 6개 상승",
+    "en": "S&P 500 sector ETFs · Oct 16 close · 6 of 11 rose"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "10/16 미국장 · 막대 옆은 등락률",
+    "en": "Oct 16 US session · change shown beside each bar"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $ billions"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "10/16~17 발표분 · 실측 · 예상 · 이전",
+    "en": "Released Oct 16-17 · actual · estimate · prior"
+  },
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "KST · yellow dot = key event"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "10/19 10:20",
+      "title_ko": "슬레이펜 ECB 정책위원 연설",
+      "title_en": "ECB's Sleijpen Speech",
+      "detail_ko": "네덜란드 중앙은행 총재 · 예상치 없음",
+      "detail_en": "Dutch central bank governor · no consensus",
+      "importance": "mid"
+    },
+    {
+      "time": "10/19 10:30",
+      "title_ko": "레인 ECB 수석이코노미스트 연설",
+      "title_en": "ECB Chief Economist Lane Speech",
+      "detail_ko": "ECB 집행이사 · 10/29 ECB 결정 앞두고 발언",
+      "detail_en": "ECB Executive Board member · ahead of Oct 29 decision",
+      "importance": "mid"
+    },
+    {
+      "time": "10/19 11:00",
+      "title_ko": "中 3분기 GDP (전년비)",
+      "title_en": "China Q3 GDP (YoY)",
+      "detail_ko": "예상 +4.4% · 이전 +4.3% · 전분기비 예상 +1.1%",
+      "detail_en": "Est. +4.4% · prior +4.3% · QoQ est. +1.1%",
+      "importance": "high"
+    },
+    {
+      "time": "10/19 11:00",
+      "title_ko": "中 9월 산업생산 (전년비)",
+      "title_en": "China Sep Industrial Output (YoY)",
+      "detail_ko": "예상 +5.4% · 이전 +5.2%",
+      "detail_en": "Est. +5.4% · prior +5.2%",
+      "importance": "mid"
+    },
+    {
+      "time": "10/19 11:00",
+      "title_ko": "中 9월 소매판매 (전년비)",
+      "title_en": "China Sep Retail Sales (YoY)",
+      "detail_ko": "예상 +0.5% · 이전 +0.4%",
+      "detail_en": "Est. +0.5% · prior +0.4%",
+      "importance": "mid"
+    },
+    {
+      "time": "10/19 15:00",
+      "title_ko": "엘더슨 ECB 집행이사 연설",
+      "title_en": "ECB's Elderson Speech",
+      "detail_ko": "ECB 집행이사 · 예상치 없음",
+      "detail_en": "ECB Executive Board member · no consensus",
+      "importance": "mid"
+    },
+    {
+      "time": "10/22 10:00",
+      "title_ko": "한국은행 금통위 기준금리 결정 (미리 보기)",
+      "title_en": "BOK Rate Decision (Preview)",
+      "detail_ko": "현재 3.00% · 동결 전망 우세",
+      "detail_en": "Currently 3.00% · hold widely expected",
+      "importance": "mid"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "caption_ko": "📊 luckyon 브리핑 · 2026.10.19(월) 아침\n\n금요일 미국장에서 나스닥은 2.15% 내린 26,140.03으로 마감했고, S&P 500은 1.09%, 다우는 0.34% 내렸습니다. 한 주 동안 나스닥은 4.48% 내렸습니다.\n\n필라델피아 반도체지수는 8거래일 연속 하락했고 마이크론은 5.63% 내렸습니다. 코어위브 5년물 CDS가 사상 최고로 오르며 AI 인프라 부채 우려가 다시 불거졌습니다. WTI 11월물은 101.41달러로 3.51% 올랐고 VIX는 19.99입니다.\n\n오늘 11:00에는 중국 3분기 GDP(예상 4.4%)가 나옵니다.\n\n저장해 두고 필요할 때 다시 보세요.\n\n#미국증시 #나스닥 #S&P500 #반도체 #마이크론 #코어위브 #유가 #VIX #국채금리 #코스피 #중국GDP #경제뉴스 #주식 #투자 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "caption_en": "📊 luckyon Briefing · Mon, Oct 19, 2026 · AM\n\nOn Friday the Nasdaq fell 2.15% to 26,140.03, the S&P 500 lost 1.09% and the Dow 0.34%. The Nasdaq dropped 4.48% on the week.\n\nThe Philadelphia Semiconductor Index fell an eighth straight session and Micron lost 5.63%. CoreWeave's 5-year CDS hit a record, reviving worries about AI-infrastructure debt. WTI November settled at $101.41, up 3.51%, and the VIX rose to 19.99.\n\nChina's Q3 GDP (est. 4.4%) is due at 11:00 AM KST today.\n\n#Stocks #Nasdaq #SP500 #Semiconductors #Micron #CoreWeave #OilPrices #VIX #Treasuries #KOSPI #ChinaGDP #Markets #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+  "sources": [
+    "Yahoo Finance",
+    "FMP (미 재무부 국채금리)",
+    "FXStreet 경제캘린더",
+    "CNN Fear & Greed",
+    "FINRA·Yahoo 스크리너",
+    "연합뉴스",
+    "국가데이터처",
+    "FT Portfolios",
+    "Bloomberg"
+  ],
+  "card_photos": {
+    "1": "The New York Stock Exchange facade at dawn, heavy cool blue haze, a sense of selloff and unease, traders silhouettes, faint red glow from screens, high contrast."
+  }
+}
