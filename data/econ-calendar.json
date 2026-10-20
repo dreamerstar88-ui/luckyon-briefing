@@ -1,21 +1,11 @@
 {
-  "fetchedAt": "2026-10-19T17:26:25Z",
+  "fetchedAt": "2026-10-20T01:06:18Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-17T17:26:25Z",
-    "to": "2026-11-02T17:26:25Z"
+    "from": "2026-10-18T01:06:18Z",
+    "to": "2026-11-03T01:06:18Z"
   },
   "events": [
-    {
-      "at": "2026-10-18T00:00:00Z",
-      "country": "US",
-      "name": "IMF Meeting",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-10-18T16:00:00Z",
       "country": "CN",
@@ -2393,6 +2383,36 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-02T19:00:00Z",
+      "country": "US",
+      "name": "Loan Officer Survey",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-02T23:00:00Z",
+      "country": "KR",
+      "name": "Consumer Price Index Growth (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-02T23:00:00Z",
+      "country": "KR",
+      "name": "Consumer Price Index Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.9,
       "actual": null,
       "unit": "%"
     }
