@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-20T01:06:18Z",
+  "fetchedAt": "2026-10-20T11:19:19Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-18T01:06:18Z",
-    "to": "2026-11-03T01:06:18Z"
+    "from": "2026-10-18T11:19:19Z",
+    "to": "2026-11-03T11:19:19Z"
   },
   "events": [
     {
@@ -163,7 +163,7 @@
       "impact": "MEDIUM",
       "consensus": 3,
       "previous": 3,
-      "actual": null,
+      "actual": 3,
       "unit": "%"
     },
     {
@@ -173,7 +173,7 @@
       "impact": "MEDIUM",
       "consensus": 0.8,
       "previous": 1.1,
-      "actual": null,
+      "actual": 1.9,
       "unit": "%"
     },
     {
@@ -183,7 +183,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 4.6,
-      "actual": null,
+      "actual": 6.7,
       "unit": "%"
     },
     {
@@ -193,7 +193,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 36.5,
-      "actual": null,
+      "actual": 7.7,
       "unit": "€"
     },
     {
@@ -203,18 +203,8 @@
       "impact": "LOW",
       "consensus": 25.2,
       "previous": 27.6,
-      "actual": null,
+      "actual": 8.71,
       "unit": "€"
-    },
-    {
-      "at": "2026-10-20T09:00:00Z",
-      "country": "CN",
-      "name": "FDI - Foreign Direct Investment (YTD) (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -5.3,
-      "actual": null,
-      "unit": "%"
     },
     {
       "at": "2026-10-20T09:00:00Z",
@@ -223,7 +213,7 @@
       "impact": "MEDIUM",
       "consensus": -45,
       "previous": -47.1,
-      "actual": null,
+      "actual": -35.9,
       "unit": null
     },
     {
@@ -233,7 +223,7 @@
       "impact": "MEDIUM",
       "consensus": 32,
       "previous": 34.7,
-      "actual": null,
+      "actual": 28.1,
       "unit": null
     },
     {
@@ -243,7 +233,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0,
-      "actual": null,
+      "actual": 1.8,
       "unit": "%"
     },
     {
@@ -253,7 +243,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -2,
-      "actual": null,
+      "actual": 1.4,
       "unit": "%"
     },
     {
@@ -263,7 +253,7 @@
       "impact": "MEDIUM",
       "consensus": 24.2,
       "previous": 25.8,
-      "actual": null,
+      "actual": 18.5,
       "unit": null
     },
     {
@@ -291,7 +281,7 @@
       "country": "US",
       "name": "Building Permits (MoM)",
       "impact": "MEDIUM",
-      "consensus": 1.4,
+      "consensus": 1.39,
       "previous": 1.394,
       "actual": null,
       "unit": null
@@ -311,7 +301,7 @@
       "country": "US",
       "name": "Housing Starts (MoM)",
       "impact": "MEDIUM",
-      "consensus": 1.31,
+      "consensus": 1.3,
       "previous": 1.275,
       "actual": null,
       "unit": null
@@ -361,7 +351,7 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -1.3,
       "previous": -11.1,
       "actual": null,
       "unit": null
@@ -455,6 +445,16 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-10-21T09:00:00Z",
+      "country": "CN",
+      "name": "FDI - Foreign Direct Investment (YTD) (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -5.3,
+      "actual": null,
+      "unit": "%"
     },
     {
       "at": "2026-10-21T10:00:00Z",
@@ -2415,6 +2415,26 @@
       "previous": 2.9,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-03T03:35:00Z",
+      "country": "JP",
+      "name": "10-y Bond Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-03T05:00:00Z",
+      "country": "US",
+      "name": "US Midterm Elections",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
