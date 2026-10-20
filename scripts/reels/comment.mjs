@@ -32,8 +32,16 @@ export function shapeOf(sym) {
   const latePct = ((late - open) / open) * 100;
   const pos = (last - lo) / (hi - lo || 1);
 
-  const peakedEarly = hiIdx < n * 0.45 && latePct < earlyPct - 0.05;
-  const troughEarly = loIdx < n * 0.45 && latePct > earlyPct + 0.05;
+  // 2026-10-20 사고: 첫 봉의 시가 부근 틱(시가 +0.04%)이 '초반 고점'으로 잡혀
+  // "출발은 좋았는데 왜 자꾸 밀리냐"가 나갔다 — 실제 차트는 갭하락으로 열려
+  // 저점(-0.68%)을 찍고 반등하던 V자였다. 되돌릴 '올랐던 폭'이 실제로 있어야
+  // 초반 고점이고(시가 대비 +0.1% 이상), 저점이 창 후반에 있어도 시가 대비
+  // 의미 있게 빠졌다가(-0.3%) 저점에서 +0.3% 이상 올라온 V자는 반등으로 본다.
+  const riseFromOpenPct = ((hi - open) / open) * 100;
+  const dropFromOpenPct = ((open - lo) / open) * 100;
+  const peakedEarly = hiIdx < n * 0.45 && latePct < earlyPct - 0.05 && riseFromOpenPct >= 0.1;
+  const vBounce = loIdx < n - 2 && dropFromOpenPct >= 0.3 && ((last - lo) / lo) * 100 >= 0.3;
+  const troughEarly = (loIdx < n * 0.45 && latePct > earlyPct + 0.05) || vBounce;
 
   return {
     pct,
