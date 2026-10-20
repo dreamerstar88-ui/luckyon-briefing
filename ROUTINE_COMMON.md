@@ -53,6 +53,52 @@
 
 ---
 
+## 0-1. 막혔을 때 실전 대체 경로 (2026-10-20 am 실측 · 이 순서로 전부 시도한다)
+
+> **원칙은 위 §0 와 `CLAUDE.md` 의 «루틴은 멈추지 않는다».** 아래는 «어디서 막히면 무엇을 해 봤더니 됐나»의 기록이다.
+> **새로 뚫은 경로·새로 막힌 곳은 이 표에 한 줄 추가한다**(성공·실패 모두 — 다음 세션이 같은 벽에 다시 부딪히지 않도록).
+
+| 막힌 곳 | 증상 | 실제로 된 대체 경로 |
+|---|---|---|
+| **코스피·코스닥 «당일 종가»** | PlayMCP `^KS11` 마지막 행(당일)이 없음 · `krx-market.json` 의 `lastClose` 는 **전일** 종가 | `WebSearch`(extended)에 «코스피 마감 19일 월요일 코스피지수 종가 반등» 식 **한국어 기사 제목 문체**로 질문 → 여러 매체가 같은 종가를 줌(2026-10-19: 5,768.01 / +1.76% / 코스닥 808.89). `krx-market.json` 의 `high`·`open` 과 종가가 맞는지 교차 확인 |
+| **한국 수급** | `flows.basis:"late"`(시간외·NXT 섞임) · PlayMCP 에 `NaverSearch` 도구가 없는 세션이 있음 | `WebSearch` 로 «코스피 N 마감 외국인 기관 개인 순매수 순매도 억원» → 매체 2곳 이상 일치하는 자리까지만(조 단위 소수 둘째까지) 쓰고 시장 범위(유가증권시장 정규장)를 카드에 밝힌다. 직전 pm 이 이미 쓴 수치가 있으면 그것과 맞춘다 |
+| **WTI** | `CL=F` 일봉이 **월물 교체 구간에 11월물↔12월물을 섞어** 준다(10/19: 거래량 99짜리 98.24 vs 정산 103.66) | **계약월을 반드시 구분한다.** 만기 직전 월물(11월물, 10/20 만기) 정산가는 한국 매체 2곳으로, 거래 중심 월물(12월물)은 야후 개별 월물(예 `CLZ26.NYM`)·`CL=F` 시간봉으로 확인. 카드에는 **거래 중심 월물 + 계약월 + 만기 월물 값을 note 에 함께** 쓴다. **직전 pm 브리핑의 WTI 와 모순되지 않는지 먼저 본다** — 이번에 어긋난 채 나갈 뻔했다 |
+| **야후 차트 429** | `Too Many Requests` | PlayMCP `UsStockInfo-get_historical_stock_prices`(종목별 순차) → 안 되면 `NODE_USE_ENV_PROXY=1 node` 로 야후를 **1.5초 간격·최대 3회 재시도**. 병렬 호출 금지 |
+| **일봉 마지막 close = null** (섹터 ETF 다수, 금 등) | 당일 행이 비어 있음 | 야후 `meta.regularMarketPrice` 를 당일 종가로 쓰고, **등락률은 PlayMCP 전일 종가로 직접 계산한다**(`chartPreviousClose` 는 5일 범위 시작값이라 틀린다 — 쓰지 않는다) |
+| **한국 개별 종목 시세** | — | PlayMCP 에 `005930.KS`·`000660.KS` 형식으로 조회(일봉 `Date` 는 UTC 라 KST 로 하루 뒤) |
+| **실적 일정·예상치** | FMP `news` 는 요금제 제한 | FMP `calendar`→`earnings-calendar`(날짜 범위) · `data/econ-calendar.json`(origin/main). **예상치가 소스마다 다르다**(NAHB: 캘린더 32, 블룸버그 31 / UAL: FMP 2.57) → 검증 에이전트가 1차로 재확인하게 한다 |
+| **전날 장 마감 후 실적 결과** | FMP earnings-calendar 가 빈 배열 | `WebSearch` «earnings results reported after the close <날짜> EPS beat estimates» + 한국어 «미국 3분기 실적 발표 19일 장 마감 후 EPS 예상 상회» → Investing.com 계열 제목에서 EPS·예상 확인. **검증 에이전트가 발표일(장 마감 후인지)을 반드시 재확인** |
+| **미국 거래대금 공매도 열** | `fetch-us-flows.mjs` 가 «공매도 파일 없음» | 거래대금·상승/하락 거래대금은 그대로 쓰고 `short` 열만 생략(선택 필드) |
+| **AI·주요소식 후보 부족** | 한 검색어로 3~4건 | 영어 «<날짜> AI announcement Nvidia OpenAI Anthropic Google» · 한국어 «HBM4 엔비디아 공급 데이터센터 전력» · 검증 에이전트에게 **다른 키워드로 2~3회 재검색**을 시킨다(§3-D). 낡은 항목(수개월 전 뉴스가 «오늘» 소식으로 걸림)은 날짜 확인 후 버린다 |
+
+**am 세션 중복 제거**: am 은 «직전 pm 이후»만 담는다. **직전 pm 파일(`git show origin/claude/live:content/<어제>-pm.json`)을 먼저 읽고**
+한국장 낮 시간 소식·중국 지표·수급 등 pm 이 이미 쓴 것은 제외한다(이번 회차에 중국 지표 4종·코스피 문장이 중복 후보로 잡혔다).
+**상한(6건)을 낡거나 중복된 항목으로 채우지 않는다** — 5건도 정상이다.
+
+**검증 에이전트 운용 실측**: ① 1차 지적을 반영한 뒤 **같은 에이전트에 `SendMessage` 로 재검증**을 맡기면 컨텍스트가 유지돼 빠르다(바뀐 부분만 재조회시킨다).
+② **게이트 뒤에 새 항목을 넣었으면 반드시 그 항목을 다시 검증에 넘긴다** — 검증 후 추가는 게이트 우회다. ③ 에이전트가 낸 수정 후보도 출처를 확인하게 한다.
+④ `schedule[].time` 은 언어무관 필드라 «새벽»·«장 마감 후» 같은 한글을 넣으면 영어 카드에 노출된다 — `10/22 05:30` 처럼 숫자로(설명은 `detail_ko/en`).
+
+**발행 절차 실측(2026-10-20 am, 소요 약 20분)**
+- **`claude/live` 커밋은 체크아웃 없이 한다**(저장소가 3GB+ 라 체크아웃이 수 분 걸리고 untracked 파일이 지워진 사고도 있었다):
+  ```
+  git fetch origin claude/live -q; BASE=$(git rev-parse FETCH_HEAD)
+  export GIT_INDEX_FILE=/tmp/live-index; rm -f $GIT_INDEX_FILE
+  git read-tree $BASE && git add content/<DATE>-<SESSION>.json cards/<DATE>/<SESSION>
+  NEW=$(git commit-tree $(git write-tree) -p $BASE -m "brief: <DATE> <SESSION> (ko+en)")
+  git push origin $NEW:refs/heads/claude/live; unset GIT_INDEX_FILE
+  ```
+  커밋 뒤 `git diff-tree --name-only -r $NEW` 로 **자기 축 경로만** 들어갔는지 확인(`git add -A` 금지와 같은 취지).
+- **Pages 배포(`pages-deploy.yml`)는 11~13분**이 정상이다(Checkout 6분+, Upload 2분, Deploy 2분). `actions_list`(`list_workflow_jobs`)로 어느 스텝인지 보고, **5분 단위 대기(`sleep` 은 `run_in_background`)를 반복**한다. `completed·success` 가 되기 전에 발행하지 않는다.
+- 발행 명령은 `NODE_USE_ENV_PROXY=1 node scripts/publish-instagram.mjs <DATE> ko|en <SESSION>` — 두 언어 모두 1회에 성공했다.
+- **세션 종료 시 stop hook 이 «untracked 파일을 커밋하라»고 반복한다.** 발행 전에는 로컬 카드·JSON 이 필요하므로 두고, **발행 뒤 `rm -rf content/<DATE>-<SESSION>.json cards/<DATE> node_modules/playwright`** 로 로컬 사본을 정리한다(이미 `claude/live` 에 있고 JSON 은 스크래치패드에 백업돼 있다). 세션 작업 브랜치에 카드를 다시 커밋하지 않는다.
+
+**사고 기록**: 2026-10-20 am — 세션이 시세·뉴스 몇 곳이 막히자(코스피 당일 종가 누락·WTI 불일치·네이버 도구 부재·야후 429) **3경로를 채우지 않고 «발행 보류 알림»만 보내고 멈췄다.**
+사용자가 «내가 진행이 안되더라도 최소 3번은 시도하라고 했잖아 · 지침서에도 넣으라고 했는데 네 멋대로 판단하고 멈추는 거야?»라고 지적했고, 위 대체 경로로 전부 해결돼 약 20분 만에 정상 발행됐다.
+**막힌 것의 대부분은 «다른 도구·다른 검색어로 한 번 더»였다.**
+
+---
+
 ## 1. 준비
 
 **의존성 확인**: `npm ls playwright` 로 playwright 가 있는지 보고, 없으면 `npm install`. (setup 스크립트에서 이미 설치됐다면 건너뛴다.)

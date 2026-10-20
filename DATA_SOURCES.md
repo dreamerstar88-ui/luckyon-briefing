@@ -602,3 +602,11 @@ Twelve-Data `get_time_series` 로 그 날짜만 메운다. ③ 둘 다 막히면
 - **실패를 지우지 않는다.** 실패 기록이 이 문서의 값이다. 다시 되기 시작했으면 줄을 지우지 말고
   "언제부터 다시 됨"을 덧붙인다.
 - **`fetch` 결과만으로 «차단» 이라고 쓰지 않는다.** 스킴(§1)·재시도(§2)·세션vs러너(§2)를 확인한 뒤 적는다.
+
+## 2026-10-20 am 실측 메모 (소스 상태)
+
+- **PlayMCP `NaverSearch`(뉴스·데이터랩) 도구가 세션에 없을 수 있다** — 그때는 `WebSearch` 한국어 «기사 제목 문체» 질문이 대체 경로다(코스피 종가·수급·유가·일정 모두 이 방식으로 해결). `ROUTINE_COMMON.md` §0-1.
+- **야후 차트 API 429**: 같은 IP 에서 연속 호출하면 걸린다. 1.5초 간격·재시도·PlayMCP 병행. 일봉 당일 close 가 null 이면 `meta.regularMarketPrice`.
+- **FMP**: `quote`(지수) · `news` 는 현재 요금제에서 `ACCESS DENIED` — 재시도하지 않는다. `economics`(treasury-rates)·`calendar`(earnings-calendar)·`marketHours` 는 정상.
+- **Alpha Vantage `WTI`**: 일별이 며칠 지연(10/14 까지)이라 당일 확인용으로는 못 쓴다.
+- **WTI `CL=F`**: 월물 교체 구간에 계약월이 섞여 값이 어긋난다(§0-1).

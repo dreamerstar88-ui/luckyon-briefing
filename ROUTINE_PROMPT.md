@@ -63,6 +63,8 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
 | 커버 범위 | 전날 21:00 이후 밤사이 (미국장 마감 결과 중심) | 오늘 08:00 이후 (한국장 마감, 아시아·중동·유럽, 미 프리마켓) |
 | 일정 카드 범위 | 지금 ~ 오늘 21:00 (한국 낮 시간대) | 지금 ~ 내일 08:00 (미국장 밤 시간대) |
 
+**⚠️ 막혀도 멈추지 않는다.** 어느 데이터든 막히면 `ROUTINE_COMMON.md` §0-1 의 대체 경로를 **최소 3가지 서로 다른 방식으로** 전부 시도하고, 안 되는 항목만 빼고 끝까지 발행한다(`CLAUDE.md` «루틴은 멈추지 않는다»). 2026-10-15·10-20 am 에 같은 사고가 났다.
+
 아래를 순서대로 수행하세요.
 
 ---
@@ -84,7 +86,7 @@ mcp__FMP__marketHours, endpoint: "holidays-by-exchange", exchange: "KRX", from_d
      | 코스피 | 같은 도구 — `^KS11` |
      | VIX | 같은 도구 — `^VIX` |
      | 원/달러 · 달러인덱스 | 같은 도구 — `KRW=X` / `DX-Y.NYB` |
-     | 금 · WTI | 같은 도구 — `GC=F` / `CL=F` |
+     | 금 · WTI | 같은 도구 — `GC=F` / `CL=F` — **WTI 는 월물 교체·만기 주간에 11월물↔12월물이 섞인다. 계약월을 구분하고 직전 pm 값과 모순되지 않는지 확인한다(`ROUTINE_COMMON.md` §0-1)** |
      | 비트코인 | 같은 도구 — `BTC-USD` |
      | 미 10년물 금리 | FMP `economics` 도구, `endpoint: "treasury-rates"`, `from_date`/`to_date` 로 해당 거래일 지정 → `year10` 값 |
      | Fear & Greed | `NODE_USE_ENV_PROXY=1 node scripts/fetch-fear-greed.mjs` — CNN 원본 API 직접 조회(2026-08-26부터, 아래 참고) |
