@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-21T15:55:30Z",
+  "fetchedAt": "2026-10-22T00:42:32Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-19T15:55:30Z",
-    "to": "2026-11-04T15:55:30Z"
+    "from": "2026-10-20T00:42:32Z",
+    "to": "2026-11-05T00:42:32Z"
   },
   "events": [
     {
@@ -383,7 +383,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.42,
-      "actual": null,
+      "actual": 5.46,
       "unit": "%"
     },
     {
@@ -393,7 +393,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -339.7,
-      "actual": null,
+      "actual": -161.6,
       "unit": "¥"
     },
     {
@@ -403,7 +403,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3521.5,
-      "actual": null,
+      "actual": -66.5,
       "unit": "¥"
     },
     {
@@ -1181,7 +1181,7 @@
       "country": "US",
       "name": "Fed Interest Rate Decision",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 4,
       "previous": 4,
       "actual": null,
       "unit": "%"
@@ -1222,7 +1222,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -161.6,
       "actual": null,
       "unit": "¥"
     },
@@ -1232,7 +1232,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -66.5,
       "actual": null,
       "unit": "¥"
     },
@@ -2620,6 +2620,36 @@
       "at": "2026-11-04T15:30:00Z",
       "country": "US",
       "name": "EIA Heating Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-04T23:00:00Z",
+      "country": "KR",
+      "name": "Current Account Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 46.11,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-04T23:50:00Z",
+      "country": "JP",
+      "name": "BoJ Monetary Policy Meeting Minutes",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-05T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
       "impact": "LOW",
       "consensus": null,
       "previous": null,
