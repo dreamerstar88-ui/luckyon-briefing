@@ -44,6 +44,7 @@ function weekdayAltTexts(content, lang) {
   // 각자 다른 배열에 내용이 들어 있으므로, items 만 보면 데이터 카드의 대체텍스트가
   // 제목만 남고 텅 빈다 (2026-08-04 확인 — 카드 ③④⑤가 실제로 비어 있었다).
   const t = (a, b) => (ko ? a : b);
+  const tv = v => (v && typeof v === 'object') ? (ko ? v.ko : v.en) : v;
   const sectionBody = s => {
     if (s.type === 'stats') {
       const tiles = (s.stats || []).map(x =>
@@ -83,7 +84,7 @@ function weekdayAltTexts(content, lang) {
   const list = [
     `${brief} ${dateLabel}: ${headline}${headlineSub ? ' - ' + headlineSub : ''}`,
     marketsLabel + (content.markets || []).map(m =>
-      `${m.label} ${m.value}${m.value_sub ? ' ' + m.value_sub : ''} ${m.delta}`).join(', '),
+      `${m.label} ${m.value}${m.value_sub ? ' ' + tv(m.value_sub) : ''} ${tv(m.delta)}`).join(', '),
     ...bodyAlts,
   ];
   if (content.schedule && content.market_hours) {
