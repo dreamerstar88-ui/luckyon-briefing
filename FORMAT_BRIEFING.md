@@ -492,7 +492,7 @@ korea/weekend/ai/watch .items[].src
   // 아이콘: shield · bond · chip · rate · ai · globe · clock · target
 
   // ── 2 시장 한눈에 ─────────────────────────────────────────
-  "markets":[{"label","value","delta","dir":"up|down|flat","note_ko","note_en"}],  // 10개
+  "markets":[{"label","value","value_sub"(선택·문자열 또는 {ko,en}),"delta","dir":"up|down|flat","note_ko","note_en"}],  // 10개 · Fear&Greed 는 value_sub 에 구간 표기 필수(ROUTINE_PROMPT.md A절)
   "tile_main":"NASDAQ",                        // 차트가 들어가는 큰 타일. pm 은 "KOSPI"
   "tile_side":["S&P 500","KOSPI"],             // 오른쪽 위아래 2개
   "tile_rest":["VIX","US 10Y","KOSDAQ","USD/KRW","Gold","WTI","Bitcoin"],  // 4+3
