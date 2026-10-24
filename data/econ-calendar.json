@@ -1,51 +1,11 @@
 {
-  "fetchedAt": "2026-10-23T15:43:09Z",
+  "fetchedAt": "2026-10-24T00:45:42Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-21T15:43:09Z",
-    "to": "2026-11-06T15:43:09Z"
+    "from": "2026-10-22T00:45:42Z",
+    "to": "2026-11-07T00:45:42Z"
   },
   "events": [
-    {
-      "at": "2026-10-21T16:30:00Z",
-      "country": "EMU",
-      "name": "ECB's President Lagarde speech",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-21T17:00:00Z",
-      "country": "US",
-      "name": "20-Year Bond Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 5.42,
-      "actual": 5.46,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-21T23:50:00Z",
-      "country": "JP",
-      "name": "Foreign Bond Investment",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -339.7,
-      "actual": -161.6,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-10-21T23:50:00Z",
-      "country": "JP",
-      "name": "Foreign Investment in Japan Stocks",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 3521.5,
-      "actual": -66.5,
-      "unit": "¥"
-    },
     {
       "at": "2026-10-22T01:00:00Z",
       "country": "KR",
@@ -343,7 +303,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 459,
-      "actual": null,
+      "actual": 460,
       "unit": null
     },
     {
@@ -353,7 +313,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -137.6,
-      "actual": null,
+      "actual": -134.5,
       "unit": "€"
     },
     {
@@ -363,7 +323,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 50.2,
-      "actual": null,
+      "actual": 69.9,
       "unit": "¥"
     },
     {
@@ -373,7 +333,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 207.9,
-      "actual": null,
+      "actual": 199.9,
       "unit": "$"
     },
     {
@@ -383,7 +343,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 100.3,
-      "actual": null,
+      "actual": 89.3,
       "unit": null
     },
     {
@@ -393,7 +353,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -141,
-      "actual": null,
+      "actual": -142.7,
       "unit": "$"
     },
     {
@@ -1591,7 +1551,7 @@
       "country": "EMU",
       "name": "Unemployment Rate",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 6.4,
       "previous": 6.4,
       "actual": null,
       "unit": "%"
@@ -1682,7 +1642,7 @@
       "name": "Baker Hughes US Oil Rig Count",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 460,
       "actual": null,
       "unit": null
     },
@@ -1692,7 +1652,7 @@
       "name": "CFTC EUR NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -134.5,
       "actual": null,
       "unit": "€"
     },
@@ -1702,7 +1662,7 @@
       "name": "CFTC JPY NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 69.9,
       "actual": null,
       "unit": "¥"
     },
@@ -1712,7 +1672,7 @@
       "name": "CFTC Gold NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 199.9,
       "actual": null,
       "unit": "$"
     },
@@ -1722,7 +1682,7 @@
       "name": "CFTC Oil NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 89.3,
       "actual": null,
       "unit": null
     },
@@ -1732,7 +1692,7 @@
       "name": "CFTC S&P 500 NC Net Positions",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -142.7,
       "actual": null,
       "unit": "$"
     },
@@ -2695,6 +2655,86 @@
       "previous": 3.5,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-06T16:00:00Z",
+      "country": "JP",
+      "name": "BoJ Governor Ueda speech",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-06T18:00:00Z",
+      "country": "US",
+      "name": "Baker Hughes US Oil Rig Count",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-06T20:00:00Z",
+      "country": "US",
+      "name": "Consumer Credit Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 8.28,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-06T20:30:00Z",
+      "country": "EMU",
+      "name": "CFTC EUR NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-06T20:30:00Z",
+      "country": "JP",
+      "name": "CFTC JPY NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-06T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Gold NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-06T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Oil NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-06T20:30:00Z",
+      "country": "US",
+      "name": "CFTC S&P 500 NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
