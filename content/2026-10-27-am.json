@@ -1,0 +1,656 @@
+{
+ "date": "2026-10-27",
+ "session": "am",
+ "dateLabel_ko": "2026.10.27(화) 아침",
+ "dateLabel_en": "Tue, Oct 27, 2026 · AM",
+ "headline_ko": "나스닥 0.82%↑ S&P 0.70%↑ 앤트로픽 상장 신청에 반도체 반등",
+ "headline_en": "Nasdaq +0.82%, S&P 500 +0.70% as Anthropic IPO Filing Lifts Chips",
+ "headline_sub_ko": "반도체지수 2.82% 급등 · 공포탐욕지수 극단적 공포 탈출 · FOMC·빅테크·SK하이닉스 실적 앞둔 한 주",
+ "headline_sub_en": "Chip index jumps 2.82% · Fear&Greed leaves Extreme Fear · FOMC, Big Tech, SK hynix earnings ahead",
+ "cover_kicker": {
+  "ko": "간밤 미국장 · 10/26 마감",
+  "en": "US Overnight · Oct 26 Close"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "나스닥 +0.82% · S&P 500 +0.70%",
+    "en": "Nasdaq +0.82% · S&P 500 +0.70%"
+   },
+   {
+    "ko": "26,169.38 / 7,676.77 · 반도체가 상승을 이끌었다",
+    "en": "26,169.38 / 7,676.77 · chips led the gain"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "앤트로픽, 나스닥 상장용 S-1 제출 (ANT)",
+    "en": "Anthropic files S-1 for Nasdaq listing (ANT)"
+   },
+   {
+    "ko": "필라델피아 반도체지수 +2.82% · 엔비디아 +2.39%",
+    "en": "Philadelphia chip index +2.82% · Nvidia +2.39%"
+   }
+  ],
+  [
+   "clock",
+   {
+    "ko": "SK하이닉스 28일 · FOMC 29일 새벽",
+    "en": "SK hynix Oct 28 · FOMC early Oct 29"
+   },
+   {
+    "ko": "알파벳·MS 28일 장 마감 후 · 삼성전자 확정실적 29일",
+    "en": "Alphabet, MSFT after close Oct 28 · Samsung final Q3 Oct 29"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "미국 증시는 상승 마감했다. 나스닥은 214.04포인트(0.82%) 오른 26,169.38, S&P 500은 53.09포인트(0.70%) 오른 7,676.77, 다우는 0.28% 오른 52,361.58이다.",
+   "앤트로픽이 나스닥 상장을 위한 S-1을 공개 제출하자 AI주가 반등했다. 필라델피아 반도체지수는 2.82% 올랐고 엔비디아 2.39%, 마이크론 2.98%, AMD 2.80%가 올랐다.",
+   "거래대금 1위는 테슬라(약 207억달러, +5.21%)였고, 상위 300종목 거래대금의 59.6%가 오른 종목에 몰렸다. 미 10년물 금리는 5.00%로 변동이 없었다.",
+   "WTI 12월물은 1.46% 내린 101.76달러다. 공포탐욕지수는 21에서 27로 올라 극단적 공포 구간을 벗어났고, 이번 주에는 FOMC와 빅테크·SK하이닉스·삼성전자 실적이 이어진다."
+  ],
+  "lines_en": [
+   "US stocks closed higher. The Nasdaq rose 214.04 points (0.82%) to 26,169.38, the S&P 500 rose 53.09 (0.70%) to 7,676.77, and the Dow gained 0.28% to 52,361.58.",
+   "AI stocks rebounded after Anthropic publicly filed an S-1 for a Nasdaq listing. The Philadelphia chip index rose 2.82%; Nvidia gained 2.39%, Micron 2.98% and AMD 2.80%.",
+   "Tesla led trading value (about $20.7B, +5.21%), and 59.6% of turnover among the 300 most active stocks went to advancers. The US 10-year yield was unchanged at 5.00%.",
+   "WTI December fell 1.46% to $101.76. Fear&Greed rose from 21 to 27, leaving Extreme Fear. FOMC, Big Tech, SK hynix and Samsung results follow this week."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "26,169.38",
+   "delta": "▲0.82%",
+   "dir": "up",
+   "note_ko": "10/26 미국장 마감 종가 · 전일 25,955.34",
+   "note_en": "Oct 26 US close · prev 25,955.34"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,676.77",
+   "delta": "▲0.70%",
+   "dir": "up",
+   "note_ko": "10/26 미국장 마감 종가 · 전일 7,623.68",
+   "note_en": "Oct 26 US close · prev 7,623.68"
+  },
+  {
+   "label": "KOSPI",
+   "value": "5,469.47",
+   "delta": "▼1.46%",
+   "dir": "down",
+   "note_ko": "10/26 종가 · 4월 이후 최저, 오늘 장 열리기 전",
+   "note_en": "Oct 26 close · lowest since April, pre-open today"
+  },
+  {
+   "label": "VIX",
+   "value": "18.39",
+   "delta": "▼5.45%",
+   "dir": "down",
+   "note_ko": "전일 19.45 · 10/26 종가",
+   "note_en": "Prev 19.45 · Oct 26 close"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "27",
+   "delta": "21 → 27 ▲",
+   "dir": "up",
+   "note_ko": "공포 구간(25~44) · 1주 전 20.8",
+   "note_en": "Fear zone (25–44) · 20.8 a week ago",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   }
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.00%",
+   "delta": "5.00% → 5.00% -",
+   "dir": "flat",
+   "note_ko": "10/26 마감 · 직전 10/23 5.00%",
+   "note_en": "Oct 26 close · prior Oct 23 5.00%"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,325.4",
+   "delta": {
+    "ko": "▲2.3원",
+    "en": "▲₩2.3"
+   },
+   "dir": "up",
+   "note_ko": "역외 시세 · 서울 마감 1,323.1 대비",
+   "note_en": "Offshore quote · vs Seoul close 1,323.1",
+   "value_sub": "· DXY 102.0"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,030.00",
+   "delta": "▲0.55%",
+   "dir": "up",
+   "note_ko": "전일 4,007.90 대비 · 10/26 종가",
+   "note_en": "vs prior 4,007.90 · Oct 26 close"
+  },
+  {
+   "label": "WTI",
+   "value": "$101.76",
+   "delta": "▼1.46%",
+   "dir": "down",
+   "note_ko": "12월물 정산가 · 전일 103.27 대비",
+   "note_en": "Dec contract settle · vs prior 103.27"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$79,905",
+   "delta": "▼0.15%",
+   "dir": "down",
+   "note_ko": "전일 80,024 대비 · 일봉 기준",
+   "note_en": "vs prior 80,024 · daily bar"
+  }
+ ],
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "나스닥·S&P 500은 10/26 미국장 종가, 코스피는 10/26 종가(오늘 장 개시 전)다. 美 10년물은 10/26 재무부 고시 기준, Fear&Greed는 CNN 기준이다. 원/달러는 역외 시세라 서울 마감과 다를 수 있고, WTI는 12월물 정산가다.",
+ "market_note_en": "Nasdaq and S&P 500 are Oct 26 US closes; KOSPI is the Oct 26 close, before today's open. The US 10Y is the Oct 26 Treasury fixing and Fear&Greed is CNN. USD/KRW is an offshore quote and may differ from the Seoul close; WTI is the December settle.",
+ "chart_series_values": [
+  26692.87,
+  26713.03,
+  26140.03,
+  26430.89,
+  26424.82,
+  26702.86,
+  26008.86,
+  25955.34,
+  26169.38
+ ],
+ "chart_series_labels": [
+  "10.14",
+  "10.15",
+  "10.16",
+  "10.19",
+  "10.20",
+  "10.21",
+  "10.22",
+  "10.23",
+  "10.26"
+ ],
+ "chart_title": {
+  "ko": "나스닥, 9거래일 종가 기준 2.0% 낮다",
+  "en": "Nasdaq still 2.0% below its Oct 14 close"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.21 26,702.86 → 10.23 25,955.34 → 10.26 26,169.38 (10.14 대비 −2.0%)",
+  "en": "10/21 26,702.86 → 10/23 25,955.34 → 10/26 26,169.38 (−2.0% vs 10/14)"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "TODAY",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "반도체 +2.74% 선두, 통신만 1.57% 하락",
+  "en": "Semis lead at +2.74%; only communications fell 1.57%"
+ },
+ "sector_sub": {
+  "ko": "10/26 · 섹터 ETF 종가 기준",
+  "en": "Oct 26 · sector ETF closes"
+ },
+ "rank_kicker": "VOLUME LEADERS",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Trading Value"
+ },
+ "rank_sub": {
+  "ko": "10/26 · 미국 개별 종목 · Yahoo 스크리너 집계",
+  "en": "Oct 26 · US single stocks · Yahoo screener"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $ billion"
+ },
+ "econ_kicker": "DATA & DISCLOSURES",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "지난밤 발표된 실적·지표",
+  "en": "Results and data released overnight"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Record",
+   "stats": [
+    {
+     "label_ko": "나스닥",
+     "label_en": "Nasdaq",
+     "value": "26,169.38",
+     "delta": "▲0.82%",
+     "dir": "up",
+     "sub_ko": "10/26 · 전일 25,955.34 · 10.14 대비 −2.0%",
+     "sub_en": "Oct 26 · Prev 25,955.34 · −2.0% vs Oct 14"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,676.77",
+     "delta": "▲0.70%",
+     "dir": "up",
+     "sub_ko": "10/26 · 전일 7,623.68 · 다우 52,361.58 ▲0.28%",
+     "sub_en": "Oct 26 · Prev 7,623.68 · Dow 52,361.58 ▲0.28%"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "거래 상위 300종목",
+     "label_en": "Top-300 by volume",
+     "up": 153,
+     "flat": 3,
+     "down": 144
+    }
+   ],
+   "note_ko": "상승 종목이 거래대금의 59.6%를 차지했다(거래 상위 300종목, Yahoo 스크리너). 미국은 투자자별 순매수를 공표하지 않는다.",
+   "note_en": "Advancers took 59.6% of turnover among the 300 most active stocks (Yahoo screener). The US does not publish net buying by investor type."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "bars": [
+    {
+     "label_ko": "반도체 (SMH)",
+     "label_en": "Semis (SMH)",
+     "value": 2.74
+    },
+    {
+     "label_ko": "기술 (XLK)",
+     "label_en": "Tech (XLK)",
+     "value": 1.69
+    },
+    {
+     "label_ko": "산업재 (XLI)",
+     "label_en": "Industrials (XLI)",
+     "value": 1.42
+    },
+    {
+     "label_ko": "경기소비재 (XLY)",
+     "label_en": "Cons. Disc. (XLY)",
+     "value": 1.03
+    },
+    {
+     "label_ko": "부동산 (XLRE)",
+     "label_en": "Real Estate (XLRE)",
+     "value": 0.54
+    },
+    {
+     "label_ko": "에너지 (XLE)",
+     "label_en": "Energy (XLE)",
+     "value": 0.45
+    },
+    {
+     "label_ko": "금융 (XLF)",
+     "label_en": "Financials (XLF)",
+     "value": 0.21
+    },
+    {
+     "label_ko": "소재 (XLB)",
+     "label_en": "Materials (XLB)",
+     "value": 0.14
+    },
+    {
+     "label_ko": "유틸리티 (XLU)",
+     "label_en": "Utilities (XLU)",
+     "value": -0.02
+    },
+    {
+     "label_ko": "필수소비재 (XLP)",
+     "label_en": "Staples (XLP)",
+     "value": -0.34
+    },
+    {
+     "label_ko": "통신 (XLC)",
+     "label_en": "Comm. (XLC)",
+     "value": -1.57
+    }
+   ],
+   "note_ko": "반도체(SMH)와 기술(XLK)이 상승을 이끌었다. 통신 섹터(XLC)는 1.57% 내려 유일하게 1%대 하락했다.",
+   "note_en": "Semis (SMH) and tech (XLK) led the gains. Communications (XLC) fell 1.57%, the only sector down more than 1%."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Trading Value",
+   "rows": [
+    {
+     "name_ko": "테슬라",
+     "name_en": "Tesla",
+     "value": "$20.70B",
+     "pct": 5.21
+    },
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$20.45B",
+     "pct": 2.98
+    },
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$19.45B",
+     "pct": 2.39
+    },
+    {
+     "name_ko": "메타",
+     "name_en": "Meta",
+     "value": "$19.42B",
+     "pct": -1.88
+    },
+    {
+     "name_ko": "스페이스X",
+     "name_en": "SpaceX",
+     "value": "$15.08B",
+     "pct": -0.4
+    }
+   ],
+   "share": {
+    "label_ko": "거래 상위 300종목 중 오르거나 내린 종목 거래대금 3,698억달러 중 비중",
+    "label_en": "Share of $369.8B turnover in the 300 most active stocks",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "테슬라",
+      "label_en": "Tesla",
+      "pct": 5.6,
+      "color": "#e5a23a"
+     },
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 25.7,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "테슬라·마이크론·엔비디아·메타·스페이스X 5종목이 상위 300종목 거래대금의 25.7%를 차지했다. 거래대금은 종가×거래량 추정이다.",
+   "note_en": "Tesla, Micron, Nvidia, Meta and SpaceX took 25.7% of turnover among the 300 most active stocks. Value is estimated as close × volume."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "美 케이던스 3분기 조정 EPS",
+     "label_en": "Cadence Q3 adj. EPS",
+     "value": "$2.11",
+     "delta": {
+      "ko": "가이던스 상단 2.07 → 2.11 ▲",
+      "en": "Guide high 2.07 → 2.11 ▲"
+     },
+     "dir": "up",
+     "sub_ko": "매출 $1.633B(가이던스 $1.595~1.625B) · 장 마감 후",
+     "sub_en": "Rev. $1.633B (guide $1.595–1.625B) · after close",
+     "ref_ko": "회사 가이던스 상단 대비 실제치 · 컨센서스는 2.05~2.09",
+     "ref_en": "Actual vs top of guidance; consensus about 2.05–2.09"
+    },
+    {
+     "label_ko": "캐나다 셀레스티카 3분기 조정 EPS",
+     "label_en": "Celestica Q3 adj. EPS",
+     "value": "$3.30",
+     "delta": {
+      "ko": "가이던스 상단 3.08 → 3.30 ▲",
+      "en": "Guide high 3.08 → 3.30 ▲"
+     },
+     "dir": "up",
+     "sub_ko": "매출 $5.83B(가이던스 $5.25~5.55B) · 장 마감 후",
+     "sub_en": "Rev. $5.83B (guide $5.25–5.55B) · after close",
+     "ref_ko": "회사 가이던스 상단 대비 실제치 · 컨센서스는 2.99 안팎",
+     "ref_en": "Actual vs top of guidance; consensus about 2.99"
+    },
+    {
+     "label_ko": "美 앰코 3분기 매출",
+     "label_en": "Amkor Q3 revenue",
+     "value": "$1.99B",
+     "delta": {
+      "ko": "전년 1.987 → 1.991 ▲",
+      "en": "Yr ago 1.987 → 1.991 ▲"
+     },
+     "dir": "up",
+     "sub_ko": "순이익 $191M(전년비 약 +50%) · 장 마감 후",
+     "sub_en": "Net income $191M (about +50% y/y) · after close",
+     "ref_ko": "반도체 후공정(패키징) 업체 · 전년 동기 대비 · 컨센서스는 소폭 하회",
+     "ref_en": "Chip packaging firm; vs year-ago; slightly below consensus"
+    },
+    {
+     "label_ko": "美 10년물 국채금리",
+     "label_en": "US 10-year Treasury yield",
+     "value": "5.00%",
+     "delta": "5.00% → 5.00% -",
+     "dir": "flat",
+     "sub_ko": "10/26 고시 · 2년물 4.68% · 30년물 5.31%",
+     "sub_en": "Oct 26 fixing · 2Y 4.68% · 30Y 5.31%"
+    },
+    {
+     "label_ko": "CNN 공포·탐욕 지수",
+     "label_en": "CNN Fear & Greed Index",
+     "value": "27",
+     "delta": "21 → 27 ▲",
+     "dir": "up",
+     "sub_ko": "극단적 공포에서 공포 구간으로 · 1주 전 20.8",
+     "sub_en": "From Extreme Fear to Fear · 20.8 a week ago"
+    }
+   ],
+   "note_ko": "케이던스는 SEC 제출 자료, 셀레스티카는 SEC 8-K와 Benzinga(조정 EPS), 앰코는 SEC 8-K 기준이다. 변화 표시는 가이던스 상단 → 실제 또는 전년 동기 → 실제이며 컨센서스와 다를 수 있다.",
+   "note_en": "Cadence per its SEC filing; Celestica per SEC 8-K and Benzinga (adj. EPS); Amkor per its SEC 8-K. Changes show top of guidance → actual or year-ago → actual and may differ from consensus."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductor Tech",
+   "items": [
+    {
+     "headline_ko": "앤트로픽, 나스닥 상장용 S-1 공개 제출 · 티커 ANT",
+     "headline_en": "Anthropic Files Public S-1 for Nasdaq Listing as 'ANT'",
+     "body_ko": "클래스A 보통주를 나스닥에 'ANT'로 상장할 계획이다. 주식 수와 가격 범위는 미정이며, S-1에 적힌 상반기 매출은 약 162.9억달러다.",
+     "body_en": "It plans to list Class A shares on Nasdaq; share count and price range are blank. The filing shows H1 revenue of about $16.29B.",
+     "src": "Anthropic, CNBC",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "필라델피아 반도체지수 2.82% 급등, 엔비디아 2.39%↑",
+     "headline_en": "Philadelphia Chip Index Jumps 2.82%; Nvidia Up 2.39%",
+     "body_ko": "지수는 11,083.47로 마감했다. 마이크론 +2.98%, AMD +2.80%, 브로드컴 +2.33%다. 이달 들어 12.2% 내려 있다.",
+     "body_en": "The index closed at 11,083.47. Micron rose 2.98%, AMD 2.80% and Broadcom 2.33%. It is still down 12.2% this month.",
+     "src": "News reports, Yahoo Finance",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "메타, 최대 950억달러 지분 조달 계획 발표",
+     "headline_en": "Meta Outlines Equity Raise of Up to $95 Billion",
+     "body_ko": "CNBC에 따르면 1단계 약 350억달러, 2단계 최대 600억달러 규모다. 엔비디아·AMD·브로드컴이 최대 50억달러 매수 관심을 표명했다고 보도됐다.",
+     "body_en": "Per CNBC, phase one is about $35B and phase two up to $60B. Nvidia, AMD and Broadcom reportedly expressed interest in up to $5B.",
+     "src": "CNBC",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "오픈AI, GPT-6.1 Terra 출시… API 입력 100만 토큰당 1달러",
+     "headline_en": "OpenAI Launches GPT-6.1 Terra; API Input $1 per 1M Tokens",
+     "body_ko": "챗GPT 워크·코덱스의 플러스·프로·엔터프라이즈·에듀 이용자에게 순차 제공된다. API 출력 가격은 100만 토큰당 5달러다.",
+     "body_en": "Rolling out to Plus, Pro, Enterprise and Edu users in ChatGPT Work and Codex. API output costs $5 per 1M tokens.",
+     "src": "OpenAI",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "SK하이닉스 28일 실적 발표, 삼성전자 확정실적은 29일",
+     "headline_en": "SK hynix Reports Oct 28; Samsung Final Q3 Results Oct 29",
+     "body_ko": "삼성전자 3분기 잠정 영업이익은 107조4,000억원(10월 8일 공시)이다. SK하이닉스 영업이익 컨센서스는 FnGuide 기준 약 77조원이다.",
+     "body_en": "Samsung's preliminary Q3 operating profit was ₩107.4T (disclosed Oct 8). SK hynix's consensus operating profit is about ₩77T (FnGuide).",
+     "src": "DART, News reports",
+     "time": "10/26"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "items": [
+    {
+     "headline_ko": "뉴욕증시 3대 지수 상승 마감, 나스닥 0.82%↑",
+     "headline_en": "Wall Street Ends Higher; Nasdaq Up 0.82%",
+     "body_ko": "다우는 52,361.58(+0.28%), S&P 500은 7,676.77(+0.70%), 나스닥은 26,169.38(+0.82%)에 마쳤다. 앤트로픽 상장 신청 소식에 AI주가 반등했다.",
+     "body_en": "Dow 52,361.58 (+0.28%), S&P 500 7,676.77 (+0.70%), Nasdaq 26,169.38 (+0.82%). AI stocks rebounded on Anthropic's listing filing.",
+     "src": "News reports, Yahoo Finance",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "WTI 12월물 1.46% 하락한 101.76달러, 브렌트 115.81달러",
+     "headline_en": "WTI December Falls 1.46% to $101.76; Brent $115.81",
+     "body_ko": "사우디·파키스탄·튀르키예 고위 당국자의 테헤란 방문 소식에 내렸다. 후티가 사우디 공격을 이어 주장하며 공급 불안은 남았다.",
+     "body_en": "Prices fell as Saudi, Pakistani and Turkish officials visited Tehran. Houthi claims of continued attacks on Saudi Arabia kept supply worries alive.",
+     "src": "News reports",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "美 10년물 5.00% 유지, FOMC 29일 새벽 3시 결과",
+     "headline_en": "US 10-Year Holds at 5.00%; FOMC Decision Early Oct 29",
+     "body_ko": "재무부 고시 기준 10년물 5.00%, 2년물 4.68%, 30년물 5.31%다. 금리선물(CME FedWatch)은 동결 확률을 90% 넘게 본다.",
+     "body_en": "Treasury fixings: 10Y 5.00%, 2Y 4.68%, 30Y 5.31%. Rate futures (CME FedWatch) put the odds of a hold above 90%.",
+     "src": "FMP, CME",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "공포탐욕지수 27, 극단적 공포 구간 벗어나",
+     "headline_en": "Fear & Greed at 27, Out of Extreme Fear",
+     "body_ko": "전 거래일 21에서 27로 올랐다. 1주 전은 20.8, 1개월 전은 36.9다. VIX는 18.39로 5.45% 내렸다.",
+     "body_en": "Up from 21 the prior session; 20.8 a week ago and 36.9 a month ago. The VIX fell 5.45% to 18.39.",
+     "src": "CNN, Yahoo Finance",
+     "time": "10/26"
+    },
+    {
+     "headline_ko": "금 4,030달러, 달러지수 102.0, 비트코인 7만9,905달러",
+     "headline_en": "Gold $4,030, Dollar Index 102.0, Bitcoin $79,905",
+     "body_ko": "금은 전일보다 0.55% 올랐고 비트코인은 0.15% 내렸다. 원/달러는 역외에서 1,325.4원으로 서울 마감(1,323.1원)보다 높다.",
+     "body_en": "Gold rose 0.55% and Bitcoin fell 0.15%. USD/KRW is 1,325.4 offshore, above the Seoul close of 1,323.1.",
+     "src": "Yahoo Finance",
+     "time": "10/26"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "AHEAD",
+ "schedule_sub": {
+  "ko": "지금부터 오늘 밤 9시까지, 이후 미리 보기",
+  "en": "From now to 9 PM tonight, plus a look ahead"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 09:00–15:30 KST · Closing auction 15:20–15:30"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "10/27 08:00",
+   "title_ko": "韓 3분기 GDP 속보치",
+   "title_en": "Korea Q3 GDP (Advance)",
+   "detail_ko": "전기비 예상 0.7% · 이전 0.6% (FXStreet)",
+   "detail_en": "QoQ est. 0.7% · prior 0.6% (FXStreet)",
+   "importance": "high"
+  },
+  {
+   "time": "10/27 19:00",
+   "title_ko": "美 보잉·코카콜라·페이팔 실적",
+   "title_en": "US Boeing, Coca-Cola, PayPal Earnings",
+   "detail_ko": "장 개장 전 발표(시각은 종목별로 다름) · 비자는 장 마감 후(28일 새벽)",
+   "detail_en": "Before the US open; Visa reports after the close (early Oct 28 KST)",
+   "importance": "mid"
+  },
+  {
+   "time": "10/27 21:30",
+   "title_ko": "美 9월 내구재 주문",
+   "title_en": "US Sep Durable Goods Orders",
+   "detail_ko": "전월비 예상 +0.6%(캘린더 기준, 출처별 상이) · 이전 0.0%",
+   "detail_en": "MoM est. +0.6% (calendar; varies by source) · prior 0.0%",
+   "importance": "mid"
+  },
+  {
+   "time": "10/28 02:00",
+   "title_ko": "라가르드 ECB 총재 연설",
+   "title_en": "ECB President Lagarde Speech",
+   "detail_ko": "통화정책 힌트에 주목",
+   "detail_en": "Watch for policy hints",
+   "importance": "high"
+  },
+  {
+   "time": "10/28 09:00",
+   "title_ko": "SK하이닉스 3분기 실적·컨퍼런스콜",
+   "title_en": "SK hynix Q3 Results & Call",
+   "detail_ko": "추가 주주환원안 공개 예정 · 컨센서스 영업이익 약 77조원(FnGuide)",
+   "detail_en": "Extra shareholder-return plan due · consensus op. profit ~₩77T (FnGuide)",
+   "importance": "high"
+  },
+  {
+   "time": "10/29 03:00",
+   "title_ko": "FOMC 결과 발표",
+   "title_en": "FOMC Decision",
+   "detail_ko": "3시 30분 기자회견 · 시장은 동결 예상",
+   "detail_en": "Press conference at 3:30 AM · hold expected",
+   "importance": "high"
+  },
+  {
+   "time": "10/29 05:00",
+   "title_ko": "알파벳·마이크로소프트 3분기 실적",
+   "title_en": "Alphabet, Microsoft Q3 Earnings",
+   "detail_ko": "10/28 미국 장 마감 후 발표 · 시각은 변동 가능",
+   "detail_en": "After the Oct 28 US close · timing may vary",
+   "importance": "mid"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "card_photos": {
+  "1": "New York Stock Exchange facade at dawn, soft golden light on the columns, a few commuters in silhouette, calm optimistic mood",
+  "3": "A dark trading desk with a rising line chart reflected on glass, city lights at night",
+  "7": "Close-up of semiconductor wafers under cool blue light, shallow depth of field"
+ },
+ "caption_ko": "📊 luckyon 브리핑 · 2026.10.27(화) 아침\n\n미국 증시는 상승 마감했습니다. 나스닥은 0.82% 오른 26,169.38, S&P 500은 0.70% 오른 7,676.77, 다우는 0.28% 오른 52,361.58입니다.\n\n앤트로픽이 나스닥 상장용 S-1을 공개 제출하자 AI주가 반등했고, 필라델피아 반도체지수는 2.82% 올랐습니다. 공포탐욕지수는 21에서 27로 올라 극단적 공포 구간을 벗어났습니다.\n\nWTI 12월물은 101.76달러, 미 10년물 금리는 5.00%입니다. 오늘 8시 한국 3분기 GDP 속보치, 28일 SK하이닉스 실적, 29일 새벽 3시 FOMC 결과가 이어집니다.\n\n저장해 두고 필요할 때 다시 보세요.\n\n#루키온브리핑 #경제브리핑 #아침브리핑 #미국증시 #나스닥 #S&P500 #반도체 #앤트로픽 #FOMC #SK하이닉스 #엔비디아 #유가 #공포탐욕지수 #주식 #증시\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Tue, Oct 27, 2026 · AM\n\nUS stocks closed higher: the Nasdaq rose 0.82% to 26,169.38, the S&P 500 0.70% to 7,676.77 and the Dow 0.28% to 52,361.58.\n\nAI stocks rebounded after Anthropic publicly filed an S-1 for a Nasdaq listing; the Philadelphia chip index rose 2.82%. Fear&Greed rose from 21 to 27, leaving Extreme Fear.\n\nWTI December is at $101.76 and the US 10-year yield at 5.00%. Korea's Q3 GDP (advance) is due at 8 AM, SK hynix reports Oct 28 and the FOMC decides at 3 AM KST Oct 29.\n\nSave this for later.\n\n#luckyonbriefing #markets #morningbrief #Nasdaq #SP500 #semiconductors #Anthropic #FOMC #SKhynix #Nvidia #oil #FearAndGreed #stocks #investing #economy\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "Anthropic",
+  "CME",
+  "CNBC",
+  "CNN Fear & Greed",
+  "DART",
+  "FMP",
+  "FXStreet",
+  "News reports",
+  "OpenAI",
+  "SEC",
+  "Yahoo Finance",
+  "Benzinga",
+  "Amkor"
+ ]
+}
