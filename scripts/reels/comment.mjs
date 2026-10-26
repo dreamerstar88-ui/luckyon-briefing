@@ -39,7 +39,12 @@ export function shapeOf(sym) {
   // 의미 있게 빠졌다가(-0.3%) 저점에서 +0.3% 이상 올라온 V자는 반등으로 본다.
   const riseFromOpenPct = ((hi - open) / open) * 100;
   const dropFromOpenPct = ((open - lo) / open) * 100;
-  const peakedEarly = hiIdx < n * 0.45 && latePct < earlyPct - 0.05 && riseFromOpenPct >= 0.1;
+  // 2026-10-26 사고: 초반에 저점을 찍고 창 중반에 고점(+0.36%)까지 갔다가 시가 부근까지
+  // 되돌려 끝난 왕복 차트가, early 평균에 저점이 섞여 latePct > earlyPct 로 나와
+  // '고점 후 반납'이 아니라 "그대로 밀고 가네"(preRallyContinued)로 판정됐다.
+  // 고점이 창 앞 60% 안이고 올랐던 폭의 60% 이상을 최근 구간에서 반납했으면 고점 후 반납이다.
+  const gaveBackMost = hiIdx < n * 0.6 && riseFromOpenPct >= 0.25 && (hi - late) >= 0.6 * (hi - open);
+  const peakedEarly = (hiIdx < n * 0.45 && latePct < earlyPct - 0.05 && riseFromOpenPct >= 0.1) || gaveBackMost;
   const vBounce = loIdx < n - 2 && dropFromOpenPct >= 0.3 && ((last - lo) / lo) * 100 >= 0.3;
   const troughEarly = (loIdx < n * 0.45 && latePct > earlyPct + 0.05) || vBounce;
 
