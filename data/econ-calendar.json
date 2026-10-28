@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-10-27T01:30:21Z",
+  "fetchedAt": "2026-10-28T01:26:09Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-25T01:30:21Z",
-    "to": "2026-11-10T01:30:21Z"
+    "from": "2026-10-26T01:26:09Z",
+    "to": "2026-11-11T01:26:09Z"
   },
   "events": [
     {
@@ -74,6 +74,16 @@
       "consensus": null,
       "previous": -0.04,
       "actual": 0.07,
+      "unit": null
+    },
+    {
+      "at": "2026-10-26T14:30:00Z",
+      "country": "US",
+      "name": "Dallas Fed Manufacturing Business Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 9.8,
+      "actual": 13.4,
       "unit": null
     },
     {
@@ -162,8 +172,8 @@
       "name": "M3 Money Supply (3m)",
       "impact": "LOW",
       "consensus": null,
-      "previous": 3.4,
-      "actual": null,
+      "previous": 3.5,
+      "actual": 3.5,
       "unit": "%"
     },
     {
@@ -173,7 +183,7 @@
       "impact": "LOW",
       "consensus": 3.6,
       "previous": 3.5,
-      "actual": null,
+      "actual": 3.5,
       "unit": "%"
     },
     {
@@ -183,7 +193,7 @@
       "impact": "LOW",
       "consensus": 3.1,
       "previous": 3.1,
-      "actual": null,
+      "actual": 3.1,
       "unit": "%"
     },
     {
@@ -193,7 +203,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 18.5,
-      "actual": null,
+      "actual": 16.8,
       "unit": null
     },
     {
@@ -203,7 +213,7 @@
       "impact": "MEDIUM",
       "consensus": 0.6,
       "previous": 0,
-      "actual": null,
+      "actual": 1.8,
       "unit": "%"
     },
     {
@@ -213,7 +223,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 0.1,
-      "actual": null,
+      "actual": 2.2,
       "unit": "%"
     },
     {
@@ -223,7 +233,7 @@
       "impact": "MEDIUM",
       "consensus": 0.6,
       "previous": 0.3,
-      "actual": null,
+      "actual": 0.5,
       "unit": "%"
     },
     {
@@ -233,7 +243,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 1.6,
-      "actual": null,
+      "actual": 0.5,
       "unit": "%"
     },
     {
@@ -243,7 +253,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 9,
-      "actual": null,
+      "actual": 9.3,
       "unit": "%"
     },
     {
@@ -253,7 +263,7 @@
       "impact": "MEDIUM",
       "consensus": 0.1,
       "previous": 0.3,
-      "actual": null,
+      "actual": 0.3,
       "unit": "%"
     },
     {
@@ -263,7 +273,7 @@
       "impact": "LOW",
       "consensus": 2.6,
       "previous": 2.5,
-      "actual": null,
+      "actual": 2.7,
       "unit": "%"
     },
     {
@@ -283,7 +293,7 @@
       "impact": "LOW",
       "consensus": 0.66,
       "previous": 0.684,
-      "actual": null,
+      "actual": 0.676,
       "unit": null
     },
     {
@@ -293,7 +303,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 6.4,
-      "actual": null,
+      "actual": -0.6,
       "unit": "%"
     },
     {
@@ -303,17 +313,7 @@
       "impact": "LOW",
       "consensus": 1,
       "previous": -2,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-10-27T14:30:00Z",
-      "country": "US",
-      "name": "Dallas Fed Manufacturing Business Index",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 9.8,
-      "actual": null,
+      "actual": -2,
       "unit": null
     },
     {
@@ -323,7 +323,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.4,
-      "actual": null,
+      "actual": 4.29,
       "unit": "%"
     },
     {
@@ -343,7 +343,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.033,
-      "actual": null,
+      "actual": 4.845,
       "unit": "%"
     },
     {
@@ -353,7 +353,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -4.93,
-      "actual": null,
+      "actual": -2.031,
       "unit": null
     },
     {
@@ -531,7 +531,7 @@
       "country": "EMU",
       "name": "Economic Sentiment Indicator",
       "impact": "MEDIUM",
-      "consensus": 97.8,
+      "consensus": 97.5,
       "previous": 97.9,
       "actual": null,
       "unit": null
@@ -621,7 +621,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 200,
+      "consensus": 199,
       "previous": 194,
       "actual": null,
       "unit": null
@@ -661,7 +661,7 @@
       "country": "US",
       "name": "Personal Consumption Expenditures Prices (QoQ)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.4,
       "previous": 5,
       "actual": null,
       "unit": "%"
@@ -681,7 +681,7 @@
       "country": "US",
       "name": "Personal Spending",
       "impact": "MEDIUM",
-      "consensus": 0.5,
+      "consensus": 0.6,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -981,7 +981,7 @@
       "country": "DE",
       "name": "Import Price Index (MoM)",
       "impact": "LOW",
-      "consensus": 2,
+      "consensus": 1.8,
       "previous": 1,
       "actual": null,
       "unit": "%"
@@ -991,7 +991,7 @@
       "country": "DE",
       "name": "Import Price Index (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 10.3,
       "previous": 8.3,
       "actual": null,
       "unit": "%"
@@ -1001,7 +1001,7 @@
       "country": "DE",
       "name": "Unemployment Change",
       "impact": "MEDIUM",
-      "consensus": 8,
+      "consensus": 5,
       "previous": 12,
       "actual": null,
       "unit": null
@@ -1211,7 +1211,7 @@
       "country": "DE",
       "name": "Consumer Price Index (MoM)",
       "impact": "HIGH",
-      "consensus": 0,
+      "consensus": 0.1,
       "previous": 0.6,
       "actual": null,
       "unit": "%"
@@ -1251,7 +1251,7 @@
       "country": "US",
       "name": "Chicago PMI",
       "impact": "MEDIUM",
-      "consensus": 55.5,
+      "consensus": 56.1,
       "previous": 58.8,
       "actual": null,
       "unit": null
@@ -1602,7 +1602,7 @@
       "name": "Redbook Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 9.3,
       "actual": null,
       "unit": "%"
     },
@@ -1662,7 +1662,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -2.031,
       "actual": null,
       "unit": null
     },
@@ -2565,6 +2565,216 @@
       "previous": -687.7,
       "actual": null,
       "unit": "¥"
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Exports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 36.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Exports (YoY) CNY",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 29.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Imports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 31,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Imports (YoY) CNY",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 24.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Trade Balance CNY",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 905.97,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T03:00:00Z",
+      "country": "CN",
+      "name": "Trade Balance USD",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 133.53,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-10T05:00:00Z",
+      "country": "JP",
+      "name": "Eco Watchers Survey: Current",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 47,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T05:00:00Z",
+      "country": "JP",
+      "name": "Eco Watchers Survey: Outlook",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 47.4,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T11:00:00Z",
+      "country": "US",
+      "name": "NFIB Business Optimism Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 97.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T13:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change 4-week average",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 16.8,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index Core s.a",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 338.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index ex Food & Energy (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index ex Food & Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T13:30:00Z",
+      "country": "US",
+      "name": "Consumer Price Index n.s.a (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 336.94,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T13:55:00Z",
+      "country": "US",
+      "name": "Redbook Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T17:00:00Z",
+      "country": "US",
+      "name": "USDA WASDE Report",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T21:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-10T23:00:00Z",
+      "country": "KR",
+      "name": "Unemployment Rate",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-10T23:50:00Z",
+      "country": "JP",
+      "name": "Money Supply M2+CD (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
