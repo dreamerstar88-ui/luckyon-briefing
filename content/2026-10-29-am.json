@@ -1,0 +1,679 @@
+{
+ "date": "2026-10-29",
+ "session": "am",
+ "dateLabel_ko": "2026.10.29(목) 아침",
+ "dateLabel_en": "Thu, Oct 29, 2026 · AM",
+ "headline_ko": "나스닥·S&P 500 사흘째 상승, 연준 동결",
+ "headline_en": "Nasdaq, S&P 500 Rise for a Third Day; Fed Holds",
+ "headline_sub_ko": "알파벳 EPS 2.12달러(예상 3.02) 시간외 하락 · MS 상승 · 공포탐욕지수 36",
+ "headline_sub_en": "Alphabet EPS $2.12 (est. $3.02), down after hours · MSFT up · Fear&Greed 36",
+ "cover_kicker": {
+  "ko": "간밤 미국장 · 10/28 마감",
+  "en": "US Overnight · Oct 28 Close"
+ },
+ "cover_facts": [
+  [
+   "shield",
+   {
+    "ko": "나스닥 +0.27% · S&P 500 +0.28%",
+    "en": "Nasdaq +0.27% · S&P 500 +0.28%"
+   },
+   {
+    "ko": "26,549.85 / 7,743.98 · 다우 52,475.10 +0.19%",
+    "en": "26,549.85 / 7,743.98 · Dow 52,475.10 +0.19%"
+   }
+  ],
+  [
+   "rate",
+   {
+    "ko": "연준 3.75~4.00% 동결 · 10대 2",
+    "en": "Fed holds at 3.75–4.00% · 10–2 vote"
+   },
+   {
+    "ko": "쿡·해맥 인상 주장 · 워시, 12월 예단 안 해",
+    "en": "Cook, Hammack wanted a hike · Warsh won't prejudge Dec"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "알파벳 EPS 2.12달러 · 예상 3.02",
+    "en": "Alphabet EPS $2.12 · est. $3.02"
+   },
+   {
+    "ko": "시간외 하락 · MS 4.89달러(예상 4.73) 상승",
+    "en": "Fell after hours · MSFT $4.89 (est. $4.73), up"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "미국 증시는 사흘째 올랐다. 나스닥은 72.04포인트(0.27%) 오른 26,549.85, S&P 500은 21.38포인트(0.28%) 오른 7,743.98, 다우는 97.53포인트(0.19%) 오른 52,475.10이다.",
+   "연준은 기준금리를 연 3.75~4.00%로 동결했다. 표결은 10대 2였고, 리사 쿡 이사와 베스 해맥 클리블랜드 연은 총재가 0.25%p 인상을 주장했다. 9월 인상 이후 첫 동결이다.",
+   "필라델피아 반도체지수가 1.75% 올라 4거래일 연속 상승했다. 마이크론은 5.86%, 샌디스크는 7.66%, 오라클은 투자자의 날 이후 10.73% 올랐다. 미 10년물은 5.05%다.",
+   "장 마감 후 알파벳은 EPS 2.12달러로 예상 3.02달러를 밑돌며 시간외에서 내렸고, 마이크로소프트는 EPS 4.89달러로 예상 4.73달러를 웃돌며 올랐다. 공포탐욕지수는 36(공포), VIX는 16.91로 3.48% 내렸다."
+  ],
+  "lines_en": [
+   "US stocks rose for a third day. The Nasdaq gained 72.04 points (0.27%) to 26,549.85, the S&P 500 gained 21.38 (0.28%) to 7,743.98, and the Dow gained 97.53 (0.19%) to 52,475.10.",
+   "The Fed held its policy rate at 3.75–4.00%. The vote was 10–2: Governor Lisa Cook and Cleveland Fed President Beth Hammack called for a 0.25-point hike. It is the first hold since September's hike.",
+   "The Philadelphia chip index rose 1.75% for a fourth straight session. Micron rose 5.86%, SanDisk 7.66% and Oracle 10.73% after its investor day. The US 10-year yield is 5.05%.",
+   "After the close, Alphabet posted EPS of $2.12 against $3.02 expected and fell after hours; Microsoft posted $4.89 against $4.73 and rose. Fear&Greed is 36 (Fear) and the VIX fell 3.48% to 16.91."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "26,549.85",
+   "delta": "▲0.27%",
+   "dir": "up",
+   "note_ko": "10/28 미국장 마감 종가 · 전일 26,477.81",
+   "note_en": "Oct 28 US close · prev 26,477.81"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,743.98",
+   "delta": "▲0.28%",
+   "dir": "up",
+   "note_ko": "10/28 미국장 마감 종가 · 전일 7,722.60",
+   "note_en": "Oct 28 US close · prev 7,722.60"
+  },
+  {
+   "label": "KOSPI",
+   "value": "6,012.44",
+   "delta": "▲6.63%",
+   "dir": "up",
+   "note_ko": "10/28 종가 · 전일 5,638.34 · 오늘 장 열리기 전",
+   "note_en": "Oct 28 close · prev 5,638.34 · pre-open today"
+  },
+  {
+   "label": "VIX",
+   "value": "16.91",
+   "delta": "▼3.48%",
+   "dir": "down",
+   "note_ko": "전일 17.52 · 10/28 종가",
+   "note_en": "Prev 17.52 · Oct 28 close"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "36",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   },
+   "delta": "33.6 → 35.9 ▲",
+   "dir": "up",
+   "note_ko": "공포 구간(25~44) · 1주 전 30.3",
+   "note_en": "Fear zone (25–44) · 30.3 a week ago"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.05%",
+   "delta": "4.99% → 5.05% ▲",
+   "dir": "up",
+   "note_ko": "10/28 마감 · 직전 10/27 4.99%",
+   "note_en": "Oct 28 close · prior (Oct 27) 4.99%"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,342.3",
+   "value_sub": "· DXY 102.1",
+   "delta": {
+    "ko": "▲17.5원",
+    "en": "▲₩17.5"
+   },
+   "dir": "up",
+   "note_ko": "역외 시세 · 전일 1,324.8 대비 · 서울 15:30 기준가는 1,337.7",
+   "note_en": "Offshore quote · vs prior 1,324.8 · Seoul 15:30 reference 1,337.7"
+  },
+  {
+   "label": "Gold",
+   "value": "$4,081.20",
+   "delta": "▲0.16%",
+   "dir": "up",
+   "note_ko": "전일 4,074.60 대비 · 10/28 종가",
+   "note_en": "vs prior 4,074.60 · Oct 28 close"
+  },
+  {
+   "label": "WTI",
+   "value": "$102.78",
+   "delta": "▲2.88%",
+   "dir": "up",
+   "note_ko": "12월물 정산가 · 전일 정산 99.90 대비",
+   "note_en": "Dec contract settle · vs prior settle 99.90"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$81,278",
+   "delta": "▲0.59%",
+   "dir": "up",
+   "note_ko": "전일 80,805 대비 · 진행 중 시세",
+   "note_en": "vs prior 80,805 · live quote"
+  }
+ ],
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "market_note_ko": "나스닥·S&P 500은 10/28 미국장 종가, 코스피는 10/28 종가(오늘 장 개시 전)다. 美 10년물은 10/28 재무부 고시 기준, Fear&Greed는 CNN 기준이다. 원/달러는 역외 시세라 서울 마감과 다를 수 있고, WTI는 12월물이다.",
+ "market_note_en": "Nasdaq and S&P 500 are Oct 28 US closes; KOSPI is the Oct 28 close, before today's open. The US 10Y is the Oct 28 Treasury fixing and Fear&Greed is CNN. USD/KRW is an offshore quote and may differ from the Seoul close; WTI is the December contract.",
+ "chart_series_values": [
+  26140.03,
+  26430.89,
+  26424.82,
+  26702.86,
+  26008.86,
+  25955.34,
+  26169.38,
+  26477.81,
+  26549.85
+ ],
+ "chart_series_labels": [
+  "10.16",
+  "10.19",
+  "10.20",
+  "10.21",
+  "10.22",
+  "10.23",
+  "10.26",
+  "10.27",
+  "10.28"
+ ],
+ "chart_title": {
+  "ko": "나스닥, 사흘 연속 올라 10/21 고점 0.6% 아래",
+  "en": "Nasdaq up three days, still 0.6% below Oct 21"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.21 26,702.86 → 10.23 25,955.34 → 10.28 26,549.85 (10.21 대비 −0.6%)",
+  "en": "10/21 26,702.86 → 10/23 25,955.34 → 10/28 26,549.85 (−0.6% vs 10/21)"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "TODAY",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "반도체 +1.74% 선두, 유틸리티 0.84% 하락",
+  "en": "Semis lead at +1.74%; utilities fall 0.84%"
+ },
+ "sector_sub": {
+  "ko": "10/28 · 섹터 ETF 종가 기준",
+  "en": "Oct 28 · sector ETF closes"
+ },
+ "rank_kicker": "VOLUME LEADERS",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Trading Value"
+ },
+ "rank_sub": {
+  "ko": "10/28 · 미국 개별 종목 · Yahoo 스크리너 집계",
+  "en": "Oct 28 · US single stocks · Yahoo screener"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $ billion"
+ },
+ "econ_kicker": "DATA & DISCLOSURES",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "지난밤 발표된 실적·지표",
+  "en": "Results and data released overnight"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Record",
+   "stats": [
+    {
+     "label_ko": "나스닥",
+     "label_en": "Nasdaq",
+     "value": "26,549.85",
+     "delta": "▲0.27%",
+     "dir": "up",
+     "sub_ko": "10/28 · 전일 26,477.81 · 10.21 대비 −0.6%",
+     "sub_en": "Oct 28 · Prev 26,477.81 · −0.6% vs Oct 21"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,743.98",
+     "delta": "▲0.28%",
+     "dir": "up",
+     "sub_ko": "10/28 · 전일 7,722.60 · 다우 52,475.10 ▲0.19%",
+     "sub_en": "Oct 28 · Prev 7,722.60 · Dow 52,475.10 ▲0.19%"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "거래 상위 300종목",
+     "label_en": "Top-300 by volume",
+     "up": 161,
+     "flat": 3,
+     "down": 136
+    }
+   ],
+   "note_ko": "상승 종목이 거래대금의 57.2%를 차지했다(거래 상위 300종목, Yahoo 스크리너). 미국은 투자자별 순매수를 공표하지 않는다.",
+   "note_en": "Advancers took 57.2% of turnover among the 300 most active stocks (Yahoo screener). The US does not publish net buying by investor type."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "bars": [
+    {
+     "label_ko": "반도체 (SMH)",
+     "label_en": "Semis (SMH)",
+     "value": 1.74
+    },
+    {
+     "label_ko": "기술 (XLK)",
+     "label_en": "Tech (XLK)",
+     "value": 0.8
+    },
+    {
+     "label_ko": "금융 (XLF)",
+     "label_en": "Financials (XLF)",
+     "value": 0.45
+    },
+    {
+     "label_ko": "에너지 (XLE)",
+     "label_en": "Energy (XLE)",
+     "value": 0.35
+    },
+    {
+     "label_ko": "산업재 (XLI)",
+     "label_en": "Industrials (XLI)",
+     "value": 0.34
+    },
+    {
+     "label_ko": "헬스케어 (XLV)",
+     "label_en": "Health (XLV)",
+     "value": 0.3
+    },
+    {
+     "label_ko": "소재 (XLB)",
+     "label_en": "Materials (XLB)",
+     "value": 0.15
+    },
+    {
+     "label_ko": "경기소비재 (XLY)",
+     "label_en": "Cons. Disc. (XLY)",
+     "value": -0.1
+    },
+    {
+     "label_ko": "필수소비재 (XLP)",
+     "label_en": "Staples (XLP)",
+     "value": -0.36
+    },
+    {
+     "label_ko": "통신 (XLC)",
+     "label_en": "Comm. (XLC)",
+     "value": -0.42
+    },
+    {
+     "label_ko": "부동산 (XLRE)",
+     "label_en": "Real Estate (XLRE)",
+     "value": -0.73
+    },
+    {
+     "label_ko": "유틸리티 (XLU)",
+     "label_en": "Utilities (XLU)",
+     "value": -0.84
+    }
+   ],
+   "note_ko": "반도체(SMH)가 1.74%, 기술(XLK)이 0.80% 올랐다. 유틸리티(XLU)는 0.84%, 부동산(XLRE)은 0.73% 내려 금리 민감 업종이 약했다. 에너지(XLE)는 0.35% 올랐다.",
+   "note_en": "Semis (SMH) rose 1.74% and tech (XLK) 0.80%. Utilities (XLU) fell 0.84% and real estate (XLRE) 0.73%, the rate-sensitive laggards. Energy (XLE) rose 0.35%."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Trading Value",
+   "rows": [
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$29.63B",
+     "pct": 5.86
+    },
+    {
+     "name_ko": "메타",
+     "name_en": "Meta",
+     "value": "$21.12B",
+     "pct": -1.24
+    },
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$19.74B",
+     "pct": -1.17
+    },
+    {
+     "name_ko": "알파벳",
+     "name_en": "Alphabet",
+     "value": "$17.55B",
+     "pct": 1.34
+    },
+    {
+     "name_ko": "테슬라",
+     "name_en": "Tesla",
+     "value": "$14.18B",
+     "pct": -0.8
+    }
+   ],
+   "share": {
+    "label_ko": "상승·하락 종목 거래대금 4,069억달러(상위 300종목) 중 비중",
+    "label_en": "Share of $406.9B turnover in stocks that rose or fell (top 300)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "마이크론",
+      "label_en": "Micron",
+      "pct": 7.3,
+      "color": "#e5a23a"
+     },
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 25.1,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "마이크론·메타·엔비디아·알파벳·테슬라 5종목이 상위 300종목 거래대금의 25.1%를 차지했다. 알파벳 등락률은 정규장 기준이며, 거래대금은 종가×거래량 추정이다.",
+   "note_en": "Micron, Meta, Nvidia, Alphabet and Tesla took 25.1% of turnover among the 300 most active stocks. Alphabet's move is regular session only; value is estimated as close × volume."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "stats": [
+    {
+     "label_ko": "美 연준 기준금리",
+     "label_en": "Fed policy rate",
+     "value": "3.75~4.00%",
+     "delta": {
+      "ko": "동결 · 예상 부합",
+      "en": "Hold · as expected"
+     },
+     "dir": "flat",
+     "sub_ko": "표결 10대 2 · 쿡·해맥 0.25%p 인상 주장",
+     "sub_en": "Vote 10–2 · Cook, Hammack wanted +25bp",
+     "ref_ko": "FOMC가 연 8회 결정한다 · 2027년부터 금리 결정 회의는 7회",
+     "ref_en": "Set by the FOMC eight times a year; seven rate-setting meetings from 2027"
+    },
+    {
+     "label_ko": "MS 회계1분기 조정 EPS",
+     "label_en": "Microsoft FQ1 adj. EPS",
+     "value": "$4.89",
+     "delta": {
+      "ko": "예상 4.73 → 4.89 ▲",
+      "en": "Est. 4.73 → 4.89 ▲"
+     },
+     "dir": "up",
+     "sub_ko": "매출 $92.28B(예상 약 $90.7B) · 장 마감 후",
+     "sub_en": "Rev. $92.28B (est. ~$90.7B) · after close"
+    },
+    {
+     "label_ko": "알파벳 3분기 EPS",
+     "label_en": "Alphabet Q3 EPS",
+     "value": "$2.12",
+     "delta": {
+      "ko": "예상 약 3.0 → 2.12 ▼",
+      "en": "Est. ~3.0 → 2.12 ▼"
+     },
+     "dir": "down",
+     "sub_ko": "매출 $127.6B · 지분증권 평가손실 87억달러 포함",
+     "sub_en": "Rev. $127.6B · incl. $8.7B equity loss"
+    },
+    {
+     "label_ko": "서비스나우 3분기 조정 EPS",
+     "label_en": "ServiceNow Q3 adj. EPS",
+     "value": "$1.00",
+     "delta": {
+      "ko": "예상 1.02 → 1.00 ▼",
+      "en": "Est. 1.02 → 1.00 ▼"
+     },
+     "dir": "down",
+     "sub_ko": "매출 $4.11B · 장 마감 후 · 시간외 급락",
+     "sub_en": "Rev. $4.11B · after close · sank after hours"
+    },
+    {
+     "label_ko": "치폴레 3분기 조정 EPS",
+     "label_en": "Chipotle Q3 adj. EPS",
+     "value": "$0.27",
+     "delta": {
+      "ko": "예상 0.29 → 0.27 ▼",
+      "en": "Est. 0.29 → 0.27 ▼"
+     },
+     "dir": "down",
+     "sub_ko": "동일점포 매출 +2.1%(예상 상회) · 장 마감 후",
+     "sub_en": "Same-store sales +2.1% (above est.) · after close"
+    },
+    {
+     "label_ko": "美 10년물 국채금리",
+     "label_en": "US 10-year Treasury yield",
+     "value": "5.05%",
+     "delta": "4.99% → 5.05% ▲",
+     "dir": "up",
+     "sub_ko": "10/28 고시 · 2년물 4.67% · 30년물 5.37%",
+     "sub_en": "Oct 28 fixing · 2Y 4.67% · 30Y 5.37%"
+    }
+   ],
+   "note_ko": "연준은 FOMC 성명, 기업 실적은 각사 발표·Investing.com·CNBC 보도 기준이다(예상은 매체 집계). 변화 표시는 예상 → 실제다.",
+   "note_en": "Fed per the FOMC statement; company results per company releases, Investing.com and CNBC (consensus per media tallies). Changes show estimate → actual."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductor Tech",
+   "items": [
+    {
+     "headline_ko": "알파벳 클라우드 매출 307억달러, 1년 새 두 배",
+     "headline_en": "Alphabet Cloud Revenue Doubles to $30.7B",
+     "body_ko": "구글 클라우드 매출은 전년 대비 약 103% 늘었다. 설비투자는 514억달러였고, 매체들은 EPS 부진과 잉여현금흐름 적자를 시간외 하락 이유로 꼽았다.",
+     "body_en": "Google Cloud revenue rose about 103% year over year. Capex was $51.4B; media cited the EPS miss and negative free cash flow for the after-hours drop.",
+     "src": "Alphabet, Investing.com",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "MS 애저 48% 성장, 마이크로소프트 클라우드 639억달러",
+     "headline_en": "Azure Grows 48%; Microsoft Cloud Hits $63.9B",
+     "body_ko": "회계1분기 매출은 922억8000만달러로 예상을 웃돌았다. 시간외에서 주가는 약 4% 올랐다고 매체들이 전했다.",
+     "body_en": "Fiscal Q1 revenue of $92.28B beat estimates. Media reported the shares rose about 4% after hours.",
+     "src": "Microsoft, Benzinga",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "오라클 투자자의 날: 2030회계연도 매출 2,250억달러 목표",
+     "headline_en": "Oracle Targets $225B+ Revenue by FY2030",
+     "body_ko": "조정 EPS 21달러 이상도 제시했고 FY30까지 추가 자금 조달은 200억달러 이내로 제한한다. 주가는 10.73% 올랐다.",
+     "body_en": "It also set adjusted EPS of $21+ and capped extra financing through FY30 at $20B. The shares rose 10.73%.",
+     "src": "Oracle, CNBC",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "KLA 회계1분기 매출 41.4억달러, 영업이익률 46.1%",
+     "headline_en": "KLA FQ1 Revenue $4.14B, Operating Margin 46.1%",
+     "body_ko": "반도체 장비업체 KLA의 매출은 전년보다 약 29% 늘었고 비GAAP EPS는 1.22달러였다. 다음 분기 매출 가이던스는 47억달러 안팎이다.",
+     "body_en": "The chip-equipment maker's revenue rose about 29% year over year, with non-GAAP EPS of $1.22. Next-quarter revenue guidance is about $4.7B.",
+     "src": "KLA, Investing.com",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "반도체지수 4일 연속 상승… 마이크론 5.86%·샌디스크 7.66%↑",
+     "headline_en": "Chip Index Rises Fourth Day; Micron +5.86%, SanDisk +7.66%",
+     "body_ko": "필라델피아 반도체지수는 1.75% 올랐다. SK하이닉스의 3분기 호실적이 메모리 업종 투자심리를 끌어올렸다는 분석이 나왔다.",
+     "body_en": "The Philadelphia chip index rose 1.75%. Analysts said SK hynix's strong Q3 results lifted sentiment in memory stocks.",
+     "src": "News reports, Yahoo Finance",
+     "time": "10/28"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "items": [
+    {
+     "headline_ko": "연준 기준금리 3.75~4.00% 동결, 10대 2 표결",
+     "headline_en": "Fed Holds at 3.75–4.00% on a 10–2 Vote",
+     "body_ko": "쿡 이사와 해맥 총재가 0.25%p 인상을 주장하며 반대표를 던졌다. 성명은 인플레이션이 여전히 높은 수준이라고 밝혔다.",
+     "body_en": "Cook and Hammack dissented, calling for a 0.25-point hike. The statement said inflation remains elevated.",
+     "src": "FOMC, News reports",
+     "time": "10/29 03:00"
+    },
+    {
+     "headline_ko": "워시 의장 \"12월 회의 예단 안 한다\"… 회의 횟수 줄인다",
+     "headline_en": "Warsh Won't Prejudge December; Fewer Meetings Planned",
+     "body_ko": "기자회견에서 추가 지표를 보겠다고 말했다. 금리 결정 회의를 2027년 7회, 2028년 6회로 줄인다고 밝혔다.",
+     "body_en": "At the press conference he said he would watch more data. He said rate-setting meetings will drop to seven in 2027 and six in 2028.",
+     "src": "CNBC, News reports",
+     "time": "10/29"
+    },
+    {
+     "headline_ko": "알파벳 시간외 급락, MS는 상승",
+     "headline_en": "Alphabet Slides After Hours While Microsoft Rises",
+     "body_ko": "알파벳은 정규장에서 1.34% 오른 뒤 시간외에서 8~10%대 하락(매체별 상이)했다. MS는 약 4% 올랐다.",
+     "body_en": "Alphabet rose 1.34% in the regular session, then fell roughly 8–10% after hours (reports vary). Microsoft rose about 4%.",
+     "src": "CNBC, Investing.com",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "서비스나우 15%대·포티넷 20%대 시간외 급락",
+     "headline_en": "ServiceNow Drops 15%+, Fortinet 20%+ After Hours",
+     "body_ko": "서비스나우는 4분기 매출 가이던스(42.5억~42.6억달러)가 예상(43.6억)에 못 미쳤고, 포티넷은 매출이 늘었지만 총마진이 예상을 밑돌았다. 치폴레는 동일점포 매출이 예상을 웃돌아 소폭~5%대(보도별 상이) 올랐다.",
+     "body_en": "ServiceNow's Q4 revenue guidance ($4.25–4.26B) missed the $4.36B estimate, and Fortinet's gross margin fell short despite higher revenue. Chipotle rose roughly 1–5% (reports vary) on a same-store sales beat.",
+     "src": "CNBC, Yahoo Finance",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "미 10년물 5.05%로 상승, 시장은 12월 인상 확률 75~90% 반영",
+     "headline_en": "10-Year Yield Rises to 5.05%; Markets Price 75–90% Dec Hike",
+     "body_ko": "금리선물은 12월 추가 인상 가능성을 75~90%로 반영하고 있다고 보도됐다(집계마다 다름). 달러인덱스는 0.17% 내렸다.",
+     "body_en": "Rate futures price a December hike at 75–90%, depending on the tally, per reports. The dollar index fell 0.17%.",
+     "src": "Treasury, Asiae",
+     "time": "10/28"
+    },
+    {
+     "headline_ko": "WTI 12월물 102.78달러, 2.9%↑… 미국의 이란 공격 재개 준비 보도",
+     "headline_en": "WTI Dec Settles at $102.78, +2.9%, on Reports of Renewed Iran Strikes",
+     "body_ko": "WSJ는 미국이 걸프 국가들에 중간선거 뒤 이란 공격 재개에 대비하라고 통보했다고 보도했다. 최종 결정은 나지 않았다. 브렌트유는 1.3% 오른 115.32달러에 마감했다.",
+     "body_en": "The WSJ reported the US told Gulf states to prepare for renewed strikes on Iran after the midterms; no final decision was made. Brent rose 1.3% to $115.32.",
+     "src": "CNBC, Yahoo Finance",
+     "time": "10/28"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "AHEAD",
+ "schedule_sub": {
+  "ko": "지금부터 오늘 밤 9시까지, 이후 미리 보기",
+  "en": "From now to 9 PM tonight, plus a look ahead"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 09:00–15:30 KST · Closing auction 15:20–15:30"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "10/29",
+   "title_ko": "삼성전자 3분기 확정 실적·콘퍼런스콜",
+   "title_en": "Samsung Electronics Final Q3 Results & Call",
+   "detail_ko": "잠정 영업이익 107조4,000억원(10/8 공시) · 주주환원 계획 주목",
+   "detail_en": "Preliminary op. profit ₩107.4T (Oct 8) · shareholder returns in focus",
+   "importance": "high"
+  },
+  {
+   "time": "10/29 19:00",
+   "title_ko": "유로존 경제심리지수",
+   "title_en": "Eurozone Economic Sentiment",
+   "detail_ko": "예상 97.8 · 이전 97.9",
+   "detail_en": "Est. 97.8 · prior 97.9",
+   "importance": "mid"
+  },
+  {
+   "time": "10/29 21:30",
+   "title_ko": "美 3분기 GDP 속보치",
+   "title_en": "US Q3 GDP (Advance)",
+   "detail_ko": "연율 예상 +3.2% · 이전 +2.2% · 미국 장 개장 전 발표",
+   "detail_en": "Annualized est. +3.2% · prior +2.2% · before the US open",
+   "importance": "high"
+  },
+  {
+   "time": "10/29 21:30",
+   "title_ko": "美 9월 PCE 물가·실업수당청구",
+   "title_en": "US Sep PCE Prices, Jobless Claims",
+   "detail_ko": "근원 PCE 전년비 예상 3.1% · 이전 3.0% / 실업수당 예상 20.0만 · 이전 19.4만",
+   "detail_en": "Core PCE YoY est. 3.1% · prior 3.0% / claims est. 200K · prior 194K",
+   "importance": "mid"
+  },
+  {
+   "time": "10/29 22:15",
+   "title_ko": "ECB 통화정책 결정",
+   "title_en": "ECB Rate Decision",
+   "detail_ko": "예금금리 2.50% 동결 전망 · 기자회견 22:45",
+   "detail_en": "Deposit rate 2.50%, hold expected · press conference 22:45",
+   "importance": "mid"
+  },
+  {
+   "time": "10/30 05:00",
+   "title_ko": "아마존·인텔 실적",
+   "title_en": "Amazon, Intel Earnings",
+   "detail_ko": "10/29 미국 장 마감 후 · EPS 예상 아마존 1.97달러, 인텔 0.41달러",
+   "detail_en": "After the Oct 29 US close · EPS est. Amazon $1.97, Intel $0.41",
+   "importance": "high"
+  },
+  {
+   "time": "10/30 12:00",
+   "title_ko": "일본은행 금리 결정·경제물가 전망보고서",
+   "title_en": "BoJ Rate Decision & Outlook Report",
+   "detail_ko": "기준금리 1.25% 동결 전망 · 도쿄 근원 CPI(08:30) 예상 2.6%, 이전 2.7%",
+   "detail_en": "Rate 1.25%, hold expected · Tokyo core CPI (08:30) est. 2.6%, prior 2.7%",
+   "importance": "high"
+  }
+ ],
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "card_photos": {
+  "1": "New York Stock Exchange facade at dawn, soft golden light on the columns, a few commuters in silhouette, calm mood after a central bank decision",
+  "3": "A dark trading desk with a gently rising line chart reflected on glass, city lights at night",
+  "7": "Close-up of a data-center server rack with glowing blue cooling pipes and memory modules, shallow depth of field"
+ },
+ "caption_ko": "📊 luckyon 브리핑 · 2026.10.29(목) 아침\n\n미국 증시는 사흘째 올랐습니다. 나스닥은 0.27% 오른 26,549.85, S&P 500은 0.28% 오른 7,743.98, 다우는 0.19% 오른 52,475.10입니다.\n\n연준은 기준금리를 3.75~4.00%로 동결했습니다. 표결은 10대 2였고 쿡 이사와 해맥 총재가 인상을 주장했습니다. 장 마감 후 알파벳은 EPS 2.12달러로 예상 3.02달러를 밑돌며 시간외에서 내렸고, 마이크로소프트는 4.89달러로 예상 4.73달러를 웃돌았습니다.\n\n공포탐욕지수는 36(공포), 미 10년물은 5.05%, WTI 12월물은 102.78달러입니다. 오늘 밤 9시 30분에는 미국 3분기 GDP 속보치가 나옵니다.\n\n저장해 두고 필요할 때 다시 보세요.\n\n#루키온브리핑 #경제브리핑 #아침브리핑 #미국증시 #나스닥 #S&P500 #FOMC #연준 #알파벳 #마이크로소프트 #오라클 #반도체 #공포탐욕지수 #주식\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Thu, Oct 29, 2026 · AM\n\nUS stocks rose for a third day: the Nasdaq gained 0.27% to 26,549.85, the S&P 500 0.28% to 7,743.98 and the Dow 0.19% to 52,475.10.\n\nThe Fed held its policy rate at 3.75–4.00% on a 10–2 vote, with Cook and Hammack calling for a hike. After the close, Alphabet posted EPS of $2.12 vs $3.02 expected and fell after hours, while Microsoft posted $4.89 vs $4.73 and rose.\n\nFear&Greed is 36 (Fear), the US 10-year yield is 5.05% and December WTI is $102.78. US Q3 GDP (advance) is due at 9:30 PM KST tonight.\n\nSave this for later.\n\n#luckyonbriefing #markets #morningbrief #Nasdaq #SP500 #FOMC #Fed #Alphabet #Microsoft #Oracle #semiconductors #FearAndGreed #stocks #investing\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "FOMC",
+  "CNN Fear & Greed",
+  "Alphabet",
+  "Microsoft",
+  "Oracle",
+  "CNBC",
+  "Investing.com",
+  "Newspim",
+  "News reports",
+  "KLA"
+ ]
+}
