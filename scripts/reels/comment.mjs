@@ -32,16 +32,116 @@ export function shapeOf(sym) {
   const latePct = ((late - open) / open) * 100;
   const pos = (last - lo) / (hi - lo || 1);
 
+  // 2026-10-20 사고: 첫 봉의 시가 부근 틱(시가 +0.04%)이 '초반 고점'으로 잡혀
+  // "출발은 좋았는데 왜 자꾸 밀리냐"가 나갔다 — 실제 차트는 갭하락으로 열려
+  // 저점(-0.68%)을 찍고 반등하던 V자였다. 되돌릴 '올랐던 폭'이 실제로 있어야
+  // 초반 고점이고(시가 대비 +0.1% 이상), 저점이 창 후반에 있어도 시가 대비
+  // 의미 있게 빠졌다가(-0.3%) 저점에서 +0.3% 이상 올라온 V자는 반등으로 본다.
+  const riseFromOpenPct = ((hi - open) / open) * 100;
+  const dropFromOpenPct = ((open - lo) / open) * 100;
+  // 2026-10-26 사고: 초반에 저점을 찍고 창 중반에 고점(+0.36%)까지 갔다가 시가 부근까지
+  // 되돌려 끝난 왕복 차트가, early 평균에 저점이 섞여 latePct > earlyPct 로 나와
+  // '고점 후 반납'이 아니라 "그대로 밀고 가네"(preRallyContinued)로 판정됐다.
+  // 고점이 창 앞 60% 안이고 올랐던 폭의 60% 이상을 최근 구간에서 반납했으면 고점 후 반납이다.
+  const gaveBackMost = hiIdx < n * 0.6 && riseFromOpenPct >= 0.25 && (hi - late) >= 0.6 * (hi - open);
+  const peakedEarly = (hiIdx < n * 0.45 && latePct < earlyPct - 0.05 && riseFromOpenPct >= 0.1) || gaveBackMost;
+  const vBounce = loIdx < n - 2 && dropFromOpenPct >= 0.3 && ((last - lo) / lo) * 100 >= 0.3;
+  const troughEarly = (loIdx < n * 0.45 && latePct > earlyPct + 0.05) || vBounce;
+
   return {
     pct,
     rangePct: ((hi - lo) / open) * 100,
-    peakedEarly: hiIdx < n * 0.45 && latePct < earlyPct - 0.05,
-    troughEarly: loIdx < n * 0.45 && latePct > earlyPct + 0.05,
+    peakedEarly,
+    troughEarly,
+    // "얼마나 되돌렸는가"를 실제 고점·저점(hi·lo, 틱 단위) 대비 최근 구간
+    // '평균'(late)으로 잰다. 극값 위치는 정확한 틱으로 잡아야 창이 길어져도
+    // 초반 1/3 평균에 고점과 그 뒤 하락이 섞여 신호가 흐려지지 않고(2026-08-19
+    // 낮, 113봉짜리 긴 창에서 이 문제로 뚜렷한 V자 회복을 놓칠 뻔했다), "지금"은
+    // 마지막 한 틱이 아니라 최근 구간 평균으로 재야 막판 한 봉의 심지 노이즈에
+    // 안 흔들린다(2026-08-19 아침, 초반 고점 이후 계속 하락 중이었는데 막판 1봉의
+    // 미세 반등만으로 '회복 중'으로 잘못 분류된 사고). peakedEarly/troughEarly가
+    // 아니면(=고점·저점이 창 앞쪽에 있지 않으면) 0 — '몇 시간 전 살짝 고점'을
+    // 지금의 하락으로 착각하지 않도록 위치 조건은 그대로 남긴다.
+    fadeFromHighPct: peakedEarly ? ((hi - late) / hi) * 100 : 0,
+    bounceFromLowPct: troughEarly ? ((late - lo) / lo) * 100 : 0,
     quiet: ((hi - lo) / open) * 100 < 0.25,
     nearHigh: pos >= 0.75,
     nearLow: pos <= 0.25,
     big: Math.abs(pct) >= 0.5,
   };
+}
+
+// ---------- 저항/지지 다중 터치 판정 ----------
+// 2026-08-27 사고: 나스닥 선물이 29,589~29,605 구간을 다섯 번 넘게 건드리고도
+// 못 뚫었는데, 스크립트는 이 개념 자체가 없어 "위로 열고 그대로 밀고 가는 중"
+// 이라고 과하게 낙관적으로 썼다. 스윙 고점 1개가 아니라 "좁은 밴드 안에서
+// 여러 번 겹친 구간"이어야 저항/지지로 부를 근거가 있다는 게 핵심.
+// (`docs/technical-analysis-reference.md` 2·3장 참고)
+function findTouchZone(values, tolPct, minTouches) {
+  let best = null;
+  for (const level of values) {
+    const band = (level * tolPct) / 100;
+    const touches = values.filter((v) => Math.abs(v - level) <= band);
+    if (touches.length >= minTouches && (!best || touches.length > best.touches)) {
+      const avgLevel = touches.reduce((a, b) => a + b, 0) / touches.length;
+      best = { level: avgLevel, touches: touches.length };
+    }
+  }
+  return best;
+}
+
+// 창 안 저항/지지 구간과 지금 종가의 관계를 판정한다. "아직 살아있는 레벨"인지는
+// 지금 종가가 그 구간에서 얼마나 떨어져 있는지로 잰다(창 앞쪽 고가가 잠깐
+// 스쳤다는 것만으로는 부족하다 — 그새 멀리 밀려났으면 이건 더 이상 "레벨
+// 공방"이 아니라 그냥 되돌림/반전이라, 아래 REVERSAL 판정에 넘겨야 맞다).
+// 돌파 여부는 "종가" 기준으로만 판단한다(고가로 살짝 찍고 되돌아오는 건 가짜
+// 돌파 — 3장 "종가 기준 vs 고가 기준"). 저항이 있으면 저항부터 본다: 저항을
+// 테스트 중이면 지지는 애초에 덜 중요한 얘기다.
+//
+// 두 가지 안전장치(테스트 중 실제로 발견한 오탐):
+//  ① sh.quiet 면 아예 보지 않는다 — 거의 평평한 창은 모든 값이 서로의 밴드
+//     안에 들어와 "저항선"이 우연히 잡힌다(가짜 신호).
+//  ② 찾은 구간이 창의 고가/저가 "극단부"(extremityPct)에 있을 때만 인정한다
+//     — 안 그러면 그냥 창 중간의 흔한 잡음 뭉침(예: 초반 낙폭 중의 4틱짜리
+//     소소한 되돌림)을 "몇 번을 막히더니 드디어 뚫었다" 같은 거창한 돌파로
+//     과장하게 된다.
+function classifyLevel(bars, sh, { tolPct = 0.02, minTouches = 3, liveMult = 2, extremityPct = 0.4 } = {}) {
+  if (sh.quiet) return null;
+  if (bars.length < minTouches + 2) return null;
+  const highs = bars.map((b) => b.h);
+  const lows = bars.map((b) => b.l);
+  const lastClose = bars[bars.length - 1].c;
+  const hi = Math.max(...highs);
+  const lo = Math.min(...lows);
+  const range = hi - lo || 1;
+
+  // 돌파(종가가 레벨을 넘었다) 쪽은 거리 제한을 두지 않는다 — 막 넘어선
+  // 순간이라면 그게 바로 "뚫었다"는 이야기다. 반대로 아직 못 넘은 "테스트
+  // 중" 쪽만 지금도 그 근처에 있어야(liveMult) 인정한다 — 안 그러면 옛날에
+  // 부딪히고 이미 멀리 밀려난 레벨을 "아직 공방 중"이라고 착각하게 된다.
+  const res = findTouchZone(highs, tolPct, minTouches);
+  if (res && (hi - res.level) / range <= extremityPct) {
+    const band = (res.level * tolPct) / 100;
+    if (lastClose > res.level) {
+      return { type: 'resistanceBreakout', level: res.level, touches: res.touches };
+    }
+    if (Math.abs(lastClose - res.level) <= band * liveMult) {
+      return { type: 'resistanceTest', level: res.level, touches: res.touches };
+    }
+  }
+
+  const sup = findTouchZone(lows, tolPct, minTouches);
+  if (sup && (sup.level - lo) / range <= extremityPct) {
+    const band = (sup.level * tolPct) / 100;
+    if (lastClose < sup.level) {
+      return { type: 'supportBreakdown', level: sup.level, touches: sup.touches };
+    }
+    if (Math.abs(lastClose - sup.level) <= band * liveMult) {
+      return { type: 'supportTest', level: sup.level, touches: sup.touches };
+    }
+  }
+
+  return null;
 }
 
 // 날짜를 씨앗으로 변형을 고른다 (같은 날은 항상 같은 문구, 날마다는 달라짐)
@@ -54,6 +154,12 @@ const pick = (arr, seed) => arr[seed % arr.length];
 
 // ---------- 상황별 문구 풀 ----------
 // 각 항목은 손글씨 2~3줄. 숫자 없음.
+//
+// '흐르다'/'흘러내리다'는 하락 전용으로 쓴다. 이 동사는 방향과 무관하게
+// 쓰이는 게 아니라 '흘러내리다·새다'처럼 소극적·하방 뉘앙스를 내포한다
+// (아래로 흐르는 물처럼). "위로 흐르는 중"은 방향과 동사가 충돌하는
+// 어색한 조합이었다 (2026-08-10 사용자 지적으로 발견, rising.ko[0] 수정).
+// 상승엔 '올라가다/오르다/치솟다' 계열을 쓴다.
 const POOL = {
   pendingQuiet: {
     ko: (e) => [
@@ -75,32 +181,19 @@ const POOL = {
       [`Moving ahead of ${e}`, `main event still to come`, `hm...`],
     ],
   },
-  newsDown: {
+  // 2026-08-27 사고 이후 재설계: 뉴스가 있다고 그 방향의 움직임을 뉴스 "때문"이라고
+  // 단정하지 않는다 (좋은 뉴스인데 창이 근소하게 빨갛다고 "이거 때문에 빠지네"라고 썼던 사고).
+  // 차트 모양 판정이 이미 끝난 뒤, 그 위에 "혹시 이거 때문인가?" 정도의 추측 한 줄만 얹는다.
+  newsMaybe: {
     ko: (n) => [
-      [`${n}`, `이거 때문에 빠지네`, `어디까지 가려고...`],
-      [`${n}`, `뜨자마자 쭉 미끄러짐`, `아 진짜...`],
+      `${n} 때문인가?`,
+      `혹시 ${n} 때문에?`,
+      `${n}... 영향 있나`,
     ],
     en: (n) => [
-      [`${n}`, `and down it goes`, `how far...`],
-      [`${n}`, `dropped the second it hit`, `ugh`],
-    ],
-  },
-  newsUp: {
-    ko: (n) => [
-      [`${n}`, `이걸로 올라가네!`, `계속 가줬으면`],
-      [`${n}`, `뜨자마자 튀어오름`, `오랜만이다 이런거`],
-    ],
-    en: (n) => [
-      [`${n}`, `and up it goes!`, `keep going please`],
-      [`${n}`, `popped right on the headline`, `been a while`],
-    ],
-  },
-  newsFlat: {
-    ko: (n) => [
-      [`${n}`, `나왔는데 반응이 없네`, `다들 관심 없나`],
-    ],
-    en: (n) => [
-      [`${n}`, `and... nothing`, `nobody cares?`],
+      `is it the ${n}?`,
+      `${n}... maybe why?`,
+      `could be the ${n}`,
     ],
   },
   // ---- 밤사이 흐름을 아는 문구 ----
@@ -108,31 +201,31 @@ const POOL = {
   // 전일 종가·갭을 알면 그날의 위치감이 맞는 말이 나온다.
   gapDownFalling: {
     ko: [
-      [`밤새 빠지더니`, `열려서도 계속 아래로`, `어디까지 가려나`],
+      [`개장 전부터 빠지더니`, `열려서도 계속 아래로`, `어디까지 가려나`],
       [`아래로 열었는데`, `멈출 생각을 안하네`],
     ],
     en: [
-      [`Fell all night`, `and keeps falling after the open`, `how far`],
+      [`Was falling pre-open`, `and keeps falling after the open`, `how far`],
       [`Opened down`, `and no sign of stopping`],
     ],
   },
   gapDownRecovering: {
     ko: [
-      [`밤사이 빠진 거`, `조금씩 만회하는 중`, `갈 길 멀다`],
+      [`개장 전에 빠진 거`, `조금씩 만회하는 중`, `갈 길 멀다`],
       [`아래로 열었지만`, `생각보다 잘 버티네`],
     ],
     en: [
-      [`Clawing back some of`, `what it lost overnight`, `long way to go`],
+      [`Clawing back some of`, `what it lost pre-open`, `long way to go`],
       [`Opened down but`, `holding up better than expected`],
     ],
   },
   gapUpHolding: {
     ko: [
-      [`밤새 오르더니`, `열려서도 잘 가네`, `이대로만`],
+      [`개장 전부터 오르더니`, `열려서도 잘 가네`, `이대로만`],
       [`위로 열고`, `그대로 밀고 가는 중`],
     ],
     en: [
-      [`Up all night and`, `still going after the open`, `just stay like this`],
+      [`Rising pre-open and`, `still going after the open`, `just stay like this`],
       [`Gapped up`, `and pushing on`],
     ],
   },
@@ -244,6 +337,51 @@ const POOL = {
       [`Nasdaq and S&P`, `going separate ways`, `confusing`],
     ],
   },
+  // ---- 저항/지지 다중 터치 ----
+  // classifyLevel() 이 감지한, "여러 번 부딪혔지만 아직 결판 안 난/결판 난" 구간.
+  // resistanceTest·supportTest 는 단정하지 않는다 — 이번에 뚫을지는 모른다.
+  resistanceTest: {
+    ko: [
+      [`이 자리서 몇 번째냐`, `못 뚫고 자꾸 튕기네`, `이번엔 가나`],
+      [`계속 여기서 막히네`, `뚫을듯 말듯`],
+      [`또 여기서 밀리네`, `이 자리가 문제인가`],
+    ],
+    en: [
+      [`Keeps hitting this level`, `and bouncing off`, `is this the time`],
+      [`Stuck at this ceiling`, `so close, not yet`],
+      [`Rejected here again`, `what's it gonna take`],
+    ],
+  },
+  resistanceBreakout: {
+    ko: [
+      [`몇 번을 막히더니`, `드디어 뚫었다`, `가보자`],
+      [`계속 부딪히던 자리`, `결국 넘어섰네`],
+    ],
+    en: [
+      [`Kept getting rejected here`, `finally broke through`, `let's go`],
+      [`Broke the level`, `that kept holding it back`],
+    ],
+  },
+  supportTest: {
+    ko: [
+      [`이 아래로는 안 뚫리네`, `몇 번째 버티는거지`],
+      [`계속 여기서 받치네`, `버텨줘`],
+    ],
+    en: [
+      [`Won't break below this`, `holding it, again`],
+      [`Keeps getting caught here`, `hold on`],
+    ],
+  },
+  supportBreakdown: {
+    ko: [
+      [`버티던 자리였는데`, `결국 뚫려버렸다`, `아래로`],
+      [`몇 번을 버티더니`, `여기서 무너지네`],
+    ],
+    en: [
+      [`Was holding here`, `finally gave way`, `heading lower`],
+      [`Defended this a few times`, `now it's breaking`],
+    ],
+  },
   // 아래 세 가지는 "창의 앞쪽"을 가리키는 표현이 들어가므로,
   // 창이 개장에서 시작할 때(open)와 장 중일 때(roll)를 나눠 둔다.
   fadeFromHigh: {
@@ -283,7 +421,7 @@ const POOL = {
     ko: {
       open: [
         [`초반엔 흔들리더니`, `결국 올라왔네`, `버틴 보람이 있다`],
-        [`아침에 놀랐는데`, `다시 위로`, `휴...`],
+        [`열자마자 놀랐는데`, `다시 위로`, `휴...`],
       ],
       roll: [
         [`흔들리더니`, `결국 올라왔네`, `버틴 보람이 있다`],
@@ -339,7 +477,7 @@ const POOL = {
   },
   rising: {
     ko: [
-      [`위로 흐르는 중`, `나쁘지 않아`],
+      [`천천히 올라가는 중`, `나쁘지 않아`],
       [`살살 올라가네`, `이대로만`],
     ],
     en: [
@@ -477,52 +615,100 @@ export function buildComment(nasdaq, sp500, ctx = {}, seedStr = '') {
   };
 
   if (ctx.pendingEvent) {
+    // 앞으로 있을 이벤트는 인과 주장이 아니라 "대기 중"이라는 상태 묘사라 그대로 둔다.
     const a = { ko: ctx.pendingEvent.title_ko, en: ctx.pendingEvent.title_en };
     return out(sh.quiet ? 'pendingQuiet' : 'pendingMoving', a);
   }
-  if (ctx.recentNews) {
-    const a = { ko: ctx.recentNews.title_ko, en: ctx.recentNews.title_en };
-    return out(down ? 'newsDown' : up ? 'newsUp' : 'newsFlat', a);
+
+  // ---- 차트 모양을 먼저 본다 — 뉴스 유무와 무관하게 항상 이 판정을 거친다 ----
+  // (예전엔 ctx.recentNews 가 있으면 이 판정을 통째로 건너뛰고 "그 뉴스 때문에
+  //  오르네/빠지네"로 단정했다. 좋은 뉴스인데 창이 근소하게 빨갛다는 이유만으로
+  //  "이거 때문에 빠지네"가 나온 사고가 있었다 — 인과가 거꾸로였다.)
+  const base = (() => {
+    // 저항/지지 다중 터치를 가장 먼저 본다 — "여러 번 부딪힌 구체적인 레벨"이
+    // 있다면, 그게 초반 고점 대비 되돌림 같은 추상적인 방향 판정보다 지금
+    // 이 순간을 더 정확히 설명한다(2026-08-27 사고 케이스). 진짜 레벨이
+    // 없으면(터치 3회 미만) null 이라 아래로 그대로 넘어간다.
+    const level = classifyLevel(nasdaq.bars, sh);
+    if (level) return out(level.type, {});
+
+    // 세션 안에서 뚜렷한 방향 전환(초반 고점→하락, 또는 초반 저점→반등)이
+    // 있었는지를 밤사이 흐름 서사보다 먼저 본다 — 이 스토리의 요점은 지금 이
+    // 순간이라, 몇 시간 전 프리장 방향보다 그 뒤에 일어난 전환이 더 현재를
+    // 대표한다. "고점에서 얼마나 빠졌나"(fadeFromHighPct)와 "저점에서 얼마나
+    // 올라왔나"(bounceFromLowPct)를 후보로 두고 점수(되돌린 폭)가 더 큰 쪽을
+    // 쓴다 — 조건을 우선순위로 하나씩 쌓는 대신, 두 후보 중 지금 궤적에 더 잘
+    // 맞는 쪽을 고르는 방식이다. 어느 쪽도 REVERSAL 이상으로 되돌리지 못했다면
+    // "뚜렷한 전환"이라 부를 근거가 없다는 뜻이라 아래 단조 흐름 판정으로 넘어간다.
+    const REVERSAL = 0.15;
+    const { fadeFromHighPct, bounceFromLowPct } = sh;
+    if (fadeFromHighPct >= REVERSAL || bounceFromLowPct >= REVERSAL) {
+      if (fadeFromHighPct >= bounceFromLowPct) return out(down ? 'fadeFromHigh' : 'coolingOff', {});
+      return out(down ? 'bounceFromLow' : 'recovered', {});
+    }
+
+    const ov0 = nasdaq.overnight;
+
+    // 개장 전 흐름을 먼저 본다 — '아까부터 그랬던 것'과 '열자마자 뒤집힌 것'은 다른 이야기다.
+    if (ov0 && ov0.preDirPct != null && ov0.preBars >= 60) {
+      const preDir = ov0.preDirPct;
+      const preWild = (ov0.preRangePct ?? 0) >= 0.8;
+      const PRE_MOVE = 0.15;
+
+      if (preWild && sh.quiet) return out('preWildThenQuiet', {});
+      if (preDir <= -PRE_MOVE && down) return out('preFadeContinued', {});
+      if (preDir >= PRE_MOVE && down) return out('preRallyReversed', {});
+      if (preDir <= -PRE_MOVE && up) return out('preFadeReversed', {});
+      if (preDir >= PRE_MOVE && up) return out('preRallyContinued', {});
+    }
+
+    if (sh.quiet) return out('quiet', {});
+    if (diverging) return out('diverging', {});
+
+    // 밤사이 흐름을 아는 문구를 먼저 시도한다.
+    // 갭이 뚜렷하거나 전일 종가와 확실히 떨어져 있을 때만 쓴다 — 애매하면 창 모양으로 넘긴다.
+    const ov = nasdaq.overnight;
+    if (ov && ov.gapPct != null) {
+      const gap = ov.gapPct;
+      const vsPrev = ov.nowVsPrevPct;
+      const BIG_GAP = 0.3;
+      if (gap <= -BIG_GAP && down) return out('gapDownFalling', {});
+      if (gap <= -BIG_GAP && up) return out('gapDownRecovering', {});
+      if (gap >= BIG_GAP && up) return out('gapUpHolding', {});
+      if (gap >= BIG_GAP && down) return out('gapUpFading', {});
+      if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
+      if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
+    }
+    // 여기까지 왔다면 뚜렷한 방향 전환은 없었다는 뜻이다 — 지금 방향으로
+    // 쭉 온 단조 흐름이니, 세션 극값 근처인지로만 표현 세기를 가른다.
+    if (down && sh.nearLow) return out('sinking', {});
+    if (down) return out('drifting', {});
+    if (up && sh.nearHigh) return out('climbing', {});
+    return out('rising', {});
+  })();
+
+  // ---- 그 다음, 뉴스를 "이거 때문인가?" 정도로만 얹는다 — 기본은 안 붙인다 ----
+  // 2026-08-27 두 차례 사고로 확인된 두 가지 문제:
+  //  ① ctx.recentNews 가 있으면 그 순간의 등락 부호만 보고 "그 뉴스 때문에
+  //     오르네/빠지네"로 단정했다 (엔비디아의 좋은 실적을 "이거 때문에
+  //     빠지네"로 엮음 — 인과가 거꾸로였다).
+  //  ② ①을 "이거 때문인가?"라는 추측형으로 바꿔도, 이 스토리는 항상 개장
+  //     후 19분 창에서 도는데 실적은 항상 전날 마감 후에 나와 그 시점엔
+  //     이미 몇 시간~반나절 지난 뉴스다. 그 뉴스의 실제 효과(갭)는 이미
+  //     차트가 "위로 열었는데"로 보여주고 있고, 지금 이 순간의 되돌림은
+  //     뉴스와 무관한 라이브 수급이다 — 오래된 뉴스를 라이브 움직임에
+  //     다시 갖다붙이는 억지였다.
+  // 그래서 기본값은 "붙이지 않음"이다. 뉴스가 지금도 여전히 이 순간의
+  // 움직임을 설명한다고 확신할 때만(대략 창 시작 기준 1~2시간 이내에 나온
+  // 뉴스, 또는 그 자산이 지금도 그 뉴스로 튀는 게 화면에 보일 때)
+  // recentNews.stillMoving = true 를 절차서 3단계에서 명시적으로 넣는다.
+  // 전날 마감 후~오늘 개장 전 실적처럼 이미 지난 뉴스는 stillMoving 을
+  // 넣지 않는다 — 갭이 이미 그 이야기를 하고 있다.
+  if (ctx.recentNews && ctx.recentNews.stillMoving && sh.big) {
+    const tagKo = pick(POOL.newsMaybe.ko(ctx.recentNews.title_ko), seed);
+    const tagEn = pick(POOL.newsMaybe.en(ctx.recentNews.title_en), seed);
+    const cap = (arr, tag) => (arr.length >= 3 ? [...arr.slice(0, 2), tag] : [...arr, tag]);
+    return { ko: cap(base.ko, tagKo), en: cap(base.en, tagEn) };
   }
-
-  const ov0 = nasdaq.overnight;
-
-  // 개장 전 흐름을 먼저 본다 — '아까부터 그랬던 것'과 '열자마자 뒤집힌 것'은 다른 이야기다.
-  if (ov0 && ov0.preDirPct != null && ov0.preBars >= 60) {
-    const preDir = ov0.preDirPct;
-    const preWild = (ov0.preRangePct ?? 0) >= 0.8;
-    const PRE_MOVE = 0.15;
-
-    if (preWild && sh.quiet) return out('preWildThenQuiet', {});
-    if (preDir <= -PRE_MOVE && down) return out('preFadeContinued', {});
-    if (preDir >= PRE_MOVE && down) return out('preRallyReversed', {});
-    if (preDir <= -PRE_MOVE && up) return out('preFadeReversed', {});
-    if (preDir >= PRE_MOVE && up) return out('preRallyContinued', {});
-  }
-
-  if (sh.quiet) return out('quiet', {});
-  if (diverging) return out('diverging', {});
-
-  // 밤사이 흐름을 아는 문구를 먼저 시도한다.
-  // 갭이 뚜렷하거나 전일 종가와 확실히 떨어져 있을 때만 쓴다 — 애매하면 창 모양으로 넘긴다.
-  const ov = nasdaq.overnight;
-  if (ov && ov.gapPct != null) {
-    const gap = ov.gapPct;
-    const vsPrev = ov.nowVsPrevPct;
-    const BIG_GAP = 0.3;
-    if (gap <= -BIG_GAP && down) return out('gapDownFalling', {});
-    if (gap <= -BIG_GAP && up) return out('gapDownRecovering', {});
-    if (gap >= BIG_GAP && up) return out('gapUpHolding', {});
-    if (gap >= BIG_GAP && down) return out('gapUpFading', {});
-    if (vsPrev <= -0.25 && up) return out('belowPrevRising', {});
-    if (vsPrev >= 0.25 && down) return out('abovePrevFalling', {});
-  }
-  if (sh.peakedEarly && down) return out('fadeFromHigh', {});
-  if (sh.troughEarly && down) return out('bounceFromLow', {});
-  if (sh.troughEarly && up) return out('recovered', {});
-  if (down && sh.nearLow) return out('sinking', {});
-  if (down) return out('drifting', {});
-  if (sh.peakedEarly && up) return out('coolingOff', {});
-  if (up && sh.nearHigh) return out('climbing', {});
-  return out('rising', {});
+  return base;
 }
