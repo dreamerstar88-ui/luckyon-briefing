@@ -201,31 +201,31 @@ const POOL = {
   // 전일 종가·갭을 알면 그날의 위치감이 맞는 말이 나온다.
   gapDownFalling: {
     ko: [
-      [`밤새 빠지더니`, `열려서도 계속 아래로`, `어디까지 가려나`],
+      [`개장 전부터 빠지더니`, `열려서도 계속 아래로`, `어디까지 가려나`],
       [`아래로 열었는데`, `멈출 생각을 안하네`],
     ],
     en: [
-      [`Fell all night`, `and keeps falling after the open`, `how far`],
+      [`Was falling pre-open`, `and keeps falling after the open`, `how far`],
       [`Opened down`, `and no sign of stopping`],
     ],
   },
   gapDownRecovering: {
     ko: [
-      [`밤사이 빠진 거`, `조금씩 만회하는 중`, `갈 길 멀다`],
+      [`개장 전에 빠진 거`, `조금씩 만회하는 중`, `갈 길 멀다`],
       [`아래로 열었지만`, `생각보다 잘 버티네`],
     ],
     en: [
-      [`Clawing back some of`, `what it lost overnight`, `long way to go`],
+      [`Clawing back some of`, `what it lost pre-open`, `long way to go`],
       [`Opened down but`, `holding up better than expected`],
     ],
   },
   gapUpHolding: {
     ko: [
-      [`밤새 오르더니`, `열려서도 잘 가네`, `이대로만`],
+      [`개장 전부터 오르더니`, `열려서도 잘 가네`, `이대로만`],
       [`위로 열고`, `그대로 밀고 가는 중`],
     ],
     en: [
-      [`Up all night and`, `still going after the open`, `just stay like this`],
+      [`Rising pre-open and`, `still going after the open`, `just stay like this`],
       [`Gapped up`, `and pushing on`],
     ],
   },
