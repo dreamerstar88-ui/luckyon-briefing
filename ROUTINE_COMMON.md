@@ -91,7 +91,7 @@
   커밋 뒤 `git diff-tree --name-only -r $NEW` 로 **자기 축 경로만** 들어갔는지 확인(`git add -A` 금지와 같은 취지).
 - **Pages 배포(`pages-deploy.yml`)는 11~13분**이 정상이다(Checkout 6분+, Upload 2분, Deploy 2분). `actions_list`(`list_workflow_jobs`)로 어느 스텝인지 보고, **5분 단위 대기(`sleep` 은 `run_in_background`)를 반복**한다. `completed·success` 가 되기 전에 발행하지 않는다.
 - 발행 명령은 `NODE_USE_ENV_PROXY=1 node scripts/publish-instagram.mjs <DATE> ko|en <SESSION>` — 두 언어 모두 1회에 성공했다.
-- **세션 종료 시 stop hook 이 «untracked 파일을 커밋하라»고 반복한다.** 발행 전에는 로컬 카드·JSON 이 필요하므로 두고, **발행 뒤 `rm -rf content/<DATE>-<SESSION>.json cards/<DATE>`** 로 로컬 사본을 정리하고, **playwright 심볼릭 링크는 `rm node_modules/playwright` 로 따로 지운다**(재귀 삭제 명령에 섞지 않는다 — 링크 대상이 허용 작업 폴더 밖(`/opt/...`)이라 Claude Code 가 그 명령 전체에 승인을 요구한 적이 있다. 2026-10-28 에 따로 지우는 방식은 승인 요청 없이 통과함을 확인)(이미 `claude/live` 에 있고 JSON 은 스크래치패드에 백업돼 있다). 세션 작업 브랜치에 카드를 다시 커밋하지 않는다.
+- **세션 종료 시 stop hook 이 «untracked 파일을 커밋하라»고 반복한다.** 발행 전에는 로컬 카드·JSON 이 필요하므로 두고, **발행 뒤 `rm -rf content/<DATE>-<SESSION>.json cards/<DATE>`** 로 로컬 사본을 정리하고, **playwright 링크는 저장소 안에 만들지 않으므로(§1) 지울 것이 없다 — `rm node_modules/playwright`·`rmdir node_modules` 를 쓰지 않는다.** 링크 대상이 허용 작업 폴더 밖(`/opt/...`)이라 Claude Code 가 그 `rm` 에 승인을 요구한다. 2026-10-28 에는 따로 지우면 통과했으나 2026-10-29 에는 단독 `rm` 도 승인을 요구해 사용자가 두 번 지적했다. **정리는 `rm -rf content/<DATE>-<SESSION>.json cards/<DATE>` 한 줄이 전부다**(이미 `claude/live` 에 있고 JSON 은 스크래치패드에 백업돼 있다). 세션 작업 브랜치에 카드를 다시 커밋하지 않는다.
 
 **사고 기록**: 2026-10-20 am — 세션이 시세·뉴스 몇 곳이 막히자(코스피 당일 종가 누락·WTI 불일치·네이버 도구 부재·야후 429) **3경로를 채우지 않고 «발행 보류 알림»만 보내고 멈췄다.**
 사용자가 «내가 진행이 안되더라도 최소 3번은 시도하라고 했잖아 · 지침서에도 넣으라고 했는데 네 멋대로 판단하고 멈추는 거야?»라고 지적했고, 위 대체 경로로 전부 해결돼 약 20분 만에 정상 발행됐다.
@@ -103,7 +103,7 @@
 
 **의존성 확인**: `npm ls playwright` 로 playwright 가 있는지 보고, 없으면 `npm install`. (setup 스크립트에서 이미 설치됐다면 건너뛴다.)
 - `npm install` 이 403 등으로 실패하는 환경이면 전역 설치본을 심볼릭 링크로 연결한다:
-  `mkdir -p node_modules && ln -sf /opt/node22/lib/node_modules/playwright node_modules/playwright`
+  `mkdir -p /home/user/node_modules && ln -sfn /opt/node22/lib/node_modules/playwright /home/user/node_modules/playwright` — **저장소 밖(`/home/user/node_modules`)에 만든다.** Node 가 상위 폴더에서 찾으므로 렌더 스크립트가 그대로 동작하고(2026-10-29 확인), 저장소에 untracked 파일이 안 생겨 정리·승인 요구·stop hook 경고가 모두 없다. `node_modules/` 를 저장소 안에 만들지 않는다.
 
 **날짜 확인**: 한국시간(KST) 기준 오늘 날짜를 `YYYY-MM-DD` 로 정해 `DATE` 로 쓴다. 세션 구분이 있는 축은 루틴 지시문의 `SESSION` 을 확인한다.
 
