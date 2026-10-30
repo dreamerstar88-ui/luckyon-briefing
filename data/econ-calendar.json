@@ -1,91 +1,11 @@
 {
-  "fetchedAt": "2026-10-30T01:59:01Z",
+  "fetchedAt": "2026-10-30T16:59:36Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-28T01:59:01Z",
-    "to": "2026-11-13T01:59:01Z"
+    "from": "2026-10-28T16:59:36Z",
+    "to": "2026-11-13T16:59:36Z"
   },
   "events": [
-    {
-      "at": "2026-10-28T07:00:00Z",
-      "country": "DE",
-      "name": "GfK Consumer Confidence Survey",
-      "impact": "MEDIUM",
-      "consensus": -31,
-      "previous": -30.6,
-      "actual": -30.8,
-      "unit": null
-    },
-    {
-      "at": "2026-10-28T11:00:00Z",
-      "country": "US",
-      "name": "MBA Mortgage Applications",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -5.3,
-      "actual": 3.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-28T12:30:00Z",
-      "country": "US",
-      "name": "Goods Trade Balance",
-      "impact": "LOW",
-      "consensus": -128.7,
-      "previous": -132.1,
-      "actual": -134.9,
-      "unit": "$"
-    },
-    {
-      "at": "2026-10-28T12:30:00Z",
-      "country": "US",
-      "name": "Wholesale Inventories",
-      "impact": "LOW",
-      "consensus": 0.4,
-      "previous": 0.5,
-      "actual": 0.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-28T14:30:00Z",
-      "country": "US",
-      "name": "EIA Crude Oil Stocks Change",
-      "impact": "LOW",
-      "consensus": -0.3,
-      "previous": -3.061,
-      "actual": -1.462,
-      "unit": null
-    },
-    {
-      "at": "2026-10-28T14:30:00Z",
-      "country": "US",
-      "name": "EIA Distillate Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1.675,
-      "actual": -1.462,
-      "unit": null
-    },
-    {
-      "at": "2026-10-28T14:30:00Z",
-      "country": "US",
-      "name": "EIA Gasoline Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -2.952,
-      "actual": 3.87,
-      "unit": null
-    },
-    {
-      "at": "2026-10-28T14:30:00Z",
-      "country": "US",
-      "name": "EIA Heating Oil Stocks Change",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 0.652,
-      "actual": 0.164,
-      "unit": null
-    },
     {
       "at": "2026-10-28T18:00:00Z",
       "country": "US",
@@ -559,16 +479,6 @@
     {
       "at": "2026-10-30T03:00:00Z",
       "country": "JP",
-      "name": "BoJ Interest Rate Decision",
-      "impact": "HIGH",
-      "consensus": 1.25,
-      "previous": 1.25,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-10-30T03:00:00Z",
-      "country": "JP",
       "name": "BoJ Monetary Policy Statement",
       "impact": "HIGH",
       "consensus": null,
@@ -587,13 +497,23 @@
       "unit": null
     },
     {
+      "at": "2026-10-30T03:03:14.81Z",
+      "country": "JP",
+      "name": "BoJ Interest Rate Decision",
+      "impact": "HIGH",
+      "consensus": 1.25,
+      "previous": 1.25,
+      "actual": 1.25,
+      "unit": "%"
+    },
+    {
       "at": "2026-10-30T05:00:00Z",
       "country": "JP",
       "name": "Annualized Housing Starts",
       "impact": "LOW",
       "consensus": null,
       "previous": 0.753,
-      "actual": null,
+      "actual": 0.714,
       "unit": null
     },
     {
@@ -603,7 +523,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -3.6,
-      "actual": null,
+      "actual": -11.1,
       "unit": "%"
     },
     {
@@ -613,7 +533,7 @@
       "impact": "LOW",
       "consensus": 2.9,
       "previous": 6.1,
-      "actual": null,
+      "actual": -2.7,
       "unit": "%"
     },
     {
@@ -633,7 +553,7 @@
       "impact": "LOW",
       "consensus": 1.8,
       "previous": 1,
-      "actual": null,
+      "actual": 2.1,
       "unit": "%"
     },
     {
@@ -643,7 +563,7 @@
       "impact": "LOW",
       "consensus": 10.3,
       "previous": 8.3,
-      "actual": null,
+      "actual": 10.4,
       "unit": "%"
     },
     {
@@ -653,7 +573,7 @@
       "impact": "MEDIUM",
       "consensus": 5,
       "previous": 12,
-      "actual": null,
+      "actual": 4,
       "unit": null
     },
     {
@@ -663,7 +583,7 @@
       "impact": "MEDIUM",
       "consensus": 6.4,
       "previous": 6.4,
-      "actual": null,
+      "actual": 6.4,
       "unit": "%"
     },
     {
@@ -673,7 +593,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.6,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -683,7 +603,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.9,
-      "actual": null,
+      "actual": 2.6,
       "unit": "%"
     },
     {
@@ -693,7 +613,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.6,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -703,7 +623,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.2,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
     },
     {
@@ -713,7 +633,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.5,
-      "actual": null,
+      "actual": -0.3,
       "unit": "%"
     },
     {
@@ -723,7 +643,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.6,
-      "actual": null,
+      "actual": 2.9,
       "unit": "%"
     },
     {
@@ -733,7 +653,7 @@
       "impact": "HIGH",
       "consensus": 0.1,
       "previous": 0.3,
-      "actual": null,
+      "actual": 0.2,
       "unit": "%"
     },
     {
@@ -743,7 +663,7 @@
       "impact": "HIGH",
       "consensus": 1.1,
       "previous": 1,
-      "actual": null,
+      "actual": 1.2,
       "unit": "%"
     },
     {
@@ -753,7 +673,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 1,
-      "actual": null,
+      "actual": 1.3,
       "unit": "%"
     },
     {
@@ -763,7 +683,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.5,
-      "actual": null,
+      "actual": -0.1,
       "unit": "%"
     },
     {
@@ -773,7 +693,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.4,
-      "actual": null,
+      "actual": 2.9,
       "unit": "%"
     },
     {
@@ -783,7 +703,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.6,
-      "actual": null,
+      "actual": -0.2,
       "unit": "%"
     },
     {
@@ -793,7 +713,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.3,
-      "actual": null,
+      "actual": 2.7,
       "unit": "%"
     },
     {
@@ -803,7 +723,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 0.6,
-      "actual": null,
+      "actual": -0.2,
       "unit": "%"
     },
     {
@@ -813,7 +733,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.4,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
     },
     {
@@ -823,7 +743,7 @@
       "impact": "HIGH",
       "consensus": 0.2,
       "previous": 0.6,
-      "actual": null,
+      "actual": 0.4,
       "unit": "%"
     },
     {
@@ -833,7 +753,7 @@
       "impact": "HIGH",
       "consensus": 1.1,
       "previous": 1.2,
-      "actual": null,
+      "actual": 1.3,
       "unit": "%"
     },
     {
@@ -843,8 +763,18 @@
       "impact": "MEDIUM",
       "consensus": 6.4,
       "previous": 6.4,
-      "actual": null,
+      "actual": 6.5,
       "unit": "%"
+    },
+    {
+      "at": "2026-10-30T10:20:00Z",
+      "country": "EMU",
+      "name": "ECB's Nagel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-10-30T12:30:00Z",
@@ -853,7 +783,7 @@
       "impact": "MEDIUM",
       "consensus": 0.8,
       "previous": 0.9,
-      "actual": null,
+      "actual": 0.8,
       "unit": "%"
     },
     {
@@ -863,7 +793,7 @@
       "impact": "HIGH",
       "consensus": 0.1,
       "previous": 0.6,
-      "actual": null,
+      "actual": -0.2,
       "unit": "%"
     },
     {
@@ -873,7 +803,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 3.3,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
     },
     {
@@ -883,7 +813,7 @@
       "impact": "MEDIUM",
       "consensus": 0.1,
       "previous": 0.6,
-      "actual": null,
+      "actual": -0.1,
       "unit": "%"
     },
     {
@@ -893,8 +823,18 @@
       "impact": "HIGH",
       "consensus": 3.1,
       "previous": 3.3,
-      "actual": null,
+      "actual": 2.8,
       "unit": "%"
+    },
+    {
+      "at": "2026-10-30T13:30:00Z",
+      "country": "US",
+      "name": "Fed's Barkin speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-10-30T13:45:00Z",
@@ -903,7 +843,7 @@
       "impact": "MEDIUM",
       "consensus": 56.1,
       "previous": 58.8,
-      "actual": null,
+      "actual": 55.3,
       "unit": null
     },
     {
@@ -1031,8 +971,8 @@
       "country": "KR",
       "name": "Trade Balance",
       "impact": "LOW",
-      "consensus": null,
-      "previous": null,
+      "consensus": 37.24,
+      "previous": 49.97,
       "actual": null,
       "unit": "$"
     },
@@ -1043,6 +983,16 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-02T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": 53.3,
+      "previous": 53.3,
       "actual": null,
       "unit": null
     },
@@ -1061,7 +1011,7 @@
       "country": "CN",
       "name": "RatingDog Manufacturing PMI",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 51.6,
       "previous": 52.1,
       "actual": null,
       "unit": null
@@ -1071,7 +1021,7 @@
       "country": "DE",
       "name": "Retail Sales (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": 1.3,
       "actual": null,
       "unit": "%"
@@ -1107,11 +1057,41 @@
       "unit": null
     },
     {
+      "at": "2026-11-02T09:45:00Z",
+      "country": "EMU",
+      "name": "ECB's Vujčić speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-02T10:00:00Z",
+      "country": "EMU",
+      "name": "ECB's Vujčić speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-02T12:00:00Z",
+      "country": "EMU",
+      "name": "ECB's Nagel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-02T14:45:00Z",
       "country": "US",
       "name": "S&P Global Manufacturing PMI",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 56,
       "previous": 56,
       "actual": null,
       "unit": null
@@ -1131,7 +1111,7 @@
       "country": "US",
       "name": "Construction Spending (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.6,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -1161,7 +1141,7 @@
       "country": "US",
       "name": "ISM Manufacturing PMI",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 54.7,
       "previous": 54.5,
       "actual": null,
       "unit": null
@@ -1171,7 +1151,7 @@
       "country": "US",
       "name": "ISM Manufacturing Prices Paid",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 77.5,
       "previous": 77.9,
       "actual": null,
       "unit": null
@@ -1221,7 +1201,7 @@
       "country": "KR",
       "name": "Consumer Price Index Growth (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 0.3,
       "actual": null,
       "unit": "%"
@@ -1231,7 +1211,7 @@
       "country": "KR",
       "name": "Consumer Price Index Growth (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 2.9,
       "previous": 2.9,
       "actual": null,
       "unit": "%"
@@ -1261,7 +1241,7 @@
       "country": "US",
       "name": "Factory Orders (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.1,
       "previous": 0.1,
       "actual": null,
       "unit": "%"
@@ -1271,7 +1251,7 @@
       "country": "US",
       "name": "JOLTS Job Openings",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 7.1,
       "previous": 7.079,
       "actual": null,
       "unit": null
@@ -1281,8 +1261,28 @@
       "country": "US",
       "name": "RealClearMarkets/TIPP Economic Optimism (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 46.2,
       "previous": 46.8,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-03T18:00:00Z",
+      "country": "EMU",
+      "name": "ECB's Nagel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-03T18:15:00Z",
+      "country": "EMU",
+      "name": "ECB's Sleijpen speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -1325,16 +1325,6 @@
       "previous": -15.2,
       "actual": null,
       "unit": "%"
-    },
-    {
-      "at": "2026-11-04T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Services PMI",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 52,
-      "actual": null,
-      "unit": null
     },
     {
       "at": "2026-11-04T01:45:00Z",
@@ -1421,7 +1411,7 @@
       "country": "EMU",
       "name": "Harmonized Index of Consumer Prices (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 3.9,
       "previous": 3.8,
       "actual": null,
       "unit": "%"
@@ -1441,8 +1431,18 @@
       "country": "US",
       "name": "ADP Employment Change",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 65,
       "previous": 90,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-04T13:20:00Z",
+      "country": "EMU",
+      "name": "ECB's Lane speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -1451,7 +1451,7 @@
       "country": "US",
       "name": "Goods and Services Trade Balance",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -107.6,
       "previous": -105.6,
       "actual": null,
       "unit": "$"
@@ -1511,7 +1511,7 @@
       "country": "US",
       "name": "ISM Services PMI",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 54.8,
       "previous": 54.9,
       "actual": null,
       "unit": null
@@ -1589,10 +1589,10 @@
     {
       "at": "2026-11-05T00:30:00Z",
       "country": "JP",
-      "name": "Jibun Bank Manufacturing PMI",
+      "name": "Jibun Bank Services PMI",
       "impact": "LOW",
-      "consensus": 53.3,
-      "previous": 53.3,
+      "consensus": 52.3,
+      "previous": 52,
       "actual": null,
       "unit": null
     },
@@ -1621,17 +1621,37 @@
       "country": "DE",
       "name": "Factory Orders s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 5.1,
       "previous": -10.6,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-05T07:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Cipollone speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-05T08:05:00Z",
+      "country": "EMU",
+      "name": "ECB's Schnabel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-05T10:00:00Z",
       "country": "EMU",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 1.8,
       "previous": 1.9,
       "actual": null,
       "unit": "%"
@@ -1657,6 +1677,16 @@
       "unit": null
     },
     {
+      "at": "2026-11-05T12:00:00Z",
+      "country": "EMU",
+      "name": "ECB's President Lagarde speech",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-05T13:30:00Z",
       "country": "US",
       "name": "Continuing Jobless Claims",
@@ -1671,7 +1701,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 197,
       "previous": 194,
       "actual": null,
       "unit": null
@@ -1727,6 +1757,26 @@
       "unit": null
     },
     {
+      "at": "2026-11-05T15:40:00Z",
+      "country": "EMU",
+      "name": "ECB's Lane speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-05T16:00:00Z",
+      "country": "EMU",
+      "name": "ECB's President Lagarde speech",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-05T16:30:00Z",
       "country": "US",
       "name": "4-Week Bill Auction",
@@ -1737,11 +1787,21 @@
       "unit": "%"
     },
     {
+      "at": "2026-11-05T17:45:00Z",
+      "country": "EMU",
+      "name": "ECB's Nagel speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-05T23:30:00Z",
       "country": "JP",
       "name": "Labor Cash Earnings (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 3.8,
       "previous": 3.8,
       "actual": null,
       "unit": "%"
@@ -1801,10 +1861,20 @@
       "country": "DE",
       "name": "Industrial Production s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": 2,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-06T09:30:00Z",
+      "country": "EMU",
+      "name": "ECB's Lane speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-06T09:30:00Z",
@@ -1821,7 +1891,7 @@
       "country": "EMU",
       "name": "Retail Sales (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": -0.1,
       "previous": 0.1,
       "actual": null,
       "unit": "%"
@@ -1841,7 +1911,7 @@
       "country": "US",
       "name": "Average Hourly Earnings (MoM)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 0.1,
       "actual": null,
       "unit": "%"
@@ -1881,7 +1951,7 @@
       "country": "US",
       "name": "Nonfarm Payrolls",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 65,
       "previous": 29,
       "actual": null,
       "unit": null
@@ -1901,7 +1971,7 @@
       "country": "US",
       "name": "Unemployment Rate",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 4.2,
       "previous": 4.2,
       "actual": null,
       "unit": "%"
@@ -1921,7 +1991,7 @@
       "country": "US",
       "name": "Michigan Consumer Sentiment Index",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 47.3,
       "previous": 48,
       "actual": null,
       "unit": null
@@ -1951,6 +2021,16 @@
       "country": "JP",
       "name": "BoJ Governor Ueda speech",
       "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-06T17:15:00Z",
+      "country": "US",
+      "name": "Fed's Bowman speech",
+      "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
       "actual": null,
@@ -2452,7 +2532,7 @@
       "name": "Consumer Price Index (MoM)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -0.2,
       "actual": null,
       "unit": "%"
     },
@@ -2462,7 +2542,7 @@
       "name": "Consumer Price Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 2.8,
       "actual": null,
       "unit": "%"
     },
@@ -2472,7 +2552,7 @@
       "name": "Harmonized Index of Consumer Prices (MoM)",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": -0.1,
       "actual": null,
       "unit": "%"
     },
@@ -2482,7 +2562,7 @@
       "name": "Harmonized Index of Consumer Prices (YoY)",
       "impact": "HIGH",
       "consensus": null,
-      "previous": null,
+      "previous": 2.8,
       "actual": null,
       "unit": "%"
     },
@@ -2581,6 +2661,16 @@
       "country": "US",
       "name": "Initial Jobless Claims 4-week average",
       "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-12T14:00:00Z",
+      "country": "US",
+      "name": "Fed's Hammack speech",
+      "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
       "actual": null,
@@ -2713,6 +2803,196 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 17.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T04:30:00Z",
+      "country": "JP",
+      "name": "Capacity Utilization",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -4.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T07:00:00Z",
+      "country": "DE",
+      "name": "Wholesale Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T07:00:00Z",
+      "country": "DE",
+      "name": "Wholesale Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 8.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "CN",
+      "name": "M2 Money Supply (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "CN",
+      "name": "New Loans",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1080,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Employment Change (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Employment Change (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Gross Domestic Product s.a. (QoQ)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Gross Domestic Product s.a. (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Industrial Production s.a. (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Industrial Production w.d.a. (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -1.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Trade Balance n.s.a.",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -16.1,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-13T10:00:00Z",
+      "country": "EMU",
+      "name": "Trade Balance s.a.",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -6.8,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-13T13:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 1.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T13:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 6.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T13:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index ex Food & Energy (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-13T13:30:00Z",
+      "country": "US",
+      "name": "Producer Price Index ex Food & Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 5,
       "actual": null,
       "unit": "%"
     }
