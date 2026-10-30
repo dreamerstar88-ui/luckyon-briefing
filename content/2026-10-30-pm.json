@@ -1,0 +1,709 @@
+{
+ "date": "2026-10-30",
+ "session": "pm",
+ "dateLabel_ko": "2026.10.30(금) 저녁",
+ "dateLabel_en": "Fri, Oct 30, 2026 · PM",
+ "headline_ko": "AI 투자 공포에 코스피 3.48% 급락, 매도 사이드카까지",
+ "headline_sub_ko": "알파벳 −12.6% · 아마존·인텔 시간외 약세 · 외국인 1.6조 순매도 · 나스닥 선물 −2.5%",
+ "headline_en": "AI-Spending Fears Hit KOSPI: -3.48% With a Sell Sidecar",
+ "headline_sub_en": "Alphabet -12.6%, Amazon and Intel fall after hours, foreigners sell KRW 1.6T, Nasdaq futures -2.5%",
+ "cover_photo": "seoul.jpg",
+ "cover_kicker": {
+  "ko": "한국장 마감 · 10/30",
+  "en": "Korea Close · Oct 30"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 −3.48% · 코스닥 −3.83%",
+    "en": "KOSPI -3.48% · KOSDAQ -3.83%"
+   },
+   {
+    "ko": "5,730.74 / 724.38 · 장중 5,599.42까지 하락",
+    "en": "5,730.74 / 724.38 · intraday low 5,599.42"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "SK하이닉스 −7.08% · 삼성전자 −3.02%",
+    "en": "SK hynix -7.08% · Samsung -3.02%"
+   },
+   {
+    "ko": "141.8만원 / 22.5만원 · 두 종목이 코스피 거래대금 48%",
+    "en": "KRW 1.418M / 225,000 · two names are 48% of KOSPI turnover"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "외국인 1.62조 순매도",
+    "en": "Foreigners sold KRW 1.62T"
+   },
+   {
+    "ko": "기관 +0.74조 · 개인 +0.62조가 받아냈다",
+    "en": "Institutions +0.74T and retail +0.62T bought the dip"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피가 206.92포인트(3.48%) 내린 5,730.74에 마감했다. 장중 5,599.42까지 밀렸고 오전 10시 4분 매도 사이드카가 발동됐다(올해 28번째). 코스닥은 3.83% 내린 724.38.",
+   "10/29 미국장에서 알파벳이 3분기 실적 뒤 12.64% 급락(종가 283.82달러)했고, 장 마감 후 아마존·인텔도 시간외에서 밀리며 나스닥 선물이 2.48% 내렸다.",
+   "외국인이 유가증권시장에서 1.62조원 순매도했고 기관(+0.74조)·개인(+0.62조)이 받았다. SK하이닉스는 7.08% 내린 141.8만원, 삼성전자는 3.02% 내린 22.5만원.",
+   "지수는 급락했지만 소프트웨어 업종은 +4.34%, 해운은 +3.82%로 거꾸로 올랐다. 코스피는 하락 656종목 대 상승 234종목."
+  ],
+  "lines_en": [
+   "KOSPI fell 206.92 pts (3.48%) to 5,730.74, hitting 5,599.42 intraday. A sell sidecar triggered at 10:04 AM (28th this year). KOSDAQ lost 3.83% to 724.38.",
+   "On Oct 29, Alphabet dropped 12.64% after earnings (close $283.82); Amazon and Intel then slid after hours, pushing Nasdaq futures down 2.48%.",
+   "Foreigners sold KRW 1.62T on the KOSPI market while institutions (+0.74T) and retail (+0.62T) bought. SK hynix fell 7.08% to 1.418M won, Samsung 3.02% to 225,000.",
+   "Despite the rout, software gained 4.34% and shipping 3.82%. KOSPI had 656 decliners against 234 advancers."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ Fut",
+   "value": "28,828.25",
+   "delta": "▼2.48%",
+   "dir": "down",
+   "note_ko": "29,562.00 대비 · 선물 기준(10/30 장중)",
+   "note_en": "vs 29,562.00 · futures, intraday Oct 30"
+  },
+  {
+   "label": "S&P 500 Fut",
+   "value": "7,673.75",
+   "delta": "▼1.04%",
+   "dir": "down",
+   "note_ko": "7,754.25 대비 · 선물 기준",
+   "note_en": "vs 7,754.25 · futures"
+  },
+  {
+   "label": "KOSPI",
+   "value": "5,730.74",
+   "delta": "▼3.48%",
+   "dir": "down",
+   "note_ko": "206.92p 하락 · 매도 사이드카 발동",
+   "note_en": "-206.92 pts · sell sidecar triggered"
+  },
+  {
+   "label": "VIX",
+   "value": "18.44",
+   "delta": "▲7.21%",
+   "dir": "up",
+   "note_ko": "17.20에서 상승 · 10/30 장중",
+   "note_en": "Up from 17.20 · intraday Oct 30"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "35",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   },
+   "delta": "-",
+   "dir": "flat",
+   "note_ko": "공포 구간(25~44) · 전일 35 · 1주 전 17",
+   "note_en": "Fear zone (25-44) · 35 prior day · 17 a week ago"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.05% → 4.98%",
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "10/28 → 10/29 종가 · 가장 최근 확정치",
+   "note_en": "Oct 28 → Oct 29 close · latest published"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,335",
+   "value_sub": "· DXY 101.7",
+   "delta": "▼0.39%",
+   "dir": "down",
+   "note_ko": "1,340에서 하락 · 달러인덱스 −0.38%",
+   "note_en": "Down from 1,340 · dollar index -0.38%"
+  },
+  {
+   "label": "Gold",
+   "value": "3,991",
+   "delta": "▼1.01%",
+   "dir": "down",
+   "note_ko": "4,031.40에서 하락 · 선물",
+   "note_en": "From 4,031.40 · futures"
+  },
+  {
+   "label": "WTI",
+   "value": "104.22",
+   "delta": "▲2.18%",
+   "dir": "up",
+   "note_ko": "12월물(CLZ26) 기준 · 102.00에서 상승",
+   "note_en": "Dec contract (CLZ26) · up from 102.00"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "77,524",
+   "delta": "▼0.32%",
+   "dir": "down",
+   "note_ko": "10/29 77,775에서 하락 · 24시간 기준",
+   "note_en": "From 77,775 on Oct 29 · 24h basis"
+  }
+ ],
+ "market_note_ko": "코스피·코스닥은 10/30 정규장 종가 · 미 지수는 선물(10/30 저녁 시점) · 미 10년물은 10/29 종가",
+ "market_note_en": "KOSPI/KOSDAQ are Oct 30 regular-session closes · US indexes are futures (Oct 30 evening) · 10Y is the Oct 29 close",
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ Fut",
+  "S&P 500 Fut"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "206.92p 하락 · 최근 9거래일",
+  "en": "-206.92 pts · last 9 sessions"
+ },
+ "chart_series_values": [
+  5552.74,
+  5735.66,
+  5533.77,
+  5550.3,
+  5469.47,
+  5638.34,
+  6012.44,
+  5937.66,
+  5730.74
+ ],
+ "chart_series_labels": [
+  "10.20",
+  "10.21",
+  "10.22",
+  "10.23",
+  "10.26",
+  "10.27",
+  "10.28",
+  "10.29",
+  "10.30"
+ ],
+ "chart_title": {
+  "ko": "이틀 만에 4.7% 반납",
+  "en": "Two Sessions, 4.7% Gone"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.28 종가 6,012.44 → 10.29 5,937.66 → 10.30 5,730.74",
+  "en": "Oct 28 close 6,012.44 → Oct 29 5,937.66 → Oct 30 5,730.74"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_title": {
+  "ko": "전자장비·자동차·반도체가 낙폭 주도",
+  "en": "Electronics, Autos, Chips Led the Drop"
+ },
+ "sector_sub": {
+  "ko": "네이버 업종 분류(코스피+코스닥) · 10/30 등락률",
+  "en": "Naver industry groups (KOSPI+KOSDAQ) · Oct 30 change"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "개별종목 기준(ETF 제외) · 막대 옆은 등락률",
+  "en": "Individual stocks (ETFs excluded) · % beside bars is the day's change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit · KRW trillion"
+ },
+ "econ_kicker": "EARNINGS · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "10/28~10/30 미국 발표분 · 실측 · 예상",
+  "en": "US releases Oct 28-30 · actual vs. estimate"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI & KOSDAQ Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "5,730.74",
+     "delta": "▼3.48%",
+     "dir": "down",
+     "sub_ko": "206.92포인트 하락 · 10/28 종가 대비 −4.7%",
+     "sub_en": "Down 206.92 pts · -4.7% from the Oct 28 close"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "724.38",
+     "delta": "▼3.83%",
+     "dir": "down",
+     "sub_ko": "28.85포인트 하락 · 하락 1,406종목",
+     "sub_en": "Down 28.85 pts · 1,406 decliners"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "up": 234,
+     "flat": 22,
+     "down": 656
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "up": 266,
+     "flat": 67,
+     "down": 1406
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (조원)",
+    "label_en": "KOSPI net buy/sell by investor (KRW tn)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Retail",
+      "value": 0.62
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreign",
+      "value": -1.62
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institution",
+      "value": 0.74
+     }
+    ]
+   },
+   "note_ko": "유가증권시장 정규장 기준, 매체 대조치(외국인 1.617~1.623조). 코스닥은 외국인·기관 순매도, 개인 약 +1,690억.",
+   "note_en": "KOSPI regular session, cross-checked across outlets. KOSDAQ: foreigners and institutions net sold; retail bought about KRW 169B."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#e66767",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "소프트웨어",
+     "label_en": "Software",
+     "value": 4.34
+    },
+    {
+     "label_ko": "해운",
+     "label_en": "Shipping",
+     "value": 3.82
+    },
+    {
+     "label_ko": "제약",
+     "label_en": "Pharma",
+     "value": 1.43
+    },
+    {
+     "label_ko": "손해보험",
+     "label_en": "P&C Ins.",
+     "value": 0.56
+    },
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": -0.23
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Elec. Prod.",
+     "value": -1.45
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuild.",
+     "value": -1.48
+    },
+    {
+     "label_ko": "철강",
+     "label_en": "Steel",
+     "value": -1.86
+    },
+    {
+     "label_ko": "화학",
+     "label_en": "Chemicals",
+     "value": -2.04
+    },
+    {
+     "label_ko": "증권",
+     "label_en": "Brokers",
+     "value": -3.28
+    },
+    {
+     "label_ko": "정유·가스",
+     "label_en": "Oil & Gas",
+     "value": -3.71
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": -6.83
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": -7.57
+    },
+    {
+     "label_ko": "전자장비",
+     "label_en": "Elec. Equip.",
+     "value": -9.33
+    }
+   ],
+   "note_ko": "시가총액 상위 업종 위주 선별. 소프트웨어는 보안주(안랩 +20.98%, 라온시큐어 +14.95%)가 이끌었다.",
+   "note_en": "Selected from the largest groups by market cap. Software was led by security names (AhnLab +20.98%, Raon Secure +14.95%)."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "color": "#e66767",
+   "type": "rank",
+   "col_name_ko": "종목",
+   "col_name_en": "Stock",
+   "col_value_ko": "거래대금",
+   "col_value_en": "Turnover",
+   "rows": [
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩5.33T",
+     "pct": -7.08
+    },
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩4.34T",
+     "pct": -3.02
+    },
+    {
+     "name_ko": "삼성전기",
+     "name_en": "Samsung E-M",
+     "value": "₩1.04T",
+     "pct": -7.5
+    },
+    {
+     "name_ko": "삼성전자우",
+     "name_en": "Samsung Pref.",
+     "value": "₩0.89T",
+     "pct": -5.33
+    },
+    {
+     "name_ko": "삼성SDI",
+     "name_en": "Samsung SDI",
+     "value": "₩0.42T",
+     "pct": 0.93
+    }
+   ],
+   "share": {
+    "label_ko": "코스피 거래대금 20.25조원 중 비중",
+    "label_en": "Share of KOSPI turnover (KRW 20.25T)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "SK하이닉스+삼성전자",
+      "label_en": "SK hynix + Samsung",
+      "pct": 47.8,
+      "color": "#e66767"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Rest",
+      "pct": 52.2,
+      "color": "#4a4a4a"
+     }
+    ]
+   },
+   "note_ko": "ETF 제외 개별종목 순위. 두 종목이 코스피 거래대금의 약 48%를 차지했고 둘 다 하락했다.",
+   "note_en": "Ranking excludes ETFs. The top two names took about 48% of KOSPI turnover, and both fell."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#e66767",
+   "type": "stats",
+   "stats": [
+    {
+     "label_ko": "알파벳 주가 (10/29)",
+     "label_en": "Alphabet shares (Oct 29)",
+     "value": "-12.64%",
+     "delta": "▼",
+     "dir": "down",
+     "sub_ko": "10/28 장 마감 후 실적 · 종가 $283.82",
+     "sub_en": "Q3 results after Oct 28 close · $283.82"
+    },
+    {
+     "label_ko": "아마존 EPS",
+     "label_en": "Amazon EPS",
+     "value": "$1.89",
+     "delta": {
+      "ko": "예상 $1.97 하회",
+      "en": "Below $1.97 est."
+     },
+     "dir": "down",
+     "sub_ko": "매출 $201.9B · 예상 $202.2B",
+     "sub_en": "Rev. $201.9B · est. $202.2B"
+    },
+    {
+     "label_ko": "인텔 4분기 EPS 가이던스",
+     "label_en": "Intel Q4 EPS guide",
+     "value": "$0.25",
+     "delta": {
+      "ko": "예상 $0.43 하회",
+      "en": "Below $0.43 est."
+     },
+     "dir": "down",
+     "sub_ko": "3분기 EPS $0.52 (예상 $0.41)",
+     "sub_en": "Q3 EPS $0.52 (est. $0.41)",
+     "ref_ko": "회사 제시 전망치 대 시장 컨센서스",
+     "ref_en": "Company outlook vs. consensus"
+    },
+    {
+     "label_ko": "엑슨모빌 EPS",
+     "label_en": "Exxon EPS",
+     "value": "$4.23",
+     "delta": {
+      "ko": "예상 $4.12 상회",
+      "en": "Above $4.12 est."
+     },
+     "dir": "up",
+     "sub_ko": "매출 $113.2B · 예상 $104.9B",
+     "sub_en": "Rev. $113.2B · est. $104.9B"
+    },
+    {
+     "label_ko": "셰브런 EPS",
+     "label_en": "Chevron EPS",
+     "value": "$5.28",
+     "delta": {
+      "ko": "예상 $4.87 상회",
+      "en": "Above $4.87 est."
+     },
+     "dir": "up",
+     "sub_ko": "매출 $67.8B · 예상 $61.8B",
+     "sub_en": "Rev. $67.8B · est. $61.8B"
+    },
+    {
+     "label_ko": "한국 9월 전산업생산",
+     "label_en": "Korea Sep total output",
+     "value": "+3.0%",
+     "delta": "▲",
+     "dir": "up",
+     "sub_ko": "전월비 · 소매판매 +3.6% · 설비투자 +5.3%",
+     "sub_en": "MoM · retail +3.6% · equipment +5.3%",
+     "ref_ko": "국가데이터처 산업활동동향 · 10/30 08:00 발표",
+     "ref_en": "Statistics agency data · released Oct 30, 8 AM"
+    }
+   ],
+   "note_ko": "EPS 예상은 FMP 컨센서스 · 알파벳 등락은 10/29 종가 기준, 인텔 가이던스는 회사 발표 대비 시장 예상.",
+   "note_en": "EPS estimates from FMP consensus · Alphabet move is the Oct 29 close · Intel guide is company outlook vs. street."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "알파벳 12.64% 급락, AI 투자 부담에 현금흐름 적자",
+     "headline_en": "Alphabet -12.64% as AI Capex Weighs on Cash Flow",
+     "body_ko": "CNBC에 따르면 알파벳은 설비투자 가이던스 1,950억~2,050억 달러를 유지했지만 3분기 잉여현금흐름이 적자였고, 주가는 상장 이후 최대 하락폭을 기록했다.",
+     "body_en": "CNBC reports Alphabet held capex guidance at $195-205B but posted negative Q3 free cash flow; the stock had its worst day since its 2004 IPO."
+    },
+    {
+     "headline_ko": "마이크로소프트 CFO, 외부 GPU 공급 지연 언급",
+     "headline_en": "Microsoft CFO Cites Third-Party GPU Delays",
+     "body_ko": "CNBC에 따르면 마이크로소프트·알파벳 모두 3분기 설비투자가 애널리스트 예상을 밑돌았다. 에이미 후드 CFO는 일부 가용 용량이 2027년 상반기로 밀린다고 밝혔다.",
+     "body_en": "CNBC says Microsoft and Alphabet both reported Q3 capex below estimates. CFO Amy Hood said some available capacity slips to 1H 2027."
+    },
+    {
+     "headline_ko": "아마존 AWS +39%, 연간 설비투자 2,200억 달러 유지",
+     "headline_en": "AWS Grows 39%; Amazon Holds $220B Capex",
+     "body_ko": "아마존은 AWS 매출이 39% 늘었지만 EPS가 예상을 밑돌았고, 설비투자 계획 유지가 부담이 되며 시간외에서 주가가 약세를 보였다.",
+     "body_en": "AWS revenue grew 39%, but EPS missed estimates and the unchanged capex plan weighed on the stock after hours."
+    },
+    {
+     "headline_ko": "인텔 4분기 가이던스 부진에 시간외 20%대 급락",
+     "headline_en": "Intel Slumps 20%+ After Hours on Weak Q4 Guide",
+     "body_ko": "인텔은 4분기 조정 EPS 0.25달러·매출 150억~160억 달러를 제시해 시장 예상(0.43달러·171억 달러)을 밑돌았다. 시간외에서 약 22~23% 하락했다.",
+     "body_en": "Intel guided Q4 adjusted EPS $0.25 on $15-16B revenue vs. street $0.43 and $17.1B. Shares fell roughly 22-23% after hours."
+    },
+    {
+     "headline_ko": "삼성·SK, 엔비디아향 HBM4 8단 양산 출하 내년 2분기 전망",
+     "headline_en": "Samsung, SK hynix Eyeing Nvidia HBM4 8-High in 2Q27",
+     "body_ko": "지디넷코리아는 10/26 두 회사가 엔비디아향 HBM4 8단 양산 출하를 내년 2분기께 목표로 한 것으로 알려졌다고 보도했다.",
+     "body_en": "ZDNet Korea reported on Oct 26 that both makers are reportedly aiming at Nvidia HBM4 8-high volume shipments around 2Q next year."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "코스피 5,730.74 마감, 올해 28번째 매도 사이드카",
+     "headline_en": "KOSPI Closes at 5,730.74; 28th Sell Sidecar of 2026",
+     "body_ko": "오전 10시 4분 코스피200 선물이 5% 넘게 빠지며 매도 사이드카가 발동됐다. 11거래일 만이다. 코스피는 장중 5,599.42까지 내렸다.",
+     "body_en": "At 10:04 AM KOSPI 200 futures fell over 5%, triggering the sell sidecar, the first sell sidecar since Oct 15. The index touched 5,599.42 intraday."
+    },
+    {
+     "headline_ko": "반도체 투톱 동반 하락, 거래대금 48% 차지",
+     "headline_en": "Chip Duo Both Fall, Taking 48% of Turnover",
+     "body_ko": "SK하이닉스는 7.08% 내린 141.8만원(장중 −9.5%), 삼성전자는 3.02% 내린 22.5만원에 마감했다. 두 종목 거래대금은 9.67조원이었다.",
+     "body_en": "SK hynix closed -7.08% at KRW 1.418M (-9.5% intraday) and Samsung -3.02% at 225,000. Their combined turnover was KRW 9.67T."
+    },
+    {
+     "headline_ko": "지수는 급락, 보안 소프트웨어는 역주행",
+     "headline_en": "Index Tumbles, Security Software Runs Opposite",
+     "body_ko": "소프트웨어 업종이 4.34% 올랐다. 안랩이 20.98%, 라온시큐어가 14.95% 올랐고 해운사 업종도 3.82% 상승했다.",
+     "body_en": "Software rose 4.34%: AhnLab +20.98% and Raon Secure +14.95%. The shipping group also gained 3.82%."
+    },
+    {
+     "headline_ko": "기아 3분기 영업이익 1.82조원, 주가 11.73% 급락",
+     "headline_en": "Kia Q3 Operating Profit KRW 1.82T; Shares -11.73%",
+     "body_ko": "뉴스핌·비즈니스포스트 보도에 따르면 기아 3분기 영업이익은 1조8,183억원으로 시장 예상(약 2.3조원대)을 밑돌았고, 주가는 9만5,600원에 마감했다.",
+     "body_en": "Per Newspim and Business Post, Kia's Q3 operating profit was KRW 1.82T, below the ~KRW 2.3T consensus; shares closed at 95,600 won."
+    },
+    {
+     "headline_ko": "9월 산업활동동향, 생산·소비·투자 3개월 만에 동반 증가",
+     "headline_en": "Sep Industrial Output: Production, Sales, Investment All Up",
+     "body_ko": "국가데이터처에 따르면 9월 전산업생산이 3.0%, 소매판매가 3.6%, 설비투자가 5.3% 늘었다. 언론은 생산 증가폭이 15년 6개월 만에 가장 크다고 전했다.",
+     "body_en": "Statistics agency data show September output +3.0%, retail sales +3.6% and equipment investment +5.3%; media called the output gain the largest in 15.5 years."
+    },
+    {
+     "headline_ko": "일본은행, 기준금리 1.25% 동결",
+     "headline_en": "Bank of Japan Holds Rates at 1.25%",
+     "body_ko": "일본은행이 금리를 동결했다. 정책위원 1명이 1.5% 인상을 주장했고 표결은 8대 1이었다. ETF 매각 속도는 확대하기로 했다.",
+     "body_en": "The BoJ held at 1.25% on an 8-1 vote, with one member pushing for 1.5%. It also decided to speed up its ETF sales."
+    },
+    {
+     "headline_ko": "나스닥 선물 −2.48%, 아마존·인텔 시간외 낙폭 반영",
+     "headline_en": "Nasdaq Futures -2.48% on Amazon, Intel After Hours",
+     "body_ko": "10/29 나스닥은 1.38% 하락했다. 이후 아마존과 인텔이 시간외에서 밀리며 선물이 28,828.25로 내렸고 S&P 500 선물은 1.04% 하락했다.",
+     "body_en": "The Nasdaq fell 1.38% on Oct 29. After Amazon and Intel slid after hours, Nasdaq futures dropped to 28,828.25 and S&P 500 futures lost 1.04%."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "Korea time (KST) · yellow dot = key"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 22:30 ~ 익일 05:00 (서머타임 기준)"
+  ],
+  "lines_en": [
+   "Regular session 10:30 PM - 5:00 AM KST (daylight time)"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "21:30",
+   "title_ko": "美 3분기 고용비용지수(ECI)",
+   "title_en": "US Q3 Employment Cost Index",
+   "detail_ko": "예상 0.8% · 이전 0.9%",
+   "detail_en": "Est. 0.8% · Prior 0.9%",
+   "importance": "mid"
+  },
+  {
+   "time": "22:00",
+   "title_ko": "독일 10월 소비자물가(CPI)",
+   "title_en": "Germany Oct CPI",
+   "detail_ko": "조화 전년비 예상 3.1% · 이전 3.3%",
+   "detail_en": "HICP YoY est. 3.1% · prior 3.3%",
+   "importance": "high"
+  },
+  {
+   "time": "22:45",
+   "title_ko": "美 10월 시카고 PMI",
+   "title_en": "US Oct Chicago PMI",
+   "detail_ko": "예상 56.1 · 이전 58.8",
+   "detail_en": "Est. 56.1 · Prior 58.8",
+   "importance": "mid"
+  },
+  {
+   "time": "10/31 01:00",
+   "title_ko": "데일리 샌프란시스코 연은 총재 연설",
+   "title_en": "Fed's Daly Speaks",
+   "detail_ko": "중립 · 투표권 X",
+   "detail_en": "Centrist · non-voter",
+   "importance": "mid"
+  },
+  {
+   "time": "10/31 01:30",
+   "title_ko": "무살렘 세인트루이스 연은 총재 연설",
+   "title_en": "Fed's Musalem Speaks",
+   "detail_ko": "매파 · 투표권 X",
+   "detail_en": "Hawk · non-voter",
+   "importance": "mid"
+  },
+  {
+   "time": "10/31 10:30",
+   "title_ko": "중국 10월 제조업 PMI",
+   "title_en": "China Oct Manufacturing PMI",
+   "detail_ko": "예상 50.0 · 이전 50.1",
+   "detail_en": "Est. 50.0 · Prior 50.1",
+   "importance": "high"
+  },
+  {
+   "time": "11/1 09:00",
+   "title_ko": "한국 10월 수출입동향 (미리보기)",
+   "title_en": "Korea Oct Trade Data (Preview)",
+   "detail_ko": "9월 수출 +83.5% · 1,209억 달러(산업통상부)",
+   "detail_en": "Sep exports +83.5% YoY, $120.9B (MOTIE)",
+   "importance": "high"
+  }
+ ],
+ "next_brief_ko": "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산",
+ "next_brief_en": "📊 Next brief — 8 AM KST, the week in review",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "caption_ko": "📊 luckyon 저녁 브리핑 · 2026.10.30(금)\n\n코스피가 3.48% 급락한 5,730.74로 마감했습니다. 오전 10시 4분 매도 사이드카(올해 28번째)가 발동됐고, 외국인은 유가증권시장에서 1.62조원을 순매도했습니다.\n\n10/29 알파벳이 12.64% 급락한 데 이어 아마존·인텔이 시간외에서 밀리며 AI 투자 수익성 우려가 번졌습니다. SK하이닉스 −7.08%, 삼성전자 −3.02%.\n\n반대로 소프트웨어 업종은 4.34% 올랐습니다.\n\n📊 다음 브리핑 — 내일 아침 8시, 한 주 결산\n\n#코스피 #사이드카 #SK하이닉스 #삼성전자 #알파벳 #아마존 #인텔 #나스닥 #AI투자 #반도체 #외국인 #증시 #경제 #투자 #luckyon",
+ "caption_en": "📊 luckyon Evening Briefing · Fri, Oct 30, 2026\n\nKOSPI fell 3.48% to 5,730.74 and a sell sidecar triggered at 10:04 AM (28th this year). Foreigners sold KRW 1.62T on the KOSPI market.\n\nAfter Alphabet's 12.64% drop on Oct 29, Amazon and Intel slid after hours, spreading worries over AI-spending returns. SK hynix -7.08%, Samsung -3.02%.\n\nSoftware went the other way, up 4.34%.\n\n📊 Next brief — 8 AM KST, the week in review\n\n#KOSPI #Sidecar #SKhynix #Samsung #Alphabet #Amazon #Intel #Nasdaq #AI #Semiconductors #Markets #Investing #luckyon",
+ "sources": [
+  "KRX",
+  "Naver Finance 내부 API",
+  "Yahoo Finance",
+  "FMP",
+  "CNN Fear & Greed",
+  "CNBC",
+  "MTN",
+  "연합뉴스 계열 보도",
+  "DART",
+  "지디넷코리아"
+ ]
+}
