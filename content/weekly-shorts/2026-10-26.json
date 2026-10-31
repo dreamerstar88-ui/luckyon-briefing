@@ -1,0 +1,453 @@
+{
+  "stamp": "2026-10-26",
+  "episode": 8,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQZ26.CME",
+    "interval": "5m",
+    "symbol_note": "12월물이 정상 월물이다(9월물은 2026-09-18 만기). 연속 심볼 NQ=F 는 쓰지 않는다 — 만기 때 말없이 갈아타 가짜 봉을 만든다(지침 2장).",
+    "from_et": "2026-10-26 04:00",
+    "to_et": "2026-10-30 16:00",
+    "window_change_note": "4회차부터의 창을 그대로 쓴다 — 월요일 프리장 시작(미 동부 04:00, 한국 월 17:00) ~ 금요일 16:00. 대표 지시 «주가 변화 프리장부터»(2026-09-26).",
+    "holiday_note": "휴장 없음. 5거래일.",
+    "end_bar_note": "to_et 16:00 은 «16:00 에 시작하는 봉»까지 포함한다. 1~7회차와 같은 관례다.",
+    "data_gap_note": "요일별 봉 수: 월 228 · 화 275 · 수 275 · 목 275 · 금 191 — 합 1,244개. 야후 5분봉에는 화~금 00:00 봉 4개와 금 14:55 봉이 없다. 금 14:55 는 주간 저점(14:50 봉 28,232.75) 바로 뒤라 야후 1분봉으로 확인했다 — 14:55~14:59 1분봉 저가는 28,260.25 이상이라 저점·최대 낙폭은 바뀌지 않는다. CNBC 대조 결과는 검사 [1-2] 가 매번 다시 낸다."
+  },
+  "video": {
+    "duration": 35,
+    "sections": {
+      "hook": [
+        0,
+        5
+      ],
+      "replay": [
+        5,
+        27.9
+      ],
+      "answer": [
+        27.9,
+        32
+      ],
+      "summ": [
+        32,
+        35
+      ]
+    },
+    "sections_note": "4회차와 같다.",
+    "hook_hold": 1.95,
+    "hold": 1.275,
+    "hold_mode": "equal",
+    "holds": [
+      1.275,
+      1.275,
+      1.275,
+      1.275,
+      1.275,
+      1.275,
+      1.275,
+      1.275
+    ],
+    "holds_note": "대표 결정(2026-10-31) «멈춤 늘리는데 각 사건 마다 멈춤 시간을 동일하게» → «35초 유지, 1.275초씩». 정지 합계 10.2초(7회차까지 9.0초), 그리는 시간 12.7초(7회차까지 13.9초). 물채우기를 하지 않는다(scene.js FIXED_HOLDS).",
+    "min_shown_exception": {
+      "value": 1.34,
+      "reason": "«35초 유지, 1.275초씩»(2026-10-31). 수요일 14:00 금리 결정과 14:30 기자회견이 5분봉 6개 거리라 금리 결정 문구가 1.34초만 보인다. 2.4초 기준을 지키는 길(영상 45초 · 차트 3.7초)과 비교해 대표가 골랐다."
+    }
+  },
+  "numbers": {
+    "bars": 1244,
+    "changes": 1243,
+    "week_pct": -1.86,
+    "mdd_pct": -6.45,
+    "peak": 30178,
+    "trough": 28232.75,
+    "week_high": 30178,
+    "week_low": 28232.75,
+    "open": 29081.75,
+    "close": 28541.5,
+    "week_high_et": "2026-10-28 16:00",
+    "week_low_et": "2026-10-30 14:50",
+    "peak_et": "2026-10-28 16:00",
+    "trough_et": "2026-10-30 14:50",
+    "_주": "창(월 04:00 ~ 금 16:00, 미 동부) 기준. 주간 등락률 -1.858%(표시 -1.86%). 주간 고점은 수 16:00 봉 — 야후 1분봉으로 16:01 분봉의 고가(30,178)다. 마이크로소프트 실적 첫 보도(RavenPack 16:01:00)와 같은 분. 저점은 금 14:50 봉. 종가는 주간 범위의 15.9% 자리."
+  },
+  "question": {
+    "id": "buyhigh",
+    "ko": "주간 고점에 산 사람은 금요일에 몇 %였을까요?",
+    "en": "If you bought the weekly high, where were you on Friday?",
+    "answer_value": -5.42,
+    "unit": "%",
+    "why": "2026-10-31 대표 결정 «고점에 산 사람». 주간 고점(30,178)은 수요일 장 마감 직후 마이크로소프트 실적이 뜬 1분에 찍혔고, 1분 뒤 알파벳이 예상을 밑돌았다. 목요일 마감 직후 아마존도 밑돌았다. 고점 → 금요일 종가 28,541.5 = -5.423%.",
+    "guard": "고점에서 종가까지 얼마나 반납하는지는 주마다 크게 다르다. 같은 창으로 잰 지난 2년 표본 84주의 중앙값은 -1.1%, 하위 10% 는 -4.3%, 상위 10% 는 -0.2%. 고점에서 끝나는 주는 0 에 가깝다. 이번 주보다 크게 반납한 주는 84주 중 6주(지난주 -5.78% 포함)다.",
+    "dist": {
+      "week": "premarket",
+      "min_bars": 80,
+      "n": 84,
+      "median": -1.1,
+      "p10": -4.3,
+      "p90": -0.2,
+      "_주": "과거 1시간봉은 data/weekly-shorts/us1h_nqf.json (야후 NQ=F 2년, 2026-10-31 다시 수집 · 2024-10-31 ~ 2026-10-30 · 서머타임 맞춘 미 동부 시각). 넣는 주: 월 04:00 봉으로 시작하고 금요일 자료가 있으며 80봉 이상(verify-shorts 의 premarket 규칙). 이번 주는 과거에 넣지 않는다. 고점은 시간봉 고가라 5분봉 고가와 같다. 금 16:00 시간봉은 17:00 에 끝나 5분봉 창보다 55분 길다. 연속 심볼이라 월물 교체 주가 섞여 있다. 이번 주(-5.42%)보다 크게 반납한 6주: 2024-12-16(-5.45%) · 2025-03-24(-5.68%) · 2025-03-31(-12.73%) · 2026-03-23(-6.09%) · 2026-06-01(-5.78%) · 2026-10-12(-5.78%)."
+    }
+  },
+  "quiz": {
+    "options": [
+      "-1.1%",
+      "-4.3%",
+      "-5.4%"
+    ],
+    "answer_index": 3,
+    "_주": "① 지난 2년 표본 84주 중앙값 ② 하위 10% ③ 정답(-5.42%). 손실이 작은 쪽부터 놓았다."
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-10-26 10:30",
+      "kst_label": "월 장중 · 한국 월 밤 11시 30분",
+      "te_event": "dallas fed manufacturing index",
+      "stars": 2,
+      "actual": "13.4",
+      "compare_field": "previous",
+      "compare": "9.8",
+      "l1": "댈러스 연은 제조업지수 13.4.",
+      "l2": "직전은 9.8이었다.",
+      "tag": "댈러스",
+      "en": "Dallas Fed manufacturing index 13.4, from 9.8",
+      "why": "그날 ★★★ 없음 · ★★ 후보 둘(08:30 시카고 연은 전미활동지수 · 10:30 이것) 중 장중은 이것 하나(지침 4장 2번). 값 대조: WSJ(모닝스타 게재 15:17 UTC) · MSN(예상 7.0). 캘린더에는 예상값이 없어 직전값을 쓴다.",
+      "pct": -0.11,
+      "rank": 166,
+      "color": "down"
+    },
+    {
+      "n": 2,
+      "et": "2026-10-27 08:30",
+      "kst_label": "화 개장 전 · 한국 화 밤 9시 30분",
+      "te_event": "durable goods orders mom",
+      "stars": 3,
+      "actual": "1.8%",
+      "compare_field": "previous",
+      "compare": "0.1%",
+      "l1": "내구재 주문 1.8% 증가.",
+      "l2": "직전은 0.1%였다.",
+      "tag": "내구재",
+      "en": "Durable goods orders +1.8% m/m, from 0.1%",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 운송 제외 내구재(★★)는 묶어서 이것을 대표로(4장 3번).",
+      "compare_note": "예상값이 집계처마다 갈린다 — 1.5%(트레이딩이코노믹스 · 더플라이) · 1.9%(블룸버그 집계, MT Newswires · LSEG 집계, Finwire) · 1.7%(차이롄서) · 0.6%(FXStreet). 출처에 따라 예상보다 높았다·낮았다가 뒤집혀 화면에는 직전값을 쓴다. 직전 0.1%(8월 수정치)는 MT Newswires · Finwire · 캘린더가 같다.",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": 0.004,
+      "rank": 1173,
+      "color": "hi"
+    },
+    {
+      "n": 3,
+      "et": "2026-10-28 14:00",
+      "kst_label": "수 장중 · 한국 목 새벽 3시",
+      "te_event": "fed interest rate decision",
+      "stars": 3,
+      "actual": "4%",
+      "compare_field": "consensus",
+      "compare": "4.0%",
+      "l1": "기준금리 3.75~4.00% 동결.",
+      "l2": "예상도 동결(4.00%)이었다.",
+      "tag": "금리결정",
+      "en": "Fed holds rates at 3.75-4.00%, as expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 값 대조: 연합인포맥스 · 뉴스1(3.75~4.00% 동결, 9월 0.25%p 인상 뒤) · FXStreet(동결 예상).",
+      "tiebreak": "같은 시각(협정세계시 18:00)에 ★★★ 두 건 — 금리 결정과 FOMC 성명. 성명은 실제값·예상값·직전값이 모두 비어 있어 비교할 값이 없고, 금리 결정은 값이 있다(실제 4% · 예상 4.0% · 직전 4%, 셋 다 같다). 값이 있는 금리 결정을 대표로 썼다(지침 4장 3번, 3회차와 같은 방식).",
+      "pair_with": 4,
+      "pct": -0.085,
+      "rank": 261,
+      "color": "down"
+    },
+    {
+      "n": 4,
+      "et": "2026-10-28 14:30",
+      "kst_label": "수 장중 · 한국 목 새벽 3시 30분",
+      "te_event": "fed press conference",
+      "stars": 3,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "워시 의장 기자회견.",
+      "l2": "금리 결정 30분 뒤였다.",
+      "tag": "기자회견",
+      "en": "Fed Chair Warsh's press conference, 30 minutes after the decision",
+      "why": "★★★ 전부 넣는다(지침 4장 1번).",
+      "no_value": "기자회견은 발표되는 수치가 없다. 캘린더에도 실제값·예상값·직전값이 비어 있다.",
+      "person_check": "연준 공식 페이지(2026-10-28 갱신, 2026-10-31 받음) — Kevin Warsh, Board of Governors, Chairman. 회견자는 니혼게이자이(20:09 UTC) · 야후 파이낸스(20:29 UTC) · AOL 이 워시 의장으로 적었다.",
+      "pct": 0.087,
+      "rank": 250,
+      "color": "up"
+    },
+    {
+      "n": 5,
+      "kind": "news",
+      "et": "2026-10-28 16:00",
+      "kst_label": "수 마감 직후 · 한국 목 새벽 5시 1분",
+      "stars": 0,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "마이크로소프트 실적, 예상 웃돌아.",
+      "l2": "1분 뒤 알파벳은 밑돌았다.",
+      "tag": "MS",
+      "en": "Microsoft beats; Alphabet misses a minute later",
+      "why": "기업 실적도 사건 후보다(지침 4장 4번). 같은 5분봉에 나스닥100 두 종목의 첫 보도가 걸려(마이크로소프트 16:01 · 알파벳 16:02) 시가총액이 큰 마이크로소프트를 대표로 적고 알파벳은 둘째 줄에 붙였다(나스닥 실적 달력 시가총액 3.94조 달러 대 3.49조 달러). 주간 고점 30,178 이 이 봉에서 나왔다. 대표 결정(2026-10-31) «넣는다 — 8개».",
+      "news": {
+        "headline": "Microsoft Q1 adj. EPS $4.89 vs $4.72 consensus, revenue $92.28B vs $90.74B",
+        "first_report_et": "2026-10-28 16:01",
+        "sources": [
+          {
+            "name": "RavenPack(실적 비교 속보)",
+            "utc": "2026-10-28T20:01:00Z",
+            "url": "https://app.bigdata.com/documents/4874F161B93273EB71F2D9D9D392935D"
+          },
+          {
+            "name": "The Fly",
+            "utc": "2026-10-28T20:01:39Z",
+            "url": "https://app.bigdata.com/documents/03265625FED46A06AE66F2BCC33F73C4"
+          },
+          {
+            "name": "Wallstreetcn",
+            "utc": "2026-10-28T20:02:11Z",
+            "url": "https://app.bigdata.com/documents/5393DFC9A7B7AD5686B8407C15C224CA"
+          },
+          {
+            "name": "Benzinga",
+            "utc": "2026-10-28T20:03:03Z",
+            "url": "https://app.bigdata.com/documents/ECAE684EC546B6FC1367B7D720E2C42A"
+          }
+        ],
+        "second_company": {
+          "name": "알파벳(GOOGL·GOOG)",
+          "first_report_et": "2026-10-28 16:02",
+          "sources": [
+            {
+              "name": "RavenPack(실적 비교 속보)",
+              "utc": "2026-10-28T20:02:00Z",
+              "url": "https://app.bigdata.com/documents/666A9E6FEB1882D9E111005A9C8C09C0"
+            },
+            {
+              "name": "Benzinga",
+              "utc": "2026-10-28T20:02:40Z",
+              "url": "https://app.bigdata.com/documents/5E54D41919006C50D558A1961D11D9B9"
+            },
+            {
+              "name": "The Fly",
+              "utc": "2026-10-28T20:03:29Z",
+              "url": "https://app.bigdata.com/documents/0A519CA131E295155D70E21AF29C7790"
+            }
+          ],
+          "note": "주당순이익 2.12달러 대 예상 3.01~3.02달러, 매출 1,276억 달러 대 예상 1,279억~1,282억 달러. 시간외 -7~-8%(MT Newswires · 야후 파이낸스 · 로이터 게재 기사)."
+        },
+        "minute_1m": "야후 1분봉: 16:00 +0.299% · 16:01 고가 30,178(주간 고점) · 16:02 -0.071% · 16:04 -0.197% · 16:05 -0.196%. 마이크로소프트 보도(16:01)에 고점, 알파벳 보도(16:02) 뒤로 밀렸다. 5분봉은 16:00 봉 +0.167%(62위) · 16:05 봉 -0.230%(28위).",
+        "origin_note": "두 회사 보도자료 원문 게시 시각(PubT)은 16:02:48(알파벳) · 16:06:41(마이크로소프트)로 속보보다 늦게 색인됐다. 마이크로소프트는 시간외 +4~5%, 알파벳은 -7~-8%(파이낸셜뉴스 · 뉴스1 · 스트레이츠타임스)."
+      },
+      "pct": 0.167,
+      "rank": 62,
+      "color": "up"
+    },
+    {
+      "n": 6,
+      "et": "2026-10-29 08:30",
+      "kst_label": "목 개장 전 · 한국 목 밤 9시 30분",
+      "te_event": "gdp growth rate qoq adv",
+      "stars": 3,
+      "actual": "3.4%",
+      "compare_field": "consensus",
+      "compare": "3.2%",
+      "l1": "3분기 GDP 성장률 3.4%.",
+      "l2": "예상은 3.2%였다.",
+      "tag": "GDP",
+      "en": "Q3 GDP (advance) 3.4%, vs 3.2% expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 시각 8건(★★★ 4 · ★★ 4)을 한 사건으로 묶었다.",
+      "tiebreak": "같은 시각 ★★★ 4건 — 근원 PCE 물가 전월비 0.3% 대 예상 0.3%(같음) · GDP 성장률 3.4% 대 3.2%(0.2%p) · 개인소득 0.2% 대 0.3%(0.1%p) · 개인지출 0.5% 대 0.6%(0.1%p). 단위가 모두 % 라 가장 많이 벗어난 GDP 성장률을 대표로(지침 4장 3번). 값 대조: MT Newswires(블룸버그 집계 3.2%) · Finwire(블룸버그) · FXStreet · 로이터 설문 3.2%(AOL 게재). 다른 집계는 3.1%(RTT) · 3.0%(팩트셋).",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": -0.121,
+      "rank": 135,
+      "color": "down"
+    },
+    {
+      "n": 7,
+      "kind": "news",
+      "et": "2026-10-29 16:00",
+      "kst_label": "목 마감 직후 · 한국 금 새벽 5시 1분",
+      "stars": 0,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "아마존 실적, 예상 밑돌아.",
+      "l2": "주당 1.89달러, 예상은 1.97달러.",
+      "tag": "아마존",
+      "en": "Amazon EPS $1.89 misses the $1.97 estimate",
+      "why": "기업 실적도 사건 후보다(지침 4장 4번). 그 주 5분 변동 1위. 같은 날 장 마감 뒤 발표한 나스닥100 종목 중 시가총액이 가장 큰 아마존(2.63조 달러)을 대표로 — 인텔(0.49조 달러)도 같은 날 마감 뒤 발표해 시간외 -16~-20%(파이낸셜뉴스 · 이데일리).",
+      "news": {
+        "headline": "Amazon.com Q3 EPS $1.89 misses $1.97 estimate, sales $201.94B vs $202.3B estimate",
+        "first_report_et": "2026-10-29 16:01",
+        "sources": [
+          {
+            "name": "RavenPack(실적 비교 속보)",
+            "utc": "2026-10-29T20:01:00Z",
+            "url": "https://app.bigdata.com/documents/12B223147AF1C99D109CFB5554687457"
+          },
+          {
+            "name": "Benzinga",
+            "utc": "2026-10-29T20:01:04Z",
+            "url": "https://app.bigdata.com/documents/ADB7E83CFF210E33B84D2903BB6F4CCD"
+          },
+          {
+            "name": "MT Newswires",
+            "utc": "2026-10-29T20:02:14Z",
+            "url": "https://app.bigdata.com/documents/FC4AE49DD4877C6A0612F0E642E5868B"
+          },
+          {
+            "name": "The Fly",
+            "utc": "2026-10-29T20:03:01Z",
+            "url": "https://app.bigdata.com/documents/3710E4546B59AD7662171BC12F41221D"
+          }
+        ],
+        "minute_1m": "야후 1분봉: 16:00 +0.084% · 16:01 -0.840% · 16:02 -0.077% · 16:03 -0.060% · 16:04 -0.206% · 16:05 -0.325%. 보도 시각(16:01)과 같은 분에 몰렸다.",
+        "origin_note": "벤징가 20:01:04 는 보도자료 원문(«Amazon.com Announces Third Quarter Results»). 예상 주당순이익은 1.97달러(팩트셋 · 벤징가 · 블룸버그 집계 야후 파이낸스)와 1.96달러(더플라이)로 갈리지만 어느 쪽이든 밑돌았다. 4분기 매출 전망 2,400억~2,470억 달러 대 예상 2,442억~2,445억 달러.",
+        "after": "16:00 봉 -1.097%(1위) · 16:05 봉 -0.238%. 목 16:00 ~ 금 09:25 -2.59%."
+      },
+      "pct": -1.097,
+      "rank": 1,
+      "color": "down"
+    },
+    {
+      "n": 8,
+      "et": "2026-10-30 09:45",
+      "kst_label": "금 장중 · 한국 금 밤 10시 45분",
+      "te_event": "chicago pmi",
+      "stars": 2,
+      "actual": "55.3",
+      "compare_field": "consensus",
+      "compare": "56.1",
+      "l1": "시카고 PMI 55.3.",
+      "l2": "예상은 56.1이었다.",
+      "tag": "시카고",
+      "en": "Chicago PMI 55.3, vs 56.1 expected",
+      "why": "그날 ★★★ 없음 · ★★ 장중 후보 넷(09:30 바킨 연설 · 09:45 이것 · 12:00 데일리 연설 · 12:30 무살렘 연설) 중 바킨(리치먼드)·데일리(샌프란시스코)는 2026 FOMC 대체 위원, 무살렘(세인트루이스)은 올해 투표 위원도 대체 위원도 아니라 뺐다(지침 4장 8번, 연준 공식 페이지 2026-10-28 갱신본). 남은 하나. 값 대조: FXStreet 경제 캘린더 · 차이롄서 · 둥팡차이푸 56.1(블룸버그 집계 MT Newswires · Finwire 는 56.0, 벤징가 55.8 — 어느 쪽이든 예상보다 낮았다).",
+      "pct": 0.033,
+      "rank": 715,
+      "color": "hi"
+    }
+  ],
+  "calendar_snapshot": "content/weekly-shorts/2026-10-26.calendar.html",
+  "coverage": {
+    "econ_calendar": "트레이딩이코노믹스 스냅샷 content/weekly-shorts/2026-10-26.calendar.html · 90행, 시각 있는 발표 90건 · ★★ 이상 38건 · ★★★ 8건. calendar-range=-2 쿠키로 2026-10-31 수집.",
+    "earnings": "그 주 발표한 나스닥100 구성 종목 — 월 CDNS · 화 STX·NXPI·BKR·PCAR·PYPL·TER · 수 MSFT·GOOG·GOOGL·KLAC·TMUS·ADP·FTNT·ORLY·AEP·HONA·ODFL·GEHC(사건⑤) · 목 AMZN·INTC·LIN·GILD·SNDK·SBUX·MDLZ·DASH·MSTR·MPWR·XEL·DXCM·ALNY(사건⑦) · 금 REGN·EXC(개장 전). 월·화는 발표 시각을 확정하지 않았다 — 그날 장 마감 직후 봉이 월 16:00 +0.022%(872위)·16:05 -0.042%, 화 16:00 +0.073%(327위)·16:05 -0.085%(258위)라 사건 크기가 아니다. 수·목은 같은 날 시가총액 1위(마이크로소프트·아마존)의 첫 보도 시각을 bigdata.com 뉴스 검색(시각 필터)으로 확정했다. 확인: 나스닥 실적 달력(api.nasdaq.com, 날짜별 5일) × 지수구성종목.json 나스닥100 102종목.",
+    "news_scan": "1위 10-29 16:00 -1.097% — 아마존 실적(사건⑦)\n2위 10-29 09:30 -0.592% — 정규장 개장 첫 봉. 지침상 사건 아님(전날 알파벳 실적 뒤 매도)\n3위 10-30 09:35 +0.383% — 개장 5분 뒤. 지침상 사건 아님\n4위 10-30 09:30 -0.371% — 정규장 개장 첫 봉. 지침상 사건 아님(같은 시각 바킨 연설은 대체 위원이라 제외)\n5위 10-29 10:45 -0.354% — 원인 못 밝힘. 1분봉 10:46 -0.09% · 10:47 -0.20% · 10:49 -0.06% 로 몇 분에 걸쳤고, 그 시각(14:42~14:51 UTC) 보도를 찾지 못했다\n6위 10-29 09:40 +0.353% — 개장 10분 뒤, 1분봉 09:41~09:44 에 걸쳐 서서히. 지침상 사건 아님\n7위 10-29 09:45 -0.326% — 개장 15분 뒤, 1분봉 09:46~09:49 에 걸쳐 서서히. 원인 못 밝힘\n8위 10-27 09:45 -0.325% — 개장 15분 뒤, 1분봉 09:46 -0.14% · 09:49 -0.21%. 원인 못 밝힘\n9위 10-30 10:35 +0.320% — 원인 못 밝힘. 1분봉 10:38 +0.23% 에 몰렸으나 그 시각(14:33~14:41 UTC) 보도를 찾지 못했다\n10위 10-28 09:45 -0.306% — 개장 15분 뒤, 1분봉 09:48 -0.17%. 원인 못 밝힘\n결론: 상위 10개 중 실적 1개(사건⑦), 개장 직후 4개, 원인 못 밝힘 5개. 주 전체 하락의 배경 보도: 알파벳 실적 뒤 사상 최대 하루 하락(-12.6%, WSJ 인용 이데일리) · 목요일 나스닥 종합 -1.38% · 아마존·인텔 시간외 급락(파이낸셜뉴스 · 연합인포맥스). 훑은 곳 — bigdata.com 뉴스 검색(시각 필터), 야후 1분봉(NQZ26).",
+    "data_crosscheck": "주가: NQZ26.CME 를 QQQ(ETF)와 대조(검사 [1-1]), CNBC 5분봉과 대조(검사 [1-2]). 같은 기간 나스닥100 지수 금 10-23 종가 28,957.5 → 금 10-30 종가 28,384.8. 과거 분포: 1시간봉 2년(검사 [2] 가 다시 센다). 지표 값: 댈러스 13.4 는 WSJ·MSN, 내구재 1.8%·직전 0.1% 는 MT Newswires·Finwire·FXStreet, 금리 동결 3.75~4.00% 는 연합인포맥스·뉴스1·FXStreet, GDP 3.4%·예상 3.2% 는 MT Newswires·Finwire·FXStreet·로이터 설문, 시카고 PMI 55.3·예상 56.1 은 FXStreet·차이롄서·둥팡차이푸. 실적 첫 보도 시각은 사건 news.sources."
+  },
+  "summary": {
+    "scope": "선정 사건",
+    "scope_note": "요약 표의 1~3위는 «고른 사건 8개» 중 순위다.",
+    "ko": "이번 주 고른 사건 8개 중 · 5분봉 전체 순위는 아니다",
+    "en": "The three biggest moves among the eight events picked this week",
+    "rows": [
+      {
+        "tag": "아마존",
+        "pct": -1.097,
+        "week_rank": 1
+      },
+      {
+        "tag": "MS",
+        "pct": 0.167,
+        "week_rank": 62
+      },
+      {
+        "tag": "GDP",
+        "pct": -0.121,
+        "week_rank": 135
+      }
+    ]
+  },
+  "copy": {
+    "_주": "화면(screen)과 자막(srt) 문구를 한곳에 둔다 — 지침 2-3. {WEEK}{N}{EVN}{TOPPCT}{ANS}{ANSN} 는 렌더러·자막 생성기가 계산해 채운다. «-1.1%» 는 question.dist.median(검사 [2] 가 1시간봉으로 다시 센다).",
+    "names": {
+      "댈러스": "댈러스 연은 제조업지수",
+      "내구재": "내구재 주문",
+      "금리결정": "기준금리 결정",
+      "기자회견": "워시 의장 기자회견",
+      "MS": "마이크로소프트·알파벳 실적",
+      "GDP": "3분기 GDP 성장률",
+      "아마존": "아마존 실적",
+      "시카고": "시카고 PMI"
+    },
+    "screen": {
+      "q1": "주간 고점은 수요일 실적 발표 직후.",
+      "q2": "그 고점에 샀다면 금요일엔 몇 %?",
+      "enHook": "The high came right after earnings. Bought it? Where were you Friday?",
+      "ansName": "주간 고점에 샀다면",
+      "ansBig": "{ANS}",
+      "ansColor": "down",
+      "ansSub1": "지난 2년 중앙값은 -1.1%",
+      "ansSub2": "알파벳·아마존 실적 뒤로 밀렸다",
+      "enAnswer": "{ANS} from the weekly high by Friday",
+      "answerMark": "none",
+      "summ1": "고점도, 가장 큰 5분 하락도 실적 직후.",
+      "summ2": "사건 중엔 아마존 실적이 가장 컸다.",
+      "rowsScope": "이번 주 고른 사건 {EVN}개 중 · 5분봉 전체 순위는 아니다",
+      "enSumm": "The three biggest moves among the eight events picked this week",
+      "loopLabel": "주간 고점에 샀다면",
+      "loopBig": "{ANS}",
+      "loopTail": "한 주 결과는 {WEEK}",
+      "loopColor": "down",
+      "kicker": "지난주 나스닥 · 월 프리장 ~ 금 마감",
+      "span": "월요일 프리장 → 금요일 마감"
+    },
+    "srt": {
+      "ko": {
+        "hook": [
+          "지난주 나스닥, 월요일 프리장 ~ 금요일 마감 · 결과는 {WEEK}",
+          "주간 고점은 수요일 실적 발표 직후 · 그 고점에 샀다면 금요일엔 몇 %였을까요?"
+        ],
+        "answer": [
+          "주간 고점에 샀다면 금요일 마감엔 {ANS}",
+          "지난 2년 중앙값은 -1.1% · 알파벳·아마존 실적 뒤로 밀렸다"
+        ],
+        "summ": [
+          "고점도, 가장 큰 5분 하락도 실적 발표 직후였다 · 고른 사건 중엔 아마존 실적이 가장 컸다({TOPPCT})",
+          "몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다"
+        ]
+      },
+      "en": {
+        "hook": [
+          "Nasdaq 100 futures, Monday pre-market to Friday close · the week ended {WEEK}",
+          "The high came right after earnings. Bought it? Where were you Friday?"
+        ],
+        "answer": [
+          "{ANS} from the weekly high by Friday's close",
+          "Two-year median: -1.1% · it slid after Alphabet and Amazon reported"
+        ],
+        "summ": [
+          "High and sharpest drop both came after earnings · Amazon {TOPPCT}",
+          "Which one did you pick? We will replay next week too"
+        ]
+      }
+    }
+  },
+  "publish": {
+    "live": {
+      "commit": "7b1d398c6ed16dd14d64ec57107ec586abb6e267",
+      "at": "2026-10-31T08:03:31.581Z"
+    },
+    "youtube": {
+      "video_id": "o3YsBEIM1yA",
+      "url": "https://www.youtube.com/watch?v=o3YsBEIM1yA",
+      "at": "2026-10-31T08:03:38.717Z",
+      "captions": {
+        "ko": "ok",
+        "en": "ok"
+      },
+      "pinned_comment": {
+        "id": "UgyQGR-iDjVue-5NTRt4AaABAg",
+        "pinned": false
+      }
+    },
+    "instagram": {
+      "media_id": "18639765307034712",
+      "permalink": "https://www.instagram.com/reel/DfJs3thlK76/",
+      "at": "2026-10-31T08:13:52.302Z"
+    },
+    "published_at": "2026-10-31T17:13:53+09:00"
+  }
+}

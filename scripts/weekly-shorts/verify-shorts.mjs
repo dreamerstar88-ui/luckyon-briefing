@@ -140,9 +140,16 @@ try {
   else bad('첫 봉 시각', `CNBC ${CB[0].d}`, `야후 ${BARS[0].d}`);
   const onlyC = CB.filter((b) => !Y.has(b.d));
   onlyC.length ? warn('야후에 없는 봉', `${onlyC.length}개 — ${onlyC.map((b) => b.d).join(', ')}`) : ok('야후에 없는 봉', '없음');
-  const both = CB.filter((b) => Y.has(b.d));
+  // 야후가 다음 봉을 통째로 빠뜨린 자리는 그 앞 봉의 종가도 몇 분 일찍 끊겨 있다(8회차 금 14:50 봉 — 14:55 봉이
+  // 없고 14:50 종가가 1분봉 14:53 값이었다, CNBC 와 31.5포인트 차이). 그런 봉은 따로 보이고 기준에서 뺀다.
+  // 빠진 봉 자체는 위 «야후에 없는 봉» 에 나오고, 정답은 아래에서 CNBC 봉으로 다시 센다.
+  const plus5 = (d) => new Date(Date.parse(d.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
+  const cset = new Set(CB.map((b) => b.d));
+  const cut = new Set(CB.filter((b) => Y.has(b.d) && cset.has(plus5(b.d)) && !Y.has(plus5(b.d))).map((b) => b.d));
+  const both = CB.filter((b) => Y.has(b.d) && !cut.has(b.d));
   const same = both.filter((b) => b.c === Y.get(b.d).c).length;
   const maxd = Math.max(0, ...both.map((b) => Math.abs(b.c - Y.get(b.d).c)));
+  if (cut.size) warn('다음 봉이 빠져 잘렸을 수 있는 야후 봉', [...cut].map((d) => `${d} 차이 ${Math.abs(CB.find((b) => b.d === d).c - Y.get(d).c)}포인트`).join(', ') + ' — 종가 대조에서 뺐다');
   maxd <= 25 ? ok('종가 대조', `${both.length}봉 중 ${same}봉 같음 · 최대 차이 ${maxd}포인트`)
              : bad('종가 대조', `최대 차이 ${maxd}포인트`, '25포인트 이하(넘으면 월물이 다른지 본다)');
   if (M.question) {
@@ -702,7 +709,12 @@ if (srtDir) {
   // 사건 하나가 화면에 머무는 시간이 너무 짧으면 두 줄을 못 읽는다
   const shown = holds.map((h, k) => (k < holds.length - 1 ? holds[k + 1] : S.replay[1]) - h);
   const minShown = Math.min(...shown);
+  // 8회차: 대표가 «사건마다 같은 정지 시간» 을 골랐고(2026-10-31), 붙은 사건은 2.4초를 못 채운다는 걸 알고 정했다.
+  // 그런 회차는 매니페스트 video.min_shown_exception 에 결정과 실제 최소값을 적어야 경고로 넘어간다.
+  const EX = M.video.min_shown_exception;
   if (minShown >= 2.4) ok('사건 노출 최소', `${minShown.toFixed(2)}초`);
+  else if (M.video.hold_mode === 'equal' && EX?.reason && Math.abs(EX.value - minShown) <= 0.02)
+    warn('사건 노출 최소', `${minShown.toFixed(2)}초 — 기준 2.4초 미달, 대표 결정: ${EX.reason}`);
   else bad('사건 노출 최소', `${minShown.toFixed(2)}초`, '2.4초 이상');
   const want = [S.hook[0], S.hook[1], ...holds.slice(1), S.answer[0], S.summ[0], S.summ[1]];
   for (const f of fs.readdirSync(srtDir).filter((f) => f.endsWith('.srt'))) {

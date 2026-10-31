@@ -17,6 +17,8 @@ let BARS=[],EVENTS=[],DAYS=[],BGC=null,LO=0,HI=1,SCHED=[],STATS={};
 // 예전에는 '5분봉 1,179개', 'Peak 29,571 …' 처럼 1회차 값이 코드에 박혀 있어
 // 회차가 바뀌어도 그대로 남았다.
 let COPY={},QUIZ={opts:[],ans:2};
+// 매니페스트 video.hold_mode='equal' 이면 사건마다 같은 정지 시간(video.holds)을 받는다(8회차, 대표 결정).
+let FIXED_HOLDS=null;
 // 요일은 날짜에서 직접 뽑는다. 예전에는 ['월'..'금'] 을 순서로 꺼내 써서
 // 휴장일이 낀 주에 요일이 하루씩 밀렸다(2회차 9/7 노동절).
 const WD='일월화수목금토';
@@ -70,7 +72,10 @@ function buildSchedule(){
   // 쪽에서 비례해 깎았는데, 그러면 붙어 있는 사건이 계속 얇아졌다. 이제는 "물채우기" 로
   // 낮은 곳부터 채운다 — 머무는 시간이 가장 짧은 사건을 끌어올리는 방향이다.
   // 2회차 6개에서 최소 노출 2.83->2.89초, 3회차 7개에서 2.47->2.62초. 최대 노출은 그대로.
-  const budget=9.0, drawT=total-budget;
+  //
+  // 8회차(사건 8개)는 대표 결정으로 사건마다 같은 정지 시간을 준다(«각 사건 마다 멈춤 시간을 동일하게»,
+  // 1.275초 × 8 = 10.2초). 그때는 예산이 정지 시간의 합이 되고 물채우기를 하지 않는다.
+  const budget=FIXED_HOLDS?FIXED_HOLDS.reduce((a,b)=>a+b,0):9.0, drawT=total-budget;
   const gap=EVENTS.map((e,k)=>((k<EVENTS.length-1?EVENTS[k+1].i:N1)-e.i)/N1*drawT);
   // holds[k]=max(MINHOLD, L-gap[k]) 의 합이 예산과 같아지는 수위 L 을 이분 탐색으로 찾는다
   let lo=MINHOLD, hi=budget+Math.max(...gap)+1;
@@ -78,7 +83,7 @@ function buildSchedule(){
     const L=(lo+hi)/2;
     if(gap.reduce((a,g)=>a+Math.max(MINHOLD,L-g),0)>budget) hi=L; else lo=L;
   }
-  const L=(lo+hi)/2, holds=gap.map(g=>Math.max(MINHOLD,L-g));
+  const L=(lo+hi)/2, holds=FIXED_HOLDS?FIXED_HOLDS.slice():gap.map(g=>Math.max(MINHOLD,L-g));
   const segs=[];let prev=0,t=0;
   EVENTS.forEach((ev,k)=>{
     const d=(ev.i-prev)/(BARS.length-1)*drawT;

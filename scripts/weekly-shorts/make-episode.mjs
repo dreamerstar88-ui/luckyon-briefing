@@ -75,7 +75,16 @@ const srt = fs.readFileSync(at(fs.readdirSync(at(DIR)).filter((f) => f.endsWith(
 const ends = [...srt.matchAll(/--> (\d\d):(\d\d):(\d\d),(\d\d\d)/g)].map((m) => +m[1] * 3600 + +m[2] * 60 + +m[3] + +m[4] / 1000);
 // 마지막 자막(요약) 구간은 끝 0.6초 전이면 루프 카드로 넘어가는 중이라 요약 글이 안 보인다(5회차에서 발견).
 // 그 자리는 요약 글이 다 뜬 시각(요약 시작 + 1.2초)으로 바꾸고, 루프 카드(끝 0.05초 전)를 한 장 더 넣는다.
-const times = [0, ...ends.map((e, i) => (i === ends.length - 1 ? S.summ[0] + 1.2 : Math.min(e - 0.6, DUR - 0.05))), DUR - 0.05];
+// 사건 장면은 «멈춘 뒤 0.8초» 를 찍는다(8회차). 사건 문구는 멈춰 있는 동안만 크고 밝고(0.3초에 걸쳐 뜬다),
+// 다음 사건까지 선을 그리는 동안은 작고 흐리게 남는다. 자막 끝 0.6초 전은 그 흐린 구간이라,
+// 멈춤이 1.275초로 짧아진 8회차에서 사건 8개 중 6개가 흐리게 찍혔다. 멈춘 시각은 자막 생성기와 같은 산술로 잰다.
+const B5 = JSON.parse(fs.readFileSync(at(`data/weekly-shorts/${STAMP}.5m.json`), 'utf8')).filter((b) => M.window.from_et <= b.d && b.d <= M.window.to_et);
+const HS = M.video.holds || M.events.map(() => M.video.hold);
+const drawT5 = (S.replay[1] - S.replay[0]) - HS.reduce((a, b) => a + b, 0);
+let tt = 0, pv = 0;
+const holdAt = M.events.map((e, k) => { const i = B5.findIndex((b) => b.d === e.et); tt += (i - pv) / (B5.length - 1) * drawT5; const h0 = S.replay[0] + tt; tt += HS[k]; pv = i; return h0 + Math.min(HS[k] - 0.1, 0.8); });
+const NE = M.events.length;
+const times = [0, ...ends.map((e, i) => (i === ends.length - 1 ? S.summ[0] + 1.2 : (i >= 1 && i <= NE) ? holdAt[i - 1] : Math.min(e - 0.6, DUR - 0.05))), DUR - 0.05];
 const sel = times.map((t) => `eq(n\\,${Math.round(t * 30)})`).join('+');
 const cols = 6, rows = Math.ceil(times.length / cols);
 const SHEET = `${OUT}/장면표본.png`;

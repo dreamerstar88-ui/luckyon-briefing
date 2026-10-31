@@ -117,7 +117,7 @@ canvas{display:block}</style></head><body>
 <canvas id="c" width="1080" height="1920"></canvas>
 <img id="p" src="${photo}" style="display:none">
 <script>${scene}
-window.__init=function(data){BARS=data.bars;EVENTS=data.events;DAYS=data.days;STATS=data.stats;COPY=data.copy;QUIZ=data.quiz;
+window.__init=function(data){BARS=data.bars;EVENTS=data.events;DAYS=data.days;STATS=data.stats;COPY=data.copy;QUIZ=data.quiz;FIXED_HOLDS=data.fixedHolds||null;
  LO=data.lo;HI=data.hi;buildSchedule();buildBg(document.getElementById('p'));return SCHED.length;};
 window.__draw=function(t){draw(t);};
 </script></body></html>`;
@@ -143,7 +143,8 @@ if(fontOK.faces.some(s=>!s.endsWith('/loaded'))||fontOK.same.length)
 console.log('글꼴:',fontOK.faces.join(' · '));
 await page.evaluate(()=>document.fonts.ready);
 await page.evaluate(()=>new Promise(r=>{const i=document.getElementById('p');i.complete?r():i.onload=r;}));
-const nseg=await page.evaluate(d=>window.__init(d),{bars:BARS,events:EVENTS,days:DAYS,stats:STATS,lo:lo-pad,hi:hi+pad,copy:COPY,quiz:QUIZ});
+const nseg=await page.evaluate(d=>window.__init(d),{bars:BARS,events:EVENTS,days:DAYS,stats:STATS,lo:lo-pad,hi:hi+pad,copy:COPY,quiz:QUIZ,
+  fixedHolds:M.video.hold_mode==='equal'?M.video.holds:null});
 // 정지 시간은 브라우저(scene.js)가 계산한다. 자막은 매니페스트의 값을 쓰므로 둘이 같아야 한다.
 const sh=await page.evaluate(()=>SCHED.filter(s=>s.hold).map(s=>+(s.t1-s.t0).toFixed(3)));
 if(sh.length!==M.video.holds.length||sh.some((h,k)=>Math.abs(h-M.video.holds[k])>0.002))

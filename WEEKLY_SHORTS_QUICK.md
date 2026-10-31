@@ -35,6 +35,13 @@ node scripts/weekly-shorts/render/parse-calendar.mjs --html=content/weekly-short
 - 질문이 바뀌어도 렌더러·자막이 질문 은행으로 답을 다시 잰다. 문구 자리표시 `{ANS}`(단위 붙은 답) · `{ANSN}`(숫자만) · `{DAYS}`(정규장 날 수)를 쓴다(5회차부터).
 - 뉴스 사건은 `"kind": "news"` 와 `news.first_report_et` · `news.sources`(이름·utc·url, 두 곳 이상)를 적는다. 검사가 최초 보도 시각이 그 5분봉 안인지, 15분 안에 받쳐 주는 다른 보도가 있는지 본다. 5회차 예시 참고.
 - 보도 시각은 bigdata.com 뉴스 검색(시각 필터)과 Newsquawk 속보 기록으로 잡고, 야후 1분봉으로 몇 분에 움직였는지 맞춘다.
+- 기업 실적도 같은 `kind: "news"` 형식으로 넣는다(8회차). 같은 5분봉에 여럿이면 시가총액이 큰 회사를 대표로(나스닥 실적 달력 `marketCap`).
+  첫 보도는 bigdata.com 빠른 검색(제목 키워드 + 시각 필터)에서 RavenPack·벤징가·더플라이 속보가 1~3분 안에 잡힌다.
+- 예상값이 집계처마다 갈려 «예상보다 높았다/낮았다» 가 뒤집히면 직전값(`compare_field: previous`)으로 쓴다(8회차 내구재 1.5% 대 1.9%).
+- 사건이 많아 붙으면 문구가 짧게 보인다. 기본은 물채우기(가까운 사건에 멈춤을 더 준다, 합계 9.0초).
+  대표가 «사건마다 같은 멈춤» 을 고르면 `video.hold_mode: "equal"` · `video.hold`(= 합계 ÷ 사건 수) · `video.holds`(같은 값 N개)를 쓰고,
+  노출 2.4초 미달은 `video.min_shown_exception`(값·대표 결정)에 적어야 경고로 넘어간다(8회차: 8개 × 1.275초, 최소 1.34초).
+- 회차 폴더의 `render.mjs`·`scene.js`·`srt2.mjs` 는 «없을 때만» 복사된다. 틀을 고친 뒤 다시 만들 때는 그 셋을 지우고 돌린다.
 
 **3. 만들기 (약 70초)** — 렌더 → 영상·음악·표지 → 자막 → 기계 검사 → 장면표본 한 장 → 올릴 파일 모으기
 
@@ -54,6 +61,8 @@ node scripts/weekly-shorts/publish-episode.mjs --stamp=2026-09-28 --ep=5 --confi
 ```
 
 공개 주소용 브랜치(파일 5개) → 유튜브(영상·자막) → 인스타 → 고정 댓글. 고정은 스튜디오에서 한 번 누른다.
+공개 주소 반영을 최대 15분 기다리므로 **이 단계에서 `long-running-work` 스킬을 부르고**, 백그라운드로 돌리며 단계 줄(`·`)과 오류만 감시한다
+(`... --confirm 2>&1 | tee out/ep<N>/publish.log | grep --line-buffered -E "^·|✖|오류|Error|완료|https"`).
 `--confirm` 없이 돌리면 무엇을 올릴지 보여 주기만 한다.
 
 ## 하지 않는 것
