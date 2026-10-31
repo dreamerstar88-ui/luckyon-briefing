@@ -1,5 +1,5 @@
 {
-  "probed_at": "2026-10-23T23:39:40.214Z",
+  "probed_at": "2026-10-31T00:14:43.874Z",
   "runner": "github-actions",
   "note": "탐침 결과. 값의 정확성은 검증하지 않았다 — 접근 가능 여부와 원본 조각만 기록한다.",
   "reachable": [
@@ -7,6 +7,7 @@
     "ishares-ivv-product-page",
     "nasdaq-ndx-overview",
     "wsj-pe-yields",
+    "krx-index-per",
     "multpl-sp500-pe"
   ],
   "results": [
@@ -22,7 +23,7 @@
       "totalBytes": 2011,
       "bytes": 2010,
       "contentType": "text/html",
-      "ms": 406
+      "ms": 128
     },
     {
       "id": "ishares-ivv-fund-json",
@@ -33,11 +34,11 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 2313749,
-      "bytes": 2311655,
+      "totalBytes": 2314548,
+      "bytes": 2312454,
       "contentType": "application/json;charset=UTF-8",
       "jsonParseError": true,
-      "ms": 819
+      "ms": 965
     },
     {
       "id": "ishares-ivv-product-page",
@@ -48,12 +49,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 2995906,
-      "bytes": 2993836,
+      "totalBytes": 2997015,
+      "bytes": 2994945,
       "contentType": "text/html;charset=UTF-8",
       "keywordFound": true,
       "snippet": "OptanonWrapper = function() {",
-      "ms": 589
+      "ms": 342
     },
     {
       "id": "invesco-qqq-holdings-csv",
@@ -67,7 +68,7 @@
       "totalBytes": 0,
       "bytes": 0,
       "contentType": "",
-      "ms": 95
+      "ms": 116
     },
     {
       "id": "nasdaq-ndx-overview",
@@ -78,12 +79,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 303753,
-      "bytes": 303722,
+      "totalBytes": 303849,
+      "bytes": 303822,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "nav id=\"headerWrapper\" class=\"flex items-center justify-between flex-wrap xl:flex-no-wrap shadow px-0",
-      "ms": 853
+      "ms": 268
     },
     {
       "id": "ssga-dia-fund-json",
@@ -97,7 +98,7 @@
       "totalBytes": 132,
       "bytes": 132,
       "contentType": "application/json;charset=utf-8",
-      "ms": 302
+      "ms": 314
     },
     {
       "id": "wsj-pe-yields",
@@ -108,12 +109,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 752941,
-      "bytes": 752654,
+      "totalBytes": 752957,
+      "bytes": 752670,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "meta name=\"description\" content=\"P/E data based on as-reported earnings; estimate data based on operating earnings.\"",
-      "ms": 266
+      "ms": 392
     },
     {
       "id": "krx-index-per",
@@ -122,12 +123,14 @@
       "desc": "KRX 정보데이터시스템 — 지수 PER/PBR/배당수익률 (MDCSTAT00701)",
       "url": "http://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd",
       "method": "POST",
-      "status": 400,
-      "ok": false,
-      "totalBytes": 6,
-      "bytes": 6,
-      "contentType": "text/html; charset=utf-8",
-      "ms": 650
+      "status": 200,
+      "ok": true,
+      "finalUrl": "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd",
+      "totalBytes": 987295,
+      "bytes": 987125,
+      "contentType": "text/html",
+      "snippet": "gVpa4/uZtLOoF/vRHP0F/Yx1dwbFQ16hZiZwVaBcVLqxsl1eubJVv3UL74Mlp/eTotJkt1Nwuct8mEOEmIDzByEgiIt38Mi+MlmzWiO2gCeKstGSsBnFWZ9L7VZlvXZ+A3l3eAm9ZsBHIPz",
+      "ms": 418
     },
     {
       "id": "multpl-sp500-pe",
@@ -138,12 +141,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 80917,
-      "bytes": 80917,
+      "totalBytes": 80916,
+      "bytes": 80916,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "acing:2px}.see-also h3{padding-bottom:10px;text-transform:uppercase}.see-also li:last-child a{border-bottom:1px solid;border-color:var(--hr_col",
-      "ms": 113
+      "ms": 32
     },
     {
       "id": "yahoo-quotesummary-spy",
@@ -157,7 +160,7 @@
       "totalBytes": 19,
       "bytes": 19,
       "contentType": "text/html",
-      "ms": 114
+      "ms": 41
     }
   ]
 }
