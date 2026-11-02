@@ -1,0 +1,668 @@
+{
+ "date": "2026-11-03",
+ "session": "am",
+ "dateLabel_ko": "2026.11.03(화) 아침",
+ "dateLabel_en": "Tue, Nov 3, 2026 · AM",
+ "headline_ko": "나스닥 3일 연속 하락, 오라클·마벨 악재에 반도체 직격",
+ "headline_sub_ko": "마벨 −12.7% · 오라클 −8.8% · WTI −7.5% · 공포탐욕 23",
+ "headline_en": "Nasdaq Falls a Third Day as Oracle, Marvell Hit Chips",
+ "headline_sub_en": "Marvell -12.7%, Oracle -8.8%, WTI -7.5%, Fear & Greed 23",
+ "cover_photo": "semiconductor.jpg",
+ "cover_kicker": {
+  "ko": "간밤 미국장 · 11/2 마감",
+  "en": "US Overnight · Nov 2 Close"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "나스닥 −1.07% · S&P 500 −0.51%",
+    "en": "Nasdaq -1.07% · S&P 500 -0.51%"
+   },
+   {
+    "ko": "25,164.32 / 7,541.40 · 두 지수 모두 3거래일 연속 하락",
+    "en": "25,164.32 / 7,541.40 · both fell a third straight session"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "마벨 −12.7% · 오라클 −8.8%",
+    "en": "Marvell -12.7% · Oracle -8.8%"
+   },
+   {
+    "ko": "루멘텀 인수 발표 · 200억달러 조달 · 반도체 ETF −2.7%",
+    "en": "Lumentum deal · $20B raise · semis ETF -2.7%"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "WTI −7.5% · 금 +1.5%",
+    "en": "WTI -7.5% · Gold +1.5%"
+   },
+   {
+    "ko": "96.26달러 / 3,956.60달러 · 미-이란 대화 기대",
+    "en": "$96.26 / $3,956.60 · US-Iran talks hopes"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "나스닥은 272.68포인트(1.07%) 내린 25,164.32, S&P 500은 0.51% 내린 7,541.40에 마감해 두 지수 모두 3거래일 연속 하락했다. 나스닥은 10/28 종가보다 5.2% 낮다. 다우는 0.41% 올랐다.",
+   "오라클이 보통주 100억·선순위채 100억 달러 등 200억달러 조달 계획을 내자 주가가 8.76% 내렸다. 마벨은 루멘텀 인수 발표 뒤 12.72% 내렸고 루멘텀은 18.59% 내렸다.",
+   "업종 ETF 11개 중 8개가 올랐다. 기술(XLK −2.95%)·에너지(XLE −3.96%)·헬스케어(XLV −0.15%)만 내렸다.",
+   "WTI 12월물은 7.55% 내린 96.26달러. 트럼프가 이란이 합의를 원한다고 말하고 이란 대통령이 대화로 풀겠다고 밝힌 영향이다. 공포탐욕지수는 26에서 23으로 내려 극단적 공포 구간에 들어섰다."
+  ],
+  "lines_en": [
+   "The Nasdaq fell 272.68 pts (1.07%) to 25,164.32 and the S&P 500 fell 0.51% to 7,541.40, both down a third straight session. The Nasdaq is 5.2% below its Oct 28 close. The Dow rose 0.41%.",
+   "Oracle fell 8.76% after outlining a $20B raise ($10B in common stock, $10B in senior notes). Marvell fell 12.72% after announcing its Lumentum acquisition, and Lumentum fell 18.59%.",
+   "Eight of 11 sector ETFs rose. Only tech (XLK -2.95%), energy (XLE -3.96%) and health care (XLV -0.15%) fell.",
+   "WTI (December) fell 7.55% to $96.26 after Trump said Iran wants a deal and Iran's president said Tehran would pursue dialogue. The Fear & Greed index slipped from 26 to 23, entering Extreme Fear."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "25,164.32",
+   "delta": "▼1.07%",
+   "dir": "down",
+   "note_ko": "25,437.00에서 하락 · 10/28 대비 −5.2%",
+   "note_en": "From 25,437.00 · -5.2% from Oct 28"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,541.40",
+   "delta": "▼0.51%",
+   "dir": "down",
+   "note_ko": "7,580.07에서 하락 · 11개 업종 중 8개 상승",
+   "note_en": "From 7,580.07 · 8 of 11 sectors rose"
+  },
+  {
+   "label": "KOSPI",
+   "value": "5,859.08",
+   "delta": "▲2.24%",
+   "dir": "up",
+   "note_ko": "11/2 종가 · 오늘 09:00 개장",
+   "note_en": "Nov 2 close · reopens 9:00 AM"
+  },
+  {
+   "label": "VIX",
+   "value": "21.15",
+   "delta": "▲8.91%",
+   "dir": "up",
+   "note_ko": "19.42에서 상승 · 최근 10거래일 최고",
+   "note_en": "From 19.42 · highest in 10 sessions"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "23",
+   "value_sub": {
+    "ko": "· 극단적 공포",
+    "en": "· Extreme Fear"
+   },
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "26 → 23 · 극단적 공포(0~24) 진입 · 1주 전 30",
+   "note_en": "26 → 23 · enters Extreme Fear (0-24) · 30 a week ago"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.94% → 4.91%",
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "10/30 → 11/2 종가 · 3거래일 연속 하락",
+   "note_en": "Oct 30 → Nov 2 close · 3rd straight drop"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,345",
+   "value_sub": "· DXY 101.8",
+   "delta": "▲0.51%",
+   "dir": "up",
+   "note_ko": "1,338에서 상승 · 최근 10거래일 최고",
+   "note_en": "From 1,338 · highest in 10 sessions"
+  },
+  {
+   "label": "Gold",
+   "value": "3,957",
+   "delta": "▲1.48%",
+   "dir": "up",
+   "note_ko": "3,898.90에서 상승 · 선물",
+   "note_en": "From 3,898.90 · futures"
+  },
+  {
+   "label": "WTI",
+   "value": "96.26",
+   "delta": "▼7.55%",
+   "dir": "down",
+   "note_ko": "12월물 기준 · 104.12에서 하락",
+   "note_en": "December contract · from 104.12"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "76,729",
+   "delta": "▼1.94%",
+   "dir": "down",
+   "note_ko": "11/1 종가 78,248 대비",
+   "note_en": "vs Nov 1 close of 78,248"
+  }
+ ],
+ "market_note_ko": "S&P 500·나스닥은 11/2 미국장 마감 종가 · 코스피는 11/2 정규장 종가 · 미 10년물은 11/2 종가",
+ "market_note_en": "S&P 500 and Nasdaq are Nov 2 US closes · KOSPI is the Nov 2 regular-session close · 10Y is the Nov 2 close",
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "10/28 종가 대비 −5.2% · 최근 9거래일",
+  "en": "-5.2% from Oct 28 close · last 9 sessions"
+ },
+ "chart_series_values": [
+  26702.86,
+  26008.86,
+  25955.34,
+  26169.38,
+  26477.81,
+  26549.85,
+  26184.72,
+  25437.0,
+  25164.32
+ ],
+ "chart_series_labels": [
+  "10.21",
+  "10.22",
+  "10.23",
+  "10.26",
+  "10.27",
+  "10.28",
+  "10.29",
+  "10.30",
+  "11.02"
+ ],
+ "chart_title": {
+  "ko": "사흘 만에 5.2% 반납",
+  "en": "Three Sessions, 5.2% Gone"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.28 종가 26,549.85 → 10.30 25,437.00 → 11.02 25,164.32",
+  "en": "Oct 28 close 26,549.85 → Oct 30 25,437.00 → Nov 2 25,164.32"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "TODAY",
+ "sector_title": {
+  "ko": "기술·에너지만 내리고 8개 업종 상승",
+  "en": "Only Tech and Energy Fell; 8 Sectors Rose"
+ },
+ "sector_sub": {
+  "ko": "미국 업종 ETF · 11/2 등락률",
+  "en": "US sector ETFs · Nov 2 change"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "미국 거래대금(가격×거래량) 상위 · 막대 옆은 등락률",
+  "en": "US turnover (price × volume) · % beside bars is the day's change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · USD billion"
+ },
+ "econ_kicker": "EARNINGS · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/2 미국 발표분 · 실측 · 예상",
+  "en": "US releases Nov 2 · actual vs. estimate"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "나스닥",
+     "label_en": "Nasdaq",
+     "value": "25,164.32",
+     "delta": "▼1.07%",
+     "dir": "down",
+     "sub_ko": "272.68포인트 하락 · 10/28 종가 대비 −5.2%",
+     "sub_en": "Down 272.68 pts · -5.2% from the Oct 28 close"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,541.40",
+     "delta": "▼0.51%",
+     "dir": "down",
+     "sub_ko": "38.67포인트 하락 · 10/28 종가 대비 −2.6%",
+     "sub_en": "Down 38.67 pts · -2.6% from the Oct 28 close"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "거래대금 상위 300종목",
+     "label_en": "Top 300 by turnover",
+     "up": 155,
+     "flat": 0,
+     "down": 145
+    }
+   ],
+   "note_ko": "상승 종목은 155개로 하락(145개)보다 많았지만 하락 종목에 거래대금이 몰렸다(상승 종목 비중 30.2%). 상승·하락 종목은 거래대금 상위 300종목 표본 기준. 미국은 투자자별 순매수를 공표하지 않는다.",
+   "note_en": "Advancers (155) outnumbered decliners (145), but turnover leaned to the losers (advancers took 30.2%). Counts cover the top-300-by-turnover sample. The US does not publish net buying by investor type."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#e66767",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "경기소비재",
+     "label_en": "Discret.",
+     "value": 2.41
+    },
+    {
+     "label_ko": "금융",
+     "label_en": "Financials",
+     "value": 1.86
+    },
+    {
+     "label_ko": "소재",
+     "label_en": "Materials",
+     "value": 1.76
+    },
+    {
+     "label_ko": "필수소비재",
+     "label_en": "Staples",
+     "value": 1.58
+    },
+    {
+     "label_ko": "산업재",
+     "label_en": "Industrials",
+     "value": 1.38
+    },
+    {
+     "label_ko": "부동산",
+     "label_en": "Real Estate",
+     "value": 1.09
+    },
+    {
+     "label_ko": "유틸리티",
+     "label_en": "Utilities",
+     "value": 0.55
+    },
+    {
+     "label_ko": "통신",
+     "label_en": "Comm.",
+     "value": 0.36
+    },
+    {
+     "label_ko": "헬스케어",
+     "label_en": "Healthcare",
+     "value": -0.15
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": -2.71
+    },
+    {
+     "label_ko": "기술",
+     "label_en": "Tech",
+     "value": -2.95
+    },
+    {
+     "label_ko": "에너지",
+     "label_en": "Energy",
+     "value": -3.96
+    }
+   ],
+   "note_ko": "업종 ETF 기준(XLY·XLF·XLB·XLP·XLI·XLRE·XLU·XLC·XLV·XLK·XLE, 반도체는 SMH). 유가가 7%대 내리자 에너지가 가장 크게 내렸고, 유가 하락 수혜 업종은 올랐다.",
+   "note_en": "Sector ETFs (XLY, XLF, XLB, XLP, XLI, XLRE, XLU, XLC, XLV, XLK, XLE; SMH for semis). Energy fell most as oil dropped over 7%, while oil-sensitive consumers and industrials rose."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "color": "#e66767",
+   "type": "rank",
+   "col_name_ko": "종목",
+   "col_name_en": "Stock",
+   "col_value_ko": "거래대금",
+   "col_value_en": "Turnover",
+   "rows": [
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$24.4B",
+     "pct": -5.78
+    },
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$23.7B",
+     "pct": -1.26
+    },
+    {
+     "name_ko": "애플",
+     "name_en": "Apple",
+     "value": "$19.7B",
+     "pct": -1.83
+    },
+    {
+     "name_ko": "마이크로소프트",
+     "name_en": "Microsoft",
+     "value": "$17.2B",
+     "pct": -2.83
+    },
+    {
+     "name_ko": "테슬라",
+     "name_en": "Tesla",
+     "value": "$17.2B",
+     "pct": 1.0
+    }
+   ],
+   "share": {
+    "label_ko": "거래대금 상위 300종목 합계(약 $439B) 중 비중",
+    "label_en": "Share of top-300 turnover (about $439B)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 23.3,
+      "color": "#e66767"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Rest",
+      "pct": 76.7,
+      "color": "#4a4a4a"
+     }
+    ]
+   },
+   "note_ko": "가격×거래량 추정치. 상위 5종목 중 테슬라만 올랐고 나머지 4개는 내렸다. 마이크론이 엔비디아를 제치고 1위.",
+   "note_en": "Estimated as price × volume. Only Tesla rose among the top five. Micron ranked first, ahead of Nvidia."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#e66767",
+   "type": "stats",
+   "stats": [
+    {
+     "label_ko": "미국 10월 ISM 제조업 PMI",
+     "label_en": "US Oct ISM Manufacturing PMI",
+     "value": "55.5",
+     "delta": {
+      "ko": "예상 54.6 상회",
+      "en": "Above 54.6 est."
+     },
+     "dir": "up",
+     "sub_ko": "이전 54.5 · 11/3 00:00 발표",
+     "sub_en": "Prior 54.5 · released 12:00 AM KST"
+    },
+    {
+     "label_ko": "ISM 제조업 지불가격",
+     "label_en": "ISM Mfg Prices Paid",
+     "value": "75.2",
+     "delta": {
+      "ko": "예상 77.0 하회",
+      "en": "Below 77.0 est."
+     },
+     "dir": "down",
+     "sub_ko": "이전 77.9 · 11/3 00:00 발표",
+     "sub_en": "Prior 77.9 · released 12:00 AM KST",
+     "ref_ko": "50 위 = 가격이 올랐다는 응답이 우세",
+     "ref_en": "Above 50 = more firms report higher prices"
+    },
+    {
+     "label_ko": "미국 10월 제조업 PMI (S&P)",
+     "label_en": "US Oct Mfg PMI (S&P Global)",
+     "value": "54.9",
+     "delta": {
+      "ko": "예상 56.0 하회",
+      "en": "Below 56.0 est."
+     },
+     "dir": "down",
+     "sub_ko": "이전 55.9 · 속보치 56.0 · 11/2 23:45",
+     "sub_en": "Prior 55.9 · flash 56.0 · 11:45 PM KST"
+    },
+    {
+     "label_ko": "애플 회계4분기 EPS",
+     "label_en": "Apple FQ4 EPS",
+     "value": "$2.05",
+     "delta": {
+      "ko": "예상 $1.99 상회",
+      "en": "Above $1.99 est."
+     },
+     "dir": "up",
+     "sub_ko": "매출 $114.5B (예상 $113.4B) · 장 마감 후",
+     "sub_en": "Rev. $114.5B (est. $113.4B) · after close"
+    },
+    {
+     "label_ko": "팔란티어 3분기 조정 EPS",
+     "label_en": "Palantir Q3 adj. EPS",
+     "value": "$0.44",
+     "delta": {
+      "ko": "예상 $0.41 상회",
+      "en": "Above $0.41 est."
+     },
+     "dir": "up",
+     "sub_ko": "매출 $23.1억 (예상 $21.8억) · 장 마감 후",
+     "sub_en": "Rev. $2.31B (est. $2.18B) · after close"
+    },
+    {
+     "label_ko": "로쿠 3분기 조정 EPS",
+     "label_en": "Roku Q3 adj. EPS",
+     "value": "$1.20",
+     "delta": {
+      "ko": "예상 $0.53 상회",
+      "en": "Above $0.53 est."
+     },
+     "dir": "up",
+     "sub_ko": "매출 $15.0억 (예상 $14.1억) · 장 마감 후",
+     "sub_en": "Rev. $1.50B (est. $1.41B) · after close"
+    }
+   ],
+   "note_ko": "예상은 FXStreet 캘린더·FMP 컨센서스 기준. 기업 실적은 미국 11/2 장 마감 후 발표분.",
+   "note_en": "Estimates from the FXStreet calendar and FMP consensus. Company results were reported after the US close on Nov 2."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "마벨, 루멘텀 기업가치 1,150억달러 전액 주식 인수",
+     "headline_en": "Marvell to Buy Lumentum at $115B Enterprise Value, All Stock",
+     "body_ko": "루멘텀 1주당 마벨 4.5주를 준다. 10/28 종가 기준 약 1,132달러지만 11/2 종가 기준 약 771달러다. 마벨 −12.72%, 루멘텀 −18.59%. 엔비디아는 두 회사에 각 20억달러씩 투자해 둔 상태다.",
+     "body_en": "Lumentum holders get 4.5 Marvell shares each: about $1,132 at Oct 28 prices, about $771 at Nov 2 closes. Marvell closed -12.72%, Lumentum -18.59%. Nvidia had put $2B into each company."
+    },
+    {
+     "headline_ko": "오라클, 200억달러 조달 계획 공시",
+     "headline_en": "Oracle Files for a $20B Raise",
+     "body_ko": "보통주 100억·선순위채 100억 달러 발행 계획을 SEC 공시로 밝혔다. 기존 차입금이 1,250억달러를 넘는 상황이라 주가가 8.76% 내렸다.",
+     "body_en": "An SEC filing outlines $10B of common stock and $10B of senior notes. With existing debt above $125B, the shares fell 8.76%."
+    },
+    {
+     "headline_ko": "반도체 동반 하락, 마이크론 −5.78%·AMD −7.52%",
+     "headline_en": "Chips Slide: Micron -5.78%, AMD -7.52%",
+     "body_ko": "반도체 ETF(SMH)는 2.71% 내려 10/29 561.67에서 3거래일 연속 하락했다. 인텔은 10/30 −28.58%에 이어 8.80% 더 내렸다.",
+     "body_en": "The semis ETF (SMH) fell 2.71%, its third straight drop from 561.67 on Oct 29. Intel fell another 8.80% after -28.58% on Oct 30."
+    },
+    {
+     "headline_ko": "팔란티어, 3분기 매출 $23.1억에 연간 전망 상향",
+     "headline_en": "Palantir Lifts Annual Guidance After Q3 Beat",
+     "body_ko": "3분기 매출 23억1,300만달러는 컨센서스 21억8,000만달러를 웃돌았다. 연간 매출 전망은 85억3,000만달러 안팎으로 올렸다.",
+     "body_en": "Q3 revenue of $2.313B beat the $2.18B consensus. It raised full-year revenue guidance to about $8.53B."
+    },
+    {
+     "headline_ko": "AMD, 오늘 미국 장 마감 후 3분기 실적 발표",
+     "headline_en": "AMD Reports Q3 After the US Close Today",
+     "body_ko": "FMP 기준 EPS 예상 1.95달러, 매출 예상 130.98억달러. 주가는 10/30 −10.88%에 이어 11/2 −7.52%로 이틀 연속 급락한 채 발표를 맞는다.",
+     "body_en": "FMP consensus: EPS $1.95, revenue $13.10B. Shares enter the print after two sharp drops, -10.88% on Oct 30 and -7.52% on Nov 2."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "WTI 7.55% 급락 96.26달러, 미-이란 대화 기대",
+     "headline_en": "WTI Plunges 7.55% to $96.26 on US-Iran Talks",
+     "body_ko": "트럼프는 이란이 \"합의를 원한다\"고 말했고, 이란 대통령은 대화로 풀겠다고 밝혔다. 이란 국영매체는 최고지도자가 정부에 대화 권한을 더 줬다고 전했다. 브렌트유도 약 8% 내려 배럴당 104달러대. 합의는 아직 이뤄지지 않았다.",
+     "body_en": "Trump said Iran \"wants a deal\"; Iran's president said Tehran would pursue dialogue, and state media said the Supreme Leader gave the government more authority on talks. Brent fell about 7-8% to about $104. No agreement has been reached yet."
+    },
+    {
+     "headline_ko": "공포탐욕지수 23, 극단적 공포 구간 진입",
+     "headline_en": "Fear & Greed Hits 23: Extreme Fear",
+     "body_ko": "CNN 지수는 26에서 23으로 내려 극단적 공포(0~24) 구간에 들어섰다. 1주 전 30, 1개월 전 38이었다. VIX는 21.15로 최근 10거래일 최고.",
+     "body_en": "CNN's gauge fell from 26 to 23, entering Extreme Fear (0-24). It was 30 a week ago and 38 a month ago. The VIX closed at 21.15, a 10-session high."
+    },
+    {
+     "headline_ko": "미 중간선거 오늘 현지 투표, 결과는 한국시간 4일 아침부터",
+     "headline_en": "US Midterms Vote Today (Local); Results From Morning KST Nov 4",
+     "body_ko": "3일(현지) 하원 435석 전체와 상원 35석을 뽑는다. 첫 투표소는 미 동부 오후 6시에 마감해 미국 정규장이 끝난 뒤 결과가 나온다.",
+     "body_en": "All 435 House seats and 35 Senate seats are up on Nov 3 (local). The first polls close at 6 PM ET, after the US regular session ends."
+    },
+    {
+     "headline_ko": "미 10년물 4.91%, 3거래일 연속 하락",
+     "headline_en": "10-Year Yield Slips to 4.91%, Third Straight Decline",
+     "body_ko": "10/28 5.05%에서 4.98%, 4.94%, 4.91%로 3거래일 연속 내렸다. 2년물은 4.59%, 30년물은 5.28%(미 재무부 고시 기준, FMP).",
+     "body_en": "From 5.05% on Oct 28 to 4.98%, 4.94% and 4.91%. The 2-year ended at 4.59% and the 30-year at 5.28% (Treasury rates via FMP)."
+    },
+    {
+     "headline_ko": "금 1.48% 올라 3,957달러, 원/달러 1,345원 최근 10거래일 최고",
+     "headline_en": "Gold Up 1.48% to $3,957; Won at 10-Session Low",
+     "body_ko": "금은 10/30 3,898.90달러에서 반등했다. 원/달러는 1,337.98원에서 0.51% 올랐고 달러인덱스는 101.80으로 0.08% 내렸다.",
+     "body_en": "Gold rebounded from $3,898.90 on Oct 30. USD/KRW rose 0.51% from 1,337.98 while the dollar index slipped 0.08% to 101.80."
+    },
+    {
+     "headline_ko": "다우 +0.41% 마감, 유가 하락·경기민감주 매수",
+     "headline_en": "Dow Gains 0.41% as Oil Falls, Cyclicals Rise",
+     "body_ko": "다우는 51,983.98로 마감해 나스닥과 엇갈렸다. 경기소비재(XLY +2.41%)·금융(XLF +1.86%)·산업재(XLI +1.38%) 업종 ETF가 올랐다.",
+     "body_en": "The Dow closed at 51,983.98, diverging from the Nasdaq. Consumer discretionary (XLY +2.41%), financials (XLF +1.86%) and industrials (XLI +1.38%) ETFs rose."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "Korea time (KST) · yellow dot = key"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "08:00",
+   "title_ko": "한국 10월 소비자물가",
+   "title_en": "Korea Oct CPI",
+   "detail_ko": "전년비 예상 2.9% · 이전 2.9%",
+   "detail_en": "YoY est. 2.9% · Prior 2.9%",
+   "importance": "mid"
+  },
+  {
+   "time": "11/3",
+   "title_ko": "도쿄증시 휴장 (문화의 날)",
+   "title_en": "Tokyo Markets Closed (Culture Day)",
+   "detail_ko": "일본 증시 하루 휴장",
+   "detail_en": "Japanese equities closed for the day",
+   "importance": "mid"
+  },
+  {
+   "time": "11/3",
+   "title_ko": "LG에너지솔루션 3분기 실적",
+   "title_en": "LG Energy Solution Q3 Earnings",
+   "detail_ko": "3분기 실적 발표",
+   "detail_en": "Q3 results",
+   "importance": "mid"
+  },
+  {
+   "time": "11/3",
+   "title_ko": "미국 중간선거 투표일 (현지)",
+   "title_en": "US Midterm Election Day (local)",
+   "detail_ko": "개표 결과는 11/4 한국시간 아침부터",
+   "detail_en": "Results from the morning of Nov 4 KST",
+   "importance": "high"
+  },
+  {
+   "time": "11/4 00:00",
+   "title_ko": "美 9월 JOLTS 구인건수",
+   "title_en": "US Sep JOLTS Job Openings",
+   "detail_ko": "예상 713만 · 이전 708만",
+   "detail_en": "Est. 7.13M · Prior 7.08M",
+   "importance": "mid"
+  },
+  {
+   "time": "11/4 00:00",
+   "title_ko": "美 9월 공장수주",
+   "title_en": "US Sep Factory Orders",
+   "detail_ko": "전월비 예상 +1.2% · 이전 +0.1%",
+   "detail_en": "MoM est. +1.2% · Prior +0.1%",
+   "importance": "mid"
+  },
+  {
+   "time": "11/4 07:00",
+   "title_ko": "AMD 3분기 실적 컨퍼런스콜",
+   "title_en": "AMD Q3 Earnings Call",
+   "detail_ko": "미국 11/3 장 마감 후 발표 · EPS 예상 $1.95, 매출 예상 $131억",
+   "detail_en": "Reported after the US close on Nov 3 · EPS est. $1.95, rev. est. $13.1B",
+   "importance": "high"
+  }
+ ],
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "caption_ko": "📊 luckyon 아침 브리핑 · 2026.11.03(화)\n\n간밤 나스닥은 1.07% 내린 25,164.32, S&P 500은 0.51% 내린 7,541.40으로 마감해 3거래일 연속 하락했습니다. 오라클이 200억달러 조달 계획을 내 8.76% 내렸고, 마벨은 루멘텀 인수 발표 뒤 12.72% 내렸습니다.\n\nWTI는 미국-이란 대화 기대에 7.55% 내린 96.26달러. 공포탐욕지수는 23으로 극단적 공포 구간에 들어섰습니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n\n#나스닥 #S&P500 #오라클 #마벨 #루멘텀 #반도체 #WTI #유가 #공포탐욕지수 #VIX #미국중간선거 #증시 #경제 #투자 #luckyon",
+ "caption_en": "📊 luckyon Morning Briefing · Tue, Nov 3, 2026\n\nThe Nasdaq fell 1.07% to 25,164.32 and the S&P 500 fell 0.51% to 7,541.40, both down a third straight session. Oracle dropped 8.76% on a $20B raise plan and Marvell fell 12.72% after announcing its Lumentum deal.\n\nWTI fell 7.55% to $96.26 on US-Iran talks hopes. The Fear & Greed index slid to 23, entering Extreme Fear.\n\n🌙 Next brief — 9 PM KST, before the US open\n\n#Nasdaq #SP500 #Oracle #Marvell #Lumentum #Semiconductors #WTI #OilPrice #FearAndGreed #VIX #USMidterms #Markets #Investing #luckyon",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "CNN Fear & Greed",
+  "FXStreet",
+  "SEC 공시",
+  "CNBC",
+  "Reuters",
+  "S&P Global",
+  "ISM"
+ ]
+}
