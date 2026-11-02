@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-11-02T01:33:06Z",
+  "fetchedAt": "2026-11-02T20:43:54Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-10-31T01:33:06Z",
-    "to": "2026-11-16T01:33:06Z"
+    "from": "2026-10-31T20:43:54Z",
+    "to": "2026-11-16T20:43:54Z"
   },
   "events": [
     {
@@ -13,7 +13,7 @@
       "impact": "LOW",
       "consensus": 37.24,
       "previous": 49.97,
-      "actual": null,
+      "actual": 42.5,
       "unit": "$"
     },
     {
@@ -53,7 +53,7 @@
       "impact": "HIGH",
       "consensus": 51.6,
       "previous": 52.1,
-      "actual": null,
+      "actual": 52,
       "unit": null
     },
     {
@@ -63,7 +63,7 @@
       "impact": "MEDIUM",
       "consensus": 0.4,
       "previous": 1.3,
-      "actual": null,
+      "actual": -2,
       "unit": "%"
     },
     {
@@ -73,7 +73,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": -0.4,
-      "actual": null,
+      "actual": -2.3,
       "unit": "%"
     },
     {
@@ -83,7 +83,7 @@
       "impact": "MEDIUM",
       "consensus": 54.2,
       "previous": 54.2,
-      "actual": null,
+      "actual": 54.2,
       "unit": null
     },
     {
@@ -93,7 +93,7 @@
       "impact": "LOW",
       "consensus": 52.4,
       "previous": 52.4,
-      "actual": null,
+      "actual": 52.7,
       "unit": null
     },
     {
@@ -133,6 +133,16 @@
       "impact": "LOW",
       "consensus": 56,
       "previous": 56,
+      "actual": 54.9,
+      "unit": null
+    },
+    {
+      "at": "2026-11-02T15:00:00Z",
+      "country": "EMU",
+      "name": "ECB's Escrivá speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": null
     },
@@ -153,7 +163,7 @@
       "impact": "LOW",
       "consensus": 0.4,
       "previous": 0.9,
-      "actual": null,
+      "actual": -1.9,
       "unit": "%"
     },
     {
@@ -163,7 +173,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 52.7,
-      "actual": null,
+      "actual": 52.4,
       "unit": null
     },
     {
@@ -173,7 +183,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 55.3,
-      "actual": null,
+      "actual": 55.5,
       "unit": null
     },
     {
@@ -183,7 +193,7 @@
       "impact": "HIGH",
       "consensus": 54.6,
       "previous": 54.5,
-      "actual": null,
+      "actual": 55.5,
       "unit": null
     },
     {
@@ -193,7 +203,7 @@
       "impact": "MEDIUM",
       "consensus": 77,
       "previous": 77.9,
-      "actual": null,
+      "actual": 75.2,
       "unit": null
     },
     {
@@ -213,7 +223,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.05,
-      "actual": null,
+      "actual": 4.04,
       "unit": "%"
     },
     {
@@ -223,7 +233,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.21,
-      "actual": null,
+      "actual": 4.15,
       "unit": "%"
     },
     {
@@ -331,7 +341,7 @@
       "country": "US",
       "name": "Total Vehicle Sales",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 15.9,
       "previous": 16,
       "actual": null,
       "unit": null
@@ -361,7 +371,7 @@
       "country": "JP",
       "name": "Monetary Base (YoY)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": -14,
       "previous": -15.2,
       "actual": null,
       "unit": "%"
@@ -731,7 +741,7 @@
       "country": "US",
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 1.71,
       "previous": 1.701,
       "actual": null,
       "unit": null
@@ -761,7 +771,7 @@
       "country": "US",
       "name": "Nonfarm Productivity",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 2.5,
       "previous": 1.4,
       "actual": null,
       "unit": "%"
@@ -771,7 +781,7 @@
       "country": "US",
       "name": "Unit Labor Costs",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.6,
       "previous": 1.2,
       "actual": null,
       "unit": "%"
@@ -1237,6 +1247,16 @@
       "unit": "€"
     },
     {
+      "at": "2026-11-09T07:00:00Z",
+      "country": "EMU",
+      "name": "Eurogroup Meeting",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-09T09:30:00Z",
       "country": "EMU",
       "name": "Sentix Investor Confidence",
@@ -1261,7 +1281,7 @@
       "country": "US",
       "name": "Wholesale Inventories",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.6,
       "previous": 0.6,
       "actual": null,
       "unit": "%"
@@ -1272,7 +1292,7 @@
       "name": "3-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.04,
       "actual": null,
       "unit": "%"
     },
@@ -1282,7 +1302,7 @@
       "name": "6-Month Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.15,
       "actual": null,
       "unit": "%"
     },
@@ -1417,6 +1437,16 @@
       "unit": null
     },
     {
+      "at": "2026-11-10T07:00:00Z",
+      "country": "EMU",
+      "name": "Eurogroup Meeting",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-10T11:00:00Z",
       "country": "US",
       "name": "NFIB Business Optimism Index",
@@ -1517,6 +1547,16 @@
       "unit": null
     },
     {
+      "at": "2026-11-10T18:00:00Z",
+      "country": "US",
+      "name": "10-Year Note Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
       "at": "2026-11-10T21:30:00Z",
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
@@ -1613,16 +1653,6 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-11T18:00:00Z",
-      "country": "US",
-      "name": "10-Year Note Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 5.3,
       "actual": null,
       "unit": "%"
     },
@@ -1757,6 +1787,16 @@
       "unit": "%"
     },
     {
+      "at": "2026-11-12T16:30:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-12T17:00:00Z",
       "country": "US",
       "name": "EIA Crude Oil Stocks Change",
@@ -1845,6 +1885,16 @@
       "previous": 17.6,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-12T23:30:00Z",
+      "country": "US",
+      "name": "Fed's Williams speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-13T04:30:00Z",
@@ -2162,7 +2212,7 @@
       "name": "Trade Balance",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 42.5,
       "actual": null,
       "unit": "$"
     },
@@ -2173,6 +2223,96 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -2.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T02:00:00Z",
+      "country": "CN",
+      "name": "Fixed Asset Investment (YTD) (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -7.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T02:00:00Z",
+      "country": "CN",
+      "name": "Industrial Production (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 5.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T02:00:00Z",
+      "country": "CN",
+      "name": "Retail Sales (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 1.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T03:00:00Z",
+      "country": "KR",
+      "name": "Money Supply Growth",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T04:00:00Z",
+      "country": "JP",
+      "name": "BoJ's Takata speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-16T11:00:00Z",
+      "country": "DE",
+      "name": "German Buba Monthly Report",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-16T13:30:00Z",
+      "country": "US",
+      "name": "NY Empire State Manufacturing Index",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 25.5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-16T16:30:00Z",
+      "country": "US",
+      "name": "3-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T16:30:00Z",
+      "country": "US",
+      "name": "6-Month Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
       "actual": null,
       "unit": "%"
     }
