@@ -1,0 +1,714 @@
+{
+  "date": "2026-11-04",
+  "session": "am",
+  "dateLabel_ko": "2026.11.04(수) 아침",
+  "dateLabel_en": "Wed, Nov 4, 2026 · AM",
+  "headline_ko": "반도체 반등에 나스닥 +0.83%, 3거래일 하락 끊었지만 10/28 종가보다 4.4% 낮아",
+  "headline_sub_ko": "거래대금 1위 애플 −1.90% · 2위 엔비디아 +2.29% · 마감 뒤 AMD 시간외 +7%",
+  "headline_en": "Chip Rebound Lifts Nasdaq 0.83%, Ending a 3-Day Slide — Still 4.4% Below Its Oct 28 Close",
+  "headline_sub_en": "Apple led turnover at -1.90%, Nvidia +2.29% second — AMD up about 7% after hours",
+  "cover_photo": "nyse.jpg",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 11/3 마감",
+    "en": "US Overnight · Nov 3 Close"
+  },
+  "cover_facts": [
+    [
+      "shield",
+      {
+        "ko": "나스닥 +0.83% · S&P 500 +0.36%",
+        "en": "Nasdaq +0.83% · S&P 500 +0.36%"
+      },
+      {
+        "ko": "25,372.01 / 7,568.92 · 다우는 −0.38% 51,786.72",
+        "en": "25,372.01 / 7,568.92 · Dow -0.38% at 51,786.72"
+      }
+    ],
+    [
+      "chip",
+      {
+        "ko": "반도체 ETF(SMH) +2.01%",
+        "en": "Semiconductor ETF (SMH) +2.01%"
+      },
+      {
+        "ko": "11개 업종 중 4개만 상승 · 거래대금 67.4%는 오른 종목",
+        "en": "Only 4 of 11 sectors rose · 67.4% of turnover in gainers"
+      }
+    ],
+    [
+      "ai",
+      {
+        "ko": "AMD 시간외 약 +7%",
+        "en": "AMD up ~7% after hours"
+      },
+      {
+        "ko": "EPS $2.09 vs 예상 $1.95 · 4분기 매출 가이던스 약 $170억",
+        "en": "EPS $2.09 vs $1.95 est. · Q4 revenue guide about $17B"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥이 207.70포인트(0.83%) 오른 25,372.01, S&P 500이 27.52포인트(0.36%) 오른 7,568.92로 마감하며 두 지수 모두 3거래일 연속 하락을 끊었다. 다우는 0.38% 내린 51,786.72.",
+      "반등에도 나스닥은 10/28 종가(26,549.85)보다 4.4% 낮다. 반도체 ETF(SMH)는 2.01% 올랐지만 S&P 500 11개 업종은 4개만 올랐다.",
+      "야후 집계 거래대금 상위 295종목 중 상승 154·하락 141. 거래대금으로는 67.4%가 오른 종목에 쏠렸고, 1위 애플은 1.90% 내렸다.",
+      "공포탐욕지수는 19로 극단적 공포 구간, VIX는 20.83. AMD는 정규장 +3.65% 뒤 실적 발표 직후 시간외에서 약 7% 올랐다."
+    ],
+    "lines_en": [
+      "The Nasdaq rose 207.70 points (0.83%) to 25,372.01 and the S&P 500 added 27.52 points (0.36%) to 7,568.92, both snapping three straight losses. The Dow slipped 0.38% to 51,786.72.",
+      "Even so, the Nasdaq sits 4.4% below its Oct 28 close of 26,549.85. The semiconductor ETF (SMH) gained 2.01%, yet only 4 of the S&P 500's 11 sectors rose.",
+      "Of the 295 most-traded names on Yahoo's screener, 154 rose and 141 fell, but 67.4% of turnover went into gainers. Top-traded Apple fell 1.90%.",
+      "Fear & Greed is 19 (Extreme Fear) and the VIX is 20.83. AMD gained 3.65% in the session and jumped about 7% after hours on its earnings."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "25,372.01",
+      "delta": "▲0.83%",
+      "dir": "up",
+      "note_ko": "207.70p 상승 · 11/3 미국장 마감 종가",
+      "note_en": "+207.70 pts · Nov 3 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,568.92",
+      "delta": "▲0.36%",
+      "dir": "up",
+      "note_ko": "27.52p 상승 · 3거래일 연속 하락 뒤 반등",
+      "note_en": "+27.52 pts · first gain after 3 down days"
+    },
+    {
+      "label": "KOSPI",
+      "value": "5,648.79",
+      "delta": "▼3.59%",
+      "dir": "down",
+      "note_ko": "210.29p 하락 · 11/3 한국장 정규장 종가",
+      "note_en": "-210.29 pts · Nov 3 Korea regular-session close"
+    },
+    {
+      "label": "VIX",
+      "value": "20.83",
+      "delta": "▼1.51%",
+      "dir": "down",
+      "note_ko": "11/2 종가 21.15 대비 · 20선 위 유지",
+      "note_en": "vs 21.15 close on Nov 2 · still above 20"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "23 → 19",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "1주 전 33 · 극단적 공포(0~24) 구간",
+      "note_en": "33 a week ago · Extreme Fear zone (0-24)",
+      "value_sub": {
+        "ko": "· 극단적 공포",
+        "en": "· Extreme Fear"
+      }
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.91% → 4.95%",
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "11/2 → 11/3 종가 · 30년물 5.32%",
+      "note_en": "Nov 2 → Nov 3 close · 30Y at 5.32%"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,344",
+      "delta": "▲0.26%",
+      "dir": "up",
+      "note_ko": "서울 주간 종가 1,341.0원 대비 · 11/3 뉴욕 마감",
+      "note_en": "vs 1,341.0 Seoul daytime close · Nov 3 NY close",
+      "value_sub": "· DXY 101.9"
+    },
+    {
+      "label": "Gold",
+      "value": "3,931",
+      "delta": "▼0.98%",
+      "dir": "down",
+      "note_ko": "11/2 종가 3,969.60 대비 · 선물",
+      "note_en": "vs 3,969.60 close on Nov 2 · futures"
+    },
+    {
+      "label": "WTI",
+      "value": "96.81",
+      "delta": "▲0.36%",
+      "dir": "up",
+      "note_ko": "12월물 기준 · 11/2에 104.12→96.46으로 −7.4%",
+      "note_en": "Dec contract · fell 7.4% on Nov 2 (104.12 → 96.46)"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "77,731",
+      "delta": "▲1.37%",
+      "dir": "up",
+      "note_ko": "11/2 76,677 대비 · 24시간 기준",
+      "note_en": "vs 76,677 on Nov 2 · 24h basis"
+    }
+  ],
+  "market_note_ko": "나스닥·S&P 500은 11/3 미국장 종가 · 코스피는 11/3 한국장 종가 · 미 10년물은 11/3 종가",
+  "market_note_en": "Nasdaq and S&P 500 are Nov 3 US closes · KOSPI is the Nov 3 Korea close · 10Y is the Nov 3 close",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "main_tile_note": {
+    "ko": "207.70p 상승 · 최근 9거래일",
+    "en": "+207.70 pts · last 9 sessions"
+  },
+  "chart_series_values": [
+    26008.86,
+    25955.34,
+    26169.38,
+    26477.81,
+    26549.85,
+    26184.72,
+    25437.0,
+    25164.31,
+    25372.01
+  ],
+  "chart_series_labels": [
+    "10.22",
+    "10.23",
+    "10.26",
+    "10.27",
+    "10.28",
+    "10.29",
+    "10.30",
+    "11.02",
+    "11.03"
+  ],
+  "chart_title": {
+    "ko": "3거래일 하락 뒤 첫 반등",
+    "en": "First Bounce After Three Down Days"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "10.28 26,549.85 → 11.02 25,164.31 → 11.03 25,372.01",
+    "en": "Oct 28 26,549.85 → Nov 2 25,164.31 → Nov 3 25,372.01"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_title": {
+    "ko": "반도체·기술이 끌었고 필수소비·소재가 밀렸다",
+    "en": "Chips, Tech Led; Staples, Materials Lagged"
+  },
+  "sector_sub": {
+    "ko": "섹터 ETF · 11/3 종가 기준 · 11개 업종 중 4개 상승(반도체 SMH 별도)",
+    "en": "Sector ETFs · Nov 3 close · 4 of 11 sectors up (SMH shown separately)"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top by Turnover"
+  },
+  "rank_sub": {
+    "ko": "11/3 미국장 · 막대 옆은 등락률",
+    "en": "Nov 3 US session · % beside bars is the day's change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $ billions"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "11/3 발표분 · 실측 · 예상",
+    "en": "Released Nov 3 · actual vs. estimate"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "나스닥",
+          "label_en": "Nasdaq",
+          "value": "25,372.01",
+          "delta": "▲0.83%",
+          "dir": "up",
+          "sub_ko": "207.70포인트 상승 · 10/28 종가 대비 −4.4%",
+          "sub_en": "Up 207.70 pts · -4.4% from the Oct 28 close"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,568.92",
+          "delta": "▲0.36%",
+          "dir": "up",
+          "sub_ko": "27.52포인트 상승 · 3거래일 연속 하락 마감 뒤 반등",
+          "sub_en": "Up 27.52 pts · ends a three-day losing run"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 4,
+          "flat": 0,
+          "down": 7
+        },
+        {
+          "label_ko": "거래대금 상위 295종목",
+          "label_en": "295 most-traded",
+          "up": 154,
+          "flat": 0,
+          "down": 141
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+        "label_en": "Turnover: gainers vs decliners ($B)",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 247.2
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -119.5
+          }
+        ]
+      },
+      "note_ko": "업종은 4곳만 올랐지만 거래대금은 오른 종목에 67.4%가 몰렸다. 대형 기술주 중심의 반등이다.",
+      "note_en": "Only 4 sectors rose, yet 67.4% of turnover went into gainers — a large-cap tech rebound."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": 2.01
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": 1.31
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm. (XLC)",
+          "value": 1.18
+        },
+        {
+          "label_ko": "산업재 (XLI)",
+          "label_en": "Indus. (XLI)",
+          "value": 0.95
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Est. (XLRE)",
+          "value": 0.07
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": -0.31
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": -0.57
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": -0.64
+        },
+        {
+          "label_ko": "경기소비재 (XLY)",
+          "label_en": "Cons. Disc. (XLY)",
+          "value": -0.7
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": -0.85
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": -2.01
+        },
+        {
+          "label_ko": "필수소비재 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": -2.07
+        }
+      ],
+      "note_ko": "반도체 SMH +2.01%가 기술 XLK +1.31%보다 컸다. 필수소비재 −2.07%·소재 −2.01%가 가장 크게 내렸다.",
+      "note_en": "SMH (+2.01%) beat XLK (+1.31%). Staples (-2.07%) and Materials (-2.01%) fell the most."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top by Turnover",
+      "color": "#e66767",
+      "type": "rank",
+      "col_name_ko": "종목",
+      "col_name_en": "Stock",
+      "col_value_ko": "거래대금",
+      "col_value_en": "Turnover",
+      "rows": [
+        {
+          "name_ko": "애플",
+          "name_en": "Apple",
+          "value": "$20.37B",
+          "pct": -1.9
+        },
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$18.66B",
+          "pct": 2.29
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$17.69B",
+          "pct": 2.58
+        },
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "value": "$15.52B",
+          "pct": 3.65
+        },
+        {
+          "name_ko": "오라클",
+          "name_en": "Oracle",
+          "value": "$10.57B",
+          "pct": 5.85
+        }
+      ],
+      "share": {
+        "label_ko": "거래대금 상위 295종목 중 상승·하락 종목 비중",
+        "label_en": "Gainers vs decliners share of turnover (295 names)",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "pct": 67.4,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "pct": 32.6,
+            "color": "#3987e5"
+          }
+        ]
+      },
+      "note_ko": "야후 스크리너 상위 300종목의 가격×거래량 추정(정규장). 상위 다섯 중 애플만 내렸고 오라클은 전날 8.8% 급락 뒤 5.85% 반등했다.",
+      "note_en": "Yahoo screener top 300, price x volume (regular session). Only Apple fell among the top five; Oracle rebounded 5.85% after a 8.8% drop the day before."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#e66767",
+      "type": "stats",
+      "stats": [
+        {
+          "label_ko": "美 9월 JOLTS 구인건수",
+          "label_en": "US Sep JOLTS Job Openings",
+          "value": "7.52M",
+          "delta": {
+            "ko": "예상 7.1 상회",
+            "en": "Above 7.1 est."
+          },
+          "dir": "up",
+          "sub_ko": "예상 7.1M(로이터) · 8월 7.2M(수정) · 자발적 퇴직률 2.1%",
+          "sub_en": "Est. 7.1M (Reuters) · Aug 7.2M (revised) · quits rate 2.1%"
+        },
+        {
+          "label_ko": "AMD 3분기 조정 EPS",
+          "label_en": "AMD Q3 Adj. EPS",
+          "value": "$2.09",
+          "delta": {
+            "ko": "예상 1.95 상회",
+            "en": "Above 1.95 est."
+          },
+          "dir": "up",
+          "sub_ko": "장 마감 후 발표 · GAAP EPS $1.46",
+          "sub_en": "After the close · GAAP EPS $1.46"
+        },
+        {
+          "ref_ko": "컨센서스 대비 실제 매출 · 성장 속도를 가늠하는 숫자",
+          "ref_en": "Revenue vs consensus; gauges growth pace",
+          "label_ko": "AMD 3분기 매출",
+          "label_en": "AMD Q3 Revenue",
+          "value": "$13.38B",
+          "delta": {
+            "ko": "예상 13.10 상회",
+            "en": "Above 13.10 est."
+          },
+          "dir": "up",
+          "sub_ko": "데이터센터 $8.5B(+97%) · 4분기 가이던스 약 $17B",
+          "sub_en": "Data center $8.5B (+97%) · Q4 guide about $17B"
+        },
+        {
+          "label_ko": "화이자 3분기 EPS",
+          "label_en": "Pfizer Q3 EPS",
+          "value": "$0.87",
+          "delta": {
+            "ko": "예상 0.735 상회",
+            "en": "Above 0.735 est."
+          },
+          "dir": "up",
+          "sub_ko": "장 시작 전 발표 · 매출 $165.8억(예상 $158.5억)",
+          "sub_en": "Before the open · revenue $16.58B (est. $15.85B)"
+        },
+        {
+          "ref_ko": "컨센서스 대비 실제 매출 · 성장 속도를 가늠하는 숫자",
+          "ref_en": "Revenue vs consensus; gauges growth pace",
+          "label_ko": "쇼피파이 3분기 매출",
+          "label_en": "Shopify Q3 Revenue",
+          "value": "$3.68B",
+          "delta": {
+            "ko": "예상 3.70 하회",
+            "en": "Below 3.70 est."
+          },
+          "dir": "down",
+          "sub_ko": "EPS $0.49(예상 $0.46) · 매출만 소폭 미달",
+          "sub_en": "EPS $0.49 (est. $0.46) · only revenue missed"
+        },
+        {
+          "label_ko": "아리스타 3분기 매출",
+          "label_en": "Arista Q3 Revenue",
+          "value": "$3.66B",
+          "delta": {
+            "ko": "예상 3.33 상회",
+            "en": "Above 3.33 est."
+          },
+          "dir": "up",
+          "sub_ko": "조정 EPS $1.20(예상 $1.08) · 4분기 매출 가이던스 $39~40억",
+          "sub_en": "Adj. EPS $1.20 (est. $1.08) · Q4 revenue guide $3.9-4.0B",
+          "ref_ko": "컨센서스 대비 실제 매출 · 성장 속도를 가늠하는 숫자",
+          "ref_en": "Revenue vs consensus; gauges growth pace"
+        },
+        {
+          "label_ko": "슈퍼마이크로 1분기 조정 EPS",
+          "label_en": "Super Micro FQ1 Adj. EPS",
+          "value": "$1.81",
+          "delta": {
+            "ko": "예상 1.23 상회",
+            "en": "Above 1.23 est."
+          },
+          "dir": "up",
+          "sub_ko": "매출 $199억(전년비 +298%) · 장 마감 후 발표",
+          "sub_en": "Revenue $19.9B (+298% YoY) · after the close",
+          "ref_ko": "컨센서스 대비 실제치 · 수치보다 예상과의 차이가 주가를 움직인다",
+          "ref_en": "Actual versus consensus; the gap, not the level, moves the stock"
+        }
+      ],
+      "note_ko": "예상치는 FMP 캘린더·보도 기준. JOLTS 실측은 BLS, 예상은 로이터 집계. 아리스타·슈퍼마이크로는 CNBC·Investing.com 보도 기준.",
+      "note_en": "Estimates from the FMP calendar and press reports. JOLTS actual from BLS, estimate per Reuters. Arista and Super Micro per CNBC and Investing.com."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semiconductors",
+      "color": "#e66767",
+      "items": [
+        {
+          "headline_ko": "AMD 데이터센터 매출 +97%, 4분기 가이던스 약 170억달러",
+          "headline_en": "AMD Data Center +97%, Q4 Guide About $17B",
+          "body_ko": "AMD는 3분기 데이터센터 매출이 85억달러로 97% 늘었고 4분기 매출을 약 170억달러(±3%)로 제시했다(컨센서스 162억달러). 리사 수 CEO는 4분기 성장 요인으로 헬리오스·베니스 양산 확대를 꼽았다.",
+          "body_en": "AMD said Q3 data center revenue rose 97% to $8.5B and guided Q4 to about $17B (±3%) vs $16.2B consensus. CEO Lisa Su tied Q4 growth to scaling Helios and Venice production."
+        },
+        {
+          "headline_ko": "오픈AI '그리드 프로텍터스', 전력 부족 땐 데이터센터 사용량 감축",
+          "headline_en": "OpenAI 'Grid Protectors' Cuts Data Center Load in Shortages",
+          "body_ko": "오픈AI는 전력망이 빠듯할 때 데이터센터 캠퍼스의 전력 사용을 줄이는 프로그램을 11/2(미국) 공개했다. 첫 대상인 조지아 에핑햄 카운티 캠퍼스(총 3.2GW)는 피크 때 최대 1,000MW를 줄일 수 있다.",
+          "body_en": "OpenAI announced on Nov 2 (US) a program to curb campus power use when the grid is tight. Its first site in Effingham County, Georgia (3.2 GW) can cut up to 1,000 MW at peak."
+        },
+        {
+          "headline_ko": "반도체 ETF SMH +2.01%, 마이크론 +2.58%·엔비디아 +2.29%",
+          "headline_en": "SMH +2.01%; Micron +2.58%, Nvidia +2.29%",
+          "body_ko": "SMH는 전날 508.31까지 내렸다가 518.52로 반등했다. 그래도 10/29 종가(561.67)보다 7.7% 낮아, 10/29 이후 낙폭(−9.5%)의 약 5분의 1만 되찾았다.",
+          "body_en": "SMH rebounded to 518.52 from 508.31 but is still 7.7% below its Oct 29 close of 561.67, recouping only a fifth of the 9.5% drop since."
+        },
+        {
+          "headline_ko": "오라클 +5.85%, 전날 8.8% 급락분 일부 만회",
+          "headline_en": "Oracle +5.85%, Recovering Part of Its 8.8% Drop",
+          "body_ko": "오라클은 11/2 AI 투자 재원 마련을 위한 신주 100억달러·채권 100억달러, 총 200억달러 조달 발표로 8.8% 내린 뒤 11/3 5.85% 올랐다. 거래대금은 105.7억달러로 5위.",
+          "body_en": "Oracle rose 5.85% on Nov 3 after falling 8.8% on Nov 2 on a $20B raise ($10B stock, $10B bonds) for AI spending. Turnover was $10.57B, fifth highest."
+        },
+        {
+          "headline_ko": "아리스타·슈퍼마이크로 장 마감 후 실적 호조, 시간외 상승",
+          "headline_en": "Arista, Super Micro Beat After the Bell, Shares Rise",
+          "body_ko": "CNBC·벤징가 보도 기준 아리스타는 매출 36.6억달러(예상 33.3억), 슈퍼마이크로는 조정 EPS 1.81달러(예상 1.23)로 예상을 웃돌았다. 아리스타 4분기 가이던스는 성장 둔화로 읽는 시각도 있다.",
+          "body_en": "Per CNBC and Benzinga, Arista posted revenue of $3.66B (est. $3.33B) and Super Micro adjusted EPS of $1.81 (est. $1.23). Some read Arista's Q4 guide as slowing growth."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#e66767",
+      "items": [
+        {
+          "headline_ko": "미국 중간선거 투표 진행 중, 투표소 마감은 한국시간 오늘 08시부터",
+          "headline_en": "US Midterm Voting Continues; Polls Start Closing 8 AM KST",
+          "body_ko": "개표 전 의석은 공화당이 하원 218석 안팎, 상원 53-47로 근소하게 앞섰다(매체별 집계 차이). 미국 증시 마감 시점에는 개표 결과가 없었다.",
+          "body_en": "Before the count Republicans held about 218 House seats and led the Senate 53-47 (tallies vary by outlet). No results were available at the US close."
+        },
+        {
+          "headline_ko": "애플 −1.90%, 마진 가이던스 45~46%·아이패드 부진",
+          "headline_en": "Apple -1.90% on 45-46% Margin Guide, Soft iPad Sales",
+          "body_ko": "CNBC 보도 기준 애플은 12월 분기 매출총이익률을 45~46%(시장 예상 47%)로 제시했고 원인으로 메모리 가격 상승을 꼽았다. 아이패드 매출은 62.3억달러(예상 67.0억달러). 애플 약세가 다우를 눌렀다는 보도다.",
+          "body_en": "Per CNBC, Apple guided December-quarter gross margin to 45-46% (est. 47%) on higher memory prices; iPad sales were $6.23B (est. $6.70B). Reports say Apple's slide weighed on the Dow."
+        },
+        {
+          "headline_ko": "WTI 96.81달러 +0.36%, 미군 케슘섬 타격 보도 속 반등",
+          "headline_en": "WTI +0.36% to $96.81 Amid Reports of US Strike on Qeshm",
+          "body_ko": "12월물 WTI는 11/2 미·이란 협상 기대에 10/30 104.12달러에서 96.46달러로 급락한 뒤, 11/3에는 미군의 이란 케슘섬 타격 보도 속에 96.81달러로 마감했다. 금은 0.98% 내린 3,930.5달러.",
+          "body_en": "Dec WTI fell from $104.12 to $96.46 on Nov 2 on US-Iran talk hopes, then closed Nov 3 at $96.81 amid reports of a US strike on Iran's Qeshm Island. Gold fell 0.98% to $3,930.5."
+        },
+        {
+          "headline_ko": "미 10년물 4.95%, 30년물 5.32%로 상승",
+          "headline_en": "US 10Y Rises to 4.95%, 30Y to 5.32%",
+          "body_ko": "재무부 고시 기준 10년물은 11/2 4.91%에서 4.95%로, 30년물은 5.28%에서 5.32%로 올랐다. 2년물은 4.61%. 달러인덱스는 101.86.",
+          "body_en": "Treasury rates show the 10Y up from 4.91% to 4.95% and the 30Y from 5.28% to 5.32% on Nov 3. The 2Y is 4.61%. The dollar index is 101.86."
+        },
+        {
+          "headline_ko": "JOLTS 자발적 퇴직 약 340만 명, 퇴직률 2.1%로 상승",
+          "headline_en": "JOLTS Quits Rise to About 3.4M, Rate 2.1%",
+          "body_ko": "BLS 9월 JOLTS에서 자발적 퇴직은 약 340만 명(퇴직률 2.1%)으로 8월 310만 명(1.9%)에서 늘어 2025년 3월 이후 가장 많았다.",
+          "body_en": "BLS's September JOLTS shows quits near 3.4M (a 2.1% rate), up from 3.1M (1.9%) in August and the most since March 2025."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "Korea time (KST) · yellow dot = key"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "11/4 08:00",
+      "title_ko": "미국 중간선거 투표소 마감·개표 시작",
+      "title_en": "US Midterm Polls Begin Closing",
+      "detail_ko": "동부 18시 마감 시작 · 하와이·알래스카는 KST 14시경 · 다수당 확정은 이후",
+      "detail_en": "Eastern polls close from 6 PM ET; Hawaii, Alaska about 2 PM KST",
+      "importance": "high"
+    },
+    {
+      "time": "11/4 10:45",
+      "title_ko": "中 10월 RatingDog 서비스업 PMI",
+      "title_en": "China Oct RatingDog Services PMI",
+      "detail_ko": "이전 51.6 · 50 위면 확장",
+      "detail_en": "Prior 51.6 · above 50 = expansion",
+      "importance": "mid"
+    },
+    {
+      "time": "11/4 17:55",
+      "title_ko": "독일·유로존 10월 복합 PMI 확정치",
+      "title_en": "Germany, Eurozone Oct Composite PMI",
+      "detail_ko": "독일 예상 52.8 · 유로존 예상 51.9",
+      "detail_en": "Germany est. 52.8 · Eurozone est. 51.9",
+      "importance": "mid"
+    },
+    {
+      "time": "11/4 19:00",
+      "title_ko": "유로존 10월 소비자물가(HICP) 속보치",
+      "title_en": "Eurozone Oct HICP Flash",
+      "detail_ko": "전년비 예상 3.9% · 이전 3.8% · 근원 이전 2.5%",
+      "detail_en": "YoY est. 3.9% · Prior 3.8% · core prior 2.5%",
+      "importance": "high"
+    },
+    {
+      "time": "11/4 22:15",
+      "title_ko": "美 10월 ADP 민간고용",
+      "title_en": "US Oct ADP Employment",
+      "detail_ko": "예상 +6.5만 명 · 이전 +9.0만 명",
+      "detail_en": "Est. +65K · Prior +90K",
+      "importance": "high"
+    },
+    {
+      "time": "11/4 22:30",
+      "title_ko": "美 9월 무역수지",
+      "title_en": "US Sep Trade Balance",
+      "detail_ko": "예상 −1,080억달러 · 이전 −1,056억달러",
+      "detail_en": "Est. -$108B · Prior -$105.6B",
+      "importance": "mid"
+    },
+    {
+      "time": "11/4 23:45",
+      "title_ko": "美 10월 서비스업 PMI (S&P·ISM)",
+      "title_en": "US Oct Services PMI (S&P, ISM)",
+      "detail_ko": "S&P 글로벌 예상 57.9 · ISM(11/5 00:00) 예상 54.8·이전 54.9",
+      "detail_en": "S&P Global est. 57.9 · ISM (Nov 5 00:00 KST) est. 54.8, prior 54.9",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "card_photos": {
+    "1": "The New York Stock Exchange facade at dusk with traders leaving, cool blue tones, dramatic dark mood",
+    "3": "A dark trading floor with chip-sector tickers glowing green and red on a wall of screens"
+  },
+  "caption_ko": "📊 luckyon 아침 브리핑 · 2026.11.04(수)\n\n나스닥이 0.83%, S&P 500이 0.36% 오르며 3거래일 연속 하락을 끊었습니다. 반도체 ETF(SMH)는 2.01% 올랐지만 나스닥은 10/28 종가보다 여전히 4.4% 낮습니다.\n\nAMD는 장 마감 뒤 조정 EPS 2.09달러(예상 1.95달러), 4분기 매출 가이던스 약 170억달러를 내놓으며 시간외 약 7% 올랐습니다. 공포탐욕지수는 19, 극단적 공포 구간입니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n\n#나스닥 #S&P500 #반도체 #AMD #엔비디아 #애플 #마이크론 #공포탐욕지수 #미국중간선거 #국제유가 #미국증시 #증시 #경제 #투자 #luckyon",
+  "caption_en": "📊 luckyon Morning Briefing · Wed, Nov 4, 2026\n\nThe Nasdaq rose 0.83% and the S&P 500 0.36%, ending three straight losses. The semiconductor ETF (SMH) gained 2.01%, but the Nasdaq is still 4.4% below its Oct 28 close.\n\nAfter the bell AMD reported adjusted EPS of $2.09 (est. $1.95) and guided Q4 revenue to about $17B, rising roughly 7% after hours. Fear & Greed sits at 19, Extreme Fear.\n\n🌙 Next brief — 9 PM KST, before the US open\n\n#Nasdaq #SP500 #Semiconductors #AMD #Nvidia #Apple #Micron #FearAndGreed #USMidterms #OilPrice #WallStreet #Markets #Investing #luckyon",
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "CNN Fear & Greed",
+    "BLS",
+    "FXStreet",
+    "KRX",
+    "Naver Finance",
+    "Newspim",
+    "ZDNet Korea",
+    "CNBC",
+    "AMD IR",
+    "OpenAI",
+    "WHYY",
+    "Oilprice",
+    "Investing.com",
+    "Benzinga"
+  ]
+}
