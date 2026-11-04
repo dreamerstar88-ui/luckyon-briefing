@@ -1,51 +1,11 @@
 {
-  "fetchedAt": "2026-11-03T03:29:03Z",
+  "fetchedAt": "2026-11-04T02:23:01Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-01T03:29:03Z",
-    "to": "2026-11-17T03:29:03Z"
+    "from": "2026-11-02T02:23:01Z",
+    "to": "2026-11-18T02:23:01Z"
   },
   "events": [
-    {
-      "at": "2026-11-01T07:00:00Z",
-      "country": "US",
-      "name": "Daylight Saving Time ends",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-02T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": 53.3,
-      "previous": 53.3,
-      "actual": 53.3,
-      "unit": null
-    },
-    {
-      "at": "2026-11-02T00:30:00Z",
-      "country": "KR",
-      "name": "S&P Global Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 53.9,
-      "actual": 51.3,
-      "unit": null
-    },
-    {
-      "at": "2026-11-02T01:45:00Z",
-      "country": "CN",
-      "name": "RatingDog Manufacturing PMI",
-      "impact": "HIGH",
-      "consensus": 51.6,
-      "previous": 52.1,
-      "actual": 52,
-      "unit": null
-    },
     {
       "at": "2026-11-02T07:00:00Z",
       "country": "DE",
@@ -273,7 +233,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 9.3,
-      "actual": null,
+      "actual": 10.4,
       "unit": "%"
     },
     {
@@ -283,7 +243,7 @@
       "impact": "MEDIUM",
       "consensus": 1.2,
       "previous": 0.1,
-      "actual": null,
+      "actual": 1.8,
       "unit": "%"
     },
     {
@@ -293,7 +253,7 @@
       "impact": "MEDIUM",
       "consensus": 7.13,
       "previous": 7.079,
-      "actual": null,
+      "actual": 7.523,
       "unit": null
     },
     {
@@ -303,7 +263,7 @@
       "impact": "LOW",
       "consensus": 46.2,
       "previous": 46.8,
-      "actual": null,
+      "actual": 48.5,
       "unit": null
     },
     {
@@ -327,23 +287,13 @@
       "unit": null
     },
     {
-      "at": "2026-11-03T20:30:00Z",
-      "country": "US",
-      "name": "Total Vehicle Sales",
-      "impact": "LOW",
-      "consensus": 15.9,
-      "previous": 16,
-      "actual": null,
-      "unit": null
-    },
-    {
       "at": "2026-11-03T21:00:00Z",
       "country": "KR",
       "name": "FX Reserves",
       "impact": "LOW",
       "consensus": null,
       "previous": 440.56,
-      "actual": null,
+      "actual": 443.16,
       "unit": null
     },
     {
@@ -351,7 +301,7 @@
       "country": "US",
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 2.1,
       "previous": -2.031,
       "actual": null,
       "unit": null
@@ -363,7 +313,7 @@
       "impact": "LOW",
       "consensus": -14,
       "previous": -15.2,
-      "actual": null,
+      "actual": -13.6,
       "unit": "%"
     },
     {
@@ -373,7 +323,7 @@
       "impact": "HIGH",
       "consensus": null,
       "previous": 51.6,
-      "actual": null,
+      "actual": 50.8,
       "unit": null
     },
     {
@@ -451,7 +401,7 @@
       "country": "EMU",
       "name": "Harmonized Index of Consumer Prices (YoY)",
       "impact": "HIGH",
-      "consensus": 3.9,
+      "consensus": 4,
       "previous": 3.8,
       "actual": null,
       "unit": "%"
@@ -471,7 +421,7 @@
       "country": "US",
       "name": "ADP Employment Change",
       "impact": "HIGH",
-      "consensus": 65,
+      "consensus": 69,
       "previous": 90,
       "actual": null,
       "unit": null
@@ -607,6 +557,16 @@
       "unit": null
     },
     {
+      "at": "2026-11-04T20:30:00Z",
+      "country": "US",
+      "name": "Total Vehicle Sales",
+      "impact": "LOW",
+      "consensus": 15.9,
+      "previous": 16,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-04T23:00:00Z",
       "country": "KR",
       "name": "Current Account Balance",
@@ -661,7 +621,7 @@
       "country": "DE",
       "name": "Factory Orders s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": 4,
+      "consensus": 4.8,
       "previous": -10.6,
       "actual": null,
       "unit": "%"
@@ -691,7 +651,7 @@
       "country": "EMU",
       "name": "Producer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": 1.8,
+      "consensus": 2.5,
       "previous": 1.9,
       "actual": null,
       "unit": "%"
@@ -701,7 +661,7 @@
       "country": "EMU",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 10.9,
       "previous": 8.2,
       "actual": null,
       "unit": "%"
@@ -741,7 +701,7 @@
       "country": "US",
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
-      "consensus": 195,
+      "consensus": 196,
       "previous": 194,
       "actual": null,
       "unit": null
@@ -901,7 +861,7 @@
       "country": "DE",
       "name": "Industrial Production s.a. (MoM)",
       "impact": "MEDIUM",
-      "consensus": 0.5,
+      "consensus": 0,
       "previous": 2,
       "actual": null,
       "unit": "%"
@@ -1031,7 +991,7 @@
       "country": "US",
       "name": "Michigan Consumer Sentiment Index",
       "impact": "HIGH",
-      "consensus": 48.2,
+      "consensus": 48,
       "previous": 48,
       "actual": null,
       "unit": null
@@ -1091,7 +1051,7 @@
       "country": "US",
       "name": "Consumer Credit Change",
       "impact": "LOW",
-      "consensus": 11.8,
+      "consensus": 12,
       "previous": 8.28,
       "actual": null,
       "unit": "$"
@@ -1522,7 +1482,7 @@
       "name": "Redbook Index (YoY)",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 10.4,
       "actual": null,
       "unit": "%"
     },
@@ -1637,6 +1597,16 @@
       "unit": "%"
     },
     {
+      "at": "2026-11-11T10:30:00Z",
+      "country": "DE",
+      "name": "30-y Bond Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
       "at": "2026-11-11T12:00:00Z",
       "country": "US",
       "name": "MBA Mortgage Applications",
@@ -1685,6 +1655,16 @@
       "previous": 6.8,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-12T09:00:00Z",
+      "country": "EMU",
+      "name": "Economic Bulletin",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-12T13:30:00Z",
@@ -1887,34 +1867,14 @@
       "unit": null
     },
     {
-      "at": "2026-11-13T04:30:00Z",
-      "country": "JP",
-      "name": "Capacity Utilization",
-      "impact": "LOW",
+      "at": "2026-11-13T00:00:00Z",
+      "country": "EMU",
+      "name": "EU leaders summit",
+      "impact": "MEDIUM",
       "consensus": null,
-      "previous": -4.2,
+      "previous": null,
       "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-13T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (MoM)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2.2,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-13T04:30:00Z",
-      "country": "JP",
-      "name": "Industrial Production (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1.9,
-      "actual": null,
-      "unit": "%"
+      "unit": null
     },
     {
       "at": "2026-11-13T07:00:00Z",
@@ -1999,26 +1959,6 @@
     {
       "at": "2026-11-13T10:00:00Z",
       "country": "EMU",
-      "name": "Industrial Production s.a. (MoM)",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": -0.5,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-13T10:00:00Z",
-      "country": "EMU",
-      "name": "Industrial Production w.d.a. (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -1.1,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-13T10:00:00Z",
-      "country": "EMU",
       "name": "Trade Balance n.s.a.",
       "impact": "LOW",
       "consensus": null,
@@ -2097,56 +2037,6 @@
       "unit": null
     },
     {
-      "at": "2026-11-13T20:30:00Z",
-      "country": "EMU",
-      "name": "CFTC EUR NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": "€"
-    },
-    {
-      "at": "2026-11-13T20:30:00Z",
-      "country": "JP",
-      "name": "CFTC JPY NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-11-13T20:30:00Z",
-      "country": "US",
-      "name": "CFTC Gold NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": "$"
-    },
-    {
-      "at": "2026-11-13T20:30:00Z",
-      "country": "US",
-      "name": "CFTC Oil NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-13T20:30:00Z",
-      "country": "US",
-      "name": "CFTC S&P 500 NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": "$"
-    },
-    {
       "at": "2026-11-15T23:50:00Z",
       "country": "JP",
       "name": "Gross Domestic Product (QoQ)",
@@ -2173,26 +2063,6 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 2.6,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-15T23:50:00Z",
-      "country": "JP",
-      "name": "Machinery Orders (MoM)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 5.2,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-15T23:50:00Z",
-      "country": "JP",
-      "name": "Machinery Orders (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 18.6,
       "actual": null,
       "unit": "%"
     },
@@ -2267,6 +2137,56 @@
       "unit": null
     },
     {
+      "at": "2026-11-16T04:30:00Z",
+      "country": "JP",
+      "name": "Capacity Utilization",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -4.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T04:30:00Z",
+      "country": "JP",
+      "name": "Industrial Production (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T10:00:00Z",
+      "country": "EMU",
+      "name": "Industrial Production s.a. (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-16T10:00:00Z",
+      "country": "EMU",
+      "name": "Industrial Production w.d.a. (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -1.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
       "at": "2026-11-16T11:00:00Z",
       "country": "DE",
       "name": "German Buba Monthly Report",
@@ -2305,6 +2225,296 @@
       "previous": null,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-16T20:30:00Z",
+      "country": "EMU",
+      "name": "CFTC EUR NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-16T20:30:00Z",
+      "country": "JP",
+      "name": "CFTC JPY NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-16T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Gold NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-16T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Oil NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-16T20:30:00Z",
+      "country": "US",
+      "name": "CFTC S&P 500 NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-17T04:30:00Z",
+      "country": "JP",
+      "name": "Tertiary Industry Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T10:00:00Z",
+      "country": "DE",
+      "name": "ZEW Survey – Current Situation",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -35.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T10:00:00Z",
+      "country": "DE",
+      "name": "ZEW Survey – Economic Sentiment",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 28.1,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T10:00:00Z",
+      "country": "EMU",
+      "name": "ZEW Survey – Economic Sentiment",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 18.5,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T13:15:00Z",
+      "country": "US",
+      "name": "ADP Employment Change 4-week average",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Export Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Export Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 11.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Import Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Import Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 8.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Retail Sales (MoM)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Retail Sales (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 6.3,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Retail Sales Control Group",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 0.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:30:00Z",
+      "country": "US",
+      "name": "Retail Sales ex Autos (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T13:55:00Z",
+      "country": "US",
+      "name": "Redbook Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T14:15:00Z",
+      "country": "US",
+      "name": "Capacity Utilization",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 76.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T14:15:00Z",
+      "country": "US",
+      "name": "Industrial Production (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T14:30:00Z",
+      "country": "US",
+      "name": "Fed's Hammack speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T15:00:00Z",
+      "country": "US",
+      "name": "Business Inventories",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T15:00:00Z",
+      "country": "US",
+      "name": "NAHB Housing Market Index",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 29,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T21:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-17T23:50:00Z",
+      "country": "JP",
+      "name": "Adjusted Merchandise Trade Balance",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -704,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-17T23:50:00Z",
+      "country": "JP",
+      "name": "Exports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 16.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T23:50:00Z",
+      "country": "JP",
+      "name": "Imports (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 18.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-17T23:50:00Z",
+      "country": "JP",
+      "name": "Merchandise Trade Balance Total",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -536.6,
+      "actual": null,
+      "unit": "¥"
     }
   ]
 }
