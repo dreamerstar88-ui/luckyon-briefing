@@ -1,81 +1,11 @@
 {
-  "fetchedAt": "2026-11-05T02:31:03Z",
+  "fetchedAt": "2026-11-05T18:41:18Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-03T02:31:03Z",
-    "to": "2026-11-19T02:31:03Z"
+    "from": "2026-11-03T18:41:18Z",
+    "to": "2026-11-19T18:41:18Z"
   },
   "events": [
-    {
-      "at": "2026-11-03T05:00:00Z",
-      "country": "US",
-      "name": "US Midterm Elections",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T13:55:00Z",
-      "country": "US",
-      "name": "Redbook Index (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 9.3,
-      "actual": 10.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-03T15:00:00Z",
-      "country": "US",
-      "name": "Factory Orders (MoM)",
-      "impact": "MEDIUM",
-      "consensus": 1.2,
-      "previous": 0.1,
-      "actual": 1.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-03T15:00:00Z",
-      "country": "US",
-      "name": "JOLTS Job Openings",
-      "impact": "MEDIUM",
-      "consensus": 7.13,
-      "previous": 7.079,
-      "actual": 7.523,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T15:00:00Z",
-      "country": "US",
-      "name": "RealClearMarkets/TIPP Economic Optimism (MoM)",
-      "impact": "LOW",
-      "consensus": 46.2,
-      "previous": 46.8,
-      "actual": 48.5,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T18:00:00Z",
-      "country": "EMU",
-      "name": "ECB's Nagel speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T18:15:00Z",
-      "country": "EMU",
-      "name": "ECB's Sleijpen speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
     {
       "at": "2026-11-03T21:00:00Z",
       "country": "KR",
@@ -347,7 +277,7 @@
       "unit": null
     },
     {
-      "at": "2026-11-04T20:06:11.237Z",
+      "at": "2026-11-04T20:05:00Z",
       "country": "US",
       "name": "Total Vehicle Sales",
       "impact": "LOW",
@@ -393,7 +323,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.1,
-      "actual": null,
+      "actual": 2.768,
       "unit": "%"
     },
     {
@@ -403,7 +333,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 2.7,
-      "actual": null,
+      "actual": 3.3,
       "unit": "%"
     },
     {
@@ -413,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": 4.8,
       "previous": -10.6,
-      "actual": null,
+      "actual": 4.4,
       "unit": "%"
     },
     {
@@ -443,7 +373,7 @@
       "impact": "MEDIUM",
       "consensus": 2.5,
       "previous": 1.9,
-      "actual": null,
+      "actual": 2.5,
       "unit": "%"
     },
     {
@@ -453,7 +383,7 @@
       "impact": "MEDIUM",
       "consensus": 10.9,
       "previous": 8.2,
-      "actual": null,
+      "actual": 11.1,
       "unit": "%"
     },
     {
@@ -463,7 +393,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 43.281,
-      "actual": null,
+      "actual": 43.994,
       "unit": null
     },
     {
@@ -483,7 +413,7 @@
       "impact": "LOW",
       "consensus": 1.71,
       "previous": 1.701,
-      "actual": null,
+      "actual": 1.718,
       "unit": null
     },
     {
@@ -493,7 +423,7 @@
       "impact": "MEDIUM",
       "consensus": 196,
       "previous": 194,
-      "actual": null,
+      "actual": 189,
       "unit": null
     },
     {
@@ -503,7 +433,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 196.75,
-      "actual": null,
+      "actual": 194.75,
       "unit": null
     },
     {
@@ -513,7 +443,7 @@
       "impact": "MEDIUM",
       "consensus": 2.5,
       "previous": 1.4,
-      "actual": null,
+      "actual": 3.6,
       "unit": "%"
     },
     {
@@ -523,7 +453,7 @@
       "impact": "MEDIUM",
       "consensus": 0.6,
       "previous": 1.2,
-      "actual": null,
+      "actual": -0.7,
       "unit": "%"
     },
     {
@@ -537,13 +467,23 @@
       "unit": null
     },
     {
+      "at": "2026-11-05T15:00:00Z",
+      "country": "US",
+      "name": "Fed's Barkin speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
       "at": "2026-11-05T15:30:00Z",
       "country": "US",
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 81,
       "previous": 80,
-      "actual": null,
+      "actual": 77,
       "unit": null
     },
     {
@@ -573,7 +513,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.91,
-      "actual": null,
+      "actual": 3.89,
       "unit": "%"
     },
     {
@@ -1211,7 +1151,7 @@
       "country": "US",
       "name": "Consumer Price Index (MoM)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 0.6,
       "actual": null,
       "unit": "%"
@@ -1241,7 +1181,7 @@
       "country": "US",
       "name": "Consumer Price Index ex Food & Energy (MoM)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.2,
       "previous": 0.3,
       "actual": null,
       "unit": "%"
@@ -1472,7 +1412,7 @@
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.718,
       "actual": null,
       "unit": null
     },
@@ -1482,7 +1422,7 @@
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 189,
       "actual": null,
       "unit": null
     },
@@ -1492,7 +1432,7 @@
       "name": "Initial Jobless Claims 4-week average",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 194.75,
       "actual": null,
       "unit": null
     },
@@ -1511,7 +1451,7 @@
       "country": "US",
       "name": "Existing Home Sales (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 3.95,
       "previous": 3.99,
       "actual": null,
       "unit": null
@@ -1532,7 +1472,7 @@
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 77,
       "actual": null,
       "unit": null
     },
@@ -1542,7 +1482,7 @@
       "name": "4-Week Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 3.89,
       "actual": null,
       "unit": "%"
     },
@@ -2553,6 +2493,126 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 18.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T09:00:00Z",
+      "country": "EMU",
+      "name": "Current Account n.s.a",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.7,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-19T09:00:00Z",
+      "country": "EMU",
+      "name": "Current Account s.a",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 8.71,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-11-19T10:00:00Z",
+      "country": "EMU",
+      "name": "Construction Output  s.a (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T10:00:00Z",
+      "country": "EMU",
+      "name": "Construction Output w.d.a (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T13:30:00Z",
+      "country": "US",
+      "name": "Continuing Jobless Claims",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T13:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T13:30:00Z",
+      "country": "US",
+      "name": "Initial Jobless Claims 4-week average",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T13:30:00Z",
+      "country": "US",
+      "name": "Philadelphia Fed Manufacturing Survey",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 20.9,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T15:30:00Z",
+      "country": "US",
+      "name": "EIA Natural Gas Storage Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T16:30:00Z",
+      "country": "US",
+      "name": "4-Week Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T17:30:00Z",
+      "country": "US",
+      "name": "Fed's Goolsbee speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-19T18:00:00Z",
+      "country": "US",
+      "name": "10-year TIPS Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.653,
       "actual": null,
       "unit": "%"
     }
