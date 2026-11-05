@@ -1,0 +1,712 @@
+{
+ "date": "2026-11-05",
+ "session": "pm",
+ "dateLabel_ko": "2026.11.05(목) 저녁",
+ "dateLabel_en": "Thu, Nov 5, 2026 · PM",
+ "headline_ko": "코스피 5.28% 급락 5,383.80… 외국인 3.4조 순매도, 삼성전자·SK하이닉스 7~9%대 하락",
+ "headline_sub_ko": "코스닥 −5.11% · 양 시장 매도 사이드카 · 카카오 +10.65%",
+ "headline_en": "KOSPI Plunges 5.28% to 5,383.80; Foreigners Sell KRW 3.4T as Samsung, SK hynix Drop 7-9%",
+ "headline_sub_en": "KOSDAQ -5.11% · sell-side sidecars on both boards · Kakao +10.65%",
+ "cover_photo": "seoul.jpg",
+ "cover_kicker": {
+  "ko": "한국장 마감 · 11/5",
+  "en": "Korea Close · Nov 5"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 −5.28% · 코스닥 −5.11%",
+    "en": "KOSPI -5.28% · KOSDAQ -5.11%"
+   },
+   {
+    "ko": "5,383.80 / 678.41 · 코스피 종가 기준 4월 3일 이후 최저",
+    "en": "5,383.80 / 678.41 · KOSPI lowest close since Apr 3"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "삼성전자 −7.57% · SK하이닉스 −9.46%",
+    "en": "Samsung -7.57% · SK hynix -9.46%"
+   },
+   {
+    "ko": "20.15만원 / 126.4만원 · 미 데이터센터 규제 우려",
+    "en": "KRW 201,500 / 1,264,000 · US data-center rule fears"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "외국인 약 3.39조 순매도",
+    "en": "Foreigners net sold about KRW 3.39T"
+   },
+   {
+    "ko": "개인 +2.27조 · 기관 +0.85조 순매수 (코스피 정규장)",
+    "en": "Retail +2.27T · institutions +0.85T net bought (KOSPI)"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피가 300.00포인트(5.28%) 내린 5,383.80에 마감했다. 종가 기준으로 4월 3일(5,337.30) 이후 7개월 만의 최저다. 코스닥은 5.11% 내린 678.41, 두 시장 모두 오전에 매도 사이드카가 발동됐다.",
+   "삼성전자 −7.57%(20만1,500원)·SK하이닉스 −9.46%(126만4,000원). 미 중간선거에서 민주당이 의회를 장악하면서 AI 데이터센터 규제가 강해질 수 있다는 우려가 반도체 대형주를 눌렀다.",
+   "유가증권시장에서 외국인이 약 3.39조원 순매도했고 개인(2.27조원)·기관(0.85조원)이 받았다. 하락 537종목 대 상승 344종목이었다.",
+   "반면 카카오는 3분기 실적과 1,500억원 자사주 매입·소각 발표로 10.65% 올랐다. 나스닥 선물 −0.51%, S&P 500 선물 +0.17%, 공포탐욕지수는 27에서 35로 올랐다."
+  ],
+  "lines_en": [
+   "KOSPI fell 300.00 pts (5.28%) to 5,383.80, its lowest close since Apr 3 (5,337.30). KOSDAQ dropped 5.11% to 678.41, and sell-side sidecars were triggered on both boards in the morning.",
+   "Samsung Electronics fell 7.57% to 201,500 won and SK hynix 9.46% to 1,264,000. Democrats taking Congress in the US midterms stoked fears of tighter AI data-center rules, weighing on chip heavyweights.",
+   "Foreigners net sold about KRW 3.39T on the KOSPI market, while retail (KRW 2.27T) and institutions (KRW 0.85T) bought. Decliners beat advancers 537 to 344.",
+   "Kakao bucked the trend, up 10.65% on Q3 results and a KRW 150B buyback-and-cancel. Nasdaq futures -0.51%, S&P 500 futures +0.17%; Fear & Greed rose from 27 to 35."
+  ]
+ },
+ "market_note_ko": "코스피·코스닥은 11/5 정규장 종가 · 미 지수는 선물(11/5 저녁 시점, 11/4 종가 대비) · 미 10년물은 11/4 종가",
+ "market_note_en": "KOSPI/KOSDAQ are Nov 5 regular-session closes · US indexes are futures (evening Nov 5, vs Nov 4 close) · 10Y is the Nov 4 close",
+ "markets": [
+  {
+   "label": "NASDAQ Fut",
+   "value": "28,422.50",
+   "delta": "▼0.51%",
+   "dir": "down",
+   "note_ko": "11/4 선물 종가 28,566.75 대비 · 11/5 저녁 시점",
+   "note_en": "vs 28,566.75 futures close on Nov 4 · evening Nov 5"
+  },
+  {
+   "label": "S&P 500 Fut",
+   "value": "7,733.25",
+   "delta": "▲0.17%",
+   "dir": "up",
+   "note_ko": "11/4 선물 종가 7,720.50 대비 · 선물 기준",
+   "note_en": "vs 7,720.50 futures close on Nov 4 · futures"
+  },
+  {
+   "label": "KOSPI",
+   "value": "5,383.80",
+   "delta": "▼5.28%",
+   "dir": "down",
+   "note_ko": "300.00p 하락 · 정규장 종가",
+   "note_en": "-300.00 pts · regular-session close"
+  },
+  {
+   "label": "VIX",
+   "value": "16.84",
+   "delta": "▲1.38%",
+   "dir": "up",
+   "note_ko": "11/4 종가 16.61 대비 · 11/5 저녁 시점",
+   "note_en": "vs 16.61 close on Nov 4 · evening Nov 5"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "27 → 35",
+   "delta": "▲",
+   "dir": "up",
+   "note_ko": "1주 전 31 · 공포(25~44) 구간 안에서 상승",
+   "note_en": "31 a week ago · rising within the Fear zone (25-44)",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   }
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.95% → 4.90%",
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "11/3 → 11/4 종가 · 가장 최근 확정치",
+   "note_en": "Nov 3 → Nov 4 close · latest published"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,343",
+   "delta": "▲0.02%",
+   "dir": "up",
+   "note_ko": "전일 1,342.90원 대비 · 11/5 저녁 시세",
+   "note_en": "vs 1,342.90 won the day before · Nov 5 evening quote",
+   "value_sub": "· DXY 101.5"
+  },
+  {
+   "label": "Gold",
+   "value": "4,138",
+   "delta": "▲1.59%",
+   "dir": "up",
+   "note_ko": "11/4 종가 4,073.00 대비 · 선물",
+   "note_en": "vs 4,073.00 close on Nov 4 · futures"
+  },
+  {
+   "label": "WTI",
+   "value": "88.80",
+   "delta": "▲0.77%",
+   "dir": "up",
+   "note_ko": "12월물(CLZ26) 기준 · 11/4 종가 88.12 대비",
+   "note_en": "Dec contract (CLZ26) · vs 88.12 close on Nov 4"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "80,215",
+   "delta": "▼0.24%",
+   "dir": "down",
+   "note_ko": "11/4 80,405 대비 · 24시간 기준",
+   "note_en": "vs 80,405 on Nov 4 · 24h basis"
+  }
+ ],
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ Fut",
+  "S&P 500 Fut"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "300.00p 하락 · 최근 9거래일",
+  "en": "-300.00 pts · last 9 sessions"
+ },
+ "chart_series_values": [
+  5469.47,
+  5638.34,
+  6012.44,
+  5937.66,
+  5730.74,
+  5859.08,
+  5648.79,
+  5683.8,
+  5383.8
+ ],
+ "chart_series_labels": [
+  "10.26",
+  "10.27",
+  "10.28",
+  "10.29",
+  "10.30",
+  "11.02",
+  "11.03",
+  "11.04",
+  "11.05"
+ ],
+ "chart_title": {
+  "ko": "5% 급락, 7개월 만의 최저 종가",
+  "en": "A 5% Plunge to a 7-Month Closing Low"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.28 고점 6,012.44 → 11.04 5,683.80 → 11.05 종가 5,383.80",
+  "en": "Oct 28 high 6,012.44 → Nov 4 5,683.80 → Nov 5 close 5,383.80"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_title": {
+  "ko": "전자장비·전기장비·반도체 급락, 포털·제약 강세",
+  "en": "Electronics, Elec. Equip., Semis Plunge; Portals, Pharma Gain"
+ },
+ "sector_sub": {
+  "ko": "네이버 업종 분류(코스피+코스닥, 대체거래소 포함 가능) · 11/5 등락률",
+  "en": "Naver industry groups (KOSPI+KOSDAQ, may include ATS) · Nov 5 change"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "개별종목 기준(ETF 제외) · 막대 옆은 정규장 종가 등락률",
+  "en": "Individual stocks (ETFs excluded) · % beside bars is the regular-session change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit · KRW trillion"
+ },
+ "econ_kicker": "EARNINGS · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/5 발표분 · 잠정실적",
+  "en": "Released Nov 5 · preliminary results"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "Korea time (KST) · yellow dot = key"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 23:30 ~ 익일 06:00 (11월 초~3월 초 표준시 기준)",
+   "프리마켓 18:00 ~ 23:30 · 애프터마켓 06:00 ~ 10:00"
+  ],
+  "lines_en": [
+   "Regular session 11:30 PM - 6:00 AM KST (standard time, early Nov to early Mar)",
+   "Pre-market 6:00-11:30 PM · after-hours 6:00-10:00 AM KST"
+  ]
+ },
+ "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI & KOSDAQ Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "5,383.80",
+     "delta": "▼5.28%",
+     "dir": "down",
+     "sub_ko": "300.00포인트 하락 · 종가 기준 4/3 이후 최저",
+     "sub_en": "Down 300.00 pts · lowest close since Apr 3"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "678.41",
+     "delta": "▼5.11%",
+     "dir": "down",
+     "sub_ko": "36.54포인트 하락 · 하락 1,292종목",
+     "sub_en": "Down 36.54 pts · 1,292 decliners"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "up": 344,
+     "flat": 31,
+     "down": 537
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "up": 380,
+     "flat": 74,
+     "down": 1292
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (조원)",
+    "label_en": "KOSPI net buy/sell by investor (KRW tn)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Retail",
+      "value": 2.27
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreign",
+      "value": -3.39
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institution",
+      "value": 0.85
+     }
+    ]
+   },
+   "note_ko": "정규장 기준, 다수 매체와 대조. 종목수는 네이버. 오전 양 시장 매도 사이드카 발동.",
+   "note_en": "Regular session, matched to several outlets. Breadth: Naver. Sell-side sidecars on both boards."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#e66767",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "인터넷·포털",
+     "label_en": "Internet/Portals",
+     "value": 8.7
+    },
+    {
+     "label_ko": "비철금속",
+     "label_en": "Non-ferrous",
+     "value": 7.35
+    },
+    {
+     "label_ko": "화장품",
+     "label_en": "Cosmetics",
+     "value": 4.67
+    },
+    {
+     "label_ko": "제약",
+     "label_en": "Pharma",
+     "value": 4.57
+    },
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": 4.07
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": 3.97
+    },
+    {
+     "label_ko": "게임",
+     "label_en": "Games",
+     "value": 3.46
+    },
+    {
+     "label_ko": "기계",
+     "label_en": "Machinery",
+     "value": -4.03
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuilding",
+     "value": -4.09
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Elec. Goods",
+     "value": -4.34
+    },
+    {
+     "label_ko": "석유·가스",
+     "label_en": "Oil & Gas",
+     "value": -5.72
+    },
+    {
+     "label_ko": "우주항공·국방",
+     "label_en": "Aero & Def.",
+     "value": -8.11
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": -8.63
+    },
+    {
+     "label_ko": "전기장비",
+     "label_en": "Elec. Equip.",
+     "value": -11.76
+    },
+    {
+     "label_ko": "전자장비",
+     "label_en": "Elec. Gear",
+     "value": -13.48
+    }
+   ],
+   "note_ko": "시가총액 상위 업종 위주 선별. 반도체는 삼성전자·SK하이닉스 하락이 끌었고, 포털은 카카오·NAVER 강세가 이끌었다.",
+   "note_en": "Selected from the largest groups by market cap. Samsung and SK hynix dragged semis; Kakao and NAVER lifted portals."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "color": "#e66767",
+   "type": "rank",
+   "col_name_ko": "종목",
+   "col_name_en": "Stock",
+   "col_value_ko": "거래대금",
+   "col_value_en": "Turnover",
+   "rows": [
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩5.85T",
+     "pct": -9.46
+    },
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩5.34T",
+     "pct": -7.57
+    },
+    {
+     "name_ko": "삼성전기",
+     "name_en": "Samsung Electro-Mech.",
+     "value": "₩1.36T",
+     "pct": -15.34
+    },
+    {
+     "name_ko": "삼성전자우",
+     "name_en": "Samsung Elec. Pref.",
+     "value": "₩0.67T",
+     "pct": -6.58
+    },
+    {
+     "name_ko": "SK스퀘어",
+     "name_en": "SK Square",
+     "value": "₩0.58T",
+     "pct": -10.01
+    }
+   ],
+   "share": {
+    "label_ko": "네이버 집계 코스피 거래대금 23.61조원 중 비중",
+    "label_en": "Share of Naver-tallied KOSPI turnover (KRW 23.61T)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "SK하이닉스+삼성전자",
+      "label_en": "SK hynix + Samsung",
+      "pct": 44.4,
+      "color": "#e66767"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Rest",
+      "pct": 55.6,
+      "color": "#4a4a4a"
+     }
+    ]
+   },
+   "note_ko": "막대 값은 종가×거래량 추정(5행 동일 산식, 거래량 집계 시점에 따라 ±0.01조), 비중은 네이버 집계(SK하이닉스 5.48조·삼성전자 5.01조). ETF 제외. 상위 5종목이 모두 6% 넘게 내렸다.",
+   "note_en": "Bar values are close x volume estimates (same formula for all rows, ±0.01T by timing); share uses Naver tallies (SK hynix 5.48T, Samsung 5.01T). ETFs excluded. All top five fell more than 6%."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#e66767",
+   "type": "stats",
+   "stats": [
+    {
+     "label_ko": "LG화학 3분기 영업이익",
+     "label_en": "LG Chem Q3 operating profit",
+     "value": "₩561.2B",
+     "delta": {
+      "ko": "전년비 ▼17.4%",
+      "en": "▼17.4% YoY"
+     },
+     "dir": "down",
+     "sub_ko": "연결 · 매출 15.496조원(+34.0%) · 석유화학 영업손실 1,756억원",
+     "sub_en": "Consolidated · revenue KRW 15.496T (+34.0%) · petchem loss KRW 175.6B"
+    },
+    {
+     "label_ko": "카카오 3분기 영업이익",
+     "label_en": "Kakao Q3 operating profit",
+     "value": "₩240.3B",
+     "delta": {
+      "ko": "전년비 ▲7.4%",
+      "en": "▲7.4% YoY"
+     },
+     "dir": "up",
+     "sub_ko": "연결 · 매출 2.0867조원 · 전년 동기는 중단영업 반영 재작성 기준",
+     "sub_en": "Consolidated · revenue KRW 2.0867T · prior year restated for discontinued ops"
+    },
+    {
+     "label_ko": "넷마블 3분기 영업이익",
+     "label_en": "Netmarble Q3 operating profit",
+     "value": "₩50.4B",
+     "delta": {
+      "ko": "예상 −27.2% 하회",
+      "en": "Missed est. by 27.2%"
+     },
+     "dir": "down",
+     "sub_ko": "연합인포맥스 컨센서스 692억원 대비 · 전년비 −44.6%",
+     "sub_en": "vs Yonhap Infomax consensus KRW 69.2B · -44.6% YoY"
+    },
+    {
+     "label_ko": "KCC 3분기 영업이익",
+     "label_en": "KCC Q3 operating profit",
+     "value": "₩85.2B",
+     "delta": {
+      "ko": "전년비 ▼32.2%",
+      "en": "▼32.2% YoY"
+     },
+     "dir": "down",
+     "sub_ko": "연결 · 매출 1.6732조원(+4.1%) · 컨센서스 비교 없음",
+     "sub_en": "Consolidated · revenue KRW 1.6732T (+4.1%) · no consensus comparison"
+    },
+    {
+     "label_ko": "소니 2분기 주당순이익",
+     "label_en": "Sony FQ2 EPS",
+     "value": "$0.48",
+     "delta": {
+      "ko": "예상 +$0.10 상회",
+      "en": "Beat est. by $0.10"
+     },
+     "dir": "up",
+     "sub_ko": "예상 $0.38 · FMP 집계(ADR 기준)",
+     "sub_en": "Est. $0.38 · FMP data (ADR basis)"
+    }
+   ],
+   "note_ko": "원화는 십억원(B) 단위 표기. 모두 잠정·공시 기준이며 넷마블 컨센서스는 연합인포맥스, 소니는 FMP. LG화학·카카오·KCC는 전년 동기와 비교.",
+   "note_en": "Won figures in billions (B). All preliminary/disclosed; Netmarble consensus from Yonhap Infomax, Sony from FMP. LG Chem, Kakao and KCC vs a year earlier."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "닛케이 4일 연속 하락, 어드밴테스트 15%·소프트뱅크 7% 급락",
+     "headline_en": "Nikkei Falls 4th Day; Advantest -15%, SoftBank -7%",
+     "body_ko": "뉴스핌은 닛케이225가 1.79% 내린 6만1,077.90엔으로 5개월 반 만의 최저라고 전했다. 낙폭은 뉴스웍스 집계다.",
+     "body_en": "Newspim: the Nikkei 225 fell 1.79% to 61,077.90, a 5.5-month low. Stock drops per Newsworks; TOPIX rose 1.16%."
+    },
+    {
+     "headline_ko": "AMD CEO “메모리 원가 상승분, 고객과 분담 협의”",
+     "headline_en": "AMD CEO: Memory Cost Rises Shared With Customers",
+     "body_ko": "뉴스핌에 따르면 리사 수 CEO는 11/3 실적 콜에서 부품 원가 상승분을 고객과 나누는 협의 중이라고 답했다.",
+     "body_en": "Per Newspim, CEO Lisa Su said on the Nov 3 earnings call that AMD is negotiating with customers to share component cost increases."
+    },
+    {
+     "headline_ko": "3분기 D램 매출 약 4.7배, 삼성전자 점유율 38% 1위",
+     "headline_en": "Q3 DRAM Revenue Up 4.7x; Samsung Leads at 38%",
+     "body_ko": "카운터포인트리서치 집계로 삼성전자 38%, SK하이닉스 29%다. D램 평균판매가는 Gb당 1.9달러까지 올랐다.",
+     "body_en": "Counterpoint Research: Samsung 38%, SK hynix 29%. The average DRAM price rose to $1.9 per Gb, per Etoday."
+    },
+    {
+     "headline_ko": "오하이오·조지아 당선인도 데이터센터 제한 공약",
+     "headline_en": "Ohio, Georgia Winners Also Pledge Data-Center Limits",
+     "body_ko": "포천에 따르면 텍사스·오하이오·조지아 주지사 당선인이 데이터센터 제한을 공약했다. 전국 모라토리엄은 거부권이 변수다.",
+     "body_en": "Fortune: governors-elect in Texas, Ohio and Georgia pledged data-center limits. A national moratorium faces a possible Trump veto."
+    },
+    {
+     "headline_ko": "오텍캐리어, 데이터센터코리아서 냉각수 분배장치 공개",
+     "headline_en": "Autek Carrier Shows CDU at Data Center Korea",
+     "body_ko": "엔비디아 인증 CDU(1.3MW급)를 전시했다. 구미 200MW 우선협상(10월)·48MW 수주(8월)는 앞서 발표된 건이다.",
+     "body_en": "It showed an Nvidia-qualified 1.3MW CDU. The Gumi 200MW preferred-bidder (Oct) and 48MW order (Aug) were announced earlier."
+    },
+    {
+     "headline_ko": "인피니언·솔루엠, AI 데이터센터 HVDC 전력 협력 MOU",
+     "headline_en": "Infineon, Solum Sign AI Data-Center HVDC MOU",
+     "body_ko": "고전압 직류(HVDC) 전력 솔루션 협력을 강화한다. 상용 공급계약은 아니며 규모와 일정은 공개되지 않았다.",
+     "body_en": "The two will deepen cooperation on high-voltage DC power. It is an MOU, not a supply contract; volume and timing were not disclosed."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "경제부총리·한은·금융위·금감원, 시장상황점검회의",
+     "headline_en": "Finance Chief, BOK, Regulators Hold Market Meeting",
+     "body_ko": "이형일 부총리 주재로 한은 총재 등이 수출입은행에서 모여 미 중간선거 결과의 금융시장 영향을 점검했다.",
+     "body_en": "Deputy PM Lee Hyung-il chaired a meeting with the BOK governor and regulators to review the market impact of the US midterm results."
+    },
+    {
+     "headline_ko": "한은 기준금리 3.00%, 올해 남은 금통위는 11/26 한 번",
+     "headline_en": "BOK Rate at 3.00%; Last 2026 Meeting Is Nov 26",
+     "body_ko": "10/22 금통위가 3.00%로 만장일치 동결했다. 시장은 11월 추가 인상을 점친다.",
+     "body_en": "The Oct 22 meeting held at 3.00% unanimously. Markets expect another hike in November."
+    },
+    {
+     "headline_ko": "원/달러 1,342.1원 마감, 국고채 10년물 3.887%",
+     "headline_en": "Won Closes at 1,342.1; 10-Year KTB at 3.887%",
+     "body_ko": "환율은 0.6원 올랐다(베타뉴스). 국고채 10년물은 3.968%에서 3.887%로 내려 5월 7일 이후 처음 3.8%대다(한국일보).",
+     "body_en": "The won rose 0.6 (Betanews). The 10-year KTB yield fell from 3.968% to 3.887%, first in the 3.8s since May 7 (Hankook Ilbo)."
+    },
+    {
+     "headline_ko": "카카오 +10.65% 3만2,200원, 자사주 1,500억원 소각",
+     "headline_en": "Kakao +10.65% to 32,200 Won on Buyback",
+     "body_ko": "515만4,639주를 11/6~2027/2/5 장내 매입해 전량 소각한다. 정신아 대표는 AI 확산이 기대에 못 미쳤다고 밝혔다.",
+     "body_en": "It will buy 5,154,639 shares from Nov 6 to Feb 5, 2027 and cancel them. CEO Chung Shin-ah said AI uptake lagged expectations."
+    },
+    {
+     "headline_ko": "항셍 +3.67%·센섹스 +2.6%, 코스피·닛케이 급락과 엇갈려",
+     "headline_en": "Hang Seng +3.67%, Sensex +2.6% as KOSPI, Nikkei Fall",
+     "body_ko": "항셍은 24,796.98(+3.67%, 야후파이낸스), 센섹스는 약 79,310(+2.6%), 니프티50은 24,536.6(+2.40%)였다.",
+     "body_en": "The Hang Seng closed at 24,796.98 (+3.67%, Yahoo Finance); the Sensex rose 2.6% to about 79,310 and Nifty 50 gained 2.40% to 24,536.6."
+    },
+    {
+     "headline_ko": "브렌트유 장중 93달러 → 저녁 96달러선, 카타르 중재",
+     "headline_en": "Brent Dips to $93, Rebounds to $96 on Qatar Talks",
+     "body_ko": "걸프뉴스는 오전 93달러라고 전했다. 저녁엔 96달러선으로 전일 종가(94.62달러)보다 1.6% 높다. 합의는 아직 없다.",
+     "body_en": "Gulf News had Brent at $93 in the morning; by evening about $96, up 1.6% from Nov 4's $94.62 close. No deal has been reached."
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "time": "11/5 21:00",
+   "title_ko": "영란은행 기준금리 결정",
+   "title_en": "Bank of England Rate Decision",
+   "detail_ko": "현재 3.75% · 시장은 25bp 인상 예상 · 베일리 총재 회견 21:30",
+   "detail_en": "Now 3.75% · market expects a 25 bp hike · Bailey presser 21:30",
+   "importance": "high"
+  },
+  {
+   "time": "11/5 22:30",
+   "title_ko": "美 신규 실업수당청구",
+   "title_en": "US Initial Jobless Claims",
+   "detail_ko": "예상 196K · 이전 194K",
+   "detail_en": "Est. 196K · Prior 194K",
+   "importance": "mid"
+  },
+  {
+   "time": "11/5 22:30",
+   "title_ko": "美 3분기 생산성·단위노동비용",
+   "title_en": "US Q3 Productivity & Unit Labor Costs",
+   "detail_ko": "생산성 예상 2.5% · 이전 1.4% / 단위노동비용 예상 0.6% · 이전 1.2%",
+   "detail_en": "Productivity est. 2.5% · prior 1.4% / ULC est. 0.6% · prior 1.2%",
+   "importance": "mid"
+  },
+  {
+   "time": "11/5 22:50",
+   "title_ko": "해맥 클리블랜드 연은 총재 대담",
+   "title_en": "Cleveland Fed's Hammack Speaks",
+   "detail_ko": "매파·투표권 O · 10월 FOMC에서 25bp 인상 소수의견",
+   "detail_en": "Hawk · voter · dissented for a 25 bp hike at the October FOMC",
+   "importance": "high"
+  },
+  {
+   "time": "11/5 23:10",
+   "title_ko": "바킨 리치먼드 연은 총재 좌담",
+   "title_en": "Richmond Fed's Barkin Speaks",
+   "detail_ko": "중립·투표권 X",
+   "detail_en": "Centrist · non-voter",
+   "importance": "mid"
+  },
+  {
+   "time": "11/6 07:00",
+   "title_ko": "에어비앤비 3분기 실적",
+   "title_en": "Airbnb Q3 Earnings",
+   "detail_ko": "미국 11/5 장 마감 후 · 예상 EPS $2.8~2.9 · 매출 $47억대 · 콜 07:00",
+   "detail_en": "After the Nov 5 US close · Est. EPS $2.8-2.9 · Rev. about $4.7B · call 7:00 AM",
+   "importance": "mid"
+  }
+ ],
+ "card_photos": {
+  "1": "Seoul financial district at dusk, glowing red downward stock ticker reflected on glass towers, moody and tense",
+  "3": "A dark trading floor with red falling index numbers across a wall of screens, traders in silhouette",
+  "7": "Close-up of a semiconductor wafer under blue light with circuit patterns, dark and cool tones"
+ },
+ "caption_ko": "📊 luckyon 저녁 브리핑 · 2026.11.05(목)\n\n코스피가 5.28% 내린 5,383.80으로 마감했습니다. 종가 기준 4월 3일 이후 최저이고, 코스닥도 5.11% 내려 양 시장에서 매도 사이드카가 발동됐습니다. 외국인은 유가증권시장에서 약 3.39조원 순매도했고 개인(+2.27조)과 기관(+0.85조)이 받았습니다.\n\n삼성전자 −7.57%, SK하이닉스 −9.46%. 미 중간선거 뒤 AI 데이터센터 규제 우려가 반도체 대형주를 눌렀습니다. 반면 카카오는 3분기 실적과 1,500억원 자사주 매입·소각 발표로 10.65% 올랐습니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#코스피 #코스닥 #삼성전자 #SK하이닉스 #카카오 #외국인 #사이드카 #반도체 #AI데이터센터 #미국중간선거 #닛케이 #원달러 #증시 #경제 #투자 #luckyon",
+ "caption_en": "📊 luckyon Evening Briefing · Thu, Nov 5, 2026\n\nKOSPI fell 5.28% to 5,383.80, its lowest close since Apr 3, and KOSDAQ dropped 5.11%; sell-side sidecars triggered on both boards. Foreigners net sold about KRW 3.39T on the KOSPI market while retail (+2.27T) and institutions (+0.85T) bought.\n\nSamsung Electronics -7.57%, SK hynix -9.46%: fears of tighter AI data-center rules after the US midterms hit chip heavyweights. Kakao bucked the trend, +10.65% on Q3 results and a KRW 150B buyback-and-cancel.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#KOSPI #KOSDAQ #Samsung #SKhynix #Kakao #Foreigners #Sidecar #Semiconductors #AIDataCenter #USMidterms #Nikkei #USDKRW #Markets #Investing #luckyon",
+ "sources": [
+  "KRX",
+  "Naver Finance 내부 API",
+  "Yahoo Finance",
+  "FMP",
+  "CNN Fear & Greed",
+  "FXStreet",
+  "DART",
+  "뉴스핌",
+  "비즈워치",
+  "한국일보",
+  "베타뉴스",
+  "토픽스타뉴스",
+  "이투데이",
+  "CNBC",
+  "Business Standard",
+  "연합인포맥스",
+  "야후파이낸스",
+  "걸프뉴스",
+  "포천"
+ ]
+}
