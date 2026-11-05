@@ -1,41 +1,11 @@
 {
-  "fetchedAt": "2026-11-04T18:35:40Z",
+  "fetchedAt": "2026-11-05T02:31:03Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-02T18:35:40Z",
-    "to": "2026-11-18T18:35:40Z"
+    "from": "2026-11-03T02:31:03Z",
+    "to": "2026-11-19T02:31:03Z"
   },
   "events": [
-    {
-      "at": "2026-11-02T19:00:00Z",
-      "country": "US",
-      "name": "Loan Officer Survey",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-02T23:00:00Z",
-      "country": "KR",
-      "name": "Consumer Price Index Growth (MoM)",
-      "impact": "LOW",
-      "consensus": 0.3,
-      "previous": 0.3,
-      "actual": 0.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-02T23:00:00Z",
-      "country": "KR",
-      "name": "Consumer Price Index Growth (YoY)",
-      "impact": "LOW",
-      "consensus": 2.9,
-      "previous": 2.9,
-      "actual": 2.8,
-      "unit": "%"
-    },
     {
       "at": "2026-11-03T05:00:00Z",
       "country": "US",
@@ -377,13 +347,13 @@
       "unit": null
     },
     {
-      "at": "2026-11-04T20:30:00Z",
+      "at": "2026-11-04T20:06:11.237Z",
       "country": "US",
       "name": "Total Vehicle Sales",
       "impact": "LOW",
       "consensus": 15.9,
       "previous": 16,
-      "actual": null,
+      "actual": 15.5,
       "unit": null
     },
     {
@@ -393,7 +363,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 46.11,
-      "actual": null,
+      "actual": 61.46,
       "unit": null
     },
     {
@@ -413,7 +383,7 @@
       "impact": "LOW",
       "consensus": 52.3,
       "previous": 52,
-      "actual": null,
+      "actual": 51.7,
       "unit": null
     },
     {
@@ -2513,6 +2483,76 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.46,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-18T19:00:00Z",
+      "country": "US",
+      "name": "FOMC Minutes",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-18T21:00:00Z",
+      "country": "US",
+      "name": "Net Long-Term TIC Flows",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 279.2,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-18T21:00:00Z",
+      "country": "US",
+      "name": "Total Net TIC Flows",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 199.8,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-11-18T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-18T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-18T23:50:00Z",
+      "country": "JP",
+      "name": "Machinery Orders (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 5.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-18T23:50:00Z",
+      "country": "JP",
+      "name": "Machinery Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 18.6,
       "actual": null,
       "unit": "%"
     }
