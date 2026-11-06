@@ -1,51 +1,11 @@
 {
-  "fetchedAt": "2026-11-05T18:41:18Z",
+  "fetchedAt": "2026-11-06T02:31:30Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-03T18:41:18Z",
-    "to": "2026-11-19T18:41:18Z"
+    "from": "2026-11-04T02:31:30Z",
+    "to": "2026-11-20T02:31:30Z"
   },
   "events": [
-    {
-      "at": "2026-11-03T21:00:00Z",
-      "country": "KR",
-      "name": "FX Reserves",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 440.56,
-      "actual": 443.16,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T21:30:00Z",
-      "country": "US",
-      "name": "API Weekly Crude Oil Stock",
-      "impact": "LOW",
-      "consensus": 2.1,
-      "previous": -2.031,
-      "actual": -5.267,
-      "unit": null
-    },
-    {
-      "at": "2026-11-03T23:50:00Z",
-      "country": "JP",
-      "name": "Monetary Base (YoY)",
-      "impact": "LOW",
-      "consensus": -14,
-      "previous": -15.2,
-      "actual": -13.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-04T01:45:00Z",
-      "country": "CN",
-      "name": "RatingDog Services PMI",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": 51.6,
-      "actual": 50.8,
-      "unit": null
-    },
     {
       "at": "2026-11-04T08:55:00Z",
       "country": "DE",
@@ -533,17 +493,7 @@
       "impact": "MEDIUM",
       "consensus": 3.8,
       "previous": 3.8,
-      "actual": null,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-05T23:30:00Z",
-      "country": "JP",
-      "name": "Overall Household Spending (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -3.1,
-      "actual": null,
+      "actual": 4.6,
       "unit": "%"
     },
     {
@@ -553,7 +503,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -92.6,
-      "actual": null,
+      "actual": 1312,
       "unit": "¥"
     },
     {
@@ -563,18 +513,8 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.18,
-      "actual": null,
+      "actual": 1.12,
       "unit": "¥"
-    },
-    {
-      "at": "2026-11-05T23:50:00Z",
-      "country": "JP",
-      "name": "JP Foreign Reserves",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 1178.4,
-      "actual": null,
-      "unit": "$"
     },
     {
       "at": "2026-11-06T07:00:00Z",
@@ -847,6 +787,16 @@
       "unit": "$"
     },
     {
+      "at": "2026-11-08T23:50:00Z",
+      "country": "JP",
+      "name": "JP Foreign Reserves",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1178.4,
+      "actual": null,
+      "unit": "$"
+    },
+    {
       "at": "2026-11-09T01:30:00Z",
       "country": "CN",
       "name": "Consumer Price Index (MoM)",
@@ -993,6 +943,16 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.932,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-09T23:30:00Z",
+      "country": "JP",
+      "name": "Overall Household Spending (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -3.1,
       "actual": null,
       "unit": "%"
     },
@@ -1352,7 +1312,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1312,
       "actual": null,
       "unit": "¥"
     },
@@ -1362,7 +1322,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.12,
       "actual": null,
       "unit": "¥"
     },
@@ -2613,6 +2573,66 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 2.653,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T21:00:00Z",
+      "country": "KR",
+      "name": "Producer Price Index Growth (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T21:00:00Z",
+      "country": "KR",
+      "name": "Producer Price Index Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T23:30:00Z",
+      "country": "JP",
+      "name": "National Consumer Price Index (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T23:30:00Z",
+      "country": "JP",
+      "name": "National CPI ex Food, Energy (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-19T23:30:00Z",
+      "country": "JP",
+      "name": "National CPI ex Fresh Food (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-20T01:15:00Z",
+      "country": "CN",
+      "name": "PBoC Interest Rate Decision",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3,
       "actual": null,
       "unit": "%"
     }
