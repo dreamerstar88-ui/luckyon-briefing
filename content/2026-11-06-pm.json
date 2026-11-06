@@ -1,0 +1,727 @@
+{
+ "date": "2026-11-06",
+ "session": "pm",
+ "dateLabel_ko": "2026.11.06(금) 저녁",
+ "dateLabel_en": "Fri, Nov 6, 2026 · PM",
+ "headline_ko": "코스피 6.02% 폭락 5,059.69… 서킷브레이커 발동, 외국인 2.8조 순매도",
+ "headline_sub_ko": "코스닥 −5.03% · SK하이닉스 −10.44% · 삼성전자 20만원선 붕괴 · 이틀간 −11%",
+ "headline_en": "KOSPI Plunges 6.02% to 5,059.69 After Circuit Breaker; Foreigners Sell KRW 2.8T",
+ "headline_sub_en": "KOSDAQ -5.03% · SK hynix -10.44% · Samsung below KRW 200K · two-day drop 11%",
+ "cover_photo": "seoul.jpg",
+ "cover_kicker": {
+  "ko": "한국장 마감 · 11/6",
+  "en": "Korea Close · Nov 6"
+ },
+ "cover_facts": [
+  [
+   "chip",
+   {
+    "ko": "코스피 −6.02% · 코스닥 −5.03%",
+    "en": "KOSPI -6.02% · KOSDAQ -5.03%"
+   },
+   {
+    "ko": "5,059.69 / 644.27 · 장중 4,911.28, 서킷브레이커 발동",
+    "en": "5,059.69 / 644.27 · intraday low 4,911.28, circuit breaker hit"
+   }
+  ],
+  [
+   "ai",
+   {
+    "ko": "삼성전자 −6.35% · SK하이닉스 −10.44%",
+    "en": "Samsung -6.35% · SK hynix -10.44%"
+   },
+   {
+    "ko": "18.87만원 / 113.2만원 · 외국인 반도체 집중 매도",
+    "en": "KRW 188,700 / 1,132,000 · foreigners dumped chips"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "외국인 −2.77조 · 기관 +1.70조",
+    "en": "Foreign -2.77T · Institution +1.70T"
+   },
+   {
+    "ko": "개인 +0.60조 · 닛케이 −5.96% · 원/달러 1,357",
+    "en": "Retail +0.60T · Nikkei -5.96% · USD/KRW 1,357"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피가 324.11포인트(6.02%) 내린 5,059.69에 마감했다. 오전 9시 3분 1단계 서킷브레이커로 20분간 거래가 멈췄고 장중 4,911.28까지 밀렸다. 이틀 합산 낙폭은 10.98%다.",
+   "삼성전자 −6.35%(18만8,700원)·SK하이닉스 −10.44%(113만2,000원). 간밤 필라델피아반도체지수가 12.25% 급락한 데다 미국의 AI 데이터센터 규제 우려까지 겹쳐 반도체 대형주가 크게 밀렸다.",
+   "유가증권시장에서 외국인이 약 2.77조원 순매도했고 기관 1.70조원·개인 0.60조원이 순매수했다. 하락 760종목, 상승 131종목이었다.",
+   "반대로 KODEX 200선물인버스2X는 +12.6%로 거래대금 2.51조원을 기록했다. 미 지수선물은 반등해 나스닥 +1.28%, S&P 500 +0.22%다."
+  ],
+  "lines_en": [
+   "KOSPI fell 324.11 points (6.02%) to 5,059.69. A level-1 circuit breaker halted trading for 20 minutes at 9:03 AM and the index hit 4,911.28 intraday. The two-day drop is 10.98%.",
+   "Samsung Electronics lost 6.35% (KRW 188,700) and SK hynix 10.44% (KRW 1,132,000). After the Philadelphia Semiconductor Index fell 12.25% overnight, US AI data-center rule fears weighed on chip heavyweights.",
+   "Foreigners net sold about KRW 2.77T on the main board while institutions bought KRW 1.70T and retail KRW 0.60T. Decliners outnumbered advancers 760 to 131.",
+   "KODEX 200 Futures Inverse 2X rose 12.6% on KRW 2.51T of turnover. US index futures rebounded: Nasdaq +1.28%, S&P 500 +0.22%."
+  ]
+ },
+ "market_note_ko": "코스피·코스닥은 11/6 정규장 종가 · 미 지수는 선물(11/6 저녁 시점, 11/5 마감 대비) · 미 10년물은 11/5 종가",
+ "market_note_en": "KOSPI/KOSDAQ are Nov 6 regular-session closes · US indexes are futures (evening Nov 6, vs Nov 5 close) · 10Y is the Nov 5 close",
+ "markets": [
+  {
+   "label": "KOSPI",
+   "value": "5,059.69",
+   "delta": "▼6.02%",
+   "dir": "down",
+   "note_ko": "11/5 종가 5,383.80 대비 · 장중 4,911.28",
+   "note_en": "vs 5,383.80 on Nov 5 · intraday low 4,911.28"
+  },
+  {
+   "label": "NASDAQ Fut",
+   "value": "27,094.00",
+   "delta": "▲1.28%",
+   "dir": "up",
+   "note_ko": "선물 · 11/5 마감 26,752.00 대비 (11/6 저녁 시점)",
+   "note_en": "Futures · vs 26,752.00 close on Nov 5 (evening Nov 6)"
+  },
+  {
+   "label": "S&P 500 Fut",
+   "value": "7,399.00",
+   "delta": "▲0.22%",
+   "dir": "up",
+   "note_ko": "선물 · 11/5 마감 7,383.00 대비 (11/6 저녁 시점)",
+   "note_en": "Futures · vs 7,383.00 close on Nov 5 (evening Nov 6)"
+  },
+  {
+   "label": "VIX",
+   "value": "26.78",
+   "delta": "▼4.97%",
+   "dir": "down",
+   "note_ko": "11/5 종가 28.18 대비 · 미국 개장 전 시세",
+   "note_en": "vs 28.18 close on Nov 5 · before the US open"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "20 → 20",
+   "delta": "-",
+   "dir": "flat",
+   "value_sub": {
+    "ko": "· 극단적 공포",
+    "en": "· Extreme Fear"
+   },
+   "note_ko": "1주 전 26 · 극단적 공포(0~24) 구간 유지",
+   "note_en": "26 a week ago · stays in Extreme Fear (0-24)"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.90% → 4.84%",
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "11/4 → 11/5 종가",
+   "note_en": "Nov 4 → Nov 5 close"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,357",
+   "delta": "▲1.08%",
+   "dir": "up",
+   "value_sub": "· DXY 102.0",
+   "note_ko": "전일 주간 종가 1,342.10원 대비 · 서울 주간 마감 1,356.60원",
+   "note_en": "vs 1,342.10 prior daytime close · Seoul daytime close 1,356.60"
+  },
+  {
+   "label": "Gold",
+   "value": "4,073",
+   "delta": "▼0.98%",
+   "dir": "down",
+   "note_ko": "11/5 종가 4,113.50 대비 · 선물",
+   "note_en": "vs 4,113.50 close on Nov 5 · futures"
+  },
+  {
+   "label": "WTI",
+   "value": "91.00",
+   "delta": "▲0.53%",
+   "dir": "up",
+   "note_ko": "12월물(CLZ26) 기준 · 11/5 종가 90.52 대비",
+   "note_en": "Dec contract (CLZ26) · vs 90.52 close on Nov 5"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "75,889",
+   "delta": "▼0.07%",
+   "dir": "down",
+   "note_ko": "11/5 75,942 대비 · 24시간 기준",
+   "note_en": "vs 75,942 on Nov 5 · 24h basis"
+  }
+ ],
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ Fut",
+  "S&P 500 Fut"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "324.11p 하락 · 최근 9거래일",
+  "en": "-324.11 pts · last 9 sessions"
+ },
+ "chart_series_values": [
+  5638.34,
+  6012.44,
+  5937.66,
+  5730.74,
+  5859.08,
+  5648.79,
+  5683.8,
+  5383.8,
+  5059.69
+ ],
+ "chart_series_labels": [
+  "10.27",
+  "10.28",
+  "10.29",
+  "10.30",
+  "11.02",
+  "11.03",
+  "11.04",
+  "11.05",
+  "11.06"
+ ],
+ "chart_title": {
+  "ko": "이틀 만에 11% 급락, 5,000선 턱걸이",
+  "en": "An 11% Two-Day Slide Stops Just Above 5,000"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "10.28 고점 6,012.44 → 11.05 5,383.80 → 11.06 종가 5,059.69",
+  "en": "Oct 28 high 6,012.44 → Nov 5 5,383.80 → Nov 6 close 5,059.69"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_title": {
+  "ko": "전기장비·반도체 급락, IT서비스·포털은 소폭 상승",
+  "en": "Elec. Equipment, Semis Plunge; IT Services, Portals Edge Up"
+ },
+ "sector_sub": {
+  "ko": "네이버 업종 분류(코스피+코스닥) · 11/6 등락률",
+  "en": "Naver industry groups (KOSPI+KOSDAQ) · Nov 6 change"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "개별종목 기준(ETF 제외) · 막대 옆은 정규장 종가 등락률",
+  "en": "Individual stocks (ETFs excluded) · % beside bars is the regular-session change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit · KRW trillion"
+ },
+ "econ_kicker": "EARNINGS · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/6 발표분 · 잠정실적",
+  "en": "Released Nov 6 · preliminary results"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI & KOSDAQ Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "5,059.69",
+     "delta": "▼6.02%",
+     "dir": "down",
+     "sub_ko": "324.11포인트 하락 · 장중 4,911.28 · 이틀 −10.98%",
+     "sub_en": "Down 324.11 pts · intraday 4,911.28 · two-day -10.98%"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "644.27",
+     "delta": "▼5.03%",
+     "dir": "down",
+     "sub_ko": "34.14포인트 하락 · 하락 1,439종목",
+     "sub_en": "Down 34.14 pts · 1,439 decliners"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "up": 131,
+     "flat": 20,
+     "down": 760
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "up": 251,
+     "flat": 58,
+     "down": 1439
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (조원)",
+    "label_en": "KOSPI net buy/sell by investor (KRW tn)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Retail",
+      "value": 0.6
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreign",
+      "value": -2.77
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institution",
+      "value": 1.7
+     }
+    ]
+   },
+   "note_ko": "정규장 기준, 다수 매체와 대조. 종목수는 네이버. 오전 9시 3분 서킷브레이커, 코스닥 매도 사이드카.",
+   "note_en": "Regular session, matched to several outlets. Breadth: Naver. Circuit breaker at 9:03 AM; KOSDAQ sell-side sidecar."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#e66767",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "IT서비스",
+     "label_en": "IT Services",
+     "value": 1.12
+    },
+    {
+     "label_ko": "인터넷·포털",
+     "label_en": "Internet/Portals",
+     "value": 1.1
+    },
+    {
+     "label_ko": "무선통신",
+     "label_en": "Wireless Telecom",
+     "value": 0.91
+    },
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": -1.82
+    },
+    {
+     "label_ko": "제약",
+     "label_en": "Pharma",
+     "value": -1.97
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": -2.68
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuilding",
+     "value": -3.44
+    },
+    {
+     "label_ko": "건설",
+     "label_en": "Construction",
+     "value": -3.51
+    },
+    {
+     "label_ko": "석유·가스",
+     "label_en": "Oil & Gas",
+     "value": -3.59
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Elec. Goods",
+     "value": -4.15
+    },
+    {
+     "label_ko": "우주항공·국방",
+     "label_en": "Aero & Def.",
+     "value": -4.56
+    },
+    {
+     "label_ko": "전자장비",
+     "label_en": "Elec. Gear",
+     "value": -5.1
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": -5.22
+    },
+    {
+     "label_ko": "손해보험",
+     "label_en": "P&C Insurance",
+     "value": -5.58
+    },
+    {
+     "label_ko": "전기장비",
+     "label_en": "Elec. Equip.",
+     "value": -7.3
+    }
+   ],
+   "note_ko": "시가총액 상위 업종 위주 선별. 반도체는 SK하이닉스·삼성전자가 끌어내렸고, 상승 업종은 IT서비스·포털·무선통신 등 소수에 그쳤다.",
+   "note_en": "Selected from the largest groups by market cap. SK hynix and Samsung dragged semis; only a few groups such as IT services, portals and wireless telecom rose."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "color": "#e66767",
+   "type": "rank",
+   "col_name_ko": "종목",
+   "col_name_en": "Stock",
+   "col_value_ko": "거래대금",
+   "col_value_en": "Turnover",
+   "rows": [
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩8.96T",
+     "pct": -10.44
+    },
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩6.62T",
+     "pct": -6.35
+    },
+    {
+     "name_ko": "삼성전기",
+     "name_en": "Samsung Electro-Mech.",
+     "value": "₩1.35T",
+     "pct": -7.84
+    },
+    {
+     "name_ko": "삼성전자우",
+     "name_en": "Samsung Elec. Pref.",
+     "value": "₩0.85T",
+     "pct": -6.3
+    },
+    {
+     "name_ko": "삼성SDI",
+     "name_en": "Samsung SDI",
+     "value": "₩0.42T",
+     "pct": -8.05
+    }
+   ],
+   "share": {
+    "label_ko": "네이버 집계 코스피 거래대금 28.98조원 중 비중",
+    "label_en": "Share of Naver-tallied KOSPI turnover (KRW 28.98T)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "SK하이닉스+삼성전자",
+      "label_en": "SK hynix + Samsung",
+      "pct": 53.8,
+      "color": "#e66767"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Rest",
+      "pct": 46.2,
+      "color": "#4a4a4a"
+     }
+    ]
+   },
+   "note_ko": "막대 값은 네이버 집계 거래대금, ETF 제외. 참고로 KODEX 200 3.06조·200선물인버스2X 2.51조(+12.6%)·레버리지 2.28조(−12.9%)도 거래대금 상위였다. 상위 5종목 모두 6% 넘게 내렸다.",
+   "note_en": "Bar values are Naver-tallied turnover, ETFs excluded. For reference, KODEX 200 (KRW 3.06T), 200 Futures Inverse 2X (2.51T, +12.6%) and Leverage (2.28T, -12.9%) also ranked high. All top five fell more than 6%."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#e66767",
+   "type": "stats",
+   "stats": [
+    {
+     "label_ko": "CJ CGV 3분기 영업이익",
+     "label_en": "CJ CGV Q3 operating profit",
+     "value": "₩73.6B",
+     "delta": {
+      "ko": "전년비 ▲215.2%",
+      "en": "▲215.2% YoY"
+     },
+     "dir": "up",
+     "sub_ko": "연결 · 매출 6,881억원(+18.0%) · 감사 전 잠정",
+     "sub_en": "Consolidated · revenue KRW 688.1B (+18.0%) · pre-audit"
+    },
+    {
+     "label_ko": "진에어 3분기 영업이익",
+     "label_en": "Jin Air Q3 operating profit",
+     "value": "₩7.8B",
+     "delta": {
+      "ko": "전년 적자 → 흑자전환",
+      "en": "Turned profitable YoY"
+     },
+     "dir": "up",
+     "sub_ko": "매출 4,131억원(+35.7%) · 전년 동기 영업손실 225억원 · 잠정 공정공시",
+     "sub_en": "Revenue KRW 413.1B (+35.7%) · year-ago loss KRW 22.5B · preliminary filing"
+    },
+    {
+     "label_ko": "SK네트웍스 3분기 영업이익",
+     "label_en": "SK Networks Q3 operating profit",
+     "value": "₩20.1B",
+     "delta": {
+      "ko": "전년비 ▼9.9%",
+      "en": "▼9.9% YoY"
+     },
+     "dir": "down",
+     "sub_ko": "연결 · 매출 1조9,357억원(−1.9%)",
+     "sub_en": "Consolidated · revenue KRW 1.9357T (-1.9%)"
+    },
+    {
+     "label_ko": "신세계I&C 3분기 영업이익",
+     "label_en": "Shinsegae I&C Q3 operating profit",
+     "value": "₩16.2B",
+     "delta": {
+      "ko": "전년비 ▲29.0%",
+      "en": "▲29.0% YoY"
+     },
+     "dir": "up",
+     "sub_ko": "연결 · 매출 1,769억원(+8.2%)",
+     "sub_en": "Consolidated · revenue KRW 176.9B (+8.2%)"
+    },
+    {
+     "label_ko": "獨 9월 산업생산",
+     "label_en": "Germany Sep industrial production",
+     "value": "+0.7%",
+     "delta": {
+      "ko": "예상 0.0%",
+      "en": "Est. 0.0%"
+     },
+     "dir": "up",
+     "sub_ko": "전월비 · 이전 +2.0%(잠정, +1.0%로 수정)",
+     "sub_en": "MoM · prior +2.0% prelim (revised to +1.0%)"
+    },
+    {
+     "label_ko": "유로존 9월 소매판매",
+     "label_en": "Eurozone Sep retail sales",
+     "value": "−0.7%",
+     "delta": {
+      "ko": "예상 −0.1%",
+      "en": "Est. -0.1%"
+     },
+     "dir": "down",
+     "sub_ko": "전월비 · 전년비 +0.4%(예상 0.6%)",
+     "sub_en": "MoM · YoY +0.4% (est. 0.6%)"
+    }
+   ],
+   "note_ko": "원화는 십억원(B) 단위 표기. 기업 실적은 DART 공시 기준 잠정치, 독일·유로존 지표는 Destatis·Eurostat 보도(예상은 FXStreet 캘린더).",
+   "note_en": "KRW shown in billions (B). Company figures are preliminary per DART filings; Germany/Eurozone data per Destatis/Eurostat reports (estimates from the FXStreet calendar)."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "SK하이닉스 HBM4 누적 수율 60%대 중반 보도… 회사는 '계획 상회'",
+     "headline_en": "SK hynix HBM4 Yield Reported in Mid-60s; Firm Says Above Plan",
+     "body_ko": "뉴스핌은 업계 관계자를 인용해 SK하이닉스의 HBM4 최종 누적 수율이 60%대 중반이라고 보도했다. 회사는 계획 수율을 웃돌고 고객 요청 물량을 안정적으로 공급 중이라고 밝혔다.",
+     "body_en": "Newspim, citing industry sources, reports SK hynix's cumulative HBM4 yield in the mid-60s percent. The company says it beats plan and supplies customer volumes steadily."
+    },
+    {
+     "headline_ko": "국내 전력기기주 동반 급락, 효성중공업 −11.95%",
+     "headline_en": "Korean Power-Equipment Stocks Slide; Hyosung Heavy -11.95%",
+     "body_ko": "효성중공업 −11.95%, LS ELECTRIC −10.25%, HD현대일렉트릭 −8.72%로 마감했다. 미국발 AI 투자 둔화·데이터센터 규제 우려가 전력 인프라주로 번졌다.",
+     "body_en": "Hyosung Heavy fell 11.95%, LS ELECTRIC 10.25% and HD Hyundai Electric 8.72%. US-led AI spending and data-center rule worries spread to power infrastructure."
+    },
+    {
+     "headline_ko": "TSMC −4.69%, 대만 가권지수 −4.51%",
+     "headline_en": "TSMC -4.69%; Taiwan's Taiex -4.51%",
+     "body_ko": "TSMC는 2,135대만달러로 마감했다. 가권지수는 39,701.64로 내렸고, 대만 당국은 공매도 제한 등 안정 방안을 검토하라고 지시했다.",
+     "body_en": "TSMC closed at TWD 2,135. The Taiex fell to 39,701.64 and authorities ordered a review of stabilization steps such as short-sale limits."
+    },
+    {
+     "headline_ko": "외국인, 6거래일간 삼성전자·SK하이닉스 8조원 넘게 순매도",
+     "headline_en": "Foreigners Net Sold Over KRW 8T of Samsung, SK hynix in 6 Sessions",
+     "body_ko": "한국일보(장중 집계 기준)에 따르면 6거래일 누적 순매도는 삼성전자 2조4,036억원, SK하이닉스 5조7,855억원이다. 반도체 업종 외국인 지분율은 2013년 이후 최저로 내려갔다.",
+     "body_en": "Hankook Ilbo (intraday tally) reports six-session net selling of KRW 2.4036T in Samsung and KRW 5.7855T in SK hynix. Foreign ownership of Korean chip stocks fell to its lowest since 2013."
+    },
+    {
+     "headline_ko": "삼성전기 −7.84%, 거래대금 1.35조원 개별종목 3위",
+     "headline_en": "Samsung Electro-Mechanics -7.84%, Third in Turnover at KRW 1.35T",
+     "body_ko": "삼성전기는 87만원에 마감했다. 네이버 업종 분류상 전자장비와기기는 −5.10%, 전기장비는 −7.30%로 내렸다.",
+     "body_en": "Samsung Electro-Mechanics closed at KRW 870,000. On Naver's industry groups, electronic equipment fell 5.10% and electrical equipment 7.30%."
+    },
+    {
+     "headline_ko": "카카오, 의사결정용 AI 'Kanana-2-v-decide' 오픈소스 공개",
+     "headline_en": "Kakao Open-Sources Decision-Making AI 'Kanana-2-v-decide'",
+     "body_ko": "카카오가 11월 6일 허깅페이스에 공개한 멀티모달 모델로, 답을 확률·선택·점수로 내놓는다. 속도 비교는 회사 자체 측정치다.",
+     "body_en": "Kakao released the multimodal model on Hugging Face on Nov 6; it returns answers as probabilities, choices or scores. Speed comparisons are the company's own measurements."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "코스피 6.02% 폭락, 장중 서킷브레이커 발동 후 5,000선 방어",
+     "headline_en": "KOSPI Plunges 6.02%; Circuit Breaker, Then Holds 5,000",
+     "body_ko": "오전 9시 3분께 1단계 서킷브레이커로 20분간 거래가 멈췄다. 장중 최저 4,911.28에서 낙폭을 줄여 5,059.69에 마감했다. 이틀 합산 −10.98%다.",
+     "body_en": "A level-1 circuit breaker halted trading for 20 minutes around 9:03 AM. The index recovered from a 4,911.28 low to close at 5,059.69, down 10.98% in two days."
+    },
+    {
+     "headline_ko": "코스닥 5.03% 하락 644.27, 매도 사이드카 발동",
+     "headline_en": "KOSDAQ Falls 5.03% to 644.27 With Sell-Side Sidecar",
+     "body_ko": "코스닥은 34.14포인트 내렸다. 프로그램 매도호가 효력을 5분간 정지하는 매도 사이드카가 발동됐고, 하락 1,439종목·상승 251종목이었다.",
+     "body_en": "KOSDAQ lost 34.14 points. A sell-side sidecar suspended program sell orders for five minutes; decliners numbered 1,439 versus 251 advancers."
+    },
+    {
+     "headline_ko": "정부 점검회의, 신용융자 담보비율 140% 유지 의무 3개월 한시 면제",
+     "headline_en": "Gov't Waives 140% Margin-Loan Collateral Rule for 3 Months",
+     "body_ko": "센TV·뉴스핌 등에 따르면 정부는 11월 9일부터 3개월간 신용융자 담보비율 유지 의무를 한시 면제하기로 했다. 증안펀드 투입과 공매도 제한은 포함되지 않았다.",
+     "body_en": "Per Sen TV and Newspim, the government will suspend the margin-loan collateral maintenance requirement for three months from Nov 9. Stabilization-fund injection and short-sale limits were not included."
+    },
+    {
+     "headline_ko": "외국인 현물 2.77조 순매도, 코스피200 선물은 순매수",
+     "headline_en": "Foreigners Sell KRW 2.77T Cash but Buy KOSPI 200 Futures",
+     "body_ko": "한국일보에 따르면 오후 3시 19분 기준 외국인은 코스피200 선물에서 6,870억원 순매수 우위였다. 현물은 유가증권시장 2.77조원 순매도, 기관은 1.70조원 순매수다.",
+     "body_en": "Hankook Ilbo reports foreigners were net buyers of KRW 687B in KOSPI 200 futures as of 3:19 PM. In cash equities they sold KRW 2.77T while institutions bought KRW 1.70T."
+    },
+    {
+     "headline_ko": "닛케이 5.96% 급락 5만7,434.77, 상하이 −1.10%",
+     "headline_en": "Nikkei Tumbles 5.96% to 57,434.77; Shanghai -1.10%",
+     "body_ko": "닛케이225는 5거래일 연속 내렸고 상하이종합은 3,649.18에 마감했다.",
+     "body_en": "The Nikkei 225 fell for a fifth straight day and Shanghai closed at 3,649.18."
+    },
+    {
+     "headline_ko": "원/달러 서울 주간 종가 1,356.60원, 14.50원 상승",
+     "headline_en": "Won Closes Daytime Session at 1,356.60, Up 14.50",
+     "body_ko": "서울외환시장 주간 거래 종가(오후 3시 30분)는 1,356.60원으로 전 거래일보다 14.50원 올랐다. 야후 기준 달러인덱스는 102.0 안팎이다.",
+     "body_en": "The Seoul daytime session closed at 1,356.60 per dollar, up 14.50. The dollar index stands near 102.0 on Yahoo data."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "Korea time (KST) · yellow dot = key"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 23:30 ~ 익일 06:00 (11월 초~3월 초 표준시 기준)",
+   "프리마켓 18:00 ~ 23:30 · 애프터마켓 06:00 ~ 10:00"
+  ],
+  "lines_en": [
+   "Regular session 11:30 PM - 6:00 AM KST (standard time, early Nov to early Mar)",
+   "Pre-market 6:00-11:30 PM · after-hours 6:00-10:00 AM KST"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "11/6 22:30",
+   "title_ko": "美 10월 비농업 고용",
+   "title_en": "US Oct Nonfarm Payrolls",
+   "detail_ko": "예상 +65K · 이전 +29K",
+   "detail_en": "Est. +65K · Prior +29K",
+   "importance": "high"
+  },
+  {
+   "time": "11/6 22:30",
+   "title_ko": "美 10월 실업률·시간당 임금",
+   "title_en": "US Oct Unemployment & Hourly Earnings",
+   "detail_ko": "실업률 예상 4.2% · 이전 4.2% / 시간당 임금 전월비 예상 0.3% · 이전 0.1%",
+   "detail_en": "Unemployment est. 4.2% · prior 4.2% / Hourly earnings MoM est. 0.3% · prior 0.1%",
+   "importance": "high"
+  },
+  {
+   "time": "11/7 00:00",
+   "title_ko": "美 11월 미시간대 소비자심리(잠정)",
+   "title_en": "US Nov Michigan Consumer Sentiment (Prelim)",
+   "detail_ko": "예상 48.0 · 이전 48.0",
+   "detail_en": "Est. 48.0 · Prior 48.0",
+   "importance": "high"
+  },
+  {
+   "time": "11/7 01:00",
+   "title_ko": "우에다 BOJ 총재 연설",
+   "title_en": "BOJ Governor Ueda Speaks",
+   "detail_ko": "일본은행 총재 · 정책 힌트 주목",
+   "detail_en": "Bank of Japan governor · watch for policy hints",
+   "importance": "high"
+  },
+  {
+   "time": "11/7 02:15",
+   "title_ko": "보먼 연준 부의장 연설",
+   "title_en": "Fed Vice Chair Bowman Speaks",
+   "detail_ko": "감독 담당 부의장 · FOMC 상임 투표권 O",
+   "detail_en": "Vice chair for supervision · permanent FOMC voter",
+   "importance": "mid"
+  },
+  {
+   "time": "11/7 03:00",
+   "title_ko": "베이커휴즈 美 원유 채굴장비 수",
+   "title_en": "Baker Hughes US Oil Rig Count",
+   "detail_ko": "이전 462기",
+   "detail_en": "Prior 462",
+   "importance": "mid"
+  },
+  {
+   "time": "11/7 05:00",
+   "title_ko": "美 9월 소비자신용 변화",
+   "title_en": "US Sep Consumer Credit Change",
+   "detail_ko": "예상 120억달러 · 이전 82.8억달러",
+   "detail_en": "Est. $12.0B · Prior $8.28B",
+   "importance": "mid"
+  }
+ ],
+ "next_brief_ko": "📊 다음 브리핑 — 내일 아침 8시, 한 주 결산",
+ "next_brief_en": "📊 Next brief — 8 AM KST, the week in review",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "card_photos": {
+  "1": "Seoul financial district at night, glowing red downward stock ticker reflected on glass towers, tense and moody",
+  "3": "A dark trading floor with red falling index numbers on a wall of screens, traders in silhouette",
+  "7": "Close-up of a semiconductor wafer under blue light with fine circuit patterns, dark background"
+ },
+ "caption_ko": "📊 luckyon 저녁 브리핑 · 2026.11.06(금)\n\n코스피가 6.02% 폭락해 5,059.69로 마감했습니다. 오전 9시 3분 서킷브레이커가 발동돼 거래가 20분간 멈췄고 장중 4,911.28까지 밀렸습니다. 코스닥도 5.03% 내린 644.27, 이틀 합산 코스피 낙폭은 10.98%입니다.\n\n삼성전자는 6.35%(18만8,700원), SK하이닉스는 10.44%(113만2,000원) 하락했습니다. 외국인은 유가증권시장에서 약 2.77조원을 순매도했고 기관 1.70조원·개인 0.60조원이 순매수했습니다.\n\n오늘 밤 22:30에는 미국 10월 고용보고서가 나옵니다.\n\n📊 다음 브리핑 — 내일 아침 8시, 한 주 결산\n\n#코스피 #코스닥 #서킷브레이커 #삼성전자 #SK하이닉스 #반도체 #외국인순매도 #증시 #미국증시 #고용보고서 #원달러 #AI데이터센터 #경제 #투자 #luckyon",
+ "caption_en": "📊 luckyon Evening Briefing · Fri, Nov 6, 2026\n\nKOSPI crashed 6.02% to 5,059.69. A circuit breaker halted trading for 20 minutes at 9:03 AM and the index hit 4,911.28 intraday. KOSDAQ fell 5.03% to 644.27, and KOSPI is down 10.98% over two days.\n\nSamsung Electronics lost 6.35% (KRW 188,700) and SK hynix 10.44% (KRW 1,132,000). Foreigners net sold about KRW 2.77T on the main board while institutions bought KRW 1.70T and retail KRW 0.60T.\n\nThe US October jobs report lands at 10:30 PM KST tonight.\n\n📊 Next brief — 8 AM KST, the week in review\n\n#KOSPI #KOSDAQ #CircuitBreaker #Samsung #SKhynix #Semiconductors #ForeignSelling #Markets #WallStreet #JobsReport #USDKRW #AIDataCenter #Investing #Economy #luckyon",
+ "sources": [
+  "KRX",
+  "Naver Finance 내부 API",
+  "Yahoo Finance",
+  "FMP",
+  "CNN Fear & Greed",
+  "FXStreet",
+  "DART",
+  "뉴스핌",
+  "한국일보",
+  "한국면세뉴스",
+  "토픽스타뉴스",
+  "서플",
+  "아시아투데이",
+  "중기이코노미"
+ ]
+}
