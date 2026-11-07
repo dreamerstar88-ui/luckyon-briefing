@@ -40,7 +40,9 @@ const cuts=[HOOK[0],HOOK[1],...holds.slice(1),ANSWER[0],SUMM[0],SUMM[1]];
 // 셋으로 갈라져, 한 곳만 고치는 사고가 구조적으로 계속 난다. 3회차에서 슈미트 직함을
 // 화면·매니페스트·발행문구에서 지웠는데 이 배열만 남아 «연준 슈미트 위원 연설» 이
 // 자막으로 나갈 뻔했다 — 지침서 9장 3번(화면만 고치고 자막을 두는 것)의 재발이었다.
-const NUM='①②③④⑤⑥⑦⑧';
+// 9회차: 사건이 9개가 되자 ⑧ 까지만 있던 이 줄 때문에 9번 자막이 «undefined» 로 나갈 뻔했다.
+const NUM='①②③④⑤⑥⑦⑧⑨⑩⑪⑫';
+if(M.events.length>NUM.length){console.error(`사건 ${M.events.length}개 — 번호 기호가 ${NUM.length}개뿐이다`);process.exit(1);}
 const KWD='일월화수목금토';
 const drop=x=>String(x).replace(/\.$/,'');
 const evCue=(e,k)=>{
@@ -55,14 +57,17 @@ const EVEN=M.events.map((e,k)=>{
   const sess=e.kst_label.split(' · ')[0];
   // 프리장·장중·애프터장 세 가지가 다 온다. 예전에는 «장중이 아니면 프리장» 이라
   // 애프터장 사건(예: 화요일 API 원유재고 17:00 ET)이 오면 그대로 틀렸다.
-  const en=/장중/.test(sess)?'session':(/애프터/.test(sess)?'after hours':(/야간/.test(sess)?'overnight':'pre-market'));
+  // 9회차: «수 마감 직후»(8회차 실적 사건)가 마감이라는 말을 몰라 pre-market 으로 나갔다. 마감 뒤도 after hours.
+  const en=/장중/.test(sess)?'session':(/애프터|마감/.test(sess)?'after hours':(/야간/.test(sess)?'overnight':'pre-market'));
   const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(e.et.replace(' ','T')+'Z').getUTCDay()];
   const [a,...b]=drop(e.en).split(', ');
   // 둘째 줄은 새 문장이 아니라 «…4.060%, up from 3.890%» 한 문장을 쉼표에서 끊은
   // 연속 줄이다. 대문자로 올리면 문장이 둘로 읽히고, 매니페스트 en 과도 글자가 달라져
   // 검증 [8] 본문 대조가 영원히 안 맞는다. 소문자 그대로 둔다.
   const tail=b.join(', ');
-  return [`${k+1}) ${day} ${en} - ${a}`, tail||drop(e.l2)];
+  // 9회차: 쉼표가 없는 문장(«…Democrats; futures bottom and bounce»)이면 둘째 줄에 한국어 l2 를
+  // 넣고 있었다 — 영어 자막에 한국어가 섞여 나갈 뻔했다. 쉼표가 없으면 한 줄로 끝낸다.
+  return tail?[`${k+1}) ${day} ${en} - ${a}`, tail]:[`${k+1}) ${day} ${en} - ${a}`];
 });
 // 훅·정답·요약 자막도 매니페스트 copy.srt 에서 만든다(4회차부터). 화면 문구(copy.screen)와
 // 같은 파일에 나란히 있어 한쪽만 고치는 일을 줄인다. 숫자는 봉에서 계산해 채운다 —
@@ -75,7 +80,7 @@ const sgn=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
 const fmtPct=v=>(Math.abs(v-Math.round(v))<0.005?String(Math.round(v)):v.toFixed(2))+'%';
 // 질문 답은 질문 은행으로 잰다(5회차부터) — render.mjs 와 같다.
 const {QUESTIONS,buildCtx}=await import(pathToFileURL(path.join(R,'scripts','weekly-shorts','questions.mjs')).href);
-const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.rank_basis?M.question.rank_basis.weeks:[]);
+const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.drop_basis?M.question.drop_basis.days:(M.question.rank_basis?M.question.rank_basis.weeks:[]));
 const ansV=QUESTIONS.find(q=>q.id===M.question.id).fn(buildCtx(B,QHIST));
 const UNIT=M.question.unit||'%';
 const fmtAns=v=>typeof v!=='number'?String(v):UNIT==='%'?fmtPct(v):(Number.isInteger(v)?String(v):v.toFixed(2))+UNIT;

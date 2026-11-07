@@ -17,7 +17,14 @@
 
 const MULT = 20;               // E-mini 나스닥100(NQ) 1계약 = 지수 1포인트당 $20
 const isReg = (d) => { const t = d.slice(11); return t >= '09:30' && t < '16:00'; };
-const kstHour = (d) => { const x = new Date(d.replace(' ', 'T') + 'Z'); x.setUTCHours(x.getUTCHours() + 13); return x.getUTCHours(); };
+// 미 동부 → 한국 시. 서머타임이면 +13, 아니면 +14(9회차에 +13 고정이 겨울에 한 시간 틀린 것을 고쳤다).
+const etFmt = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+const etOff = (d) => { for (const h of [5, 4]) { const ms = Date.parse(d.replace(' ', 'T') + ':00Z') + h * 3600e3; if (etFmt.format(new Date(ms)).replace(',', '') === d) return h; } return 4; };
+const kstHour = (d) => { const x = new Date(d.replace(' ', 'T') + 'Z'); x.setUTCHours(x.getUTCHours() + etOff(d) + 9); return x.getUTCHours(); };
+// 두 날짜 사이를 «N년 M개월» 로(다 채운 달만 센다). 2020-03-16 → 2026-11-05 = 6년 7개월.
+const spanYM = (a, b) => { const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
+  const mo = (y2 - y1) * 12 + (m2 - m1) - (d2 < d1 ? 1 : 0), Y = Math.floor(mo / 12), Mo = mo % 12;
+  return [Y ? `${Y}년` : '', Mo ? `${Mo}개월` : ''].filter(Boolean).join(' ') || '1개월 미만'; };
 const dow = (d) => '일월화수목금토'[new Date(d.slice(0, 10) + 'T00:00:00Z').getUTCDay()];
 const pctOf = (a, b) => (a / b - 1) * 100;
 
@@ -208,6 +215,18 @@ export const QUESTIONS = [
     fn: (c) => { if (!c.hist.length || c.hist[0].wp === undefined) throw new Error('weekrank: 과거 주간 등락률(hist[].wp)이 없다');
       return 1 + c.hist.filter((w) => w.wp < c.weekPct).length; }, kind: 'count',
     guard: '크게 빠진 주는 드물어 순위가 주마다 크게 다르다. 같은 -5% 대라도 그 사이에 더 큰 하락이 몇 번 있었는지에 따라 1위도 10위도 된다.' },
+  // 9회차(2026-11-02 주)에 대표가 고른 질문 «이번 주 최대 하락은 하루 기준 얼마 만의 최대 하락인지».
+  // hist = 나스닥100 지수(^NDX) 일봉 등락 [{d, p}] — 매니페스트 question.drop_basis.days(이번 주 날짜 전부 + 2000년부터 큰 하락).
+  // 이번 주 날짜 중 가장 크게 빠진 날을 고르고, 그보다 같거나 크게 빠진 마지막 날까지를 «N년 M개월» 로 답한다.
+  { id: 'dropsince', cat: '수준', unit: '',
+    ko: '이번 주 가장 큰 하루 하락은 몇 년 만이었을까요?', en: "This week's worst day was the worst in how long?",
+    fn: (c) => { const H = c.hist.filter((h) => h && h.d && typeof h.p === 'number');
+      const wk = H.filter((h) => c.days.includes(h.d)); if (!wk.length) throw new Error('dropsince: 이번 주 일봉(hist[].d·p)이 없다');
+      const w = wk.reduce((a, b) => (b.p < a.p ? b : a));
+      const prev = H.filter((h) => h.d < w.d && h.p <= w.p).sort((a, b) => (a.d < b.d ? -1 : 1)).at(-1);
+      if (!prev) throw new Error('dropsince: 이보다 큰 하락이 hist 에 없다');
+      return spanYM(prev.d, w.d); }, kind: 'span',
+    guard: '하루 -3%대 하락은 해마다 몇 번씩 나오지만 -6% 를 넘는 날은 몇 년에 한 번이다. 같은 큰 하락이라도 직전 기록이 1년 전일 수도, 십수 년 전일 수도 있다.' },
   { id: 'gapsum', cat: '연속', unit: '%',
     ko: '날마다 생긴 시가 갭을 다 더하면 몇 %였을까요?', en: 'How much did the daily opening gaps add up to?',
     fn: (c) => { let s = 0; for (let i = 1; i < c.days.length; i++) {

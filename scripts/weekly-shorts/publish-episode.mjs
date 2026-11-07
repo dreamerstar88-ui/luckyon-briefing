@@ -42,6 +42,19 @@ const PAGES = (fs.readFileSync(IGENV, 'utf8').match(/^PAGES_BASE_URL=(.*)$/m) ||
 const url = (f) => `${PAGES}/cards/reels/${SLUG}/ko/${f}`;
 console.log(`${GO ? '▶ 올린다' : '미리보기(아무것도 안 올림)'} — ${EP}회차 ${STAMP} · 단계 ${[...ONLY].join(', ')}`);
 
+// 유튜브 인증 나이 — 구글 동의 화면이 «테스트 중» 이라 발급 7일 뒤 만료된다(HANDOVER 5장).
+// 9회차(2026-11-07): 발급 10-30 → 8일째에 live 를 먼저 올린 뒤 유튜브 단계에서야 invalid_grant 로 멈췄다.
+// 회차가 7~8일 간격이라 거의 매주 걸린다. 아무것도 올리기 전에 본다.
+if (['youtube', 'captions', 'comment'].some((s) => ONLY.has(s))) {
+  const issued = (fs.readFileSync(KEYS, 'utf8').match(/^GOOGLE_REFRESH_TOKEN_ISSUED=(\d{4}-\d{2}-\d{2})/m) || [])[1];
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
+  const age = issued ? Math.round((Date.parse(today) - Date.parse(issued)) / 864e5) : null;
+  const how = '`backtest-reels` 폴더에서 node --env-file="C:/Users/PSJ_1/.claude/SJ PARK Project/api-keys/keys.env" scripts/authorize-youtube.mjs → 뜬 주소를 대표님이 열어 허용';
+  if (age === null) console.log('⚠ 유튜브 인증 발급일(GOOGLE_REFRESH_TOKEN_ISSUED)이 keys.env 에 없다 — 만료 여부를 미리 못 본다');
+  else if (age >= 7) (GO ? die : console.log)(`유튜브 인증이 만료됐다 — 발급 ${issued}, 오늘(한국) ${today}로 ${age}일째(7일에 만료). 다시 받기: ${how}`);
+  else console.log(`· 유튜브 인증: 발급 ${issued} · ${age}일째 · 만료까지 ${7 - age}일`);
+}
+
 // 1) 공개 주소용 브랜치: 기존 브랜치 위에 파일 다섯 개만 얹은 커밋. 이미 같은 파일이 있으면 건너뛴다.
 if (ONLY.has('live')) {
   git('fetch', '-q', 'origin', 'claude/live');

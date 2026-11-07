@@ -31,7 +31,10 @@ const die=(...m)=>{console.error(...m);process.exit(1);};
 const M=JSON.parse(fs.readFileSync(MANI,'utf8'));
 const all=JSON.parse(fs.readFileSync(DATA,'utf8'));
 const raw=all.filter(x=>M.window.from_et<=x.d&&x.d<=M.window.to_et);
-const kstOf=et=>{const d=new Date(et.replace(' ','T')+'Z');d.setUTCHours(d.getUTCHours()+13);
+// 미 동부 → 한국시간. 9회차(2026-11-02 주)에 서머타임이 끝나 +13 고정이 한 시간 틀렸다 — 그 주의 실제 시차(13·14)를 Intl 로 잰다.
+const etFmt=new Intl.DateTimeFormat('sv-SE',{timeZone:'America/New_York',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+const etOff=et=>{for(const h of [5,4]){const ms=Date.parse(et.replace(' ','T')+':00Z')+h*3600e3;if(etFmt.format(new Date(ms)).replace(',','')===et)return h;}die('미 동부 시각 변환 실패',et);};
+const kstOf=et=>{const d=new Date(et.replace(' ','T')+'Z');d.setUTCHours(d.getUTCHours()+etOff(et)+9);
   const w='일월화수목금토'[d.getUTCDay()];
   return `${d.getUTCMonth()+1}/${d.getUTCDate()} ${w} ${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
 const BARS=raw.map(x=>({d:x.d,o:x.o,h:x.h,l:x.l,c:x.c,kst:kstOf(x.d)}));
@@ -79,7 +82,7 @@ const aboveV=BARS.filter(b=>b.c>=open).length/BARS.length*100;
 // 질문 답은 질문 은행으로 다시 잰다(5회차부터). 4회차까지는 «시가 위 시간» 만 재서 다른 질문이면 멈췄다.
 const {QUESTIONS,buildCtx}=await import(pathToFileURL(path.join(R,'scripts','weekly-shorts','questions.mjs')).href);
 const QB=QUESTIONS.find(q=>q.id===M.question.id);if(!QB)die('질문 은행에 없는 id',M.question.id);
-const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.rank_basis?M.question.rank_basis.weeks:[]);
+const QHIST=M.question.prior_high?[{d:M.question.prior_high.et,o:M.question.prior_high.value,h:M.question.prior_high.value,l:M.question.prior_high.value,c:M.question.prior_high.value}]:(M.question.drop_basis?M.question.drop_basis.days:(M.question.rank_basis?M.question.rank_basis.weeks:[]));
 const ansV=QB.fn(buildCtx(BARS,QHIST));
 if(typeof ansV==='number'?Math.abs(ansV-M.question.answer_value)>0.01:ansV!==M.question.answer_value)die('질문 답이 매니페스트와 다르다',ansV,M.question.answer_value);
 const UNIT=M.question.unit||'%';
@@ -163,8 +166,8 @@ if(bad.length&&!args['allow-overlap'])die('사건 원이 다른 것에 닿는다
 // 칸 자체가 좁으면 붙어 보인다. 6px 보다 좁으면 멈춘다.
 if(COPY.openLine){
   const lg=await page.evaluate(()=>{const p=openLabelBox(document.getElementById('c').getContext('2d'));
-    const {bxs,side,place}=eventSlots();
-    return EVENTS.map((ev,j)=>{const h=vtextH(ev.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ev,side[j]).bx,by=place[j]?CY+14:CY+CH-h-14;
+    const {bxs,side,place,bys}=eventSlots();
+    return EVENTS.map((ev,j)=>{const h=vtextH(ev.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ev,side[j]).bx,by=place[j]?CY+14+bys[j]:CY+CH-h-14-bys[j];
       if(by>p.y0+p.h||by+h<p.y0)return null;                     // 높이가 안 겹치는 상자는 빼고
       return {box:j+1,gap:Math.round(Math.max(bx-(p.x+p.w),p.x-(bx+BW_)))};}).filter(Boolean)
       .concat([{box:'x',gap:Math.round(p.x)},{box:'w',gap:p.w}]);});

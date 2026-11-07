@@ -146,7 +146,11 @@ try {
   const plus5 = (d) => new Date(Date.parse(d.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
   const cset = new Set(CB.map((b) => b.d));
   const cut = new Set(CB.filter((b) => Y.has(b.d) && cset.has(plus5(b.d)) && !Y.has(plus5(b.d))).map((b) => b.d));
-  const both = CB.filter((b) => Y.has(b.d) && !cut.has(b.d));
+  // 매니페스트 window.cnbc_close_exceptions([{d, reason}])에 이유를 적은 봉도 따로 보이고 뺀다(9회차 목 15:55 —
+  // 마감 1분에 0.2% 씩 움직이던 봉이라 두 출처의 마지막 체결이 31포인트 갈렸다). 이유 없이 빼지 않는다.
+  const EXC = new Map((M.window.cnbc_close_exceptions || []).filter((x) => x.d && x.reason).map((x) => [x.d, x.reason]));
+  for (const [d, why] of EXC) { const cb = CB.find((b) => b.d === d); if (cb && Y.has(d)) warn('이유를 적고 뺀 봉', `${d} 야후 ${Y.get(d).c} · CNBC ${cb.c} (차이 ${Math.abs(cb.c - Y.get(d).c)}포인트) — ${why}`); }
+  const both = CB.filter((b) => Y.has(b.d) && !cut.has(b.d) && !EXC.has(b.d));
   const same = both.filter((b) => b.c === Y.get(b.d).c).length;
   const maxd = Math.max(0, ...both.map((b) => Math.abs(b.c - Y.get(b.d).c)));
   if (cut.size) warn('다음 봉이 빠져 잘렸을 수 있는 야후 봉', [...cut].map((d) => `${d} 차이 ${Math.abs(CB.find((b) => b.d === d).c - Y.get(d).c)}포인트`).join(', ') + ' — 종가 대조에서 뺐다');
@@ -156,7 +160,7 @@ try {
     const { QUESTIONS, buildCtx } = await import('./questions.mjs');
     const Q = QUESTIONS.find((q) => q.id === M.question.id);
     // 사상 최고가 질문은 창 이전 최고가를 hist 로 받아야 셀 수 있다(아래 [2] 와 같은 값).
-    const PH0 = M.question.prior_high, QH0 = PH0 ? [{ d: PH0.et, o: PH0.value, h: PH0.value, l: PH0.value, c: PH0.value }] : (M.question.rank_basis ? M.question.rank_basis.weeks : []);
+    const PH0 = M.question.prior_high, QH0 = PH0 ? [{ d: PH0.et, o: PH0.value, h: PH0.value, l: PH0.value, c: PH0.value }] : (M.question.drop_basis ? M.question.drop_basis.days : (M.question.rank_basis ? M.question.rank_basis.weeks : []));
     const gotC = Q ? Q.fn(buildCtx(CB, QH0, M.events)) : null;
     if (typeof gotC === 'number') cmp('정답을 CNBC 봉으로 다시 셈', +gotC.toFixed(1), +(+M.question.answer_value).toFixed(1), 0.05);
   }
@@ -197,7 +201,7 @@ if (M.question) {
   if (!Q) bad('질문 은행', M.question.id, '은행에 없는 id');
   else {
     // 사상 최고가 질문(athbars)은 창 이전 최고가를 hist 한 봉으로 받는다(6회차부터). 아래 [2-1] 이 그 값을 다시 확인한다.
-    const PH = M.question.prior_high, QH = PH ? [{ d: PH.et, o: PH.value, h: PH.value, l: PH.value, c: PH.value }] : (M.question.rank_basis ? M.question.rank_basis.weeks : []);
+    const PH = M.question.prior_high, QH = PH ? [{ d: PH.et, o: PH.value, h: PH.value, l: PH.value, c: PH.value }] : (M.question.drop_basis ? M.question.drop_basis.days : (M.question.rank_basis ? M.question.rank_basis.weeks : []));
     let got; try { got = Q.fn(buildCtx(BARS, QH, M.events)); } catch (e) { got = null; }
     if (got === null) bad('질문 재계산', '계산 실패', M.question.id);
     else {
@@ -359,6 +363,38 @@ if (M.question?.rank_basis) {
   }
 }
 
+// ── 2-1c. «몇 년 만의 하루 하락» 비교 자료 재확인 (9회차부터) ─────────────────
+// 매니페스트에 적은 나스닥100 지수 일봉 목록(이번 주 날짜 전부 + min_p 이하 큰 하락)을 야후 ^NDX 일봉으로
+// 다시 만들어 빠진 날·틀린 값이 없는지 보고, 나스닥100 선물 연속(NQ=F) 일봉으로 «마지막으로 더 크게 빠진 날» 을
+// 다시 찾는다(두 번째 출처). 목록에서 하루만 빠져도 답(몇 년 만)이 통째로 바뀐다.
+if (M.question?.drop_basis) {
+  console.log(`\n[2-1c] 하루 하락 비교 자료 재확인 (야후 ^NDX · NQ=F 일봉)`);
+  const DB = M.question.drop_basis;
+  const daily = async (s) => { const u = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(s)}?interval=1d&period1=${Math.floor(Date.parse(DB.from + 'T00:00:00Z') / 1000) - 10 * 86400}&period2=${Math.floor(Date.parse(M.window.to_et.slice(0, 10) + 'T00:00:00Z') / 1000) + 2 * 86400}`;
+    const x = (await (await fetch(u, { headers: { 'User-Agent': UA } })).json()).chart.result[0], q = x.indicators.quote[0];
+    const rows = x.timestamp.map((t, i) => ({ d: new Date(t * 1000).toISOString().slice(0, 10), c: q.close[i] })).filter((r) => r.c != null);
+    return rows.slice(1).map((r, i) => ({ d: r.d, p: (r.c / rows[i].c - 1) * 100 })).filter((r) => r.d >= DB.from); };
+  try {
+    const days = [...new Set(BARS.map((b) => b.d.slice(0, 10)))];
+    const N = await daily(DB.series || '^NDX');
+    const want = N.filter((r) => days.includes(r.d) || (r.d < days[0] && r.p <= DB.min_p));
+    const have = new Map(DB.days.map((r) => [r.d, r.p]));
+    const miss = want.filter((r) => !have.has(r.d)), off = want.filter((r) => have.has(r.d) && Math.abs(have.get(r.d) - r.p) > 0.01);
+    const extra = DB.days.filter((r) => !want.find((w) => w.d === r.d));
+    (miss.length || off.length || extra.length)
+      ? bad('비교 목록(야후 ^NDX 재수집)', `빠짐 ${miss.map((r) => r.d).join(',') || 0} · 값 다름 ${off.map((r) => r.d).join(',') || 0} · 남는 날 ${extra.map((r) => r.d).join(',') || 0}`, `${DB.from} 부터 ${DB.min_p}% 이하 전부 + 이번 주 ${days.length}일`)
+      : ok('비교 목록(야후 ^NDX 재수집)', `${want.length}일 일치 (${DB.from} 부터 ${DB.min_p}% 이하 + 이번 주)`);
+    const wk = N.filter((r) => days.includes(r.d)), w = wk.reduce((a, b) => (b.p < a.p ? b : a));
+    const prev = N.filter((r) => r.d < w.d && r.p <= w.p).at(-1);
+    cmp('이번 주 가장 큰 하루 하락(^NDX)', `${w.d} ${w.p.toFixed(2)}%`, `${DB.worst.d} ${DB.worst.p.toFixed(2)}%`);
+    cmp('그보다 크게 빠진 마지막 날(^NDX)', prev ? prev.d : '없음', DB.prev.d);
+    const F = await daily('NQ=F'), wf = F.filter((r) => days.includes(r.d)).reduce((a, b) => (b.p < a.p ? b : a));
+    const pf = F.filter((r) => r.d < wf.d && r.p <= wf.p).at(-1);
+    cmp('두 번째 출처 NQ=F — 그보다 크게 빠진 마지막 날', pf ? `${pf.d}` : '없음', DB.prev.d);
+    console.log(`  · NQ=F 이번 주 가장 큰 하루 하락 ${wf.d} ${wf.p.toFixed(2)}% · 직전 더 큰 날 ${pf ? pf.d + ' ' + pf.p.toFixed(2) + '%' : '없음'}`);
+  } catch (e) { bad('하루 하락 비교 자료', `재수집 실패 — ${e.message}`, '야후 일봉'); }
+}
+
 // 영어 줄은 26px 까지 줄여도 가로 968px 안에 들어와야 한다. 넘치면 말없이 잘린다.
 // 2회차에서 88자짜리 훅이 "…above the ope…" 로 잘린 채 표지에까지 들어갔다.
 // 글자 폭을 여기서 정확히 잴 수는 없으니 글자 수로 막는다(26px 기준 약 74자가 한계).
@@ -463,6 +499,13 @@ for (const e of M.events) {
   if (e.session_exception) ok(`사건${e.n} 장 밖 발표(사유 있음)`, `${hhmm} — ${e.session_exception}`);
   else bad(`사건${e.n} 장 밖 발표`, `${hhmm} · 사유 없음`, 'session_exception 에 그날 후보가 하나뿐인 이유를 적어라');
 }
+// 시장 사건(9회차부터). 캘린더 지표도 보도도 아닌 «그 봉의 움직임 자체»(예: 목요일 정규장 개장 투매)는
+// 지침 4장 5·6번상 사건이 아니다. 대표가 예외로 넣은 경우만 받는다 — rule_exception 에 «대표» 결정과 이유가 있어야 한다.
+for (const e of M.events.filter((x) => x.kind === 'market')) {
+  const why = e.rule_exception || '';
+  /대표/.test(why) && why.length > 30 ? ok(`사건${e.n} 시장 사건(대표 예외)`, why.slice(0, 80) + '…')
+                                      : bad(`사건${e.n} 시장 사건`, '예외 사유 없음', 'rule_exception 에 대표 결정과 이유');
+}
 // 뉴스 사건(지침 4장 5번 · 2-8-1). 최초 보도 시각이 그 5분봉 안에 있어야 하고, 시각이 찍힌 출처가
 // 둘 이상이어야 한다. 5회차에서 처음 넣었다 — 그전에는 뉴스 사건이 없어 검사도 없었다.
 const etOfUtc = (u) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', hourCycle: 'h23',
@@ -532,6 +575,7 @@ try {
   console.log(`  · 캘린더 ${table.size}건 파싱`);
   for (const e of M.events) {
     if (e.kind === 'news') { ok(`사건${e.n} 캘린더 항목`, '뉴스 사건 — 캘린더 대신 [4] 에서 출처·시각 확인'); continue; }
+    if (e.kind === 'market') { ok(`사건${e.n} 캘린더 항목`, '시장 사건 — 캘린더 항목 없음, [4] 에서 대표 예외 확인'); continue; }
     const row = table.get(e.te_event);
     if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', e.te_event); continue; }
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
@@ -549,7 +593,7 @@ try {
   // 판단으로 골랐다 — 다음 회차에서 달라지지 않도록 기계가 본다.
   const num = (v) => { const m = String(v).match(/-?[\d.]+/); return m ? parseFloat(m[0]) : null; };
   for (const e of M.events) {
-    if (e.kind === 'news') continue;
+    if (e.kind === 'news' || e.kind === 'market') continue;
     const row = table.get(e.te_event);
     if (!row || !row.at) continue;
     const group = all.filter((r) => r.at === row.at);
@@ -648,6 +692,7 @@ for (const e of M.events) {
   // 다만 «값이 없다» 를 매니페스트가 스스로 주장하게 두면 숫자 검사를 피하는 구멍이 된다.
   // 그래서 캘린더 원본에 정말로 실제값·예상값·직전값이 전부 비어 있는지 확인하고 넘어간다.
   if (e.kind === 'news') { ok(`사건${e.n} 값 없음`, '뉴스 사건 — 발표값이 없다. 출처·시각은 [4]'); continue; }
+  if (e.kind === 'market') { ok(`사건${e.n} 값 없음`, '시장 사건 — 발표값이 없다. 예외 사유는 [4]'); continue; }
   if (!e.actual && !e.compare) {
     if (!e.no_value) { bad(`사건${e.n} 값 없음`, '실제값·비교값이 비어 있다', 'no_value 에 사유를 적어라'); continue; }
     const row = CAL && CAL.get(e.te_event);
@@ -748,6 +793,14 @@ if (srtDir) {
     });
     textOk ? ok(`${f} 본문`, `사건 ${M.events.length}개 문구가 매니페스트와 일치`)
            : bad(`${f} 본문`, '매니페스트 문구를 그대로 담아야 한다', firstBad);
+    // 9회차: 위 대조는 «매니페스트 문구가 들어 있나» 만 봐서, 번호 자리에 찍힌 «undefined» 와
+    // 영어 자막 둘째 줄에 섞인 한국어를 둘 다 통과시켰다. 그 두 가지를 따로 본다.
+    const junk = body.match(/undefined|NaN|null|\[object/);
+    junk ? bad(`${f} 빈 값`, '없어야 한다', `«${junk[0]}» 가 찍혔다`) : ok(`${f} 빈 값`, 'undefined·NaN·null 없음');
+    if (!ko) {
+      const hangul = body.match(/[가-힣ㄱ-ㅎ①-⑳]+/);
+      hangul ? bad(`${f} 한국어 섞임`, '영어 자막에 한글이 없어야 한다', `«${hangul[0]}»`) : ok(`${f} 한국어 섞임`, '없음');
+    }
   }
 
   // 커밋된 생성기가 커밋된 자막을 그대로 만들어 내는가.
@@ -889,6 +942,8 @@ if (srtDir) {
     top10.sort((a, b) => Math.abs(b) - Math.abs(a)); extra.push(...top10.slice(0, 10));
     // 순위 질문(7회차)은 비교한 과거 주의 등락률을 설명에 적는다 — 검사 [2-1b] 가 다시 만든 목록의 값만 허용한다.
     if (M.question?.rank_basis) extra.push(...M.question.rank_basis.weeks.map((w) => w.wp));
+    // 하루 하락 질문(9회차)은 비교한 날의 등락률을 설명에 적는다 — 검사 [2-1c] 가 야후로 다시 만든 목록의 값만.
+    if (M.question?.drop_basis) extra.push(...M.question.drop_basis.days.map((r) => r.p));
     for (const v of extra) for (const d of [2, 3]) { const s = v.toFixed(d) + '%'; allow.add(s); allow.add((v >= 0 ? '+' : '') + s); allow.add(Math.abs(v).toFixed(d) + '%'); }
   }
   const all = [title, desc, cap, cmt].join('\n');

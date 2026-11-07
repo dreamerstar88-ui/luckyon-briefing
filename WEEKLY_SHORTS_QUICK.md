@@ -75,7 +75,8 @@ node scripts/weekly-shorts/publish-episode.mjs --stamp=2026-09-28 --ep=5 --confi
 
 | 막힘 | 할 일 |
 |---|---|
-| 유튜브 인증 만료(7일마다) | `backtest-reels` 에서 `node --env-file="C:/Users/PSJ_1/.claude/SJ PARK Project/api-keys/keys.env" scripts/authorize-youtube.mjs` → 대표님이 브라우저에서 허용 |
+| 유튜브 인증 만료(7일마다) | `backtest-reels` 에서 `node --env-file="C:/Users/PSJ_1/.claude/SJ PARK Project/api-keys/keys.env" scripts/authorize-youtube.mjs` → 대표님이 브라우저에서 허용. 회차가 7~8일 간격이라 **거의 매주 걸린다** — `publish-episode` 가 시작할 때 발급일을 보고 7일째면 아무것도 올리기 전에 멈춘다(9회차부터). 미리보기(`--confirm` 없이)에 남은 날짜가 찍히니 **만들기 전에 미리보기부터** 돌려 대표님께 주소를 먼저 드린다 |
+| 이미 올린 영상의 자막 고치기 | `node scripts/weekly-shorts/update-caption.mjs --video=<번호> --lang=en --file=<srt>` (미리보기) → `--confirm`. 새 자막을 더하지 않고 같은 자막을 바꾼다. 9회차에 8회차 영어 자막(pre-market→after hours·섞인 한국어 2줄)을 이렇게 고쳤다 |
 | 유튜브 하루 한도(quotaExceeded) | 한국시간 오후 4시 뒤 `--only=captions,comment --confirm` |
 | 인스타가 공개 주소를 못 받음 | `publish-episode` 가 15분까지 기다린다. 그래도 안 되면 GitHub Pages 배포를 본다 |
 | 인스타 토큰 | `~/.secrets/luckyon-ig.env` (keys.env 가 아니다) |

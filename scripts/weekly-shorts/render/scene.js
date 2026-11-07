@@ -167,8 +167,9 @@ function boxOf(ev,side,off=16){
   return {bx,box};
 }
 // 그 상자를 위/아래에 뒀을 때 주가 선과 얼마나 떨어지는가 (음수면 선이 상자를 지난다)
-function clearOfAt(ev,top,bx){
-  const box=vtextH(ev.tag,LH_)+PADY_*2;
+function clearOfAt(ev,top,bx,dy=0){
+  // dy: 위아래로 쌓은 상자의 밀림(위 자리면 아래로, 아래 자리면 위로). 9회차에 쌓기를 넣으며 더했다.
+  const box=vtextH(ev.tag,LH_)+PADY_*2+dy;
   let hi=1e9,lo=-1e9;
   for(let j=0;j<BARS.length;j++){const xj=X(j);if(xj<bx-4||xj>bx+BW_+4)continue;
     const yj=Y(BARS[j].c);if(yj<hi)hi=yj;if(yj>lo)lo=yj;}
@@ -192,11 +193,19 @@ function clusters(){
   }
   out.push(cur); return out;
 }
+// 미국 정규장(09:30~16:00 ET)을 한국시간으로. 서머타임이면 «밤 10:30~새벽 5:00», 아니면 «밤 11:30~새벽 6:00».
+// 9회차까지는 서머타임 값이 글자로 박혀 있어 11월(표준시) 주에 한 시간 틀렸다. 그 주 첫 09:30 봉의 한국 시각으로 잰다.
+function regKst(){
+  const b=BARS.find(x=>x.d.slice(11)==='09:30'); if(!b||!b.kst) return '';
+  const [hh,mm]=b.kst.slice(-5).split(':').map(Number), s=hh*60+mm, e=(s+390)%1440;
+  const f=m=>{const h=Math.floor(m/60),mi=m%60,ap=h<7?'새벽':(h<12?'오전':(h<18?'오후':'밤'));return `${ap} ${h>12?h-12:h}:${String(mi).padStart(2,'0')}`;};
+  return `한국 ${f(s)}~${f(e)}`;
+}
 function eventSlots(){
   const pair=[],place=[],side=[],bxs=[],bys=[],bcx=[];
   for(let k=0;k<EVENTS.length;k++){pair.push(false);side.push(1);place.push(true);bxs.push(null);bys.push(0);bcx.push(X(EVENTS[k].i));}
   const H=k=>vtextH(EVENTS[k].tag,LH_)+PADY_*2;
-  const yOf=(k,top)=>top?CY+14:CY+CH-H(k)-14;
+  const yOf=(k,top)=>top?CY+14+bys[k]:CY+CH-H(k)-14-bys[k];
   // 이미 놓은 상자와의 가로 틈(높이가 겹치는 것만 본다). 겹치면 음수.
   const placed=[];
   const boxGap=(k,bx,top)=>{let g=1e9;const y0=yOf(k,top),y1=y0+H(k);
@@ -222,6 +231,37 @@ function eventSlots(){
     const inside=(l)=>l>=CX+4&&l+BLK<=CX+CW-4;
     const cands=[hi+16, lo-16-BLK, Math.min(Math.max(mid-BLK/2,CX+4),CX+CW-4-BLK)];
     let left=cands.find(l=>inside(l)&&lineGap(l)>=10);
+    // 세 자리가 다 막히면 먼저 «위아래로 쌓기» 를 본다 — 상자들을 무리 왼쪽 끝 선 바로 왼쪽(또는 오른쪽 끝 선 바로
+    // 오른쪽) 한 줄에 위아래로 쌓는다. 나란히 펼 자리가 없을 때 상자가 제 선에서 멀리 밀려나지 않게 하려는 것이다.
+    // 9회차: 금 08:30·10:00 무리의 상자가 목 19:00 선 너머 200px 왼쪽까지 밀려나 순서가 뒤집혀 보였다.
+    if(left===undefined){
+      const GAPY=8, tot=cl.reduce((a,k)=>a+H(k),0)+GAPY*(cl.length-1);
+      const colGap=(l)=>{let g=1e9;for(const e of EVENTS){const x=X(e.i);g=Math.min(g,x<l?l-x:(x>l+BW_?x-l-BW_:-Math.min(x-l,l+BW_-x)));}return g;};
+      for(const col of [lo-16-BW_, hi+16]){
+        if(!(col>=CX+4&&col+BW_<=CX+CW-4)||colGap(col)<10)continue;
+        if(tot>CH-28)continue;
+        let acc=0;const dys=cl.map(k=>{const d=acc;acc+=H(k)+GAPY;return d;});
+        // 위·아래 중 주가 선과 원에서 더 먼 쪽(쌓은 덩어리 전체가 들어가는지 본다)
+        const fit=(top)=>Math.min(...cl.map((k,n)=>clearOfAt(EVENTS[k],top,col,dys[n])));
+        const top=fit(true)>=fit(false);
+        if(fit(top)<8)continue;
+        const BD=42, span=(cl.length-1)*BD, c0=Math.max(CX+18,Math.min(mid-span/2,CX+CW-18-span));
+        cl.forEach((k,n)=>{pair[k]=true;bxs[k]=col;bys[k]=dys[n];side[k]=col<X(EVENTS[k].i)?-1:1;bcx[k]=c0+n*BD;place[k]=top;placed.push({k,bx:col,top});});
+        left=null;break;
+      }
+      if(left===null)continue;
+      left=undefined;
+    }
+    // 그래도 안 되면 무리 바깥으로 2px 씩 밀며 처음으로 비는 자리를 찾는다(가까운 쪽 먼저).
+    // 9회차: 금 08:30·10:00 무리(14px 간격)가 화면 오른쪽 끝에 붙어 있고 왼쪽 124px 에 목 19:00 선이
+    // 있어서, 왼쪽 바로 바깥은 그 선에 걸리고 가운데는 제 선 위에 얹혔다.
+    if(left===undefined){
+      for(let d=2;d<CW;d+=2){
+        const a=lo-16-BLK-d, b=hi+16+d;
+        if(inside(a)&&lineGap(a)>=10){left=a;break;}
+        if(inside(b)&&lineGap(b)>=10){left=b;break;}
+      }
+    }
     if(left===undefined)left=cands.filter(inside).sort((a,b)=>lineGap(b)-lineGap(a))[0]??cands[2];
     // 번호 원은 위아래로 쌓지 않고 옆으로 벌린다(원 지름 34 + 8). 예전에는 둘째 원을 46px 올리고
     // 제 세로선까지 줄을 내렸는데, 두 선이 원 반지름(17)보다 가까우면 그 줄이 첫째 원을 가로질렀다.
@@ -259,7 +299,7 @@ function eventLines(ctx,upto,mode){
   ctx.save();
   // 바깥에서 준 투명도를 덮어쓰면 요약이 사라져도 배지·라벨만 남아 루프 카드 위에 얹힌다.
   const A=ctx.globalAlpha;
-  const {place:PLACE,side:SIDE,bxs:BXS,bcx:BCX}=eventSlots();
+  const {place:PLACE,side:SIDE,bxs:BXS,bcx:BCX,bys:BYS}=eventSlots();
   for(let k=0;k<EVENTS.length;k++){
     const ev=EVENTS[k];
     if(ev.i>upto)continue;
@@ -286,7 +326,7 @@ function eventLines(ctx,upto,mode){
     // 사건 봉의 종가 한 점만 보면 바로 뒤 스파이크가 상자를 뚫고 지나간다.
     // 자리는 전체 봉 기준으로 한 번 정한다 — 그래야 선이 다가와도 상자가 안 움직인다.
     const box=h+PADY*2;
-    const by = PLACE[k] ? CY+14 : CY+CH-box-14;
+    const by = PLACE[k] ? CY+14+BYS[k] : CY+CH-box-14-BYS[k];
     // 바탕은 불투명하게 칠한다. .86 이었을 때 «주간 시가» 점선이 상자 5개 안으로 비쳐 보였다(4회차 검증).
     ctx.globalAlpha=A;ctx.fillStyle='#000';
     rr(ctx,bx,by,BW,h+PADY*2,10);ctx.fill();
@@ -308,7 +348,7 @@ function dayAxis(ctx){
     numT(ctx,d.slice(5).replace('-','/')+' '+dowOf(d),cx,CY+CH+62,'700 32px PD',C.muted,'center');
   });
   // «미국 날짜» 가 아니라 «미국 거래일» 이다. 창이 월 04:00 부터라 일요일 봉은 없다.
-  txt(ctx,'가로축은 미국 거래일 · 밝은 구간은 미국 정규장(한국 밤 10:30~새벽 5:00)',56,CY+CH+124,'500 27px PD',C.dim);
+  txt(ctx,`가로축은 미국 거래일 · 밝은 구간은 미국 정규장(${regKst()})`,56,CY+CH+124,'500 27px PD',C.dim);
   ctx.restore();
 }
 // ── 주간 시가 기준선. 질문이 «시가 위에 있던 시간» 인 회차에서만 그린다(COPY.openLine).
@@ -349,7 +389,7 @@ function openLine(ctx,a=1){
 function openLabelBox(ctx){
   const y=Y(refV());
   ctx.save();ctx.font=OPEN_FONT;const LW=Math.ceil(ctx.measureText(refLabel()).width)+20;ctx.restore();
-  const {place,side,bxs}=eventSlots();
+  const {place,side,bxs,bys}=eventSlots();
   // 선 위(선에 붙은 한 줄)와 선 아래 두 줄을 다 보고, 가장 여유가 큰 자리를 고른다.
   const bands=[[y-36,y-4],[y+4,y+36]].filter(([t,b])=>t>=CY+2&&b<=CY+CH-2);
   let pick=null;
@@ -360,7 +400,7 @@ function openLabelBox(ctx){
       blocked.push([x-12,x+12]);                                   // 사건 세로선
       const bx=bxs[k]!=null?bxs[k]:boxOf(ev,side[k]).bx;
       const box=vtextH(ev.tag,LH_)+PADY_*2;
-      const by=place[k]?CY+14:CY+CH-box-14;
+      const by=place[k]?CY+14+bys[k]:CY+CH-box-14-bys[k];
       if(by<LY1&&by+box>LY0)blocked.push([bx-8,bx+BW_+8]);          // 이름표와 높이가 겹치는 라벨 상자
       const ey=Y(BARS[ev.i].c);                                     // 사건이 멈출 때의 원
       if(ey-RING_OUT<LY1+4&&ey+RING_OUT>LY0-4)blocked.push([x-RING_OUT-4,x+RING_OUT+4]);
@@ -385,7 +425,7 @@ function openLabelBox(ctx){
 // 라벨 상자(지나간 사건 전부)·시가 이름표 사이의 틈을 px 로 낸다. 음수면 겹친 것이다.
 // 눈으로 훑어서는 0.6초짜리 겹침을 놓친다 — 4회차 1번 사건이 그랬다.
 function layoutHits(ctx){
-  const {bxs,side,place}=eventSlots();
+  const {bxs,side,place,bys}=eventSlots();
   const lab=COPY.openLine?openLabelBox(ctx):null;
   const gapTo=(cx,cy,x0,y0,x1,y1)=>{const nx=Math.max(x0,Math.min(cx,x1)),ny=Math.max(y0,Math.min(cy,y1));
     return Math.hypot(cx-nx,cy-ny)-RING_OUT;};
@@ -393,7 +433,7 @@ function layoutHits(ctx){
   EVENTS.forEach((ek,k)=>{
     const cx=X(ek.i),cy=Y(BARS[ek.i].c);
     EVENTS.forEach((ej,j)=>{if(ej.i>ek.i)return;
-      const h=vtextH(ej.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ej,side[j]).bx,by=place[j]?CY+14:CY+CH-h-14;
+      const h=vtextH(ej.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ej,side[j]).bx,by=place[j]?CY+14+bys[j]:CY+CH-h-14-bys[j];
       out.push({ring:k+1,what:`${j+1}번 상자`,gap:+gapTo(cx,cy,bx,by,bx+BW_,by+h).toFixed(1)});});
     if(lab)out.push({ring:k+1,what:'시가 이름표',gap:+gapTo(cx,cy,lab.x,lab.y0,lab.x+lab.w,lab.y0+lab.h).toFixed(1)});
   });
@@ -411,7 +451,7 @@ function lineBoxGaps(){
   for(let a=0;a<EVENTS.length;a++)for(let b=a+1;b<EVENTS.length;b++)
     out.push({what:`${a+1}번 원↔${b+1}번 원`,gap:+(Math.abs(bcx[a]-bcx[b])-34).toFixed(1)});
   // 상자끼리: 높이가 겹치는 짝만 가로 틈을 잰다
-  const {place:pl}=eventSlots(), Hh=k=>vtextH(EVENTS[k].tag,LH_)+PADY_*2, Yo=(k)=>pl[k]?CY+14:CY+CH-Hh(k)-14;
+  const {place:pl,bys:BY2}=eventSlots(), Hh=k=>vtextH(EVENTS[k].tag,LH_)+PADY_*2, Yo=(k)=>pl[k]?CY+14+BY2[k]:CY+CH-Hh(k)-14-BY2[k];
   for(let a=0;a<EVENTS.length;a++)for(let b=a+1;b<EVENTS.length;b++){
     const ya=Yo(a),yb=Yo(b); if(ya+Hh(a)<=yb||yb+Hh(b)<=ya)continue;
     const A=bxs[a]!=null?bxs[a]:boxOf(EVENTS[a],side[a]).bx, B=bxs[b]!=null?bxs[b]:boxOf(EVENTS[b],side[b]).bx;
@@ -420,9 +460,9 @@ function lineBoxGaps(){
   return out;
 }
 function boxCurveGaps(){
-  const {bxs,side,place}=eventSlots();
+  const {bxs,side,place,bys}=eventSlots();
   return EVENTS.map((ev,j)=>{
-    const h=vtextH(ev.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ev,side[j]).bx,by=place[j]?CY+14:CY+CH-h-14;
+    const h=vtextH(ev.tag,LH_)+PADY_*2,bx=bxs[j]!=null?bxs[j]:boxOf(ev,side[j]).bx,by=place[j]?CY+14+bys[j]:CY+CH-h-14-bys[j];
     let gap=1e9;
     for(let i=1;i<BARS.length;i++){const x0=X(i-1),x1=X(i);if(x1<bx||x0>bx+BW_)continue;
       const a=Y(BARS[i-1].c),b=Y(BARS[i].c),lo=Math.min(a,b),hi=Math.max(a,b);
