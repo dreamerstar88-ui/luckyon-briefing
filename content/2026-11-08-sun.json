@@ -1,0 +1,632 @@
+{
+  "session": "sun",
+  "dateLabel_ko": "2026.11.08(일)",
+  "dateLabel_en": "Nov 8, 2026 (Sun)",
+  "weekLabel_ko": "다음 주 미리 보기 · 11월 둘째 주",
+  "weekLabel_en": "THE WEEK AHEAD · NOV 9–13",
+  "cover": {
+    "headline_ko": "물가부터 보고,<br>AI 실적을 잰다",
+    "headline_en": "Prices first,<br>then AI earnings",
+    "hero": {
+      "label_ko": "美 10월 소비자물가 (전월비) 컨센서스",
+      "label_en": "US Oct CPI (m/m) consensus",
+      "value": "0.3%",
+      "sub_ko": "직전 <b>0.6%</b> · 11/10(화) 22:30 KST 발표",
+      "sub_en": "Prior <b>0.6%</b> · due Tue Nov 10, 22:30 KST"
+    },
+    "points": [
+      {
+        "title_ko": "화요일 밤 물가",
+        "title_en": "Tuesday night: CPI",
+        "body_ko": "전월비 <b>0.6%</b>에서 <b>0.3%</b>로 둔화할지가 관건입니다.",
+        "body_en": "The question is whether m/m CPI cools from <b>0.6%</b> to <b>0.3%</b>."
+      },
+      {
+        "title_ko": "금요일 새벽 AI 장비·네트워크",
+        "title_en": "Thu after the US close: AI gear",
+        "body_ko": "어플라이드 머티어리얼즈·시스코가 12일(현지) 장 마감 후, 한국시간 13일 새벽 발표합니다.",
+        "body_en": "Applied Materials and Cisco both report after the close on Nov 12."
+      },
+      {
+        "title_ko": "금요일 생산자물가",
+        "title_en": "Friday: producer prices",
+        "body_ko": "PPI 전월비 컨센서스는 직전 <b>1.3%</b>보다 낮은 <b>0.4%</b>입니다.",
+        "body_en": "PPI m/m consensus is <b>0.4%</b>, down from <b>1.3%</b>."
+      }
+    ],
+    "tiles_title_ko": "지난주 마감",
+    "tiles_title_en": "LAST WEEK'S CLOSE",
+    "tiles": [
+      {
+        "label_ko": "S&P 500",
+        "label_en": "S&P 500",
+        "value": -2.68
+      },
+      {
+        "label_ko": "나스닥",
+        "label_en": "Nasdaq",
+        "value": -3.37
+      },
+      {
+        "label_ko": "코스피",
+        "label_en": "KOSPI",
+        "value": -11.71
+      }
+    ]
+  },
+  "weekend": {
+    "title_ko": "주말 사이 소식",
+    "title_en": "Over the weekend",
+    "sub_ko": "토요일 낮 ~ 일요일 저녁",
+    "sub_en": "Saturday midday to Sunday evening",
+    "note_ko": "평일 브리핑이 비는 구간을 메웁니다",
+    "note_en": "Filling the gap where the weekday brief goes quiet",
+    "items": [
+      {
+        "emoji": "🛡",
+        "headline_ko": "금감원, 담보비율 의무 면제 확정… 증권사 반대매매 완화",
+        "headline_en": "FSS confirms margin-rule relief; brokers ease forced sales",
+        "body_ko": "금융감독원은 8일 신용융자 담보비율 140% 유지 의무를 9일부터 내년 1월 31일까지 면제한다고 밝혔습니다. 미래에셋증권은 국내 주식 유지비율을 140%에서 130%로 낮추고, 한국투자·키움증권은 신청 고객의 반대매매를 미뤄 줍니다.",
+        "body_en": "On Nov 8 the FSS said brokers' 140% margin-loan collateral duty is waived from Nov 9 through Jan 31. Mirae Asset cuts its maintenance ratio for Korean stocks from 140% to 130%, and Korea Investment and Kiwoom will defer forced sales for clients who apply.",
+        "src": "FSS · 11/8"
+      },
+      {
+        "emoji": "🇨🇳",
+        "headline_ko": "中 10월 말 외환보유액 3조4,052억달러, 49억달러 증가",
+        "headline_en": "China's FX reserves rise $4.9B to $3.4052T in October",
+        "body_ko": "중국 국가외환관리국이 7일(토) 발표한 10월 말 외환보유액은 3조4,052억달러로 9월 말보다 0.14% 늘었습니다.",
+        "body_en": "China's foreign-exchange regulator said on Saturday, Nov 7, that reserves stood at $3.4052T at end-October, up 0.14% from end-September.",
+        "src": "SAFE · 11/7"
+      },
+      {
+        "emoji": "₿",
+        "headline_ko": "비트코인, 주말 사이 7만5천달러대 횡보",
+        "headline_en": "Bitcoin holds around $75,000 over the weekend",
+        "body_ko": "금요일 미국장 마감 시점 75,759달러에서 일요일 75,873달러로 0.15% 움직이는 데 그쳤습니다. 지난주 주식시장 급락 때와 달리 주말엔 조용했습니다.",
+        "body_en": "It moved just 0.15%, from $75,759 at Friday's US close to $75,873 on Sunday — quiet after last week's equity selloff.",
+        "src": "Yahoo · 11/8"
+      }
+    ]
+  },
+  "week": {
+    "note_ko": "시각은 KST · 美 장 마감 후 실적은 한국 다음 날 새벽 칸에 · 일정은 바뀔 수 있습니다",
+    "note_en": "Times in KST · US after-close reports sit on the next Korean day · Schedules can change",
+    "days": [
+      {
+        "day_ko": "월 11/9",
+        "day_en": "Mon 11/9",
+        "rows": [
+          {
+            "time": "10:30",
+            "name_ko": "中 10월 소비자물가",
+            "name_en": "China Oct CPI",
+            "tag_ko": "직전 0.9%",
+            "tag_en": "Prior 0.9%",
+            "importance": "high"
+          },
+          {
+            "time": "10:30",
+            "name_ko": "中 10월 생산자물가",
+            "name_en": "China Oct PPI",
+            "tag_ko": "직전 5.0%",
+            "tag_en": "Prior 5.0%",
+            "importance": "mid"
+          },
+          {
+            "time": "21:00",
+            "name_ko": "컨스텔레이션 에너지 실적",
+            "name_en": "Constellation earnings",
+            "tag_ko": "장 시작 전",
+            "tag_en": "Before open",
+            "importance": "mid"
+          },
+          {
+            "time": "22:40",
+            "name_ko": "보우먼 감독부의장 발언",
+            "name_en": "Fed's Bowman speaks",
+            "tag_ko": "투표권 O",
+            "tag_en": "Voter",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "화 11/10",
+        "day_en": "Tue 11/10",
+        "rows": [
+          {
+            "time": "06:00",
+            "name_ko": "옥시덴털 실적",
+            "name_en": "Occidental earnings",
+            "tag_ko": "美 장 마감 후",
+            "tag_en": "After US close",
+            "importance": "mid"
+          },
+          {
+            "time": "12:00",
+            "name_ko": "中 10월 수출입",
+            "name_en": "China Oct trade",
+            "tag_ko": "수출 직전 +36.3%",
+            "tag_en": "Exports prior +36.3%",
+            "importance": "mid"
+          },
+          {
+            "time": "16:00",
+            "name_ko": "금통위 의사록",
+            "name_en": "BOK minutes",
+            "tag_ko": "10월 회의",
+            "tag_en": "October meeting",
+            "importance": "mid"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "美 10월 소비자물가",
+            "name_en": "US Oct CPI",
+            "tag_ko": "전월비 직전 0.6%",
+            "tag_en": "Prior 0.6% m/m",
+            "importance": "high"
+          }
+        ]
+      },
+      {
+        "day_ko": "수 11/11",
+        "day_en": "Wed 11/11",
+        "rows": [
+          {
+            "time": "06:00",
+            "name_ko": "코어위브 실적",
+            "name_en": "CoreWeave earnings",
+            "tag_ko": "美 장 마감 후",
+            "tag_en": "After US close",
+            "importance": "mid"
+          },
+          {
+            "time": "08:00",
+            "name_ko": "韓 10월 고용동향",
+            "name_en": "Korea Oct jobs",
+            "tag_ko": "직전 실업률 2.0%",
+            "tag_en": "Prior jobless 2.0%",
+            "importance": "high"
+          },
+          {
+            "time": "12:00",
+            "name_ko": "韓 10월 가계대출",
+            "name_en": "Korea Oct household loans",
+            "tag_ko": "금융위",
+            "tag_en": "FSC",
+            "importance": "mid"
+          },
+          {
+            "time": "18:45",
+            "name_ko": "라가르드 ECB 총재 연설",
+            "name_en": "ECB's Lagarde speaks",
+            "tag_ko": "통화정책 신호",
+            "tag_en": "Policy signal",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "목 11/12",
+        "day_en": "Thu 11/12",
+        "rows": [
+          {
+            "time": "08:50",
+            "name_ko": "日 10월 생산자물가",
+            "name_en": "Japan Oct PPI",
+            "tag_ko": "직전 6.8%",
+            "tag_en": "Prior 6.8%",
+            "importance": "mid"
+          },
+          {
+            "time": "21:00",
+            "name_ko": "네비우스 실적",
+            "name_en": "Nebius earnings",
+            "tag_ko": "장 시작 전",
+            "tag_en": "Before open",
+            "importance": "mid"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "美 신규 실업수당청구",
+            "name_en": "US jobless claims",
+            "tag_ko": "직전 18.9만",
+            "tag_en": "Prior 189K",
+            "importance": "mid"
+          },
+          {
+            "time": "23:00",
+            "name_ko": "해맥 총재 발언",
+            "name_en": "Fed's Hammack speaks",
+            "tag_ko": "매파 · 투표권 O",
+            "tag_en": "Hawk · voter",
+            "importance": "mid"
+          }
+        ]
+      },
+      {
+        "day_ko": "금 11/13",
+        "day_en": "Fri 11/13",
+        "rows": [
+          {
+            "time": "06:00",
+            "name_ko": "어플라이드·시스코 실적",
+            "name_en": "AMAT & Cisco earnings",
+            "tag_ko": "美 장 마감 후",
+            "tag_en": "After US close",
+            "importance": "high"
+          },
+          {
+            "time": "06:00",
+            "name_ko": "韓 10월 수출입물가",
+            "name_en": "Korea Oct trade prices",
+            "tag_ko": "한국은행",
+            "tag_en": "BOK",
+            "importance": "mid"
+          },
+          {
+            "time": "19:00",
+            "name_ko": "유로존 3분기 GDP",
+            "name_en": "Eurozone Q3 GDP",
+            "tag_ko": "속보치 0.4%",
+            "tag_en": "Flash 0.4%",
+            "importance": "mid"
+          },
+          {
+            "time": "22:30",
+            "name_ko": "美 10월 생산자물가",
+            "name_en": "US Oct PPI",
+            "tag_ko": "전월비 직전 1.3%",
+            "tag_en": "Prior 1.3% m/m",
+            "importance": "mid"
+          }
+        ]
+      }
+    ]
+  },
+  "econ": {
+    "title_ko": "미국 · 글로벌 지표",
+    "title_en": "US & global data",
+    "sub_ko": "직전치 → 컨센서스",
+    "sub_en": "Prior → consensus",
+    "note_ko": "컨센서스는 FXStreet 경제 캘린더 기준 · 발표 직전까지 바뀔 수 있습니다",
+    "note_en": "Consensus per the FXStreet economic calendar · can shift up to the release",
+    "rows": [
+      {
+        "name_ko": "美 10월 소비자물가 (전월비)",
+        "name_en": "US Oct CPI (m/m)",
+        "when": "11/10 22:30",
+        "prev": "0.6%",
+        "est": "0.3%",
+        "dir": -1
+      },
+      {
+        "name_ko": "美 10월 근원 CPI (전월비)",
+        "name_en": "US Oct core CPI (m/m)",
+        "when": "11/10 22:30",
+        "prev": "0.3%",
+        "est": "0.2%",
+        "dir": -1
+      },
+      {
+        "name_ko": "美 10월 생산자물가 (전월비)",
+        "name_en": "US Oct PPI (m/m)",
+        "when": "11/13 22:30",
+        "prev": "1.3%",
+        "est": "0.4%",
+        "dir": -1
+      },
+      {
+        "name_ko": "美 신규 실업수당청구",
+        "name_en": "US initial jobless claims",
+        "when": "11/12 22:30",
+        "prev": "189K",
+        "est": "195K",
+        "dir": 1
+      },
+      {
+        "name_ko": "中 10월 소비자물가 (전년비)",
+        "name_en": "China Oct CPI (y/y)",
+        "when": "11/9 10:30",
+        "prev": "0.9%",
+        "est": "0.8%",
+        "dir": -1
+      }
+    ]
+  },
+  "earnings": {
+    "title_ko": "다음 주 실적",
+    "title_en": "Earnings ahead",
+    "sub_ko": "전년 동기 → 컨센서스 (조정 EPS)",
+    "sub_en": "Year ago → consensus (adj. EPS)",
+    "note_ko": "컨센서스는 Zacks·TipRanks 등 집계 기준 · 매체별 차이 있음 · 날짜는 미국 현지",
+    "note_en": "Consensus per Zacks, TipRanks and others · varies by source · US local dates",
+    "items": [
+      {
+        "name_ko": "컨스텔레이션",
+        "name_en": "Constellation",
+        "logo": "CEG",
+        "mono_ko": "CEG",
+        "mono_en": "CEG",
+        "color": "#0f6b8f",
+        "when": "11/9",
+        "slot_ko": "장 시작 전",
+        "slot_en": "Before open",
+        "epsPrev": "3.04",
+        "eps": "3.90",
+        "dir": 1
+      },
+      {
+        "name_ko": "옥시덴털",
+        "name_en": "Occidental",
+        "logo": "OXY",
+        "mono_ko": "OXY",
+        "mono_en": "OXY",
+        "color": "#c8102e",
+        "when": "11/9",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "0.64",
+        "eps": "1.43",
+        "dir": 1
+      },
+      {
+        "name_ko": "코어위브",
+        "name_en": "CoreWeave",
+        "logo": "CRWV",
+        "mono_ko": "CRWV",
+        "mono_en": "CRWV",
+        "color": "#2741e7",
+        "when": "11/10",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "-0.22",
+        "eps": "-1.27",
+        "dir": -1
+      },
+      {
+        "name_ko": "네비우스",
+        "name_en": "Nebius",
+        "logo": "NBIS",
+        "mono_ko": "NBIS",
+        "mono_en": "NBIS",
+        "color": "#1b1f3b",
+        "when": "11/12",
+        "slot_ko": "장 시작 전",
+        "slot_en": "Before open",
+        "epsPrev": "-0.40",
+        "eps": "-0.72",
+        "dir": -1
+      },
+      {
+        "name_ko": "시스코",
+        "name_en": "Cisco",
+        "logo": "CSCO",
+        "mono_ko": "CS",
+        "mono_en": "CS",
+        "color": "#049fd9",
+        "when": "11/12",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "1.00",
+        "eps": "1.32",
+        "dir": 1
+      },
+      {
+        "name_ko": "어플라이드 머티어리얼즈",
+        "name_en": "Applied Materials",
+        "logo": "AMAT",
+        "mono_ko": "AM",
+        "mono_en": "AM",
+        "color": "#c2382e",
+        "when": "11/12",
+        "slot_ko": "장 마감 후",
+        "slot_en": "After close",
+        "epsPrev": "2.17",
+        "eps": "4.06",
+        "dir": 1
+      }
+    ]
+  },
+  "korea": {
+    "title_ko": "한국 다음 주",
+    "title_en": "Korea next week",
+    "sub_ko": "지표 · 통화정책 · 만기",
+    "sub_en": "Data, policy, expiry",
+    "note_ko": "국내 일정은 발표 기관·거래소 공지 기준",
+    "note_en": "Dates follow agency and exchange notices",
+    "items": [
+      {
+        "emoji": "👷",
+        "headline_ko": "수요일 10월 고용동향 — 직전 실업률 2.0%",
+        "headline_en": "Wednesday: October jobs — prior jobless rate 2.0%",
+        "body_ko": "국가데이터처가 11일 오전 8시에 발표합니다. 9월 취업자는 1년 전보다 11.3만 명 늘었습니다. 같은 날 정오엔 금융위원회가 10월 가계대출 동향을 내놓습니다.",
+        "body_en": "Statistics Korea releases it at 8 AM on Nov 11; September employment was up 113K from a year earlier. At noon, the FSC publishes October household-lending data.",
+        "src": "11/11"
+      },
+      {
+        "emoji": "🏦",
+        "headline_ko": "금통위는 이번 주 없음 — 화요일 의사록, 결정은 26일",
+        "headline_en": "No BOK decision this week — minutes Tue, decision Nov 26",
+        "body_ko": "10일 지난 10월 회의 의사록이 공개됩니다. 올해 마지막 기준금리 결정은 26일입니다.",
+        "body_en": "Minutes of the October meeting come out on Nov 10. The year's last rate decision is on Nov 26.",
+        "src": "11/10 · 11/26"
+      },
+      {
+        "emoji": "📅",
+        "headline_ko": "목요일 코스피200 옵션 만기",
+        "headline_en": "Thursday: KOSPI 200 options expiry",
+        "body_ko": "12일은 이달 옵션 만기일입니다. 지난주 서킷브레이커까지 나온 급락 직후라 장 막판 변동성이 커질 수 있습니다.",
+        "body_en": "Nov 12 is monthly options expiry. Coming right after last week's circuit-breaker selloff, late-session swings may be larger.",
+        "src": "KRX · 11/12"
+      }
+    ]
+  },
+  "ai": {
+    "title_ko": "AI · 반도체",
+    "title_en": "AI & semiconductors",
+    "sub_ko": "다음 주 볼 것 세 가지",
+    "sub_en": "Three things to watch",
+    "note_ko": "지난주 필라델피아반도체지수 −12.15% 뒤 첫 AI 실적 주간",
+    "note_en": "First AI earnings week after the chip index's −12.15% week",
+    "items": [
+      {
+        "icon": "chip",
+        "headline_ko": "코어위브 — AI 클라우드의 자금 조달 여력",
+        "headline_en": "CoreWeave — can AI cloud keep funding its build-out?",
+        "body_ko": "10일 장 마감 후 발표합니다. 금리 부담 속에 데이터센터 증설 자금을 어떻게 마련하는지, 수주잔고와 내년 설비투자 계획이 관전 포인트입니다.",
+        "body_en": "Reports Nov 10 after the close. Watch how it funds data-center expansion amid higher rates, plus its backlog and next year's capex plan.",
+        "src": "11/10"
+      },
+      {
+        "icon": "chip",
+        "headline_ko": "어플라이드 — 반도체 장비 수주 흐름",
+        "headline_en": "Applied Materials — the chip-equipment order trend",
+        "body_ko": "12일 장 마감 후 회계 4분기 실적을 냅니다. AI용 첨단 로직·HBM 장비 수요와 중국 매출 비중, 다음 분기 가이던스가 쟁점입니다.",
+        "body_en": "Fiscal Q4 results Nov 12 after the close. Key issues: demand for leading-edge logic and HBM tools, China's share of sales, and next-quarter guidance.",
+        "src": "11/12"
+      },
+      {
+        "icon": "chip",
+        "headline_ko": "시스코 — AI 인프라 네트워크 주문",
+        "headline_en": "Cisco — AI infrastructure networking orders",
+        "body_ko": "같은 날 장 마감 후 발표합니다. 대형 클라우드 기업의 AI 네트워크 장비 주문이 이어지는지가 데이터센터 투자 둔화 우려를 가늠할 잣대입니다.",
+        "body_en": "Reports the same evening. Whether hyperscaler orders for AI networking gear keep coming is a gauge of fears over a data-center slowdown.",
+        "src": "11/12"
+      }
+    ]
+  },
+  "watch": {
+    "title_ko": "놓치면 안 될 것",
+    "title_en": "Don't miss",
+    "sub_ko": "휴장 · 연준 · AI 행사",
+    "sub_en": "Holiday, the Fed, AI event",
+    "note_ko": "③~⑤에 없는 확정 일정",
+    "note_en": "Fixed dates not in cards 3–5",
+    "items": [
+      {
+        "emoji": "🇺🇸",
+        "headline_ko": "수요일 美 재향군인의 날 — 채권시장 휴장",
+        "headline_en": "Wednesday: Veterans Day — US bond market shut",
+        "body_ko": "11일 미국 채권시장은 쉬고 주식시장은 정상 개장합니다. 그날은 국채금리 움직임이 비어 보일 수 있습니다.",
+        "body_en": "US bond markets close on Nov 11 while stocks trade normally, so Treasury yields may be quiet that day.",
+        "src": "11/11"
+      },
+      {
+        "emoji": "🎙",
+        "headline_ko": "연준 인사 발언 릴레이 — 월~금 매일",
+        "headline_en": "Fed speakers every day, Monday to Friday",
+        "body_ko": "보우먼 감독 담당 부의장(투표권 O)·월러 이사(투표권 O)·굴스비 총재(투표권 X)·해맥 총재(매파·투표권 O) 등이 잇따라 나섭니다. CPI 전후로 12월 회의 신호가 나올 수 있습니다.",
+        "body_en": "Vice Chair for Supervision Bowman (voter), Governor Waller (voter), Goolsbee (non-voter) and Hammack (hawk, voter) speak in turn; CPI week could bring December hints.",
+        "src": "11/9~11/13"
+      },
+      {
+        "emoji": "🤖",
+        "headline_ko": "월·화 엔비디아 AI 데이 서울",
+        "headline_en": "Mon–Tue: NVIDIA AI Day Seoul",
+        "body_ko": "9~10일 서울 코엑스에서 열립니다. 삼성전자·SK하이닉스·네이버클라우드 등 파트너 약 20곳이 참여해 피지컬 AI·에이전틱 AI·AI 인프라 세션을 진행합니다.",
+        "body_en": "Runs Nov 9–10 at COEX in Seoul, with about 20 partners including Samsung Electronics, SK hynix and Naver Cloud, and sessions on physical AI, agentic AI and AI infrastructure.",
+        "src": "COEX · 11/9~11/10"
+      }
+    ]
+  },
+  "start": {
+    "note_ko": "금요일(11/6) 마감 기준 · 주간 변동 · 지난주 상세 결산은 토요일 회차에서 다뤘습니다",
+    "note_en": "Friday (Nov 6) close · weekly change · full review ran in Saturday's edition",
+    "indexes": [
+      {
+        "name_ko": "S&P 500",
+        "name_en": "S&P 500",
+        "close": 7376.86,
+        "wk": -2.68
+      },
+      {
+        "name_ko": "나스닥 종합",
+        "name_en": "Nasdaq Composite",
+        "close": 24579.43,
+        "wk": -3.37
+      },
+      {
+        "name_ko": "코스피",
+        "name_en": "KOSPI",
+        "close": 5059.69,
+        "wk": -11.71
+      }
+    ],
+    "metrics": [
+      {
+        "emoji": "📈",
+        "name_ko": "VIX",
+        "name_en": "VIX",
+        "value": "25.64",
+        "delta": "▲32.03%",
+        "dir": 1
+      },
+      {
+        "emoji": "🏦",
+        "name_ko": "미 10년물",
+        "name_en": "US 10Y",
+        "value": "4.86%",
+        "delta": "▼8bp",
+        "dir": -1
+      },
+      {
+        "emoji": "$₩",
+        "name_ko": "원/달러",
+        "name_en": "USD/KRW",
+        "value": "1,364",
+        "delta": "▲2.26%",
+        "dir": 1
+      },
+      {
+        "emoji": "🥇",
+        "name_ko": "금",
+        "name_en": "Gold",
+        "value": "$4,079.50",
+        "delta": "▲4.63%",
+        "dir": 1
+      },
+      {
+        "emoji": "🛢",
+        "name_ko": "WTI",
+        "name_en": "WTI",
+        "value": "$90.83",
+        "delta": "▼12.76%",
+        "dir": -1
+      },
+      {
+        "emoji": "₿",
+        "name_ko": "비트코인",
+        "name_en": "Bitcoin",
+        "value": "$75,759",
+        "delta": "▼1.25%",
+        "dir": -1
+      }
+    ]
+  },
+  "outro": {
+    "tagline_ko": "평일엔 매일 아침·저녁,<br>주말엔 한 주를 한눈에",
+    "tagline_en": "Twice a day on weekdays,<br>the whole week on weekends",
+    "next_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+    "next_en": "☀️ Next up — 8am KST, the US close"
+  },
+  "caption_ko": "🗓 luckyon 브리핑 · 다음 주 일정 (2026.11.09~11.13)\n\n화요일 밤 미국 10월 소비자물가가 첫 관문입니다. 전월비 컨센서스는 0.3%로 직전 0.6%보다 낮습니다. 금요일 새벽(한국시간)에는 어플라이드 머티어리얼즈와 시스코가 실적을 내고, 금요일 밤에는 생산자물가가 나옵니다. 지난주 반도체지수가 한 주 새 12% 넘게 빠진 뒤 처음 맞는 AI 실적 주간입니다. 국내는 월요일부터 신용융자 담보비율 의무가 면제되고, 수요일 10월 고용동향, 목요일 옵션 만기가 이어집니다.\n\n👉 매주 일요일 밤, 다음 주 일정을 한 장씩 정리해 드립니다. 팔로우하고 놓치지 마세요!\n저장 🔖 공유 📤 환영합니다.\n\n#주식 #미국주식 #나스닥 #코스피 #다음주일정 #경제 #재테크 #투자 #CPI #소비자물가 #반도체 #AI #어플라이드머티어리얼즈 #시스코 #옵션만기\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "🗓 luckyon Briefing · The week ahead (Nov 9–13, 2026)\n\nUS October CPI on Tuesday night is the first gate: the m/m consensus is 0.3%, down from 0.6%. Applied Materials and Cisco report after Thursday's US close, and producer prices follow on Friday. It's the first AI earnings week since the chip index lost more than 12% in a week. In Korea, the margin-loan collateral rule is waived from Monday, with October jobs data on Wednesday and options expiry on Thursday.\n\n👉 Every Sunday night, the week ahead, one card at a time. Follow so you never miss it!\nSaves 🔖 and shares 📤 are welcome.\n\n#stockmarket #investing #economy #nasdaq #kospi #weekahead #cpi #inflation #semiconductors #ai #appliedmaterials #cisco #earnings #stocks #finance\n\n☀️ Next up — 8am KST, the US close",
+  "sources": [
+    "Yahoo Finance",
+    "KRX",
+    "FXStreet",
+    "Alpha Vantage",
+    "FMP",
+    "US Treasury",
+    "BLS",
+    "Bank of Korea",
+    "Statistics Korea",
+    "FSC",
+    "FSS",
+    "SAFE",
+    "Zacks",
+    "TipRanks",
+    "NVIDIA"
+  ]
+}
