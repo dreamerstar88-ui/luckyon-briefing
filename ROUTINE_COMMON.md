@@ -69,6 +69,7 @@
 | **실적 일정·예상치** | FMP `news` 는 요금제 제한 | FMP `calendar`→`earnings-calendar`(날짜 범위) · `data/econ-calendar.json`(origin/main). **예상치가 소스마다 다르다**(NAHB: 캘린더 32, 블룸버그 31 / UAL: FMP 2.57) → 검증 에이전트가 1차로 재확인하게 한다 |
 | **전날 장 마감 후 실적 결과** | FMP earnings-calendar 가 빈 배열 | `WebSearch` «earnings results reported after the close <날짜> EPS beat estimates» + 한국어 «미국 3분기 실적 발표 19일 장 마감 후 EPS 예상 상회» → Investing.com 계열 제목에서 EPS·예상 확인. **검증 에이전트가 발표일(장 마감 후인지)을 반드시 재확인** |
 | **미국 거래대금 공매도 열** | `fetch-us-flows.mjs` 가 «공매도 파일 없음» | 거래대금·상승/하락 거래대금은 그대로 쓰고 `short` 열만 생략(선택 필드) |
+| **Pages 배포(`pages-deploy.yml`)가 연속 `cancelled`** | 2026-11-10 am: Checkout 6~11분 + Upload·Deploy 로 15분 잡 타임아웃에 4회 연속 걸림(재실행 4번 모두 취소) | **`claude/live` 에 푸시만 돼 있으면 Pages 를 기다리지 않고** `PAGES_BASE_URL=https://raw.githubusercontent.com/dreamerstar88-ui/luckyon-briefing/claude/live NODE_USE_ENV_PROXY=1 node scripts/publish-instagram.mjs <DATE> ko|en <SESSION>` 로 발행한다. 저장소가 공개라 Meta 가 raw 주소에서 이미지를 가져가며 ko·en 모두 1회에 성공했다(media id 17876367207636432·18426941242152222). 세션에서도 raw 가 200 으로 열린다. Pages 는 나중에 정상 배포되도록 두면 된다 |
 | **AI·주요소식 후보 부족** | 한 검색어로 3~4건 | 영어 «<날짜> AI announcement Nvidia OpenAI Anthropic Google» · 한국어 «HBM4 엔비디아 공급 데이터센터 전력» · 검증 에이전트에게 **다른 키워드로 2~3회 재검색**을 시킨다(§3-D). 낡은 항목(수개월 전 뉴스가 «오늘» 소식으로 걸림)은 날짜 확인 후 버린다 |
 
 **am 세션 중복 제거**: am 은 «직전 pm 이후»만 담는다. **직전 pm 파일(`git show origin/claude/live:content/<어제>-pm.json`)을 먼저 읽고**
