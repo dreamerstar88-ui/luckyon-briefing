@@ -1,101 +1,11 @@
 {
-  "fetchedAt": "2026-11-08T17:00:53Z",
+  "fetchedAt": "2026-11-09T01:45:08Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-06T17:00:53Z",
-    "to": "2026-11-22T17:00:53Z"
+    "from": "2026-11-07T01:45:08Z",
+    "to": "2026-11-23T01:45:08Z"
   },
   "events": [
-    {
-      "at": "2026-11-06T17:15:00Z",
-      "country": "US",
-      "name": "Fed's Bowman speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-06T18:00:00Z",
-      "country": "US",
-      "name": "Baker Hughes US Oil Rig Count",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 462,
-      "actual": 463,
-      "unit": null
-    },
-    {
-      "at": "2026-11-06T18:00:00Z",
-      "country": "US",
-      "name": "Fed's Daly speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-06T20:00:00Z",
-      "country": "US",
-      "name": "Consumer Credit Change",
-      "impact": "LOW",
-      "consensus": 12,
-      "previous": 8.28,
-      "actual": 27.84,
-      "unit": "$"
-    },
-    {
-      "at": "2026-11-06T20:30:00Z",
-      "country": "EMU",
-      "name": "CFTC EUR NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -143.9,
-      "actual": -157.8,
-      "unit": "€"
-    },
-    {
-      "at": "2026-11-06T20:30:00Z",
-      "country": "JP",
-      "name": "CFTC JPY NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 101.6,
-      "actual": 102.3,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-11-06T20:30:00Z",
-      "country": "US",
-      "name": "CFTC Gold NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 186.5,
-      "actual": 179.5,
-      "unit": "$"
-    },
-    {
-      "at": "2026-11-06T20:30:00Z",
-      "country": "US",
-      "name": "CFTC Oil NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 74.3,
-      "actual": 80.3,
-      "unit": null
-    },
-    {
-      "at": "2026-11-06T20:30:00Z",
-      "country": "US",
-      "name": "CFTC S&P 500 NC Net Positions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -134.4,
-      "actual": -129.4,
-      "unit": "$"
-    },
     {
       "at": "2026-11-07T08:00:00Z",
       "country": "CN",
@@ -113,7 +23,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1178.4,
-      "actual": null,
+      "actual": 1179.1,
       "unit": "$"
     },
     {
@@ -121,9 +31,9 @@
       "country": "CN",
       "name": "Consumer Price Index (MoM)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0,
       "previous": 0.2,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -133,7 +43,7 @@
       "impact": "HIGH",
       "consensus": 0.8,
       "previous": 0.9,
-      "actual": null,
+      "actual": 0.7,
       "unit": "%"
     },
     {
@@ -143,7 +53,7 @@
       "impact": "MEDIUM",
       "consensus": 5.3,
       "previous": 5,
-      "actual": null,
+      "actual": 5.7,
       "unit": "%"
     },
     {
@@ -171,7 +81,7 @@
       "country": "DE",
       "name": "Exports (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": -0.8,
       "actual": null,
       "unit": "%"
@@ -181,7 +91,7 @@
       "country": "DE",
       "name": "Imports (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 0.5,
       "previous": 0.9,
       "actual": null,
       "unit": "%"
@@ -191,7 +101,7 @@
       "country": "DE",
       "name": "Trade Balance s.a.",
       "impact": "MEDIUM",
-      "consensus": 19.4,
+      "consensus": 19.2,
       "previous": 19.5,
       "actual": null,
       "unit": "€"
@@ -481,7 +391,7 @@
       "country": "US",
       "name": "Consumer Price Index (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 3.9,
       "previous": 3.7,
       "actual": null,
       "unit": "%"
@@ -511,7 +421,7 @@
       "country": "US",
       "name": "Consumer Price Index ex Food & Energy (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 2.8,
       "previous": 2.6,
       "actual": null,
       "unit": "%"
@@ -521,7 +431,7 @@
       "country": "US",
       "name": "Consumer Price Index n.s.a (MoM)",
       "impact": "LOW",
-      "consensus": null,
+      "consensus": 337.02,
       "previous": 336.94,
       "actual": null,
       "unit": null
@@ -1091,7 +1001,7 @@
       "country": "CN",
       "name": "M2 Money Supply (YoY)",
       "impact": "LOW",
-      "consensus": 7.3,
+      "consensus": 7.2,
       "previous": 7.2,
       "actual": null,
       "unit": "%"
@@ -1181,7 +1091,7 @@
       "country": "US",
       "name": "Producer Price Index (YoY)",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 6.6,
       "previous": 6.3,
       "actual": null,
       "unit": "%"
@@ -1201,7 +1111,7 @@
       "country": "US",
       "name": "Producer Price Index ex Food & Energy (YoY)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 5,
       "previous": 5,
       "actual": null,
       "unit": "%"
@@ -1251,7 +1161,7 @@
       "country": "JP",
       "name": "Gross Domestic Product (QoQ)",
       "impact": "HIGH",
-      "consensus": null,
+      "consensus": 0.1,
       "previous": 0.4,
       "actual": null,
       "unit": "%"
@@ -1261,7 +1171,7 @@
       "country": "JP",
       "name": "Gross Domestic Product Annualized",
       "impact": "MEDIUM",
-      "consensus": null,
+      "consensus": 0.3,
       "previous": 1.4,
       "actual": null,
       "unit": "%"
@@ -2313,6 +2223,26 @@
       "impact": "LOW",
       "consensus": null,
       "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-23T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 53.3,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-23T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Services PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 51.7,
       "actual": null,
       "unit": null
     }
