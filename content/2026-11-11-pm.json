@@ -1,0 +1,647 @@
+{
+ "date": "2026-11-11",
+ "session": "pm",
+ "dateLabel_ko": "2026.11.11(수) 저녁",
+ "dateLabel_en": "Wed, Nov 11, 2026 · PM",
+ "headline_ko": "코스피 +2.60% 5,375, 코스닥 +5.62% 사이드카 이틀째",
+ "headline_en": "KOSPI +2.60% to 5,375; KOSDAQ +5.62% on Second Straight Sidecar",
+ "headline_sub_ko": "SK하이닉스 +5.36% · 삼성전자 +3.57% · 외국인 코스피 약 6,600억 순매수",
+ "headline_sub_en": "SK hynix +5.36% · Samsung +3.57% · Foreigners net buy about ₩660B on KOSPI",
+ "cover_photo": "seoul.jpg",
+ "cover_kicker": {
+  "ko": "국내 마감 · 11/11",
+  "en": "Korea Close · Nov 11"
+ },
+ "cover_facts": [
+  [
+   "target",
+   {
+    "ko": "코스피 +2.60% · 코스닥 +5.62%",
+    "en": "KOSPI +2.60% · KOSDAQ +5.62%"
+   },
+   {
+    "ko": "5,375.36 / 705.10 · 이틀 연속 반등",
+    "en": "5,375.36 / 705.10 · second straight rebound"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "외국인 코스피 약 +6,600억 순매수",
+    "en": "Foreigners net buy KOSPI ~₩660B"
+   },
+   {
+    "ko": "개인 약 −7,160억 · 기관 약 −4,820억",
+    "en": "Retail sold ~₩716B · institutions sold ~₩482B"
+   }
+  ],
+  [
+   "chip",
+   {
+    "ko": "반도체 +5.84% · 항공사 −9.74%",
+    "en": "Semis +5.84% · Airlines -9.74%"
+   },
+   {
+    "ko": "어제 +13.28% 올랐던 항공사는 하루 만에 급락",
+    "en": "Airlines, up 13.28% yesterday, reversed sharply"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "코스피는 136.23포인트(2.60%) 오른 5,375.36, 코스닥은 37.49포인트(5.62%) 오른 705.10에 마감했다. 코스닥은 오전 11시 28분경 매수 사이드카가 발동돼 전날에 이어 이틀 연속이었다.",
+   "SK하이닉스는 5.36%(127만7,000원), 삼성전자는 3.57%(20만6,000원) 올랐다. 두 종목 거래대금 7.25조원이 코스피 거래대금(17.60조원)의 41.2%였다.",
+   "코스피에서 외국인이 약 6,600억원 순매수했고, 개인은 약 7,160억원, 기관은 약 4,820억원 순매도했다. 코스닥은 기관이 약 3,130억원 순매수했다.",
+   "업종 79개 중 57개가 올랐다. 전날 13.28% 올랐던 항공사는 9.74% 내려 가장 크게 하락했다."
+  ],
+  "lines_en": [
+   "The KOSPI rose 136.23 points (2.60%) to 5,375.36 and the KOSDAQ gained 37.49 points (5.62%) to 705.10. A buy-side sidecar hit the KOSDAQ around 11:28 AM, its second in a row.",
+   "SK hynix rose 5.36% to ₩1,277,000 and Samsung Electronics 3.57% to ₩206,000. Their combined ₩7.25T of turnover was 41.2% of KOSPI turnover (₩17.60T).",
+   "Foreigners net bought about ₩660B on the KOSPI while individuals sold about ₩716B and institutions about ₩482B. On the KOSDAQ, institutions net bought about ₩313B.",
+   "57 of 79 industry groups rose. Airlines, up 13.28% a day earlier, fell 9.74%, the biggest drop."
+  ]
+ },
+ "market_note_ko": "코스피는 11/11 정규장 종가 · 나스닥·S&P 500은 12월물 선물(11/11 20시경) · VIX는 11/10 종가 · 금·WTI는 선물, 원/달러·DXY·비트코인은 11/11 20시경 시세(야후) · 미 10년물은 11/10 종가",
+ "market_note_en": "KOSPI is the Nov 11 regular-session close · Nasdaq and S&P 500 are Dec futures (~8 PM KST Nov 11) · VIX is the Nov 10 close · gold and WTI are futures; USD/KRW, DXY and Bitcoin are ~8 PM KST quotes · US 10Y is the Nov 10 close",
+ "markets": [
+  {
+   "label": "NASDAQ Fut",
+   "value": "28,351.25",
+   "delta": "▲1.85%",
+   "dir": "up",
+   "note_ko": "나스닥100 12월물 · 11/10 정산 27,835.25 대비",
+   "note_en": "Nasdaq 100 Dec futures · vs 27,835.25 settle on Nov 10"
+  },
+  {
+   "label": "S&P 500 Fut",
+   "value": "7,607.00",
+   "delta": "▲0.83%",
+   "dir": "up",
+   "note_ko": "S&P 500 12월물 · 11/10 정산 7,544.25 대비",
+   "note_en": "S&P 500 Dec futures · vs 7,544.25 settle on Nov 10"
+  },
+  {
+   "label": "KOSPI",
+   "value": "5,375.36",
+   "delta": "▲2.60%",
+   "dir": "up",
+   "note_ko": "11/10 종가 5,239.13 대비 · 코스닥 705.10(▲5.62%)",
+   "note_en": "vs 5,239.13 on Nov 10 · KOSDAQ 705.10 (+5.62%)"
+  },
+  {
+   "label": "VIX",
+   "value": "19.46",
+   "delta": "▼2.31%",
+   "dir": "down",
+   "note_ko": "11/9 종가 19.92 대비 · 11/5 28.18에서 내린 수준",
+   "note_en": "vs 19.92 on Nov 9 · down from 28.18 on Nov 5"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "33 → 34",
+   "delta": "▲",
+   "dir": "up",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   },
+   "note_ko": "1주 전 34 · 공포(25~44) 구간 유지",
+   "note_en": "34 a week ago · stays in Fear (25-44)"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.88% → 4.98%",
+   "delta": "▲",
+   "dir": "up",
+   "note_ko": "11/9 → 11/10 종가",
+   "note_en": "Nov 9 → Nov 10 close"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,338.46",
+   "delta": "▼0.40%",
+   "dir": "down",
+   "value_sub": "· DXY 102.5",
+   "note_ko": "야후 11/10 종가 1,343.84원 대비(서울 종가 1,337.5원) · 11/11 20시경",
+   "note_en": "vs 1,343.84 Yahoo close on Nov 10 (Seoul close 1,337.5) · ~8 PM KST Nov 11"
+  },
+  {
+   "label": "Gold",
+   "value": "4,061.90",
+   "delta": "▲0.79%",
+   "dir": "up",
+   "note_ko": "11/10 종가 4,030.20 대비 · 선물",
+   "note_en": "vs 4,030.20 on Nov 10 · futures"
+  },
+  {
+   "label": "WTI",
+   "value": "86.78",
+   "delta": "▲0.86%",
+   "dir": "up",
+   "note_ko": "12월물 · 11/10 정산 86.04 대비",
+   "note_en": "Dec contract · vs 86.04 settle on Nov 10"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "73,952",
+   "delta": "▲0.31%",
+   "dir": "up",
+   "note_ko": "11/10(UTC) 종가 73,720 대비 · 11/11 20시경",
+   "note_en": "vs 73,720 on Nov 10 (UTC) · ~8 PM KST Nov 11"
+  }
+ ],
+ "tile_main": "KOSPI",
+ "tile_side": [
+  "NASDAQ Fut",
+  "S&P 500 Fut"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "136.23p 상승 · 최근 9거래일",
+  "en": "+136.23 pts · last 9 sessions"
+ },
+ "chart_series_values": [
+  5730.74,
+  5859.08,
+  5648.79,
+  5683.8,
+  5383.8,
+  5059.69,
+  5018.85,
+  5239.13,
+  5375.36
+ ],
+ "chart_series_labels": [
+  "10.30",
+  "11.02",
+  "11.03",
+  "11.04",
+  "11.05",
+  "11.06",
+  "11.09",
+  "11.10",
+  "11.11"
+ ],
+ "chart_title": {
+  "ko": "이틀 반등에도 11/4 종가는 아직 위",
+  "en": "Two-Day Rebound, Still Below the Nov 4 Close"
+ },
+ "chart_sub": {
+  "ko": "코스피 종가 · 최근 9거래일",
+  "en": "KOSPI close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "11.09 5,018.85 → 11.10 5,239.13 → 11.11 5,375.36",
+  "en": "Nov 9 5,018.85 → Nov 10 5,239.13 → Nov 11 5,375.36"
+ },
+ "record_section": "코스피 · 코스닥 기록",
+ "record_kicker": "TODAY",
+ "sector_title": {
+  "ko": "항공사는 하루 만에 −9.74%, 79개 중 57개 상승",
+  "en": "Airlines Reverse -9.74%; 57 of 79 Groups Rise"
+ },
+ "sector_sub": {
+  "ko": "네이버 업종 분류 등락률 · 코스피+코스닥 · 79개 중 15개",
+  "en": "Naver industry groups, KOSPI+KOSDAQ · 15 of 79"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top by Turnover"
+ },
+ "rank_sub": {
+  "ko": "코스피 · 막대 옆은 등락률",
+  "en": "KOSPI · % beside bars is the day's change"
+ },
+ "rank_unit": {
+  "ko": "단위 · 조원",
+  "en": "Unit · KRW trillion"
+ },
+ "econ_kicker": "DATA RELEASES",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/11 발표분 · 한국",
+  "en": "Released Nov 11 · Korea"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "코스피 · 코스닥 기록",
+   "title_en": "KOSPI & KOSDAQ Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "코스피",
+     "label_en": "KOSPI",
+     "value": "5,375.36",
+     "delta": "▲2.60%",
+     "dir": "up",
+     "sub_ko": "136.23포인트 상승 · 11/4 종가比 −5.4%",
+     "sub_en": "Up 136.23 pts · 5.4% below Nov 4 close"
+    },
+    {
+     "label_ko": "코스닥",
+     "label_en": "KOSDAQ",
+     "value": "705.10",
+     "delta": "▲5.62%",
+     "dir": "up",
+     "sub_ko": "37.49포인트 상승 · 이틀 연속 매수 사이드카",
+     "sub_en": "Up 37.49 pts · buy-side sidecar for a second day"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "코스피 등락 종목수",
+     "label_en": "KOSPI breadth",
+     "up": 575,
+     "flat": 41,
+     "down": 296
+    },
+    {
+     "label_ko": "코스닥 등락 종목수",
+     "label_en": "KOSDAQ breadth",
+     "up": 1278,
+     "flat": 76,
+     "down": 399
+    }
+   ],
+   "flows": {
+    "label_ko": "코스피 투자자별 순매수 (조원)",
+    "label_en": "KOSPI net buy/sell by investor (₩ tn)",
+    "rows": [
+     {
+      "label_ko": "개인",
+      "label_en": "Individuals",
+      "value": -0.72
+     },
+     {
+      "label_ko": "외국인",
+      "label_en": "Foreigners",
+      "value": 0.66
+     },
+     {
+      "label_ko": "기관",
+      "label_en": "Institutions",
+      "value": -0.48
+     }
+    ]
+   },
+   "note_ko": "유가증권시장 정규장 · 언론 보도가 일치하는 자리까지만 적었다",
+   "note_en": "KOSPI regular session, rounded to where press reports agree"
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#e66767",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "전자장비",
+     "label_en": "Electronic Equip.",
+     "value": 8.46
+    },
+    {
+     "label_ko": "통신장비",
+     "label_en": "Telecom Eq.",
+     "value": 6.77
+    },
+    {
+     "label_ko": "반도체",
+     "label_en": "Semis",
+     "value": 5.84
+    },
+    {
+     "label_ko": "화학",
+     "label_en": "Chemicals",
+     "value": 4.54
+    },
+    {
+     "label_ko": "전기장비",
+     "label_en": "Elec. Equip.",
+     "value": 4.5
+    },
+    {
+     "label_ko": "전기제품",
+     "label_en": "Elec. Prod.",
+     "value": 4.14
+    },
+    {
+     "label_ko": "기계",
+     "label_en": "Machinery",
+     "value": 3.36
+    },
+    {
+     "label_ko": "우주항공국방",
+     "label_en": "Aero & Def.",
+     "value": 3.22
+    },
+    {
+     "label_ko": "석유와가스",
+     "label_en": "Oil & Gas",
+     "value": 2.31
+    },
+    {
+     "label_ko": "은행",
+     "label_en": "Banks",
+     "value": 0.41
+    },
+    {
+     "label_ko": "자동차",
+     "label_en": "Autos",
+     "value": -0.37
+    },
+    {
+     "label_ko": "조선",
+     "label_en": "Shipbuilding",
+     "value": -0.43
+    },
+    {
+     "label_ko": "손해보험",
+     "label_en": "P&C Insurance",
+     "value": -3.56
+    },
+    {
+     "label_ko": "게임",
+     "label_en": "Games",
+     "value": -5.32
+    },
+    {
+     "label_ko": "항공사",
+     "label_en": "Airlines",
+     "value": -9.74
+    }
+   ],
+   "note_ko": "전자장비(+8.46%)가 시가총액이 큰 업종 중 가장 크게 올랐다. 전날 +13.28%였던 항공사는 −9.74%로 79개 업종 중 가장 크게 내렸다. 반도체는 +5.84%.",
+   "note_en": "Electronic equipment (+8.46%) led among sizable groups. Airlines, +13.28% a day earlier, fell 9.74%, the most of all 79 groups. Semiconductors rose 5.84%."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top by Turnover",
+   "color": "#e66767",
+   "type": "rank",
+   "col_name_ko": "종목",
+   "col_name_en": "Stock",
+   "col_value_ko": "거래대금",
+   "col_value_en": "Turnover",
+   "rows": [
+    {
+     "name_ko": "SK하이닉스",
+     "name_en": "SK hynix",
+     "value": "₩4.03T",
+     "pct": 5.36
+    },
+    {
+     "name_ko": "삼성전자",
+     "name_en": "Samsung Elec.",
+     "value": "₩3.22T",
+     "pct": 3.57
+    },
+    {
+     "name_ko": "KODEX 200",
+     "name_en": "KODEX 200",
+     "value": "₩1.99T",
+     "pct": 3.1
+    },
+    {
+     "name_ko": "KODEX 레버리지",
+     "name_en": "KODEX Leverage",
+     "value": "₩1.47T",
+     "pct": 6.09
+    },
+    {
+     "name_ko": "KODEX 인버스",
+     "name_en": "KODEX Inverse",
+     "value": "₩1.29T",
+     "pct": -3.02
+    }
+   ],
+   "share": {
+    "label_ko": "코스피 거래대금(17.60조) 중 SK하이닉스·삼성전자 비중",
+    "label_en": "SK hynix + Samsung share of KOSPI turnover (₩17.60T)",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "두 종목",
+      "label_en": "Two stocks",
+      "pct": 41.2,
+      "color": "#e66767"
+     },
+     {
+      "label_ko": "나머지",
+      "label_en": "Others",
+      "pct": 58.8,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "업종별 상위 종목을 모은 집계로 ETF 3개 포함. 레버리지 ETF(+6.09%)와 인버스 ETF(−3.02%)가 모두 상위 5위에 들었다.",
+   "note_en": "Compiled from per-industry top names, including 3 ETFs. Both the leveraged ETF (+6.09%) and the inverse ETF (-3.02%) made the top 5."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#e66767",
+   "type": "stats",
+   "stats": [
+    {
+     "label_ko": "韓 10월 취업자 (전년비)",
+     "label_en": "Korea Oct Employment (YoY)",
+     "value": "+113K → +139K",
+     "delta": "▲",
+     "dir": "up",
+     "sub_ko": "청년(15~29세) 고용률 42.9%, 1.7%p 하락",
+     "sub_en": "Youth (15-29) employment rate 42.9%, down 1.7pp",
+     "ref_ko": "국가데이터처 고용동향 · 전년 동월 대비 취업자 증가폭",
+     "ref_en": "Korea Data Agency labor survey · YoY change in employed"
+    },
+    {
+     "label_ko": "광동제약 3분기 영업이익",
+     "label_en": "Kwangdong Pharm Q3 Op. Profit",
+     "value": "₩10.87B → ₩7.04B",
+     "delta": "▼35.2%",
+     "dir": "down",
+     "sub_ko": "매출 4,606억원 +3.6% · 순이익 −94.1%",
+     "sub_en": "Sales ₩460.6B, +3.6% · net income -94.1%",
+     "ref_ko": "연결 잠정 · 전년 동기 대비 · 감사 전",
+     "ref_en": "Consolidated preliminary · vs year earlier · unaudited"
+    },
+    {
+     "label_ko": "메리츠금융 1~3분기 순이익",
+     "label_en": "Meritz Financial 9M Net Income",
+     "value": "₩1.96T",
+     "delta": "▼3.2%",
+     "dir": "down",
+     "sub_ko": "3분기 누적 · 전년 동기 대비",
+     "sub_en": "Nine-month cumulative · vs year earlier",
+     "ref_ko": "잠정 · 누적 당기순이익",
+     "ref_en": "Preliminary · cumulative net income"
+    }
+   ],
+   "note_ko": "표기는 이전 → 이번 발표치(취업자) 또는 전년 동기 → 이번(실적). 3분기 잠정실적은 공정공시 기준이며 감사 전 수치다.",
+   "note_en": "Shown as prior → latest (employment) or year-earlier → latest (earnings). Q3 figures are preliminary fair-disclosure numbers, unaudited.",
+   "cols": 1
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "구글, 제미나이 4 카본 공개…유료 API·AI 울트라 대상",
+     "headline_en": "Google Releases Gemini 4 Carbon to Paid API and AI Ultra",
+     "body_ko": "유료 API 가격은 11/30까지 입력·출력 100만 토큰당 2달러·10달러, 12/1부터 4달러·20달러다. 일반 이용자는 AI 울트라 구독자부터 쓸 수 있다.",
+     "body_en": "Paid API pricing is $2 input/$10 output per 1M tokens through Nov 30, then $4/$20. Consumers need a Google AI Ultra subscription."
+    },
+    {
+     "headline_ko": "TSMC 이사회, 앤트로픽·오픈AI에 각각 최대 5억달러 투자 승인",
+     "headline_en": "TSMC Board Approves Up to $500M Each in Anthropic, OpenAI",
+     "body_ko": "11/10 이사회가 승인한 상한 금액이며 집행 전이다. 앤트로픽은 IPO 공모가로 보통주를, 오픈AI는 우선주를 산다.",
+     "body_en": "Approved by the Nov 10 board as a cap, not yet executed: Anthropic common shares at the IPO price, OpenAI preferred shares."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#e66767",
+   "items": [
+    {
+     "headline_ko": "코스닥 +5.62%, 매수 사이드카 이틀 연속 발동",
+     "headline_en": "KOSDAQ +5.62% as Buy Sidecar Triggers Again",
+     "body_ko": "코스닥은 11시 28분경 사이드카가 발동돼 전날에 이어 이틀 연속이었다. 코스피는 시가 5,209.71, 장중 고가 5,377.99, 종가 5,375.36이었다.",
+     "body_en": "A buy-side sidecar hit the KOSDAQ around 11:28 AM, a second day in a row. The KOSPI opened at 5,209.71, peaked at 5,377.99 and closed at 5,375.36."
+    },
+    {
+     "headline_ko": "외국인 코스피 약 6,600억 순매수, 개인 약 −7,160억·기관 약 −4,820억",
+     "headline_en": "Foreigners Buy ~₩660B on KOSPI; Retail Sells ~₩716B, Institutions ~₩482B",
+     "body_ko": "코스닥은 기관이 약 3,130억원 순매수했다. 정규장 기준이며 매체마다 수십억~수백억원 차이가 있어 일치하는 자리까지만 반올림해 적었다.",
+     "body_en": "On the KOSDAQ, institutions net bought about ₩313B. Regular-session figures; outlets differ by up to a few tens of billions of won, so numbers are rounded."
+    },
+    {
+     "headline_ko": "10월 취업자 13만9천명 증가, 청년 고용률은 30개월째 하락",
+     "headline_en": "Oct Jobs +139K; Youth Employment Rate Falls for 30th Month",
+     "body_ko": "국가데이터처 발표: 취업자 2,917만9천명, 증가폭은 전월보다 2만6천명 확대. 숙박·음식점업은 13만7천명 줄었고 청년(15~29세) 취업자는 19만6천명 줄어 48개월째 감소했다.",
+     "body_en": "Korea Data Agency: employed 29.179M, with the gain 26K larger than September. Accommodation and food services lost 137K jobs, and youth (15-29) employment fell 196K, a 48th straight monthly drop."
+    },
+    {
+     "headline_ko": "금감원, 샘표·샘표식품 합병 서류에 정정 요구",
+     "headline_en": "FSS Orders Corrections to Sempio–Sempio Foods Merger Filings",
+     "body_ko": "금융감독원이 샘표에는 10/30 제출 합병 결정 보고서의 정정명령을, 샘표식품에는 11/2 제출 합병 증권신고서의 정정신고서 제출을 요구했다(11/11 공시).",
+     "body_en": "The Financial Supervisory Service ordered corrections to Sempio's Oct 30 merger decision report and asked Sempio Foods to refile its Nov 2 merger registration statement (filed Nov 11)."
+    },
+    {
+     "headline_ko": "정부, 경제전망 발표 연 2회에서 3회로 확대",
+     "headline_en": "Korea to Raise Economic Outlook Releases to Three a Year",
+     "body_ko": "11일 비상경제장관회의에서 논의됐다(한국경제 보도). 하반기 경제성장전략은 따로 마련하지 않는다.",
+     "body_en": "Discussed at the Nov 11 emergency economic ministers' meeting (per Hankyung). No separate second-half growth strategy will be drawn up."
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 오늘 밤은 예정 일정이 적어 내일 이후를 미리 보기로 담았다",
+  "en": "Korea time (KST) · few events tonight, so the next days are previewed"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "미국 증시 운영시간",
+  "title_en": "US Market Hours",
+  "lines_ko": [
+   "정규장 23:30 ~ 익일 06:00 (표준시 기준) · 프리마켓 18:00 ~ 23:30"
+  ],
+  "lines_en": [
+   "Regular session 11:30 PM - 6:00 AM KST (standard time) · pre-market 6:00 PM - 11:30 PM"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "11/12 08:50",
+   "title_ko": "日 10월 생산자물가(PPI)",
+   "title_en": "Japan Oct PPI",
+   "detail_ko": "전년비 예상 +6.5% · 이전 +6.8%",
+   "detail_en": "YoY est. +6.5% · Prior +6.8%",
+   "importance": "mid"
+  },
+  {
+   "time": "11/12 22:30",
+   "title_ko": "美 주간 신규 실업수당 청구",
+   "title_en": "US Initial Jobless Claims",
+   "detail_ko": "예상 195K · 이전 189K",
+   "detail_en": "Est. 195K · Prior 189K",
+   "importance": "high"
+  },
+  {
+   "time": "11/12 23:00",
+   "title_ko": "해맥 클리블랜드 연은 총재(매파·투표권 O) 연설",
+   "title_en": "Fed's Hammack (hawk, voter) Speaks",
+   "detail_ko": "美 연준 인사 발언(미리 보기)",
+   "detail_en": "Fed speaker (preview)",
+   "importance": "mid"
+  },
+  {
+   "time": "11/13 00:00",
+   "title_ko": "바 연준 이사(투표권 O) 연설",
+   "title_en": "Fed Governor Barr (voter) Speaks",
+   "detail_ko": "美 연준 인사 발언(미리 보기)",
+   "detail_en": "Fed speaker (preview)",
+   "importance": "mid"
+  },
+  {
+   "time": "11/13 01:30",
+   "title_ko": "굴스비 시카고 연은 총재(투표권 X) 연설",
+   "title_en": "Fed's Goolsbee (non-voter) Speaks",
+   "detail_ko": "美 연준 인사 발언(미리 보기)",
+   "detail_en": "Fed speaker (preview)",
+   "importance": "mid"
+  },
+  {
+   "time": "11/13 03:10",
+   "title_ko": "데일리 샌프란시스코 연은 총재(투표권 X) 연설",
+   "title_en": "Fed's Daly (non-voter) Speaks",
+   "detail_ko": "美 연준 인사 발언(미리 보기)",
+   "detail_en": "Fed speaker (preview)",
+   "importance": "mid"
+  },
+  {
+   "time": "11/13 04:30",
+   "title_ko": "라가르드 ECB 총재 연설",
+   "title_en": "ECB President Lagarde Speaks",
+   "detail_ko": "유로존 통화정책 발언(미리 보기)",
+   "detail_en": "Eurozone policy remarks (preview)",
+   "importance": "mid"
+  }
+ ],
+ "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+ "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "caption_ko": "📊 luckyon 저녁 브리핑 · 2026.11.11(수)\n\n코스피는 2.60% 오른 5,375.36, 코스닥은 5.62% 오른 705.10에 마감했습니다. 코스닥은 이틀 연속 매수 사이드카가 발동됐고, SK하이닉스 +5.36%·삼성전자 +3.57%가 지수를 끌었습니다. 외국인은 코스피에서 약 6,600억원 순매수했습니다.\n\n전날 13.28% 올랐던 항공사는 9.74% 내렸습니다. 내일 밤 10시 30분에는 미국 주간 실업수당 청구가 나옵니다.\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리\n\n#코스피 #코스닥 #삼성전자 #SK하이닉스 #외국인순매수 #사이드카 #반도체 #항공주 #나스닥선물 #원달러 #증시 #주식 #경제 #고용동향 #luckyon",
+ "caption_en": "📊 luckyon evening brief · Wed, Nov 11, 2026\n\nThe KOSPI rose 2.60% to 5,375.36 and the KOSDAQ 5.62% to 705.10, with a buy-side sidecar on the KOSDAQ for a second straight day. SK hynix (+5.36%) and Samsung (+3.57%) led, and foreigners net bought about ₩660B on the KOSPI.\n\nAirlines, up 13.28% a day earlier, fell 9.74%. US jobless claims arrive at 10:30 PM KST tomorrow.\n\n☀️ Next brief — 8 AM KST, US close wrap-up\n\n#KOSPI #KOSDAQ #Samsung #SKhynix #foreigners #sidecar #semiconductors #airlines #Nasdaq #USDKRW #stocks #markets #economy #jobs #luckyon",
+ "sources": [
+  "KRX",
+  "Naver Finance",
+  "Yahoo Finance",
+  "FMP",
+  "FXStreet",
+  "CNN Fear & Greed",
+  "뉴스핌",
+  "DART",
+  "국가데이터처"
+ ]
+}
