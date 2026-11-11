@@ -1,0 +1,673 @@
+{
+  "date": "2026-11-12",
+  "session": "am",
+  "dateLabel_ko": "2026.11.12(목) 아침",
+  "dateLabel_en": "Thu, Nov 12, 2026 · AM",
+  "headline_ko": "코어위브발 AI 반등, 나스닥 +1.60%·반도체지수 +5.7%",
+  "headline_sub_ko": "마이크론 +11.9%·샌디스크 +13.7% · 미 채권시장은 재향군인의 날 휴장 · 코스피는 오늘 옵션만기",
+  "headline_en": "CoreWeave Sparks AI Rebound: Nasdaq +1.60%, Chip Index +5.7%",
+  "headline_sub_en": "Micron +11.9%, SanDisk +13.7% · US bond market shut for Veterans Day · KOSPI options expire today",
+  "cover_photo": "photos/nyse.jpg",
+  "cover_kicker": {
+    "ko": "간밤 미국장 · 11/11 마감",
+    "en": "US Overnight · Nov 11 Close"
+  },
+  "cover_facts": [
+    [
+      "chip",
+      {
+        "ko": "필라델피아 반도체지수 +5.7%",
+        "en": "Philadelphia Semiconductor Index +5.7%"
+      },
+      {
+        "ko": "마이크론 +11.9% · AMD +7.3% · 엔비디아 +2.87%",
+        "en": "Micron +11.9% · AMD +7.3% · Nvidia +2.87%"
+      }
+    ],
+    [
+      "target",
+      {
+        "ko": "나스닥 +1.60% · S&P 500 +1.31%",
+        "en": "Nasdaq +1.60% · S&P 500 +1.31%"
+      },
+      {
+        "ko": "25,466.19 / 7,619.38 · 전날 낙폭의 2배 넘게 되돌렸다",
+        "en": "25,466.19 / 7,619.38 · regained over twice Tuesday's drop"
+      }
+    ],
+    [
+      "globe",
+      {
+        "ko": "금 −0.90% · WTI +0.48%",
+        "en": "Gold -0.90% · WTI +0.48%"
+      },
+      {
+        "ko": "금 3,994.10달러 · 이란 핵물질 반출 거부에 유가 반등",
+        "en": "Gold $3,994.10 · oil rebounds as Iran rejects shipping out nuclear material"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "나스닥은 400.32포인트(1.60%) 오른 25,466.19, S&P 500은 98.45포인트(1.31%) 오른 7,619.38, 다우는 254.60포인트(0.49%) 오른 52,486.49로 마감했다. 나스닥은 전날 하락폭(187.27포인트)의 2배 넘게 되돌렸다.",
+      "AI 클라우드 기업 코어위브의 3분기 실적(매출 36.6억달러, 예상 약 35.5억달러)이 AI 투자 불안을 덜었다. 코어위브는 24.7% 올랐고, 반도체 ETF SMH는 4.82%, 마이크론은 11.89% 올랐다. 엔비디아는 2.87% 올라 173.73달러였다.",
+      "11개 섹터 ETF 중 10개가 올랐고 기술(XLK)이 +3.23%로 가장 컸다. 거래대금 상위 300종목 중 203개가 올랐고, 거래대금의 79.9%가 상승 종목에 몰렸다.",
+      "미 채권시장은 재향군인의 날로 쉬어 10년물은 11/10 종가 4.98%에 머물렀다. 금은 0.90% 내린 3,994.10달러, WTI는 0.48% 오른 86.45달러다."
+    ],
+    "lines_en": [
+      "The Nasdaq rose 400.32 points (1.60%) to 25,466.19, the S&P 500 98.45 (1.31%) to 7,619.38 and the Dow 254.60 (0.49%) to 52,486.49. The Nasdaq regained more than twice Tuesday's 187.27-point drop.",
+      "CoreWeave's Q3 results (revenue $3.66B vs. about $3.55B expected) eased worries over AI spending. CoreWeave gained 24.7%, the semiconductor ETF SMH 4.82% and Micron 11.89%. Nvidia rose 2.87% to $173.73.",
+      "Ten of 11 sector ETFs rose, led by tech (XLK) at +3.23%. Of the 300 most-traded names, 203 rose, and 79.9% of turnover went into gainers.",
+      "The US bond market was shut for Veterans Day, so the 10-year yield stayed at its Nov 10 close of 4.98%. Gold fell 0.90% to $3,994.10 and WTI rose 0.48% to $86.45."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "25,466.19",
+      "delta": "▲1.60%",
+      "dir": "up",
+      "note_ko": "400.32p 상승 · 11/11 미국장 마감 종가",
+      "note_en": "+400.32 pts · Nov 11 US close"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,619.38",
+      "delta": "▲1.31%",
+      "dir": "up",
+      "note_ko": "98.45p 상승 · 11개 업종 중 10개 상승",
+      "note_en": "+98.45 pts · 10 of 11 sectors rose"
+    },
+    {
+      "label": "KOSPI",
+      "value": "5,375.36",
+      "delta": "▲2.60%",
+      "dir": "up",
+      "note_ko": "11/11 한국장 종가 · 코스닥 705.10(▲5.62%)",
+      "note_en": "Nov 11 Korea close · KOSDAQ 705.10 (+5.62%)"
+    },
+    {
+      "label": "VIX",
+      "value": "17.49",
+      "delta": "▼10.12%",
+      "dir": "down",
+      "note_ko": "11/10 19.46 대비 · 11/5 28.18에서 내려온 수준",
+      "note_en": "vs 19.46 on Nov 10 · down from 28.18 on Nov 5"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "33 → 37",
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "1주 전 34 · 공포(25~44) 구간 유지",
+      "note_en": "34 a week ago · stays in Fear (25-44)",
+      "value_sub": {
+        "ko": "· 공포",
+        "en": "· Fear"
+      }
+    },
+    {
+      "label": "US 10Y",
+      "value": "4.88% → 4.98%",
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "11/9 → 11/10 종가 · 11/11은 채권시장 휴장",
+      "note_en": "Nov 9 → Nov 10 close · bond market shut Nov 11"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,338.49",
+      "delta": "▼0.40%",
+      "dir": "down",
+      "note_ko": "야후 11/10 종가 1,343.84원 대비 · 달러인덱스 +0.66%",
+      "note_en": "vs 1,343.84 Yahoo close on Nov 10 · dollar index +0.66%",
+      "value_sub": "· DXY 102.9"
+    },
+    {
+      "label": "Gold",
+      "value": "3,994.10",
+      "delta": "▼0.90%",
+      "dir": "down",
+      "note_ko": "11/10 4,030.20 대비 · 선물 · 4,000달러 아래",
+      "note_en": "vs 4,030.20 on Nov 10 · futures · below $4,000"
+    },
+    {
+      "label": "WTI",
+      "value": "86.45",
+      "delta": "▲0.48%",
+      "dir": "up",
+      "note_ko": "12월물 · 11/10 86.04 대비",
+      "note_en": "Dec contract · vs 86.04 on Nov 10"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "74,377",
+      "delta": "▲0.89%",
+      "dir": "up",
+      "note_ko": "11/10(UTC) 73,720 대비 · 11/11 UTC 일봉(진행 중, 07시 KST 조회)",
+      "note_en": "vs 73,720 on Nov 10 (UTC) · Nov 11 UTC daily bar (in progress, ~7 AM KST)"
+    }
+  ],
+  "market_note_ko": "나스닥·S&P 500·VIX·금·WTI는 11/11 미국장 마감 · 코스피는 11/11 정규장 종가 · 원/달러·DXY는 11/11 일봉 종가(야후) · 비트코인은 11/11 UTC 일봉 진행 중 시세 · 10년물은 11/10 종가",
+  "market_note_en": "Nasdaq, S&P 500, VIX, gold and WTI are Nov 11 US closes · KOSPI is the Nov 11 regular-session close · USD/KRW and DXY are Nov 11 daily closes (Yahoo) · Bitcoin is the in-progress Nov 11 UTC bar · US 10Y is the Nov 10 close",
+  "tile_main": "NASDAQ",
+  "tile_side": [
+    "S&P 500",
+    "KOSPI"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "chart_series": "us",
+  "main_tile_note": {
+    "ko": "400.32p 상승 · 최근 9거래일",
+    "en": "+400.32 pts · last 9 sessions"
+  },
+  "chart_series_values": [
+    25437.0,
+    25164.31,
+    25372.01,
+    25736.51,
+    24315.0,
+    24579.43,
+    25253.14,
+    25065.87,
+    25466.19
+  ],
+  "chart_series_labels": [
+    "10.30",
+    "11.02",
+    "11.03",
+    "11.04",
+    "11.05",
+    "11.06",
+    "11.09",
+    "11.10",
+    "11.11"
+  ],
+  "chart_title": {
+    "ko": "전날 낙폭의 2배 넘게 되돌렸다",
+    "en": "Regained Over Twice Tuesday's Drop"
+  },
+  "chart_sub": {
+    "ko": "나스닥종합 종가 · 최근 9거래일",
+    "en": "Nasdaq Composite close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "11.05 24,315.00 → 11.10 25,065.87 → 11.11 25,466.19",
+    "en": "Nov 5 24,315.00 → Nov 10 25,065.87 → Nov 11 25,466.19"
+  },
+  "record_section": "미국장 기록",
+  "record_kicker": "TODAY",
+  "sector_title": {
+    "ko": "기술이 가장 크게 올랐다",
+    "en": "Tech Led the Rebound"
+  },
+  "sector_sub": {
+    "ko": "S&P500 섹터 ETF·반도체 SMH · 11/11 종가 · 11개 중 10개 상승",
+    "en": "S&P 500 sector ETFs + SMH · Nov 11 close · 10 of 11 rose"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top by Turnover"
+  },
+  "rank_sub": {
+    "ko": "11/11 미국장 · 막대 옆은 등락률",
+    "en": "Nov 11 US session · % beside bars is the day's change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 십억달러",
+    "en": "Unit · $ billions"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "11/11 발표분 · 실측 · 예상 · 이전",
+    "en": "Released Nov 11 · actual · est. · prior"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "sections": [
+    {
+      "title_ko": "미국장 기록",
+      "title_en": "US Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "다우존스",
+          "label_en": "Dow Jones",
+          "value": "52,486.49",
+          "delta": "▲0.49%",
+          "dir": "up",
+          "sub_ko": "254.60포인트 상승 · 3대 지수 중 상승폭이 가장 작다",
+          "sub_en": "Up 254.60 pts · smallest gain of the three"
+        },
+        {
+          "label_ko": "S&P 500",
+          "label_en": "S&P 500",
+          "value": "7,619.38",
+          "delta": "▲1.31%",
+          "dir": "up",
+          "sub_ko": "98.45포인트 상승 · 전날 −0.38% 뒤 반등",
+          "sub_en": "Up 98.45 pts · rebound after Tuesday's -0.38%"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "S&P 500 11개 업종",
+          "label_en": "S&P 500 sectors",
+          "up": 10,
+          "flat": 0,
+          "down": 1
+        },
+        {
+          "label_ko": "거래대금 상위 300종목",
+          "label_en": "300 most-traded",
+          "up": 203,
+          "flat": 5,
+          "down": 92
+        }
+      ],
+      "flows": {
+        "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+        "label_en": "Turnover: gainers vs decliners ($B)",
+        "rows": [
+          {
+            "label_ko": "오른 종목",
+            "label_en": "Gainers",
+            "value": 328.0
+          },
+          {
+            "label_ko": "내린 종목",
+            "label_en": "Decliners",
+            "value": -82.7
+          }
+        ]
+      },
+      "note_ko": "11개 업종 중 10개가 올랐고 거래대금의 79.9%가 오른 종목에 몰렸다. 전날(상승 종목 $140.1B 대 하락 종목 $265.1B)과 정반대다.",
+      "note_en": "Ten of eleven sectors rose and 79.9% of turnover went into gainers, the reverse of Tuesday ($140.1B into gainers vs $265.1B into decliners)."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "US Sectors",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "반도체 (SMH)",
+          "label_en": "Semis (SMH)",
+          "value": 4.82
+        },
+        {
+          "label_ko": "기술 (XLK)",
+          "label_en": "Tech (XLK)",
+          "value": 3.23
+        },
+        {
+          "label_ko": "에너지 (XLE)",
+          "label_en": "Energy (XLE)",
+          "value": 1.86
+        },
+        {
+          "label_ko": "산업 (XLI)",
+          "label_en": "Industrials (XLI)",
+          "value": 1.33
+        },
+        {
+          "label_ko": "통신 (XLC)",
+          "label_en": "Comm (XLC)",
+          "value": 0.78
+        },
+        {
+          "label_ko": "금융 (XLF)",
+          "label_en": "Financials (XLF)",
+          "value": 0.58
+        },
+        {
+          "label_ko": "필수소비 (XLP)",
+          "label_en": "Staples (XLP)",
+          "value": 0.46
+        },
+        {
+          "label_ko": "소재 (XLB)",
+          "label_en": "Materials (XLB)",
+          "value": 0.32
+        },
+        {
+          "label_ko": "유틸리티 (XLU)",
+          "label_en": "Utilities (XLU)",
+          "value": 0.21
+        },
+        {
+          "label_ko": "헬스케어 (XLV)",
+          "label_en": "Health (XLV)",
+          "value": 0.04
+        },
+        {
+          "label_ko": "부동산 (XLRE)",
+          "label_en": "Real Est. (XLRE)",
+          "value": 0.02
+        },
+        {
+          "label_ko": "임의소비 (XLY)",
+          "label_en": "Cons Disc (XLY)",
+          "value": -0.05
+        }
+      ],
+      "note_ko": "반도체(SMH) +4.82%, 기술(XLK) +3.23%가 가장 크게 올랐다. 전날 가장 약했던 두 업종이 오늘은 가장 강했다. 에너지(XLE)도 +1.86%.",
+      "note_en": "Semis (SMH) +4.82% and tech (XLK) +3.23% led. The two weakest groups on Tuesday were the strongest on Wednesday. Energy (XLE) added 1.86%."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "엔비디아",
+          "name_en": "Nvidia",
+          "value": "$47.04B",
+          "pct": 2.87
+        },
+        {
+          "name_ko": "마이크론",
+          "name_en": "Micron",
+          "value": "$28.76B",
+          "pct": 11.89
+        },
+        {
+          "name_ko": "AMD",
+          "name_en": "AMD",
+          "value": "$23.66B",
+          "pct": 7.32
+        },
+        {
+          "name_ko": "스페이스X",
+          "name_en": "SpaceX",
+          "value": "$15.61B",
+          "pct": -2.33
+        },
+        {
+          "name_ko": "샌디스크",
+          "name_en": "SanDisk",
+          "value": "$15.54B",
+          "pct": 13.69
+        }
+      ],
+      "share": {
+        "label_ko": "표본 300종목 거래대금($410.8B) 중 상위 5종목 비중",
+        "label_en": "Top five's share of the 300-stock sample's turnover ($410.8B)",
+        "mode": "nested",
+        "segments": [
+          {
+            "label_ko": "상위 5종목",
+            "label_en": "Top 5",
+            "pct": 31.8,
+            "color": "#e66767"
+          },
+          {
+            "label_ko": "나머지",
+            "label_en": "Others",
+            "pct": 68.2,
+            "color": "#3987e5"
+          }
+        ]
+      },
+      "note_ko": "상위 5종목 중 4개가 반도체·메모리다. 마이크론(+11.89%)과 샌디스크(+13.69%) 등 메모리주가 가장 크게 올랐다. 스페이스X만 내렸다.",
+      "note_en": "Four of the top five are chip or memory names; Micron (+11.89%) and SanDisk (+13.69%) rose most. SpaceX was the only decliner."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "코어위브 3분기 매출",
+          "label_en": "CoreWeave Q3 Revenue",
+          "value": "$3.66B",
+          "delta": {
+            "ko": "예상 약 $3.55B 상회",
+            "en": "Above est. ~$3.55B"
+          },
+          "dir": "up",
+          "sub_ko": "11/10 장 마감 후 발표 · 11/11 주가 +24.7%",
+          "sub_en": "Reported after Nov 10 close · stock +24.7% on Nov 11",
+          "ref_ko": "AI 클라우드 인프라 기업 · AI 투자 수요의 풍향계",
+          "ref_en": "AI cloud-infrastructure firm; a gauge of AI demand"
+        },
+        {
+          "label_ko": "코어위브 주가",
+          "label_en": "CoreWeave Share Price",
+          "value": "$48.73 → $60.77",
+          "delta": "▲24.7%",
+          "dir": "up",
+          "sub_ko": "11/10 → 11/11 종가",
+          "sub_en": "Nov 10 → Nov 11 close",
+          "ref_ko": "실적 발표 다음 거래일 종가 기준 등락",
+          "ref_en": "Change in the first session after the results"
+        },
+        {
+          "label_ko": "필라델피아 반도체지수",
+          "label_en": "Philadelphia Semi Index",
+          "value": "+5.66%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "11/11 일간 등락률 (서울데이터랩 집계)",
+          "sub_en": "Nov 11 daily change (per Seoul Data Lab)",
+          "ref_ko": "필라델피아 거래소 상장 반도체 30개 종목 지수 · 반도체 업황의 대표 지표",
+          "ref_en": "Index of 30 listed US chip stocks; a bellwether for the sector"
+        },
+        {
+          "label_ko": "美 MBA 주택대출 신청 (주간)",
+          "label_en": "US MBA Mortgage Applications (WoW)",
+          "value": "−1.2% → +6.2%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "11/11 21:00 발표 · 전주 대비",
+          "sub_en": "Released 9 PM KST Nov 11 · week over week",
+          "ref_ko": "주택 구입·재융자 대출 신청 건수의 주간 변동",
+          "ref_en": "Weekly change in home-purchase and refinance loan applications"
+        }
+      ],
+      "note_ko": "표기는 이전 → 이번 값이거나 실측과 예상의 나란히 보기다. 코어위브 매출은 11/10 장 마감 후 발표, 주가는 11/11 종가 기준.",
+      "note_en": "Shown as prior → latest or actual beside estimate. CoreWeave reported after the Nov 10 close; the share move is the Nov 11 close."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "반도체 급반등… 마이크론 +11.89%, 샌디스크 +13.69%",
+          "headline_en": "Chips Snap Back: Micron +11.89%, SanDisk +13.69%",
+          "body_ko": "마이크론은 725.11달러에서 811.30달러, 샌디스크는 859.99달러에서 977.69달러로 올랐다. AMD +7.32%, 반도체 ETF SMH +4.82%, 필라델피아 반도체지수는 +5.66%였다.",
+          "body_en": "Micron went from $725.11 to $811.30 and SanDisk from $859.99 to $977.69. AMD rose 7.32%, the SMH ETF 4.82% and the Philadelphia Semiconductor Index 5.66%."
+        },
+        {
+          "headline_ko": "엔비디아 +2.87%, 11/6 종가보다는 6.9% 낮다",
+          "headline_en": "Nvidia +2.87%, Still 6.9% Below Nov 6",
+          "body_ko": "168.89달러에서 173.73달러로 올랐다. 11/6 종가(186.64달러)에는 못 미친다. 11/10 급락은 젠슨 황 CEO 관련 보도와 이사회 독립조사 착수 등이 겹쳤다는 보도가 나왔다(회사는 근거 없다는 입장).",
+          "body_en": "Up from $168.89 to $173.73, still short of the Nov 6 close of $186.64. Reports tied the Nov 10 slide to news about CEO Jensen Huang and a board-led independent review; the company says there is no basis."
+        },
+        {
+          "headline_ko": "코어위브 +24.7%, 3분기 매출이 예상 웃돌며 AI 불안 진정",
+          "headline_en": "CoreWeave +24.7% as Q3 Beat Calms AI Worries",
+          "body_ko": "3분기 매출은 36.6억달러로 예상 약 35.5억달러를 웃돌았고 연 매출 가이던스는 130~133억달러다. 주가는 48.73달러에서 60.77달러로 올랐다. 복수 매체는 이 실적이 반도체·데이터센터주 반등을 이끌었다고 전했다.",
+          "body_en": "Q3 revenue was $3.66B vs. about $3.55B expected, with full-year guidance of $13-13.3B. The stock went from $48.73 to $60.77. Several outlets said the report drove the chip and data-center rebound."
+        },
+        {
+          "headline_ko": "앤트로픽 IPO, 11/18 공모가 결정·11/19 거래 시작 전망",
+          "headline_en": "Anthropic IPO Seen Pricing Nov 18, Trading Nov 19",
+          "body_ko": "공모가 밴드는 주당 70~78달러, 종목코드는 'ANT'다. 소식통 보도에 따른 일정이며 회사는 확인하지 않았다. 공개 매각 최대 약 644억달러는 상단가 기준 계산값이다.",
+          "body_en": "The range is $70-78 a share under the ticker 'ANT'. The timetable comes from sources and is unconfirmed by the company; the up-to-$64.4B public raise is a calculation at the top of the range."
+        },
+        {
+          "headline_ko": "구글 딥마인드, 제미나이 로보틱스 2.5·알파지놈 2 공개",
+          "headline_en": "Google DeepMind Unveils Gemini Robotics 2.5, AlphaGenome 2",
+          "body_ko": "SiliconANGLE 보도: 로보틱스 모델은 11/11부터 딥마인드 로봇 파트너사를 통해 제공되고, 알파지놈 2는 DNA 서열이 사람 세포 유형에 미치는 영향을 예측한다.",
+          "body_en": "Per SiliconANGLE, the robotics model is rolling out Nov 11 via DeepMind's robotics partners, and AlphaGenome 2 predicts how DNA sequences affect human cell types."
+        },
+        {
+          "headline_ko": "SK하이닉스 ADR 약 10%·마이크론 12% 급등 속보",
+          "headline_en": "SK hynix ADR Up About 10% Alongside Micron",
+          "body_ko": "헤럴드경제는 11일(현지시간) 美 반도체주가 일제히 올라 SK하이닉스 ADR이 약 10% 올랐다고 전했다. ADR 종가는 직접 확인하지 못해 보도 표현 그대로 옮긴다.",
+          "body_en": "Herald Economy reported that US chip stocks rallied on Nov 11 with SK hynix's ADR up about 10%. Its close was not independently checked, so the reported figure is shown."
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "나스닥 +1.60%… 코어위브 실적에 하루 만에 반등",
+          "headline_en": "Nasdaq +1.60% as CoreWeave Results Spark One-Day Rebound",
+          "body_ko": "복수 매체는 코어위브 실적, 엔비디아 반등, 미국·이란 충돌 종식 관측을 상승 요인으로 꼽았다. 나스닥은 11/5 종가 24,315.00보다 4.7% 높고, 11/4 종가(25,736.51)에는 아직 못 미친다.",
+          "body_en": "Outlets cited CoreWeave's results, Nvidia's rebound and hopes of an end to US-Iran fighting. The Nasdaq is 4.7% above its Nov 5 close of 24,315.00 but still below the Nov 4 close of 25,736.51."
+        },
+        {
+          "headline_ko": "미 채권시장 재향군인의 날 휴장, 연준 월러·로건은 추가 인상 시사",
+          "headline_en": "US Bonds Shut for Veterans Day; Fed's Waller, Logan Signal More Hikes",
+          "body_ko": "10년물은 11/10 종가 4.98%(매체별 4.99%)였다. 11/10 발언에서 월러 이사(투표권 O)는 12월 25bp 인상을 지지하며 10월 근원 CPI가 0.3% 이상이면 50bp도 검토할 만하다고 했고, 로건 댈러스 연은 총재(투표권 O)는 최소 두 차례 추가 인상이 필요하다고 했다.",
+          "body_en": "The 10-year ended Nov 10 at 4.98% (4.99% in some reports). In Nov 10 remarks, Governor Waller (voter) backed a 25bp December hike and said 50bp merits consideration if October core CPI ran 0.3% or more; Dallas Fed's Logan (voter) said at least two more hikes are needed."
+        },
+        {
+          "headline_ko": "12월 인상 확률 보도 25bp 약 85~91%, 50bp 9~15%",
+          "headline_en": "Dec Odds Reported: 25bp ~85-91%, 50bp 9-15%",
+          "body_ko": "CME 페드워치 기준으로 보도된 확률이며 매체와 집계 시점에 따라 달라 범위로 적는다. 25bp 인상이 지배적인 시나리오다.",
+          "body_en": "These are CME FedWatch odds as reported; they vary by outlet and timing, so a range is shown. A 25bp hike remains the dominant scenario."
+        },
+        {
+          "headline_ko": "이란 핵물질 반출 불가 입장… WTI 86.45달러로 반등",
+          "headline_en": "Iran Rules Out Exporting Enriched Material; WTI Up to $86.45",
+          "body_ko": "11일 늦게 이란 최고국가안보회의 사무총장이 농축 핵물질의 반출은 없다는 입장을 밝혀 종전 기대가 후퇴했다(복수 매체 보도). 호르무즈 해협 선박 공격도 이어지고 있다.",
+          "body_en": "Late on Nov 11, the secretary of Iran's Supreme National Security Council said enriched material will not leave the country, dimming peace hopes (multiple outlets). Attacks on ships in Hormuz continue."
+        },
+        {
+          "headline_ko": "금 −0.90% 3,994.10달러, 달러인덱스 +0.66%",
+          "headline_en": "Gold -0.90% to $3,994.10; Dollar Index +0.66%",
+          "body_ko": "금 선물은 4,030.20달러에서 3,994.10달러로 내려 4,000달러 아래로 밀렸다. 달러인덱스는 102.23에서 102.91으로 올랐고, 원/달러는 1,338.49원이다.",
+          "body_en": "Gold futures slid from $4,030.20 to $3,994.10, below $4,000. The dollar index rose from 102.23 to 102.91 and USD/KRW stands at 1,338.49."
+        },
+        {
+          "headline_ko": "코스피 오늘 옵션만기… MSCI 편출입 '제로' 전망",
+          "headline_en": "KOSPI Options Expire Today; MSCI Review Seen With No Changes",
+          "body_ko": "코스피는 11일 5,375.36(+2.60%)으로 마감했다. 12일은 코스피200 옵션 만기일이고, 증권가는 MSCI 한국 지수 신규 편입·편출이 없을 것으로 본다. SK하이닉스에는 약 2,600억원 패시브 매도가 나올 것이라는 분석이 있다.",
+          "body_en": "The KOSPI closed Nov 11 at 5,375.36 (+2.60%). Today is KOSPI 200 options expiry, and brokers expect no MSCI Korea additions or deletions, though one analysis sees about ₩260B of passive selling in SK hynix."
+        }
+      ]
+    }
+  ],
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "Korea time (KST) · yellow dot = key"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "한국 증시 운영시간",
+    "title_en": "Korea Market Hours",
+    "lines_ko": [
+      "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+    ],
+    "lines_en": [
+      "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "11/12",
+      "title_ko": "어플라이드 머티어리얼즈 회계4분기 실적 (미국 장 마감 후)",
+      "title_en": "Applied Materials Fiscal Q4 Earnings (after US close)",
+      "detail_ko": "EPS 예상 $4.05 · 매출 예상 $10.30B",
+      "detail_en": "EPS est. $4.05 · revenue est. $10.30B",
+      "importance": "high"
+    },
+    {
+      "time": "11/12",
+      "title_ko": "MSCI 11월 정기변경 결과",
+      "title_en": "MSCI Nov Index Review",
+      "detail_ko": "한국 신규 편입·편출 없을 것으로 전망",
+      "detail_en": "No Korea additions or deletions expected",
+      "importance": "high"
+    },
+    {
+      "time": "11/12",
+      "title_ko": "코스피200 옵션 만기",
+      "title_en": "KOSPI 200 Options Expiry",
+      "detail_ko": "장 막판 프로그램 매매 변동성 경계",
+      "detail_en": "Watch late-session program trading",
+      "importance": "mid"
+    },
+    {
+      "time": "11/12 22:30",
+      "title_ko": "美 주간 신규 실업수당 청구",
+      "title_en": "US Initial Jobless Claims",
+      "detail_ko": "예상 195K · 이전 189K",
+      "detail_en": "Est. 195K · prior 189K",
+      "importance": "high"
+    },
+    {
+      "time": "11/12 23:00",
+      "title_ko": "해맥 클리블랜드 연은 총재(매파·투표권 O) 연설",
+      "title_en": "Fed's Hammack (hawk, voter) Speaks",
+      "detail_ko": "12월 인상폭 관련 발언 주목",
+      "detail_en": "Watch remarks on December hike size",
+      "importance": "mid"
+    },
+    {
+      "time": "11/12",
+      "title_ko": "시스코 회계연도 1분기 실적 (미국 장 마감 후)",
+      "title_en": "Cisco Fiscal Q1 Earnings (after US close)",
+      "detail_ko": "EPS 예상 $1.33 · 매출 예상 $18.12B",
+      "detail_en": "EPS est. $1.33 · revenue est. $18.12B",
+      "importance": "high"
+    },
+    {
+      "time": "11/13 03:00",
+      "title_ko": "美 30년물 국채 입찰",
+      "title_en": "US 30-Year Bond Auction",
+      "detail_ko": "30년물 금리가 5.35%까지 오른 뒤 첫 입찰 점검",
+      "detail_en": "A test of demand with the 30-year near 5.35%",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+  "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "caption_ko": "📊 luckyon 아침 브리핑 · 2026.11.12(목)\n\n코어위브 실적이 AI 투자 불안을 덜면서 나스닥은 1.60%, S&P 500은 1.31% 올랐습니다. 필라델피아 반도체지수는 5.66%, 마이크론은 11.89%, 샌디스크는 13.69% 올랐고 엔비디아도 2.87% 반등했습니다.\n\n미 채권시장은 재향군인의 날로 쉬었고 10년물은 11/10 종가 4.98%입니다. 금은 3,994.10달러로 내렸고 WTI는 86.45달러로 올랐습니다. 오늘 코스피는 옵션 만기일입니다.\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전\n\n#미국증시 #나스닥 #반도체 #마이크론 #엔비디아 #코어위브 #앤트로픽 #국채금리 #연준 #유가 #금값 #코스피 #증시 #경제 #luckyon",
+  "caption_en": "📊 luckyon Morning Briefing · Thu, Nov 12, 2026\n\nCoreWeave's results eased worries over AI spending, lifting the Nasdaq 1.60% and the S&P 500 1.31%. The Philadelphia Semiconductor Index gained 5.66%, Micron 11.89% and SanDisk 13.69%, while Nvidia rebounded 2.87%.\n\nThe US bond market was closed for Veterans Day, leaving the 10-year at its Nov 10 close of 4.98%. Gold slid to $3,994.10 and WTI rose to $86.45. KOSPI options expire today.\n\n🌙 Next brief — 9 PM KST, before the US open\n\n#USStocks #Nasdaq #Semiconductors #Micron #Nvidia #CoreWeave #Anthropic #Treasuries #Fed #Oil #Gold #KOSPI #Markets #Economy #luckyon",
+  "sources": [
+    "Yahoo Finance",
+    "FMP",
+    "CNN Fear & Greed",
+    "KRX",
+    "FXStreet",
+    "CNBC",
+    "Benzinga",
+    "서울데이터랩",
+    "SiliconANGLE",
+    "글로벌이코노믹",
+    "헤럴드경제"
+  ],
+  "card_photos": {
+    "1": "A glowing wall of semiconductor stock tickers over a dark Wall Street trading floor at dawn, cool blue light, restrained and moody, long shadows."
+  }
+}
