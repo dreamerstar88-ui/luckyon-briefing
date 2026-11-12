@@ -1,121 +1,11 @@
 {
-  "fetchedAt": "2026-11-11T18:38:09Z",
+  "fetchedAt": "2026-11-12T03:05:36Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-09T18:38:09Z",
-    "to": "2026-11-25T18:38:09Z"
+    "from": "2026-11-10T03:05:36Z",
+    "to": "2026-11-26T03:05:36Z"
   },
   "events": [
-    {
-      "at": "2026-11-09T23:30:00Z",
-      "country": "JP",
-      "name": "Overall Household Spending (YoY)",
-      "impact": "LOW",
-      "consensus": -3.1,
-      "previous": -3.1,
-      "actual": -6.7,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-09T23:50:00Z",
-      "country": "JP",
-      "name": "Bank Lending (YoY)",
-      "impact": "LOW",
-      "consensus": 5.4,
-      "previous": 5.3,
-      "actual": 5.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-09T23:50:00Z",
-      "country": "JP",
-      "name": "BoJ Summary of Opinions",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-09T23:50:00Z",
-      "country": "JP",
-      "name": "Current Account n.s.a.",
-      "impact": "MEDIUM",
-      "consensus": 3354.4,
-      "previous": 4062,
-      "actual": 2372,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-11-09T23:50:00Z",
-      "country": "JP",
-      "name": "Trade Balance - BOP Basis",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -687.7,
-      "actual": -187.5,
-      "unit": "¥"
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Exports (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 33.5,
-      "previous": 36.3,
-      "actual": 35.2,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Exports (YoY) CNY",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 29.6,
-      "actual": 28.7,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Imports (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 32,
-      "previous": 31,
-      "actual": 41.6,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Imports (YoY) CNY",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 24.6,
-      "actual": 34.7,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Trade Balance CNY",
-      "impact": "MEDIUM",
-      "consensus": 859,
-      "previous": 905.97,
-      "actual": 712.78,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T02:30:00Z",
-      "country": "CN",
-      "name": "Trade Balance USD",
-      "impact": "MEDIUM",
-      "consensus": 125.8,
-      "previous": 133.53,
-      "actual": 105.28,
-      "unit": "$"
-    },
     {
       "at": "2026-11-10T05:00:00Z",
       "country": "JP",
@@ -523,7 +413,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1312,
-      "actual": null,
+      "actual": -537.6,
       "unit": "¥"
     },
     {
@@ -533,7 +423,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1129.3,
-      "actual": null,
+      "actual": -105.2,
       "unit": "¥"
     },
     {
@@ -543,7 +433,7 @@
       "impact": "LOW",
       "consensus": 0.3,
       "previous": -0.3,
-      "actual": null,
+      "actual": 0.7,
       "unit": "%"
     },
     {
@@ -553,8 +443,18 @@
       "impact": "LOW",
       "consensus": 6.5,
       "previous": 6.8,
-      "actual": null,
+      "actual": 7.1,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-12T01:50:00Z",
+      "country": "JP",
+      "name": "BoJ's Asada speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-12T09:00:00Z",
@@ -1762,7 +1662,7 @@
       "name": "Foreign Bond Investment",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -537.6,
       "actual": null,
       "unit": "¥"
     },
@@ -1772,7 +1672,7 @@
       "name": "Foreign Investment in Japan Stocks",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -105.2,
       "actual": null,
       "unit": "¥"
     },
@@ -2775,6 +2675,36 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-11-25T19:00:00Z",
+      "country": "US",
+      "name": "Fed's Beige Book",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-26T00:00:00Z",
+      "country": "EMU",
+      "name": "EU leaders summit",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-26T01:00:00Z",
+      "country": "KR",
+      "name": "BoK Interest Rate Decision",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 3,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
