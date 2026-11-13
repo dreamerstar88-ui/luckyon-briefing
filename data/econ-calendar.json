@@ -1,91 +1,11 @@
 {
-  "fetchedAt": "2026-11-12T18:51:20Z",
+  "fetchedAt": "2026-11-13T02:39:53Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-10T18:51:20Z",
-    "to": "2026-11-26T18:51:20Z"
+    "from": "2026-11-11T02:39:53Z",
+    "to": "2026-11-27T02:39:53Z"
   },
   "events": [
-    {
-      "at": "2026-11-10T19:00:00Z",
-      "country": "US",
-      "name": "Fed's Schmid speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T20:30:00Z",
-      "country": "US",
-      "name": "Fed's Bowman speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T21:30:00Z",
-      "country": "US",
-      "name": "API Weekly Crude Oil Stock",
-      "impact": "LOW",
-      "consensus": -1,
-      "previous": -5.267,
-      "actual": 9,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T23:00:00Z",
-      "country": "KR",
-      "name": "Unemployment Rate",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2.6,
-      "actual": 2.5,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-10T23:30:00Z",
-      "country": "US",
-      "name": "Fed's Bowman speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T23:30:00Z",
-      "country": "US",
-      "name": "Fed's Paulson speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T23:40:00Z",
-      "country": "US",
-      "name": "Fed's Goolsbee speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-10T23:50:00Z",
-      "country": "JP",
-      "name": "Money Supply M2+CD (YoY)",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 2,
-      "actual": 1.7,
-      "unit": "%"
-    },
     {
       "at": "2026-11-11T05:00:00Z",
       "country": "US",
@@ -453,7 +373,7 @@
       "impact": "MEDIUM",
       "consensus": -298.6,
       "previous": -27,
-      "actual": null,
+      "actual": -404.1,
       "unit": "$"
     },
     {
@@ -473,7 +393,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 40.9,
-      "actual": null,
+      "actual": 36.7,
       "unit": "%"
     },
     {
@@ -483,7 +403,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 17.6,
-      "actual": null,
+      "actual": 13.5,
       "unit": "%"
     },
     {
@@ -2575,6 +2495,66 @@
       "previous": 3.1,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-26T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo Consumer Price Index (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-26T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Food, Energy (YoY)",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 2.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-26T23:30:00Z",
+      "country": "JP",
+      "name": "Tokyo CPI ex Fresh Food (YoY)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-26T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-26T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-11-27T00:00:00Z",
+      "country": "EMU",
+      "name": "EU leaders summit",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
