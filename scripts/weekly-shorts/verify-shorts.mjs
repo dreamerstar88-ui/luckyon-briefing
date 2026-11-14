@@ -100,7 +100,9 @@ try {
     const c = qres.indicators.quote[0].close[i];
     if (c != null) QC.set(etStr(t), c);
   });
-  const pairs = BARS.filter((b) => QC.has(b.d)).map((b) => ({ d: b.d, r: b.c / QC.get(b.d) }));
+  // QQQ 는 정규장(09:30~15:55 봉)에만 거래된다. 야후는 가장 최근 날에만 16:00 점(종가)을 하나 더 붙여 주는데,
+  // 선물 16:00 봉은 16:00~16:05 의 움직임이라 둘을 나누면 배율이 튄다(10회차 11/13 16:00 -0.648% → 0.65% 튐, 월물 교체 아님).
+  const pairs = BARS.filter((b) => QC.has(b.d) && b.d.slice(11) >= '09:30' && b.d.slice(11) <= '15:55').map((b) => ({ d: b.d, r: b.c / QC.get(b.d) }));
   if (pairs.length < 50) {
     warn('월물 교체 검사', `QQQ 와 겹치는 봉이 ${pairs.length}개뿐이라 판정하지 않는다`);
   } else {
@@ -519,18 +521,65 @@ for (const e of M.events.filter((x) => x.kind === 'news')) {
   const first = src.map((s) => s.utc).sort()[0];
   cmp(`사건${e.n} 최초 보도 시각(미 동부)`, etOfUtc(first), N.first_report_et);
   const barEnd = new Date(Date.parse(e.et.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
+  // 10회차: 보도가 선물이 쉬는 시간(미 동부 17:00~18:00)에 나오면 그 시각에 봉이 없다. 반응은 다시 열린 첫 봉에
+  // 한꺼번에 담긴다(11/11 17:01 뉴욕타임스 · 17:30 월스트리트저널 → 18:00 봉). 그 봉이 정말 «쉰 뒤 첫 봉» 이고
+  // 보도가 쉬는 사이에 있으며 news.halt_gap 에 사유가 있을 때만 받는다.
+  const iBar = BARS.findIndex((b) => b.d === e.et);
+  const prevEnd = iBar > 0 ? new Date(Date.parse(BARS[iBar - 1].d.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ') : null;
   if (N.first_report_et >= e.et && N.first_report_et < barEnd) ok(`사건${e.n} 보도가 그 봉 안`, `${N.first_report_et} ∈ [${e.et}, ${barEnd})`);
-  else bad(`사건${e.n} 보도가 그 봉 안`, N.first_report_et, `[${e.et}, ${barEnd})`);
+  else if (N.halt_gap && prevEnd && prevEnd < e.et && N.first_report_et >= prevEnd && N.first_report_et < e.et)
+    ok(`사건${e.n} 보도가 장 쉬는 사이`, `${N.first_report_et} ∈ [${prevEnd}, ${e.et}) — 다시 열린 첫 봉에 반영 · ${String(N.halt_gap).slice(0, 50)}…`);
+  else bad(`사건${e.n} 보도가 그 봉 안`, N.first_report_et, `[${e.et}, ${barEnd})${prevEnd && prevEnd < e.et ? ` 또는 쉰 구간 [${prevEnd}, ${e.et}) + news.halt_gap 사유` : ''}`);
   const later = src.filter((s) => s.utc !== first && Date.parse(s.utc) - Date.parse(first) <= 15 * 60e3);
   if (later.length) ok(`사건${e.n} 시각을 받쳐 주는 별도 보도`, later.map((s) => `${s.name} ${etOfUtc(s.utc).slice(11)}`).join(' · '));
   else bad(`사건${e.n} 시각을 받쳐 주는 별도 보도`, '없음', '최초 보도 15분 안의 다른 출처');
 }
 
 // ── 5. 트레이딩이코노믹스 캘린더로 별표·실제값·예상값 대조 ────────────────────
-console.log(`\n[5] 트레이딩이코노믹스 캘린더 대조`);
+const FXS = M.calendar_source === 'fxstreet';
+console.log(`\n[5] ${FXS ? 'FXStreet' : '트레이딩이코노믹스'} 캘린더 대조`);
 const d1 = M.window.from_et.slice(0, 10), d2 = M.window.to_et.slice(0, 10);
 let CAL = null;   // 캘린더 파싱 결과 (6장에서 재사용)
+// 사건이 가리키는 캘린더 항목 이름. 10회차부터 FXStreet 를 쓰면 cal_event 에 적는다(9회차까지는 te_event).
+const evKey = (e) => e.cal_event || e.te_event;
 try {
+  const table = new Map();
+  const all = [];
+  let outOfRange = 0;
+  if (FXS) {
+    // 10회차(2026-11-14): 트레이딩이코노믹스가 지난 주 일정을 안 내주게 돼(받기 요청에 보안 확인 페이지)
+    // 대표 결정으로 FXStreet 공개 캘린더 API 로 바꿨다. 지난 날짜도 실제값까지 다시 준다 — 그래서 매번 다시 받아 대조하고,
+    // 막히면 제작 때 저장한 원본 응답(calendar_snapshot)으로 대조한다. 등급은 volatility HIGH=3 · MEDIUM=2 · 그 밖=1.
+    let rows = null;
+    try {
+      const nx = new Date(d2 + 'T00:00:00Z'); nx.setUTCDate(nx.getUTCDate() + 1);
+      const r = await fetch(`https://calendar-api.fxstreet.com/en/api/v1/eventDates/${d1}T00:00:00Z/${nx.toISOString().slice(0, 10)}T06:00:00Z`,
+        { headers: { Origin: 'https://www.fxstreet.com', Referer: 'https://www.fxstreet.com/', 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' } });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      rows = (await r.json()).filter((x) => String(x.countryCode).toUpperCase() === 'US');
+      console.log(`  · FXStreet 다시 받음 · 미국 ${rows.length}건`);
+    } catch (e1) {
+      if (!M.calendar_snapshot || !fs.existsSync(M.calendar_snapshot)) throw new Error(`BLOCKED:FXStreet ${e1.message} · 사본 없음`);
+      rows = JSON.parse(readText(M.calendar_snapshot)).events;
+      console.log(`  ⚠ FXStreet 를 다시 못 받아(${e1.message}) 제작 시점 사본으로 대조한다 — ${M.calendar_snapshot}`);
+    }
+    const etFmt = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/New_York', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+    const fmtV = (v, unit) => (v == null ? '' : `${v}${unit === '%' ? '%' : ''}`);
+    for (const x of rows) {
+      const et = etFmt.format(new Date(x.dateUtc)).replace(',', '');
+      const day = et.slice(0, 10);
+      if (day < d1 || day > d2) { outOfRange++; continue; }
+      const vol = String(x.volatility || '').toUpperCase();
+      const rec = { name: x.name, day, at: x.isAllDay ? '' : et, stars: vol === 'HIGH' ? 3 : vol === 'MEDIUM' ? 2 : 1,
+        actual: fmtV(x.actual, x.unit), previous: fmtV(x.previous, x.unit), consensus: fmtV(x.consensus, x.unit),
+        // 직전값이 발표 때 고쳐지면 previous 는 옛 값, revised 가 새 값이다(10회차 기존주택 판매 +1.5% → +1.0%).
+        revised: fmtV(x.revised, x.unit) };
+      // 같은 이름이 한 주에 여러 번 나온다(연준 인사 연설). 시각까지 붙인 열쇠로도 찾을 수 있게 둘 다 넣는다.
+      if (!table.has(x.name)) table.set(x.name, rec);
+      table.set(`${x.name}@${et}`, rec);
+      all.push(rec);
+    }
+  } else {
   const resp = await fetch(`https://tradingeconomics.com/united-states/calendar?d1=${d1}&d2=${d2}`,
     { headers: { 'User-Agent': UA } });
   let html = await resp.text();
@@ -545,10 +594,6 @@ try {
     console.log(`  ⚠ 사이트가 대상 주를 주지 않아 제작 시점 스냅샷으로 대조한다 — ${M.calendar_snapshot}`);
   }
   const rows = html.split(/<tr\s+data-url=/).slice(1);
-  const table = new Map();
-  CAL = table;   // 아래 6장에서 «값이 없는 사건» 을 캘린더로 확인할 때 쓴다
-  const all = [];
-  let outOfRange = 0;
   for (const r0 of rows) {
     const r = r0.replace(/\s+/g, ' ');
     const name = (r.match(/data-event="([^"]*)"/) || [])[1];
@@ -567,6 +612,8 @@ try {
     table.set(name, rec);
     all.push(rec);
   }
+  }   // 트레이딩이코노믹스 갈래 끝
+  CAL = table;   // 아래 6장에서 «값이 없는 사건» 을 캘린더로 확인할 때 쓴다
   if (table.size === 0) {
     throw new Error(outOfRange > 0
       ? `RANGE:대상 주(${d1}~${d2}) 행이 하나도 없다. 받은 ${outOfRange}건은 전부 다른 날짜다`
@@ -576,8 +623,8 @@ try {
   for (const e of M.events) {
     if (e.kind === 'news') { ok(`사건${e.n} 캘린더 항목`, '뉴스 사건 — 캘린더 대신 [4] 에서 출처·시각 확인'); continue; }
     if (e.kind === 'market') { ok(`사건${e.n} 캘린더 항목`, '시장 사건 — 캘린더 항목 없음, [4] 에서 대표 예외 확인'); continue; }
-    const row = table.get(e.te_event);
-    if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', e.te_event); continue; }
+    const row = table.get(evKey(e));
+    if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', evKey(e).split("@")[0]); continue; }
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
     cmp(`사건${e.n} 실제값`, row.actual, e.actual);
     // 기자회견·연설은 발표값이 없어 비교 필드도 비어 있다. 6장에서 캘린더가 정말로
@@ -594,7 +641,7 @@ try {
   const num = (v) => { const m = String(v).match(/-?[\d.]+/); return m ? parseFloat(m[0]) : null; };
   for (const e of M.events) {
     if (e.kind === 'news' || e.kind === 'market') continue;
-    const row = table.get(e.te_event);
+    const row = table.get(evKey(e));
     if (!row || !row.at) continue;
     const group = all.filter((r) => r.at === row.at);
     const maxStars = Math.max(...group.map((r) => r.stars));
@@ -606,9 +653,9 @@ try {
     if (top.length === 1) { ok(`사건${e.n} 같은 시각 묶음`, `★${maxStars} 단독`); continue; }
     const missed = top.filter((r) => r.consensus && r.actual && r.actual !== r.consensus);
     if (missed.length > 0) {
-      if (!missed.some((r) => r.name === e.te_event)) {
+      if (!missed.some((r) => r.name === evKey(e).split("@")[0])) {
         bad(`사건${e.n} 대표 선정`, `예상을 벗어난 ${missed.map((r) => r.name).join(' / ')} 중에서 골라야 한다`,
-          `${e.te_event}(예상대로 나옴)`);
+          `${evKey(e).split("@")[0]}(예상대로 나옴)`);
         continue;
       }
       if (missed.length > 1 && !e.tiebreak) {
@@ -635,13 +682,13 @@ try {
         const tied = moved.filter((x) => Math.abs(x.d - best.d) < 1e-9);
         if (tied.length > 1) {
           if (!e.tiebreak) { bad(`사건${e.n} 대표 선정`, `직전값 변동이 ${tied.length}건 동률(${best.d.toFixed(3)})이라 규칙으로 못 가른다 — tiebreak 에 사람이 고른 근거를 적어라`, '사유 없음'); continue; }
-          if (!tied.some((x) => x.r.name === e.te_event)) {
-            bad(`사건${e.n} 대표 선정`, `동률인 ${tied.map((x) => x.r.name).join(' / ')} 중에서 골라야 한다`, e.te_event); continue;
+          if (!tied.some((x) => x.r.name === evKey(e).split("@")[0])) {
+            bad(`사건${e.n} 대표 선정`, `동률인 ${tied.map((x) => x.r.name).join(' / ')} 중에서 골라야 한다`, evKey(e).split("@")[0]); continue;
           }
           ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} · 직전값 변동 ${best.d.toFixed(3)} 동률 — tiebreak 사유로 확인`);
-        } else if (best.r.name !== e.te_event) {
+        } else if (best.r.name !== evKey(e).split("@")[0]) {
           bad(`사건${e.n} 대표 선정`, `${why0} 이니 직전값에서 가장 많이 움직인 ${best.r.name} 를 써야 한다`,
-            e.te_event);
+            evKey(e).split("@")[0]);
           continue;
         } else {
           ok(`사건${e.n} 대표 선정`, `★${maxStars} ${top.length}건 ${why0} — 직전값 변동 최대 선택`);
@@ -695,7 +742,7 @@ for (const e of M.events) {
   if (e.kind === 'market') { ok(`사건${e.n} 값 없음`, '시장 사건 — 발표값이 없다. 예외 사유는 [4]'); continue; }
   if (!e.actual && !e.compare) {
     if (!e.no_value) { bad(`사건${e.n} 값 없음`, '실제값·비교값이 비어 있다', 'no_value 에 사유를 적어라'); continue; }
-    const row = CAL && CAL.get(e.te_event);
+    const row = CAL && CAL.get(evKey(e));
     if (!row) { warn(`사건${e.n} 값 없음`, `캘린더로 확인하지 못했다 — ${e.no_value}`); continue; }
     if (row.actual || row.consensus || row.previous) {
       bad(`사건${e.n} 값 없음`, `캘린더에 값이 있다 (실 ${row.actual} / 예 ${row.consensus} / 직전 ${row.previous})`, '값이 있으면 화면에 적어라');
@@ -930,7 +977,9 @@ if (srtDir) {
   const allow = new Set([wk, wk.replace('+', ''), `${M.numbers.mdd_pct}%`, `${Math.abs(M.numbers.mdd_pct)}%`, ...opts,
     `${D.median}%`, `${D.p10}%`, `${D.p90}%`, '100%', '0%', '10%', '90%',   // 10%·90% 는 «하위 10%» 같은 분위 이름
     ...M.events.flatMap((e) => [`${e.pct >= 0 ? '+' : ''}${e.pct.toFixed(3)}%`, `${e.pct.toFixed(3)}%`, `${Math.abs(e.pct).toFixed(3)}%`,
-      ...([e.l1, e.l2, e.en].join(' ').match(/[+\-−]?\d+(\.\d+)?%/g) || [])])].map(norm));
+      ...([e.l1, e.l2, e.en].join(' ').match(/[+\-−]?\d+(\.\d+)?%/g) || [])]),
+    // 질문 자체의 기준값(10회차 «1% 넘는 방향 전환» 의 1%)은 질문 정의 문구에 있는 것만 받는다.
+    ...([M.question.ko, M.question.en].join(' ').match(/\d+(\.\d+)?%/g) || [])].map(norm));
   // 질문이 날마다의 정규장 등락을 다루면(5회차 updays) 설명에 그 값을 적는다. 봉에서 다시 잰 값만 허용한다.
   {
     const { QUESTIONS: QQ, buildCtx: BC } = await import('./questions.mjs');

@@ -29,6 +29,9 @@ curl -sSL -A "Mozilla/5.0" -H "Cookie: calendar-range=-2" https://tradingeconomi
 node scripts/weekly-shorts/render/parse-calendar.mjs --html=content/weekly-shorts/2026-09-28.calendar.html --from=2026-09-28 --to=2026-10-02 --minstars=2
 ```
 
+- **트레이딩이코노믹스가 일정을 안 주면**(받은 HTML 에 일정 0행 · 보안 확인 페이지 — 10회차) FXStreet 로 받는다: 공개 API `https://calendar-api.fxstreet.com/en/api/v1/eventDates/<시작>T00:00:00Z/<끝>T06:00:00Z`(Origin·Referer 를 fxstreet.com 으로) 에서 미국만 `content/weekly-shorts/<월요일>.calendar.fxstreet.json` 에 저장하고, 매니페스트에 `calendar_source: "fxstreet"` · `calendar_snapshot` · 사건마다 `cal_event`(같은 이름이 여럿이면 `이름@YYYY-MM-DD HH:MM`)를 적는다. 등급 HIGH=★★★ · MEDIUM=★★ · LOW=★. 검사 [5] 가 다시 받아 대조한다. 설명란의 «중요도(★)» 문구도 FXStreet 로 바꾼다.
+- 지표 값은 **값마다** 통신사 2곳 이상과 맞추고, 몇 곳을 봤는지 매니페스트 why 에 적는다. 헤드라인·근원처럼 이름이 비슷한 지표는 둘 다 확인한다(10회차 «PPI 예상 6%» 질문).
+
 **2. 매니페스트와 발행문구** — 앞 회차 것을 복사해 고친다.
 `content/weekly-shorts/<월요일>.json` · `docs/samples/weekly-shorts/ep<NN>/발행문구.md`
 
@@ -64,6 +67,7 @@ node scripts/weekly-shorts/publish-episode.mjs --stamp=2026-09-28 --ep=5 --confi
 공개 주소 반영을 최대 15분 기다리므로 **이 단계에서 `long-running-work` 스킬을 부르고**, 백그라운드로 돌리며 단계 줄(`·`)과 오류만 감시한다
 (`... --confirm 2>&1 | tee out/ep<N>/publish.log | grep --line-buffered -E "^·|✖|오류|Error|완료|https"`).
 `--confirm` 없이 돌리면 무엇을 올릴지 보여 주기만 한다.
+올린 뒤에는 `node scripts/weekly-shorts/check-published.mjs --ep=<N> --stamp=<월요일>` 로 공개 상태(유튜브 공개·자막·댓글, 인스타 캡션 글자 대조)를 따로 조회한다.
 
 ## 하지 않는 것
 

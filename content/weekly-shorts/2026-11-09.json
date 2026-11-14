@@ -1,0 +1,351 @@
+{
+  "stamp": "2026-11-09",
+  "episode": 10,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQZ26.CME",
+    "interval": "5m",
+    "symbol_note": "12월물이 정상 월물이다(만기 2026-12-18). 연속 심볼 NQ=F 는 쓰지 않는다 — 만기 때 말없이 갈아타 가짜 봉을 만든다(지침 2장).",
+    "from_et": "2026-11-09 04:00",
+    "to_et": "2026-11-13 16:00",
+    "window_change_note": "4회차부터의 창을 그대로 쓴다 — 월요일 프리장 시작(미 동부 04:00) ~ 금요일 16:00. 대표 지시 «주가 변화 프리장부터»(2026-09-26). 미 동부 표준시(한국과 14시간 차).",
+    "holiday_note": "휴장 없음. 5거래일. 수요일(11/11) 재향군인의 날 — 채권시장은 쉬고 주식·선물은 정상 거래.",
+    "end_bar_note": "to_et 16:00 은 «16:00 에 시작하는 봉»까지 포함한다. 1~9회차와 같은 관례다.",
+    "data_gap_note": "요일별 봉 수: 월 228 · 화 275 · 수 275 · 목 275 · 금 192 — 합 1,245개. CNBC 대조 결과는 검사 [1-2] 가 매번 다시 낸다."
+  },
+  "video": {
+    "duration": 35,
+    "sections": {
+      "hook": [
+        0,
+        5
+      ],
+      "replay": [
+        5,
+        27.9
+      ],
+      "answer": [
+        27.9,
+        32
+      ],
+      "summ": [
+        32,
+        35
+      ]
+    },
+    "sections_note": "4회차와 같다.",
+    "hook_hold": 1.95,
+    "hold": 1.5,
+    "hold_mode": "equal",
+    "holds": [
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "holds_note": "대표 결정(2026-11-14) «사건마다 같은 멈춤» — 8·9회차와 같다. 합계 9.0초를 6등분(1.5초씩). 그리는 시간 13.9초는 앞 회차와 같다."
+  },
+  "numbers": {
+    "bars": 1245,
+    "changes": 1244,
+    "week_pct": 2.88,
+    "mdd_pct": -3.49,
+    "peak": 28697,
+    "trough": 27695,
+    "week_high": 28697,
+    "week_low": 27031,
+    "open": 27076,
+    "close": 27855.75,
+    "week_high_et": "2026-11-11 13:45",
+    "week_low_et": "2026-11-09 04:25",
+    "peak_et": "2026-11-11 13:45",
+    "trough_et": "2026-11-13 11:20",
+    "_주": "창(월 04:00 ~ 금 16:00, 미 동부) 기준. 주간 저점은 월 04:25 봉(창 시작 25분 뒤), 고점은 수 13:45 봉. 최대 낙폭은 그 고점에서 금 11:20 봉 저점까지."
+  },
+  "question": {
+    "id": "swings",
+    "ko": "1% 넘는 방향 전환이 몇 번 있었을까요?",
+    "en": "How many 1% swings changed direction?",
+    "answer_value": 11,
+    "unit": "번",
+    "why": "2026-11-14 대표 결정 «1% 넘는 방향 전환 횟수». 질문 은행 swings — 첫 종가에서 출발해, 직전 꼭짓점에서 1% 넘게 거꾸로 가면 한 번으로 센다(첫 1% 움직임도 한 번). 이번 주 5분봉 종가로 11번.",
+    "guard": "추세 주는 1~2번, 톱니 주는 6번을 넘는다. 0인 주도 있다(질문 은행)."
+  },
+  "quiz": {
+    "options": [
+      "4번",
+      "7번",
+      "11번"
+    ],
+    "answer_index": 3,
+    "_주": "정답 11번(③). 보기는 질문 은행의 기준(추세 주 1~2번 · 톱니 주 6번 넘음)을 보고 고른 세 값 — 4번·7번은 정답이 아니다."
+  },
+  "events": [
+    {
+      "n": 1,
+      "et": "2026-11-09 08:40",
+      "kst_label": "월 개장 전 · 한국 월 밤 10시 40분",
+      "cal_event": "Fed's Bowman speech@2026-11-09 08:40",
+      "stars": 2,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "보먼 연준 이사 연설.",
+      "l2": "올해 FOMC 투표 위원이다.",
+      "tag": "보먼",
+      "no_value": "연설 — 발표값이 없다. FXStreet 에도 실제·예상·직전값이 비어 있다.",
+      "en": "Fed Governor Bowman speaks, a 2026 FOMC voter",
+      "why": "월요일은 ★★★ 이 없다. ★★ 후보는 보먼(08:40) · 굴스비(10:00) · 바킨(12:15) 연설 셋인데, 굴스비·바킨은 2026 대체 위원이라 뺀다(지침 4장 8번 · 연준 FOMC 페이지 2026-10-28 갱신본 확인). 남은 ★★ 은 보먼 하나다.",
+      "session_exception": "월요일 ★★ 중 투표 위원 연설은 보먼(08:40) 하나뿐이다. 장중 ★★(굴스비·바킨)은 투표권이 없어 빠졌다(지침 4장 2·8번).",
+      "pct": -0.043,
+      "rank": 674,
+      "color": "hi"
+    },
+    {
+      "n": 2,
+      "et": "2026-11-10 08:30",
+      "kst_label": "화 개장 전 · 한국 화 밤 10시 30분",
+      "cal_event": "Consumer Price Index ex Food & Energy (MoM)",
+      "stars": 3,
+      "actual": "0.3%",
+      "compare_field": "consensus",
+      "compare": "0.2%",
+      "l1": "근원 소비자물가 전월비 0.3%.",
+      "l2": "예상은 0.2%였다.",
+      "tag": "물가",
+      "en": "Core CPI +0.3% m/m, vs 0.2% expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 08:30 에 ★★★ 2건(소비자물가 전월비 0.4%·예상 0.3%, 근원 전월비 0.3%·예상 0.2%)을 한 사건으로 묶었다(4장 3번). 값 대조: MT Newswires(근원 0.3%·예상 0.2%) · Finwire(블룸버그 예상 0.2%) · CNBC(다우존스 예상 0.3%·근원 0.2%). 이번 달은 노동통계국이 전년비를 내지 않았다(2025년 10월 가격을 셧다운으로 못 모음 — CNBC·차이롄서).",
+      "tiebreak": "같은 시각 ★★★ 2건이 둘 다 예상보다 0.1%포인트 높았다 — 같은 단위라 벗어난 크기가 같다. 예상 대비 비율로는 근원(0.2→0.3, 50%)이 헤드라인(0.3→0.4, 33%)보다 크고, 2회차에도 근원 전월비를 대표로 썼다. 그래서 근원 전월비를 대표로 골랐다.",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": -0.806,
+      "rank": 1,
+      "color": "down"
+    },
+    {
+      "n": 3,
+      "et": "2026-11-11 07:00",
+      "kst_label": "수 개장 전 · 한국 수 밤 9시",
+      "cal_event": "MBA Mortgage Applications",
+      "stars": 1,
+      "actual": "6.2%",
+      "compare_field": "previous",
+      "compare": "-1.2%",
+      "l1": "주택담보대출 신청 +6.2%.",
+      "l2": "직전은 -1.2%였다.",
+      "tag": "모기지",
+      "en": "MBA mortgage applications +6.2%, vs -1.2% prior",
+      "why": "수요일(재향군인의 날)은 미국 발표가 MBA 주택담보대출 신청(★, 07:00) 하나뿐이다. ★★★·★★ 이 없어 그날 최고 등급인 ★ 에서 고른다(지침 4장 2번). 예상치가 없어 직전값과 비교한다. 값 대조: MT Newswires · Finwire · Alliance News(+6.2%, 직전 -1.2%).",
+      "session_exception": "수요일 미국 발표는 07:00 MBA 하나뿐이다(재향군인의 날, 채권시장 휴장). 장중 후보가 없다(지침 4장 2번).",
+      "pct": 0.033,
+      "rank": 786,
+      "color": "hi"
+    },
+    {
+      "n": 4,
+      "kind": "news",
+      "et": "2026-11-11 18:00",
+      "kst_label": "수 야간 · 한국 목 오전 8시",
+      "stars": 0,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "엔비디아 이사회, CEO 해임 준비(WSJ).",
+      "l2": "장이 쉬는 사이 보도, 재개 봉에 반영.",
+      "tag": "엔비디아",
+      "session_exception": "뉴스 사건 — 장 마감 뒤 보도. 선물은 미 동부 18:00 에 다시 열리고, 그 봉이 그 주 5분 변동 2위다(지침 4장 5번).",
+      "en": "WSJ: Nvidia board moves to oust CEO Huang; priced in at the reopen",
+      "why": "뉴스도 사건 후보다(지침 4장 5번). 그 주 5분 변동 2위(-0.666%). 16:55 봉 종가 28,444.25 → 18:00 봉 시가 28,306.25(-0.49%) → 18:10 봉 저가 28,135. CNBC «엔비디아 시간외 -7%, 나스닥100 선물 -0.9% 로 개장».",
+      "news": {
+        "headline": "WSJ: Nvidia board is preparing to oust CEO Jensen Huang after two extramarital affairs (minutes after an NYT report)",
+        "first_report_et": "2026-11-11 17:30",
+        "halt_gap": "선물은 미 동부 17:00~18:00 쉰다. 월스트리트저널 보도(17:30)와 그 앞 뉴욕타임스 보도(17:01)가 모두 그 사이에 나와, 반응은 18:00 재개 첫 봉에 한꺼번에 담겼다.",
+        "sources": [
+          {
+            "name": "Benzinga(WSJ 인용)",
+            "utc": "2026-11-11T22:30:16Z",
+            "url": "https://app.bigdata.com/documents/7D39A375E90EA220ECCA4D1F59AB01B4"
+          },
+          {
+            "name": "The Fly(WSJ 인용)",
+            "utc": "2026-11-11T22:31:19Z",
+            "url": "https://app.bigdata.com/documents/78197EBD8C82E9AE25C2E18E09B1201D"
+          },
+          {
+            "name": "차이롄서",
+            "utc": "2026-11-11T22:31:54Z",
+            "url": "https://app.bigdata.com/documents/064FFACE78975D8FCD47C40895F18850"
+          },
+          {
+            "name": "로이터(AOL)",
+            "utc": "2026-11-11T22:46:51Z",
+            "url": "https://app.bigdata.com/documents/E5833503E70E351EC40550A143603F8E"
+          }
+        ],
+        "origin_note": "그 앞 17:01 뉴욕타임스가 «젠슨 황, 보고 라인 임원(킴벌리 파월 부사장)과도 관계» 를 보도했다(The Fly 22:01:34Z · 벤징가 22:01:54Z). 두 보도가 모두 장이 쉬는 사이에 나와 어느 쪽이 얼마를 움직였는지는 가를 수 없다. 사건 이름은 시장이 크게 반응한 해임 준비 보도(WSJ)로 썼다. 다음 날(목) 08:48 엔비디아가 사임을 발표했다(벤징가 13:48:12Z · 8-K) — 그 봉(08:45)은 -0.120%(189위)라 사건으로 넣지 않았다.",
+        "after": "18:05 봉 -0.170% · 18:10 봉 -0.232%. CNBC «엔비디아 시간외 -7% 넘게, 나스닥100 선물 -0.9% 로 개장»(23:03Z)."
+      },
+      "pct": -0.666,
+      "rank": 2,
+      "color": "down"
+    },
+    {
+      "n": 5,
+      "et": "2026-11-12 10:00",
+      "kst_label": "목 장중 · 한국 금 0시",
+      "cal_event": "Existing Home Sales Change (MoM)",
+      "stars": 2,
+      "actual": "-5.5%",
+      "compare_field": "revised",
+      "compare": "1%",
+      "l1": "기존주택 판매 전월비 -5.5%.",
+      "l2": "9월(수정)은 +1.0%였다.",
+      "tag": "주택",
+      "en": "Existing home sales -5.5% m/m, vs +1.0% in September (revised)",
+      "why": "목요일은 ★★★ 이 없다. ★★ 중 투표 위원·지표만 남기면 08:30 실업수당(장 전) · 09:00 해맥 연설(장 전) · 10:00 기존주택 판매·바 이사 연설(장중) · 14:00 재정수지(장중) · 18:30 윌리엄스 연설(야간). 장중 우선, 장중 둘은 등락률로 — 10:00 봉 -0.257%(33위) > 14:00 봉 -0.173%(81위)(지침 4장 2번). 굴스비·데일리·슈미드 연설은 투표권이 없어 뺐다.",
+      "tiebreak": "같은 10:00 봉에 ★★ 2건 — 기존주택 판매 전월비(-5.5%)와 바 연준 이사 연설(값 없음). 값이 있는 기존주택 판매를 대표로 썼다. FXStreet 에 예상치가 없어 직전값과 비교한다 — 9월치가 발표 때 +1.5% 에서 +1.0% 로 고쳐져(FXStreet revised · Finwire) 고친 값을 쓴다. 블룸버그 예상은 -3.5%(Finwire), 건수 예상 385만 채(MT Newswires·The Fly). 같은 봉의 ★ 기존주택 판매 건수는 375만 채(예상 385만 채).",
+      "pct": -0.257,
+      "rank": 33,
+      "color": "down"
+    },
+    {
+      "n": 6,
+      "et": "2026-11-13 08:30",
+      "kst_label": "금 개장 전 · 한국 금 밤 10시 30분",
+      "cal_event": "Producer Price Index ex Food & Energy (YoY)",
+      "stars": 3,
+      "actual": "5%",
+      "compare_field": "consensus",
+      "compare": "5%",
+      "l1": "근원 생산자물가 전년비 5%.",
+      "l2": "예상도 5%였다.",
+      "tag": "생산자",
+      "en": "Core PPI 5% y/y, in line with forecasts",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 08:30 에 FXStreet ★★★ 은 근원 전년비 하나이고, 생산자물가 전월비(0.3%·예상 0.4%) · 전년비(6.5%·예상 6.6%) · 근원 전월비(0.3%·예상 0.3%)는 ★★ 이다. 묶을 때 최고 등급을 대표로 쓰는 규칙(4장 3번)이라 예상과 같게 나온 근원 전년비가 대표다. 값 대조(2026-11-14 다시): 근원 전년비 5.0%·예상 5.0% — Finwire(블룸버그) · 차이롄서 · Alliance News · FXStreet · Flush · Anue. 헤드라인 전년비 6.5%·예상 6.6% — Finwire(블룸버그) · MT Newswires · 로이터 · RTTNews · 차이롄서 · 뉴스1. 헤드라인 전월비 0.3%·예상 0.4% — 로이터 설문 · 블룸버그 · 다우존스. 대표가 헤드라인 대신 근원 전년비를 그대로 두기로 했다(2026-11-14 «그대로 근원 전년비»).",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": 0.473,
+      "rank": 7,
+      "color": "up"
+    }
+  ],
+  "calendar_source": "fxstreet",
+  "calendar_snapshot": "content/weekly-shorts/2026-11-09.calendar.fxstreet.json",
+  "coverage": {
+    "econ_calendar": "FXStreet 공개 캘린더 API(미국 57건) — 대표 결정(2026-11-14). 트레이딩이코노믹스는 이번엔 받기 요청에 보안 확인 페이지를 돌려줬고(일정 0행), 크롬 무료 화면은 11/13 부터만, 웹 아카이브(11/10 사본)도 빈 표였다. 등급: HIGH=★★★ · MEDIUM=★★ · LOW=★. ★★★ 3건(화 소비자물가 전월비·근원 전월비, 금 근원 생산자물가 전년비).",
+    "earnings": "그 주 나스닥100 실적 — 월 TTWO · 목 CSCO·AMAT(나스닥 실적 달력). 장 마감 직후 봉: 월 16:05 -0.041%(701위) · 목 16:05 +0.127%(170위). 둘 다 작아 넣지 않았다.",
+    "news_scan": "1위 11-10 08:30 -0.806% — 소비자물가 발표(사건②)\n2위 11-11 18:00 -0.666% — 엔비디아 해임 준비 보도(사건④). 선물이 쉬는 17:00~18:00 사이 뉴욕타임스(17:01)·월스트리트저널(17:30) 보도\n3위 11-13 16:00 -0.648% — 정규장 마감 직후 봉(16:00~16:05). 지침상 사건 아님(4장 6번). 그 시각 새 보도 못 찾음(bigdata.com 20:50~21:15Z)\n4위 11-13 10:10 -0.616% — 반도체 일제 하락(필라델피아 반도체지수 -4.3%, 차이롄서 15:05Z). 그 시각 새 보도 못 찾음 — 붙이지 않는다(4장 5번)\n5위 11-12 09:35 +0.530% — 개장 직후. 지침상 사건 아님(4장 5번)\n6위 11-12 09:30 +0.495% — 정규장 개장 첫 봉. 지침상 사건 아님(4장 6번)\n7위 11-13 08:30 +0.473% — 생산자물가 발표(사건⑥)\n8위 11-10 09:55 +0.473% — 개장 25분 뒤. 새 보도 못 찾음\n9위 11-12 11:05 +0.449% — 그 시각 보도 0건(bigdata.com 15:55~16:12Z)\n10위 11-13 10:00 -0.433% — 4위와 같은 반도체 일제 하락의 시작. 새 보도 못 찾음",
+    "data_crosscheck": "주가: NQZ26.CME 를 QQQ(ETF)와 대조(검사 [1-1]), CNBC 5분봉과 대조(검사 [1-2]). 지표 값은 FXStreet 를 검사 [5] 가 다시 받아 대조한다."
+  },
+  "summary": {
+    "scope": "선정 사건",
+    "scope_note": "요약 표의 1~3위는 «고른 사건 6개» 중 순위다.",
+    "ko": "이번 주 고른 사건 6개 중 · 5분봉 전체 순위는 아니다",
+    "en": "The three biggest moves among the six events picked this week",
+    "rows": [
+      {
+        "tag": "물가",
+        "pct": -0.806,
+        "week_rank": 1
+      },
+      {
+        "tag": "엔비디아",
+        "pct": -0.666,
+        "week_rank": 2
+      },
+      {
+        "tag": "생산자",
+        "pct": 0.473,
+        "week_rank": 7
+      }
+    ]
+  },
+  "copy": {
+    "_주": "화면(screen)과 자막(srt) 문구를 한곳에 둔다 — 지침 2-3. {WEEK}{N}{EVN}{TOPPCT}{ANS}{ANSN} 는 렌더러·자막 생성기가 계산해 채운다.",
+    "names": {
+      "보먼": "보먼 이사 연설",
+      "물가": "근원 소비자물가",
+      "모기지": "주택담보대출 신청",
+      "엔비디아": "엔비디아 해임 준비 보도",
+      "주택": "기존주택 판매",
+      "생산자": "근원 생산자물가"
+    },
+    "screen": {
+      "q1": "한 주 동안 오르고 내리기를 되풀이했다.",
+      "q2": "1% 넘게 방향을 바꾼 건 몇 번?",
+      "enHook": "How many times did it reverse by more than 1%?",
+      "ansName": "1% 넘는 방향 전환",
+      "ansBig": "{ANS}",
+      "ansColor": "hi",
+      "ansSub1": "직전 꼭짓점에서 1% 넘게 거꾸로 갈 때마다 한 번",
+      "ansSub2": "그러고도 한 주 결과는 {WEEK}",
+      "enAnswer": "{ANSN} reversals of more than 1% in one week",
+      "answerMark": "none",
+      "summ1": "물가에 밀리고, 엔비디아에 흔들렸다.",
+      "summ2": "사건 중엔 소비자물가가 가장 컸다.",
+      "rowsScope": "이번 주 고른 사건 {EVN}개 중 · 5분봉 전체 순위는 아니다",
+      "enSumm": "The three biggest moves among the six events picked this week",
+      "loopLabel": "1% 넘는 방향 전환은",
+      "loopBig": "{ANS}",
+      "loopTail": "한 주 결과는 {WEEK}",
+      "loopColor": "hi",
+      "kicker": "지난주 나스닥 · 월 프리장 ~ 금 마감",
+      "span": "월요일 프리장 → 금요일 마감"
+    },
+    "srt": {
+      "ko": {
+        "hook": [
+          "지난주 나스닥, 월요일 프리장 ~ 금요일 마감 · 결과는 {WEEK}",
+          "한 주 동안 오르고 내리기를 되풀이했다 · 1% 넘게 방향을 바꾼 건 몇 번?"
+        ],
+        "answer": [
+          "1% 넘는 방향 전환 {ANS}",
+          "직전 꼭짓점에서 1% 넘게 거꾸로 갈 때마다 한 번 · 그러고도 한 주 결과는 {WEEK}"
+        ],
+        "summ": [
+          "물가에 밀리고 엔비디아에 흔들렸다 · 고른 사건 중엔 소비자물가가 가장 컸다({TOPPCT})",
+          "몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다"
+        ]
+      },
+      "en": {
+        "hook": [
+          "Nasdaq 100 futures, Monday pre-market to Friday close · the week ended {WEEK}",
+          "How many times did it reverse by more than 1%?"
+        ],
+        "answer": [
+          "{ANSN} reversals of more than 1% in one week",
+          "Each counts a 1%+ move against the last turning point · still {WEEK} on the week"
+        ],
+        "summ": [
+          "Hit by inflation, shaken by Nvidia · core CPI moved it most ({TOPPCT})",
+          "Which one did you pick? We will replay next week too"
+        ]
+      }
+    }
+  },
+  "publish": {
+    "live": {
+      "commit": "41c22cf7dfd8f1726c84415b063a4c0c2e0847d4",
+      "at": "2026-11-14T07:43:47.203Z"
+    },
+    "youtube": {
+      "video_id": "ZVzITsnN7os",
+      "url": "https://www.youtube.com/watch?v=ZVzITsnN7os",
+      "at": "2026-11-14T07:43:54.651Z",
+      "captions": {
+        "ko": "ok",
+        "en": "ok"
+      },
+      "pinned_comment": {
+        "id": "Ugz2EvTc74ekYId1XTV4AaABAg",
+        "pinned": false
+      }
+    },
+    "instagram": {
+      "media_id": "17912709378375929",
+      "permalink": "https://www.instagram.com/reel/DftuFuRkh2P/",
+      "at": "2026-11-14T07:57:20.913Z"
+    },
+    "published_at": "2026-11-14T16:57:22+09:00"
+  }
+}
