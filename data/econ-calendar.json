@@ -1,25 +1,25 @@
 {
-  "fetchedAt": "2026-11-15T17:40:17Z",
+  "fetchedAt": "2026-11-16T02:12:37Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-13T17:40:17Z",
-    "to": "2026-11-29T17:40:17Z"
+    "from": "2026-11-14T02:12:37Z",
+    "to": "2026-11-30T02:12:37Z"
   },
   "events": [
     {
-      "at": "2026-11-13T18:00:00Z",
+      "at": "2026-11-14T14:30:00Z",
       "country": "US",
-      "name": "Baker Hughes US Oil Rig Count",
-      "impact": "LOW",
+      "name": "Fed's Collins speech",
+      "impact": "MEDIUM",
       "consensus": null,
-      "previous": 463,
-      "actual": 463,
+      "previous": null,
+      "actual": null,
       "unit": null
     },
     {
-      "at": "2026-11-14T00:00:00Z",
+      "at": "2026-11-15T18:40:00Z",
       "country": "US",
-      "name": "Fed's Jefferson speech",
+      "name": "Fed's Schmid speech",
       "impact": "MEDIUM",
       "consensus": null,
       "previous": null,
@@ -33,7 +33,7 @@
       "impact": "HIGH",
       "consensus": 0.1,
       "previous": 0.4,
-      "actual": null,
+      "actual": 0,
       "unit": "%"
     },
     {
@@ -43,7 +43,7 @@
       "impact": "MEDIUM",
       "consensus": 0.3,
       "previous": 1.4,
-      "actual": null,
+      "actual": -0.1,
       "unit": "%"
     },
     {
@@ -53,7 +53,7 @@
       "impact": "MEDIUM",
       "consensus": 2.6,
       "previous": 2.6,
-      "actual": null,
+      "actual": 2.4,
       "unit": "%"
     },
     {
@@ -73,7 +73,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -2.8,
-      "actual": null,
+      "actual": -2.4,
       "unit": "%"
     },
     {
@@ -83,7 +83,7 @@
       "impact": "LOW",
       "consensus": -7,
       "previous": -7.2,
-      "actual": null,
+      "actual": -8.1,
       "unit": "%"
     },
     {
@@ -93,7 +93,7 @@
       "impact": "HIGH",
       "consensus": 5.3,
       "previous": 5.5,
-      "actual": null,
+      "actual": 4.8,
       "unit": "%"
     },
     {
@@ -103,7 +103,7 @@
       "impact": "HIGH",
       "consensus": 0.8,
       "previous": 1.1,
-      "actual": null,
+      "actual": 0.4,
       "unit": "%"
     },
     {
@@ -2195,6 +2195,66 @@
       "previous": 0.7,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-29T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-29T23:00:00Z",
+      "country": "KR",
+      "name": "Industrial Output Growth",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-29T23:00:00Z",
+      "country": "KR",
+      "name": "Service Sector Output",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-30T01:05:00Z",
+      "country": "JP",
+      "name": "BoJ Governor Ueda speech",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-30T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49.3,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-30T01:30:00Z",
+      "country": "CN",
+      "name": "NBS Non-Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 49.7,
+      "actual": null,
+      "unit": null
     }
   ]
 }
