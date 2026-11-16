@@ -1,47 +1,47 @@
 {
-  "month": "202609",
+  "month": "202610",
   "unit": "천달러",
   "source": "한국은행 ECOS 901Y092 성질별 수출입 · 901Y118 수출입 총괄",
   "customsOpen": false,
   "total": {
-    "export": 121254258,
-    "import": 71071850,
-    "balance": 50182408,
-    "exportYoyPct": 84,
-    "crosscheck": "총괄 표는 121050082"
+    "export": 115409957,
+    "import": 72764754,
+    "balance": 42645203,
+    "exportYoyPct": 93.9,
+    "crosscheck": "총괄 표는 이 달 아직 미공표"
   },
   "exportByKind": [
     {
       "code": "E104",
       "name_ko": "중화학 공업품",
       "name_en": "Heavy & chemical",
-      "value": 108020163,
-      "sharePct": 89.1,
-      "yoyPct": 90.7
+      "value": 102652886,
+      "sharePct": 88.9,
+      "yoyPct": 101.5
     },
     {
       "code": "E103",
       "name_ko": "경공업품",
       "name_en": "Light industry",
-      "value": 3158006,
-      "sharePct": 2.6,
-      "yoyPct": 4.2
+      "value": 3217787,
+      "sharePct": 2.8,
+      "yoyPct": 9.1
     },
     {
       "code": "E102",
       "name_ko": "원료 및 연료",
       "name_en": "Raw materials & fuel",
-      "value": 8983644,
-      "sharePct": 7.4,
-      "yoyPct": 76.7
+      "value": 8460043,
+      "sharePct": 7.3,
+      "yoyPct": 82.5
     },
     {
       "code": "E101",
       "name_ko": "식료 및 직접소비재",
       "name_en": "Food & consumer",
-      "value": 1092445,
+      "value": 1079241,
       "sharePct": 0.9,
-      "yoyPct": -5.5
+      "yoyPct": 9.8
     }
   ],
   "importByKind": [
@@ -49,25 +49,25 @@
       "code": "I102",
       "name_ko": "원자재",
       "name_en": "Raw materials",
-      "value": 29688033,
-      "sharePct": 41.8,
-      "yoyPct": 21.2
+      "value": 33826128,
+      "sharePct": 46.5,
+      "yoyPct": 43.5
     },
     {
       "code": "I103",
       "name_ko": "자본재",
       "name_en": "Capital goods",
-      "value": 31103375,
-      "sharePct": 43.8,
-      "yoyPct": 42.3
+      "value": 29147675,
+      "sharePct": 40.1,
+      "yoyPct": 47.5
     },
     {
       "code": "I101",
       "name_ko": "소비재",
       "name_en": "Consumer goods",
-      "value": 10280442,
-      "sharePct": 14.5,
-      "yoyPct": 2
+      "value": 9790951,
+      "sharePct": 13.5,
+      "yoyPct": -3.8
     }
   ],
   "hsItems": null
