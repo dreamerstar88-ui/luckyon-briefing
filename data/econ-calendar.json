@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-11-16T20:57:34Z",
+  "fetchedAt": "2026-11-17T04:33:16Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-14T20:57:34Z",
-    "to": "2026-11-30T20:57:34Z"
+    "from": "2026-11-15T04:33:16Z",
+    "to": "2026-12-01T04:33:16Z"
   },
   "events": [
     {
@@ -323,7 +323,7 @@
       "impact": "LOW",
       "consensus": 0,
       "previous": -0.1,
-      "actual": null,
+      "actual": -0.5,
       "unit": "%"
     },
     {
@@ -2695,6 +2695,76 @@
       "previous": null,
       "actual": null,
       "unit": "$"
+    },
+    {
+      "at": "2026-11-30T23:30:00Z",
+      "country": "JP",
+      "name": "Jobs / Applicants Ratio",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.19,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-11-30T23:30:00Z",
+      "country": "JP",
+      "name": "Unemployment Rate",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 2.4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-30T23:50:00Z",
+      "country": "JP",
+      "name": "Capital Spending",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 1.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-01T00:00:00Z",
+      "country": "KR",
+      "name": "Trade Balance",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 42.6,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-12-01T00:30:00Z",
+      "country": "JP",
+      "name": "Jibun Bank Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-01T00:30:00Z",
+      "country": "KR",
+      "name": "S&P Global Manufacturing PMI",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 51.3,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-01T01:45:00Z",
+      "country": "CN",
+      "name": "RatingDog Manufacturing PMI",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 52,
+      "actual": null,
+      "unit": null
     }
   ]
 }
