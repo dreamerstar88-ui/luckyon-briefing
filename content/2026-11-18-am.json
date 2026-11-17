@@ -1,0 +1,674 @@
+{
+ "date": "2026-11-18",
+ "session": "am",
+ "dateLabel_ko": "2026.11.18(수) 아침",
+ "dateLabel_en": "Wed, Nov 18, 2026 · AM",
+ "headline_ko": "다우 1.64% 급락, 엔비디아는 장 마감 후 매출 1,158억달러",
+ "headline_sub_ko": "S&P 500 11개 업종 전부 하락 · 거래대금 상위 300종목 중 오른 종목은 68개",
+ "headline_en": "Dow Sheds 1.64% as Nvidia Reports $115.8B Revenue After the Bell",
+ "headline_sub_en": "All 11 S&P 500 sectors fell · only 68 of the 300 most-traded names rose",
+ "cover_photo": "photos/nyse.jpg",
+ "cover_kicker": {
+  "ko": "간밤 미국장 · 11/17 마감",
+  "en": "US Overnight · Nov 17 Close"
+ },
+ "cover_facts": [
+  [
+   "shield",
+   {
+    "ko": "다우 -1.64% · S&P 500 -1.03%",
+    "en": "Dow -1.64% · S&P 500 -1.03%"
+   },
+   {
+    "ko": "50,759.42 / 7,340.53 · 나스닥 -0.74%",
+    "en": "50,759.42 / 7,340.53 pts · Nasdaq -0.74%"
+   }
+  ],
+  [
+   "chip",
+   {
+    "ko": "엔비디아 3분기 매출 1,158억달러",
+    "en": "Nvidia Q3 revenue $115.84B"
+   },
+   {
+    "ko": "예상 약 1,090억 · 장 마감 후 발표",
+    "en": "vs ~$109B est. · reported after the close"
+   }
+  ],
+  [
+   "bond",
+   {
+    "ko": "VIX 25.46 · 공포탐욕 31 → 25",
+    "en": "VIX 25.46 · Fear & Greed 31 → 25"
+   },
+   {
+    "ko": "VIX 하루 +11.1% · 지표는 '공포' 구간",
+    "en": "VIX +11.1% on the day · index in 'Fear'"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "17일 뉴욕증시는 다우가 848.75포인트(1.64%) 내린 50,759.42로 마감했고 S&P 500은 1.03%, 나스닥은 0.74% 내렸다. 나스닥은 4거래일 연속 하락했다.",
+   "장 마감 후 엔비디아가 3분기 매출 1,158억달러를 발표해 예상(약 1,090억달러)을 웃돌았다. 정규장에서는 실적 경계감 속에 0.44% 내렸다.",
+   "S&P 500 섹터 ETF 11개가 전부 내렸고, 거래대금 상위 300종목 중 오른 종목은 68개, 내린 종목은 231개였다. 금액으로도 하락 종목에 3,083억달러, 상승 종목에 804억달러가 몰렸다.",
+   "VIX는 11.1% 올라 25.46으로 4거래일 연속 상승했고, CNN 공포탐욕지수는 31에서 25로 내려 '공포' 구간 하단에 닿았다. 소매판매는 예상대로 0.2% 늘었다."
+  ],
+  "lines_en": [
+   "The Dow fell 848.75 points (1.64%) to 50,759.42 on Nov 17; the S&P 500 lost 1.03% and the Nasdaq 0.74%. The Nasdaq has now fallen four sessions in a row.",
+   "After the close Nvidia reported Q3 revenue of $115.84B, above the ~$109B estimate. In the regular session the stock slipped 0.44% on earnings nerves.",
+   "All 11 S&P 500 sector ETFs fell. Of the 300 most-traded names 68 rose and 231 fell, with $308.3B of turnover in decliners against $80.4B in gainers.",
+   "The VIX rose 11.1% to 25.46, its fourth straight gain, and CNN's Fear & Greed index dropped from 31 to 25, at the low end of 'Fear'. Retail sales rose 0.2%, in line."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "24,328.38",
+   "delta": "▼0.74%",
+   "dir": "down",
+   "note_ko": "181.38p 하락 · 4거래일 연속 하락",
+   "note_en": "-181.38 pts · 4th straight decline"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,340.53",
+   "delta": "▼1.03%",
+   "dir": "down",
+   "note_ko": "76.06p 하락 · 11개 업종 전부 하락",
+   "note_en": "-76.06 pts · all 11 sectors fell"
+  },
+  {
+   "label": "KOSPI",
+   "value": "4,968.48",
+   "delta": "▼2.59%",
+   "dir": "down",
+   "note_ko": "11/17 종가 · 2월 이후 첫 5,000선 이탈",
+   "note_en": "Nov 17 close · first sub-5,000 close since Feb"
+  },
+  {
+   "label": "VIX",
+   "value": "25.46",
+   "delta": "▲11.13%",
+   "dir": "up",
+   "note_ko": "2.55p 상승 · 4거래일 연속 상승",
+   "note_en": "+2.55 pts · 4th straight rise"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "31 → 25",
+   "value_sub": {
+    "ko": "· 공포",
+    "en": "· Fear"
+   },
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "1주 전 37 · 극단적 공포(24 이하)까지 1점",
+   "note_en": "37 a week ago · 1 pt above Extreme Fear"
+  },
+  {
+   "label": "US 10Y",
+   "value": "5.12% → 5.10%",
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "11/16 → 11/17 종가 · 5%대 유지",
+   "note_en": "Nov 16 → Nov 17 close · still above 5%"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,334.9",
+   "value_sub": "· DXY 103.55",
+   "delta": "▲0.12%",
+   "dir": "up",
+   "note_ko": "미국장 마감 시점 해외 시세 · 달러인덱스 보합",
+   "note_en": "Offshore quote at US close · dollar index flat"
+  },
+  {
+   "label": "Gold",
+   "value": "$3,851.90",
+   "delta": "▼0.03%",
+   "dir": "down",
+   "note_ko": "11/6 4,074.90 대비 5.5% 낮은 수준",
+   "note_en": "5.5% below the Nov 6 close of $4,074.90"
+  },
+  {
+   "label": "WTI",
+   "value": "$85.61",
+   "delta": "▼0.13%",
+   "dir": "down",
+   "note_ko": "12월물 · 11/16 85.72에 이어 이틀째 85달러대",
+   "note_en": "Dec contract · 2nd day in the $85s after Nov 16's 85.72"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "$64,340",
+   "delta": "▼0.80%",
+   "dir": "down",
+   "note_ko": "11/18 오전 시세 · 11/9 종가 75,223 대비 -14.5%",
+   "note_en": "Nov 18 morning quote · -14.5% from the Nov 9 close of $75,223"
+  }
+ ],
+ "market_note_ko": "미국 지수는 11/17 미국장 마감 종가 · 코스피는 11/17 한국장 종가 · 해외 시세는 야후 파이낸스 기준",
+ "market_note_en": "US indexes are Nov 17 US closes · KOSPI is the Nov 17 Korea close · offshore quotes from Yahoo Finance",
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "chart_series": "us",
+ "main_tile_note": {
+  "ko": "181.38p 하락 · 최근 9거래일",
+  "en": "-181.38 pts · last 9 sessions"
+ },
+ "chart_title": {
+  "ko": "나스닥 4거래일 연속 하락",
+  "en": "Nasdaq Down Four Sessions Straight"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "11.11 고점 25,466.19  →  11.16 24,509.76  →  11.17 24,328.38",
+  "en": "Nov 11 high 25,466.19  →  Nov 16 24,509.76  →  Nov 17 24,328.38"
+ },
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "다우존스",
+     "label_en": "Dow Jones",
+     "value": "50,759.42",
+     "delta": "▼1.64%",
+     "dir": "down",
+     "sub_ko": "848.75포인트 하락 · 3대 지수 중 최대 낙폭",
+     "sub_en": "Down 848.75 pts · worst of the three"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,340.53",
+     "delta": "▼1.03%",
+     "dir": "down",
+     "sub_ko": "76.06포인트 하락 · 11/16 7,416.59에서 이어진 하락",
+     "sub_en": "Down 76.06 pts · extends Nov 16's slide from 7,416.59"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "S&P 500 11개 업종",
+     "label_en": "S&P 500 sectors",
+     "up": 0,
+     "flat": 0,
+     "down": 11
+    },
+    {
+     "label_ko": "거래대금 상위 300종목",
+     "label_en": "300 most-traded",
+     "up": 68,
+     "flat": 1,
+     "down": 231
+    }
+   ],
+   "flows": {
+    "label_ko": "상승 종목 대 하락 종목 거래대금 (십억달러)",
+    "label_en": "Turnover: gainers vs decliners ($B)",
+    "rows": [
+     {
+      "label_ko": "오른 종목",
+      "label_en": "Gainers",
+      "value": 80.4
+     },
+     {
+      "label_ko": "내린 종목",
+      "label_en": "Decliners",
+      "value": -308.3
+     }
+    ]
+   },
+   "note_ko": "업종 11개가 전부 내렸고 돈도 내린 종목으로 갔다 — 거래대금의 79.3%가 하락 종목에 몰렸다. 지수만이 아니라 시장 내부도 약세였다.",
+   "note_en": "All 11 sectors fell and money followed: 79.3% of turnover sat in decliners. The internals were as weak as the index."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "US Sectors",
+   "color": "#4a9d7f",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "반도체 (SMH)",
+     "label_en": "Semis (SMH)",
+     "value": -0.39
+    },
+    {
+     "label_ko": "에너지 (XLE)",
+     "label_en": "Energy (XLE)",
+     "value": -0.52
+    },
+    {
+     "label_ko": "산업 (XLI)",
+     "label_en": "Industrials (XLI)",
+     "value": -0.55
+    },
+    {
+     "label_ko": "임의소비 (XLY)",
+     "label_en": "Cons Disc (XLY)",
+     "value": -0.89
+    },
+    {
+     "label_ko": "기술 (XLK)",
+     "label_en": "Tech (XLK)",
+     "value": -0.91
+    },
+    {
+     "label_ko": "소재 (XLB)",
+     "label_en": "Materials (XLB)",
+     "value": -1.22
+    },
+    {
+     "label_ko": "필수소비 (XLP)",
+     "label_en": "Staples (XLP)",
+     "value": -1.23
+    },
+    {
+     "label_ko": "헬스케어 (XLV)",
+     "label_en": "Health (XLV)",
+     "value": -1.41
+    },
+    {
+     "label_ko": "통신 (XLC)",
+     "label_en": "Comm (XLC)",
+     "value": -1.46
+    },
+    {
+     "label_ko": "부동산 (XLRE)",
+     "label_en": "Real Estate (XLRE)",
+     "value": -1.49
+    },
+    {
+     "label_ko": "유틸리티 (XLU)",
+     "label_en": "Utilities (XLU)",
+     "value": -1.59
+    },
+    {
+     "label_ko": "금융 (XLF)",
+     "label_en": "Financials (XLF)",
+     "value": -1.91
+    }
+   ],
+   "note_ko": "12개 전부 마이너스다. 반도체(SMH)가 -0.39%로 가장 덜 빠졌고 금융(XLF)이 -1.91%로 가장 크게 내렸다. 엔비디아 실적을 앞두고 반도체는 오히려 버텼다.",
+   "note_en": "All twelve were negative. Semis (SMH) fell least at -0.39%; financials (XLF) fell most at -1.91%. Chips held up best ahead of Nvidia's report."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top Turnover",
+   "color": "#3987e5",
+   "type": "rank",
+   "rows": [
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "57.53",
+     "pct": -0.44
+    },
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "22.66",
+     "pct": -0.92
+    },
+    {
+     "name_ko": "AMD",
+     "name_en": "AMD",
+     "value": "17.61",
+     "pct": -0.17
+    },
+    {
+     "name_ko": "마이크로소프트",
+     "name_en": "Microsoft",
+     "value": "13.80",
+     "pct": -2.27
+    },
+    {
+     "name_ko": "애플",
+     "name_en": "Apple",
+     "value": "12.76",
+     "pct": -0.25
+    }
+   ],
+   "share": {
+    "label_ko": "상위 5종목이 표본 300종목 거래대금(상승·하락 합)의 32.0% · 나머지 295종목 68.0%",
+    "label_en": "Top 5 hold 32.0% of the 300-name sample's up+down turnover · other 295 names 68.0%",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상위 5종목",
+      "label_en": "Top 5",
+      "pct": 32.0,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "엔비디아 한 종목이 575억달러로 상위 5종목 거래대금의 46%를 차지했다. 실적 발표를 앞둔 거래가 쏠렸고 주가는 0.44% 내리는 데 그쳤다. 마이크로소프트는 2.27%로 5종목 중 가장 크게 내렸다.",
+   "note_en": "Nvidia alone traded $57.5B — 46% of the top five's turnover — as positioning built before its report, yet it fell just 0.44%. Microsoft fell the most of the five at 2.27%."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#5b8dd6",
+   "type": "stats",
+   "cols": 2,
+   "stats": [
+    {
+     "label_ko": "미국 10월 소매판매 (전월비)",
+     "label_en": "US Oct Retail Sales (MoM)",
+     "value": "0.2%",
+     "delta": {
+      "ko": "예상 0.2% 부합",
+      "en": "In line with 0.2% est."
+     },
+     "dir": "flat",
+     "sub_ko": "22:30 · 예상 +0.2% · 이전 +0.8%",
+     "sub_en": "22:30 · est. +0.2% · prior +0.8%"
+    },
+    {
+     "label_ko": "미국 10월 소매판매 컨트롤그룹",
+     "label_en": "US Oct Retail Sales Control Group",
+     "value": "0.6%",
+     "delta": "▲0.5%p",
+     "dir": "up",
+     "sub_ko": "22:30 · 이전 +0.1% · 자동차 등 제외",
+     "sub_en": "22:30 · prior +0.1% · ex autos etc."
+    },
+    {
+     "label_ko": "미국 10월 산업생산 (전월비)",
+     "label_en": "US Oct Industrial Production (MoM)",
+     "value": "-0.4%",
+     "delta": {
+      "ko": "예상 0.1% 하회",
+      "en": "Below 0.1% est."
+     },
+     "dir": "down",
+     "sub_ko": "23:15 · 예상 +0.1% · 이전 +0.7%",
+     "sub_en": "23:15 · est. +0.1% · prior +0.7%"
+    },
+    {
+     "label_ko": "엔비디아 3분기 조정 EPS",
+     "label_en": "Nvidia Q3 Adj. EPS",
+     "value": "$2.68",
+     "delta": {
+      "ko": "예상 $2.48 상회",
+      "en": "Beat $2.48 est."
+     },
+     "dir": "up",
+     "sub_ko": "11/17 장 마감 후 · 예상은 FMP·LSEG 기준",
+     "sub_en": "After the Nov 17 close · est. per FMP/LSEG"
+    },
+    {
+     "label_ko": "엔비디아 3분기 매출",
+     "label_en": "Nvidia Q3 Revenue",
+     "value": "$115.84B",
+     "delta": {
+      "ko": "예상 약 $109B 상회",
+      "en": "Beat ~$109B est."
+     },
+     "dir": "up",
+     "sub_ko": "전년 동기 +103% · 데이터센터 $107.6B",
+     "sub_en": "+103% YoY · data center $107.6B",
+     "ref_ko": "발표 전 월가 컨센서스 대비 · 데이터센터가 매출 대부분",
+     "ref_en": "Vs pre-release Street consensus; data center is most of sales"
+    },
+    {
+     "label_ko": "디즈니 4분기 조정 EPS",
+     "label_en": "Disney Q4 Adj. EPS",
+     "value": "$1.77",
+     "delta": {
+      "ko": "예상 $1.67 상회",
+      "en": "Beat $1.67 est."
+     },
+     "dir": "up",
+     "sub_ko": "장전 · 매출 $25.95B · 주가 -1.48%",
+     "sub_en": "Pre-mkt · rev. $25.95B · stock -1.48%"
+    }
+   ],
+   "note_ko": "소매판매는 예상대로였지만 산업생산은 예상을 밑돌았다. 엔비디아는 장 마감 후 EPS·매출 모두 예상을 웃돌았고, 디즈니는 EPS가 예상을 웃돌았는데도 주가가 1.48% 내렸다.",
+   "note_en": "Retail sales matched but industrial output missed. Nvidia beat on EPS and revenue after the close; Disney beat on EPS yet fell 1.48%."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semis",
+   "color": "#7b6cd9",
+   "items": [
+    {
+     "headline_ko": "엔비디아 3분기 매출 1,158억달러, 전년비 103%↑",
+     "headline_en": "Nvidia Q3 Revenue $115.8B, Up 103% YoY",
+     "body_ko": "엔비디아가 17일 장 마감 후 3분기 매출 1,158억달러, 조정 EPS 2.68달러를 발표했다. 예상은 각각 약 1,090억달러, 2.48달러다. 데이터센터 매출은 1,076억달러로 전년보다 110% 늘었다.",
+     "body_en": "After the Nov 17 close Nvidia reported Q3 revenue of $115.8B and adjusted EPS of $2.68, against estimates of ~$109B and $2.48. Data-center revenue was $107.6B, up 110%."
+    },
+    {
+     "headline_ko": "4분기 매출 가이던스 1,300억달러 제시",
+     "headline_en": "Q4 Revenue Guidance of $130B",
+     "body_ko": "엔비디아는 4분기 매출을 1,300억달러(±3%)로 내다봤다. LSEG 집계 컨센서스는 약 1,250억달러다. 중국 데이터센터 매출은 0으로 가정했고, 총마진은 71~72%로 3분기 74.9%에서 낮아진다.",
+     "body_en": "Nvidia guided Q4 revenue to $130B (±3%) versus an LSEG consensus near $125B, assuming zero China data-center sales. Gross margin is guided to 71-72%, down from 74.9% in Q3."
+    },
+    {
+     "headline_ko": "엔비디아 공급약정 3,900억달러, 베라 루빈 증산",
+     "headline_en": "Nvidia: $390B Supply Commitments, Vera Rubin Ramp",
+     "body_ko": "엔비디아는 공급약정이 3,900억달러로 전분기(2,790억달러)보다 늘었다고 SEC 제출 자료에서 밝혔다. 베라 루빈 증산 속도는 회사 역사상 가장 빠르다고 했다.",
+     "body_en": "Nvidia said in its SEC filing that supply commitments rose to $390B from $279B, and called the Vera Rubin ramp the fastest in its history."
+    },
+    {
+     "headline_ko": "앤스로픽 IPO, 범위 웃도는 가격 논의 보도",
+     "headline_en": "Anthropic IPO: Pricing Above Range Reportedly Weighed",
+     "body_ko": "FT 등은 앤스로픽이 희망 범위 70~78달러를 웃도는 공모가를 논의한다고 전했다. 나스닥 상장(티커 ANT) 물량은 8억2,500만주이고, 미 현지 18일 저녁 공모가를 확정해 19일 거래를 시작할 예정이다. 최종 공모가는 아직 나오지 않았다.",
+     "body_en": "The FT and others report Anthropic is weighing a price above its $70-78 range. The Nasdaq listing (ticker ANT) covers 825M shares, with pricing expected the evening of Nov 18 US time and trading Nov 19. No final price yet."
+    },
+    {
+     "headline_ko": "오픈AI, GPT-6.2 '아스트라'·'솔' 출시",
+     "headline_en": "OpenAI Launches GPT-6.2 Astra and Sol",
+     "body_ko": "오픈AI가 17일 GPT-6.2 아스트라·솔을 챗GPT 워크, 코덱스, API로 내놓았다. 요금제별로 순차 제공된다. 성능 비교는 오픈AI 자체 벤치마크 주장이어서 독립 검증은 아직 확인되지 않았다.",
+     "body_en": "OpenAI launched GPT-6.2 Astra and Sol on Nov 17 across ChatGPT Work, Codex and the API, rolling out by plan tier. Its performance comparisons are OpenAI's own benchmark claims, not yet independently verified."
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#d98a3c",
+   "items": [
+    {
+     "headline_ko": "뉴욕증시, 엔비디아 실적 경계 속 AI주 급락",
+     "headline_en": "Wall St Slides on Nvidia Jitters, AI Names Sell Off",
+     "body_ko": "다우는 848.75포인트 내렸고 마이크로소프트(-2.27%)가 상위 거래대금 종목 중 가장 크게 밀렸다. 장중 CNN의 NSA 기밀망 장애 보도도 나왔으나 시장 영향은 확인되지 않았다. NSA는 정기 점검 중 성능 저하라고 밝혔다.",
+     "body_en": "The Dow fell 848.75 points and Microsoft (-2.27%) fell most among the top-turnover names. CNN also reported an NSA classified-network outage intraday, but its market impact is unconfirmed; the NSA called it degraded performance during routine maintenance."
+    },
+    {
+     "headline_ko": "홈디포, 맥페일 CFO가 23일 CEO로",
+     "headline_en": "Home Depot: CFO McPhail Becomes CEO on Nov 23",
+     "body_ko": "CNBC에 따르면 데커 CEO는 의료 휴직 끝에 물러나 이사회 의장을 맡고, 맥페일 CFO가 23일 CEO에 오른다. 3분기 조정 EPS는 3.86달러, 매출은 434억달러였다. 주가는 2.45% 내렸다.",
+     "body_en": "CNBC reports CEO Ted Decker steps down after medical leave and stays as chairman; CFO Richard McPhail becomes CEO on Nov 23. Q3 adjusted EPS was $3.86 on $43.4B revenue. The stock fell 2.45%."
+    },
+    {
+     "headline_ko": "12월 FOMC 인상 확률 거의 100% 보도",
+     "headline_en": "Reports Put a December Hike Near 100%",
+     "body_ko": "복수 매체는 12월 8~9일 FOMC 인상 확률을 95~100%로 전했고, 0.5%p 인상론도 거론된다. 10년물은 5.12%에서 5.10%로 소폭 내렸다. 연준은 10월에 3.75~4.00%로 동결했고, 2명이 인상을 주장했다.",
+     "body_en": "Several outlets put the odds of a hike at the Dec 8-9 FOMC at 95-100%, and a 50bp move is also being floated. The 10-year yield eased from 5.12% to 5.10%. The Fed held at 3.75-4.00% in October, with two dissents in favor of a hike."
+    },
+    {
+     "headline_ko": "엔비디아 호실적에도 외국인 매도 부담 남아",
+     "headline_en": "Nvidia Beat Doesn't Fully Lift Foreign-Selling Overhang",
+     "body_ko": "EBN은 증권가가 엔비디아 호실적이 외국인 매도 부담을 다 덜어주지는 못한다고 본다고 전했다. 코스피는 17일 외국인이 1조4,000억원대를 순매도하며 4,968.48로 내려앉았다.",
+     "body_en": "EBN reports brokers see Nvidia's beat as not fully relieving foreign-selling pressure. The KOSPI closed at 4,968.48 on Nov 17 as foreigners sold roughly KRW 1.4 trillion net."
+    },
+    {
+     "headline_ko": "엔비디아 시간외 상승, 황 사임 후 첫 실적",
+     "headline_en": "Nvidia Up After Hours in First Report Since Huang Exit",
+     "body_ko": "한국경제·이투데이 등은 엔비디아가 시간외에서 2~3%대 올랐다고 전했다. 젠슨 황 CEO가 12일 사임한 뒤 첫 실적으로, 콜레트 크레스 CFO가 임시 CEO를 맡고 있다. 정규장 종가는 155.46달러(-0.44%)였다.",
+     "body_en": "Hankyung and Etoday report Nvidia rose roughly 2-3% after hours. It is the first report since CEO Jensen Huang resigned on Nov 12, with CFO Colette Kress as interim CEO. The regular-session close was $155.46 (-0.44%)."
+    }
+   ]
+  }
+ ],
+ "sector_title": {
+  "ko": "12개 모두 하락",
+  "en": "All Twelve Fell"
+ },
+ "sector_sub": {
+  "ko": "S&P500 섹터 ETF · 11/17 종가 기준 · 11개 중 0개 상승",
+  "en": "S&P 500 sector ETFs · Nov 17 close · 0 of 11 rose"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top Turnover"
+ },
+ "rank_sub": {
+  "ko": "11/17 미국장 · 막대 옆은 등락률",
+  "en": "Nov 17 US session · change shown beside bars"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $B"
+ },
+ "econ_kicker": "EARNINGS · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/17 발표분 · 실측 · 예상 · 이전",
+  "en": "Released Nov 17 · actual · estimate · prior"
+ },
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "KST · yellow dot = key event"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 9:00 AM - 3:30 PM KST · Call auction 8:30-9:00 AM / 3:20-3:30 PM"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "08:50",
+   "title_ko": "일본 10월 무역수지",
+   "title_en": "Japan Oct Trade Balance",
+   "detail_ko": "수출 전년비 예상 20% · 이전 16.7%",
+   "detail_en": "Exports YoY est. 20% · prior 16.7%",
+   "importance": "mid"
+  },
+  {
+   "time": "12:00",
+   "title_ko": "한은 3분기 가계신용(잠정)",
+   "title_en": "BOK Q3 Household Credit (Prelim)",
+   "detail_ko": "한은 가계신용 잠정치 발표",
+   "detail_en": "BOK preliminary household-credit data",
+   "importance": "mid"
+  },
+  {
+   "time": "19:00",
+   "title_ko": "유로존 10월 소비자물가(HICP)",
+   "title_en": "Eurozone Oct HICP",
+   "detail_ko": "근원 전년비 예상 2.5% · 이전 2.5%",
+   "detail_en": "Core YoY est. 2.5% · prior 2.5%",
+   "importance": "mid"
+  },
+  {
+   "time": "22:30",
+   "title_ko": "미국 10월 주택착공·건축허가",
+   "title_en": "US Oct Housing Starts & Permits",
+   "detail_ko": "착공 예상 1.27M · 이전 1.221M",
+   "detail_en": "Starts est. 1.27M · prior 1.221M",
+   "importance": "mid"
+  },
+  {
+   "time": "23:25",
+   "title_ko": "라가르드 ECB 총재 연설",
+   "title_en": "ECB's Lagarde Speaks",
+   "detail_ko": "ECB 총재 연설 · 금리 경로 단서",
+   "detail_en": "ECB president's speech · clues on the rate path",
+   "importance": "high"
+  },
+  {
+   "time": "11/19 04:00",
+   "title_ko": "FOMC 10월 회의 의사록",
+   "title_en": "FOMC October Minutes",
+   "detail_ko": "12월 인상 논의 수위 확인 · 반대 2표의 논거 주목",
+   "detail_en": "Watch the tone on a December hike · the case behind the two dissents",
+   "importance": "high"
+  },
+  {
+   "time": "11/19 AM",
+   "title_ko": "앤스로픽 IPO 공모가 확정",
+   "title_en": "Anthropic IPO Pricing",
+   "detail_ko": "희망가 70~78달러 · 미 현지 18일 저녁 확정 예정",
+   "detail_en": "Range $70-78 · pricing expected evening of Nov 18 US time",
+   "importance": "high"
+  }
+ ],
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "caption_ko": "📊 luckyon 브리핑 · 2026.11.18(수) 아침\n\n17일 뉴욕증시는 다우가 848.75포인트(1.64%) 내린 50,759.42로 마감했고, S&P 500은 1.03%, 나스닥은 0.74% 내렸습니다. 나스닥은 4거래일 연속 하락했습니다.\n\nS&P 500 섹터 ETF 11개가 전부 내렸고, 거래대금 상위 300종목 중 오른 종목은 68개뿐이었습니다. VIX는 25.46으로 11.1% 올랐고, 공포탐욕지수는 31에서 25로 내렸습니다.\n\n장 마감 후 엔비디아는 3분기 매출 1,158억달러(예상 약 1,090억달러), 4분기 가이던스 1,300억달러를 발표했습니다. 앤스로픽 IPO 공모가는 미 현지 18일 확정될 예정입니다.\n\n저장해 두고 오늘 하루 참고하세요.\n\n#미국증시 #다우 #나스닥 #엔비디아 #앤스로픽 #코스피 #VIX #공포탐욕지수 #FOMC #AI반도체 #홈디포 #비트코인 #투자 #경제브리핑 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Wed, Nov 18, 2026 · AM\n\nThe Dow fell 848.75 points (1.64%) to 50,759.42 on Nov 17; the S&P 500 lost 1.03% and the Nasdaq 0.74%, its fourth straight decline.\n\nAll 11 S&P 500 sector ETFs fell and only 68 of the 300 most-traded names rose. The VIX jumped 11.1% to 25.46 and Fear & Greed slid from 31 to 25.\n\nAfter the close Nvidia reported Q3 revenue of $115.84B (est. ~$109B) and guided Q4 to $130B. Anthropic's IPO is due to price on Nov 18 US time.\n\nSave this for today.\n\n#USStocks #Dow #Nasdaq #Nvidia #Anthropic #KOSPI #VIX #FearAndGreed #FOMC #AI #Semiconductors #HomeDepot #Bitcoin #Investing #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "Yahoo Finance",
+  "FMP",
+  "CNN Fear & Greed",
+  "FXStreet 경제캘린더",
+  "SEC",
+  "CNBC",
+  "한국경제",
+  "이투데이",
+  "EBN"
+ ],
+ "chart_series_values": [
+  24315,
+  24579.43,
+  25253.14,
+  25065.87,
+  25466.19,
+  25366.09,
+  25136.27,
+  24509.76,
+  24328.38
+ ],
+ "chart_series_labels": [
+  "11.05",
+  "11.06",
+  "11.09",
+  "11.10",
+  "11.11",
+  "11.12",
+  "11.13",
+  "11.16",
+  "11.17"
+ ],
+ "card_photos": {
+  "1": "A dim Wall Street trading floor at the closing bell, traders in silhouette staring at red screens, cold blue and amber light, heavy mood, wide cinematic composition",
+  "3": "Dark trading floor with a wall of screens showing falling red index lines, deep shadows, moody blue tone, abstract no readable text"
+ }
+}
