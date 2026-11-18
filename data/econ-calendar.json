@@ -1,101 +1,11 @@
 {
-  "fetchedAt": "2026-11-17T19:47:02Z",
+  "fetchedAt": "2026-11-18T03:43:40Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-15T19:47:02Z",
-    "to": "2026-12-01T19:47:02Z"
+    "from": "2026-11-16T03:43:40Z",
+    "to": "2026-12-02T03:43:40Z"
   },
   "events": [
-    {
-      "at": "2026-11-15T23:50:00Z",
-      "country": "JP",
-      "name": "Gross Domestic Product (QoQ)",
-      "impact": "HIGH",
-      "consensus": 0.1,
-      "previous": 0.4,
-      "actual": 0,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-15T23:50:00Z",
-      "country": "JP",
-      "name": "Gross Domestic Product Annualized",
-      "impact": "MEDIUM",
-      "consensus": 0.3,
-      "previous": 1.4,
-      "actual": -0.1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-15T23:50:00Z",
-      "country": "JP",
-      "name": "Gross Domestic Product Deflator (YoY)",
-      "impact": "MEDIUM",
-      "consensus": 2.6,
-      "previous": 2.6,
-      "actual": 2.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-15T23:55:00Z",
-      "country": "KR",
-      "name": "Trade Balance",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 42.5,
-      "actual": 42.6,
-      "unit": "$"
-    },
-    {
-      "at": "2026-11-16T01:30:00Z",
-      "country": "CN",
-      "name": "House Price Index ",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": -2.8,
-      "actual": -2.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-16T02:00:00Z",
-      "country": "CN",
-      "name": "Fixed Asset Investment (YTD) (YoY)",
-      "impact": "LOW",
-      "consensus": -7,
-      "previous": -7.2,
-      "actual": -8.1,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-16T02:00:00Z",
-      "country": "CN",
-      "name": "Industrial Production (YoY)",
-      "impact": "HIGH",
-      "consensus": 5.3,
-      "previous": 5.5,
-      "actual": 4.8,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-16T02:00:00Z",
-      "country": "CN",
-      "name": "Retail Sales (YoY)",
-      "impact": "HIGH",
-      "consensus": 0.8,
-      "previous": 1.1,
-      "actual": 0.4,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-16T03:00:00Z",
-      "country": "KR",
-      "name": "Money Supply Growth",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 7.2,
-      "actual": 7,
-      "unit": "%"
-    },
     {
       "at": "2026-11-16T04:00:00Z",
       "country": "JP",
@@ -533,7 +443,7 @@
       "impact": "LOW",
       "consensus": -0.5,
       "previous": 9,
-      "actual": null,
+      "actual": 5.3,
       "unit": null
     },
     {
@@ -543,7 +453,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": -704,
-      "actual": null,
+      "actual": -767.2,
       "unit": "¥"
     },
     {
@@ -553,7 +463,7 @@
       "impact": "MEDIUM",
       "consensus": 20,
       "previous": 16.7,
-      "actual": null,
+      "actual": 20.5,
       "unit": "%"
     },
     {
@@ -563,7 +473,7 @@
       "impact": "MEDIUM",
       "consensus": 25.8,
       "previous": 18.9,
-      "actual": null,
+      "actual": 21.6,
       "unit": "%"
     },
     {
@@ -573,8 +483,18 @@
       "impact": "MEDIUM",
       "consensus": -956,
       "previous": -536.6,
-      "actual": null,
+      "actual": -476.5,
       "unit": "¥"
+    },
+    {
+      "at": "2026-11-18T01:00:00Z",
+      "country": "JP",
+      "name": "BoJ Governor Ueda speech",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-18T02:45:00Z",
@@ -1622,7 +1542,7 @@
       "name": "API Weekly Crude Oil Stock",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 5.3,
       "actual": null,
       "unit": null
     },
@@ -2875,6 +2795,46 @@
       "previous": 48.5,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-12-01T21:30:00Z",
+      "country": "US",
+      "name": "API Weekly Crude Oil Stock",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-01T23:00:00Z",
+      "country": "KR",
+      "name": "Consumer Price Index Growth (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-01T23:00:00Z",
+      "country": "KR",
+      "name": "Consumer Price Index Growth (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2.8,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-01T23:50:00Z",
+      "country": "JP",
+      "name": "Monetary Base (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": -13.6,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
