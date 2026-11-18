@@ -1,0 +1,675 @@
+{
+  "date": "2026-11-18",
+  "session": "pm",
+  "dateLabel_ko": "2026.11.18(수) 저녁",
+  "dateLabel_en": "Wed, Nov 18, 2026 · PM",
+  "headline_ko": "코스피 하루 만에 5,000선 탈환 · 기관 홀로 약 0.5조 순매수",
+  "headline_sub_ko": "외국인·개인은 동반 순매도 · 한중 FTA 타결에 엔터주 급등 · 앤스로픽 공모가는 내일 오전",
+  "headline_en": "KOSPI Retakes 5,000 in One Day as Institutions Buy Alone",
+  "headline_sub_en": "Foreigners and retail both net sellers · entertainment stocks jump on Korea-China FTA deal · Anthropic prices tomorrow morning KST",
+  "cover_photo": "seoul.jpg",
+  "cover_kicker": {
+    "ko": "한국장 마감 · 11/18",
+    "en": "Korea Close · Nov 18"
+  },
+  "cover_facts": [
+    [
+      "chip",
+      {
+        "ko": "코스피 +1.99%·코스닥 +1.96%",
+        "en": "KOSPI +1.99% · KOSDAQ +1.96%"
+      },
+      {
+        "ko": "5,067.44 / 662.81 · 5,000선 하루 만에 회복",
+        "en": "5,067.44 / 662.81 · back above 5,000 in a day"
+      }
+    ],
+    [
+      "globe",
+      {
+        "ko": "기관 약 +0.5조 · 외국인 약 −0.3조",
+        "en": "Inst. ~+₩0.5T · Foreign ~-₩0.3T"
+      },
+      {
+        "ko": "개인도 약 −0.6조 · 기관 혼자 받았다",
+        "en": "Retail ~-₩0.6T · institutions bought alone"
+      }
+    ],
+    [
+      "target",
+      {
+        "ko": "한중 FTA 타결 · 엔터주 급등",
+        "en": "Korea-China FTA deal · entertainment jumps"
+      },
+      {
+        "ko": "에스엠 애프터마켓 상한가 · 내일 오전 앤스로픽 공모가",
+        "en": "SM hits limit after hours · Anthropic prices tomorrow AM"
+      }
+    ]
+  ],
+  "summary": {
+    "lines_ko": [
+      "코스피는 98.96포인트(1.99%) 오른 5,067.44로 마감해 하루 만에 5,000선을 되찾았다. 장중에는 5,133.14까지 올랐다가 4,943.17까지 내려 190포인트 가까이 출렁였다.",
+      "기관이 유가증권시장에서 약 0.5조원을 순매수했고 외국인(약 −0.3조원)과 개인(약 −0.6조원)은 팔았다. 외국인 순매도는 어제(−1.45조원)의 4분의 1 안팎으로 줄었다.",
+      "상승 485종목 대 하락 383종목(어제 185 대 709). 반도체주가 크게 올라 SK하이닉스(+4.19%)와 삼성전자(+2.31%)가 함께 올랐다. 매체들은 엔비디아 실적을 반등 배경으로 꼽았다.",
+      "한·중이 FTA 서비스·투자 후속협상 실질 타결을 선언하자 엔터주가 급등했다. 내일 오전(한국시간) 앤스로픽 공모가가 정해지고, 새벽 4시에는 FOMC 의사록이 나온다."
+    ],
+    "lines_en": [
+      "KOSPI rose 98.96 points (1.99%) to 5,067.44, back above 5,000 in a day. It ran from a high of 5,133.14 to a low of 4,943.17, a swing of nearly 190 points.",
+      "Institutions net bought about ₩0.5T on the main board while foreigners (about -₩0.3T) and retail (about -₩0.6T) sold. Foreign selling shrank to roughly a quarter of yesterday's -₩1.45T.",
+      "Advancers beat decliners 485 to 383 (185 to 709 yesterday). Chip stocks rallied, with SK hynix (+4.19%) and Samsung Electronics (+2.31%) both up. Outlets credited Nvidia's earnings.",
+      "Entertainment stocks jumped after Seoul and Beijing declared a substantive deal on FTA services and investment talks. Anthropic prices tomorrow morning KST; FOMC minutes come at 4 AM."
+    ]
+  },
+  "markets": [
+    {
+      "label": "NASDAQ",
+      "value": "27,387.50",
+      "delta": "▲1.15%",
+      "dir": "up",
+      "note_ko": "선물 · 전일 종가 27,075.50 대비",
+      "note_en": "Futures · vs prior close 27,075.50"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,403.25",
+      "delta": "▲0.60%",
+      "dir": "up",
+      "note_ko": "선물 · 전일 종가 7,359.00 대비",
+      "note_en": "Futures · vs prior close 7,359.00"
+    },
+    {
+      "label": "KOSPI",
+      "value": "5,067.44",
+      "delta": "▲1.99%",
+      "dir": "up",
+      "note_ko": "98.96p 상승 · 4,968.48에서 반등",
+      "note_en": "+98.96 pts · rebound from 4,968.48"
+    },
+    {
+      "label": "VIX",
+      "value": "23.61",
+      "delta": "▼7.27%",
+      "dir": "down",
+      "note_ko": "전일 종가 25.46 대비",
+      "note_en": "vs prior close 25.46"
+    },
+    {
+      "label": "Fear&Greed",
+      "value": "25 → 26",
+      "value_sub": {
+        "ko": "· 공포",
+        "en": "· Fear"
+      },
+      "delta": "▲",
+      "dir": "up",
+      "note_ko": "공포 구간(25~44) · 1주 전 36",
+      "note_en": "Fear zone (25-44) · 36 a week ago"
+    },
+    {
+      "label": "US 10Y",
+      "value": "5.12% → 5.10%",
+      "delta": "▼",
+      "dir": "down",
+      "note_ko": "11/16 → 11/17 종가 · 美 재무부",
+      "note_en": "Nov 16 → Nov 17 close · US Treasury"
+    },
+    {
+      "label": "USD/KRW",
+      "value": "1,332",
+      "value_sub": "· DXY 103.76",
+      "delta": "▼0.28%",
+      "dir": "down",
+      "note_ko": "전일 1,335.67 대비",
+      "note_en": "vs prior 1,335.67"
+    },
+    {
+      "label": "Gold",
+      "value": "3,774",
+      "delta": "▼2.34%",
+      "dir": "down",
+      "note_ko": "금 선물 달러/온스 · 전일 3,864.20",
+      "note_en": "Gold futures, $/oz · prior 3,864.20"
+    },
+    {
+      "label": "WTI",
+      "value": "83.70",
+      "delta": "▼2.69%",
+      "dir": "down",
+      "note_ko": "12월물 선물 · 전일 86.01",
+      "note_en": "Dec futures · prior 86.01"
+    },
+    {
+      "label": "Bitcoin",
+      "value": "64,113",
+      "delta": "▼1.20%",
+      "dir": "down",
+      "note_ko": "11/8 74,585에서 약 14% 아래",
+      "note_en": "About 14% below Nov 8's 74,585"
+    }
+  ],
+  "market_note_ko": "S&P 500·나스닥은 선물, 코스피·코스닥은 11/18 종가 · 20:10 KST 조회",
+  "market_note_en": "S&P 500 and Nasdaq are futures; KOSPI and KOSDAQ are Nov 18 closes · as of 20:10 KST",
+  "tile_main": "KOSPI",
+  "tile_side": [
+    "NASDAQ",
+    "S&P 500"
+  ],
+  "tile_rest": [
+    "VIX",
+    "Fear&Greed",
+    "US 10Y",
+    "USD/KRW",
+    "Gold",
+    "WTI",
+    "Bitcoin"
+  ],
+  "main_tile_note": {
+    "ko": "98.96p 상승 · 최근 9거래일",
+    "en": "+98.96 pts · last 9 sessions"
+  },
+  "chart_series_values": [
+    5059.69,
+    5018.85,
+    5239.13,
+    5375.36,
+    5342.73,
+    5290.53,
+    5100.5,
+    4968.48,
+    5067.44
+  ],
+  "chart_series_labels": [
+    "11.6",
+    "11.9",
+    "11.10",
+    "11.11",
+    "11.12",
+    "11.13",
+    "11.16",
+    "11.17",
+    "11.18"
+  ],
+  "chart_title": {
+    "ko": "5,000선 아래에서 하루 만에 되돌렸다",
+    "en": "Back Above 5,000 After One Day Below"
+  },
+  "chart_sub": {
+    "ko": "코스피 종가 · 최근 9거래일",
+    "en": "KOSPI close · last 9 sessions"
+  },
+  "chart_note": {
+    "ko": "11.11 반등 고점 5,375.36 → 11.17 4,968.48 → 11.18 5,067.44",
+    "en": "Nov 11 rebound high 5,375.36 → Nov 17 4,968.48 → Nov 18 5,067.44"
+  },
+  "record_section": "코스피 · 코스닥 기록",
+  "record_kicker": "TODAY",
+  "sections": [
+    {
+      "title_ko": "코스피 · 코스닥 기록",
+      "title_en": "KOSPI & KOSDAQ Scorecard",
+      "color": "#e66767",
+      "type": "stats",
+      "cols": 1,
+      "stats": [
+        {
+          "label_ko": "코스피",
+          "label_en": "KOSPI",
+          "value": "5,067.44",
+          "delta": "▲1.99%",
+          "dir": "up",
+          "sub_ko": "98.96포인트 상승 · 장중 변동폭 189.97포인트",
+          "sub_en": "Up 98.96 pts · intraday range 189.97 pts"
+        },
+        {
+          "label_ko": "코스닥",
+          "label_en": "KOSDAQ",
+          "value": "662.81",
+          "delta": "▲1.96%",
+          "dir": "up",
+          "sub_ko": "12.75포인트 상승 · 11/11 705.10에서 6.0% 아래",
+          "sub_en": "Up 12.75 pts · 6.0% below Nov 11's 705.10"
+        }
+      ],
+      "breadth": [
+        {
+          "label_ko": "코스피 등락 종목수",
+          "label_en": "KOSPI advancers / decliners",
+          "up": 485,
+          "flat": 43,
+          "down": 383
+        },
+        {
+          "label_ko": "코스닥 등락 종목수",
+          "label_en": "KOSDAQ advancers / decliners",
+          "up": 967,
+          "flat": 86,
+          "down": 696
+        }
+      ],
+      "flows": {
+        "label_ko": "코스피 투자자별 순매수 (조원)",
+        "label_en": "KOSPI net buy/sell by investor (₩T)",
+        "rows": [
+          {
+            "label_ko": "개인",
+            "label_en": "Retail",
+            "value": -0.6
+          },
+          {
+            "label_ko": "외국인",
+            "label_en": "Foreign",
+            "value": -0.3
+          },
+          {
+            "label_ko": "기관",
+            "label_en": "Institution",
+            "value": 0.5
+          }
+        ]
+      },
+      "note_ko": "유가증권시장 정규장 기준, 매체 집계가 일치하는 자리까지 표기. 기관만 샀는데 지수는 1.99% 올랐다.",
+      "note_en": "Regular session, rounded to where outlets agree. Only institutions bought, yet KOSPI rose 1.99%."
+    },
+    {
+      "title_ko": "섹터별 등락",
+      "title_en": "Sector Moves",
+      "color": "#4a9d7f",
+      "type": "bars",
+      "bars": [
+        {
+          "label_ko": "전자장비·기기",
+          "label_en": "Elec. Equip.",
+          "value": 7.06
+        },
+        {
+          "label_ko": "기계",
+          "label_en": "Machinery",
+          "value": 5.18
+        },
+        {
+          "label_ko": "생명보험",
+          "label_en": "Life Ins.",
+          "value": 4.92
+        },
+        {
+          "label_ko": "반도체",
+          "label_en": "Semis",
+          "value": 4.41
+        },
+        {
+          "label_ko": "복합기업",
+          "label_en": "Conglom.",
+          "value": 3.69
+        },
+        {
+          "label_ko": "IT서비스",
+          "label_en": "IT Services",
+          "value": 3.58
+        },
+        {
+          "label_ko": "석유·가스",
+          "label_en": "Oil & Gas",
+          "value": 3.56
+        },
+        {
+          "label_ko": "전기장비",
+          "label_en": "Elec. Gear",
+          "value": 2.92
+        },
+        {
+          "label_ko": "자동차",
+          "label_en": "Autos",
+          "value": 2.26
+        },
+        {
+          "label_ko": "증권",
+          "label_en": "Brokers",
+          "value": 2.1
+        },
+        {
+          "label_ko": "우주항공·방산",
+          "label_en": "Aero & Def.",
+          "value": 1.68
+        },
+        {
+          "label_ko": "화학",
+          "label_en": "Chemicals",
+          "value": 0.96
+        },
+        {
+          "label_ko": "은행",
+          "label_en": "Banks",
+          "value": -0.65
+        },
+        {
+          "label_ko": "건설",
+          "label_en": "Construction",
+          "value": -1.02
+        },
+        {
+          "label_ko": "제약",
+          "label_en": "Pharma",
+          "value": -1.95
+        }
+      ],
+      "note_ko": "79개 업종 중 67개가 올랐다(어제는 10개). 반도체가 코스피보다 크게 올랐고 은행·건설·제약은 내렸다. 업종 값은 20시 무렵 애프터마켓(NXT)이 섞인 집계라 정규장 종가와 다를 수 있다.",
+      "note_en": "67 of 79 industries rose (10 yesterday). Semis beat KOSPI; banks, construction and pharma fell. Industry figures are a ~8 PM tally that includes after-market (NXT) trades, so they can differ from regular-session closes."
+    },
+    {
+      "title_ko": "거래대금 상위",
+      "title_en": "Top Turnover",
+      "color": "#3987e5",
+      "type": "rank",
+      "rows": [
+        {
+          "name_ko": "SK하이닉스",
+          "name_en": "SK hynix",
+          "value": "₩4.04T",
+          "pct": 4.19
+        },
+        {
+          "name_ko": "삼성전자",
+          "name_en": "Samsung Elec.",
+          "value": "₩3.43T",
+          "pct": 2.31
+        },
+        {
+          "name_ko": "삼성전기",
+          "name_en": "Samsung E-M",
+          "value": "₩0.84T",
+          "pct": 7.43
+        },
+        {
+          "name_ko": "삼성전자우",
+          "name_en": "Samsung Elec. Pref.",
+          "value": "₩0.70T",
+          "pct": 3.95
+        },
+        {
+          "name_ko": "삼성E&A",
+          "name_en": "Samsung E&A",
+          "value": "₩0.29T",
+          "pct": -5.6
+        }
+      ],
+      "note_ko": "ETF를 뺀 개별 종목(네이버 증권 집계, 야후 거래량×종가 추정과 약 8~10% 차이). 상위 5개 중 4개가 삼성 계열이고 합계는 5.26조원이다. 상장 당일인 에이엘로봇(0.64조원)은 뺐다.",
+      "note_en": "Individual stocks, ETFs excluded (Naver Finance tally, ~8-10% off a volume×close estimate). Four of the top five are Samsung group names, ₩5.26T combined. AL Robot (₩0.64T), listed today, is left out."
+    },
+    {
+      "title_ko": "실적 · 지표 발표",
+      "title_en": "Earnings & Data",
+      "color": "#5b8dd6",
+      "type": "stats",
+      "cols": 2,
+      "stats": [
+        {
+          "label_ko": "일본 10월 수출",
+          "label_en": "Japan Oct Exports",
+          "value": "16.7% → 20.5%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "전년비 · 예상 20.0%",
+          "sub_en": "YoY · est. 20.0%",
+          "ref_ko": "재무성 통관 기준 · 전년 동월비",
+          "ref_en": "MoF customs basis, YoY"
+        },
+        {
+          "label_ko": "일본 10월 수입",
+          "label_en": "Japan Oct Imports",
+          "value": "18.9% → 21.6%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "전년비 · 예상 25.8%",
+          "sub_en": "YoY · est. 25.8%",
+          "ref_ko": "재무성 통관 기준 · 전년 동월비",
+          "ref_en": "MoF customs basis, YoY"
+        },
+        {
+          "label_ko": "일본 10월 무역수지",
+          "label_en": "Japan Oct Trade Balance",
+          "value": "−536.6 → −476.5",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "단위 십억엔 · 예상 −956.0",
+          "sub_en": "¥ billions · est. -956.0",
+          "ref_ko": "수출−수입 · 마이너스는 적자",
+          "ref_en": "Exports minus imports; negative = deficit"
+        },
+        {
+          "label_ko": "유로존 10월 물가",
+          "label_en": "Euro Area Oct HICP",
+          "value": "3.8% → 4.0%",
+          "delta": "▲",
+          "dir": "up",
+          "sub_ko": "전년비 확정 · 예상 4.0% · 에너지 +21.0%",
+          "sub_en": "YoY final · est. 4.0% · energy +21.0%"
+        }
+      ],
+      "note_ko": "11/18 발표분. 변화 표기는 이전값 → 현재값이고, 예상치는 부연에 적었다. 유로존은 EU 통계국 확정치, 일본은 재무성 발표치(FXStreet 캘린더 기준)다.",
+      "note_en": "Nov 18 releases. Arrows show prior → current; estimates are in the sub-line. Euro area is Eurostat's final print; Japan is Ministry of Finance data via the FXStreet calendar."
+    },
+    {
+      "title_ko": "AI · 반도체 기술",
+      "title_en": "AI & Semis",
+      "color": "#7b6cd9",
+      "items": [
+        {
+          "headline_ko": "마이크로소프트, 자체 AI 모델 공개",
+          "headline_en": "Microsoft Unveils In-House AI Models",
+          "body_ko": "마이크로소프트는 이그나이트에서 코딩·보안 등 특화 모델을 내놨다(Axios 집계 6종). 오픈AI·앤스로픽보다 저렴하다는 주장은 자사 벤치마크 기준이다.",
+          "body_en": "At Ignite, Microsoft launched specialized coding and security models (six, per Axios), claiming lower costs than OpenAI and Anthropic on its own benchmarks.",
+          "src": "Axios"
+        },
+        {
+          "headline_ko": "삼성전기, 엔비디아와 기판·MLCC 협력 확대 보도",
+          "headline_en": "Samsung E-M Reported Deepening Nvidia Ties",
+          "body_ko": "머니투데이·ZDNet은 엔비디아가 삼성전기 기판 생산시설 확충 지원을 검토 중이라고 전했다. 삼성전기는 이날 7.43% 올랐다.",
+          "body_en": "MoneyToday and ZDNet report Nvidia is weighing support for Samsung Electro-Mechanics' substrate capacity. The stock rose 7.43% today.",
+          "src": "MoneyToday"
+        },
+        {
+          "headline_ko": "HBM4 가격, 내년 두 배 이상 전망 보도",
+          "headline_en": "HBM4 Prices Seen More Than Doubling Next Year",
+          "body_ko": "ZDNet 등은 HBM4 Gb당 가격이 올해 2.05달러 이상에서 내년 3~5.5달러로 오를 것이라는 분석을 전했다. 전망이며 확정 가격이 아니다.",
+          "body_en": "ZDNet and others cite an analysis seeing HBM4 prices per Gb rising from $2.05+ this year to $3-5.5 next year. It is a forecast, not a set price.",
+          "src": "ZDNet"
+        },
+        {
+          "headline_ko": "DB하이텍, 1,473억원에 서울 신사동 건물·토지 취득",
+          "headline_en": "DB HiTek Buys Seoul Property for ₩147.3B",
+          "body_ko": "AI 추론용 데이터센터 사업에 쓸 계획이라고 회사가 밝혔다. 같은 이사회에서 자기주식 소각과 420억원 자사주 신탁도 결의했다.",
+          "body_en": "The company says the site is for an AI-inference data center business. The same board approved a share cancellation and a ₩42B buyback trust.",
+          "src": "DART"
+        }
+      ]
+    },
+    {
+      "title_ko": "주요 소식",
+      "title_en": "Top Stories",
+      "color": "#d98a3c",
+      "items": [
+        {
+          "headline_ko": "한중 FTA 서비스·투자 협상 타결, 엔터주 급등",
+          "headline_en": "Korea-China FTA Deal Lifts Entertainment Stocks",
+          "body_ko": "산업통상부는 한·중 FTA 서비스·투자 후속협상 실질 타결을 선언했다. 중국은 게임·영화에 최혜국대우를 약속했다. 에스엠은 정규장 +14.3%, 애프터마켓은 상한가.",
+          "body_en": "Korea and China struck a deal on FTA services and investment; China pledged MFN treatment for games, films. SM: +14.3% regular, limit-up after hours.",
+          "src": "MOTIE",
+          "time": "11/18"
+        },
+        {
+          "headline_ko": "코스피 5,067.44, 기관 홀로 받은 5,000선 회복",
+          "headline_en": "KOSPI 5,067.44: Institutions Alone Drive the Rebound",
+          "body_ko": "장중 5,133.14까지 올랐다 4,943.17까지 밀렸지만 낮 12시 무렵 상승 전환해 오른 채 마감했다. 외국인·개인이 팔고 기관이 약 0.5조원 샀다.",
+          "body_en": "It hit 5,133.14, dipped to 4,943.17, turned positive near noon and held. Foreigners and retail sold; institutions bought about ₩0.5T.",
+          "src": "KRX",
+          "time": "11/18"
+        },
+        {
+          "headline_ko": "DB하이텍, 자사주 소각 · 420억원 신탁 취득 결의",
+          "headline_en": "DB HiTek Approves Share Cancellation and ₩42B Buyback",
+          "body_ko": "11/25 보통주 59만2,000주 등을 소각하고, 하나증권과 420억원 자사주 신탁(11/19~5/18)을 맺는다. 신규 취득분의 80%는 1년 내 소각한다.",
+          "body_en": "It will cancel 592,000 common shares and more on Nov 25 and sign a ₩42B trust with Hana Securities (Nov 19-May 18); 80% of new buybacks go to cancellation.",
+          "src": "DART",
+          "time": "11/18"
+        },
+        {
+          "headline_ko": "금 현물 3,777.83달러, 작년 9월 이후 최저",
+          "headline_en": "Spot Gold at $3,777.83, Lowest Since September 2025",
+          "body_ko": "로이터 기준 현물 금은 1.9% 내렸다. 美 금리 인상 전망과 달러 강세가 부담이라는 보도가 이어졌다. 금 선물은 −2.34%.",
+          "body_en": "Spot gold fell 1.9% per Reuters, with rate-hike bets and a stronger dollar cited. Gold futures fell 2.34%.",
+          "src": "Reuters",
+          "time": "11/18"
+        },
+        {
+          "headline_ko": "닛케이 +0.28%, 항셍 −0.91%",
+          "headline_en": "Nikkei +0.28%, Hang Seng -0.91%",
+          "body_ko": "닛케이225는 59,024.28, 항셍지수는 23,294.75로 마쳤다. 코스피(+1.99%)는 두 지수보다 크게 반등했다.",
+          "body_en": "The Nikkei 225 closed at 59,024.28 and the Hang Seng at 23,294.75. KOSPI (+1.99%) rebounded more than either.",
+          "src": "Yahoo Finance",
+          "time": "11/18"
+        },
+        {
+          "headline_ko": "에이엘로봇, 코스닥 상장 첫날 공모가 밑 마감",
+          "headline_en": "AL Robot Closes Below IPO Price on Debut",
+          "body_ko": "공모가 17,600원 대비 약 24.8% 낮은 13,240원 안팎에서 마쳤다는 보도가 나왔다. 거래대금은 0.64조원이었다.",
+          "body_en": "Reports put the close near ₩13,240, about 24.8% under the ₩17,600 IPO price. Turnover was ₩0.64T.",
+          "src": "Naver/KRX",
+          "time": "11/18"
+        }
+      ]
+    }
+  ],
+  "sector_title": {
+    "ko": "79개 업종 중 67개 상승",
+    "en": "67 of 79 Industries Rose"
+  },
+  "sector_sub": {
+    "ko": "네이버 업종 분류(코스피+코스닥) · 20시 무렵 집계(애프터마켓 포함) · 11/18",
+    "en": "Naver industry groups (KOSPI+KOSDAQ) · ~8 PM tally incl. after-market · Nov 18"
+  },
+  "rank_kicker": "TOP TURNOVER",
+  "rank_title": {
+    "ko": "거래대금 상위",
+    "en": "Top Turnover"
+  },
+  "rank_sub": {
+    "ko": "11/18 한국장 · 막대 옆은 등락률",
+    "en": "Nov 18 Korea · % = daily change"
+  },
+  "rank_unit": {
+    "ko": "단위 · 조원",
+    "en": "Unit · ₩ trillion"
+  },
+  "econ_kicker": "EARNINGS · DATA",
+  "econ_title": {
+    "ko": "실적 · 지표 발표",
+    "en": "Earnings & Data"
+  },
+  "econ_sub": {
+    "ko": "11/18 발표분 · 일본·유로존",
+    "en": "Nov 18 releases · Japan & euro area"
+  },
+  "tech_section": "AI · 반도체 기술",
+  "stories_section": "주요 소식",
+  "schedule_kicker": "KEY SCHEDULE",
+  "schedule_sub": {
+    "ko": "한국시간 기준 · 노란 점 = 주목",
+    "en": "KST · yellow dot = key event"
+  },
+  "schedule_title_ko": "주요 일정",
+  "schedule_title_en": "Key Schedule",
+  "market_hours": {
+    "title_ko": "미국 증시 운영시간",
+    "title_en": "US Market Hours",
+    "lines_ko": [
+      "정규장 23:30 ~ 익일 06:00 (동절기 기준) · 프리마켓 18:00 ~ 23:30"
+    ],
+    "lines_en": [
+      "Regular session 11:30 PM - 6:00 AM KST (standard time) · Pre-market 6:00 PM - 11:30 PM"
+    ]
+  },
+  "schedule": [
+    {
+      "time": "11/18 22:30",
+      "title_ko": "美 10월 주택착공·건축허가",
+      "title_en": "US Oct Housing Starts & Permits",
+      "detail_ko": "착공 예상 1.27M · 이전 1.221M / 허가 예상 1.38M · 이전 1.40M",
+      "detail_en": "Starts est. 1.27M · prior 1.221M / permits est. 1.38M · prior 1.40M",
+      "importance": "mid"
+    },
+    {
+      "time": "11/18 23:25",
+      "title_ko": "라가르드 ECB 총재 연설",
+      "title_en": "ECB's Lagarde Speaks",
+      "detail_ko": "유로존 10월 물가 4.0% 확정 직후",
+      "detail_en": "Right after euro-area October inflation was confirmed at 4.0%",
+      "importance": "mid"
+    },
+    {
+      "time": "11/19 00:00",
+      "title_ko": "美 10월 잠정주택매매 (전월비)",
+      "title_en": "US Oct Pending Home Sales (MoM)",
+      "detail_ko": "예상 −2.1% · 이전 −7.3%",
+      "detail_en": "Est. -2.1% · prior -7.3%",
+      "importance": "mid"
+    },
+    {
+      "time": "11/19 04:00",
+      "title_ko": "FOMC 10월 회의 의사록",
+      "title_en": "FOMC Minutes (Oct Meeting)",
+      "detail_ko": "시장은 12월 25bp 인상을 95% 안팎으로 반영(복수 매체)",
+      "detail_en": "Markets price about 95% odds of a 25bp December hike (multiple outlets)",
+      "importance": "high"
+    },
+    {
+      "time": "11/19 04:30",
+      "title_ko": "윌리엄스 뉴욕 연은 총재 발언",
+      "title_en": "Fed's Williams Speaks",
+      "detail_ko": "FOMC 상임 투표위원 · 투표권 O",
+      "detail_en": "Permanent FOMC voter",
+      "importance": "mid"
+    },
+    {
+      "time": "11/19 06:15",
+      "title_ko": "카시카리 미니애폴리스 연은 총재 발언",
+      "title_en": "Fed's Kashkari Speaks",
+      "detail_ko": "올해 FOMC 투표권 O",
+      "detail_en": "2026 FOMC voter",
+      "importance": "mid"
+    },
+    {
+      "time": "11/19 AM",
+      "title_ko": "앤스로픽 IPO 공모가 확정",
+      "title_en": "Anthropic IPO Pricing",
+      "detail_ko": "희망 70~78달러 · 19일 나스닥(ANT) 첫 거래 예정",
+      "detail_en": "Range $70-78 · first trade on Nasdaq (ANT) expected Nov 19",
+      "importance": "high"
+    }
+  ],
+  "next_brief_ko": "☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "next_brief_en": "☀️ Next brief — 8 AM KST, US close wrap-up",
+  "outro_tagline_ko": "",
+  "outro_tagline_en": "",
+  "card_photos": {
+    "1": "The Seoul skyline at dusk, a brokerage trading screen glowing green and red above the city lights, shallow depth of field, warm amber and cool blue tones, no text.",
+    "3": "A dark trading room with rising green index charts on a wall of monitors, a few traders in silhouette, moody low-key lighting, no text."
+  },
+  "caption_ko": "📊 luckyon 브리핑 · 2026.11.18(수) 저녁\n\n코스피가 1.99% 오른 5,067.44로 마감하며 하루 만에 5,000선을 되찾았습니다. 장중 변동폭은 190포인트에 달했습니다.\n\n기관이 약 0.5조원 순매수했고 외국인(약 −0.3조원)과 개인(약 −0.6조원)은 팔았습니다. 한중 FTA 서비스·투자 후속협상 타결 소식에 엔터주가 급등했습니다.\n\n내일 새벽 4시 FOMC 의사록, 내일 오전 앤스로픽 공모가 확정이 이어집니다.\n\n저장해 두고 내일 아침 8시 브리핑에서 이어서 확인하세요.\n\n#코스피 #코스닥 #주식 #증시 #삼성전자 #SK하이닉스 #엔터주 #한한령 #앤스로픽 #FOMC #나스닥 #환율 #경제 #투자 #luckyon\n\n☀️ 다음 브리핑 — 내일 아침 8시, 미국장 마감 정리",
+  "caption_en": "📊 luckyon Briefing · Wed, Nov 18, 2026 · PM\n\nKOSPI rose 1.99% to 5,067.44, back above 5,000 in a day, after a swing of nearly 190 points.\n\nInstitutions net bought about ₩0.5T while foreigners (about -₩0.3T) and retail (about -₩0.6T) sold. Entertainment stocks jumped on the Korea-China FTA services and investment deal.\n\n4 AM KST: FOMC minutes. Tomorrow morning KST: Anthropic's IPO pricing.\n\nSave this and check the 8 AM brief tomorrow.\n\n#KOSPI #KOSDAQ #Stocks #Korea #Samsung #SKhynix #Entertainment #Anthropic #FOMC #Nasdaq #Markets #Economy #Investing #luckyon\n\n☀️ Next brief — 8 AM KST, US close wrap-up",
+  "sources": [
+    "Yahoo Finance",
+    "네이버 증권 (krx-market.json)",
+    "DART",
+    "FMP",
+    "FXStreet 경제캘린더",
+    "CNN Fear & Greed",
+    "미 재무부",
+    "시사저널e",
+    "위키트리",
+    "뉴스핌",
+    "Axios",
+    "CNBC",
+    "산업통상부"
+  ]
+}
