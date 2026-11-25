@@ -1,151 +1,11 @@
 {
-  "fetchedAt": "2026-11-25T04:55:03Z",
+  "fetchedAt": "2026-11-25T20:26:53Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-23T04:55:03Z",
-    "to": "2026-12-09T04:55:03Z"
+    "from": "2026-11-23T20:26:53Z",
+    "to": "2026-12-09T20:26:53Z"
   },
   "events": [
-    {
-      "at": "2026-11-23T08:30:00Z",
-      "country": "DE",
-      "name": "HCOB Composite PMI",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": 53.4,
-      "actual": 55,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T08:30:00Z",
-      "country": "DE",
-      "name": "HCOB Manufacturing PMI",
-      "impact": "HIGH",
-      "consensus": 54.1,
-      "previous": 54.2,
-      "actual": 55,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T08:30:00Z",
-      "country": "DE",
-      "name": "HCOB Services PMI",
-      "impact": "HIGH",
-      "consensus": 52.2,
-      "previous": 52.5,
-      "actual": 54,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T09:00:00Z",
-      "country": "EMU",
-      "name": "HCOB Composite PMI",
-      "impact": "HIGH",
-      "consensus": null,
-      "previous": 51.7,
-      "actual": 51.7,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T09:00:00Z",
-      "country": "EMU",
-      "name": "HCOB Manufacturing PMI",
-      "impact": "HIGH",
-      "consensus": 52.8,
-      "previous": 52.7,
-      "actual": 52.9,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T09:00:00Z",
-      "country": "EMU",
-      "name": "HCOB Services PMI",
-      "impact": "HIGH",
-      "consensus": 51.8,
-      "previous": 51.4,
-      "actual": 51.2,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T13:30:00Z",
-      "country": "US",
-      "name": "Chicago Fed National Activity Index ",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 0.07,
-      "actual": -0.06,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T14:30:00Z",
-      "country": "EMU",
-      "name": "ECB's Lane speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T14:45:00Z",
-      "country": "US",
-      "name": "S&P Global Composite PMI",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": 55.9,
-      "actual": 54.6,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T14:45:00Z",
-      "country": "US",
-      "name": "S&P Global Manufacturing PMI",
-      "impact": "HIGH",
-      "consensus": 54.6,
-      "previous": 54.9,
-      "actual": 54.5,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T14:45:00Z",
-      "country": "US",
-      "name": "S&P Global Services PMI",
-      "impact": "HIGH",
-      "consensus": 55.8,
-      "previous": 56.1,
-      "actual": 54.7,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T16:30:00Z",
-      "country": "US",
-      "name": "3-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": 4.111,
-      "previous": 4.155,
-      "actual": 4.18,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-23T16:30:00Z",
-      "country": "US",
-      "name": "6-Month Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.31,
-      "actual": 4.34,
-      "unit": "%"
-    },
-    {
-      "at": "2026-11-23T18:00:00Z",
-      "country": "US",
-      "name": "2-Year Note Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.708,
-      "actual": 4.7,
-      "unit": "%"
-    },
     {
       "at": "2026-11-23T21:00:00Z",
       "country": "KR",
@@ -343,7 +203,7 @@
       "impact": "MEDIUM",
       "consensus": 0.2,
       "previous": 0.2,
-      "actual": null,
+      "actual": 0.1,
       "unit": "%"
     },
     {
@@ -353,7 +213,7 @@
       "impact": "MEDIUM",
       "consensus": 1.2,
       "previous": 1.2,
-      "actual": null,
+      "actual": 1.1,
       "unit": "%"
     },
     {
@@ -363,7 +223,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 1.3,
-      "actual": null,
+      "actual": 1.2,
       "unit": "%"
     },
     {
@@ -377,14 +237,24 @@
       "unit": null
     },
     {
-      "at": "2026-11-25T10:30:00Z",
+      "at": "2026-11-25T10:40:00Z",
       "country": "DE",
       "name": "10-y Bond Auction",
       "impact": "LOW",
       "consensus": null,
       "previous": 3.58,
-      "actual": null,
+      "actual": 3.22,
       "unit": "%"
+    },
+    {
+      "at": "2026-11-25T11:25:00Z",
+      "country": "EMU",
+      "name": "ECB's Kocher speech",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     },
     {
       "at": "2026-11-25T12:00:00Z",
@@ -393,7 +263,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -2.3,
-      "actual": null,
+      "actual": 6.1,
       "unit": "%"
     },
     {
@@ -403,7 +273,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.763,
-      "actual": null,
+      "actual": 1.697,
       "unit": null
     },
     {
@@ -413,7 +283,7 @@
       "impact": "HIGH",
       "consensus": 0.3,
       "previous": 0.3,
-      "actual": null,
+      "actual": 0.3,
       "unit": "%"
     },
     {
@@ -423,7 +293,7 @@
       "impact": "HIGH",
       "consensus": 3.2,
       "previous": 3.1,
-      "actual": null,
+      "actual": 3.3,
       "unit": "%"
     },
     {
@@ -433,7 +303,7 @@
       "impact": "MEDIUM",
       "consensus": 2.5,
       "previous": 2.5,
-      "actual": null,
+      "actual": 2.5,
       "unit": "%"
     },
     {
@@ -443,7 +313,7 @@
       "impact": "MEDIUM",
       "consensus": 0.4,
       "previous": 1.8,
-      "actual": null,
+      "actual": 0.2,
       "unit": "%"
     },
     {
@@ -453,7 +323,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 2.2,
-      "actual": null,
+      "actual": 0.4,
       "unit": "%"
     },
     {
@@ -463,7 +333,7 @@
       "impact": "MEDIUM",
       "consensus": 0.5,
       "previous": 0.5,
-      "actual": null,
+      "actual": 0.5,
       "unit": "%"
     },
     {
@@ -473,7 +343,7 @@
       "impact": "MEDIUM",
       "consensus": 3.4,
       "previous": 3.4,
-      "actual": null,
+      "actual": 4.3,
       "unit": "%"
     },
     {
@@ -483,7 +353,7 @@
       "impact": "MEDIUM",
       "consensus": 2.3,
       "previous": 2.2,
-      "actual": null,
+      "actual": 1.8,
       "unit": "%"
     },
     {
@@ -493,7 +363,7 @@
       "impact": "MEDIUM",
       "consensus": 200,
       "previous": 203,
-      "actual": null,
+      "actual": 189,
       "unit": null
     },
     {
@@ -503,7 +373,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 197.75,
-      "actual": null,
+      "actual": 196,
       "unit": null
     },
     {
@@ -513,7 +383,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": 0.5,
-      "actual": null,
+      "actual": 1.2,
       "unit": "%"
     },
     {
@@ -523,7 +393,7 @@
       "impact": "MEDIUM",
       "consensus": 0.3,
       "previous": 0.5,
-      "actual": null,
+      "actual": 0.3,
       "unit": "%"
     },
     {
@@ -533,7 +403,7 @@
       "impact": "MEDIUM",
       "consensus": 3.8,
       "previous": 3.6,
-      "actual": null,
+      "actual": 3.8,
       "unit": "%"
     },
     {
@@ -543,7 +413,7 @@
       "impact": "MEDIUM",
       "consensus": 2.1,
       "previous": 2.1,
-      "actual": null,
+      "actual": 2.1,
       "unit": "%"
     },
     {
@@ -553,7 +423,7 @@
       "impact": "MEDIUM",
       "consensus": 0.4,
       "previous": 0.2,
-      "actual": null,
+      "actual": 0.7,
       "unit": "%"
     },
     {
@@ -563,7 +433,17 @@
       "impact": "MEDIUM",
       "consensus": 0.4,
       "previous": 0.5,
-      "actual": null,
+      "actual": 0.3,
+      "unit": "%"
+    },
+    {
+      "at": "2026-11-25T15:00:00Z",
+      "country": "US",
+      "name": "4-Week Bill Auction",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.05,
+      "actual": 4.115,
       "unit": "%"
     },
     {
@@ -573,7 +453,7 @@
       "impact": "LOW",
       "consensus": 0.65,
       "previous": 0.676,
-      "actual": null,
+      "actual": 0.701,
       "unit": null
     },
     {
@@ -583,7 +463,7 @@
       "impact": "MEDIUM",
       "consensus": null,
       "previous": -0.6,
-      "actual": null,
+      "actual": 14.2,
       "unit": "%"
     },
     {
@@ -593,7 +473,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 3.38,
-      "actual": null,
+      "actual": 1.109,
       "unit": null
     },
     {
@@ -603,7 +483,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 1.571,
-      "actual": null,
+      "actual": 0.715,
       "unit": null
     },
     {
@@ -613,7 +493,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 5.192,
-      "actual": null,
+      "actual": 1.733,
       "unit": null
     },
     {
@@ -623,18 +503,8 @@
       "impact": "LOW",
       "consensus": null,
       "previous": -0.775,
-      "actual": null,
+      "actual": 0.219,
       "unit": null
-    },
-    {
-      "at": "2026-11-25T16:30:00Z",
-      "country": "US",
-      "name": "4-Week Bill Auction",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 4.05,
-      "actual": null,
-      "unit": "%"
     },
     {
       "at": "2026-11-25T17:00:00Z",
@@ -643,7 +513,7 @@
       "impact": "LOW",
       "consensus": -19,
       "previous": 20,
-      "actual": null,
+      "actual": -20,
       "unit": null
     },
     {
@@ -653,7 +523,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 4.894,
-      "actual": null,
+      "actual": 4.708,
       "unit": "%"
     },
     {
@@ -663,7 +533,7 @@
       "impact": "LOW",
       "consensus": null,
       "previous": 469,
-      "actual": null,
+      "actual": 470,
       "unit": null
     },
     {
@@ -811,7 +681,7 @@
       "country": "JP",
       "name": "Tokyo CPI ex Fresh Food (YoY)",
       "impact": "MEDIUM",
-      "consensus": 2.9,
+      "consensus": 3,
       "previous": 2.6,
       "actual": null,
       "unit": "%"
@@ -851,7 +721,7 @@
       "country": "DE",
       "name": "Unemployment Change",
       "impact": "MEDIUM",
-      "consensus": 5,
+      "consensus": 4,
       "previous": 4,
       "actual": null,
       "unit": null
@@ -891,7 +761,7 @@
       "country": "EMU",
       "name": "Economic Sentiment Indicator",
       "impact": "MEDIUM",
-      "consensus": 97.1,
+      "consensus": 97.2,
       "previous": 96.9,
       "actual": null,
       "unit": null
@@ -901,7 +771,7 @@
       "country": "EMU",
       "name": "Industrial Confidence",
       "impact": "LOW",
-      "consensus": -3.2,
+      "consensus": -3.3,
       "previous": -3.4,
       "actual": null,
       "unit": null
@@ -1682,7 +1552,7 @@
       "name": "MBA Mortgage Applications",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 6.1,
       "actual": null,
       "unit": "%"
     },
@@ -1702,7 +1572,7 @@
       "name": "EIA Crude Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.109,
       "actual": null,
       "unit": null
     },
@@ -1712,7 +1582,7 @@
       "name": "EIA Distillate Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 0.715,
       "actual": null,
       "unit": null
     },
@@ -1722,7 +1592,7 @@
       "name": "EIA Gasoline Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.733,
       "actual": null,
       "unit": null
     },
@@ -1732,7 +1602,7 @@
       "name": "EIA Heating Oil Stocks Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 0.219,
       "actual": null,
       "unit": null
     },
@@ -1872,7 +1742,7 @@
       "name": "Continuing Jobless Claims",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 1.697,
       "actual": null,
       "unit": null
     },
@@ -1882,7 +1752,7 @@
       "name": "Initial Jobless Claims",
       "impact": "MEDIUM",
       "consensus": null,
-      "previous": null,
+      "previous": 189,
       "actual": null,
       "unit": null
     },
@@ -1892,7 +1762,7 @@
       "name": "Initial Jobless Claims 4-week average",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 196,
       "actual": null,
       "unit": null
     },
@@ -1972,7 +1842,7 @@
       "name": "EIA Natural Gas Storage Change",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": -20,
       "actual": null,
       "unit": null
     },
@@ -1982,7 +1852,7 @@
       "name": "4-Week Bill Auction",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 4.115,
       "actual": null,
       "unit": "%"
     },
@@ -2132,7 +2002,7 @@
       "name": "Baker Hughes US Oil Rig Count",
       "impact": "LOW",
       "consensus": null,
-      "previous": null,
+      "previous": 470,
       "actual": null,
       "unit": null
     },
@@ -2675,6 +2545,216 @@
       "previous": 5.7,
       "actual": null,
       "unit": "%"
+    },
+    {
+      "at": "2026-12-09T06:00:00Z",
+      "country": "JP",
+      "name": "Machine Tool Orders (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 42.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T07:00:00Z",
+      "country": "DE",
+      "name": "Exports (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T07:00:00Z",
+      "country": "DE",
+      "name": "Imports (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 4.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T07:00:00Z",
+      "country": "DE",
+      "name": "Trade Balance s.a.",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": 15.6,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-12-09T12:00:00Z",
+      "country": "US",
+      "name": "MBA Mortgage Applications",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T15:00:00Z",
+      "country": "US",
+      "name": "Existing Home Sales (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 3.75,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T15:00:00Z",
+      "country": "US",
+      "name": "Existing Home Sales Change (MoM)",
+      "impact": "MEDIUM",
+      "consensus": null,
+      "previous": -5.5,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T15:00:00Z",
+      "country": "US",
+      "name": "Wholesale Inventories",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T15:30:00Z",
+      "country": "US",
+      "name": "EIA Crude Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T15:30:00Z",
+      "country": "US",
+      "name": "EIA Distillate Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T15:30:00Z",
+      "country": "US",
+      "name": "EIA Gasoline Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T15:30:00Z",
+      "country": "US",
+      "name": "EIA Heating Oil Stocks Change",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Fed Interest Rate Decision",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 4,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Fed Monetary Policy Statement",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "FOMC Economic Projections",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 1st year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 4.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 2nd year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.9,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - 3rd year",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.6,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - Current",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 4.1,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:00:00Z",
+      "country": "US",
+      "name": "Interest Rate Projections - Longer",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": 3.2,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T19:30:00Z",
+      "country": "US",
+      "name": "FOMC Press Conference",
+      "impact": "HIGH",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
     }
   ]
 }
