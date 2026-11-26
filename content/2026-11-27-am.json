@@ -1,0 +1,621 @@
+{
+ "date": "2026-11-27",
+ "session": "am",
+ "dateLabel_ko": "2026.11.27(금) 아침",
+ "dateLabel_en": "Fri, Nov 27, 2026 · Morning",
+ "headline_ko": "美 증시 하루 쉬고 오늘 밤 단축 개장",
+ "headline_en": "US Stocks Reopen Tonight for a Short Session",
+ "headline_sub_ko": "나스닥 11/25 종가 23,585.80 ▼0.62% · 엔비디아·마이크론 4%대 하락 · 코스피 4,711",
+ "headline_sub_en": "Nasdaq Nov 25 close 23,585.80 -0.62% · Nvidia, Micron fell ~4% · KOSPI 4,711",
+ "cover_photo": "photos/nyse.jpg",
+ "cover_kicker": {
+  "ko": "美 휴장 · 마지막 거래일 11/25",
+  "en": "US Holiday · Last Session Nov 25"
+ },
+ "cover_facts": [
+  [
+   "shield",
+   {
+    "ko": "나스닥 -0.62% · S&P 500 -0.25%",
+    "en": "Nasdaq -0.62% · S&P 500 -0.25%"
+   },
+   {
+    "ko": "23,585.80 / 7,182.78 · 11/26은 추수감사절 휴장",
+    "en": "23,585.80 / 7,182.78 · closed Nov 26 for Thanksgiving"
+   }
+  ],
+  [
+   "chip",
+   {
+    "ko": "엔비디아 -3.91% · 마이크론 -4.57%",
+    "en": "Nvidia -3.91% · Micron -4.57%"
+   },
+   {
+    "ko": "11/25 美 거래대금 1·2위 · 반도체 ETF(SMH) -1.01%",
+    "en": "No. 1 and 2 by US turnover Nov 25 · SMH -1.01%"
+   }
+  ],
+  [
+   "globe",
+   {
+    "ko": "코스피 4,711.21 · 장중 4,800선 터치 뒤 반납",
+    "en": "KOSPI 4,711.21 · pared gains after touching 4,800"
+   },
+   {
+    "ko": "오늘 밤 美 증시 23:30~03:00 단축 거래",
+    "en": "US stocks trade 11:30 PM-3 AM KST tonight"
+   }
+  ]
+ ],
+ "summary": {
+  "lines_ko": [
+   "美 증시는 추수감사절로 26일 하루 쉬었다. 마지막 거래일인 11/25 나스닥은 0.62% 내린 23,585.80, S&P 500은 0.25% 내린 7,182.78로 마감했다. 이틀 연속 하락이다.",
+   "반도체가 내림세를 이끌었다. 거래대금 1위 엔비디아는 3.91%, 2위 마이크론은 4.57% 내렸고 반도체 ETF(SMH)는 1.01% 내렸다.",
+   "거래 상위 300종목 중 오른 종목이 212개로 내린 83개보다 많았지만, 거래대금은 하락 종목 쪽이 58.7%를 차지했다.",
+   "코스피는 26일 4,711.21(+0.29%)로 마감했다. 美 증시는 오늘 한국시간 23:30부터 28일 03:00까지 단축 거래한다."
+  ],
+  "lines_en": [
+   "US stocks were closed Nov 26 for Thanksgiving. On the last session, Nov 25, the Nasdaq fell 0.62% to 23,585.80 and the S&P 500 fell 0.25% to 7,182.78 - a second straight decline.",
+   "Chips led the drop: No. 1 by turnover Nvidia fell 3.91%, No. 2 Micron fell 4.57%, and the chip ETF SMH lost 1.01%.",
+   "Among the 300 most-traded names, 212 rose and 83 fell, yet 58.7% of dollar turnover went to decliners.",
+   "KOSPI closed Nov 26 at 4,711.21 (+0.29%). US stocks trade a short session tonight, 11:30 PM to 3 AM KST."
+  ]
+ },
+ "markets": [
+  {
+   "label": "NASDAQ",
+   "value": "23,586",
+   "value_sub": null,
+   "delta": "▼0.62%",
+   "dir": "down",
+   "note_ko": "11/25 종가 · 11/24 23,733.54 대비 · 11/26 휴장",
+   "note_en": "Nov 25 close · vs 23,733.54 Nov 24 · closed Nov 26"
+  },
+  {
+   "label": "S&P 500",
+   "value": "7,183",
+   "value_sub": null,
+   "delta": "▼0.25%",
+   "dir": "down",
+   "note_ko": "11/25 종가 · 11/24 7,201.09 대비 · 11/26 휴장",
+   "note_en": "Nov 25 close · vs 7,201.09 Nov 24 · closed Nov 26"
+  },
+  {
+   "label": "KOSPI",
+   "value": "4,711.21",
+   "value_sub": null,
+   "delta": "▲0.29%",
+   "dir": "up",
+   "note_ko": "11/26 종가 · 전일 4,697.51 대비 · 오늘 개장 전",
+   "note_en": "Nov 26 close · vs 4,697.51 prior · before today's open"
+  },
+  {
+   "label": "VIX",
+   "value": "28.29",
+   "value_sub": null,
+   "delta": "▲7.32%",
+   "dir": "up",
+   "note_ko": "11/25 종가 · 11/24 종가 26.36 대비 · 美 휴장",
+   "note_en": "Nov 25 close · vs 26.36 Nov 24 · US closed"
+  },
+  {
+   "label": "Fear&Greed",
+   "value": "15 → 15",
+   "value_sub": {
+    "ko": "· 극단적 공포",
+    "en": "· Extreme Fear"
+   },
+   "delta": "-",
+   "dir": "flat",
+   "note_ko": "극단적 공포 구간(0~24) · 1주 전 16 · 1개월 전 30",
+   "note_en": "Extreme Fear zone (0-24) · 1 week ago 16 · 1 month ago 30"
+  },
+  {
+   "label": "US 10Y",
+   "value": "4.91% → 4.85%",
+   "value_sub": null,
+   "delta": "▼",
+   "dir": "down",
+   "note_ko": "11/24→11/25 종가 · 11/26 美 채권시장 휴장",
+   "note_en": "Nov 24 to Nov 25 close · US bond market closed Nov 26"
+  },
+  {
+   "label": "USD/KRW",
+   "value": "1,343",
+   "value_sub": "· DXY 103.78",
+   "delta": "▲0.05%",
+   "dir": "up",
+   "note_ko": "뉴욕 마감 환율 · 전일 1,342.65 대비",
+   "note_en": "NY close · vs 1,342.65 prior"
+  },
+  {
+   "label": "Gold",
+   "value": "3,536",
+   "value_sub": null,
+   "delta": "▼0.73%",
+   "dir": "down",
+   "note_ko": "금 선물 달러/온스 · 11/25 정산 · 11/24 3,561.90 대비",
+   "note_en": "Gold futures $/oz · Nov 25 settle · vs 3,561.90 Nov 24"
+  },
+  {
+   "label": "WTI",
+   "value": "83.68",
+   "value_sub": null,
+   "delta": "▲1.99%",
+   "dir": "up",
+   "note_ko": "1월물 · 11/25 정산 · 11/24 82.05 대비",
+   "note_en": "Jan contract · Nov 25 settle · vs 82.05 Nov 24"
+  },
+  {
+   "label": "Bitcoin",
+   "value": "60,518",
+   "value_sub": null,
+   "delta": "▲0.23%",
+   "dir": "up",
+   "note_ko": "11/26 저녁 시세 · 11/25 종가 60,378 대비",
+   "note_en": "Nov 26 evening price · vs 60,378 Nov 25 close"
+  }
+ ],
+ "tile_main": "NASDAQ",
+ "tile_side": [
+  "S&P 500",
+  "KOSPI"
+ ],
+ "tile_rest": [
+  "VIX",
+  "Fear&Greed",
+  "US 10Y",
+  "USD/KRW",
+  "Gold",
+  "WTI",
+  "Bitcoin"
+ ],
+ "main_tile_note": {
+  "ko": "11/20 저점 22,617.73에서 +4.28%",
+  "en": "+4.28% from the Nov 20 low of 22,617.73"
+ },
+ "market_note_ko": "※ 美 지수·VIX·10년물·금·WTI는 11/25 종가(정산)(11/26 美 휴장), 코스피는 11/26 종가, 환율·비트코인은 11/26 저녁 시세",
+ "market_note_en": "※ US indexes, VIX, 10Y, gold, WTI: Nov 25 close/settle (US closed Nov 26); KOSPI: Nov 26 close; KRW and bitcoin: Nov 26 evening",
+ "chart_series_values": [
+  25136.27,
+  24509.76,
+  24328.38,
+  24429.88,
+  23879.2,
+  22617.73,
+  24089.56,
+  23733.54,
+  23585.8
+ ],
+ "chart_series_labels": [
+  "11.13",
+  "11.16",
+  "11.17",
+  "11.18",
+  "11.19",
+  "11.20",
+  "11.23",
+  "11.24",
+  "11.25"
+ ],
+ "chart_title": {
+  "ko": "나스닥, 11/20 저점 뒤 반등하다 이틀 연속 하락",
+  "en": "Nasdaq Rebounds From Nov 20 Low, Then Slips Two Days"
+ },
+ "chart_sub": {
+  "ko": "나스닥종합 종가 · 최근 9거래일",
+  "en": "Nasdaq Composite close · last 9 sessions"
+ },
+ "chart_note": {
+  "ko": "11.20 22,617.73  →  11.23 24,089.56  →  11.25 23,585.80",
+  "en": "Nov 20 22,617.73  →  Nov 23 24,089.56  →  Nov 25 23,585.80"
+ },
+ "record_section": "미국장 기록",
+ "record_kicker": "LAST SESSION",
+ "sector_section": "섹터별 등락",
+ "sector_title": {
+  "ko": "소재 +2.07%, 반도체 -1.01%",
+  "en": "Materials +2.07%, Semis -1.01%"
+ },
+ "sector_sub": {
+  "ko": "美 섹터 ETF(시총 가중) · 11/25 종가",
+  "en": "US sector ETFs (cap-weighted) · Nov 25 close"
+ },
+ "rank_kicker": "TOP TURNOVER",
+ "rank_title": {
+  "ko": "거래대금 상위",
+  "en": "Top Turnover"
+ },
+ "rank_sub": {
+  "ko": "11/25 美 주식 · 막대 옆은 등락률",
+  "en": "US stocks Nov 25 · change shown beside bars"
+ },
+ "rank_unit": {
+  "ko": "단위 · 십억달러",
+  "en": "Unit · $ billion"
+ },
+ "econ_kicker": "US · DATA",
+ "econ_title": {
+  "ko": "실적 · 지표 발표",
+  "en": "Earnings & Data"
+ },
+ "econ_sub": {
+  "ko": "11/25 종가 · 전 거래일 대비",
+  "en": "Nov 25 close · vs prior session"
+ },
+ "tech_section": "AI · 반도체 기술",
+ "stories_section": "주요 소식",
+ "sections": [
+  {
+   "title_ko": "미국장 기록",
+   "title_en": "US Market Scorecard",
+   "color": "#e66767",
+   "type": "stats",
+   "cols": 1,
+   "stats": [
+    {
+     "label_ko": "나스닥종합",
+     "label_en": "Nasdaq Composite",
+     "value": "23,585.80",
+     "delta": "▼0.62%",
+     "dir": "down",
+     "sub_ko": "147.74포인트 하락 · 전일 23,733.54",
+     "sub_en": "Down 147.74 pts · prior 23,733.54"
+    },
+    {
+     "label_ko": "S&P 500",
+     "label_en": "S&P 500",
+     "value": "7,182.78",
+     "delta": "▼0.25%",
+     "dir": "down",
+     "sub_ko": "18.31포인트 하락 · 전일 7,201.09",
+     "sub_en": "Down 18.31 pts · prior 7,201.09"
+    }
+   ],
+   "breadth": [
+    {
+     "label_ko": "거래 상위 300종목",
+     "label_en": "Top 300 by volume",
+     "up": 212,
+     "flat": 5,
+     "down": 83
+    }
+   ],
+   "note_ko": "11/25 마지막 거래일 기준(26일 휴장). 등락 종목수는 야후 거래 상위 300종목 표본. 11/20 나스닥은 5.28% 급락했고 이후 3거래일간 4.28% 반등했다.",
+   "note_en": "Last session Nov 25 (closed Nov 26). Breadth is the Yahoo top-300 most-active sample. Nasdaq fell 5.28% on Nov 20, then regained 4.28% over three sessions."
+  },
+  {
+   "title_ko": "섹터별 등락",
+   "title_en": "Sector Moves",
+   "color": "#4a9d7f",
+   "type": "bars",
+   "bars": [
+    {
+     "label_ko": "소재 (XLB)",
+     "label_en": "Materials (XLB)",
+     "value": 2.07
+    },
+    {
+     "label_ko": "부동산 (XLRE)",
+     "label_en": "Real Estate (XLRE)",
+     "value": 0.92
+    },
+    {
+     "label_ko": "통신 (XLC)",
+     "label_en": "Comm. (XLC)",
+     "value": 0.89
+    },
+    {
+     "label_ko": "산업재 (XLI)",
+     "label_en": "Indu. (XLI)",
+     "value": 0.83
+    },
+    {
+     "label_ko": "에너지 (XLE)",
+     "label_en": "Energy (XLE)",
+     "value": 0.74
+    },
+    {
+     "label_ko": "금융 (XLF)",
+     "label_en": "Financials (XLF)",
+     "value": 0.71
+    },
+    {
+     "label_ko": "유틸리티 (XLU)",
+     "label_en": "Utilities (XLU)",
+     "value": 0.48
+    },
+    {
+     "label_ko": "필수소비 (XLP)",
+     "label_en": "Staples (XLP)",
+     "value": 0.46
+    },
+    {
+     "label_ko": "경기소비 (XLY)",
+     "label_en": "Discret. (XLY)",
+     "value": -0.2
+    },
+    {
+     "label_ko": "헬스케어 (XLV)",
+     "label_en": "Health (XLV)",
+     "value": -0.56
+    },
+    {
+     "label_ko": "기술 (XLK)",
+     "label_en": "Tech (XLK)",
+     "value": -0.83
+    },
+    {
+     "label_ko": "반도체 (SMH)",
+     "label_en": "Semis (SMH)",
+     "value": -1.01
+    }
+   ],
+   "note_ko": "소재·부동산·통신이 올랐고 반도체·기술이 내렸다. 11/25 종가, 전일 대비. 美 섹터 ETF는 시총 가중이다.",
+   "note_en": "Materials, real estate and communications rose; semis and tech fell. Nov 25 close vs prior day. US sector ETFs are cap-weighted."
+  },
+  {
+   "title_ko": "거래대금 상위",
+   "title_en": "Top Turnover",
+   "color": "#3987e5",
+   "type": "rank",
+   "rows": [
+    {
+     "name_ko": "엔비디아",
+     "name_en": "Nvidia",
+     "value": "$53.7B",
+     "pct": -3.91
+    },
+    {
+     "name_ko": "마이크론",
+     "name_en": "Micron",
+     "value": "$31.5B",
+     "pct": -4.57
+    },
+    {
+     "name_ko": "앤트로픽(ANT)",
+     "name_en": "Anthropic (ANT)",
+     "value": "$24.2B",
+     "pct": 1.08
+    },
+    {
+     "name_ko": "AMD",
+     "name_en": "AMD",
+     "value": "$20.8B",
+     "pct": -1.75
+    },
+    {
+     "name_ko": "애플",
+     "name_en": "Apple",
+     "value": "$18.9B",
+     "pct": 0.43
+    }
+   ],
+   "share": {
+    "label_ko": "집계 300종목 거래대금 중 상승 41.3% · 하락 58.7%",
+    "label_en": "Of top-300 turnover: advancers 41.3% · decliners 58.7%",
+    "mode": "nested",
+    "segments": [
+     {
+      "label_ko": "상승 종목",
+      "label_en": "Advancers",
+      "pct": 41.3,
+      "color": "#e5484d"
+     },
+     {
+      "label_ko": "하락 종목",
+      "label_en": "Decliners",
+      "pct": 58.7,
+      "color": "#3987e5"
+     }
+    ]
+   },
+   "note_ko": "오른 종목이 212개로 내린 83개보다 많았지만 하락 종목 거래대금이 2,734억달러로 상승 1,924억달러보다 컸다. 야후 거래 상위 300종목, 가격×거래량 추정.",
+   "note_en": "Advancers outnumbered decliners 212 to 83, yet decliners drew $273.4B of turnover vs $192.4B. Yahoo top-300 sample, price x volume estimate."
+  },
+  {
+   "title_ko": "실적 · 지표 발표",
+   "title_en": "Earnings & Data",
+   "color": "#5b8dd6",
+   "type": "stats",
+   "cols": 2,
+   "stats": [
+    {
+     "label_ko": "美 3분기 GDP(2차 추정)",
+     "label_en": "US Q3 GDP (2nd est.)",
+     "value": "4.3%",
+     "delta": "▲",
+     "dir": "up",
+     "sub_ko": "11/25 발표 · 예상 3.4% · 이전 3.4%",
+     "sub_en": "Nov 25 · est. 3.4% · prior 3.4%"
+    },
+    {
+     "label_ko": "美 10년물 금리",
+     "label_en": "US 10Y Yield",
+     "value": "4.91% → 4.85%",
+     "delta": "▼",
+     "dir": "down",
+     "sub_ko": "11/24→11/25 종가",
+     "sub_en": "Nov 24 to Nov 25 close"
+    },
+    {
+     "label_ko": "美 2년-10년 금리차",
+     "label_en": "US 2Y-10Y Spread",
+     "value": "0.28 → 0.24",
+     "delta": "▼",
+     "dir": "down",
+     "sub_ko": "%p · 2년물 4.61%, 10년물 4.85%",
+     "sub_en": "%-pts · 2Y 4.61%, 10Y 4.85%"
+    },
+    {
+     "label_ko": "美 30년물 금리",
+     "label_en": "US 30Y Yield",
+     "value": "5.30% → 5.24%",
+     "delta": "▼",
+     "dir": "down",
+     "sub_ko": "11/24→11/25 종가",
+     "sub_en": "Nov 24 to Nov 25 close"
+    }
+   ],
+   "note_ko": "금리는 이전→현재(11/26 美 채권시장 휴장). 재무부 일별 수익률 기준, GDP는 상무부 BEA 발표 보도 기준.",
+   "note_en": "Yields shown prior→current (US bond market closed Nov 26). Treasury daily yields; GDP per reports of the BEA release."
+  },
+  {
+   "title_ko": "AI · 반도체 기술",
+   "title_en": "AI & Semiconductors",
+   "color": "#8b6fd6",
+   "items": [
+    {
+     "headline_ko": "엔비디아 -3.91%, 마이크론 -4.57%… 거래대금 1·2위",
+     "headline_en": "Nvidia -3.91%, Micron -4.57% on Top Turnover",
+     "body_ko": "11/25 美 거래대금 1위 엔비디아는 537억달러, 2위 마이크론은 315억달러였다. 반도체 ETF(SMH)는 1.01% 내렸다.",
+     "body_en": "Nvidia led Nov 25 US turnover at $53.7B, Micron second at $31.5B. The chip ETF SMH fell 1.01%.",
+     "src": "Yahoo Finance",
+     "time": "11/25"
+    },
+    {
+     "headline_ko": "앤트로픽(ANT), 거래대금 3위에 1.08% 상승",
+     "headline_en": "Anthropic (ANT) Ranks No. 3, Up 1.08%",
+     "body_ko": "11/19 나스닥에 상장한 앤트로픽은 25일 거래대금 242억달러로 3위였다. 공모가는 83달러, 상장 첫날 종가는 97.17달러였다.",
+     "body_en": "Anthropic, listed on the Nasdaq Nov 19, ranked third on Nov 25 with $24.2B traded. It priced at $83 and closed day one at $97.17.",
+     "src": "Yahoo Finance",
+     "time": "11/25"
+    }
+   ]
+  },
+  {
+   "title_ko": "주요 소식",
+   "title_en": "Top Stories",
+   "color": "#d6a24a",
+   "items": [
+    {
+     "headline_ko": "美 증시 하루 쉬고 오늘 밤 단축 거래",
+     "headline_en": "US Stocks Return Tonight for a Short Session",
+     "body_ko": "美 증시는 26일 휴장했고 27일은 한국시간 23:30부터 28일 03:00까지 거래한다. 채권시장은 ET 오후 2시에 일찍 닫는다.",
+     "body_en": "US stocks were shut Nov 26 and trade 11:30 PM Nov 27 to 3 AM Nov 28 KST. Bonds close early at 2 PM ET.",
+     "src": "NYSE · SIFMA",
+     "time": "11/27"
+    },
+    {
+     "headline_ko": "나스닥, 11/20 5.28% 급락 뒤 6.5% 반등",
+     "headline_en": "Nasdaq Fell 5.28% on Nov 20, Then Rebounded 6.5%",
+     "body_ko": "11/20 22,617.73으로 내렸다가 11/23 24,089.56으로 6.51% 올랐다. 11/24·25 이틀 내려 저점 대비 반등폭은 4.28%로 줄었다.",
+     "body_en": "The Nasdaq hit 22,617.73 on Nov 20, jumped 6.51% to 24,089.56 on Nov 23, then slipped two days, trimming the rebound to 4.28%.",
+     "src": "Yahoo Finance",
+     "time": "11/25"
+    },
+    {
+     "headline_ko": "브렌트유 96.57달러 +2.1%, 후티 사우디 공격 주장",
+     "headline_en": "Brent $96.57, +2.1%, on Houthi Saudi Claim",
+     "body_ko": "26일 런던 브렌트유 1월물이 1.96달러(2.1%) 오른 96.57달러에 마감했다. 예멘 후티가 사우디 정유시설을 공격했다고 주장한 영향이다.",
+     "body_en": "London Brent January rose $1.96 (2.1%) to $96.57 on Nov 26 after Yemen's Houthis claimed an attack on a Saudi refinery.",
+     "src": "ICE",
+     "time": "11/26"
+    },
+    {
+     "headline_ko": "삼성전자 분기배당금 오늘 지급",
+     "headline_en": "Samsung Electronics Pays Quarterly Dividend Today",
+     "body_ko": "삼성전자 3분기 배당이 오늘 지급된다. 주당 4,601원이고 배당 기준일은 9/30이었다.",
+     "body_en": "Samsung Electronics pays its Q3 dividend today: KRW 4,601 per share, record date Sept 30.",
+     "src": "Samsung",
+     "time": "11/27"
+    }
+   ]
+  }
+ ],
+ "schedule_kicker": "KEY SCHEDULE",
+ "schedule_sub": {
+  "ko": "한국시간 기준 · 노란 점 = 주목",
+  "en": "KST · yellow dot = key event"
+ },
+ "schedule_title_ko": "주요 일정",
+ "schedule_title_en": "Key Schedule",
+ "market_hours": {
+  "title_ko": "한국 증시 운영시간",
+  "title_en": "Korea Market Hours",
+  "lines_ko": [
+   "정규장 09:00 ~ 15:30 · 동시호가 08:30~09:00 / 15:20~15:30"
+  ],
+  "lines_en": [
+   "Regular session 9:00 AM - 3:30 PM · call auctions 8:30-9:00 AM / 3:20-3:30 PM"
+  ]
+ },
+ "schedule": [
+  {
+   "time": "08:30",
+   "title_ko": "日 도쿄 근원 CPI (식품·에너지 제외, 전년비)",
+   "title_en": "Japan Tokyo Core CPI ex Food & Energy (YoY)",
+   "detail_ko": "예상 3.0% · 이전 2.4% · 신선식품 제외 예상 3.0%",
+   "detail_en": "Est. 3.0% · prior 2.4% · ex fresh food est. 3.0%",
+   "importance": "high"
+  },
+  {
+   "time": "17:55",
+   "title_ko": "독일 실업률",
+   "title_en": "Germany Unemployment Rate",
+   "detail_ko": "예상 6.4% · 이전 6.4%",
+   "detail_en": "Est. 6.4% · prior 6.4%",
+   "importance": "mid"
+  },
+  {
+   "time": "19:00",
+   "title_ko": "유로존 경제심리지표(ESI)",
+   "title_en": "Eurozone Economic Sentiment Indicator",
+   "detail_ko": "예상 97.2 · 이전 96.9 · 소비자신뢰 예상 -16.9",
+   "detail_en": "Est. 97.2 · prior 96.9 · consumer confidence est. -16.9",
+   "importance": "mid"
+  },
+  {
+   "time": "22:00",
+   "title_ko": "ECB 나겔 총재 연설",
+   "title_en": "ECB's Nagel Speaks",
+   "detail_ko": "12월 회의 앞두고 통화정책 발언 주목",
+   "detail_en": "Policy remarks ahead of the December meeting",
+   "importance": "mid"
+  },
+  {
+   "time": "22:30",
+   "title_ko": "美 상품무역수지·도매재고",
+   "title_en": "US Goods Trade Balance & Wholesale Inventories",
+   "detail_ko": "무역수지 예상 -1,310억달러 · 이전 -1,359억달러 · 도매재고 예상 0.7%",
+   "detail_en": "Trade est. -$131B · prior -$135.9B · wholesale inventories est. 0.7%",
+   "importance": "mid"
+  },
+  {
+   "time": "23:15",
+   "title_ko": "ECB 부이치 위원 연설",
+   "title_en": "ECB's Vujcic Speaks",
+   "detail_ko": "유로존 통화정책 관련 발언",
+   "detail_en": "Remarks on euro-area monetary policy",
+   "importance": "mid"
+  },
+  {
+   "time": "23:30",
+   "title_ko": "美 증시 단축 거래 시작 (블랙프라이데이)",
+   "title_en": "US Stocks Open for Black Friday Short Session",
+   "detail_ko": "28일 03:00 조기 폐장 · 채권시장은 ET 오후 2시 마감",
+   "detail_en": "Closes 3 AM KST Nov 28 · bonds close 2 PM ET",
+   "importance": "high"
+  }
+ ],
+ "next_brief_ko": "🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "next_brief_en": "🌙 Next brief — 9 PM KST, before the US open",
+ "outro_tagline_ko": "",
+ "outro_tagline_en": "",
+ "card_photos": {
+  "1": "The New York Stock Exchange facade with an American flag on a quiet holiday morning, cool blue and amber tones, cinematic wide shot, no text",
+  "3": "A dark trading room with a wall of screens showing a jagged index line that drops, rebounds and drops again, abstract, no readable text"
+ },
+ "caption_ko": "📊 luckyon 브리핑 · 2026.11.27(금) 아침\n\n美 증시는 추수감사절로 26일 하루 쉬었습니다. 마지막 거래일인 11/25 나스닥은 0.62% 내린 23,585.80, S&P 500은 0.25% 내린 7,182.78로 마감했습니다.\n\n엔비디아는 3.91%, 마이크론은 4.57% 내리며 거래대금 1·2위에 올랐습니다. 거래 상위 300종목 중 오른 종목은 212개로 내린 83개보다 많았지만, 거래대금은 하락 종목 쪽이 58.7%를 차지했습니다.\n\n코스피는 26일 4,711.21(+0.29%)로 마감했습니다. 오늘 밤 美 증시는 한국시간 23:30~28일 03:00 단축 거래합니다.\n\n저장해 두고 오늘 밤 9시 브리핑에서 이어서 확인하세요.\n\n#나스닥 #S&P500 #미국증시 #추수감사절 #블랙프라이데이 #엔비디아 #마이크론 #앤트로픽 #반도체 #코스피 #환율 #경제 #투자 #주식 #luckyon\n\n🌙 다음 브리핑 — 오늘 밤 9시, 미국장 개장 전",
+ "caption_en": "📊 luckyon Briefing · Fri, Nov 27, 2026 · Morning\n\nUS stocks were closed Nov 26 for Thanksgiving. On the last session, Nov 25, the Nasdaq fell 0.62% to 23,585.80 and the S&P 500 fell 0.25% to 7,182.78.\n\nNvidia lost 3.91% and Micron 4.57%, ranking No. 1 and 2 by turnover. Among the 300 most-traded stocks, 212 rose and 83 fell, yet 58.7% of dollar turnover went to decliners.\n\nKOSPI closed Nov 26 at 4,711.21 (+0.29%). US stocks trade a short session tonight, 11:30 PM to 3 AM KST.\n\nSave this and catch the next brief at 9 PM KST.\n\n#Nasdaq #SP500 #USStocks #Thanksgiving #BlackFriday #Nvidia #Micron #Anthropic #Semiconductors #KOSPI #Markets #Investing #Stocks #Economy #luckyon\n\n🌙 Next brief — 9 PM KST, before the US open",
+ "sources": [
+  "Yahoo Finance",
+  "US Treasury",
+  "FMP",
+  "CNN Fear & Greed",
+  "FXStreet",
+  "Financial Times",
+  "NYSE",
+  "ICE"
+ ]
+}
