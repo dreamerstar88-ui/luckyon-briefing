@@ -1,51 +1,11 @@
 {
-  "fetchedAt": "2026-11-25T20:26:53Z",
+  "fetchedAt": "2026-11-26T04:11:13Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-23T20:26:53Z",
-    "to": "2026-12-09T20:26:53Z"
+    "from": "2026-11-24T04:11:13Z",
+    "to": "2026-12-10T04:11:13Z"
   },
   "events": [
-    {
-      "at": "2026-11-23T21:00:00Z",
-      "country": "KR",
-      "name": "Consumer Sentiment Index",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 105.4,
-      "actual": 103.1,
-      "unit": null
-    },
-    {
-      "at": "2026-11-23T21:00:00Z",
-      "country": "US",
-      "name": "Fed's Williams speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-24T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Manufacturing PMI",
-      "impact": "LOW",
-      "consensus": 53.5,
-      "previous": 53.3,
-      "actual": 53.7,
-      "unit": null
-    },
-    {
-      "at": "2026-11-24T00:30:00Z",
-      "country": "JP",
-      "name": "Jibun Bank Services PMI",
-      "impact": "LOW",
-      "consensus": null,
-      "previous": 51.7,
-      "actual": 50.5,
-      "unit": null
-    },
     {
       "at": "2026-11-24T09:00:00Z",
       "country": "DE",
@@ -573,7 +533,7 @@
       "impact": "MEDIUM",
       "consensus": 3.25,
       "previous": 3,
-      "actual": null,
+      "actual": 3.25,
       "unit": "%"
     },
     {
@@ -2755,6 +2715,56 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-12-09T23:50:00Z",
+      "country": "JP",
+      "name": "BSI Large Manufacturing Conditions Index (QoQ)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.6,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-09T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Bond Investment",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-12-09T23:50:00Z",
+      "country": "JP",
+      "name": "Foreign Investment in Japan Stocks",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-12-09T23:50:00Z",
+      "country": "JP",
+      "name": "Producer Price Index (MoM)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 0.7,
+      "actual": null,
+      "unit": "%"
+    },
+    {
+      "at": "2026-12-09T23:50:00Z",
+      "country": "JP",
+      "name": "Producer Price Index (YoY)",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": 7.1,
+      "actual": null,
+      "unit": "%"
     }
   ]
 }
