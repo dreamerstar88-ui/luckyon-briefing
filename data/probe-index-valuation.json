@@ -1,5 +1,5 @@
 {
-  "probed_at": "2026-11-21T01:52:31.132Z",
+  "probed_at": "2026-11-28T02:59:41.052Z",
   "runner": "github-actions",
   "note": "탐침 결과. 값의 정확성은 검증하지 않았다 — 접근 가능 여부와 원본 조각만 기록한다.",
   "reachable": [
@@ -7,8 +7,7 @@
     "ishares-ivv-product-page",
     "nasdaq-ndx-overview",
     "wsj-pe-yields",
-    "krx-index-per",
-    "multpl-sp500-pe"
+    "krx-index-per"
   ],
   "results": [
     {
@@ -23,7 +22,7 @@
       "totalBytes": 2011,
       "bytes": 2010,
       "contentType": "text/html",
-      "ms": 246
+      "ms": 168
     },
     {
       "id": "ishares-ivv-fund-json",
@@ -34,11 +33,11 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 2372169,
-      "bytes": 2369967,
+      "totalBytes": 2374299,
+      "bytes": 2372097,
       "contentType": "application/json;charset=UTF-8",
       "jsonParseError": true,
-      "ms": 861
+      "ms": 711
     },
     {
       "id": "ishares-ivv-product-page",
@@ -49,12 +48,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 3065063,
-      "bytes": 3062885,
+      "totalBytes": 3068031,
+      "bytes": 3065853,
       "contentType": "text/html;charset=UTF-8",
       "keywordFound": true,
       "snippet": "OptanonWrapper = function() {",
-      "ms": 383
+      "ms": 387
     },
     {
       "id": "invesco-qqq-holdings-csv",
@@ -68,7 +67,7 @@
       "totalBytes": 0,
       "bytes": 0,
       "contentType": "",
-      "ms": 193
+      "ms": 45
     },
     {
       "id": "nasdaq-ndx-overview",
@@ -79,12 +78,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 303849,
-      "bytes": 303822,
+      "totalBytes": 331116,
+      "bytes": 331089,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "nav id=\"headerWrapper\" class=\"flex items-center justify-between flex-wrap xl:flex-no-wrap shadow px-0",
-      "ms": 645
+      "ms": 307
     },
     {
       "id": "ssga-dia-fund-json",
@@ -98,7 +97,7 @@
       "totalBytes": 132,
       "bytes": 132,
       "contentType": "application/json;charset=utf-8",
-      "ms": 406
+      "ms": 123
     },
     {
       "id": "wsj-pe-yields",
@@ -109,12 +108,12 @@
       "method": "GET",
       "status": 200,
       "ok": true,
-      "totalBytes": 762691,
-      "bytes": 762404,
+      "totalBytes": 759081,
+      "bytes": 758794,
       "contentType": "text/html; charset=utf-8",
       "keywordFound": true,
       "snippet": "meta name=\"description\" content=\"P/E data based on as-reported earnings; estimate data based on operating earnings.\"",
-      "ms": 346
+      "ms": 73
     },
     {
       "id": "krx-index-per",
@@ -130,7 +129,7 @@
       "bytes": 987125,
       "contentType": "text/html",
       "snippet": "gVpa4/uZtLOoF/vRHP0F/Yx1dwbFQ16hZiZwVaBcVLqxsl1eubJVv3UL74Mlp/eTotJkt1Nwuct8mEOEmIDzByEgiIt38Mi+MlmzWiO2gCeKstGSsBnFWZ9L7VZlvXZ+A3l3eAm9ZsBHIPz",
-      "ms": 1640
+      "ms": 2007
     },
     {
       "id": "multpl-sp500-pe",
@@ -139,14 +138,9 @@
       "desc": "multpl.com S&P 500 PE Ratio (2차 가공 — 대조용)",
       "url": "https://www.multpl.com/s-p-500-pe-ratio",
       "method": "GET",
-      "status": 200,
-      "ok": true,
-      "totalBytes": 80941,
-      "bytes": 80941,
-      "contentType": "text/html; charset=utf-8",
-      "keywordFound": true,
-      "snippet": "acing:2px}.see-also h3{padding-bottom:10px;text-transform:uppercase}.see-also li:last-child a{border-bottom:1px solid;border-color:var(--hr_col",
-      "ms": 175
+      "ok": false,
+      "error": "fetch failed",
+      "ms": 27
     },
     {
       "id": "yahoo-quotesummary-spy",
@@ -160,7 +154,7 @@
       "totalBytes": 19,
       "bytes": 19,
       "contentType": "text/html",
-      "ms": 146
+      "ms": 32
     }
   ]
 }
