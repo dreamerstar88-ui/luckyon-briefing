@@ -1,0 +1,375 @@
+{
+  "stamp": "2026-11-23",
+  "episode": 12,
+  "series": "주간복기",
+  "window": {
+    "symbol": "NQZ26.CME",
+    "interval": "5m",
+    "symbol_note": "12월물이 정상 월물이다(만기 2026-12-18). 연속 심볼 NQ=F 는 쓰지 않는다 — 만기 때 말없이 갈아타 가짜 봉을 만든다(지침 2장).",
+    "from_et": "2026-11-23 04:00",
+    "to_et": "2026-11-27 13:00",
+    "window_change_note": "4회차부터의 창을 그대로 쓴다 — 월요일 프리장 시작(미 동부 04:00) ~ 금요일 정규장 마감 봉. 대표 지시 «주가 변화 프리장부터»(2026-09-26). 미 동부 표준시(한국과 14시간 차).",
+    "holiday_note": "목 11/26 추수감사절 — 주식시장(뉴욕증권거래소·나스닥)은 휴장, 나스닥100 선물은 00:00~13:00 · 18:00~ 거래(CME 일정을 인용한 다우존스 기사(모닝스타·야후 게재)와 인터내셔널 비즈니스 타임스. CNBC 5분봉 목요일 228개 모두 거래량 있음, 합 127,180계약). 금 11/27 주식시장 13:00 단축 마감, 선물 13:15 마감.",
+    "end_bar_note": "to_et 13:00 — 금요일 정규장이 13:00 에 끝나 «정규장 마감 봉까지»(평소 16:00 봉) 규칙을 13:00 봉에 적용했다. 선물 13:05·13:10 봉은 넣지 않는다.",
+    "closed_days": [
+      "2026-11-26"
+    ],
+    "early_close": {
+      "2026-11-27": "13:00"
+    },
+    "gap_fill": {
+      "source": "cnbc",
+      "from_et": "2026-11-26 00:00",
+      "to_et": "2026-11-27 09:25",
+      "count": 342,
+      "reason": "야후가 목요일(추수감사절)과 금요일 개장 전 봉을 5분봉·1시간봉 모두 주지 않았다(12월물·연속 심볼·S&P 선물 모두). 선물은 그 시간에도 거래했다. 대표 결정(2026-11-28) «채워야지 cnbc로 채워줘» — 빈 봉만 CNBC 5분봉으로 채우고 야후 봉은 그대로 둔다. 겹치는 820봉 중 759봉 종가 같음 · 최대 차이 11.25포인트. 이음매(수 23:55 야후 26,389.75 / CNBC 26,397.25)의 7.5포인트 차이는 목 00:00 봉에 섞인다."
+    },
+    "data_gap_note": "요일별 봉 수: 월 228 · 화 274 · 수 275 · 목 228 · 금 157 — 합 1,162개(그중 CNBC 로 채운 봉 342개). 화·수 00:00 봉은 앞 회차들처럼 야후에 없어 비어 있다. CNBC 대조 결과는 검사 [1-2] 가 매번 다시 낸다."
+  },
+  "video": {
+    "duration": 35,
+    "sections": {
+      "hook": [
+        0,
+        5
+      ],
+      "replay": [
+        5,
+        27.9
+      ],
+      "answer": [
+        27.9,
+        32
+      ],
+      "summ": [
+        32,
+        35
+      ]
+    },
+    "sections_note": "4회차와 같다.",
+    "hook_hold": 1.95,
+    "hold": 1.8,
+    "hold_mode": "equal",
+    "holds": [
+      1.8,
+      1.8,
+      1.8,
+      1.8,
+      1.8
+    ],
+    "holds_note": "«사건마다 같은 멈춤»(대표 결정 2026-11-07 · 11-14) — 9~11회차와 같이 합계 9.0초를 사건 수로 나눈다. 5개라 1.8초씩. 그리는 시간 13.9초는 앞 회차와 같다.",
+    "min_shown_exception": {
+      "value": 1.92,
+      "reason": "«사건마다 같은 멈춤»(2026-11-07 · 11-14)을 그대로 따른 결과다. 월 08:55 엔비디아 발표(사건①)와 09:45 S&P PMI(사건②)가 5분봉 10개 거리라 엔비디아 문구가 1.92초만 크게 보인다. 둘 다 지침 4장 규칙(뉴스 5번 · ★★★ 1번)에 들어와 하나를 빼지 않았다. 발행 전 대표 확인 — 장면표본과 영상으로 보고한다."
+    }
+  },
+  "numbers": {
+    "bars": 1162,
+    "changes": 1161,
+    "week_pct": 3.13,
+    "mdd_pct": -7.77,
+    "peak": 27137,
+    "trough": 25028,
+    "week_high": 27137,
+    "week_low": 25028,
+    "open": 25975.25,
+    "close": 26788.75,
+    "week_high_et": "2026-11-23 09:30",
+    "week_low_et": "2026-11-25 09:45",
+    "peak_et": "2026-11-23 09:30",
+    "trough_et": "2026-11-25 09:45",
+    "_주": "창(월 04:00 ~ 금 13:00, 미 동부) 기준. 주간 고점은 월 09:30 봉(엔비디아 발표 35분 뒤 정규장 개장 봉), 저점은 수 09:45 봉. 최대 낙폭은 그 고점에서 수요일 저점까지."
+  },
+  "question": {
+    "id": "bigbar",
+    "ko": "가장 크게 움직인 5분봉 하나는 몇 %였을까요?",
+    "en": "How big was the single biggest 5-minute bar?",
+    "answer_value": 3.14,
+    "unit": "%",
+    "why": "2026-11-28 대표 결정 «질문은 추천으로» — 추천은 «가장 크게 움직인 5분봉 하나». 질문 은행 bigbar — 바로 앞 봉 종가 대비 종가 변화가 크기로 가장 큰 봉. 이번 주 월 08:55 봉 +3.138%(앞 봉 종가 25,871.25 → 26,683), 엔비디아가 젠슨 황 CEO 복귀를 발표한 봉이다. 한 주 결과(+3.13%)와 거의 같다. 1~11회차 제목과 대조해 쓴 적 없는 질문임을 확인했다(1회차 최대 낙폭 · 2회차 가장 크게 움직인 지표 이름 등).",
+    "guard": "지표가 얼마나 세게 때렸는지에 달려 있다. 조용한 주는 0.1%, 고용지표 주는 0.5%를 넘는다(질문 은행). 3~11회차 주(같은 창, 자료 파일로 잼) 가장 큰 봉은 0.29%~1.21%였다."
+  },
+  "quiz": {
+    "options": [
+      "+1.21%",
+      "+3.14%",
+      "+7.36%"
+    ],
+    "answer_index": 2,
+    "_주": "정답 +3.14%(②). ① +1.21% 는 3~11회차 주 가운데 가장 컸던 5분봉(11회차 엔비디아 매출 전망 봉) — 지난 기록 최대라 정답이 아니다. ③ +7.36% 는 이번 주 최대 상승폭(수요일 저점에서 그 뒤 고점까지) — 한 봉이 아니라 여러 봉에 걸친 폭이다. 숫자 순서대로 놓았다."
+  },
+  "events": [
+    {
+      "n": 1,
+      "kind": "news",
+      "et": "2026-11-23 08:55",
+      "kst_label": "월 개장 전 · 한국 월 밤 10시 55분",
+      "stars": 0,
+      "actual": "",
+      "compare_field": "",
+      "compare": "",
+      "l1": "엔비디아, 젠슨 황 CEO 복귀 발표.",
+      "l2": "이사회 만장일치 결정, 즉시 효력.",
+      "tag": "엔비디아",
+      "session_exception": "뉴스 사건 — 개장 35분 전 08:55 발표. 그 주 5분 변동 1위다(지침 4장 5번).",
+      "en": "Nvidia reinstates Jensen Huang as CEO, effective immediately",
+      "why": "뉴스도 사건 후보다(지침 4장 5번). 그 주 5분 변동 1위(+3.138%). 엔비디아는 나스닥100 구성 종목이다. 1분봉(야후 NQZ26): 08:54 종가 25,871.25 → 08:55 26,176.5(+1.18%) → 08:56 +0.79% → 08:57 +0.41%. 보도자료 내용 대조: «이사회 만장일치(voted unanimously)» · «즉시 효력(effective immediately)» — 벤징가(보도자료 전문) · The Fly · 8-K.",
+      "news": {
+        "headline": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director (GLOBE NEWSWIRE)",
+        "first_report_et": "2026-11-23 08:55",
+        "sources": [
+          {
+            "name": "벤징가(보도자료 전문)",
+            "utc": "2026-11-23T13:55:53Z",
+            "url": "https://app.bigdata.com/documents/1BBF7D693CB503FAC59A190F4F431959"
+          },
+          {
+            "name": "The Fly",
+            "utc": "2026-11-23T13:56:17Z",
+            "url": "https://app.bigdata.com/documents/881383CD8114444448376E1F60082ABA"
+          },
+          {
+            "name": "벤징가(제목 속보)",
+            "utc": "2026-11-23T13:56:36Z",
+            "url": "https://app.bigdata.com/documents/6FF329301A3FD847B206B92A42C183FC"
+          },
+          {
+            "name": "Finwire",
+            "utc": "2026-11-23T13:56:48Z",
+            "url": "https://app.bigdata.com/documents/CAB3B480F7CF5BCCFC7989A341D77F3B"
+          },
+          {
+            "name": "SEC 8-K",
+            "utc": "2026-11-23T13:57:54Z",
+            "url": "https://app.bigdata.com/documents/FF3C9FC183DD5C3283B75C3639E0E13A"
+          }
+        ],
+        "origin_note": "전날(일) 트럼프 대통령이 트루스소셜에 «엔비디아 이사회가 젠슨 황을 다시 고용하길 바란다»고 썼고(야후 파이낸스 13:44Z), 월요일 아침 선물은 발표 전부터 3% 남짓 올라 있었다(CBS · AP). 발표 봉의 +3.138% 는 그 위에 더해진 몫이다.",
+        "after": "09:00 봉 +0.668%(5위) · 09:05 봉 -0.611%(7위). 로이터 «09:02 나스닥100 선물 +6.53%»."
+      },
+      "pct": 3.138,
+      "rank": 1,
+      "color": "up"
+    },
+    {
+      "n": 2,
+      "et": "2026-11-23 09:45",
+      "kst_label": "월 장중 · 한국 월 밤 11시 45분",
+      "cal_event": "S&P Global Services PMI",
+      "stars": 3,
+      "actual": "54.7",
+      "compare_field": "consensus",
+      "compare": "55.8",
+      "l1": "S&P 서비스업 PMI 54.7.",
+      "l2": "예상은 55.8이었다.",
+      "tag": "PMI",
+      "en": "S&P Global services PMI 54.7, vs 55.8 expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 09:45 에 ★★★ 2건(서비스업 54.7·예상 55.8, 제조업 54.5·예상 54.6)을 한 사건으로 묶었다(4장 3번). 값 대조: 서비스업 54.7 — MT Newswires · The Fly · FXStreet · 로이터(Fidelity) · Alliance News. 예상치는 집계처마다 갈린다 — FXStreet 55.8(Alliance News 인용) · 블룸버그 55.5(MT Newswires) · 벤징가·The Fly 55.6 — 모두 실제보다 높아 «예상 밑돎»은 같다.",
+      "tiebreak": "같은 시각 ★★★ 2건이 둘 다 FXStreet 예상을 밑돌았다 — 서비스업 1.1포인트(55.8→54.7), 제조업 0.1포인트(54.6→54.5). 같은 단위(지수)라 «예상에서 가장 많이 벗어난 것»(4장 3번)으로 서비스업을 대표로 썼다. 블룸버그 집계로는 제조업이 예상과 같다(MT Newswires · 벤징가 54.5).",
+      "pct": 0.227,
+      "rank": 110,
+      "color": "up"
+    },
+    {
+      "n": 3,
+      "et": "2026-11-24 10:00",
+      "kst_label": "화 장중 · 한국 수 0시",
+      "cal_event": "Consumer Confidence",
+      "stars": 2,
+      "actual": "103.3",
+      "compare_field": "consensus",
+      "compare": "92.4",
+      "l1": "소비자신뢰지수 103.3.",
+      "l2": "예상은 92.4였다.",
+      "tag": "신뢰",
+      "en": "Consumer confidence 103.3, vs 92.4 expected",
+      "why": "화요일은 ★★★ 이 없다. ★★ 후보: 08:15 ADP 4주 평균(장 전) · 09:00 주택가격지수(장 전) · 10:00 소비자신뢰지수(장중). 장중 우선이라 소비자신뢰지수 하나다(지침 4장 2번). 투표 위원 연설은 그날 없다.",
+      "cal_missing": {
+        "reason": "FXStreet 캘린더에 항목(MEDIUM)은 있는데 실제·예상·직전값이 모두 비어 있다(2026-11-28 두 번 받아 확인). 콘퍼런스보드 발표문과 통신사로 값을 맞췄다: 실제 103.3 · 10월 91.9(91.7 에서 고침). 예상치는 집계처마다 갈린다 — 블룸버그 92.4(MT Newswires · 차이롄서 «45명 중앙값 92.4») · 로이터 92.5(US News · FXStreet 기사) · 다우존스 92.2(CNBC · WSJ) — 모두 실제보다 11포인트 낮아 «예상 웃돎»은 같다. 화면에는 블룸버그 92.4 를 쓴다.",
+        "sources": [
+          {
+            "name": "콘퍼런스보드 발표문(벤징가 게재)",
+            "utc": "2026-11-24T15:00:11Z",
+            "url": "https://app.bigdata.com/documents/3FC2D5A28BCAE214F70E7EFA680C5A76"
+          },
+          {
+            "name": "차이롄서(InfoQuanta)",
+            "utc": "2026-11-24T15:00:23Z",
+            "url": "https://app.bigdata.com/documents/7CD1881977E26DF98215BAFA90603AF8"
+          },
+          {
+            "name": "MT Newswires",
+            "utc": "2026-11-24T15:19:44Z",
+            "url": "https://app.bigdata.com/documents/0F7C04A9A7AD1AF154DA47F272A47CAB"
+          },
+          {
+            "name": "CNBC",
+            "utc": "2026-11-24T15:42:10Z",
+            "url": "https://app.bigdata.com/documents/6FD863669C50BBB509FF98AFFA713547"
+          }
+        ]
+      },
+      "pct": -0.075,
+      "rank": 557,
+      "color": "down"
+    },
+    {
+      "n": 4,
+      "et": "2026-11-25 08:30",
+      "kst_label": "수 개장 전 · 한국 수 밤 10시 30분",
+      "cal_event": "Core Personal Consumption Expenditures - Price Index (YoY)",
+      "stars": 3,
+      "actual": "3.3%",
+      "compare_field": "consensus",
+      "compare": "3.2%",
+      "l1": "근원 PCE 물가 전년비 3.3%.",
+      "l2": "예상은 3.2%였다.",
+      "tag": "물가",
+      "en": "Core PCE prices +3.3% y/y, vs 3.2% expected",
+      "why": "★★★ 전부 넣는다(지침 4장 1번). 같은 08:30 에 ★★★ 2건(근원 PCE 전월비 0.3%·예상 0.3%, 전년비 3.3%·예상 3.2%)을 한 사건으로 묶었다(4장 3번). 같은 봉에 ★★ 3분기 GDP 수정치 4.3%(예상 3.4%) · 실업수당 18.9만 건 등도 있다. 값 대조: 근원 전년비 3.3%·예상 3.2% — Finwire(블룸버그) · 벤징가 · 차이롄서 · CNBC(다우존스 «0.1%포인트 위») · FOX(LSEG). 직전 3.1% — MT Newswires · 벤징가.",
+      "tiebreak": "같은 시각 ★★★ 2건 중 예상을 벗어난 것은 전년비 하나다(전월비는 0.3% 로 예상과 같음). 그래서 전년비를 대표로 썼다(4장 3번).",
+      "session_exception": "★★★ 은 장중·장밖 상관없이 넣는다(지침 4장 1번). 발표가 08:30 이다.",
+      "pct": -0.48,
+      "rank": 20,
+      "color": "down"
+    },
+    {
+      "n": 5,
+      "et": "2026-11-27 08:30",
+      "kst_label": "금 개장 전 · 한국 금 밤 10시 30분",
+      "cal_event": "Wholesale Inventories",
+      "stars": 1,
+      "actual": "0.9%",
+      "compare_field": "consensus",
+      "compare": "0.5%",
+      "l1": "도매재고 전월비 0.9%.",
+      "l2": "예상은 0.5%였다.",
+      "tag": "재고",
+      "en": "Wholesale inventories +0.9% m/m, vs 0.5% expected",
+      "why": "금요일(단축 개장)은 ★★★·★★ 이 없다. ★ 은 08:30 상품수지 · 도매재고 둘뿐이라 그날 최고 등급인 ★ 에서 고른다(지침 4장 2번). 이 봉(08:30)은 야후에 없어 CNBC 로 채운 봉이다(window.gap_fill). 값 대조: 도매재고 0.9%·예상 0.5% — MT Newswires(블룸버그) · Finwire · The Fly · 벤징가 · 차이롄서.",
+      "tiebreak": "같은 시각 ★ 2건이 둘 다 예상을 벗어났다 — 상품수지 -1,495억 달러(FXStreet 예상 -1,310억 · 블룸버그 -1,360억), 도매재고 0.9%(예상 0.5%). 단위가 달러와 % 로 달라 사람이 골랐다(4장 3번): 11회차와 같이 예상 대비 비율이 큰 쪽 — 도매재고 +80% > 상품수지 14%.",
+      "session_exception": "금요일 미국 발표는 08:30 두 건(★)뿐이다. 장중 후보가 없다(지침 4장 2번).",
+      "pct": -0.025,
+      "rank": 923,
+      "color": "hi"
+    }
+  ],
+  "calendar_source": "fxstreet",
+  "calendar_snapshot": "content/weekly-shorts/2026-11-23.calendar.fxstreet.json",
+  "coverage": {
+    "econ_calendar": "FXStreet 공개 캘린더 API(미국 49건) — 10회차 대표 결정(2026-11-14 «FXStreet 로 바꾼다»)대로. 등급: HIGH=★★★ · MEDIUM=★★ · LOW=★. ★★★ 4건(월 S&P 제조업·서비스업 PMI, 수 근원 PCE 전월비·전년비). 목요일은 추수감사절이라 미국 발표가 없다(지침 4장 7번). 화 소비자신뢰지수는 FXStreet 값이 비어 통신사로 맞췄다(사건③ cal_missing).",
+    "earnings": "그 주 나스닥100 실적 — 월 CRWD · 화 ADI·ADSK·WDAY · 수~금 없음(나스닥 실적 달력 api.nasdaq.com 날짜별 5일 × 나스닥100 목록 101종목, 11/27 기준). 월 크라우드스트라이크는 06:04 에 실적과 지스케일러 인수를 함께 냈다(8-K 11:04:51Z) → 06:00 봉 -0.003%(1,129위). 화 아날로그디바이스 07:01(RavenPack 12:01:00Z) → 07:00 봉 -0.268%(74위). 화 마감 뒤 오토데스크·워크데이 → 16:00 봉 -0.188%(163위) · 16:05 -0.034%. 이번 회차에는 넣지 않았다.",
+    "news_scan": "1위 11-23 08:55 +3.138% — 엔비디아 젠슨 황 CEO 복귀 발표(사건①). 첫 보도 08:55:53(벤징가 보도자료)\n2위 11-25 09:55 +0.816% — 개장 25분 뒤. 나스닥이 -4.5% 까지 밀렸다가 되돌린 구간. 그 시각(14:50~15:05Z) 새 보도 못 찾음 — 붙이지 않는다(4장 5번)\n3위 11-25 09:30 -0.773% — 정규장 개장 첫 봉. 지침상 사건 아님(4장 6번)\n4위 11-27 09:30 -0.760% — 정규장 개장 첫 봉(단축 개장일). 지침상 사건 아님(4장 6번)\n5위 11-23 09:00 +0.668% — 엔비디아 발표 봉 바로 다음 봉의 이어짐. 새 보도 아님\n6위 11-25 10:15 -0.635% — 그 시각(15:10~15:25Z) 보도는 하락 정리 기사뿐. 원인 못 밝힘\n7위 11-23 09:05 -0.611% — 엔비디아 발표 뒤 되돌림. 새 보도 아님\n8위 11-23 09:30 -0.601% — 정규장 개장 첫 봉. 지침상 사건 아님(4장 6번)\n9위 11-24 12:05 +0.583% — 그 시각(17:00~17:15Z) 새 보도 못 찾음. 원인 못 밝힘\n10위 11-27 12:55 +0.572% — 단축 마감(13:00) 5분 전. 지침상 사건 아님(4장 5번)",
+    "data_crosscheck": "주가: NQZ26.CME(야후) — 야후에 없는 목요일·금요일 개장 전 342봉은 CNBC 5분봉으로 채웠다(대표 결정 2026-11-28). QQQ(ETF)와 대조(검사 [1-1]), CNBC 5분봉과 대조(검사 [1-2] · 채운 봉은 뺌). 지표 값은 FXStreet 를 검사 [5] 가 다시 받아 대조하고, 통신사 대조는 사건마다 why 에 적었다. 투표 위원 연설은 이번 주 고른 사건에 없다."
+  },
+  "summary": {
+    "scope": "선정 사건",
+    "scope_note": "요약 표의 1~3위는 «고른 사건 5개» 중 순위다.",
+    "ko": "이번 주 고른 사건 5개 중 · 5분봉 전체 순위는 아니다",
+    "en": "The three biggest moves among the five events picked this week",
+    "rows": [
+      {
+        "tag": "엔비디아",
+        "pct": 3.138,
+        "week_rank": 1
+      },
+      {
+        "tag": "물가",
+        "pct": -0.48,
+        "week_rank": 20
+      },
+      {
+        "tag": "PMI",
+        "pct": 0.227,
+        "week_rank": 110
+      }
+    ]
+  },
+  "copy": {
+    "_주": "화면(screen)과 자막(srt) 문구를 한곳에 둔다 — 지침 2-3. {WEEK}{N}{EVN}{TOPPCT}{ANS}{ANSN} 는 렌더러·자막 생성기가 계산해 채운다. {ANS} 는 부호 없이 나와(3.14%) 앞에 + 를 붙였다.",
+    "names": {
+      "엔비디아": "엔비디아 황 CEO 복귀",
+      "PMI": "S&P 서비스업 PMI",
+      "신뢰": "소비자신뢰지수",
+      "물가": "근원 PCE 물가",
+      "재고": "도매재고"
+    },
+    "screen": {
+      "q1": "한 주 동안 5분봉 {N}개.",
+      "q2": "가장 크게 움직인 하나는 몇 %?",
+      "enHook": "Of {N} five-minute bars, how big was the biggest?",
+      "ansName": "가장 크게 움직인 5분봉",
+      "ansBig": "+{ANS}",
+      "ansColor": "up",
+      "ansSub1": "월 08:55 · 엔비디아 젠슨 황 복귀 발표",
+      "ansSub2": "한 주 결과 {WEEK}와 거의 같다",
+      "enAnswer": "+{ANS} in one bar, as Nvidia reinstated Huang",
+      "answerMark": "none",
+      "summ1": "황 복귀에 뛰고, 수요일 밀렸다가 되돌렸다.",
+      "summ2": "사건 중엔 엔비디아가 가장 컸다.",
+      "rowsScope": "이번 주 고른 사건 {EVN}개 중 · 5분봉 전체 순위는 아니다",
+      "enSumm": "The three biggest moves among the five events picked this week",
+      "loopLabel": "가장 크게 움직인 5분봉은",
+      "loopBig": "+{ANS}",
+      "loopTail": "한 주 결과는 {WEEK}",
+      "loopColor": "up",
+      "kicker": "지난주 나스닥 · 월 프리장 ~ 금 마감",
+      "span": "월요일 프리장 → 금요일 마감"
+    },
+    "srt": {
+      "ko": {
+        "hook": [
+          "지난주 나스닥, 월요일 프리장 ~ 금요일 마감 · 결과는 {WEEK}",
+          "한 주 동안 5분봉 {N}개 · 가장 크게 움직인 하나는 몇 %?"
+        ],
+        "answer": [
+          "가장 크게 움직인 5분봉 +{ANS} · 월요일 엔비디아 젠슨 황 복귀 발표",
+          "한 주 결과 {WEEK}와 거의 같다"
+        ],
+        "summ": [
+          "황 CEO 복귀에 뛰고 수요일 밀렸다가 되돌렸다 · 고른 사건 중엔 엔비디아가 가장 컸다({TOPPCT})",
+          "몇 번 고르셨나요? 다음 주도 다시 돌려 드립니다"
+        ]
+      },
+      "en": {
+        "hook": [
+          "Nasdaq 100 futures, Monday pre-market to Friday close · the week ended {WEEK}",
+          "Of {N} five-minute bars, how big was the biggest?"
+        ],
+        "answer": [
+          "The biggest bar: +{ANS}, as Nvidia reinstated Jensen Huang",
+          "Almost the whole week ({WEEK}) in five minutes"
+        ],
+        "summ": [
+          "Jumped on Huang's return, fell back Wednesday, then recovered · Nvidia moved it most ({TOPPCT})",
+          "Which one did you pick? We will replay next week too"
+        ]
+      }
+    }
+  },
+  "publish": {
+    "live": {
+      "commit": "b2ad24bd4aa70aad311679effade0097be32506d",
+      "at": "2026-11-28T05:36:36.778Z"
+    },
+    "youtube": {
+      "video_id": "8FP8TTALvS4",
+      "url": "https://www.youtube.com/watch?v=8FP8TTALvS4",
+      "at": "2026-11-28T05:36:43.193Z",
+      "captions": {
+        "ko": "ok",
+        "en": "ok"
+      },
+      "pinned_comment": {
+        "id": "Ugw2A8aHg2Fcob-hesl4AaABAg",
+        "pinned": false
+      }
+    },
+    "instagram": {
+      "media_id": "17945467164100500",
+      "permalink": "https://www.instagram.com/reel/DgRiiqVBV44/",
+      "at": "2026-11-28T05:48:48.964Z"
+    },
+    "published_at": "2026-11-28T14:48:50+09:00"
+  }
+}

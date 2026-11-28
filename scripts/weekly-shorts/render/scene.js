@@ -19,6 +19,8 @@ let BARS=[],EVENTS=[],DAYS=[],BGC=null,LO=0,HI=1,SCHED=[],STATS={};
 let COPY={},QUIZ={opts:[],ans:2};
 // 매니페스트 video.hold_mode='equal' 이면 사건마다 같은 정지 시간(video.holds)을 받는다(8회차, 대표 결정).
 let FIXED_HOLDS=null;
+// 주식시장 휴장일·단축 마감(12회차 추수감사절 — 목 휴장, 금 13:00 마감). 선물 봉은 있어도 정규장 음영을 칠하지 않거나 마감 시각에서 끊는다.
+let CLOSED_DAYS=[],EARLY_CLOSE={};
 // 요일은 날짜에서 직접 뽑는다. 예전에는 ['월'..'금'] 을 순서로 꺼내 써서
 // 휴장일이 낀 주에 요일이 하루씩 밀렸다(2회차 9/7 노동절).
 const WD='일월화수목금토';
@@ -134,8 +136,12 @@ function chartPanel(ctx){ctx.save();ctx.fillStyle=C.panel;rr(ctx,40,CY-46,1000,C
 function dayShade(ctx){
   ctx.save();
   for(const d of DAYS){
-    const a=BARS.findIndex(x=>x.d===d+' 09:30');let b=BARS.findIndex(x=>x.d===d+' 16:00');
-    if(b<0)b=BARS.length-1;if(a<0)continue;
+    if(CLOSED_DAYS.includes(d))continue;
+    const a=BARS.findIndex(x=>x.d===d+' 09:30');let b=BARS.findIndex(x=>x.d===d+' '+(EARLY_CLOSE[d]||'16:00'));
+    // 마감 봉이 없으면 그날 마지막 봉에서 끊는다. 예전에는 차트 끝까지 칠했다 — 16:00 봉이 없는 날이
+    // 금요일(창 끝)뿐이라 드러나지 않았는데, 12회차 목요일(16:00 봉 없음)에서 음영이 차트 끝까지 번진다.
+    if(b<0){for(let i=BARS.length-1;i>=0;i--)if(BARS[i].d.startsWith(d)){b=i;break;}}
+    if(a<0||b<0)continue;
     ctx.fillStyle='rgba(255,255,255,.05)';rr(ctx,X(a),CY,X(b)-X(a),CH,6);ctx.fill();
   }
   ctx.strokeStyle='#3a3a3a';ctx.lineWidth=2;ctx.setLineDash([6,8]);

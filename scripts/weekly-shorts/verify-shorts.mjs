@@ -80,6 +80,39 @@ try {
   process.exit(1);
 }
 
+// CNBC 5분봉(@ND.1 = 나스닥100 선물 근월물). 미 동부 시각 문자열 from~to(끝 봉 포함).
+const cnbcBars = async (from, to) => {
+  const tsOf = (d) => d.replace(/[- :]/g, '') + '00';
+  const end = new Date(Date.parse(to.replace(' ', 'T') + ':00Z') + 5 * 60e3).toISOString().slice(0, 16).replace('T', ' ');
+  const cj = await (await fetch(`https://ts-api.cnbc.com/harmony/app/bars/@ND.1/5M/${tsOf(from)}/${tsOf(end)}/unadjusted/EST5EDT.json`, { headers: { 'User-Agent': 'Mozilla/5.0' } })).json();
+  const t2d = (t) => `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)} ${t.slice(8, 10)}:${t.slice(10, 12)}`;
+  return (cj?.barData?.priceBars || []).map((b) => ({ d: t2d(b.tradeTime), o: +b.open, h: +b.high, l: +b.low, c: +b.close }))
+    .filter((b) => from <= b.d && b.d <= to);
+};
+
+// ── 1-0. 야후가 통째로 빠뜨린 구간을 CNBC 로 채운다 (12회차부터) ─────────────────
+// 12회차(11/23 주) 추수감사절 목요일은 주식시장은 쉬었지만 나스닥100 선물은 00:00~13:00 · 18:00~ 거래했다.
+// 야후는 그 목요일과 금요일 개장 전 봉을 5분봉·1시간봉 모두 주지 않았다(342개). 대표 결정(2026-11-28)
+// «채워야지 cnbc로 채워줘». 매니페스트 window.gap_fill({source:'cnbc', from_et, to_et, count, reason})이 있을 때만,
+// 그 구간에서 야후에 없는 봉만 CNBC 봉으로 넣는다. 넣은 봉은 src:'cnbc' 로 표시하고 [1-2] 두 출처 대조에서는 뺀다.
+const GF = M.window.gap_fill;
+if (GF) {
+  console.log(`\n[1-0] 빈 구간 채우기 (${GF.source} · ${GF.from_et} ~ ${GF.to_et})`);
+  if (GF.source !== 'cnbc' || !GF.from_et || !GF.to_et || !GF.reason) {
+    bad('빈 구간 채우기 설정', JSON.stringify(GF).slice(0, 80), 'source:cnbc · from_et · to_et · reason');
+  } else {
+    try {
+      const have = new Set(BARS.map((b) => b.d));
+      const yIn = BARS.filter((b) => b.d >= GF.from_et && b.d <= GF.to_et).length;
+      const fill = (await cnbcBars(GF.from_et, GF.to_et)).filter((b) => !have.has(b.d)).map((b) => ({ ...b, src: 'cnbc' }));
+      BARS = [...BARS, ...fill].sort((a, b) => (a.d < b.d ? -1 : 1));
+      yIn ? warn('채우는 구간 안의 야후 봉', `${yIn}개 — 야후 값을 그대로 두고 빈 자리만 채웠다`) : ok('채우는 구간 안의 야후 봉', '없음(통째로 빠짐)');
+      if (GF.count != null) cmp('CNBC 로 채운 봉 수', fill.length, GF.count);
+      else ok('CNBC 로 채운 봉 수', `${fill.length}개`);
+    } catch (e) { bad('빈 구간 채우기', `CNBC 수집 실패 — ${e.message}`, '채운 봉'); }
+  }
+}
+
 // ── 1-1. 월물 교체(롤오버)가 구간 안에 섞였는지 ─────────────────────────────
 // 야후의 연속 심볼 `NQ=F` 는 만기가 다가오면 다음 월물로 갈아탄다. 그 순간 가격이
 // 월물 간 가격차만큼 통째로 뛰는데, 캔들만 보면 시장이 움직인 것과 구별되지 않는다.
@@ -137,10 +170,14 @@ try {
   const CB = (cj?.barData?.priceBars || []).map((b) => ({ d: t2d(b.tradeTime), o: +b.open, h: +b.high, l: +b.low, c: +b.close }))
     .filter((b) => M.window.from_et <= b.d && b.d <= M.window.to_et);
   if (!CB.length) throw new Error('창 안의 봉을 못 받았다');
-  const Y = new Map(BARS.map((b) => [b.d, b]));
+  // [1-0] 에서 CNBC 로 채운 봉은 야후 봉이 아니다 — 대조에서 뺀다.
+  const Y = new Map(BARS.filter((b) => b.src !== 'cnbc').map((b) => [b.d, b]));
+  const filledN = BARS.length - Y.size;
+  if (filledN) console.log(`  · [1-0] 에서 CNBC 로 채운 봉 ${filledN}개는 «야후에 없는 봉»·종가 대조에서 뺀다`);
   if (CB[0].d === BARS[0].d) cmp('첫 봉 시가 (야후 = CNBC)', CB[0].o, BARS[0].o, 0.001);
   else bad('첫 봉 시각', `CNBC ${CB[0].d}`, `야후 ${BARS[0].d}`);
-  const onlyC = CB.filter((b) => !Y.has(b.d));
+  const filledSet = new Set(BARS.filter((b) => b.src === 'cnbc').map((b) => b.d));
+  const onlyC = CB.filter((b) => !Y.has(b.d) && !filledSet.has(b.d));
   onlyC.length ? warn('야후에 없는 봉', `${onlyC.length}개 — ${onlyC.map((b) => b.d).join(', ')}`) : ok('야후에 없는 봉', '없음');
   // 야후가 다음 봉을 통째로 빠뜨린 자리는 그 앞 봉의 종가도 몇 분 일찍 끊겨 있다(8회차 금 14:50 봉 — 14:55 봉이
   // 없고 14:50 종가가 1분봉 14:53 값이었다, CNBC 와 31.5포인트 차이). 그런 봉은 따로 보이고 기준에서 뺀다.
@@ -488,9 +525,12 @@ console.log(`\n[3-2] 요약 표 범위`);
 // 규칙 검사: 요일당 최소 1개
 console.log(`\n[4] 사건 선정 규칙`);
 const days = new Set(M.events.map((e) => e.et.slice(0, 10)));
+// 주식시장 휴장일(window.closed_days)은 선물 봉이 09:30~ 에 있어도 거래일로 세지 않는다 — 12회차 추수감사절 목요일.
+const CLOSED = new Set(M.window.closed_days || []);
 const winDays = new Set(BARS.map((b) => b.d.slice(0, 10)).filter((d) => {
-  return BARS.some((b) => b.d.startsWith(d) && b.d.slice(11) >= '09:30' && b.d.slice(11) <= '16:00');
+  return !CLOSED.has(d) && BARS.some((b) => b.d.startsWith(d) && b.d.slice(11) >= '09:30' && b.d.slice(11) <= '16:00');
 }));
+if (CLOSED.size) console.log(`  · 주식시장 휴장일 ${[...CLOSED].join(', ')} 은 거래일에서 뺀다(사건 없음이 맞다 — 지침 4장 7번)`);
 cmp('사건이 있는 요일 수', days.size, winDays.size);
 // 규칙: 「같은 조건이면 장중 우선」은 동점일 때의 우선순위지 필수 조건이 아니다.
 // 그날 후보가 하나뿐이면 프리장이어도 정당하다. 그래서 실패가 아니라 확인 항목으로 남기고,
@@ -626,6 +666,16 @@ try {
     const row = table.get(evKey(e));
     if (!row) { bad(`사건${e.n} 캘린더 항목`, '없음', evKey(e).split("@")[0]); continue; }
     cmp(`사건${e.n} 별표`, row.stars, e.stars);
+    // 캘린더에 항목은 있는데 값이 통째로 비어 있는 경우(12회차 FXStreet 소비자신뢰지수 — 발표됐는데 실제·예상·직전값이 null).
+    // 값을 지어내지 않도록 매니페스트 cal_missing({reason, sources: 통신사 2곳 이상 {name, utc, url}})이 있을 때만 경고로 넘긴다.
+    if (!row.actual && !row.consensus && !row.previous && e.actual) {
+      const CM = e.cal_missing;
+      if (!CM || !CM.reason) { bad(`사건${e.n} 실제값`, '캘린더 값이 비어 있다', 'cal_missing 에 사유와 출처를 적어라'); continue; }
+      const srcN = (CM.sources || []).filter((s) => s.name && s.url).length;
+      if (srcN < 2) { bad(`사건${e.n} 값 출처`, `${srcN}곳`, '캘린더가 비었으면 통신사 2곳 이상'); continue; }
+      warn(`사건${e.n} 캘린더 값 비어 있음`, `실제 ${e.actual} · ${e.compare_field} ${e.compare} 는 통신사 ${srcN}곳으로 확인 — ${CM.reason}`);
+      continue;
+    }
     cmp(`사건${e.n} 실제값`, row.actual, e.actual);
     // 기자회견·연설은 발표값이 없어 비교 필드도 비어 있다. 6장에서 캘린더가 정말로
     // 비어 있는지 따로 확인하므로 여기서는 건너뛴다.
@@ -900,7 +950,9 @@ if (srtDir) {
       const norm = (x) => x.replace(/[\s·.,]/g, '');
       const nb = norm(body);
       const shown = opts.filter((o) => nb.includes(norm(o)));
-      const elim = opts.filter((o) => new RegExp(`${norm(o)}[가-힣]{0,4}(아니|없었|아닙)`).test(nb));
+      // 보기에 + 같은 정규식 기호가 들어 있으면(12회차 «+1.21%») 그대로 넣었을 때 검사기가 죽었다 — 글자 그대로 찾게 바꾼다.
+      const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const elim = opts.filter((o) => new RegExp(`${esc(norm(o))}[가-힣]{0,4}(아니|없었|아닙)`).test(nb));
       if (elim.length > 0) {
         bad('고정 댓글 정답 노출', '소거법도 노출이다', `«${elim[0]}» 를 지우고 있다 — 보기가 ${opts.length}개다`);
       } else if (ans && nb.includes(norm(ans)) && shown.length < opts.length) {
