@@ -1,41 +1,11 @@
 {
-  "fetchedAt": "2026-11-27T19:54:17Z",
+  "fetchedAt": "2026-11-28T03:57:10Z",
   "source": "fxstreet",
   "range": {
-    "from": "2026-11-25T19:54:17Z",
-    "to": "2026-12-11T19:54:17Z"
+    "from": "2026-11-26T03:57:10Z",
+    "to": "2026-12-12T03:57:10Z"
   },
   "events": [
-    {
-      "at": "2026-11-26T00:00:00Z",
-      "country": "EMU",
-      "name": "EU leaders summit",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-26T01:00:00Z",
-      "country": "JP",
-      "name": "BoJ's Tamura speech",
-      "impact": "MEDIUM",
-      "consensus": null,
-      "previous": null,
-      "actual": null,
-      "unit": null
-    },
-    {
-      "at": "2026-11-26T01:00:00Z",
-      "country": "KR",
-      "name": "BoK Interest Rate Decision",
-      "impact": "MEDIUM",
-      "consensus": 3.25,
-      "previous": 3,
-      "actual": 3.25,
-      "unit": "%"
-    },
     {
       "at": "2026-11-26T05:00:00Z",
       "country": "JP",
@@ -2695,6 +2665,56 @@
       "previous": null,
       "actual": null,
       "unit": null
+    },
+    {
+      "at": "2026-12-11T20:30:00Z",
+      "country": "EMU",
+      "name": "CFTC EUR NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "€"
+    },
+    {
+      "at": "2026-12-11T20:30:00Z",
+      "country": "JP",
+      "name": "CFTC JPY NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "¥"
+    },
+    {
+      "at": "2026-12-11T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Gold NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
+    },
+    {
+      "at": "2026-12-11T20:30:00Z",
+      "country": "US",
+      "name": "CFTC Oil NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": null
+    },
+    {
+      "at": "2026-12-11T20:30:00Z",
+      "country": "US",
+      "name": "CFTC S&P 500 NC Net Positions",
+      "impact": "LOW",
+      "consensus": null,
+      "previous": null,
+      "actual": null,
+      "unit": "$"
     }
   ]
 }
